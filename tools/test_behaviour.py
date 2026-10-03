@@ -1,0 +1,688 @@
+#!/usr/bin/env python3
+"""Behaviour tests: play actual runs and assert the game state machine holds.
+
+These drive the real functions (startGame/doReveal/lifelines/survival) rather
+than inspecting data, so they catch state-machine regressions.
+"""
+import subprocess, os, io, re, json, sys
+
+ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+CHROME = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+
+TESTS = r"""
+<script>
+(function(){
+  const out=[]; const ok=(n,c,x)=>out.push({n,pass:!!c,extra:x||''});
+  const answerCorrectly = () => { sel = new Set(cat.qs[qi].a); doReveal(); };
+  const answerWrong = () => {
+    const q = cat.qs[qi];
+    const bad = disp.find(o => !q.a.includes(o.id));
+    sel = new Set(bad ? [bad.id] : []); doReveal();
+  };
+  try {
+    // ---- scoring: perfect answers accumulate, combo raises the multiplier ----
+    diffKey='facil'; startGame();
+    ok('startGame arms the quiz screen', sc==='quiz' && cat.qs.length===10, sc);
+    ok('timer set from difficulty', tMax===30 && tLeft===30, `tMax=${tMax}`);
+    const p0 = pts; answerCorrectly();
+    ok('a correct answer scores', pts > p0, `${p0} -> ${pts}`);
+    ok('streak increments', streak===1, `streak=${streak}`);
+    ok('runLog records the result', runLog.length===1 && runLog[0]===3, JSON.stringify(runLog));
+
+    // ---- wrong answer resets the streak ----
+    diffKey='facil'; startGame();
+    answerCorrectly();
+    const stAfter = streak;
+    qi = 1; sel.clear(); sc='quiz'; disp=getDisp(cat.qs[1]);
+    answerWrong();
+    ok('wrong answer resets streak', stAfter===1 && streak===0, `${stAfter} -> ${streak}`);
+
+    // ---- difficulty multiplier: hard scores more than easy for the same act ----
+    function firstGain(k){
+      diffKey=k; startGame(); tLeft=tMax; answerCorrectly(); return lastGain;
+    }
+    const ge=firstGain('facil'), gh=firstGain('dificil');
+    ok('hard pays more than easy', gh > ge, `easy=${ge} hard=${gh}`);
+
+    // ---- the prize ladder ----
+    startMilhao();
+    ok('milhao starts on the first rung',
+       isMil===true && rung===0 && sc==='quiz' && banked===0, `rung=${rung}`);
+    ok('milhao deals one question per rung',
+       cat.qs.length===LADDER.length, `${cat.qs.length} vs ${LADDER.length}`);
+    /* Keyed on the prompt AND the answer: four rungs are now cartas especiais,
+       and two Quem sou eu cards share a prompt while asking about different
+       faces. Those are not duplicates — the same prompt with the same answer
+       would be. */
+    ok('milhao questions are all distinct',
+       new Set(cat.qs.map(q=>q.t+'|'+(q.a||[]).join(','))).size===cat.qs.length);
+    ok('the first rung has no safety net', safetyNet()===0, `${safetyNet()}`);
+    ok('the clock comes from the rung, not the difficulty',
+       tMax===LADDER[0].time, `tMax=${tMax}`);
+
+    // climbing: each correct answer moves up exactly one rung
+    const r0 = rung; answerCorrectly();
+    ok('a correct answer does not advance during the reveal', rung===r0, `rung=${rung}`);
+    advanceAfterReveal(3);
+    ok('the reveal timing out moves up one rung', rung===r0+1, `rung=${rung}`);
+
+    /* Drive the real state machine, skipping only the dramatic pause. */
+    function climb(n){
+      startMilhao();
+      for (let i=0;i<n;i++){ answerCorrectly(); advanceAfterReveal(3); }
+    }
+    climb(4);
+    ok('four rungs cleared banks the first checkpoint',
+       rung===4 && safetyNet()===5000, `rung=${rung} net=${safetyNet()}`);
+    ok('the clock shortens as the money grows',
+       qTime() < LADDER[0].time, `${qTime()} < ${LADDER[0].time}`);
+    ok('distractors get stricter as the money grows',
+       qStrict() > 0, `strict=${qStrict().toFixed(2)}`);
+
+    climb(9);
+    ok('nine rungs cleared banks the second checkpoint',
+       safetyNet()===50000, `net=${safetyNet()}`);
+
+    // cashing out pays the rung you have already cleared
+    climb(6); sc='quiz'; cashOut();
+    ok('parar ends the run', sc==='end' && cashed===true, sc);
+    ok('parar pays the last rung cleared',
+       banked===LADDER[5].v, `${banked} vs ${LADDER[5].v}`);
+
+    // falling drops to the safety net, not to zero
+    climb(6); sc='quiz';
+    const netBefore = safetyNet();
+    answerWrong();
+    ok('a miss on the ladder banks the safety net',
+       banked===netBefore && netBefore===5000, `banked=${banked} net=${netBefore}`);
+
+    // falling before any checkpoint pays nothing
+    startMilhao(); sc='quiz'; answerWrong();
+    ok('a miss before the first checkpoint pays nothing', banked===0, `${banked}`);
+
+    // the ask-first threshold
+    startMilhao(); sel=new Set([disp[0].id]); confirmAnswer();
+    ok('early rungs lock in without asking', sc!=='ask', sc);
+    startMilhao(); rung=ASK_FROM_RUNG; sel=new Set([disp[0].id]); confirmAnswer();
+    ok('high rungs ask for a final answer', sc==='ask', sc);
+    unlockAnswer();
+    ok('the player can take it back', sc==='quiz', sc);
+
+    // the ladder sheet holds the clock
+    startMilhao(); ladderOpen=true;
+    const tBefore = tLeft;
+    ok('opening the ladder does not spend the clock', tLeft===tBefore);
+    clearHelpers();
+    ok('the ladder sheet closes between questions', ladderOpen===false);
+
+    // ---- cartas especiais: the other two shapes, dealt into the climb ----
+    startMilhao();
+    const spAt = cat.qs.map((q,i)=>q._special?i:-1).filter(i=>i>=0);
+    ok('the ladder deals four cartas especiais', spAt.length===4, `at ${spAt.join(',')}`);
+    ok('a carta especial never lands on a checkpoint',
+       spAt.every(i=>!LADDER[i].safe),
+       `safe: ${LADDER.map((s,i)=>s.safe?i:null).filter(i=>i!==null).join(',')}`);
+    ok('both kinds are dealt, twice each',
+       cat.qs.filter(q=>q._special==='who').length===2 &&
+       cat.qs.filter(q=>q._special==='tl').length===2,
+       cat.qs.filter(q=>q._special).map(q=>q._special).join(','));
+    ok('a Quem sou eu card opens on one clue and holds more',
+       cat.qs.filter(q=>q._special==='who')
+             .every(q=>q.clues && q.clues.length>=3 && q._shown===1));
+    ok('a Linha do tempo card deals four events and one right order',
+       cat.qs.filter(q=>q._special==='tl')
+             .every(q=>q.order && q.order.length===4 && q.a.length===4));
+    ok('a carta especial never repeats a face the climb already asks for', (()=>{
+        const plain = new Set();
+        cat.qs.forEach(q=>{ if(!q._special) (q.a||[]).forEach(a=>plain.add(a)); });
+        return cat.qs.filter(q=>q._special).every(q=>(q.a||[]).every(a=>!plain.has(a)));
+      })());
+
+    // the card is announced first, and the clock waits for it to be turned
+    startMilhao();
+    const firstSp = cat.qs.findIndex(q=>q._special);
+    for (let i=0;i<firstSp;i++){ answerCorrectly(); advanceAfterReveal(3); }
+    ok('a special rung stops on the card, not on the board',
+       sc==='card' && qi===firstSp, `sc=${sc} qi=${qi}`);
+    ok('the clock has not started while the card is face up',
+       tLeft===tMax, `${tLeft}/${tMax}`);
+    ok('a carta especial gets a longer clock than its rung would give',
+       tMax>=45 && tMax>=LADDER[firstSp].time, `tMax=${tMax} rung=${LADDER[firstSp].time}`);
+    go();
+    const turn = document.getElementById('bcardgo');
+    ok('the card can be turned over', !!turn);
+    if (turn) turn.click();
+    ok('turning the card arms the board', sc==='quiz', sc);
+
+    // a clue costs the clock, and exactly what it says it costs
+    startMilhao();
+    const whoAt = cat.qs.findIndex(q=>q._special==='who');
+    qi=whoAt; rung=whoAt; sc='quiz'; tMax=qTime(); tLeft=tMax;
+    disp=getDisp(cat.qs[whoAt]); go();
+    const t0c = tLeft, shown0 = cat.qs[whoAt]._shown;
+    const clueBtn = document.getElementById('bclue');
+    ok('a Quem sou eu card offers the next clue', !!clueBtn);
+    if (clueBtn) clueBtn.click();
+    ok('a clue costs seconds, not points',
+       cat.qs[whoAt]._shown===shown0+1 && tLeft===t0c-CLUE_COST, `${t0c} -> ${tLeft}`);
+
+    // the three ajudas that narrow the board are off where nothing narrows
+    startMilhao();
+    const tlAt = cat.qs.findIndex(q=>q._special==='tl');
+    qi=tlAt; rung=tlAt; sc='quiz'; disp=getDisp(cat.qs[tlAt]);
+    resetLifes(); usePoll(); useExpert();
+    ok('the crowd and the pundit stay silent on a Linha do tempo card',
+       lifes.poll===1 && lifes.expert===1, `poll=${lifes.poll} expert=${lifes.expert}`);
+    ok('cortar has nothing to cut when every tile is right', cutCount()===0, `${cutCount()}`);
+    useFreeze();
+    ok('congelar still works on a card', lifes.freeze===0, `${lifes.freeze}`);
+
+    // ---- the cover ----
+    sc='home'; go();
+    ok('the cover still has one way in', !!document.getElementById('mil-btn'));
+    ok('com amigos is gone from the cover', !document.getElementById('party-btn'));
+    ok('quem sou eu and linha do tempo are no longer modes of their own',
+       !document.getElementById('who-btn') && !document.getElementById('tl-btn'));
+    ok('the insígnias strip is printed on the cover',
+       !!document.getElementById('medal-strip'));
+    ok('the strip shows an empty pocket when there is room for one',
+       earnedMedals().length===MEDALS.length ||
+       document.querySelectorAll('.medal-dot-off').length>0,
+       `${earnedMedals().length}/${MEDALS.length}`);
+
+    // money formatting
+    ok('money reads in pt-BR grouping', money(1000000)==='R$ 1.000.000', money(1000000));
+
+    // clearing the last rung must count as sixteen cleared, not fifteen
+    climb(LADDER.length);
+    ok('the million ends the run', sc==='end' && cashed===true, sc);
+    ok('the million banks the top prize',
+       banked===LADDER[LADDER.length-1].v, `${banked}`);
+    ok('a full climb reads 16 of 16', rung===LADDER.length, `${rung}/${LADDER.length}`);
+    ok('the share card shows every rung lit',
+       (shareText().match(/🟨/g)||[]).length===LADDER.length,
+       shareText().split('\n')[1]);
+
+    // ---- lifelines ----
+    // Some questions are two-way comparisons; land on a full board so the
+    // assertion is about the card, not about which question came up.
+    diffKey='moderado'; startGame();
+    while (disp.length < 10) { qi = (qi + 1) % cat.qs.length; disp = getDisp(cat.qs[qi]); }
+    const before = disp.length;
+    useHalf();
+    ok('50/50 hides options', hidden.size > 0 && hidden.size < before, `hid ${hidden.size}/${before}`);
+    ok('50/50 never hides a correct answer',
+       [...hidden].every(id => !cat.qs[qi].a.includes(id)));
+    ok('50/50 is single use', lifes.half === 0);
+
+    // and it refuses to spend itself when it could not remove anything
+    diffKey='moderado'; startGame();
+    (function(){
+      const q = cat.qs[qi];                       // a two-way board: one right, one wrong
+      disp = [disp.find(o => q.a.includes(o.id)), disp.find(o => !q.a.includes(o.id))]
+             .filter(Boolean);
+      const available = cutCount();
+      useHalf();
+      ok('50/50 is not wasted on a two-way question',
+         available === 0 && lifes.half === 1, `cut=${available} card=${lifes.half}`);
+    })();
+
+    diffKey='moderado'; startGame();
+    useFreeze();
+    ok('freeze pauses the clock', frozen === true && lifes.freeze === 0);
+    const t1 = tLeft; // simulate a tick
+    if (typeof tmr !== 'undefined') { /* tick handled by interval; just assert flag */ }
+    ok('freeze is single use', lifes.freeze === 0);
+
+    // ---- placar: the audience vote ----
+    diffKey='moderado'; startGame();
+    usePoll();
+    ok('placar votes on every visible tile',
+       poll && Object.keys(poll).length === disp.length, `${poll?Object.keys(poll).length:0}/${disp.length}`);
+    ok('placar percentages add up to 100',
+       Object.values(poll).reduce((a,b)=>a+b,0) === 100,
+       `${Object.values(poll).reduce((a,b)=>a+b,0)}`);
+    ok('placar is single use', lifes.poll === 0);
+    // The crowd should be a strong hint, never a free answer — and it should
+    // get noticeably worse as the money climbs, or Placar beats every other card.
+    function crowd(atRung){
+      let hit = 0;
+      for (let i=0;i<80;i++){
+        startMilhao(); rung=atRung; qi=atRung; disp=getDisp(cat.qs[qi]);
+        lifes.poll=1; usePoll();
+        const top = Object.keys(poll).reduce((a,b)=>poll[a]>=poll[b]?a:b);
+        if (cat.qs[qi].a.includes(top)) hit++;
+      }
+      return hit;
+    }
+    const cLow = crowd(0), cHigh = crowd(15);
+    ok('the crowd is a strong hint, not a free answer',
+       cLow >= 56 && cLow <= 78, `${cLow}/80`);
+    ok('the crowd falls apart near the million', cHigh < cLow - 20, `${cLow} -> ${cHigh}`);
+
+    // ---- convidado: the pundit ----
+    diffKey='moderado'; startGame();
+    useExpert();
+    ok('the pundit names a visible option',
+       expert && disp.some(o => o.id === expert.id), expert ? expert.name : 'none');
+    ok('the pundit says how sure he is', typeof expert.sure === 'boolean' && !!expert.line);
+    ok('the pundit is single use', lifes.expert === 0);
+    // he should be shakier near the million than at the bottom of the ladder
+    /* Both rungs have to be written questions: the pundit does not speak on a
+       Linha do tempo card, where every tile on the board is a right answer. */
+    function pundit(atRung){
+      let hit = 0;
+      for (let i=0;i<60;i++){
+        startMilhao(); rung=atRung; qi=atRung; disp=getDisp(cat.qs[qi]);
+        lifes.expert=1; useExpert();
+        if (cat.qs[qi].a.includes(expert.id)) hit++;
+      }
+      return hit;
+    }
+    ok('the pundit is tested on plain rungs',
+       !SPECIAL_RUNGS[0] && !SPECIAL_RUNGS[13], JSON.stringify(SPECIAL_RUNGS));
+    const low = pundit(0), high = pundit(13);
+    ok('the pundit gets shakier as the money climbs', low > high, `rung1=${low} rung14=${high}`);
+
+    diffKey='moderado'; startGame();
+    const q0 = qi;
+    useSkip();
+    ok('skip advances the question', qi === q0 + 1, `${q0} -> ${qi}`);
+    ok('skip logs a neutral result', runLog[runLog.length-1] === -1, JSON.stringify(runLog));
+    ok('skip is single use', lifes.skip === 0);
+
+    // ---- lifelines reset between runs ----
+    diffKey='facil'; startGame();
+    ok('lifelines refresh on a new run',
+       lifes.half===1 && lifes.freeze===1 && lifes.skip===1 && hidden.size===0);
+
+    // ---- survival: ends on first non-perfect answer ----
+    startSurvival();
+    ok('survival starts in quiz', isSurv===true && sc==='quiz');
+    const longQueue = cat.qs.length;
+    ok('survival queues plenty of questions', longQueue > 20, `${longQueue}`);
+    answerCorrectly();
+    ok('survival continues after a correct answer', sc==='reveal');
+
+    // ---- daily is reproducible ----
+    _seed=null; seedFrom(1234); const a=buildGame('moderado').qs.map(q=>q.t).join('|');
+    _seed=null; seedFrom(1234); const b=buildGame('moderado').qs.map(q=>q.t).join('|');
+    ok('same seed produces the same game', a===b);
+    _seed=null; seedFrom(999);  const c=buildGame('moderado').qs.map(q=>q.t).join('|');
+    ok('different seed produces a different game', a!==c);
+    _seed=null;
+
+    // ---- medals ----
+    stats={games:1,correct:0,answered:10,bestStreak:0};
+    ok('first-game medal unlocks', earnedMedals().some(m=>m.id==='first'));
+    // The album is a separate store from stats, and the album medals have
+    // always been keyed to it alone. Zeroing only stats left whatever the
+    // rounds above collected, which used to stay under 25 and now does not —
+    // a run also earns escudos, selecoes and mascotes. "No games" has to mean
+    // both stores empty or the assertion is not testing what it says.
+    stats={games:0,correct:0,answered:0,bestStreak:0}; album=new Set();
+    ok('no medals with no games', earnedMedals().length===0, `${earnedMedals().length}`);
+    // every card is printed in exactly one set and has a tier, or it would
+    // silently fall off the medals screen
+    ok('every figurinha especial is in one set and has a tier',
+       MEDALS.every(m => MEDAL_SETS.filter(s => s.ids.includes(m.id)).length === 1 && MEDAL_TIER[m.id]),
+       MEDALS.filter(m => MEDAL_SETS.filter(s => s.ids.includes(m.id)).length !== 1 || !MEDAL_TIER[m.id]).map(m => m.id).join(','));
+
+    // ---- every sticker in the album can actually be collected ----
+    // The escudos, selecoes and mascotes are printed in the album whether or
+    // not any rule hands them out. The first cut shipped 30 selecoes and 15
+    // escudos that no question could ever produce: the sections were there,
+    // the medals were there, and neither could be finished. Simulate the two
+    // routes and require every id to be reachable.
+    album = new Set();
+    const reach = new Set();
+    // route 1: whatever a right answer hands over, for every question in the pool
+    let pool = [];
+    CATS.forEach(c => c.qs.forEach(q => pool.push(q)));
+    for (let i = 0; i < 12; i++) pool = pool.concat(GEN_QS(2));
+    // run it twice: the mascote needs the escudo to already be held
+    for (let pass = 0; pass < 2; pass++) {
+      pool.forEach(q => { try { collect(earned(q)); } catch (e) {} });
+    }
+    album.forEach(id => reach.add(id));
+    // route 2: holding the players themselves earns the badges behind them
+    collect(PL.map(p => p.id));
+    pool.forEach(q => { try { collect(earned(q)); } catch (e) {} });
+    album.forEach(id => reach.add(id));
+    const unreachable = ALL_STICKERS.filter(id => !reach.has(id));
+    ok('every sticker in the album can be collected', unreachable.length === 0,
+       `${unreachable.length} unreachable: ${unreachable.slice(0,6).join(', ')}`);
+    album = new Set();
+
+    // ---- share card ----
+    diffKey='facil'; startGame(); runLog=[3,1,0,-1];
+    nCorrect=1; bestStreak=1;
+    const txt = shareText();
+    ok('share card renders one emoji per question',
+       (txt.match(/🟩|🟨|⬛|⬜/g)||[]).length === 4, txt.split('\n')[1]);
+    ok('share card includes the site link', txt.includes('tdosreis.github.io'));
+
+    // ---- symbols: nothing the platform can refuse to draw ----
+    ok('every country in the squad has a drawn flag',
+       PL.every(p => FLAGS[p.ctry]),
+       PL.filter(p => !FLAGS[p.ctry]).map(p=>p.ctry).join(',') || 'all covered');
+    ok('flags render as svg, not text', flagSVG('BRA', 8).startsWith('<svg'));
+    ok('an unknown country still renders something',
+       flagSVG('ZZZ', 8).length > 20 && !/undefined/.test(flagSVG('ZZZ', 8)));
+    ok('icons render as svg', ICON.check('#fff',12).startsWith('<svg')
+       && ICON.cut('#fff',12).startsWith('<svg'));
+
+    // Category marks are data, so guard the data: a flag belongs in `flag`
+    // (drawn) and never in `emoji` (a regional-indicator pair).
+    (function(){
+      const flagEmoji = /\uD83C[\uDDE6-\uDDFF]|🏴/;
+      const bad = CATS.filter(c => c.emoji && flagEmoji.test(c.emoji));
+      ok('no category carries a flag emoji', bad.length === 0,
+         bad.map(c=>c.id).join(',') || 'clean');
+      ok('a flag category renders a drawn flag',
+         catIcon(CATS.find(c => c.flag)).startsWith('<svg'));
+      ok('a normal category still renders its emoji',
+         catIcon(CATS.find(c => c.emoji && !c.flag)).length > 0);
+      ok('catIcon copes with a category that has neither', catIcon({}) === '');
+    })();
+    // the glyphs that Android's WebView has no font for must not be in the markup
+    (function(){
+      const screens = [];
+      sc='home';    go(); screens.push(document.getElementById('ct').innerHTML);
+      sc='medals';  go(); screens.push(document.getElementById('ct').innerHTML);
+      sc='difficulty'; go(); screens.push(document.getElementById('ct').innerHTML);
+      startMilhao();     screens.push(document.getElementById('ct').innerHTML);
+      ladderOpen=true; go(); screens.push(document.getElementById('ct').innerHTML);
+      ladderOpen=false;
+      // ✓ ✗ ✕ ★ → ← ✂ ❄ ⏭ have no glyph in Roboto; regional-indicator and
+      // tag-sequence flags have none on most non-Apple platforms.
+      const banned = /[✓✗✕★→←✂❄⏭]|🏴|\uD83C[\uDDE6-\uDDFF]/;
+      const bad = screens.map((h, i) => banned.test(h) ? i : -1).filter(i => i >= 0);
+      ok('no tofu-prone glyphs reach the DOM', bad.length === 0, `screens ${bad.join(',')}`);
+    })();
+
+    // ---- artwork: everything referenced, everything labelled ----
+    ok('every player has a photo', PL.every(p => p.img),
+       PL.filter(p=>!p.img).map(p=>p.id).join(',') || 'all present');
+    ok('every club has a crest or a drawn fallback',
+       CL.every(c => LOGOS[c.id] || (c.c1 && c.c2)),
+       CL.filter(c=>!LOGOS[c.id]&&!(c.c1&&c.c2)).map(c=>c.id).join(',') || 'all covered');
+
+    /* Every club now ships its own official escudo, so nothing should reach
+       the drawn badge through LOGOS. It survives only as clubFallback's
+       landing spot for a file that 404s. */
+    (function(){
+      const drawn = CL.filter(c => !LOGOS[c.id]);
+      ok('every club has a real crest, none falls back to the drawn badge',
+         drawn.length === 0, drawn.map(c=>c.id).join(',') || 'none');
+      // the three we did find must be wired up and attributed
+      ['corinthians','vasco','nautico'].forEach(function(id){
+        ok(`${id} uses a real licensed crest`,
+           !!LOGOS[id] && !!CREDITS[LOGOS[id]] && !!CREDITS[LOGOS[id]].a,
+           LOGOS[id] ? `${LOGOS[id]} — ${CREDITS[LOGOS[id]] ? CREDITS[LOGOS[id]].l : 'NO CREDIT'}` : 'missing');
+      });
+      // every crest, whatever its file, goes in the same disc — that is what
+      // makes a row of them read as one set instead of a jumble
+      ok('every crest sits in the standard disc',
+         CL.every(c => clubArt(c.id,'').indexOf('crest-disc') !== -1),
+         CL.filter(c => clubArt(c.id,'').indexOf('crest-disc') === -1).map(c=>c.id).join(',') || 'all discs');
+      /* FLAT_LOGOS and the #shield clip-path are gone: they existed to make
+         flags and files flattened onto white behave, and every club now ships
+         transparent official artwork. What matters instead is that the six
+         non-free escudos are named, so the licence distinction stays visible. */
+      // This used to assert `size === 6`, which was the count on the day it was
+      // written and went stale the moment the user approved the foreign crests.
+      // What matters is that the set exists and is not empty — whether it holds
+      // the right ids is the drift assertion below, which cannot go stale.
+      ok('the non-free escudos are named in one place',
+         typeof NONFREE_CRESTS !== 'undefined' && NONFREE_CRESTS.size > 0,
+         typeof NONFREE_CRESTS === 'undefined' ? 'missing' : `${NONFREE_CRESTS.size} named`);
+      ok('every named non-free escudo is credited',
+         [...NONFREE_CRESTS].every(id => LOGOS[id] && CREDITS[LOGOS[id]]),
+         [...NONFREE_CRESTS].filter(id => !(LOGOS[id] && CREDITS[LOGOS[id]])).join(',') || 'all credited');
+      /* The list and the licences must not drift apart: a club shipped under
+         the identification rationale but missing from the set would be an
+         undocumented non-free asset, which is exactly what the set exists to
+         prevent. This is the assertion that would have caught NONFREE_CRESTS
+         being deleted by an unrelated edit. */
+      (function(){
+         const named = [...NONFREE_CRESTS].sort().join(',');
+         const byLicence = Object.keys(LOGOS)
+           .filter(id => CREDITS[LOGOS[id]] && /identifica/i.test(CREDITS[LOGOS[id]].l || ''))
+           .sort().join(',');
+         ok('the non-free list matches the non-free licences',
+            named === byLicence, named === byLicence ? named : `set=[${named}] licences=[${byLicence}]`);
+      })();
+      /* The badge used to be a chrome ring with a glossy dome, which was the
+         loudest object on a board of flat printed crests. It is now cut to the
+         same shield as everything else, so what it must carry is the shield,
+         the monogram and the year — not shading. */
+      const thin = drawn.filter(c => {
+        const svg = genericCrest(c.id);
+        return !svg
+            || svg.indexOf(c.a) === -1                       // monogram
+            || (c.f && svg.indexOf(String(c.f)) === -1)      // founding year
+            || svg.indexOf('clipPath') === -1;               // cut to the shield
+      });
+      ok('each drawn badge carries its monogram, year and shield',
+         thin.length === 0, thin.map(c=>c.id).join(',') || 'all complete');
+      ok('the drawn badge is flat, like the printed crests',
+         drawn.every(c => genericCrest(c.id).indexOf('Gradient') === -1),
+         drawn.filter(c => genericCrest(c.id).indexOf('Gradient') !== -1).map(c=>c.id).join(',') || 'all flat');
+      // and the kit pattern must actually differ between clubs, or Sport and
+      // Náutico both come out as red-and-white stripes
+      const shapes = new Set(drawn.map(c => genericCrest(c.id).replace(/[\d.]/g,'')));
+      ok('drawn badges are visually distinct from one another',
+         shapes.size === drawn.length, `${shapes.size} distinct of ${drawn.length}`);
+      ok('a dark second colour survives as the kit pattern',
+         _dist('#C00000', '#111111') > 70, `dist=${Math.round(_dist('#C00000','#111111'))}`);
+    })();
+    ok('every portrait and stadium has an image',
+       Object.keys(PORT).every(k => PORT_IMGS[k]) && Object.keys(STAD).every(k => STAD_IMGS[k]));
+    ok('generated questions never reference a blank image',
+       [1,2,3].every(t => GEN_QS(t).every(q =>
+         ['reveal','face','qimg','port','stad','crest'].every(k => q[k] === undefined || !!q[k]))));
+
+    (function(){
+      // Every visual must either carry a name or be explicitly marked decorative.
+      const unlabelled = new Set();
+      function audit(tag){
+        document.querySelectorAll('#ct img').forEach(im => {
+          if (im.getAttribute('aria-hidden') !== 'true' && !im.getAttribute('alt'))
+            unlabelled.add(tag + ':img');
+          if (!im.getAttribute('src')) unlabelled.add(tag + ':img-no-src');
+        });
+        document.querySelectorAll('#ct svg').forEach(sv => {
+          if (sv.getAttribute('aria-hidden') !== 'true' && !sv.getAttribute('aria-label'))
+            unlabelled.add(tag + ':svg');
+        });
+      }
+      ['home','medals','credits','difficulty'].forEach(s => { sc=s; go(); audit(s); });
+      for (let i=0;i<20;i++){ startMilhao(); audit('milhao'); }
+      for (let i=0;i<12;i++){ diffKey='dificil'; startGame(); audit('treino'); }
+      ok('every image and icon is named or marked decorative',
+         unlabelled.size === 0, [...unlabelled].join(', ') || 'all labelled');
+    })();
+
+    /* ── Small screens ───────────────────────────────────────────
+       These ran in a 320px-wide iframe when written. Headless Chrome
+       clamps its own viewport to 500px no matter what --window-size
+       says, so a probe run directly in the page silently tests 500px
+       and reports a clean bill of health for sizes it never tried.
+       tools/narrow.py drives the iframe harness; these assertions hold
+       whatever width the suite happens to run at. */
+    (function(){
+      // a tile caption must never be clipped — the name is the answer
+      let clipped = [];
+      for (let n = 0; n < 6; n++) {
+        startMilhao();
+        for (let i = 0; i < cat.qs.length; i++)
+          if (cat.qs[i].type === 'player' && !cat.qs[i].textTiles) { qi = i; break; }
+        rung = 9; disp = getDisp(cat.qs[qi]); go();
+        document.querySelectorAll('.tile-name, .fig-nm').forEach(function(nm){
+          if (nm.scrollHeight > nm.clientHeight + 1) clipped.push(nm.textContent.trim());
+        });
+      }
+      ok('no tile caption is truncated', clipped.length === 0,
+         [...new Set(clipped)].slice(0,4).join(', ') || 'all names fit');
+
+      // the vote overlay must not sit on top of the caption
+      startMilhao(); rung = 9; qi = 9; disp = getDisp(cat.qs[9]); go(); usePoll();
+      let collisions = 0;
+      document.querySelectorAll('.b').forEach(function(t){
+        const nm = t.querySelector('.tile-name'), v = t.querySelector('.vote-pct');
+        if (!nm || !v) return;
+        const a = nm.getBoundingClientRect(), b = v.getBoundingClientRect();
+        if (a.left < b.right && b.left < a.right && a.top < b.bottom && b.top < a.bottom) collisions++;
+      });
+      ok('the audience percentage never overlaps a name', collisions === 0, `${collisions} tiles`);
+
+      /* CONFIRMAR must stay reachable without scrolling — but only assert it
+         at a height a real phone actually has. This suite runs at whatever
+         viewport headless Chrome hands out (~469px tall), which is shorter
+         than any shipping device; tools/narrow.py checks the real sizes. */
+      const vh = document.documentElement.clientHeight;
+      startMilhao(); rung = 9; qi = 9; disp = getDisp(cat.qs[9]); go();
+      usePoll(); useExpert();
+      const cta = document.getElementById('bconf');
+      const bottom = cta ? Math.round(cta.getBoundingClientRect().bottom) : -1;
+      ok('the confirm button stays above the fold',
+         vh < 520 ? true : (!!cta && bottom <= vh + 1),
+         vh < 520 ? `skipped — viewport only ${vh}px tall, see tools/narrow.py`
+                  : `cta=${bottom} vh=${vh}`);
+    })();
+
+    /* ---- every page of the album is the same twenty pockets ---- */
+    (function(){
+      album = new Set(ALL_STICKERS.filter((id, i) => i % 2));
+      sc = 'album'; albCtry = null; albPage = 0; go();
+      const secs = [...document.querySelectorAll('.alb-tab')].map(b => b.dataset.ctry);
+      const bad = [], shapes = [];
+      secs.forEach(c => {
+        albCtry = c; albPage = 0; go();
+        const n = document.querySelectorAll('.alb-pip').length;
+        for (let i = 0; i < n; i++) {
+          albPage = i; go();
+          const slots = [...document.querySelectorAll('.alb-grid > .alb-slot')];
+          if (slots.length !== ALB_PER) bad.push(`${c}:${i + 1}=${slots.length}`);
+          const hs = new Set(slots.map(el => Math.round(el.getBoundingClientRect().height)));
+          if (hs.size !== 1) shapes.push(`${c}:${i + 1}=${[...hs].join('/')}`);
+        }
+      });
+      ok('every album page holds exactly twenty pockets', bad.length === 0,
+         bad.slice(0, 4).join(', ') || `${secs.length} sections`);
+      ok('every pocket on an album page is the same size', shapes.length === 0,
+         shapes.slice(0, 4).join(', ') || 'filled, empty and blank all match');
+      album = new Set(); sc = 'home'; go();
+    })();
+
+    /* ---- the album after a run that earned something ----
+       html() reads movedScreen to open the album on the spread the new
+       sticker lives in. movedScreen was a const inside go(), which html() is
+       called by but not written inside, so this threw ReferenceError for
+       every player who had just earned a figurinha — and the guard is
+       `runNewIds.length && movedScreen`, so it threw only for them, which is
+       how it shipped. The whole screen failed to render: #ct kept whatever
+       was on it before. */
+    (function(){
+      album = new Set(); runNewIds = []; sc = 'home'; go();
+      const before = document.getElementById('ct').innerHTML.length;
+      const save = advanceAfterReveal; advanceAfterReveal = function(){};
+      diffKey = 'moderado'; startGame();
+      const q = cat.qs.find(x => x.type === 'player' && x.a.length === 1) || cat.qs[0];
+      qi = cat.qs.indexOf(q); disp = getDisp(q); sel = new Set(q.a);
+      doReveal();
+      const earnedOne = runNewIds.length > 0;
+      let threw = '';
+      try { sc = 'album'; go(); } catch (e) { threw = (e && e.message) || String(e); }
+      const shown = !!document.querySelector('.alb-slot');
+      ok('answering right earns a figurinha', earnedOne, runNewIds.join(', ') || 'none');
+      ok('the album opens after a run that earned one', !threw && shown,
+         threw || (shown ? 'album on screen' : '#ct did not change'));
+      ok('it opens on the spread the new sticker is in',
+         !threw && !!document.querySelector('.alb-fresh'),
+         threw || `albCtry=${albCtry} albPage=${albPage}`);
+      advanceAfterReveal = save;
+      album = new Set(); runNewIds = []; sc = 'home'; go();
+    })();
+
+    /* ---- swiping a page of the album ----
+       The turn is a plain slide now: release decides the whole gesture at
+       once, rather than a drag whose state has to survive the re-render
+       taking the page does (go() replaces #alb-book on every turn). */
+    (function(){
+      ALL_STICKERS.forEach(id => album.add(id));
+      sc = 'album'; albCtry = 'BRA'; albPage = 2; go();
+      const B = () => document.getElementById('alb-book');
+      const T = (t, x, y) => {
+        const el = B(), o = { clientX: x, clientY: y, identifier: 1, target: el };
+        const e = new Event(t, { bubbles: true });
+        e.touches = t === 'touchend' ? [] : [o]; e.changedTouches = [o];
+        el.dispatchEvent(e);
+      };
+      const r = B().getBoundingClientRect(), y = r.top + r.height * 0.35;
+      const page0 = albPage;
+
+      /* a mostly-vertical move is a scroll and must not turn the page */
+      T('touchstart', r.right - 40, y); T('touchend', r.right - 52, y + 120);
+      ok('a vertical swipe does not turn the album page',
+         albPage === page0, `albPage=${albPage}`);
+
+      /* a short sideways move is not a swipe either — under the 40px floor */
+      T('touchstart', r.right - 40, y); T('touchend', r.right - 60, y);
+      ok('a short sideways move does not turn the album page',
+         albPage === page0, `albPage=${albPage}`);
+
+      /* a real sideways swipe turns the page on release */
+      T('touchstart', r.right - 24, y); T('touchend', r.right - 90, y);
+      ok('a sideways swipe turns the album page forward',
+         albPage === page0 + 1, `albPage=${albPage}`);
+
+      const r2 = B().getBoundingClientRect(), y2 = r2.top + r2.height * 0.35;
+      T('touchstart', r2.left + 24, y2); T('touchend', r2.left + 90, y2);
+      ok('swiping the other way turns the album page back',
+         albPage === page0, `albPage=${albPage}`);
+
+      album = new Set(); sc = 'home'; go();
+    })();
+
+    // Attribution is a licence condition, so an unattributed photo must never be
+    // silent — the credits screen has to name it as unsourced.
+    (function(){
+      const unsourced = PL.filter(p => p.img && !CREDITS[p.img]).map(p => p.n);
+      sc='credits'; go();
+      const shown = document.getElementById('ct').textContent;
+      ok('every unattributed photo is disclosed on the credits screen',
+         unsourced.every(n => shown.includes(n)),
+         unsourced.length ? unsourced.join(', ') : 'all photos attributed');
+      ok('the credits screen lists an author for every attributed photo',
+         Object.values(CREDITS).every(c => c.a && c.l));
+    })();
+
+  } catch(e) { out.push({n:'EXCEPTION',pass:false,extra:(e&&(e.stack||e.message))||String(e)}); }
+  const el=document.createElement('div'); el.id='OUT';
+  el.textContent=JSON.stringify(out); document.body.appendChild(el);
+})();
+</script>
+"""
+
+src = io.open(os.path.join(ROOT, "index.html"), encoding="utf-8").read()
+tmp = os.path.join(ROOT, "_test_beh.html")
+io.open(tmp, "w", encoding="utf-8").write(src.replace("</body>", TESTS + "</body>"))
+try:
+    dom = subprocess.run([CHROME, "--headless", "--disable-gpu", "--virtual-time-budget=12000",
+                          "--allow-file-access-from-files", "--dump-dom", "file://" + tmp],
+                         capture_output=True, text=True, timeout=200).stdout
+finally:
+    os.remove(tmp)
+
+m = re.search(r'<div id="OUT">(.*?)</div>', dom, re.S)
+if not m:
+    print("!! no output"); [print("  ", e) for e in re.findall(r"Uncaught[^<\n]*", dom)[:4]]; sys.exit(1)
+res = json.loads(m.group(1).replace("&quot;", '"').replace("&amp;", "&")
+                           .replace("&lt;", "<").replace("&gt;", ">"))
+npass = sum(1 for r in res if r["pass"])
+for r in res:
+    print(f"  [{'PASS' if r['pass'] else 'FAIL'}] {r['n']}" + (f"   ({r['extra']})" if r["extra"] else ""))
+print(f"\n{npass}/{len(res)} passed")
+sys.exit(0 if npass == len(res) else 1)

@@ -1,0 +1,283 @@
+#!/usr/bin/env python3
+"""Render specific game states to PNG so changes can be eyeballed."""
+import subprocess, os, io, sys, re
+
+ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+CHROME = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+OUT = os.path.join(ROOT, "store-assets")
+
+# name -> JS to run once the page has booted
+STATES = {
+
+ # ── The six phone screenshots on the Play listing ──────────────
+ # They have to carry the story in order: what the app is, that the clubs
+ # and the players are really in it, that there is an album to fill, that a
+ # wrong answer teaches you something, and that the million is the point.
+ # The listing wants all six the same size, and the set already uploaded is
+ # 1000x1800 — so H=900 (the default 940 gives 1880 and won't match).
+ #   THEME=light H=900 python3 tools/shots.py shot-01-home shot-02-crests \
+ #     shot-03-question shot-04-album shot-05-ficha shot-06-milhao
+
+ "shot-01-home": """album=new Set(PL.slice(0,58).map(p=>p.id)); LS.set('album',[...album]);
+   stats={games:37,correct:412,answered:560,bestStreak:9,perfect:3,hard80:2,survBest:11};
+   LS.set('stats',stats); LS.set('milBest',150000);
+   heroSticker=function(){ const h=PL.find(p=>p.id==='pele'); return {p:h,num:PL.indexOf(h)+1}; };
+   sc='home'; go();""",
+
+ "shot-02-crests": """diffKey='moderado'; cat=buildGame('moderado');
+   const fq={ t:'Campeão do Brasileirão em 2024?', a:['botafogo'],
+     fixed:['botafogo','palmeiras','flamengo','cruzeiro','saopaulo',
+            'gremio','corinthians','vasco','santos','atleticomg'] };
+   cat.qs=[fq]; qi=0; sel.clear(); pts=48; streak=4; runLog=[3,3,3,1,3];
+   sc='quiz'; tMax=25; tLeft=19; disp=getDisp(fq); go();""",
+
+ "shot-03-question": """diffKey='dificil'; cat=buildGame('dificil');
+   const fq={ t:'Quem marcou os dois gols do Brasil na final da Copa de 2002?',
+     a:['ronaldo'], type:'player',
+     fixed:['ronaldo','ronaldinho','rivaldo','bebeto','romario',
+            'careca','edmundo','zico','socrates','falcao'] };
+   cat.qs=[fq]; qi=0; sel.clear(); pts=72; streak=6; runLog=[3,3,3,3,3,3];
+   sc='quiz'; tMax=20; tLeft=14; disp=getDisp(fq); go();""",
+
+ # The album is a book now: the listing shot should open on a spread with
+ # stickers actually in it, not on whichever page the app happens to start on.
+ # Brazil's 80s is the page that fills — the 70s runs to eleven cards and
+ # leaves two thirds of the paper bare. Three slots are left open on purpose:
+ # a page with gaps in it is the whole reason to keep playing.
+ "shot-04-album": """(function(){
+     var b=[]; PL.forEach(function(p,i){ if(p.ctry==='BRA') b.push({p:p,n:i+1}); });
+     var pgs=albumPages(b);
+     var i=pgs.findIndex(function(pg){ return pg.from===1980; });
+     albPage=Math.max(0,i);
+     var page=pgs[albPage]||{items:[]};
+     var hold=new Set(page.items.slice(4,7).map(function(g){ return g.p.id; }));
+     album=new Set(PL.filter(function(p){
+       return p.ctry==='BRA' && p.era && p.era[0]<1990 && !hold.has(p.id); }).map(p=>p.id)
+       .concat(PL.slice(0,40).map(p=>p.id).filter(function(id){ return !hold.has(id); })));
+     LS.set('album',[...album]);
+   })();
+   albCtry='BRA';
+   sc='album'; go();""",
+
+ "shot-05-ficha": """advanceAfterReveal=function(){};
+   album=new Set(); diffKey='moderado'; cat=buildGame('moderado');
+   const fq={ t:'Quem ganhou a Bola de Ouro em 2007, jogando pelo AC Milan?',
+     a:['kaka'], type:'player',
+     fixed:['kaka','ronaldinho','pirlo','nedved','shevchenko',
+            'figo','totti','del_piero','maldini','nesta'] };
+   cat.qs=[fq]; qi=0; disp=getDisp(fq); sel=new Set(['kaka']); tLeft=15; pts=54; doReveal();""",
+
+ "shot-06-milhao": """startMilhao(); rung=11; qi=11; banked=50000;
+   cat.qs[11]={ t:'Qual destes jogadores foi campeão do mundo em 1970?',
+     a:['jairzinho'], type:'player',
+     fixed:['jairzinho','zico','falcao','socrates','junior',
+            'dinamite','careca','eder','cerezo','bebeto'], _cat:{id:'copa',name:'Copa do Mundo',col:'#2E7D4F'} };
+   sel.clear(); sc='quiz'; tMax=qTime(); tLeft=21; disp=getDisp(cat.qs[11]); go();""",
+
+
+ # The mascots are the thing no other football quiz has: 41 drawings, none of
+ # them anybody's licensed artwork. Worth a shot of its own on the listing.
+ "shot-07-mascotes": """(function(){
+     // An album part-filled, the way anyone's actually looks. Filling everything
+     // but the mascots made the header read "96% colado", which is a state a new
+     // player never sees and undersells how much there is to collect.
+     album = new Set();
+     PL.slice(0, 96).forEach(function(p){ album.add(p.id); });
+     ESCUDOS.slice(0, 34).forEach(function(id){ album.add(SK.esc(id)); });
+     SELECOES.slice(0, 14).forEach(function(c){ album.add(SK.sel(c)); });
+     MASCOTES.slice(0, 15).forEach(function(id){ album.add(SK.msc(id)); });
+     MASCOTES.slice(18, 21).forEach(function(id){ album.add(SK.msc(id)); });
+     LS.set('album', [...album]);
+   })();
+   albCtry='__mascotes'; albPage=0; sc='album'; go();""",
+
+ "s-wrong": """advanceAfterReveal=function(){};
+   diffKey='moderado'; startGame();
+   const q=cat.qs[0]; const bad=disp.find(o=>!q.a.includes(o.id));
+   sel=new Set([bad.id]); tLeft=12; doReveal();""",
+
+ "s-medals": """stats={games:14,correct:132,answered:190,bestStreak:6,perfect:1,hard80:1,survBest:4};
+   LS.set('stats',stats); sc='medals'; go();""",
+ "s-home2": """stats={games:14,correct:132,answered:190,bestStreak:6,perfect:1,hard80:1,survBest:9};
+   LS.set('stats',stats); sc='home'; go();""",
+ "s-survival": """startSurvival();""",
+
+ "s-lifelines": """diffKey='moderado'; startGame();
+   useHalf();""",
+ "s-frozen": """diffKey='moderado'; startGame(); useFreeze();""",
+
+ "s-svgcrest": """diffKey='facil';
+   cat = buildGame('facil');
+   const fq = { t:'Escudos originais do app (Vasco, Corinthians, Sport, Bragantino, Náutico)',
+                a:['vasco'],
+                fixed:['vasco','corinthians','sport','bragantino','nautico',
+                       'flamengo','palmeiras','santos','gremio','cruzeiro'] };
+   cat.qs=[fq]; qi=0; sel.clear(); pts=0; streak=0; runLog=[];
+   sc='quiz'; tMax=30; tLeft=25; disp=getDisp(fq); go();""",
+
+  "s-album-rest": """album=new Set(PL.filter(p=>p.ctry!=='BRA').slice(0,70).map(p=>p.id));
+   LS.set('album',[...album]); sc='album'; go();
+   setTimeout(function(){var h=document.querySelector('.scroll-y');
+     if(h) h.scrollTop=h.scrollHeight;},700);""",
+
+ "s-album-fresh": """album=new Set(PL.slice(0,30).map(p=>p.id));
+   runNewIds=['pele','garrincha','zico']; runNewIds.forEach(id=>album.add(id));
+   LS.set('album',[...album]); sc='album'; go();""",
+
+ "s-album": """album=new Set(PL.slice(0,46).map(p=>p.id).concat(PL.slice(60,74).map(p=>p.id)));
+   LS.set('album',[...album]); sc='album'; go();""",
+ "s-back-hit": """advanceAfterReveal=function(){};   /* hold the reveal on screen */
+   diffKey='moderado'; startGame();
+   const q=cat.qs.find(x=>x.type==='player'&&x.a.length===1)||cat.qs[0];
+   qi=cat.qs.indexOf(q); disp=getDisp(q); sel=new Set(q.a); tLeft=14; doReveal();""",
+ "s-back-miss": """advanceAfterReveal=function(){};
+   diffKey='moderado'; startGame();
+   const q=cat.qs.find(x=>x.type==='player'&&x.a.length===1)||cat.qs[0];
+   qi=cat.qs.indexOf(q); disp=getDisp(q); album=new Set(PL.map(p=>p.id));
+   const bad=disp.find(o=>!q.a.includes(o.id)); sel=new Set([bad.id]); tLeft=9; doReveal();""",
+ "s-home2b": """album=new Set(PL.slice(0,52).map(p=>p.id)); LS.set('album',[...album]);
+   stats={games:14,correct:132,answered:190,bestStreak:6,perfect:1,hard80:1,survBest:9};
+   LS.set('stats',stats); sc='home'; go();""",
+ "s-newcrests": """diffKey='facil'; cat=buildGame('facil');
+   const ids=['goias','atleticogo','avai','crb','sampaio','botafogosp','santacruz','portuguesa','remo','chapecoense'];
+   const fq={ t:'Escudos novos: Goiás, Atlético GO, Avaí, CRB, Sampaio, Botafogo-SP, Santa Cruz, Portuguesa, Remo, Chapecoense',
+              a:['goias'], fixed:ids };
+   cat.qs=[fq]; qi=0; sel.clear(); sc='quiz'; tMax=30; tLeft=25; disp=getDisp(fq); go();""",
+ "s-newcrests2": """diffKey='facil'; cat=buildGame('facil');
+   const ids=['cuiaba','csa','abc','juventude','figueirense','paysandu','mirassol','sport','bragantino','nautico'];
+   const fq={ t:'Cuiabá, CSA, ABC, Juventude, Figueirense, Paysandu, Mirassol, Sport, Bragantino, Náutico',
+              a:['cuiaba'], fixed:ids };
+   cat.qs=[fq]; qi=0; sel.clear(); sc='quiz'; tMax=30; tLeft=25; disp=getDisp(fq); go();""",
+ "s-newstad": """diffKey='facil'; cat=buildGame('facil');
+   const fq={ t:'O Morumbi é o estádio de qual clube paulista?', a:['saopaulo'], stad:'morumbi',
+              pool: CL.filter(c=>c.id!=='saopaulo').map(c=>c.id) };
+   cat.qs=[fq]; qi=0; sel.clear(); sc='quiz'; tMax=30; tLeft=22; disp=getDisp(fq); go();""",
+ "s-home":       "sc='home'; go();",
+ "s-difficulty": "sc='difficulty'; go();",
+ "s-credits":    "sc='credits'; go();",
+ "s-quiz-hard":  "diffKey='dificil'; startGame();",
+ # Was the photo-reveal question — "Quem é este jogador?", the portrait
+ # sharpening as the clock ran down — which was dropped along with q.reveal,
+ # leaving `GEN_QS(2).find(q => q.reveal)` undefined and this shot throwing in
+ # getDisp every time it ran. The reveal worth a picture now is the panel that
+ # comes up over the board with the answer on it.
+ "s-reveal": """advanceAfterReveal=function(){};
+   diffKey='moderado'; startGame();
+   const q=cat.qs.find(x=>x.type==='player'&&x.a.length===1)||cat.qs[0];
+   qi=cat.qs.indexOf(q); disp=getDisp(q); sel=new Set(q.a);
+   pts=48; streak=4; tLeft=17; doReveal();""",
+ "s-career": """diffKey='dificil';
+   cat = buildGame('dificil');
+   const cq = GEN_QS(3).find(q => /nesta ordem/.test(q.t));
+   cat.qs = [cq]; qi=0; sel.clear(); pts=0; streak=0; runLog=[];
+   sc='quiz'; tMax=20; tLeft=14; disp=getDisp(cq); go();""",
+ "s-clubface": """diffKey='moderado';
+   cat = buildGame('moderado');
+   const fq = GEN_QS(2).find(q => q.face);
+   cat.qs=[fq]; qi=0; sel.clear(); pts=0; streak=0; runLog=[];
+   sc='quiz'; tMax=25; tLeft=20; disp=getDisp(fq); go();""",
+ "s-end-figs": """diffKey='dificil'; cat=buildGame('dificil');
+   album=new Set(PL.slice(0,40).map(p=>p.id)); LS.set('album',[...album]);
+   cat.qs=cat.qs.slice(0,10);
+   pts=64; nCorrect=8; nPartial=1; bestStreak=5; runLog=[3,3,3,0,3,3,1,3,3,3];
+   runNewIds=['leonidas','ghiggia','zito','cubillas','banks'];
+   runNew=runNewIds.length; scores['dificil']=64; sc='end'; go();""",
+
+ "s-end": """diffKey='dificil';
+   cat = buildGame('dificil'); cat.qs = cat.qs.slice(0,10);
+   pts=64; nCorrect=8; nPartial=1; bestStreak=5; streak=5;
+   runLog=[3,3,3,0,3,3,1,3,3,3]; scores['dificil']=64;
+   stats={games:12,correct:74,answered:110,bestStreak:7};
+   sc='end'; go();""",
+ "s-combo": """diffKey='dificil'; startGame();
+   pts=41; streak=4; prevPts=30;
+   sc='reveal'; lastMsg='';
+   (function(){ const q=cat.qs[0]; sel=new Set(q.a); tLeft=16; doReveal(); })();""",
+
+ # ── the held-up-to-the-light views, front and back ──
+ # Two taps in the real app: the first enlarges, the second turns it over.
+ "s-zoom-fig": """album=new Set(PL.slice(0,30).map(p=>p.id)); LS.set('album',[...album]);
+   albCtry='BRA'; albPage=0; sc='album'; go();
+   (function(){ var c=document.querySelector('.alb-turn'); if(c){ c.click(); c.click(); } })();""",
+
+ "s-zoom-fig-back": """album=new Set(PL.slice(0,30).map(p=>p.id)); LS.set('album',[...album]);
+   albCtry='BRA'; albPage=0; sc='album'; go();
+   (function(){ var c=document.querySelector('.alb-turn'); if(c){ c.click(); c.click(); }
+     var z=document.querySelector('.zoom'); if(z) z.classList.add('is-turned'); })();""",
+
+ "s-zoom-ins": """stats={games:37,correct:412,answered:560,bestStreak:9,perfect:3,hard80:2,survBest:11};
+   LS.set('stats',stats); insPage=0; sc='medals'; go();
+   (function(){ var c=document.querySelector('.ins'); if(c) c.click(); })();""",
+
+ "s-zoom-ins-back": """stats={games:37,correct:412,answered:560,bestStreak:9,perfect:3,hard80:2,survBest:11};
+   LS.set('stats',stats); insPage=0; sc='medals'; go();
+   (function(){ var c=document.querySelector('.ins'); if(c) c.click();
+     var z=document.querySelector('.zoom'); if(z) z.classList.add('is-turned'); })();""",
+
+ # ── the cartas especiais, face down and then played ────────────
+ "s-card-who": """startMilhao(); const i=cat.qs.findIndex(q=>q._special==='who');
+   qi=i; rung=i; disp=getDisp(cat.qs[i]); tMax=qTime(); tLeft=tMax; sc='card'; go();""",
+
+ "s-card-tl": """startMilhao(); const i=cat.qs.findIndex(q=>q._special==='tl');
+   qi=i; rung=i; disp=getDisp(cat.qs[i]); tMax=qTime(); tLeft=tMax; sc='card'; go();""",
+
+ # three clues showing, so the "+ pista" price is on screen with them
+ "s-who": """startMilhao(); const i=cat.qs.findIndex(q=>q._special==='who');
+   qi=i; rung=i; cat.qs[i]._shown=3; disp=getDisp(cat.qs[i]);
+   tMax=qTime(); tLeft=31; sc='quiz'; go();""",
+
+ # and the board where three of the five ajudas are off
+ "s-tl": """startMilhao(); const i=cat.qs.findIndex(q=>q._special==='tl');
+   qi=i; rung=i; disp=getDisp(cat.qs[i]); tMax=qTime(); tLeft=42; sc='quiz'; go();""",
+
+ # a brand new phone: the insígnias strip has to be there at zero
+ "s-home-zero": """album=new Set(); LS.set('album',[]);
+   stats={games:0,correct:0,answered:0,bestStreak:0}; LS.set('stats',stats);
+   LS.set('milBest',0); sc='home'; go();""",
+}
+
+def shot(name, js):
+    src = io.open(os.path.join(ROOT, "index.html"), encoding="utf-8").read()
+    theme = os.environ.get("THEME", "")
+    if theme: src = src.replace("<html lang=\"pt-BR\">", f"<html lang=\"pt-BR\" data-theme=\"{theme}\">")
+    # The error is painted into the picture so it cannot be missed by eye, and
+    # the title is set so it cannot be missed by the console either: a state
+    # that threw used to print "ok", because a PNG had been written, and
+    # s-reveal went on doing that for as long as it took somebody to open the
+    # file. Chrome writes the screenshot and dumps the DOM in the same run.
+    inject = ("<script>window.addEventListener('load',function(){setTimeout(function(){"
+              "try{" + js + "}catch(e){document.title='SHOT-THREW';"
+              "document.body.innerHTML='<pre style=\"color:red;"
+              "font-size:11px\">'+(e.stack||e)+'</pre>';}},250);});</script>")
+    tmp = os.path.join(ROOT, "_shot.html")
+    io.open(tmp, "w", encoding="utf-8").write(src.replace("</body>", inject + "</body>"))
+    try:
+        r = subprocess.run([CHROME, "--headless", "--disable-gpu", "--hide-scrollbars",
+                            "--window-size=500," + os.environ.get("H", "940"),
+                            "--force-device-scale-factor=2",
+                            "--allow-file-access-from-files", "--virtual-time-budget=5000",
+                            "--screenshot=" + os.path.join(OUT, name + ".png"),
+                            "--dump-dom",
+                            "file://" + tmp], capture_output=True, text=True, timeout=240)
+    finally:
+        if os.path.exists(tmp): os.remove(tmp)
+    p = os.path.join(OUT, name + ".png")
+    dom = r.stdout or ""
+    if not os.path.exists(p):
+        print(f"  {name:14s} MISSING")
+        return False
+    # the <title>, not the whole DOM: --dump-dom hands back the injected script
+    # too, and its source contains the marker whether or not anything threw
+    if re.search(r"<title[^>]*>\s*SHOT-THREW\s*</title>", dom):
+        m = re.search(r"<pre[^>]*>(.*?)</pre>", dom, re.S)
+        why = re.sub(r"\s+", " ", (m.group(1) if m else "")).strip()[:110]
+        print(f"  {name:14s} THREW  {why}")
+        return False
+    print(f"  {name:14s} ok")
+    return True
+
+want = sys.argv[1:] or list(STATES)
+ok = True
+for n in want:
+    if n in STATES: ok = shot(n, STATES[n]) and ok
+sys.exit(0 if ok else 1)

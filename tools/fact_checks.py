@@ -1,0 +1,219 @@
+#!/usr/bin/env python3
+"""The claims a number-scanner cannot check: associations and superlatives.
+
+tools/audit_questions.py catches questions asserting a year or a count. The rest
+assert that a thing is associated with another thing — "Sócrates liderou a
+Democracia Corinthiana em qual clube?", "Qual clube carioca é o Gigante da
+Colina?" — or make a superlative claim with no number in it, which is where this
+kind of error usually hides.
+
+Those cannot be derived, so they are listed by hand: each claim names the exact
+article that would settle it and the terms that must appear in it. Adding a
+question of that kind means adding a row here.
+
+  python3 tools/fact_checks.py      # exits non-zero if any claim fails
+
+Last full run: 61/61 confirmed. The only error the whole audit found was
+elsewhere — "maior artilheiro da Seleção Brasileira" answered Neymar where Marta
+holds the record across both teams; it now says "masculina".
+"""
+import json,urllib.request,urllib.parse,unicodedata,time,sys
+UA="FutebolQuizBR/1.2 (https://tdosreis.github.io/futebol-quiz/; tiagor.reis@gmail.com)"
+def get(u): return urllib.request.urlopen(urllib.request.Request(u,headers={"User-Agent":UA}),timeout=60).read()
+def japi(u): return json.loads(get(u).decode())
+CACHE={}
+def art(lang,title):
+    k=(lang,title)
+    if k in CACHE: return CACHE[k]
+    try:
+        d=japi(f"https://{lang}.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&explaintext=1"
+               f"&redirects=1&titles={urllib.parse.quote(title)}")
+        t=(list(d["query"]["pages"].values())[0].get("extract","") or "")
+    except Exception: t=""
+    CACHE[k]=t; time.sleep(0.2); return t
+def fold(x): return ''.join(c for c in unicodedata.normalize('NFD',str(x).lower()) if unicodedata.category(c)!='Mn')
+
+# (label, lang, article, [terms that must all appear])
+C=[
+ ("Pelé -> Santos","pt","Pelé",["santos"]),
+ ("Garrincha -> Botafogo","pt","Garrincha",["botafogo"]),
+ ("Kaká -> São Paulo","pt","Kaká",["sao paulo"]),
+ ("Ronaldo -> Cruzeiro","pt","Ronaldo Nazário",["cruzeiro"]),
+ ("Sócrates -> Democracia Corinthiana","pt","Sócrates (futebolista)",["democracia corinthiana","corinthians"]),
+ ("Sport -> leão","pt","Sport Club do Recife",["leao"]),
+ ("Vasco -> Gigante da Colina","pt","Club de Regatas Vasco da Gama",["gigante da colina"]),
+ ("Atlético-MG -> Galo","pt","Clube Atlético Mineiro",["galo"]),
+ ("Santos -> Peixe","pt","Santos Futebol Clube",["peixe"]),
+ ("Coritiba -> Coxa","pt","Coritiba Foot Ball Club",["coxa"]),
+ ("Corinthians -> Timão","pt","Sport Club Corinthians Paulista",["timao"]),
+ ("Allianz Parque -> Palmeiras","pt","Allianz Parque",["palmeiras"]),
+ ("Neo Química Arena -> Corinthians","pt","Neo Química Arena",["corinthians"]),
+ ("Beira-Rio -> Internacional","pt","Estádio Beira-Rio",["internacional"]),
+ ("Vila Belmiro -> Santos","pt","Estádio Urbano Caldeira",["santos"]),
+ ("São Januário -> Vasco","pt","Estádio São Januário",["vasco"]),
+ ("Arena do Grêmio -> Grêmio","pt","Arena do Grêmio",["gremio"]),
+ ("Maracanã -> Flamengo+Fluminense","pt","Estádio do Maracanã",["flamengo","fluminense"]),
+ ("Mineirão -> Cruzeiro+Atlético","pt","Estádio Governador Magalhães Pinto",["cruzeiro","atletico"]),
+ ("Morumbi -> São Paulo","pt","Estádio do Morumbi",["sao paulo"]),
+ ("Fonte Nova -> Bahia","pt","Arena Fonte Nova",["bahia"]),
+ ("Couto Pereira -> Coritiba","pt","Estádio Major Antônio Couto Pereira",["coritiba"]),
+ ("Arruda -> Santa Cruz","pt","Estádio José do Rego Maciel",["santa cruz"]),
+ ("Nílton Santos -> Enciclopédia","pt","Nílton Santos",["enciclopedia"]),
+ ("Coutinho -> Santos com Pelé","pt","Coutinho (futebolista)",["santos","pele"]),
+ ("Pepe -> Santos toda a carreira","pt","Pepe (futebolista brasileiro)",["santos"]),
+ ("Casagrande -> Democracia Corinthiana","pt","Walter Casagrande Júnior",["corinthians"]),
+ ("Chilavert -> faltas e pênaltis","es","José Luis Chilavert",["penal"]),
+ ("Valderrama -> capitão 3 Copas","es","Carlos Valderrama",["1990","1994","1998"]),
+ ("Francescoli -> River + Marseille","es","Enzo Francescoli",["river plate","marsella"]),
+ ("Reinaldo -> lesões no joelho","pt","José Reinaldo de Lima",["joelho"]),
+ ("Cruyff -> a finta","en","Cruyff Turn",["cruyff"]),
+ ("Charles Miller -> pai do futebol BR","pt","Charles Miller",["futebol"]),
+ ("FIFA fundada 1904 Paris","pt","FIFA",["1904","paris"]),
+ ("pênaltis introduzidos 1891","en","Penalty kick (association football)",["1891"]),
+ ("Laranja Mecânica","pt","Seleção Neerlandesa de Futebol",["laranja mecanica"]),
+ ("10 de linha + goleiro","en","Laws of the Game (association football)",["eleven"]),
+ ("substituições em Copas 1970","en","Substitute (association football)",["1970"]),
+ ("Copa com 32 seleções em 1998","en","FIFA World Cup",["1998","32"]),
+ ("grande área 16,5 m","en","Penalty area",["16.5"]),
+ ("El Clásico","en","El Clásico",["real madrid","barcelona"]),
+ ("Derby della Madonnina","en","Derby della Madonnina",["inter","milan"]),
+ ("Old Firm","en","Old Firm",["celtic","rangers"]),
+ ("Tiki-taka -> Guardiola/Barça","en","Tiki-taka",["barcelona"]),
+ ("Bernabéu -> Real Madrid","en","Santiago Bernabéu Stadium",["real madrid"]),
+ ("Camp Nou -> Barcelona","en","Camp Nou",["barcelona"]),
+ ("San Siro -> Milan + Inter","en","San Siro",["milan","inter"]),
+ ("Anfield -> YNWA","en","Anfield",["you'll never walk alone"]),
+ ("Old Trafford -> Man United","en","Old Trafford",["manchester united"]),
+ ("Signal Iduna Park -> Dortmund","en","Westfalenstadion",["dortmund","yellow wall"]),
+ ("Galatasaray -> Ali Sami Yen inferno","en","Ali Sami Yen Stadium",["hell"]),
+ ("Jupiler Pro League -> Bélgica","en","Belgian Pro League",["belgium"]),
+ ("Superclásico -> Boca x River","en","Superclásico",["boca","river"]),
+ ("Mourinho -> UCL Porto e Inter","en","José Mourinho",["porto","inter"]),
+ ("Klopp -> gegenpressing Liverpool","en","Jürgen Klopp",["liverpool","gegenpressing"]),
+ ("Brasil 5 Copas","pt","Seleção Brasileira de Futebol",["cinco"]),
+ ("camisa branca abandonada apos 1950","pt","Uniformes da Seleção Brasileira de Futebol",["1950","aposentada"]),
+ ("Roberto Carlos -> faltas","pt","Roberto Carlos da Silva",["falta"]),
+ ("Ibrahimović -> títulos em 4 países","en","Zlatan Ibrahimović",["ajax","juventus","barcelona","paris saint-germain"]),
+ ("Beckham -> cobranças de falta","en","David Beckham",["free-kick"]),
+ ("Henry -> 4x artilheiro da PL","en","Thierry Henry",["golden boot"]),
+ # ── Da Arquibancada: os clássicos, os mascotes, os apelidos ──
+ ("Clássico dos Milhões = Fla x Vasco","pt","Clássico dos Milhões",["flamengo","vasco"]),
+ ("Fla-Flu","pt","Fla-Flu",["flamengo","fluminense"]),
+ ("Grenal","pt","Gre-Nal",["gremio","internacional"]),
+ ("Derby Paulista = Cor x Pal","pt","Derby Paulista",["corinthians","palmeiras"]),
+ ("Choque-Rei = SP x Pal","pt","Choque-Rei",["sao paulo","palmeiras"]),
+ ("Majestoso = Cor x SP","pt","Clássico Majestoso",["corinthians","sao paulo"]),
+ ("San-São = Santos x SP","pt","San-São",["santos","sao paulo"]),
+ ("Clássico Mineiro","pt","Clássico Mineiro",["cruzeiro","atletico"]),
+ ("Ba-Vi","pt","Ba-Vi",["bahia","vitoria"]),
+ ("Flamengo urubu","pt","Clube de Regatas do Flamengo",["urubu"]),
+ ("Palmeiras porco","pt","Sociedade Esportiva Palmeiras",["porco"]),
+ ("Corinthians mosqueteiro","pt","Sport Club Corinthians Paulista",["mosqueteiro"]),
+ ("Cruzeiro raposa","pt","Cruzeiro Esporte Clube",["raposa"]),
+ ("Palmeiras Verdão","pt","Sociedade Esportiva Palmeiras",["verdao"]),
+ ("Internacional Colorado","pt","Sport Club Internacional",["colorado"]),
+ ("Grêmio Imortal","pt","Grêmio Foot-Ball Porto Alegrense",["imortal"]),
+ ("Ceará Vozão","pt","Ceará Sporting Club",["vozao"]),
+ ("Fortaleza Leão do Pici","pt","Fortaleza Esporte Clube",["pici"]),
+ ("Bahia Esquadrão de Aço","pt","Esporte Clube Bahia",["esquadrao"]),
+ ("Athletico Furacão","pt","Club Athletico Paranaense",["furacao"]),
+ ("Avaí Leão da Ilha","pt","Avaí Futebol Clube",["leao da ilha"]),
+ ("Paysandu Papão da Curuzu","pt","Paysandu Sport Club",["papao"]),
+ ("Fluminense Laranjeiras","pt","Fluminense Football Club",["laranjeiras"]),
+ # ── futebol feminino e a era moderna ──
+ ("1a Copa Feminina em 1991","en","1991 FIFA Women's World Cup",["1991"]),
+ ("EUA maior campeã feminina","en","FIFA Women's World Cup",["united states"]),
+ ("Espanha campeã 2023","en","2023 FIFA Women's World Cup",["spain"]),
+ ("Brasil sedia a Copa Feminina de 2027","en","2027 FIFA Women's World Cup",["brazil"]),
+ # note: the English "Formiga (footballer)" is a disambiguation page — use pt.
+ ("Formiga em 7 Copas","pt","Formiga (futebolista)",["7 copas"]),
+ ("Argentina campeã 2022","pt","Copa do Mundo FIFA de 2022",["argentina"]),
+ ("Marrocos na semifinal de 2022","en","2022 FIFA World Cup",["morocco"]),
+ ("Mbappé hat-trick na final de 2022","en","2022 FIFA World Cup final",["hat-trick"]),
+ ("Copa 2026: EUA, Canadá, México, 48","en","2026 FIFA World Cup",["mexico","canada","48"]),
+ ("Mundial de Clubes com 32 em 2025","en","2025 FIFA Club World Cup",["32"]),
+ # ── as ligas europeias por dentro ──
+ ("Premier League tem 20 clubes","en","Premier League",["20 clubs"]),
+ ("Bundesliga tem 18 clubes","en","Bundesliga",["18 "]),
+ ("Championship = 2a divisao inglesa","en","EFL Championship",["second"]),
+ ("La Liga 2 = 2a divisao espanhola","en","Segunda División",["second"]),
+ ("Liga Europa = 2o nivel","en","UEFA Europa League",["second"]),
+ ("Liga Conferencia criada em 2021","en","UEFA Conference League",["2021"]),
+ ("Man Utd venceu a 1a Premier League","en","1992–93 FA Premier League",["manchester united"]),
+ ("Leicester campeao em 2015-16","en","2015–16 Premier League",["leicester"]),
+ ("Juventus = La Vecchia Signora","en","Juventus FC",["vecchia signora"]),
+ ("Real Madrid = Los Blancos","en","Real Madrid CF",["los blancos"]),
+ ("Napoli campeao da Serie A 2023","en","2022–23 Serie A",["napoli"]),
+ ("Allianz Arena e do Bayern","en","Allianz Arena",["bayern"]),
+ # ── transferências e jogos que ninguém esquece ──
+ ("Neymar: transferencia recorde","en","Neymar",["record","barcelona","paris"]),
+ ("CR7 ao Real Madrid em 2009","en","Cristiano Ronaldo",["2009","real madrid"]),
+ ("Neymar Santos -> Barcelona 2013","en","Neymar",["2013","barcelona"]),
+ ("Istambul 2005 terminou 3-3","en","2005 UEFA Champions League final",["3–3"]),
+ ("Barcelona 6-1 PSG em 2017","en","Barcelona 6–1 Paris Saint-Germain",["6–1"]),
+ ("final de 1994 nos penaltis vs Italia","en","1994 FIFA World Cup final",["italy","penalt"]),
+ ("final de 2002 vs Alemanha, em Yokohama","en","2002 FIFA World Cup final",["germany","yokohama"]),
+ ("final de 1970: Brasil 4-1 Italia","en","1970 FIFA World Cup",["4–1","italy"]),
+ ("Copa de 1970 teve 16 selecoes","pt","Copa do Mundo FIFA de 1970",["dezesseis selecoes"]),
+ # ── Sul-Americana ──
+ ("Argentina: maior campeã da Copa América","en","Copa América",["argentina"]),
+ ("Brasil venceu a Copa América de 2019","en","2019 Copa América",["brazil","peru"]),
+ ("Argentina venceu a de 2021 no Maracanã","en","2021 Copa América",["argentina","maracan"]),
+ ("Chile campeão em 2015 e 2016","en","Chile national football team",["2015","2016"]),
+ ("1a Copa América: 1916, Argentina","en","1916 South American Championship",["argentina","1916"]),
+ ("Independiente: sete Libertadores","pt","Club Atlético Independiente",["sete"]),
+ ("Peñarol e a Libertadores","en","Peñarol",["copa libertadores"]),
+ ("Boca joga na Bombonera","en","La Bombonera",["boca juniors"]),
+ ("River joga no Monumental","en","Estadio Monumental (Buenos Aires)",["river plate"]),
+ ("final de 1930 no Centenario","en","1930 FIFA World Cup final",["centenario"]),
+ ("Colo-Colo é do Chile","en","Colo-Colo",["chile"]),
+ ("Olimpia é do Paraguai","en","Club Olimpia",["paraguay"]),
+ ("Atlético Nacional: Colômbia, 1989 e 2016","en","Atlético Nacional",["colombia","1989","2016"]),
+ ("Alianza Lima é do Peru","en","Alianza Lima",["peru"]),
+ ("Copa Sul-Americana é o 2o nível","en","Copa Sudamericana",["second"]),
+ ("Conmebol organiza a América do Sul","en","CONMEBOL",["south america"]),
+ # ── Futebol feminino ──
+ ("Marta: maior artilheira de Copas do Mundo","en","Marta (footballer)",["world cup"]),
+ ("Marta: seis vezes melhor do mundo","en","Marta (footballer)",["six"]),
+ ("Formiga: sete Copas do Mundo","pt","Formiga (futebolista)",["7 Copas do Mundo"]),
+ ("futebol feminino proibido no Brasil ate 1979","pt","Futebol feminino no Brasil",["1979","1941"]),
+ ("EUA venceu a 1a Copa feminina, 1991","en","1991 FIFA Women's World Cup",["united states"]),
+ ("EUA: maior campea da Copa feminina","en","FIFA Women's World Cup",["united states"]),
+ ("Espanha campea em 2023","en","2023 FIFA Women's World Cup",["spain"]),
+ ("EUA campea em 2019","en","2019 FIFA Women's World Cup",["united states"]),
+ ("2023 na Australia e Nova Zelandia","en","2023 FIFA Women's World Cup",["australia","new zealand"]),
+ ("Brasil sedia a Copa feminina de 2027","en","2027 FIFA Women's World Cup",["brazil"]),
+ ("Corinthians: maior campeao da Libertadores feminina","pt","Copa Libertadores da América de Futebol Feminino",["corinthians"]),
+ ("1a Libertadores feminina em 2009","pt","Copa Libertadores da América de Futebol Feminino",["2009"]),
+ ("Brasil: prata em Atenas 2004","en","Brazil women's national football team",["2004"]),
+ ("EUA: ouro olimpico em 2024","en","Football at the 2024 Summer Olympics \u2013 Women's tournament",["united states","gold"]),
+ ("Inglaterra campea da Euro de 2022","en","UEFA Women's Euro 2022",["england"]),
+ # ── WC: os bicampeões e o tricampeão ──
+ # Generator 37 asks "quantas Copas venceu como jogador" and derives the answer
+ # from WC[].length, so a missing year there ships a wrong answer. These are the
+ # only entries where the count is more than one.
+ ("Pele: 1958, 1962 e 1970","pt","Pelé",["1958","1962","1970"]),
+ ("Garrincha: 1958 e 1962","pt","Garrincha",["1958","1962"]),
+ ("Didi: 1958 e 1962","pt","Didi (futebolista)",["1958","1962"]),
+ ("Nilton Santos: 1958 e 1962","pt","Nílton Santos",["1958","1962"]),
+ ("Zagallo: 1958 e 1962 como jogador","pt","Mário Zagallo",["1958","1962"]),
+ ("Cafu: 1994 e 2002","pt","Cafu",["1994","2002"]),
+ ("Ronaldo: 1994 e 2002","pt","Ronaldo Nazário",["1994","2002"]),
+ ("Gilmar: 1958 e 1962","pt","Gilmar dos Santos Neves",["1958","1962"]),
+ ("Djalma Santos: 1958 e 1962","pt","Djalma Santos",["1958","1962"]),
+ ("Zito: 1958 e 1962","pt","Zito (futebolista)",["1958","1962"]),
+ ("Vava: 1958 e 1962","pt","Vavá",["1958","1962"]),
+ ("Pepe: 1958 e 1962","pt","Pepe (futebolista brasileiro)",["1958","1962"]),
+]
+bad=[]
+for label,lang,title,terms in C:
+    t=fold(art(lang,title))
+    if not t: bad.append((label,"article empty: "+title)); print(f"  ??  {label:40s} article empty ({title})"); continue
+    miss=[x for x in terms if fold(x) not in t]
+    if miss: bad.append((label,"missing "+str(miss))); print(f"  ??  {label:40s} missing {miss}")
+    else: print(f"  OK  {label:40s}")
+print(f"\n{len(C)-len(bad)} of {len(C)} claims confirmed against Wikipedia")
+if bad:
+    print("  unresolved:")
+    for label, why in bad: print(f"    {label}: {why}")
+sys.exit(1 if bad else 0)
