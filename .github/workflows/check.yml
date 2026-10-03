@@ -1,0 +1,38 @@
+# Boots the page in headless Chrome and runs the whole suite: data integrity, every question
+# at every difficulty, whole runs of each mode, every sticker in the album.
+name: Checks
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  suite:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - name: Data files parse
+        run: |
+          python3 - <<'PY'
+          import json, glob
+          for f in glob.glob('tools/questions/*.json') + glob.glob('data/*.json') + ['manifest.json', 'android/twa-manifest.json']:
+              json.load(open(f, encoding='utf-8'))
+          print('json ok')
+          PY
+      - name: Test suite (headless Chrome)
+        env:
+          CHROME: google-chrome
+        run: python3 tools/history/test_all.py
+
+  sources:
+    # Every written question carries a Wikipedia article and the words it must contain.
+    # Network-heavy, so by hand: Actions -> Checks -> Run workflow.
+    if: github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - run: SCRATCH=$RUNNER_TEMP python3 tools/check_questions.py | tail -80

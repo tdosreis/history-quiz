@@ -10,7 +10,8 @@ Exit status is non-zero if anything failed.
 """
 import html, io, json, os, re, subprocess, sys
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
-CHROME = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+CHROME = os.environ.get("CHROME", "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome")
+EXTRA = ["--no-sandbox"] if os.environ.get("CI") else []
 
 JS = r"""
 (function () {
@@ -97,7 +98,7 @@ JS = r"""
   note.specials = { who: buildWho(6).qs.length, tl: buildTimeline(6).qs.length };
   if (note.specials.who < 6 || note.specials.tl < 6) F('specials short ' + JSON.stringify(note.specials));
   buildWho(10).qs.forEach(q => { if (!q.clues || q.clues.length < 3) F('who clues ' + q.a);
-    const nm = (PL.find(p => p.id === q.a[0]) || {}).n || ''; q.clues.forEach(c => { if (nm && _fold(c).includes(_fold(nm.split(' ').pop())) && nm.split(' ').pop().length > 4) F('clue names answer: ' + nm); }); });
+    const nm = (PL.find(p => p.id === q.a[0]) || {}).n || ''; const last = _fold(nm.split(' ').pop()); q.clues.forEach(c => { if (nm && last.length > 4 && new RegExp('\\b' + last + '\\b').test(_fold(c))) F('clue names answer: ' + nm); }); });
 
   /* ── the album: every sticker prints, front and back ── */
   ALL_STICKERS.forEach((sid, i) => {
@@ -121,7 +122,7 @@ tail = ("<script>window.addEventListener('load',function(){setTimeout(function()
 tmp = os.path.join(ROOT, "_test_all.html")
 io.open(tmp, "w", encoding="utf-8").write(src.replace("<head>", "<head>" + head, 1).replace("</body>", tail + "</body>"))
 try:
-    r = subprocess.run([CHROME, "--headless=new", "--disable-gpu", "--allow-file-access-from-files",
+    r = subprocess.run([CHROME] + EXTRA + ["--headless=new", "--disable-gpu", "--allow-file-access-from-files",
                         "--virtual-time-budget=60000", "--dump-dom", "file://" + tmp],
                        capture_output=True, text=True, timeout=300)
 finally:
