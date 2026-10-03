@@ -84,7 +84,7 @@ pizarro|Francisco Pizarro|pt:Francisco Pizarro|EXP|1478|1541|ESP|imperio_espanho
 moctezuma|Montezuma II|pt:Montezuma II|GOV|1466|1520|MEX|asteca|O Último Grande Imperador Asteca||
 atahualpa|Atahualpa|pt:Atahualpa|GOV|1502|1533|PER|inca|O Último Imperador Inca||
 isabel_castela|Isabel I de Castela|pt:Isabel I de Castela|GOV|1451|1504|ESP|espanha|A Rainha Católica||
-carlos_v|Carlos V|pt:Carlos V do Sacro Império Romano-Germânico|GOV|1500|1558|ESP|sacro_imperio,imperio_espanhol|O Império onde o Sol Nunca se Punha|reforma|
+carlos_v|Carlos V|pt:Carlos V do Sacro Império Romano-Germânico|GOV|1500|1558|BEL|sacro_imperio,imperio_espanhol|O Império onde o Sol Nunca se Punha|reforma|
 solimao|Solimão, o Magnífico|pt:Solimão, o Magnífico|GOV|1494|1566|TUR|imperio_otomano|O Legislador||
 maquiavel|Nicolau Maquiavel|pt:Nicolau Maquiavel|PEN|1469|1527|ITA|republica_florentina|O Autor de O Príncipe|renascimento|
 erasmo|Erasmo de Roterdã|pt:Erasmo de Roterdão|PEN|1466|1536|NED||O Príncipe dos Humanistas|reforma|
@@ -192,7 +192,7 @@ mark_twain|Mark Twain|pt:Mark Twain|ART|1835|1910|USA|estados_unidos|O Autor de 
 nietzsche|Friedrich Nietzsche|pt:Friedrich Nietzsche|PEN|1844|1900|GER|prussia|O Filósofo de Assim Falou Zaratustra||
 van_gogh|Vincent van Gogh|pt:Vincent van Gogh|ART|1853|1890|NED||O Pintor de A Noite Estrelada||
 freud|Sigmund Freud|pt:Sigmund Freud|PEN|1856|1939|AUT|austria_hungria|O Pai da Psicanálise||
-tesla|Nikola Tesla|pt:Nikola Tesla|PEN|1856|1943|SRB|austria_hungria|O Gênio da Corrente Alternada||
+tesla|Nikola Tesla|pt:Nikola Tesla|PEN|1856|1943|CRO|austria_hungria|O Gênio da Corrente Alternada||
 edison|Thomas Edison|pt:Thomas Edison|PEN|1847|1931|USA|estados_unidos|O Mago de Menlo Park||
 meiji|Imperador Meiji|pt:Imperador Meiji|GOV|1852|1912|JPN|imperio_japones|O Imperador da Modernização do Japão||
 pankhurst|Emmeline Pankhurst|pt:Emmeline Pankhurst|REV|1858|1928|ENG|reino_unido|A Líder das Sufragistas||

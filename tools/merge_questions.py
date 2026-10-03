@@ -6,7 +6,7 @@ Each file is one category:
 
 A row is
   t        the question
-  a        the answers: player ids (type "player"), Brazilian club ids (no
+  a        the answers: player ids (type "player"), polity ids (no
            type), or the exact text of a choice (type "txt")
   type     "player" | "txt" | omitted for a club
   choices  txt only: six options, the answers among them
@@ -46,8 +46,8 @@ def inventory(src):
     bare = src[:a + len(BEGIN)] + "\n" + src[b:]
     probe = ("<script>window.addEventListener('load',function(){setTimeout(function(){"
              "var o={pl:PL.map(function(p){return [p.id,p.n]}),cl:CL.map(function(c){return [c.id,c.n]}),"
-             "logos:Object.keys(LOGOS),flags:Object.keys(FLAGS),ctry:CTRY_NAME,"
-             "stad:Object.keys(STAD_IMGS),icons:Object.keys(QICON),ufs:Object.keys(ART.UF_XY),"
+             "logos:CL.map(function(c){return c.id}),flags:Object.keys(FLAGS),ctry:CTRY_NAME,"
+             "stad:Object.keys(STAD_IMGS),icons:Object.keys(QICON),ufs:[],"
              "texts:[].concat.apply([],CATS.map(function(c){return c.qs.map(function(q){return q.t})}))};"
              "var p=document.createElement('pre');p.id='inv';p.textContent=JSON.stringify(o);"
              "document.body.appendChild(p);},200);});</script>")
@@ -190,7 +190,7 @@ def main():
 
     out = [BEGIN]
     for cat, rows in cats:
-        badge = f"flag:{json.dumps(cat['flag'])}" if cat.get("flag") else f"emoji:{json.dumps(cat.get('emoji', '⚽'), ensure_ascii=False)}"
+        badge = f"flag:{json.dumps(cat['flag'])}" if cat.get("flag") else f"emoji:{json.dumps(cat.get('emoji', '📜'), ensure_ascii=False)}"
         out.append(f"  {{\n    id:{json.dumps(cat['id'])}, name:{json.dumps(cat['name'], ensure_ascii=False)}, {badge},")
         out.append(f"    tag:{json.dumps(cat['tag'], ensure_ascii=False)}, col:{json.dumps(cat['col'])}, diff:{json.dumps(cat['diff'], ensure_ascii=False)},")
         out.append("    qs:[")

@@ -174,7 +174,20 @@ const _pn = id => (typeof clubName === 'function' ? clubName(id) : id);
 const byClub = id => ({ o:'pelo ', a:'pela ', os:'pelos ', as:'pelas ', '':'por ' }[_pa(id)]) + _pn(id);
 const ofClub = id => ({ o:'do ', a:'da ', os:'dos ', as:'das ', '':'de ' }[_pa(id)]) + _pn(id);
 const inClub = id => ({ o:'no ', a:'na ', os:'nos ', as:'nas ', '':'em ' }[_pa(id)]) + _pn(id);
+const toClub = id => ({ o:'ao ', a:'à ', os:'aos ', as:'às ', '':'a ' }[_pa(id)]) + _pn(id);
 const theClub = id => ({ o:'o ', a:'a ', os:'os ', as:'as ', '':'' }[_pa(id)]) + _pn(id);
+
+/* Where a birthplace is uncertain, or has changed hands since, "nasceu em…" is not asked:
+   a question that has to be argued is not a question. */
+const NAT_SKIP = new Set(['atila', 'espartaco', 'homero', 'herodoto', 'euclides', 'carlos_magno', 'atahualpa', 'leif',
+  'kant', 'catarina_grande', 'garibaldi', 'nightingale', 'freud', 'ataturk', 'orwell', 'clarice', 'sidarta', 'wu_zetian',
+  'sun_tzu', 'confucio', 'salomao', 'hamurabi', 'nabucodonosor', 'ciro', 'dario', 'xerxes', 'al_khwarizmi', 'avicena']);
+
+/* "a Revolução Francesa", "o Renascimento", "as Cruzadas" */
+const EV_ART = { Revolução:'a', Guerra:'a', Guerras:'as', Cruzadas:'as', Renascimento:'o', Peste:'a', Grandes:'as', Reforma:'a',
+  Iluminismo:'o', Independência:'a', Independências:'as', Conquistas:'as', Queda:'a', Primeira:'a', Segunda:'a',
+  Descolonização:'a', Direitos:'os', Corrida:'a', Unificação:'a', Abolição:'a' };
+const theEvent = id => { const n = (EVENTS[id] || {}).n || id; return (EV_ART[n.split(' ')[0]] || 'a') + ' ' + n; };
 
 /* Years, with the era they belong to: 356 a.C., 1789. */
 const yearTxt = y => (y < 0 ? (-y) + ' a.C.' : String(y));
@@ -274,6 +287,15 @@ def main():
     blocks = build_blocks()
     for k, v in blocks.items():
         s = put(s, k, v)
+    if "/*@@gen@@*/" not in s:
+        i = s.index("function GEN_QS(tier) {"); e = match(s, s.index("{", i))
+        s = s[:i] + "/*@@gen@@*/\n/*@@/gen@@*/" + s[e:]
+    s = put(s, "gen", io.open(os.path.join(H, "js", "gen.js"), encoding="utf-8").read())
+    if "/*@@specials@@*/" not in s:
+        a = s.index("/* Copas do Mundo: ano → [sede, campeã]")
+        e_ = s.index("/* ── Where these two are actually played")
+        s = s[:a] + "/*@@specials@@*/\n/*@@/specials@@*/\n" + s[e_:]
+    s = put(s, "specials", io.open(os.path.join(H, "js", "specials.js"), encoding="utf-8").read())
     s = put(s, "flags_extra", io.open(os.path.join(H, "js", "flags_extra.js"), encoding="utf-8").read())
     s = put(s, "art", "\n".join(io.open(os.path.join(H, "js", f), encoding="utf-8").read() for f in ("art_head.js", "art_tail.js")))
     io.open(PAGE, "w", encoding="utf-8").write(s)

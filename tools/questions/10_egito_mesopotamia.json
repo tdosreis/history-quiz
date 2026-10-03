@@ -1,0 +1,1013 @@
+{
+ "id": "egito_mesopotamia",
+ "name": "Egito e Mesopotâmia",
+ "tag": "Faraós, cuneiforme e as primeiras cidades",
+ "col": "#B8860B",
+ "diff": "Variado",
+ "emoji": "🏺",
+ "qs": [
+  {
+   "t": "Qual rio fertilizava as terras do Egito Antigo?",
+   "type": "txt",
+   "choices": [
+    "Nilo",
+    "Tigre",
+    "Eufrates",
+    "Indo",
+    "Danúbio",
+    "Jordão"
+   ],
+   "a": [
+    "Nilo"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "pyramid"
+   },
+   "src": [
+    "pt",
+    "Egito Antigo",
+    [
+     "Nilo"
+    ]
+   ],
+   "x": "As cheias anuais do Nilo deixavam um limo fértil nas margens: sem ele, o Egito seria deserto."
+  },
+  {
+   "t": "Como se chamava a escrita sagrada dos antigos egípcios, feita de desenhos?",
+   "type": "txt",
+   "choices": [
+    "Hieróglifos",
+    "Cuneiforme",
+    "Runas",
+    "Alfabeto fenício",
+    "Linear B",
+    "Ogham"
+   ],
+   "a": [
+    "Hieróglifos"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "scroll"
+   },
+   "src": [
+    "pt",
+    "Hieróglifo",
+    [
+     "Egito"
+    ]
+   ]
+  },
+  {
+   "t": "Qual pedra, encontrada em 1799, ajudou a decifrar os hieróglifos?",
+   "type": "txt",
+   "choices": [
+    "Pedra de Roseta",
+    "Pedra de Roma",
+    "Código de Hamurabi",
+    "Estela de Merneptá",
+    "Pedra do Sol",
+    "Obelisco de Karnak"
+   ],
+   "a": [
+    "Pedra de Roseta"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "scroll"
+   },
+   "src": [
+    "pt",
+    "Pedra de Roseta",
+    [
+     "1799"
+    ]
+   ],
+   "x": "Jean-François Champollion decifrou os hieróglifos em 1822, comparando os três textos gravados na pedra."
+  },
+  {
+   "t": "Qual faraó mandou construir os templos de Abu Simbel e reinou por mais de sessenta anos?",
+   "type": "player",
+   "a": [
+    "ramses_ii"
+   ],
+   "d": 2,
+   "art": {
+    "stad": "abu_simbel"
+   },
+   "src": [
+    "pt",
+    "Ramessés II",
+    [
+     "Abu Simbel"
+    ]
+   ]
+  },
+  {
+   "t": "Qual faraó teve a tumba descoberta quase intacta por Howard Carter, em 1922?",
+   "type": "player",
+   "a": [
+    "tutancamon"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "pyramid"
+   },
+   "src": [
+    "pt",
+    "Tutancâmon",
+    [
+     "Howard Carter"
+    ]
+   ],
+   "x": "O faraó-menino morreu por volta dos 18 anos; sua máscara de ouro virou símbolo do Egito Antigo."
+  },
+  {
+   "t": "Qual mulher governou o Egito como faraó por cerca de vinte anos, usando barba cerimonial?",
+   "type": "player",
+   "a": [
+    "hatexepsute"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "crown"
+   },
+   "src": [
+    "pt",
+    "Hatexepsute",
+    [
+     "faraó"
+    ]
+   ]
+  },
+  {
+   "t": "Qual faraó tentou impor o culto a um único deus, o disco solar Aton?",
+   "type": "player",
+   "a": [
+    "aquenaton"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "pyramid"
+   },
+   "src": [
+    "pt",
+    "Aquenáton",
+    [
+     "Aton"
+    ]
+   ]
+  },
+  {
+   "t": "Qual rainha do Egito se aliou a Júlio César e depois a Marco Antônio?",
+   "type": "player",
+   "a": [
+    "cleopatra"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "crown"
+   },
+   "src": [
+    "pt",
+    "Cleópatra VII",
+    [
+     "César",
+     "Antônio"
+    ]
+   ]
+  },
+  {
+   "t": "Qual é a maior das pirâmides de Gizé?",
+   "type": "txt",
+   "choices": [
+    "A de Quéops",
+    "A de Quéfren",
+    "A de Miquerinos",
+    "A de Djoser",
+    "A de Medum",
+    "A de Snefru"
+   ],
+   "a": [
+    "A de Quéops"
+   ],
+   "d": 2,
+   "art": {
+    "stad": "piramide_queops"
+   },
+   "src": [
+    "pt",
+    "Pirâmide de Quéops",
+    [
+     "Quéops"
+    ]
+   ],
+   "x": "Por mais de 3.800 anos, a Grande Pirâmide foi a construção mais alta feita pelo ser humano."
+  },
+  {
+   "t": "Para que serviam as pirâmides do Egito?",
+   "type": "txt",
+   "choices": [
+    "Tumbas de faraós",
+    "Observatórios astronômicos",
+    "Celeiros reais",
+    "Templos de sacrifício",
+    "Fortalezas militares",
+    "Palácios de verão"
+   ],
+   "a": [
+    "Tumbas de faraós"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "pyramid"
+   },
+   "src": [
+    "pt",
+    "Pirâmide",
+    [
+     "tumba"
+    ]
+   ]
+  },
+  {
+   "t": "Qual processo preservava o corpo dos faraós após a morte?",
+   "type": "txt",
+   "choices": [
+    "Mumificação",
+    "Cremação",
+    "Embalsamamento grego",
+    "Congelamento",
+    "Petrificação",
+    "Defumação"
+   ],
+   "a": [
+    "Mumificação"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "pyramid"
+   },
+   "src": [
+    "pt",
+    "Mumificação",
+    [
+     "Egito"
+    ]
+   ]
+  },
+  {
+   "t": "Qual deus egípcio, de cabeça de chacal, guiava os mortos e cuidava da mumificação?",
+   "type": "txt",
+   "choices": [
+    "Anúbis",
+    "Hórus",
+    "Rá",
+    "Osíris",
+    "Thot",
+    "Seth"
+   ],
+   "a": [
+    "Anúbis"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "pyramid"
+   },
+   "src": [
+    "pt",
+    "Anúbis",
+    [
+     "chacal"
+    ]
+   ]
+  },
+  {
+   "t": "Qual era o deus-sol principal do panteão egípcio?",
+   "type": "txt",
+   "choices": [
+    "Rá",
+    "Osíris",
+    "Anúbis",
+    "Hórus",
+    "Ptah",
+    "Sobek"
+   ],
+   "a": [
+    "Rá"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "pyramid"
+   },
+   "src": [
+    "pt",
+    "Rá",
+    [
+     "Sol"
+    ]
+   ]
+  },
+  {
+   "t": "Como se chamava o soberano do Egito Antigo?",
+   "type": "txt",
+   "choices": [
+    "Faraó",
+    "Sultão",
+    "Califa",
+    "Imperador",
+    "Xá",
+    "Regente"
+   ],
+   "a": [
+    "Faraó"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "crown"
+   },
+   "src": [
+    "pt",
+    "Faraó",
+    [
+     "Egito"
+    ]
+   ]
+  },
+  {
+   "t": "O que o Egito Antigo escrevia sobre rolos feitos de uma planta do Nilo?",
+   "type": "txt",
+   "choices": [
+    "Papiro",
+    "Pergaminho",
+    "Argila",
+    "Seda",
+    "Bambu",
+    "Couro"
+   ],
+   "a": [
+    "Papiro"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "scroll"
+   },
+   "src": [
+    "pt",
+    "Papiro",
+    [
+     "Egito"
+    ]
+   ]
+  },
+  {
+   "t": "Qual civilização criou a escrita cuneiforme, em placas de argila?",
+   "type": "txt",
+   "choices": [
+    "Sumérios",
+    "Egípcios",
+    "Fenícios",
+    "Gregos",
+    "Hititas",
+    "Persas"
+   ],
+   "a": [
+    "Sumérios"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "scroll"
+   },
+   "src": [
+    "pt",
+    "Escrita cuneiforme",
+    [
+     "sumér"
+    ]
+   ],
+   "x": "A palavra “cuneiforme” vem do latim cuneus, “cunha”: o formato dos sinais feitos por uma cunha na argila."
+  },
+  {
+   "t": "Entre quais rios se desenvolveu a Mesopotâmia?",
+   "type": "txt",
+   "choices": [
+    "Tigre e Eufrates",
+    "Nilo e Jordão",
+    "Indo e Ganges",
+    "Danúbio e Reno",
+    "Tigre e Nilo",
+    "Eufrates e Jordão"
+   ],
+   "a": [
+    "Tigre e Eufrates"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "map"
+   },
+   "src": [
+    "pt",
+    "Mesopotâmia",
+    [
+     "Tigre",
+     "Eufrates"
+    ]
+   ],
+   "x": "“Mesopotâmia” significa “terra entre rios”, em grego."
+  },
+  {
+   "t": "Qual rei da Babilônia ordenou um dos primeiros códigos de leis escritos, com a regra “olho por olho”?",
+   "type": "player",
+   "a": [
+    "hamurabi"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "scroll"
+   },
+   "src": [
+    "pt",
+    "Hamurabi",
+    [
+     "código"
+    ]
+   ],
+   "x": "O Código de Hamurabi foi gravado numa estela de basalto de mais de dois metros, hoje no Museu do Louvre."
+  },
+  {
+   "t": "Qual rei babilônico, segundo a tradição, mandou erguer os Jardins Suspensos?",
+   "type": "player",
+   "a": [
+    "nabucodonosor"
+   ],
+   "d": 3,
+   "art": {
+    "stad": "portao_ishtar"
+   },
+   "src": [
+    "pt",
+    "Nabucodonosor II",
+    [
+     "Jardins Suspensos"
+    ]
+   ]
+  },
+  {
+   "t": "Qual império mesopotâmico tinha a cidade de Nínive como capital e uma biblioteca com milhares de tabuletas?",
+   "a": [
+    "assiria"
+   ],
+   "d": 4,
+   "art": {
+    "icon": "book"
+   },
+   "src": [
+    "pt",
+    "Império Assírio",
+    [
+     "Nínive"
+    ]
+   ]
+  },
+  {
+   "t": "Qual cidade da Mesopotâmia era famosa pelo Portão de Ishtar e pelos Jardins Suspensos?",
+   "type": "txt",
+   "choices": [
+    "Babilônia",
+    "Nínive",
+    "Ur",
+    "Susa",
+    "Persépolis",
+    "Tebas"
+   ],
+   "a": [
+    "Babilônia"
+   ],
+   "d": 2,
+   "art": {
+    "stad": "portao_ishtar"
+   },
+   "src": [
+    "pt",
+    "Babilônia",
+    [
+     "Ishtar"
+    ]
+   ]
+  },
+  {
+   "t": "Qual civilização mesopotâmica inventou a roda e o arado, segundo os achados arqueológicos?",
+   "type": "txt",
+   "choices": [
+    "Sumérios",
+    "Hititas",
+    "Acádios",
+    "Assírios",
+    "Caldeus",
+    "Elamitas"
+   ],
+   "a": [
+    "Sumérios"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "gear"
+   },
+   "src": [
+    "pt",
+    "Suméria",
+    [
+     "roda"
+    ]
+   ]
+  },
+  {
+   "t": "Qual o nome dos templos em degraus da Mesopotâmia, ligados à Torre de Babel?",
+   "type": "txt",
+   "choices": [
+    "Zigurates",
+    "Pirâmides",
+    "Obeliscos",
+    "Mastabas",
+    "Pagodes",
+    "Tholos"
+   ],
+   "a": [
+    "Zigurates"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "pyramid"
+   },
+   "src": [
+    "pt",
+    "Zigurate",
+    [
+     "templo"
+    ]
+   ]
+  },
+  {
+   "t": "Qual povo do Oriente Médio criou um alfabeto que deu origem ao alfabeto grego?",
+   "type": "txt",
+   "choices": [
+    "Fenícios",
+    "Hebreus",
+    "Egípcios",
+    "Persas",
+    "Assírios",
+    "Lídios"
+   ],
+   "a": [
+    "Fenícios"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "ship"
+   },
+   "src": [
+    "pt",
+    "Fenícia",
+    [
+     "alfabeto"
+    ]
+   ]
+  },
+  {
+   "t": "Qual o nome do primeiro faraó a reunir o Alto e o Baixo Egito, segundo a tradição?",
+   "type": "txt",
+   "choices": [
+    "Narmer (Menés)",
+    "Djoser",
+    "Quéops",
+    "Ramsés",
+    "Tutmés",
+    "Akhenaton"
+   ],
+   "a": [
+    "Narmer (Menés)"
+   ],
+   "d": 4,
+   "art": {
+    "icon": "crown"
+   },
+   "src": [
+    "pt",
+    "Narmer",
+    [
+     "Alto e Baixo Egito"
+    ]
+   ]
+  },
+  {
+   "t": "Qual construção do Egito Antigo é considerada a pirâmide mais antiga, em degraus?",
+   "type": "txt",
+   "choices": [
+    "A de Djoser, em Sacará",
+    "A de Quéops",
+    "A de Miquerinos",
+    "A Pirâmide Vermelha",
+    "A de Quéfren",
+    "A de Unas"
+   ],
+   "a": [
+    "A de Djoser, em Sacará"
+   ],
+   "d": 4,
+   "art": {
+    "icon": "pyramid"
+   },
+   "src": [
+    "pt",
+    "Pirâmide de Djoser",
+    [
+     "Sacará"
+    ]
+   ]
+  },
+  {
+   "t": "Quem, segundo a Bíblia, libertou os hebreus da escravidão no Egito?",
+   "type": "txt",
+   "choices": [
+    "Moisés",
+    "Abraão",
+    "Davi",
+    "Salomão",
+    "Josué",
+    "Isaque"
+   ],
+   "a": [
+    "Moisés"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "scroll"
+   },
+   "src": [
+    "pt",
+    "Moisés",
+    [
+     "Egito"
+    ]
+   ]
+  },
+  {
+   "t": "Qual rei de Israel, filho de Davi, é lembrado pela sabedoria e pela construção do Primeiro Templo em Jerusalém?",
+   "type": "player",
+   "a": [
+    "salomao"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "crown"
+   },
+   "src": [
+    "pt",
+    "Salomão",
+    [
+     "Templo"
+    ]
+   ]
+  },
+  {
+   "t": "Qual a grande estátua com corpo de leão e rosto humano que guarda as pirâmides de Gizé?",
+   "type": "txt",
+   "choices": [
+    "Esfinge",
+    "Colosso",
+    "Quimera",
+    "Grifo",
+    "Minotauro",
+    "Anúbis"
+   ],
+   "a": [
+    "Esfinge"
+   ],
+   "d": 1,
+   "art": {
+    "stad": "esfinge"
+   },
+   "src": [
+    "pt",
+    "Esfinge de Gizé",
+    [
+     "leão"
+    ]
+   ]
+  },
+  {
+   "t": "Em qual cidade egípcia ficam os templos de Karnak e o Vale dos Reis?",
+   "type": "txt",
+   "choices": [
+    "Luxor (antiga Tebas)",
+    "Alexandria",
+    "Mênfis",
+    "Gizé",
+    "Assuã",
+    "Heliópolis"
+   ],
+   "a": [
+    "Luxor (antiga Tebas)"
+   ],
+   "d": 3,
+   "art": {
+    "stad": "karnak"
+   },
+   "src": [
+    "pt",
+    "Luxor",
+    [
+     "Karnak"
+    ]
+   ]
+  },
+  {
+   "t": "Como os egípcios chamavam a “Casa da Vida”, onde se copiavam textos e se ensinava a escrever?",
+   "type": "txt",
+   "choices": [
+    "Per-Ankh",
+    "Pirâmide",
+    "Serapeu",
+    "Mastaba",
+    "Cartela",
+    "Naos"
+   ],
+   "a": [
+    "Per-Ankh"
+   ],
+   "d": 5,
+   "art": {
+    "icon": "book"
+   },
+   "src": [
+    "en",
+    "House of Life",
+    [
+     "Per-Ankh"
+    ]
+   ]
+  },
+  {
+   "t": "Qual dessas invenções é atribuída aos antigos egípcios?",
+   "type": "txt",
+   "choices": [
+    "Calendário solar de 365 dias",
+    "Pólvora",
+    "Imprensa",
+    "Bússola",
+    "Relógio mecânico",
+    "Papel de arroz"
+   ],
+   "a": [
+    "Calendário solar de 365 dias"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "hourglass"
+   },
+   "src": [
+    "pt",
+    "Calendário egípcio",
+    [
+     "365"
+    ]
+   ]
+  },
+  {
+   "t": "Qual povo conquistou o Egito em 525 a.C. e o incorporou ao seu império?",
+   "type": "txt",
+   "choices": [
+    "Persas",
+    "Romanos",
+    "Gregos",
+    "Assírios",
+    "Hititas",
+    "Babilônios"
+   ],
+   "a": [
+    "Persas"
+   ],
+   "d": 4,
+   "art": {
+    "icon": "crown"
+   },
+   "src": [
+    "pt",
+    "Egito Antigo",
+    [
+     "525 a.C."
+    ]
+   ]
+  },
+  {
+   "t": "Qual cidade fundada por Alexandre, o Grande, tornou-se capital do Egito ptolomaico?",
+   "type": "txt",
+   "choices": [
+    "Alexandria",
+    "Mênfis",
+    "Tebas",
+    "Gizé",
+    "Cairo",
+    "Heliópolis"
+   ],
+   "a": [
+    "Alexandria"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "ship"
+   },
+   "src": [
+    "pt",
+    "Alexandria",
+    [
+     "Alexandre"
+    ]
+   ],
+   "x": "A Biblioteca de Alexandria chegou a guardar centenas de milhares de rolos e atraiu sábios de todo o mundo antigo."
+  },
+  {
+   "t": "Qual a última dinastia a governar o Egito Antigo, da qual Cleópatra fez parte?",
+   "type": "txt",
+   "choices": [
+    "Ptolomaica",
+    "Ramessida",
+    "Saíta",
+    "Persa",
+    "Tutmósida",
+    "Hicsa"
+   ],
+   "a": [
+    "Ptolomaica"
+   ],
+   "d": 4,
+   "art": {
+    "icon": "crown"
+   },
+   "src": [
+    "pt",
+    "Dinastia ptolomaica",
+    [
+     "Cleópatra"
+    ]
+   ]
+  },
+  {
+   "t": "O Código de Hamurabi está gravado em qual material?",
+   "type": "txt",
+   "choices": [
+    "Basalto",
+    "Mármore",
+    "Argila crua",
+    "Ouro",
+    "Papiro",
+    "Madeira"
+   ],
+   "a": [
+    "Basalto"
+   ],
+   "d": 4,
+   "art": {
+    "icon": "scroll"
+   },
+   "src": [
+    "pt",
+    "Código de Hamurabi",
+    [
+     "basalto"
+    ]
+   ]
+  },
+  {
+   "t": "Qual civilização construiu a cidade de Ur, uma das primeiras do mundo?",
+   "type": "txt",
+   "choices": [
+    "Sumérios",
+    "Egípcios",
+    "Persas",
+    "Hititas",
+    "Fenícios",
+    "Gregos"
+   ],
+   "a": [
+    "Sumérios"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "pyramid"
+   },
+   "src": [
+    "pt",
+    "Ur",
+    [
+     "sumér"
+    ]
+   ]
+  },
+  {
+   "t": "Em que região do mundo surgiram as primeiras cidades e a escrita?",
+   "type": "txt",
+   "choices": [
+    "Mesopotâmia",
+    "Vale do Indo",
+    "China",
+    "Egito",
+    "Grécia",
+    "Mesoamérica"
+   ],
+   "a": [
+    "Mesopotâmia"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "map"
+   },
+   "src": [
+    "pt",
+    "Mesopotâmia",
+    [
+     "primeiras cidades"
+    ]
+   ]
+  },
+  {
+   "t": "Qual título era dado aos escribas do Egito, indispensáveis à administração do Estado?",
+   "type": "txt",
+   "choices": [
+    "Escribas",
+    "Vizires",
+    "Sacerdotes",
+    "Nomarcas",
+    "Capatazes",
+    "Arquitetos"
+   ],
+   "a": [
+    "Escribas"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "scroll"
+   },
+   "src": [
+    "pt",
+    "Escriba",
+    [
+     "Egito"
+    ]
+   ]
+  },
+  {
+   "t": "Qual constelação ou estrela os egípcios associavam à cheia do Nilo?",
+   "type": "txt",
+   "choices": [
+    "Sírio",
+    "Polaris",
+    "Órion",
+    "Vega",
+    "Antares",
+    "Cruzeiro do Sul"
+   ],
+   "a": [
+    "Sírio"
+   ],
+   "d": 5,
+   "art": {
+    "icon": "globe"
+   },
+   "src": [
+    "pt",
+    "Sírius",
+    [
+     "Egito"
+    ]
+   ]
+  },
+  {
+   "t": "Como era chamado o vale na margem oeste do Nilo, onde ficam as tumbas de Tutancâmon e Ramsés?",
+   "type": "txt",
+   "choices": [
+    "Vale dos Reis",
+    "Vale das Rainhas",
+    "Vale do Indo",
+    "Vale da Morte",
+    "Vale de Gizé",
+    "Vale dos Nobres"
+   ],
+   "a": [
+    "Vale dos Reis"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "pyramid"
+   },
+   "src": [
+    "pt",
+    "Vale dos Reis",
+    [
+     "Tutancâmon"
+    ]
+   ]
+  }
+ ]
+}

@@ -313,3 +313,9 @@ function questionArt(q) {
   const era = qEra(q);
   return era ? html.replace('class="qart', `class="qart ${era}`) : html;
 }
+
+/* A polity's brasão as a standalone picture: the share card draws it on a canvas. */
+function crestURI(id) {
+  return 'data:image/svg+xml,' + encodeURIComponent(
+    `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60">${genericCrest(id)}</svg>`);
+}

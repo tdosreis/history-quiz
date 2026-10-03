@@ -1,0 +1,889 @@
+{
+ "id": "grecia",
+ "name": "Grécia Antiga",
+ "tag": "Da pólis ao Helenismo",
+ "col": "#1F4E8C",
+ "diff": "Variado",
+ "emoji": "🏛️",
+ "qs": [
+  {
+   "t": "Qual cidade grega é considerada o berço da democracia?",
+   "type": "txt",
+   "choices": [
+    "Atenas",
+    "Esparta",
+    "Corinto",
+    "Tebas",
+    "Delfos",
+    "Olímpia"
+   ],
+   "a": [
+    "Atenas"
+   ],
+   "d": 1,
+   "art": {
+    "stad": "partenon"
+   },
+   "src": [
+    "pt",
+    "Democracia ateniense",
+    [
+     "Atenas"
+    ]
+   ]
+  },
+  {
+   "t": "Qual templo domina a Acrópole de Atenas, dedicado à deusa Atena?",
+   "type": "txt",
+   "choices": [
+    "Partenon",
+    "Erecteion",
+    "Panteão",
+    "Templo de Zeus",
+    "Coliseu",
+    "Pórtico de Átalo"
+   ],
+   "a": [
+    "Partenon"
+   ],
+   "d": 1,
+   "art": {
+    "stad": "partenon"
+   },
+   "src": [
+    "pt",
+    "Partenon",
+    [
+     "Atena"
+    ]
+   ],
+   "x": "O Partenon foi concluído em 432 a.C., na época de Péricles, e sobreviveu a séculos como templo, igreja e mesquita."
+  },
+  {
+   "t": "Qual estadista dominou Atenas na sua Era de Ouro e liderou a construção do Partenon?",
+   "type": "player",
+   "a": [
+    "pericles"
+   ],
+   "d": 2,
+   "art": {
+    "stad": "partenon"
+   },
+   "src": [
+    "pt",
+    "Péricles",
+    [
+     "Partenon"
+    ]
+   ]
+  },
+  {
+   "t": "Qual rei espartano morreu com seus guerreiros na Batalha das Termópilas, em 480 a.C.?",
+   "type": "player",
+   "a": [
+    "leonidas"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "sword"
+   },
+   "src": [
+    "pt",
+    "Leônidas I",
+    [
+     "Termópilas"
+    ]
+   ],
+   "x": "Os famosos “300” eram a guarda pessoal de Leônidas; milhares de outros gregos lutaram ao lado deles."
+  },
+  {
+   "t": "Qual cidade-Estado grega educava seus meninos desde os sete anos para a vida militar?",
+   "a": [
+    "esparta"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "sword"
+   },
+   "src": [
+    "pt",
+    "Esparta",
+    [
+     "agogê"
+    ]
+   ]
+  },
+  {
+   "t": "Quais povos se enfrentaram nas Guerras Médicas?",
+   "type": "txt",
+   "choices": [
+    "Gregos e persas",
+    "Gregos e romanos",
+    "Persas e egípcios",
+    "Atenienses e fenícios",
+    "Gregos e cartagineses",
+    "Macedônios e hititas"
+   ],
+   "a": [
+    "Gregos e persas"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "sword"
+   },
+   "src": [
+    "pt",
+    "Guerras greco-persas",
+    [
+     "persas"
+    ]
+   ]
+  },
+  {
+   "t": "Em que batalha de 490 a.C. os atenienses derrotaram os persas, dando nome a uma corrida de longa distância?",
+   "type": "txt",
+   "choices": [
+    "Maratona",
+    "Salamina",
+    "Plateias",
+    "Termópilas",
+    "Egospótamos",
+    "Queroneia"
+   ],
+   "a": [
+    "Maratona"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "sword"
+   },
+   "src": [
+    "pt",
+    "Batalha de Maratona",
+    [
+     "490 a.C."
+    ]
+   ],
+   "x": "Segundo a lenda, um mensageiro correu de Maratona a Atenas para anunciar a vitória — e caiu morto de exaustão."
+  },
+  {
+   "t": "Qual filósofo ateniense foi condenado a beber cicuta, em 399 a.C.?",
+   "type": "player",
+   "a": [
+    "socrates"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "bust"
+   },
+   "src": [
+    "pt",
+    "Sócrates",
+    [
+     "cicuta"
+    ]
+   ]
+  },
+  {
+   "t": "Qual filósofo, discípulo de Sócrates, fundou a Academia e escreveu A República?",
+   "type": "player",
+   "a": [
+    "platao"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "book"
+   },
+   "src": [
+    "pt",
+    "Platão",
+    [
+     "Academia"
+    ]
+   ]
+  },
+  {
+   "t": "Qual filósofo foi tutor de Alexandre, o Grande, e fundou o Liceu?",
+   "type": "player",
+   "a": [
+    "aristoteles"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "book"
+   },
+   "src": [
+    "pt",
+    "Aristóteles",
+    [
+     "Alexandre"
+    ]
+   ]
+  },
+  {
+   "t": "Qual matemático grego dá nome a um célebre teorema sobre triângulos retângulos?",
+   "type": "player",
+   "a": [
+    "pitagoras"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "book"
+   },
+   "src": [
+    "pt",
+    "Pitágoras",
+    [
+     "teorema"
+    ]
+   ]
+  },
+  {
+   "t": "Qual médico grego é chamado “pai da Medicina” e dá nome a um juramento?",
+   "type": "player",
+   "a": [
+    "hipocrates"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "book"
+   },
+   "src": [
+    "pt",
+    "Hipócrates",
+    [
+     "juramento"
+    ]
+   ]
+  },
+  {
+   "t": "Qual matemático de Siracusa teria gritado “Eureka!” ao descobrir o princípio do empuxo?",
+   "type": "player",
+   "a": [
+    "arquimedes"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "gear"
+   },
+   "src": [
+    "pt",
+    "Arquimedes",
+    [
+     "Eureka"
+    ]
+   ]
+  },
+  {
+   "t": "Qual autor dos Elementos é chamado “pai da Geometria”?",
+   "type": "player",
+   "a": [
+    "euclides"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "book"
+   },
+   "src": [
+    "pt",
+    "Euclides",
+    [
+     "Elementos"
+    ]
+   ]
+  },
+  {
+   "t": "Qual poeta é tradicionalmente apontado como autor da Ilíada e da Odisseia?",
+   "type": "player",
+   "a": [
+    "homero"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "book"
+   },
+   "src": [
+    "pt",
+    "Homero",
+    [
+     "Ilíada"
+    ]
+   ]
+  },
+  {
+   "t": "Qual dramaturgo ateniense escreveu Édipo Rei?",
+   "type": "player",
+   "a": [
+    "sofocles"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "scroll"
+   },
+   "src": [
+    "pt",
+    "Sófocles",
+    [
+     "Édipo"
+    ]
+   ]
+  },
+  {
+   "t": "Qual historiador grego é chamado “pai da História” por suas Histórias sobre as Guerras Médicas?",
+   "type": "player",
+   "a": [
+    "herodoto"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "book"
+   },
+   "src": [
+    "pt",
+    "Heródoto",
+    [
+     "Guerras"
+    ]
+   ]
+  },
+  {
+   "t": "Qual a cidade grega que sediava os jogos em honra a Zeus, a cada quatro anos?",
+   "type": "txt",
+   "choices": [
+    "Olímpia",
+    "Atenas",
+    "Delfos",
+    "Corinto",
+    "Esparta",
+    "Micenas"
+   ],
+   "a": [
+    "Olímpia"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "trophy"
+   },
+   "src": [
+    "pt",
+    "Olímpia (Grécia)",
+    [
+     "Zeus"
+    ]
+   ],
+   "x": "Os Jogos Olímpicos da Antiguidade começaram em 776 a.C. e duraram mais de mil anos, até serem proibidos em 393 d.C."
+  },
+  {
+   "t": "Em qual cidade grega ficava o famoso oráculo consultado antes de grandes decisões?",
+   "type": "txt",
+   "choices": [
+    "Delfos",
+    "Olímpia",
+    "Atenas",
+    "Esparta",
+    "Tebas",
+    "Corinto"
+   ],
+   "a": [
+    "Delfos"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "column"
+   },
+   "src": [
+    "pt",
+    "Oráculo de Delfos",
+    [
+     "Apolo"
+    ]
+   ]
+  },
+  {
+   "t": "Como se chamavam as cidades-Estado gregas, independentes entre si?",
+   "type": "txt",
+   "choices": [
+    "Pólis",
+    "Satrapias",
+    "Províncias",
+    "Feudos",
+    "Nomos",
+    "Colônias"
+   ],
+   "a": [
+    "Pólis"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "column"
+   },
+   "src": [
+    "pt",
+    "Pólis",
+    [
+     "cidade-Estado"
+    ]
+   ]
+  },
+  {
+   "t": "Como os gregos chamavam o espaço público central da cidade, para o comércio e o debate?",
+   "type": "txt",
+   "choices": [
+    "Ágora",
+    "Acrópole",
+    "Pórtico",
+    "Teatro",
+    "Fórum",
+    "Estádio"
+   ],
+   "a": [
+    "Ágora"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "column"
+   },
+   "src": [
+    "pt",
+    "Ágora",
+    [
+     "praça"
+    ]
+   ]
+  },
+  {
+   "t": "Qual a guerra entre Atenas e Esparta e seus aliados, entre 431 e 404 a.C.?",
+   "type": "txt",
+   "choices": [
+    "Guerra do Peloponeso",
+    "Guerra de Troia",
+    "Guerras Médicas",
+    "Guerras Púnicas",
+    "Guerra Sagrada",
+    "Guerra de Corinto"
+   ],
+   "a": [
+    "Guerra do Peloponeso"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "sword"
+   },
+   "src": [
+    "pt",
+    "Guerra do Peloponeso",
+    [
+     "Esparta"
+    ]
+   ]
+  },
+  {
+   "t": "Qual guerra mitológica, narrada por Homero, teria sido causada pelo rapto de Helena?",
+   "type": "txt",
+   "choices": [
+    "Guerra de Troia",
+    "Guerra do Peloponeso",
+    "Guerra de Corinto",
+    "Guerra Médica",
+    "Guerra de Tebas",
+    "Guerra de Creta"
+   ],
+   "a": [
+    "Guerra de Troia"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "sword"
+   },
+   "src": [
+    "pt",
+    "Guerra de Troia",
+    [
+     "Helena"
+    ]
+   ]
+  },
+  {
+   "t": "Qual civilização anterior à Grécia clássica construiu o palácio de Cnossos, em Creta?",
+   "type": "txt",
+   "choices": [
+    "Minoica",
+    "Micênica",
+    "Fenícia",
+    "Hitita",
+    "Dórica",
+    "Etrusca"
+   ],
+   "a": [
+    "Minoica"
+   ],
+   "d": 4,
+   "art": {
+    "icon": "column"
+   },
+   "src": [
+    "pt",
+    "Civilização minoica",
+    [
+     "Cnossos"
+    ]
+   ]
+  },
+  {
+   "t": "Qual rei macedônio, pai de Alexandre, unificou a Grécia após a Batalha de Queroneia?",
+   "type": "txt",
+   "choices": [
+    "Filipe II",
+    "Filipe V",
+    "Pirro",
+    "Cassandro",
+    "Perseu",
+    "Antígono"
+   ],
+   "a": [
+    "Filipe II"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "crown"
+   },
+   "src": [
+    "pt",
+    "Filipe II da Macedônia",
+    [
+     "Queroneia"
+    ]
+   ]
+  },
+  {
+   "t": "Qual rei da Macedônia criou, em pouco mais de uma década, um império do Egito à Índia?",
+   "type": "player",
+   "a": [
+    "alexandre"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "sword"
+   },
+   "src": [
+    "pt",
+    "Alexandre, o Grande",
+    [
+     "Índia"
+    ]
+   ]
+  },
+  {
+   "t": "Como se chama o período da cultura grega espalhada pelo mundo após as conquistas de Alexandre?",
+   "type": "txt",
+   "choices": [
+    "Helenístico",
+    "Clássico",
+    "Arcaico",
+    "Homérico",
+    "Micênico",
+    "Bizantino"
+   ],
+   "a": [
+    "Helenístico"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "globe"
+   },
+   "src": [
+    "pt",
+    "Período helenístico",
+    [
+     "Alexandre"
+    ]
+   ]
+  },
+  {
+   "t": "Qual o nome do cavalo de Alexandre, o Grande?",
+   "type": "txt",
+   "choices": [
+    "Bucéfalo",
+    "Pégaso",
+    "Incitatus",
+    "Bayard",
+    "Marengo",
+    "Sleipnir"
+   ],
+   "a": [
+    "Bucéfalo"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "sword"
+   },
+   "src": [
+    "pt",
+    "Bucéfalo",
+    [
+     "Alexandre"
+    ]
+   ]
+  },
+  {
+   "t": "Qual o regime político de Atenas, em que os cidadãos votavam as leis na assembleia?",
+   "type": "txt",
+   "choices": [
+    "Democracia",
+    "Monarquia",
+    "Oligarquia",
+    "Tirania",
+    "Teocracia",
+    "Aristocracia"
+   ],
+   "a": [
+    "Democracia"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "column"
+   },
+   "src": [
+    "pt",
+    "Democracia ateniense",
+    [
+     "assembleia"
+    ]
+   ]
+  },
+  {
+   "t": "Quem NÃO podia votar na democracia ateniense?",
+   "type": "txt",
+   "choices": [
+    "Mulheres, escravos e estrangeiros",
+    "Camponeses",
+    "Soldados",
+    "Comerciantes ricos",
+    "Artesãos",
+    "Marinheiros"
+   ],
+   "a": [
+    "Mulheres, escravos e estrangeiros"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "column"
+   },
+   "src": [
+    "pt",
+    "Democracia ateniense",
+    [
+     "mulheres"
+    ]
+   ]
+  },
+  {
+   "t": "Qual a maior das ilhas gregas, sede da civilização minoica?",
+   "type": "txt",
+   "choices": [
+    "Creta",
+    "Rodes",
+    "Corfu",
+    "Naxos",
+    "Samos",
+    "Lesbos"
+   ],
+   "a": [
+    "Creta"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "map"
+   },
+   "src": [
+    "pt",
+    "Creta",
+    [
+     "minoica"
+    ]
+   ]
+  },
+  {
+   "t": "Qual o nome da fortaleza elevada de Atenas, onde fica o Partenon?",
+   "type": "txt",
+   "choices": [
+    "Acrópole",
+    "Ágora",
+    "Pnyx",
+    "Areópago",
+    "Cidadela de Tebas",
+    "Lícabeto"
+   ],
+   "a": [
+    "Acrópole"
+   ],
+   "d": 2,
+   "art": {
+    "stad": "partenon"
+   },
+   "src": [
+    "pt",
+    "Acrópole de Atenas",
+    [
+     "Partenon"
+    ]
+   ]
+  },
+  {
+   "t": "Qual obra de Homero narra a volta de Odisseu para casa depois da Guerra de Troia?",
+   "type": "txt",
+   "choices": [
+    "Odisseia",
+    "Ilíada",
+    "Eneida",
+    "Argonáuticas",
+    "Teogonia",
+    "Os Trabalhos e os Dias"
+   ],
+   "a": [
+    "Odisseia"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "book"
+   },
+   "src": [
+    "pt",
+    "Odisseia",
+    [
+     "Odisseu"
+    ]
+   ]
+  },
+  {
+   "t": "Qual formação militar grega de soldados com escudos e lanças, lado a lado, era a base dos exércitos das pólis?",
+   "type": "txt",
+   "choices": [
+    "Falange",
+    "Legião",
+    "Testudo",
+    "Coorte",
+    "Esquadrão",
+    "Cunha"
+   ],
+   "a": [
+    "Falange"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "sword"
+   },
+   "src": [
+    "pt",
+    "Falange",
+    [
+     "hoplita"
+    ]
+   ]
+  },
+  {
+   "t": "Qual poeta grega da ilha de Lesbos ficou conhecida pelos versos líricos sobre o amor?",
+   "type": "txt",
+   "choices": [
+    "Safo",
+    "Hipácia",
+    "Aspásia",
+    "Corina",
+    "Erina",
+    "Safira"
+   ],
+   "a": [
+    "Safo"
+   ],
+   "d": 4,
+   "art": {
+    "icon": "book"
+   },
+   "src": [
+    "pt",
+    "Safo",
+    [
+     "Lesbos"
+    ]
+   ]
+  },
+  {
+   "t": "Qual civilização grega arcaica de Micenas foi lembrada nos poemas de Homero?",
+   "type": "txt",
+   "choices": [
+    "Micênica",
+    "Minoica",
+    "Dórica",
+    "Jônica",
+    "Etrusca",
+    "Fenícia"
+   ],
+   "a": [
+    "Micênica"
+   ],
+   "d": 4,
+   "art": {
+    "icon": "column"
+   },
+   "src": [
+    "pt",
+    "Civilização micênica",
+    [
+     "Micenas"
+    ]
+   ]
+  },
+  {
+   "t": "Qual das Sete Maravilhas do Mundo Antigo ficava na ilha de Rodes?",
+   "type": "txt",
+   "choices": [
+    "O Colosso",
+    "O Farol",
+    "O Mausoléu",
+    "O Templo de Ártemis",
+    "A Estátua de Zeus",
+    "Os Jardins Suspensos"
+   ],
+   "a": [
+    "O Colosso"
+   ],
+   "d": 4,
+   "art": {
+    "icon": "column"
+   },
+   "src": [
+    "pt",
+    "Colosso de Rodes",
+    [
+     "Rodes"
+    ]
+   ]
+  },
+  {
+   "t": "Em que século a.C. viveram Sócrates, Platão e Péricles, no auge de Atenas?",
+   "type": "txt",
+   "choices": [
+    "V e IV a.C.",
+    "VIII e VII a.C.",
+    "III e II a.C.",
+    "I a.C. e I d.C.",
+    "X e IX a.C.",
+    "VI e V d.C."
+   ],
+   "a": [
+    "V e IV a.C."
+   ],
+   "d": 3,
+   "art": {
+    "icon": "hourglass"
+   },
+   "src": [
+    "pt",
+    "Atenas",
+    [
+     "século V a.C."
+    ]
+   ]
+  }
+ ]
+}

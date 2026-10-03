@@ -196,11 +196,11 @@
   "url": "https://commons.wikimedia.org/wiki/File:Vue_a%C3%A9rienne_du_domaine_de_Versailles_par_ToucanWings_-_Creative_Commons_By_Sa_3.0_-_083.jpg"
  },
  "arco_triunfo": {
-  "img": "img/5fd32c0bcd178f83.webp",
-  "file": "Arch of SS 2.jpg",
-  "author": "slsphotolibrary",
-  "license": "CC BY-SA 2.0",
-  "url": "https://commons.wikimedia.org/wiki/File:Arch_of_SS_2.jpg"
+  "img": "img/3d58c48dfec8437f.webp",
+  "file": "Arc de Triomphe - Août 2026.jpg",
+  "author": "ZeusUpsistos",
+  "license": "CC BY-SA 4.0",
+  "url": "https://commons.wikimedia.org/wiki/File:Arc_de_Triomphe_-_Ao%C3%BBt_2026.jpg"
  },
  "torre_eiffel": {
   "img": "img/78709fab6300c120.webp",
@@ -341,5 +341,19 @@
   "author": "Mariordo (Mario Roberto Durán Ortiz)",
   "license": "CC BY-SA 4.0",
   "url": "https://commons.wikimedia.org/wiki/File:Brasilia_Catedral_08_2005_03.jpg"
+ },
+ "portao_ishtar": {
+  "img": "img/25d01ab624a7b533.webp",
+  "file": "Ishtar Gate at Berlin Museum.jpg",
+  "author": "Rictor Norton",
+  "license": "CC BY 2.0",
+  "url": "https://commons.wikimedia.org/wiki/File:Ishtar_Gate_at_Berlin_Museum.jpg"
+ },
+ "museu_imperial": {
+  "img": "img/fd1ad810130b7c60.webp",
+  "file": "Museu Imperial 03 (cropped).JPG",
+  "author": "Filipo Tardim",
+  "license": "CC BY-SA 4.0",
+  "url": "https://commons.wikimedia.org/wiki/File:Museu_Imperial_03_(cropped).JPG"
  }
 }

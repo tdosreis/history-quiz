@@ -10,7 +10,7 @@ piramide_queops|Pirâmide de Quéops|Gizé, Egito|pt:Pirâmide de Quéops|egito_
 esfinge|Grande Esfinge|Gizé, Egito|pt:Esfinge de Gizé|egito_antigo
 abu_simbel|Abu Simbel|Egito|pt:Abu Simbel|egito_antigo
 karnak|Templo de Karnak|Luxor, Egito|pt:Templo de Karnak|egito_antigo
-portao_ishtar|Portão de Ishtar|Babilônia|pt:Portão de Ishtar|babilonia
+portao_ishtar|Portão de Ishtar|Babilônia|en:Ishtar Gate|babilonia
 persepolis|Persépolis|Irã|pt:Persépolis|persia
 petra|Petra|Jordânia|pt:Petra|
 muralha_china|Grande Muralha|China|pt:Grande Muralha da China|ming
@@ -28,7 +28,7 @@ stonehenge|Stonehenge|Inglaterra|pt:Stonehenge|
 torre_londres|Torre de Londres|Londres|pt:Torre de Londres|inglaterra
 notre_dame|Notre-Dame|Paris|pt:Catedral de Notre-Dame de Paris|francia
 versalhes|Palácio de Versalhes|França|pt:Palácio de Versalhes|francia
-arco_triunfo|Arco do Triunfo|Paris|pt:Arco do Triunfo|imperio_frances
+arco_triunfo|Arco do Triunfo|Paris|en:Arc de Triomphe|imperio_frances
 torre_eiffel|Torre Eiffel|Paris|pt:Torre Eiffel|
 escorial|Mosteiro do Escorial|Espanha|pt:Mosteiro do Escorial|imperio_espanhol
 torre_belem|Torre de Belém|Lisboa|pt:Torre de Belém|imperio_portugues
@@ -48,5 +48,5 @@ monte_rushmore|Monte Rushmore|Dakota do Sul|pt:Monte Rushmore|estados_unidos
 cristo_redentor|Cristo Redentor|Rio de Janeiro|pt:Cristo Redentor|brasil_republica
 museu_ipiranga|Museu do Ipiranga|São Paulo|pt:Museu do Ipiranga|imperio_brasil
 ouro_preto|Ouro Preto|Minas Gerais|pt:Ouro Preto|brasil_colonia
-museu_imperial|Museu Imperial|Petrópolis|pt:Museu Imperial (Petrópolis)|imperio_brasil
+museu_imperial|Museu Imperial|Petrópolis|en:Imperial Museum of Brazil|imperio_brasil
 catedral_brasilia|Catedral de Brasília|Brasília|pt:Catedral Metropolitana de Brasília|brasil_republica

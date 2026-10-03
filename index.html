@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>Futebol Quiz BR</title>
+  <title>History Quiz</title>
   <!-- Thirty dark-only rules are written ":root:not([data-theme=light]) X"
        outside the dark media query, so with no attribute they applied on a
        light phone too: the album's pages stayed night-dark and the empty
@@ -3645,7 +3645,20 @@ const _pn = id => (typeof clubName === 'function' ? clubName(id) : id);
 const byClub = id => ({ o:'pelo ', a:'pela ', os:'pelos ', as:'pelas ', '':'por ' }[_pa(id)]) + _pn(id);
 const ofClub = id => ({ o:'do ', a:'da ', os:'dos ', as:'das ', '':'de ' }[_pa(id)]) + _pn(id);
 const inClub = id => ({ o:'no ', a:'na ', os:'nos ', as:'nas ', '':'em ' }[_pa(id)]) + _pn(id);
+const toClub = id => ({ o:'ao ', a:'à ', os:'aos ', as:'às ', '':'a ' }[_pa(id)]) + _pn(id);
 const theClub = id => ({ o:'o ', a:'a ', os:'os ', as:'as ', '':'' }[_pa(id)]) + _pn(id);
+
+/* Where a birthplace is uncertain, or has changed hands since, "nasceu em…" is not asked:
+   a question that has to be argued is not a question. */
+const NAT_SKIP = new Set(['atila', 'espartaco', 'homero', 'herodoto', 'euclides', 'carlos_magno', 'atahualpa', 'leif',
+  'kant', 'catarina_grande', 'garibaldi', 'nightingale', 'freud', 'ataturk', 'orwell', 'clarice', 'sidarta', 'wu_zetian',
+  'sun_tzu', 'confucio', 'salomao', 'hamurabi', 'nabucodonosor', 'ciro', 'dario', 'xerxes', 'al_khwarizmi', 'avicena']);
+
+/* "a Revolução Francesa", "o Renascimento", "as Cruzadas" */
+const EV_ART = { Revolução:'a', Guerra:'a', Guerras:'as', Cruzadas:'as', Renascimento:'o', Peste:'a', Grandes:'as', Reforma:'a',
+  Iluminismo:'o', Independência:'a', Independências:'as', Conquistas:'as', Queda:'a', Primeira:'a', Segunda:'a',
+  Descolonização:'a', Direitos:'os', Corrida:'a', Unificação:'a', Abolição:'a' };
+const theEvent = id => { const n = (EVENTS[id] || {}).n || id; return (EV_ART[n.split(' ')[0]] || 'a') + ' ' + n; };
 
 /* Years, with the era they belong to: 356 a.C., 1789. */
 const yearTxt = y => (y < 0 ? (-y) + ' a.C.' : String(y));
@@ -3896,6 +3909,11 @@ const ICON = {
   coins:  _ico('M14 5a6 2.5 0 1 0 0 .1M8 5v9c0 1.4 2.7 2.5 6 2.5s6-1.1 6-2.5V5M8 9.5c0 1.4 2.7 2.5 6 2.5s6-1.1 6-2.5M4 8v9c0 1 1.2 1.9 3 2.3'),
   crown:  _ico('M3 18h18l1-10-5 4-5-7-5 7-5-4zM4 21h16'),
   calendar: _ico('M4.5 5.5h15v15h-15zM4.5 10h15M9 3v4.4M15 3v4.4'),
+  scroll: _ico('M7 4h10a2 2 0 0 1 2 2v12a2 2 0 0 0 2 2H9a2 2 0 0 1-2-2V4zM7 4a2 2 0 0 0-2 2v1h2M11 9h6M11 13h6'),
+  flag:   _ico('M5 21V4M5 4h11l-2 4 2 4H5'),
+  column: _ico('M5 5h14M6 8h12M8 8v10M12 8v10M16 8v10M6 18h12M5 21h14'),
+  globe:  _ico('M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18'),
+  torch:  _ico('M12 3c3 3 3 6 0 9-3-3-3-6 0-9zM9 12h6l-1 9h-4z'),
 };
 
 /*@@data_meta@@*/
@@ -3986,7 +4004,7 @@ const PL_META = {
   moctezuma: { pos:'GOV', era:[1466,1520], ctry:'MEX', clubs:['asteca'] },
   atahualpa: { pos:'GOV', era:[1502,1533], ctry:'PER', clubs:['inca'] },
   isabel_castela: { pos:'GOV', era:[1451,1504], ctry:'ESP', clubs:['espanha'] },
-  carlos_v: { pos:'GOV', era:[1500,1558], ctry:'ESP', clubs:['sacro_imperio', 'imperio_espanhol'] },
+  carlos_v: { pos:'GOV', era:[1500,1558], ctry:'BEL', clubs:['sacro_imperio', 'imperio_espanhol'] },
   solimao: { pos:'GOV', era:[1494,1566], ctry:'TUR', clubs:['imperio_otomano'] },
   maquiavel: { pos:'PEN', era:[1469,1527], ctry:'ITA', clubs:['republica_florentina'] },
   erasmo: { pos:'PEN', era:[1466,1536], ctry:'NED', clubs:[] },
@@ -4091,7 +4109,7 @@ const PL_META = {
   nietzsche: { pos:'PEN', era:[1844,1900], ctry:'GER', clubs:['prussia'] },
   van_gogh: { pos:'ART', era:[1853,1890], ctry:'NED', clubs:[] },
   freud: { pos:'PEN', era:[1856,1939], ctry:'AUT', clubs:['austria_hungria'] },
-  tesla: { pos:'PEN', era:[1856,1943], ctry:'SRB', clubs:['austria_hungria'] },
+  tesla: { pos:'PEN', era:[1856,1943], ctry:'CRO', clubs:['austria_hungria'] },
   edison: { pos:'PEN', era:[1847,1931], ctry:'USA', clubs:['estados_unidos'] },
   meiji: { pos:'GOV', era:[1852,1912], ctry:'JPN', clubs:['imperio_japones'] },
   pankhurst: { pos:'REV', era:[1858,1928], ctry:'ENG', clubs:['reino_unido'] },
@@ -4537,6 +4555,7 @@ const STAD = {
   esfinge: { name:'Grande Esfinge', city:'Gizé, Egito', p:'egito_antigo' },
   abu_simbel: { name:'Abu Simbel', city:'Egito', p:'egito_antigo' },
   karnak: { name:'Templo de Karnak', city:'Luxor, Egito', p:'egito_antigo' },
+  portao_ishtar: { name:'Portão de Ishtar', city:'Babilônia', p:'babilonia' },
   persepolis: { name:'Persépolis', city:'Irã', p:'persia' },
   petra: { name:'Petra', city:'Jordânia', p:'' },
   muralha_china: { name:'Grande Muralha', city:'China', p:'ming' },
@@ -4574,6 +4593,8 @@ const STAD = {
   cristo_redentor: { name:'Cristo Redentor', city:'Rio de Janeiro', p:'brasil_republica' },
   museu_ipiranga: { name:'Museu do Ipiranga', city:'São Paulo', p:'imperio_brasil' },
   ouro_preto: { name:'Ouro Preto', city:'Minas Gerais', p:'brasil_colonia' },
+  museu_imperial: { name:'Museu Imperial', city:'Petrópolis', p:'imperio_brasil' },
+  catedral_brasilia: { name:'Catedral de Brasília', city:'Brasília', p:'brasil_republica' },
 };
 const STAD_IMGS = {
   coliseu: 'img/efd34e046fbc113e.webp',
@@ -4587,6 +4608,7 @@ const STAD_IMGS = {
   esfinge: 'img/7cc5727859694279.webp',
   abu_simbel: 'img/4c12cd7d41b60b83.webp',
   karnak: 'img/152ee7f2effc2eb3.webp',
+  portao_ishtar: 'img/25d01ab624a7b533.webp',
   persepolis: 'img/992f9d330e061585.webp',
   petra: 'img/7b5f23babaeaa3e3.webp',
   muralha_china: 'img/1519e62405ae2d44.webp',
@@ -4604,7 +4626,7 @@ const STAD_IMGS = {
   torre_londres: 'img/e6a5e9f24221596b.webp',
   notre_dame: 'img/d1709b71f80af0ba.webp',
   versalhes: 'img/57b198af435733f8.webp',
-  arco_triunfo: 'img/5fd32c0bcd178f83.webp',
+  arco_triunfo: 'img/3d58c48dfec8437f.webp',
   torre_eiffel: 'img/78709fab6300c120.webp',
   escorial: 'img/3b030cde21b79ca6.webp',
   torre_belem: 'img/24521eec6aa79176.webp',
@@ -4624,6 +4646,8 @@ const STAD_IMGS = {
   cristo_redentor: 'img/59d0df7e28757a0f.webp',
   museu_ipiranga: 'img/21a22246102dc2b8.webp',
   ouro_preto: 'img/2ccb8470e88d4a53.webp',
+  museu_imperial: 'img/fd1ad810130b7c60.webp',
+  catedral_brasilia: 'img/b82d2f95ba2c186c.webp',
 };
 const PEOPLE = {};
 const MSC_PAINTED = new Set([]);
@@ -4888,7 +4912,7 @@ const CREDITS = {
   'img/e6a5e9f24221596b.webp': { a:'Bob Collowan', l:'CC BY-SA 3.0' },
   'img/d1709b71f80af0ba.webp': { a:'P e z i', l:'CC BY-SA 3.0' },
   'img/57b198af435733f8.webp': { a:'ToucanWings', l:'CC BY-SA 3.0' },
-  'img/5fd32c0bcd178f83.webp': { a:'slsphotolibrary', l:'CC BY-SA 2.0' },
+  'img/3d58c48dfec8437f.webp': { a:'ZeusUpsistos', l:'CC BY-SA 4.0' },
   'img/78709fab6300c120.webp': { a:'Benh LIEU SONG', l:'Public domain' },
   'img/3b030cde21b79ca6.webp': { a:'Zvonimir Stamenov', l:'CC BY-SA 4.0' },
   'img/24521eec6aa79176.webp': { a:'Rehman Abubakr', l:'CC BY-SA 4.0' },
@@ -4908,6 +4932,9 @@ const CREDITS = {
   'img/59d0df7e28757a0f.webp': { a:'Arne Müseler', l:'CC BY-SA 3.0 de' },
   'img/21a22246102dc2b8.webp': { a:'ProtoplasmaKid', l:'CC BY 4.0' },
   'img/2ccb8470e88d4a53.webp': { a:'Raquel Mendes Silva', l:'CC BY-SA 4.0' },
+  'img/b82d2f95ba2c186c.webp': { a:'Mariordo (Mario Roberto Durán Ortiz)', l:'CC BY-SA 4.0' },
+  'img/25d01ab624a7b533.webp': { a:'Rictor Norton', l:'CC BY 2.0' },
+  'img/fd1ad810130b7c60.webp': { a:'Filipo Tardim', l:'CC BY-SA 4.0' },
 };
 /*@@/data_images@@*/
 /* ═══════════════════════════════════════════════════
@@ -4917,11 +4944,11 @@ const DIFFS = [
   { key:'facil',    label:'Fácil',    emoji:'😊', ic:'check', n:10, col:'#2E7D4F',
     desc:'Alternativas variadas · 30s',
     time:30, strict:0.00, opts:10, tier:2, pmul:1   },
-  { key:'moderado', label:'Moderado', emoji:'⚽', ic:'bolt',  n:15, col:'#B8761F',
+  { key:'moderado', label:'Moderado', emoji:'📜', ic:'bolt',  n:15, col:'#B8761F',
     desc:'Alternativas parecidas · 25s',
     time:25, strict:0.55, opts:10, tier:3, pmul:1.5 },
   { key:'dificil',  label:'Difícil',  emoji:'🔥', ic:'flame', n:20, col:'#B3402F',
-    desc:'Mesma posição e era · 20s',
+    desc:'Mesma área e época · 20s',
     time:20, strict:1.00, opts:10, tier:5, pmul:2   },
 ];
 const DCFG = () => DIFFS.find(d => d.key === diffKey) || DIFFS[0];
@@ -4982,16 +5009,17 @@ function eraGap(a, b) {
   return Math.min(Math.abs(a.era[0] - b.era[1]), Math.abs(b.era[0] - a.era[1]));
 }
 
-/* Confusability between clubs */
+/*@@simclub@@*/
+/* Confusability between polities */
 function simClub(cand, ref) {
   let sc = 0;
-  if (cand.s === ref.s) sc += 42;                              // same state
-  sc += Math.max(0, 22 - Math.abs((cand.f||1900) - (ref.f||1900)) / 2);
-  if ((cand.lib > 0) === (ref.lib > 0)) sc += 20;              // both/neither Libertadores
-  if ((cand.br  > 0) === (ref.br  > 0)) sc += 16;              // both/neither Brasileirão
+  if (cand.s === ref.s) sc += 42;                                          // same part of the world
+  sc += Math.max(0, 22 - Math.abs((cand.f || 0) - (ref.f || 0)) / 40);   // founded around the same time
+  if ((cand.e > 0) === (ref.e > 0)) sc += 20;                              // both gone / both still here
+  if ((cand.f < 0) === (ref.f < 0)) sc += 16;                              // both ancient / both not
   return sc;
 }
-
+/*@@/simclub@@*/
 /* ── Reading the question for clues ──────────────────────────
    "Qual argentino…", "…o goleiro que…", "…na Copa de 1958" — each of
    those hands the player a filter. If the board then shows flags, or
@@ -5000,50 +5028,45 @@ function simClub(cand, ref) {
    an Argentine question gets Argentines, a 1958 question gets players
    who were actually around in 1958, and the flags come off the tiles. */
 const _fold = t => String(t || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-const DEMONYM = [
-  /* before 'gales' and 'irland', which they contain */
-  ['senegal', 'SEN'], ['irlanda do norte', 'NIR'], ['norte-irland', 'NIR'],
-  ['argelin', 'ALG'], ['argelia', 'ALG'], ['marfinense', 'CIV'], [' peru', 'PER'],
-  ['paragua', 'PAR'], ['romen', 'ROU'], ['romeni', 'ROU'], ['irland', 'IRL'],
-  ['coreia', 'KOR'], ['corean', 'KOR'], ['japon', 'JPN'], ['japao', 'JPN'],
-  ['brasil', 'BRA'], ['argentin', 'ARG'], ['portug', 'POR'], ['franca', 'FRA'], ['frances', 'FRA'],
-  ['holand', 'NED'], ['alema', 'GER'], ['germ', 'GER'], ['bulgar', 'BUL'], ['itali', 'ITA'],
-  ['ingl', 'ENG'], ['suec', 'SWE'], ['polon', 'POL'], ['marfim', 'CIV'], ['ivor', 'CIV'],
-  ['liberia', 'LBR'], ['croa', 'CRO'], ['colomb', 'COL'], ['espanh', 'ESP'], ['urugua', 'URU'],
-  ['egipc', 'EGY'], ['egito', 'EGY'], ['norueg', 'NOR'], ['camar', 'CMR'], ['ucran', 'UKR'],
-  ['hungar', 'HUN'], ['hungri', 'HUN'], ['belg', 'BEL'], ['tchec', 'CZE'], ['chequi', 'CZE'],
-  ['checo', 'CZE'], ['dinamarq', 'DEN'], ['russ', 'RUS'], ['mexic', 'MEX'], ['chile', 'CHI'],
-  [' gana', 'GHA'], ['ganes', 'GHA'], ['escoc', 'SCO'], ['gales', 'WAL'], ['senegal', 'SEN'],
-  ['nigeri', 'NGA'],
-];
+/*@@cues@@*/
+const DEMONYM = CTRY_STEMS;
 const POS_WORDS = [
-  ['goleiro', 'GK'],
-  ['zagueiro', 'DF'], ['lateral', 'DF'], ['defensor', 'DF'], ['beque', 'DF'],
-  ['meia', 'MF'], ['meio-campista', 'MF'], ['meio campista', 'MF'], ['volante', 'MF'], ['armador', 'MF'],
-  /* not 'artilheiro': that is what he did, not where he played — "artilheiro
-     do Flamengo" is Zico, a meia */
-  ['atacante', 'FW'], ['centroavante', 'FW'], ['ponta', 'FW'],
+  ['governante', 'GOV'], ['imperador', 'GOV'], ['imperatriz', 'GOV'], [' rei ', 'GOV'], ['rainha', 'GOV'],
+  ['farao', 'GOV'], ['presidente', 'GOV'], ['soberano', 'GOV'], ['primeiro-ministro', 'GOV'], ['sultao', 'GOV'],
+  ['califa', 'GOV'], ['czar', 'GOV'], ['tsar', 'GOV'], ['chanceler', 'GOV'],
+  ['general', 'GEN'], ['estrategista', 'GEN'], ['conquistador', 'GEN'], ['guerreiro', 'GEN'], ['almirante', 'GEN'],
+  ['filosofo', 'PEN'], ['cientista', 'PEN'], ['matematic', 'PEN'], ['fisico', 'PEN'], ['pensador', 'PEN'],
+  ['inventor', 'PEN'], ['medico', 'PEN'], ['astronomo', 'PEN'], ['naturalista', 'PEN'], ['economista', 'PEN'],
+  ['pintor', 'ART'], ['escritor', 'ART'], ['poeta', 'ART'], ['compositor', 'ART'], ['musico', 'ART'],
+  ['arquitet', 'ART'], ['escultor', 'ART'], ['dramaturgo', 'ART'], ['romancista', 'ART'], ['artista', 'ART'],
+  ['revolucionari', 'REV'], ['reformador', 'REV'], ['abolicionista', 'REV'], ['ativista', 'REV'], ['libertador', 'REV'],
+  ['explorador', 'EXP'], ['navegador', 'EXP'], ['navegante', 'EXP'], ['viajante', 'EXP'], ['astronauta', 'EXP'], ['cosmonauta', 'EXP'],
 ];
+
+const _romanVal = r => { const m = { i:1, v:5, x:10, l:50, c:100 }; let n = 0, p = 0;
+  for (const ch of r.split('').reverse()) { const v = m[ch] || 0; n += v < p ? -v : v; p = Math.max(p, v); } return n; };
+/* the year a question is about, if it says one: "1789", "356 a.C.", "século XVIII" */
+function yearCue(t) {
+  let m = /\b(\d{1,4})\s*a\.?\s?c\b/.exec(t);
+  if (m) return -parseInt(m[1], 10);
+  m = /seculo ([ivxlc]+)( a\.?\s?c)?\b/.exec(t);
+  if (m) { const n = _romanVal(m[1]); if (n) return m[2] ? -(n * 100 - 50) : (n * 100 - 50); }
+  m = /\b(1[0-9]{3}|20[0-2][0-9]|[5-9][0-9]{2})\b/.exec(t);
+  return m ? parseInt(m[1], 10) : null;
+}
 
 function qCues(q) {
   if (q._cues) return q._cues;
   const t = ' ' + _fold(q.t) + ' ';
   const cues = { ctry: null, pos: null, year: null };
   for (const [w, code] of DEMONYM) if (t.indexOf(w) !== -1) { cues.ctry = code; break; }
-  /* a club's name is not a position: "Defensor Sporting" */
-  const tp = t.replace(/defensor sporting/g, '');
-  for (const [w, pos]  of POS_WORDS) if (tp.indexOf(w) !== -1) { cues.pos = pos; break; }
-  const y = /\b(19[3-9]\d|20[0-2]\d)\b/.exec(t);
-  if (y) cues.year = parseInt(y[1], 10);
-  else {
-    const d = /anos (\d0)\b/.exec(t);              // "anos 70", "anos 2000"
-    if (d) { const n = parseInt(d[1], 10); cues.year = (n >= 30 ? 1900 + n : 2000 + n) + 5; }
-  }
-  cues.any = !!(cues.ctry || cues.pos || cues.year);
+  for (const [w, pos]  of POS_WORDS) if (t.indexOf(w) !== -1) { cues.pos = pos; break; }
+  cues.year = yearCue(t);
+  cues.any = !!(cues.ctry || cues.pos || cues.year !== null);
   q._cues = cues;
   return cues;
 }
-
+/*@@/cues@@*/
 /* ── Which questions may cross the generations ───────────────
    "Quem é o maior artilheiro de Copas de todos os tempos?" is *about*
    the whole history, so Klose beside Pelé beside Mbappé is the question
@@ -5052,7 +5075,7 @@ function qCues(q) {
    football question into a date-sorting exercise, and the answer stands
    out for being the only man of the right vintage. So only these are
    allowed to mix eras; every other board is held to one. */
-const ALL_TIME = /(todos os tempos|de todos|da historia|na historia|recordista|maior artilheiro da|mais titulos|toda a historia)/;
+const ALL_TIME = /(todos os tempos|toda a historia|da historia mundial|de todos|ao longo da historia)/;
 function qAllTime(q) {
   if (q._at === undefined) q._at = ALL_TIME.test(_fold(q.t));
   return q._at;
@@ -5062,7 +5085,7 @@ function qAllTime(q) {
 function cueFits(p, cues) {
   if (cues.ctry && p.ctry !== cues.ctry) return false;
   if (cues.pos  && p.pos  !== cues.pos)  return false;
-  if (cues.year && p.era && (p.era[0] > cues.year + 2 || p.era[1] < cues.year - 2)) return false;
+  if (cues.year !== null && p.era && (p.era[0] > cues.year + 2 || p.era[1] < cues.year - 2)) return false;
   return true;
 }
 
@@ -5071,10 +5094,10 @@ function cueSim(p, cues) {
   let sc = 0;
   if (cues.ctry && p.ctry === cues.ctry) sc += 30;
   if (cues.pos  && p.pos  === cues.pos)  sc += 26;
-  if (cues.year && p.era) {
+  if (cues.year !== null && p.era) {
     const gap = p.era[0] > cues.year ? p.era[0] - cues.year
               : p.era[1] < cues.year ? cues.year - p.era[1] : 0;
-    sc += Math.max(0, 26 - gap * 2.2);
+    sc += Math.max(0, 26 - gap * 0.5);
   }
   return sc;
 }
@@ -5113,7 +5136,7 @@ function getDisp(q) {
      what the card is allowed to show. Generators can set either flag directly
      when the giveaway is in the shape of the question rather than its words. */
   if (cues.ctry) { q._noFlag = true; q._hideCtry = true; }
-  if (cues.year) q._hideEra = true;
+  if (cues.year !== null && cues.year !== undefined) q._hideEra = true;
 
   // `fixed` = show exactly these tiles (comparison questions)
   if (q.fixed) return shuf(q.fixed.map(id => (isPlayer ? PL : CL).find(x => x.id === id)).filter(Boolean));
@@ -5146,7 +5169,7 @@ function getDisp(q) {
        candidates leaves the ranking no room to also match the position and
        the country, and the hard board ends up no harder than the moderate
        one — just narrower. */
-    const win  = strict >= 0.9 ? 13 : strict >= 0.4 ? 17 : 26;
+    const win  = strict >= 0.9 ? 80 : strict >= 0.4 ? 120 : 200;
     let near = wrong.filter(x => eraGap(x, ref) <= win);
     // widen rather than give up, so a thin era still fills a board
     if (near.length < need + 2) near = wrong.filter(x => eraGap(x, ref) <= win * 2);
@@ -5223,17 +5246,17 @@ function getDisp(q) {
 /* ═══════════════════════════════════════════════════
    QUESTION DIFFICULTY RATING
 ═══════════════════════════════════════════════════ */
-const FAMOUS = new Set(['pele','messi','cr7','ronaldo','ronaldinho','neymar',
-  'maradona','zidane','romario','garrincha','zico','kaka','mbappe','vinicius','gabigol']);
+/*@@tier-head@@*/
+const FAMOUS = new Set(['napoleao','cleopatra','einstein','leonardo','cesar','alexandre','gandhi','newton','colombo',
+  'cabral','tiradentes','dom_pedro_i','dom_pedro_ii','princesa_isabel','santos_dumont','churchill','mandela','mlk',
+  'shakespeare','mozart','beethoven','marie_curie','darwin','galileu','lincoln','washington','zumbi','vasco_gama',
+  'gengis','ramses_ii','tutancamon','picasso','van_gogh','freud','marx','lenin','che','fidel','kennedy','augusto',
+  'nero','luis_xiv','michelangelo','joana_darc','socrates','platao','aristoteles','machado','getulio','anne_frank']);
 
 /* How hard a question is, on a scale of five.
-   It used to be three, which is fine for three difficulty buttons and wrong
-   for a sixteen-rung ladder: rungs 10 to 16 all asked for "tier 3" and drew
-   from one bucket, so the last seven questions of a Milhão run were no harder
-   than the tenth. The category still sets the base; what moves it is the
-   answer itself — a famous name is easier than an obscure one whatever the
-   category, a man who debuted in 1955 is harder than one playing now, and
-   being asked for two names is harder than being asked for one. */
+   The category sets the base; what moves it is the answer itself — a famous
+   name is easier than an obscure one whatever the category, and being asked
+   for two names is harder than being asked for one. */
 function qTier(q) {
   return Math.max(1, Math.min(5, _qBase(q) + _qShift(q)));
 }
@@ -5244,39 +5267,11 @@ function _qShift(q) {
   let shift = ans.length > 1 ? 1 : 0;        // "selecione os 2" is harder
   if (!ans.length) return shift;
   if (ans.some(p => FAMOUS.has(p.id))) return shift - 1;
-  const debut = Math.min(...ans.map(p => (p.era ? p.era[0] : 2000)));
-  if (debut < 1960) return shift + 2;
-  if (debut < 1975) return shift + 1;
   return shift;
 }
-
+/*@@/tier-head@@*/
 function _qBase(q) {
-  if (q.d) return q.d;                       // explicit override
-  const cid = (q._cat && q._cat.id) || '';
-  if (cid === 'ouro') return 4;              // the older pages, by construction
-  if (cid === 'origens') return 4;           // nobody knows 1863 by accident
-  if (cid === 'europa') return 3;
-  if (cid === 'curiosos') return 3;
-  if (cid === 'torcida') return 2;
-  if (cid === 'sulamerica') return 3;
-  if (cid === 'estados')  return 1;
-  if (cid === 'estadios') return 2;
-  if (cid === 'lendas')   return 2;
-  if (cid === 'libertadores' || cid === 'brasileirao') {
-    const m = /\b(19|20)\d{2}\b/.exec(q.t);
-    const y = m ? parseInt(m[0], 10) : 2000;
-    return y >= 2015 ? 1 : y >= 2005 ? 2 : 3;
-  }
-  if (cid === 'craques') {
-    return q.a.some(id => FAMOUS.has(id)) ? 2 : 3;
-  }
-  if (cid === 'copa') {
-    const m = /\b(19|20)\d{2}\b/.exec(q.t);
-    const y = m ? parseInt(m[0], 10) : 2000;
-    return y >= 2002 ? 2 : 3;
-  }
-  if (cid === 'apelidos') return q.a.some(id => FAMOUS.has(id)) ? 1 : 2;
-  return 2;
+  return q.d || 2;                           // every question carries its own tier
 }
 
 /* What a question is *about*, as a key: its answers, sorted. Two questions
@@ -5386,7 +5381,7 @@ function buildGame(key) {
   }
 
   return {
-    id: 'mixed', name: 'Futebol Quiz BR', emoji: '⚽',
+    id: 'mixed', name: 'History Quiz', emoji: '📜',
     tag: 'Perguntas misturadas', col: '#FFD700', diff: cfg.label,
     qs: shuf(qs),
   };
@@ -5398,711 +5393,356 @@ function buildGame(key) {
    Build fresh questions from the structured data so the
    pool never runs dry and distractors are correct by design.
 ═══════════════════════════════════════════════════ */
+/*@@gen@@*/
 function GEN_QS(tier) {
   /* GENCAT — badge shown in the quiz header for generated questions */
   const GC = {
-    club:  { id:'g_club',  name:'Carreira',  emoji:'🧭', col:'#26A69A' },
-    pos:   { id:'g_pos',   name:'Posição',   emoji:'🎯', col:'#7E57C2' },
-    nat:   { id:'g_nat',   name:'Seleções',  emoji:'🌎', col:'#42A5F5' },
-    hist:  { id:'g_hist',  name:'História',  emoji:'📚', col:'#C8A400' },
-    squad: { id:'g_squad', name:'Elenco',    emoji:'👥', col:'#66BB6A' },
-    era:   { id:'g_era',   name:'Época',     emoji:'⏳', col:'#FFA726' },
-    path:  { id:'g_path',  name:'Caminho',   emoji:'🔀', col:'#26C6DA' },
+    pol:   { id:'g_pol',   name:'Estados',      emoji:'🏛️', col:'#8A5A2B' },
+    nat:   { id:'g_nat',   name:'Origens',      emoji:'🌍', col:'#42A5F5' },
+    hist:  { id:'g_hist',  name:'Cronologia',   emoji:'📜', col:'#C8A400' },
+    squad: { id:'g_squad', name:'Ligações',     emoji:'🔗', col:'#66BB6A' },
+    era:   { id:'g_era',   name:'Época',        emoji:'⏳', col:'#FFA726' },
+    path:  { id:'g_path',  name:'Caminhos',     emoji:'🔀', col:'#26C6DA' },
+    event: { id:'g_event', name:'Grandes Eventos', emoji:'🌋', col:'#C0562E' },
+    nobel: { id:'g_nobel', name:'Prêmio Nobel', emoji:'🏅', col:'#B8860B' },
+    nick:  { id:'g_nick',  name:'Epítetos',     emoji:'🏷️', col:'#8E4E9E' },
+    flag:  { id:'g_flag',  name:'Bandeiras',    emoji:'🚩', col:'#C0392B' },
+    place: { id:'g_place', name:'Lugares',      emoji:'🗺️', col:'#3F6FB5' },
+    count: { id:'g_count', name:'Datas',        emoji:'🔢', col:'#5C7F67' },
   };
   const out  = [];
-  const CIDS = new Set(CL.map(c => c.id));
   const rndOf = a => a[Math.floor(rnd() * a.length)];
   const pick = (a, n) => shuf(a).slice(0, n);
+  const born = p => p.era[0];
+  /* a century, as the album would print it: 'século XVIII', 'século V a.C.' */
+  const cent = p => centTxt(born(p));
+  const overlap = (p, ev) => p.era[0] <= ev.y[1] && p.era[1] >= ev.y[0];
+  const natOk = p => !NAT_SKIP.has(p.id) && CTRY_NAME[p.ctry] && FLAGS[p.ctry];
 
-  /* ── 1. Which Brazilian club did this player turn out for? ── */
-  const withBr = PL.filter(p => (p.clubs || []).some(c => CIDS.has(c)));
-  pick(withBr, 26).forEach(p => {
-    const mine = (p.clubs || []).filter(c => CIDS.has(c));
+  /* ── 1. Which state is tied to this figure? ── */
+  pick(PL.filter(p => (p.clubs || []).length), 26).forEach(p => {
+    const mine = p.clubs;
     out.push({
-      t: `Por qual destes clubes ${p.n} jogou?`,
+      t: `Qual destes estados está ligado a ${p.n}?`,
       a: [rndOf(mine)],
-      pool: CL.filter(c => !(p.clubs || []).includes(c.id)).map(c => c.id),
-      face: p.img, _cat: GC.club,
+      pool: CL.filter(c => !mine.includes(c.id)).map(c => c.id),
+      face: p.img, _cat: GC.pol,
       d: p.ctry === 'BRA' ? 2 : 3,
     });
   });
 
-  /* ── 2. Position recognition ── */
-  ['GK', 'DF', 'MF'].forEach(pos => {
-    const same   = PL.filter(p => p.pos === pos);
-    const others = PL.filter(p => p.pos !== pos);
-    if (same.length < 2 || others.length < 9) return;
-    pick(same, 4).forEach(p => {
-      out.push({
-        t: `Qual destes jogadores atuava como ${POS_NAME[pos].toLowerCase()}?`,
-        a: [p.id], type: 'player',
-        pool: others.map(x => x.id), _cat: GC.pos,
-        d: pos === 'GK' ? 1 : 2,
-      });
-    });
-  });
-
-  /* ── 3. Nationality ── */
+  /* ── 2. Birthplace ── */
   const byCtry = {};
-  PL.forEach(p => { (byCtry[p.ctry] = byCtry[p.ctry] || []).push(p); });
-  Object.keys(byCtry).filter(c => c !== 'BRA' && byCtry[c].length >= 1).forEach(c => {
+  PL.filter(natOk).forEach(p => { (byCtry[p.ctry] = byCtry[p.ctry] || []).push(p); });
+  Object.keys(byCtry).forEach(c => {
     const p = rndOf(byCtry[c]);
     out.push({
-      t: `Qual destes jogadores defendeu a seleção ${ctrySel(c)}?`,
-      _skip: !CTRY_NAME[c],
+      t: `Qual destes personagens nasceu ${ctryEm(c)}?`,
       a: [p.id], type: 'player', flag: c,
       pool: PL.filter(x => x.ctry !== c).map(x => x.id), _cat: GC.nat,
-      d: 2,
+      d: c === 'BRA' ? 1 : 2,
     });
   });
 
-  /* ── 4. Oldest club (comparison, exact 10 tiles) ── */
+  /* ── 3. Oldest / youngest / longest-lived state (comparison, exact ten) ── */
   for (let i = 0; i < 4; i++) {
     const set = pick(CL, 10);
     const oldest = set.reduce((a, b) => (a.f <= b.f ? a : b));
-    if (set.filter(c => c.f === oldest.f).length > 1) continue;   // avoid ties
-    out.push({ t: 'Qual destes clubes foi fundado primeiro?',
-               a: [oldest.id], fixed: set.map(c => c.id), _cat: GC.hist, d: 3 });
+    if (set.filter(c => c.f === oldest.f).length > 1) continue;
+    out.push({ t: 'Qual destes estados surgiu primeiro?',
+               a: [oldest.id], fixed: set.map(c => c.id), _cat: GC.hist, d: 2 });
   }
-
-  /* ── 5. Most Brasileirão titles ── */
   for (let i = 0; i < 4; i++) {
-    const set = pick(CL, 10);
-    const top = set.reduce((a, b) => (a.br >= b.br ? a : b));
-    if (top.br === 0 || set.filter(c => c.br === top.br).length > 1) continue;
-    out.push({ t: 'Qual destes clubes tem mais títulos do Brasileirão?',
-               a: [top.id], fixed: set.map(c => c.id), _cat: GC.hist, d: 2 });
-  }
-
-  /* ── 6. Libertadores winners (multi-select) ── */
-  for (let i = 0; i < 3; i++) {
-    const champs = pick(CL.filter(c => c.lib > 0), 3);
-    const rest   = pick(CL.filter(c => c.lib === 0), 7);
-    if (champs.length < 3 || rest.length < 7) break;
-    out.push({ t: 'Selecione os clubes que JÁ venceram a Libertadores',
-               a: champs.map(c => c.id),
-               fixed: champs.concat(rest).map(c => c.id), _cat: GC.hist, d: 2 });
-  }
-
-  /* ── 7. Team-mates: who also played for this club? ── */
-  const clubPlayers = {};
-  PL.forEach(p => (p.clubs || []).forEach(c => {
-    if (CIDS.has(c)) (clubPlayers[c] = clubPlayers[c] || []).push(p);
-  }));
-  pick(Object.keys(clubPlayers).filter(c => clubPlayers[c].length >= 2), 6).forEach(c => {
-    const yes = pick(clubPlayers[c], 2);
-    const no  = PL.filter(p => !(p.clubs || []).includes(c));
-    out.push({
-      t: `Selecione os 2 jogadores que passaram ${byClub(c)}`,
-      a: yes.map(p => p.id), type: 'player',
-      pool: no.map(p => p.id),
-      crest: c, _cat: GC.squad,
-      d: 3,
-    });
-  });
-
-  /* ── 8. Era placement ── */
-  pick(PL.filter(p => p.era && p.era[0] >= 1990), 6).forEach(p => {
-    const dec = Math.floor(p.era[0] / 10) * 10;
-    const others = PL.filter(x => x.era && Math.floor(x.era[0] / 10) * 10 !== dec);
-    if (others.length < 9) return;
-    out.push({
-      t: `Qual destes jogadores começou a carreira nos anos ${dec}?`,
-      a: [p.id], type: 'player',
-      pool: others.map(x => x.id), _cat: GC.era,
-      d: 3,
-    });
-  });
-
-  /* 9 was PHOTO REVEAL — "Quem é este jogador?", the portrait sharpening as
-     the clock ran down. Dropped on the player's call: it was not interesting
-     enough to earn a rung. Its machinery went with it (q.reveal, .reveal-box,
-     the blur in startTmr, the g_photo category), so the numbering skips it
-     rather than renumbering twenty-six generators around a hole. */
-
-  /* ── 10. CAREER PATH: guess the player from the clubs he played for ── */
-  pick(PL.filter(p => (p.clubs || []).length >= 3), 8).forEach(p => {
-    /* Joined with a middle dot, not an arrow: U+2192 has no glyph in Roboto,
-       so Android's WebView draws a box between every club. The wording
-       carries the ordering instead. */
-    const path = (p.clubs || []).slice(0, 4).map(clubName).join('  ·  ');
-    out.push({
-      t: `Que jogador passou por estes clubes, nesta ordem?\n${path}`,
-      a: [p.id], type: 'player',
-      path: (p.clubs || []).slice(0, 4),   // the crests, in the same order
-      textTiles: true,
-      pool: PL.filter(x => x.id !== p.id).map(x => x.id), _cat: GC.path,
-      d: 3,
-    });
-  });
-
-  /* ═════ GEN2 — extra templates ═════ */
-
-  /* 11. Stadium → club */
-  const STIDS = Object.keys(typeof STAD !== 'undefined' ? STAD : {});
-  const STAD_CLUB = { allianz:'palmeiras', neoq:'corinthians', beirario:'internacional',
-    vilabelmiro:'santos', saojanua:'vasco', arena_gre:'gremio',
-    morumbi:'saopaulo',
-    fontenova:'bahia',
-    couto:'coritiba',
-    arruda:'santacruz',  };
-  /* A ground is "no Maracanã" but "na Vila Belmiro" — the feminine ones took
-     "no" and read as a slip, the same way "é de Bahia" did. Cities take their
-     article too: "em Salvador", but "no Rio de Janeiro". */
-  const STAD_EM = { neoq:'na', vilabelmiro:'na', arena_gre:'na', fontenova:'na' };
-  const CITY_EM = { 'Rio de Janeiro':'no' };
-  /* The trap the state question already avoids, in another shape: the Arena do
-     Grêmio names its tenant outright, and the Vila Belmiro and the Morumbi
-     stand in Santos and São Paulo, cities that name theirs. Dropping the city
-     saves those two; a ground named after the club it answers cannot be asked
-     at all, so it is left out. Matched both ways round, like namesState below:
-     the club is "Santos FC" and the city plain "Santos", so neither string
-     contains the other whole. */
-  const saysClub = (s, id) => {
-    const a = _fold(s);
-    const b = _fold(clubName(id) || '').replace(/\b(fc|sc|ec|cr|se|ac|aa)\b/g, ' ').replace(/\s+/g, ' ').trim();
-    return !!b && (a.indexOf(b) !== -1 || b.indexOf(a) !== -1);
-  };
-  pick(STIDS.filter(k => STAD_CLUB[k] && !saysClub(STAD[k].name, STAD_CLUB[k])), 4).forEach(k => {
-    const owner = STAD_CLUB[k], em = STAD_EM[k] || 'no';
-    const where = `Qual clube manda seus jogos ${em} ${STAD[k].name}`;
-    out.push({
-      t: saysClub(STAD[k].city, owner) ? `${where}?`
-        : `${where}, ${CITY_EM[STAD[k].city] || 'em'} ${STAD[k].city}?`,
-      a: [owner],
-      pool: CL.filter(c => c.id !== owner).map(c => c.id),
-      stad: k,
-      _cat: GC.hist, d: 2,
-    });
-  });
-
-  /* 12. Which club is from this state? */
-  const byState = {};
-  CL.forEach(c => { (byState[c.s] = byState[c.s] || []).push(c); });
-  const ST_NAME = { RJ:'Rio de Janeiro', SP:'São Paulo', RS:'Rio Grande do Sul',
-    MG:'Minas Gerais', PR:'Paraná', BA:'Bahia', CE:'Ceará', PE:'Pernambuco',
-    SC:'Santa Catarina', GO:'Goiás', MT:'Mato Grosso', PA:'Pará', AL:'Alagoas',
-    RN:'Rio Grande do Norte', MA:'Maranhão' };
-  /* Portuguese names most states with an article: "da Bahia", "do Paraná",
-     but "de São Paulo", "de Minas Gerais". "É de Bahia" read as a slip. */
-  const ST_DE = { RJ:'do', SP:'de', RS:'do', MG:'de', PR:'do', BA:'da', CE:'do', PE:'de',
-    SC:'de', GO:'de', MT:'de', PA:'do', AL:'de', RN:'do', MA:'do' };
-  /* Bahia is from Bahia, Ceará from Ceará, Goiás from Goiás — asking which of
-     these is from that state answers itself. Such a club stays in the pool as a
-     wrong answer elsewhere; it just cannot be the answer to its own name. */
-  const namesState = (c, st) => {
-    const a = _fold(c.n), b = _fold(ST_NAME[st] || '');
-    return !!b && (a.indexOf(b) !== -1 || b.indexOf(a) !== -1);
-  };
-  pick(Object.keys(byState).filter(st =>
-    ST_NAME[st] && byState[st].some(c => !namesState(c, st))), 5).forEach(st => {
-    const ok = byState[st].filter(c => !namesState(c, st));
-    out.push({
-      t: `Qual destes clubes é ${ST_DE[st] || 'de'} ${ST_NAME[st]}?`,
-      a: [rndOf(ok).id], uf: st, _noClub: true,
-      pool: CL.filter(c => c.s !== st && !namesState(c, st)).map(c => c.id),
-      _cat: GC.hist, d: 1,
-    });
-  });
-
-  /* 13. Head-to-head: who played longer? */
-  for (let i = 0; i < 4; i++) {
-    const two = pick(PL.filter(p => p.era), 2);
-    if (two.length < 2) break;
-    const span = p => p.era[1] - p.era[0];
-    if (span(two[0]) === span(two[1])) continue;
-    const longer = span(two[0]) > span(two[1]) ? two[0] : two[1];
-    out.push({
-      t: 'Quem teve a carreira mais longa?',
-      a: [longer.id], type: 'player',
-      fixed: two.map(p => p.id),
-      _cat: GC.era, d: 2,
-    });
-  }
-
-  /* 14. Odd one out — nine share a trait, one doesn't */
-  ['GK', 'DF', 'MF', 'FW'].forEach(pos => {
-    const same = PL.filter(p => p.pos === pos);
-    const other = PL.filter(p => p.pos !== pos);
-    if (same.length < 9 || !other.length) return;
-    const odd = rndOf(other);
-    out.push({
-      t: `Qual destes NÃO era ${POS_NAME[pos].toLowerCase()}?`,
-      a: [odd.id], type: 'player',
-      fixed: pick(same, 9).map(p => p.id).concat(odd.id),
-      _cat: GC.pos, d: 2,
-    });
-  });
-
-  /* 15. Which club was founded in this decade? */
-  for (let i = 0; i < 3; i++) {
-    const c = rndOf(CL);
-    const dec = Math.floor(c.f / 10) * 10;
-    const others = CL.filter(x => Math.floor(x.f / 10) * 10 !== dec);
-    if (others.length < 9) continue;
-    out.push({
-      t: `Qual destes clubes foi fundado na década de ${dec}?`,
-      a: [c.id],
-      pool: others.map(x => x.id),
-      _cat: GC.hist, d: 3,
-    });
-  }
-
-  /* 16. Contemporaries — who played in the same era? */
-  pick(PL.filter(p => p.era), 5).forEach(p => {
-    const overlaps = x => x.id !== p.id &&
-      Math.min(x.era[1], p.era[1]) - Math.max(x.era[0], p.era[0]) >= 5;
-    const mates = PL.filter(overlaps);
-    const strangers = PL.filter(x => x.id !== p.id && !overlaps(x));
-    if (!mates.length || strangers.length < 9) return;
-    const mate = rndOf(mates);
-    out.push({
-      t: `Quem jogou na mesma época que ${p.n}?`,
-      a: [mate.id], type: 'player',
-      fixed: pick(strangers, 9).map(x => x.id).concat(mate.id),
-      face: p.img,
-      _cat: GC.era, d: 3,
-    });
-  });
-
-  /* 17. Most Libertadores titles among these */
-  for (let i = 0; i < 3; i++) {
-    const set = pick(CL, 10);
-    const top = set.reduce((a, b) => (a.lib >= b.lib ? a : b));
-    if (top.lib === 0 || set.filter(c => c.lib === top.lib).length > 1) continue;
-    out.push({ t: 'Qual destes clubes tem mais títulos da Libertadores?',
-               a: [top.id], fixed: set.map(c => c.id), _cat: GC.hist, d: 2 });
-  }
-
-  /* 18 was a second "selecione os 2 jogadores que defenderam a seleção X" and
-     is gone: GEN4 #34 asks it better. That one requires a country to have at
-     least three players before it will ask — with exactly two, every one of
-     them is always the answer, so the question is the same every time and
-     answerable without knowing anything. #34 also hides the flag and the
-     country band, which this one only got by accident, through the cue reader. */
-
-  /* ═════ GEN3 — honours, nicknames, careers abroad ═════ */
-  const GC3 = {
-    copa:  { id:'copa',   name:'Copa do Mundo', emoji:'🌍', col:'#2E7D4F' },
-    bo:    { id:'g_bo',   name:'Bola de Ouro',  emoji:'🏅', col:'#B8860B' },
-    nick:  { id:'apelidos', name:'Apelidos',    emoji:'🏷️', col:'#8E4E9E' },
-    abroad:{ id:'g_abroad', name:'Europa',      emoji:'✈️', col:'#3F6FB5' },
-  };
-
-  /* 19. World champion of a given year — the year clue keeps the wrong
-         answers in that era, so this is a real memory test, not a calendar */
-  const wcYears = [...new Set(PL.flatMap(p => p.wc))];
-  pick(wcYears, 6).forEach(y => {
-    const yes = PL.filter(p => p.wc.includes(y));
-    const no  = PL.filter(p => !p.wc.includes(y));
-    if (!yes.length || no.length < 9) return;
-    out.push({
-      t: `Qual destes jogadores foi campeão do mundo em ${y}?`,
-      a: [rndOf(yes).id], type: 'player',
-      pool: no.map(p => p.id), _cat: GC3.copa,
-      d: y >= 1994 ? 2 : 3,
-    });
-  });
-
-  /* 20. Two champions of the same World Cup, among eight who were not */
-  pick(wcYears.filter(y => PL.filter(p => p.wc.includes(y)).length >= 2), 3).forEach(y => {
-    const yes = pick(PL.filter(p => p.wc.includes(y)), 2);
-    const no  = pick(PL.filter(p => !p.wc.includes(y) && p.era && Math.abs(p.era[0] - y) < 22), 8);
-    if (no.length < 8) return;
-    out.push({
-      t: `Selecione os 2 campeões mundiais de ${y}`,
-      a: yes.map(p => p.id), type: 'player',
-      fixed: yes.concat(no).map(p => p.id), _cat: GC3.copa, d: 3,
-    });
-  });
-
-  /* 21. The one who never lifted it */
-  for (let i = 0; i < 3; i++) {
-    const champs = pick(PL.filter(p => p.wc.length), 9);
-    const never  = PL.filter(p => !p.wc.length && p.era && p.era[0] >= 1975);
-    if (champs.length < 9 || !never.length) break;
-    const odd = rndOf(never);
-    out.push({
-      t: 'Qual destes jogadores NUNCA foi campeão do mundo?',
-      a: [odd.id], type: 'player',
-      fixed: champs.map(p => p.id).concat(odd.id), _cat: GC3.copa, d: 3,
-    });
-  }
-
-  /* 22. Ballon d'Or */
-  for (let i = 0; i < 3; i++) {
-    const yes = PL.filter(p => p.bo > 0);
-    const no  = PL.filter(p => !p.bo);
-    if (yes.length < 3 || no.length < 8) break;
-    const two = pick(yes, 2);
-    out.push({
-      t: 'Selecione os 2 jogadores que JÁ venceram a Bola de Ouro',
-      a: two.map(p => p.id), type: 'player',
-      fixed: two.concat(pick(no, 8)).map(p => p.id), _cat: GC3.bo, d: 3,
-    });
-  }
-  pick(PL.filter(p => p.bo > 0), 4).forEach(p => {
-    out.push({
-      t: 'Qual destes jogadores venceu a Bola de Ouro?',
-      a: [p.id], type: 'player',
-      pool: PL.filter(x => !x.bo).map(x => x.id), _cat: GC3.bo, d: 2,
-    });
-  });
-  for (let i = 0; i < 2; i++) {
-    const set = pick(PL.filter(p => p.bo > 0), 10);
-    const top = set.reduce((a, b) => (a.bo >= b.bo ? a : b));
-    if (set.length < 10 || set.filter(p => p.bo === top.bo).length > 1) continue;
-    out.push({
-      t: 'Qual destes jogadores tem MAIS Bolas de Ouro?',
-      a: [top.id], type: 'player',
-      fixed: set.map(p => p.id), _cat: GC3.bo, d: 3,
-    });
-  }
-
-  /* 23. Nicknames — match the name the crowd uses to the face */
-  /* A nickname is only a question if it points at one man and does not
-     spell him out. "Djalminha" was filed under Djalma Santos while Djalminha
-     himself is in the album; "Matador" is Kempes and Cavani both; "Julinho
-     Botelho" or "Doutor Raí" print the answer on its own card. */
-  const nickOk = p => {
-    if (!p.nick) return false;
-    const nk = _fold(p.nick), nm = _fold(p.n);
-    if (nk === nm) return false;
-    const words = s => s.split(/[^a-z0-9]+/).filter(w => w.length >= 3);
-    if (words(nm).some(w => nk.includes(w)) || words(nk).some(w => nm.includes(w))) return false;
-    return !PL.some(x => x.id !== p.id && (_fold(x.n) === nk || (x.nick && _fold(x.nick) === nk)));
-  };
-  pick(PL.filter(nickOk), 8).forEach(p => {
-    out.push({
-      t: `Qual jogador é conhecido como "${p.nick}"?`,
-      a: [p.id], type: 'player',
-      pool: PL.filter(x => x.id !== p.id).map(x => x.id), _cat: GC3.nick,
-      d: FAMOUS.has(p.id) ? 1 : 2,
-    });
-  });
-
-  /* 24. Careers abroad — which of these wore this foreign club's shirt? */
-  const abroad = {};
-  PL.forEach(p => (p.clubs || []).forEach(c => {
-    if (!CIDS.has(c)) (abroad[c] = abroad[c] || []).push(p);
-  }));
-  const bigAbroad = Object.keys(abroad).filter(c => abroad[c].length >= 3 && CLUB_NAMES[c]);
-  pick(bigAbroad, 6).forEach(c => {
-    const yes = rndOf(abroad[c]);
-    out.push({
-      t: `Qual destes jogadores vestiu a camisa ${ofClub(c)}?`,
-      a: [yes.id], type: 'player',
-      pool: PL.filter(p => !(p.clubs || []).includes(c)).map(p => p.id), _cat: GC3.abroad,
-      d: abroad[c].length >= 6 ? 2 : 3,
-    });
-  });
-  pick(bigAbroad.filter(c => abroad[c].length >= 4), 3).forEach(c => {
-    const yes = pick(abroad[c], 2);
-    const no  = PL.filter(p => !(p.clubs || []).includes(c));
-    if (no.length < 8) return;
-    out.push({
-      t: `Selecione os 2 jogadores que passaram ${byClub(c)}`,
-      a: yes.map(p => p.id), type: 'player',
-      pool: no.map(p => p.id), _cat: GC3.abroad, d: 3,
-    });
-  });
-
-  /* 25. The same shirt abroad: who else wore it? Not "team-mate" — the album
-     knows the clubs a man played for, not the years, and George Best and Van
-     der Sar both played for Fulham a quarter of a century apart. */
-  pick(PL.filter(p => (p.clubs || []).some(c => !CIDS.has(c) && (abroad[c] || []).length >= 2)), 5).forEach(p => {
-    const cs = (p.clubs || []).filter(c => !CIDS.has(c) && (abroad[c] || []).length >= 2);
-    const c  = rndOf(cs);
-    const mates = abroad[c].filter(x => x.id !== p.id);
-    if (!mates.length) return;
-    out.push({
-      t: `Além de ${p.n}, quem também jogou ${inClub(c)}?`,
-      a: [rndOf(mates).id], type: 'player',
-      pool: PL.filter(x => x.id !== p.id && !(x.clubs || []).includes(c)).map(x => x.id),
-      face: p.img, _cat: GC3.abroad, d: 3,
-    });
-  });
-
-  /* 26. Clubs: the one that never won the league, and the youngest club */
-  for (let i = 0; i < 2; i++) {
-    const winners = pick(CL.filter(c => c.br > 0), 9);
-    const never   = CL.filter(c => c.br === 0);
-    if (winners.length < 9 || !never.length) break;
-    const odd = rndOf(never);
-    out.push({ t: 'Qual destes clubes NUNCA foi campeão brasileiro?',
-               a: [odd.id], fixed: winners.map(c => c.id).concat(odd.id), _cat: GC.hist, d: 2 });
-  }
-  for (let i = 0; i < 2; i++) {
     const set = pick(CL, 10);
     const newest = set.reduce((a, b) => (a.f >= b.f ? a : b));
     if (set.filter(c => c.f === newest.f).length > 1) continue;
-    out.push({ t: 'Qual destes clubes é o mais novo — fundado por último?',
+    out.push({ t: 'Qual destes estados é o mais recente — surgiu por último?',
                a: [newest.id], fixed: set.map(c => c.id), _cat: GC.hist, d: 3 });
   }
-
-  /* 27. Same-year league and cup — who won the Brasileirão the year this club won the Libertadores? */
-  pick(Object.keys(LIB_CHAMPS).filter(y => BR_CHAMPS[y] && BR_CHAMPS[y] !== LIB_CHAMPS[y]), 3).forEach(y => {
-    out.push({
-      t: `Em ${y} o ${clubName(LIB_CHAMPS[y])} venceu a Libertadores. Quem foi o campeão brasileiro naquele ano?`,
-      a: [BR_CHAMPS[y]],
-      pool: CL.filter(c => c.id !== BR_CHAMPS[y]).map(c => c.id),
-      crest: LIB_CHAMPS[y], _cat: GC.hist, d: 3,
-    });
-  });
-
-  /* ═════ GEN4 — as gerações: quem jogou com quem, e quando ═════
-     Everything here is derived from era, position and the World Cup table, so
-     it grows on its own as the album does. Each generator refuses to emit
-     unless the answer is unique — an "odd one out" with two odd ones is worse
-     than no question at all. */
-  const GC4 = {
-    geracao: { id:'g_geracao', name:'Gerações',  emoji:'⏳', col:'#8A6D3B' },
-    elenco:  { id:'g_elenco',  name:'O elenco',  emoji:'👥', col:'#2E7D4F' },
-  };
-
-  /* 28. Who lifted it alongside him — the same squad, same year */
-  pick(PL.filter(p => p.wc.length), 6).forEach(p => {
-    const y     = rndOf(p.wc);
-    const mates = PL.filter(x => x.id !== p.id && x.wc.includes(y));
-    if (mates.length < 1) return;
-    /* wrong answers are contemporaries who never won that one, so the question
-       cannot be solved by spotting the one old photo among nine new ones */
-    const no = PL.filter(x => !x.wc.includes(y) && x.era && Math.abs(x.era[0] - y) < 18);
-    if (no.length < 9) return;
-    out.push({
-      t: `Quem foi campeão do mundo em ${y} ao lado de ${p.n}?`,
-      a: [rndOf(mates).id], type: 'player',
-      pool: no.map(x => x.id), face: p.img, _cat: GC4.elenco, d: 3,
-    });
-  });
-
-  /* 29. The man in that shirt: one position, one winning squad */
-  const POS_ASK = { GK:'o goleiro', DF:'um zagueiro', MF:'um meio-campista', FW:'um atacante' };
-  pick(wcYears, 5).forEach(y => {
-    const squad = PL.filter(p => p.wc.includes(y));
-    const pos   = rndOf(['GK', 'DF', 'MF', 'FW']);
-    const yes   = squad.filter(p => p.pos === pos);
-    /* only ask when the answer is the one man it can be */
-    if (yes.length !== 1) return;
-    const no = PL.filter(p => p.pos === pos && !p.wc.includes(y)
-                              && p.era && Math.abs(p.era[0] - y) < 20);
-    if (no.length < 9) return;
-    out.push({
-      t: `Quem era ${POS_ASK[pos]} campeão do mundo de ${y}?`,
-      a: [yes[0].id], type: 'player',
-      pool: no.map(p => p.id), _cat: GC4.elenco, d: 3,
-    });
-  });
-
-  /* 30. Oldest of the ten — the album spans seventy years, so this is a real
-         question about eras rather than a guess */
-  for (let i = 0; i < 3; i++) {
-    const set = pick(PL.filter(p => p.era), 10);
-    if (set.length < 10) break;
-    const first = set.reduce((a, b) => (a.era[0] <= b.era[0] ? a : b));
-    if (set.filter(p => p.era[0] === first.era[0]).length > 1) continue;
-    out.push({
-      t: 'Qual destes jogadores começou a carreira PRIMEIRO?',
-      a: [first.id], type: 'player',
-      fixed: set.map(p => p.id), _cat: GC4.geracao, d: 3,
-      _hideEra: true,   // the card's own decade and stock would answer it
-    });
-  }
-
-  /* 31. The intruder from another age */
   for (let i = 0; i < 4; i++) {
-    const dec  = rndOf([1950, 1960, 1970, 1980, 1990, 2000]);
-    const same = PL.filter(p => p.era && Math.floor(p.era[0] / 10) * 10 === dec);
-    const far  = PL.filter(p => p.era && Math.abs(p.era[0] - dec) >= 25);
-    if (same.length < 9 || !far.length) continue;
-    const odd = rndOf(far);
-    out.push({
-      t: `Nove destes jogadores estrearam nos anos ${String(dec).slice(2)}. Qual é o intruso?`,
-      a: [odd.id], type: 'player',
-      fixed: pick(same, 9).map(p => p.id).concat(odd.id), _cat: GC4.geracao, d: 3,
-      _hideEra: true,
-    });
+    const set = pick(CL.filter(c => c.e !== 0), 10);
+    const len = c => c.e - c.f;
+    const top = set.reduce((a, b) => (len(a) >= len(b) ? a : b));
+    if (set.length < 10 || set.filter(c => len(c) === len(top)).length > 1) continue;
+    out.push({ t: 'Qual destes estados durou mais tempo?',
+               a: [top.id], fixed: set.map(c => c.id), _cat: GC.hist, d: 3 });
   }
 
-  /* 32. A world champion in this club's shirt.
-         Deliberately not "wore it in the 70s": the data holds a career span and
-         a set of clubs, never which club in which year, so a decade in the
-         question would be a claim the album cannot back — it would have had
-         Ronaldo at Corinthians in the 1990s, fifteen years early. Club plus
-         world title is two facts the data really does hold. */
-  for (let i = 0; i < 5; i++) {
-    const c   = rndOf(CL).id;
-    const yes = PL.filter(p => (p.clubs || []).includes(c) && p.wc.length);
-    if (!yes.length) continue;
-    const no = PL.filter(p => p.wc.length && !(p.clubs || []).includes(c));
-    if (no.length < 9) continue;
-    out.push({
-      t: `Qual destes campeões do mundo vestiu a camisa ${ofClub(c)}?`,
-      a: [rndOf(yes).id], type: 'player',
-      pool: no.map(p => p.id), crest: c, _cat: GC4.geracao, d: 3,
-    });
+  /* ── 4. Multi-select: states of the ancient world among the later ones ── */
+  for (let i = 0; i < 3; i++) {
+    const old = pick(CL.filter(c => c.f < 0), 3);
+    const rest = pick(CL.filter(c => c.f >= 1000), 7);
+    if (old.length < 3 || rest.length < 7) break;
+    out.push({ t: 'Selecione os estados que já existiam antes de Cristo',
+               a: old.map(c => c.id), fixed: old.concat(rest).map(c => c.id), _cat: GC.hist, d: 2 });
+  }
+  for (let i = 0; i < 3; i++) {
+    const gone = pick(CL.filter(c => c.e !== 0), 3);
+    const live = pick(CL.filter(c => c.e === 0), 7);
+    if (gone.length < 3 || live.length < 7) break;
+    out.push({ t: 'Selecione os estados que deixaram de existir',
+               a: gone.map(c => c.id), fixed: gone.concat(live).map(c => c.id), _cat: GC.hist, d: 2 });
   }
 
-  /* 33. More World Cups than the rest */
-  for (let i = 0; i < 2; i++) {
-    const set = pick(PL.filter(p => p.wc.length), 10);
-    if (set.length < 10) break;
-    const top = set.reduce((a, b) => (a.wc.length >= b.wc.length ? a : b));
-    if (set.filter(p => p.wc.length === top.wc.length).length > 1) continue;
+  /* ── 5. Who else is tied to this state? ── */
+  const polFigs = {};
+  PL.forEach(p => (p.clubs || []).forEach(c => (polFigs[c] = polFigs[c] || []).push(p)));
+  pick(Object.keys(polFigs).filter(c => polFigs[c].length >= 2), 7).forEach(c => {
+    const yes = pick(polFigs[c], 2);
+    const no  = PL.filter(p => !(p.clubs || []).includes(c));
+    if (no.length < 8) return;
     out.push({
-      t: 'Qual destes jogadores ganhou MAIS Copas do Mundo?',
-      a: [top.id], type: 'player',
-      fixed: set.map(p => p.id), _cat: GC4.elenco, d: 3,
-    });
-  }
-
-  /* 34. Countrymen — the album reaches thirty-nine nations now */
-  pick([...new Set(PL.map(p => p.ctry))].filter(
-        c => c !== 'BRA' && PL.filter(p => p.ctry === c).length >= 3), 5).forEach(c => {
-    const yes = pick(PL.filter(p => p.ctry === c), 2);
-    const no  = PL.filter(p => p.ctry !== c);
-    if (yes.length < 2 || no.length < 8) return;
-    out.push({
-      t: `Selecione os 2 jogadores que defenderam a seleção ${ctrySel(c)}`,
+      t: `Selecione os 2 personagens ligados ${toClub(c)}`,
       a: yes.map(p => p.id), type: 'player',
-      fixed: yes.concat(pick(no, 8)).map(p => p.id), _cat: GC4.geracao, d: 3,
-      _noFlag: true, _hideCtry: true,
+      pool: no.map(p => p.id), crest: c, _cat: GC.squad, d: 3,
+    });
+  });
+  pick(Object.keys(polFigs).filter(c => polFigs[c].length >= 3), 6).forEach(c => {
+    const yes = rndOf(polFigs[c]);
+    out.push({
+      t: `Qual destes personagens está ligado ${toClub(c)}?`,
+      a: [yes.id], type: 'player',
+      pool: PL.filter(p => !(p.clubs || []).includes(c)).map(p => p.id), _cat: GC.squad,
+      d: polFigs[c].length >= 6 ? 2 : 3,
     });
   });
 
-  /* ═════ GEN5 — read the crest, read the years ═════ */
-  const GC5 = {
-    escudo: { id:'g_escudo', name:'Escudos',  emoji:'🛡️', col:'#B23A2E' },
-    conta:  { id:'g_conta',  name:'Contas',   emoji:'🔢', col:'#6B5B3E' },
-    msc:    { id:'g_msc',    name:'Mascotes', emoji:'🥅', col:'#8E5A16' },
+  /* ── 6. Century of birth ── */
+  pick(PL, 16).forEach(p => {
+    const others = PL.filter(x => cent(x) !== cent(p));
+    if (others.length < 9) return;
+    out.push({
+      t: `Qual destes personagens nasceu no ${cent(p)}?`,
+      a: [p.id], type: 'player',
+      pool: others.map(x => x.id), _cat: GC.era, d: 3,
+    });
+  });
+  pick(PL, 12).forEach(p => {
+    const mine = cent(p), key = centNum(born(p)) * (born(p) < 0 ? -1 : 1);
+    const pool = [];
+    for (let k = -8; k <= 21; k++) { if (k === 0) continue; const y = k < 0 ? (k + 1) * 100 - 50 : k * 100 - 50; pool.push(centTxt(y)); }
+    const near = [...new Set(pool)].filter(c => c !== mine);
+    const opts = pick(near.sort((a, b) => Math.abs(near.indexOf(a) - near.indexOf(mine)) - Math.abs(near.indexOf(b) - near.indexOf(mine)) + (rnd() - .5) * 4).slice(0, 9), 5);
+    out.push({
+      t: `Em que século nasceu ${p.n}?`, type: 'txt',
+      choices: shuf([mine].concat(opts)), a: [mine], face: p.img, _cat: GC.count, d: 3,
+    });
+  });
+
+  /* ── 7. The path: which figure is tied to all of these states? ── */
+  pick(PL.filter(p => (p.clubs || []).length >= 2), 8).forEach(p => {
+    const path = p.clubs.slice(0, 3);
+    out.push({
+      t: `Que personagem esteve ligado a todos estes estados?\n${path.map(clubName).join('  ·  ')}`,
+      a: [p.id], type: 'player',
+      path, textTiles: true,
+      pool: PL.filter(x => x.id !== p.id && !path.every(c => (x.clubs || []).includes(c))).map(x => x.id),
+      _cat: GC.path, d: 3,
+    });
+  });
+
+  /* ── 8. Monuments ── */
+  const STIDS = Object.keys(STAD);
+  pick(STIDS.filter(k => STAD[k].p), 6).forEach(k => {
+    const owner = STAD[k].p;
+    out.push({
+      t: `Qual destes estados está ligado ao monumento ${STAD[k].name} (${STAD[k].city})?`,
+      a: [owner], pool: CL.filter(c => c.id !== owner).map(c => c.id), stad: k, _cat: GC.place, d: 3,
+    });
+  });
+  pick(STIDS, 8).forEach(k => {
+    const mine = STAD[k].city;
+    const others = [...new Set(STIDS.map(x => STAD[x].city))].filter(c => c !== mine);
+    if (others.length < 5) return;
+    out.push({
+      t: 'Onde fica este monumento?', type: 'txt',
+      choices: shuf([mine].concat(pick(others, 5))), a: [mine], stad: k, _cat: GC.place, d: 2,
+    });
+  });
+
+  /* ── 9. Region of a state ── */
+  const REG_EM = { EU:'na Europa', AS:'na Ásia', AF:'na África', AM:'nas Américas' };
+  pick(CL, 10).forEach(c => {
+    out.push({
+      t: `Qual destes estados surgiu ${REG_EM[c.s]}?`,
+      a: [c.id], pool: CL.filter(x => x.s !== c.s).map(x => x.id), _noClub: true, _cat: GC.pol, d: 1,
+    });
+  });
+
+  /* ── 10. Head-to-head: who lived longer, who was born first ── */
+  for (let i = 0; i < 4; i++) {
+    const two = pick(PL, 2);
+    const span = p => p.era[1] - p.era[0];
+    if (span(two[0]) === span(two[1]) || Math.abs(span(two[0]) - span(two[1])) < 8) continue;
+    const longer = span(two[0]) > span(two[1]) ? two[0] : two[1];
+    out.push({ t: 'Quem viveu mais tempo?', a: [longer.id], type: 'player',
+               fixed: two.map(p => p.id), _cat: GC.era, d: 2 });
+  }
+  for (let i = 0; i < 5; i++) {
+    const set = pick(PL, 10);
+    const first = set.reduce((a, b) => (born(a) <= born(b) ? a : b));
+    if (set.filter(p => born(p) === born(first)).length > 1) continue;
+    out.push({ t: 'Qual destes personagens nasceu primeiro?',
+               a: [first.id], type: 'player', fixed: set.map(p => p.id), _cat: GC.era, d: 3 });
+  }
+  for (let i = 0; i < 4; i++) {
+    const set = pick(PL, 10);
+    const last = set.reduce((a, b) => (born(a) >= born(b) ? a : b));
+    if (set.filter(p => born(p) === born(last)).length > 1) continue;
+    out.push({ t: 'Qual destes personagens nasceu por último?',
+               a: [last.id], type: 'player', fixed: set.map(p => p.id), _cat: GC.era, d: 3 });
+  }
+
+  /* ── 11. The intruder from another age ── */
+  for (let i = 0; i < 5; i++) {
+    const c = rndOf(PL);
+    const same = PL.filter(p => cent(p) === cent(c));
+    const odd = PL.filter(p => Math.abs(born(p) - born(c)) > 250);
+    if (same.length < 9 || !odd.length) continue;
+    const o = rndOf(odd);
+    out.push({
+      t: `Nove destes personagens nasceram no ${cent(c)}. Qual é o intruso?`,
+      a: [o.id], type: 'player',
+      fixed: pick(same, 9).map(p => p.id).concat(o.id), _cat: GC.era, d: 3,
+    });
+  }
+
+  /* ── 12. Contemporaries ── */
+  pick(PL, 6).forEach(p => {
+    const overlaps = x => x.id !== p.id &&
+      Math.min(x.era[1], p.era[1]) - Math.max(x.era[0], p.era[0]) >= 25;
+    const mates = PL.filter(overlaps);
+    const strangers = PL.filter(x => x.id !== p.id && !overlaps(x) && Math.abs(x.era[0] - p.era[0]) > 120);
+    if (!mates.length || strangers.length < 9) return;
+    const mate = rndOf(mates);
+    out.push({
+      t: `Quem foi contemporâneo de ${p.n}?`,
+      a: [mate.id], type: 'player',
+      fixed: pick(strangers, 9).map(x => x.id).concat(mate.id),
+      face: p.img, _cat: GC.era, d: 3,
+    });
+  });
+
+  /* ── 13. Great events: who lived through them ── */
+  const evIds = Object.keys(EVENTS);
+  pick(evIds, 12).forEach(ev => {
+    const E_ = EVENTS[ev];
+    const yes = PL.filter(p => p.ev.includes(ev) && overlap(p, E_));
+    const no  = PL.filter(p => !overlap(p, E_) && Math.min(Math.abs(p.era[1] - E_.y[0]), Math.abs(p.era[0] - E_.y[1])) > 60);
+    if (!yes.length || no.length < 9) return;
+    out.push({
+      t: `Qual destes personagens viveu durante ${theEvent(ev)} (${yearTxt(E_.y[0])}–${yearTxt(E_.y[1])})?`,
+      a: [rndOf(yes).id], type: 'player',
+      pool: no.map(p => p.id), _cat: GC.event, d: 3,
+    });
+  });
+  pick(evIds.filter(ev => PL.filter(p => p.ev.includes(ev) && overlap(p, EVENTS[ev])).length >= 2), 5).forEach(ev => {
+    const E_ = EVENTS[ev];
+    const yes = pick(PL.filter(p => p.ev.includes(ev) && overlap(p, E_)), 2);
+    const no  = pick(PL.filter(p => !overlap(p, E_) && Math.abs(p.era[0] - E_.y[0]) < 220), 8);
+    if (no.length < 8) return;
+    out.push({
+      t: `Selecione os 2 personagens que viveram durante ${theEvent(ev)}`,
+      a: yes.map(p => p.id), type: 'player',
+      fixed: yes.concat(no).map(p => p.id), _cat: GC.event, d: 3,
+    });
+  });
+
+  /* ── 14. The Nobel Prize ── */
+  for (let i = 0; i < 4; i++) {
+    const yes = PL.filter(p => p.nb > 0);
+    const no  = PL.filter(p => !p.nb && p.era[1] >= 1901);
+    if (yes.length < 3 || no.length < 8) break;
+    const two = pick(yes, 2);
+    out.push({
+      t: 'Selecione os 2 personagens que ganharam o Prêmio Nobel',
+      a: two.map(p => p.id), type: 'player',
+      fixed: two.concat(pick(no, 8)).map(p => p.id), _cat: GC.nobel, d: 3,
+    });
+  }
+  pick(PL.filter(p => p.nb > 0), 5).forEach(p => {
+    out.push({
+      t: 'Qual destes personagens ganhou o Prêmio Nobel?',
+      a: [p.id], type: 'player',
+      pool: PL.filter(x => !x.nb && x.era[1] >= 1901).map(x => x.id), _cat: GC.nobel, d: 2,
+    });
+  });
+  { const set = PL.filter(p => p.nb > 0);
+    const two = set.filter(p => p.nb === 2);
+    if (two.length) out.push({
+      t: 'Qual destes personagens ganhou DOIS prêmios Nobel?',
+      a: [two[0].id], type: 'player',
+      fixed: [two[0]].concat(pick(set.filter(p => p.nb === 1), 9)).map(p => p.id), _cat: GC.nobel, d: 3,
+    });
+  }
+
+  /* ── 15. Epithets, both ways round ── */
+  const nickOk = p => {
+    if (!p.nick) return false;
+    const nk = _fold(p.nick), nm = _fold(p.n);
+    const words = s => s.split(/[^a-z0-9]+/).filter(w => w.length >= 4 && !/^(autor|pintor|pai|primeiro|ultimo|imperador|rainha|lider|rei)$/.test(w));
+    if (words(nm).some(w => nk.includes(w))) return false;
+    return !PL.some(x => x.id !== p.id && x.nick && _fold(x.nick) === nk);
   };
-
-  /* 35. Whose crest is this?
-         The tiles must be names, not crests — ten crests beside the one in the
-         question turns a football question into spot-the-picture. */
-  pick(CL.filter(c => LOGOS[c.id] && !HIDE_CRESTS.has(c.id)), 8).forEach(c => {
+  pick(PL.filter(nickOk), 12).forEach(p => {
     out.push({
-      t: 'De que clube é este escudo?',
-      a: [c.id],
-      crest: c.id,
-      _crestIsQ: true,          // the crest is the question, not decoration
-      textTiles: true,
-      pool: CL.filter(x => x.id !== c.id).map(x => x.id),
-      _cat: GC5.escudo,
-      /* a crest you see every weekend is easier than one from the Série B */
-      d: (c.br || 0) + (c.lib || 0) > 0 ? 2 : 4,
+      t: `Quem é conhecido como "${p.nick}"?`,
+      a: [p.id], type: 'player',
+      pool: PL.filter(x => x.id !== p.id).map(x => x.id), _cat: GC.nick,
+      d: FAMOUS.has(p.id) ? 1 : 3,
+    });
+  });
+  pick(PL.filter(nickOk), 8).forEach(p => {
+    const others = pick(PL.filter(x => x.nick && x.id !== p.id && x.pos === p.pos && nickOk(x)), 5);
+    if (others.length < 5) return;
+    out.push({
+      t: `Qual epíteto acompanha ${p.n}?`, type: 'txt',
+      choices: shuf([p.nick].concat(others.map(x => x.nick))), a: [p.nick], face: p.img, _cat: GC.nick, d: 3,
     });
   });
 
-  /* 35b. The other ninety-six escudos.
-          Generator 35 answers with a club id, and a club board draws its tiles
-          from CL — so it can only ever ask about the forty-two Brazilian ones.
-          The foreign crests were sitting in the album and never once in a
-          question. Asked as text, the answer is the club's NAME, so the board
-          does not need a row for it. */
-  (function () {
-    const foreign = Object.keys(CLUB_NAMES).filter(id => LOGOS[id] && !HIDE_CRESTS.has(id));
-    pick(foreign, 6).forEach(id => {
-      const others = pick(foreign.filter(x => x !== id), 5).map(clubName);
-      if (others.length < 5) return;
-      out.push({
-        t: 'De que clube é este escudo?',
-        type: 'txt', choices: shuf([clubName(id)].concat(others)),
-        a: [clubName(id)],
-        crest: id, _crestIsQ: true,
-        _cat: GC5.escudo, d: 3,
-      });
-    });
-  })();
-
-  /* 37. The mascots, both ways round.
-         Forty-one drawings that the quiz had never asked about. Same rule as
-         the crest question: when the picture is the question the tiles have to
-         be words, or it stops being a football question. */
-  (function () {
-    const ids = Object.keys(MASCOTS).filter(id => MASC_ART[(MASCOTS[id] || {}).art]);
-    if (ids.length < 6) return;
-
-    /* the drawing is the question, the answer is the club */
-    pick(ids, 5).forEach(id => {
-      /* Never offer two clubs that share the drawing — five clubs are a Leão,
-         and "de que clube é este leão?" has five right answers. */
-      const art  = MASCOTS[id].art;
-      const safe = ids.filter(x => x !== id && MASCOTS[x].art !== art);
-      const others = pick(safe, 5).map(clubName);
-      if (others.length < 5) return;
-      out.push({
-        t: 'De que clube é este mascote?',
-        type: 'txt', choices: shuf([clubName(id)].concat(others)),
-        a: [clubName(id)],
-        msc: id, _cat: GC5.msc,
-        /* a Galo or a Porco is common knowledge; a Timbu is not */
-        d: (CL.find(c => c.id === id) || {}).br ? 2 : 4,
-      });
-    });
-
-    /* and the other way: the club is the question, the answer is the name */
-    pick(ids, 5).forEach(id => {
-      const mine = MASCOTS[id].n;
-      const others = pick(ids.filter(x => MASCOTS[x].n !== mine), 5)
-        .map(x => MASCOTS[x].n);
-      if (new Set(others).size < 5) return;
-      out.push({
-        t: `Qual é o mascote ${ofClub(id)}?`,
-        type: 'txt', choices: shuf([mine].concat(others)),
-        a: [mine],
-        crest: id, _cat: GC5.msc, d: 3,
-      });
-    });
-  })();
-
-  /* 36. Which decade did he start in? Answers are decades, so the tiles are
-         words and the card cannot show its own band. */
-  pick(PL.filter(p => p.era), 6).forEach(p => {
-    const dec = Math.floor(p.era[0] / 10) * 10;
-    const span = [1920, 1930, 1940, 1950, 1960, 1970, 1980, 1990, 2000, 2010, 2020];
-    const near = span.filter(d => d !== dec && Math.abs(d - dec) <= 30);
-    if (near.length < 4) return;
-    /* "Anos 00" reads as nothing; the 2000s are spelled out */
-    const label = d => d >= 2000 ? `Anos ${d}` : `Anos ${String(d).slice(2)}`;
+  /* ── 16. Birthplace, the other way round: a country per figure ── */
+  pick(PL.filter(natOk), 12).forEach(p => {
+    const all = Object.keys(CTRY_NAME).filter(c => c !== p.ctry && FLAGS[c]);
     out.push({
-      t: `Em que década ${p.n} começou a carreira?`,
-      type: 'txt',
-      choices: shuf([dec].concat(pick(near, 4))).map(label),
-      a: [label(dec)],
-      face: p.img,
-      _cat: GC5.conta,
-      d: FAMOUS.has(p.id) ? 2 : 4,
+      t: `Em que país nasceu ${p.n}?`, type: 'txt',
+      choices: shuf([CTRY_NAME[p.ctry]].concat(pick(all, 5).map(c => CTRY_NAME[c]))), a: [CTRY_NAME[p.ctry]],
+      face: p.img, _cat: GC.nat, d: 2,
     });
   });
 
-  /* 37. How many did he win? */
-  pick(PL.filter(p => p.wc.length), 5).forEach(p => {
-    const n = p.wc.length;
-    const label = k => k === 1 ? '1 Copa' : `${k} Copas`;
-    const opts = [0, 1, 2, 3].filter(k => k !== n).slice(0, 3);
+  /* ── 17. Flags: whose is this? ── */
+  pick(Object.keys(CTRY_NAME).filter(c => FLAGS[c]), 14).forEach(c => {
+    const all = Object.keys(CTRY_NAME).filter(x => x !== c && FLAGS[x]);
     out.push({
-      t: `Quantas Copas do Mundo ${p.n} venceu como jogador?`,
-      type: 'txt',
-      choices: shuf([n].concat(opts)).map(k => k === 0 ? 'Nenhuma' : label(k)),
-      a: [n === 0 ? 'Nenhuma' : label(n)],
-      face: p.img,
-      _cat: GC5.conta,
-      d: 3,
+      t: 'De que país é esta bandeira?', type: 'txt',
+      choices: shuf([CTRY_NAME[c]].concat(pick(all, 5).map(x => CTRY_NAME[x]))), a: [CTRY_NAME[c]],
+      flag: c, _flagIsQ: true, _cat: GC.flag, d: ['BRA', 'USA', 'FRA', 'ITA', 'GER', 'JPN', 'ESP', 'POR'].includes(c) ? 1 : 3,
+    });
+  });
+
+  /* ── 18. Years: when did they die? (only where the date is not in dispute) ── */
+  pick(PL.filter(p => born(p) >= 1400), 10).forEach(p => {
+    const y = p.era[1];
+    const opts = new Set();
+    while (opts.size < 5) { const o = y + Math.round((rnd() - .5) * 2 * 22); if (o !== y && o > born(p) + 12) opts.add(o); }
+    out.push({
+      t: `Em que ano morreu ${p.n}?`, type: 'txt',
+      choices: shuf([String(y)].concat([...opts].map(String))), a: [String(y)], face: p.img, _cat: GC.count, d: 4,
+    });
+  });
+  pick(PL.filter(p => born(p) >= 1400), 8).forEach(p => {
+    const y = born(p);
+    const opts = new Set();
+    while (opts.size < 5) { const o = y + Math.round((rnd() - .5) * 2 * 20); if (o !== y) opts.add(o); }
+    out.push({
+      t: `Em que ano nasceu ${p.n}?`, type: 'txt',
+      choices: shuf([String(y)].concat([...opts].map(String))), a: [String(y)], face: p.img, _cat: GC.count, d: 4,
     });
   });
 
   // Safety net: a generator bug must never put an unanswerable question in front
   // of a player, so drop anything whose answers don't resolve.
-  /* The last gate: a question whose answer names a row that does not exist
-     cannot be drawn, so it is dropped rather than shipped broken.
-
-     A `txt` question is the exception, and used not to be. Its answer is its
-     own words — "Milan", "1970", "Cinco" — not an id, so checking it against
-     CL threw away every generated text question ever written. Generators 36
-     and 37 produced nothing at all for that reason. For those the guarantee
-     is the one validate.py makes of the hand-written ones: the answers must
-     be among the choices, and there must be enough choices to fill a board. */
   return out.filter(q =>
     !q._skip &&
     q.a && q.a.length &&
@@ -6112,6 +5752,8 @@ function GEN_QS(tier) {
         q.a.every(a => q.choices.includes(a))
       : q.a.every(id => (q.type === 'player' ? PL : CL).some(x => x.id === id))));
 }
+
+/*@@/gen@@*/
 
 /* ═══════════════════════════════════════════════════
    GAME STATE
@@ -6177,10 +5819,11 @@ function earned(q) {
       out.push(SK.esc(id));
       /* the escudo comes first and the mascote only on the way back: you have
          to answer a club you have already answered once */
-      if (album.has(SK.esc(id)) && MASCOTS[id]) out.push(SK.msc(id));
+      if (album.has(SK.esc(id))) { const mk = nextMonument(id); if (mk) out.push(SK.msc(mk)); }
     });
   }
   if (q.flag && ALL_SET.has(SK.sel(q.flag))) out.push(SK.sel(q.flag));
+  if (q.stad && MASCOTS[q.stad] && !MASCOTS[q.stad].p) out.push(SK.msc(q.stad));
 
   /* ── The badges the questions alone would never hand out ──
      Only nine of the thirty-nine nations have a question carrying their flag,
@@ -6261,7 +5904,7 @@ function saveDaily() {
 }
 
 function shareText() {
-  const link = 'https://tdosreis.github.io/futebol-quiz/';
+  const link = 'https://tdosreis.github.io/history-quiz/';
 
   /* The ladder gets its own card: the climb reads better as a column of
      rungs than as a row of squares, and the number is the whole story. */
@@ -6272,13 +5915,13 @@ function shareText() {
     const albM = runNew
       ? `\n📔 ${runNew} ${runNew === 1 ? 'figurinha nova' : 'figurinhas novas'} · ${album.size}/${ALL_STICKERS.length} no álbum`
       : '';
-    return `Rumo ao Milhão ⚽ Futebol Quiz BR\n${climb}\n`
+    return `Rumo ao Milhão 📜 History Quiz\n${climb}\n`
          + `${verdict} ${money(banked)} · degrau ${rung}/${LADDER.length}${albM}\n${link}`;
   }
 
   const grid = runLog.map(p => p === 3 ? '🟩' : p === 1 ? '🟨' : p === -1 ? '⬜' : '⬛').join('');
-  const head = isDaily ? `Futebol Quiz BR ⚽ Desafio #${dayIndex()}`
-                       : `Futebol Quiz BR ⚽ ${DCFG().label}`;
+  const head = isDaily ? `History Quiz 📜 Desafio #${dayIndex()}`
+                       : `History Quiz 📜 ${DCFG().label}`;
   const strk = bestStreak >= 3 ? `  🔥${bestStreak}` : '';
   /* The album is the thing that makes this app not just another quiz, and the
      share card never mentioned it. One line, and only when the run actually
@@ -6504,15 +6147,15 @@ function useSkip() {
    and says who he was. Built from the data we already hold, so it is
    right by construction and there is no prose to keep in sync.
 ═══════════════════════════════════════════════════ */
+/*@@facts@@*/
 function playerFacts(p) {
   const out = [];
   out.push(`${POS_NAME[p.pos]} · ${CTRY_NAME[p.ctry] || p.ctry}`);
-  if (p.era) out.push(`${p.era[0]}–${p.era[1]}`);
+  if (p.era) out.push(eraTxt(p.era));
   const honours = [];
-  if (p.wc && p.wc.length) honours.push(p.wc.length === 1 ? `Copa de ${p.wc[0]}`
-    : `${p.wc.length} Copas (${p.wc.join(', ')})`);
-  if (p.bo) honours.push(p.bo === 1 ? 'Bola de Ouro' : `${p.bo} Bolas de Ouro`);
-  /* "Ronaldo Fenômeno" already says Fenômeno — only print the nickname
+  if (p.nb) honours.push(p.nb === 1 ? 'Prêmio Nobel' : `${p.nb} Prêmios Nobel`);
+  if (p.ev && p.ev.length) honours.push(p.ev.slice(0, 2).map(e => EVENTS[e].n).join(' · '));
+  /* "Napoleão Bonaparte" already says Bonaparte — only print the epithet
      when it is not sitting in the name already. */
   const nick = p.nick && !p.n.toLowerCase().includes(p.nick.toLowerCase()) ? p.nick : null;
   return { line: out.join(' · '), honours,
@@ -6520,12 +6163,9 @@ function playerFacts(p) {
 }
 
 function clubFacts(c) {
-  const t = [];
-  if (c.lib) t.push(c.lib === 1 ? '1 Libertadores' : `${c.lib} Libertadores`);
-  if (c.br)  t.push(c.br === 1 ? '1 Brasileirão' : `${c.br} Brasileirões`);
-  return { line: `Fundado em ${c.f} · ${c.s}`, honours: t, clubs: '', nick: c.a };
+  return { line: `${yearTxt(c.f)} – ${c.e ? yearTxt(c.e) : 'hoje'} · ${REGION[c.s]}`, honours: [], clubs: '', nick: c.a };
 }
-
+/*@@/facts@@*/
 /* The reverse of an album card, shaped like the front so it can sit in the
    same pocket and turn over into it. A real figurinha printed the player's
    details on the back and that is the whole reason you peeled it off the
@@ -6533,7 +6173,7 @@ function clubFacts(c) {
    Only collected stickers turn: an empty pocket has no back. */
 function figurinhaBack(p, num) {
   const f = playerFacts(p);
-  const yrs = p.era ? `${p.era[0]}–${p.era[1]}` : '';
+  const yrs = p.era ? eraTxt(p.era) : '';
   /* a real sticker back carries the club's crest printed faint behind the
      text — the ink the printer had left over */
   const wm = p.clubs && p.clubs[0] && LOGOS[p.clubs[0]];
@@ -6580,493 +6220,34 @@ function stickerBack(item, isPlayer, isNew) {
    MEDALS — long-run progression
 ═══════════════════════════════════════════════════ */
 /* The album's milestones, as a share of however many players it holds. */
+/*@@monuments@@*/
 /* ═══════════════════════════════════════════════════
-   MASCOTES — the rarest sheet in the album
+   MONUMENTOS — the rarest sheet in the album
 
-   A club's mascot is the club's own artwork and is never freely licensed, so
-   none of these can be a photograph or a fetched file. They are drawn here,
-   in the same flat 1970s hand as the rest of ART: one heavy outline, no
-   gradients, nothing that needs a gradient to read at seventy pixels.
-
-   One drawing serves every club that shares the animal — five clubs are a
-   Leão, two are a Galo — which is also how the terraces talk about them.
+   A state's monument turns up only when you answer that state a second time:
+   the first time earns its brasão, coming back to it earns the stone it left
+   behind. Monuments with no state of their own — Petra, Stonehenge — are
+   stuck by the question that shows their photograph.
+   Every picture is a photograph from Wikimedia Commons, printed in a round
+   window; the credits screen lists each one.
 ═══════════════════════════════════════════════════ */
-const _msc = (body, bg) => `<svg viewBox="0 0 80 80" width="100%" aria-hidden="true"
-  style="display:block;width:100%;height:100%;">
-  <rect width="80" height="80" fill="${bg || 'var(--retro-card)'}"/>
-  <g stroke="#2A1D10" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round">${body}</g>
-</svg>`;
-
-const MASC_ART = {
-  /* Two clubs, two roosters. Atlético's Galo is black and white and CRB's is
-     red, so the bird simply takes the colour its own club wears. */
-  galo: (a) => _msc(`
-    <path d="M30 66 q-6 -10 -2 -20 q3 -9 12 -11 q10 -2 15 5 q4 6 1 12 l-4 14 Z" fill="${a || '#B23A2E'}"/>
-    <circle cx="47" cy="28" r="11" fill="${a || '#B23A2E'}"/>
-    <path d="M40 18 q2 -6 6 -3 q1 -6 5 -3 q2 -5 5 0 q1 4 -2 6 Z" fill="#8E2018"/>
-    <path d="M58 28 l9 3 l-9 4 Z" fill="#F0C24A"/>
-    <path d="M50 38 q4 3 1 7 q-4 2 -5 -2 Z" fill="#8E2018"/>
-    <circle cx="50" cy="26" r="1.9" fill="#2A1D10" stroke="none"/>
-    <path d="M28 48 q-10 -6 -13 -16 q9 2 14 8" fill="#8E2018"/>
-    <path d="M34 66 v7 M46 66 v7" stroke-width="2.8"/>`),
-
-  raposa: () => _msc(`
-    <path d="M24 62 q-4 -14 6 -22 l10 -8 l10 8 q10 8 6 22 Z" fill="#C4681E"/>
-    <path d="M30 40 l-4 -16 l14 8 Z" fill="#C4681E"/>
-    <path d="M50 40 l4 -16 l-14 8 Z" fill="#C4681E"/>
-    <path d="M34 54 q6 8 12 0 q-3 8 -6 8 q-3 0 -6 -8 Z" fill="#F5EFE0"/>
-    <circle cx="34" cy="46" r="2" fill="#2A1D10" stroke="none"/>
-    <circle cx="46" cy="46" r="2" fill="#2A1D10" stroke="none"/>
-    <path d="M54 60 q14 2 16 14 q-12 2 -18 -8" fill="#C4681E"/>`),
-
-  porco: () => _msc(`
-    <path d="M22 58 q-3 -18 10 -24 q10 -5 20 0 q13 6 10 24 Z" fill="#E39AA8"/>
-    <path d="M28 36 l-4 -12 l12 5 Z" fill="#D2808F"/>
-    <path d="M52 36 l4 -12 l-12 5 Z" fill="#D2808F"/>
-    <ellipse cx="40" cy="52" rx="10" ry="7" fill="#D2808F"/>
-    <circle cx="36" cy="52" r="1.8" fill="#2A1D10" stroke="none"/>
-    <circle cx="44" cy="52" r="1.8" fill="#2A1D10" stroke="none"/>
-    <circle cx="31" cy="42" r="2" fill="#2A1D10" stroke="none"/>
-    <circle cx="49" cy="42" r="2" fill="#2A1D10" stroke="none"/>
-    <path d="M62 56 q7 2 4 8 q-3 4 -6 1" fill="none"/>`),
-
-  urubu: () => _msc(`
-    <path d="M26 64 q-6 -16 4 -26 q8 -8 18 -4 q12 5 8 20 l-3 10 Z" fill="#3A3A38"/>
-    <path d="M30 44 q-14 -4 -18 -16 q14 0 22 8" fill="#2A2A28"/>
-    <circle cx="50" cy="30" r="9" fill="#C9B79A"/>
-    <path d="M59 29 q8 1 7 5 q-5 3 -9 0 Z" fill="#F0C24A"/>
-    <circle cx="52" cy="27" r="1.9" fill="#2A1D10" stroke="none"/>
-    <path d="M34 64 v7 M46 64 v7" stroke-width="2.8"/>`),
-
-  peixe: () => _msc(`
-    <path d="M14 42 q14 -18 34 -16 q18 2 20 16 q-2 14 -20 16 q-20 2 -34 -16 Z" fill="#2E7D9E"/>
-    <path d="M68 42 l12 -12 v24 Z" fill="#24657F"/>
-    <path d="M40 26 q4 -10 10 -8 q-2 6 -4 9" fill="#24657F"/>
-    <circle cx="56" cy="37" r="2.6" fill="#F5EFE0" stroke="none"/>
-    <circle cx="56" cy="37" r="1.3" fill="#2A1D10" stroke="none"/>
-    <path d="M30 44 q8 6 18 4" fill="none" stroke-width="1.8" opacity=".6"/>`),
-
-  /* The mane has to be ragged: a regular star reads as a sun, which is what
-     the first attempt at this drawing looked like. */
-  /* ── The lion, six times over ─────────────────────────────────────
-     Six clubs have a lion and, until now, the same lion: six identical cards
-     in a row read as a printing error rather than as six mascots. They are
-     still the same animal, because they are — what changes is what each club
-     actually calls its own. The Leão do Sport wears the crown it wears on the
-     club's own iconography, the Leão Azul do Remo is blue, the Leão da Ilha
-     has its wave, the Leão do Pici its three colours, Vitória's carries the
-     sash, and Mirassol's the scarf. Nothing here is anyone's official art —
-     it is this album's drawing of a lion, six ways. */
-  leao: (a, b, v) => _msc(`
-    <path d="M40 9 q7 1 9 6 q7 -2 10 4 q7 2 6 9 q5 4 2 10 q3 6 -3 10 q0 7 -7 8
-             q-3 6 -10 5 q-4 4 -9 0 q-7 1 -10 -5 q-7 -1 -7 -8 q-6 -4 -3 -10
-             q-3 -6 2 -10 q-1 -7 6 -9 q3 -6 10 -4 q2 -5 9 -6 Z" fill="${
-               v === 'azul' ? (a || '#0B1E4B') : '#A8681A'}"/>
-    ${v === 'pici' ? `<path d="M26 20 h28 v7 h-28 Z" fill="${b || '#A81C1C'}" stroke="none" opacity=".9"/>` : ''}
-    <circle cx="40" cy="42" r="14" fill="${v === 'azul' ? '#D9E2F2' : '#F0C24A'}"/>
-    <path d="M28 34 q-2 -6 3 -7 q4 -1 5 4" fill="${v === 'azul' ? '#D9E2F2' : '#F0C24A'}"/>
-    <path d="M52 34 q2 -6 -3 -7 q-4 -1 -5 4" fill="${v === 'azul' ? '#D9E2F2' : '#F0C24A'}"/>
-    <ellipse cx="40" cy="49" rx="9" ry="6.5" fill="#F5E3C0"/>
-    <circle cx="34" cy="39" r="2.2" fill="#2A1D10" stroke="none"/>
-    <circle cx="46" cy="39" r="2.2" fill="#2A1D10" stroke="none"/>
-    <path d="M40 45 l-3.5 3 h7 Z" fill="#2A1D10" stroke="none"/>
-    <path d="M40 48 v4 M40 52 q-4 3 -7 0 M40 52 q4 3 7 0" fill="none" stroke-width="1.9"/>
-    ${v === 'coroa'  ? `<path d="M29 14 l3 -9 l5 5 l3 -8 l3 8 l5 -5 l3 9 Z" fill="${a || '#C00000'}"/>` : ''}
-    ${v === 'barra'  ? `<path d="M18 62 q22 9 44 0 l0 8 q-22 8 -44 0 Z" fill="${a || '#B80000'}"/>
-                        <path d="M32 65 v8 M48 65 v8" stroke="${b || '#111'}" stroke-width="4"/>` : ''}
-    ${v === 'ilha'   ? `<path d="M12 68 q7 -6 14 0 q7 6 14 0 q7 -6 14 0 q7 6 14 0" fill="none"
-                          stroke="${a || '#1B4E9B'}" stroke-width="3.4"/>` : ''}
-    ${v === 'faixa'  ? `<path d="M18 62 q22 9 44 0 l0 8 q-22 8 -44 0 Z" fill="${b || '#0A7A3C'}"/>` : ''}`),
-
-  coelho: () => _msc(`
-    <path d="M26 64 q-4 -16 6 -22 q8 -5 16 0 q10 6 6 22 Z" fill="#E6E0D2"/>
-    <path d="M31 44 q-4 -20 1 -26 q6 -2 6 22" fill="#E6E0D2"/>
-    <path d="M49 44 q4 -20 -1 -26 q-6 -2 -6 22" fill="#E6E0D2"/>
-    <circle cx="34" cy="52" r="2" fill="#2A1D10" stroke="none"/>
-    <circle cx="46" cy="52" r="2" fill="#2A1D10" stroke="none"/>
-    <path d="M40 57 l-2.5 2.5 h5 Z" fill="#B23A2E" stroke="none"/>
-    <path d="M32 62 h-9 M48 62 h9" stroke-width="1.6" opacity=".7"/>`),
-
-  macaca: () => _msc(`
-    <circle cx="40" cy="42" r="17" fill="#7A5230"/>
-    <circle cx="20" cy="38" r="8" fill="#8C6038"/>
-    <circle cx="60" cy="38" r="8" fill="#8C6038"/>
-    <ellipse cx="40" cy="48" rx="12" ry="10" fill="#C9A47A"/>
-    <circle cx="34" cy="38" r="2.2" fill="#2A1D10" stroke="none"/>
-    <circle cx="46" cy="38" r="2.2" fill="#2A1D10" stroke="none"/>
-    <circle cx="36" cy="46" r="1.4" fill="#2A1D10" stroke="none"/>
-    <circle cx="44" cy="46" r="1.4" fill="#2A1D10" stroke="none"/>
-    <path d="M34 53 q6 5 12 0" fill="none" stroke-width="1.9"/>`),
-
-  tigre: () => _msc(`
-    <circle cx="40" cy="42" r="18" fill="#E08A26"/>
-    <path d="M24 28 l-3 -10 12 5 Z" fill="#E08A26"/>
-    <path d="M56 28 l3 -10 -12 5 Z" fill="#E08A26"/>
-    <ellipse cx="40" cy="50" rx="12" ry="9" fill="#F5EFE0"/>
-    <path d="M28 32 l4 6 M40 26 v7 M52 32 l-4 6" stroke-width="2.6"/>
-    <circle cx="34" cy="40" r="2.2" fill="#2A1D10" stroke="none"/>
-    <circle cx="46" cy="40" r="2.2" fill="#2A1D10" stroke="none"/>
-    <path d="M40 48 l-3 3 h6 Z" fill="#2A1D10" stroke="none"/>
-    <path d="M34 54 q6 5 12 0" fill="none" stroke-width="1.9"/>`),
-
-  /* Horns out to the side and curling UP, well clear of the skull — drawn
-     tight to the head they just read as a second pair of ears. */
-  touro: () => _msc(`
-    <path d="M26 30 q-12 -4 -16 4 q-3 8 4 11 q3 -8 12 -7" fill="#E6E0D2"/>
-    <path d="M54 30 q12 -4 16 4 q3 8 -4 11 q-3 -8 -12 -7" fill="#E6E0D2"/>
-    <path d="M27 30 q13 -8 26 0 q7 5 5 16 q-2 12 -18 12 q-16 0 -18 -12 q-2 -11 5 -16 Z" fill="#3A3A38"/>
-    <ellipse cx="40" cy="52" rx="11" ry="8" fill="#9B6B44"/>
-    <circle cx="35" cy="52" r="1.9" fill="#2A1D10" stroke="none"/>
-    <circle cx="45" cy="52" r="1.9" fill="#2A1D10" stroke="none"/>
-    <circle cx="33" cy="39" r="2.2" fill="#2A1D10" stroke="none"/>
-    <circle cx="47" cy="39" r="2.2" fill="#2A1D10" stroke="none"/>
-    <path d="M20 62 q8 6 20 6 q12 0 20 -6" fill="none" stroke-width="1.8" opacity=".45"/>`),
-
-  /* In profile, with a snout, a horn and a flame. Face-on it was a green
-     blob; lying sideways it was a green blob with wings. */
-  dragao: () => _msc(`
-    <path d="M20 60 q10 -10 24 -8 q10 1 14 8 Z" fill="#276B44"/>
-    <path d="M46 20 q14 2 16 14 q2 12 -10 16 q-6 2 -12 -1 l-8 9 -2 -10
-             q-8 -5 -6 -14 q2 -12 14 -14 Z" fill="#2E7D4F"/>
-    <path d="M50 18 l2 -12 8 10 Z" fill="#276B44"/>
-    <path d="M36 20 l-4 -11 10 6 Z" fill="#276B44"/>
-    <path d="M34 34 q-12 -2 -18 -10 q11 -2 15 -6" fill="#276B44"/>
-    <path d="M30 42 q-11 5 -20 1 q8 -6 10 -10" fill="#B23A2E"/>
-    <path d="M14 44 q-9 4 -13 0 q6 -3 8 -6" fill="#F0C24A"/>
-    <circle cx="48" cy="30" r="3" fill="#F0C24A" stroke="none"/>
-    <circle cx="48" cy="30" r="1.3" fill="#2A1D10" stroke="none"/>
-    <path d="M38 40 l4 4 5 -4" fill="none" stroke-width="1.8"/>`),
-
-  cobra: () => _msc(`
-    <path d="M14 66 q0 -12 14 -12 q14 0 14 -9 q0 -8 -10 -8 q-9 0 -9 7"
-      fill="none" stroke="#B23A2E" stroke-width="11" stroke-linecap="round"/>
-    <path d="M14 66 q0 -12 14 -12 q14 0 14 -9 q0 -8 -10 -8 q-9 0 -9 7"
-      fill="none" stroke="#F5EFE0" stroke-width="11" stroke-linecap="butt"
-      stroke-dasharray="3 11" opacity=".9"/>
-    <path d="M14 66 q0 -12 14 -12 q14 0 14 -9 q0 -8 -10 -8 q-9 0 -9 7"
-      fill="none" stroke="#2A1D10" stroke-width="11.6" stroke-linecap="round" opacity="0"/>
-    <path d="M23 44 q-2 -14 10 -18 q13 -4 18 6" fill="none" stroke="#B23A2E" stroke-width="11" stroke-linecap="round"/>
-    <circle cx="55" cy="30" r="9" fill="#B23A2E"/>
-    <circle cx="58" cy="27" r="2" fill="#F5EFE0" stroke="none"/>
-    <circle cx="58" cy="27" r="1" fill="#2A1D10" stroke="none"/>
-    <path d="M63 33 l9 4 M63 33 l9 0" fill="none" stroke="#8E2018" stroke-width="2.2"/>`),
-
-  periquito: () => _msc(`
-    <path d="M30 62 q-8 -12 -2 -22 q6 -10 16 -8 q12 3 12 15 q0 12 -10 15 Z" fill="#2E9E5B"/>
-    <circle cx="46" cy="28" r="10" fill="#3FB570"/>
-    <path d="M42 18 q4 -8 9 -5 q-1 5 -4 7" fill="#F0C24A"/>
-    <path d="M56 28 q8 2 6 6 q-5 2 -8 -1 Z" fill="#F0C24A"/>
-    <circle cx="49" cy="26" r="1.9" fill="#2A1D10" stroke="none"/>
-    <path d="M32 66 v6 M44 66 v6" stroke-width="2.6"/>`),
-
-  elefante: () => _msc(`
-    <path d="M26 60 q-4 -20 8 -26 q10 -5 18 2 q9 8 4 24 Z" fill="#8C93A0"/>
-    <path d="M24 38 q-14 -4 -14 6 q0 10 14 8" fill="#7A828F"/>
-    <path d="M56 38 q14 -4 14 6 q0 10 -14 8" fill="#7A828F"/>
-    <path d="M38 58 q-2 12 4 16 q6 -2 4 -8" fill="#7A828F"/>
-    <path d="M32 60 l-5 8 M50 60 l5 8" stroke-width="2.2" stroke="#F5EFE0"/>
-    <circle cx="34" cy="46" r="2" fill="#2A1D10" stroke="none"/>
-    <circle cx="46" cy="46" r="2" fill="#2A1D10" stroke="none"/>`),
-
-  tubarao: () => _msc(`
-    <path d="M8 46 q18 -16 38 -14 q20 2 26 12 q-6 10 -26 12 q-20 2 -38 -10 Z" fill="#5B7A8C"/>
-    <path d="M40 30 l4 -16 10 14 Z" fill="#4A6675"/>
-    <path d="M72 44 l8 -10 v20 Z" fill="#4A6675"/>
-    <path d="M30 50 q18 6 34 2" fill="#F5EFE0" stroke="none"/>
-    <path d="M32 50 l3 5 3 -5 3 5 3 -5 3 5 3 -5 3 5 3 -5" fill="none" stroke-width="1.5"/>
-    <circle cx="56" cy="38" r="2.2" fill="#2A1D10" stroke="none"/>`),
-
-  /* A gambá: long pointed snout, round ears, and the bare tail that is the
-     only part anyone actually recognises. */
-  timbu: () => _msc(`
-    <path d="M30 60 q-8 -12 0 -22 q6 -8 16 -6 q11 3 12 15 q1 11 -8 15 Z" fill="#9B8C74"/>
-    <circle cx="28" cy="34" r="7" fill="#C9B79A"/>
-    <circle cx="50" cy="30" r="7" fill="#C9B79A"/>
-    <path d="M34 40 q-14 2 -22 10 q10 6 20 2" fill="#E0D4BC"/>
-    <path d="M12 50 q-3 3 0 5" fill="none" stroke-width="2"/>
-    <circle cx="26" cy="46" r="1.9" fill="#2A1D10" stroke="none"/>
-    <circle cx="40" cy="44" r="1.9" fill="#2A1D10" stroke="none"/>
-    <path d="M58 52 q14 6 10 18 q-10 3 -14 -8" fill="#E0D4BC"/>`),
-
-  almirante: () => _msc(`
-    <path d="M26 66 q0 -14 14 -14 q14 0 14 14 Z" fill="#111"/>
-    <circle cx="40" cy="40" r="13" fill="#C9A47A"/>
-    <path d="M18 30 q22 -14 44 0 q-8 4 -22 4 q-14 0 -22 -4 Z" fill="#111"/>
-    <path d="M34 46 q6 8 12 0 q-2 8 -6 8 q-4 0 -6 -8 Z" fill="#E6E0D2"/>
-    <circle cx="35" cy="38" r="1.9" fill="#2A1D10" stroke="none"/>
-    <circle cx="45" cy="38" r="1.9" fill="#2A1D10" stroke="none"/>
-    <path d="M32 60 l8 6 8 -6" fill="#E6E0D2"/>`),
-
-  /* The Mosqueteiro belongs to two clubs. Corinthians' wears black, Grêmio's
-     blue — the doublet and the hat take the club's own colours, and the plume
-     the second, so the two cards never read as the same drawing twice. */
-  mosqueteiro: (a, b) => _msc(`
-    <path d="M26 66 q0 -14 14 -14 q14 0 14 14 Z" fill="${a || '#B23A2E'}"/>
-    <circle cx="40" cy="40" r="12" fill="#C9A47A"/>
-    <path d="M20 30 q20 -12 40 0 q-10 5 -20 5 q-10 0 -20 -5 Z" fill="${a || '#3A3A38'}"/>
-    <path d="M58 28 q10 -10 16 -6 q-4 8 -14 10" fill="${b || '#F5EFE0'}"/>
-    <path d="M34 48 q6 4 12 0" fill="none" stroke-width="1.9"/>
-    <circle cx="35" cy="38" r="1.9" fill="#2A1D10" stroke="none"/>
-    <circle cx="45" cy="38" r="1.9" fill="#2A1D10" stroke="none"/>
-    <path d="M56 62 l18 -18" stroke-width="3"/>`),
-
-  /* ── the seventeen the first sheet left out ── */
-
-  /* Fluminense: pó de arroz, the rice powder a player once used to pass for
-     white at the club. The tin, not a face — a face would be a lie about it. */
-  poDeArroz: () => _msc(`
-    <path d="M24 60 h32 v-22 h-32 Z" fill="#8B1D3B"/>
-    <path d="M22 38 h36 v-6 h-36 Z" fill="#2E7D52"/>
-    <path d="M30 32 q10 -8 20 0" fill="#E6E0D2"/>
-    <circle cx="40" cy="49" r="8" fill="#F5EFE0"/>
-    <circle cx="40" cy="49" r="4.5" fill="none" stroke-width="1.6" opacity=".75"/>
-    <circle cx="40" cy="49" r="1.4" fill="#2A1D10" stroke="none" opacity=".7"/>
-    <path d="M14 30 q4 -6 8 -2 M60 26 q5 -5 8 0 M12 44 q-5 -3 -6 2" fill="none" stroke-width="1.7" opacity=".7"/>`),
-
-  /* Botafogo's Biriba, the dog that was carried onto the pitch for luck. */
-  cachorro: () => _msc(`
-    <path d="M26 62 q-6 -14 2 -22 q8 -8 18 -4 q12 5 8 20 l-2 6 Z" fill="#3A3A38"/>
-    <path d="M26 40 q-8 -12 -2 -18 q7 1 10 10" fill="#2A2A28"/>
-    <path d="M54 40 q8 -12 2 -18 q-7 1 -10 10" fill="#2A2A28"/>
-    <ellipse cx="40" cy="52" rx="10" ry="7" fill="#E6E0D2"/>
-    <circle cx="40" cy="47" r="2.4" fill="#2A1D10" stroke="none"/>
-    <path d="M34 56 q6 4 12 0" fill="none" stroke-width="1.8"/>
-    <circle cx="33" cy="42" r="2" fill="#F5EFE0" stroke="none"/>
-    <circle cx="47" cy="42" r="2" fill="#F5EFE0" stroke="none"/>`),
-
-  /* São Paulo: the saint the club is named for, drawn as the halo and the
-     tricolour, not as a portrait. */
-  santo: () => _msc(`
-    <circle cx="40" cy="36" r="12" fill="#C9A47A"/>
-    <ellipse cx="40" cy="20" rx="14" ry="4" fill="none" stroke="#F0C24A" stroke-width="3"/>
-    <path d="M26 62 q0 -14 14 -14 q14 0 14 14 Z" fill="#E6E0D2"/>
-    <path d="M40 48 v14" stroke-width="2.2"/>
-    <path d="M26 62 h9 v-11 q-9 2 -9 11 Z" fill="#B23A2E"/>
-    <path d="M54 62 h-9 v-11 q9 2 9 11 Z" fill="#2B4E9B"/>
-    <circle cx="35" cy="35" r="1.9" fill="#2A1D10" stroke="none"/>
-    <circle cx="45" cy="35" r="1.9" fill="#2A1D10" stroke="none"/>
-    <path d="M35 41 q5 4 10 0" fill="none" stroke-width="1.8"/>`),
-
-  /* Athletico-PR: the Furacão is weather, so it is drawn as weather. */
-  furacao: () => _msc(`
-    <path d="M12 20 h52 M18 30 h46 M22 40 h38 M28 50 h26 M34 60 h14"
-      fill="none" stroke="#B23A2E" stroke-width="5" stroke-linecap="round"/>
-    <path d="M60 18 q10 4 2 10 M58 40 q10 3 3 9" fill="none" stroke-width="2.2"/>
-    <circle cx="40" cy="40" r="7" fill="#2A1D10" stroke="none" opacity=".18"/>`),
-
-  /* Bahia and Ceará both answer to an old man. */
-  vovo: () => _msc(`
-    <circle cx="40" cy="34" r="13" fill="#C9A47A"/>
-    <path d="M27 30 q13 -12 26 0 q-5 -14 -13 -14 q-8 0 -13 14 Z" fill="#E6E0D2"/>
-    <path d="M30 42 q10 16 20 0 q-2 16 -10 16 q-8 0 -10 -16 Z" fill="#E6E0D2"/>
-    <circle cx="34" cy="33" r="1.9" fill="#2A1D10" stroke="none"/>
-    <circle cx="46" cy="33" r="1.9" fill="#2A1D10" stroke="none"/>
-    <path d="M28 33 h-6 M52 33 h6" fill="none" stroke-width="1.6" opacity=".6"/>
-    <path d="M26 62 q0 -10 14 -10 q14 0 14 10 Z" fill="#2B4E9B"/>`),
-
-  /* Coritiba's coxa branca, the white thigh. A leg, plainly. */
-  coxa: () => _msc(`
-    <path d="M32 14 q10 -2 14 8 q4 12 0 22 q-3 8 2 16 l-14 4 q-6 -12 -4 -22
-             q2 -10 -2 -18 q-2 -8 4 -10 Z" fill="#F5EFE0"/>
-    <path d="M34 56 q10 -3 14 2 l2 8 h-18 Z" fill="#2A1D10"/>
-    <path d="M34 26 q8 -3 12 2" fill="none" stroke-width="1.8" opacity=".5"/>
-    <path d="M14 20 q6 -6 10 0 M60 52 q6 -5 9 1" fill="none" stroke="#0B6B3A" stroke-width="2.4"/>`),
-
-  /* Guarani's bugre and Portuguesa's lusa are both people, and a cartoon of a
-     people is not something this album should print. Their crest stands in. */
-
-  /* Cuiabá: o Dourado, the golden fish of the Paraguay river. */
-  dourado: () => _msc(`
-    <path d="M12 40 q16 -16 34 -14 q18 2 22 14 q-4 12 -22 14 q-18 2 -34 -14 Z" fill="#F0C24A"/>
-    <path d="M68 40 l12 -11 v22 Z" fill="#C48A1E"/>
-    <path d="M40 26 q4 -9 10 -7 q-2 5 -4 8" fill="#C48A1E"/>
-    <path d="M30 42 q10 7 22 4" fill="none" stroke-width="1.8" opacity=".55"/>
-    <circle cx="56" cy="36" r="2.6" fill="#F5EFE0" stroke="none"/>
-    <circle cx="56" cy="36" r="1.3" fill="#2A1D10" stroke="none"/>`),
-
-  /* Juventude: o Papo, the jaguar of the serra. */
-  papo: () => _msc(`
-    <circle cx="40" cy="42" r="17" fill="#C9A05A"/>
-    <path d="M25 29 l-3 -10 11 5 Z" fill="#C9A05A"/>
-    <path d="M55 29 l3 -10 -11 5 Z" fill="#C9A05A"/>
-    <ellipse cx="40" cy="50" rx="11" ry="8" fill="#F0DFB8"/>
-    <circle cx="30" cy="35" r="2.4" fill="#2A1D10" stroke="none" opacity=".55"/>
-    <circle cx="50" cy="35" r="2.4" fill="#2A1D10" stroke="none" opacity=".55"/>
-    <circle cx="27" cy="47" r="2.2" fill="#2A1D10" stroke="none" opacity=".45"/>
-    <circle cx="53" cy="47" r="2.2" fill="#2A1D10" stroke="none" opacity=".45"/>
-    <circle cx="35" cy="41" r="2.1" fill="#2A1D10" stroke="none"/>
-    <circle cx="45" cy="41" r="2.1" fill="#2A1D10" stroke="none"/>
-    <path d="M40 47 l-3 3 h6 Z" fill="#2A1D10" stroke="none"/>`),
-
-  /* Chapecoense: o Verdão do Oeste, the green of the west. */
-  verdao: () => _msc(`
-    <path d="M40 12 q18 6 18 22 q0 20 -18 32 q-18 -12 -18 -32 q0 -16 18 -22 Z" fill="#0B7A3B"/>
-    <path d="M40 22 v34" fill="none" stroke="#F5EFE0" stroke-width="2.4"/>
-    <path d="M40 30 q9 3 9 10 M40 30 q-9 3 -9 10 M40 42 q7 3 7 9 M40 42 q-7 3 -7 9"
-      fill="none" stroke="#F5EFE0" stroke-width="1.9"/>`),
-
-  /* Figueirense: o Furacão do Estreito — a fig leaf is the club's own name. */
-  figueira: () => _msc(`
-    <path d="M40 62 v-20" stroke-width="3"/>
-    <path d="M40 44 q-20 -2 -24 -16 q-2 -12 10 -14 q10 -2 14 8 q4 -10 14 -8
-             q12 2 10 14 q-4 14 -24 16 Z" fill="#0F6B3A"/>
-    <path d="M40 44 v-24 M40 30 l-9 -6 M40 30 l9 -6 M40 38 l-7 -5 M40 38 l7 -5"
-      fill="none" stroke="#F5EFE0" stroke-width="1.7"/>`),
-
-  /* Paysandu: o Papão da Curuzu, the bogeyman. */
-  papao: () => _msc(`
-    <path d="M22 62 q0 -26 18 -26 q18 0 18 26 Z" fill="#0B2E6B"/>
-    <path d="M22 40 q4 -22 18 -22 q14 0 18 22 q-8 -6 -18 -6 q-10 0 -18 6 Z" fill="#0A2454"/>
-    <circle cx="33" cy="44" r="3" fill="#F0C24A" stroke="none"/>
-    <circle cx="47" cy="44" r="3" fill="#F0C24A" stroke="none"/>
-    <path d="M31 54 l4 4 4 -4 4 4 4 -4" fill="none" stroke="#F5EFE0" stroke-width="2"/>`),
-
-  /* CSA: o Azulão, the big blue bird. */
-  azulao: () => _msc(`
-    <path d="M28 62 q-8 -12 -2 -22 q6 -10 16 -8 q13 3 13 16 q0 12 -10 14 Z" fill="#1B4F9C"/>
-    <circle cx="46" cy="28" r="10" fill="#2B62B5"/>
-    <path d="M56 28 q9 2 7 6 q-6 2 -9 -1 Z" fill="#F0C24A"/>
-    <circle cx="49" cy="26" r="1.9" fill="#2A1D10" stroke="none"/>
-    <path d="M26 44 q-12 -2 -16 -10 q11 0 16 4" fill="#153F80"/>
-    <path d="M32 66 v6 M44 66 v6" stroke-width="2.6"/>`),
-
-  /* Mirassol: o Leão — but a different lion would be a lie, so it shares the
-     Leão drawing. Botafogo-SP is o Pantera. */
-  pantera: () => _msc(`
-    <circle cx="40" cy="42" r="17" fill="#2A2A28"/>
-    <path d="M25 29 l-3 -10 11 5 Z" fill="#2A2A28"/>
-    <path d="M55 29 l3 -10 -11 5 Z" fill="#2A2A28"/>
-    <ellipse cx="40" cy="50" rx="11" ry="8" fill="#3E3E3B"/>
-    <circle cx="35" cy="40" r="2.4" fill="#F0C24A" stroke="none"/>
-    <circle cx="45" cy="40" r="2.4" fill="#F0C24A" stroke="none"/>
-    <path d="M40 47 l-3 3 h6 Z" fill="#F5EFE0" stroke="none"/>
-    <path d="M34 53 q6 4 12 0" fill="none" stroke="#F5EFE0" stroke-width="1.8"/>`),
-
-  /* Bahia: o Super-Homem Tricolor. A caped figure, not the club's crest and
-     not anybody's licensed character — a cape, a chest badge and a stance. */
-  heroi: () => _msc(`
-    <path d="M26 34 q14 -6 28 0 l6 30 q-20 6 -40 0 Z" fill="#1B4F9C"/>
-    <path d="M28 36 q-12 6 -10 24 l10 2 Z" fill="#B23A2E"/>
-    <path d="M52 36 q12 6 10 24 l-10 2 Z" fill="#B23A2E"/>
-    <circle cx="40" cy="24" r="10" fill="#C9A47A"/>
-    <path d="M31 19 q9 -9 18 0 q-4 -6 -9 -6 q-5 0 -9 6 Z" fill="#2A1D10"/>
-    <circle cx="36" cy="24" r="1.8" fill="#2A1D10" stroke="none"/>
-    <circle cx="44" cy="24" r="1.8" fill="#2A1D10" stroke="none"/>
-    <path d="M36 29 q4 3 8 0" fill="none" stroke-width="1.7"/>
-    <path d="M40 44 l5 5 -5 5 -5 -5 Z" fill="#F5EFE0"/>`),
-
-  /* Portuguesa: a caravela. The club's own symbol, and the one thing about
-     the Lusa that is an object rather than a person. */
-  caravela: () => _msc(`
-    <path d="M10 56 q30 8 60 0 l-6 10 q-24 5 -48 0 Z" fill="#B23A2E"/>
-    <path d="M40 12 v44" stroke-width="2.6"/>
-    <path d="M40 16 q16 6 16 14 q-16 3 -16 -2 Z" fill="#F5EFE0"/>
-    <path d="M40 34 q14 5 14 12 q-14 2 -14 -2 Z" fill="#F5EFE0"/>
-    <path d="M40 20 q-13 5 -13 12 q13 2 13 -2 Z" fill="#E6E0D2"/>
-    <path d="M6 62 q10 4 18 0 q10 4 18 0 q10 4 18 0 q8 3 14 0"
-      fill="none" stroke="#2B5EA8" stroke-width="2" opacity=".8"/>`),
-
-  saci: () => _msc(`
-    <circle cx="40" cy="34" r="12" fill="#5A3A22"/>
-    <path d="M27 26 q13 -14 26 0 Z" fill="#B23A2E"/>
-    <path d="M40 12 q4 6 -1 10" fill="none" stroke-width="2"/>
-    <circle cx="35" cy="34" r="2" fill="#F5EFE0" stroke="none"/>
-    <circle cx="45" cy="34" r="2" fill="#F5EFE0" stroke="none"/>
-    <path d="M34 41 q6 5 12 0" fill="none" stroke-width="1.9"/>
-    <path d="M32 46 h16 l-4 16 h-8 Z" fill="#3A3A38"/>
-    <path d="M40 62 v8 h6" stroke-width="3"/>
-    <path d="M54 40 q8 -2 8 -8" fill="none" stroke-width="2.2"/>`),
-};
-
-/* The flat drawings read as clip-art beside the photographs, and the
-   clubs' own mascot art is theirs and under no free licence. Each mascot is
-   now Microsoft's Fluent Emoji 3D figure for its animal (MIT licence) on a
-   disc in the club's colours: the rooster for the Galos, the fox for the
-   Raposa, the fencer for the Mosqueteiros, the wolf for the Papão. The
-   Azulão's bird is tinted blue and the Dourado's fish gold. Papo, which has
-   no fitting figure, keeps its drawing. */
-const MSC_IMG = { galo:0, raposa:0, porco:0, urubu:0, peixe:0, leao:0, coelho:0, macaca:0,
-  tigre:0, touro:0, dragao:0, cobra:0, periquito:0, elefante:0, tubarao:0, timbu:0,
-  almirante:0, mosqueteiro:0, saci:0, poDeArroz:0, cachorro:0, santo:0, furacao:0,
-  heroi:0, vovo:0, coxa:0, verdao:0, figueira:0, papao:0, caravela:0, pantera:0,
-  azulao: 'hue-rotate(235deg) saturate(1.15)', dourado: 'hue-rotate(205deg) saturate(1.4) brightness(1.1)' };
-const mscDisc = (k, c1, c2) => `<svg viewBox="0 0 80 80" width="100%" aria-hidden="true"
-  style="display:block;width:100%;height:100%;">
-  <rect width="80" height="80" fill="var(--retro-card)"/>
-  <circle class="msc-disc" cx="40" cy="40" r="34" fill="${c1 || '#2E4A3A'}"/>
-  <circle class="msc-glow" cx="40" cy="36" r="30" fill="#fff" opacity=".13"/>
-  <circle class="msc-ring" cx="40" cy="40" r="34" fill="none" stroke="${c2 || '#E9DDC1'}" stroke-width="2.5"/>
-  <image href="img/msc/${k}.webp" x="13" y="12" width="54" height="54"${MSC_IMG[k] ? ` style="filter:${MSC_IMG[k]}"` : ''}/>
-</svg>`;
-Object.keys(MSC_IMG).forEach(k => { MASC_ART[k] = (c1, c2) => mscDisc(k, c1, c2); });
-/* Better than a toy: a real photograph of the animal (or the hat, the ship,
-   the saint) each mascot is — freely licensed, from Wikimedia Commons — in the
-   same disc, until the painted mascot is ready. */
-const MSC_PHOTO = new Set(['almirante', 'azulao', 'cachorro', 'caravela', 'cobra', 'coelho', 'dourado', 'dragao', 'elefante', 'figueira', 'furacao', 'galo', 'leao', 'macaca', 'mosqueteiro', 'pantera', 'peixe', 'periquito', 'poDeArroz', 'porco', 'raposa', 'saci', 'santo', 'tigre', 'timbu', 'touro', 'tubarao', 'urubu']);
-/* every disc gets its own clip id: the same mascot can be on the album page
-   (hidden) and in the zoom at once, and a clip found inside a hidden page
-   clips the zoom's photo to nothing */
 let _mpN = 0;
-const mscPhoto = (k, c1, c2, id = 'mp' + (++_mpN)) => `<svg viewBox="0 0 80 80" width="100%" aria-hidden="true"
+const monDisc = (k, c1, c2, id = 'mp' + (++_mpN)) => `<svg viewBox="0 0 80 80" width="100%" aria-hidden="true"
   style="display:block;width:100%;height:100%;"><defs><clipPath id="${id}"><circle cx="40" cy="40" r="33"/></clipPath></defs>
   <rect width="80" height="80" fill="var(--retro-card)"/>
   <circle cx="40" cy="40" r="35.5" fill="${c2 || '#E9DDC1'}"/>
-  <image href="img/msc-pic/${k}.webp" x="7" y="7" width="66" height="66" preserveAspectRatio="xMidYMid slice" clip-path="url(#${id})"/>
-  <circle cx="40" cy="40" r="33" fill="none" stroke="${c1 || '#2E4A3A'}" stroke-width="2.5"/>
+  <image href="${STAD_IMGS[k] || ''}" x="7" y="7" width="66" height="66" preserveAspectRatio="xMidYMid slice" clip-path="url(#${id})"/>
+  <circle cx="40" cy="40" r="33" fill="none" stroke="${c1 || '#7B1E3A'}" stroke-width="2.5"/>
 </svg>`;
-MSC_PHOTO.forEach(k => { MASC_ART[k] = (c1, c2) => mscPhoto(k, c1, c2); });
-
-/* Which club wears which. A drawing is shared by everyone who shares the
-   animal — that is how the terraces say it too. */
-const MASCOTS = {
-  atleticomg:  { n:'Galo',            art:'galo' },
-  crb:         { n:'Galo',            art:'galo' },
-  cruzeiro:    { n:'Raposa',          art:'raposa' },
-  palmeiras:   { n:'Porco',           art:'porco' },
-  flamengo:    { n:'Urubu',           art:'urubu' },
-  santos:      { n:'Peixe',           art:'peixe' },
-  sport:       { n:'Leão',            art:'leao', v:'coroa' },
-  vitoria:     { n:'Leão',            art:'leao', v:'barra' },
-  fortaleza:   { n:'Leão do Pici',    art:'leao', v:'pici'  },
-  avai:        { n:'Leão da Ilha',    art:'leao', v:'ilha'  },
-  remo:        { n:'Leão Azul',       art:'leao', v:'azul'  },
-  americamg:   { n:'Coelho',          art:'coelho' },
-  pontepreta:  { n:'Macaca',          art:'macaca' },
-  criciuma:    { n:'Tigre',           art:'tigre' },
-  bragantino:  { n:'Massa Bruta',     art:'touro' },
-  atleticogo:  { n:'Dragão',          art:'dragao' },
-  santacruz:   { n:'Cobra Coral',     art:'cobra' },
-  goias:       { n:'Periquito',       art:'periquito' },
-  abc:         { n:'Elefante',        art:'elefante' },
-  sampaio:     { n:'Tubarão',         art:'tubarao' },
-  nautico:     { n:'Timbu',           art:'timbu' },
-  vasco:       { n:'Almirante',       art:'almirante' },
-  corinthians: { n:'Mosqueteiro',     art:'mosqueteiro' },
-  gremio:      { n:'Mosqueteiro',     art:'mosqueteiro' },
-  internacional:{ n:'Saci',           art:'saci' },
-  /* ── the rest of the Brazilian clubs, September 2026 ── */
-  fluminense:  { n:'Pó de Arroz',     art:'poDeArroz' },
-  botafogo:    { n:'Biriba',          art:'cachorro' },
-  saopaulo:    { n:'Santo Paulo',     art:'santo' },
-  atleticopr:  { n:'Furacão',         art:'furacao' },
-  bahia:       { n:'Super-Homem',     art:'heroi' },
-  ceara:       { n:'Vovô',            art:'vovo' },
-  coritiba:    { n:'Coxa',            art:'coxa' },
-  cuiaba:      { n:'Dourado',         art:'dourado' },
-  juventude:   { n:'Papo',            art:'papo' },
-  chapecoense: { n:'Verdão do Oeste', art:'verdao' },
-  figueirense: { n:'Figueira',        art:'figueira' },
-  paysandu:    { n:'Papão',           art:'papao' },
-  portuguesa:  { n:'Lusa',            art:'caravela' },
-  csa:         { n:'Azulão',          art:'azulao' },
-  mirassol:    { n:'Leão',            art:'leao', v:'faixa' },
-  botafogosp:  { n:'Pantera',         art:'pantera' },
-  /* Guarani's mascot is the Bugre, and "bugre" is a slur for indigenous
-     Brazilians. Every other mascot here is an animal, an object or a figure
-     from folklore; a cartoon of a people is not something this album is going
-     to print, so Guarani is the one club without a mascot sticker. */
-};
-
+const MASC_ART = {};
+const MASCOTS = {};
+Object.keys(STAD).forEach(k => {
+  MASCOTS[k] = { n: STAD[k].name, art: k, p: STAD[k].p || '', city: STAD[k].city };
+  MASC_ART[k] = (c1, c2) => monDisc(k, c1, c2);
+});
+/* the first monument of a state the album does not hold yet */
+const nextMonument = id => Object.keys(MASCOTS).find(k => MASCOTS[k].p === id && !album.has(SK.msc(k)));
+/*@@/monuments@@*/
 /* ═══════════════════════════════════════════════════
    THE OTHER STICKERS — escudos, seleções, mascotes
 
@@ -7109,11 +6290,11 @@ const MASCOTES = Object.keys(MASCOTS);
 function stk(sid) {
   const k = sid.slice(0, 2);
   if (k === 'e:') { const id = sid.slice(2);
-    return { kind:'escudo',  id, n: clubName(id), sub:'Escudo' }; }
+    return { kind:'escudo',  id, n: clubName(id), sub:'Brasão' }; }
   if (k === 's:') { const c = sid.slice(2);
-    return { kind:'selecao', id: c, n: CTRY_NAME[c] || c, sub:'Seleção' }; }
+    return { kind:'selecao', id: c, n: CTRY_NAME[c] || c, sub:'Nação' }; }
   if (k === 'm:') { const id = sid.slice(2); const m = MASCOTS[id] || {};
-    return { kind:'mascote', id, n: m.n || '', sub: clubName(id) }; }
+    return { kind:'mascote', id, n: m.n || '', sub: m.city || '' }; }
   const p = PL.find(x => x.id === sid);
   return p ? { kind:'player', id: sid, n: p.n, p } : null;
 }
@@ -7199,28 +6380,21 @@ function figExtra(sid, size, opts) {
 
   if (st.kind === 'escudo') {
     const br = CL.find(c => c.id === st.id);
-    band = br ? br.s : 'EXTERIOR';
+    band = br ? REGION[br.s].toUpperCase() : '';
     art  = `<span class="fig-crest">${clubArt(st.id, '', false)}</span>`;
   } else if (st.kind === 'selecao') {
-    band = 'SELEÇÃO';
+    band = 'NAÇÃO';
     art  = selecaoArt(st.id);
     tint = ` style="--c1:${ctryColors(st.id)[0]};--c2:${ctryColors(st.id)[1]}"`;
   } else {
-    band = 'MASCOTE';
-    /* One drawing used to serve every club that shares an animal, and a wash
-       of the club's colour behind it was supposed to tell them apart. It did
-       not: six Leões in a row still read as one drawing printed six times.
-       The colours go into the animal now, and each of the shared ones carries
-       what its own club calls it — see MASC_ART.leao. */
-    const br = CL.find(c => c.id === st.id);
+/*@@fx-msc@@*/
+    band = 'MONUMENTO';
     const m  = MASCOTS[st.id] || {};
+    const br = CL.find(c => c.id === m.p);
     tint = br ? ` style="background:${hexA(br.c1, .16)}"` : '';
-    art  = MSC_PAINTED.has(st.id)
-      ? `<span class="fig-msc fig-msc-paint"><img src="img/msc-club/${st.id}.webp" alt="" aria-hidden="true" loading="lazy"></span>`
-      : `<span class="fig-msc">${(MASC_ART[m.art] || (() => ''))(
-      br && br.c1, br && br.c2, m.v)}</span>`;
+    art  = `<span class="fig-msc">${(MASC_ART[m.art] || (() => ''))(br && br.c1, br && br.c2)}</span>`;
   }
-
+/*@@/fx-msc@@*/
   const c = opts.copy || null;
   return `<span class="fig fig-retro fig-extra fig-x-${st.kind} fig-${size}${copyCls(sid, c)}">
     <span class="fig-band">${band}</span>
@@ -7235,9 +6409,9 @@ const ALB_HALF = Math.round(PL.length * 0.50);
 const ALB_3Q   = Math.round(PL.length * 0.75);
 
 const MEDALS = [
-  { id:'first',  ic:'ball', n:'Estreia',        d:'Jogue sua primeira partida',
+  { id:'first',  ic:'scroll', n:'Estreia',        d:'Jogue sua primeira partida',
     t: st => st.games >= 1 },
-  { id:'ten',    ic:'shirt', n:'Rodada',         d:'Jogue 10 partidas',
+  { id:'ten',    ic:'column', n:'Rodada',         d:'Jogue 10 partidas',
     t: st => st.games >= 10, p: st => [st.games || 0, 10] },
   { id:'perfect',ic:'target', n:'Perfeição',      d:'Acerte 100% de uma partida',
     t: st => (st.perfect || 0) >= 1 },
@@ -7256,13 +6430,13 @@ const MEDALS = [
      stickers, which was half of a 125-player album and 28% of a 215-player
      one; the name stayed true only until the album grew. The description
      prints the real number so the target is never a mystery. */
-  { id:'alb25',  ic:'shirt', n:'Começou a colar', d:'Colecione 25 figurinhas',
+  { id:'alb25',  ic:'column', n:'Começou a colar', d:'Colecione 25 figurinhas',
     t: () => album.size >= 25, p: () => [album.size, 25] },
   /* Keeps its old threshold on purpose. These are computed live from the
      album's size, never stored, so moving 60 up to the new half would have
      taken the medal back off everyone sitting between the two. It only loses
      the name "Meio álbum", which stopped being true when the album grew. */
-  { id:'alb60',  ic:'ball',  n:'Sessenta coladas', d:'Colecione 60 figurinhas',
+  { id:'alb60',  ic:'scroll',  n:'Sessenta coladas', d:'Colecione 60 figurinhas',
     t: () => album.size >= 60, p: () => [album.size, 60] },
   /* These two are half and three quarters of the PLAYERS, which is what the
      whole album was when they were written. The thresholds stay where they are
@@ -7279,17 +6453,17 @@ const MEDALS = [
      and mascot sheets behind them it has to count players specifically, or it
      would call the book finished with three empty sections in it. Anyone who
      has it today has all the players, so nobody loses it. */
-  { id:'albAll', ic:'crown', n:'Todos os craques', d:'Colecione todos os jogadores',
+  { id:'albAll', ic:'crown', n:'Todos os personagens', d:'Colecione todas as figuras da História',
     t: () => albPlayers() >= PL.length, p: () => [albPlayers(), PL.length] },
-  { id:'albEsc', ic:'shield', n:'Chapa dos escudos', d:`Colecione os ${ESCUDOS.length} escudos`,
+  { id:'albEsc', ic:'shield', n:'Galeria dos brasões', d:`Colecione os ${ESCUDOS.length} brasões`,
     t: () => ESCUDOS.every(id => album.has(SK.esc(id))),
     p: () => [ESCUDOS.filter(id => album.has(SK.esc(id))).length, ESCUDOS.length] },
-  { id:'albSel', ic:'shirt',  n:'Todas as seleções', d:`Colecione as ${SELECOES.length} seleções`,
+  { id:'albSel', ic:'flag',  n:'Todas as nações', d:`Colecione as ${SELECOES.length} nações`,
     t: () => SELECOES.every(c => album.has(SK.sel(c))),
     p: () => [SELECOES.filter(c => album.has(SK.sel(c))).length, SELECOES.length] },
-  /* The mascots only turn up on a club you have already answered once, so this
+  /* The monuments only turn up on a state you have already answered once, so this
      is the one that asks you to go back through the book. */
-  { id:'albMsc', ic:'star',   n:'Folha dos mascotes', d:`Colecione os ${MASCOTES.length} mascotes`,
+  { id:'albMsc', ic:'column',   n:'Folha dos monumentos', d:`Colecione os ${MASCOTES.length} monumentos`,
     t: () => MASCOTES.every(id => album.has(SK.msc(id))),
     p: () => [MASCOTES.filter(id => album.has(SK.msc(id))).length, MASCOTES.length] },
   { id:'albBook',ic:'crown',  n:'Álbum completo',  d:'Complete o álbum inteiro',
@@ -8286,6 +7460,12 @@ function questionArt(q) {
   return era ? html.replace('class="qart', `class="qart ${era}`) : html;
 }
 
+/* A polity's brasão as a standalone picture: the share card draws it on a canvas. */
+function crestURI(id) {
+  return 'data:image/svg+xml,' + encodeURIComponent(
+    `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60">${genericCrest(id)}</svg>`);
+}
+
 /*@@/art@@*/
 /* ═══════════════════════════════════════════════════
    SCREENS
@@ -8333,11 +7513,12 @@ const medalChips = () => (window._newMedals || []).length ? `
 /* 2000, not 1992: Ronaldo, Ronaldinho and Rivaldo belong to the old
    pages in every way that matters, and putting them on mint stock looked
    like a filing error. */
-const MODERN_FROM = 2000;
+const MODERN_FROM = 1850;
 const figEra = p => (p.era && p.era[0] < MODERN_FROM) ? 'retro' : 'modern';
 
 /* The two shapes behind a modern figurinha take the player's own
    national colours, the way the real ones do. */
+/*@@ctry-colors@@*/
 const CTRY_COLORS = {
   BRA:['#FEDF00','#009B3A'], ARG:['#74ACDF','#F6B40E'], POR:['#DA291C','#046A38'],
   FRA:['#002395','#ED2939'], NED:['#AE1C28','#21468B'], GER:['#DD0000','#FFCE00'],
@@ -8350,7 +7531,16 @@ const CTRY_COLORS = {
   CHI:['#D52B1E','#0039A6'], GHA:['#CE1126','#006B3F'], SCO:['#0065BD','#EEEEEE'],
   WAL:['#C8102E','#00AB39'], SEN:['#00853F','#FDEF42'], NGA:['#008751','#EEEEEE'],
   BUL:['#00966E','#D62612'], CIV:['#F77F00','#009E60'], LBR:['#BF0A30','#002868'],
+  USA:['#B22234','#3C3B6E'], GRC:['#0D5EAF','#EEEEEE'], TUR:['#E30A17','#EEEEEE'], IRN:['#239F40','#DA0000'],
+  IRQ:['#CE1126','#111111'], ISR:['#0038B8','#EEEEEE'], IND:['#FF9933','#138808'], CHN:['#DE2910','#FFDE00'],
+  MNG:['#C4272F','#015197'], TUN:['#E70013','#EEEEEE'], AUT:['#ED2939','#EEEEEE'], CUB:['#002A8F','#CF142B'],
+  VEN:['#FFCC00','#00247D'], HAI:['#00209F','#D21034'], ZAF:['#007749','#FFB81C'], MLI:['#14B53A','#FCD116'],
+  MAR:['#C1272D','#006233'], UZB:['#0099B5','#1EB53A'], NPL:['#DC143C','#003893'], VNM:['#DA251D','#FFFF00'],
+  CHE:['#DA291C','#EEEEEE'], SRB:['#C6363C','#0C4076'], MKD:['#D20000','#FFE600'], ETH:['#078930','#DA121D'],
+  AGO:['#CC092F','#111111'], JPN:['#BC002D','#EEEEEE'], PER:['#D91023','#EEEEEE'], PAR:['#D52B1E','#0038A8'],
+  IRL:['#169B62','#FF883E'], ROU:['#002B7F','#FCD116'], KOR:['#CD2E3A','#0047A0'], ALG:['#006233','#D21034'],
 };
+/*@@/ctry-colors@@*/
 const ctryColors = c => CTRY_COLORS[c] || ['#17593F', '#B8860B'];
 
 /* A photo that fails to arrive (a flaky connection, or the first load after
@@ -8365,7 +7555,7 @@ function imgRetry(img) {
 /* A band that has lost its country to the question ("which of these played
    for Norway?") said a bare "00" or "90", which read as a number. It says
    the decade in words instead: ANOS 90, ANOS 2000. */
-const bandDec = yr => 'ANOS ' + decName(Math.floor(yr / 10) * 10);
+const bandDec = yr => 'SÉC. ' + centTxt(yr).slice(7).toUpperCase();
 
 /* One figurinha. `size` is lg (album page), sm (a tile on the board) or
    hero (the cover). */
@@ -8385,10 +7575,10 @@ function figurinha(p, size, opts) {
        its room — "ARGÉLIA 70" truncated to "ARGÉLIA…". A merged spread keeps
        the year, because there it is the thing that tells the cards apart. */
     (opts.hideEra || opts.noYear || !yr) ? ''
-      : opts.hideCtry ? bandDec(yr) : String(Math.floor(yr / 10) * 10).slice(2),
+      : opts.hideCtry ? bandDec(yr) : '',
   ].filter(Boolean).join(' ');
   const sub  = opts.sub !== undefined ? opts.sub
-             : `${POS_NAME[p.pos]} · ${p.era ? p.era[0] + '–' + p.era[1] : ''}`;
+             : `${POS_NAME[p.pos]} · ${p.era ? eraTxt(p.era) : ''}`;
   const alt  = opts.decorative ? 'alt="" aria-hidden="true"' : `alt="${p.n}"`;
   const nmCls = 'fig-nm' + (p.n.length > 13 ? ' fig-nm-long' : '');
   /* the printed copy, when this card is one: its stock, its variant, its
@@ -8467,38 +7657,25 @@ function extraPages(items, label) {
 function figExtraBack(sid, num) {
   const st = stk(sid);
   if (!st) return '';
+/*@@extraback@@*/
   const lines = [];
   if (st.kind === 'escudo') {
-    /* `cl`, not `br`: the Brasileirão count is itself the field `br`, and
-       `br.br` reads like a typo. */
     const cl = CL.find(c => c.id === st.id);
-    lines.push(cl ? `Clube brasileiro · ${cl.s}` : 'Clube estrangeiro');
-    const tit = [];
-    if (cl && cl.lib) tit.push(`${cl.lib} ${cl.lib === 1 ? 'Libertadores' : 'Libertadores'}`);
-    if (cl && cl.br)  tit.push(`${cl.br} ${cl.br === 1 ? 'Brasileirão' : 'Brasileirões'}`);
-    if (tit.length) lines.push(tit.join(' · '));
-    if (cl && cl.f)   lines.push(`Fundado em ${cl.f}`);
+    if (cl) lines.push(`${REGION[cl.s]} · ${yearTxt(cl.f)} – ${cl.e ? yearTxt(cl.e) : 'hoje'}`);
     const men = PL.filter(x => (x.clubs || []).includes(st.id));
     if (men.length) lines.push(men.slice(0, 4).map(x => x.n).join(' · '));
   } else if (st.kind === 'selecao') {
     const men = PL.filter(x => x.ctry === st.id);
     lines.push(`${men.length} ${men.length === 1 ? 'figurinha' : 'figurinhas'} no álbum`);
-    const wc = men.filter(x => (x.wc || []).length);
-    if (wc.length) lines.push(`Campeões do mundo: ${wc.length}`);
+    const nb = men.reduce((a, x) => a + (x.nb || 0), 0);
+    if (nb) lines.push(`Prêmios Nobel: ${nb}`);
     lines.push(men.slice(0, 4).map(x => x.n).join(' · '));
   } else {
-    /* The same sentence printed on all twenty-five backs is filler. The club
-       behind the mascot is the thing worth reading. */
-    const cl = CL.find(c => c.id === st.id);
-    lines.push(`Mascote ${byClub(st.id)}`);
-    if (cl) {
-      lines.push([cl.s, cl.f ? `fundado em ${cl.f}` : ''].filter(Boolean).join(' · '));
-      const tit = [];
-      if (cl.lib) tit.push(`${cl.lib} Libertadores`);
-      if (cl.br)  tit.push(`${cl.br} ${cl.br === 1 ? 'Brasileirão' : 'Brasileirões'}`);
-      if (tit.length) lines.push(tit.join(' · '));
-    }
+    const m = MASCOTS[st.id] || {};
+    lines.push(`Monumento · ${m.city || ''}`);
+    if (m.p) lines.push(`Ligado ${toClub(m.p)}`);
   }
+/*@@/extraback@@*/
   const c = copyOf(sid);
   return `
     <span class="figback${c ? ' has-cert fin-' + c.f : ''}">
@@ -8513,60 +7690,64 @@ function figExtraBack(sid, num) {
     </span>`;
 }
 
+/*@@album-pages@@*/
 function albumPages(items) {
   if (!items.length) return [];
-  const dec = g => g.p.era ? Math.floor(g.p.era[0] / 10) * 10 : 1990;
+  const dec = g => g.p.era ? g.p.era[0] : 1800;
   const sorted = items.slice().sort((a, b) => dec(a) - dec(b) || a.n - b.n);
   const pages = [];
   for (let i = 0; i < sorted.length; i += ALB_PER) {
     const its = sorted.slice(i, i + ALB_PER);
     const ds = its.map(dec);
-    /* the page is printed on the paper of the decade most of it belongs to */
+    /* the page is printed on the paper of the age most of it belongs to */
     const tally = {};
-    ds.forEach(d => { tally[d] = (tally[d] || 0) + 1; });
-    const main = +Object.keys(tally).sort((a, b) => tally[b] - tally[a] || a - b)[0];
+    ds.forEach(d => { const k = decStyle(d); tally[k] = (tally[k] || 0) + 1; });
+    const main = ds[Math.floor(ds.length / 2)];
     pages.push({ from: ds[0], to: ds[ds.length - 1], main, items: its });
   }
   return pages;
 }
 
-/* What a spread is called. Two digits up to the nineties, four from 2000 on —
-   which is both how Portuguese says it and the only way to tell "anos 20" the
-   decade of Domingos da Guia from "anos 2020" the decade of Endrick. */
-const decName = d => d >= 2000 ? `${d}` : String(d).slice(2);
-const decLabel = pg => pg.from === pg.to
-  ? `Anos ${decName(pg.from)}`
-  : `Anos ${decName(pg.from)} – ${decName(pg.to)}`;
+/* What a spread is called: the age its cards were born in, then the span. */
+const AGES = [[-Infinity, 476, 'Antiguidade'], [476, 1450, 'Idade Média'], [1450, 1789, 'Idade Moderna'],
+              [1789, 1914, 'Século XIX'], [1914, Infinity, 'Século XX']];
+const ageOf = y => (AGES.find(a => y >= a[0] && y < a[1]) || AGES[AGES.length - 1])[2];
+const decName = d => centTxt(d).replace('século ', '');
+const decLabel = pg => {
+  const a = ageOf(pg.from), b = ageOf(pg.to);
+  return a === b ? a : `${a} – ${b}`;
+};
 
-/* Which paper the spread is printed on. The album spans a century, and a page
-   of 1950s cards has no business looking like a page of 2020s ones. */
+/* Which paper the spread is printed on. The album spans five thousand years, and
+   a page of papyrus-age cards has no business looking like a page of modern ones. */
+/*@@/album-pages@@*/
 /* The end of a section is printed as a pitch across the spread: the halfway
    line lies on the spine and the section's emblem sits in the centre circle.
    Across a short panel the pitch runs sideways, down a tall one it stands up,
    so neither is squashed. The circle is drawn in HTML, since the lines stretch
    with the panel and a stretched circle is an oval. */
+/*@@alb-pitch@@*/
 const albPitch = wide => {
-  const r = wide
-    ? [[0, 22, 17, 56], [0, 36, 6.5, 28], [83, 22, 17, 56], [93.5, 36, 6.5, 28]]
-    : [[22, 0, 56, 14], [36, 0, 28, 5.5], [22, 86, 56, 14], [36, 94.5, 28, 5.5]];
-  const half = wide ? '<line x1="50" y1="0" x2="50" y2="100"/>' : '<line x1="0" y1="50" x2="100" y2="50"/>';
+  /* a certificate border: a frame, an inner rule and the corners of a seal */
+  const r = [[3, 6, 94, 88], [8, 14, 84, 72]];
+  const cross = wide ? '<line x1="50" y1="6" x2="50" y2="94"/>' : '<line x1="3" y1="50" x2="97" y2="50"/>';
   return `<svg class="alb-pitch" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
-    <rect x="0" y="0" width="100" height="100"/>${half}
+    <rect x="0" y="0" width="100" height="100"/>${cross}
     ${r.map(([x, y, w, h]) => `<rect x="${x}" y="${y}" width="${w}" height="${h}"/>`).join('')}</svg>`;
 };
-
+/*@@/alb-pitch@@*/
 /* What an empty pocket has printed in it: the outline of what goes there. */
 const albGhost = kind =>
     kind === 'escudo'  ? ICON.shield('currentColor', 30)
-  : kind === 'selecao' ? ICON.shirt('currentColor', 30)
-  : kind === 'mascote' ? ICON.star('currentColor', 30)
+  : kind === 'selecao' ? ICON.flag('currentColor', 30)
+  : kind === 'mascote' ? ICON.column('currentColor', 30)
   : `<svg viewBox="0 0 40 46" width="34" height="39" aria-hidden="true">
        <circle cx="20" cy="13.5" r="8.5" fill="currentColor"/>
        <path d="M3 46c0-11 7.6-18.5 17-18.5S37 35 37 46z" fill="currentColor"/></svg>`;
 
-const decStyle = d => d <= 1940 ? 'dec-a' : d <= 1960 ? 'dec-b'
-                    : d <= 1970 ? 'dec-c' : d <= 1980 ? 'dec-d'
-                    : d <= 1990 ? 'dec-e' : d <= 2000 ? 'dec-f' : 'dec-g';
+const decStyle = d => d < 500 ? 'dec-a' : d < 1450 ? 'dec-b'
+                    : d < 1650 ? 'dec-c' : d < 1800 ? 'dec-d'
+                    : d < 1900 ? 'dec-e' : d < 1950 ? 'dec-f' : 'dec-g';
 
 /* The sticker on the cover. It changes every time the album is opened — a
    fixed face made the cover look broken — and once you have collected
@@ -8578,9 +7759,9 @@ const decStyle = d => d <= 1940 ? 'dec-a' : d <= 1960 ? 'dec-b'
    under Ronaldo Fenômeno, so the same slot meant a different thing depending
    on the face. The nickname still has its own place on the back of the card. */
 /* the portraits still waiting for their painting: the cover never uses them */
-const UNPAINTED = new Set(['nedved', 'gento', 'rossi', 'antony', 'butragueno', 'meazza']);
+const UNPAINTED = new Set([]);
 function heroSticker() {
-  const great = PL.filter(p => !UNPAINTED.has(p.id) && (FAMOUS.has(p.id) || (p.wc && p.wc.length) || p.bo > 0));
+  const great = PL.filter(p => !UNPAINTED.has(p.id) && (FAMOUS.has(p.id) || p.nb > 0));
   const mine  = great.filter(p => album.has(p.id));
   const pool  = mine.length ? mine : (great.length ? great : PL);
   const p = pool[Math.floor(Math.random() * pool.length)] || PL[0];
@@ -8936,7 +8117,7 @@ function guilloche(key, cy, withWaves) {
 function microText(sid, c) {
   const who = (stk(sid) || {}).n || (sid.startsWith('t:') ? (setById(sid.slice(2)) || {}).n : '')
             || (bdayPlayer(sid) || {}).n || '';
-  const unit = `FUTEBOL QUIZ BR · ${copyCode(c)} · ${(who || '').toUpperCase()} · ${
+  const unit = `HISTORY QUIZ · ${copyCode(c)} · ${(who || '').toUpperCase()} · ${
     c.pr ? 'Nº ' + serialTxt(c) : FIN_NAME[c.f].toUpperCase()} · `;
   const id = 'mt' + (h53(sid + c.k) % 1e9);
   return `<svg class="mt" viewBox="0 0 100 172" aria-hidden="true" preserveAspectRatio="none">
@@ -9151,19 +8332,19 @@ function packBackFace(i) {
     <span class="pkb-frame"></span>
     <span class="pkb-ring"><span class="pkb-fq">FQ</span></span>
     <span class="pkb-t">Figurinha oficial</span>
-    <span class="pkb-s">Futebol Quiz BR · ${new Date().getFullYear()}</span>
+    <span class="pkb-s">History Quiz · ${new Date().getFullYear()}</span>
   </span>`;
 }
 function packArt(n, meta) {
   return `<span class="pk-art">
-    <span class="pk-crimp">${'FUTEBOL QUIZ BR · '.repeat(4)}</span>
+    <span class="pk-crimp">${'HISTORY QUIZ · '.repeat(4)}</span>
     <span class="pk-emb">${ICON.ball('currentColor', 30)}</span>
     <span class="pk-kick">${meta.kick || 'Pacote da rodada'}</span>
     <span class="pk-ttl">Figurinhas</span>
     <span class="pk-ed">Temporada ${new Date().getFullYear()} · 1ª edição</span>
     <span class="pk-cnt"><b>${n}</b> ${n === 1 ? 'figurinha' : 'figurinhas'}</span>
     <span class="pk-fine">Pode conter figurinhas Prata, Holográficas e Ouro · autografadas · erros de impressão</span>
-    <span class="pk-crimp pk-crimp-b">${'FUTEBOL QUIZ BR · '.repeat(4)}</span>
+    <span class="pk-crimp pk-crimp-b">${'HISTORY QUIZ · '.repeat(4)}</span>
   </span>`;
 }
 /* The rip is never straight: a jagged line, different on every packet. */
@@ -9572,7 +8753,7 @@ async function shareFig(sid) {
   x.fillStyle = fin === 0 ? '#F6EBD8' : '#1b1609';
   x.font = '700 26px "Archivo Narrow", sans-serif'; x.textAlign = 'center'; x.textBaseline = 'middle';
   const bandText = sid.startsWith('b:') ? `PARABÉNS · ${BDAYS[p.id][1]} ${MES[BDAYS[p.id][0] - 1]}`.toUpperCase()
-    : set ? set.t.toUpperCase() : p ? bandCtry(p.ctry) : st.kind === 'escudo' ? 'ESCUDO' : st.kind === 'selecao' ? 'SELEÇÃO' : 'MASCOTE';
+    : set ? set.t.toUpperCase() : p ? bandCtry(p.ctry) : st.kind === 'escudo' ? 'BRASÃO' : st.kind === 'selecao' ? 'NAÇÃO' : 'MONUMENTO';
   x.fillText(bandText.split('').join(' '), W / 2, cy + bh / 2 + 1);
   /* the picture */
   const px = cx + 34, py = cy + bh + 26, pw = cw - 68, ph = ch - bh - caph - 44;
@@ -9600,7 +8781,7 @@ async function shareFig(sid) {
         x.strokeStyle = '#f3e7c4'; x.lineWidth = 3; x.beginPath(); x.arc(fx + s / 2, fy + s / 2, s / 2, 0, 7); x.stroke();
       }
     }
-  } else if (st.kind === 'escudo') drawCover(await loadImg(LOGOS[st.id]), true);
+  } else if (st.kind === 'escudo') drawCover(await loadImg(crestURI(st.id)), true);
   else if (st.kind === 'selecao') drawCover(await loadImg(svgUrl(flagSVG(st.id, 300))), true);
   else {
     const br = CL.find(q => q.id === st.id), m = MASCOTS[st.id] || {};
@@ -9670,12 +8851,12 @@ async function shareFig(sid) {
   x.fillStyle = 'rgba(233,223,198,.72)'; x.font = '600 25px Archivo, sans-serif';
   x.fillText(`${copyCode(c)}  ·  ${c.o ? 'Série fundadora' : c.p1 ? '1ª edição' : 'Temporada'} ${c.ed}`, W / 2, cy + ch + 112);
   x.font = 'italic 600 34px Fraunces, serif'; x.fillStyle = '#E9DFC6';
-  x.fillText('Futebol Quiz BR', W / 2, H - 58);
+  x.fillText('History Quiz', W / 2, H - 58);
   const blob = await new Promise(r => cv.toBlob(r, 'image/png'));
   if (!blob) return;
   const nm = (set ? set.n : (p || st).n);
   const file = new File([blob], `figurinha-${sid.replace(/[^a-z0-9]+/gi, '-')}.png`, { type: 'image/png' });
-  const text = `Minha figurinha ${FIN_NAME[c.f].toLowerCase()}${c.pr ? ' Nº ' + serialTxt(c) : ''}: ${nm} · Futebol Quiz BR`;
+  const text = `Minha figurinha ${FIN_NAME[c.f].toLowerCase()}${c.pr ? ' Nº ' + serialTxt(c) : ''}: ${nm} · History Quiz`;
   try {
     if (navigator.canShare && navigator.canShare({ files: [file] })) { await navigator.share({ files: [file], text }); return; }
   } catch (e) { if (e && e.name === 'AbortError') return; }
@@ -9753,7 +8934,7 @@ function vitrineHtml() {
     </section>
 
     <section class="vit-sec">
-      <div class="vit-h"><span>Edições do dia</span><small>só no aniversário do craque — nunca reimpressas</small></div>
+      <div class="vit-h"><span>Edições do dia</span><small>só no aniversário do personagem — nunca reimpressas</small></div>
       ${today.length ? `<div class="vit-bday is-today">${ICON.star('currentColor', 14)}<span>Hoje é aniversário de <b>${
         today.map(id => PL.find(p => p.id === id).n).join(' e ')}</b>. Acerte 3 perguntas em qualquer modo e leve a edição de hoje.</span></div>` : ''}
       ${lims.length ? `<div class="vit-grid" style="--pw:${pwR}px">${lims.map(sid => card(sid, pwR)).join('')}</div>` : ''}
@@ -9838,7 +9019,7 @@ function html() {
       <figure class="cv-art">
         <img src="${hero.img}" alt="${hero.n}" decoding="async">
         <div class="cv-mast">
-          <span>Futebol Quiz BR</span><span>Edição ${year}</span>
+          <span>History Quiz</span><span>Edição ${year}</span>
         </div>
         <figcaption class="cv-cap"><b>Nº ${NUM}</b> ${hero.n}<i>${POS_NAME[hero.pos]} · ${CTRY_NAME[hero.ctry] || hero.ctry}</i></figcaption>
       </figure>
@@ -9912,7 +9093,7 @@ function html() {
           <button id="bvit2" class="link">Vitrine</button>
           <button id="bcred" class="link">Créditos</button>
         </div>
-        <p class="home-indep">App independente · sem vínculo com clubes, federações ou a FIFA</p>
+        <p class="home-indep">App independente · imagens da Wikimedia Commons</p>
 
         ${stats.games > 0 ? `<div class="cv-stats">
           ${stats.games} ${stats.games === 1 ? 'partida' : 'partidas'}
@@ -9966,25 +9147,32 @@ function html() {
 
     /* The album was printed in several languages, and every old one prints the
        country's name in all of them across the header band. */
+/*@@alb-sec@@*/
     const LANGS = {
       BRA:'Brazil · Brasilien · Brésil · Brasile', ARG:'Argentina · Argentinien · Argentine',
       ITA:'Italy · Italien · Italie · Italia',     GER:'Germany · Deutschland · Allemagne',
       ENG:'England · Angleterre · Inghilterra',    FRA:'France · Frankreich · Francia',
       ESP:'Spain · Spanien · Espagne · Spagna',    POR:'Portugal · Portogallo',
       NED:'Holland · Niederlande · Pays-Bas',      URU:'Uruguay · Uruguai',
+      USA:'United States · Vereinigte Staaten',    GRC:'Greece · Griechenland · Grèce · Grecia',
+      RUS:'Russia · Russland · Russie · Russia',   EGY:'Egypt · Ägypten · Égypte · Egitto',
+      CHN:'China · Chine · Cina',                  AUT:'Austria · Österreich · Autriche',
+      IRQ:'Iraq · Irak · Irak · Iraq',             TUR:'Turkey · Türkei · Turquie · Turchia',
+      IRN:'Iran · Persia · Perse',                 POL:'Poland · Polen · Pologne · Polonia',
     };
     /* Sections that are not countries: what the band, the tab and the pages
        of each are called. */
     const SEC = {
       __resto:    { t:'RESTO DO MUNDO', tab:'RDM', langs:'Rest of the world · Rest der Welt',
-                    ic: () => ICON.ball('currentColor', 15) },
-      __escudos:  { t:'ESCUDOS',        tab:'ESC', langs:'Crests · Wappen · Stemmi',
-                    page:'Escudos', ic: () => ICON.shield('currentColor', 14) },
-      __selecoes: { t:'SELEÇÕES',       tab:'SEL', langs:'National teams · Nationalmannschaften',
-                    page:'Seleções', ic: () => ICON.shirt('currentColor', 14) },
-      __mascotes: { t:'MASCOTES',       tab:'MAS', langs:'Mascots · Maskottchen · Mascotte',
-                    page:'Mascotes', ic: () => ICON.star('currentColor', 14) },
+                    ic: () => ICON.globe('currentColor', 15) },
+      __escudos:  { t:'BRASÕES',        tab:'BRS', langs:'Coats of arms · Wappen · Stemmi',
+                    page:'Brasões', ic: () => ICON.shield('currentColor', 14) },
+      __selecoes: { t:'NAÇÕES',         tab:'NAÇ', langs:'Nations · Nationen · Nazioni',
+                    page:'Nações', ic: () => ICON.flag('currentColor', 14) },
+      __mascotes: { t:'MONUMENTOS',     tab:'MON', langs:'Monuments · Denkmäler · Monumenti',
+                    page:'Monumentos', ic: () => ICON.column('currentColor', 14) },
     };
+/*@@/alb-sec@@*/
     const sidOf  = g => g.sid || g.p.id;
     const isExtra = c => !!(SEC[c] && SEC[c].page);
     const total  = ALL_STICKERS.length;
@@ -10203,33 +9391,25 @@ function html() {
     return `
     <div class="pg" style="gap:10px;">
       ${topbar('Créditos das imagens')}
+/*@@credits@@*/
       <div class="note" style="font-size:11.5px;line-height:1.45;">
         <div style="font-weight:800;color:var(--brass);margin-bottom:3px;">App independente</div>
-        Este quiz é um projeto de fã, sem vínculo, patrocínio ou aprovação de
-        nenhum clube, federação, liga, da CBF ou da FIFA. Nomes, escudos e marcas
-        pertencem aos seus donos e aparecem só para identificação.
-        Se você representa um clube ou é titular de algum direito e quer que algo
-        seja retirado, escreva para tiagor.reis@gmail.com — atendemos rápido.
+        Este quiz é um projeto educativo, sem vínculo, patrocínio ou aprovação de
+        nenhum governo, museu, instituição ou marca. Os nomes de pessoas, povos e
+        lugares são fatos históricos de domínio comum.
+        Se você é titular de algum direito e quer que algo seja retirado, escreva
+        para tiagor.reis@gmail.com — atendemos rápido.
       </div>
       <p class="small muted" style="font-size:11px;">
-        As fotos vêm da <b style="color:var(--ink);">Wikimedia Commons</b> e são usadas sob
-        licenças livres (CC / domínio público), impressas aqui em serigrafia.
+        As imagens vêm da <b style="color:var(--ink);">Wikimedia Commons</b> e são usadas sob
+        licenças livres (CC / domínio público): bustos, pinturas, gravuras e
+        fotografias de monumentos, impressas aqui em serigrafia.
         Obrigado a cada autor listado abaixo.<br><br>
-        Escudos dos clubes são marcas registradas de seus respectivos clubes, exibidos
-        apenas para identificação dentro do quiz. Todos são o escudo oficial de
-        cada clube, tirado do infobox do artigo do clube — que é o que define a
-        marca atual. Uma parte deles não tem versão sob licença livre em lugar
-        nenhum: são marcas registradas, exibidas aqui só para identificar o
-        clube dentro do quiz, e estão listadas abaixo com essa licença.<br><br>
-        As bandeiras são do projeto <b style="color:var(--ink);">flag-icons</b>, de
-        Panayiotis Lipiridis (licença MIT); as da Iugoslávia, da União Soviética e da
-        Alemanha Oriental foram desenhadas aqui.<br><br>
-        Os mascotes são fotografias de bichos e objetos de verdade, também da
-        Wikimedia Commons (listadas abaixo), e alguns usam as figuras do
-        <b style="color:var(--ink);">Fluent Emoji</b>, da Microsoft (licença MIT).
-        Mascote de clube é arte do próprio clube; nenhum destes é a arte oficial
-        de ninguém.
+        As bandeiras dos países foram desenhadas para este app. Os brasões dos
+        estados e impérios são ilustrações próprias, feitas para identificá-los
+        no jogo — não reproduzem nenhum símbolo oficial.
       </p>
+/*@@/credits@@*/
       <!-- The cap was a flat 330px, from when the page never filled the sheet;
            on a tall phone that wasted half the screen. It has to stay a cap of
            some kind — #qz is only min-height:100dvh, so with no definite height
@@ -10346,7 +9526,7 @@ function html() {
   if (sc === 'end') {
     const total = cat.qs.length;
     const pct = Math.round(nCorrect / total * 100);
-    const msg = pct >= 80 ? 'Craque!' : pct >= 50 ? 'Boa jogada!' : 'Treina mais!';
+    const msg = pct >= 80 ? 'Mestre da História!' : pct >= 50 ? 'Muito bem!' : 'Hora de estudar!';
     const isRecord = scores[diffKey] !== undefined && pts === scores[diffKey] && pts > 0;
     const curDiff  = DIFFS.find(d => d.key === diffKey);
     return `
@@ -10472,10 +9652,10 @@ function html() {
       ${armed && (q._shown || 1) < q.clues.length
         ? `<button id="bclue" class="btn btn-ghost btn-sm clue-more">+ pista <span class="small muted">−${CLUE_COST} seg.</span></button>` : ''}
     </div>` : `
-    <div class="qcard${isMil ? ' qcard-brass' : ''}${q.score || q.xi ? ' qcard-strip' : ''}">
+    <div class="qcard${isMil ? ' qcard-brass' : ''}">
       ${art}
       <p>${q.t}</p>
-      ${q.score ? scoreStrip(q.score, q) : q.xi ? xiStrip(q.xi) : ''}
+      
     </div>`}
 
     ${expertBox}
@@ -10502,8 +9682,8 @@ function html() {
           : q.type === 'txt'
           ? (q.a.length > 1 ? `Marque as ${q.a.length} respostas certas` : 'Marque a resposta certa')
           : q.type === 'player'
-          ? (q.a.length > 1 ? `Marque os ${q.a.length} jogadores certos` : 'Marque o jogador certo')
-          : (q.a.length > 1 ? `Marque os ${q.a.length} times certos`     : 'Marque o time certo')}</p>
+          ? (q.a.length > 1 ? `Marque os ${q.a.length} personagens certos` : 'Marque o personagem certo')
+          : (q.a.length > 1 ? `Marque os ${q.a.length} estados certos`     : 'Marque o estado certo')}</p>
       <div class="foot-row">
         <button id="bconf" ${(q.order ? sel.size === q.order.length : sel.size > 0) ? '' : 'disabled'} class="btn ${
           isMil ? 'btn-brass' : 'btn-primary'} btn-lg${sel.size ? ' is-armed' : ''}">
@@ -11202,44 +10382,30 @@ function startGame() {
 const GC_WHO = { id:'g_who', name:'Quem sou eu?',   emoji:'🕵️', col:'#7E57C2' };
 const GC_TL  = { id:'g_tl',  name:'Linha do tempo', emoji:'⏳', col:'#0F7B6C' };
 
-/* Copas do Mundo: ano → [sede, campeã]. The Linha do tempo deals from here. */
-const WC_ED = {
-  1930:['Uruguai','Uruguai'],      1934:['Itália','Itália'],        1938:['França','Itália'],
-  1950:['Brasil','Uruguai'],       1954:['Suíça','Alemanha'],       1958:['Suécia','Brasil'],
-  1962:['Chile','Brasil'],         1966:['Inglaterra','Inglaterra'],1970:['México','Brasil'],
-  1974:['Alemanha','Alemanha'],    1978:['Argentina','Argentina'],  1982:['Espanha','Itália'],
-  1986:['México','Argentina'],     1990:['Itália','Alemanha'],      1994:['Estados Unidos','Brasil'],
-  1998:['França','França'],        2002:['Coreia e Japão','Brasil'],2006:['Alemanha','Itália'],
-  2010:['África do Sul','Espanha'],2014:['Brasil','Alemanha'],      2018:['Rússia','França'],
-  2022:['Catar','Argentina'],      2026:['Estados Unidos, México e Canadá','Espanha'],
-};
-
+/*@@specials@@*/
 /* `pick` lives inside the generators, so these rounds carry their own. */
 const pickN = (arr, n) => shuf(arr).slice(0, n);
 
-/* The clues, cheapest first: what he was and roughly when, where he was from,
-   the clubs, and only at the end the trophies that all but name him. */
+/* The clues, cheapest first: when and where, what the figure did, the states
+   they were tied to, and only at the end the epithet that all but names them. */
 function whoClues(p) {
   const cl = [];
-  /* "anos 10" is not how anyone says 2010 — a decade of this century keeps
-     all four digits, one of the last keeps the two it is known by. */
-  const dec = p.era ? Math.floor(p.era[0] / 10) * 10 : 0;
-  cl.push(`${POS_NAME[p.pos]}${dec ? `, começou nos anos ${dec >= 2000 ? dec : String(dec).slice(2)}` : ''}`);
-  cl.push(`Defendeu a seleção: ${CTRY_NAME[p.ctry] || p.ctry}`);
-  const clubs = (p.clubs || []).slice(0, 3).map(clubName).filter(Boolean);
-  if (clubs.length) cl.push(`Passou por ${clubs.join(', ')}`);
+  cl.push(`Viveu no ${centTxt(p.era[0])} · ${POS_NAME[p.pos]}`);
+  if (!NAT_SKIP.has(p.id) && CTRY_NAME[p.ctry]) cl.push(`Nasceu ${ctryEm(p.ctry)}`);
+  const pols = (p.clubs || []).slice(0, 3).map(clubName).filter(Boolean);
+  if (pols.length) cl.push(`Ligado a: ${pols.join(', ')}`);
   const h = [];
-  if (p.wc && p.wc.length) h.push(p.wc.length === 1 ? `Campeão do mundo em ${p.wc[0]}` : `Campeão do mundo em ${p.wc.join(' e ')}`);
-  if (p.bo) h.push(p.bo === 1 ? 'Ganhou uma Bola de Ouro' : `Ganhou ${p.bo} Bolas de Ouro`);
+  if (p.nb) h.push(p.nb === 1 ? 'Ganhou o Prêmio Nobel' : `Ganhou ${p.nb} Prêmios Nobel`);
+  if (p.ev && p.ev.length) h.push(`Viveu ${EVENTS[p.ev[0]].n.replace(/^(.)/, c => c.toLowerCase())}`);
   if (p.nick) h.push(`Ficou conhecido como “${p.nick}”`);
   if (h.length) cl.push(h.join(' · '));
   return cl;
 }
 function buildWho(n) {
-  const rich = PL.filter(p => p.img && p.era && (p.clubs || []).length >= 2);
+  const rich = PL.filter(p => p.img && p.era && (p.clubs || []).length >= 1 && p.nick);
   /* Half the cards come from the written clue sets — a story told in four
      steps reads better than a record read aloud — and half are built from
-     the data, so every player can still turn up. */
+     the data, so every figure can still turn up. */
   const written = pickN(CATS.flatMap(c => c.qs.filter(q => q.clues && q.a && q.a.length === 1)), Math.ceil(n / 2))
     .map(q => ({ ...q, clues: q.clues.slice(), _shown: 1, _cat: GC_WHO }));
   const taken = new Set(written.map(q => q.a[0]));
@@ -11251,43 +10417,95 @@ function buildWho(n) {
            col:'#7E57C2', diff:'Variado', qs };
 }
 
-const TL_BO = [['distefano',1957],['kopa',1958],['yashin',1963],['eusebio',1965],['charlton',1966],['best',1968],['gerd_muller',1970],['cruyff',1971],
-  ['beckenbauer',1972],['platini',1983],['gullit',1987],['van_basten',1988],['baggio',1993],['weah',1995],['ronaldo',1997],['zidane',1998],['rivaldo',1999],
-  ['figo',2000],['ronaldinho',2005],['kaka',2007],['cr7',2008],['messi',2009],['modric',2018],['benzema',2022]];
-const TL_UCL = [['realmadrid',1956],['benfica',1961],['milan',1963],['inter',1964],['celtic',1967],['manutd',1968],['ajax',1971],['bayern',1974],
-  ['liverpool',1977],['juventus',1985],['porto',1987],['barcelona',1992],['marseille',1993],['dortmund',1997],['chelsea',2012],['mancity',2023]];
-/* Every card the timeline can deal: a World Cup, a club's founding, a club's
-   first Libertadores — all from tables the app already tests. */
+/* Dated events the Linha do tempo can deal. [id, year, label, sub, picture]
+   where the picture is {face: figure}, {crest: polity} or {flag: country}. Years
+   are the ones the books agree on; where a date is traditional it is the traditional one. */
+const TL_DATES = [
+  ['maratona', -490, 'Batalha de Maratona', 'Gregos contra persas', { crest:'atenas' }],
+  ['alexandre_morre', -323, 'Morte de Alexandre, o Grande', 'Babilônia', { face:'alexandre' }],
+  ['cesar_morte', -44, 'Assassinato de Júlio César', 'Idos de Março', { face:'cesar' }],
+  ['vesuvio', 79, 'Erupção do Vesúvio', 'Pompeia soterrada', { crest:'imperio_romano' }],
+  ['queda_roma', 476, 'Queda do Império Romano do Ocidente', 'Fim da Antiguidade', { crest:'imperio_romano' }],
+  ['carlos_magno_coroa', 800, 'Coroação de Carlos Magno', 'Natal em Roma', { face:'carlos_magno' }],
+  ['hastings', 1066, 'Batalha de Hastings', 'Normandos conquistam a Inglaterra', { face:'guilherme_conquistador' }],
+  ['gengis_khan', 1206, 'Gengis Khan é proclamado soberano', 'Nasce o Império Mongol', { face:'gengis' }],
+  ['peste', 1347, 'A Peste Negra chega à Europa', 'Século XIV', { crest:'veneza' }],
+  ['joana_darc_morte', 1431, 'Joana d\'Arc é queimada em Rouen', 'Guerra dos Cem Anos', { face:'joana_darc' }],
+  ['constantinopla', 1453, 'Queda de Constantinopla', 'Fim do Império Bizantino', { face:'maome_ii' }],
+  ['colombo_america', 1492, 'Colombo chega à América', 'Ilha de Guanahani', { face:'colombo' }],
+  ['india_gama', 1498, 'Vasco da Gama chega à Índia', 'Calicute', { face:'vasco_gama' }],
+  ['cabral_brasil', 1500, 'Cabral chega ao Brasil', 'Porto Seguro', { face:'cabral' }],
+  ['teses', 1517, 'Lutero publica as 95 teses', 'Início da Reforma', { face:'lutero' }],
+  ['tenochtitlan', 1521, 'Queda de Tenochtitlán', 'Cortés conquista os astecas', { face:'cortes' }],
+  ['copernico_livro', 1543, 'Copérnico publica sua obra', 'O Sol no centro', { face:'copernico' }],
+  ['armada', 1588, 'Derrota da Invencível Armada', 'Inglaterra de Elizabeth I', { face:'elizabeth_i' }],
+  ['principia', 1687, 'Newton publica os Principia', 'A lei da gravitação', { face:'newton' }],
+  ['versalhes_luis', 1682, 'A corte se muda para Versalhes', 'O Rei Sol', { face:'luis_xiv' }],
+  ['independencia_eua', 1776, 'Independência dos Estados Unidos', 'Filadélfia', { face:'jefferson' }],
+  ['bastilha', 1789, 'Queda da Bastilha', 'Revolução Francesa', { crest:'franca_revolucionaria' }],
+  ['coroa_napoleao', 1804, 'Napoleão se coroa imperador', 'Notre-Dame', { face:'napoleao' }],
+  ['haiti_indep', 1804, 'Independência do Haiti', 'Primeira república negra', { face:'toussaint' }],
+  ['familia_real', 1808, 'A corte portuguesa chega ao Rio', 'Dom João VI no Brasil', { face:'dom_joao_vi' }],
+  ['waterloo', 1815, 'Batalha de Waterloo', 'Derrota final de Napoleão', { face:'wellington' }],
+  ['independencia_br', 1822, 'Independência do Brasil', 'Grito do Ipiranga', { face:'dom_pedro_i' }],
+  ['darwin_origem', 1859, 'Darwin publica A Origem das Espécies', 'Evolução', { face:'darwin' }],
+  ['lincoln_morte', 1865, 'Assassinato de Lincoln', 'Fim da Guerra de Secessão', { face:'lincoln' }],
+  ['lei_aurea', 1888, 'Lei Áurea', 'Abolição no Brasil', { face:'princesa_isabel' }],
+  ['republica_br', 1889, 'Proclamação da República', 'Marechal Deodoro', { face:'deodoro' }],
+  ['avião', 1906, 'Santos Dumont voa em Paris', 'O 14-Bis', { face:'santos_dumont' }],
+  ['primeira_guerra_inicio', 1914, 'Começa a Primeira Guerra Mundial', 'Sarajevo', { crest:'austria_hungria' }],
+  ['revolucao_russa', 1917, 'Revolução Russa', 'Lênin toma o poder', { face:'lenin' }],
+  ['crash', 1929, 'Quebra da Bolsa de Nova York', 'A Grande Depressão', { crest:'estados_unidos' }],
+  ['segunda_guerra_inicio', 1939, 'Começa a Segunda Guerra Mundial', 'Invasão da Polônia', { flag:'POL' }],
+  ['pearl_harbor', 1941, 'Ataque a Pearl Harbor', 'EUA entram na guerra', { face:'fdr' }],
+  ['fim_guerra', 1945, 'Fim da Segunda Guerra Mundial', 'Rendição do Japão', { face:'churchill' }],
+  ['india_indep', 1947, 'Independência da Índia', 'Fim do domínio britânico', { face:'gandhi' }],
+  ['cuba_rev', 1959, 'Revolução Cubana', 'Fidel chega a Havana', { face:'fidel' }],
+  ['brasilia', 1960, 'Inauguração de Brasília', 'JK', { face:'jk' }],
+  ['gagarin_voo', 1961, 'Gagarin vai ao espaço', 'Primeiro humano em órbita', { face:'gagarin' }],
+  ['muro_construido', 1961, 'Construção do Muro de Berlim', 'Guerra Fria', { crest:'urss' }],
+  ['lua', 1969, 'O homem pisa na Lua', 'Apollo 11', { face:'armstrong' }],
+  ['muro_queda', 1989, 'Queda do Muro de Berlim', 'Fim da divisão alemã', { flag:'GER' }],
+  ['mandela_livre', 1990, 'Mandela é libertado', 'Fim do apartheid', { face:'mandela' }],
+  ['urss_fim', 1991, 'Fim da União Soviética', 'Gorbachev renuncia', { face:'gorbachev' }],
+  ['mlk_marcha', 1963, 'Marcha sobre Washington', 'Eu tenho um sonho', { face:'mlk' }],
+  ['constituicao_88', 1988, 'Constituição Cidadã', 'Redemocratização do Brasil', { crest:'brasil_republica' }],
+  ['vargas_1930', 1930, 'Getúlio Vargas chega ao poder', 'Revolução de 1930', { face:'getulio' }],
+  ['tiradentes_morte', 1792, 'Execução de Tiradentes', 'Inconfidência Mineira', { face:'tiradentes' }],
+  ['zumbi_morte', 1695, 'Morte de Zumbi dos Palmares', 'Fim de Palmares', { face:'zumbi' }],
+];
+/* Every card the timeline can deal: a dated event, a figure's birth, a polity's
+   rise — all from tables the app already tests. */
 function tlEvents() {
   const ev = [];
-  Object.keys(WC_ED).forEach(y => ev.push({
-    id: 'wc' + y, y: +y, label: `${WC_ED[y][1]} campeã do mundo`, sub: `Sede: ${WC_ED[y][0]}`, flag: WC_ED[y][1] }));
-  /* a face and a crest on the cards too, not only cups: the year a craque
-     first won the Bola de Ouro, and a club's first European Cup */
-  TL_BO.forEach(([id, y]) => { if (PL.find(p => p.id === id)) ev.push({ id: 'bo' + id, y, label: PL.find(p => p.id === id).n, sub: '1ª Bola de Ouro', face: id }); });
-  TL_UCL.forEach(([id, y]) => { if (LOGOS[id]) ev.push({ id: 'ucl' + id, y, label: clubName(id) || id, sub: '1º título europeu', crest: id }); });
-  Object.keys(CL_META).forEach(c => {
-    const f = CL_META[c].f, nm = clubName(c);
-    if (f && nm) ev.push({ id: 'f' + c, y: f, label: `Fundação ${ofClub(c)}`, crest: c });
+  TL_DATES.forEach(([id, y, label, sub, pic]) => {
+    const e = { id: 'd' + id, y, label, sub };
+    if (pic.face && PL.find(p => p.id === pic.face)) e.face = pic.face;
+    else if (pic.crest && CL.find(c => c.id === pic.crest)) e.crest = pic.crest;
+    else if (pic.flag && FLAGS[pic.flag]) e.flag = pic.flag;
+    else return;
+    ev.push(e);
   });
-  const first = {};
-  Object.keys(LIB_CHAMPS).forEach(y => {
-    const c = LIB_CHAMPS[y];
-    if (!first[c] || +y < first[c]) first[c] = +y;
-  });
-  Object.keys(first).forEach(c => {
-    const nm = clubName(c);
-    if (nm) ev.push({ id: 'l' + c, y: first[c], label: `1ª Libertadores ${ofClub(c)}`, crest: c });
-  });
+  /* the birth of a figure — only where the year is not in dispute */
+  PL.filter(p => p.era[0] >= 1300 && p.id !== 'tamerlao').forEach(p =>
+    ev.push({ id: 'b' + p.id, y: p.era[0], label: p.n, sub: 'Nascimento', face: p.id }));
+  PL.filter(p => p.era[1] >= 1300).forEach(p =>
+    ev.push({ id: 'm' + p.id, y: p.era[1], label: p.n, sub: 'Morte', face: p.id }));
+  /* and the rise of a state */
+  CL.filter(c => c.f > -3000 && c.f !== 0).forEach(c =>
+    ev.push({ id: 'f' + c.id, y: c.f, label: `Surgimento ${ofClub(c.id)}`, sub: REGION[c.s], crest: c.id }));
   return ev;
 }
 function buildTimeline(n) {
   const all = tlEvents(), used = new Set(), qs = [];
-  for (let guard = 0; qs.length < n && guard < 300; guard++) {
+  for (let guard = 0; qs.length < n && guard < 400; guard++) {
     const four = pickN(all.filter(e => !used.has(e.id)), 4);
     if (four.length < 4) break;
+    /* the same person twice on one board gives the order away */
+    const who = four.map(e => e.face).filter(Boolean);
+    if (new Set(who).size !== who.length) continue;
     const ys = four.map(e => e.y).sort((a, b) => a - b);
-    if (ys.some((y, i) => i && y - ys[i - 1] < 4)) continue;   // too close to be fair
+    if (ys.some((y, i) => i && y - ys[i - 1] < Math.max(6, Math.abs(y) * 0.03))) continue;   // too close to be fair
     four.forEach(e => used.add(e.id));
     qs.push({ t: 'Coloque em ordem, do mais antigo para o mais recente', type: 'order',
               order: shuf(four), a: four.slice().sort((a, b) => a.y - b.y).map(e => e.id), _cat: GC_TL });
@@ -11296,6 +10514,7 @@ function buildTimeline(n) {
            col:'#0F7B6C', diff:'Variado', qs };
 }
 
+/*@@/specials@@*/
 /* ── Where these two are actually played ──────────────────────
    Neither is a mode of its own any more. They were two more buttons on a
    cover that already had a queue of them, and a player who came for the
@@ -11344,42 +10563,9 @@ function dealSpecials(qs) {
   return qs;
 }
 
-/* ── Two new ways to ask ─────────────────────────────────────
-   O placar: a real result on a scoreboard, one side hidden — "1970 · Brasil
-   4 × 1 ?" — and the answers are the teams that could have been there, each
-   with its flag or crest. A escalação: a famous XI laid out on a pitch, one
-   name missing, and the answer is the man who stood there. Both are the
-   picture the question is about, so the card carries them in place of the
-   small vignette. */
-function teamImg(name) {
-  const r = optResolve(name);
-  if (r && r.k === 'club' && !r.pair && LOGOS[r.id]) return clubArt(r.id, '', false);
-  if (r && r.k === 'ctry') return `<span class="qsc-flag"><img src="${flagFile(r.iso[0])}" alt="" aria-hidden="true" /></span>`;
-  const ini = String(name).split(/\s+/).map(w => w[0]).join('').slice(0, 2).toUpperCase();
-  return `<span class="qsc-mono">${ini}</span>`;
-}
-function scoreStrip(st, q) {
-  /* the line under the score ("Chelsea 4 × 3 nos pênaltis") must not name
-     the side the question is asking for until the answer is shown */
-  let x = st.x || '';
-  if (x && q && sc !== 'reveal')
-    (q.a || []).forEach(a => { const nm = clubName(a) || a;
-      x = x.replace(new RegExp(String(nm).replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi'), '???'); });
-  const side = n => n === '?'
-    ? `<span class="qsc-t qsc-q"><span class="qsc-qm">?</span><b>???</b></span>`
-    : `<span class="qsc-t">${teamImg(n)}<b>${n}</b></span>`;
-  return `<div class="qstrip qsc" role="img" aria-label="Placar">
-    <span class="qsc-lbl">${st.lbl || ''}</span>
-    <div class="qsc-row">${side(st.h)}<span class="qsc-g num">${st.hg}<i>×</i>${st.ag}</span>${side(st.a)}</div>
-    ${x ? `<span class="qsc-x">${x}</span>` : ''}</div>`;
-}
-function xiStrip(xi) {
-  const cols = xi.rows.map(r => `<div class="xi-col">${r.map(n => n === '?'
-    ? '<span class="xi-p xi-q">?</span>' : `<span class="xi-p">${n}</span>`).join('')}</div>`).join('');
-  return `<div class="qstrip xi" role="img" aria-label="Escalação">
-    <span class="xi-lbl">${xi.t}</span><div class="xi-pitch">${cols}</div></div>`;
-}
-
+/*@@noscore@@*/
+/* (the scoreboard and the lineup were football's; history has none) */
+/*@@/noscore@@*/
 /* ═══════════════════════════════════════════════════
    O BARALHO DA RODADA
 
@@ -11445,28 +10631,12 @@ function lockIn() {
    won either side of it — facts the app already holds and tests. */
 const ORD = n => n + 'º';
 const joinPT = a => a.length < 2 ? a.join('') : a.slice(0, -1).join(', ') + ' e ' + a[a.length - 1];
+/*@@story@@*/
 function storyFor(q) {
   if (!q) return '';
-  if (q.x) return q.x;
-  const cid = q._cat && q._cat.id, y = +((String(q.t).match(/\b(19|20)\d\d\b/) || [])[0]);
-  if (!y || !q.a || q.a.length !== 1) return '';
-  if (cid === 'libertadores') {
-    const id = q.a[0], ys = Object.keys(LIB_CHAMPS).map(Number).filter(k => LIB_CHAMPS[k] === id).sort((m, n) => m - n);
-    const nm = clubName(id);
-    if (ys.length === 1) return `Foi a única Libertadores ${ofClub(id)} até hoje.`;
-    return `Foi o ${ORD(ys.indexOf(y) + 1)} dos ${ys.length} títulos ${ofClub(id)} na Libertadores: ${joinPT(ys.map(String))}.`;
-  }
-  if (cid === 'brasileirao') {
-    const nm = id => clubName(BR_CHAMPS[id]);
-    const prev = BR_CHAMPS[y - 1], next = BR_CHAMPS[y + 1];
-    const bits = [];
-    if (prev) bits.push(prev === q.a[0] ? `Foi o bicampeonato: o ${nm(y)} já tinha vencido em ${y - 1}` : `Em ${y - 1}, o campeão tinha sido o ${nm(y - 1)}`);
-    if (next) bits.push(next === q.a[0] ? `e voltou a vencer em ${y + 1}` : `em ${y + 1}, a taça foi para o ${nm(y + 1)}`);
-    return bits.length ? bits.join('; ') + '.' : '';
-  }
-  return '';
+  return q.x || '';
 }
-
+/*@@/story@@*/
 /* After the reveal, the run waits for you: long enough to read what came
    with the answer, never so long that it drags. "Próxima" moves on at once,
    and touching the story holds it on screen for as long as you like. */
