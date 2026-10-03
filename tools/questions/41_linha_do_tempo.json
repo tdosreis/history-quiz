@@ -1,0 +1,778 @@
+{
+ "id": "linha_do_tempo",
+ "name": "Linha do tempo",
+ "tag": "Ordene do mais antigo ao mais novo",
+ "col": "#0f7b6c",
+ "diff": "Variado",
+ "emoji": "⏳",
+ "qs": [
+  {
+   "t": "Linha do tempo: o que veio primeiro — o nascimento de Sócrates, Leonardo da Vinci, Napoleão ou Einstein?",
+   "type": "order",
+   "a": [
+    "socrates",
+    "leonardo",
+    "napoleao",
+    "einstein"
+   ],
+   "order": [
+    {
+     "id": "socrates",
+     "y": -470,
+     "label": "Sócrates",
+     "sub": "Nascimento",
+     "face": "socrates"
+    },
+    {
+     "id": "leonardo",
+     "y": 1452,
+     "label": "Leonardo da Vinci",
+     "sub": "Nascimento",
+     "face": "leonardo"
+    },
+    {
+     "id": "napoleao",
+     "y": 1769,
+     "label": "Napoleão Bonaparte",
+     "sub": "Nascimento",
+     "face": "napoleao"
+    },
+    {
+     "id": "einstein",
+     "y": 1879,
+     "label": "Albert Einstein",
+     "sub": "Nascimento",
+     "face": "einstein"
+    }
+   ],
+   "d": 1,
+   "src": [
+    "pt",
+    "Napoleão Bonaparte",
+    [
+     "1769"
+    ]
+   ]
+  },
+  {
+   "t": "Linha do tempo: ordene o nascimento de Cleópatra, Carlos Magno, Gutenberg e Galileu?",
+   "type": "order",
+   "a": [
+    "cleopatra",
+    "carlos_magno",
+    "gutenberg",
+    "galileu"
+   ],
+   "order": [
+    {
+     "id": "cleopatra",
+     "y": -69,
+     "label": "Cleópatra VII",
+     "sub": "Nascimento",
+     "face": "cleopatra"
+    },
+    {
+     "id": "carlos_magno",
+     "y": 742,
+     "label": "Carlos Magno",
+     "sub": "Nascimento",
+     "face": "carlos_magno"
+    },
+    {
+     "id": "gutenberg",
+     "y": 1400,
+     "label": "Gutenberg",
+     "sub": "Nascimento",
+     "face": "gutenberg"
+    },
+    {
+     "id": "galileu",
+     "y": 1564,
+     "label": "Galileu Galilei",
+     "sub": "Nascimento",
+     "face": "galileu"
+    }
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Galileu Galilei",
+    [
+     "1564"
+    ]
+   ]
+  },
+  {
+   "t": "Linha do tempo: o que veio primeiro — a morte de Alexandre, a de Júlio César, a de Joana d'Arc ou a de Lincoln?",
+   "type": "order",
+   "a": [
+    "alexandre",
+    "cesar",
+    "joana",
+    "lincoln"
+   ],
+   "order": [
+    {
+     "id": "alexandre",
+     "y": -323,
+     "label": "Alexandre, o Grande",
+     "sub": "Morte",
+     "face": "alexandre"
+    },
+    {
+     "id": "cesar",
+     "y": -44,
+     "label": "Júlio César",
+     "sub": "Morte",
+     "face": "cesar"
+    },
+    {
+     "id": "joana",
+     "y": 1431,
+     "label": "Joana d'Arc",
+     "sub": "Morte",
+     "face": "joana_darc"
+    },
+    {
+     "id": "lincoln",
+     "y": 1865,
+     "label": "Abraham Lincoln",
+     "sub": "Morte",
+     "face": "lincoln"
+    }
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Abraham Lincoln",
+    [
+     "1865"
+    ]
+   ]
+  },
+  {
+   "t": "Linha do tempo: ordene Colombo na América, Lutero e as 95 teses, a Revolução Francesa e a Primeira Guerra?",
+   "type": "order",
+   "a": [
+    "colombo",
+    "lutero",
+    "bastilha",
+    "guerra"
+   ],
+   "order": [
+    {
+     "id": "colombo",
+     "y": 1492,
+     "label": "Colombo chega à América",
+     "sub": "Primeira viagem",
+     "face": "colombo"
+    },
+    {
+     "id": "lutero",
+     "y": 1517,
+     "label": "95 teses de Lutero",
+     "sub": "Reforma",
+     "face": "lutero"
+    },
+    {
+     "id": "bastilha",
+     "y": 1789,
+     "label": "Queda da Bastilha",
+     "sub": "Revolução Francesa",
+     "crest": "franca_revolucionaria"
+    },
+    {
+     "id": "guerra",
+     "y": 1914,
+     "label": "Início da Primeira Guerra",
+     "sub": "Sarajevo",
+     "crest": "austria_hungria"
+    }
+   ],
+   "d": 1,
+   "src": [
+    "pt",
+    "Primeira Guerra Mundial",
+    [
+     "1914"
+    ]
+   ]
+  },
+  {
+   "t": "Linha do tempo: ordene os eventos do Brasil — Cabral, Independência, Lei Áurea e Brasília?",
+   "type": "order",
+   "a": [
+    "cabral",
+    "indep",
+    "aurea",
+    "brasilia"
+   ],
+   "order": [
+    {
+     "id": "cabral",
+     "y": 1500,
+     "label": "Cabral chega ao Brasil",
+     "sub": "Porto Seguro",
+     "face": "cabral"
+    },
+    {
+     "id": "indep",
+     "y": 1822,
+     "label": "Independência do Brasil",
+     "sub": "Grito do Ipiranga",
+     "face": "dom_pedro_i"
+    },
+    {
+     "id": "aurea",
+     "y": 1888,
+     "label": "Lei Áurea",
+     "sub": "Abolição",
+     "face": "princesa_isabel"
+    },
+    {
+     "id": "brasilia",
+     "y": 1960,
+     "label": "Inauguração de Brasília",
+     "sub": "JK",
+     "face": "jk"
+    }
+   ],
+   "d": 1,
+   "src": [
+    "pt",
+    "História do Brasil",
+    [
+     "1822"
+    ]
+   ]
+  },
+  {
+   "t": "Linha do tempo: o que veio primeiro — a Grande Pirâmide, o Partenon, o Coliseu ou Santa Sofia?",
+   "type": "order",
+   "a": [
+    "piramide",
+    "partenon",
+    "coliseu",
+    "santa_sofia"
+   ],
+   "order": [
+    {
+     "id": "piramide",
+     "y": -2560,
+     "label": "Pirâmide de Quéops",
+     "sub": "Egito Antigo",
+     "crest": "egito_antigo"
+    },
+    {
+     "id": "partenon",
+     "y": -432,
+     "label": "Partenon",
+     "sub": "Atenas",
+     "crest": "atenas"
+    },
+    {
+     "id": "coliseu",
+     "y": 80,
+     "label": "Coliseu",
+     "sub": "Roma",
+     "crest": "imperio_romano"
+    },
+    {
+     "id": "santa_sofia",
+     "y": 537,
+     "label": "Santa Sofia",
+     "sub": "Constantinopla",
+     "crest": "bizancio"
+    }
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Pirâmide de Quéops",
+    [
+     "Quéops"
+    ]
+   ]
+  },
+  {
+   "t": "Linha do tempo: ordene a queda de Constantinopla, a Magna Carta, o Tratado de Tordesilhas e a Paz de Vestfália?",
+   "type": "order",
+   "a": [
+    "magna",
+    "const",
+    "tordesilhas",
+    "vestfalia"
+   ],
+   "order": [
+    {
+     "id": "magna",
+     "y": 1215,
+     "label": "Magna Carta",
+     "sub": "Inglaterra",
+     "crest": "inglaterra"
+    },
+    {
+     "id": "const",
+     "y": 1453,
+     "label": "Queda de Constantinopla",
+     "sub": "Otomanos",
+     "face": "maome_ii"
+    },
+    {
+     "id": "tordesilhas",
+     "y": 1494,
+     "label": "Tratado de Tordesilhas",
+     "sub": "Portugal e Espanha",
+     "crest": "espanha"
+    },
+    {
+     "id": "vestfalia",
+     "y": 1648,
+     "label": "Paz de Vestfália",
+     "sub": "Fim da Guerra dos Trinta Anos",
+     "crest": "sacro_imperio"
+    }
+   ],
+   "d": 3,
+   "src": [
+    "pt",
+    "Paz de Vestfália",
+    [
+     "1648"
+    ]
+   ]
+  },
+  {
+   "t": "Linha do tempo: quem nasceu primeiro — Mozart, Beethoven, Chopin ou Tchaikovsky?",
+   "type": "order",
+   "a": [
+    "mozart",
+    "beethoven",
+    "chopin",
+    "tchaikovsky"
+   ],
+   "order": [
+    {
+     "id": "mozart",
+     "y": 1756,
+     "label": "Mozart",
+     "sub": "Nascimento",
+     "face": "mozart"
+    },
+    {
+     "id": "beethoven",
+     "y": 1770,
+     "label": "Beethoven",
+     "sub": "Nascimento",
+     "face": "beethoven"
+    },
+    {
+     "id": "chopin",
+     "y": 1810,
+     "label": "Chopin",
+     "sub": "Nascimento",
+     "face": "chopin"
+    },
+    {
+     "id": "tchaikovsky",
+     "y": 1840,
+     "label": "Tchaikovsky",
+     "sub": "Nascimento",
+     "face": "tchaikovsky"
+    }
+   ],
+   "d": 3,
+   "src": [
+    "pt",
+    "Frédéric Chopin",
+    [
+     "1810"
+    ]
+   ]
+  },
+  {
+   "t": "Linha do tempo: ordene a independência dos EUA, a do Haiti, a do Brasil e a da Índia?",
+   "type": "order",
+   "a": [
+    "eua",
+    "haiti",
+    "brasil",
+    "india"
+   ],
+   "order": [
+    {
+     "id": "eua",
+     "y": 1776,
+     "label": "Independência dos EUA",
+     "sub": "Declaração de 1776",
+     "face": "jefferson"
+    },
+    {
+     "id": "haiti",
+     "y": 1804,
+     "label": "Independência do Haiti",
+     "sub": "Toussaint e Dessalines",
+     "face": "toussaint"
+    },
+    {
+     "id": "brasil",
+     "y": 1822,
+     "label": "Independência do Brasil",
+     "sub": "D. Pedro I",
+     "face": "dom_pedro_i"
+    },
+    {
+     "id": "india",
+     "y": 1947,
+     "label": "Independência da Índia",
+     "sub": "Gandhi",
+     "face": "gandhi"
+    }
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Independência da Índia",
+    [
+     "1947"
+    ]
+   ]
+  },
+  {
+   "t": "Linha do tempo: ordene o voo de Santos Dumont, a Revolução Russa, o fim da Segunda Guerra e a chegada à Lua?",
+   "type": "order",
+   "a": [
+    "dumont",
+    "russa",
+    "fim",
+    "lua"
+   ],
+   "order": [
+    {
+     "id": "dumont",
+     "y": 1906,
+     "label": "Voo do 14-Bis",
+     "sub": "Santos Dumont",
+     "face": "santos_dumont"
+    },
+    {
+     "id": "russa",
+     "y": 1917,
+     "label": "Revolução Russa",
+     "sub": "Lênin",
+     "face": "lenin"
+    },
+    {
+     "id": "fim",
+     "y": 1945,
+     "label": "Fim da Segunda Guerra",
+     "sub": "1945",
+     "face": "churchill"
+    },
+    {
+     "id": "lua",
+     "y": 1969,
+     "label": "Homem na Lua",
+     "sub": "Apollo 11",
+     "face": "armstrong"
+    }
+   ],
+   "d": 1,
+   "src": [
+    "pt",
+    "Apollo 11",
+    [
+     "1969"
+    ]
+   ]
+  },
+  {
+   "t": "Linha do tempo: ordene a morte de Tutancâmon, de Péricles, de Augusto e de Maomé II?",
+   "type": "order",
+   "a": [
+    "tut",
+    "pericles",
+    "augusto",
+    "maome"
+   ],
+   "order": [
+    {
+     "id": "tut",
+     "y": -1323,
+     "label": "Tutancâmon",
+     "sub": "Morte",
+     "face": "tutancamon"
+    },
+    {
+     "id": "pericles",
+     "y": -429,
+     "label": "Péricles",
+     "sub": "Morte",
+     "face": "pericles"
+    },
+    {
+     "id": "augusto",
+     "y": 14,
+     "label": "Augusto",
+     "sub": "Morte",
+     "face": "augusto"
+    },
+    {
+     "id": "maome",
+     "y": 1481,
+     "label": "Maomé II",
+     "sub": "Morte",
+     "face": "maome_ii"
+    }
+   ],
+   "d": 4,
+   "src": [
+    "pt",
+    "Augusto",
+    [
+     "14"
+    ]
+   ]
+  },
+  {
+   "t": "Linha do tempo: ordene o nascimento de Darwin, Marx, Tolstói e Freud?",
+   "type": "order",
+   "a": [
+    "darwin",
+    "marx",
+    "tolstoi",
+    "freud"
+   ],
+   "order": [
+    {
+     "id": "darwin",
+     "y": 1809,
+     "label": "Darwin",
+     "sub": "Nascimento",
+     "face": "darwin"
+    },
+    {
+     "id": "marx",
+     "y": 1818,
+     "label": "Karl Marx",
+     "sub": "Nascimento",
+     "face": "marx"
+    },
+    {
+     "id": "tolstoi",
+     "y": 1828,
+     "label": "Tolstói",
+     "sub": "Nascimento",
+     "face": "tolstoi"
+    },
+    {
+     "id": "freud",
+     "y": 1856,
+     "label": "Sigmund Freud",
+     "sub": "Nascimento",
+     "face": "freud"
+    }
+   ],
+   "d": 3,
+   "src": [
+    "pt",
+    "Sigmund Freud",
+    [
+     "1856"
+    ]
+   ]
+  },
+  {
+   "t": "Linha do tempo: ordene Maratona, a travessia dos Alpes por Aníbal, o Rubicão de César e a queda de Roma?",
+   "type": "order",
+   "a": [
+    "medicas",
+    "punicas",
+    "cesar",
+    "queda"
+   ],
+   "order": [
+    {
+     "id": "medicas",
+     "y": -490,
+     "label": "Batalha de Maratona",
+     "sub": "Guerras Médicas",
+     "crest": "atenas"
+    },
+    {
+     "id": "punicas",
+     "y": -218,
+     "label": "Aníbal atravessa os Alpes",
+     "sub": "Guerras Púnicas",
+     "face": "anibal"
+    },
+    {
+     "id": "cesar",
+     "y": -49,
+     "label": "César cruza o Rubicão",
+     "sub": "Guerra civil",
+     "face": "cesar"
+    },
+    {
+     "id": "queda",
+     "y": 476,
+     "label": "Queda de Roma do Ocidente",
+     "sub": "476",
+     "crest": "imperio_romano"
+    }
+   ],
+   "d": 3,
+   "src": [
+    "pt",
+    "Guerras Púnicas",
+    [
+     "218 a.C."
+    ]
+   ]
+  },
+  {
+   "t": "Linha do tempo: ordene a Primeira Cruzada, a Guerra dos Cem Anos, a Peste Negra e a Primeira Guerra Mundial?",
+   "type": "order",
+   "a": [
+    "cruz",
+    "cem",
+    "peste",
+    "guerra"
+   ],
+   "order": [
+    {
+     "id": "cruz",
+     "y": 1096,
+     "label": "Primeira Cruzada",
+     "sub": "Início",
+     "face": "saladino"
+    },
+    {
+     "id": "cem",
+     "y": 1337,
+     "label": "Guerra dos Cem Anos",
+     "sub": "Início",
+     "face": "joana_darc"
+    },
+    {
+     "id": "peste",
+     "y": 1347,
+     "label": "Peste Negra chega à Europa",
+     "sub": "1347",
+     "crest": "veneza"
+    },
+    {
+     "id": "guerra",
+     "y": 1914,
+     "label": "Primeira Guerra Mundial",
+     "sub": "Início",
+     "crest": "imperio_alemao"
+    }
+   ],
+   "d": 4,
+   "src": [
+    "pt",
+    "Peste Negra",
+    [
+     "1347"
+    ]
+   ]
+  },
+  {
+   "t": "Linha do tempo: ordene a morte de Zumbi, a de Tiradentes, a de D. Pedro I e a de Getúlio Vargas?",
+   "type": "order",
+   "a": [
+    "zumbi",
+    "tira",
+    "pedro",
+    "getulio"
+   ],
+   "order": [
+    {
+     "id": "zumbi",
+     "y": 1695,
+     "label": "Zumbi dos Palmares",
+     "sub": "Morte",
+     "face": "zumbi"
+    },
+    {
+     "id": "tira",
+     "y": 1792,
+     "label": "Tiradentes",
+     "sub": "Morte",
+     "face": "tiradentes"
+    },
+    {
+     "id": "pedro",
+     "y": 1834,
+     "label": "Dom Pedro I",
+     "sub": "Morte",
+     "face": "dom_pedro_i"
+    },
+    {
+     "id": "getulio",
+     "y": 1954,
+     "label": "Getúlio Vargas",
+     "sub": "Morte",
+     "face": "getulio"
+    }
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Getúlio Vargas",
+    [
+     "1954"
+    ]
+   ]
+  },
+  {
+   "t": "Linha do tempo: ordene o Muro de Berlim (construção), Mandela livre, o fim da URSS e o 11 de setembro?",
+   "type": "order",
+   "a": [
+    "muro",
+    "queda",
+    "mandela",
+    "onze"
+   ],
+   "order": [
+    {
+     "id": "muro",
+     "y": 1961,
+     "label": "Construção do Muro de Berlim",
+     "sub": "1961",
+     "crest": "urss"
+    },
+    {
+     "id": "queda",
+     "y": 1989,
+     "label": "Queda do Muro de Berlim",
+     "sub": "1989",
+     "crest": "urss"
+    },
+    {
+     "id": "mandela",
+     "y": 1990,
+     "label": "Mandela é libertado",
+     "sub": "1990",
+     "face": "mandela"
+    },
+    {
+     "id": "onze",
+     "y": 2001,
+     "label": "Atentados de 11 de setembro",
+     "sub": "2001",
+     "crest": "estados_unidos"
+    }
+   ],
+   "d": 3,
+   "src": [
+    "pt",
+    "Muro de Berlim",
+    [
+     "1961"
+    ]
+   ]
+  }
+ ]
+}

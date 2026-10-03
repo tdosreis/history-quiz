@@ -1,0 +1,596 @@
+{
+ "id": "seculo19",
+ "name": "Século XIX",
+ "tag": "Nações, impérios e ciência",
+ "col": "#4A6A8A",
+ "diff": "Variado",
+ "emoji": "🎩",
+ "qs": [
+  {
+   "t": "Qual chanceler prussiano unificou a Alemanha em 1871?",
+   "type": "player",
+   "a": [
+    "bismarck"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "cannon"
+   },
+   "src": [
+    "pt",
+    "Otto von Bismarck",
+    [
+     "1871"
+    ]
+   ]
+  },
+  {
+   "t": "Qual revolucionário italiano, o “Herói dos Dois Mundos”, liderou os Mil Camisas Vermelhas?",
+   "type": "player",
+   "a": [
+    "garibaldi"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "flag"
+   },
+   "src": [
+    "pt",
+    "Giuseppe Garibaldi",
+    [
+     "Camisas Vermelhas"
+    ]
+   ]
+  },
+  {
+   "t": "Qual presidente americano abolicionista liderou a União na Guerra de Secessão?",
+   "type": "player",
+   "a": [
+    "lincoln"
+   ],
+   "d": 1,
+   "art": {
+    "stad": "capitolio"
+   },
+   "src": [
+    "pt",
+    "Abraham Lincoln",
+    [
+     "Guerra de Secessão"
+    ]
+   ]
+  },
+  {
+   "t": "Qual rainha britânica dá nome a uma era de 63 anos e a um império onde o sol nunca se punha?",
+   "type": "player",
+   "a": [
+    "victoria"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "crown"
+   },
+   "src": [
+    "pt",
+    "Vitória do Reino Unido",
+    [
+     "63 anos"
+    ]
+   ]
+  },
+  {
+   "t": "Qual naturalista inglês publicou A Origem das Espécies, em 1859?",
+   "type": "player",
+   "a": [
+    "darwin"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "book"
+   },
+   "src": [
+    "pt",
+    "Charles Darwin",
+    [
+     "Origem das Espécies"
+    ]
+   ]
+  },
+  {
+   "t": "Qual monge austríaco descobriu as leis da hereditariedade com ervilhas?",
+   "type": "player",
+   "a": [
+    "mendel"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "book"
+   },
+   "src": [
+    "pt",
+    "Gregor Mendel",
+    [
+     "ervilha"
+    ]
+   ]
+  },
+  {
+   "t": "Qual cientista francês criou a vacina contra a raiva e a pasteurização?",
+   "type": "player",
+   "a": [
+    "pasteur"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "book"
+   },
+   "src": [
+    "pt",
+    "Louis Pasteur",
+    [
+     "raiva"
+    ]
+   ]
+  },
+  {
+   "t": "Qual enfermeira inglesa, “a Dama da Lâmpada”, reformou os hospitais na Guerra da Crimeia?",
+   "type": "player",
+   "a": [
+    "nightingale"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "torch"
+   },
+   "src": [
+    "pt",
+    "Florence Nightingale",
+    [
+     "Crimeia"
+    ]
+   ]
+  },
+  {
+   "t": "Qual matemática inglesa é considerada a primeira programadora da história?",
+   "type": "player",
+   "a": [
+    "ada_lovelace"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "gear"
+   },
+   "src": [
+    "pt",
+    "Ada Lovelace",
+    [
+     "programa"
+    ]
+   ]
+  },
+  {
+   "t": "Qual filósofo alemão escreveu O Capital, com sua análise do capitalismo?",
+   "type": "player",
+   "a": [
+    "marx"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "book"
+   },
+   "src": [
+    "pt",
+    "Karl Marx",
+    [
+     "O Capital"
+    ]
+   ]
+  },
+  {
+   "t": "Qual filósofo alemão proclamou “Deus está morto”?",
+   "type": "player",
+   "a": [
+    "nietzsche"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "book"
+   },
+   "src": [
+    "pt",
+    "Friedrich Nietzsche",
+    [
+     "Deus está morto"
+    ]
+   ]
+  },
+  {
+   "t": "Qual escritor russo é autor de Guerra e Paz e Anna Karênina?",
+   "type": "player",
+   "a": [
+    "tolstoi"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "book"
+   },
+   "src": [
+    "pt",
+    "Liev Tolstói",
+    [
+     "Guerra e Paz"
+    ]
+   ]
+  },
+  {
+   "t": "Qual escritor russo escreveu Crime e Castigo?",
+   "type": "player",
+   "a": [
+    "dostoievski"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "book"
+   },
+   "src": [
+    "pt",
+    "Fiódor Dostoiévski",
+    [
+     "Crime e Castigo"
+    ]
+   ]
+  },
+  {
+   "t": "Qual escritor francês escreveu Os Miseráveis e O Corcunda de Notre-Dame?",
+   "type": "player",
+   "a": [
+    "victor_hugo"
+   ],
+   "d": 2,
+   "art": {
+    "stad": "notre_dame"
+   },
+   "src": [
+    "pt",
+    "Victor Hugo",
+    [
+     "Os Miseráveis"
+    ]
+   ]
+  },
+  {
+   "t": "Qual escritor inglês criou Oliver Twist e Um Conto de Natal?",
+   "type": "player",
+   "a": [
+    "dickens"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "book"
+   },
+   "src": [
+    "pt",
+    "Charles Dickens",
+    [
+     "Oliver Twist"
+    ]
+   ]
+  },
+  {
+   "t": "Qual pintor francês deu nome ao Impressionismo com Impressão, Nascer do Sol?",
+   "type": "player",
+   "a": [
+    "monet"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "bust"
+   },
+   "src": [
+    "pt",
+    "Claude Monet",
+    [
+     "Impressão"
+    ]
+   ]
+  },
+  {
+   "t": "Qual pintor holandês criou A Noite Estrelada?",
+   "type": "player",
+   "a": [
+    "van_gogh"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "bust"
+   },
+   "src": [
+    "pt",
+    "Vincent van Gogh",
+    [
+     "Noite Estrelada"
+    ]
+   ]
+  },
+  {
+   "t": "Qual inventor americano criou a lâmpada elétrica comercial e o fonógrafo?",
+   "type": "player",
+   "a": [
+    "edison"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "gear"
+   },
+   "src": [
+    "pt",
+    "Thomas Edison",
+    [
+     "lâmpada"
+    ]
+   ]
+  },
+  {
+   "t": "Qual inventor sérvio-americano desenvolveu o sistema de corrente alternada?",
+   "type": "player",
+   "a": [
+    "tesla"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "gear"
+   },
+   "src": [
+    "pt",
+    "Nikola Tesla",
+    [
+     "corrente alternada"
+    ]
+   ]
+  },
+  {
+   "t": "Qual explorador escocês atravessou a África e encontrou as Cataratas Vitória?",
+   "type": "player",
+   "a": [
+    "livingstone"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "map"
+   },
+   "src": [
+    "pt",
+    "David Livingstone",
+    [
+     "Vitória"
+    ]
+   ]
+  },
+  {
+   "t": "Qual médico vienense criou a psicanálise?",
+   "type": "player",
+   "a": [
+    "freud"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "book"
+   },
+   "src": [
+    "pt",
+    "Sigmund Freud",
+    [
+     "psicanálise"
+    ]
+   ]
+  },
+  {
+   "t": "Qual conferência de 1884–1885 dividiu a África entre as potências europeias?",
+   "type": "txt",
+   "choices": [
+    "Conferência de Berlim",
+    "Congresso de Viena",
+    "Conferência de Yalta",
+    "Conferência de Bandung",
+    "Tratado de Versalhes",
+    "Conferência de Potsdam"
+   ],
+   "a": [
+    "Conferência de Berlim"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "map"
+   },
+   "src": [
+    "pt",
+    "Conferência de Berlim",
+    [
+     "1884"
+    ]
+   ]
+  },
+  {
+   "t": "Qual a guerra civil americana que opôs o Norte ao Sul entre 1861 e 1865?",
+   "type": "txt",
+   "choices": [
+    "Guerra de Secessão",
+    "Guerra da Independência",
+    "Guerra de 1812",
+    "Guerra Hispano-Americana",
+    "Guerra do Vietnã",
+    "Guerra do Texas"
+   ],
+   "a": [
+    "Guerra de Secessão"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "cannon"
+   },
+   "src": [
+    "pt",
+    "Guerra de Secessão",
+    [
+     "1861"
+    ]
+   ]
+  },
+  {
+   "t": "Qual congresso de 1814–1815 reorganizou a Europa após a queda de Napoleão?",
+   "type": "txt",
+   "choices": [
+    "Congresso de Viena",
+    "Congresso de Berlim",
+    "Congresso de Vestfália",
+    "Congresso de Paris",
+    "Conferência de Yalta",
+    "Concílio de Trento"
+   ],
+   "a": [
+    "Congresso de Viena"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "scroll"
+   },
+   "src": [
+    "pt",
+    "Congresso de Viena",
+    [
+     "1815"
+    ]
+   ]
+  },
+  {
+   "t": "Qual inovação do século XIX transmitia mensagens por fios elétricos usando um código de pontos e traços?",
+   "type": "txt",
+   "choices": [
+    "Telégrafo",
+    "Telefone",
+    "Rádio",
+    "Televisão",
+    "Fax",
+    "Satélite"
+   ],
+   "a": [
+    "Telégrafo"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "gear"
+   },
+   "src": [
+    "pt",
+    "Telégrafo",
+    [
+     "código Morse"
+    ]
+   ]
+  },
+  {
+   "t": "Qual país asiático se modernizou rapidamente após a Restauração Meiji, em 1868?",
+   "type": "txt",
+   "choices": [
+    "Japão",
+    "China",
+    "Coreia",
+    "Índia",
+    "Sião",
+    "Vietnã"
+   ],
+   "a": [
+    "Japão"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "sword"
+   },
+   "src": [
+    "pt",
+    "Restauração Meiji",
+    [
+     "1868"
+    ]
+   ]
+  },
+  {
+   "t": "Qual a construção inaugurada em 1869 que ligou o Mediterrâneo ao Mar Vermelho?",
+   "type": "txt",
+   "choices": [
+    "Canal de Suez",
+    "Canal do Panamá",
+    "Canal da Mancha",
+    "Canal de Kiel",
+    "Canal de Corinto",
+    "Canal Erie"
+   ],
+   "a": [
+    "Canal de Suez"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "ship"
+   },
+   "src": [
+    "pt",
+    "Canal de Suez",
+    [
+     "1869"
+    ]
+   ]
+  },
+  {
+   "t": "Qual presente a França ofereceu aos EUA, inaugurado em 1886, como símbolo de liberdade?",
+   "type": "txt",
+   "choices": [
+    "Estátua da Liberdade",
+    "Torre Eiffel",
+    "Arco do Triunfo",
+    "Cristo Redentor",
+    "Estátua de Lincoln",
+    "Sino da Liberdade"
+   ],
+   "a": [
+    "Estátua da Liberdade"
+   ],
+   "d": 1,
+   "art": {
+    "stad": "estatua_liberdade"
+   },
+   "src": [
+    "pt",
+    "Estátua da Liberdade",
+    [
+     "1886"
+    ]
+   ]
+  },
+  {
+   "t": "Qual a feira mundial de 1889, em Paris, para a qual foi erguida a Torre Eiffel?",
+   "type": "txt",
+   "choices": [
+    "Exposição Universal",
+    "Jogos Olímpicos",
+    "Feira de Hannover",
+    "Festival de Cannes",
+    "Feira do Livro",
+    "Congresso Internacional"
+   ],
+   "a": [
+    "Exposição Universal"
+   ],
+   "d": 3,
+   "art": {
+    "stad": "torre_eiffel"
+   },
+   "src": [
+    "pt",
+    "Torre Eiffel",
+    [
+     "1889"
+    ]
+   ]
+  }
+ ]
+}

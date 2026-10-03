@@ -1,0 +1,496 @@
+{
+ "id": "mulheres",
+ "name": "Mulheres na História",
+ "tag": "Rainhas, cientistas e rebeldes",
+ "col": "#C0568E",
+ "diff": "Variado",
+ "emoji": "👩",
+ "qs": [
+  {
+   "t": "Qual faraó mulher construiu um templo magnífico em Deir el-Bahari?",
+   "type": "player",
+   "a": [
+    "hatexepsute"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "crown"
+   },
+   "src": [
+    "pt",
+    "Hatexepsute",
+    [
+     "Deir el-Bahari"
+    ]
+   ]
+  },
+  {
+   "t": "Qual rainha do Egito foi a última governante da dinastia ptolomaica?",
+   "type": "player",
+   "a": [
+    "cleopatra"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "crown"
+   },
+   "src": [
+    "pt",
+    "Cleópatra VII",
+    [
+     "Ptolomaica"
+    ]
+   ]
+  },
+  {
+   "t": "Qual matemática e filósofa de Alexandria foi assassinada por uma multidão, em 415?",
+   "type": "player",
+   "a": [
+    "hipacia"
+   ],
+   "d": 4,
+   "art": {
+    "icon": "book"
+   },
+   "src": [
+    "pt",
+    "Hipácia",
+    [
+     "Alexandria"
+    ]
+   ]
+  },
+  {
+   "t": "Qual imperatriz chinesa governou sob o nome de dinastia Zhou, no século VII?",
+   "type": "player",
+   "a": [
+    "wu_zetian"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "crown"
+   },
+   "src": [
+    "pt",
+    "Wu Zetian",
+    [
+     "Zhou"
+    ]
+   ]
+  },
+  {
+   "t": "Qual jovem camponesa francesa liderou exércitos e foi canonizada em 1920?",
+   "type": "player",
+   "a": [
+    "joana_darc"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "sword"
+   },
+   "src": [
+    "pt",
+    "Joana d'Arc",
+    [
+     "1920"
+    ]
+   ]
+  },
+  {
+   "t": "Qual rainha castelhana apoiou a viagem de Colombo?",
+   "type": "player",
+   "a": [
+    "isabel_castela"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "crown"
+   },
+   "src": [
+    "pt",
+    "Isabel I de Castela",
+    [
+     "Colombo"
+    ]
+   ]
+  },
+  {
+   "t": "Qual rainha inglesa governou durante a era de Shakespeare e de Francis Drake?",
+   "type": "player",
+   "a": [
+    "elizabeth_i"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "crown"
+   },
+   "src": [
+    "pt",
+    "Isabel I de Inglaterra",
+    [
+     "Drake"
+    ]
+   ]
+  },
+  {
+   "t": "Qual imperatriz russa governou por 34 anos e correspondeu-se com Voltaire?",
+   "type": "player",
+   "a": [
+    "catarina_grande"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "crown"
+   },
+   "src": [
+    "pt",
+    "Catarina II da Rússia",
+    [
+     "Voltaire"
+    ]
+   ]
+  },
+  {
+   "t": "Qual rainha da Angola atual lutou contra os portugueses por mais de trinta anos?",
+   "type": "player",
+   "a": [
+    "nzinga"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "sword"
+   },
+   "src": [
+    "en",
+    "Nzinga of Ndongo and Matamba",
+    [
+     "Portuguese"
+    ]
+   ]
+  },
+  {
+   "t": "Qual cientista foi a primeira mulher a ganhar um Nobel?",
+   "type": "player",
+   "a": [
+    "marie_curie"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "book"
+   },
+   "src": [
+    "pt",
+    "Marie Curie",
+    [
+     "primeira mulher"
+    ]
+   ]
+  },
+  {
+   "t": "Qual condessa inglesa escreveu o primeiro algoritmo para uma máquina, nos anos 1840?",
+   "type": "player",
+   "a": [
+    "ada_lovelace"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "gear"
+   },
+   "src": [
+    "pt",
+    "Ada Lovelace",
+    [
+     "algoritmo"
+    ]
+   ]
+  },
+  {
+   "t": "Qual enfermeira transformou os hospitais militares e criou a enfermagem moderna?",
+   "type": "player",
+   "a": [
+    "nightingale"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "torch"
+   },
+   "src": [
+    "pt",
+    "Florence Nightingale",
+    [
+     "enfermagem"
+    ]
+   ]
+  },
+  {
+   "t": "Qual líder inglesa fundou a União Social e Política das Mulheres, pelo voto feminino?",
+   "type": "player",
+   "a": [
+    "pankhurst"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "flag"
+   },
+   "src": [
+    "pt",
+    "Emmeline Pankhurst",
+    [
+     "voto"
+    ]
+   ]
+  },
+  {
+   "t": "Qual escritora francesa publicou O Segundo Sexo, em 1949?",
+   "type": "player",
+   "a": [
+    "beauvoir"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "book"
+   },
+   "src": [
+    "pt",
+    "Simone de Beauvoir",
+    [
+     "O Segundo Sexo"
+    ]
+   ]
+  },
+  {
+   "t": "Qual costureira do Alabama desafiou a segregação nos ônibus, em 1955?",
+   "type": "player",
+   "a": [
+    "rosa_parks"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "flag"
+   },
+   "src": [
+    "pt",
+    "Rosa Parks",
+    [
+     "Montgomery"
+    ]
+   ]
+  },
+  {
+   "t": "Qual imperatriz austríaca foi decisiva para a independência do Brasil?",
+   "type": "player",
+   "a": [
+    "leopoldina"
+   ],
+   "d": 3,
+   "art": {
+    "stad": "museu_ipiranga"
+   },
+   "src": [
+    "pt",
+    "Maria Leopoldina de Áustria",
+    [
+     "independência"
+    ]
+   ]
+  },
+  {
+   "t": "Qual princesa regente do Brasil assinou a Lei Áurea?",
+   "type": "player",
+   "a": [
+    "princesa_isabel"
+   ],
+   "d": 1,
+   "art": {
+    "stad": "museu_imperial"
+   },
+   "src": [
+    "pt",
+    "Isabel, Princesa Imperial do Brasil",
+    [
+     "Lei Áurea"
+    ]
+   ]
+  },
+  {
+   "t": "Qual heroína gaúcha-catarinense lutou ao lado do marido na Guerra dos Farrapos?",
+   "type": "player",
+   "a": [
+    "anita"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "flag"
+   },
+   "src": [
+    "pt",
+    "Anita Garibaldi",
+    [
+     "Farrapos"
+    ]
+   ]
+  },
+  {
+   "t": "Qual compositora e pianista abriu caminho para as mulheres na música popular brasileira?",
+   "type": "player",
+   "a": [
+    "chiquinha"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "book"
+   },
+   "src": [
+    "pt",
+    "Chiquinha Gonzaga",
+    [
+     "maestrina"
+    ]
+   ]
+  },
+  {
+   "t": "Qual escritora brasileira de origem ucraniana escreveu Perto do Coração Selvagem?",
+   "type": "player",
+   "a": [
+    "clarice"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "book"
+   },
+   "src": [
+    "pt",
+    "Clarice Lispector",
+    [
+     "Perto do Coração Selvagem"
+    ]
+   ]
+  },
+  {
+   "t": "Qual religiosa nascida em Skopje dedicou a vida aos mais pobres de Calcutá?",
+   "type": "player",
+   "a": [
+    "madre_teresa"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "flag"
+   },
+   "src": [
+    "pt",
+    "Madre Teresa de Calcutá",
+    [
+     "Skopje"
+    ]
+   ]
+  },
+  {
+   "t": "Qual pintora mexicana se casou com o muralista Diego Rivera?",
+   "type": "player",
+   "a": [
+    "frida"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "bust"
+   },
+   "src": [
+    "pt",
+    "Frida Kahlo",
+    [
+     "Diego Rivera"
+    ]
+   ]
+  },
+  {
+   "t": "Qual primeira-ministra britânica foi a primeira mulher no cargo, em 1979?",
+   "type": "player",
+   "a": [
+    "thatcher"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "flag"
+   },
+   "src": [
+    "pt",
+    "Margaret Thatcher",
+    [
+     "1979"
+    ]
+   ]
+  },
+  {
+   "t": "Qual adolescente escreveu um diário que virou símbolo contra o Holocausto?",
+   "type": "player",
+   "a": [
+    "anne_frank"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "book"
+   },
+   "src": [
+    "pt",
+    "Anne Frank",
+    [
+     "Diário"
+    ]
+   ]
+  },
+  {
+   "t": "Qual rainha britânica deu nome à era vitoriana e reinou por 63 anos?",
+   "type": "player",
+   "a": [
+    "victoria"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "crown"
+   },
+   "src": [
+    "pt",
+    "Vitória do Reino Unido",
+    [
+     "vitoriana"
+    ]
+   ]
+  },
+  {
+   "t": "Qual rainha da França, a última antes da Revolução, foi guilhotinada em 1793?",
+   "type": "player",
+   "a": [
+    "maria_antonieta"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "crown"
+   },
+   "src": [
+    "pt",
+    "Maria Antonieta",
+    [
+     "1793"
+    ]
+   ]
+  },
+  {
+   "t": "Qual imperatriz dos Habsburgos reinou de 1740 a 1780 e teve 16 filhos?",
+   "type": "player",
+   "a": [
+    "maria_teresa"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "crown"
+   },
+   "src": [
+    "pt",
+    "Maria Teresa da Áustria",
+    [
+     "1740"
+    ]
+   ]
+  }
+ ]
+}

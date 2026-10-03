@@ -1,0 +1,730 @@
+{
+ "id": "brasil_republica",
+ "name": "Brasil República",
+ "tag": "De 1889 aos dias de hoje",
+ "col": "#2E8B57",
+ "diff": "Variado",
+ "flag": "BRA",
+ "qs": [
+  {
+   "t": "Qual foi o primeiro presidente civil do Brasil, eleito em 1894?",
+   "type": "txt",
+   "choices": [
+    "Prudente de Morais",
+    "Deodoro da Fonseca",
+    "Floriano Peixoto",
+    "Campos Sales",
+    "Rodrigues Alves",
+    "Afonso Pena"
+   ],
+   "a": [
+    "Prudente de Morais"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "flag"
+   },
+   "src": [
+    "pt",
+    "Prudente de Morais",
+    [
+     "1894"
+    ]
+   ]
+  },
+  {
+   "t": "Qual guerra no sertão baiano, de 1896 a 1897, foi narrada em Os Sertões, de Euclides da Cunha?",
+   "type": "txt",
+   "choices": [
+    "Guerra de Canudos",
+    "Guerra do Contestado",
+    "Revolta da Chibata",
+    "Guerra do Paraguai",
+    "Cabanagem",
+    "Guerra dos Farrapos"
+   ],
+   "a": [
+    "Guerra de Canudos"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "cannon"
+   },
+   "src": [
+    "pt",
+    "Guerra de Canudos",
+    [
+     "Os Sertões"
+    ]
+   ]
+  },
+  {
+   "t": "Qual líder religioso reuniu milhares de seguidores em Canudos?",
+   "type": "txt",
+   "choices": [
+    "Antônio Conselheiro",
+    "Padre Cícero",
+    "Frei Caneca",
+    "Lampião",
+    "Zé Pelintra",
+    "Dom Hélder"
+   ],
+   "a": [
+    "Antônio Conselheiro"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "flag"
+   },
+   "src": [
+    "pt",
+    "Antônio Conselheiro",
+    [
+     "Canudos"
+    ]
+   ]
+  },
+  {
+   "t": "Qual revolta de 1904 no Rio de Janeiro reagiu à vacinação obrigatória contra a varíola?",
+   "type": "txt",
+   "choices": [
+    "Revolta da Vacina",
+    "Revolta da Chibata",
+    "Revolta dos 18 do Forte",
+    "Guerra do Contestado",
+    "Sabinada",
+    "Cabanagem"
+   ],
+   "a": [
+    "Revolta da Vacina"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "torch"
+   },
+   "src": [
+    "pt",
+    "Revolta da Vacina",
+    [
+     "1904"
+    ]
+   ]
+  },
+  {
+   "t": "Qual sanitarista liderou a campanha contra a febre amarela e a varíola no início do século XX?",
+   "type": "player",
+   "a": [
+    "oswaldo_cruz"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "book"
+   },
+   "src": [
+    "pt",
+    "Oswaldo Cruz",
+    [
+     "febre amarela"
+    ]
+   ]
+  },
+  {
+   "t": "Qual inventor brasileiro voou com o 14-Bis em Paris, em 1906?",
+   "type": "player",
+   "a": [
+    "santos_dumont"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "gear"
+   },
+   "src": [
+    "pt",
+    "Alberto Santos-Dumont",
+    [
+     "14-Bis"
+    ]
+   ]
+  },
+  {
+   "t": "Qual diplomata, o “Barão”, resolveu pacificamente as fronteiras do Brasil?",
+   "type": "player",
+   "a": [
+    "rio_branco"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "map"
+   },
+   "src": [
+    "pt",
+    "Barão do Rio Branco",
+    [
+     "fronteira"
+    ]
+   ]
+  },
+  {
+   "t": "Qual marechal desbravou o sertão com linhas telegráficas e criou o órgão de proteção aos indígenas?",
+   "type": "player",
+   "a": [
+    "rondon"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "map"
+   },
+   "src": [
+    "pt",
+    "Cândido Rondon",
+    [
+     "telegráf"
+    ]
+   ]
+  },
+  {
+   "t": "Qual evento artístico de 1922, em São Paulo, inaugurou o Modernismo no Brasil?",
+   "type": "txt",
+   "choices": [
+    "Semana de Arte Moderna",
+    "Bienal de São Paulo",
+    "Salão de Belas Artes",
+    "Semana do Folclore",
+    "Festival de Cinema",
+    "Exposição Nacional"
+   ],
+   "a": [
+    "Semana de Arte Moderna"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "bust"
+   },
+   "src": [
+    "pt",
+    "Semana de Arte Moderna",
+    [
+     "1922"
+    ]
+   ]
+  },
+  {
+   "t": "Qual pintora modernista criou o Abaporu, em 1928?",
+   "type": "player",
+   "a": [
+    "tarsila"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "bust"
+   },
+   "src": [
+    "pt",
+    "Tarsila do Amaral",
+    [
+     "Abaporu"
+    ]
+   ]
+  },
+  {
+   "t": "Qual compositor brasileiro criou as Bachianas Brasileiras?",
+   "type": "player",
+   "a": [
+    "villa_lobos"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "book"
+   },
+   "src": [
+    "pt",
+    "Heitor Villa-Lobos",
+    [
+     "Bachianas"
+    ]
+   ]
+  },
+  {
+   "t": "Qual pintor paulista retratou Retirantes e Café, e fez os painéis Guerra e Paz da ONU?",
+   "type": "player",
+   "a": [
+    "portinari"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "bust"
+   },
+   "src": [
+    "pt",
+    "Candido Portinari",
+    [
+     "Retirantes"
+    ]
+   ]
+  },
+  {
+   "t": "Qual movimento de 1930 levou Getúlio Vargas ao poder?",
+   "type": "txt",
+   "choices": [
+    "Revolução de 1930",
+    "Revolução Constitucionalista",
+    "Tenentismo",
+    "Intentona Comunista",
+    "Revolta dos 18 do Forte",
+    "Coluna Prestes"
+   ],
+   "a": [
+    "Revolução de 1930"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "flag"
+   },
+   "src": [
+    "pt",
+    "Revolução de 1930",
+    [
+     "Vargas"
+    ]
+   ]
+  },
+  {
+   "t": "Qual presidente, o “Pai dos Pobres”, criou a CLT e a Petrobras no seu segundo governo?",
+   "type": "player",
+   "a": [
+    "getulio"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "flag"
+   },
+   "src": [
+    "pt",
+    "Getúlio Vargas",
+    [
+     "CLT"
+    ]
+   ]
+  },
+  {
+   "t": "Qual regime, de 1937 a 1945, concentrou poder em Getúlio Vargas?",
+   "type": "txt",
+   "choices": [
+    "Estado Novo",
+    "República Velha",
+    "Ditadura Militar",
+    "Segundo Reinado",
+    "Era Regencial",
+    "Nova República"
+   ],
+   "a": [
+    "Estado Novo"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "flag"
+   },
+   "src": [
+    "pt",
+    "Estado Novo (Brasil)",
+    [
+     "1937"
+    ]
+   ]
+  },
+  {
+   "t": "Qual a consolidação que, em 1943, reuniu a legislação trabalhista brasileira?",
+   "type": "txt",
+   "choices": [
+    "CLT",
+    "CUT",
+    "FGTS",
+    "INSS",
+    "PIS",
+    "Sudene"
+   ],
+   "a": [
+    "CLT"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "scroll"
+   },
+   "src": [
+    "pt",
+    "Consolidação das Leis do Trabalho",
+    [
+     "1943"
+    ]
+   ]
+  },
+  {
+   "t": "Qual presidente prometeu “50 anos em 5” e inaugurou Brasília, em 1960?",
+   "type": "player",
+   "a": [
+    "jk"
+   ],
+   "d": 1,
+   "art": {
+    "stad": "catedral_brasilia"
+   },
+   "src": [
+    "pt",
+    "Juscelino Kubitschek",
+    [
+     "Brasília"
+    ]
+   ]
+  },
+  {
+   "t": "Qual arquiteto projetou os principais edifícios de Brasília?",
+   "type": "player",
+   "a": [
+    "niemeyer"
+   ],
+   "d": 2,
+   "art": {
+    "stad": "catedral_brasilia"
+   },
+   "src": [
+    "pt",
+    "Oscar Niemeyer",
+    [
+     "Brasília"
+    ]
+   ]
+  },
+  {
+   "t": "Em que data foi inaugurada Brasília?",
+   "type": "txt",
+   "choices": [
+    "21 de abril de 1960",
+    "7 de setembro de 1960",
+    "15 de novembro de 1956",
+    "1º de maio de 1960",
+    "21 de abril de 1792",
+    "31 de março de 1964"
+   ],
+   "a": [
+    "21 de abril de 1960"
+   ],
+   "d": 3,
+   "art": {
+    "stad": "catedral_brasilia"
+   },
+   "src": [
+    "pt",
+    "Brasília",
+    [
+     "21 de abril de 1960"
+    ]
+   ]
+  },
+  {
+   "t": "Em que ano ocorreu o golpe militar que iniciou a ditadura no Brasil?",
+   "type": "txt",
+   "choices": [
+    "1964",
+    "1930",
+    "1945",
+    "1954",
+    "1968",
+    "1985"
+   ],
+   "a": [
+    "1964"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "flag"
+   },
+   "src": [
+    "pt",
+    "Golpe de Estado no Brasil em 1964",
+    [
+     "1964"
+    ]
+   ]
+  },
+  {
+   "t": "Qual ato institucional, de 1968, endureceu a ditadura militar, suspendendo garantias?",
+   "type": "txt",
+   "choices": [
+    "AI-5",
+    "AI-1",
+    "AI-3",
+    "Lei de Anistia",
+    "Pacote de Abril",
+    "Lei Falcão"
+   ],
+   "a": [
+    "AI-5"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "scroll"
+   },
+   "src": [
+    "pt",
+    "Ato Institucional Número Cinco",
+    [
+     "1968"
+    ]
+   ]
+  },
+  {
+   "t": "Qual o movimento popular de 1984 que pediu eleições diretas para presidente?",
+   "type": "txt",
+   "choices": [
+    "Diretas Já",
+    "Caras-Pintadas",
+    "Marcha da Família",
+    "Cansei",
+    "Vem pra Rua",
+    "Fora Collor"
+   ],
+   "a": [
+    "Diretas Já"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "flag"
+   },
+   "src": [
+    "pt",
+    "Diretas Já",
+    [
+     "1984"
+    ]
+   ]
+  },
+  {
+   "t": "Qual a lei de 1979 que permitiu a volta de exilados políticos ao Brasil?",
+   "type": "txt",
+   "choices": [
+    "Lei da Anistia",
+    "Lei Áurea",
+    "Lei Falcão",
+    "Lei de Segurança Nacional",
+    "Lei do Divórcio",
+    "Lei Maria da Penha"
+   ],
+   "a": [
+    "Lei da Anistia"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "scroll"
+   },
+   "src": [
+    "pt",
+    "Lei da Anistia (Brasil)",
+    [
+     "1979"
+    ]
+   ]
+  },
+  {
+   "t": "Em que ano foi promulgada a Constituição brasileira conhecida como “Cidadã”?",
+   "type": "txt",
+   "choices": [
+    "1988",
+    "1824",
+    "1891",
+    "1946",
+    "1967",
+    "1998"
+   ],
+   "a": [
+    "1988"
+   ],
+   "d": 1,
+   "art": {
+    "crest": "brasil_republica"
+   },
+   "src": [
+    "pt",
+    "Constituição brasileira de 1988",
+    [
+     "1988"
+    ]
+   ]
+  },
+  {
+   "t": "Qual seringueiro e ambientalista acreano foi assassinado em 1988 por defender a floresta?",
+   "type": "player",
+   "a": [
+    "chico_mendes"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "flag"
+   },
+   "src": [
+    "pt",
+    "Chico Mendes",
+    [
+     "1988"
+    ]
+   ]
+  },
+  {
+   "t": "Qual educador pernambucano criou um método de alfabetização de adultos e é patrono da educação brasileira?",
+   "type": "player",
+   "a": [
+    "paulo_freire"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "book"
+   },
+   "src": [
+    "pt",
+    "Paulo Freire",
+    [
+     "alfabetização"
+    ]
+   ]
+  },
+  {
+   "t": "Qual escritora, nascida na Ucrânia e naturalizada brasileira, escreveu A Hora da Estrela?",
+   "type": "player",
+   "a": [
+    "clarice"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "book"
+   },
+   "src": [
+    "pt",
+    "Clarice Lispector",
+    [
+     "A Hora da Estrela"
+    ]
+   ]
+  },
+  {
+   "t": "Qual poeta mineiro escreveu “No meio do caminho tinha uma pedra”?",
+   "type": "player",
+   "a": [
+    "drummond"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "book"
+   },
+   "src": [
+    "pt",
+    "Carlos Drummond de Andrade",
+    [
+     "pedra"
+    ]
+   ]
+  },
+  {
+   "t": "Qual plano econômico de 1994 estabilizou a moeda e criou o Real?",
+   "type": "txt",
+   "choices": [
+    "Plano Real",
+    "Plano Cruzado",
+    "Plano Collor",
+    "Plano Bresser",
+    "Plano Verão",
+    "Plano Marshall"
+   ],
+   "a": [
+    "Plano Real"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "gear"
+   },
+   "src": [
+    "pt",
+    "Plano Real",
+    [
+     "1994"
+    ]
+   ]
+  },
+  {
+   "t": "Em que ano o Brasil foi campeão mundial de futebol pela primeira vez, em campo estrangeiro?",
+   "type": "txt",
+   "choices": [
+    "1958",
+    "1950",
+    "1962",
+    "1970",
+    "1994",
+    "2002"
+   ],
+   "a": [
+    "1958"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "trophy"
+   },
+   "src": [
+    "pt",
+    "Copa do Mundo FIFA de 1958",
+    [
+     "Brasil"
+    ]
+   ]
+  },
+  {
+   "t": "Qual cidade brasileira sediou a Cúpula da Terra (Rio-92), conferência da ONU sobre meio ambiente?",
+   "type": "txt",
+   "choices": [
+    "Rio de Janeiro",
+    "Brasília",
+    "São Paulo",
+    "Manaus",
+    "Salvador",
+    "Belém"
+   ],
+   "a": [
+    "Rio de Janeiro"
+   ],
+   "d": 2,
+   "art": {
+    "stad": "cristo_redentor"
+   },
+   "src": [
+    "pt",
+    "Conferência das Nações Unidas sobre Meio Ambiente e Desenvolvimento",
+    [
+     "1992"
+    ]
+   ]
+  },
+  {
+   "t": "Qual o monumento inaugurado em 1931 no alto do Corcovado, no Rio de Janeiro?",
+   "type": "txt",
+   "choices": [
+    "Cristo Redentor",
+    "Cristo Rei",
+    "Pão de Açúcar",
+    "Estátua da Liberdade",
+    "Monumento às Bandeiras",
+    "Obelisco"
+   ],
+   "a": [
+    "Cristo Redentor"
+   ],
+   "d": 1,
+   "art": {
+    "stad": "cristo_redentor"
+   },
+   "src": [
+    "pt",
+    "Cristo Redentor (Rio de Janeiro)",
+    [
+     "1931"
+    ]
+   ]
+  }
+ ]
+}

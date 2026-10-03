@@ -1,0 +1,666 @@
+{
+ "id": "africa_americas",
+ "name": "África e Américas Antigas",
+ "tag": "Impérios do ouro, do milho e do sol",
+ "col": "#1F7A4D",
+ "diff": "Variado",
+ "emoji": "🗿",
+ "qs": [
+  {
+   "t": "Qual imperador do Mali ficou famoso por sua riqueza e sua peregrinação a Meca, em 1324?",
+   "type": "txt",
+   "choices": [
+    "Mansa Mussa",
+    "Sundiata Keita",
+    "Askia Mohammed",
+    "Sonni Ali",
+    "Shaka",
+    "Haile Selassie"
+   ],
+   "a": [
+    "Mansa Mussa"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "crown"
+   },
+   "src": [
+    "pt",
+    "Mansa Mussa",
+    [
+     "Meca"
+    ]
+   ]
+  },
+  {
+   "t": "Qual líder criou o poderoso reino dos zulus, no sul da África, no início do século XIX?",
+   "type": "player",
+   "a": [
+    "shaka"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "sword"
+   },
+   "src": [
+    "pt",
+    "Shaka",
+    [
+     "zulu"
+    ]
+   ]
+  },
+  {
+   "t": "Qual rainha de Ndongo e Matamba lutou contra o domínio português em Angola no século XVII?",
+   "type": "player",
+   "a": [
+    "nzinga"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "crown"
+   },
+   "src": [
+    "en",
+    "Nzinga of Ndongo and Matamba",
+    [
+     "Portuguese"
+    ]
+   ]
+  },
+  {
+   "t": "Qual imperador etíope, chamado “Leão de Judá”, discursou na Liga das Nações em 1936?",
+   "type": "player",
+   "a": [
+    "haile_selassie"
+   ],
+   "d": 4,
+   "art": {
+    "icon": "crown"
+   },
+   "src": [
+    "pt",
+    "Hailé Selassié I",
+    [
+     "Liga das Nações"
+    ]
+   ]
+  },
+  {
+   "t": "Qual cidade do Mali foi famosa como centro de comércio de ouro e de estudos islâmicos?",
+   "type": "txt",
+   "choices": [
+    "Tombuctu",
+    "Gao",
+    "Mombaça",
+    "Zanzibar",
+    "Axum",
+    "Quíloa"
+   ],
+   "a": [
+    "Tombuctu"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "map"
+   },
+   "src": [
+    "pt",
+    "Tombuctu",
+    [
+     "Mali"
+    ]
+   ]
+  },
+  {
+   "t": "Qual reino africano, no atual norte da Etiópia, adotou o cristianismo no século IV?",
+   "type": "txt",
+   "choices": [
+    "Axum",
+    "Kush",
+    "Songai",
+    "Zimbábue",
+    "Daomé",
+    "Benin"
+   ],
+   "a": [
+    "Axum"
+   ],
+   "d": 4,
+   "art": {
+    "icon": "column"
+   },
+   "src": [
+    "pt",
+    "Reino de Axum",
+    [
+     "cristianismo"
+    ]
+   ]
+  },
+  {
+   "t": "Qual a grande construção de pedra do sudeste da África, que dá nome a um país?",
+   "type": "txt",
+   "choices": [
+    "Grande Zimbábue",
+    "Axum",
+    "Meroé",
+    "Lalibela",
+    "Gizé",
+    "Kilwa"
+   ],
+   "a": [
+    "Grande Zimbábue"
+   ],
+   "d": 4,
+   "art": {
+    "icon": "castle"
+   },
+   "src": [
+    "pt",
+    "Grande Zimbábue",
+    [
+     "Zimbábue"
+    ]
+   ]
+  },
+  {
+   "t": "Qual comércio forçado levou milhões de africanos escravizados para as Américas?",
+   "type": "txt",
+   "choices": [
+    "Tráfico atlântico",
+    "Rota do sal",
+    "Comércio de ouro",
+    "Rota da seda",
+    "Caravana de marfim",
+    "Cabotagem"
+   ],
+   "a": [
+    "Tráfico atlântico"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "ship"
+   },
+   "src": [
+    "pt",
+    "Tráfico atlântico de escravos",
+    [
+     "Américas"
+    ]
+   ]
+  },
+  {
+   "t": "Qual país recebeu o maior número de africanos escravizados nas Américas?",
+   "type": "txt",
+   "choices": [
+    "Brasil",
+    "Estados Unidos",
+    "Cuba",
+    "Haiti",
+    "Jamaica",
+    "Colômbia"
+   ],
+   "a": [
+    "Brasil"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "ship"
+   },
+   "src": [
+    "pt",
+    "Tráfico atlântico de escravos",
+    [
+     "Brasil"
+    ]
+   ]
+  },
+  {
+   "t": "Qual civilização mesoamericana construiu Tikal e Chichén Itzá, e criou um calendário e escrita próprios?",
+   "type": "txt",
+   "choices": [
+    "Maia",
+    "Asteca",
+    "Inca",
+    "Olmeca",
+    "Tolteca",
+    "Zapoteca"
+   ],
+   "a": [
+    "Maia"
+   ],
+   "d": 1,
+   "art": {
+    "stad": "chichen_itza"
+   },
+   "src": [
+    "pt",
+    "Civilização maia",
+    [
+     "calendário"
+    ]
+   ]
+  },
+  {
+   "t": "Qual a capital do Império Asteca, construída sobre um lago, onde hoje é a Cidade do México?",
+   "type": "txt",
+   "choices": [
+    "Tenochtitlán",
+    "Cuzco",
+    "Teotihuacán",
+    "Tikal",
+    "Machu Picchu",
+    "Cholula"
+   ],
+   "a": [
+    "Tenochtitlán"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "pyramid"
+   },
+   "src": [
+    "pt",
+    "Tenochtitlán",
+    [
+     "lago"
+    ]
+   ]
+  },
+  {
+   "t": "Qual conquistador espanhol derrubou o Império Asteca, entre 1519 e 1521?",
+   "type": "player",
+   "a": [
+    "cortes"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "sword"
+   },
+   "src": [
+    "pt",
+    "Hernán Cortés",
+    [
+     "asteca"
+    ]
+   ]
+  },
+  {
+   "t": "Qual imperador asteca recebeu os espanhóis em Tenochtitlán em 1519?",
+   "type": "player",
+   "a": [
+    "moctezuma"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "crown"
+   },
+   "src": [
+    "pt",
+    "Montezuma II",
+    [
+     "Cortés"
+    ]
+   ]
+  },
+  {
+   "t": "Qual conquistador espanhol capturou o imperador inca Atahualpa, em 1532?",
+   "type": "player",
+   "a": [
+    "pizarro"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "sword"
+   },
+   "src": [
+    "pt",
+    "Francisco Pizarro",
+    [
+     "Atahualpa"
+    ]
+   ]
+  },
+  {
+   "t": "Qual foi o último imperador inca independente, capturado em Cajamarca?",
+   "type": "player",
+   "a": [
+    "atahualpa"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "crown"
+   },
+   "src": [
+    "pt",
+    "Atahualpa",
+    [
+     "Cajamarca"
+    ]
+   ]
+  },
+  {
+   "t": "Qual a capital do Império Inca, nos Andes?",
+   "type": "txt",
+   "choices": [
+    "Cuzco",
+    "Machu Picchu",
+    "Lima",
+    "Quito",
+    "Tiahuanaco",
+    "La Paz"
+   ],
+   "a": [
+    "Cuzco"
+   ],
+   "d": 2,
+   "art": {
+    "stad": "machu_picchu"
+   },
+   "src": [
+    "pt",
+    "Cusco",
+    [
+     "inca"
+    ]
+   ]
+  },
+  {
+   "t": "Qual cidadela inca nos Andes, redescoberta em 1911 por Hiram Bingham, é Patrimônio Mundial?",
+   "type": "txt",
+   "choices": [
+    "Machu Picchu",
+    "Sacsayhuamán",
+    "Ollantaytambo",
+    "Chan Chan",
+    "Tikal",
+    "Cajamarca"
+   ],
+   "a": [
+    "Machu Picchu"
+   ],
+   "d": 1,
+   "art": {
+    "stad": "machu_picchu"
+   },
+   "src": [
+    "pt",
+    "Machu Picchu",
+    [
+     "1911"
+    ]
+   ]
+  },
+  {
+   "t": "Qual o nome do sistema de cordas com nós usado pelos incas para registrar informações?",
+   "type": "txt",
+   "choices": [
+    "Quipu",
+    "Códice",
+    "Glifo",
+    "Ábaco",
+    "Cartela",
+    "Tabuleta"
+   ],
+   "a": [
+    "Quipu"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "scroll"
+   },
+   "src": [
+    "pt",
+    "Quipo",
+    [
+     "inca"
+    ]
+   ]
+  },
+  {
+   "t": "Qual cereal, domesticado na Mesoamérica, era a base da alimentação maia e asteca?",
+   "type": "txt",
+   "choices": [
+    "Milho",
+    "Trigo",
+    "Arroz",
+    "Cevada",
+    "Sorgo",
+    "Centeio"
+   ],
+   "a": [
+    "Milho"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "globe"
+   },
+   "src": [
+    "pt",
+    "Milho",
+    [
+     "Mesoamérica"
+    ]
+   ]
+  },
+  {
+   "t": "Qual civilização andina produziu as misteriosas linhas desenhadas no deserto, no Peru?",
+   "type": "txt",
+   "choices": [
+    "Nazca",
+    "Inca",
+    "Chimu",
+    "Tiwanaku",
+    "Moche",
+    "Wari"
+   ],
+   "a": [
+    "Nazca"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "map"
+   },
+   "src": [
+    "pt",
+    "Linhas de Nazca",
+    [
+     "Peru"
+    ]
+   ]
+  },
+  {
+   "t": "Qual civilização é conhecida pelas gigantescas cabeças de pedra na costa do Golfo do México?",
+   "type": "txt",
+   "choices": [
+    "Olmeca",
+    "Maia",
+    "Asteca",
+    "Inca",
+    "Tolteca",
+    "Mixteca"
+   ],
+   "a": [
+    "Olmeca"
+   ],
+   "d": 4,
+   "art": {
+    "icon": "bust"
+   },
+   "src": [
+    "pt",
+    "Olmecas",
+    [
+     "cabeça"
+    ]
+   ]
+  },
+  {
+   "t": "Qual a grande estátua de pedra da Ilha de Páscoa chamada?",
+   "type": "txt",
+   "choices": [
+    "Moai",
+    "Quipu",
+    "Totem",
+    "Menir",
+    "Ahu",
+    "Cairn"
+   ],
+   "a": [
+    "Moai"
+   ],
+   "d": 2,
+   "art": {
+    "stad": "moai"
+   },
+   "src": [
+    "pt",
+    "Moai",
+    [
+     "Ilha de Páscoa"
+    ]
+   ]
+  },
+  {
+   "t": "Qual doença trazida pelos europeus devastou as populações indígenas das Américas?",
+   "type": "txt",
+   "choices": [
+    "Varíola",
+    "Peste negra",
+    "Cólera",
+    "Escorbuto",
+    "Malária",
+    "Tuberculose bovina"
+   ],
+   "a": [
+    "Varíola"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "hourglass"
+   },
+   "src": [
+    "pt",
+    "Varíola",
+    [
+     "América"
+    ]
+   ]
+  },
+  {
+   "t": "Qual povo indígena norte-americano liderou a vitória em Little Bighorn, em 1876?",
+   "type": "txt",
+   "choices": [
+    "Sioux e Cheyenne",
+    "Apaches",
+    "Navajos",
+    "Iroqueses",
+    "Cherokees",
+    "Comanches"
+   ],
+   "a": [
+    "Sioux e Cheyenne"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "sword"
+   },
+   "src": [
+    "pt",
+    "Batalha de Little Bighorn",
+    [
+     "Sioux"
+    ]
+   ]
+  },
+  {
+   "t": "Qual chefe sioux Hunkpapa liderou a resistência indígena e participou da vitória em Little Bighorn?",
+   "type": "player",
+   "a": [
+    "touro_sentado"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "sword"
+   },
+   "src": [
+    "pt",
+    "Touro Sentado",
+    [
+     "Little Bighorn"
+    ]
+   ]
+  },
+  {
+   "t": "Qual líder de Palmares resistiu à escravidão no quilombo mais famoso do Brasil colonial?",
+   "type": "player",
+   "a": [
+    "zumbi"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "flag"
+   },
+   "src": [
+    "pt",
+    "Zumbi dos Palmares",
+    [
+     "Palmares"
+    ]
+   ]
+  },
+  {
+   "t": "Qual o povo indígena que habitava o litoral do Brasil quando os portugueses chegaram e falava tupi?",
+   "type": "txt",
+   "choices": [
+    "Tupinambás",
+    "Yanomamis",
+    "Guaranis do Sul",
+    "Aimorés",
+    "Kayapós",
+    "Xavantes"
+   ],
+   "a": [
+    "Tupinambás"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "map"
+   },
+   "src": [
+    "pt",
+    "Tupinambás",
+    [
+     "tupi"
+    ]
+   ]
+  },
+  {
+   "t": "Qual a fronteira definida em 1494 entre as terras de Portugal e Espanha no Novo Mundo?",
+   "type": "txt",
+   "choices": [
+    "Tratado de Tordesilhas",
+    "Tratado de Madri",
+    "Tratado de Utrecht",
+    "Tratado de Vestfália",
+    "Tratado de Versalhes",
+    "Tratado de Santo Ildefonso"
+   ],
+   "a": [
+    "Tratado de Tordesilhas"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "map"
+   },
+   "src": [
+    "pt",
+    "Tratado de Tordesilhas",
+    [
+     "1494"
+    ]
+   ]
+  }
+ ]
+}

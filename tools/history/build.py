@@ -284,7 +284,15 @@ def main():
     s = io.open(PAGE, encoding="utf-8").read()
     if "/*@@data_cl_cats@@*/" not in s:
         s = migrate(s)
+    # the merged questions live inside the CATS block; keep them across a rebuild
+    B, E_ = "/* NEW-QS:BEGIN", "/* NEW-QS:END */"
+    kept = None
+    if B in s and E_ in s:
+        a = s.index(B); a = s.index("\n", a) + 1
+        kept = s[a:s.index(E_)]
     blocks = build_blocks()
+    if kept is not None:
+        blocks["data_cl_cats"] = blocks["data_cl_cats"].replace("  " + E_, kept + "  " + E_)
     for k, v in blocks.items():
         s = put(s, k, v)
     if "/*@@gen@@*/" not in s:

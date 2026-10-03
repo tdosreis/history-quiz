@@ -1,0 +1,634 @@
+{
+ "id": "revolucoes",
+ "name": "Revoluções",
+ "tag": "Bastilhas, independências e fábricas",
+ "col": "#B3402F",
+ "diff": "Variado",
+ "emoji": "🔥",
+ "qs": [
+  {
+   "t": "Em que ano começou a Revolução Francesa, com a queda da Bastilha?",
+   "type": "txt",
+   "choices": [
+    "1789",
+    "1776",
+    "1799",
+    "1804",
+    "1815",
+    "1848"
+   ],
+   "a": [
+    "1789"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "torch"
+   },
+   "src": [
+    "pt",
+    "Revolução Francesa",
+    [
+     "1789"
+    ]
+   ]
+  },
+  {
+   "t": "Qual o lema da Revolução Francesa?",
+   "type": "txt",
+   "choices": [
+    "Liberdade, Igualdade, Fraternidade",
+    "Ordem e Progresso",
+    "Deus, Pátria e Rei",
+    "União, Força, Fé",
+    "Paz, Pão e Terra",
+    "Vida, Liberdade e Felicidade"
+   ],
+   "a": [
+    "Liberdade, Igualdade, Fraternidade"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "torch"
+   },
+   "src": [
+    "pt",
+    "Revolução Francesa",
+    [
+     "Liberdade"
+    ]
+   ]
+  },
+  {
+   "t": "Qual prisão parisiense foi tomada pelo povo em 14 de julho de 1789?",
+   "type": "txt",
+   "choices": [
+    "Bastilha",
+    "Conciergerie",
+    "Torre do Templo",
+    "Louvre",
+    "Santé",
+    "Châtelet"
+   ],
+   "a": [
+    "Bastilha"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "torch"
+   },
+   "src": [
+    "pt",
+    "Queda da Bastilha",
+    [
+     "14 de julho"
+    ]
+   ]
+  },
+  {
+   "t": "Qual líder jacobino conduziu o período do Terror, em 1793–1794?",
+   "type": "player",
+   "a": [
+    "robespierre"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "torch"
+   },
+   "src": [
+    "pt",
+    "Maximilien de Robespierre",
+    [
+     "Terror"
+    ]
+   ]
+  },
+  {
+   "t": "Qual rainha francesa, nascida na Áustria, foi guilhotinada em 1793?",
+   "type": "player",
+   "a": [
+    "maria_antonieta"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "crown"
+   },
+   "src": [
+    "pt",
+    "Maria Antonieta",
+    [
+     "guilhotin"
+    ]
+   ]
+  },
+  {
+   "t": "Qual general corso tomou o poder na França em 1799 e se coroou imperador em 1804?",
+   "type": "player",
+   "a": [
+    "napoleao"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "sword"
+   },
+   "src": [
+    "pt",
+    "Napoleão Bonaparte",
+    [
+     "1804"
+    ]
+   ]
+  },
+  {
+   "t": "Qual duque britânico derrotou Napoleão em Waterloo, em 1815?",
+   "type": "player",
+   "a": [
+    "wellington"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "sword"
+   },
+   "src": [
+    "pt",
+    "Arthur Wellesley, 1.º Duque de Wellington",
+    [
+     "Waterloo"
+    ]
+   ]
+  },
+  {
+   "t": "Qual almirante britânico venceu a Batalha de Trafalgar, em 1805, e morreu nela?",
+   "type": "player",
+   "a": [
+    "nelson"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "ship"
+   },
+   "src": [
+    "pt",
+    "Horatio Nelson",
+    [
+     "Trafalgar"
+    ]
+   ]
+  },
+  {
+   "t": "Em que ilha Napoleão foi exilado definitivamente, em 1815?",
+   "type": "txt",
+   "choices": [
+    "Santa Helena",
+    "Elba",
+    "Córsega",
+    "Malta",
+    "Creta",
+    "Sardenha"
+   ],
+   "a": [
+    "Santa Helena"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "ship"
+   },
+   "src": [
+    "pt",
+    "Napoleão Bonaparte",
+    [
+     "Santa Helena"
+    ]
+   ]
+  },
+  {
+   "t": "Qual documento de 1789 proclamou direitos universais na França revolucionária?",
+   "type": "txt",
+   "choices": [
+    "Declaração dos Direitos do Homem e do Cidadão",
+    "Magna Carta",
+    "Bill of Rights",
+    "Código Napoleônico",
+    "Édito de Nantes",
+    "Carta das Nações"
+   ],
+   "a": [
+    "Declaração dos Direitos do Homem e do Cidadão"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "scroll"
+   },
+   "src": [
+    "pt",
+    "Declaração dos Direitos do Homem e do Cidadão",
+    [
+     "1789"
+    ]
+   ]
+  },
+  {
+   "t": "Qual o conjunto de leis civis de Napoleão, que influenciou muitos países?",
+   "type": "txt",
+   "choices": [
+    "Código Napoleônico",
+    "Código de Hamurabi",
+    "Código Justiniano",
+    "Código Penal Imperial",
+    "Constituição de 1791",
+    "Pandectas"
+   ],
+   "a": [
+    "Código Napoleônico"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "scroll"
+   },
+   "src": [
+    "pt",
+    "Código Civil Francês",
+    [
+     "1804"
+    ]
+   ]
+  },
+  {
+   "t": "Em que ano as Treze Colônias declararam independência dos britânicos?",
+   "type": "txt",
+   "choices": [
+    "1776",
+    "1789",
+    "1763",
+    "1783",
+    "1812",
+    "1865"
+   ],
+   "a": [
+    "1776"
+   ],
+   "d": 1,
+   "art": {
+    "stad": "capitolio"
+   },
+   "src": [
+    "pt",
+    "Declaração de Independência dos Estados Unidos",
+    [
+     "1776"
+    ]
+   ]
+  },
+  {
+   "t": "Qual o principal redator da Declaração de Independência dos Estados Unidos?",
+   "type": "player",
+   "a": [
+    "jefferson"
+   ],
+   "d": 2,
+   "art": {
+    "stad": "capitolio"
+   },
+   "src": [
+    "pt",
+    "Thomas Jefferson",
+    [
+     "Declaração de Independência"
+    ]
+   ]
+  },
+  {
+   "t": "Qual general comandou o exército continental e foi o primeiro presidente dos EUA?",
+   "type": "player",
+   "a": [
+    "washington"
+   ],
+   "d": 1,
+   "art": {
+    "stad": "capitolio"
+   },
+   "src": [
+    "pt",
+    "George Washington",
+    [
+     "primeiro presidente"
+    ]
+   ]
+  },
+  {
+   "t": "Qual cientista e diplomata americano inventou o para-raios e ajudou a redigir a independência?",
+   "type": "player",
+   "a": [
+    "franklin"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "torch"
+   },
+   "src": [
+    "pt",
+    "Benjamin Franklin",
+    [
+     "para-raios"
+    ]
+   ]
+  },
+  {
+   "t": "Qual a máxima dos colonos americanos contra os impostos britânicos?",
+   "type": "txt",
+   "choices": [
+    "Sem representação, nada de impostos",
+    "Dê-me liberdade ou dê-me a morte",
+    "Pão, paz e terra",
+    "Um por todos",
+    "Ordem e progresso",
+    "Liberdade ainda que tardia"
+   ],
+   "a": [
+    "Sem representação, nada de impostos"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "torch"
+   },
+   "src": [
+    "pt",
+    "Taxação sem representação",
+    [
+     "representação"
+    ]
+   ]
+  },
+  {
+   "t": "Qual ex-escravizado liderou a revolução que fez do Haiti a primeira república negra livre?",
+   "type": "player",
+   "a": [
+    "toussaint"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "flag"
+   },
+   "src": [
+    "pt",
+    "Toussaint Louverture",
+    [
+     "Haiti"
+    ]
+   ]
+  },
+  {
+   "t": "Qual venezuelano, “o Libertador”, liderou a independência de vários países da América do Sul?",
+   "type": "player",
+   "a": [
+    "bolivar"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "flag"
+   },
+   "src": [
+    "pt",
+    "Simón Bolívar",
+    [
+     "Libertador"
+    ]
+   ]
+  },
+  {
+   "t": "Qual general argentino atravessou os Andes para libertar o Chile e o Peru?",
+   "type": "player",
+   "a": [
+    "san_martin"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "flag"
+   },
+   "src": [
+    "pt",
+    "José de San Martín",
+    [
+     "Andes"
+    ]
+   ]
+  },
+  {
+   "t": "Qual príncipe português proclamou a independência do Brasil, em 7 de setembro de 1822?",
+   "type": "player",
+   "a": [
+    "dom_pedro_i"
+   ],
+   "d": 1,
+   "art": {
+    "stad": "museu_ipiranga"
+   },
+   "src": [
+    "pt",
+    "Pedro I do Brasil",
+    [
+     "1822"
+    ]
+   ]
+  },
+  {
+   "t": "Qual a revolução, iniciada na Inglaterra por volta de 1760, que mecanizou a produção?",
+   "type": "txt",
+   "choices": [
+    "Revolução Industrial",
+    "Revolução Gloriosa",
+    "Revolução Verde",
+    "Revolução Francesa",
+    "Revolução Puritana",
+    "Revolução Americana"
+   ],
+   "a": [
+    "Revolução Industrial"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "gear"
+   },
+   "src": [
+    "pt",
+    "Revolução Industrial",
+    [
+     "1760"
+    ]
+   ]
+  },
+  {
+   "t": "Qual invenção de James Watt, aperfeiçoada em 1769, moveu fábricas e locomotivas?",
+   "type": "txt",
+   "choices": [
+    "Máquina a vapor",
+    "Tear mecânico",
+    "Dínamo",
+    "Motor a combustão",
+    "Lâmpada",
+    "Telégrafo"
+   ],
+   "a": [
+    "Máquina a vapor"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "gear"
+   },
+   "src": [
+    "pt",
+    "Máquina a vapor",
+    [
+     "Watt"
+    ]
+   ]
+  },
+  {
+   "t": "Qual setor industrial inglês foi pioneiro, com o tear mecânico?",
+   "type": "txt",
+   "choices": [
+    "Têxtil",
+    "Siderúrgico",
+    "Naval",
+    "Químico",
+    "Alimentício",
+    "Automobilístico"
+   ],
+   "a": [
+    "Têxtil"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "gear"
+   },
+   "src": [
+    "pt",
+    "Revolução Industrial",
+    [
+     "têxtil"
+    ]
+   ]
+  },
+  {
+   "t": "Qual movimento de trabalhadores ingleses quebrou máquinas no início do século XIX?",
+   "type": "txt",
+   "choices": [
+    "Ludismo",
+    "Cartismo",
+    "Sindicalismo",
+    "Anarquismo",
+    "Jacobinismo",
+    "Fabianismo"
+   ],
+   "a": [
+    "Ludismo"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "gear"
+   },
+   "src": [
+    "pt",
+    "Ludismo",
+    [
+     "máquinas"
+    ]
+   ]
+  },
+  {
+   "t": "Qual obra de 1848, de Marx e Engels, começa com “Um espectro ronda a Europa”?",
+   "type": "txt",
+   "choices": [
+    "Manifesto Comunista",
+    "O Capital",
+    "A Riqueza das Nações",
+    "O Contrato Social",
+    "A Utopia",
+    "Ideologia Alemã"
+   ],
+   "a": [
+    "Manifesto Comunista"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "book"
+   },
+   "src": [
+    "pt",
+    "Manifesto Comunista",
+    [
+     "1848"
+    ]
+   ]
+  },
+  {
+   "t": "Qual ciclo de revoluções liberais sacudiu a Europa em 1848?",
+   "type": "txt",
+   "choices": [
+    "Primavera dos Povos",
+    "Revolução Gloriosa",
+    "Era do Terror",
+    "Guerra Fria",
+    "Primavera Árabe",
+    "Revolução de Veludo"
+   ],
+   "a": [
+    "Primavera dos Povos"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "torch"
+   },
+   "src": [
+    "pt",
+    "Primavera dos Povos",
+    [
+     "1848"
+    ]
+   ]
+  },
+  {
+   "t": "Em que ano ocorreu a Revolução Russa que levou os bolcheviques ao poder?",
+   "type": "txt",
+   "choices": [
+    "1917",
+    "1905",
+    "1914",
+    "1923",
+    "1939",
+    "1991"
+   ],
+   "a": [
+    "1917"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "torch"
+   },
+   "src": [
+    "pt",
+    "Revolução Russa",
+    [
+     "1917"
+    ]
+   ]
+  },
+  {
+   "t": "Qual líder bolchevique comandou a Revolução de Outubro?",
+   "type": "player",
+   "a": [
+    "lenin"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "torch"
+   },
+   "src": [
+    "pt",
+    "Vladimir Lenin",
+    [
+     "Outubro"
+    ]
+   ]
+  }
+ ]
+}

@@ -1,0 +1,775 @@
+{
+ "id": "roma",
+ "name": "Roma Antiga",
+ "tag": "Da República ao fim do Império",
+ "col": "#9E1B1B",
+ "diff": "Variado",
+ "emoji": "🏟️",
+ "qs": [
+  {
+   "t": "Segundo a lenda, quem fundou Roma em 753 a.C.?",
+   "type": "txt",
+   "choices": [
+    "Rômulo",
+    "Remo",
+    "Eneias",
+    "Numa Pompílio",
+    "Tarquínio",
+    "Brutus"
+   ],
+   "a": [
+    "Rômulo"
+   ],
+   "d": 1,
+   "art": {
+    "stad": "forum_romano"
+   },
+   "src": [
+    "pt",
+    "Roma",
+    [
+     "Rômulo"
+    ]
+   ],
+   "x": "A lenda diz que os gêmeos Rômulo e Remo foram amamentados por uma loba."
+  },
+  {
+   "t": "Qual era o regime político de Roma entre 509 a.C. e 27 a.C.?",
+   "type": "txt",
+   "choices": [
+    "República",
+    "Monarquia absoluta",
+    "Democracia direta",
+    "Teocracia",
+    "Tirania",
+    "Federação"
+   ],
+   "a": [
+    "República"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "column"
+   },
+   "src": [
+    "pt",
+    "República Romana",
+    [
+     "509 a.C."
+    ]
+   ]
+  },
+  {
+   "t": "Como se chamava o órgão aristocrático que aconselhava e governava Roma?",
+   "type": "txt",
+   "choices": [
+    "Senado",
+    "Conselho dos Quinhentos",
+    "Eclésia",
+    "Areópago",
+    "Cúria Ducal",
+    "Parlamento"
+   ],
+   "a": [
+    "Senado"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "column"
+   },
+   "src": [
+    "pt",
+    "Senado romano",
+    [
+     "Roma"
+    ]
+   ]
+  },
+  {
+   "t": "Contra qual potência Roma travou as três Guerras Púnicas?",
+   "type": "txt",
+   "choices": [
+    "Cartago",
+    "Grécia",
+    "Pérsia",
+    "Egito",
+    "Macedônia",
+    "Gália"
+   ],
+   "a": [
+    "Cartago"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "ship"
+   },
+   "src": [
+    "pt",
+    "Guerras Púnicas",
+    [
+     "Cartago"
+    ]
+   ]
+  },
+  {
+   "t": "Qual general cartaginês atravessou os Alpes com elefantes para invadir a Itália?",
+   "type": "player",
+   "a": [
+    "anibal"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "sword"
+   },
+   "src": [
+    "pt",
+    "Aníbal",
+    [
+     "Alpes"
+    ]
+   ]
+  },
+  {
+   "t": "Qual general romano derrotou Aníbal na Batalha de Zama, em 202 a.C.?",
+   "type": "player",
+   "a": [
+    "cipiao"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "sword"
+   },
+   "src": [
+    "pt",
+    "Cipião Africano",
+    [
+     "Zama"
+    ]
+   ]
+  },
+  {
+   "t": "Qual líder romano conquistou a Gália e cruzou o Rubicão, em 49 a.C.?",
+   "type": "player",
+   "a": [
+    "cesar"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "sword"
+   },
+   "src": [
+    "pt",
+    "Júlio César",
+    [
+     "Rubicão"
+    ]
+   ],
+   "x": "“A sorte está lançada” teria dito César ao cruzar o rio, iniciando a guerra civil."
+  },
+  {
+   "t": "Qual escravizado liderou a maior revolta de gladiadores contra Roma, entre 73 e 71 a.C.?",
+   "type": "player",
+   "a": [
+    "espartaco"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "sword"
+   },
+   "src": [
+    "pt",
+    "Espártaco",
+    [
+     "gladiador"
+    ]
+   ]
+  },
+  {
+   "t": "Qual orador romano denunciou Catilina em famosos discursos no Senado?",
+   "type": "player",
+   "a": [
+    "cicero"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "scroll"
+   },
+   "src": [
+    "pt",
+    "Cícero",
+    [
+     "Catilina"
+    ]
+   ]
+  },
+  {
+   "t": "Quem se tornou o primeiro imperador de Roma, em 27 a.C.?",
+   "type": "player",
+   "a": [
+    "augusto"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "crown"
+   },
+   "src": [
+    "pt",
+    "Augusto",
+    [
+     "27 a.C."
+    ]
+   ]
+  },
+  {
+   "t": "Qual imperador romano é lembrado, na tradição, pelo Grande Incêndio de Roma em 64 d.C.?",
+   "type": "player",
+   "a": [
+    "nero"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "crown"
+   },
+   "src": [
+    "pt",
+    "Nero",
+    [
+     "incêndio"
+    ]
+   ]
+  },
+  {
+   "t": "Qual imperador-filósofo escreveu as Meditações em grego?",
+   "type": "player",
+   "a": [
+    "marco_aurelio"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "book"
+   },
+   "src": [
+    "pt",
+    "Marco Aurélio",
+    [
+     "Meditações"
+    ]
+   ]
+  },
+  {
+   "t": "Qual imperador mandou erguer uma muralha na fronteira norte da Britânia?",
+   "type": "player",
+   "a": [
+    "adriano"
+   ],
+   "d": 3,
+   "art": {
+    "stad": "muralha_adriano"
+   },
+   "src": [
+    "pt",
+    "Adriano",
+    [
+     "Muralha"
+    ]
+   ]
+  },
+  {
+   "t": "Qual imperador legalizou o cristianismo com o Edito de Milão, em 313, e fundou Constantinopla?",
+   "type": "player",
+   "a": [
+    "constantino"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "crown"
+   },
+   "src": [
+    "pt",
+    "Constantino I",
+    [
+     "Edito de Milão"
+    ]
+   ]
+  },
+  {
+   "t": "Qual poeta romano escreveu a Eneida, epopeia da origem de Roma?",
+   "type": "player",
+   "a": [
+    "virgilio"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "book"
+   },
+   "src": [
+    "pt",
+    "Virgílio",
+    [
+     "Eneida"
+    ]
+   ]
+  },
+  {
+   "t": "Qual médico grego a serviço dos gladiadores e dos imperadores influenciou a Medicina por mais de mil anos?",
+   "type": "player",
+   "a": [
+    "galeno"
+   ],
+   "d": 4,
+   "art": {
+    "icon": "book"
+   },
+   "src": [
+    "pt",
+    "Galeno",
+    [
+     "gladiador"
+    ]
+   ]
+  },
+  {
+   "t": "Qual anfiteatro de Roma, inaugurado no ano 80, sediava lutas de gladiadores?",
+   "type": "txt",
+   "choices": [
+    "Coliseu",
+    "Circo Máximo",
+    "Panteão",
+    "Fórum",
+    "Termas de Caracala",
+    "Teatro de Marcelo"
+   ],
+   "a": [
+    "Coliseu"
+   ],
+   "d": 1,
+   "art": {
+    "stad": "coliseu"
+   },
+   "src": [
+    "pt",
+    "Coliseu",
+    [
+     "gladiador"
+    ]
+   ]
+  },
+  {
+   "t": "Qual cidade romana foi soterrada pelo Vesúvio no ano 79?",
+   "type": "txt",
+   "choices": [
+    "Pompeia",
+    "Roma",
+    "Cartago",
+    "Óstia",
+    "Capri",
+    "Ravena"
+   ],
+   "a": [
+    "Pompeia"
+   ],
+   "d": 1,
+   "art": {
+    "stad": "pompeia"
+   },
+   "src": [
+    "pt",
+    "Pompeia",
+    [
+     "79"
+    ]
+   ]
+  },
+  {
+   "t": "Qual era o nome da grande estrada militar que ligava Roma a Brindisi?",
+   "type": "txt",
+   "choices": [
+    "Via Ápia",
+    "Via Láctea",
+    "Via Sacra",
+    "Via Egnácia",
+    "Via Flamínia",
+    "Via Aurélia"
+   ],
+   "a": [
+    "Via Ápia"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "map"
+   },
+   "src": [
+    "pt",
+    "Via Ápia",
+    [
+     "Roma"
+    ]
+   ]
+  },
+  {
+   "t": "Qual a unidade básica do exército romano, de cerca de 5 mil homens?",
+   "type": "txt",
+   "choices": [
+    "Legião",
+    "Falange",
+    "Coorte",
+    "Esquadra",
+    "Centúria",
+    "Manípulo"
+   ],
+   "a": [
+    "Legião"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "sword"
+   },
+   "src": [
+    "pt",
+    "Legião romana",
+    [
+     "legião"
+    ]
+   ]
+  },
+  {
+   "t": "Qual língua era falada em Roma e deu origem ao português, espanhol e italiano?",
+   "type": "txt",
+   "choices": [
+    "Latim",
+    "Grego",
+    "Etrusco",
+    "Osco",
+    "Fenício",
+    "Aramaico"
+   ],
+   "a": [
+    "Latim"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "book"
+   },
+   "src": [
+    "pt",
+    "Latim",
+    [
+     "português"
+    ]
+   ]
+  },
+  {
+   "t": "Qual obra pública romana levava água às cidades por arcos de pedra?",
+   "type": "txt",
+   "choices": [
+    "Aqueduto",
+    "Termas",
+    "Basílica",
+    "Anfiteatro",
+    "Fórum",
+    "Cloaca"
+   ],
+   "a": [
+    "Aqueduto"
+   ],
+   "d": 1,
+   "art": {
+    "stad": "aqueduto_segovia"
+   },
+   "src": [
+    "pt",
+    "Aqueduto",
+    [
+     "romano"
+    ]
+   ]
+  },
+  {
+   "t": "Em que ano, tradicionalmente, caiu o Império Romano do Ocidente?",
+   "type": "txt",
+   "choices": [
+    "476",
+    "395",
+    "330",
+    "800",
+    "1453",
+    "410"
+   ],
+   "a": [
+    "476"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "crown"
+   },
+   "src": [
+    "pt",
+    "Queda do Império Romano do Ocidente",
+    [
+     "476"
+    ]
+   ],
+   "x": "O último imperador, Rômulo Augústulo, foi deposto pelo chefe germânico Odoacro."
+  },
+  {
+   "t": "Qual foi o líder huno apelidado “Flagelo de Deus”, que ameaçou Roma no século V?",
+   "type": "txt",
+   "choices": [
+    "Átila",
+    "Alarico",
+    "Genserico",
+    "Odoacro",
+    "Teodorico",
+    "Gengis Khan"
+   ],
+   "a": [
+    "Átila"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "sword"
+   },
+   "src": [
+    "pt",
+    "Átila",
+    [
+     "huno"
+    ]
+   ]
+  },
+  {
+   "t": "Em qual cidade foi assassinado Júlio César, nos Idos de Março de 44 a.C.?",
+   "type": "txt",
+   "choices": [
+    "Roma",
+    "Alexandria",
+    "Cartago",
+    "Atenas",
+    "Ravena",
+    "Milão"
+   ],
+   "a": [
+    "Roma"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "sword"
+   },
+   "src": [
+    "pt",
+    "Júlio César",
+    [
+     "44 a.C."
+    ]
+   ]
+  },
+  {
+   "t": "Qual foi o imperador que dividiu o Império Romano entre seus filhos, em 395?",
+   "type": "txt",
+   "choices": [
+    "Teodósio I",
+    "Diocleciano",
+    "Constantino",
+    "Justiniano",
+    "Marco Aurélio",
+    "Trajano"
+   ],
+   "a": [
+    "Teodósio I"
+   ],
+   "d": 4,
+   "art": {
+    "icon": "crown"
+   },
+   "src": [
+    "pt",
+    "Teodósio I",
+    [
+     "395"
+    ]
+   ]
+  },
+  {
+   "t": "Qual religião, antes perseguida, tornou-se a oficial do Império Romano com Teodósio?",
+   "type": "txt",
+   "choices": [
+    "Cristianismo",
+    "Judaísmo",
+    "Mitraísmo",
+    "Culto a Ísis",
+    "Zoroastrismo",
+    "Maniqueísmo"
+   ],
+   "a": [
+    "Cristianismo"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "column"
+   },
+   "src": [
+    "pt",
+    "Teodósio I",
+    [
+     "cristianismo"
+    ]
+   ]
+  },
+  {
+   "t": "Como os romanos chamavam o Mar Mediterrâneo?",
+   "type": "txt",
+   "choices": [
+    "Mare Nostrum",
+    "Mare Clausum",
+    "Pontus Euxinus",
+    "Mare Rubrum",
+    "Oceanus",
+    "Mare Tyrrhenum"
+   ],
+   "a": [
+    "Mare Nostrum"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "ship"
+   },
+   "src": [
+    "pt",
+    "Mare Nostrum",
+    [
+     "romano"
+    ]
+   ]
+  },
+  {
+   "t": "Qual a data tradicional da fundação de Roma?",
+   "type": "txt",
+   "choices": [
+    "753 a.C.",
+    "509 a.C.",
+    "27 a.C.",
+    "1000 a.C.",
+    "264 a.C.",
+    "146 a.C."
+   ],
+   "a": [
+    "753 a.C."
+   ],
+   "d": 3,
+   "art": {
+    "icon": "hourglass"
+   },
+   "src": [
+    "pt",
+    "Roma",
+    [
+     "753 a.C."
+    ]
+   ]
+  },
+  {
+   "t": "Qual cidade fundada por Constantino se tornou a nova capital do Império, em 330?",
+   "type": "txt",
+   "choices": [
+    "Constantinopla",
+    "Ravena",
+    "Milão",
+    "Alexandria",
+    "Antioquia",
+    "Nicomédia"
+   ],
+   "a": [
+    "Constantinopla"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "crown"
+   },
+   "src": [
+    "pt",
+    "Constantinopla",
+    [
+     "330"
+    ]
+   ]
+  },
+  {
+   "t": "O que eram os “pães e circo” da política romana?",
+   "type": "txt",
+   "choices": [
+    "Alimento e espetáculos para agradar o povo",
+    "Impostos sobre padarias",
+    "Festas religiosas obrigatórias",
+    "Pagamento de soldados",
+    "Um tipo de moeda",
+    "Leis sobre o comércio"
+   ],
+   "a": [
+    "Alimento e espetáculos para agradar o povo"
+   ],
+   "d": 3,
+   "art": {
+    "stad": "coliseu"
+   },
+   "src": [
+    "pt",
+    "Pão e circo",
+    [
+     "circo"
+    ]
+   ]
+  },
+  {
+   "t": "Como se chamava o grande esgoto que drenava o centro de Roma, uma das obras de engenharia mais antigas da cidade?",
+   "type": "txt",
+   "choices": [
+    "Cloaca Máxima",
+    "Via Ápia",
+    "Aqua Marcia",
+    "Fórum de Trajano",
+    "Muralha Serviana",
+    "Pórtico de Otávia"
+   ],
+   "a": [
+    "Cloaca Máxima"
+   ],
+   "d": 5,
+   "art": {
+    "icon": "gear"
+   },
+   "src": [
+    "pt",
+    "Cloaca Máxima",
+    [
+     "esgoto"
+    ]
+   ]
+  },
+  {
+   "t": "Qual material revolucionou a construção romana, permitindo cúpulas como a do Panteão?",
+   "type": "txt",
+   "choices": [
+    "Concreto",
+    "Aço",
+    "Vidro soprado",
+    "Tijolo cru",
+    "Madeira laminada",
+    "Cal pura"
+   ],
+   "a": [
+    "Concreto"
+   ],
+   "d": 3,
+   "art": {
+    "stad": "panteao"
+   },
+   "src": [
+    "pt",
+    "Panteão (Roma)",
+    [
+     "concreto"
+    ]
+   ]
+  }
+ ]
+}

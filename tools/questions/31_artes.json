@@ -1,0 +1,550 @@
+{
+ "id": "artes",
+ "name": "Artes e Letras",
+ "tag": "Pinturas, livros e partituras",
+ "col": "#8E4E9E",
+ "diff": "Variado",
+ "emoji": "🎭",
+ "qs": [
+  {
+   "t": "Qual pintor catalão, surrealista, criou A Persistência da Memória, com relógios derretidos?",
+   "type": "player",
+   "a": [
+    "dali"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "bust"
+   },
+   "src": [
+    "pt",
+    "Salvador Dalí",
+    [
+     "Persistência da Memória"
+    ]
+   ]
+  },
+  {
+   "t": "Qual pintor espanhol criou Guernica, em 1937?",
+   "type": "player",
+   "a": [
+    "picasso"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "bust"
+   },
+   "src": [
+    "pt",
+    "Pablo Picasso",
+    [
+     "Guernica"
+    ]
+   ]
+  },
+  {
+   "t": "Qual pintora mexicana ficou famosa pelos autorretratos, como As Duas Fridas?",
+   "type": "player",
+   "a": [
+    "frida"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "bust"
+   },
+   "src": [
+    "pt",
+    "Frida Kahlo",
+    [
+     "Autorretrato"
+    ]
+   ]
+  },
+  {
+   "t": "Qual escritor tcheco escreveu A Metamorfose, sobre um homem transformado em inseto?",
+   "type": "player",
+   "a": [
+    "kafka"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "book"
+   },
+   "src": [
+    "pt",
+    "Franz Kafka",
+    [
+     "Metamorfose"
+    ]
+   ]
+  },
+  {
+   "t": "Qual escritor britânico escreveu 1984 e A Revolução dos Bichos?",
+   "type": "player",
+   "a": [
+    "orwell"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "book"
+   },
+   "src": [
+    "pt",
+    "George Orwell",
+    [
+     "1984"
+    ]
+   ]
+  },
+  {
+   "t": "Qual escritor americano escreveu O Velho e o Mar e ganhou o Nobel em 1954?",
+   "type": "player",
+   "a": [
+    "hemingway"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "book"
+   },
+   "src": [
+    "pt",
+    "Ernest Hemingway",
+    [
+     "O Velho e o Mar"
+    ]
+   ]
+  },
+  {
+   "t": "Qual escritor colombiano escreveu Cem Anos de Solidão?",
+   "type": "player",
+   "a": [
+    "garcia_marquez"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "book"
+   },
+   "src": [
+    "pt",
+    "Gabriel García Márquez",
+    [
+     "Cem Anos de Solidão"
+    ]
+   ]
+  },
+  {
+   "t": "Qual humorista britânico criou o personagem Carlitos, o Vagabundo?",
+   "type": "player",
+   "a": [
+    "chaplin"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "bust"
+   },
+   "src": [
+    "pt",
+    "Charlie Chaplin",
+    [
+     "Vagabundo"
+    ]
+   ]
+  },
+  {
+   "t": "Qual escritor americano criou Tom Sawyer e Huckleberry Finn?",
+   "type": "player",
+   "a": [
+    "mark_twain"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "book"
+   },
+   "src": [
+    "pt",
+    "Mark Twain",
+    [
+     "Tom Sawyer"
+    ]
+   ]
+  },
+  {
+   "t": "Qual compositor polonês, o “poeta do piano”, escreveu noturnos e polonaises?",
+   "type": "player",
+   "a": [
+    "chopin"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "book"
+   },
+   "src": [
+    "pt",
+    "Frédéric Chopin",
+    [
+     "piano"
+    ]
+   ]
+  },
+  {
+   "t": "Qual compositor russo escreveu O Lago dos Cisnes?",
+   "type": "player",
+   "a": [
+    "tchaikovsky"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "book"
+   },
+   "src": [
+    "pt",
+    "Piotr Ilitch Tchaikovski",
+    [
+     "Lago dos Cisnes"
+    ]
+   ]
+  },
+  {
+   "t": "Qual poeta do Renascimento escreveu A Divina Comédia, com Inferno, Purgatório e Paraíso?",
+   "type": "player",
+   "a": [
+    "dante"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "book"
+   },
+   "src": [
+    "pt",
+    "Dante Alighieri",
+    [
+     "Inferno"
+    ]
+   ]
+  },
+  {
+   "t": "Qual escritor mineiro, ícone do Modernismo, escreveu A Rosa do Povo?",
+   "type": "player",
+   "a": [
+    "drummond"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "book"
+   },
+   "src": [
+    "pt",
+    "Carlos Drummond de Andrade",
+    [
+     "Rosa do Povo"
+    ]
+   ]
+  },
+  {
+   "t": "Qual arquiteto carioca desenhou o Palácio da Alvorada e o Congresso Nacional?",
+   "type": "player",
+   "a": [
+    "niemeyer"
+   ],
+   "d": 2,
+   "art": {
+    "stad": "catedral_brasilia"
+   },
+   "src": [
+    "pt",
+    "Oscar Niemeyer",
+    [
+     "Alvorada"
+    ]
+   ]
+  },
+  {
+   "t": "Qual pintora brasileira criou o Abaporu, símbolo do movimento antropofágico?",
+   "type": "player",
+   "a": [
+    "tarsila"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "bust"
+   },
+   "src": [
+    "pt",
+    "Tarsila do Amaral",
+    [
+     "Abaporu"
+    ]
+   ]
+  },
+  {
+   "t": "Qual compositor brasileiro uniu o folclore ao erudito e criou o Trenzinho do Caipira?",
+   "type": "player",
+   "a": [
+    "villa_lobos"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "book"
+   },
+   "src": [
+    "pt",
+    "Heitor Villa-Lobos",
+    [
+     "Trenzinho"
+    ]
+   ]
+  },
+  {
+   "t": "Qual escritor brasileiro criou Brás Cubas, que narra suas memórias depois de morto?",
+   "type": "player",
+   "a": [
+    "machado"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "book"
+   },
+   "src": [
+    "pt",
+    "Machado de Assis",
+    [
+     "Brás Cubas"
+    ]
+   ]
+  },
+  {
+   "t": "Qual pintura de Leonardo da Vinci retrata uma mulher de sorriso enigmático, exposta no Louvre?",
+   "type": "txt",
+   "choices": [
+    "Mona Lisa",
+    "A Última Ceia",
+    "A Dama do Arminho",
+    "A Virgem dos Rochedos",
+    "São João Batista",
+    "O Homem Vitruviano"
+   ],
+   "a": [
+    "Mona Lisa"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "bust"
+   },
+   "src": [
+    "pt",
+    "Mona Lisa",
+    [
+     "Louvre"
+    ]
+   ]
+  },
+  {
+   "t": "Qual obra de Michelangelo decora o teto de uma capela do Vaticano?",
+   "type": "txt",
+   "choices": [
+    "A Criação de Adão",
+    "A Escola de Atenas",
+    "O Nascimento de Vênus",
+    "O Beijo",
+    "A Ronda Noturna",
+    "A Piedade"
+   ],
+   "a": [
+    "A Criação de Adão"
+   ],
+   "d": 2,
+   "art": {
+    "stad": "sao_pedro"
+   },
+   "src": [
+    "pt",
+    "A Criação de Adão",
+    [
+     "Capela Sistina"
+    ]
+   ]
+  },
+  {
+   "t": "Qual escultura de Michelangelo representa o herói bíblico que derrotou Golias?",
+   "type": "txt",
+   "choices": [
+    "Davi",
+    "Moisés",
+    "Pietà",
+    "O Pensador",
+    "Laocoonte",
+    "Apolo"
+   ],
+   "a": [
+    "Davi"
+   ],
+   "d": 2,
+   "art": {
+    "stad": "duomo_florenca"
+   },
+   "src": [
+    "pt",
+    "David (Michelangelo)",
+    [
+     "Michelangelo"
+    ]
+   ]
+  },
+  {
+   "t": "Qual o movimento artístico de Monet e Renoir, que pintava a luz e o instante?",
+   "type": "txt",
+   "choices": [
+    "Impressionismo",
+    "Cubismo",
+    "Surrealismo",
+    "Barroco",
+    "Romantismo",
+    "Realismo"
+   ],
+   "a": [
+    "Impressionismo"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "bust"
+   },
+   "src": [
+    "pt",
+    "Impressionismo",
+    [
+     "Monet"
+    ]
+   ]
+  },
+  {
+   "t": "Qual escritor inglês criou o detetive Sherlock Holmes?",
+   "type": "txt",
+   "choices": [
+    "Arthur Conan Doyle",
+    "Agatha Christie",
+    "Charles Dickens",
+    "Edgar Allan Poe",
+    "Oscar Wilde",
+    "H. G. Wells"
+   ],
+   "a": [
+    "Arthur Conan Doyle"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "book"
+   },
+   "src": [
+    "pt",
+    "Arthur Conan Doyle",
+    [
+     "Sherlock Holmes"
+    ]
+   ]
+  },
+  {
+   "t": "Qual escritor russo escreveu O Idiota, Os Irmãos Karamázov e Crime e Castigo?",
+   "type": "txt",
+   "choices": [
+    "Dostoiévski",
+    "Tolstói",
+    "Tchekhov",
+    "Gógol",
+    "Púchkin",
+    "Turguêniev"
+   ],
+   "a": [
+    "Dostoiévski"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "book"
+   },
+   "src": [
+    "pt",
+    "Fiódor Dostoiévski",
+    [
+     "Irmãos Karamázov"
+    ]
+   ]
+  },
+  {
+   "t": "Qual poeta português escreveu Mensagem e usou heterônimos como Álvaro de Campos?",
+   "type": "txt",
+   "choices": [
+    "Fernando Pessoa",
+    "Luís de Camões",
+    "Eça de Queirós",
+    "José Saramago",
+    "Sophia de Mello",
+    "Camilo Castelo Branco"
+   ],
+   "a": [
+    "Fernando Pessoa"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "book"
+   },
+   "src": [
+    "pt",
+    "Fernando Pessoa",
+    [
+     "Álvaro de Campos"
+    ]
+   ]
+  },
+  {
+   "t": "Qual movimento artístico brasileiro de 1922 buscava uma arte nacional e moderna?",
+   "type": "txt",
+   "choices": [
+    "Modernismo",
+    "Romantismo",
+    "Parnasianismo",
+    "Barroco mineiro",
+    "Realismo",
+    "Simbolismo"
+   ],
+   "a": [
+    "Modernismo"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "bust"
+   },
+   "src": [
+    "pt",
+    "Modernismo no Brasil",
+    [
+     "1922"
+    ]
+   ]
+  },
+  {
+   "t": "Qual o estilo arquitetônico de Aleijadinho e das igrejas de Ouro Preto?",
+   "type": "txt",
+   "choices": [
+    "Barroco",
+    "Gótico",
+    "Românico",
+    "Neoclássico",
+    "Modernista",
+    "Art Déco"
+   ],
+   "a": [
+    "Barroco"
+   ],
+   "d": 2,
+   "art": {
+    "stad": "ouro_preto"
+   },
+   "src": [
+    "pt",
+    "Barroco mineiro",
+    [
+     "Aleijadinho"
+    ]
+   ]
+  }
+ ]
+}

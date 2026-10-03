@@ -1,0 +1,571 @@
+{
+ "id": "imperios",
+ "name": "Impérios e Civilizações",
+ "tag": "Estados que fizeram a História",
+ "col": "#8A5A2B",
+ "diff": "Variado",
+ "emoji": "🌍",
+ "qs": [
+  {
+   "t": "Qual estado, com capital em Cuzco, dominava os Andes quando os espanhóis chegaram?",
+   "a": [
+    "inca"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "map"
+   },
+   "src": [
+    "pt",
+    "Império Inca",
+    [
+     "Cusco"
+    ]
+   ]
+  },
+  {
+   "t": "Qual estado, com capital em Tenochtitlán, foi derrubado por Cortés?",
+   "a": [
+    "asteca"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "pyramid"
+   },
+   "src": [
+    "pt",
+    "Império Asteca",
+    [
+     "Tenochtitlán"
+    ]
+   ]
+  },
+  {
+   "t": "Qual civilização construiu as pirâmides de Gizé e os templos de Karnak?",
+   "a": [
+    "egito_antigo"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "pyramid"
+   },
+   "src": [
+    "pt",
+    "Egito Antigo",
+    [
+     "Gizé"
+    ]
+   ]
+  },
+  {
+   "t": "Qual império, fundado por Ciro, o Grande, foi o maior do mundo antigo até Alexandre?",
+   "a": [
+    "persia"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "crown"
+   },
+   "src": [
+    "pt",
+    "Império Aquemênida",
+    [
+     "Ciro"
+    ]
+   ]
+  },
+  {
+   "t": "Qual cidade-Estado grega educava seus cidadãos para a guerra e liderou a Liga do Peloponeso?",
+   "a": [
+    "esparta"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "sword"
+   },
+   "src": [
+    "pt",
+    "Esparta",
+    [
+     "Peloponeso"
+    ]
+   ]
+  },
+  {
+   "t": "Qual cidade-Estado grega foi o berço da democracia e do teatro?",
+   "a": [
+    "atenas"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "column"
+   },
+   "src": [
+    "pt",
+    "Atenas",
+    [
+     "democracia"
+    ]
+   ]
+  },
+  {
+   "t": "Qual potência do norte da África rivalizou com Roma nas Guerras Púnicas?",
+   "a": [
+    "cartago"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "ship"
+   },
+   "src": [
+    "pt",
+    "Cartago",
+    [
+     "Roma"
+    ]
+   ]
+  },
+  {
+   "t": "Qual estado, de Augusto a Rômulo Augústulo, dominou o Mediterrâneo por séculos?",
+   "a": [
+    "imperio_romano"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "crown"
+   },
+   "src": [
+    "pt",
+    "Império Romano",
+    [
+     "Augusto"
+    ]
+   ]
+  },
+  {
+   "t": "Qual império, com capital em Constantinopla, durou até 1453?",
+   "a": [
+    "bizancio"
+   ],
+   "d": 2,
+   "art": {
+    "stad": "santa_sofia"
+   },
+   "src": [
+    "pt",
+    "Império Bizantino",
+    [
+     "1453"
+    ]
+   ]
+  },
+  {
+   "t": "Qual império islâmico, com capital em Bagdá, viu florescer a Casa da Sabedoria?",
+   "a": [
+    "califado_abassida"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "book"
+   },
+   "src": [
+    "pt",
+    "Califado Abássida",
+    [
+     "Bagdá"
+    ]
+   ]
+  },
+  {
+   "t": "Qual império fundado por Gengis Khan chegou a ir do Pacífico ao Leste Europeu?",
+   "a": [
+    "imperio_mongol"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "sword"
+   },
+   "src": [
+    "pt",
+    "Império Mongol",
+    [
+     "Gengis Khan"
+    ]
+   ]
+  },
+  {
+   "t": "Qual império conquistou Constantinopla em 1453 e governou o Oriente Médio por séculos?",
+   "a": [
+    "imperio_otomano"
+   ],
+   "d": 1,
+   "art": {
+    "stad": "mesquita_azul"
+   },
+   "src": [
+    "pt",
+    "Império Otomano",
+    [
+     "1453"
+    ]
+   ]
+  },
+  {
+   "t": "Qual dinastia chinesa construiu a Cidade Proibida?",
+   "a": [
+    "ming"
+   ],
+   "d": 2,
+   "art": {
+    "stad": "cidade_proibida"
+   },
+   "src": [
+    "pt",
+    "Dinastia Ming",
+    [
+     "Cidade Proibida"
+    ]
+   ]
+  },
+  {
+   "t": "Qual estado indiano, de Akbar a Aurangzeb, construiu o Taj Mahal?",
+   "a": [
+    "mogol"
+   ],
+   "d": 2,
+   "art": {
+    "stad": "taj_mahal"
+   },
+   "src": [
+    "pt",
+    "Império Mogol",
+    [
+     "Taj Mahal"
+    ]
+   ]
+  },
+  {
+   "t": "Qual império do oeste africano, famoso pelo ouro e por Mansa Mussa, tinha Tombuctu como centro cultural?",
+   "a": [
+    "mali"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "map"
+   },
+   "src": [
+    "pt",
+    "Império do Mali",
+    [
+     "Mansa Mussa"
+    ]
+   ]
+  },
+  {
+   "t": "Qual estado europeu, liderado por Frederico, o Grande, tinha Berlim como centro?",
+   "a": [
+    "prussia"
+   ],
+   "d": 3,
+   "art": {
+    "stad": "brandemburgo"
+   },
+   "src": [
+    "pt",
+    "Prússia",
+    [
+     "Frederico"
+    ]
+   ]
+  },
+  {
+   "t": "Qual império, de Pedro, o Grande a Nicolau II, era governado por czares?",
+   "a": [
+    "imperio_russo"
+   ],
+   "d": 2,
+   "art": {
+    "stad": "kremlin"
+   },
+   "src": [
+    "pt",
+    "Império Russo",
+    [
+     "czar"
+    ]
+   ]
+  },
+  {
+   "t": "Qual estado nasceu com a Revolução de 1917 e acabou em 1991?",
+   "a": [
+    "urss"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "flag"
+   },
+   "src": [
+    "pt",
+    "União Soviética",
+    [
+     "1991"
+    ]
+   ]
+  },
+  {
+   "t": "Qual estado europeu foi governado por Napoleão como imperador?",
+   "a": [
+    "imperio_frances"
+   ],
+   "d": 2,
+   "art": {
+    "stad": "arco_triunfo"
+   },
+   "src": [
+    "pt",
+    "Primeiro Império Francês",
+    [
+     "Napoleão"
+    ]
+   ]
+  },
+  {
+   "t": "Qual estado, no século XIX, teve a rainha Vitória e dominou colônias em todos os continentes?",
+   "a": [
+    "imperio_britanico"
+   ],
+   "d": 1,
+   "art": {
+    "stad": "torre_londres"
+   },
+   "src": [
+    "pt",
+    "Império Britânico",
+    [
+     "Vitória"
+    ]
+   ]
+  },
+  {
+   "t": "Qual império, com sede na Península Ibérica, tinha Madri como centro e o Escorial como símbolo?",
+   "a": [
+    "imperio_espanhol"
+   ],
+   "d": 2,
+   "art": {
+    "stad": "escorial"
+   },
+   "src": [
+    "pt",
+    "Império Espanhol",
+    [
+     "Filipe II"
+    ]
+   ]
+  },
+  {
+   "t": "Qual império ultramarino teve como símbolo as caravelas e a Torre de Belém?",
+   "a": [
+    "imperio_portugues"
+   ],
+   "d": 2,
+   "art": {
+    "stad": "torre_belem"
+   },
+   "src": [
+    "pt",
+    "Império Português",
+    [
+     "Lisboa"
+    ]
+   ]
+  },
+  {
+   "t": "Qual estado asiático, com capital em Angkor, construiu o maior templo do mundo?",
+   "a": [
+    "khmer"
+   ],
+   "d": 3,
+   "art": {
+    "stad": "angkor_wat"
+   },
+   "src": [
+    "pt",
+    "Império Khmer",
+    [
+     "Angkor"
+    ]
+   ]
+  },
+  {
+   "t": "Qual civilização mesoamericana, de pirâmides e calendário, construiu Chichén Itzá?",
+   "a": [
+    "maia"
+   ],
+   "d": 2,
+   "art": {
+    "stad": "chichen_itza"
+   },
+   "src": [
+    "pt",
+    "Civilização maia",
+    [
+     "Chichén Itzá"
+    ]
+   ]
+  },
+  {
+   "t": "Qual república italiana de mercadores dominou o Mediterrâneo oriental, com a Basílica de São Marcos?",
+   "a": [
+    "veneza"
+   ],
+   "d": 3,
+   "art": {
+    "stad": "sao_marcos"
+   },
+   "src": [
+    "pt",
+    "República de Veneza",
+    [
+     "São Marcos"
+    ]
+   ]
+  },
+  {
+   "t": "Qual estado do Japão, de 1603 a 1868, foi governado por xoguns de uma mesma família?",
+   "a": [
+    "tokugawa"
+   ],
+   "d": 3,
+   "art": {
+    "stad": "himeji"
+   },
+   "src": [
+    "pt",
+    "Xogunato Tokugawa",
+    [
+     "xogun"
+    ]
+   ]
+  },
+  {
+   "t": "Qual império de língua e leis próprias reinou de 962 a 1806 na Europa Central?",
+   "a": [
+    "sacro_imperio"
+   ],
+   "d": 4,
+   "art": {
+    "icon": "crown"
+   },
+   "src": [
+    "pt",
+    "Sacro Império Romano-Germânico",
+    [
+     "1806"
+    ]
+   ]
+  },
+  {
+   "t": "Qual estado, no século XVII, foi a potência marítima da Europa, com a Companhia das Índias?",
+   "a": [
+    "holanda"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "ship"
+   },
+   "src": [
+    "pt",
+    "República das Sete Províncias Unidas",
+    [
+     "Companhia"
+    ]
+   ]
+  },
+  {
+   "t": "Qual império foi unificado por um primeiro imperador em 221 a.C. e ergueu uma grande muralha?",
+   "a": [
+    "dinastia_qin"
+   ],
+   "d": 3,
+   "art": {
+    "stad": "muralha_china"
+   },
+   "src": [
+    "pt",
+    "Dinastia Qin",
+    [
+     "221 a.C."
+    ]
+   ]
+  },
+  {
+   "t": "Qual reino, no atual Etiópia, adotou o cristianismo no século IV?",
+   "a": [
+    "axum"
+   ],
+   "d": 4,
+   "art": {
+    "icon": "column"
+   },
+   "src": [
+    "pt",
+    "Reino de Axum",
+    [
+     "cristianismo"
+    ]
+   ]
+  },
+  {
+   "t": "Qual império da Mesopotâmia, de Hamurabi, tinha os Jardins Suspensos?",
+   "a": [
+    "babilonia"
+   ],
+   "d": 2,
+   "art": {
+    "stad": "portao_ishtar"
+   },
+   "src": [
+    "pt",
+    "Babilônia",
+    [
+     "Hamurabi"
+    ]
+   ]
+  },
+  {
+   "t": "Qual império da Europa Central, dos Habsburgos, existiu de 1867 a 1918?",
+   "a": [
+    "austria_hungria"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "crown"
+   },
+   "src": [
+    "pt",
+    "Áustria-Hungria",
+    [
+     "1867"
+    ]
+   ]
+  },
+  {
+   "t": "Qual estado asiático desmoronou em 1912, encerrando milênios de governo imperial na China?",
+   "a": [
+    "qing"
+   ],
+   "d": 3,
+   "art": {
+    "stad": "cidade_proibida"
+   },
+   "src": [
+    "pt",
+    "Dinastia Qing",
+    [
+     "1912"
+    ]
+   ]
+  }
+ ]
+}

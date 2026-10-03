@@ -1,0 +1,600 @@
+{
+ "id": "guerra_fria",
+ "name": "Guerra Fria e Mundo Atual",
+ "tag": "Muros, foguetes e novos tempos",
+ "col": "#3F6FB5",
+ "diff": "Variado",
+ "emoji": "🚀",
+ "qs": [
+  {
+   "t": "Quais eram as duas superpotências da Guerra Fria?",
+   "type": "txt",
+   "choices": [
+    "Estados Unidos e União Soviética",
+    "Estados Unidos e China",
+    "Reino Unido e França",
+    "Alemanha e Japão",
+    "União Soviética e China",
+    "Índia e Paquistão"
+   ],
+   "a": [
+    "Estados Unidos e União Soviética"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "rocket"
+   },
+   "src": [
+    "pt",
+    "Guerra Fria",
+    [
+     "superpotência"
+    ]
+   ]
+  },
+  {
+   "t": "Qual o nome da barreira que dividiu Berlim entre 1961 e 1989?",
+   "type": "txt",
+   "choices": [
+    "Muro de Berlim",
+    "Linha Maginot",
+    "Muralha de Adriano",
+    "Cortina de Ferro",
+    "Linha Siegfried",
+    "Grande Muralha"
+   ],
+   "a": [
+    "Muro de Berlim"
+   ],
+   "d": 1,
+   "art": {
+    "stad": "muro_berlim"
+   },
+   "src": [
+    "pt",
+    "Muro de Berlim",
+    [
+     "1961"
+    ]
+   ]
+  },
+  {
+   "t": "Em que ano caiu o Muro de Berlim?",
+   "type": "txt",
+   "choices": [
+    "1989",
+    "1961",
+    "1975",
+    "1985",
+    "1991",
+    "1999"
+   ],
+   "a": [
+    "1989"
+   ],
+   "d": 1,
+   "art": {
+    "stad": "muro_berlim"
+   },
+   "src": [
+    "pt",
+    "Queda do Muro de Berlim",
+    [
+     "1989"
+    ]
+   ]
+  },
+  {
+   "t": "Em que ano foi dissolvida a União Soviética?",
+   "type": "txt",
+   "choices": [
+    "1991",
+    "1985",
+    "1989",
+    "1990",
+    "1993",
+    "1999"
+   ],
+   "a": [
+    "1991"
+   ],
+   "d": 2,
+   "art": {
+    "crest": "urss"
+   },
+   "src": [
+    "pt",
+    "Dissolução da União Soviética",
+    [
+     "1991"
+    ]
+   ]
+  },
+  {
+   "t": "Qual líder soviético iniciou a glasnost e a perestroika?",
+   "type": "player",
+   "a": [
+    "gorbachev"
+   ],
+   "d": 2,
+   "art": {
+    "crest": "urss"
+   },
+   "src": [
+    "pt",
+    "Mikhail Gorbachev",
+    [
+     "perestroika"
+    ]
+   ]
+  },
+  {
+   "t": "Qual presidente americano enfrentou a Crise dos Mísseis de Cuba, em 1962?",
+   "type": "player",
+   "a": [
+    "kennedy"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "rocket"
+   },
+   "src": [
+    "pt",
+    "John F. Kennedy",
+    [
+     "Crise dos Mísseis"
+    ]
+   ]
+  },
+  {
+   "t": "Qual líder da Revolução Cubana governou Cuba por quase meio século?",
+   "type": "player",
+   "a": [
+    "fidel"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "flag"
+   },
+   "src": [
+    "pt",
+    "Fidel Castro",
+    [
+     "Revolução Cubana"
+    ]
+   ]
+  },
+  {
+   "t": "Qual médico argentino, guerrilheiro, tornou-se símbolo da Revolução Cubana?",
+   "type": "player",
+   "a": [
+    "che"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "flag"
+   },
+   "src": [
+    "pt",
+    "Che Guevara",
+    [
+     "Cuba"
+    ]
+   ]
+  },
+  {
+   "t": "Qual líder vietnamita liderou a luta pela independência e deu nome a uma cidade?",
+   "type": "player",
+   "a": [
+    "ho_chi_minh"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "flag"
+   },
+   "src": [
+    "pt",
+    "Ho Chi Minh",
+    [
+     "Vietnã"
+    ]
+   ]
+  },
+  {
+   "t": "Qual primeira-ministra britânica, apelidada de “Dama de Ferro”, governou de 1979 a 1990?",
+   "type": "player",
+   "a": [
+    "thatcher"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "flag"
+   },
+   "src": [
+    "pt",
+    "Margaret Thatcher",
+    [
+     "Dama de Ferro"
+    ]
+   ]
+  },
+  {
+   "t": "Qual cosmonauta soviético foi o primeiro ser humano a ir ao espaço, em 1961?",
+   "type": "player",
+   "a": [
+    "gagarin"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "rocket"
+   },
+   "src": [
+    "pt",
+    "Yuri Gagarin",
+    [
+     "1961"
+    ]
+   ]
+  },
+  {
+   "t": "Qual astronauta americano foi o primeiro a pisar na Lua, em 1969?",
+   "type": "player",
+   "a": [
+    "armstrong"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "rocket"
+   },
+   "src": [
+    "pt",
+    "Neil Armstrong",
+    [
+     "1969"
+    ]
+   ]
+  },
+  {
+   "t": "Qual o satélite soviético lançado em 1957, que iniciou a corrida espacial?",
+   "type": "txt",
+   "choices": [
+    "Sputnik",
+    "Apollo",
+    "Vostok",
+    "Explorer",
+    "Voyager",
+    "Luna"
+   ],
+   "a": [
+    "Sputnik"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "rocket"
+   },
+   "src": [
+    "pt",
+    "Sputnik 1",
+    [
+     "1957"
+    ]
+   ]
+  },
+  {
+   "t": "Qual a missão que levou o homem à Lua pela primeira vez?",
+   "type": "txt",
+   "choices": [
+    "Apollo 11",
+    "Apollo 13",
+    "Gemini 4",
+    "Vostok 1",
+    "Apollo 8",
+    "Skylab"
+   ],
+   "a": [
+    "Apollo 11"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "rocket"
+   },
+   "src": [
+    "pt",
+    "Apollo 11",
+    [
+     "Lua"
+    ]
+   ]
+  },
+  {
+   "t": "Qual a aliança militar ocidental criada em 1949 durante a Guerra Fria?",
+   "type": "txt",
+   "choices": [
+    "OTAN",
+    "Pacto de Varsóvia",
+    "Eixo",
+    "SEATO",
+    "ONU",
+    "Liga Árabe"
+   ],
+   "a": [
+    "OTAN"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "globe"
+   },
+   "src": [
+    "pt",
+    "Organização do Tratado do Atlântico Norte",
+    [
+     "1949"
+    ]
+   ]
+  },
+  {
+   "t": "Como se chamou o conflito de 1955 a 1975 em que os EUA apoiaram o sul contra o Vietnã do Norte?",
+   "type": "txt",
+   "choices": [
+    "Guerra do Vietnã",
+    "Guerra da Coreia",
+    "Guerra do Golfo",
+    "Guerra do Afeganistão",
+    "Guerra Civil Chinesa",
+    "Guerra do Iraque"
+   ],
+   "a": [
+    "Guerra do Vietnã"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "cannon"
+   },
+   "src": [
+    "pt",
+    "Guerra do Vietnã",
+    [
+     "1975"
+    ]
+   ]
+  },
+  {
+   "t": "Qual o regime de segregação racial legal da África do Sul, que durou até 1994?",
+   "type": "txt",
+   "choices": [
+    "Apartheid",
+    "Colonialismo",
+    "Nazismo",
+    "Fascismo",
+    "Escravidão",
+    "Segregação de Jim Crow"
+   ],
+   "a": [
+    "Apartheid"
+   ],
+   "d": 1,
+   "art": {
+    "flag": "ZAF"
+   },
+   "src": [
+    "pt",
+    "Apartheid",
+    [
+     "África do Sul"
+    ]
+   ]
+  },
+  {
+   "t": "Qual líder, preso por 27 anos, tornou-se o primeiro presidente negro da África do Sul?",
+   "type": "player",
+   "a": [
+    "mandela"
+   ],
+   "d": 1,
+   "art": {
+    "flag": "ZAF"
+   },
+   "src": [
+    "pt",
+    "Nelson Mandela",
+    [
+     "27 anos"
+    ]
+   ]
+  },
+  {
+   "t": "Qual pastor americano liderou a luta pelos direitos civis e proferiu “Eu tenho um sonho”?",
+   "type": "player",
+   "a": [
+    "mlk"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "flag"
+   },
+   "src": [
+    "pt",
+    "Martin Luther King Jr.",
+    [
+     "sonho"
+    ]
+   ]
+  },
+  {
+   "t": "Qual costureira negra recusou ceder o lugar em um ônibus no Alabama, em 1955?",
+   "type": "player",
+   "a": [
+    "rosa_parks"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "flag"
+   },
+   "src": [
+    "pt",
+    "Rosa Parks",
+    [
+     "1955"
+    ]
+   ]
+  },
+  {
+   "t": "Qual líder indiano conquistou a independência com a não violência, em 1947?",
+   "type": "player",
+   "a": [
+    "gandhi"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "flag"
+   },
+   "src": [
+    "pt",
+    "Mahatma Gandhi",
+    [
+     "não violência"
+    ]
+   ]
+  },
+  {
+   "t": "Qual religiosa nascida na Macedônia dedicou a vida aos pobres de Calcutá e ganhou o Nobel da Paz?",
+   "type": "player",
+   "a": [
+    "madre_teresa"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "flag"
+   },
+   "src": [
+    "pt",
+    "Madre Teresa de Calcutá",
+    [
+     "Nobel"
+    ]
+   ]
+  },
+  {
+   "t": "Qual o tratado de 1957 que criou a base da atual União Europeia?",
+   "type": "txt",
+   "choices": [
+    "Tratado de Roma",
+    "Tratado de Maastricht",
+    "Tratado de Lisboa",
+    "Tratado de Versalhes",
+    "Tratado de Paris",
+    "Acordo de Schengen"
+   ],
+   "a": [
+    "Tratado de Roma"
+   ],
+   "d": 4,
+   "art": {
+    "icon": "globe"
+   },
+   "src": [
+    "pt",
+    "Tratado de Roma",
+    [
+     "1957"
+    ]
+   ]
+  },
+  {
+   "t": "Qual evento terrorista de 11 de setembro de 2001 atingiu as Torres Gêmeas?",
+   "type": "txt",
+   "choices": [
+    "Atentados de 11 de setembro",
+    "Ataque a Pearl Harbor",
+    "Crise dos Mísseis",
+    "Atentado de Oklahoma",
+    "Guerra do Golfo",
+    "Queda de Saigon"
+   ],
+   "a": [
+    "Atentados de 11 de setembro"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "globe"
+   },
+   "src": [
+    "pt",
+    "Ataques de 11 de setembro de 2001",
+    [
+     "2001"
+    ]
+   ]
+  },
+  {
+   "t": "Qual rede mundial de computadores se popularizou na década de 1990?",
+   "type": "txt",
+   "choices": [
+    "Internet",
+    "Telefone",
+    "Telégrafo",
+    "Radar",
+    "ARPANET apenas",
+    "Fax"
+   ],
+   "a": [
+    "Internet"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "globe"
+   },
+   "src": [
+    "pt",
+    "Internet",
+    [
+     "1990"
+    ]
+   ]
+  },
+  {
+   "t": "Qual físico britânico escreveu Uma Breve História do Tempo e estudou os buracos negros?",
+   "type": "player",
+   "a": [
+    "hawking"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "globe"
+   },
+   "src": [
+    "pt",
+    "Stephen Hawking",
+    [
+     "Breve História do Tempo"
+    ]
+   ]
+  },
+  {
+   "t": "Qual país asiático foi dividido em dois após a Guerra da Coreia, em 1953?",
+   "type": "txt",
+   "choices": [
+    "Coreia",
+    "Vietnã",
+    "Índia",
+    "Japão",
+    "China",
+    "Tailândia"
+   ],
+   "a": [
+    "Coreia"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "map"
+   },
+   "src": [
+    "pt",
+    "Guerra da Coreia",
+    [
+     "1953"
+    ]
+   ]
+  }
+ ]
+}

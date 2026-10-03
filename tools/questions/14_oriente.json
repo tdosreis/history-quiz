@@ -1,0 +1,740 @@
+{
+ "id": "oriente",
+ "name": "Ásia e Oriente",
+ "tag": "Dinastias, sultões e xoguns",
+ "col": "#C8731F",
+ "diff": "Variado",
+ "emoji": "🐉",
+ "qs": [
+  {
+   "t": "Qual chefe mongol unificou as tribos das estepes e fundou o maior império contíguo da História?",
+   "type": "player",
+   "a": [
+    "gengis"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "sword"
+   },
+   "src": [
+    "pt",
+    "Gengis Khan",
+    [
+     "mongol"
+    ]
+   ]
+  },
+  {
+   "t": "Qual neto de Gengis Khan fundou a dinastia Yuan na China?",
+   "type": "player",
+   "a": [
+    "kublai"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "crown"
+   },
+   "src": [
+    "pt",
+    "Kublai Khan",
+    [
+     "Yuan"
+    ]
+   ]
+  },
+  {
+   "t": "Qual primeiro imperador da China unificou o país em 221 a.C. e foi enterrado com um exército de terracota?",
+   "type": "player",
+   "a": [
+    "qin_shi_huang"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "crown"
+   },
+   "src": [
+    "pt",
+    "Qin Shi Huang",
+    [
+     "terracota"
+    ]
+   ]
+  },
+  {
+   "t": "Qual a única mulher a governar a China como imperatriz por direito próprio, na dinastia Tang?",
+   "type": "player",
+   "a": [
+    "wu_zetian"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "crown"
+   },
+   "src": [
+    "pt",
+    "Wu Zetian",
+    [
+     "imperatriz"
+    ]
+   ]
+  },
+  {
+   "t": "Qual filósofo chinês, do século VI a.C., ensinava a harmonia social e o respeito aos mais velhos?",
+   "type": "player",
+   "a": [
+    "confucio"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "book"
+   },
+   "src": [
+    "pt",
+    "Confúcio",
+    [
+     "filósofo"
+    ]
+   ]
+  },
+  {
+   "t": "Qual estrategista chinês é autor de A Arte da Guerra?",
+   "type": "player",
+   "a": [
+    "sun_tzu"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "book"
+   },
+   "src": [
+    "pt",
+    "Sun Tzu",
+    [
+     "A Arte da Guerra"
+    ]
+   ]
+  },
+  {
+   "t": "Qual príncipe indiano deixou a vida de luxo para buscar a iluminação e fundou o budismo?",
+   "type": "player",
+   "a": [
+    "sidarta"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "bust"
+   },
+   "src": [
+    "pt",
+    "Sidarta Gautama",
+    [
+     "budismo"
+    ]
+   ]
+  },
+  {
+   "t": "Qual imperador indiano converteu-se ao budismo depois de uma sangrenta guerra em Kalinga?",
+   "type": "player",
+   "a": [
+    "ashoka"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "crown"
+   },
+   "src": [
+    "pt",
+    "Ashoka",
+    [
+     "Kalinga"
+    ]
+   ]
+  },
+  {
+   "t": "Qual imperador mogol mandou construir o Taj Mahal em memória da esposa Mumtaz Mahal?",
+   "type": "txt",
+   "choices": [
+    "Shah Jahan",
+    "Akbar",
+    "Babur",
+    "Aurangzeb",
+    "Humayun",
+    "Tamerlão"
+   ],
+   "a": [
+    "Shah Jahan"
+   ],
+   "d": 3,
+   "art": {
+    "stad": "taj_mahal"
+   },
+   "src": [
+    "pt",
+    "Taj Mahal",
+    [
+     "Shah Jahan"
+    ]
+   ]
+  },
+  {
+   "t": "Qual a grande muralha construída ao longo dos séculos para proteger a China das invasões do norte?",
+   "type": "txt",
+   "choices": [
+    "Grande Muralha",
+    "Muralha de Adriano",
+    "Muralha de Constantinopla",
+    "Muralha Serviana",
+    "Muralha de Aksum",
+    "Muro de Berlim"
+   ],
+   "a": [
+    "Grande Muralha"
+   ],
+   "d": 1,
+   "art": {
+    "stad": "muralha_china"
+   },
+   "src": [
+    "pt",
+    "Grande Muralha da China",
+    [
+     "norte"
+    ]
+   ]
+  },
+  {
+   "t": "Qual dinastia chinesa construiu a Cidade Proibida, em Pequim?",
+   "type": "txt",
+   "choices": [
+    "Ming",
+    "Han",
+    "Tang",
+    "Qing",
+    "Song",
+    "Qin"
+   ],
+   "a": [
+    "Ming"
+   ],
+   "d": 2,
+   "art": {
+    "stad": "cidade_proibida"
+   },
+   "src": [
+    "pt",
+    "Cidade Proibida",
+    [
+     "Ming"
+    ]
+   ]
+  },
+  {
+   "t": "Qual rota comercial ligava a China ao Mediterrâneo, transportando seda e especiarias?",
+   "type": "txt",
+   "choices": [
+    "Rota da Seda",
+    "Rota do Incenso",
+    "Estrada Real",
+    "Rota do Âmbar",
+    "Caminho de Santiago",
+    "Via Ápia"
+   ],
+   "a": [
+    "Rota da Seda"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "map"
+   },
+   "src": [
+    "pt",
+    "Rota da Seda",
+    [
+     "seda"
+    ]
+   ]
+  },
+  {
+   "t": "Qual invento chinês foi essencial para a navegação e chegou à Europa na Idade Média?",
+   "type": "txt",
+   "choices": [
+    "Bússola",
+    "Astrolábio",
+    "Quadrante",
+    "Sextante",
+    "Relógio de água",
+    "Cronômetro"
+   ],
+   "a": [
+    "Bússola"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "globe"
+   },
+   "src": [
+    "pt",
+    "Bússola",
+    [
+     "China"
+    ]
+   ]
+  },
+  {
+   "t": "Quais invenções são tradicionalmente atribuídas à China antiga?",
+   "type": "txt",
+   "choices": [
+    "Papel, pólvora, bússola e imprensa",
+    "Alfabeto, moeda e roda",
+    "Vidro, cimento e aço",
+    "Relógio, lente e microscópio",
+    "Álgebra, zero e xadrez",
+    "Seda, algodão e tinta"
+   ],
+   "a": [
+    "Papel, pólvora, bússola e imprensa"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "gear"
+   },
+   "src": [
+    "pt",
+    "Quatro grandes invenções",
+    [
+     "pólvora"
+    ]
+   ]
+  },
+  {
+   "t": "Como se chamava o governante militar do Japão feudal, que na prática detinha o poder?",
+   "type": "txt",
+   "choices": [
+    "Xogum",
+    "Mikado",
+    "Daimyo",
+    "Samurai",
+    "Imperador",
+    "Ronin"
+   ],
+   "a": [
+    "Xogum"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "sword"
+   },
+   "src": [
+    "pt",
+    "Xogum",
+    [
+     "Japão"
+    ]
+   ]
+  },
+  {
+   "t": "Como eram chamados os guerreiros a serviço dos senhores feudais no Japão?",
+   "type": "txt",
+   "choices": [
+    "Samurais",
+    "Ninjas",
+    "Ronins",
+    "Xoguns",
+    "Daimyos",
+    "Monges guerreiros"
+   ],
+   "a": [
+    "Samurais"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "sword"
+   },
+   "src": [
+    "pt",
+    "Samurai",
+    [
+     "Japão"
+    ]
+   ]
+  },
+  {
+   "t": "Qual senhor da guerra unificou o Japão e fundou o Xogunato Tokugawa, em 1603?",
+   "type": "player",
+   "a": [
+    "tokugawa_ieyasu"
+   ],
+   "d": 3,
+   "art": {
+    "stad": "himeji"
+   },
+   "src": [
+    "pt",
+    "Tokugawa Ieyasu",
+    [
+     "1603"
+    ]
+   ]
+  },
+  {
+   "t": "Qual imperador japonês liderou a modernização do país após 1868?",
+   "type": "player",
+   "a": [
+    "meiji"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "crown"
+   },
+   "src": [
+    "pt",
+    "Imperador Meiji",
+    [
+     "1868"
+    ]
+   ]
+  },
+  {
+   "t": "Qual esquadra chinesa de “navios do tesouro” chegou à África no início do século XV?",
+   "type": "txt",
+   "choices": [
+    "A de Zheng He",
+    "A de Kublai Khan",
+    "A de Marco Polo",
+    "A de Gengis Khan",
+    "A de Sun Tzu",
+    "A de Tamerlão"
+   ],
+   "a": [
+    "A de Zheng He"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "ship"
+   },
+   "src": [
+    "pt",
+    "Zheng He",
+    [
+     "África"
+    ]
+   ]
+  },
+  {
+   "t": "Qual almirante chinês comandou as grandes expedições marítimas da dinastia Ming?",
+   "type": "player",
+   "a": [
+    "zheng_he"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "ship"
+   },
+   "src": [
+    "pt",
+    "Zheng He",
+    [
+     "Ming"
+    ]
+   ]
+  },
+  {
+   "t": "Qual religião fundada por Maomé no século VII se espalhou da Arábia ao Atlântico em cem anos?",
+   "type": "txt",
+   "choices": [
+    "Islamismo",
+    "Zoroastrismo",
+    "Budismo",
+    "Judaísmo",
+    "Hinduísmo",
+    "Xintoísmo"
+   ],
+   "a": [
+    "Islamismo"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "book"
+   },
+   "src": [
+    "pt",
+    "Islão",
+    [
+     "Maomé"
+    ]
+   ]
+  },
+  {
+   "t": "Qual cidade era a capital do Califado Abássida e centro do saber islâmico a partir de 762?",
+   "type": "txt",
+   "choices": [
+    "Bagdá",
+    "Damasco",
+    "Meca",
+    "Cairo",
+    "Córdoba",
+    "Isfahan"
+   ],
+   "a": [
+    "Bagdá"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "book"
+   },
+   "src": [
+    "pt",
+    "Bagdá",
+    [
+     "Abássida"
+    ]
+   ]
+  },
+  {
+   "t": "Qual matemático persa, do século IX, deu nome à palavra “algoritmo” e escreveu sobre álgebra?",
+   "type": "player",
+   "a": [
+    "al_khwarizmi"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "book"
+   },
+   "src": [
+    "pt",
+    "Al-Khwarizmi",
+    [
+     "álgebra"
+    ]
+   ]
+  },
+  {
+   "t": "Qual médico persa escreveu o Cânone da Medicina, usado na Europa por séculos?",
+   "type": "player",
+   "a": [
+    "avicena"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "book"
+   },
+   "src": [
+    "pt",
+    "Avicena",
+    [
+     "Cânone"
+    ]
+   ]
+  },
+  {
+   "t": "Qual califa abássida é associado ao auge de Bagdá e às histórias das Mil e Uma Noites?",
+   "type": "player",
+   "a": [
+    "harun"
+   ],
+   "d": 4,
+   "art": {
+    "icon": "crown"
+   },
+   "src": [
+    "pt",
+    "Harune Arraxide",
+    [
+     "Bagdá"
+    ]
+   ]
+  },
+  {
+   "t": "Qual imperador otomano, conhecido como “o Magnífico”, levou o império ao auge no século XVI?",
+   "type": "player",
+   "a": [
+    "solimao"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "crown"
+   },
+   "src": [
+    "pt",
+    "Solimão, o Magnífico",
+    [
+     "Otomano"
+    ]
+   ]
+  },
+  {
+   "t": "Qual sultão otomano conquistou Constantinopla aos 21 anos?",
+   "type": "player",
+   "a": [
+    "maome_ii"
+   ],
+   "d": 3,
+   "art": {
+    "stad": "santa_sofia"
+   },
+   "src": [
+    "en",
+    "Mehmed the Conqueror",
+    [
+     "Constantinople"
+    ]
+   ]
+  },
+  {
+   "t": "Qual a mesquita do século XVII conhecida por seus azulejos azuis, em Istambul?",
+   "type": "txt",
+   "choices": [
+    "Mesquita Azul",
+    "Santa Sofia",
+    "Mesquita de Córdoba",
+    "Cúpula da Rocha",
+    "Mesquita Suleymaniye",
+    "Mesquita de Selim"
+   ],
+   "a": [
+    "Mesquita Azul"
+   ],
+   "d": 2,
+   "art": {
+    "stad": "mesquita_azul"
+   },
+   "src": [
+    "pt",
+    "Mesquita Azul",
+    [
+     "Istambul"
+    ]
+   ]
+  },
+  {
+   "t": "Qual templo hindu-budista do Camboja é o maior monumento religioso do mundo?",
+   "type": "txt",
+   "choices": [
+    "Angkor Wat",
+    "Borobudur",
+    "Bagan",
+    "Prambanan",
+    "Ayutthaya",
+    "Wat Pho"
+   ],
+   "a": [
+    "Angkor Wat"
+   ],
+   "d": 2,
+   "art": {
+    "stad": "angkor_wat"
+   },
+   "src": [
+    "pt",
+    "Angkor Wat",
+    [
+     "Camboja"
+    ]
+   ]
+  },
+  {
+   "t": "Qual império asiático teve Angkor como capital?",
+   "type": "txt",
+   "choices": [
+    "Khmer",
+    "Mongol",
+    "Máuria",
+    "Mogol",
+    "Tang",
+    "Songai"
+   ],
+   "a": [
+    "Khmer"
+   ],
+   "d": 3,
+   "art": {
+    "stad": "angkor_wat"
+   },
+   "src": [
+    "pt",
+    "Império Khmer",
+    [
+     "Angkor"
+    ]
+   ]
+  },
+  {
+   "t": "Qual guerra de 1839–1842 opôs a China ao Reino Unido por causa do comércio de ópio?",
+   "type": "txt",
+   "choices": [
+    "Guerra do Ópio",
+    "Guerra dos Boxers",
+    "Guerra dos Sete Anos",
+    "Revolta Taiping",
+    "Guerra Sino-Japonesa",
+    "Guerra da Crimeia"
+   ],
+   "a": [
+    "Guerra do Ópio"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "cannon"
+   },
+   "src": [
+    "pt",
+    "Primeira Guerra do Ópio",
+    [
+     "1839"
+    ]
+   ]
+  },
+  {
+   "t": "Em que ano a monarquia chinesa acabou, com a queda da dinastia Qing?",
+   "type": "txt",
+   "choices": [
+    "1912",
+    "1849",
+    "1899",
+    "1949",
+    "1900",
+    "1937"
+   ],
+   "a": [
+    "1912"
+   ],
+   "d": 4,
+   "art": {
+    "icon": "crown"
+   },
+   "src": [
+    "pt",
+    "Dinastia Qing",
+    [
+     "1912"
+    ]
+   ]
+  },
+  {
+   "t": "Qual conquistador turco-mongol do século XIV tinha sua capital em Samarcanda?",
+   "type": "txt",
+   "choices": [
+    "Tamerlão",
+    "Gengis Khan",
+    "Átila",
+    "Babur",
+    "Saladino",
+    "Kublai"
+   ],
+   "a": [
+    "Tamerlão"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "sword"
+   },
+   "src": [
+    "pt",
+    "Tamerlão",
+    [
+     "Samarcanda"
+    ]
+   ]
+  }
+ ]
+}

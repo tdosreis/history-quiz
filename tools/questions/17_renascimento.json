@@ -1,0 +1,560 @@
+{
+ "id": "renascimento",
+ "name": "Renascimento e Reforma",
+ "tag": "Gênios, tipografia e fé em disputa",
+ "col": "#7B1E3A",
+ "diff": "Variado",
+ "emoji": "🎨",
+ "qs": [
+  {
+   "t": "Qual gênio florentino pintou a Mona Lisa e A Última Ceia e projetou máquinas voadoras?",
+   "type": "player",
+   "a": [
+    "leonardo"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "bust"
+   },
+   "src": [
+    "pt",
+    "Leonardo da Vinci",
+    [
+     "Mona Lisa"
+    ]
+   ]
+  },
+  {
+   "t": "Qual artista pintou o teto da Capela Sistina e esculpiu o Davi?",
+   "type": "player",
+   "a": [
+    "michelangelo"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "bust"
+   },
+   "src": [
+    "pt",
+    "Michelangelo",
+    [
+     "Capela Sistina"
+    ]
+   ]
+  },
+  {
+   "t": "Qual pintor renascentista criou a Escola de Atenas, no Vaticano?",
+   "type": "player",
+   "a": [
+    "rafael"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "bust"
+   },
+   "src": [
+    "pt",
+    "Rafael Sanzio",
+    [
+     "Escola de Atenas"
+    ]
+   ]
+  },
+  {
+   "t": "Qual pintor florentino criou O Nascimento de Vênus?",
+   "type": "player",
+   "a": [
+    "botticelli"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "bust"
+   },
+   "src": [
+    "pt",
+    "Sandro Botticelli",
+    [
+     "Nascimento de Vênus"
+    ]
+   ]
+  },
+  {
+   "t": "Qual banqueiro e governante de Florença foi o grande mecenas do Renascimento?",
+   "type": "player",
+   "a": [
+    "lorenzo"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "crown"
+   },
+   "src": [
+    "pt",
+    "Lourenço de Médici",
+    [
+     "Florença"
+    ]
+   ]
+  },
+  {
+   "t": "Qual diplomata florentino escreveu O Príncipe, tratado sobre o poder?",
+   "type": "player",
+   "a": [
+    "maquiavel"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "book"
+   },
+   "src": [
+    "pt",
+    "Nicolau Maquiavel",
+    [
+     "O Príncipe"
+    ]
+   ]
+  },
+  {
+   "t": "Qual humanista de Roterdã escreveu Elogio da Loucura?",
+   "type": "player",
+   "a": [
+    "erasmo"
+   ],
+   "d": 4,
+   "art": {
+    "icon": "book"
+   },
+   "src": [
+    "pt",
+    "Erasmo de Roterdão",
+    [
+     "Elogio da Loucura"
+    ]
+   ]
+  },
+  {
+   "t": "Qual artista alemão ficou famoso por gravuras como Cavaleiro, Morte e Diabo?",
+   "type": "player",
+   "a": [
+    "durer"
+   ],
+   "d": 4,
+   "art": {
+    "icon": "bust"
+   },
+   "src": [
+    "pt",
+    "Albrecht Dürer",
+    [
+     "gravura"
+    ]
+   ]
+  },
+  {
+   "t": "Qual monge alemão afixou 95 teses contra a venda de indulgências, em 1517?",
+   "type": "player",
+   "a": [
+    "lutero"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "scroll"
+   },
+   "src": [
+    "pt",
+    "Martinho Lutero",
+    [
+     "95 teses"
+    ]
+   ]
+  },
+  {
+   "t": "Qual reformador francês pregou a predestinação e liderou a Reforma em Genebra?",
+   "type": "player",
+   "a": [
+    "calvino"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "book"
+   },
+   "src": [
+    "pt",
+    "João Calvino",
+    [
+     "Genebra"
+    ]
+   ]
+  },
+  {
+   "t": "Qual rei inglês rompeu com Roma para se divorciar e criou a Igreja Anglicana?",
+   "type": "player",
+   "a": [
+    "henrique_viii"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "crown"
+   },
+   "src": [
+    "pt",
+    "Henrique VIII de Inglaterra",
+    [
+     "anglicana"
+    ]
+   ]
+  },
+  {
+   "t": "Qual rainha inglesa, filha de Ana Bolena, governou por 44 anos, derrotando a Invencível Armada?",
+   "type": "player",
+   "a": [
+    "elizabeth_i"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "crown"
+   },
+   "src": [
+    "pt",
+    "Isabel I de Inglaterra",
+    [
+     "Armada"
+    ]
+   ]
+  },
+  {
+   "t": "Qual astrônomo polonês propôs que a Terra gira em torno do Sol?",
+   "type": "player",
+   "a": [
+    "copernico"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "globe"
+   },
+   "src": [
+    "pt",
+    "Nicolau Copérnico",
+    [
+     "Sol"
+    ]
+   ]
+  },
+  {
+   "t": "Qual cientista italiano foi julgado pela Inquisição por defender o heliocentrismo?",
+   "type": "player",
+   "a": [
+    "galileu"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "globe"
+   },
+   "src": [
+    "pt",
+    "Galileu Galilei",
+    [
+     "Inquisição"
+    ]
+   ]
+  },
+  {
+   "t": "Qual astrônomo alemão formulou as três leis do movimento dos planetas?",
+   "type": "player",
+   "a": [
+    "kepler"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "globe"
+   },
+   "src": [
+    "pt",
+    "Johannes Kepler",
+    [
+     "planetas"
+    ]
+   ]
+  },
+  {
+   "t": "Qual dramaturgo inglês escreveu Hamlet e Romeu e Julieta?",
+   "type": "player",
+   "a": [
+    "shakespeare"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "book"
+   },
+   "src": [
+    "pt",
+    "William Shakespeare",
+    [
+     "Hamlet"
+    ]
+   ]
+  },
+  {
+   "t": "Qual escritor espanhol criou Dom Quixote de la Mancha?",
+   "type": "player",
+   "a": [
+    "cervantes"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "book"
+   },
+   "src": [
+    "pt",
+    "Miguel de Cervantes",
+    [
+     "Dom Quixote"
+    ]
+   ]
+  },
+  {
+   "t": "Qual palavra, que significa “renascer”, dá nome ao movimento cultural que revalorizou a Antiguidade clássica?",
+   "type": "txt",
+   "choices": [
+    "Renascimento",
+    "Reforma",
+    "Barroco",
+    "Iluminismo",
+    "Humanismo apenas",
+    "Romantismo"
+   ],
+   "a": [
+    "Renascimento"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "book"
+   },
+   "src": [
+    "pt",
+    "Renascimento",
+    [
+     "Antiguidade"
+    ]
+   ]
+  },
+  {
+   "t": "Em qual país nasceu o Renascimento, no século XIV?",
+   "type": "txt",
+   "choices": [
+    "Itália",
+    "França",
+    "Alemanha",
+    "Inglaterra",
+    "Espanha",
+    "Holanda"
+   ],
+   "a": [
+    "Itália"
+   ],
+   "d": 1,
+   "art": {
+    "stad": "duomo_florenca"
+   },
+   "src": [
+    "pt",
+    "Renascimento",
+    [
+     "Itália"
+    ]
+   ]
+  },
+  {
+   "t": "Qual a catedral de Florença cuja cúpula foi projetada por Brunelleschi?",
+   "type": "txt",
+   "choices": [
+    "Santa Maria del Fiore",
+    "São Pedro",
+    "São Marcos",
+    "Notre-Dame",
+    "Santa Sofia",
+    "Duomo de Milão"
+   ],
+   "a": [
+    "Santa Maria del Fiore"
+   ],
+   "d": 3,
+   "art": {
+    "stad": "duomo_florenca"
+   },
+   "src": [
+    "pt",
+    "Catedral de Santa Maria del Fiore",
+    [
+     "Brunelleschi"
+    ]
+   ]
+  },
+  {
+   "t": "Qual a corrente de pensamento do Renascimento que colocava o ser humano no centro do mundo?",
+   "type": "txt",
+   "choices": [
+    "Humanismo",
+    "Escolástica",
+    "Positivismo",
+    "Marxismo",
+    "Iluminismo",
+    "Utilitarismo"
+   ],
+   "a": [
+    "Humanismo"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "book"
+   },
+   "src": [
+    "pt",
+    "Humanismo renascentista",
+    [
+     "homem"
+    ]
+   ]
+  },
+  {
+   "t": "Qual o nome do movimento da Igreja Católica, nos séculos XVI–XVII, em resposta à Reforma Protestante?",
+   "type": "txt",
+   "choices": [
+    "Contrarreforma",
+    "Cruzada",
+    "Inquisição medieval",
+    "Cisma do Oriente",
+    "Concílio de Niceia",
+    "Reconquista"
+   ],
+   "a": [
+    "Contrarreforma"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "book"
+   },
+   "src": [
+    "pt",
+    "Contrarreforma",
+    [
+     "Reforma"
+    ]
+   ]
+  },
+  {
+   "t": "Qual ordem religiosa, fundada por Inácio de Loyola em 1534, foi decisiva na Contrarreforma e na educação no Brasil colonial?",
+   "type": "txt",
+   "choices": [
+    "Companhia de Jesus",
+    "Franciscanos",
+    "Dominicanos",
+    "Beneditinos",
+    "Carmelitas",
+    "Templários"
+   ],
+   "a": [
+    "Companhia de Jesus"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "book"
+   },
+   "src": [
+    "pt",
+    "Companhia de Jesus",
+    [
+     "Loyola"
+    ]
+   ]
+  },
+  {
+   "t": "Qual tribunal da Igreja perseguia hereges e foi reativado na Espanha em 1478?",
+   "type": "txt",
+   "choices": [
+    "Inquisição",
+    "Tribunal de Nuremberg",
+    "Santo Ofício de Avignon",
+    "Concílio de Trento",
+    "Cúria Romana",
+    "Conselho de Castela"
+   ],
+   "a": [
+    "Inquisição"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "scroll"
+   },
+   "src": [
+    "pt",
+    "Inquisição espanhola",
+    [
+     "1478"
+    ]
+   ]
+  },
+  {
+   "t": "Qual o pintor holandês do século XVII que retratou a Ronda Noturna?",
+   "type": "txt",
+   "choices": [
+    "Rembrandt",
+    "Vermeer",
+    "Van Dyck",
+    "Hals",
+    "Rubens",
+    "Bosch"
+   ],
+   "a": [
+    "Rembrandt"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "bust"
+   },
+   "src": [
+    "pt",
+    "A Ronda Noturna",
+    [
+     "Rembrandt"
+    ]
+   ]
+  },
+  {
+   "t": "Qual pintor holandês criou A Moça com Brinco de Pérola?",
+   "type": "player",
+   "a": [
+    "vermeer"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "bust"
+   },
+   "src": [
+    "pt",
+    "Johannes Vermeer",
+    [
+     "Brinco de Pérola"
+    ]
+   ]
+  },
+  {
+   "t": "Qual pintor da corte espanhola criou As Meninas, em 1656?",
+   "type": "player",
+   "a": [
+    "velazquez"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "bust"
+   },
+   "src": [
+    "pt",
+    "Diego Velázquez",
+    [
+     "As Meninas"
+    ]
+   ]
+  }
+ ]
+}

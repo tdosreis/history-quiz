@@ -1,0 +1,559 @@
+{
+ "id": "absolutismo",
+ "name": "Reis, Rainhas e Luzes",
+ "tag": "Absolutismo e Iluminismo",
+ "col": "#C8A400",
+ "diff": "Variado",
+ "emoji": "👑",
+ "qs": [
+  {
+   "t": "Qual rei francês, o “Rei Sol”, reinou por 72 anos e construiu Versalhes?",
+   "type": "player",
+   "a": [
+    "luis_xiv"
+   ],
+   "d": 1,
+   "art": {
+    "stad": "versalhes"
+   },
+   "src": [
+    "pt",
+    "Luís XIV de França",
+    [
+     "Versalhes"
+    ]
+   ],
+   "x": "Luís XIV tinha apenas 4 anos e meio quando subiu ao trono, em 1643."
+  },
+  {
+   "t": "Qual czar russo viajou à Europa para aprender, fundou São Petersburgo e modernizou a Rússia?",
+   "type": "player",
+   "a": [
+    "pedro_grande"
+   ],
+   "d": 2,
+   "art": {
+    "stad": "palacio_inverno"
+   },
+   "src": [
+    "pt",
+    "Pedro I da Rússia",
+    [
+     "São Petersburgo"
+    ]
+   ]
+  },
+  {
+   "t": "Qual imperatriz da Rússia, de origem alemã, reinou por 34 anos e protegeu os iluministas?",
+   "type": "player",
+   "a": [
+    "catarina_grande"
+   ],
+   "d": 3,
+   "art": {
+    "stad": "palacio_inverno"
+   },
+   "src": [
+    "pt",
+    "Catarina II da Rússia",
+    [
+     "Voltaire"
+    ]
+   ]
+  },
+  {
+   "t": "Qual rei da Prússia, filósofo e flautista, foi chamado “o Grande”?",
+   "type": "player",
+   "a": [
+    "frederico_grande"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "crown"
+   },
+   "src": [
+    "pt",
+    "Frederico II da Prússia",
+    [
+     "Grande"
+    ]
+   ]
+  },
+  {
+   "t": "Qual imperatriz dos Habsburgos teve 16 filhos, entre eles Maria Antonieta?",
+   "type": "player",
+   "a": [
+    "maria_teresa"
+   ],
+   "d": 4,
+   "art": {
+    "icon": "crown"
+   },
+   "src": [
+    "pt",
+    "Maria Teresa da Áustria",
+    [
+     "Maria Antonieta"
+    ]
+   ]
+  },
+  {
+   "t": "Qual filósofo inglês é considerado o pai do liberalismo e defendeu os direitos naturais?",
+   "type": "player",
+   "a": [
+    "locke"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "book"
+   },
+   "src": [
+    "pt",
+    "John Locke",
+    [
+     "liberalismo"
+    ]
+   ]
+  },
+  {
+   "t": "Qual pensador francês defendeu a separação dos três poderes em O Espírito das Leis?",
+   "type": "player",
+   "a": [
+    "montesquieu"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "book"
+   },
+   "src": [
+    "pt",
+    "Montesquieu",
+    [
+     "Espírito das Leis"
+    ]
+   ]
+  },
+  {
+   "t": "Qual iluminista francês combateu a intolerância e escreveu Cândido?",
+   "type": "player",
+   "a": [
+    "voltaire"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "book"
+   },
+   "src": [
+    "pt",
+    "Voltaire",
+    [
+     "Cândido"
+    ]
+   ]
+  },
+  {
+   "t": "Qual filósofo genebrino escreveu O Contrato Social?",
+   "type": "player",
+   "a": [
+    "rousseau"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "book"
+   },
+   "src": [
+    "pt",
+    "Jean-Jacques Rousseau",
+    [
+     "Contrato Social"
+    ]
+   ]
+  },
+  {
+   "t": "Qual filósofo alemão escreveu a Crítica da Razão Pura?",
+   "type": "player",
+   "a": [
+    "kant"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "book"
+   },
+   "src": [
+    "pt",
+    "Immanuel Kant",
+    [
+     "Crítica da Razão Pura"
+    ]
+   ]
+  },
+  {
+   "t": "Qual economista escocês escreveu A Riqueza das Nações, em 1776?",
+   "type": "player",
+   "a": [
+    "adam_smith"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "book"
+   },
+   "src": [
+    "pt",
+    "Adam Smith",
+    [
+     "Riqueza das Nações"
+    ]
+   ]
+  },
+  {
+   "t": "Qual cientista inglês formulou a lei da gravitação universal?",
+   "type": "player",
+   "a": [
+    "newton"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "globe"
+   },
+   "src": [
+    "pt",
+    "Isaac Newton",
+    [
+     "gravitação"
+    ]
+   ]
+  },
+  {
+   "t": "Qual filósofo francês escreveu “Penso, logo existo”?",
+   "type": "player",
+   "a": [
+    "descartes"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "book"
+   },
+   "src": [
+    "pt",
+    "René Descartes",
+    [
+     "Penso, logo existo"
+    ]
+   ]
+  },
+  {
+   "t": "Qual compositor alemão do Barroco escreveu as Variações Goldberg e a Paixão segundo São Mateus?",
+   "type": "player",
+   "a": [
+    "bach"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "book"
+   },
+   "src": [
+    "pt",
+    "Johann Sebastian Bach",
+    [
+     "Paixão"
+    ]
+   ]
+  },
+  {
+   "t": "Qual compositor austríaco, menino-prodígio, escreveu A Flauta Mágica?",
+   "type": "player",
+   "a": [
+    "mozart"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "book"
+   },
+   "src": [
+    "pt",
+    "Wolfgang Amadeus Mozart",
+    [
+     "Flauta Mágica"
+    ]
+   ]
+  },
+  {
+   "t": "Qual compositor surdo escreveu a Nona Sinfonia, com o Hino à Alegria?",
+   "type": "player",
+   "a": [
+    "beethoven"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "book"
+   },
+   "src": [
+    "pt",
+    "Ludwig van Beethoven",
+    [
+     "Nona Sinfonia"
+    ]
+   ]
+  },
+  {
+   "t": "Qual rei francês teria dito “O Estado sou eu”, símbolo do absolutismo?",
+   "type": "txt",
+   "choices": [
+    "Luís XIV",
+    "Luís XVI",
+    "Henrique IV",
+    "Francisco I",
+    "Carlos Magno",
+    "Napoleão"
+   ],
+   "a": [
+    "Luís XIV"
+   ],
+   "d": 2,
+   "art": {
+    "stad": "versalhes"
+   },
+   "src": [
+    "pt",
+    "Luís XIV de França",
+    [
+     "O Estado sou eu"
+    ]
+   ]
+  },
+  {
+   "t": "Qual palácio foi a residência da corte francesa a partir de 1682?",
+   "type": "txt",
+   "choices": [
+    "Versalhes",
+    "Louvre",
+    "Fontainebleau",
+    "Tulherias",
+    "Chambord",
+    "Luxemburgo"
+   ],
+   "a": [
+    "Versalhes"
+   ],
+   "d": 1,
+   "art": {
+    "stad": "versalhes"
+   },
+   "src": [
+    "pt",
+    "Palácio de Versalhes",
+    [
+     "1682"
+    ]
+   ]
+  },
+  {
+   "t": "Qual o século chamado “das Luzes”, em que a razão desafiou a tradição?",
+   "type": "txt",
+   "choices": [
+    "XVIII",
+    "XVI",
+    "XVII",
+    "XIX",
+    "XV",
+    "XX"
+   ],
+   "a": [
+    "XVIII"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "torch"
+   },
+   "src": [
+    "pt",
+    "Iluminismo",
+    [
+     "século XVIII"
+    ]
+   ]
+  },
+  {
+   "t": "Qual o grande dicionário do conhecimento do Iluminismo, organizado por Diderot e d'Alembert?",
+   "type": "txt",
+   "choices": [
+    "Enciclopédia",
+    "Suma Teológica",
+    "Dicionário de Oxford",
+    "Etimologias",
+    "Almanaque Real",
+    "Pandectas"
+   ],
+   "a": [
+    "Enciclopédia"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "book"
+   },
+   "src": [
+    "pt",
+    "Encyclopédie",
+    [
+     "Diderot"
+    ]
+   ]
+  },
+  {
+   "t": "Qual guerra de 1618 a 1648 devastou a Europa Central e terminou com a Paz de Vestfália?",
+   "type": "txt",
+   "choices": [
+    "Guerra dos Trinta Anos",
+    "Guerra dos Cem Anos",
+    "Guerra dos Sete Anos",
+    "Guerra da Sucessão Espanhola",
+    "Guerra Civil Inglesa",
+    "Guerra do Peloponeso"
+   ],
+   "a": [
+    "Guerra dos Trinta Anos"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "cannon"
+   },
+   "src": [
+    "pt",
+    "Guerra dos Trinta Anos",
+    [
+     "Vestfália"
+    ]
+   ]
+  },
+  {
+   "t": "Qual revolução inglesa de 1688 limitou o poder do rei e deu poderes ao Parlamento?",
+   "type": "txt",
+   "choices": [
+    "Revolução Gloriosa",
+    "Revolução Puritana",
+    "Revolução Industrial",
+    "Guerra das Rosas",
+    "Revolução Americana",
+    "Revolta dos Camponeses"
+   ],
+   "a": [
+    "Revolução Gloriosa"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "crown"
+   },
+   "src": [
+    "pt",
+    "Revolução Gloriosa",
+    [
+     "1688"
+    ]
+   ]
+  },
+  {
+   "t": "Qual rei inglês foi executado em 1649, após a Guerra Civil?",
+   "type": "txt",
+   "choices": [
+    "Carlos I",
+    "Henrique VIII",
+    "Jaime II",
+    "Ricardo III",
+    "Eduardo II",
+    "Carlos II"
+   ],
+   "a": [
+    "Carlos I"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "crown"
+   },
+   "src": [
+    "pt",
+    "Carlos I de Inglaterra",
+    [
+     "1649"
+    ]
+   ]
+  },
+  {
+   "t": "Qual o líder da República da Inglaterra, depois da execução do rei?",
+   "type": "txt",
+   "choices": [
+    "Oliver Cromwell",
+    "William Pitt",
+    "Winston Churchill",
+    "Thomas More",
+    "John Hampden",
+    "Walter Raleigh"
+   ],
+   "a": [
+    "Oliver Cromwell"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "crown"
+   },
+   "src": [
+    "pt",
+    "Oliver Cromwell",
+    [
+     "Lord Protector"
+    ]
+   ]
+  },
+  {
+   "t": "Qual a política econômica do absolutismo que buscava acumular metais preciosos e proteger a produção nacional?",
+   "type": "txt",
+   "choices": [
+    "Mercantilismo",
+    "Liberalismo",
+    "Fisiocracia",
+    "Socialismo",
+    "Capitalismo industrial",
+    "Escambo"
+   ],
+   "a": [
+    "Mercantilismo"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "ship"
+   },
+   "src": [
+    "pt",
+    "Mercantilismo",
+    [
+     "metais"
+    ]
+   ]
+  },
+  {
+   "t": "Qual a fonte de poder do rei, segundo a teoria absolutista de Bossuet?",
+   "type": "txt",
+   "choices": [
+    "Direito divino",
+    "Contrato social",
+    "Voto popular",
+    "Força militar",
+    "Herança de terras",
+    "Constituição"
+   ],
+   "a": [
+    "Direito divino"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "crown"
+   },
+   "src": [
+    "pt",
+    "Direito divino dos reis",
+    [
+     "Bossuet"
+    ]
+   ]
+  }
+ ]
+}

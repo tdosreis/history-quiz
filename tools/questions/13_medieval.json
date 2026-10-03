@@ -1,0 +1,719 @@
+{
+ "id": "medieval",
+ "name": "Idade Média",
+ "tag": "Cavaleiros, mosteiros e cruzadas",
+ "col": "#5B4A7A",
+ "diff": "Variado",
+ "emoji": "🏰",
+ "qs": [
+  {
+   "t": "Qual rei franco foi coroado imperador pelo papa no Natal do ano 800?",
+   "type": "player",
+   "a": [
+    "carlos_magno"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "crown"
+   },
+   "src": [
+    "pt",
+    "Carlos Magno",
+    [
+     "800"
+    ]
+   ]
+  },
+  {
+   "t": "Qual duque da Normandia conquistou a Inglaterra na Batalha de Hastings, em 1066?",
+   "type": "player",
+   "a": [
+    "guilherme_conquistador"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "sword"
+   },
+   "src": [
+    "pt",
+    "Guilherme I de Inglaterra",
+    [
+     "Hastings"
+    ]
+   ]
+  },
+  {
+   "t": "Qual rei inglês, conhecido como Coração de Leão, liderou a Terceira Cruzada?",
+   "type": "player",
+   "a": [
+    "ricardo"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "sword"
+   },
+   "src": [
+    "pt",
+    "Ricardo I de Inglaterra",
+    [
+     "Cruzada"
+    ]
+   ]
+  },
+  {
+   "t": "Qual sultão reconquistou Jerusalém dos cruzados em 1187?",
+   "type": "player",
+   "a": [
+    "saladino"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "sword"
+   },
+   "src": [
+    "pt",
+    "Saladino",
+    [
+     "Jerusalém"
+    ]
+   ]
+  },
+  {
+   "t": "Qual jovem camponesa francesa liderou tropas na Guerra dos Cem Anos e foi queimada em 1431?",
+   "type": "player",
+   "a": [
+    "joana_darc"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "sword"
+   },
+   "src": [
+    "pt",
+    "Joana d'Arc",
+    [
+     "1431"
+    ]
+   ]
+  },
+  {
+   "t": "Qual teólogo italiano escreveu a Suma Teológica, unindo Aristóteles e a fé cristã?",
+   "type": "player",
+   "a": [
+    "tomas_aquino"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "book"
+   },
+   "src": [
+    "pt",
+    "Tomás de Aquino",
+    [
+     "Suma Teológica"
+    ]
+   ]
+  },
+  {
+   "t": "Qual poeta florentino escreveu a Divina Comédia?",
+   "type": "player",
+   "a": [
+    "dante"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "book"
+   },
+   "src": [
+    "pt",
+    "Dante Alighieri",
+    [
+     "Divina Comédia"
+    ]
+   ]
+  },
+  {
+   "t": "Qual alemão inventou a prensa de tipos móveis por volta de 1440?",
+   "type": "player",
+   "a": [
+    "gutenberg"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "book"
+   },
+   "src": [
+    "pt",
+    "Johannes Gutenberg",
+    [
+     "1440"
+    ]
+   ]
+  },
+  {
+   "t": "Qual sistema econômico e social medieval se baseava na terra e na relação entre senhores e servos?",
+   "type": "txt",
+   "choices": [
+    "Feudalismo",
+    "Mercantilismo",
+    "Capitalismo",
+    "Escravismo antigo",
+    "Socialismo",
+    "Absolutismo"
+   ],
+   "a": [
+    "Feudalismo"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "castle"
+   },
+   "src": [
+    "pt",
+    "Feudalismo",
+    [
+     "servo"
+    ]
+   ]
+  },
+  {
+   "t": "Como se chamava a terra que um senhor feudal concedia a um vassalo?",
+   "type": "txt",
+   "choices": [
+    "Feudo",
+    "Latifúndio",
+    "Sesmaria",
+    "Pólis",
+    "Aldeia",
+    "Burgo"
+   ],
+   "a": [
+    "Feudo"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "castle"
+   },
+   "src": [
+    "pt",
+    "Feudo",
+    [
+     "vassalo"
+    ]
+   ]
+  },
+  {
+   "t": "Qual foi a epidemia que matou cerca de um terço dos europeus entre 1347 e 1351?",
+   "type": "txt",
+   "choices": [
+    "Peste Negra",
+    "Varíola",
+    "Cólera",
+    "Gripe espanhola",
+    "Tifo",
+    "Febre amarela"
+   ],
+   "a": [
+    "Peste Negra"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "hourglass"
+   },
+   "src": [
+    "pt",
+    "Peste Negra",
+    [
+     "1347"
+    ]
+   ]
+  },
+  {
+   "t": "Qual guerra opôs Inglaterra e França entre 1337 e 1453?",
+   "type": "txt",
+   "choices": [
+    "Guerra dos Cem Anos",
+    "Guerra das Duas Rosas",
+    "Guerra dos Trinta Anos",
+    "Guerra de Sucessão Espanhola",
+    "Guerra dos Sete Anos",
+    "Guerra do Peloponeso"
+   ],
+   "a": [
+    "Guerra dos Cem Anos"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "cannon"
+   },
+   "src": [
+    "pt",
+    "Guerra dos Cem Anos",
+    [
+     "1337"
+    ]
+   ]
+  },
+  {
+   "t": "Qual documento de 1215 limitou o poder do rei João Sem Terra, na Inglaterra?",
+   "type": "txt",
+   "choices": [
+    "Magna Carta",
+    "Bill of Rights",
+    "Declaração de Direitos",
+    "Código de Justiniano",
+    "Édito de Nantes",
+    "Petição de Direito"
+   ],
+   "a": [
+    "Magna Carta"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "scroll"
+   },
+   "src": [
+    "pt",
+    "Magna Carta",
+    [
+     "1215"
+    ]
+   ]
+  },
+  {
+   "t": "Qual movimento armado cristão, a partir de 1096, buscou conquistar Jerusalém?",
+   "type": "txt",
+   "choices": [
+    "Cruzadas",
+    "Reconquista",
+    "Inquisição",
+    "Guerra Santa Islâmica",
+    "Cisma do Oriente",
+    "Peregrinações"
+   ],
+   "a": [
+    "Cruzadas"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "sword"
+   },
+   "src": [
+    "pt",
+    "Cruzadas",
+    [
+     "1096"
+    ]
+   ]
+  },
+  {
+   "t": "Como se chamava o processo de retomada da Península Ibérica dos mouros pelos reinos cristãos?",
+   "type": "txt",
+   "choices": [
+    "Reconquista",
+    "Cruzada",
+    "Inquisição",
+    "Renascença",
+    "Conquista",
+    "Restauração"
+   ],
+   "a": [
+    "Reconquista"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "sword"
+   },
+   "src": [
+    "pt",
+    "Reconquista",
+    [
+     "Península Ibérica"
+    ]
+   ]
+  },
+  {
+   "t": "Em que ano caiu o último reino mouro da Península Ibérica, Granada?",
+   "type": "txt",
+   "choices": [
+    "1492",
+    "1453",
+    "1212",
+    "1236",
+    "1066",
+    "1517"
+   ],
+   "a": [
+    "1492"
+   ],
+   "d": 3,
+   "art": {
+    "stad": "alhambra"
+   },
+   "src": [
+    "pt",
+    "Reconquista",
+    [
+     "1492"
+    ]
+   ]
+  },
+  {
+   "t": "Qual a grande cisão da Igreja, em 1054, entre Roma e Constantinopla?",
+   "type": "txt",
+   "choices": [
+    "Cisma do Oriente",
+    "Reforma Protestante",
+    "Cisma do Ocidente",
+    "Inquisição",
+    "Concílio de Niceia",
+    "Cruzada dos Pobres"
+   ],
+   "a": [
+    "Cisma do Oriente"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "book"
+   },
+   "src": [
+    "pt",
+    "Cisma do Oriente",
+    [
+     "1054"
+    ]
+   ]
+  },
+  {
+   "t": "Qual povo escandinavo atacava e comerciava pelos rios e mares da Europa nos séculos IX–XI?",
+   "type": "txt",
+   "choices": [
+    "Vikings",
+    "Visigodos",
+    "Hunos",
+    "Magiares",
+    "Mouros",
+    "Francos"
+   ],
+   "a": [
+    "Vikings"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "ship"
+   },
+   "src": [
+    "pt",
+    "Vikings",
+    [
+     "Escandinávia"
+    ]
+   ]
+  },
+  {
+   "t": "Qual explorador viking chegou à América do Norte por volta do ano 1000?",
+   "type": "player",
+   "a": [
+    "leif"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "ship"
+   },
+   "src": [
+    "pt",
+    "Leif Eriksson",
+    [
+     "América"
+    ]
+   ]
+  },
+  {
+   "t": "Qual era a ordem social dos três estados na Europa medieval?",
+   "type": "txt",
+   "choices": [
+    "Clero, nobreza e povo",
+    "Rei, burgueses e escravos",
+    "Papa, imperador e servos",
+    "Nobres, soldados e mercadores",
+    "Clero, burgueses e camponeses livres",
+    "Cavaleiros, escudeiros e pajens"
+   ],
+   "a": [
+    "Clero, nobreza e povo"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "castle"
+   },
+   "src": [
+    "pt",
+    "Idade Média",
+    [
+     "clero"
+    ]
+   ]
+  },
+  {
+   "t": "Como se chamava o código de conduta dos cavaleiros medievais?",
+   "type": "txt",
+   "choices": [
+    "Cavalaria",
+    "Vassalagem",
+    "Heráldica",
+    "Torneio",
+    "Chancelaria",
+    "Cortesia"
+   ],
+   "a": [
+    "Cavalaria"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "sword"
+   },
+   "src": [
+    "pt",
+    "Cavalaria",
+    [
+     "cavaleiro"
+    ]
+   ]
+  },
+  {
+   "t": "Qual a universidade mais antiga da Europa ainda em funcionamento, fundada em 1088?",
+   "type": "txt",
+   "choices": [
+    "Bolonha",
+    "Oxford",
+    "Paris",
+    "Salamanca",
+    "Coimbra",
+    "Pádua"
+   ],
+   "a": [
+    "Bolonha"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "book"
+   },
+   "src": [
+    "pt",
+    "Universidade de Bolonha",
+    [
+     "1088"
+    ]
+   ]
+  },
+  {
+   "t": "Qual estilo arquitetônico medieval é marcado por arcos ogivais e vitrais, como Notre-Dame?",
+   "type": "txt",
+   "choices": [
+    "Gótico",
+    "Românico",
+    "Barroco",
+    "Bizantino",
+    "Neoclássico",
+    "Manuelino"
+   ],
+   "a": [
+    "Gótico"
+   ],
+   "d": 2,
+   "art": {
+    "stad": "notre_dame"
+   },
+   "src": [
+    "pt",
+    "Arquitetura gótica",
+    [
+     "ogiva"
+    ]
+   ]
+  },
+  {
+   "t": "Qual império medieval, com capital em Constantinopla, foi a continuação oriental de Roma?",
+   "type": "txt",
+   "choices": [
+    "Bizantino",
+    "Otomano",
+    "Carolíngio",
+    "Persa",
+    "Sacro Império",
+    "Veneziano"
+   ],
+   "a": [
+    "Bizantino"
+   ],
+   "d": 2,
+   "art": {
+    "stad": "santa_sofia"
+   },
+   "src": [
+    "pt",
+    "Império Bizantino",
+    [
+     "Constantinopla"
+    ]
+   ]
+  },
+  {
+   "t": "Em que ano os otomanos conquistaram Constantinopla, encerrando o Império Bizantino?",
+   "type": "txt",
+   "choices": [
+    "1453",
+    "1204",
+    "1492",
+    "1389",
+    "1517",
+    "1071"
+   ],
+   "a": [
+    "1453"
+   ],
+   "d": 2,
+   "art": {
+    "stad": "santa_sofia"
+   },
+   "src": [
+    "pt",
+    "Queda de Constantinopla",
+    [
+     "1453"
+    ]
+   ],
+   "x": "O sultão Maomé II tinha apenas 21 anos quando tomou a cidade, após um cerco de 53 dias."
+  },
+  {
+   "t": "Qual foi a revolta camponesa inglesa de 1381?",
+   "type": "txt",
+   "choices": [
+    "Revolta dos Camponeses",
+    "Revolta dos Ciompi",
+    "Jacquerie",
+    "Guerra das Rosas",
+    "Cruzada dos Pobres",
+    "Revolta de Jack Cade"
+   ],
+   "a": [
+    "Revolta dos Camponeses"
+   ],
+   "d": 4,
+   "art": {
+    "icon": "sword"
+   },
+   "src": [
+    "pt",
+    "Revolta dos Camponeses",
+    [
+     "1381"
+    ]
+   ]
+  },
+  {
+   "t": "Qual foi a data da Batalha de Poitiers, em que os francos de Carlos Martel detiveram o avanço muçulmano?",
+   "type": "txt",
+   "choices": [
+    "732",
+    "711",
+    "800",
+    "1066",
+    "476",
+    "1095"
+   ],
+   "a": [
+    "732"
+   ],
+   "d": 4,
+   "art": {
+    "icon": "sword"
+   },
+   "src": [
+    "pt",
+    "Batalha de Poitiers (732)",
+    [
+     "732"
+    ]
+   ]
+  },
+  {
+   "t": "Qual obra de Marco Polo descreve suas viagens à China de Kublai Khan?",
+   "type": "txt",
+   "choices": [
+    "O Livro das Maravilhas",
+    "A Divina Comédia",
+    "Os Lusíadas",
+    "A Utopia",
+    "O Decameron",
+    "Crônicas de Froissart"
+   ],
+   "a": [
+    "O Livro das Maravilhas"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "map"
+   },
+   "src": [
+    "pt",
+    "Marco Polo",
+    [
+     "Kublai"
+    ]
+   ]
+  },
+  {
+   "t": "Qual a ordem militar religiosa fundada para proteger peregrinos em Jerusalém, depois destruída em 1312?",
+   "type": "txt",
+   "choices": [
+    "Templários",
+    "Hospitalários",
+    "Teutônicos",
+    "Jesuítas",
+    "Beneditinos",
+    "Cistercienses"
+   ],
+   "a": [
+    "Templários"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "sword"
+   },
+   "src": [
+    "pt",
+    "Ordem dos Templários",
+    [
+     "1312"
+    ]
+   ]
+  },
+  {
+   "t": "Qual instituição preservava e copiava livros na Europa medieval?",
+   "type": "txt",
+   "choices": [
+    "Os mosteiros",
+    "As universidades de Oxford",
+    "As guildas de ferreiros",
+    "As feiras de Champagne",
+    "Os castelos",
+    "As cortes de justiça"
+   ],
+   "a": [
+    "Os mosteiros"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "book"
+   },
+   "src": [
+    "pt",
+    "Mosteiro",
+    [
+     "livros"
+    ]
+   ]
+  }
+ ]
+}

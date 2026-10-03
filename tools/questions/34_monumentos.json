@@ -1,0 +1,1804 @@
+{
+ "id": "monumentos",
+ "name": "Monumentos e Lugares",
+ "tag": "Pedras que contam histórias",
+ "col": "#3F6FB5",
+ "diff": "Variado",
+ "emoji": "🗺️",
+ "qs": [
+  {
+   "t": "Que monumento é este?",
+   "type": "txt",
+   "choices": [
+    "Coliseu",
+    "Moai",
+    "Templo de Karnak",
+    "Torre de Londres",
+    "Muro de Berlim",
+    "Aqueduto de Segóvia"
+   ],
+   "a": [
+    "Coliseu"
+   ],
+   "d": 2,
+   "art": {
+    "stad": "coliseu"
+   },
+   "src": [
+    "pt",
+    "Coliseu",
+    [
+     "Coliseu"
+    ]
+   ]
+  },
+  {
+   "t": "Qual é este monumento histórico?",
+   "type": "txt",
+   "choices": [
+    "Panteão",
+    "Pompeia",
+    "Torre de Pisa",
+    "Pirâmide de Quéops",
+    "Alhambra",
+    "Sagrada Família"
+   ],
+   "a": [
+    "Panteão"
+   ],
+   "d": 2,
+   "art": {
+    "stad": "panteao"
+   },
+   "src": [
+    "pt",
+    "Panteão (Roma)",
+    [
+     "Panteão"
+    ]
+   ]
+  },
+  {
+   "t": "Que lugar famoso aparece na foto?",
+   "type": "txt",
+   "choices": [
+    "Fórum Romano",
+    "Aqueduto de Segóvia",
+    "Mosteiro dos Jerónimos",
+    "Grande Muralha",
+    "Muralha de Adriano",
+    "Partenon"
+   ],
+   "a": [
+    "Fórum Romano"
+   ],
+   "d": 4,
+   "art": {
+    "stad": "forum_romano"
+   },
+   "src": [
+    "pt",
+    "Fórum Romano",
+    [
+     "Romano"
+    ]
+   ]
+  },
+  {
+   "t": "Como se chama esta construção?",
+   "type": "txt",
+   "choices": [
+    "Muralha de Adriano",
+    "Palácio de Versalhes",
+    "Notre-Dame",
+    "Pompeia",
+    "Taj Mahal",
+    "Partenon"
+   ],
+   "a": [
+    "Muralha de Adriano"
+   ],
+   "d": 4,
+   "art": {
+    "stad": "muralha_adriano"
+   },
+   "src": [
+    "pt",
+    "Muralha de Adriano",
+    [
+     "Adriano"
+    ]
+   ]
+  },
+  {
+   "t": "Que monumento é este?",
+   "type": "txt",
+   "choices": [
+    "Aqueduto de Segóvia",
+    "Basílica de São Pedro",
+    "Palácio de Versalhes",
+    "Muralha de Adriano",
+    "Basílica de São Marcos",
+    "Grande Esfinge"
+   ],
+   "a": [
+    "Aqueduto de Segóvia"
+   ],
+   "d": 4,
+   "art": {
+    "stad": "aqueduto_segovia"
+   },
+   "src": [
+    "pt",
+    "Aqueduto de Segóvia",
+    [
+     "Segóvia"
+    ]
+   ]
+  },
+  {
+   "t": "Qual é este monumento histórico?",
+   "type": "txt",
+   "choices": [
+    "Pompeia",
+    "Cidade Proibida",
+    "Portão de Brandemburgo",
+    "Sagrada Família",
+    "Muralha de Adriano",
+    "Basílica de São Marcos"
+   ],
+   "a": [
+    "Pompeia"
+   ],
+   "d": 2,
+   "art": {
+    "stad": "pompeia"
+   },
+   "src": [
+    "pt",
+    "Pompeia",
+    [
+     "Pompeia"
+    ]
+   ]
+  },
+  {
+   "t": "Que lugar famoso aparece na foto?",
+   "type": "txt",
+   "choices": [
+    "Partenon",
+    "Sagrada Família",
+    "Torre de Londres",
+    "Muralha de Adriano",
+    "Cidade Proibida",
+    "Fórum Romano"
+   ],
+   "a": [
+    "Partenon"
+   ],
+   "d": 2,
+   "art": {
+    "stad": "partenon"
+   },
+   "src": [
+    "pt",
+    "Partenon",
+    [
+     "Partenon"
+    ]
+   ]
+  },
+  {
+   "t": "Como se chama esta construção?",
+   "type": "txt",
+   "choices": [
+    "Pirâmide de Quéops",
+    "Basílica de São Pedro",
+    "Abu Simbel",
+    "Machu Picchu",
+    "Notre-Dame",
+    "Templo de Karnak"
+   ],
+   "a": [
+    "Pirâmide de Quéops"
+   ],
+   "d": 2,
+   "art": {
+    "stad": "piramide_queops"
+   },
+   "src": [
+    "pt",
+    "Pirâmide de Quéops",
+    [
+     "Quéops"
+    ]
+   ]
+  },
+  {
+   "t": "Que monumento é este?",
+   "type": "txt",
+   "choices": [
+    "Grande Esfinge",
+    "Torre de Pisa",
+    "Pirâmide de Quéops",
+    "Basílica de São Marcos",
+    "Chichén Itzá",
+    "Basílica de São Pedro"
+   ],
+   "a": [
+    "Grande Esfinge"
+   ],
+   "d": 2,
+   "art": {
+    "stad": "esfinge"
+   },
+   "src": [
+    "pt",
+    "Esfinge de Gizé",
+    [
+     "Esfinge"
+    ]
+   ]
+  },
+  {
+   "t": "Qual é este monumento histórico?",
+   "type": "txt",
+   "choices": [
+    "Abu Simbel",
+    "Capitólio",
+    "Persépolis",
+    "Partenon",
+    "Sagrada Família",
+    "Basílica de São Marcos"
+   ],
+   "a": [
+    "Abu Simbel"
+   ],
+   "d": 4,
+   "art": {
+    "stad": "abu_simbel"
+   },
+   "src": [
+    "pt",
+    "Abu Simbel",
+    [
+     "Simbel"
+    ]
+   ]
+  },
+  {
+   "t": "Que lugar famoso aparece na foto?",
+   "type": "txt",
+   "choices": [
+    "Templo de Karnak",
+    "Portão de Brandemburgo",
+    "Petra",
+    "Alhambra",
+    "Partenon",
+    "Basílica de São Pedro"
+   ],
+   "a": [
+    "Templo de Karnak"
+   ],
+   "d": 4,
+   "art": {
+    "stad": "karnak"
+   },
+   "src": [
+    "pt",
+    "Templo de Karnak",
+    [
+     "Karnak"
+    ]
+   ]
+  },
+  {
+   "t": "Como se chama esta construção?",
+   "type": "txt",
+   "choices": [
+    "Portão de Ishtar",
+    "Cristo Redentor",
+    "Aqueduto de Segóvia",
+    "Basílica de São Marcos",
+    "Muralha de Adriano",
+    "Palácio de Inverno"
+   ],
+   "a": [
+    "Portão de Ishtar"
+   ],
+   "d": 4,
+   "art": {
+    "stad": "portao_ishtar"
+   },
+   "src": [
+    "en",
+    "Ishtar Gate",
+    [
+     "Ishtar"
+    ]
+   ]
+  },
+  {
+   "t": "Que monumento é este?",
+   "type": "txt",
+   "choices": [
+    "Persépolis",
+    "Grande Muralha",
+    "Torre de Belém",
+    "Capitólio",
+    "Torre de Pisa",
+    "Palácio de Versalhes"
+   ],
+   "a": [
+    "Persépolis"
+   ],
+   "d": 4,
+   "art": {
+    "stad": "persepolis"
+   },
+   "src": [
+    "pt",
+    "Persépolis",
+    [
+     "Persépolis"
+    ]
+   ]
+  },
+  {
+   "t": "Qual é este monumento histórico?",
+   "type": "txt",
+   "choices": [
+    "Petra",
+    "Catedral de Brasília",
+    "Moai",
+    "Torre Eiffel",
+    "Sagrada Família",
+    "Alhambra"
+   ],
+   "a": [
+    "Petra"
+   ],
+   "d": 4,
+   "art": {
+    "stad": "petra"
+   },
+   "src": [
+    "pt",
+    "Petra",
+    [
+     "Petra"
+    ]
+   ]
+  },
+  {
+   "t": "Que lugar famoso aparece na foto?",
+   "type": "txt",
+   "choices": [
+    "Grande Muralha",
+    "Chichén Itzá",
+    "Taj Mahal",
+    "Portão de Ishtar",
+    "Monte Rushmore",
+    "Catedral de Brasília"
+   ],
+   "a": [
+    "Grande Muralha"
+   ],
+   "d": 2,
+   "art": {
+    "stad": "muralha_china"
+   },
+   "src": [
+    "pt",
+    "Grande Muralha da China",
+    [
+     "Muralha"
+    ]
+   ]
+  },
+  {
+   "t": "Como se chama esta construção?",
+   "type": "txt",
+   "choices": [
+    "Cidade Proibida",
+    "Taj Mahal",
+    "Pompeia",
+    "Basílica de São Marcos",
+    "Chichén Itzá",
+    "Catedral de Florença"
+   ],
+   "a": [
+    "Cidade Proibida"
+   ],
+   "d": 2,
+   "art": {
+    "stad": "cidade_proibida"
+   },
+   "src": [
+    "pt",
+    "Cidade Proibida",
+    [
+     "Proibida"
+    ]
+   ]
+  },
+  {
+   "t": "Que monumento é este?",
+   "type": "txt",
+   "choices": [
+    "Taj Mahal",
+    "Torre de Belém",
+    "Santa Sofia",
+    "Museu do Ipiranga",
+    "Arco do Triunfo",
+    "Machu Picchu"
+   ],
+   "a": [
+    "Taj Mahal"
+   ],
+   "d": 2,
+   "art": {
+    "stad": "taj_mahal"
+   },
+   "src": [
+    "pt",
+    "Taj Mahal",
+    [
+     "Mahal"
+    ]
+   ]
+  },
+  {
+   "t": "Qual é este monumento histórico?",
+   "type": "txt",
+   "choices": [
+    "Angkor Wat",
+    "Kremlin",
+    "Aqueduto de Segóvia",
+    "Pirâmide de Quéops",
+    "Mosteiro dos Jerónimos",
+    "Notre-Dame"
+   ],
+   "a": [
+    "Angkor Wat"
+   ],
+   "d": 2,
+   "art": {
+    "stad": "angkor_wat"
+   },
+   "src": [
+    "pt",
+    "Angkor Wat",
+    [
+     "Wat"
+    ]
+   ]
+  },
+  {
+   "t": "Que lugar famoso aparece na foto?",
+   "type": "txt",
+   "choices": [
+    "Castelo de Himeji",
+    "Templo de Karnak",
+    "Museu Imperial",
+    "Santa Sofia",
+    "Abu Simbel",
+    "Torre de Belém"
+   ],
+   "a": [
+    "Castelo de Himeji"
+   ],
+   "d": 4,
+   "art": {
+    "stad": "himeji"
+   },
+   "src": [
+    "pt",
+    "Castelo de Himeji",
+    [
+     "Himeji"
+    ]
+   ]
+  },
+  {
+   "t": "Como se chama esta construção?",
+   "type": "txt",
+   "choices": [
+    "Machu Picchu",
+    "Notre-Dame",
+    "Fórum Romano",
+    "Estátua da Liberdade",
+    "Aqueduto de Segóvia",
+    "Museu Imperial"
+   ],
+   "a": [
+    "Machu Picchu"
+   ],
+   "d": 2,
+   "art": {
+    "stad": "machu_picchu"
+   },
+   "src": [
+    "pt",
+    "Machu Picchu",
+    [
+     "Picchu"
+    ]
+   ]
+  },
+  {
+   "t": "Que monumento é este?",
+   "type": "txt",
+   "choices": [
+    "Chichén Itzá",
+    "Basílica de São Pedro",
+    "Basílica de São Marcos",
+    "Moai",
+    "Santa Sofia",
+    "Monte Rushmore"
+   ],
+   "a": [
+    "Chichén Itzá"
+   ],
+   "d": 2,
+   "art": {
+    "stad": "chichen_itza"
+   },
+   "src": [
+    "pt",
+    "Chichén Itzá",
+    [
+     "Itzá"
+    ]
+   ]
+  },
+  {
+   "t": "Qual é este monumento histórico?",
+   "type": "txt",
+   "choices": [
+    "Moai",
+    "Mesquita Azul",
+    "Kremlin",
+    "Torre de Belém",
+    "Sagrada Família",
+    "Torre Eiffel"
+   ],
+   "a": [
+    "Moai"
+   ],
+   "d": 2,
+   "art": {
+    "stad": "moai"
+   },
+   "src": [
+    "pt",
+    "Moai",
+    [
+     "Moai"
+    ]
+   ]
+  },
+  {
+   "t": "Que lugar famoso aparece na foto?",
+   "type": "txt",
+   "choices": [
+    "Santa Sofia",
+    "Aqueduto de Segóvia",
+    "Pompeia",
+    "Angkor Wat",
+    "Mosteiro do Escorial",
+    "Monte Rushmore"
+   ],
+   "a": [
+    "Santa Sofia"
+   ],
+   "d": 2,
+   "art": {
+    "stad": "santa_sofia"
+   },
+   "src": [
+    "pt",
+    "Santa Sofia",
+    [
+     "Sofia"
+    ]
+   ]
+  },
+  {
+   "t": "Como se chama esta construção?",
+   "type": "txt",
+   "choices": [
+    "Mesquita Azul",
+    "Estátua da Liberdade",
+    "Aqueduto de Segóvia",
+    "Muralha de Adriano",
+    "Museu do Ipiranga",
+    "Monte Rushmore"
+   ],
+   "a": [
+    "Mesquita Azul"
+   ],
+   "d": 2,
+   "art": {
+    "stad": "mesquita_azul"
+   },
+   "src": [
+    "pt",
+    "Mesquita Azul",
+    [
+     "Azul"
+    ]
+   ]
+  },
+  {
+   "t": "Que monumento é este?",
+   "type": "txt",
+   "choices": [
+    "Alhambra",
+    "Machu Picchu",
+    "Muro de Berlim",
+    "Basílica de São Marcos",
+    "Capitólio",
+    "Arco do Triunfo"
+   ],
+   "a": [
+    "Alhambra"
+   ],
+   "d": 2,
+   "art": {
+    "stad": "alhambra"
+   },
+   "src": [
+    "pt",
+    "Alhambra",
+    [
+     "Alhambra"
+    ]
+   ]
+  },
+  {
+   "t": "Qual é este monumento histórico?",
+   "type": "txt",
+   "choices": [
+    "Stonehenge",
+    "Castelo de Himeji",
+    "Cristo Redentor",
+    "Alhambra",
+    "Estátua da Liberdade",
+    "Santa Sofia"
+   ],
+   "a": [
+    "Stonehenge"
+   ],
+   "d": 2,
+   "art": {
+    "stad": "stonehenge"
+   },
+   "src": [
+    "pt",
+    "Stonehenge",
+    [
+     "Stonehenge"
+    ]
+   ]
+  },
+  {
+   "t": "Que lugar famoso aparece na foto?",
+   "type": "txt",
+   "choices": [
+    "Torre de Londres",
+    "Panteão",
+    "Torre Eiffel",
+    "Santa Sofia",
+    "Templo de Karnak",
+    "Palácio de Inverno"
+   ],
+   "a": [
+    "Torre de Londres"
+   ],
+   "d": 2,
+   "art": {
+    "stad": "torre_londres"
+   },
+   "src": [
+    "pt",
+    "Torre de Londres",
+    [
+     "Londres"
+    ]
+   ]
+  },
+  {
+   "t": "Como se chama esta construção?",
+   "type": "txt",
+   "choices": [
+    "Notre-Dame",
+    "Pirâmide de Quéops",
+    "Torre de Belém",
+    "Muralha de Adriano",
+    "Petra",
+    "Catedral de Brasília"
+   ],
+   "a": [
+    "Notre-Dame"
+   ],
+   "d": 2,
+   "art": {
+    "stad": "notre_dame"
+   },
+   "src": [
+    "pt",
+    "Catedral de Notre-Dame de Paris",
+    [
+     "Notre-Dame"
+    ]
+   ]
+  },
+  {
+   "t": "Que monumento é este?",
+   "type": "txt",
+   "choices": [
+    "Palácio de Versalhes",
+    "Castelo de Himeji",
+    "Grande Esfinge",
+    "Ouro Preto",
+    "Cidade Proibida",
+    "Stonehenge"
+   ],
+   "a": [
+    "Palácio de Versalhes"
+   ],
+   "d": 2,
+   "art": {
+    "stad": "versalhes"
+   },
+   "src": [
+    "pt",
+    "Palácio de Versalhes",
+    [
+     "Versalhes"
+    ]
+   ]
+  },
+  {
+   "t": "Qual é este monumento histórico?",
+   "type": "txt",
+   "choices": [
+    "Arco do Triunfo",
+    "Stonehenge",
+    "Torre de Belém",
+    "Pompeia",
+    "Templo de Karnak",
+    "Palácio de Versalhes"
+   ],
+   "a": [
+    "Arco do Triunfo"
+   ],
+   "d": 2,
+   "art": {
+    "stad": "arco_triunfo"
+   },
+   "src": [
+    "en",
+    "Arc de Triomphe",
+    [
+     "Triunfo"
+    ]
+   ]
+  },
+  {
+   "t": "Que lugar famoso aparece na foto?",
+   "type": "txt",
+   "choices": [
+    "Torre Eiffel",
+    "Stonehenge",
+    "Basílica de São Pedro",
+    "Angkor Wat",
+    "Grande Esfinge",
+    "Notre-Dame"
+   ],
+   "a": [
+    "Torre Eiffel"
+   ],
+   "d": 2,
+   "art": {
+    "stad": "torre_eiffel"
+   },
+   "src": [
+    "pt",
+    "Torre Eiffel",
+    [
+     "Eiffel"
+    ]
+   ]
+  },
+  {
+   "t": "Como se chama esta construção?",
+   "type": "txt",
+   "choices": [
+    "Mosteiro do Escorial",
+    "Basílica de São Pedro",
+    "Angkor Wat",
+    "Cristo Redentor",
+    "Torre de Londres",
+    "Santa Sofia"
+   ],
+   "a": [
+    "Mosteiro do Escorial"
+   ],
+   "d": 4,
+   "art": {
+    "stad": "escorial"
+   },
+   "src": [
+    "pt",
+    "Mosteiro do Escorial",
+    [
+     "Escorial"
+    ]
+   ]
+  },
+  {
+   "t": "Que monumento é este?",
+   "type": "txt",
+   "choices": [
+    "Torre de Belém",
+    "Capitólio",
+    "Alhambra",
+    "Grande Muralha",
+    "Abu Simbel",
+    "Pompeia"
+   ],
+   "a": [
+    "Torre de Belém"
+   ],
+   "d": 2,
+   "art": {
+    "stad": "torre_belem"
+   },
+   "src": [
+    "pt",
+    "Torre de Belém",
+    [
+     "Belém"
+    ]
+   ]
+  },
+  {
+   "t": "Qual é este monumento histórico?",
+   "type": "txt",
+   "choices": [
+    "Mosteiro dos Jerónimos",
+    "Portão de Ishtar",
+    "Abu Simbel",
+    "Grande Muralha",
+    "Estátua da Liberdade",
+    "Coliseu"
+   ],
+   "a": [
+    "Mosteiro dos Jerónimos"
+   ],
+   "d": 4,
+   "art": {
+    "stad": "jeronimos"
+   },
+   "src": [
+    "pt",
+    "Mosteiro dos Jerónimos",
+    [
+     "Jerónimos"
+    ]
+   ]
+  },
+  {
+   "t": "Que lugar famoso aparece na foto?",
+   "type": "txt",
+   "choices": [
+    "Catedral de Florença",
+    "Mosteiro do Escorial",
+    "Sagrada Família",
+    "Portão de Ishtar",
+    "Taj Mahal",
+    "Castelo de Himeji"
+   ],
+   "a": [
+    "Catedral de Florença"
+   ],
+   "d": 2,
+   "art": {
+    "stad": "duomo_florenca"
+   },
+   "src": [
+    "pt",
+    "Catedral de Santa Maria del Fiore",
+    [
+     "Florença"
+    ]
+   ]
+  },
+  {
+   "t": "Como se chama esta construção?",
+   "type": "txt",
+   "choices": [
+    "Torre de Pisa",
+    "Coliseu",
+    "Abu Simbel",
+    "Torre de Londres",
+    "Catedral de Florença",
+    "Mesquita Azul"
+   ],
+   "a": [
+    "Torre de Pisa"
+   ],
+   "d": 2,
+   "art": {
+    "stad": "torre_pisa"
+   },
+   "src": [
+    "pt",
+    "Torre de Pisa",
+    [
+     "Pisa"
+    ]
+   ]
+  },
+  {
+   "t": "Que monumento é este?",
+   "type": "txt",
+   "choices": [
+    "Basílica de São Pedro",
+    "Palácio de Inverno",
+    "Basílica de São Marcos",
+    "Chichén Itzá",
+    "Grande Esfinge",
+    "Monte Rushmore"
+   ],
+   "a": [
+    "Basílica de São Pedro"
+   ],
+   "d": 2,
+   "art": {
+    "stad": "sao_pedro"
+   },
+   "src": [
+    "pt",
+    "Basílica de São Pedro",
+    [
+     "Pedro"
+    ]
+   ]
+  },
+  {
+   "t": "Qual é este monumento histórico?",
+   "type": "txt",
+   "choices": [
+    "Basílica de São Marcos",
+    "Torre de Belém",
+    "Palácio de Inverno",
+    "Muro de Berlim",
+    "Capitólio",
+    "Ouro Preto"
+   ],
+   "a": [
+    "Basílica de São Marcos"
+   ],
+   "d": 4,
+   "art": {
+    "stad": "sao_marcos"
+   },
+   "src": [
+    "pt",
+    "Basílica de São Marcos",
+    [
+     "Marcos"
+    ]
+   ]
+  },
+  {
+   "t": "Que lugar famoso aparece na foto?",
+   "type": "txt",
+   "choices": [
+    "Sagrada Família",
+    "Muralha de Adriano",
+    "Arco do Triunfo",
+    "Catedral de Brasília",
+    "Capitólio",
+    "Torre de Pisa"
+   ],
+   "a": [
+    "Sagrada Família"
+   ],
+   "d": 2,
+   "art": {
+    "stad": "sagrada_familia"
+   },
+   "src": [
+    "pt",
+    "Templo Expiatório da Sagrada Família",
+    [
+     "Família"
+    ]
+   ]
+  },
+  {
+   "t": "Como se chama esta construção?",
+   "type": "txt",
+   "choices": [
+    "Kremlin",
+    "Stonehenge",
+    "Partenon",
+    "Torre Eiffel",
+    "Portão de Brandemburgo",
+    "Muralha de Adriano"
+   ],
+   "a": [
+    "Kremlin"
+   ],
+   "d": 2,
+   "art": {
+    "stad": "kremlin"
+   },
+   "src": [
+    "pt",
+    "Kremlin de Moscou",
+    [
+     "Kremlin"
+    ]
+   ]
+  },
+  {
+   "t": "Que monumento é este?",
+   "type": "txt",
+   "choices": [
+    "Palácio de Inverno",
+    "Persépolis",
+    "Aqueduto de Segóvia",
+    "Petra",
+    "Palácio de Versalhes",
+    "Templo de Karnak"
+   ],
+   "a": [
+    "Palácio de Inverno"
+   ],
+   "d": 4,
+   "art": {
+    "stad": "palacio_inverno"
+   },
+   "src": [
+    "pt",
+    "Palácio de Inverno",
+    [
+     "Inverno"
+    ]
+   ]
+  },
+  {
+   "t": "Qual é este monumento histórico?",
+   "type": "txt",
+   "choices": [
+    "Portão de Brandemburgo",
+    "Pirâmide de Quéops",
+    "Moai",
+    "Sagrada Família",
+    "Muralha de Adriano",
+    "Partenon"
+   ],
+   "a": [
+    "Portão de Brandemburgo"
+   ],
+   "d": 4,
+   "art": {
+    "stad": "brandemburgo"
+   },
+   "src": [
+    "pt",
+    "Portão de Brandemburgo",
+    [
+     "Brandemburgo"
+    ]
+   ]
+  },
+  {
+   "t": "Que lugar famoso aparece na foto?",
+   "type": "txt",
+   "choices": [
+    "Muro de Berlim",
+    "Coliseu",
+    "Basílica de São Pedro",
+    "Abu Simbel",
+    "Catedral de Florença",
+    "Partenon"
+   ],
+   "a": [
+    "Muro de Berlim"
+   ],
+   "d": 2,
+   "art": {
+    "stad": "muro_berlim"
+   },
+   "src": [
+    "pt",
+    "Muro de Berlim",
+    [
+     "Berlim"
+    ]
+   ]
+  },
+  {
+   "t": "Como se chama esta construção?",
+   "type": "txt",
+   "choices": [
+    "Estátua da Liberdade",
+    "Mesquita Azul",
+    "Kremlin",
+    "Panteão",
+    "Aqueduto de Segóvia",
+    "Petra"
+   ],
+   "a": [
+    "Estátua da Liberdade"
+   ],
+   "d": 2,
+   "art": {
+    "stad": "estatua_liberdade"
+   },
+   "src": [
+    "pt",
+    "Estátua da Liberdade",
+    [
+     "Liberdade"
+    ]
+   ]
+  },
+  {
+   "t": "Que monumento é este?",
+   "type": "txt",
+   "choices": [
+    "Capitólio",
+    "Kremlin",
+    "Alhambra",
+    "Abu Simbel",
+    "Palácio de Inverno",
+    "Taj Mahal"
+   ],
+   "a": [
+    "Capitólio"
+   ],
+   "d": 4,
+   "art": {
+    "stad": "capitolio"
+   },
+   "src": [
+    "pt",
+    "Capitólio dos Estados Unidos",
+    [
+     "Capitólio"
+    ]
+   ]
+  },
+  {
+   "t": "Qual é este monumento histórico?",
+   "type": "txt",
+   "choices": [
+    "Monte Rushmore",
+    "Santa Sofia",
+    "Sagrada Família",
+    "Mesquita Azul",
+    "Torre Eiffel",
+    "Pirâmide de Quéops"
+   ],
+   "a": [
+    "Monte Rushmore"
+   ],
+   "d": 2,
+   "art": {
+    "stad": "monte_rushmore"
+   },
+   "src": [
+    "pt",
+    "Monte Rushmore",
+    [
+     "Rushmore"
+    ]
+   ]
+  },
+  {
+   "t": "Que lugar famoso aparece na foto?",
+   "type": "txt",
+   "choices": [
+    "Cristo Redentor",
+    "Pirâmide de Quéops",
+    "Mosteiro do Escorial",
+    "Arco do Triunfo",
+    "Torre Eiffel",
+    "Machu Picchu"
+   ],
+   "a": [
+    "Cristo Redentor"
+   ],
+   "d": 2,
+   "art": {
+    "stad": "cristo_redentor"
+   },
+   "src": [
+    "pt",
+    "Cristo Redentor",
+    [
+     "Redentor"
+    ]
+   ]
+  },
+  {
+   "t": "Como se chama esta construção?",
+   "type": "txt",
+   "choices": [
+    "Museu do Ipiranga",
+    "Pompeia",
+    "Abu Simbel",
+    "Partenon",
+    "Ouro Preto",
+    "Moai"
+   ],
+   "a": [
+    "Museu do Ipiranga"
+   ],
+   "d": 4,
+   "art": {
+    "stad": "museu_ipiranga"
+   },
+   "src": [
+    "pt",
+    "Museu do Ipiranga",
+    [
+     "Ipiranga"
+    ]
+   ]
+  },
+  {
+   "t": "Que monumento é este?",
+   "type": "txt",
+   "choices": [
+    "Ouro Preto",
+    "Museu do Ipiranga",
+    "Taj Mahal",
+    "Torre Eiffel",
+    "Capitólio",
+    "Templo de Karnak"
+   ],
+   "a": [
+    "Ouro Preto"
+   ],
+   "d": 2,
+   "art": {
+    "stad": "ouro_preto"
+   },
+   "src": [
+    "pt",
+    "Ouro Preto",
+    [
+     "Preto"
+    ]
+   ]
+  },
+  {
+   "t": "Qual é este monumento histórico?",
+   "type": "txt",
+   "choices": [
+    "Museu Imperial",
+    "Mosteiro dos Jerónimos",
+    "Panteão",
+    "Petra",
+    "Mesquita Azul",
+    "Abu Simbel"
+   ],
+   "a": [
+    "Museu Imperial"
+   ],
+   "d": 4,
+   "art": {
+    "stad": "museu_imperial"
+   },
+   "src": [
+    "en",
+    "Imperial Museum of Brazil",
+    [
+     "Imperial"
+    ]
+   ]
+  },
+  {
+   "t": "Que lugar famoso aparece na foto?",
+   "type": "txt",
+   "choices": [
+    "Catedral de Brasília",
+    "Capitólio",
+    "Catedral de Florença",
+    "Panteão",
+    "Ouro Preto",
+    "Mosteiro dos Jerónimos"
+   ],
+   "a": [
+    "Catedral de Brasília"
+   ],
+   "d": 4,
+   "art": {
+    "stad": "catedral_brasilia"
+   },
+   "src": [
+    "pt",
+    "Catedral Metropolitana de Brasília",
+    [
+     "Brasília"
+    ]
+   ]
+  },
+  {
+   "t": "Em que país fica a Pirâmide de Quéops?",
+   "type": "txt",
+   "choices": [
+    "Egito",
+    "México",
+    "Peru",
+    "Sudão",
+    "Iraque",
+    "Líbia"
+   ],
+   "a": [
+    "Egito"
+   ],
+   "d": 2,
+   "art": {
+    "stad": "piramide_queops"
+   },
+   "src": [
+    "pt",
+    "Pirâmide de Quéops",
+    [
+     "Egito"
+    ]
+   ]
+  },
+  {
+   "t": "Em que país fica o Taj Mahal?",
+   "type": "txt",
+   "choices": [
+    "Índia",
+    "Paquistão",
+    "Irã",
+    "Turquia",
+    "Nepal",
+    "Bangladesh"
+   ],
+   "a": [
+    "Índia"
+   ],
+   "d": 2,
+   "art": {
+    "stad": "taj_mahal"
+   },
+   "src": [
+    "pt",
+    "Taj Mahal",
+    [
+     "Índia"
+    ]
+   ]
+  },
+  {
+   "t": "Em que país fica Machu Picchu?",
+   "type": "txt",
+   "choices": [
+    "Peru",
+    "Bolívia",
+    "Equador",
+    "México",
+    "Chile",
+    "Colômbia"
+   ],
+   "a": [
+    "Peru"
+   ],
+   "d": 2,
+   "art": {
+    "stad": "machu_picchu"
+   },
+   "src": [
+    "pt",
+    "Machu Picchu",
+    [
+     "Peru"
+    ]
+   ]
+  },
+  {
+   "t": "Em que país fica Chichén Itzá?",
+   "type": "txt",
+   "choices": [
+    "México",
+    "Guatemala",
+    "Peru",
+    "Honduras",
+    "Cuba",
+    "Belize"
+   ],
+   "a": [
+    "México"
+   ],
+   "d": 2,
+   "art": {
+    "stad": "chichen_itza"
+   },
+   "src": [
+    "pt",
+    "Chichén Itzá",
+    [
+     "México"
+    ]
+   ]
+  },
+  {
+   "t": "Em que cidade fica o Partenon?",
+   "type": "txt",
+   "choices": [
+    "Atenas",
+    "Roma",
+    "Esparta",
+    "Corinto",
+    "Istambul",
+    "Delfos"
+   ],
+   "a": [
+    "Atenas"
+   ],
+   "d": 2,
+   "art": {
+    "stad": "partenon"
+   },
+   "src": [
+    "pt",
+    "Partenon",
+    [
+     "Atenas"
+    ]
+   ]
+  },
+  {
+   "t": "Em que cidade fica o Coliseu?",
+   "type": "txt",
+   "choices": [
+    "Roma",
+    "Atenas",
+    "Milão",
+    "Florença",
+    "Veneza",
+    "Nápoles"
+   ],
+   "a": [
+    "Roma"
+   ],
+   "d": 2,
+   "art": {
+    "stad": "coliseu"
+   },
+   "src": [
+    "pt",
+    "Coliseu",
+    [
+     "Roma"
+    ]
+   ]
+  },
+  {
+   "t": "Em que cidade fica Santa Sofia?",
+   "type": "txt",
+   "choices": [
+    "Istambul",
+    "Atenas",
+    "Roma",
+    "Moscou",
+    "Cairo",
+    "Belgrado"
+   ],
+   "a": [
+    "Istambul"
+   ],
+   "d": 2,
+   "art": {
+    "stad": "santa_sofia"
+   },
+   "src": [
+    "pt",
+    "Santa Sofia",
+    [
+     "Istambul"
+    ]
+   ]
+  },
+  {
+   "t": "Em que cidade fica o Kremlin?",
+   "type": "txt",
+   "choices": [
+    "Moscou",
+    "São Petersburgo",
+    "Kiev",
+    "Minsk",
+    "Varsóvia",
+    "Praga"
+   ],
+   "a": [
+    "Moscou"
+   ],
+   "d": 2,
+   "art": {
+    "stad": "kremlin"
+   },
+   "src": [
+    "pt",
+    "Kremlin de Moscou",
+    [
+     "Moscou"
+    ]
+   ]
+  },
+  {
+   "t": "Em que cidade fica a Torre de Belém?",
+   "type": "txt",
+   "choices": [
+    "Lisboa",
+    "Porto",
+    "Madri",
+    "Sevilha",
+    "Coimbra",
+    "Faro"
+   ],
+   "a": [
+    "Lisboa"
+   ],
+   "d": 2,
+   "art": {
+    "stad": "torre_belem"
+   },
+   "src": [
+    "pt",
+    "Torre de Belém",
+    [
+     "Lisboa"
+    ]
+   ]
+  },
+  {
+   "t": "Em que país fica a Grande Muralha?",
+   "type": "txt",
+   "choices": [
+    "China",
+    "Japão",
+    "Mongólia",
+    "Coreia",
+    "Índia",
+    "Vietnã"
+   ],
+   "a": [
+    "China"
+   ],
+   "d": 2,
+   "art": {
+    "stad": "muralha_china"
+   },
+   "src": [
+    "pt",
+    "Grande Muralha da China",
+    [
+     "China"
+    ]
+   ]
+  },
+  {
+   "t": "Em que país fica Angkor Wat?",
+   "type": "txt",
+   "choices": [
+    "Camboja",
+    "Tailândia",
+    "Vietnã",
+    "Laos",
+    "Mianmar",
+    "Indonésia"
+   ],
+   "a": [
+    "Camboja"
+   ],
+   "d": 2,
+   "art": {
+    "stad": "angkor_wat"
+   },
+   "src": [
+    "pt",
+    "Angkor Wat",
+    [
+     "Camboja"
+    ]
+   ]
+  },
+  {
+   "t": "Em que cidade brasileira fica o Cristo Redentor?",
+   "type": "txt",
+   "choices": [
+    "Rio de Janeiro",
+    "São Paulo",
+    "Salvador",
+    "Brasília",
+    "Belo Horizonte",
+    "Recife"
+   ],
+   "a": [
+    "Rio de Janeiro"
+   ],
+   "d": 2,
+   "art": {
+    "stad": "cristo_redentor"
+   },
+   "src": [
+    "pt",
+    "Cristo Redentor (Rio de Janeiro)",
+    [
+     "Rio"
+    ]
+   ]
+  },
+  {
+   "t": "Em que estado brasileiro fica Ouro Preto?",
+   "type": "txt",
+   "choices": [
+    "Minas Gerais",
+    "Bahia",
+    "São Paulo",
+    "Goiás",
+    "Espírito Santo",
+    "Rio de Janeiro"
+   ],
+   "a": [
+    "Minas Gerais"
+   ],
+   "d": 2,
+   "art": {
+    "stad": "ouro_preto"
+   },
+   "src": [
+    "pt",
+    "Ouro Preto",
+    [
+     "Minas"
+    ]
+   ]
+  },
+  {
+   "t": "Em que cidade fica o Museu do Ipiranga?",
+   "type": "txt",
+   "choices": [
+    "São Paulo",
+    "Rio de Janeiro",
+    "Santos",
+    "Salvador",
+    "Campinas",
+    "Curitiba"
+   ],
+   "a": [
+    "São Paulo"
+   ],
+   "d": 2,
+   "art": {
+    "stad": "museu_ipiranga"
+   },
+   "src": [
+    "pt",
+    "Museu do Ipiranga",
+    [
+     "São"
+    ]
+   ]
+  },
+  {
+   "t": "Em que cidade fica a Estátua da Liberdade?",
+   "type": "txt",
+   "choices": [
+    "Nova York",
+    "Washington",
+    "Boston",
+    "Filadélfia",
+    "Chicago",
+    "Los Angeles"
+   ],
+   "a": [
+    "Nova York"
+   ],
+   "d": 2,
+   "art": {
+    "stad": "estatua_liberdade"
+   },
+   "src": [
+    "pt",
+    "Estátua da Liberdade",
+    [
+     "Nova"
+    ]
+   ]
+  },
+  {
+   "t": "Em que cidade fica a Sagrada Família?",
+   "type": "txt",
+   "choices": [
+    "Barcelona",
+    "Madri",
+    "Valência",
+    "Sevilha",
+    "Lisboa",
+    "Granada"
+   ],
+   "a": [
+    "Barcelona"
+   ],
+   "d": 2,
+   "art": {
+    "stad": "sagrada_familia"
+   },
+   "src": [
+    "pt",
+    "Templo Expiatório da Sagrada Família",
+    [
+     "Barcelona"
+    ]
+   ]
+  },
+  {
+   "t": "Em que país fica Stonehenge?",
+   "type": "txt",
+   "choices": [
+    "Inglaterra",
+    "Escócia",
+    "Irlanda",
+    "França",
+    "País de Gales",
+    "Dinamarca"
+   ],
+   "a": [
+    "Inglaterra"
+   ],
+   "d": 2,
+   "art": {
+    "stad": "stonehenge"
+   },
+   "src": [
+    "pt",
+    "Stonehenge",
+    [
+     "Inglaterra"
+    ]
+   ]
+  },
+  {
+   "t": "Em que cidade ficava o Muro que dividiu a Alemanha?",
+   "type": "txt",
+   "choices": [
+    "Berlim",
+    "Bonn",
+    "Munique",
+    "Viena",
+    "Praga",
+    "Varsóvia"
+   ],
+   "a": [
+    "Berlim"
+   ],
+   "d": 2,
+   "art": {
+    "stad": "muro_berlim"
+   },
+   "src": [
+    "pt",
+    "Muro de Berlim",
+    [
+     "Berlim"
+    ]
+   ]
+  }
+ ]
+}

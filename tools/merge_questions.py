@@ -88,7 +88,7 @@ def main():
             bad = lambda msg: errs.append(f"{where}: {msg} :: {q.get('t', '')[:70]}")
             t, a, typ = q.get("t", ""), q.get("a") or [], q.get("type")
             if not t.endswith("?"): bad("question does not end in '?'")
-            key = fold(t + ' ' + q["clues"][0]) if q.get("clues") else fold(t)
+            key = fold(t + ' ' + q["clues"][0]) if q.get("clues") else fold(t + ' ' + json.dumps(q.get("art") or {}, sort_keys=True))
             if key in seen: bad(f"duplicate of a question in {seen[key]}")
             seen[key] = where
             cl_ = q.get("clues")

@@ -11,10 +11,11 @@ const QICON = {
 };
 /* the mark of a category when a question carries no picture of its own */
 const CAT_ART = {
-  antiguidade: 'column', egito_mesopotamia: 'pyramid', grecia_roma: 'column', medieval: 'castle',
-  descobrimentos: 'ship', renascimento: 'book', revolucoes: 'torch', imperios: 'crown',
-  guerras: 'cannon', guerra_fria: 'rocket', brasil: 'map', brasil_imperio: 'crown', brasil_republica: 'flag',
-  invencoes: 'gear', mundo_variado: 'globe', quem_sou_eu: 'bust', linha_do_tempo: 'hourglass',
+  egito_mesopotamia: 'pyramid', grecia: 'column', roma: 'sword', medieval: 'castle', oriente: 'globe',
+  africa_americas: 'pyramid', descobrimentos: 'ship', renascimento: 'book', absolutismo: 'crown', revolucoes: 'torch',
+  seculo19: 'gear', guerras_mundiais: 'cannon', guerra_fria: 'rocket', brasil_colonia: 'ship', brasil_republica: 'flag',
+  ciencia: 'gear', artes: 'bust', mulheres: 'crown', personagens: 'bust', monumentos: 'column', curiosidades: 'scroll',
+  quem_sou_eu: 'bust', linha_do_tempo: 'hourglass', imperios: 'crown',
 };
 const FALLBACK_PHOTO = {};
 const NONFREE_CRESTS = new Set([]);
@@ -282,8 +283,8 @@ function questionArtRaw(q) {
   if (q.crest && !(q.a || []).includes(q.crest) && !_answerNames(q, clubName(q.crest)))
     return `<div class="qart qart-crest${q._crestIsQ ? ' qart-hero' : ''}">${
       clubArt(q.crest, 'max-width:100%;max-height:100%;object-fit:contain;', true)}</div>`;
-  if (q.flag && FLAGS[q.flag] && !_answerNames(q, CTRY_NAME[q.flag]) &&
-      !(q.type === 'player' && (q.a || []).some(id => (PL.find(p => p.id === id) || {}).ctry === q.flag)))
+  if (q.flag && FLAGS[q.flag] && (q._flagIsQ || !_answerNames(q, CTRY_NAME[q.flag])) &&
+      (q._flagIsQ || !(q.type === 'player' && (q.a || []).some(id => (PL.find(p => p.id === id) || {}).ctry === q.flag))))
     return `<div class="qart qart-flag" role="img" aria-label="${CTRY_NAME[q.flag] || q.flag}">${qFlagInner(q.flag)}</div>`;
   if (q.path && q.path.length) {
     const shown = q.path.filter(c => CL.some(x => x.id === c)).slice(0, 4);

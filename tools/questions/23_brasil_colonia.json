@@ -1,0 +1,871 @@
+{
+ "id": "brasil_colonia",
+ "name": "Brasil Colônia e Império",
+ "tag": "De 1500 a 1889",
+ "col": "#1F7A4D",
+ "diff": "Variado",
+ "flag": "BRA",
+ "qs": [
+  {
+   "t": "Qual foi o primeiro nome dado ao Brasil pelos portugueses, em 1500?",
+   "type": "txt",
+   "choices": [
+    "Ilha de Vera Cruz",
+    "Terra do Fogo",
+    "Santa Cruz do Sul",
+    "Brasil Novo",
+    "Terra dos Papagaios",
+    "Pindorama"
+   ],
+   "a": [
+    "Ilha de Vera Cruz"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "map"
+   },
+   "src": [
+    "pt",
+    "História do Brasil",
+    [
+     "Vera Cruz"
+    ]
+   ]
+  },
+  {
+   "t": "Qual a primeira vila fundada pelos portugueses no Brasil, em 1532?",
+   "type": "txt",
+   "choices": [
+    "São Vicente",
+    "Salvador",
+    "Olinda",
+    "Santos",
+    "Piratininga",
+    "Paranaguá"
+   ],
+   "a": [
+    "São Vicente"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "map"
+   },
+   "src": [
+    "pt",
+    "São Vicente (São Paulo)",
+    [
+     "1532"
+    ]
+   ]
+  },
+  {
+   "t": "Qual cidade foi fundada em 1554 por jesuítas, no planalto paulista?",
+   "type": "txt",
+   "choices": [
+    "São Paulo",
+    "Santos",
+    "Campinas",
+    "Sorocaba",
+    "Jundiaí",
+    "Curitiba"
+   ],
+   "a": [
+    "São Paulo"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "map"
+   },
+   "src": [
+    "pt",
+    "História da cidade de São Paulo",
+    [
+     "1554"
+    ]
+   ]
+  },
+  {
+   "t": "Qual jesuíta, junto a Nóbrega, fundou o Colégio de São Paulo de Piratininga?",
+   "type": "txt",
+   "choices": [
+    "José de Anchieta",
+    "Antônio Vieira",
+    "Manuel da Nóbrega apenas",
+    "Gonçalo de Azevedo",
+    "Fernão Cardim",
+    "Pero Correia"
+   ],
+   "a": [
+    "José de Anchieta"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "book"
+   },
+   "src": [
+    "pt",
+    "José de Anchieta",
+    [
+     "Piratininga"
+    ]
+   ]
+  },
+  {
+   "t": "Qual foi o principal produto da economia colonial no Nordeste, no século XVI?",
+   "type": "txt",
+   "choices": [
+    "Açúcar",
+    "Café",
+    "Ouro",
+    "Algodão",
+    "Borracha",
+    "Cacau"
+   ],
+   "a": [
+    "Açúcar"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "ship"
+   },
+   "src": [
+    "pt",
+    "Ciclo do açúcar",
+    [
+     "engenho"
+    ]
+   ]
+  },
+  {
+   "t": "Como se chamava a propriedade rural açucareira, com plantação, moenda e casa-grande?",
+   "type": "txt",
+   "choices": [
+    "Engenho",
+    "Fazenda de café",
+    "Quilombo",
+    "Reduções",
+    "Sesmaria",
+    "Estância"
+   ],
+   "a": [
+    "Engenho"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "gear"
+   },
+   "src": [
+    "pt",
+    "Engenho",
+    [
+     "açúcar"
+    ]
+   ]
+  },
+  {
+   "t": "Qual país invadiu Pernambuco em 1630 e criou o Brasil Holandês?",
+   "type": "txt",
+   "choices": [
+    "Países Baixos",
+    "França",
+    "Inglaterra",
+    "Espanha",
+    "Dinamarca",
+    "Suécia"
+   ],
+   "a": [
+    "Países Baixos"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "ship"
+   },
+   "src": [
+    "pt",
+    "Brasil Holandês",
+    [
+     "1630"
+    ]
+   ]
+  },
+  {
+   "t": "Qual conde governou o Brasil Holandês e transformou Recife numa cidade moderna?",
+   "type": "txt",
+   "choices": [
+    "Maurício de Nassau",
+    "Duarte Coelho",
+    "Tomé de Sousa",
+    "Mem de Sá",
+    "Estácio de Sá",
+    "Salvador Correia"
+   ],
+   "a": [
+    "Maurício de Nassau"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "map"
+   },
+   "src": [
+    "pt",
+    "Maurício de Nassau",
+    [
+     "Recife"
+    ]
+   ]
+  },
+  {
+   "t": "Qual o nome dos grupos de exploradores paulistas que penetraram o interior atrás de indígenas e riquezas?",
+   "type": "txt",
+   "choices": [
+    "Bandeirantes",
+    "Inconfidentes",
+    "Jesuítas",
+    "Tropeiros",
+    "Quilombolas",
+    "Farroupilhas"
+   ],
+   "a": [
+    "Bandeirantes"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "map"
+   },
+   "src": [
+    "pt",
+    "Bandeirantes",
+    [
+     "sertão"
+    ]
+   ]
+  },
+  {
+   "t": "Qual ciclo econômico do século XVIII fez de Vila Rica (Ouro Preto) uma das maiores cidades da América?",
+   "type": "txt",
+   "choices": [
+    "Ciclo do ouro",
+    "Ciclo do açúcar",
+    "Ciclo do café",
+    "Ciclo da borracha",
+    "Ciclo do algodão",
+    "Ciclo do pau-brasil"
+   ],
+   "a": [
+    "Ciclo do ouro"
+   ],
+   "d": 1,
+   "art": {
+    "stad": "ouro_preto"
+   },
+   "src": [
+    "pt",
+    "Ciclo do ouro no Brasil",
+    [
+     "Minas Gerais"
+    ]
+   ]
+  },
+  {
+   "t": "Qual imposto cobrava 20% do ouro extraído no Brasil colonial?",
+   "type": "txt",
+   "choices": [
+    "Quinto",
+    "Dízimo",
+    "Derrama",
+    "Capitação",
+    "Alcabala",
+    "Imposto de renda"
+   ],
+   "a": [
+    "Quinto"
+   ],
+   "d": 2,
+   "art": {
+    "stad": "ouro_preto"
+   },
+   "src": [
+    "pt",
+    "Quinto (imposto)",
+    [
+     "ouro"
+    ]
+   ]
+  },
+  {
+   "t": "Qual escultor e arquiteto mineiro criou os Profetas de Congonhas e a Igreja de São Francisco de Assis, em Ouro Preto?",
+   "type": "player",
+   "a": [
+    "aleijadinho"
+   ],
+   "d": 2,
+   "art": {
+    "stad": "ouro_preto"
+   },
+   "src": [
+    "pt",
+    "Aleijadinho",
+    [
+     "Congonhas"
+    ]
+   ]
+  },
+  {
+   "t": "Qual líder quilombola resistiu à escravidão no Quilombo dos Palmares, até sua morte em 1695?",
+   "type": "player",
+   "a": [
+    "zumbi"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "flag"
+   },
+   "src": [
+    "pt",
+    "Zumbi dos Palmares",
+    [
+     "1695"
+    ]
+   ],
+   "x": "O 20 de novembro, dia de sua morte, é lembrado como Dia da Consciência Negra."
+  },
+  {
+   "t": "Qual alferes mineiro foi enforcado em 1792 por liderar a Inconfidência Mineira?",
+   "type": "player",
+   "a": [
+    "tiradentes"
+   ],
+   "d": 1,
+   "art": {
+    "stad": "ouro_preto"
+   },
+   "src": [
+    "pt",
+    "Tiradentes",
+    [
+     "1792"
+    ]
+   ]
+  },
+  {
+   "t": "Qual o lema da bandeira de Minas Gerais, usado pelos inconfidentes?",
+   "type": "txt",
+   "choices": [
+    "Libertas quae sera tamen",
+    "Ordem e Progresso",
+    "Plus Ultra",
+    "Sempre Fiel",
+    "Pro Brasilia Fiant Eximia",
+    "Per Aspera ad Astra"
+   ],
+   "a": [
+    "Libertas quae sera tamen"
+   ],
+   "d": 3,
+   "art": {
+    "stad": "ouro_preto"
+   },
+   "src": [
+    "pt",
+    "Inconfidência Mineira",
+    [
+     "Libertas quae sera tamen"
+    ]
+   ]
+  },
+  {
+   "t": "Qual revolta baiana de 1798, com participação popular e ideais igualitários, foi duramente reprimida?",
+   "type": "txt",
+   "choices": [
+    "Conjuração Baiana",
+    "Revolta dos Malês",
+    "Sabinada",
+    "Balaiada",
+    "Cabanagem",
+    "Guerra dos Mascates"
+   ],
+   "a": [
+    "Conjuração Baiana"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "flag"
+   },
+   "src": [
+    "pt",
+    "Conjuração Baiana",
+    [
+     "1798"
+    ]
+   ]
+  },
+  {
+   "t": "Qual monarca transferiu a corte portuguesa para o Rio de Janeiro, em 1808, fugindo de Napoleão?",
+   "type": "player",
+   "a": [
+    "dom_joao_vi"
+   ],
+   "d": 1,
+   "art": {
+    "stad": "museu_imperial"
+   },
+   "src": [
+    "pt",
+    "João VI de Portugal",
+    [
+     "1808"
+    ]
+   ]
+  },
+  {
+   "t": "Qual o ato de 1808 que abriu os portos brasileiros às nações amigas?",
+   "type": "txt",
+   "choices": [
+    "Abertura dos Portos",
+    "Lei do Ventre Livre",
+    "Lei Eusébio de Queirós",
+    "Lei dos Sexagenários",
+    "Alvará de 1785",
+    "Tratado de 1810"
+   ],
+   "a": [
+    "Abertura dos Portos"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "ship"
+   },
+   "src": [
+    "pt",
+    "Abertura dos portos às nações amigas",
+    [
+     "1808"
+    ]
+   ]
+  },
+  {
+   "t": "Qual título o Brasil recebeu em 1815, ao deixar de ser colônia dentro do reino?",
+   "type": "txt",
+   "choices": [
+    "Reino Unido de Portugal, Brasil e Algarves",
+    "Império do Brasil",
+    "República dos Estados Unidos do Brasil",
+    "Vice-Reino do Brasil",
+    "Reino do Brasil e Plata",
+    "Capitania Geral"
+   ],
+   "a": [
+    "Reino Unido de Portugal, Brasil e Algarves"
+   ],
+   "d": 4,
+   "art": {
+    "icon": "crown"
+   },
+   "src": [
+    "pt",
+    "Reino Unido de Portugal, Brasil e Algarves",
+    [
+     "1815"
+    ]
+   ]
+  },
+  {
+   "t": "Qual a imperatriz austríaca que apoiou a independência do Brasil e escreveu a carta a D. Pedro, em 1822?",
+   "type": "player",
+   "a": [
+    "leopoldina"
+   ],
+   "d": 3,
+   "art": {
+    "stad": "museu_ipiranga"
+   },
+   "src": [
+    "pt",
+    "Maria Leopoldina de Áustria",
+    [
+     "independência"
+    ]
+   ]
+  },
+  {
+   "t": "Qual político, “Patriarca da Independência”, foi conselheiro de D. Pedro I?",
+   "type": "player",
+   "a": [
+    "jose_bonifacio"
+   ],
+   "d": 3,
+   "art": {
+    "stad": "museu_ipiranga"
+   },
+   "src": [
+    "pt",
+    "José Bonifácio de Andrada e Silva",
+    [
+     "Patriarca"
+    ]
+   ]
+  },
+  {
+   "t": "Em que local, às margens de um riacho em São Paulo, D. Pedro I teria proclamado a independência?",
+   "type": "txt",
+   "choices": [
+    "Ipiranga",
+    "Paranapiacaba",
+    "Tietê",
+    "Santos",
+    "Morumbi",
+    "Anhangabaú"
+   ],
+   "a": [
+    "Ipiranga"
+   ],
+   "d": 1,
+   "art": {
+    "stad": "museu_ipiranga"
+   },
+   "src": [
+    "pt",
+    "Independência do Brasil",
+    [
+     "Ipiranga"
+    ]
+   ]
+  },
+  {
+   "t": "Qual o nome do primeiro imperador do Brasil?",
+   "type": "txt",
+   "choices": [
+    "Dom Pedro I",
+    "Dom Pedro II",
+    "Dom João VI",
+    "Dom Miguel",
+    "Dom Sebastião",
+    "Dom Afonso"
+   ],
+   "a": [
+    "Dom Pedro I"
+   ],
+   "d": 1,
+   "art": {
+    "stad": "museu_ipiranga"
+   },
+   "src": [
+    "pt",
+    "Pedro I do Brasil",
+    [
+     "Imperador"
+    ]
+   ]
+  },
+  {
+   "t": "Em que ano D. Pedro I abdicou do trono brasileiro em favor do filho?",
+   "type": "txt",
+   "choices": [
+    "1831",
+    "1822",
+    "1824",
+    "1840",
+    "1850",
+    "1889"
+   ],
+   "a": [
+    "1831"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "crown"
+   },
+   "src": [
+    "pt",
+    "Pedro I do Brasil",
+    [
+     "1831"
+    ]
+   ]
+  },
+  {
+   "t": "Qual imperador reinou por quase 50 anos, de 1840 a 1889, e era apaixonado por ciência e artes?",
+   "type": "player",
+   "a": [
+    "dom_pedro_ii"
+   ],
+   "d": 1,
+   "art": {
+    "stad": "museu_imperial"
+   },
+   "src": [
+    "pt",
+    "Pedro II do Brasil",
+    [
+     "1889"
+    ]
+   ]
+  },
+  {
+   "t": "Qual guerra, entre 1864 e 1870, opôs o Paraguai à Tríplice Aliança?",
+   "type": "txt",
+   "choices": [
+    "Guerra do Paraguai",
+    "Guerra dos Farrapos",
+    "Guerra do Contestado",
+    "Guerra de Canudos",
+    "Guerra da Cisplatina",
+    "Guerra dos Mascates"
+   ],
+   "a": [
+    "Guerra do Paraguai"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "cannon"
+   },
+   "src": [
+    "pt",
+    "Guerra do Paraguai",
+    [
+     "1864"
+    ]
+   ]
+  },
+  {
+   "t": "Qual militar, patrono do Exército, comandou as forças brasileiras na Guerra do Paraguai e foi pacificador de revoltas?",
+   "type": "player",
+   "a": [
+    "duque_caxias"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "sword"
+   },
+   "src": [
+    "pt",
+    "Duque de Caxias",
+    [
+     "Paraguai"
+    ]
+   ]
+  },
+  {
+   "t": "Qual catarinense lutou na Guerra dos Farrapos ao lado de Giuseppe Garibaldi?",
+   "type": "player",
+   "a": [
+    "anita"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "flag"
+   },
+   "src": [
+    "pt",
+    "Anita Garibaldi",
+    [
+     "Farrapos"
+    ]
+   ]
+  },
+  {
+   "t": "Qual empresário e banqueiro do Império foi pioneiro da industrialização e construiu a primeira ferrovia do Brasil?",
+   "type": "player",
+   "a": [
+    "maua"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "gear"
+   },
+   "src": [
+    "pt",
+    "Irineu Evangelista de Sousa",
+    [
+     "Mauá"
+    ]
+   ]
+  },
+  {
+   "t": "Qual lei de 1850 proibiu o tráfico de africanos para o Brasil?",
+   "type": "txt",
+   "choices": [
+    "Lei Eusébio de Queirós",
+    "Lei do Ventre Livre",
+    "Lei Áurea",
+    "Lei dos Sexagenários",
+    "Lei Saraiva",
+    "Lei Feijó"
+   ],
+   "a": [
+    "Lei Eusébio de Queirós"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "scroll"
+   },
+   "src": [
+    "pt",
+    "Lei Eusébio de Queirós",
+    [
+     "1850"
+    ]
+   ]
+  },
+  {
+   "t": "Qual lei de 1871 declarou livres os filhos de escravizadas nascidos a partir dela?",
+   "type": "txt",
+   "choices": [
+    "Lei do Ventre Livre",
+    "Lei Áurea",
+    "Lei Eusébio de Queirós",
+    "Lei dos Sexagenários",
+    "Lei Rio Branco só nominal",
+    "Lei Saraiva-Cotegipe"
+   ],
+   "a": [
+    "Lei do Ventre Livre"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "scroll"
+   },
+   "src": [
+    "pt",
+    "Lei do Ventre Livre",
+    [
+     "1871"
+    ]
+   ]
+  },
+  {
+   "t": "Em que data foi assinada a Lei Áurea, que aboliu a escravidão no Brasil?",
+   "type": "txt",
+   "choices": [
+    "13 de maio de 1888",
+    "7 de setembro de 1822",
+    "15 de novembro de 1889",
+    "28 de setembro de 1871",
+    "20 de novembro de 1695",
+    "21 de abril de 1792"
+   ],
+   "a": [
+    "13 de maio de 1888"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "scroll"
+   },
+   "src": [
+    "pt",
+    "Lei Áurea",
+    [
+     "13 de maio de 1888"
+    ]
+   ]
+  },
+  {
+   "t": "Qual princesa assinou a Lei Áurea, enquanto o pai estava na Europa?",
+   "type": "player",
+   "a": [
+    "princesa_isabel"
+   ],
+   "d": 1,
+   "art": {
+    "stad": "museu_imperial"
+   },
+   "src": [
+    "pt",
+    "Isabel, Princesa Imperial do Brasil",
+    [
+     "Lei Áurea"
+    ]
+   ]
+  },
+  {
+   "t": "Qual jornalista abolicionista, “o Tigre da Abolição”, foi um dos grandes oradores da campanha?",
+   "type": "player",
+   "a": [
+    "patrocinio"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "scroll"
+   },
+   "src": [
+    "pt",
+    "José do Patrocínio",
+    [
+     "abolicion"
+    ]
+   ]
+  },
+  {
+   "t": "Qual advogado ex-escravizado libertou centenas de cativos nos tribunais de São Paulo?",
+   "type": "player",
+   "a": [
+    "luis_gama"
+   ],
+   "d": 4,
+   "art": {
+    "icon": "scroll"
+   },
+   "src": [
+    "pt",
+    "Luís Gama",
+    [
+     "abolicion"
+    ]
+   ]
+  },
+  {
+   "t": "Qual marechal proclamou a República do Brasil, em 15 de novembro de 1889?",
+   "type": "player",
+   "a": [
+    "deodoro"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "flag"
+   },
+   "src": [
+    "pt",
+    "Deodoro da Fonseca",
+    [
+     "1889"
+    ]
+   ]
+  },
+  {
+   "t": "Qual escritor carioca, fundador da Academia Brasileira de Letras, escreveu Dom Casmurro?",
+   "type": "player",
+   "a": [
+    "machado"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "book"
+   },
+   "src": [
+    "pt",
+    "Machado de Assis",
+    [
+     "Dom Casmurro"
+    ]
+   ]
+  },
+  {
+   "t": "Qual compositora carioca escreveu a marcha “Ó Abre Alas”, o primeiro sucesso do Carnaval?",
+   "type": "player",
+   "a": [
+    "chiquinha"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "book"
+   },
+   "src": [
+    "pt",
+    "Chiquinha Gonzaga",
+    [
+     "Ó Abre Alas"
+    ]
+   ]
+  }
+ ]
+}

@@ -1,0 +1,644 @@
+{
+ "id": "ciencia",
+ "name": "Ciência e Invenções",
+ "tag": "Descobertas que mudaram o mundo",
+ "col": "#2E7D4F",
+ "diff": "Variado",
+ "emoji": "💡",
+ "qs": [
+  {
+   "t": "Qual cientista polonesa descobriu o polônio e o rádio e ganhou dois prêmios Nobel?",
+   "type": "player",
+   "a": [
+    "marie_curie"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "book"
+   },
+   "src": [
+    "pt",
+    "Marie Curie",
+    [
+     "polônio"
+    ]
+   ]
+  },
+  {
+   "t": "Qual físico formulou a teoria da relatividade?",
+   "type": "player",
+   "a": [
+    "einstein"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "globe"
+   },
+   "src": [
+    "pt",
+    "Albert Einstein",
+    [
+     "relatividade"
+    ]
+   ]
+  },
+  {
+   "t": "Qual físico dinamarquês propôs um modelo quântico do átomo, em 1913?",
+   "type": "player",
+   "a": [
+    "niels_bohr"
+   ],
+   "d": 4,
+   "art": {
+    "icon": "book"
+   },
+   "src": [
+    "pt",
+    "Niels Bohr",
+    [
+     "1913"
+    ]
+   ]
+  },
+  {
+   "t": "Qual escocês descobriu a penicilina, em 1928?",
+   "type": "player",
+   "a": [
+    "fleming"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "book"
+   },
+   "src": [
+    "pt",
+    "Alexander Fleming",
+    [
+     "penicilina"
+    ]
+   ]
+  },
+  {
+   "t": "Qual industrial americano popularizou a linha de montagem na produção de automóveis?",
+   "type": "player",
+   "a": [
+    "ford"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "gear"
+   },
+   "src": [
+    "pt",
+    "Henry Ford",
+    [
+     "linha de montagem"
+    ]
+   ]
+  },
+  {
+   "t": "Qual médico brasileiro combateu a febre amarela e a peste bubônica no Rio de Janeiro?",
+   "type": "player",
+   "a": [
+    "oswaldo_cruz"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "book"
+   },
+   "src": [
+    "pt",
+    "Oswaldo Cruz",
+    [
+     "febre amarela"
+    ]
+   ]
+  },
+  {
+   "t": "Qual cientista britânico decifrou o Enigma e formalizou a ideia de computador universal?",
+   "type": "player",
+   "a": [
+    "turing"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "gear"
+   },
+   "src": [
+    "pt",
+    "Alan Turing",
+    [
+     "computador"
+    ]
+   ]
+  },
+  {
+   "t": "Qual matemático grego escreveu Os Elementos, base da geometria por mais de dois mil anos?",
+   "type": "player",
+   "a": [
+    "euclides"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "book"
+   },
+   "src": [
+    "pt",
+    "Euclides",
+    [
+     "Elementos"
+    ]
+   ]
+  },
+  {
+   "t": "Qual cientista de Siracusa descobriu o princípio do empuxo e inventou a alavanca como máquina?",
+   "type": "player",
+   "a": [
+    "arquimedes"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "gear"
+   },
+   "src": [
+    "pt",
+    "Arquimedes",
+    [
+     "empuxo"
+    ]
+   ]
+  },
+  {
+   "t": "Qual médico grego é conhecido como o pai da Medicina?",
+   "type": "player",
+   "a": [
+    "hipocrates"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "book"
+   },
+   "src": [
+    "pt",
+    "Hipócrates",
+    [
+     "Medicina"
+    ]
+   ]
+  },
+  {
+   "t": "Qual astrônomo italiano usou um telescópio para ver crateras na Lua e as luas de Júpiter?",
+   "type": "player",
+   "a": [
+    "galileu"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "globe"
+   },
+   "src": [
+    "pt",
+    "Galileu Galilei",
+    [
+     "telescópio"
+    ]
+   ]
+  },
+  {
+   "t": "Qual cientista inglês publicou os Principia Mathematica, em 1687?",
+   "type": "player",
+   "a": [
+    "newton"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "globe"
+   },
+   "src": [
+    "pt",
+    "Isaac Newton",
+    [
+     "Principia"
+    ]
+   ]
+  },
+  {
+   "t": "Qual matemático alemão desenvolveu o cálculo ao mesmo tempo que Newton?",
+   "type": "player",
+   "a": [
+    "leibniz"
+   ],
+   "d": 4,
+   "art": {
+    "icon": "book"
+   },
+   "src": [
+    "pt",
+    "Gottfried Wilhelm Leibniz",
+    [
+     "cálculo"
+    ]
+   ]
+  },
+  {
+   "t": "Qual cientista francês escreveu o Discurso do Método e criou o plano cartesiano?",
+   "type": "player",
+   "a": [
+    "descartes"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "book"
+   },
+   "src": [
+    "pt",
+    "René Descartes",
+    [
+     "plano cartesiano"
+    ]
+   ]
+  },
+  {
+   "t": "Qual pensador francês do século XVII inventou uma calculadora mecânica e estudou a pressão atmosférica?",
+   "type": "player",
+   "a": [
+    "pascal"
+   ],
+   "d": 4,
+   "art": {
+    "icon": "gear"
+   },
+   "src": [
+    "pt",
+    "Blaise Pascal",
+    [
+     "calculadora"
+    ]
+   ]
+  },
+  {
+   "t": "Qual instrumento, inventado no início do século XVII, permitiu ver os céus mais de perto?",
+   "type": "txt",
+   "choices": [
+    "Telescópio",
+    "Microscópio",
+    "Sextante",
+    "Astrolábio",
+    "Periscópio",
+    "Barômetro"
+   ],
+   "a": [
+    "Telescópio"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "globe"
+   },
+   "src": [
+    "pt",
+    "Telescópio",
+    [
+     "século XVII"
+    ]
+   ]
+  },
+  {
+   "t": "Qual a data em que o homem pisou na Lua pela primeira vez?",
+   "type": "txt",
+   "choices": [
+    "20 de julho de 1969",
+    "4 de outubro de 1957",
+    "12 de abril de 1961",
+    "20 de julho de 1959",
+    "21 de dezembro de 1968",
+    "16 de julho de 1969"
+   ],
+   "a": [
+    "20 de julho de 1969"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "rocket"
+   },
+   "src": [
+    "pt",
+    "Apollo 11",
+    [
+     "20 de julho de 1969"
+    ]
+   ]
+  },
+  {
+   "t": "Qual vacina, criada por Edward Jenner em 1796, foi a primeira da história?",
+   "type": "txt",
+   "choices": [
+    "Contra a varíola",
+    "Contra a raiva",
+    "Contra o tétano",
+    "Contra a poliomielite",
+    "Contra a febre amarela",
+    "Contra o sarampo"
+   ],
+   "a": [
+    "Contra a varíola"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "book"
+   },
+   "src": [
+    "pt",
+    "Edward Jenner",
+    [
+     "varíola"
+    ]
+   ]
+  },
+  {
+   "t": "Qual substância, descoberta por Fleming, abriu a era dos antibióticos?",
+   "type": "txt",
+   "choices": [
+    "Penicilina",
+    "Insulina",
+    "Aspirina",
+    "Cloroquina",
+    "Morfina",
+    "Estreptomicina"
+   ],
+   "a": [
+    "Penicilina"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "book"
+   },
+   "src": [
+    "pt",
+    "Penicilina",
+    [
+     "Fleming"
+    ]
+   ]
+  },
+  {
+   "t": "Qual o nome da estrutura do DNA, descrita em 1953 por Watson e Crick?",
+   "type": "txt",
+   "choices": [
+    "Dupla hélice",
+    "Tripla hélice",
+    "Hélice única",
+    "Nucleossomo",
+    "Cromossomo",
+    "Anel de Krebs"
+   ],
+   "a": [
+    "Dupla hélice"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "book"
+   },
+   "src": [
+    "pt",
+    "DNA",
+    [
+     "Watson"
+    ]
+   ]
+  },
+  {
+   "t": "Qual a máquina, de 1822, projetada por Charles Babbage, é precursora do computador?",
+   "type": "txt",
+   "choices": [
+    "Máquina diferencial",
+    "ENIAC",
+    "Colossus",
+    "Pascalina",
+    "Tear de Jacquard",
+    "Zuse Z1"
+   ],
+   "a": [
+    "Máquina diferencial"
+   ],
+   "d": 4,
+   "art": {
+    "icon": "gear"
+   },
+   "src": [
+    "pt",
+    "Charles Babbage",
+    [
+     "máquina"
+    ]
+   ]
+  },
+  {
+   "t": "Quem inventou o telefone, patenteado em 1876?",
+   "type": "txt",
+   "choices": [
+    "Alexander Graham Bell",
+    "Thomas Edison",
+    "Nikola Tesla",
+    "Guglielmo Marconi",
+    "Samuel Morse",
+    "Antonio Meucci apenas"
+   ],
+   "a": [
+    "Alexander Graham Bell"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "gear"
+   },
+   "src": [
+    "pt",
+    "Alexander Graham Bell",
+    [
+     "telefone"
+    ]
+   ]
+  },
+  {
+   "t": "Qual irmãos americanos realizaram o primeiro voo motorizado controlado, em 1903?",
+   "type": "txt",
+   "choices": [
+    "Wright",
+    "Montgolfier",
+    "Lumière",
+    "Mayo",
+    "Dodge",
+    "Kellogg"
+   ],
+   "a": [
+    "Wright"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "gear"
+   },
+   "src": [
+    "pt",
+    "Irmãos Wright",
+    [
+     "1903"
+    ]
+   ]
+  },
+  {
+   "t": "Qual inventor italiano é associado ao desenvolvimento do rádio?",
+   "type": "txt",
+   "choices": [
+    "Guglielmo Marconi",
+    "Alessandro Volta",
+    "Enrico Fermi",
+    "Galileu",
+    "Antonio Meucci",
+    "Leonardo"
+   ],
+   "a": [
+    "Guglielmo Marconi"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "gear"
+   },
+   "src": [
+    "pt",
+    "Guglielmo Marconi",
+    [
+     "rádio"
+    ]
+   ]
+  },
+  {
+   "t": "Qual o nome do primeiro satélite artificial da Terra, lançado em 1957?",
+   "type": "txt",
+   "choices": [
+    "Sputnik 1",
+    "Explorer 1",
+    "Vostok 1",
+    "Telstar",
+    "Apollo 1",
+    "Hubble"
+   ],
+   "a": [
+    "Sputnik 1"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "rocket"
+   },
+   "src": [
+    "pt",
+    "Sputnik 1",
+    [
+     "1957"
+    ]
+   ]
+  },
+  {
+   "t": "Qual teoria de Darwin explica a origem das espécies?",
+   "type": "txt",
+   "choices": [
+    "Seleção natural",
+    "Geração espontânea",
+    "Lamarckismo",
+    "Criacionismo",
+    "Catastrofismo",
+    "Mutacionismo"
+   ],
+   "a": [
+    "Seleção natural"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "book"
+   },
+   "src": [
+    "pt",
+    "Seleção natural",
+    [
+     "Darwin"
+    ]
+   ]
+  },
+  {
+   "t": "Qual a unidade de medida de energia nomeada em homenagem a um físico inglês que estudou o calor?",
+   "type": "txt",
+   "choices": [
+    "Joule",
+    "Watt",
+    "Newton",
+    "Pascal",
+    "Volt",
+    "Hertz"
+   ],
+   "a": [
+    "Joule"
+   ],
+   "d": 4,
+   "art": {
+    "icon": "gear"
+   },
+   "src": [
+    "pt",
+    "Joule",
+    [
+     "James Prescott Joule"
+    ]
+   ]
+  },
+  {
+   "t": "Qual a ferramenta, criada por Gutenberg, que espalhou livros pela Europa?",
+   "type": "txt",
+   "choices": [
+    "Prensa de tipos móveis",
+    "Tear mecânico",
+    "Linotipo",
+    "Xilogravura",
+    "Pergaminho",
+    "Mimeógrafo"
+   ],
+   "a": [
+    "Prensa de tipos móveis"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "book"
+   },
+   "src": [
+    "pt",
+    "Prensa móvel",
+    [
+     "Gutenberg"
+    ]
+   ]
+  },
+  {
+   "t": "Qual a primeira linha de trem de passageiros do mundo, aberta em 1825, ligava Stockton a Darlington, em qual país?",
+   "type": "txt",
+   "choices": [
+    "Inglaterra",
+    "França",
+    "Alemanha",
+    "Estados Unidos",
+    "Bélgica",
+    "Escócia"
+   ],
+   "a": [
+    "Inglaterra"
+   ],
+   "d": 4,
+   "art": {
+    "icon": "gear"
+   },
+   "src": [
+    "pt",
+    "Stockton and Darlington Railway",
+    [
+     "1825"
+    ]
+   ]
+  }
+ ]
+}

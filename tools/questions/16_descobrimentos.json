@@ -1,0 +1,630 @@
+{
+ "id": "descobrimentos",
+ "name": "Grandes Navegações",
+ "tag": "Caravelas, rotas e novos mundos",
+ "col": "#1F6E8C",
+ "diff": "Variado",
+ "emoji": "⛵",
+ "qs": [
+  {
+   "t": "Qual príncipe português impulsionou a exploração do litoral africano na Escola de Sagres?",
+   "type": "player",
+   "a": [
+    "henrique_navegador"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "ship"
+   },
+   "src": [
+    "en",
+    "Prince Henry the Navigator",
+    [
+     "Sagres"
+    ]
+   ]
+  },
+  {
+   "t": "Qual navegador português chegou à Índia por mar, em 1498, contornando a África?",
+   "type": "player",
+   "a": [
+    "vasco_gama"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "ship"
+   },
+   "src": [
+    "pt",
+    "Vasco da Gama",
+    [
+     "1498"
+    ]
+   ]
+  },
+  {
+   "t": "Qual navegador português chegou ao Brasil em 22 de abril de 1500?",
+   "type": "player",
+   "a": [
+    "cabral"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "ship"
+   },
+   "src": [
+    "pt",
+    "Pedro Álvares Cabral",
+    [
+     "1500"
+    ]
+   ]
+  },
+  {
+   "t": "Qual navegador a serviço da Espanha chegou à América em 1492, buscando uma rota para as Índias?",
+   "type": "player",
+   "a": [
+    "colombo"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "ship"
+   },
+   "src": [
+    "pt",
+    "Cristóvão Colombo",
+    [
+     "1492"
+    ]
+   ]
+  },
+  {
+   "t": "Qual navegador português comandou a expedição que deu a primeira volta ao mundo, mas morreu nas Filipinas?",
+   "type": "player",
+   "a": [
+    "magalhaes"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "globe"
+   },
+   "src": [
+    "pt",
+    "Fernão de Magalhães",
+    [
+     "Filipinas"
+    ]
+   ]
+  },
+  {
+   "t": "Qual navegador italiano deu nome ao continente americano?",
+   "type": "player",
+   "a": [
+    "vespucio"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "map"
+   },
+   "src": [
+    "pt",
+    "Américo Vespúcio",
+    [
+     "América"
+    ]
+   ]
+  },
+  {
+   "t": "Qual cabo, no extremo sul da África, foi contornado por Bartolomeu Dias em 1488?",
+   "type": "txt",
+   "choices": [
+    "Cabo da Boa Esperança",
+    "Cabo Verde",
+    "Cabo Horn",
+    "Cabo Bojador",
+    "Cabo Finisterra",
+    "Cabo São Roque"
+   ],
+   "a": [
+    "Cabo da Boa Esperança"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "ship"
+   },
+   "src": [
+    "pt",
+    "Bartolomeu Dias",
+    [
+     "1488"
+    ]
+   ]
+  },
+  {
+   "t": "Qual o tipo de navio leve e ágil usado pelos portugueses nas navegações do século XV?",
+   "type": "txt",
+   "choices": [
+    "Caravela",
+    "Galera",
+    "Trirreme",
+    "Drácar",
+    "Junco",
+    "Fragata"
+   ],
+   "a": [
+    "Caravela"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "ship"
+   },
+   "src": [
+    "pt",
+    "Caravela",
+    [
+     "portugu"
+    ]
+   ]
+  },
+  {
+   "t": "Qual instrumento ajudava os navegadores a medir a latitude pela altura dos astros?",
+   "type": "txt",
+   "choices": [
+    "Astrolábio",
+    "Relógio de sol",
+    "Sismógrafo",
+    "Cronômetro",
+    "Telescópio",
+    "Ábaco"
+   ],
+   "a": [
+    "Astrolábio"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "globe"
+   },
+   "src": [
+    "pt",
+    "Astrolábio",
+    [
+     "latitude"
+    ]
+   ]
+  },
+  {
+   "t": "Qual produto asiático era tão valioso que motivou a busca de rotas marítimas para as Índias?",
+   "type": "txt",
+   "choices": [
+    "Especiarias",
+    "Chá",
+    "Café",
+    "Tabaco",
+    "Cacau",
+    "Batata"
+   ],
+   "a": [
+    "Especiarias"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "ship"
+   },
+   "src": [
+    "pt",
+    "Especiaria",
+    [
+     "Índia"
+    ]
+   ]
+  },
+  {
+   "t": "Qual cidade italiana controlava o comércio de especiarias com o Oriente antes das navegações?",
+   "type": "txt",
+   "choices": [
+    "Veneza",
+    "Gênova",
+    "Florença",
+    "Roma",
+    "Nápoles",
+    "Milão"
+   ],
+   "a": [
+    "Veneza"
+   ],
+   "d": 3,
+   "art": {
+    "stad": "sao_marcos"
+   },
+   "src": [
+    "pt",
+    "República de Veneza",
+    [
+     "especiarias"
+    ]
+   ]
+  },
+  {
+   "t": "Qual cidade turca foi tomada pelos otomanos em 1453, dificultando as rotas terrestres para o Oriente?",
+   "type": "txt",
+   "choices": [
+    "Constantinopla",
+    "Esmirna",
+    "Antioquia",
+    "Ankara",
+    "Bagdá",
+    "Alexandria"
+   ],
+   "a": [
+    "Constantinopla"
+   ],
+   "d": 2,
+   "art": {
+    "stad": "santa_sofia"
+   },
+   "src": [
+    "pt",
+    "Queda de Constantinopla",
+    [
+     "1453"
+    ]
+   ]
+  },
+  {
+   "t": "Em que data, segundo a tradição, Cabral chegou ao litoral do Brasil?",
+   "type": "txt",
+   "choices": [
+    "22 de abril de 1500",
+    "7 de setembro de 1822",
+    "15 de novembro de 1889",
+    "12 de outubro de 1492",
+    "1º de janeiro de 1500",
+    "21 de abril de 1792"
+   ],
+   "a": [
+    "22 de abril de 1500"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "ship"
+   },
+   "src": [
+    "pt",
+    "Pedro Álvares Cabral",
+    [
+     "22 de abril"
+    ]
+   ]
+  },
+  {
+   "t": "Como se chamou o monte avistado por Cabral e que deu nome ao primeiro marco do Brasil?",
+   "type": "txt",
+   "choices": [
+    "Monte Pascoal",
+    "Pão de Açúcar",
+    "Corcovado",
+    "Pico da Neblina",
+    "Serra do Mar",
+    "Monte Roraima"
+   ],
+   "a": [
+    "Monte Pascoal"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "map"
+   },
+   "src": [
+    "pt",
+    "Monte Pascoal",
+    [
+     "Cabral"
+    ]
+   ]
+  },
+  {
+   "t": "Qual escritor português registrou a chegada ao Brasil na famosa “Carta ao rei D. Manuel”?",
+   "type": "txt",
+   "choices": [
+    "Pero Vaz de Caminha",
+    "Luís de Camões",
+    "Gil Vicente",
+    "Fernão Lopes",
+    "Gomes Eanes de Zurara",
+    "Eça de Queirós"
+   ],
+   "a": [
+    "Pero Vaz de Caminha"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "scroll"
+   },
+   "src": [
+    "pt",
+    "Pero Vaz de Caminha",
+    [
+     "carta"
+    ]
+   ]
+  },
+  {
+   "t": "Qual poema épico de Camões narra a viagem de Vasco da Gama à Índia?",
+   "type": "txt",
+   "choices": [
+    "Os Lusíadas",
+    "A Odisseia",
+    "A Eneida",
+    "Mensagem",
+    "Peregrinação",
+    "Dom Quixote"
+   ],
+   "a": [
+    "Os Lusíadas"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "book"
+   },
+   "src": [
+    "pt",
+    "Os Lusíadas",
+    [
+     "Vasco da Gama"
+    ]
+   ]
+  },
+  {
+   "t": "Qual poeta português é autor de Os Lusíadas?",
+   "type": "player",
+   "a": [
+    "camoes"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "book"
+   },
+   "src": [
+    "pt",
+    "Luís de Camões",
+    [
+     "Lusíadas"
+    ]
+   ]
+  },
+  {
+   "t": "Qual país de língua portuguesa fica na costa da África, descoberto pelos navegadores em 1444, e deu nome a um cabo?",
+   "type": "txt",
+   "choices": [
+    "Cabo Verde",
+    "Angola",
+    "Moçambique",
+    "Guiné-Bissau",
+    "São Tomé",
+    "Gâmbia"
+   ],
+   "a": [
+    "Cabo Verde"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "map"
+   },
+   "src": [
+    "pt",
+    "Cabo Verde",
+    [
+     "portugueses"
+    ]
+   ]
+  },
+  {
+   "t": "Quem completou a primeira circum-navegação do globo, em 1522, depois da morte de Magalhães?",
+   "type": "txt",
+   "choices": [
+    "Juan Sebastián Elcano",
+    "Américo Vespúcio",
+    "Francis Drake",
+    "James Cook",
+    "Pedro Álvares Cabral",
+    "Bartolomeu Dias"
+   ],
+   "a": [
+    "Juan Sebastián Elcano"
+   ],
+   "d": 4,
+   "art": {
+    "icon": "ship"
+   },
+   "src": [
+    "pt",
+    "Juan Sebastián Elcano",
+    [
+     "1522"
+    ]
+   ]
+  },
+  {
+   "t": "Qual país, no século XVII, chegou a dominar o nordeste brasileiro por 24 anos?",
+   "type": "txt",
+   "choices": [
+    "Holanda",
+    "França",
+    "Inglaterra",
+    "Espanha",
+    "Dinamarca",
+    "Suécia"
+   ],
+   "a": [
+    "Holanda"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "ship"
+   },
+   "src": [
+    "pt",
+    "Brasil Holandês",
+    [
+     "1630"
+    ]
+   ]
+  },
+  {
+   "t": "Qual a unidade de moeda portuguesa em ouro, base do sistema monetário do império?",
+   "type": "txt",
+   "choices": [
+    "Cruzado",
+    "Peso",
+    "Ducado",
+    "Florim",
+    "Soldo",
+    "Dobrão do rei Henrique"
+   ],
+   "a": [
+    "Cruzado"
+   ],
+   "d": 4,
+   "art": {
+    "icon": "crown"
+   },
+   "src": [
+    "pt",
+    "Cruzado (moeda)",
+    [
+     "ouro"
+    ]
+   ]
+  },
+  {
+   "t": "Qual alimento americano foi levado à Europa e à Ásia após 1492 e mudou a dieta mundial?",
+   "type": "txt",
+   "choices": [
+    "Batata",
+    "Arroz",
+    "Trigo",
+    "Cevada",
+    "Lentilha",
+    "Aveia"
+   ],
+   "a": [
+    "Batata"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "globe"
+   },
+   "src": [
+    "pt",
+    "Batata",
+    [
+     "América"
+    ]
+   ]
+  },
+  {
+   "t": "Como se chama a troca de plantas, animais, doenças e pessoas entre Velho e Novo Mundo, após 1492?",
+   "type": "txt",
+   "choices": [
+    "Troca colombiana",
+    "Troca de Tordesilhas",
+    "Rota da Seda",
+    "Revolução Verde",
+    "Mercantilismo",
+    "Comércio triangular"
+   ],
+   "a": [
+    "Troca colombiana"
+   ],
+   "d": 4,
+   "art": {
+    "icon": "globe"
+   },
+   "src": [
+    "pt",
+    "Troca colombiana",
+    [
+     "1492"
+    ]
+   ]
+  },
+  {
+   "t": "Qual a primeira capital do Brasil colonial, fundada em 1549?",
+   "type": "txt",
+   "choices": [
+    "Salvador",
+    "Rio de Janeiro",
+    "Recife",
+    "São Vicente",
+    "Olinda",
+    "São Paulo"
+   ],
+   "a": [
+    "Salvador"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "map"
+   },
+   "src": [
+    "pt",
+    "Salvador",
+    [
+     "1549"
+    ]
+   ]
+  },
+  {
+   "t": "Qual foi o sistema de divisão do Brasil em 15 faixas de terra entregues a donatários?",
+   "type": "txt",
+   "choices": [
+    "Capitanias hereditárias",
+    "Sesmarias",
+    "Quilombos",
+    "Bandeiras",
+    "Reduções",
+    "Engenhos"
+   ],
+   "a": [
+    "Capitanias hereditárias"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "map"
+   },
+   "src": [
+    "pt",
+    "Capitanias hereditárias",
+    [
+     "donatário"
+    ]
+   ]
+  },
+  {
+   "t": "Qual foi a primeira atividade econômica explorada pelos portugueses no Brasil?",
+   "type": "txt",
+   "choices": [
+    "Extração de pau-brasil",
+    "Cana-de-açúcar",
+    "Mineração de ouro",
+    "Café",
+    "Borracha",
+    "Algodão"
+   ],
+   "a": [
+    "Extração de pau-brasil"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "ship"
+   },
+   "src": [
+    "pt",
+    "Pau-brasil",
+    [
+     "primeira"
+    ]
+   ]
+  }
+ ]
+}

@@ -1,0 +1,504 @@
+{
+ "id": "curiosidades",
+ "name": "Curiosidades da História",
+ "tag": "Fatos que poucos sabem",
+ "col": "#00897B",
+ "diff": "Variado",
+ "emoji": "🎲",
+ "qs": [
+  {
+   "t": "Qual o animal que, segundo os romanos, salvou o Capitólio com seus gritos, quando os gauleses atacaram?",
+   "type": "txt",
+   "choices": [
+    "Gansos",
+    "Cães",
+    "Cavalos",
+    "Corujas",
+    "Galos",
+    "Lobos"
+   ],
+   "a": [
+    "Gansos"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "castle"
+   },
+   "src": [
+    "pt",
+    "Saque de Roma (387 a.C.)",
+    [
+     "gansos"
+    ]
+   ]
+  },
+  {
+   "t": "Qual jogo de tabuleiro, surgido na Índia por volta do século VI, chegou à Europa pelos árabes?",
+   "type": "txt",
+   "choices": [
+    "Xadrez",
+    "Gamão",
+    "Go",
+    "Damas",
+    "Senet",
+    "Mahjong"
+   ],
+   "a": [
+    "Xadrez"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "gear"
+   },
+   "src": [
+    "pt",
+    "Xadrez",
+    [
+     "Índia"
+    ]
+   ]
+  },
+  {
+   "t": "Qual doença matou mais soldados que as batalhas na Guerra da Crimeia, segundo Florence Nightingale?",
+   "type": "txt",
+   "choices": [
+    "Doenças infecciosas e falta de higiene",
+    "Frio extremo",
+    "Fome apenas",
+    "Afogamentos",
+    "Intoxicação por gás",
+    "Acidentes de cavalo"
+   ],
+   "a": [
+    "Doenças infecciosas e falta de higiene"
+   ],
+   "d": 4,
+   "art": {
+    "icon": "torch"
+   },
+   "src": [
+    "pt",
+    "Florence Nightingale",
+    [
+     "higiene"
+    ]
+   ]
+  },
+  {
+   "t": "Em que século surgiu a imprensa de tipos móveis na Europa, com Gutenberg?",
+   "type": "txt",
+   "choices": [
+    "XV",
+    "XII",
+    "XIII",
+    "XIV",
+    "XVI",
+    "XVII"
+   ],
+   "a": [
+    "XV"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "book"
+   },
+   "src": [
+    "pt",
+    "Johannes Gutenberg",
+    [
+     "século XV"
+    ]
+   ]
+  },
+  {
+   "t": "Qual foi a primeira capital do Brasil independente?",
+   "type": "txt",
+   "choices": [
+    "Rio de Janeiro",
+    "Salvador",
+    "São Paulo",
+    "Brasília",
+    "Recife",
+    "Ouro Preto"
+   ],
+   "a": [
+    "Rio de Janeiro"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "map"
+   },
+   "src": [
+    "pt",
+    "Rio de Janeiro",
+    [
+     "capital"
+    ]
+   ]
+  },
+  {
+   "t": "Qual cidade do mundo foi capital de três impérios: romano, bizantino e otomano?",
+   "type": "txt",
+   "choices": [
+    "Istambul (Constantinopla)",
+    "Atenas",
+    "Alexandria",
+    "Roma",
+    "Antioquia",
+    "Bagdá"
+   ],
+   "a": [
+    "Istambul (Constantinopla)"
+   ],
+   "d": 3,
+   "art": {
+    "stad": "santa_sofia"
+   },
+   "src": [
+    "pt",
+    "Istambul",
+    [
+     "Bizâncio"
+    ]
+   ]
+  },
+  {
+   "t": "Qual rio Júlio César cruzou, em 49 a.C., simbolizando o início da guerra civil?",
+   "type": "txt",
+   "choices": [
+    "Rubicão",
+    "Tibre",
+    "Pó",
+    "Danúbio",
+    "Reno",
+    "Arno"
+   ],
+   "a": [
+    "Rubicão"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "sword"
+   },
+   "src": [
+    "pt",
+    "Rubicão",
+    [
+     "César"
+    ]
+   ]
+  },
+  {
+   "t": "Qual o nome do navio de Charles Darwin na viagem que inspirou sua teoria?",
+   "type": "txt",
+   "choices": [
+    "HMS Beagle",
+    "Mayflower",
+    "Bounty",
+    "Victory",
+    "Endeavour",
+    "Santa Maria"
+   ],
+   "a": [
+    "HMS Beagle"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "ship"
+   },
+   "src": [
+    "pt",
+    "HMS Beagle",
+    [
+     "Darwin"
+    ]
+   ]
+  },
+  {
+   "t": "Qual a ilha onde Napoleão morreu em 1821, no Atlântico Sul?",
+   "type": "txt",
+   "choices": [
+    "Santa Helena",
+    "Elba",
+    "Ascensão",
+    "Trindade",
+    "Córsega",
+    "Madeira"
+   ],
+   "a": [
+    "Santa Helena"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "ship"
+   },
+   "src": [
+    "pt",
+    "Santa Helena",
+    [
+     "Napoleão"
+    ]
+   ]
+  },
+  {
+   "t": "Qual a mulher que, em 1903, ganhou o Nobel de Física e depois o de Química, em 1911?",
+   "type": "txt",
+   "choices": [
+    "Marie Curie",
+    "Irène Joliot-Curie",
+    "Lise Meitner",
+    "Rosalind Franklin",
+    "Dorothy Hodgkin",
+    "Ada Lovelace"
+   ],
+   "a": [
+    "Marie Curie"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "book"
+   },
+   "src": [
+    "pt",
+    "Marie Curie",
+    [
+     "1911"
+    ]
+   ]
+  },
+  {
+   "t": "Qual o animal que Aníbal levou na travessia dos Alpes?",
+   "type": "txt",
+   "choices": [
+    "Elefantes",
+    "Camelos",
+    "Rinocerontes",
+    "Cavalos brancos",
+    "Touros",
+    "Mamutes"
+   ],
+   "a": [
+    "Elefantes"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "sword"
+   },
+   "src": [
+    "pt",
+    "Aníbal",
+    [
+     "elefantes"
+    ]
+   ]
+  },
+  {
+   "t": "Qual país tem o maior número de pirâmides do mundo, mais que o Egito?",
+   "type": "txt",
+   "choices": [
+    "Sudão",
+    "México",
+    "Peru",
+    "China",
+    "Indonésia",
+    "Etiópia"
+   ],
+   "a": [
+    "Sudão"
+   ],
+   "d": 5,
+   "art": {
+    "icon": "pyramid"
+   },
+   "src": [
+    "pt",
+    "Pirâmides núbias",
+    [
+     "Sudão"
+    ]
+   ]
+  },
+  {
+   "t": "Qual o maior império da história por área contínua, no século XIII?",
+   "type": "txt",
+   "choices": [
+    "Mongol",
+    "Romano",
+    "Persa",
+    "Otomano",
+    "Britânico",
+    "Inca"
+   ],
+   "a": [
+    "Mongol"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "sword"
+   },
+   "src": [
+    "pt",
+    "Império Mongol",
+    [
+     "maior"
+    ]
+   ]
+  },
+  {
+   "t": "Qual objeto de ouro e ferro era usado para identificar os imperadores do Sacro Império, e hoje está em Viena?",
+   "type": "txt",
+   "choices": [
+    "A coroa imperial",
+    "A espada de Carlos Magno",
+    "O cetro de Otão",
+    "O Santo Graal",
+    "A lança do destino",
+    "O manto de Cristo"
+   ],
+   "a": [
+    "A coroa imperial"
+   ],
+   "d": 5,
+   "art": {
+    "icon": "crown"
+   },
+   "src": [
+    "pt",
+    "Coroa Imperial do Sacro Império Romano-Germânico",
+    [
+     "Viena"
+    ]
+   ]
+  },
+  {
+   "t": "Qual alimento, trazido do Peru, salvou a Europa de várias fomes a partir do século XVIII?",
+   "type": "txt",
+   "choices": [
+    "Batata",
+    "Milho",
+    "Mandioca",
+    "Tomate",
+    "Cacau",
+    "Feijão"
+   ],
+   "a": [
+    "Batata"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "globe"
+   },
+   "src": [
+    "pt",
+    "Batata",
+    [
+     "Peru"
+    ]
+   ]
+  },
+  {
+   "t": "Qual o ano em que as mulheres passaram a votar no Brasil, por decreto de Getúlio Vargas?",
+   "type": "txt",
+   "choices": [
+    "1932",
+    "1889",
+    "1922",
+    "1946",
+    "1964",
+    "1988"
+   ],
+   "a": [
+    "1932"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "flag"
+   },
+   "src": [
+    "pt",
+    "Voto feminino no Brasil",
+    [
+     "1932"
+    ]
+   ]
+  },
+  {
+   "t": "Qual civilização antiga já usava vidros, cosméticos e sabão e era chamada de “berço da civilização”?",
+   "type": "txt",
+   "choices": [
+    "Mesopotâmia",
+    "Grécia",
+    "Roma",
+    "China",
+    "Maia",
+    "Fenícia"
+   ],
+   "a": [
+    "Mesopotâmia"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "map"
+   },
+   "src": [
+    "pt",
+    "Mesopotâmia",
+    [
+     "berço"
+    ]
+   ]
+  },
+  {
+   "t": "Qual a sigla da organização internacional criada em 1945, com sede em Nova York?",
+   "type": "txt",
+   "choices": [
+    "ONU",
+    "OTAN",
+    "OEA",
+    "UE",
+    "OMC",
+    "FMI"
+   ],
+   "a": [
+    "ONU"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "globe"
+   },
+   "src": [
+    "pt",
+    "Organização das Nações Unidas",
+    [
+     "Nova Iorque"
+    ]
+   ]
+  },
+  {
+   "t": "Qual o objeto de uma crença antiga: segundo a lenda, uma espada fincada numa rocha, ligada ao rei Artur?",
+   "type": "txt",
+   "choices": [
+    "Excalibur",
+    "Durandal",
+    "Joyeuse",
+    "Tizona",
+    "Gram",
+    "Anduril"
+   ],
+   "a": [
+    "Excalibur"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "sword"
+   },
+   "src": [
+    "pt",
+    "Excalibur",
+    [
+     "Artur"
+    ]
+   ]
+  }
+ ]
+}

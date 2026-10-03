@@ -1,0 +1,674 @@
+{
+ "id": "guerras_mundiais",
+ "name": "As Guerras Mundiais",
+ "tag": "1914–1918 e 1939–1945",
+ "col": "#5A5A5A",
+ "diff": "Variado",
+ "emoji": "⚔️",
+ "qs": [
+  {
+   "t": "Qual assassinato em Sarajevo, em 1914, foi o estopim da Primeira Guerra Mundial?",
+   "type": "txt",
+   "choices": [
+    "O do arquiduque Francisco Ferdinando",
+    "O do czar Nicolau II",
+    "O do rei Alexandre da Sérvia",
+    "O do kaiser Guilherme II",
+    "O de Rosa Luxemburgo",
+    "O do presidente Wilson"
+   ],
+   "a": [
+    "O do arquiduque Francisco Ferdinando"
+   ],
+   "d": 2,
+   "art": {
+    "crest": "austria_hungria"
+   },
+   "src": [
+    "pt",
+    "Primeira Guerra Mundial",
+    [
+     "Sarajevo"
+    ]
+   ]
+  },
+  {
+   "t": "Quais eram as duas grandes alianças da Primeira Guerra Mundial?",
+   "type": "txt",
+   "choices": [
+    "Tríplice Entente e Tríplice Aliança",
+    "Eixo e Aliados",
+    "OTAN e Pacto de Varsóvia",
+    "Liga e Comintern",
+    "Santa Aliança e Concerto da Europa",
+    "Entente e Eixo"
+   ],
+   "a": [
+    "Tríplice Entente e Tríplice Aliança"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "cannon"
+   },
+   "src": [
+    "pt",
+    "Primeira Guerra Mundial",
+    [
+     "Tríplice Entente"
+    ]
+   ]
+  },
+  {
+   "t": "Qual tipo de combate marcou a Frente Ocidental na Primeira Guerra Mundial?",
+   "type": "txt",
+   "choices": [
+    "Guerra de trincheiras",
+    "Guerra naval",
+    "Guerra-relâmpago",
+    "Guerra de guerrilhas",
+    "Guerra nuclear",
+    "Guerra aérea"
+   ],
+   "a": [
+    "Guerra de trincheiras"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "cannon"
+   },
+   "src": [
+    "pt",
+    "Guerra de trincheiras",
+    [
+     "Primeira Guerra"
+    ]
+   ]
+  },
+  {
+   "t": "Em que ano terminou a Primeira Guerra Mundial?",
+   "type": "txt",
+   "choices": [
+    "1918",
+    "1914",
+    "1916",
+    "1919",
+    "1920",
+    "1945"
+   ],
+   "a": [
+    "1918"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "cannon"
+   },
+   "src": [
+    "pt",
+    "Primeira Guerra Mundial",
+    [
+     "1918"
+    ]
+   ]
+  },
+  {
+   "t": "Qual tratado de 1919 impôs duras condições à Alemanha após a Primeira Guerra?",
+   "type": "txt",
+   "choices": [
+    "Tratado de Versalhes",
+    "Tratado de Tordesilhas",
+    "Tratado de Vestfália",
+    "Tratado de Paris",
+    "Pacto de Locarno",
+    "Paz de Brest-Litovsk"
+   ],
+   "a": [
+    "Tratado de Versalhes"
+   ],
+   "d": 2,
+   "art": {
+    "stad": "versalhes"
+   },
+   "src": [
+    "pt",
+    "Tratado de Versalhes",
+    [
+     "1919"
+    ]
+   ]
+  },
+  {
+   "t": "Qual presidente americano propôs os Quatorze Pontos e a criação da Liga das Nações?",
+   "type": "player",
+   "a": [
+    "wilson"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "scroll"
+   },
+   "src": [
+    "pt",
+    "Woodrow Wilson",
+    [
+     "Liga das Nações"
+    ]
+   ]
+  },
+  {
+   "t": "Qual líder turco comandou a defesa de Galípoli e fundou a República da Turquia, em 1923?",
+   "type": "player",
+   "a": [
+    "ataturk"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "flag"
+   },
+   "src": [
+    "pt",
+    "Mustafa Kemal Atatürk",
+    [
+     "Galípoli"
+    ]
+   ]
+  },
+  {
+   "t": "Qual a data do início da Segunda Guerra Mundial, com a invasão da Polônia pela Alemanha?",
+   "type": "txt",
+   "choices": [
+    "1º de setembro de 1939",
+    "28 de junho de 1914",
+    "7 de dezembro de 1941",
+    "6 de junho de 1944",
+    "8 de maio de 1945",
+    "11 de novembro de 1918"
+   ],
+   "a": [
+    "1º de setembro de 1939"
+   ],
+   "d": 2,
+   "art": {
+    "flag": "POL"
+   },
+   "src": [
+    "pt",
+    "Segunda Guerra Mundial",
+    [
+     "1939"
+    ]
+   ]
+  },
+  {
+   "t": "Quais eram as principais potências do Eixo na Segunda Guerra Mundial?",
+   "type": "txt",
+   "choices": [
+    "Alemanha, Itália e Japão",
+    "Reino Unido, França e URSS",
+    "Alemanha, Áustria e Turquia",
+    "Japão, China e Coreia",
+    "Itália, Espanha e Portugal",
+    "Alemanha, Rússia e Japão"
+   ],
+   "a": [
+    "Alemanha, Itália e Japão"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "cannon"
+   },
+   "src": [
+    "pt",
+    "Eixo (Segunda Guerra Mundial)",
+    [
+     "Itália"
+    ]
+   ]
+  },
+  {
+   "t": "Qual primeiro-ministro britânico liderou o Reino Unido durante a maior parte da Segunda Guerra?",
+   "type": "player",
+   "a": [
+    "churchill"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "cannon"
+   },
+   "src": [
+    "pt",
+    "Winston Churchill",
+    [
+     "Segunda Guerra"
+    ]
+   ]
+  },
+  {
+   "t": "Qual presidente americano governou os EUA durante a maior parte da Segunda Guerra, e morreu em abril de 1945?",
+   "type": "player",
+   "a": [
+    "fdr"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "cannon"
+   },
+   "src": [
+    "pt",
+    "Franklin D. Roosevelt",
+    [
+     "1945"
+    ]
+   ]
+  },
+  {
+   "t": "Qual general liderou a França Livre a partir de Londres, após a ocupação alemã?",
+   "type": "player",
+   "a": [
+    "de_gaulle"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "cannon"
+   },
+   "src": [
+    "pt",
+    "Charles de Gaulle",
+    [
+     "França Livre"
+    ]
+   ]
+  },
+  {
+   "t": "Qual adolescente judia escreveu um diário enquanto se escondia dos nazistas em Amsterdã?",
+   "type": "player",
+   "a": [
+    "anne_frank"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "book"
+   },
+   "src": [
+    "pt",
+    "Anne Frank",
+    [
+     "diário"
+    ]
+   ]
+  },
+  {
+   "t": "Qual matemático britânico decifrou o código Enigma e é considerado pai da computação?",
+   "type": "player",
+   "a": [
+    "turing"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "gear"
+   },
+   "src": [
+    "pt",
+    "Alan Turing",
+    [
+     "Enigma"
+    ]
+   ]
+  },
+  {
+   "t": "Qual operação aliada desembarcou na Normandia, em 6 de junho de 1944?",
+   "type": "txt",
+   "choices": [
+    "Dia D",
+    "Operação Barbarossa",
+    "Operação Overlord só no Pacífico",
+    "Batalha das Ardenas",
+    "Operação Torch",
+    "Blitz"
+   ],
+   "a": [
+    "Dia D"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "cannon"
+   },
+   "src": [
+    "pt",
+    "Operação Overlord",
+    [
+     "6 de junho de 1944"
+    ]
+   ]
+  },
+  {
+   "t": "Qual a campanha alemã de invasão da União Soviética, iniciada em 1941?",
+   "type": "txt",
+   "choices": [
+    "Operação Barbarossa",
+    "Operação Overlord",
+    "Blitzkrieg",
+    "Operação Leão-Marinho",
+    "Operação Torch",
+    "Operação Market Garden"
+   ],
+   "a": [
+    "Operação Barbarossa"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "cannon"
+   },
+   "src": [
+    "pt",
+    "Operação Barbarossa",
+    [
+     "1941"
+    ]
+   ]
+  },
+  {
+   "t": "Qual ataque japonês de 7 de dezembro de 1941 levou os EUA à Segunda Guerra?",
+   "type": "txt",
+   "choices": [
+    "Pearl Harbor",
+    "Midway",
+    "Iwo Jima",
+    "Hiroshima",
+    "Okinawa",
+    "Singapura"
+   ],
+   "a": [
+    "Pearl Harbor"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "ship"
+   },
+   "src": [
+    "pt",
+    "Ataque a Pearl Harbor",
+    [
+     "7 de dezembro"
+    ]
+   ]
+  },
+  {
+   "t": "Quais cidades japonesas sofreram bombas atômicas em agosto de 1945?",
+   "type": "txt",
+   "choices": [
+    "Hiroshima e Nagasaki",
+    "Tóquio e Osaka",
+    "Quioto e Nagoia",
+    "Hiroshima e Quioto",
+    "Nagasaki e Yokohama",
+    "Tóquio e Hiroshima"
+   ],
+   "a": [
+    "Hiroshima e Nagasaki"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "cannon"
+   },
+   "src": [
+    "pt",
+    "Bombardeamentos atómicos de Hiroshima e Nagasaki",
+    [
+     "agosto de 1945"
+    ]
+   ]
+  },
+  {
+   "t": "Qual o nome do genocídio de seis milhões de judeus pelo regime nazista?",
+   "type": "txt",
+   "choices": [
+    "Holocausto",
+    "Gulag",
+    "Nakba",
+    "Armênio",
+    "Purga",
+    "Kristallnacht"
+   ],
+   "a": [
+    "Holocausto"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "scroll"
+   },
+   "src": [
+    "pt",
+    "O Holocausto",
+    [
+     "seis milhões"
+    ]
+   ]
+  },
+  {
+   "t": "Em que ano terminou a Segunda Guerra Mundial?",
+   "type": "txt",
+   "choices": [
+    "1945",
+    "1939",
+    "1941",
+    "1943",
+    "1948",
+    "1950"
+   ],
+   "a": [
+    "1945"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "cannon"
+   },
+   "src": [
+    "pt",
+    "Segunda Guerra Mundial",
+    [
+     "1945"
+    ]
+   ]
+  },
+  {
+   "t": "Qual organização foi criada em 1945 para manter a paz mundial?",
+   "type": "txt",
+   "choices": [
+    "Organização das Nações Unidas",
+    "Liga das Nações",
+    "OTAN",
+    "União Europeia",
+    "Cruz Vermelha",
+    "Comintern"
+   ],
+   "a": [
+    "Organização das Nações Unidas"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "globe"
+   },
+   "src": [
+    "pt",
+    "Organização das Nações Unidas",
+    [
+     "1945"
+    ]
+   ]
+  },
+  {
+   "t": "Qual a participação brasileira na Segunda Guerra, enviada à Itália em 1944?",
+   "type": "txt",
+   "choices": [
+    "Força Expedicionária Brasileira",
+    "Legião Verde",
+    "Exército da Borracha",
+    "Corpo de Paz",
+    "Brigada Aérea",
+    "Guarda Nacional"
+   ],
+   "a": [
+    "Força Expedicionária Brasileira"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "flag"
+   },
+   "src": [
+    "pt",
+    "Força Expedicionária Brasileira",
+    [
+     "1944"
+    ]
+   ]
+  },
+  {
+   "t": "Qual presidente brasileiro decidiu entrar na Segunda Guerra ao lado dos Aliados?",
+   "type": "player",
+   "a": [
+    "getulio"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "flag"
+   },
+   "src": [
+    "pt",
+    "Getúlio Vargas",
+    [
+     "Segunda Guerra"
+    ]
+   ]
+  },
+  {
+   "t": "Qual cidade alemã sediou os julgamentos de criminosos nazistas depois da guerra?",
+   "type": "txt",
+   "choices": [
+    "Nuremberg",
+    "Berlim",
+    "Munique",
+    "Frankfurt",
+    "Viena",
+    "Hamburgo"
+   ],
+   "a": [
+    "Nuremberg"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "scroll"
+   },
+   "src": [
+    "pt",
+    "Julgamento de Nuremberg",
+    [
+     "nazist"
+    ]
+   ]
+  },
+  {
+   "t": "Qual a política alemã de guerra de movimento rápido, com blindados e aviões, no início da Segunda Guerra?",
+   "type": "txt",
+   "choices": [
+    "Blitzkrieg",
+    "Guerra de atrito",
+    "Terra arrasada",
+    "Defesa em profundidade",
+    "Linha Maginot",
+    "Cerco total"
+   ],
+   "a": [
+    "Blitzkrieg"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "cannon"
+   },
+   "src": [
+    "pt",
+    "Blitzkrieg",
+    [
+     "guerra"
+    ]
+   ]
+  },
+  {
+   "t": "Qual batalha entre 1942 e 1943 marcou a virada na Frente Oriental, com a derrota alemã?",
+   "type": "txt",
+   "choices": [
+    "Stalingrado",
+    "Berlim",
+    "Kursk",
+    "Moscou",
+    "Leningrado",
+    "Dunquerque"
+   ],
+   "a": [
+    "Stalingrado"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "cannon"
+   },
+   "src": [
+    "pt",
+    "Batalha de Stalingrado",
+    [
+     "1943"
+    ]
+   ]
+  },
+  {
+   "t": "Qual gripe matou dezenas de milhões de pessoas entre 1918 e 1920?",
+   "type": "txt",
+   "choices": [
+    "Gripe espanhola",
+    "Peste negra",
+    "Cólera asiática",
+    "Febre amarela",
+    "Gripe aviária",
+    "Tifo exantemático"
+   ],
+   "a": [
+    "Gripe espanhola"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "hourglass"
+   },
+   "src": [
+    "pt",
+    "Gripe espanhola",
+    [
+     "1918"
+    ]
+   ]
+  },
+  {
+   "t": "Qual crise de 1929 levou a economia mundial à Grande Depressão?",
+   "type": "txt",
+   "choices": [
+    "Quebra da Bolsa de Nova York",
+    "Crise do petróleo",
+    "Crise do euro",
+    "Bolha das ferrovias",
+    "Pânico de 1907",
+    "Crise dos subprimes"
+   ],
+   "a": [
+    "Quebra da Bolsa de Nova York"
+   ],
+   "d": 2,
+   "art": {
+    "crest": "estados_unidos"
+   },
+   "src": [
+    "pt",
+    "Crise de 1929",
+    [
+     "1929"
+    ]
+   ]
+  }
+ ]
+}

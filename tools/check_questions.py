@@ -17,7 +17,7 @@ Articles are cached in $SCRATCH/wiki, so a re-run only fetches what changed.
 import glob, hashlib, io, json, os, sys, time, unicodedata, urllib.parse, urllib.request
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
-UA = "FutebolQuizBR/1.3 (https://tdosreis.github.io/futebol-quiz/; tiagor.reis@gmail.com)"
+UA = "HistoryQuiz/1.0 (https://tdosreis.github.io/history-quiz/; tiagor.reis@gmail.com)"
 CACHE = os.path.join(os.environ.get("SCRATCH") or sys.exit("set SCRATCH"), "wiki")
 os.makedirs(CACHE, exist_ok=True)
 
