@@ -1,0 +1,52 @@
+# chave|Nome|Local|wiki|estado (id de polities.tsv, opcional)
+coliseu|Coliseu|Roma|pt:Coliseu|imperio_romano
+panteao|Panteão|Roma|pt:Panteão (Roma)|imperio_romano
+forum_romano|Fórum Romano|Roma|pt:Fórum Romano|republica_romana
+muralha_adriano|Muralha de Adriano|Inglaterra|pt:Muralha de Adriano|imperio_romano
+aqueduto_segovia|Aqueduto de Segóvia|Espanha|pt:Aqueduto de Segóvia|imperio_romano
+pompeia|Pompeia|Itália|pt:Pompeia|imperio_romano
+partenon|Partenon|Atenas|pt:Partenon|atenas
+piramide_queops|Pirâmide de Quéops|Gizé, Egito|pt:Pirâmide de Quéops|egito_antigo
+esfinge|Grande Esfinge|Gizé, Egito|pt:Esfinge de Gizé|egito_antigo
+abu_simbel|Abu Simbel|Egito|pt:Abu Simbel|egito_antigo
+karnak|Templo de Karnak|Luxor, Egito|pt:Templo de Karnak|egito_antigo
+portao_ishtar|Portão de Ishtar|Babilônia|pt:Portão de Ishtar|babilonia
+persepolis|Persépolis|Irã|pt:Persépolis|persia
+petra|Petra|Jordânia|pt:Petra|
+muralha_china|Grande Muralha|China|pt:Grande Muralha da China|ming
+cidade_proibida|Cidade Proibida|Pequim|pt:Cidade Proibida|ming
+taj_mahal|Taj Mahal|Agra, Índia|pt:Taj Mahal|mogol
+angkor_wat|Angkor Wat|Camboja|pt:Angkor Wat|khmer
+himeji|Castelo de Himeji|Japão|pt:Castelo de Himeji|tokugawa
+machu_picchu|Machu Picchu|Peru|pt:Machu Picchu|inca
+chichen_itza|Chichén Itzá|México|pt:Chichén Itzá|maia
+moai|Moai|Ilha de Páscoa|pt:Moai|
+santa_sofia|Santa Sofia|Istambul|pt:Santa Sofia|bizancio
+mesquita_azul|Mesquita Azul|Istambul|pt:Mesquita Azul|imperio_otomano
+alhambra|Alhambra|Granada, Espanha|pt:Alhambra|
+stonehenge|Stonehenge|Inglaterra|pt:Stonehenge|
+torre_londres|Torre de Londres|Londres|pt:Torre de Londres|inglaterra
+notre_dame|Notre-Dame|Paris|pt:Catedral de Notre-Dame de Paris|francia
+versalhes|Palácio de Versalhes|França|pt:Palácio de Versalhes|francia
+arco_triunfo|Arco do Triunfo|Paris|pt:Arco do Triunfo|imperio_frances
+torre_eiffel|Torre Eiffel|Paris|pt:Torre Eiffel|
+escorial|Mosteiro do Escorial|Espanha|pt:Mosteiro do Escorial|imperio_espanhol
+torre_belem|Torre de Belém|Lisboa|pt:Torre de Belém|imperio_portugues
+jeronimos|Mosteiro dos Jerónimos|Lisboa|pt:Mosteiro dos Jerónimos|portugal
+duomo_florenca|Catedral de Florença|Florença|pt:Catedral de Santa Maria del Fiore|republica_florentina
+torre_pisa|Torre de Pisa|Pisa|pt:Torre de Pisa|
+sao_pedro|Basílica de São Pedro|Vaticano|pt:Basílica de São Pedro|
+sao_marcos|Basílica de São Marcos|Veneza|pt:Basílica de São Marcos|veneza
+sagrada_familia|Sagrada Família|Barcelona|pt:Templo Expiatório da Sagrada Família|espanha
+kremlin|Kremlin|Moscou|pt:Kremlin de Moscou|imperio_russo
+palacio_inverno|Palácio de Inverno|São Petersburgo|pt:Palácio de Inverno|imperio_russo
+brandemburgo|Portão de Brandemburgo|Berlim|pt:Portão de Brandemburgo|prussia
+muro_berlim|Muro de Berlim|Berlim|pt:Muro de Berlim|urss
+estatua_liberdade|Estátua da Liberdade|Nova York|pt:Estátua da Liberdade|estados_unidos
+capitolio|Capitólio|Washington|pt:Capitólio dos Estados Unidos|estados_unidos
+monte_rushmore|Monte Rushmore|Dakota do Sul|pt:Monte Rushmore|estados_unidos
+cristo_redentor|Cristo Redentor|Rio de Janeiro|pt:Cristo Redentor|brasil_republica
+museu_ipiranga|Museu do Ipiranga|São Paulo|pt:Museu do Ipiranga|imperio_brasil
+ouro_preto|Ouro Preto|Minas Gerais|pt:Ouro Preto|brasil_colonia
+museu_imperial|Museu Imperial|Petrópolis|pt:Museu Imperial (Petrópolis)|imperio_brasil
+catedral_brasilia|Catedral de Brasília|Brasília|pt:Catedral Metropolitana de Brasília|brasil_republica

@@ -1,0 +1,72 @@
+# id|Nome|abbr|region|início|fim(0=existe)|cor1|cor2|emblema
+# região: EU Europa · AS Ásia · AF África · AM Américas
+# emblema: crown sun moon eagle column pyramid sword laurel star lion ship wheel tower cross book hammer
+egito_antigo|Egito Antigo|EGI|AF|-3100|-30|#C8A400|#1B3A6B|pyramid
+babilonia|Babilônia|BAB|AS|-1894|-539|#1F4E8C|#E3B341|tower
+assiria|Império Assírio|ASS|AS|-911|-609|#7A2E1D|#E3B341|lion
+persia|Império Persa|PER|AS|-550|-330|#5B2A86|#E3B341|sun
+israel_antigo|Reino de Israel|ISR|AS|-1047|-586|#1F4E8C|#EEE|star
+atenas|Atenas|ATE|EU|-508|-322|#1F4E8C|#EEE|column
+esparta|Esparta|SPA|EU|-650|-192|#9E1B1B|#111|sword
+macedonia|Reino da Macedônia|MAC|EU|-808|-168|#7B1E3A|#E3B341|sun
+cartago|Cartago|CAR|AF|-814|-146|#5B2A86|#EEE|ship
+republica_romana|República Romana|RRO|EU|-509|-27|#9E1B1B|#E3B341|eagle
+imperio_romano|Império Romano|IRO|EU|-27|476|#7B1E3A|#E3B341|laurel
+bizancio|Império Bizantino|BIZ|EU|330|1453|#5B2A86|#E3B341|cross
+hunos|Império Huno|HUN|EU|370|469|#4A3A2A|#C8A400|sword
+han|Dinastia Han|HAN|AS|-206|220|#9E1B1B|#E3B341|wheel
+maurya|Império Máuria|MAU|AS|-322|-185|#C8731F|#EEE|wheel
+axum|Reino de Axum|AXU|AF|100|940|#1F7A4D|#E3B341|column
+maia|Civilização Maia|MAI|AM|-2000|1697|#1F7A4D|#E3B341|pyramid
+francos|Reino dos Francos|FRN|EU|481|843|#1F4E8C|#E3B341|crown
+sacro_imperio|Sacro Império Romano-Germânico|SIR|EU|962|1806|#222|#E3B341|eagle
+califado_omiada|Califado Omíada|OMI|AS|661|750|#EEE|#1F7A4D|moon
+califado_abassida|Califado Abássida|ABA|AS|750|1258|#111|#EEE|moon
+tang|Dinastia Tang|TAN|AS|618|907|#C8A400|#9E1B1B|wheel
+imperio_mongol|Império Mongol|MON|AS|1206|1368|#1F4E8C|#EEE|sword
+ming|Dinastia Ming|MIN|AS|1368|1644|#C8A400|#9E1B1B|tower
+qing|Dinastia Qing|QIN|AS|1644|1912|#E3B341|#1F4E8C|crown
+khmer|Império Khmer|KHM|AS|802|1431|#C8731F|#7B1E3A|tower
+mali|Império do Mali|MAL|AF|1235|1670|#1F7A4D|#E3B341|sun
+songai|Império Songai|SON|AF|1464|1591|#C8731F|#111|sun
+inglaterra|Reino da Inglaterra|ING|EU|927|1707|#9E1B1B|#EEE|lion
+francia|Reino da França|FRA|EU|843|1792|#1F4E8C|#E3B341|crown
+republica_florentina|República de Florença|FLO|EU|1115|1569|#9E1B1B|#EEE|book
+veneza|República de Veneza|VEN|EU|697|1797|#9E1B1B|#E3B341|lion
+portugal|Portugal|POR|EU|1143|0|#1F7A4D|#9E1B1B|ship
+espanha|Espanha|ESP|EU|1479|0|#9E1B1B|#E3B341|crown
+imperio_otomano|Império Otomano|OTO|AS|1299|1922|#9E1B1B|#EEE|moon
+safavida|Império Safávida|SAF|AS|1501|1736|#1F7A4D|#E3B341|sun
+mogol|Império Mogol|MOG|AS|1526|1857|#1F7A4D|#E3B341|crown
+tokugawa|Xogunato Tokugawa|TOK|AS|1603|1868|#111|#EEE|sword
+asteca|Império Asteca|AZT|AM|1428|1521|#1F7A4D|#C8731F|sun
+inca|Império Inca|INC|AM|1438|1533|#C8731F|#E3B341|sun
+imperio_espanhol|Império Espanhol|IES|EU|1492|1898|#9E1B1B|#E3B341|ship
+imperio_portugues|Império Português|IPO|EU|1415|1999|#1F7A4D|#9E1B1B|ship
+holanda|República Holandesa|HOL|EU|1581|1795|#C8731F|#1F4E8C|ship
+suecia|Suécia|SUE|EU|1523|0|#1F4E8C|#E3B341|lion
+prussia|Prússia|PRU|EU|1701|1947|#222|#EEE|eagle
+reino_unido|Reino Unido|GBR|EU|1707|0|#1F4E8C|#9E1B1B|lion
+imperio_russo|Império Russo|IMR|EU|1721|1917|#222|#E3B341|eagle
+austria_hungria|Império Austro-Húngaro|AUH|EU|1867|1918|#E3B341|#222|eagle
+franca_revolucionaria|França Revolucionária|REV|EU|1789|1799|#1F4E8C|#9E1B1B|star
+imperio_frances|Primeiro Império Francês|NAP|EU|1804|1815|#1F4E8C|#E3B341|eagle
+estados_unidos|Estados Unidos|EUA|AM|1776|0|#1F4E8C|#9E1B1B|star
+haiti|Haiti|HAI|AM|1804|0|#1F4E8C|#9E1B1B|sun
+gran_colombia|Grã-Colômbia|GCO|AM|1819|1831|#E3B341|#1F4E8C|star
+imperio_britanico|Império Britânico|IMB|EU|1583|1997|#9E1B1B|#1F4E8C|crown
+imperio_brasil|Império do Brasil|IBR|AM|1822|1889|#1F7A4D|#E3B341|crown
+brasil_colonia|Brasil Colônia|BCO|AM|1500|1822|#1F7A4D|#E3B341|ship
+brasil_republica|Brasil República|BRA|AM|1889|0|#1F7A4D|#E3B341|star
+imperio_alemao|Império Alemão|IAL|EU|1871|1918|#222|#9E1B1B|eagle
+imperio_japones|Império do Japão|IJA|AS|1868|1947|#9E1B1B|#EEE|sun
+italia_fascista|Itália Fascista|FAS|EU|1922|1943|#1F7A4D|#9E1B1B|eagle
+alemanha_nazista|Alemanha Nazista|NAZ|EU|1933|1945|#111|#9E1B1B|eagle
+urss|União Soviética|URS|EU|1922|1991|#9E1B1B|#E3B341|hammer
+china_popular|República Popular da China|RPC|AS|1949|0|#9E1B1B|#E3B341|star
+india|Índia|IND|AS|1947|0|#C8731F|#1F7A4D|wheel
+turquia|Turquia|TUR|AS|1923|0|#9E1B1B|#EEE|moon
+cuba|Cuba|CUB|AM|1902|0|#1F4E8C|#9E1B1B|star
+africa_do_sul|África do Sul|RSA|AF|1910|0|#1F7A4D|#E3B341|sun
+dinastia_qin|Dinastia Qin|DQI|AS|-221|-206|#222|#E3B341|sword
+ayubida|Sultanato Aiúbida|AYU|AS|1171|1260|#C8A400|#1F7A4D|sword

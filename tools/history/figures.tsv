@@ -1,0 +1,241 @@
+# id|Nome|wiki|papel|nasc|morte|país|afiliações|epíteto|eventos|nobel
+# papel: GOV governante · GEN líder militar · PEN pensador/cientista · ART artista/escritor · REV revolucionário/reformador · EXP explorador
+# ── Antiguidade ──
+hatexepsute|Hatexepsute|pt:Hatexepsute|GOV|-1507|-1458|EGY|egito_antigo|A Rainha-Faraó||
+aquenaton|Aquenáton|pt:Aquenáton|GOV|-1380|-1336|EGY|egito_antigo|O Faraó Herege||
+ramses_ii|Ramsés II|pt:Ramessés II|GOV|-1303|-1213|EGY|egito_antigo|O Grande||
+tutancamon|Tutancâmon|pt:Tutancâmon|GOV|-1341|-1323|EGY|egito_antigo|O Faraó Menino||
+cleopatra|Cleópatra VII|pt:Cleópatra VII|GOV|-69|-30|EGY|egito_antigo,republica_romana|A Última Rainha do Egito|fim_republica|
+hamurabi|Hamurabi|pt:Hamurabi|GOV|-1810|-1750|IRQ|babilonia|O Rei das Leis||
+nabucodonosor|Nabucodonosor II|pt:Nabucodonosor II|GOV|-642|-562|IRQ|babilonia|O Construtor dos Jardins||
+salomao|Rei Salomão|pt:Salomão|GOV|-990|-931|ISR|israel_antigo|O Sábio||
+ciro|Ciro, o Grande|pt:Ciro II, o Grande|GOV|-600|-530|IRN|persia|Rei dos Reis||
+dario|Dario I|pt:Dario I|GOV|-550|-486|IRN|persia||guerras_persas|
+xerxes|Xerxes I|pt:Xerxes I|GOV|-519|-465|IRN|persia||guerras_persas|
+pericles|Péricles|pt:Péricles|GOV|-495|-429|GRC|atenas|O Primeiro Cidadão de Atenas|peloponeso|
+leonidas|Leônidas I|pt:Leônidas I|GEN|-540|-480|GRC|esparta|O Herói das Termópilas|guerras_persas|
+alexandre|Alexandre, o Grande|pt:Alexandre, o Grande|GEN|-356|-323|GRC|macedonia,persia|O Conquistador|conquistas_alexandre|
+sidarta|Buda|pt:Sidarta Gautama|PEN|-563|-483|NPL||O Iluminado||
+confucio|Confúcio|pt:Confúcio|PEN|-551|-479|CHN||O Mestre Kong||
+sun_tzu|Sun Tzu|pt:Sun Tzu|GEN|-544|-496|CHN||O Autor de A Arte da Guerra||
+qin_shi_huang|Qin Shi Huang|pt:Qin Shi Huang|GOV|-259|-210|CHN|dinastia_qin|O Primeiro Imperador da China||
+ashoka|Ashoka|pt:Ashoka|GOV|-304|-232|IND|maurya|O Imperador Budista||
+homero|Homero|pt:Homero|ART|-800|-750|GRC||O Poeta da Ilíada||
+sofocles|Sófocles|pt:Sófocles|ART|-496|-406|GRC|atenas|O Autor de Édipo Rei||
+herodoto|Heródoto|pt:Heródoto|PEN|-484|-425|GRC|atenas|O Pai da História|guerras_persas|
+socrates|Sócrates|pt:Sócrates|PEN|-470|-399|GRC|atenas|O Filósofo da Cicuta|peloponeso|
+platao|Platão|pt:Platão|PEN|-428|-348|GRC|atenas|O Fundador da Academia||
+aristoteles|Aristóteles|pt:Aristóteles|PEN|-384|-322|GRC|atenas,macedonia|O Mestre de Alexandre||
+pitagoras|Pitágoras|pt:Pitágoras|PEN|-570|-495|GRC||O Dono do Teorema||
+hipocrates|Hipócrates|pt:Hipócrates|PEN|-460|-370|GRC||O Pai da Medicina||
+euclides|Euclides|pt:Euclides|PEN|-325|-265|GRC||O Pai da Geometria||
+arquimedes|Arquimedes|pt:Arquimedes|PEN|-287|-212|ITA||O Homem do Eureka|guerras_punicas|
+anibal|Aníbal|pt:Aníbal|GEN|-247|-183|TUN|cartago|O Cartaginês dos Elefantes|guerras_punicas|
+cipiao|Cipião Africano|pt:Cipião Africano|GEN|-236|-183|ITA|republica_romana,cartago|O Vencedor de Zama|guerras_punicas|
+cicero|Cícero|pt:Cícero|PEN|-106|-43|ITA|republica_romana|O Maior Orador de Roma|fim_republica|
+cesar|Júlio César|pt:Júlio César|GEN|-100|-44|ITA|republica_romana|O Ditador Perpétuo|fim_republica|
+espartaco|Espártaco|pt:Espártaco|REV|-111|-71|BUL|republica_romana|O Gladiador Rebelde|fim_republica|
+virgilio|Virgílio|pt:Virgílio|ART|-70|-19|ITA|republica_romana|O Autor da Eneida||
+augusto|Augusto|pt:Augusto|GOV|-63|14|ITA|republica_romana,imperio_romano|O Primeiro Imperador|fim_republica|
+nero|Nero|pt:Nero|GOV|37|68|ITA|imperio_romano|O Imperador do Incêndio de Roma||
+adriano|Adriano|pt:Adriano|GOV|76|138|ESP|imperio_romano|O Imperador do Muro||
+galeno|Galeno|pt:Galeno|PEN|129|216|TUR|imperio_romano|O Médico dos Gladiadores||
+marco_aurelio|Marco Aurélio|pt:Marco Aurélio|GOV|121|180|ITA|imperio_romano|O Imperador Filósofo||
+hipacia|Hipácia|pt:Hipácia|PEN|360|415|EGY|imperio_romano|A Matemática de Alexandria||
+constantino|Constantino I|pt:Constantino I|GOV|272|337|SRB|imperio_romano,bizancio|O Fundador de Constantinopla||
+atila|Átila|pt:Átila|GEN|406|453|HUN|hunos|O Flagelo de Deus||
+justiniano|Justiniano I|pt:Justiniano I|GOV|482|565|MKD|bizancio|O Imperador da Lei||
+# ── Idade Média ──
+maome_ii|Maomé II|en:Mehmed the Conqueror|GOV|1432|1481|TUR|imperio_otomano|O Conquistador de Constantinopla||
+carlos_magno|Carlos Magno|pt:Carlos Magno|GOV|742|814|FRA|francos|O Pai da Europa||
+harun|Harune Arraxide|pt:Harune Arraxide|GOV|763|809|IRQ|califado_abassida|O Califa das Mil e Uma Noites||
+wu_zetian|Wu Zetian|pt:Wu Zetian|GOV|624|705|CHN|tang|A Única Imperatriz da China||
+al_khwarizmi|Al-Khwarizmi|pt:Muhammad ibn Musa al-Khwarizmi|PEN|780|850|UZB|califado_abassida|O Pai da Álgebra||
+avicena|Avicena|pt:Avicena|PEN|980|1037|UZB|califado_abassida|O Príncipe dos Médicos||
+guilherme_conquistador|Guilherme, o Conquistador|pt:Guilherme I de Inglaterra|GOV|1028|1087|FRA|inglaterra|O Conquistador da Inglaterra||
+saladino|Saladino|pt:Saladino|GEN|1137|1193|IRQ|ayubida|O Sultão da Reconquista de Jerusalém|cruzadas|
+ricardo|Ricardo Coração de Leão|pt:Ricardo I de Inglaterra|GOV|1157|1199|ENG|inglaterra|Coração de Leão|cruzadas|
+averroes|Averróis|pt:Averróis|PEN|1126|1198|ESP||O Comentador de Aristóteles||
+gengis|Gengis Khan|pt:Gengis Khan|GEN|1162|1227|MNG|imperio_mongol|O Soberano Universal||
+tomas_aquino|Tomás de Aquino|pt:Tomás de Aquino|PEN|1225|1274|ITA||O Doutor Angélico||
+kublai|Kublai Khan|pt:Kublai Khan|GOV|1215|1294|MNG|imperio_mongol|O Neto de Gengis Khan||
+marco_polo|Marco Polo|pt:Marco Polo|EXP|1254|1324|ITA|veneza,imperio_mongol|O Viajante de Veneza||
+dante|Dante Alighieri|pt:Dante Alighieri|ART|1265|1321|ITA|republica_florentina|O Autor da Divina Comédia||
+mansa_musa|Mansa Mussa|pt:Mansa Mussa|GOV|1280|1337|MLI|mali|O Homem Mais Rico da História||
+ibn_battuta|Ibn Battuta|pt:Ibn Battuta|EXP|1304|1368|MAR||O Maior Viajante Medieval||
+tamerlao|Tamerlão|pt:Tamerlão|GEN|1336|1405|UZB||O Conquistador Coxo||
+zheng_he|Zheng He|pt:Zheng He|EXP|1371|1433|CHN|ming|O Almirante dos Tesouros|grandes_navegacoes|
+joana_darc|Joana d'Arc|pt:Joana d'Arc|GEN|1412|1431|FRA|francia|A Donzela de Orléans|guerra_cem_anos|
+gutenberg|Johannes Gutenberg|pt:Johannes Gutenberg|PEN|1400|1468|GER|sacro_imperio|O Pai da Imprensa|renascimento|
+# ── Renascimento e Descobrimentos ──
+henrique_navegador|Infante D. Henrique|en:Prince Henry the Navigator|GOV|1394|1460|POR|portugal,imperio_portugues|O Navegador|grandes_navegacoes|
+lorenzo|Lourenço de Médici|pt:Lourenço de Médici|GOV|1449|1492|ITA|republica_florentina|O Magnífico|renascimento|
+botticelli|Sandro Botticelli|pt:Sandro Botticelli|ART|1445|1510|ITA|republica_florentina|O Pintor do Nascimento de Vênus|renascimento|
+leonardo|Leonardo da Vinci|pt:Leonardo da Vinci|ART|1452|1519|ITA|republica_florentina|O Gênio Universal|renascimento|
+michelangelo|Michelangelo|pt:Michelangelo|ART|1475|1564|ITA|republica_florentina|O Pintor da Capela Sistina|renascimento|
+rafael|Rafael Sanzio|pt:Rafael Sanzio|ART|1483|1520|ITA||O Pintor da Escola de Atenas|renascimento|
+colombo|Cristóvão Colombo|pt:Cristóvão Colombo|EXP|1451|1506|ITA|espanha,imperio_espanhol|O Almirante do Mar Oceano|grandes_navegacoes|
+vasco_gama|Vasco da Gama|pt:Vasco da Gama|EXP|1469|1524|POR|portugal,imperio_portugues|O Descobridor do Caminho para a Índia|grandes_navegacoes|
+cabral|Pedro Álvares Cabral|pt:Pedro Álvares Cabral|EXP|1467|1520|POR|portugal,imperio_portugues,brasil_colonia|O Descobridor do Brasil|grandes_navegacoes|
+magalhaes|Fernão de Magalhães|pt:Fernão de Magalhães|EXP|1480|1521|POR|portugal,espanha|O Líder da Primeira Volta ao Mundo|grandes_navegacoes|
+vespucio|Américo Vespúcio|pt:Américo Vespúcio|EXP|1454|1512|ITA|espanha|O Homem que Deu Nome à América|grandes_navegacoes|
+cortes|Hernán Cortés|pt:Hernán Cortés|EXP|1485|1547|ESP|imperio_espanhol,asteca|O Conquistador do México|grandes_navegacoes|
+pizarro|Francisco Pizarro|pt:Francisco Pizarro|EXP|1478|1541|ESP|imperio_espanhol,inca|O Conquistador do Peru|grandes_navegacoes|
+moctezuma|Montezuma II|pt:Montezuma II|GOV|1466|1520|MEX|asteca|O Último Grande Imperador Asteca||
+atahualpa|Atahualpa|pt:Atahualpa|GOV|1502|1533|PER|inca|O Último Imperador Inca||
+isabel_castela|Isabel I de Castela|pt:Isabel I de Castela|GOV|1451|1504|ESP|espanha|A Rainha Católica||
+carlos_v|Carlos V|pt:Carlos V do Sacro Império Romano-Germânico|GOV|1500|1558|ESP|sacro_imperio,imperio_espanhol|O Império onde o Sol Nunca se Punha|reforma|
+solimao|Solimão, o Magnífico|pt:Solimão, o Magnífico|GOV|1494|1566|TUR|imperio_otomano|O Legislador||
+maquiavel|Nicolau Maquiavel|pt:Nicolau Maquiavel|PEN|1469|1527|ITA|republica_florentina|O Autor de O Príncipe|renascimento|
+erasmo|Erasmo de Roterdã|pt:Erasmo de Roterdão|PEN|1466|1536|NED||O Príncipe dos Humanistas|reforma|
+durer|Albrecht Dürer|pt:Albrecht Dürer|ART|1471|1528|GER|sacro_imperio|O Mestre da Gravura|renascimento|
+lutero|Martinho Lutero|pt:Martinho Lutero|REV|1483|1546|GER|sacro_imperio|O Pai da Reforma|reforma|
+calvino|João Calvino|pt:João Calvino|REV|1509|1564|FRA||O Reformador de Genebra|reforma|
+copernico|Nicolau Copérnico|pt:Nicolau Copérnico|PEN|1473|1543|POL||O Autor do Heliocentrismo|revolucao_cientifica|
+henrique_viii|Henrique VIII|pt:Henrique VIII de Inglaterra|GOV|1491|1547|ENG|inglaterra|O Rei das Seis Esposas|reforma|
+elizabeth_i|Elizabeth I|pt:Isabel I de Inglaterra|GOV|1533|1603|ENG|inglaterra|A Rainha Virgem||
+felipe_ii|Filipe II|pt:Filipe II de Espanha|GOV|1527|1598|ESP|espanha,imperio_espanhol|O Rei da Invencível Armada||
+camoes|Luís de Camões|pt:Luís de Camões|ART|1524|1580|POR|portugal,imperio_portugues|O Autor de Os Lusíadas||
+cervantes|Miguel de Cervantes|pt:Miguel de Cervantes|ART|1547|1616|ESP|espanha|O Autor de Dom Quixote||
+shakespeare|William Shakespeare|pt:William Shakespeare|ART|1564|1616|ENG|inglaterra|O Bardo de Avon|renascimento|
+galileu|Galileu Galilei|pt:Galileu Galilei|PEN|1564|1642|ITA||O Pai da Ciência Moderna|revolucao_cientifica|
+kepler|Johannes Kepler|pt:Johannes Kepler|PEN|1571|1630|GER|sacro_imperio|O Legislador dos Planetas|revolucao_cientifica|
+# ── Séculos XVII e XVIII ──
+velazquez|Diego Velázquez|pt:Diego Velázquez|ART|1599|1660|ESP|espanha|O Pintor de As Meninas||
+rembrandt|Rembrandt|pt:Rembrandt|ART|1606|1669|NED|holanda|O Mestre da Luz e da Sombra||
+vermeer|Johannes Vermeer|pt:Johannes Vermeer|ART|1632|1675|NED|holanda|O Pintor da Moça com Brinco de Pérola||
+descartes|René Descartes|pt:René Descartes|PEN|1596|1650|FRA||O Autor do Penso, Logo Existo|revolucao_cientifica|
+pascal|Blaise Pascal|pt:Blaise Pascal|PEN|1623|1662|FRA||O Matemático dos Pensamentos|revolucao_cientifica|
+spinoza|Baruch Spinoza|pt:Baruch de Espinoza|PEN|1632|1677|NED|holanda|O Filósofo da Substância||
+locke|John Locke|pt:John Locke|PEN|1632|1704|ENG|inglaterra|O Pai do Liberalismo|iluminismo|
+leibniz|Gottfried Leibniz|pt:Gottfried Wilhelm Leibniz|PEN|1646|1716|GER|sacro_imperio|O Co-inventor do Cálculo|revolucao_cientifica|
+newton|Isaac Newton|pt:Isaac Newton|PEN|1643|1727|ENG|inglaterra|O Descobridor da Gravitação|revolucao_cientifica|
+luis_xiv|Luís XIV|pt:Luís XIV de França|GOV|1638|1715|FRA|francia|O Rei Sol||
+pedro_grande|Pedro, o Grande|pt:Pedro I da Rússia|GOV|1672|1725|RUS|imperio_russo|O Fundador de São Petersburgo||
+bach|Johann Sebastian Bach|pt:Johann Sebastian Bach|ART|1685|1750|GER|sacro_imperio|O Mestre do Barroco||
+montesquieu|Montesquieu|pt:Montesquieu|PEN|1689|1755|FRA|francia|O Teórico da Separação dos Poderes|iluminismo|
+voltaire|Voltaire|pt:Voltaire|PEN|1694|1778|FRA|francia|O Mestre do Iluminismo|iluminismo|
+franklin|Benjamin Franklin|pt:Benjamin Franklin|PEN|1706|1790|USA|estados_unidos|O Homem do Para-raios|iluminismo,independencia_eua|
+rousseau|Jean-Jacques Rousseau|pt:Jean-Jacques Rousseau|PEN|1712|1778|CHE||O Autor do Contrato Social|iluminismo|
+frederico_grande|Frederico, o Grande|pt:Frederico II da Prússia|GOV|1712|1786|GER|prussia|O Rei Filósofo da Prússia|iluminismo|
+maria_teresa|Maria Teresa|pt:Maria Teresa da Áustria|GOV|1717|1780|AUT|sacro_imperio|A Imperatriz dos Habsburgos|iluminismo|
+adam_smith|Adam Smith|pt:Adam Smith|PEN|1723|1790|SCO|reino_unido|O Pai da Economia|iluminismo|
+kant|Immanuel Kant|pt:Immanuel Kant|PEN|1724|1804|GER|prussia|O Filósofo da Razão Pura|iluminismo|
+catarina_grande|Catarina, a Grande|pt:Catarina II da Rússia|GOV|1729|1796|RUS|imperio_russo|A Imperatriz Iluminista|iluminismo|
+cook|James Cook|pt:James Cook|EXP|1728|1779|ENG|reino_unido|O Navegador do Pacífico||
+washington|George Washington|pt:George Washington|GOV|1732|1799|USA|estados_unidos|O Pai da Pátria Americana|independencia_eua|
+jefferson|Thomas Jefferson|pt:Thomas Jefferson|GOV|1743|1826|USA|estados_unidos|O Redator da Declaração de Independência|iluminismo,independencia_eua|
+toussaint|Toussaint Louverture|pt:Toussaint Louverture|REV|1743|1803|HAI|haiti|O Líder da Revolução Haitiana||
+goya|Francisco de Goya|pt:Francisco de Goya|ART|1746|1828|ESP|espanha|O Pintor de 3 de Maio de 1808||
+mozart|Wolfgang Amadeus Mozart|pt:Wolfgang Amadeus Mozart|ART|1756|1791|AUT|sacro_imperio|O Menino Prodígio de Salzburgo||
+maria_antonieta|Maria Antonieta|pt:Maria Antonieta|GOV|1755|1793|AUT|francia|A Última Rainha da França Antiga|revolucao_francesa|
+nelson|Horatio Nelson|pt:Horatio Nelson|GEN|1758|1805|ENG|reino_unido|O Herói de Trafalgar|guerras_napoleonicas|
+robespierre|Maximilien Robespierre|pt:Maximilien de Robespierre|REV|1758|1794|FRA|franca_revolucionaria|O Incorruptível|revolucao_francesa|
+napoleao|Napoleão Bonaparte|pt:Napoleão Bonaparte|GEN|1769|1821|FRA|imperio_frances,franca_revolucionaria|O Imperador dos Franceses|revolucao_francesa,guerras_napoleonicas|
+wellington|Duque de Wellington|pt:Arthur Wellesley, 1.º Duque de Wellington|GEN|1769|1852|IRL|reino_unido|O Vencedor de Waterloo|guerras_napoleonicas|
+beethoven|Ludwig van Beethoven|pt:Ludwig van Beethoven|ART|1770|1827|GER|sacro_imperio|O Compositor Surdo da Nona Sinfonia||
+shaka|Shaka|pt:Shaka|GEN|1787|1828|ZAF||O Rei dos Zulus||
+san_martin|José de San Martín|pt:José de San Martín|REV|1778|1850|ARG||O Libertador do Cone Sul|independencias_latam|
+bolivar|Simón Bolívar|pt:Simón Bolívar|REV|1783|1830|VEN|gran_colombia|O Libertador|independencias_latam|
+# ── Brasil ──
+zumbi|Zumbi dos Palmares|pt:Zumbi dos Palmares|REV|1655|1695|BRA|brasil_colonia|O Último Líder do Quilombo dos Palmares||
+tiradentes|Tiradentes|pt:Tiradentes|REV|1746|1792|BRA|brasil_colonia|O Mártir da Inconfidência Mineira||
+aleijadinho|Aleijadinho|pt:Aleijadinho|ART|1738|1814|BRA|brasil_colonia|O Escultor dos Profetas de Congonhas||
+jose_bonifacio|José Bonifácio|pt:José Bonifácio de Andrada e Silva|REV|1763|1838|BRA|imperio_brasil|O Patriarca da Independência|independencias_latam|
+dom_joao_vi|Dom João VI|pt:João VI de Portugal|GOV|1767|1826|POR|portugal,brasil_colonia|O Rei que Transferiu a Corte para o Rio|independencias_latam|
+leopoldina|Dona Leopoldina|pt:Maria Leopoldina de Áustria|GOV|1797|1826|AUT|imperio_brasil|A Imperatriz da Independência|independencias_latam|
+dom_pedro_i|Dom Pedro I|pt:Pedro I do Brasil|GOV|1798|1834|POR|imperio_brasil|O Imperador da Independência|independencias_latam|
+duque_caxias|Duque de Caxias|pt:Duque de Caxias|GEN|1803|1880|BRA|imperio_brasil|O Patrono do Exército||
+maua|Barão de Mauá|pt:Irineu Evangelista de Sousa|PEN|1813|1889|BRA|imperio_brasil|O Pioneiro da Industrialização||
+luis_gama|Luís Gama|pt:Luís Gama|REV|1830|1882|BRA|imperio_brasil|O Advogado dos Escravizados|abolicao_br|
+machado|Machado de Assis|pt:Machado de Assis|ART|1839|1908|BRA|imperio_brasil|O Bruxo do Cosme Velho||
+anita|Anita Garibaldi|pt:Anita Garibaldi|REV|1821|1849|BRA|imperio_brasil|A Heroína dos Dois Mundos||
+dom_pedro_ii|Dom Pedro II|pt:Pedro II do Brasil|GOV|1825|1891|BRA|imperio_brasil|O Imperador Mecenas|abolicao_br|
+deodoro|Marechal Deodoro|pt:Deodoro da Fonseca|GOV|1827|1892|BRA|brasil_republica|O Proclamador da República||
+chiquinha|Chiquinha Gonzaga|pt:Chiquinha Gonzaga|ART|1847|1935|BRA|imperio_brasil|A Autora de Ó Abre Alas||
+patrocinio|José do Patrocínio|pt:José do Patrocínio|REV|1853|1905|BRA|imperio_brasil|O Tigre da Abolição|abolicao_br|
+princesa_isabel|Princesa Isabel|pt:Isabel, Princesa Imperial do Brasil|REV|1846|1921|BRA|imperio_brasil|A Redentora|abolicao_br|
+rio_branco|Barão do Rio Branco|pt:Barão do Rio Branco|GOV|1845|1912|BRA|brasil_republica|O Patrono da Diplomacia Brasileira||
+oswaldo_cruz|Oswaldo Cruz|pt:Oswaldo Cruz|PEN|1872|1917|BRA|brasil_republica|O Sanitarista da Vacina||
+santos_dumont|Santos Dumont|pt:Alberto Santos-Dumont|PEN|1873|1932|BRA|brasil_republica|O Pai da Aviação||
+rondon|Marechal Rondon|pt:Cândido Rondon|EXP|1865|1958|BRA|brasil_republica|O Desbravador do Sertão||
+getulio|Getúlio Vargas|pt:Getúlio Vargas|GOV|1882|1954|BRA|brasil_republica|O Pai dos Pobres|segunda_guerra|
+villa_lobos|Heitor Villa-Lobos|pt:Heitor Villa-Lobos|ART|1887|1959|BRA|brasil_republica|O Autor das Bachianas Brasileiras||
+tarsila|Tarsila do Amaral|pt:Tarsila do Amaral|ART|1886|1973|BRA|brasil_republica|A Pintora do Abaporu||
+portinari|Candido Portinari|pt:Candido Portinari|ART|1903|1962|BRA|brasil_republica|O Pintor de Retirantes||
+drummond|Carlos Drummond de Andrade|pt:Carlos Drummond de Andrade|ART|1902|1987|BRA|brasil_republica|O Poeta de Itabira||
+jk|Juscelino Kubitschek|pt:Juscelino Kubitschek|GOV|1902|1976|BRA|brasil_republica|O Presidente Bossa Nova|guerra_fria|
+niemeyer|Oscar Niemeyer|pt:Oscar Niemeyer|ART|1907|2012|BRA|brasil_republica|O Arquiteto de Brasília||
+clarice|Clarice Lispector|pt:Clarice Lispector|ART|1920|1977|BRA|brasil_republica|A Autora de A Hora da Estrela||
+paulo_freire|Paulo Freire|pt:Paulo Freire|PEN|1921|1997|BRA|brasil_republica|O Patrono da Educação Brasileira||
+chico_mendes|Chico Mendes|pt:Chico Mendes|REV|1944|1988|BRA|brasil_republica|O Defensor da Floresta||
+# ── Século XIX ──
+garibaldi|Giuseppe Garibaldi|pt:Giuseppe Garibaldi|REV|1807|1882|ITA||O Herói dos Dois Mundos|unificacao_italia|
+lincoln|Abraham Lincoln|pt:Abraham Lincoln|GOV|1809|1865|USA|estados_unidos|O Presidente da Emancipação|guerra_secessao|
+darwin|Charles Darwin|pt:Charles Darwin|PEN|1809|1882|ENG|reino_unido|O Pai da Evolução||
+chopin|Frédéric Chopin|pt:Frédéric Chopin|ART|1810|1849|POL||O Poeta do Piano||
+dickens|Charles Dickens|pt:Charles Dickens|ART|1812|1870|ENG|reino_unido|O Autor de Oliver Twist||
+livingstone|David Livingstone|pt:David Livingstone|EXP|1813|1873|SCO|reino_unido|O Explorador da África||
+bismarck|Otto von Bismarck|pt:Otto von Bismarck|GOV|1815|1898|GER|prussia,imperio_alemao|O Chanceler de Ferro||
+ada_lovelace|Ada Lovelace|pt:Ada Lovelace|PEN|1815|1852|ENG|reino_unido|A Primeira Programadora||
+marx|Karl Marx|pt:Karl Marx|PEN|1818|1883|GER||O Autor de O Capital||
+victoria|Rainha Vitória|pt:Vitória do Reino Unido|GOV|1819|1901|ENG|reino_unido,imperio_britanico|A Rainha do Império Britânico||
+nightingale|Florence Nightingale|pt:Florence Nightingale|PEN|1820|1910|ENG|reino_unido|A Dama da Lâmpada||
+dostoievski|Fiódor Dostoiévski|pt:Fiódor Dostoiévski|ART|1821|1881|RUS|imperio_russo|O Autor de Crime e Castigo||
+pasteur|Louis Pasteur|pt:Louis Pasteur|PEN|1822|1895|FRA||O Pai da Microbiologia||
+mendel|Gregor Mendel|pt:Gregor Mendel|PEN|1822|1884|CZE|austria_hungria|O Pai da Genética||
+tolstoi|Liev Tolstói|pt:Liev Tolstói|ART|1828|1910|RUS|imperio_russo|O Autor de Guerra e Paz||
+victor_hugo|Victor Hugo|pt:Victor Hugo|ART|1802|1885|FRA||O Autor de Os Miseráveis||
+tchaikovsky|Piotr Tchaikovsky|pt:Piotr Ilitch Tchaikovski|ART|1840|1893|RUS|imperio_russo|O Compositor de O Lago dos Cisnes||
+monet|Claude Monet|pt:Claude Monet|ART|1840|1926|FRA||O Pai do Impressionismo||
+mark_twain|Mark Twain|pt:Mark Twain|ART|1835|1910|USA|estados_unidos|O Autor de Tom Sawyer||
+nietzsche|Friedrich Nietzsche|pt:Friedrich Nietzsche|PEN|1844|1900|GER|prussia|O Filósofo de Assim Falou Zaratustra||
+van_gogh|Vincent van Gogh|pt:Vincent van Gogh|ART|1853|1890|NED||O Pintor de A Noite Estrelada||
+freud|Sigmund Freud|pt:Sigmund Freud|PEN|1856|1939|AUT|austria_hungria|O Pai da Psicanálise||
+tesla|Nikola Tesla|pt:Nikola Tesla|PEN|1856|1943|SRB|austria_hungria|O Gênio da Corrente Alternada||
+edison|Thomas Edison|pt:Thomas Edison|PEN|1847|1931|USA|estados_unidos|O Mago de Menlo Park||
+meiji|Imperador Meiji|pt:Imperador Meiji|GOV|1852|1912|JPN|imperio_japones|O Imperador da Modernização do Japão||
+pankhurst|Emmeline Pankhurst|pt:Emmeline Pankhurst|REV|1858|1928|ENG|reino_unido|A Líder das Sufragistas||
+# ── Século XX ──
+marie_curie|Marie Curie|pt:Marie Curie|PEN|1867|1934|POL||A Descobridora do Rádio||2
+gandhi|Mahatma Gandhi|pt:Mahatma Gandhi|REV|1869|1948|IND|india|O Apóstolo da Não Violência|descolonizacao|
+lenin|Vladimir Lênin|pt:Vladimir Lenin|REV|1870|1924|RUS|urss|O Líder da Revolução de Outubro|revolucao_russa|
+churchill|Winston Churchill|pt:Winston Churchill|GOV|1874|1965|ENG|reino_unido|O Primeiro-Ministro da Vitória|primeira_guerra,segunda_guerra,guerra_fria|1
+wilson|Woodrow Wilson|pt:Woodrow Wilson|GOV|1856|1924|USA|estados_unidos|O Idealizador da Liga das Nações|primeira_guerra|1
+ford|Henry Ford|pt:Henry Ford|PEN|1863|1947|USA|estados_unidos|O Pai da Linha de Montagem||
+einstein|Albert Einstein|pt:Albert Einstein|PEN|1879|1955|GER||O Pai da Relatividade|segunda_guerra|1
+fleming|Alexander Fleming|pt:Alexander Fleming|PEN|1881|1955|SCO|reino_unido|O Descobridor da Penicilina||1
+picasso|Pablo Picasso|pt:Pablo Picasso|ART|1881|1973|ESP|espanha|O Pintor de Guernica||
+fdr|Franklin D. Roosevelt|pt:Franklin D. Roosevelt|GOV|1882|1945|USA|estados_unidos|O Presidente do New Deal|segunda_guerra|
+ataturk|Mustafa Kemal Atatürk|pt:Mustafa Kemal Atatürk|GOV|1881|1938|TUR|turquia|O Pai dos Turcos|primeira_guerra|
+kafka|Franz Kafka|pt:Franz Kafka|ART|1883|1924|CZE|austria_hungria|O Autor de A Metamorfose||
+niels_bohr|Niels Bohr|pt:Niels Bohr|PEN|1885|1962|DEN||O Pai do Modelo Atômico Quântico||1
+haile_selassie|Hailé Selassié|en:Haile Selassie|GOV|1892|1975|ETH||O Leão de Judá||
+chaplin|Charlie Chaplin|pt:Charlie Chaplin|ART|1889|1977|ENG||O Criador de O Vagabundo||
+de_gaulle|Charles de Gaulle|pt:Charles de Gaulle|GEN|1890|1970|FRA||O General da França Livre|segunda_guerra|
+ho_chi_minh|Ho Chi Minh|pt:Ho Chi Minh|REV|1890|1969|VNM||O Líder da Independência do Vietnã|descolonizacao,guerra_fria|
+hemingway|Ernest Hemingway|pt:Ernest Hemingway|ART|1899|1961|USA|estados_unidos|O Autor de O Velho e o Mar||1
+dali|Salvador Dalí|pt:Salvador Dalí|ART|1904|1989|ESP|espanha|O Pintor dos Relógios Derretidos||
+orwell|George Orwell|pt:George Orwell|ART|1903|1950|ENG|reino_unido|O Autor de 1984||
+madre_teresa|Madre Teresa de Calcutá|pt:Madre Teresa de Calcutá|REV|1910|1997|MKD|india|A Santa dos Pobres de Calcutá||1
+turing|Alan Turing|pt:Alan Turing|PEN|1912|1954|ENG|reino_unido|O Pai da Computação|segunda_guerra|
+rosa_parks|Rosa Parks|pt:Rosa Parks|REV|1913|2005|USA|estados_unidos|A Mãe do Movimento dos Direitos Civis|direitos_civis|
+kennedy|John F. Kennedy|pt:John F. Kennedy|GOV|1917|1963|USA|estados_unidos|O Presidente da Crise dos Mísseis|guerra_fria,direitos_civis|
+mandela|Nelson Mandela|pt:Nelson Mandela|REV|1918|2013|ZAF|africa_do_sul|O Pai da Nação Arco-Íris|descolonizacao|1
+frida|Frida Kahlo|pt:Frida Kahlo|ART|1907|1954|MEX||A Pintora de As Duas Fridas||
+beauvoir|Simone de Beauvoir|pt:Simone de Beauvoir|PEN|1908|1986|FRA||A Autora de O Segundo Sexo||
+thatcher|Margaret Thatcher|pt:Margaret Thatcher|GOV|1925|2013|ENG|reino_unido|A Dama de Ferro|guerra_fria|
+fidel|Fidel Castro|pt:Fidel Castro|REV|1926|2016|CUB|cuba|O Líder da Revolução Cubana|guerra_fria|
+garcia_marquez|Gabriel García Márquez|pt:Gabriel García Márquez|ART|1927|2014|COL||O Autor de Cem Anos de Solidão||1
+che|Che Guevara|pt:Che Guevara|REV|1928|1967|ARG|cuba|O Guerrilheiro Heroico|guerra_fria|
+anne_frank|Anne Frank|pt:Anne Frank|ART|1929|1945|GER||A Autora do Diário de Anne Frank|segunda_guerra|
+mlk|Martin Luther King Jr.|pt:Martin Luther King Jr.|REV|1929|1968|USA|estados_unidos|O Pastor do Sonho de Igualdade|direitos_civis|1
+gorbachev|Mikhail Gorbachev|pt:Mikhail Gorbachev|GOV|1931|2022|RUS|urss|O Último Líder da União Soviética|guerra_fria|1
+gagarin|Yuri Gagarin|pt:Yuri Gagarin|EXP|1934|1968|RUS|urss|O Primeiro Homem no Espaço|guerra_fria,corrida_espacial|
+armstrong|Neil Armstrong|pt:Neil Armstrong|EXP|1930|2012|USA|estados_unidos|O Primeiro Homem na Lua|guerra_fria,corrida_espacial|
+amundsen|Roald Amundsen|pt:Roald Amundsen|EXP|1872|1928|NOR||O Conquistador do Polo Sul||
+hawking|Stephen Hawking|pt:Stephen Hawking|PEN|1942|2018|ENG|reino_unido|O Autor de Uma Breve História do Tempo||
+leif|Leif Erikson|pt:Leif Eriksson|EXP|970|1020|NOR||O Viking que Chegou à América||
+nzinga|Rainha Nzinga|en:Nzinga of Ndongo and Matamba|GOV|1583|1663|AGO||A Rainha Guerreira de Angola||
+tokugawa_ieyasu|Tokugawa Ieyasu|pt:Tokugawa Ieyasu|GEN|1543|1616|JPN|tokugawa|O Fundador do Xogunato Tokugawa||
+touro_sentado|Touro Sentado|pt:Touro Sentado|REV|1831|1890|USA||O Chefe Sioux de Little Bighorn||
