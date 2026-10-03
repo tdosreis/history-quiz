@@ -12,7 +12,8 @@ function whoClues(p) {
   const h = [];
   if (p.nb) h.push(p.nb === 1 ? 'Ganhou o Prêmio Nobel' : `Ganhou ${p.nb} Prêmios Nobel`);
   if (p.ev && p.ev.length) h.push(`Viveu ${EVENTS[p.ev[0]].n.replace(/^(.)/, c => c.toLowerCase())}`);
-  if (p.nick) h.push(`Ficou conhecido como “${p.nick}”`);
+  const nmw = _fold(p.n).split(/[^a-z]+/).filter(w => w.length >= 5);
+  if (p.nick && !nmw.some(w => _fold(p.nick).includes(w))) h.push(`Ficou conhecido como “${p.nick}”`);
   if (h.length) cl.push(h.join(' · '));
   return cl;
 }

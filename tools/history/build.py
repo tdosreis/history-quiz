@@ -144,7 +144,7 @@ def gen_lib():
     C = rows("ctries.tsv", 5)
     names = {c[0]: c[1] for c in C}
     out = []
-    out.append("const POS_NAME = { GOV:'Poder', GEN:'Guerra', PEN:'Ciência e Filosofia', ART:'Artes e Letras', REV:'Revolução e Reforma', EXP:'Exploração' };")
+    out.append("const POS_NAME = { GOV:'Poder', GEN:'Guerra', PEN:'Ideias', ART:'Artes', REV:'Reforma', EXP:'Viagens' };")
     out.append("const CTRY_NAME = " + js(names).replace('"', "'") + ";")
     out.append("const CTRY_ART = " + js({c[0]: c[2] for c in C if c[2]}).replace('"', "'") + ";")
     out.append("const CTRY_BAND = " + js({c[0]: c[4] for c in C if c[4]}).replace('"', "'") + ";")

@@ -21,12 +21,12 @@
 
   <!-- PWA -->
   <link rel="manifest" href="manifest.json" />
-  <meta name="theme-color" content="#E9E6DB" media="(prefers-color-scheme: light)" />
-  <meta name="theme-color" content="#171A12" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#ECE3CE" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#1A1517" media="(prefers-color-scheme: dark)" />
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-  <meta name="apple-mobile-web-app-title" content="Futebol Quiz" />
+  <meta name="apple-mobile-web-app-title" content="History Quiz" />
   <link rel="apple-touch-icon" href="icons/icon-192.png" />
 
   <!-- Fonts -->
@@ -46,10 +46,10 @@
     ═══════════════════════════════════════════════════════════════ */
     :root {
       color-scheme: light dark;
-      --stock:     #E9E6DB;   /* the page */
-      --stock-2:   #DDD9C9;   /* the table the album lies on */
-      --pocket:    #F6F4EE;   /* a sticker pocket */
-      --pocket-2:  #EFECE2;   /* a pocket, pressed */
+      --stock:     #ECE3CE;   /* the page */
+      --stock-2:   #DFD3B8;   /* the table the album lies on */
+      --pocket:    #F7F1E2;   /* a sticker pocket */
+      --pocket-2:  #F0E8D3;   /* a pocket, pressed */
       --ink:       #20241E;
       --ink-2:     #4B4F45;
       --ink-3:     #5B5D54;   /* was #7E8175 — 2.76:1 on the retro card */
@@ -58,9 +58,9 @@
                                     meant to read belongs on --ink-3. */
       --rule:      #CBC5B2;
       --rule-2:    #DBD6C6;
-      --pitch:     #17593F;
-      --pitch-2:   #1E7150;
-      --pitch-soft:#D9E6DD;
+      --pitch:     #7B1E3A;
+      --pitch-2:   #9A2B4D;
+      --pitch-soft:#EBD9DD;
       --on-pitch:  #F3F1E8;
       --brass:     #A9803B;
       --brass-ink: #735728;   /* brass as TEXT: the fill tone is 2.5:1 on paper */
@@ -99,34 +99,34 @@
       --retro-ink:   #3B2E1B;
       --retro-band:  #B23A2E;
       --retro-band2: #8E2A20;
-      --modern-card: #56BEB2;
-      --modern-card2:#2A736C;   /* was #3E9E96 — the band's white sat at 2.97:1 */
-      --modern-ink:  #0C2F2C;
+      --modern-card: #8FA9B5;
+      --modern-card2:#3F5F73;   /* was #3E9E96 — the band's white sat at 2.97:1 */
+      --modern-ink:  #12232E;
       --modern-chip: #F2F7F5;
 
       /* The four inks of the figurinhas especiais, common to legendary. Each
          carries its own ink for text printed on it; all four clear 4.5:1. */
-      --t1: #17593F; --t1-on: #F3F1E8;
-      --t2: #2A736C; --t2-on: #F2F7F5;
+      --t1: #7B1E3A; --t1-on: #F3F1E8;
+      --t2: #3F5F73; --t2-on: #F2F7F5;
       --t3: #B23A2E; --t3-on: #F6EFE0;
       --t4: #B98C42; --t4-on: #2A1F08;
     }
     @media (prefers-color-scheme: dark) {
       :root:not([data-theme="light"]) {
-        --stock:     #171A12;
-        --stock-2:   #0F110B;
-        --pocket:    #20251B;
-        --pocket-2:  #1B2017;
+        --stock:     #1A1517;
+        --stock-2:   #110D0F;
+        --pocket:    #261E21;
+        --pocket-2:  #1F191B;
         --ink:       #ECE7D6;
         --ink-2:     #C4C0AE;
-        --ink-3:     #8E9182;
-        --ink-4:     #62655A;
-        --rule:      #363B2D;
-        --rule-2:    #2A2F23;
-        --pitch:     #3E9C6E;
-        --pitch-2:   #55B585;
-        --pitch-soft:#1E3529;
-        --on-pitch:  #0F1A13;
+        --ink-3:     #988A8D;
+        --ink-4:     #6E6164;
+        --rule:      #3B3033;
+        --rule-2:    #2E2528;
+        --pitch:     #C2566F;
+        --pitch-2:   #D8728A;
+        --pitch-soft:#3A1E27;
+        --on-pitch:  #1A0A10;
         --brass:     #C79A4E;
         --brass-ink: #C79A4E;   /* already 6:1 on the dark page */
         --good-ink:  #4CAE74;
@@ -147,15 +147,15 @@
         --modern-chip: #CFEDE6;   /* was #0E2422 — a dark chip on the dark
                                      card is 1.32:1, so the country band on a
                                      post-2000 figurinha was all but invisible */
-        --t1: #3E9C6E; --t1-on: #0F1A13; --t2: #4FB3AA; --t2-on: #0C2F2C;
+        --t1: #C2566F; --t1-on: #1A0A10; --t2: #4FB3AA; --t2-on: #12232E;
         --t3: #D0604C; --t3-on: #1A0A06; --t4: #D8AE5E; --t4-on: #1A1204;
       }
     }
     :root[data-theme="dark"] {
-      --stock:#171A12; --stock-2:#0F110B; --pocket:#20251B; --pocket-2:#1B2017;
-      --ink:#ECE7D6; --ink-2:#C4C0AE; --ink-3:#8E9182; --ink-4:#62655A;
-      --rule:#363B2D; --rule-2:#2A2F23; --pitch:#3E9C6E; --pitch-2:#55B585;
-      --pitch-soft:#1E3529; --on-pitch:#0F1A13; --brass:#C79A4E; --brass-2:#E0B968;
+      --stock:#1A1517; --stock-2:#110D0F; --pocket:#261E21; --pocket-2:#1F191B;
+      --ink:#ECE7D6; --ink-2:#C4C0AE; --ink-3:#988A8D; --ink-4:#6E6164;
+      --rule:#3B3033; --rule-2:#2E2528; --pitch:#C2566F; --pitch-2:#D8728A;
+      --pitch-soft:#3A1E27; --on-pitch:#1A0A10; --brass:#C79A4E; --brass-2:#E0B968;
       --brass-ink:#C79A4E; --good-ink:#4CAE74;
       --brass-soft:#3A2F16; --on-brass:#1A1204; --good:#4CAE74; --bad:#E06A55;
       --bad-soft:#3A211C; --warn:#D9963A; --shadow:rgba(0,0,0,.45); --shadow-2:rgba(0,0,0,.7);
@@ -164,7 +164,7 @@
       --retro-ink:#E8DCC0; --retro-band:#8E2A20; --retro-band2:#6E1F17;
       --modern-card:#1C4A46; --modern-card2:#153B38; --modern-ink:#DCF0EC;
       --modern-chip:#CFEDE6;
-      --t1:#3E9C6E; --t1-on:#0F1A13; --t2:#4FB3AA; --t2-on:#0C2F2C;
+      --t1:#C2566F; --t1-on:#1A0A10; --t2:#4FB3AA; --t2-on:#12232E;
       --t3:#D0604C; --t3-on:#1A0A06; --t4:#D8AE5E; --t4-on:#1A1204;
     }
 
@@ -882,12 +882,12 @@
     .aj-poll { --aj: #3F6FB5; --aj-soft: rgba(63, 111, 181, .14); }
     .aj-mic  { --aj: #8E4E9E; --aj-soft: rgba(142, 78, 158, .14); }
     .aj-snow { --aj: #2E8BA8; --aj-soft: rgba(46, 139, 168, .14); }
-    .aj-skip { --aj: #17593F; --aj-soft: rgba(23, 89, 63, .14); }
+    .aj-skip { --aj: #7B1E3A; --aj-soft: rgba(23, 89, 63, .14); }
     :root[data-theme="dark"] .aj-cut,  :root:not([data-theme="light"]) .aj-cut  { --aj: #E06A55; }
     :root[data-theme="dark"] .aj-poll, :root:not([data-theme="light"]) .aj-poll { --aj: #7FA9E8; }
     :root[data-theme="dark"] .aj-mic,  :root:not([data-theme="light"]) .aj-mic  { --aj: #C58FD4; }
     :root[data-theme="dark"] .aj-snow, :root:not([data-theme="light"]) .aj-snow { --aj: #6BC2DC; }
-    :root[data-theme="dark"] .aj-skip, :root:not([data-theme="light"]) .aj-skip { --aj: #3E9C6E; }
+    :root[data-theme="dark"] .aj-skip, :root:not([data-theme="light"]) .aj-skip { --aj: #C2566F; }
 
     .ajuda:not(:disabled):hover { border-color: var(--aj); box-shadow: 0 2px 8px var(--shadow); }
     .ajuda:not(:disabled):hover .aj-disc { transform: scale(1.08); }
@@ -986,7 +986,7 @@
     .mode-disc { display: flex; align-items: center; justify-content: center;
       width: 30px; height: 30px; border-radius: 50%; flex: none;
       background: var(--md-soft); color: var(--md); transition: transform .18s; }
-    .mode-daily { --md: #17593F; --md-soft: rgba(23, 89, 63, .14); }
+    .mode-daily { --md: #7B1E3A; --md-soft: rgba(23, 89, 63, .14); }
     .mode-done  { --md: #7E8175; --md-soft: rgba(126, 129, 117, .14); }
     .mode-surv  { --md: #B3402F; --md-soft: rgba(179, 64, 47, .14); }
     .mode-train { --md: #B8860B; --md-soft: rgba(184, 134, 11, .14); }
@@ -1069,7 +1069,7 @@
 
     .mode-album { --md: #B8860B; --md-soft: rgba(184, 134, 11, .14); flex: none; }
     :root[data-theme="dark"] .mode-album, :root:not([data-theme="light"]) .mode-album { --md: #D8A83C; }
-    :root[data-theme="dark"] .mode-daily, :root:not([data-theme="light"]) .mode-daily { --md: #3E9C6E; }
+    :root[data-theme="dark"] .mode-daily, :root:not([data-theme="light"]) .mode-daily { --md: #C2566F; }
     :root[data-theme="dark"] .mode-surv,  :root:not([data-theme="light"]) .mode-surv  { --md: #E06A55; }
     :root[data-theme="dark"] .mode-train, :root:not([data-theme="light"]) .mode-train { --md: #D8A83C; }
     .mode:hover { background: var(--pocket-2); border-color: var(--md); box-shadow: 0 2px 8px var(--shadow); }
@@ -2600,11 +2600,11 @@
        both sit inside the torn edge instead of on it. */
     .b:not(.b-fig) .vote-pct { right: 12px; top: 9px; background: rgba(34,37,31,.1); color: #22251F;
       box-shadow: inset 0 0 0 1px rgba(34,37,31,.18); }
-    .b:not(.b-fig).b-top-vote .vote-pct { background: #17593F; color: #F3F1E8; box-shadow: none; }
+    .b:not(.b-fig).b-top-vote .vote-pct { background: #7B1E3A; color: #F3F1E8; box-shadow: none; }
     .b-text.b-voted:not(.b-fig) { padding-bottom: 17px; }
     .b:not(.b-fig) .vote { left: 14px; right: 14px; bottom: 8px; height: 4px; border-radius: 2px; background: rgba(34,37,31,.12); }
     .b:not(.b-fig) .vote > i { background: #6A6A5E; border-radius: 2px; }
-    .b:not(.b-fig).b-top-vote .vote > i { background: #17593F; }
+    .b:not(.b-fig).b-top-vote .vote > i { background: #7B1E3A; }
     .b-gone { border: 0; background: url(img/atelier/stroke-card.webp) center / 100% 100% no-repeat; opacity: .08; }
     /* the lifelines: dabs of paint with a word under them, no card */
     .ajuda { background: none !important; min-width: 0; padding: 4px 6px; }
@@ -2631,7 +2631,7 @@
     .fig-retro .fig-band::after, .fig-modern .fig-band::after { content: ''; position: absolute; left: 22%; right: 22%; bottom: 1px;
       height: max(2px, calc(var(--pw, 80px) * .035)); background: var(--fp-stroke, #B23A2E); opacity: .85;
       -webkit-mask: url(img/atelier/stroke-bar.webp) center / 100% 100%; mask: url(img/atelier/stroke-bar.webp) center / 100% 100%; }
-    .fig-modern .fig-band::after { background: linear-gradient(90deg, var(--c1, #17593F) 0 50%, var(--c2, #B8860B) 50% 100%); }
+    .fig-modern .fig-band::after { background: linear-gradient(90deg, var(--c1, #7B1E3A) 0 50%, var(--c2, #B8860B) 50% 100%); }
     .fig-band-mute::after { display: none; }
     /* the painting on its mat */
     .fig-retro .fig-art, .fig-modern .fig-art { padding: 4% 7% 0; background: none !important; }
@@ -4294,7 +4294,7 @@ const CATS = [
       {"t": "Qual estado asiático desmoronou em 1912, encerrando milênios de governo imperial na China?", "a": ["qing"], "d": 3, "stad": "cidade_proibida"},
     ]
   },
-    /* NEW-QS:END */
+          /* NEW-QS:END */
 ];
 /*@@/data_cl_cats@@*/
 /*@@data_pl_lib@@*/
@@ -4532,11 +4532,11 @@ const PL = [
   { id:'tokugawa_ieyasu', n:'Tokugawa Ieyasu', img:'img/20ffc5fc7242a50f.webp' },
   { id:'touro_sentado', n:'Touro Sentado', img:'img/05fa6be0d1190177.webp' },
 ];
-const POS_NAME = { GOV:'Poder', GEN:'Guerra', PEN:'Ciência e Filosofia', ART:'Artes e Letras', REV:'Revolução e Reforma', EXP:'Exploração' };
-const CTRY_NAME = {'BRA': 'Brasil', 'ARG': 'Argentina', 'POR': 'Portugal', 'FRA': 'França', 'NED': 'Holanda', 'GER': 'Alemanha', 'BUL': 'Bulgária', 'ITA': 'Itália', 'ENG': 'Inglaterra', 'SCO': 'Escócia', 'IRL': 'Irlanda', 'ESP': 'Espanha', 'POL': 'Polônia', 'RUS': 'Rússia', 'HUN': 'Hungria', 'CZE': 'Tchéquia', 'AUT': 'Áustria', 'CHE': 'Suíça', 'DEN': 'Dinamarca', 'NOR': 'Noruega', 'SRB': 'Sérvia', 'MKD': 'Macedônia do Norte', 'GRC': 'Grécia', 'TUR': 'Turquia', 'IRN': 'Irã', 'IRQ': 'Iraque', 'ISR': 'Israel', 'EGY': 'Egito', 'TUN': 'Tunísia', 'MAR': 'Marrocos', 'MLI': 'Mali', 'ETH': 'Etiópia', 'AGO': 'Angola', 'ZAF': 'África do Sul', 'IND': 'Índia', 'NPL': 'Nepal', 'CHN': 'China', 'MNG': 'Mongólia', 'JPN': 'Japão', 'VNM': 'Vietnã', 'UZB': 'Uzbequistão', 'USA': 'Estados Unidos', 'MEX': 'México', 'CUB': 'Cuba', 'HAI': 'Haiti', 'VEN': 'Venezuela', 'COL': 'Colômbia', 'PER': 'Peru', 'CHI': 'Chile', 'URU': 'Uruguai', 'PAR': 'Paraguai'};
-const CTRY_ART = {'BRA': 'o', 'ARG': 'a', 'FRA': 'a', 'NED': 'a', 'GER': 'a', 'BUL': 'a', 'ITA': 'a', 'ENG': 'a', 'SCO': 'a', 'IRL': 'a', 'ESP': 'a', 'POL': 'a', 'RUS': 'a', 'HUN': 'a', 'CZE': 'a', 'AUT': 'a', 'CHE': 'a', 'DEN': 'a', 'NOR': 'a', 'SRB': 'a', 'MKD': 'a', 'GRC': 'a', 'TUR': 'a', 'IRN': 'o', 'IRQ': 'o', 'EGY': 'o', 'TUN': 'a', 'MAR': 'o', 'MLI': 'o', 'ETH': 'a', 'ZAF': 'a', 'IND': 'a', 'NPL': 'o', 'CHN': 'a', 'MNG': 'a', 'JPN': 'o', 'VNM': 'o', 'UZB': 'o', 'USA': 'os', 'MEX': 'o', 'HAI': 'o', 'VEN': 'a', 'COL': 'a', 'PER': 'o', 'CHI': 'o', 'URU': 'o', 'PAR': 'o'};
+const POS_NAME = { GOV:'Poder', GEN:'Guerra', PEN:'Ideias', ART:'Artes', REV:'Reforma', EXP:'Viagens' };
+const CTRY_NAME = {'BRA': 'Brasil', 'ARG': 'Argentina', 'POR': 'Portugal', 'FRA': 'França', 'NED': 'Holanda', 'GER': 'Alemanha', 'BUL': 'Bulgária', 'ITA': 'Itália', 'ENG': 'Inglaterra', 'SCO': 'Escócia', 'IRL': 'Irlanda', 'ESP': 'Espanha', 'POL': 'Polônia', 'RUS': 'Rússia', 'HUN': 'Hungria', 'CZE': 'Tchéquia', 'AUT': 'Áustria', 'CHE': 'Suíça', 'DEN': 'Dinamarca', 'NOR': 'Noruega', 'SRB': 'Sérvia', 'MKD': 'Macedônia do Norte', 'GRC': 'Grécia', 'TUR': 'Turquia', 'IRN': 'Irã', 'IRQ': 'Iraque', 'ISR': 'Israel', 'EGY': 'Egito', 'TUN': 'Tunísia', 'MAR': 'Marrocos', 'MLI': 'Mali', 'ETH': 'Etiópia', 'AGO': 'Angola', 'ZAF': 'África do Sul', 'IND': 'Índia', 'NPL': 'Nepal', 'CHN': 'China', 'MNG': 'Mongólia', 'JPN': 'Japão', 'VNM': 'Vietnã', 'UZB': 'Uzbequistão', 'USA': 'Estados Unidos', 'MEX': 'México', 'CUB': 'Cuba', 'HAI': 'Haiti', 'VEN': 'Venezuela', 'COL': 'Colômbia', 'PER': 'Peru', 'CHI': 'Chile', 'URU': 'Uruguai', 'PAR': 'Paraguai', 'BEL': 'Bélgica', 'CRO': 'Croácia', 'UKR': 'Ucrânia'};
+const CTRY_ART = {'BRA': 'o', 'ARG': 'a', 'FRA': 'a', 'NED': 'a', 'GER': 'a', 'BUL': 'a', 'ITA': 'a', 'ENG': 'a', 'SCO': 'a', 'IRL': 'a', 'ESP': 'a', 'POL': 'a', 'RUS': 'a', 'HUN': 'a', 'CZE': 'a', 'AUT': 'a', 'CHE': 'a', 'DEN': 'a', 'NOR': 'a', 'SRB': 'a', 'MKD': 'a', 'GRC': 'a', 'TUR': 'a', 'IRN': 'o', 'IRQ': 'o', 'EGY': 'o', 'TUN': 'a', 'MAR': 'o', 'MLI': 'o', 'ETH': 'a', 'ZAF': 'a', 'IND': 'a', 'NPL': 'o', 'CHN': 'a', 'MNG': 'a', 'JPN': 'o', 'VNM': 'o', 'UZB': 'o', 'USA': 'os', 'MEX': 'o', 'HAI': 'o', 'VEN': 'a', 'COL': 'a', 'PER': 'o', 'CHI': 'o', 'URU': 'o', 'PAR': 'o', 'BEL': 'a', 'CRO': 'a', 'UKR': 'a'};
 const CTRY_BAND = {'MKD': 'Maced. Norte', 'ZAF': 'África do Sul', 'UZB': 'Uzbequistão', 'USA': 'EUA'};
-const CTRY_STEMS = [['estados unidos', 'USA'], ['sul-africa', 'ZAF'], ['brasileir', 'BRA'], ['estadunid', 'USA'], ['argentin', 'ARG'], ['neerland', 'NED'], ['dinamarq', 'DEN'], ['american', 'USA'], ['venezuel', 'VEN'], ['britani', 'ENG'], ['sovieti', 'RUS'], ['macedon', 'MKD'], ['mesopot', 'IRQ'], ['vietnam', 'VNM'], ['paragua', 'PAR'], ['brasil', 'BRA'], ['portug', 'POR'], ['holand', 'NED'], ['prussi', 'GER'], ['bulgar', 'BUL'], ['romano', 'ITA'], ['irland', 'IRL'], ['espanh', 'ESP'], ['hungar', 'HUN'], ['norueg', 'NOR'], ['viking', 'NOR'], ['otoman', 'TUR'], ['israel', 'ISR'], ['marroq', 'MAR'], ['indian', 'IND'], ['mongol', 'MNG'], ['colomb', 'COL'], ['chilen', 'CHI'], ['urugua', 'URU'], ['franc', 'FRA'], ['alema', 'GER'], ['itali', 'ITA'], ['escoc', 'SCO'], ['polon', 'POL'], ['tchec', 'CZE'], ['checo', 'CZE'], ['boemi', 'CZE'], ['austr', 'AUT'], ['persa', 'IRN'], ['persi', 'IRN'], ['iraqu', 'IRQ'], ['egipc', 'EGY'], ['egito', 'EGY'], ['tunis', 'TUN'], ['malin', 'MLI'], ['etiop', 'ETH'], ['angol', 'AGO'], ['india', 'IND'], ['nepal', 'NPL'], ['japon', 'JPN'], ['japao', 'JPN'], ['uzbek', 'UZB'], ['mexic', 'MEX'], ['cuban', 'CUB'], ['haiti', 'HAI'], ['germ', 'GER'], ['trac', 'BUL'], ['ingl', 'ENG'], ['russ', 'RUS'], ['suic', 'CHE'], ['serv', 'SRB'], ['greg', 'GRC'], ['grec', 'GRC'], ['turc', 'TUR'], ['iran', 'IRN'], ['chin', 'CHN'], ['peru', 'PER']];
+const CTRY_STEMS = [['estados unidos', 'USA'], ['sul-africa', 'ZAF'], ['brasileir', 'BRA'], ['estadunid', 'USA'], ['argentin', 'ARG'], ['neerland', 'NED'], ['dinamarq', 'DEN'], ['american', 'USA'], ['venezuel', 'VEN'], ['britani', 'ENG'], ['sovieti', 'RUS'], ['macedon', 'MKD'], ['mesopot', 'IRQ'], ['vietnam', 'VNM'], ['paragua', 'PAR'], ['brasil', 'BRA'], ['portug', 'POR'], ['holand', 'NED'], ['prussi', 'GER'], ['bulgar', 'BUL'], ['romano', 'ITA'], ['irland', 'IRL'], ['espanh', 'ESP'], ['hungar', 'HUN'], ['norueg', 'NOR'], ['viking', 'NOR'], ['otoman', 'TUR'], ['israel', 'ISR'], ['marroq', 'MAR'], ['indian', 'IND'], ['mongol', 'MNG'], ['colomb', 'COL'], ['chilen', 'CHI'], ['urugua', 'URU'], ['franc', 'FRA'], ['alema', 'GER'], ['itali', 'ITA'], ['escoc', 'SCO'], ['polon', 'POL'], ['tchec', 'CZE'], ['checo', 'CZE'], ['boemi', 'CZE'], ['austr', 'AUT'], ['persa', 'IRN'], ['persi', 'IRN'], ['iraqu', 'IRQ'], ['egipc', 'EGY'], ['egito', 'EGY'], ['tunis', 'TUN'], ['malin', 'MLI'], ['etiop', 'ETH'], ['angol', 'AGO'], ['india', 'IND'], ['nepal', 'NPL'], ['japon', 'JPN'], ['japao', 'JPN'], ['uzbek', 'UZB'], ['mexic', 'MEX'], ['cuban', 'CUB'], ['haiti', 'HAI'], ['croat', 'CRO'], ['ucran', 'UKR'], ['germ', 'GER'], ['trac', 'BUL'], ['ingl', 'ENG'], ['russ', 'RUS'], ['suic', 'CHE'], ['serv', 'SRB'], ['greg', 'GRC'], ['grec', 'GRC'], ['turc', 'TUR'], ['iran', 'IRN'], ['chin', 'CHN'], ['peru', 'PER'], ['belg', 'BEL']];
 
 /* "do Egito", "da França", "de Portugal" — the article each country takes */
 const ctryDe = c => { const a = CTRY_ART[c], n = CTRY_NAME[c] || c;
@@ -8449,7 +8449,7 @@ const CTRY_COLORS = {
   IRL:['#169B62','#FF883E'], ROU:['#002B7F','#FCD116'], KOR:['#CD2E3A','#0047A0'], ALG:['#006233','#D21034'],
 };
 /*@@/ctry-colors@@*/
-const ctryColors = c => CTRY_COLORS[c] || ['#17593F', '#B8860B'];
+const ctryColors = c => CTRY_COLORS[c] || ['#7B1E3A', '#B8860B'];
 
 /* A photo that fails to arrive (a flaky connection, or the first load after
    an update) is asked for once more before the card gives up on it; it used
@@ -9638,8 +9638,8 @@ async function shareFig(sid) {
   const p = sid.startsWith('b:') ? bdayPlayer(sid) : (stk(sid) || {}).p;
   const st = stk(sid), set = sid.startsWith('t:') ? setById(sid.slice(2)) : null;
   const modern = p && !sid.startsWith('t:') && figEra(p) === 'modern';
-  const card = modern ? '#56BEB2' : '#EFE2C4', band = modern ? '#2A736C' : '#B23A2E',
-        ink = modern ? '#0C2F2C' : '#2B2116';
+  const card = modern ? '#8FA9B5' : '#EFE2C4', band = modern ? '#3F5F73' : '#B23A2E',
+        ink = modern ? '#12232E' : '#2B2116';
   const cw = 480, ch = Math.round(cw * 50 / 29), cx = (W - cw) / 2, cy = 110;
   const bh = 58, caph = 150;
   /* shadow and body */
@@ -11305,7 +11305,8 @@ function whoClues(p) {
   const h = [];
   if (p.nb) h.push(p.nb === 1 ? 'Ganhou o Prêmio Nobel' : `Ganhou ${p.nb} Prêmios Nobel`);
   if (p.ev && p.ev.length) h.push(`Viveu ${EVENTS[p.ev[0]].n.replace(/^(.)/, c => c.toLowerCase())}`);
-  if (p.nick) h.push(`Ficou conhecido como “${p.nick}”`);
+  const nmw = _fold(p.n).split(/[^a-z]+/).filter(w => w.length >= 5);
+  if (p.nick && !nmw.some(w => _fold(p.nick).includes(w))) h.push(`Ficou conhecido como “${p.nick}”`);
   if (h.length) cl.push(h.join(' · '));
   return cl;
 }

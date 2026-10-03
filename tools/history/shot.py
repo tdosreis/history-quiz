@@ -7,7 +7,7 @@ out, js = sys.argv[1], sys.argv[2]
 size = sys.argv[3] if len(sys.argv) > 3 else "500x900"
 w, h = size.split("x")
 src = io.open(os.path.join(ROOT, "index.html"), encoding="utf-8").read()
-tail = "<script>window.addEventListener('load',function(){setTimeout(function(){%s},700);});</script>" % js
+tail = "<style>.b,.b *,.alb-slot,.alb-slot *{animation:none!important;opacity:1!important}</style><script>window.addEventListener('load',function(){setTimeout(function(){%s},700);});</script>" % js
 tmp = os.path.join(ROOT, "_shot.html")
 io.open(tmp, "w", encoding="utf-8").write(src.replace("</body>", tail + "</body>"))
 try:
