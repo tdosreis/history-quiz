@@ -76,4 +76,4 @@ if __name__ == "__main__":
     want = sys.argv[1:] or list(STATES) + ["feature"]
     for n in want:
         if n == "feature": feature()
-        else: shot(n, STATES[n], h=900)
+        else: shot(n, STATES[n], w=540, h=960)
