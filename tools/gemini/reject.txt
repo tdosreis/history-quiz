@@ -1,0 +1,2 @@
+# Paintings reviewed and kept out of the app (the original picture stays).
+# One per line: a figure id (napoleao), a monument key (coliseu) or an img/ path, then # why.
