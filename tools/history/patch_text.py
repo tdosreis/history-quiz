@@ -6,14 +6,18 @@ P = os.path.join(ROOT, "index.html")
 s = io.open(P, encoding="utf-8").read()
 applied = []
 
-def region(start_pat, end_pat, new, tag):
+def region(start_pat, end_pat, new, tag, html=False):
+    """html=True marks the region with HTML comments: the region sits inside an
+    HTML template, where a /* */ sentinel would be printed on screen."""
     global s
-    if "/*@@%s@@*/" % tag in s: return
+    a, b = ("<!--@@%s@@-->", "<!--@@/%s@@-->") if html else ("/*@@%s@@*/", "/*@@/%s@@*/")
+    if a % tag in s: return
     m = re.search(start_pat, s, re.M)
     if not m: sys.exit("start not found for " + tag)
     n = re.compile(end_pat, re.M).search(s, m.end())
     if not n: sys.exit("end not found for " + tag)
-    s = s[:m.start()] + "/*@@%s@@*/\n%s\n/*@@/%s@@*/\n" % (tag, new.strip("\n"), tag) + s[n.start():]
+    ind = "      " if html else ""
+    s = s[:m.start()] + ind + a % tag + "\n" + new.strip("\n") + "\n" + ind + b % tag + "\n" + s[n.start():]
     applied.append(tag)
 
 def sub(old, new, tag, count=1):
@@ -61,7 +65,7 @@ region(r'^      <div class="note" style="font-size:11.5px;line-height:1.45;">\n 
         estados e impérios são ilustrações próprias, feitas para identificá-los
         no jogo — não reproduzem nenhum símbolo oficial.
       </p>
-""", "credits")
+""", "credits", html=True)
 
 # the sentence under the home hero etc. may still say football: swept by the grep below
 io.open(P, "w", encoding="utf-8").write(s)

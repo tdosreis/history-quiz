@@ -9,8 +9,11 @@
        they can never go stale.
 ──────────────────────────────────────────────── */
 /* v1: first release of History Quiz. Bump VERSION whenever index.html changes in a way
-   that must reach installed copies at once; pictures live in their own cache. */
-const VERSION = 'v1';
+   that must reach installed copies at once; pictures live in their own cache.
+   v2: the atelier textures (paper, brush strokes, answer slips, washes) the page
+   always named but the first release never shipped — buttons, lifeline seals and
+   backgrounds were invisible without them. */
+const VERSION = 'v2';
 const CACHE   = 'history-quiz-' + VERSION;
 /* Photos, crests and flags never change under the same name (each file is
    named by its content), so they live in a cache of their own that survives

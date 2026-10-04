@@ -117,6 +117,16 @@ JS = r"""
 
 head = "<script>window.__errs=[];window.addEventListener('error',function(e){__errs.push((e.message||'')+' @line '+e.lineno);});</script>"
 src = io.open(os.path.join(ROOT, "index.html"), encoding="utf-8").read()
+
+# Every picture the page or the service worker names must be in the repo. The
+# atelier textures (paper, brush strokes, slips) were once left behind in a
+# port, and the page still booted: it just lost its buttons and backgrounds.
+missing = []
+for name in ("index.html", "sw.js", "manifest.json"):
+    text = io.open(os.path.join(ROOT, name), encoding="utf-8").read()
+    for ref in sorted(set(re.findall(r"(?:img|icons)/[A-Za-z0-9_./-]+\.(?:webp|png|jpg|jpeg|svg|gif)", text))):
+        if not os.path.isfile(os.path.join(ROOT, ref)):
+            missing.append("%s names %s" % (name, ref))
 tail = ("<script>window.addEventListener('load',function(){setTimeout(function(){var v;try{v=JSON.stringify((%s))}catch(x){v=JSON.stringify({fails:['TEST CRASH '+x+' '+(x.stack||'').slice(0,300)],note:{}})}"
         "var p=document.createElement('pre');p.id='probe';p.textContent=JSON.stringify({errs:__errs,v:v});document.body.appendChild(p);},1500);});</script>") % JS
 tmp = os.path.join(ROOT, "_test_all.html")
@@ -134,7 +144,8 @@ d = json.loads(html.unescape(m.group(1)))
 res = json.loads(d["v"])
 for e in d["errs"]: print("  PAGE ERROR", e)
 for f in res["fails"]: print("  FAIL", f)
+for f in missing: print("  MISSING FILE", f)
 print(json.dumps(res["note"], ensure_ascii=False))
-bad = len(d["errs"]) + len(res["fails"])
+bad = len(d["errs"]) + len(res["fails"]) + len(missing)
 print("%d problem(s)" % bad)
 sys.exit(1 if bad else 0)
