@@ -13,6 +13,7 @@ function GEN_QS(tier) {
     flag:  { id:'g_flag',  name:'Bandeiras',    emoji:'🚩', col:'#C0392B' },
     place: { id:'g_place', name:'Lugares',      emoji:'🗺️', col:'#3F6FB5' },
     count: { id:'g_count', name:'Datas',        emoji:'🔢', col:'#5C7F67' },
+    duel:  { id:'g_duel',  name:'Duelo',        emoji:'🤺', col:'#5D4037' },
   };
   const out  = [];
   const rndOf = a => a[Math.floor(rnd() * a.length)];
@@ -344,6 +345,40 @@ function GEN_QS(tier) {
       choices: shuf([String(y)].concat([...opts].map(String))), a: [String(y)], face: p.img, _cat: GC.count, d: 4,
     });
   });
+
+  /* ── 19. Duelo: two cards only ──
+     Dates before the year 1000 are often approximate in the album, so an
+     ancient pair needs a century between them; a modern pair, a decade.
+     The closer the two, the harder the duel. */
+  const sure = (a, b) => Math.abs(a - b) >= (Math.min(a, b) < 1000 ? 100 : 10);
+  const duelD = gap => gap < 40 ? 3 : gap < 150 ? 2 : 1;
+  for (let i = 0, made = 0; i < 60 && made < 12; i++) {
+    const [p1, p2] = pick(PL.filter(p => p.era), 2);
+    if (!p1 || !p2 || !sure(born(p1), born(p2))) continue;
+    const first = born(p1) < born(p2) ? p1 : p2;
+    out.push({ t: 'Duelo: quem nasceu primeiro?', type: 'player', a: [first.id], fixed: [p1.id, p2.id], duel: true,
+               icon: 'hourglass', _cat: GC.duel, d: duelD(Math.abs(born(p1) - born(p2))) });
+    made++;
+  }
+  for (let i = 0, made = 0; i < 40 && made < 6; i++) {
+    const [c1, c2] = pick(CL, 2);
+    if (!c1 || !c2 || !sure(c1.f, c2.f)) continue;
+    const first = c1.f < c2.f ? c1 : c2;
+    out.push({ t: 'Duelo: qual destes estados surgiu primeiro?', a: [first.id], fixed: [c1.id, c2.id], duel: true,
+               icon: 'hourglass', _cat: GC.duel, d: duelD(Math.abs(c1.f - c2.f)) });
+    made++;
+  }
+  /* who lived longer: only figures born after 1400, whose dates are certain,
+     and a lifespan apart by at least eight years */
+  for (let i = 0, made = 0; i < 60 && made < 6; i++) {
+    const [p1, p2] = pick(PL.filter(p => p.era && born(p) >= 1400 && p.era[1] < 2026), 2);
+    if (!p1 || !p2) continue;
+    const l1 = p1.era[1] - p1.era[0], l2 = p2.era[1] - p2.era[0];
+    if (Math.abs(l1 - l2) < 8) continue;
+    out.push({ t: 'Duelo: quem viveu mais anos?', type: 'player', a: [l1 > l2 ? p1.id : p2.id], fixed: [p1.id, p2.id], duel: true,
+               icon: 'hourglass', _cat: GC.duel, d: Math.abs(l1 - l2) < 20 ? 3 : 2 });
+    made++;
+  }
 
   // Safety net: a generator bug must never put an unanswerable question in front
   // of a player, so drop anything whose answers don't resolve.
