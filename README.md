@@ -21,5 +21,36 @@ tools/history/test_all.py  suíte completa em um único Chrome headless
 
 Fluxo típico: editar um `.tsv` ou `qgen/*.py` → `tools/history/qgen/run_all.sh` →
 `python3 tools/merge_questions.py` → `python3 tools/history/build.py` → `python3 tools/history/test_all.py`.
+Fora do macOS, aponte `CHROME` para o Chrome/Chromium e use `CI=1` (roda headless com `--no-sandbox`).
+
+## Os formatos de pergunta
+
+Além das clássicas (texto, personagem, estado, "Quem sou eu?", linha do tempo), a História pergunta
+do seu jeito — cada formato é a própria figura do cartão, com um efeito e um som
+(`tools/history/js/formats.js`, `tools/history/css/formats.css`):
+
+| Formato | DSL (`qgen/qdsl.py`) | O que aparece |
+|---|---|---|
+| Quem disse? | `c.QT(frase, resposta, ctx=…, kind=…)` | a frase escrita a tinta; gravada em pedra, num diário de bordo ou numa carta lacrada |
+| Batalha | `c.BT(t, resposta, 'Lugar · ano', lado_a, lado_b)` | dois estandartes e as espadas cruzadas, um lado escondido |
+| Linhagem | `c.LN(t, resposta, título, ['A', '?', 'C'], kind='grupo')` | uma sucessão (ou um conselho) com um elo faltando |
+| Manchete | `c.NW(t, resposta, manchete, paper=…, sub=…)` | a primeira página do dia |
+| Duelo | `c.DU(t, certo, outro)` | só duas cartas e o VS |
+| Fato ou mito? | `c.MY(t, True/False, x=…)` | dois carimbos; o certo desce na revelação |
+
+Toda resposta escrita tem figura (rosto, brasão, bandeira, foto do monumento ou um desenho do tipo
+de resposta), e toda pergunta mostra o personagem, monumento ou estado que menciona.
+
+## Arte com Gemini
+
+`tools/gemini/` repinta os retratos e as fotos de monumentos no traço do ateliê. Rode pela aba
+Actions (precisa do segredo `GEMINI_API_KEY` no repositório):
+
+- **Gemini paint test** — alguns retratos lado a lado (`compare.jpg` no branch `gemini-tests`);
+  `busts`: `sculpture` (o busto continua busto) ou `alive` (o rosto pintado vivo)
+- **Gemini paint batch** — todas as figuras e monumentos, no branch `gemini-batch`
+
+Depois de revisar: `python3 tools/gemini/integrate.py <pasta ai-batch>` e `python3 tools/history/build.py`.
+As pinturas entram com nomes novos, para que o cache dos celulares as receba.
 
 Veja `PLAY_STORE_LISTING.md` para a publicação na Google Play.
