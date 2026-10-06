@@ -1,0 +1,239 @@
+{
+ "id": "duelos",
+ "name": "Duelo",
+ "tag": "Só dois na disputa",
+ "col": "#5D4037",
+ "diff": "Variado",
+ "emoji": "🤺",
+ "qs": [
+  {
+   "t": "Duelo: quem nasceu primeiro?",
+   "type": "player",
+   "fixed": [
+    "leonardo",
+    "michelangelo"
+   ],
+   "duel": true,
+   "a": [
+    "leonardo"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "hourglass"
+   },
+   "src": [
+    "pt",
+    "Leonardo da Vinci",
+    [
+     "1452"
+    ]
+   ]
+  },
+  {
+   "t": "Duelo: quem nasceu primeiro?",
+   "type": "player",
+   "fixed": [
+    "colombo",
+    "cabral"
+   ],
+   "duel": true,
+   "a": [
+    "colombo"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "hourglass"
+   },
+   "src": [
+    "pt",
+    "Cristóvão Colombo",
+    [
+     "1451"
+    ]
+   ]
+  },
+  {
+   "t": "Duelo: quem viveu primeiro?",
+   "type": "player",
+   "fixed": [
+    "socrates",
+    "aristoteles"
+   ],
+   "duel": true,
+   "a": [
+    "socrates"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "hourglass"
+   },
+   "src": [
+    "pt",
+    "Sócrates",
+    [
+     "Atenas"
+    ]
+   ]
+  },
+  {
+   "t": "Duelo: quem governou primeiro?",
+   "type": "player",
+   "fixed": [
+    "ramses_ii",
+    "cleopatra"
+   ],
+   "duel": true,
+   "a": [
+    "ramses_ii"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "pyramid"
+   },
+   "src": [
+    "pt",
+    "Ramessés II",
+    [
+     "XIX dinastia"
+    ]
+   ]
+  },
+  {
+   "t": "Duelo: quem morreu mais jovem?",
+   "type": "player",
+   "fixed": [
+    "alexandre",
+    "cesar"
+   ],
+   "duel": true,
+   "a": [
+    "alexandre"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "sword"
+   },
+   "src": [
+    "pt",
+    "Alexandre, o Grande",
+    [
+     "32"
+    ]
+   ]
+  },
+  {
+   "t": "Duelo: qual destes estados surgiu primeiro?",
+   "fixed": [
+    "han",
+    "imperio_romano"
+   ],
+   "duel": true,
+   "a": [
+    "han"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "hourglass"
+   },
+   "src": [
+    "pt",
+    "Dinastia Han",
+    [
+     "206"
+    ]
+   ]
+  },
+  {
+   "t": "Duelo: o que aconteceu primeiro?",
+   "type": "txt",
+   "choices": [
+    "Chegada de Colombo à América",
+    "Chegada de Cabral ao Brasil"
+   ],
+   "duel": true,
+   "a": [
+    "Chegada de Colombo à América"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "ship"
+   },
+   "src": [
+    "pt",
+    "Cristóvão Colombo",
+    [
+     "1492"
+    ]
+   ]
+  },
+  {
+   "t": "Duelo: qual invenção veio primeiro?",
+   "type": "txt",
+   "choices": [
+    "Telefone de Bell",
+    "Lâmpada de Edison"
+   ],
+   "duel": true,
+   "a": [
+    "Telefone de Bell"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "gear"
+   },
+   "src": [
+    "pt",
+    "Telefone",
+    [
+     "1876"
+    ]
+   ]
+  },
+  {
+   "t": "Duelo: qual destes foi construído primeiro?",
+   "type": "txt",
+   "choices": [
+    "Coliseu",
+    "Muralha de Adriano"
+   ],
+   "duel": true,
+   "a": [
+    "Coliseu"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "column"
+   },
+   "src": [
+    "pt",
+    "Coliseu",
+    [
+     "80"
+    ]
+   ]
+  },
+  {
+   "t": "Duelo: quem chegou primeiro ao poder?",
+   "type": "player",
+   "fixed": [
+    "lenin",
+    "getulio"
+   ],
+   "duel": true,
+   "a": [
+    "lenin"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "flag"
+   },
+   "src": [
+    "pt",
+    "Vladimir Lênin",
+    [
+     "1917"
+    ]
+   ]
+  }
+ ]
+}

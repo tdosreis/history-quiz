@@ -406,6 +406,13 @@ const _optMemo = new WeakMap();
 function optArtFor(q) {
   if (!q || q.type !== 'txt' || !q.choices) return null;
   if (_optMemo.has(q)) return _optMemo.get(q);
+  /* fato ou mito: the two slips are the two rubber stamps */
+  if (q.myth) {
+    const out = { _kind: 'stamp' };
+    q.choices.forEach(c => { out[c] = { k: 'stamp', kind: /^fato$/i.test(c) ? 'fato' : 'mito' }; });
+    _optMemo.set(q, out);
+    return out;
+  }
   const res = q.choices.map(optResolve);
   const t = _fold(q.t || '');
   const looks = OPT_LOOKS.test(t);
@@ -445,6 +452,7 @@ function optArtFor(q) {
 }
 function optArtHtml(r) {
   if (!r) return '';
+  if (r.k === 'stamp') return `<span class="opt-art opt-stamp">${stampSVG(r.kind)}</span>`;
   if (r.k === 'club') return r.blank
     ? `<span class="opt-art opt-crest opt-ink">${shieldGlyph(r.n)}</span>`
     : `<span class="opt-art opt-crest">${clubArt(r.id, 'width:100%;height:100%;', false)}</span>`;
@@ -528,7 +536,7 @@ function badge(item, idx) {
 
   if (isTextQ(curQ)) {
     const oa = optArtFor(curQ), art = oa ? optArtHtml(oa[item.id]) : '';
-    return `<div class="${cls} b-text${art ? ' b-art' : ''}" data-id="${item.id}" style="${delay}">
+    return `<div class="${cls} b-text${art ? ' b-art' : ''}${curQ.myth ? ' b-myth' : ''}" data-id="${item.id}" style="${delay}">
       ${tab}${voteEl}${art}<span class="tile-name${longCls}">${item.n}</span></div>`;
   }
 

@@ -75,6 +75,85 @@ class Cat:
         r = {"t": t, "type": "order", "a": ans, "order": order, "d": d, "src": list(s[:2]) + [list(s[2])]}
         self.qs.append(r)
 
+    # ── history's own formats (tools/history/js/formats.js) ──
+    # Each strip is the question's picture, so these rows carry no `art`.
+    # `a` is a figure id (typ='player'), a polity id (typ=None) or, with
+    # typ='txt', the right text with `wrong` the five other choices.
+    def _strip(self, t, a, d, typ, wrong, key, val, kw):
+        ans = [a] if isinstance(a, str) else list(a)
+        r = {"t": t}
+        if typ: r["type"] = typ
+        if typ == "txt":
+            ch = ans + list(wrong or [])
+            if len(ch) != 6 or len({c.lower() for c in ch}) != 6:
+                raise SystemExit("need 6 distinct choices (%d): %s :: %s" % (len(ch), t, ch))
+            r["choices"] = ch
+        r[key] = val
+        r["a"] = ans
+        r["d"] = d
+        s = kw.get("src")
+        if not s: raise SystemExit("no src for: " + t)
+        r["src"] = list(s[:2]) + [list(s[2])]
+        if kw.get("x"): r["x"] = kw["x"]
+        self.qs.append(r)
+
+    def QT(self, quote, a, d=2, ctx=None, t="Quem disse esta frase?", typ="player", wrong=None, **kw):
+        """Citação: the sentence on a sheet; name who said or wrote it."""
+        v = {"q": quote}
+        if ctx: v["ctx"] = ctx
+        self._strip(t, a, d, typ, wrong, "quote", v, kw)
+
+    def BT(self, t, a, lbl, side_a, side_b, d=2, x=None, typ=None, wrong=None, **kw):
+        """Batalha: two sides (polity ids, country codes or names), one of them '?'."""
+        v = {"lbl": lbl, "a": side_a, "b": side_b}
+        if x: v["x"] = x
+        self._strip(t, a, d, typ, wrong, "battle", v, kw)
+
+    def LN(self, t, a, title, rows, d=3, kind=None, sub=None, era=None, typ="player", wrong=None, **kw):
+        """Linhagem: a succession (arrows) or, kind='grupo', a council/alliance; one row '?'."""
+        v = {"t": title, "rows": rows}
+        if kind: v["kind"] = kind
+        if sub: v["sub"] = sub
+        if era: v["era"] = era
+        self._strip(t, a, d, typ, wrong, "line", v, kw)
+
+    def NW(self, t, a, h, d=2, paper=None, sub=None, date=None, city=None, typ="txt", wrong=None, **kw):
+        """Manchete: a front page; the headline must not name the answer."""
+        v = {"h": h}
+        for k, x in (("paper", paper), ("sub", sub), ("date", date), ("city", city)):
+            if x: v[k] = x
+        self._strip(t, a, d, typ, wrong, "news", v, kw)
+
+    def DU(self, t, a, other, d=1, typ="player", **kw):
+        """Duelo: two cards only. typ='player'/None: a and other are ids;
+        typ='txt': a and other are the two texts."""
+        r = {"t": t}
+        if typ: r["type"] = typ
+        if typ == "txt":
+            r["choices"] = [a, other]
+        else:
+            r["fixed"] = [a, other]
+        r["duel"] = True
+        r["a"] = [a]
+        r["d"] = d
+        r["art"] = self._art(kw)
+        s = kw.get("src")
+        if not s: raise SystemExit("no src for: " + t)
+        r["src"] = list(s[:2]) + [list(s[2])]
+        if kw.get("x"): r["x"] = kw["x"]
+        self.qs.append(r)
+
+    def MY(self, t, fact, d=2, **kw):
+        """Fato ou mito: a claim people repeat; fact=True if it is true. Always give x."""
+        r = {"t": t, "type": "txt", "choices": ["Fato", "Mito"], "duel": True, "myth": True,
+             "a": ["Fato" if fact else "Mito"], "d": d, "art": self._art(kw)}
+        s = kw.get("src")
+        if not s: raise SystemExit("no src for: " + t)
+        r["src"] = list(s[:2]) + [list(s[2])]
+        if not kw.get("x"): raise SystemExit("a myth needs its explanation (x): " + t)
+        r["x"] = kw["x"]
+        self.qs.append(r)
+
     def write(self):
         os.makedirs(OUT, exist_ok=True)
         d = dict(self.meta); d["qs"] = self.qs

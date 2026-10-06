@@ -1,0 +1,310 @@
+{
+ "id": "fato_mito",
+ "name": "Fato ou mito?",
+ "tag": "O que todo mundo repete",
+ "col": "#455A64",
+ "diff": "Variado",
+ "emoji": "🔎",
+ "qs": [
+  {
+   "t": "Napoleão Bonaparte era um homem muito baixo para a sua época?",
+   "type": "txt",
+   "choices": [
+    "Fato",
+    "Mito"
+   ],
+   "duel": true,
+   "myth": true,
+   "a": [
+    "Mito"
+   ],
+   "d": 2,
+   "art": {
+    "who": "napoleao"
+   },
+   "src": [
+    "en",
+    "Napoleon",
+    [
+     "height"
+    ]
+   ],
+   "x": "Media por volta de 1,69 m, a altura comum de um francês do seu tempo; a fama veio da propaganda inglesa e da confusão entre polegadas francesas e inglesas."
+  },
+  {
+   "t": "Os vikings usavam capacetes com chifres nas batalhas?",
+   "type": "txt",
+   "choices": [
+    "Fato",
+    "Mito"
+   ],
+   "duel": true,
+   "myth": true,
+   "a": [
+    "Mito"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "sword"
+   },
+   "src": [
+    "pt",
+    "Vikings",
+    [
+     "capacete"
+    ]
+   ],
+   "x": "Nenhum capacete viking com chifres foi encontrado: a imagem nasceu nos figurinos de óperas do século XIX."
+  },
+  {
+   "t": "Charles Darwin e Abraham Lincoln nasceram no mesmo dia?",
+   "type": "txt",
+   "choices": [
+    "Fato",
+    "Mito"
+   ],
+   "duel": true,
+   "myth": true,
+   "a": [
+    "Fato"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "hourglass"
+   },
+   "src": [
+    "pt",
+    "Charles Darwin",
+    [
+     "12 de fevereiro de 1809"
+    ]
+   ],
+   "x": "Os dois nasceram em 12 de fevereiro de 1809, um na Inglaterra e o outro no Kentucky."
+  },
+  {
+   "t": "Cleópatra viveu mais perto da chegada do homem à Lua do que da construção da Grande Pirâmide de Gizé?",
+   "type": "txt",
+   "choices": [
+    "Fato",
+    "Mito"
+   ],
+   "duel": true,
+   "myth": true,
+   "a": [
+    "Fato"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "pyramid"
+   },
+   "src": [
+    "pt",
+    "Cleópatra VII",
+    [
+     "30 a.C."
+    ]
+   ],
+   "x": "A Grande Pirâmide tem cerca de 4.500 anos; Cleópatra morreu em 30 a.C., uns 2.000 anos antes da Apollo 11."
+  },
+  {
+   "t": "Na Idade Média, a maioria dos sábios acreditava que a Terra era plana?",
+   "type": "txt",
+   "choices": [
+    "Fato",
+    "Mito"
+   ],
+   "duel": true,
+   "myth": true,
+   "a": [
+    "Mito"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "globe"
+   },
+   "src": [
+    "pt",
+    "Mito da Terra plana",
+    [
+     "século XIX"
+    ]
+   ],
+   "x": "Os estudiosos medievais sabiam que a Terra é redonda desde os gregos; o mito da \"Terra plana medieval\" foi espalhado no século XIX."
+  },
+  {
+   "t": "A Grande Muralha da China pode ser vista da Lua a olho nu?",
+   "type": "txt",
+   "choices": [
+    "Fato",
+    "Mito"
+   ],
+   "duel": true,
+   "myth": true,
+   "a": [
+    "Mito"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "castle"
+   },
+   "src": [
+    "pt",
+    "Grande Muralha da China",
+    [
+     "Lua"
+    ]
+   ],
+   "x": "É longa, mas estreita demais: nenhum astronauta das missões Apollo a viu da Lua."
+  },
+  {
+   "t": "Albert Einstein foi reprovado em matemática na escola?",
+   "type": "txt",
+   "choices": [
+    "Fato",
+    "Mito"
+   ],
+   "duel": true,
+   "myth": true,
+   "a": [
+    "Mito"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "gear"
+   },
+   "src": [
+    "en",
+    "Albert Einstein",
+    [
+     "mathematics"
+    ]
+   ],
+   "x": "Ele dominava cálculo antes dos 15 anos; o boato surgiu de uma mudança na escala de notas de uma escola suíça."
+  },
+  {
+   "t": "O Império Bizantino durou quase mil anos depois da queda de Roma no Ocidente?",
+   "type": "txt",
+   "choices": [
+    "Fato",
+    "Mito"
+   ],
+   "duel": true,
+   "myth": true,
+   "a": [
+    "Fato"
+   ],
+   "d": 2,
+   "art": {
+    "crest": "bizancio"
+   },
+   "src": [
+    "pt",
+    "Império Bizantino",
+    [
+     "1453"
+    ]
+   ],
+   "x": "O Império Romano do Oriente resistiu de 476 até 1453, quando Constantinopla caiu diante dos otomanos."
+  },
+  {
+   "t": "Maria Antonieta disse \"Que comam brioches!\" ao saber que o povo não tinha pão?",
+   "type": "txt",
+   "choices": [
+    "Fato",
+    "Mito"
+   ],
+   "duel": true,
+   "myth": true,
+   "a": [
+    "Mito"
+   ],
+   "d": 2,
+   "art": {
+    "who": "maria_antonieta"
+   },
+   "src": [
+    "pt",
+    "Que comam brioches",
+    [
+     "Rousseau"
+    ]
+   ],
+   "x": "Não há registro de que tenha dito: a frase aparece nas Confissões de Rousseau, escritas quando ela ainda era criança na Áustria."
+  },
+  {
+   "t": "Tutancâmon tornou-se faraó ainda criança?",
+   "type": "txt",
+   "choices": [
+    "Fato",
+    "Mito"
+   ],
+   "duel": true,
+   "myth": true,
+   "a": [
+    "Fato"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "pyramid"
+   },
+   "src": [
+    "pt",
+    "Tutancâmon",
+    [
+     "nove"
+    ]
+   ],
+   "x": "Subiu ao trono por volta dos nove anos de idade e morreu perto dos 18."
+  },
+  {
+   "t": "Os gladiadores romanos sempre lutavam até a morte?",
+   "type": "txt",
+   "choices": [
+    "Fato",
+    "Mito"
+   ],
+   "duel": true,
+   "myth": true,
+   "a": [
+    "Mito"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "sword"
+   },
+   "src": [
+    "pt",
+    "Gladiador",
+    [
+     "morte"
+    ]
+   ],
+   "x": "Gladiadores custavam caro para treinar; muitos combates terminavam com a rendição de um deles, e a morte era a exceção."
+  },
+  {
+   "t": "O Brasil foi o último país das Américas a abolir a escravidão?",
+   "type": "txt",
+   "choices": [
+    "Fato",
+    "Mito"
+   ],
+   "duel": true,
+   "myth": true,
+   "a": [
+    "Fato"
+   ],
+   "d": 1,
+   "art": {
+    "flag": "BRA"
+   },
+   "src": [
+    "pt",
+    "Lei Áurea",
+    [
+     "1888"
+    ]
+   ],
+   "x": "A Lei Áurea, de 13 de maio de 1888, fez do Brasil o último país independente das Américas a abolir a escravidão."
+  }
+ ]
+}

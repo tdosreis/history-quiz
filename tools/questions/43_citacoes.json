@@ -1,0 +1,314 @@
+{
+ "id": "citacoes",
+ "name": "Quem disse?",
+ "tag": "Citação: quem disse ou escreveu",
+ "col": "#6D4C41",
+ "diff": "Variado",
+ "emoji": "🪶",
+ "qs": [
+  {
+   "t": "Quem disse esta frase?",
+   "type": "player",
+   "quote": {
+    "q": "Vim, vi, venci.",
+    "ctx": "Mensagem a Roma depois da vitória em Zela, 47 a.C."
+   },
+   "a": [
+    "cesar"
+   ],
+   "d": 1,
+   "src": [
+    "pt",
+    "Veni, vidi, vici",
+    [
+     "Zela"
+    ]
+   ]
+  },
+  {
+   "t": "Quem disse esta frase?",
+   "type": "player",
+   "quote": {
+    "q": "A sorte está lançada.",
+    "ctx": "Ao atravessar o Rubicão com suas legiões, 49 a.C."
+   },
+   "a": [
+    "cesar"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Alea jacta est",
+    [
+     "Rubicão"
+    ]
+   ]
+  },
+  {
+   "t": "Quem disse esta frase?",
+   "type": "player",
+   "quote": {
+    "q": "Penso, logo existo.",
+    "ctx": "Discurso do Método, 1637"
+   },
+   "a": [
+    "descartes"
+   ],
+   "d": 1,
+   "src": [
+    "pt",
+    "Cogito, ergo sum",
+    [
+     "Discurso do Método"
+    ]
+   ]
+  },
+  {
+   "t": "Quem disse esta frase?",
+   "type": "player",
+   "quote": {
+    "q": "Eu tenho um sonho.",
+    "ctx": "Marcha sobre Washington, agosto de 1963"
+   },
+   "a": [
+    "mlk"
+   ],
+   "d": 1,
+   "src": [
+    "pt",
+    "I Have a Dream",
+    [
+     "1963"
+    ]
+   ]
+  },
+  {
+   "t": "Quem disse esta frase?",
+   "type": "player",
+   "quote": {
+    "q": "Independência ou morte!",
+    "ctx": "Às margens do riacho Ipiranga, 7 de setembro de 1822"
+   },
+   "a": [
+    "dom_pedro_i"
+   ],
+   "d": 1,
+   "src": [
+    "pt",
+    "Independência do Brasil",
+    [
+     "Ipiranga"
+    ]
+   ]
+  },
+  {
+   "t": "Quem disse esta frase?",
+   "type": "player",
+   "quote": {
+    "q": "Não tenho nada a oferecer senão sangue, trabalho, lágrimas e suor.",
+    "ctx": "Primeiro discurso como primeiro-ministro, maio de 1940"
+   },
+   "a": [
+    "churchill"
+   ],
+   "d": 2,
+   "src": [
+    "en",
+    "Blood, toil, tears and sweat",
+    [
+     "1940"
+    ]
+   ]
+  },
+  {
+   "t": "Quem disse esta frase?",
+   "type": "player",
+   "quote": {
+    "q": "Proletários de todos os países, uni-vos!",
+    "ctx": "Manifesto escrito a quatro mãos, Londres, 1848"
+   },
+   "a": [
+    "marx"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Manifesto Comunista",
+    [
+     "1848"
+    ]
+   ]
+  },
+  {
+   "t": "Quem disse esta frase?",
+   "type": "player",
+   "quote": {
+    "q": "Dai-me um ponto de apoio e moverei o mundo.",
+    "ctx": "Frase que os antigos lhe atribuíam, sobre a alavanca"
+   },
+   "a": [
+    "arquimedes"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Arquimedes",
+    [
+     "alavanca"
+    ]
+   ]
+  },
+  {
+   "t": "Quem disse esta frase?",
+   "type": "player",
+   "quote": {
+    "q": "Saio da vida para entrar na História.",
+    "ctx": "Carta-testamento, agosto de 1954"
+   },
+   "a": [
+    "getulio"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Carta-testamento",
+    [
+     "1954"
+    ]
+   ]
+  },
+  {
+   "t": "Quem disse esta frase?",
+   "type": "player",
+   "quote": {
+    "q": "Se vi mais longe, foi por estar sobre ombros de gigantes.",
+    "ctx": "Carta a Robert Hooke, 1675"
+   },
+   "a": [
+    "newton"
+   ],
+   "d": 3,
+   "src": [
+    "en",
+    "Standing on the shoulders of giants",
+    [
+     "Hooke"
+    ]
+   ]
+  },
+  {
+   "t": "Quem disse esta frase?",
+   "type": "player",
+   "quote": {
+    "q": "Este é um pequeno passo para um homem, um salto gigantesco para a humanidade.",
+    "ctx": "Mar da Tranquilidade, 20 de julho de 1969"
+   },
+   "a": [
+    "armstrong"
+   ],
+   "d": 1,
+   "src": [
+    "pt",
+    "Apollo 11",
+    [
+     "Tranquilidade"
+    ]
+   ]
+  },
+  {
+   "t": "Quem disse esta frase?",
+   "type": "player",
+   "quote": {
+    "q": "Só sei que nada sei.",
+    "ctx": "Segundo a Apologia escrita por um de seus discípulos"
+   },
+   "a": [
+    "socrates"
+   ],
+   "d": 1,
+   "src": [
+    "pt",
+    "Só sei que nada sei",
+    [
+     "Apologia"
+    ]
+   ]
+  },
+  {
+   "t": "Quem disse esta frase?",
+   "type": "player",
+   "quote": {
+    "q": "Ser ou não ser, eis a questão.",
+    "ctx": "Monólogo do príncipe da Dinamarca, ato III"
+   },
+   "a": [
+    "shakespeare"
+   ],
+   "d": 1,
+   "src": [
+    "pt",
+    "Ser ou não ser",
+    [
+     "Hamlet"
+    ]
+   ]
+  },
+  {
+   "t": "Quem disse esta frase?",
+   "type": "player",
+   "quote": {
+    "q": "O homem nasce livre, e por toda parte encontra-se a ferros.",
+    "ctx": "Primeira linha do Contrato Social, 1762"
+   },
+   "a": [
+    "rousseau"
+   ],
+   "d": 3,
+   "src": [
+    "pt",
+    "Do Contrato Social",
+    [
+     "1762"
+    ]
+   ]
+  },
+  {
+   "t": "Quem disse esta frase?",
+   "type": "player",
+   "quote": {
+    "q": "O Estado sou eu.",
+    "ctx": "Frase atribuída ao Rei Sol, provavelmente apócrifa"
+   },
+   "a": [
+    "luis_xiv"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Luís XIV de França",
+    [
+     "Rei Sol"
+    ]
+   ]
+  },
+  {
+   "t": "Quem disse esta frase?",
+   "type": "player",
+   "quote": {
+    "q": "A imaginação é mais importante que o conhecimento.",
+    "ctx": "Entrevista ao Saturday Evening Post, 1929"
+   },
+   "a": [
+    "einstein"
+   ],
+   "d": 2,
+   "src": [
+    "en",
+    "Albert Einstein",
+    [
+     "imagination"
+    ]
+   ]
+  }
+ ]
+}

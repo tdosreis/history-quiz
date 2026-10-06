@@ -1,0 +1,246 @@
+{
+ "id": "manchetes",
+ "name": "Manchetes",
+ "tag": "A primeira página do dia",
+ "col": "#37474F",
+ "diff": "Variado",
+ "emoji": "📰",
+ "qs": [
+  {
+   "t": "Em que ano saiu esta manchete?",
+   "type": "txt",
+   "choices": [
+    "1969",
+    "1961",
+    "1965",
+    "1967",
+    "1971",
+    "1972"
+   ],
+   "news": {
+    "h": "Homem pisa na Lua",
+    "paper": "Diário da Manhã",
+    "sub": "Astronautas da Apollo 11 caminham no Mar da Tranquilidade"
+   },
+   "a": [
+    "1969"
+   ],
+   "d": 1,
+   "src": [
+    "pt",
+    "Apollo 11",
+    [
+     "1969"
+    ]
+   ]
+  },
+  {
+   "t": "Em que ano saiu esta manchete?",
+   "type": "txt",
+   "choices": [
+    "1989",
+    "1985",
+    "1987",
+    "1990",
+    "1991",
+    "1993"
+   ],
+   "news": {
+    "h": "Cai o Muro de Berlim",
+    "paper": "Gazeta Europeia",
+    "sub": "Multidão atravessa a fronteira entre as duas Alemanhas"
+   },
+   "a": [
+    "1989"
+   ],
+   "d": 1,
+   "src": [
+    "pt",
+    "Queda do Muro de Berlim",
+    [
+     "1989"
+    ]
+   ]
+  },
+  {
+   "t": "Em que ano saiu esta manchete?",
+   "type": "txt",
+   "choices": [
+    "1912",
+    "1905",
+    "1908",
+    "1910",
+    "1914",
+    "1916"
+   ],
+   "news": {
+    "h": "Titanic afunda no Atlântico Norte",
+    "paper": "The Evening Post",
+    "sub": "Transatlântico bate num iceberg na viagem inaugural"
+   },
+   "a": [
+    "1912"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "RMS Titanic",
+    [
+     "1912"
+    ]
+   ]
+  },
+  {
+   "t": "Em que ano saiu esta manchete?",
+   "type": "txt",
+   "choices": [
+    "1914",
+    "1908",
+    "1911",
+    "1912",
+    "1916",
+    "1918"
+   ],
+   "news": {
+    "h": "Arquiduque assassinado em Sarajevo",
+    "paper": "Wiener Abendpost",
+    "sub": "Herdeiro do trono austro-húngaro é morto a tiros"
+   },
+   "a": [
+    "1914"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Assassinato de Francisco Fernando",
+    [
+     "1914"
+    ]
+   ]
+  },
+  {
+   "t": "Em que ano saiu esta manchete?",
+   "type": "txt",
+   "choices": [
+    "1889",
+    "1822",
+    "1831",
+    "1871",
+    "1888",
+    "1891"
+   ],
+   "news": {
+    "h": "Proclamada a República",
+    "paper": "Gazeta da Corte",
+    "sub": "Marechal depõe o Imperador; a família imperial parte para o exílio"
+   },
+   "a": [
+    "1889"
+   ],
+   "d": 1,
+   "src": [
+    "pt",
+    "Proclamação da República do Brasil",
+    [
+     "1889"
+    ]
+   ]
+  },
+  {
+   "t": "Em que ano saiu esta manchete?",
+   "type": "txt",
+   "choices": [
+    "1917",
+    "1905",
+    "1914",
+    "1918",
+    "1922",
+    "1924"
+   ],
+   "news": {
+    "h": "Bolcheviques tomam o Palácio de Inverno",
+    "paper": "Jornal do Norte",
+    "sub": "Revolução em Petrogrado derruba o governo provisório"
+   },
+   "a": [
+    "1917"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Revolução de Outubro",
+    [
+     "1917"
+    ]
+   ]
+  },
+  {
+   "t": "Quem é o herói desta manchete?",
+   "type": "player",
+   "news": {
+    "h": "Brasileiro voa em Paris no 14-Bis",
+    "paper": "Le Petit Parisien",
+    "sub": "Aparelho mais pesado que o ar decola diante de uma comissão oficial"
+   },
+   "a": [
+    "santos_dumont"
+   ],
+   "d": 1,
+   "src": [
+    "pt",
+    "14-bis",
+    [
+     "1906"
+    ]
+   ]
+  },
+  {
+   "t": "Quem governava o Brasil no dia desta manchete?",
+   "type": "player",
+   "news": {
+    "h": "Brasília é inaugurada",
+    "paper": "Correio do Planalto",
+    "sub": "A nova capital nasce no Planalto Central, em 21 de abril"
+   },
+   "a": [
+    "jk"
+   ],
+   "d": 1,
+   "src": [
+    "pt",
+    "Brasília",
+    [
+     "Juscelino"
+    ]
+   ]
+  },
+  {
+   "t": "Em que ano saiu esta manchete?",
+   "type": "txt",
+   "choices": [
+    "1945",
+    "1943",
+    "1944",
+    "1946",
+    "1947",
+    "1949"
+   ],
+   "news": {
+    "h": "Alemanha se rende",
+    "paper": "A Gazeta",
+    "sub": "Termina a guerra na Europa; multidões celebram nas ruas"
+   },
+   "a": [
+    "1945"
+   ],
+   "d": 1,
+   "src": [
+    "pt",
+    "Dia da Vitória na Europa",
+    [
+     "1945"
+    ]
+   ]
+  }
+ ]
+}

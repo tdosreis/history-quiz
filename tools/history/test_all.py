@@ -44,11 +44,16 @@ JS = r"""
   CATS.forEach(c => c.qs.forEach(q => {
     nq++; const w = c.id + ': ' + q.t.slice(0, 50);
     if (!q.t.endsWith('?')) F('no ? ' + w);
-    if (texts.has(q.t + JSON.stringify(q.stad || q.who || q.crest || q.flag || q.icon || '') + (q.clues ? q.clues[0] : ''))) F('duplicate ' + w);
-    texts.add(q.t + JSON.stringify(q.stad || q.who || q.crest || q.flag || q.icon || '') + (q.clues ? q.clues[0] : ''));
+    /* a question is told apart by its words, its picture, its clue, its strip and its duel */
+    const key = q.t + JSON.stringify(q.stad || q.who || q.crest || q.flag || q.icon || '') + (q.clues ? q.clues[0] : '')
+              + JSON.stringify(q.quote || q.battle || q.line || q.news || '') + (q.duel ? JSON.stringify(q.fixed || q.choices) : '');
+    if (texts.has(key)) F('duplicate ' + w);
+    texts.add(key);
     if (!q.a || !q.a.length) F('no answer ' + w);
     if (q.type === 'txt') {
-      if (q.choices.length !== 6 || new Set(q.choices).size !== 6) F('choices ' + w);
+      const need = q.duel ? 2 : 6;
+      if (q.choices.length !== need || new Set(q.choices).size !== need) F('choices ' + w);
+      if (q.myth && q.choices.slice().sort().join() !== 'Fato,Mito') F('a myth is stamped Fato or Mito ' + w);
       q.a.forEach(a => { if (!q.choices.includes(a)) F('answer not among choices ' + w); });
     } else if (q.type === 'player') q.a.forEach(a => { if (!PL.some(p => p.id === a)) F('unknown figure ' + a + ' ' + w); });
     else if (q.type === 'order') {
@@ -70,8 +75,10 @@ JS = r"""
         const dd = d.map(x => x.id);
         if (new Set(dd).size !== dd.length) F(k + ' duplicate tile :: ' + q.t.slice(0, 60));
         if (!q.a.every(a => dd.includes(a))) F(k + ' answer missing :: ' + q.t.slice(0, 60));
-        if (!q.order && !q.fixed && dd.length < Math.min(6, 10)) F(k + ' few tiles(' + dd.length + ') :: ' + q.t.slice(0, 60));
-        const art = questionArt(q); if (typeof art !== 'string' || (!q.order && !/<(img|svg)\b/.test(art))) F('question without a picture :: ' + q.t.slice(0, 60));
+        if (!q.order && !q.fixed && !q.duel && dd.length < Math.min(6, 10)) F(k + ' few tiles(' + dd.length + ') :: ' + q.t.slice(0, 60));
+        if (q.duel && dd.length !== 2) F(k + ' a duel needs exactly two tiles :: ' + q.t.slice(0, 60));
+        if (hasStrip(q) && !/class="qstrip/.test(qStrip(q))) F('strip did not draw :: ' + q.t.slice(0, 60));
+        const art = questionArt(q); if (typeof art !== 'string' || (!q.order && !hasStrip(q) && !/<(img|svg)\b/.test(art))) F('question without a picture :: ' + q.t.slice(0, 60));
         if (q.type === 'txt') { const oa = optArtFor(q);
           /* every written answer carries a picture: never a bare word on a slip */
           q.choices.forEach(c => { if (!oa || !optArtHtml(oa[c])) F('txt answer without a picture: ' + c + ' :: ' + q.t.slice(0, 50)); }); }

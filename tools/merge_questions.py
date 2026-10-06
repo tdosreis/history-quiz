@@ -31,6 +31,7 @@ import glob, io, json, os, re, subprocess, sys, unicodedata
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 P = os.path.join(ROOT, "index.html")
 CHROME = os.environ.get("CHROME", "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome")
+STRIPS = ("quote", "battle", "line", "news")   # history's own formats (tools/history/js/formats.js)
 BEGIN = "  /* NEW-QS:BEGIN — written by tools/merge_questions.py from tools/questions/*.json */"
 END = "  /* NEW-QS:END */"
 
@@ -54,7 +55,7 @@ def inventory(src):
     tmp = os.path.join(ROOT, "_merge_inv.html")
     io.open(tmp, "w", encoding="utf-8").write(bare.replace("</body>", probe + "</body>"))
     try:
-        out = subprocess.run([CHROME, "--headless", "--disable-gpu", "--allow-file-access-from-files",
+        out = subprocess.run([CHROME] + (["--no-sandbox"] if os.environ.get("CI") else []) + ["--headless", "--disable-gpu", "--allow-file-access-from-files",
                               "--virtual-time-budget=3000", "--dump-dom", "file://" + tmp],
                              capture_output=True, text=True, timeout=240).stdout
     finally:
@@ -88,7 +89,8 @@ def main():
             bad = lambda msg: errs.append(f"{where}: {msg} :: {q.get('t', '')[:70]}")
             t, a, typ = q.get("t", ""), q.get("a") or [], q.get("type")
             if not t.endswith("?"): bad("question does not end in '?'")
-            key = fold(t + ' ' + q["clues"][0]) if q.get("clues") else fold(t + ' ' + json.dumps(q.get("art") or {}, sort_keys=True))
+            strip = {k_: q[k_] for k_ in STRIPS if q.get(k_)}
+            key = fold(t + ' ' + q["clues"][0]) if q.get("clues") else fold(t + ' ' + json.dumps(q.get("art") or {}, sort_keys=True) + json.dumps(strip, sort_keys=True, ensure_ascii=False) + (json.dumps(q.get("choices") or q.get("fixed")) if q.get("duel") else ''))
             if key in seen: bad(f"duplicate of a question in {seen[key]}")
             seen[key] = where
             cl_ = q.get("clues")
@@ -102,6 +104,33 @@ def main():
                 if any(x not in fx for x in a): bad("fixed: an answer is not among the tiles")
                 for x in fx:
                     if x not in (pl if typ == "player" else cl): bad(f"fixed: unknown id '{x}'")
+            # history's own formats: each strip is the question's picture
+            qt_, bt_, ln_, nw_ = q.get("quote"), q.get("battle"), q.get("line"), q.get("news")
+            ansnames = [fold(pl.get(x, '') if typ == "player" else x if typ == "txt" else cl.get(x, '')) for x in a]
+            def names_answer(txt):
+                f_ = fold(txt or '')
+                return any(n and len(n) >= 4 and re.search(r'(^|[^a-z0-9])' + re.escape(n) + r'($|[^a-z0-9])', f_) for n in ansnames)
+            if qt_ is not None and not (isinstance(qt_, dict) and isinstance(qt_.get("q"), str) and 6 <= len(qt_["q"]) <= 220):
+                bad("quote needs q: the sentence (6-220 characters)")
+            if qt_ is not None and names_answer(qt_.get("q")): bad("the quote names its own speaker")
+            if bt_ is not None:
+                if not isinstance(bt_, dict) or [bt_.get("a"), bt_.get("b")].count("?") != 1 or not bt_.get("lbl"):
+                    bad("battle needs lbl, a, b with exactly one side '?'")
+                elif names_answer(bt_.get("a") if bt_.get("b") == "?" else bt_.get("b")) or names_answer(bt_.get("lbl")):
+                    bad("the battle strip shows its own answer")
+            if ln_ is not None:
+                rows_ = ln_.get("rows") if isinstance(ln_, dict) else None
+                if not rows_ or not 3 <= len(rows_) <= 6 or rows_.count("?") != 1 or not ln_.get("t"):
+                    bad("line needs t and 3-6 rows with exactly one '?'")
+                elif any(names_answer(r_) for r_ in rows_ if r_ != "?"):
+                    bad("the line already shows its answer")
+            if nw_ is not None and not (isinstance(nw_, dict) and nw_.get("h")): bad("news needs h: the headline")
+            if nw_ is not None and names_answer(nw_.get("h", "") + " " + nw_.get("date", "")): bad("the headline names its own answer")
+            if q.get("myth"):
+                if typ != "txt" or not q.get("duel") or sorted(q.get("choices") or []) != ["Fato", "Mito"]:
+                    bad("myth: a txt duel whose choices are Fato and Mito")
+            if q.get("duel") and typ in ("player", None) and len(q.get("fixed") or []) != 2:
+                bad("duel: exactly two fixed tiles")
             sc_, xi_ = q.get("score"), q.get("xi")
             if sc_ is not None and ([sc_.get("h"), sc_.get("a")].count("?") != 1 or "hg" not in sc_ or "ag" not in sc_):
                 bad("score needs h, hg, ag, a with exactly one side '?'")
@@ -133,7 +162,7 @@ def main():
                 bad(f"unknown type '{typ}'")
 
             art = q.get("art") or {}
-            pictured = typ == "order" or sc_ is not None or xi_ is not None
+            pictured = typ == "order" or sc_ is not None or xi_ is not None or any(q.get(k_) for k_ in STRIPS)
             if len(art) != (0 if pictured else 1): bad("art needs exactly one key" if not pictured else "a scoreboard, pitch or timeline is its own picture: no art")
             for k, v in art.items():
                 if k == "who":
@@ -165,7 +194,7 @@ def main():
             row = {"t": t, "a": a}
             if typ: row["type"] = typ
             if typ == "txt": row["choices"] = q["choices"]
-            for k_ in ("fixed", "clues", "score", "xi", "order"):
+            for k_ in ("fixed", "clues", "score", "xi", "order", "duel", "myth") + STRIPS:
                 if q.get(k_) is not None: row[k_] = q[k_]
             if q.get("clues"):
                 # a clue card hides what the tiles would otherwise give away

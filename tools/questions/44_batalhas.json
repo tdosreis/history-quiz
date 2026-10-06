@@ -1,0 +1,255 @@
+{
+ "id": "batalhas",
+ "name": "Batalhas",
+ "tag": "Duas bandeiras, um lado escondido",
+ "col": "#8C2F2F",
+ "diff": "Variado",
+ "emoji": "⚔️",
+ "qs": [
+  {
+   "t": "Contra quem os 300 espartanos de Leônidas resistiram nesta batalha?",
+   "battle": {
+    "lbl": "Termópilas · 480 a.C.",
+    "a": "esparta",
+    "b": "?",
+    "x": "O exército de Xerxes só passou pelo desfiladeiro depois de uma traição."
+   },
+   "a": [
+    "persia"
+   ],
+   "d": 1,
+   "src": [
+    "pt",
+    "Batalha das Termópilas",
+    [
+     "Xerxes"
+    ]
+   ]
+  },
+  {
+   "t": "Qual cidade grega comandou a frota que venceu os persas nesta batalha naval?",
+   "battle": {
+    "lbl": "Salamina · 480 a.C.",
+    "a": "?",
+    "b": "persia",
+    "x": "Temístocles atraiu as galeras persas para um estreito onde não podiam manobrar."
+   },
+   "a": [
+    "atenas"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Batalha de Salamina",
+    [
+     "Temístocles"
+    ]
+   ]
+  },
+  {
+   "t": "Quem Roma derrotou nesta batalha, pondo fim à Segunda Guerra Púnica?",
+   "battle": {
+    "lbl": "Zama · 202 a.C.",
+    "a": "republica_romana",
+    "b": "?",
+    "x": "Cipião enfrentou Aníbal no norte da África e venceu."
+   },
+   "a": [
+    "cartago"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Batalha de Zama",
+    [
+     "Aníbal"
+    ]
+   ]
+  },
+  {
+   "t": "Quem derrotou o Primeiro Império Francês em Waterloo, ao lado da Prússia?",
+   "battle": {
+    "lbl": "Waterloo · 1815",
+    "a": "imperio_frances",
+    "b": "?",
+    "x": "O exército de Wellington resistiu até a chegada dos prussianos de Blücher."
+   },
+   "a": [
+    "reino_unido"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Batalha de Waterloo",
+    [
+     "Wellington"
+    ]
+   ]
+  },
+  {
+   "t": "Quem a União Soviética cercou e derrotou nesta batalha decisiva?",
+   "battle": {
+    "lbl": "Stalingrado · 1942–1943",
+    "a": "urss",
+    "b": "?",
+    "x": "O VI Exército alemão se rendeu em fevereiro de 1943."
+   },
+   "a": [
+    "alemanha_nazista"
+   ],
+   "d": 1,
+   "src": [
+    "pt",
+    "Batalha de Stalingrado",
+    [
+     "1943"
+    ]
+   ]
+  },
+  {
+   "t": "Quem invadiu a Inglaterra e venceu esta batalha?",
+   "type": "txt",
+   "choices": [
+    "Normandos",
+    "Vikings",
+    "Escoceses",
+    "Francos",
+    "Bretões",
+    "Saxões"
+   ],
+   "battle": {
+    "lbl": "Hastings · 1066",
+    "a": "?",
+    "b": "inglaterra",
+    "x": "Guilherme, duque da Normandia, tornou-se rei da Inglaterra no Natal de 1066."
+   },
+   "a": [
+    "Normandos"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Batalha de Hastings",
+    [
+     "normandos"
+    ]
+   ]
+  },
+  {
+   "t": "Contra quem o Egito de Ramsés II lutou nesta batalha de carros de guerra?",
+   "type": "txt",
+   "choices": [
+    "Hititas",
+    "Assírios",
+    "Babilônios",
+    "Núbios",
+    "Filisteus",
+    "Fenícios"
+   ],
+   "battle": {
+    "lbl": "Kadesh · c. 1274 a.C.",
+    "a": "egito_antigo",
+    "b": "?",
+    "x": "A batalha terminou sem vencedor claro e levou a um dos primeiros tratados de paz conhecidos."
+   },
+   "a": [
+    "Hititas"
+   ],
+   "d": 3,
+   "src": [
+    "pt",
+    "Batalha de Kadesh",
+    [
+     "hititas"
+    ]
+   ]
+  },
+  {
+   "t": "Qual aliança cristã venceu a frota otomana nesta batalha?",
+   "type": "txt",
+   "choices": [
+    "Liga Santa",
+    "Liga Hanseática",
+    "Liga de Delos",
+    "Tríplice Aliança",
+    "Liga de Cambrai",
+    "Liga de Augsburgo"
+   ],
+   "battle": {
+    "lbl": "Lepanto · 1571",
+    "a": "?",
+    "b": "imperio_otomano",
+    "x": "Foi a última grande batalha de galeras a remo; Cervantes lutou nela e perdeu o movimento de uma mão."
+   },
+   "a": [
+    "Liga Santa"
+   ],
+   "d": 3,
+   "src": [
+    "pt",
+    "Batalha de Lepanto",
+    [
+     "Liga Santa"
+    ]
+   ]
+  },
+  {
+   "t": "Quem deteve o avanço dos mongóis nesta batalha, na Palestina?",
+   "type": "txt",
+   "choices": [
+    "Mamelucos",
+    "Seljúcidas",
+    "Cruzados",
+    "Abássidas",
+    "Omíadas",
+    "Otomanos"
+   ],
+   "battle": {
+    "lbl": "Ain Jalut · 1260",
+    "a": "?",
+    "b": "imperio_mongol",
+    "x": "Foi a primeira grande derrota dos mongóis numa batalha campal."
+   },
+   "a": [
+    "Mamelucos"
+   ],
+   "d": 4,
+   "src": [
+    "pt",
+    "Batalha de Ain Jalut",
+    [
+     "mamelucos"
+    ]
+   ]
+  },
+  {
+   "t": "Quem expulsou os holandeses de Pernambuco nos montes desta batalha?",
+   "type": "txt",
+   "choices": [
+    "Luso-brasileiros",
+    "Franceses",
+    "Espanhóis",
+    "Ingleses",
+    "Suecos",
+    "Dinamarqueses"
+   ],
+   "battle": {
+    "lbl": "Guararapes · 1648",
+    "a": "?",
+    "b": "holanda",
+    "x": "As duas batalhas dos Guararapes são lembradas como berço do Exército Brasileiro."
+   },
+   "a": [
+    "Luso-brasileiros"
+   ],
+   "d": 3,
+   "src": [
+    "pt",
+    "Batalhas dos Guararapes",
+    [
+     "holandeses"
+    ]
+   ]
+  }
+ ]
+}

@@ -1,0 +1,240 @@
+{
+ "id": "linhagens",
+ "name": "Dinastias e alianças",
+ "tag": "Complete a linhagem",
+ "col": "#7B5E1E",
+ "diff": "Variado",
+ "emoji": "👑",
+ "qs": [
+  {
+   "t": "Quem completa a dinastia Tudor?",
+   "type": "player",
+   "line": {
+    "t": "Dinastia Tudor · Inglaterra",
+    "rows": [
+     "Henrique VII",
+     "Henrique VIII",
+     "Eduardo VI",
+     "Maria I",
+     "?"
+    ],
+    "era": "mod"
+   },
+   "a": [
+    "elizabeth_i"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Dinastia Tudor",
+    [
+     "Isabel"
+    ]
+   ],
+   "x": "A última dos Tudor reinou 44 anos e não deixou herdeiros."
+  },
+  {
+   "t": "Quem é o elo que falta na Casa de Bragança no Brasil?",
+   "type": "player",
+   "line": {
+    "t": "Casa de Bragança no Brasil",
+    "rows": [
+     "Dom João VI",
+     "?",
+     "Dom Pedro II"
+    ],
+    "era": "new"
+   },
+   "a": [
+    "dom_pedro_i"
+   ],
+   "d": 1,
+   "src": [
+    "pt",
+    "Casa de Bragança",
+    [
+     "Pedro"
+    ]
+   ]
+  },
+  {
+   "t": "Quem foi o primeiro desta linha de imperadores romanos?",
+   "type": "player",
+   "line": {
+    "t": "Dinastia júlio-claudiana",
+    "rows": [
+     "?",
+     "Tibério",
+     "Calígula",
+     "Cláudio",
+     "Nero"
+    ],
+    "era": "ant"
+   },
+   "a": [
+    "augusto"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Dinastia júlio-claudiana",
+    [
+     "Augusto"
+    ]
+   ]
+  },
+  {
+   "t": "Quem abre a lista dos presidentes do Brasil?",
+   "type": "player",
+   "line": {
+    "t": "Os primeiros presidentes do Brasil",
+    "rows": [
+     "?",
+     "Floriano Peixoto",
+     "Prudente de Morais",
+     "Campos Sales"
+    ],
+    "era": "new"
+   },
+   "a": [
+    "deodoro"
+   ],
+   "d": 1,
+   "src": [
+    "pt",
+    "Lista de presidentes do Brasil",
+    [
+     "Deodoro"
+    ]
+   ]
+  },
+  {
+   "t": "Quem completava o Primeiro Triunvirato?",
+   "type": "txt",
+   "choices": [
+    "Crasso",
+    "Marco Antônio",
+    "Lépido",
+    "Bruto",
+    "Catão",
+    "Sila"
+   ],
+   "line": {
+    "t": "Primeiro Triunvirato · Roma, 60 a.C.",
+    "rows": [
+     "Júlio César",
+     "Pompeu",
+     "?"
+    ],
+    "kind": "grupo",
+    "era": "ant"
+   },
+   "a": [
+    "Crasso"
+   ],
+   "d": 3,
+   "src": [
+    "pt",
+    "Primeiro Triunvirato",
+    [
+     "Crasso"
+    ]
+   ],
+   "x": "Crasso, o homem mais rico de Roma, morreu em 53 a.C. lutando contra os partos."
+  },
+  {
+   "t": "Quem se sentou à mesa com estes dois em Ialta?",
+   "type": "txt",
+   "choices": [
+    "Josef Stálin",
+    "Harry Truman",
+    "Benito Mussolini",
+    "Chiang Kai-shek",
+    "Clement Attlee",
+    "Leon Trótski"
+   ],
+   "line": {
+    "t": "Conferência de Ialta · fevereiro de 1945",
+    "rows": [
+     "Winston Churchill",
+     "Franklin D. Roosevelt",
+     "?"
+    ],
+    "kind": "grupo",
+    "era": "new"
+   },
+   "a": [
+    "Josef Stálin"
+   ],
+   "d": 1,
+   "src": [
+    "pt",
+    "Conferência de Ialta",
+    [
+     "Stalin"
+    ]
+   ]
+  },
+  {
+   "t": "Quem foi o rei que completa a dinastia de Avis?",
+   "type": "txt",
+   "choices": [
+    "Manuel I",
+    "Sebastião I",
+    "Afonso Henriques",
+    "Dinis I",
+    "João III",
+    "Pedro I"
+   ],
+   "line": {
+    "t": "Dinastia de Avis · Portugal",
+    "rows": [
+     "João I",
+     "Duarte I",
+     "Afonso V",
+     "João II",
+     "?"
+    ],
+    "era": "med"
+   },
+   "a": [
+    "Manuel I"
+   ],
+   "d": 4,
+   "src": [
+    "pt",
+    "Dinastia de Avis",
+    [
+     "Manuel"
+    ]
+   ],
+   "x": "No reinado de Manuel I, Vasco da Gama chegou à Índia e Cabral ao Brasil."
+  },
+  {
+   "t": "Quem é o filósofo que falta nesta linhagem de mestre e discípulo?",
+   "type": "player",
+   "line": {
+    "t": "Mestre e discípulo · Atenas",
+    "rows": [
+     "Sócrates",
+     "?",
+     "Aristóteles",
+     "Alexandre, o Grande"
+    ],
+    "era": "ant"
+   },
+   "a": [
+    "platao"
+   ],
+   "d": 1,
+   "src": [
+    "pt",
+    "Platão",
+    [
+     "Sócrates"
+    ]
+   ],
+   "x": "Platão foi aluno de Sócrates e professor de Aristóteles, que educou Alexandre."
+  }
+ ]
+}
