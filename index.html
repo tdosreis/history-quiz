@@ -4525,7 +4525,7 @@ const CATS = [
       {"t": "O Brasil foi o último país das Américas a abolir a escravidão?", "a": ["Fato"], "type": "txt", "choices": ["Fato", "Mito"], "duel": true, "myth": true, "d": 1, "x": "A Lei Áurea, de 13 de maio de 1888, fez do Brasil o último país independente das Américas a abolir a escravidão.", "flag": "BRA"},
     ]
   },
-      /* NEW-QS:END */
+        /* NEW-QS:END */
 ];
 /*@@/data_cl_cats@@*/
 /*@@data_pl_lib@@*/
@@ -7684,7 +7684,7 @@ function newMedals() {
    Four sets, sectioned like the album. The shape of the emblem is the set;
    the ink is the tier. */
 const MEDAL_SETS = [
-  { id:'campo',  n:'Em campo',       tag:'Campo',  shape:'seal',
+  { id:'campo',  n:'Em jogo',        tag:'Jogo',   shape:'seal',
     ids:['first','ten','perfect','streak5','streak10','hard','c100','c500'] },
   { id:'album',  n:'O álbum',        tag:'Álbum',  shape:'shield',
     ids:['alb25','alb60','albHalf','alb3q','albAll','albEsc','albSel','albMsc','albBook'] },
@@ -8394,10 +8394,14 @@ const EMBLEM = {
   hammer:  k => `<path d="M20 36L36 14M33 11l8 7-3 3-8-7z" stroke="${k}" stroke-width="3" fill="${k}" stroke-linecap="round"/><path d="M40 34a11 11 0 0 1-17-13" fill="none" stroke="${k}" stroke-width="3" stroke-linecap="round"/>`,
 };
 
+/* every drawing of a brasão gets its own clip-path id: the same crest can sit in
+   an album pocket and in the zoom at once, and a shared id clips the zoomed
+   one against the hidden pocket's shape — the shield came out as a bare outline */
+let _crestN = 0;
 function genericCrest(id) {
   const c = CL.find(x => x.id === id);
   if (!c) return '';
-  const uid  = 'c' + id.replace(/\W/g, '');
+  const uid  = 'c' + id.replace(/\W/g, '') + '_' + (++_crestN).toString(36);
   const base = c.c1;
   const alt  = _dist(c.c1, c.c2) > 70 ? c.c2 : (_lum(base) < 0.5 ? '#ececec' : '#1a1a1a');
   const ink  = _lum(base) < 0.55 ? (_lum(alt) > 0.6 ? alt : '#ffffff') : '#141414';
@@ -9320,7 +9324,7 @@ function sigOf(sid, c, v) {
              c.d || '', (v || _vault || {}).seed || ''].join('|');
   return b32(h53(s + SEAL, 0x5f3a), 8);
 }
-const copyCode = c => c && c.k ? `FQ-${c.k.slice(0, 4)}-${c.k.slice(4, 8)}` : '';
+const copyCode = c => c && c.k ? `HQ-${c.k.slice(0, 4)}-${c.k.slice(4, 8)}` : '';
 const isAuthentic = (sid, c) => !!c && c.k === sigOf(sid, c);
 const copyRank = c => !c ? -1 : c.f * 1000 + (c.v ? 400 : 0) + c.g;
 const serialTxt = c => c && c.pr ? `${String(c.sn).padStart(String(c.pr).length, '0')}/${c.pr}` : '';
@@ -9421,21 +9425,23 @@ function pullBoost() {
   return Math.min(1.6, 1 + d + Math.min(streak, 10) * .025 + (isMil ? Math.min(.45, rung * .03) : 0) + (isSurv ? .15 : 0));
 }
 
-/* ── Coleções: whole teams, and the photograph you get for them ──
-   A World Cup winning side is a set once the album holds four of its men,
-   and so are the Ballon d'Or winners. Complete one and the team photograph
-   is printed for you — gold, numbered out of a hundred. */
+/* ── Coleções: the people of one chapter of history, and their portrait ──
+   Futebol Quiz's sets were World Cup squads. Here a set is everyone the
+   album holds from one great event — the Renaissance, the voyages, the
+   Enlightenment — once it has three of them, and the Nobel laureates.
+   Complete one and its group portrait is printed for you — gold, numbered
+   out of a hundred. */
 let _sets = null;
 function figSets() {
   if (_sets) return _sets;
   const g = {};
-  PL.forEach(p => (p.wc || []).forEach(y => { (g[p.ctry + y] = g[p.ctry + y] || { ctry: p.ctry, y, ids: [] }).ids.push(p.id); }));
-  const wc = Object.values(g).filter(s => s.ids.length >= 4)
-    .sort((a, b) => (a.ctry === 'BRA' ? 0 : 1) - (b.ctry === 'BRA' ? 0 : 1) || a.y - b.y)
-    .map(s => ({ id: 'wc' + s.ctry + s.y, ctry: s.ctry, y: s.y, ids: s.ids,
-                 n: `${CTRY_NAME[s.ctry] || s.ctry} ${s.y}`, t: 'Campeões do mundo' }));
-  const bo = PL.filter(p => p.bo > 0).map(p => p.id);
-  _sets = wc.concat(bo.length ? [{ id: 'bola', ids: bo, n: 'Bolas de Ouro', t: 'Os melhores do mundo' }] : []);
+  PL.forEach(p => (p.ev || []).forEach(e => { (g[e] = g[e] || []).push(p.id); }));
+  const evs = Object.keys(g).filter(e => g[e].length >= 3 && EVENTS[e])
+    .sort((a, b) => EVENTS[a].y[0] - EVENTS[b].y[0])
+    .map(e => ({ id: 'ev_' + e, ev: e, ids: g[e], n: EVENTS[e].n,
+                 t: `${yearTxt(EVENTS[e].y[0])} – ${yearTxt(EVENTS[e].y[1])}` }));
+  const nb = PL.filter(p => p.nb > 0).map(p => p.id);
+  _sets = evs.concat(nb.length >= 3 ? [{ id: 'nobel', ids: nb, n: 'Prêmios Nobel', t: 'Os laureados do álbum' }] : []);
   return _sets;
 }
 function checkSets(out, silent) {
@@ -9456,15 +9462,17 @@ const setById = id => figSets().find(s => s.id === id);
    card for that day, dated, and never again. Only players whose birthday is
    beyond doubt are on this list. */
 const BDAYS = {
-  pele:[10,23], garrincha:[10,28], maradona:[10,30], zico:[3,3], romario:[1,29], ronaldo:[9,18],
-  ronaldinho:[3,21], rivaldo:[4,19], kaka:[4,22], neymar:[2,5], cr7:[2,5], messi:[6,24],
-  cruyff:[4,25], beckenbauer:[9,11], zidane:[6,23], socrates:[2,19], cafu:[6,7], roberto_carlos:[4,10],
-  eusebio:[1,25], distefano:[7,4], puskas:[4,1], platini:[6,21], van_basten:[10,31], maldini:[6,26],
-  henry:[8,17], iniesta:[5,11], xavi:[1,25], buffon:[1,28], yashin:[10,22], bebeto:[2,16],
-  carlos_alberto:[7,17], jairzinho:[12,25], tostao:[1,25], rivellino:[1,1], didi:[10,8], falcao:[10,16],
-  taffarel:[5,8], mbappe:[12,20], haaland:[7,21], vinicius:[7,12], modric:[9,9], gerd_muller:[11,3],
-  charlton:[10,11], best:[5,22], adriano:[2,17], zagallo:[8,9], gerson:[1,11], nilton_santos:[5,16],
-  djalma_santos:[2,27], vava:[11,12], leonidas:[9,6], careca:[10,5], dunga:[10,31], junior:[6,29],
+  napoleao:[8,15], einstein:[3,14], leonardo:[4,15], mozart:[1,27], darwin:[2,12], lincoln:[2,12],
+  gandhi:[10,2], mlk:[1,15], mandela:[7,18], churchill:[11,30], marie_curie:[11,7], galileu:[2,15],
+  copernico:[2,19], dom_pedro_ii:[12,2], dom_pedro_i:[10,12], santos_dumont:[7,20], machado:[6,21],
+  getulio:[4,19], jk:[9,12], tesla:[7,10], edison:[2,11], frida:[7,6], picasso:[10,25], van_gogh:[3,30],
+  washington:[2,22], jefferson:[4,13], victoria:[5,24], elizabeth_i:[9,7], luis_xiv:[9,5],
+  maria_antonieta:[11,2], bolivar:[7,24], che:[6,14], fidel:[8,13], anne_frank:[6,12], armstrong:[8,5],
+  gagarin:[3,9], hawking:[1,8], turing:[6,23], princesa_isabel:[7,29], oswaldo_cruz:[8,5],
+  niemeyer:[12,15], clarice:[12,10], drummond:[10,31], chico_mendes:[12,15], marx:[5,5], lenin:[4,22],
+  freud:[5,6], pasteur:[12,27], victor_hugo:[2,26], dickens:[2,7], mark_twain:[11,30], hemingway:[7,21],
+  dali:[5,11], chaplin:[4,16], kennedy:[5,29], rosa_parks:[2,4], thatcher:[10,13], de_gaulle:[11,22],
+  fdr:[1,30], madre_teresa:[8,26], garcia_marquez:[3,6], beauvoir:[1,9], ada_lovelace:[12,10], nightingale:[5,12],
 };
 const MES = ['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez'];
 const ymd = d => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
@@ -9617,14 +9625,14 @@ function sealSVG(c) {
     <path d="${rays}" stroke="currentColor" stroke-width=".35" opacity=".5"/>
     <circle cx="20" cy="20" r="18.4" fill="none" stroke="currentColor" stroke-width=".5"/>
     <circle cx="20" cy="20" r="8.6" fill="none" stroke="currentColor" stroke-width=".5"/>
-    <text x="20" y="19.6" text-anchor="middle" class="seal-fq">FQ</text>
+    <text x="20" y="19.6" text-anchor="middle" class="seal-fq">HQ</text>
     <text x="20" y="24.4" text-anchor="middle" class="seal-n">${c.pr ? serialTxt(c) : c.ed}</text></svg>`;
 }
 /* The certificate block at the foot of a back, and the paper behind it. */
 function certBack(sid, c) {
   if (!c) return '';
   const ok = isAuthentic(sid, c);
-  const series = c.o ? 'Série fundadora' : c.p1 ? '1ª edição' : 'Temporada';
+  const series = c.o ? 'Série fundadora' : c.p1 ? '1ª edição' : 'Coleção';
   return `
     <span class="cert${ok ? '' : ' cert-bad'}">
       <span class="cert-l">
@@ -9727,9 +9735,9 @@ function figTeam(s, c, size) {
     <span class="fig-art"><span class="team-ph">
       <span class="team-row">${men.slice(0, half).map(face).join('')}</span>
       <span class="team-row team-front">${men.slice(half).map(face).join('')}</span>
-      ${s.ctry ? `<span class="team-flag">${flagSVG(s.ctry, 12)}</span>` : `<span class="team-flag team-ball">${ICON.ball('currentColor', 12)}</span>`}
+      ${s.ctry ? `<span class="team-flag">${flagSVG(s.ctry, 12)}</span>` : `<span class="team-flag team-ball">${ICON.scroll('currentColor', 12)}</span>`}
     </span>${artLayers(c, '')}</span>
-    <span class="fig-cap"><span class="fig-nm">${s.n}</span><span class="fig-sub">Foto oficial</span></span>
+    <span class="fig-cap"><span class="fig-nm">${s.n}</span><span class="fig-sub">Retrato oficial</span></span>
     ${foilLayers(sid, c)}
   </span>`;
 }
@@ -9754,7 +9762,7 @@ function specialBack(sid, c) {
   let head = 'Edição limitada', nm = '', lines = [];
   if (sid.startsWith('t:')) {
     const s = setById(sid.slice(2)) || { n: '', ids: [] };
-    head = 'Foto oficial'; nm = s.n;
+    head = 'Retrato oficial'; nm = s.n;
     lines = [s.t, s.ids.map(id => (PL.find(p => p.id === id) || {}).n).filter(Boolean).join(' · ')];
   } else {
     const p = bdayPlayer(sid) || { n: '' };
@@ -9813,7 +9821,7 @@ Object.assign(snd, {
 function packBackFace(i) {
   return `<span class="pkb">${guilloche('pk' + (i % 5), 86, true)}
     <span class="pkb-frame"></span>
-    <span class="pkb-ring"><span class="pkb-fq">FQ</span></span>
+    <span class="pkb-ring"><span class="pkb-fq">HQ</span></span>
     <span class="pkb-t">Figurinha oficial</span>
     <span class="pkb-s">History Quiz · ${new Date().getFullYear()}</span>
   </span>`;
@@ -9821,10 +9829,10 @@ function packBackFace(i) {
 function packArt(n, meta) {
   return `<span class="pk-art">
     <span class="pk-crimp">${'HISTORY QUIZ · '.repeat(4)}</span>
-    <span class="pk-emb">${ICON.ball('currentColor', 30)}</span>
+    <span class="pk-emb">${ICON.column('currentColor', 30)}</span>
     <span class="pk-kick">${meta.kick || 'Pacote da rodada'}</span>
     <span class="pk-ttl">Figurinhas</span>
-    <span class="pk-ed">Temporada ${new Date().getFullYear()} · 1ª edição</span>
+    <span class="pk-ed">Coleção ${new Date().getFullYear()} · 1ª edição</span>
     <span class="pk-cnt"><b>${n}</b> ${n === 1 ? 'figurinha' : 'figurinhas'}</span>
     <span class="pk-fine">Pode conter figurinhas Prata, Holográficas e Ouro · autografadas · erros de impressão</span>
     <span class="pk-crimp pk-crimp-b">${'HISTORY QUIZ · '.repeat(4)}</span>
@@ -10055,7 +10063,7 @@ function packStrip() {
   const n = runPulls.length;
   if (!runPackOpened) return `
     <button id="bpack" class="pack-teaser" type="button" aria-label="Abrir o pacote da rodada: ${n} ${n === 1 ? 'figurinha' : 'figurinhas'}">
-      <span class="pt-env" aria-hidden="true"><span class="pt-emb">${ICON.ball('currentColor', 13)}</span><i></i></span>
+      <span class="pt-env" aria-hidden="true"><span class="pt-emb">${ICON.column('currentColor', 13)}</span><i></i></span>
       <span class="pt-txt"><b>Pacote da rodada</b>
         <span>${n} ${n === 1 ? 'figurinha' : 'figurinhas'} · toque para abrir</span></span>
     </button>`;
@@ -10332,7 +10340,7 @@ async function shareFig(sid) {
   const line = [c.v ? VAR_NAME[c.v] : FIN_NAME[c.f], c.pr ? 'Nº ' + serialTxt(c) : '', 'Estado ' + gradeTxt(c.g)].filter(Boolean).join('  ·  ').toUpperCase();
   x.fillText(line.split('').join(' '), W / 2, cy + ch + 70);
   x.fillStyle = 'rgba(233,223,198,.72)'; x.font = '600 25px Archivo, sans-serif';
-  x.fillText(`${copyCode(c)}  ·  ${c.o ? 'Série fundadora' : c.p1 ? '1ª edição' : 'Temporada'} ${c.ed}`, W / 2, cy + ch + 112);
+  x.fillText(`${copyCode(c)}  ·  ${c.o ? 'Série fundadora' : c.p1 ? '1ª edição' : 'Coleção'} ${c.ed}`, W / 2, cy + ch + 112);
   x.font = 'italic 600 34px Fraunces, serif'; x.fillStyle = '#E9DFC6';
   x.fillText('History Quiz', W / 2, H - 58);
   const blob = await new Promise(r => cv.toBlob(r, 'image/png'));
@@ -10396,14 +10404,14 @@ function vitrineHtml() {
     </section>
 
     <section class="vit-sec">
-      <div class="vit-h"><span>Coleções</span><small>complete o time e ganhe a foto oficial em ouro</small></div>
+      <div class="vit-h"><span>Coleções</span><small>complete a coleção e ganhe o retrato oficial em ouro</small></div>
       <div class="vit-sets">
         ${figSets().map(s => {
           const got = s.ids.filter(id => album.has(id)).length, done = !!v.sets[s.id];
           return `<div class="vit-set${done ? ' is-done' : ''}" ${done ? `data-sid="t:${s.id}" role="button" tabindex="0"` : ''}>
-            <span class="vit-set-fl">${s.ctry ? flagSVG(s.ctry, 16) : ICON.ball('currentColor', 16)}</span>
+            <span class="vit-set-fl">${s.ctry ? flagSVG(s.ctry, 16) : ICON.scroll('currentColor', 16)}</span>
             <span class="vit-set-m">
-              <span class="vit-set-n">${s.n}<small>${done ? 'foto oficial ' + serialTxt(v.sets[s.id]) : `${got} de ${s.ids.length}`}</small></span>
+              <span class="vit-set-n">${s.n}<small>${done ? 'retrato oficial ' + serialTxt(v.sets[s.id]) : `${s.t} · ${got} de ${s.ids.length}`}</small></span>
               <span class="vit-set-faces">${s.ids.slice(0, 14).map(id => {
                 const p = PL.find(q => q.id === id);
                 return p ? `<i class="${album.has(id) ? 'on' : ''}"><img src="${p.img}" alt="" loading="lazy" /></i>` : '';

@@ -74,10 +74,14 @@ const EMBLEM = {
   hammer:  k => `<path d="M20 36L36 14M33 11l8 7-3 3-8-7z" stroke="${k}" stroke-width="3" fill="${k}" stroke-linecap="round"/><path d="M40 34a11 11 0 0 1-17-13" fill="none" stroke="${k}" stroke-width="3" stroke-linecap="round"/>`,
 };
 
+/* every drawing of a brasão gets its own clip-path id: the same crest can sit in
+   an album pocket and in the zoom at once, and a shared id clips the zoomed
+   one against the hidden pocket's shape — the shield came out as a bare outline */
+let _crestN = 0;
 function genericCrest(id) {
   const c = CL.find(x => x.id === id);
   if (!c) return '';
-  const uid  = 'c' + id.replace(/\W/g, '');
+  const uid  = 'c' + id.replace(/\W/g, '') + '_' + (++_crestN).toString(36);
   const base = c.c1;
   const alt  = _dist(c.c1, c.c2) > 70 ? c.c2 : (_lum(base) < 0.5 ? '#ececec' : '#1a1a1a');
   const ink  = _lum(base) < 0.55 ? (_lum(alt) > 0.6 ? alt : '#ffffff') : '#141414';

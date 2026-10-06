@@ -52,7 +52,7 @@ def inventory(src):
              "texts:[].concat.apply([],CATS.map(function(c){return c.qs.map(function(q){return q.t})}))};"
              "var p=document.createElement('pre');p.id='inv';p.textContent=JSON.stringify(o);"
              "document.body.appendChild(p);},200);});</script>")
-    tmp = os.path.join(ROOT, "_merge_inv.html")
+    tmp = os.path.join(ROOT, "_merge_inv_%d.html" % os.getpid())   # several checks may run side by side
     io.open(tmp, "w", encoding="utf-8").write(bare.replace("</body>", probe + "</body>"))
     try:
         out = subprocess.run([CHROME] + (["--no-sandbox"] if os.environ.get("CI") else []) + ["--headless", "--disable-gpu", "--allow-file-access-from-files",
