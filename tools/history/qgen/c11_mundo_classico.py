@@ -19,7 +19,7 @@ c.T('Segundo a lenda, que estratagema permitiu aos gregos entrar em Troia?', 'Um
 c.T('Como se chamava, na Roma antiga, a camada de cidadãos comuns que lutou por direitos contra os patrícios?', 'Plebeus',
     ['Escravos', 'Libertos', 'Clientes', 'Equestres', 'Senadores'], d=1, crest='republica_romana',
     src=('en', 'Conflict of the Orders', ['plebeians']),
-    x='Depois de séculos de disputa, eles ganharam tribunos próprios e, em 367 a.C., o direito de chegar ao consulado.')
+    x='Na primeira secessão da plebe, em 494 a.C., eles conquistaram tribunos próprios; em 367 a.C., ganharam o direito de chegar ao consulado.')
 c.T('Como se chamavam os grandes banhos públicos dos romanos, com piscinas quentes e frias?', 'Termas',
     ['Fóruns', 'Basílicas', 'Ínsulas', 'Aquedutos', 'Átrios'], d=1, icon='column',
     src=('en', 'Thermae', ['Caracalla']),
@@ -41,7 +41,7 @@ c.T('Como se chamava a votação ateniense que podia mandar um cidadão para o e
     ['Plebiscito', 'Anátema', 'Proscrição', 'Decimação', 'Excomunhão'], d=3, crest='atenas',
     src=('en', 'Ostracism', ['ten years']),
     x='Os eleitores escreviam o nome do escolhido em cacos de cerâmica, os óstracos, que deram nome à votação.')
-c.T('Qual imperador levou o Império Romano à sua maior extensão, com a conquista da Dácia?', 'Trajano',
+c.T('Qual imperador, conquistador da Dácia, levou o Império Romano à sua maior extensão?', 'Trajano',
     ['Adriano', 'Augusto', 'Nero', 'Diocleciano', 'Vespasiano'], d=3, icon='map',
     src=('pt', 'Trajano', ['Dácia']),
     x='A Coluna de Trajano, em Roma, conta essa guerra num friso em espiral de cerca de 200 metros.')
@@ -102,12 +102,12 @@ c.P('De qual imperador é a estátua equestre de bronze do Capitólio que escapo
 c.C('Qual pólis liderou a Liga de Delos e usou o tesouro da aliança para embelezar a própria cidade?', 'atenas', d=2, crest='persia',
     src=('pt', 'Liga de Delos', ['Atenas']),
     x='Em 454 a.C., o tesouro da liga saiu da ilha de Delos para a Acrópole, e parte dele ajudou a pagar o Partenon.')
-c.C('Qual cidade, fundada por colonos fenícios de Tiro, foi arrasada pelos romanos em 146 a.C.?', 'cartago', d=2, crest='republica_romana',
+c.C('Qual cidade, arrasada pelos romanos em 146 a.C. depois de um cerco de três anos, deu lugar à província romana da África?', 'cartago', d=2, crest='republica_romana',
     src=('pt', 'Cartago', ['146 a.C.']),
     x='No mesmo ano, Roma também destruiu Corinto, na Grécia: 146 a.C. selou o domínio romano sobre o Mediterrâneo.')
 c.C('Qual cidade grega tinha sempre dois reis ao mesmo tempo, de duas famílias diferentes?', 'esparta', d=3, crest='atenas',
     src=('en', 'Sparta', ['Eurypontid']),
-    x='Os reis vinham das casas dos Ágidas e dos Euripôntidas, e um conselho de anciãos, a gerúsia, limitava o seu poder.')
+    x='Os reis vinham das casas dos Ágidas e dos Euripôntidas, e cinco éforos, eleitos a cada ano, fiscalizavam o seu poder.')
 c.C('Qual reino tinha Pela como capital e um exército de falanges armadas com longas lanças, as sarissas?', 'macedonia', d=3, icon='sword',
     src=('en', 'Sarissa', ['Macedonian']),
     x='A sarissa podia passar de 5 metros de comprimento: as primeiras fileiras da falange formavam uma muralha de pontas.')
@@ -116,7 +116,7 @@ c.C('Qual reino tinha Pela como capital e um exército de falanges armadas com l
 c.Q('Quem sou eu?', 'espartaco', ['Nasci na Trácia e, segundo alguns relatos, servi como auxiliar no exército romano.',
     'Fui vendido como escravo e treinado numa escola de gladiadores em Cápua.',
     'Em 73 a.C., fugi com algumas dezenas de companheiros e reuni um exército de milhares.',
-    'Fui derrotado pelas legiões de Crasso, e milhares de seguidores foram crucificados ao longo da Via Ápia.'], 1,
+    'Fui derrotado pelas legiões de Crasso, e milhares de seguidores foram crucificados ao longo da Via Ápia.'], 2,
     src=('pt', 'Espártaco', ['Cápua']),
     x='A revolta durou de 73 a 71 a.C. e, quase dois mil anos depois, virou filme de Stanley Kubrick com Kirk Douglas, em 1960.')
 c.Q('Quem sou eu?', 'anibal', ['Meu pai me fez jurar, ainda menino, ódio eterno a Roma.',
@@ -124,7 +124,7 @@ c.Q('Quem sou eu?', 'anibal', ['Meu pai me fez jurar, ainda menino, ódio eterno
     'Venci os romanos no lago Trasimeno e, em Canas, cerquei um exército inteiro.',
     'Derrotado em Zama, acabei no exílio e tomei veneno para não ser entregue aos romanos.'], 2,
     src=('pt', 'Aníbal', ['Trasimeno']),
-    x='Por cerca de 15 anos ele percorreu a Itália sem perder uma grande batalha, mas nunca chegou a atacar a cidade de Roma.')
+    x='Por cerca de 15 anos ele percorreu a Itália sem perder uma grande batalha, mas nunca pôs cerco à própria Roma.')
 c.Q('Quem sou eu?', 'constantino', ['Meu pai era um dos quatro governantes do Império, e as tropas me aclamaram na Britânia.',
     'Antes de uma batalha decisiva junto a uma ponte, teria visto um sinal no céu.',
     'Convoquei o primeiro concílio geral da Igreja, em Niceia, no ano 325.',
@@ -156,7 +156,7 @@ c.O('Ponha em ordem estes fatos da República Romana, do mais antigo ao mais rec
 # ── Quem disse? ──
 c.QT('Até tu, Brutus?', 'cesar', 1, ctx='Últimas palavras atribuídas a ele nos Idos de Março, 44 a.C.; a forma famosa vem de Shakespeare',
      src=('en', 'Et tu, Brute?', ['Suetonius']),
-     x='Suetônio registra a frase em grego, “kai sy, teknon” (“também tu, filho?”), mas conta que, segundo outros, César morreu calado.')
+     x='Suetônio conta que César morreu sem dizer nada, mas que, segundo alguns, disse a Bruto em grego “kai sy, teknon?” (“também tu, filho?”).')
 c.QT('O homem é, por natureza, um animal político.', 'aristoteles', 2, ctx='Livro I da Política, século IV a.C.',
      src=('en', 'Politics (Aristotle)', ['political animal']),
      x='Para o filósofo, quem vive fora da pólis, a cidade-Estado, ou é um animal selvagem ou é um deus.')
@@ -168,7 +168,7 @@ c.QT('Aproveita o dia e confia o mínimo possível no amanhã.', 'Horácio', 3, 
      wrong=['Virgílio', 'Ovídio', 'Catulo', 'Juvenal', 'Lucrécio'], ctx='Ode em latim, por volta de 23 a.C. — o famoso “carpe diem”',
      src=('pt', 'Carpe diem', ['Horácio']),
      x='O verso fala de colher o dia como se colhe um fruto maduro: “carpe” vem do verbo latino que significa colher.')
-c.QT('Venham buscá-las!', 'leonidas', 3, ctx='Resposta registrada por Plutarco quando o rei persa exigiu que os gregos entregassem as armas, 480 a.C.',
+c.QT('Venham buscá-las!', 'leonidas', 3, ctx='Resposta atribuída a ele por Plutarco, quando o rei persa exigiu que os gregos entregassem as armas, 480 a.C.',
      src=('en', 'Molon labe', ['Leonidas']),
      x='Em grego, “molon labe”: a frase está gravada no monumento ao rei espartano erguido nas Termópilas em 1955.')
 c.QT('Cartago deve ser destruída.', 'Catão, o Velho', 3, typ='txt',
@@ -177,7 +177,7 @@ c.QT('Cartago deve ser destruída.', 'Catão, o Velho', 3, typ='txt',
      src=('en', 'Carthago delenda est', ['Cato']),
      x='Ele repetia a frase até em debates sobre outros assuntos; Cartago foi arrasada em 146 a.C., três anos depois da morte dele.')
 c.QT('Se queres a paz, prepara a guerra.', 'Vegécio', 5, t='De qual autor romano vem esta máxima?', typ='txt',
-     wrong=['Cícero', 'Tácito', 'Sêneca', 'Tito Lívio', 'Plínio, o Velho'],
+     wrong=['Suetônio', 'Tácito', 'Sêneca', 'Tito Lívio', 'Plínio, o Velho'],
      ctx='Adaptação de uma frase de um tratado militar romano tardio; em latim, “si vis pacem, para bellum”',
      src=('en', 'Si vis pacem, para bellum', ['Vegetius']),
      x='O tratado, o Epitoma rei militaris, foi um dos manuais militares mais copiados e lidos da Idade Média.')
@@ -186,9 +186,6 @@ c.QT('Se queres a paz, prepara a guerra.', 'Vegécio', 5, t='De qual autor roman
 c.BT('Qual cidade grega venceu os persas nesta batalha, com a ajuda de Plateias?', 'atenas', 'Maratona · 490 a.C.', '?', 'persia', d=1,
      x='A lenda do mensageiro que correu até Atenas para anunciar a vitória inspirou a prova da maratona dos Jogos Olímpicos modernos.',
      src=('pt', 'Batalha de Maratona', ['Dario']))
-c.BT('Qual império Alexandre derrotou de vez nesta batalha?', 'persia', 'Gaugamela · 331 a.C.', 'macedonia', '?', d=1,
-     x='O rei Dario III fugiu do campo de batalha e, no ano seguinte, foi assassinado por um de seus próprios sátrapas.',
-     src=('pt', 'Batalha de Gaugamela', ['Dario III']))
 c.BT('Quem sofreu nesta batalha uma das piores derrotas de sua história, cercado pelas tropas de Aníbal?', 'republica_romana', 'Canas · 216 a.C.', 'cartago', '?', d=2,
      x='Aníbal recuou o centro e fechou as alas sobre um exército maior: a manobra ainda é estudada nas academias militares.',
      src=('pt', 'Batalha de Canas', ['Aníbal']))
@@ -203,15 +200,11 @@ c.BT('Qual chefe germânico, que tinha servido ao exército romano, comandou est
      wrong=['Vercingetórix', 'Alarico', 'Odoacro', 'Genserico', 'Maroboduo'],
      x='Três legiões foram aniquiladas; segundo Suetônio, Augusto gritava: “Varo, devolve-me as minhas legiões!”',
      src=('en', 'Battle of the Teutoburg Forest', ['Arminius']))
-c.BT('Qual reino Roma derrotou nesta batalha, levando seu último rei, Perseu, como prisioneiro?', 'macedonia', 'Pidna · 168 a.C.', 'republica_romana', '?', d=4,
+c.BT('Qual reino Roma derrotou nesta batalha, cujo último rei, Perseu, acabou levado preso para Roma?', 'macedonia', 'Pidna · 168 a.C.', 'republica_romana', '?', d=4,
      x='A falange, imbatível em terreno plano, se desfez no terreno irregular, e as legiões, mais flexíveis, entraram pelas brechas.',
      src=('en', 'Battle of Pydna', ['Perseus']))
 
 # ── Linhagens ──
-c.LN('Quem completa esta família, a última a reinar no Egito antigo?', 'cleopatra', 'Os últimos Ptolomeus · pai, filha e neto',
-     ['Ptolomeu XII Auleta', '?', 'Ptolomeu XV Cesarião'], d=2, era='ant',
-     src=('en', 'Ptolemaic dynasty', ['Caesarion']),
-     x='Cesarião, filho de Júlio César, foi morto por ordem de Otaviano em 30 a.C., ainda adolescente.')
 c.LN('Quem completa a lista dos “cinco bons imperadores”?', 'adriano', 'Os cinco bons imperadores · Roma, 96–180',
      ['Nerva', 'Trajano', '?', 'Antonino Pio', 'Marco Aurélio'], d=3, era='ant',
      src=('en', 'Five Good Emperors', ['Hadrian']),
@@ -227,11 +220,11 @@ c.LN('Quem reinou entre o pai e o irmão nesta dinastia?', 'Tito', 'Dinastia fla
 c.LN('Quem completava a primeira Tetrarquia, ao lado destes três?', 'Constâncio Cloro', 'Primeira Tetrarquia · 293', ['Diocleciano', 'Maximiano', 'Galério', '?'], d=5,
      kind='grupo', era='ant', typ='txt', wrong=['Constantino', 'Maxêncio', 'Licínio', 'Severo', 'Aureliano'],
      src=('en', 'Tetrarchy', ['Constantius']),
-     x='Era o pai de Constantino, aclamado imperador pelas tropas em Eboracum, atual York, quando ele morreu ali, em 306.')
+     x='Era o pai de Constantino, que as tropas aclamaram imperador em Eboracum, atual York, quando o pai morreu ali, em 306.')
 
 # ── Manchetes ──
 c.NW('Em que ano saiu esta manchete?', '1896', 'Jogos Olímpicos renascem em Atenas', 2, paper='Gazeta de Atenas',
-     sub='Grego vence a maratona e é carregado em triunfo no estádio Panatenaico',
+     sub='Grego vence a maratona sob a ovação do estádio Panatenaico',
      wrong=['1880', '1888', '1892', '1900', '1904'], src=('pt', 'Jogos Olímpicos de Verão de 1896', ['Louis']),
      x='O vencedor da maratona, Spyridon Louis, era um carregador de água de um vilarejo perto de Atenas.')
 c.NW('Em que ano saiu esta manchete?', '1900', 'Arqueólogo inglês desenterra em Creta o palácio do rei Minos', 4, paper='The Daily Courier',
@@ -241,7 +234,7 @@ c.NW('Em que ano saiu esta manchete?', '1900', 'Arqueólogo inglês desenterra e
 c.NW('Em que ano saiu esta manchete?', '1820', 'Camponês encontra estátua de Afrodite na ilha de Milos', 5, paper='Courrier de l’Égée',
      sub='A escultura de mármore, sem os braços, deve seguir para Paris como presente ao rei',
      wrong=['1798', '1806', '1815', '1830', '1848'], src=('en', 'Venus de Milo', ['1820']),
-     x='Hoje no Louvre, a Vênus de Milo é do período helenístico, de cerca de 150 a 125 a.C.; os braços nunca foram encontrados.')
+     x='Hoje no Louvre, a Vênus de Milo é do período helenístico, de cerca de 150 a 125 a.C.; ninguém sabe ao certo em que posição estavam os braços.')
 
 # ── Duelos ──
 c.DU('Duelo: quem viveu primeiro?', 'socrates', 'cesar', 1, icon='hourglass',
@@ -267,9 +260,9 @@ c.MY('Nero tocou violino enquanto Roma pegava fogo, em 64 d.C.?', False, 2, who=
 c.MY('Os romanos tinham salas, os vomitórios, para vomitar nos banquetes e continuar comendo?', False, 2, stad='coliseu',
      x='Vomitorium era a passagem por onde o público “jorrava” para fora do anfiteatro; a sala para vomitar é invenção moderna.',
      src=('en', 'Vomitorium', ['amphitheatre']))
-c.MY('Os atletas dos Jogos Olímpicos da Grécia Antiga competiam nus?', True, 2, icon='trophy',
+c.MY('Nos Jogos Olímpicos da Grécia Antiga, os atletas da maioria das provas competiam nus?', True, 2, icon='trophy',
      x='A palavra “ginásio” vem do grego gymnós, que significa “nu”.',
-     src=('en', 'Ancient Olympic Games', ['naked']))
+     src=('en', 'Ancient Olympic Games', ['nude']))
 c.MY('Sócrates não deixou nenhum texto escrito?', True, 2, who='platao',
      x='O que sabemos de suas ideias vem sobretudo dos diálogos de Platão e dos escritos de Xenofonte, seus discípulos.',
      src=('pt', 'Sócrates', ['Xenofonte']))

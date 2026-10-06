@@ -112,7 +112,7 @@
      "plebeians"
     ]
    ],
-   "x": "Depois de séculos de disputa, eles ganharam tribunos próprios e, em 367 a.C., o direito de chegar ao consulado."
+   "x": "Na primeira secessão da plebe, em 494 a.C., eles conquistaram tribunos próprios; em 367 a.C., ganharam o direito de chegar ao consulado."
   },
   {
    "t": "Como se chamavam os grandes banhos públicos dos romanos, com piscinas quentes e frias?",
@@ -250,7 +250,7 @@
    "x": "Os eleitores escreviam o nome do escolhido em cacos de cerâmica, os óstracos, que deram nome à votação."
   },
   {
-   "t": "Qual imperador levou o Império Romano à sua maior extensão, com a conquista da Dácia?",
+   "t": "Qual imperador, conquistador da Dácia, levou o Império Romano à sua maior extensão?",
    "type": "txt",
    "choices": [
     "Trajano",
@@ -633,7 +633,7 @@
    "x": "Em 454 a.C., o tesouro da liga saiu da ilha de Delos para a Acrópole, e parte dele ajudou a pagar o Partenon."
   },
   {
-   "t": "Qual cidade, fundada por colonos fenícios de Tiro, foi arrasada pelos romanos em 146 a.C.?",
+   "t": "Qual cidade, arrasada pelos romanos em 146 a.C. depois de um cerco de três anos, deu lugar à província romana da África?",
    "a": [
     "cartago"
    ],
@@ -666,7 +666,7 @@
      "Eurypontid"
     ]
    ],
-   "x": "Os reis vinham das casas dos Ágidas e dos Euripôntidas, e um conselho de anciãos, a gerúsia, limitava o seu poder."
+   "x": "Os reis vinham das casas dos Ágidas e dos Euripôntidas, e cinco éforos, eleitos a cada ano, fiscalizavam o seu poder."
   },
   {
    "t": "Qual reino tinha Pela como capital e um exército de falanges armadas com longas lanças, as sarissas?",
@@ -698,7 +698,7 @@
    "a": [
     "espartaco"
    ],
-   "d": 1,
+   "d": 2,
    "art": {
     "icon": "bust"
    },
@@ -734,7 +734,7 @@
      "Trasimeno"
     ]
    ],
-   "x": "Por cerca de 15 anos ele percorreu a Itália sem perder uma grande batalha, mas nunca chegou a atacar a cidade de Roma."
+   "x": "Por cerca de 15 anos ele percorreu a Itália sem perder uma grande batalha, mas nunca pôs cerco à própria Roma."
   },
   {
    "t": "Quem sou eu?",
@@ -931,7 +931,7 @@
      "Suetonius"
     ]
    ],
-   "x": "Suetônio registra a frase em grego, “kai sy, teknon” (“também tu, filho?”), mas conta que, segundo outros, César morreu calado."
+   "x": "Suetônio conta que César morreu sem dizer nada, mas que, segundo alguns, disse a Bruto em grego “kai sy, teknon?” (“também tu, filho?”)."
   },
   {
    "t": "Quem disse esta frase?",
@@ -1006,7 +1006,7 @@
    "type": "player",
    "quote": {
     "q": "Venham buscá-las!",
-    "ctx": "Resposta registrada por Plutarco quando o rei persa exigiu que os gregos entregassem as armas, 480 a.C."
+    "ctx": "Resposta atribuída a ele por Plutarco, quando o rei persa exigiu que os gregos entregassem as armas, 480 a.C."
    },
    "a": [
     "leonidas"
@@ -1054,7 +1054,7 @@
    "type": "txt",
    "choices": [
     "Vegécio",
-    "Cícero",
+    "Suetônio",
     "Tácito",
     "Sêneca",
     "Tito Lívio",
@@ -1094,26 +1094,6 @@
     "Batalha de Maratona",
     [
      "Dario"
-    ]
-   ]
-  },
-  {
-   "t": "Qual império Alexandre derrotou de vez nesta batalha?",
-   "battle": {
-    "lbl": "Gaugamela · 331 a.C.",
-    "a": "macedonia",
-    "b": "?",
-    "x": "O rei Dario III fugiu do campo de batalha e, no ano seguinte, foi assassinado por um de seus próprios sátrapas."
-   },
-   "a": [
-    "persia"
-   ],
-   "d": 1,
-   "src": [
-    "pt",
-    "Batalha de Gaugamela",
-    [
-     "Dario III"
     ]
    ]
   },
@@ -1217,7 +1197,7 @@
    ]
   },
   {
-   "t": "Qual reino Roma derrotou nesta batalha, levando seu último rei, Perseu, como prisioneiro?",
+   "t": "Qual reino Roma derrotou nesta batalha, cujo último rei, Perseu, acabou levado preso para Roma?",
    "battle": {
     "lbl": "Pidna · 168 a.C.",
     "a": "republica_romana",
@@ -1235,31 +1215,6 @@
      "Perseus"
     ]
    ]
-  },
-  {
-   "t": "Quem completa esta família, a última a reinar no Egito antigo?",
-   "type": "player",
-   "line": {
-    "t": "Os últimos Ptolomeus · pai, filha e neto",
-    "rows": [
-     "Ptolomeu XII Auleta",
-     "?",
-     "Ptolomeu XV Cesarião"
-    ],
-    "era": "ant"
-   },
-   "a": [
-    "cleopatra"
-   ],
-   "d": 2,
-   "src": [
-    "en",
-    "Ptolemaic dynasty",
-    [
-     "Caesarion"
-    ]
-   ],
-   "x": "Cesarião, filho de Júlio César, foi morto por ordem de Otaviano em 30 a.C., ainda adolescente."
   },
   {
    "t": "Quem completa a lista dos “cinco bons imperadores”?",
@@ -1388,7 +1343,7 @@
      "Constantius"
     ]
    ],
-   "x": "Era o pai de Constantino, aclamado imperador pelas tropas em Eboracum, atual York, quando ele morreu ali, em 306."
+   "x": "Era o pai de Constantino, que as tropas aclamaram imperador em Eboracum, atual York, quando o pai morreu ali, em 306."
   },
   {
    "t": "Em que ano saiu esta manchete?",
@@ -1404,7 +1359,7 @@
    "news": {
     "h": "Jogos Olímpicos renascem em Atenas",
     "paper": "Gazeta de Atenas",
-    "sub": "Grego vence a maratona e é carregado em triunfo no estádio Panatenaico"
+    "sub": "Grego vence a maratona sob a ovação do estádio Panatenaico"
    },
    "a": [
     "1896"
@@ -1475,7 +1430,7 @@
      "1820"
     ]
    ],
-   "x": "Hoje no Louvre, a Vênus de Milo é do período helenístico, de cerca de 150 a 125 a.C.; os braços nunca foram encontrados."
+   "x": "Hoje no Louvre, a Vênus de Milo é do período helenístico, de cerca de 150 a 125 a.C.; ninguém sabe ao certo em que posição estavam os braços."
   },
   {
    "t": "Duelo: quem viveu primeiro?",
@@ -1649,7 +1604,7 @@
    "x": "Vomitorium era a passagem por onde o público “jorrava” para fora do anfiteatro; a sala para vomitar é invenção moderna."
   },
   {
-   "t": "Os atletas dos Jogos Olímpicos da Grécia Antiga competiam nus?",
+   "t": "Nos Jogos Olímpicos da Grécia Antiga, os atletas da maioria das provas competiam nus?",
    "type": "txt",
    "choices": [
     "Fato",
@@ -1668,7 +1623,7 @@
     "en",
     "Ancient Olympic Games",
     [
-     "naked"
+     "nude"
     ]
    ],
    "x": "A palavra “ginásio” vem do grego gymnós, que significa “nu”."
