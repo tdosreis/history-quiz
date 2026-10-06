@@ -4525,7 +4525,7 @@ const CATS = [
       {"t": "O Brasil foi o último país das Américas a abolir a escravidão?", "a": ["Fato"], "type": "txt", "choices": ["Fato", "Mito"], "duel": true, "myth": true, "d": 1, "x": "A Lei Áurea, de 13 de maio de 1888, fez do Brasil o último país independente das Américas a abolir a escravidão.", "flag": "BRA"},
     ]
   },
-        /* NEW-QS:END */
+                /* NEW-QS:END */
 ];
 /*@@/data_cl_cats@@*/
 /*@@data_pl_lib@@*/
@@ -8928,8 +8928,88 @@ function questionArtRaw(q) {
   }
   if (q.clues || /\bquem sou eu\b/i.test(q.t || ''))
     return `<div class="qart qart-wide print qart-ink" role="img" aria-label="Busto misterioso">${ART.bust(104)}</div>`;
+  /* a question drawn with a generic vignette that names someone or something
+     the album has a picture of shows that picture instead */
+  const inf = inferArt(q);
+  if (inf) return inf;
   const key = q.icon || CAT_ART[(q._cat && q._cat.id) || ''] || 'scroll';
   return `<div class="qart qart-wide print qart-ink" role="img" aria-label="Ilustração">${(QICON[key] || QICON.scroll)(104)}</div>`;
+}
+
+/* ── Every question pictures its own subject ──
+   "Qual a ferramenta criada por Gutenberg?" is about Gutenberg, and the album
+   has his face; "Em que país fica o Coliseu?" has its photograph. Names are
+   matched whole (or by a part that belongs to one figure only, never a title
+   like "imperador" or "rainha"), longest first, and never when the picture
+   would be the answer or one of the choices. */
+const ART_STOP = new Set(['imperador', 'imperatriz', 'rainha', 'princesa', 'principe', 'marechal', 'duque', 'barao',
+  'madre', 'infante', 'grande', 'magnifico', 'conquistador', 'navegador', 'coracao', 'sentado', 'touro', 'santo',
+  'dona', 'calcuta', 'teresa', 'maria', 'joao', 'pedro', 'carlos', 'henrique', 'luis', 'jose', 'francisco', 'isabel',
+  'maome', 'filipe', 'guilherme', 'ricardo', 'frederico', 'catarina', 'alexandre', 'constantino', 'justiniano',
+  /* first names and plain words that would put the wrong face on a question:
+     "a vitória em Little Bighorn", "São Paulo", "o litoral africano", "James Watt",
+     "as Cortes de Lisboa", "a Marcha sobre Washington" */
+  'vitoria', 'paulo', 'africano', 'santos', 'cruz', 'castro', 'branco', 'cortes', 'washington', 'roosevelt',
+  'gonzaga', 'andrade', 'assis', 'mendes', 'albert', 'charles', 'george', 'john', 'james', 'thomas', 'william',
+  'pablo', 'miguel', 'jorge', 'antonio', 'martin', 'nelson', 'mikhail', 'gabriel', 'simon', 'diego', 'candido',
+  'oscar', 'ernest', 'franz', 'claude', 'victor', 'vincent', 'blaise', 'johann', 'johannes', 'gottfried',
+  'immanuel', 'adam', 'benjamin', 'abraham', 'woodrow', 'winston', 'margaret', 'frida', 'stephen', 'emmeline',
+  'florence', 'sigmund', 'nikola', 'henry', 'ludwig', 'wolfgang', 'friedrich', 'vladimir', 'mustafa', 'niels',
+  'charlie', 'ernesto', 'salvador', 'gregor', 'frederic', 'david', 'marie', 'mahatma', 'nicolau', 'sandro',
+  'heitor', 'tarsila', 'carlos', 'clarice', 'chico', 'juscelino', 'getulio', 'barao', 'zumbi']);
+/* monuments whose name is also a plain word ("o panteão egípcio") */
+const STAD_STOP = new Set(['panteao', 'capitolio', 'forum romano']);
+let _artIdx = null;
+function artIndex() {
+  if (_artIdx) return _artIdx;
+  const byLen = (a, b) => b[0].length - a[0].length;
+  const faces = [], part = {};
+  PL.forEach(p => {
+    if (!p.img || !p.n) return;
+    faces.push([_fold(p.n), p]);
+    _fold(p.n).replace(/[(),.]/g, ' ').split(/\s+/).forEach(w => {
+      if (w.length >= 5 && !ART_STOP.has(w)) part[w] = part[w] === undefined ? p : null;
+    });
+  });
+  Object.keys(part).forEach(w => { if (part[w]) faces.push([w, part[w]]); });
+  const stads = Object.keys(STAD).filter(k => STAD_IMGS[k]).map(k => [_fold(STAD[k].name), k]).filter(([n]) => !STAD_STOP.has(n));
+  const crests = CL.map(c => [_fold(c.n), c.id]).filter(([k]) => k.length >= 5);
+  return (_artIdx = { faces: faces.sort(byLen), stads: stads.sort(byLen), crests: crests.sort(byLen) });
+}
+const _artMemo = new WeakMap();
+/* names of things that are not the thing: a painting is not the city-state */
+const ART_PHRASES = /escola de atenas|cortes de lisboa|cortes portuguesas|euclides da cunha/g;
+function inferArt(q) {
+  if (!q || q.order || q.clues || hasStrip(q)) return '';
+  if (_artMemo.has(q)) return _artMemo.get(q);
+  const t = ' ' + _fold(q.t || '').replace(ART_PHRASES, ' ') + ' ', I = artIndex();
+  /* a state's brasão only for a question set in its own time: "a Índia" of
+     1498 is not the republic of 1947 */
+  const yr = typeof qCues === 'function' ? qCues(q).year : null;
+  const alive = id => { const c = CL.find(x => x.id === id); if (!c) return false;
+    return yr === null || yr === undefined ? c.f < 1900 : yr >= c.f - 10 && yr <= (c.e || 3000) + 10; };
+  const at = k => new RegExp('[^a-z0-9]' + k.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '[^a-z0-9]').test(t);
+  const named = (q.a || []).map(a => _fold(q.type === 'txt' ? a : q.type === 'player' ? (PL.find(p => p.id === a) || {}).n : clubName(a)))
+    .concat((q.choices || []).map(_fold)).filter(Boolean);
+  const clash = k => named.some(a => a.includes(k) || k.includes(a));
+  let out = '';
+  for (const [k, id] of I.stads) if (at(k) && !clash(k)) {
+    out = `<div class="qart qart-wide print"><img src="${STAD_IMGS[id]}" alt="" aria-hidden="true"
+      onerror="this.parentElement.style.display='none'" /></div>`; break; }
+  if (!out) for (const [k, p] of I.faces) if (at(k) && !clash(k) && !(q.a || []).includes(p.id)) { out = faceHtml(p.img); break; }
+  if (!out) for (const [k, id] of I.crests) if (at(k) && !clash(k) && !(q.a || []).includes(id) && alive(id)) {
+    out = `<div class="qart qart-crest">${clubArt(id, 'max-width:100%;max-height:100%;object-fit:contain;', true)}</div>`; break; }
+  _artMemo.set(q, out);
+  return out;
+}
+/* which name a question's inferred picture came from (for the tests) */
+function inferArtKey(q) {
+  const t = ' ' + _fold(q.t || '').replace(ART_PHRASES, ' ') + ' ', I = artIndex();
+  const at = k => new RegExp('[^a-z0-9]' + k.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '[^a-z0-9]').test(t);
+  for (const [k] of I.stads) if (at(k)) return 'stad:' + k;
+  for (const [k, p] of I.faces) if (at(k)) return 'face:' + k + '=' + p.id;
+  for (const [k] of I.crests) if (at(k)) return 'crest:' + k;
+  return '';
 }
 
 /* The frame is the era, never the picture: a cream mat with a sepia rule for
