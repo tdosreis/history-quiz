@@ -306,7 +306,7 @@ def main():
     s = put(s, "specials", io.open(os.path.join(H, "js", "specials.js"), encoding="utf-8").read())
     s = put(s, "flags_extra", io.open(os.path.join(H, "js", "flags_extra.js"), encoding="utf-8").read())
     s = put(s, "art", "\n".join(io.open(os.path.join(H, "js", f), encoding="utf-8").read() for f in ("art_head.js", "art_tail.js")))
-    s = put(s, "formats", io.open(os.path.join(H, "js", "formats.js"), encoding="utf-8").read())
+    s = put(s, "formats", "\n".join(io.open(os.path.join(H, "js", f), encoding="utf-8").read() for f in ("formats.js", "almanac.js")))
     s = put(s, "formats_css", io.open(os.path.join(H, "css", "formats.css"), encoding="utf-8").read())
     io.open(PAGE, "w", encoding="utf-8").write(s)
     print("index.html updated: %d bytes" % len(s.encode("utf-8")))
