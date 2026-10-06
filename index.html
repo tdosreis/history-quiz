@@ -1056,6 +1056,13 @@
       --sp: #B49BE6; --sp-soft: rgba(180, 155, 230, .15); }
     :root[data-theme="dark"] .spcard-tl, :root:not([data-theme="light"]) .spcard-tl {
       --sp: #5FC2B0; --sp-soft: rgba(95, 194, 176, .15); }
+    /* History's own cards: the quill's ink brown, the battle's iron red, the dynasty's gold */
+    .spcard-quote  { --sp: #6D4C41; --sp-soft: rgba(109, 76, 65, .14); }
+    .spcard-battle { --sp: #8C2F2F; --sp-soft: rgba(140, 47, 47, .14); }
+    .spcard-line   { --sp: #8A6A1E; --sp-soft: rgba(138, 106, 30, .15); }
+    :root[data-theme="dark"] .spcard-quote, :root:not([data-theme="light"]) .spcard-quote { --sp: #C9A48F; --sp-soft: rgba(201, 164, 143, .15); }
+    :root[data-theme="dark"] .spcard-battle, :root:not([data-theme="light"]) .spcard-battle { --sp: #E07A6A; --sp-soft: rgba(224, 122, 106, .15); }
+    :root[data-theme="dark"] .spcard-line, :root:not([data-theme="light"]) .spcard-line { --sp: #E0B968; --sp-soft: rgba(224, 185, 104, .15); }
     .spcard-k { font: 800 9px/1 var(--font-c); letter-spacing: .2em; text-transform: uppercase;
       color: var(--sp, var(--brass)); }
     .spcard-ic { width: 64px; height: 64px; border-radius: 50%; color: var(--sp, var(--brass));
@@ -12366,13 +12373,21 @@ function buildTimeline(n) {
    plain kind — and the two hardest sit high, where a timeline is genuinely
    worth R$ 600.000. */
 const SPECIAL_RUNGS = { 5: 'who', 9: 'tl', 12: 'who', 14: 'tl' };
+/* Which kinds may be dealt on each special rung. Each climb draws its own, so
+   the four cards are not the same four every time: a clue card or a sentence
+   to attribute or a dynasty to complete in the middle, an ordering or a
+   battle higher up. */
+const SPECIAL_DECK = { 5: ['who', 'quote', 'line'], 9: ['tl', 'battle', 'quote'], 12: ['who', 'line', 'battle'], 14: ['tl', 'battle'] };
 
 /* What each card says on its face. The colours are not here: they belong to
    .spcard-who / .spcard-tl, which is the only way they can change with the
    theme the way everything else on screen does. */
 const SPECIAL = {
-  who: { n: 'Quem sou eu?',   tag: 'Quatro pistas, uma de cada vez', ic: ICON.target },
-  tl:  { n: 'Linha do tempo', tag: 'Do mais antigo ao mais novo',    ic: ICON.clock },
+  who:    { n: 'Quem sou eu?',   tag: 'Quatro pistas, uma de cada vez', ic: ICON.target },
+  tl:     { n: 'Linha do tempo', tag: 'Do mais antigo ao mais novo',    ic: ICON.clock },
+  quote:  { n: 'Quem disse?',    tag: 'Uma frase, uma voz',             ic: ICON.quill },
+  battle: { n: 'Batalha',        tag: 'Um dos lados está escondido',    ic: ICON.sword },
+  line:   { n: 'Linhagem',       tag: 'Falta um elo na corrente',       ic: ICON.chain },
 };
 
 /* Seconds a clue costs the clock — the whole price of the card. */
@@ -12383,13 +12398,25 @@ const CLUE_COST = 5;
    another question in the run is passed over: the same man twice in sixteen
    would give the second one away. */
 function dealSpecials(qs) {
-  const spare = { who: buildWho(4).qs, tl: buildTimeline(4).qs };
+  /* the written questions of each of History's formats, best suited to the rung first */
+  const written = key => shuf(CATS.flatMap(c => c.qs.filter(q => q[key]).map(q => ({ ...q, _cat: c }))));
+  const spare = { who: buildWho(4).qs, tl: buildTimeline(4).qs,
+                  quote: written('quote'), battle: written('battle'), line: written('line') };
   const answered = new Set();
   qs.forEach(q => (q.a || []).forEach(a => answered.add(a)));
+  const dealt = new Set();
   Object.keys(SPECIAL_RUNGS).forEach(k => {
     const i = +k;
     if (i >= qs.length) return;
-    const kind = SPECIAL_RUNGS[k];
+    /* this climb's card for the rung: a kind not dealt yet, if the deck allows */
+    const deck = shuf((SPECIAL_DECK[k] || [SPECIAL_RUNGS[k]]).filter(x => spare[x] && spare[x].length));
+    const kind = deck.find(x => !dealt.has(x)) || deck[0] || SPECIAL_RUNGS[k];
+    dealt.add(kind);
+    /* a written card is taken from the tier the rung asks for when one is there */
+    if (['quote', 'battle', 'line'].includes(kind)) {
+      const tier = LADDER[i].tier, pool = spare[kind];
+      pool.sort((a, b) => Math.abs(qTier(b) - tier) - Math.abs(qTier(a) - tier));
+    }
     let card = null;
     while (spare[kind].length) {
       const c = spare[kind].pop();
@@ -12399,6 +12426,7 @@ function dealSpecials(qs) {
     if (!card) return;                       // no clean card left: leave the question
     (card.a || []).forEach(a => answered.add(a));
     qs[i] = Object.assign({}, card, { _special: kind });
+    qs[i]._d = qTier(qs[i]);
   });
   return qs;
 }
