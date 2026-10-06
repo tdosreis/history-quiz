@@ -71,8 +71,10 @@ JS = r"""
         if (new Set(dd).size !== dd.length) F(k + ' duplicate tile :: ' + q.t.slice(0, 60));
         if (!q.a.every(a => dd.includes(a))) F(k + ' answer missing :: ' + q.t.slice(0, 60));
         if (!q.order && !q.fixed && dd.length < Math.min(6, 10)) F(k + ' few tiles(' + dd.length + ') :: ' + q.t.slice(0, 60));
-        const art = questionArt(q); if (typeof art !== 'string') F('art ' + q.t);
-        if (q.type === 'txt') optArtFor(q);
+        const art = questionArt(q); if (typeof art !== 'string' || (!q.order && !/<(img|svg)\b/.test(art))) F('question without a picture :: ' + q.t.slice(0, 60));
+        if (q.type === 'txt') { const oa = optArtFor(q);
+          /* every written answer carries a picture: never a bare word on a slip */
+          q.choices.forEach(c => { if (!oa || !optArtHtml(oa[c])) F('txt answer without a picture: ' + c + ' :: ' + q.t.slice(0, 50)); }); }
       } catch (e) { F('EXC ' + e.message + ' :: ' + q.t.slice(0, 60)); }
     });
   });
