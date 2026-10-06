@@ -5071,6 +5071,12 @@ const ICON = {
   column: _ico('M5 5h14M6 8h12M8 8v10M12 8v10M16 8v10M6 18h12M5 21h14'),
   globe:  _ico('M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18'),
   torch:  _ico('M12 3c3 3 3 6 0 9-3-3-3-6 0-9zM9 12h6l-1 9h-4z'),
+  sword:  _ico('M14.5 3.5h6v6L9 21l-6-6zM5.5 12.5l6 6M3.5 20.5l3-3'),
+  news:   _ico('M4 5h13v14H6a2 2 0 0 1-2-2zM17 9h3v8a2 2 0 0 1-2 2M7 8h7M7 11h7M7 14h4'),
+  quill:  _ico('M20 3c-7 1-12 6-14 15l1 1c2-4 5-6 8-7M20 3c-1 5-4 9-8 11M5 21l2-3'),
+  stamp:  _ico('M9 3h6v6l3 4H6l3-4zM4 16h16v3H4zM6 21h12'),
+  chain:  _ico('M9 15l6-6M10 6.5l1.5-1.5a3.5 3.5 0 0 1 5 5L15 11.5M14 17.5l-1.5 1.5a3.5 3.5 0 0 1-5-5L9 12.5'),
+  hourglass: _ico('M6 3h12M6 21h12M7 3c0 6 10 6 10 9s-10 3-10 9M17 3c0 6-10 6-10 9s10 3 10 9'),
 };
 
 /*@@data_meta@@*/
@@ -7659,6 +7665,23 @@ const MEDALS = [
   { id:'albMsc', ic:'column',   n:'Folha dos monumentos', d:`Colecione os ${MASCOTES.length} monumentos`,
     t: () => MASCOTES.every(id => album.has(SK.msc(id))),
     p: () => [MASCOTES.filter(id => album.has(SK.msc(id))).length, MASCOTES.length] },
+  /* ── the archive: History's own ways to ask, counted across games ── */
+  { id:'fQuote', ic:'quill', n:'Pena afiada',     d:'Acerte 10 vezes “Quem disse?”',
+    t: st => fmtN(st, 'quote') >= 10, p: st => [fmtN(st, 'quote'), 10] },
+  { id:'fBattle',ic:'sword', n:'Estrategista',    d:'Acerte 10 batalhas',
+    t: st => fmtN(st, 'battle') >= 10, p: st => [fmtN(st, 'battle'), 10] },
+  { id:'fLine',  ic:'chain', n:'Genealogista',    d:'Complete 10 linhagens',
+    t: st => fmtN(st, 'line') >= 10, p: st => [fmtN(st, 'line'), 10] },
+  { id:'fNews',  ic:'news',  n:'Furo de reportagem', d:'Acerte 10 manchetes',
+    t: st => fmtN(st, 'news') >= 10, p: st => [fmtN(st, 'news'), 10] },
+  { id:'fDuel',  ic:'flame', n:'Duelista',        d:'Vença 15 duelos',
+    t: st => fmtN(st, 'duel') >= 15, p: st => [fmtN(st, 'duel'), 15] },
+  { id:'fMyth',  ic:'stamp', n:'Caça-mitos',      d:'Acerte 15 “Fato ou mito?”',
+    t: st => fmtN(st, 'myth') >= 15, p: st => [fmtN(st, 'myth'), 15] },
+  { id:'fOrder', ic:'hourglass', n:'Cronista',    d:'Acerte 10 linhas do tempo',
+    t: st => fmtN(st, 'order') >= 10, p: st => [fmtN(st, 'order'), 10] },
+  { id:'fAll',   ic:'book',  n:'Historiador completo', d:'Acerte pelo menos uma de cada formato',
+    t: st => FMT_KEYS.every(k => fmtN(st, k) >= 1), p: st => [FMT_KEYS.filter(k => fmtN(st, k) >= 1).length, FMT_KEYS.length] },
   { id:'albBook',ic:'crown',  n:'Álbum completo',  d:'Complete o álbum inteiro',
     t: () => album.size >= ALL_STICKERS.length,
     p: () => [album.size, ALL_STICKERS.length] },
@@ -7711,14 +7734,22 @@ const MEDAL_SETS = [
     ids:['daily3','daily7','surv10'] },
   { id:'milhao', n:'Rumo ao Milhão', tag:'Milhão', shape:'coin',
     ids:['safe1','safe2','quit','million'] },
+  { id:'arquivo', n:'O arquivo',     tag:'Arquivo', shape:'hex',
+    ids:['fQuote','fBattle','fLine','fNews','fDuel','fMyth','fOrder','fAll'] },
 ];
 /* How hard each one is to get, not how many people hold it — there is no
    server to count that, and a made-up percentage would be a lie. */
+/* the ways a question can be asked, as the archive counts them */
+const FMT_KEYS = ['quote', 'battle', 'line', 'news', 'duel', 'myth', 'order'];
+const qFmt = q => !q ? '' : q.quote ? 'quote' : q.battle ? 'battle' : q.line ? 'line' : q.news ? 'news'
+                : q.myth ? 'myth' : q.duel ? 'duel' : q.order ? 'order' : '';
+const fmtN = (st, k) => ((st && st.fmt) || {})[k] || 0;
 const MEDAL_TIER = {
   first:1, ten:1, streak5:1, alb25:1, daily3:1, safe1:1,
   perfect:2, streak10:2, c100:2, alb60:2, albHalf:2, daily7:2, safe2:2,
   hard:3, c500:3, alb3q:3, albEsc:3, albSel:3, albMsc:3, surv10:3, quit:3,
   albAll:4, albBook:4, million:4,
+  fQuote:2, fBattle:2, fLine:2, fNews:2, fOrder:2, fDuel:2, fMyth:2, fAll:3,
 };
 const TIER_NAME = ['', 'Comum', 'Rara', 'Épica', 'Lendária'];
 const medalSet = m => MEDAL_SETS.find(s => s.ids.includes(m.id)) || MEDAL_SETS[0];
@@ -12861,6 +12892,9 @@ function finishRun() {
   stats.correct  += nCorrect;
   stats.answered += cat.qs.length;
   stats.bestStreak = Math.max(stats.bestStreak || 0, bestStreak);
+  /* each question answered right, by the way it was asked (the archive's insígnias) */
+  try { cat.qs.forEach((q, i) => { const k = qFmt(q); if (k && runLog[i] === 3) {
+    stats.fmt = stats.fmt || {}; stats.fmt[k] = (stats.fmt[k] || 0) + 1; } }); } catch (e) {}
   const acc = nCorrect / Math.max(1, cat.qs.length);
   if (isMil) {
     stats.milBest  = Math.max(stats.milBest || 0, banked);
