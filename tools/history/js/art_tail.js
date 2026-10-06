@@ -8,7 +8,39 @@ const QICON = {
   torch: w => ART.torch(w), cannon: w => ART.cannon(w), map: w => ART.map(w),
   hourglass: w => ART.hourglass(w), trophy: w => ART.trophy(w), gear: w => ART.gear(w),
   rocket: w => ART.rocket(w), flag: w => ART.flag(w), bust: w => ART.bust(w),
+  quill: w => ART.quill(w), telescope: w => ART.telescope(w), flask: w => ART.flask(w), palette: w => ART.palette(w),
+  lyre: w => ART.lyre(w), masks: w => ART.masks(w), helmet: w => ART.helmet(w), compass: w => ART.compass(w),
+  train: w => ART.train(w), plane: w => ART.plane(w), chains: w => ART.chains(w), scales: w => ART.scales(w),
+  dove: w => ART.dove(w), church: w => ART.church(w), coins: w => ART.coins(w), amphora: w => ART.amphora(w),
 };
+/* A writer picks from the vignettes they know; a book over a question about a
+   symphony, or a sword over a Greek hoplite, is the nearest they had. The
+   question's own words choose a closer one when there is one. */
+const ICON_REFINE = [
+  [/\b(sinfonia|opera|compos\w*|compositor\w*|musica\w*|piano|violino|cancao|hino|samba|choro|valsa)\b/, 'lyre'],
+  [/\b(teatro|peca|tragedia|comedia|dramaturg\w*|ator|atriz|cinema|filme)\b/, 'masks'],
+  [/\b(pint\w*|quadro|tela|afresco|mural|retrato|impressionis\w*|cubis\w*|surreal\w*|barroco|museu)\b/, 'palette'],
+  [/\b(telescop\w*|astronom\w*|planeta\w*|orbita\w*|estrela\w*|cometa|eclipse|heliocentr\w*|galaxia)\b/, 'telescope'],
+  [/\b(quimic\w*|elemento|vacina\w*|medic\w*|doenca\w*|penicilina|antibiotic\w*|laboratori\w*|radioativ\w*|microb\w*|virus)\b/, 'flask'],
+  [/\b(poema|poeta|poesia|romance|escrit\w*|livro|obra literaria|soneto|epopeia|literatura|autor\w*)\b/, 'quill'],
+  [/\b(locomotiva|ferrovia\w*|trem|vapor|revolucao industrial|fabrica\w*|maquina a vapor)\b/, 'train'],
+  [/\b(aviao|avioes|voo|aviador\w*|aeronave|14-bis|zepelim)\b/, 'plane'],
+  [/\b(escrav\w*|abolic\w*|lei aurea|quilombo\w*|alforria|cativ\w*)\b/, 'chains'],
+  [/\b(lei|leis|codigo|constituicao|direito\w*|tribunal|juiz|julgamento|justica)\b/, 'scales'],
+  [/\b(paz|armisticio|nobel da paz|nao violencia|onu)\b/, 'dove'],
+  [/\b(igreja|catedral|papa\w*|bispo|monge\w*|mosteiro|cristianismo|catolic\w*|protestant\w*|reforma protestante|concilio|cruzada\w*)\b/, 'church'],
+  [/\b(moeda\w*|dinheiro|comerci\w*|banco|economia|imposto\w*|ouro|tributo|mercad\w*|inflacao|plano real)\b/, 'coins'],
+  [/\b(hoplita\w*|legiao|legionari\w*|falange|cavaleiro\w*|samurai|gladiador\w*|guerreiro\w*|espartan\w*)\b/, 'helmet'],
+  [/\b(navega\w*|bussola|rota|descobriment\w*|expedic\w*|circum-navega\w*|cartograf\w*|astrolabio)\b/, 'compass'],
+  [/\b(grecia antiga|ceramica|anfora|vaso grego|olimpiad\w*|jogos olimpicos)\b/, 'amphora'],
+];
+const ICON_GENERIC = new Set(['book', 'bust', 'scroll', 'globe', 'gear', 'map', 'crown', 'sword', 'flag', 'torch', 'ship', 'column']);
+function refineIcon(q, key) {
+  if (!ICON_GENERIC.has(key)) return key;
+  const t = _fold(q.t || '');
+  for (const [rx, k] of ICON_REFINE) if (rx.test(t)) return k;
+  return key;
+}
 /* the mark of a category when a question carries no picture of its own */
 const CAT_ART = {
   egito_mesopotamia: 'pyramid', grecia: 'column', roma: 'sword', medieval: 'castle', oriente: 'globe',
@@ -612,7 +644,7 @@ function questionArtRaw(q) {
      the album has a picture of shows that picture instead */
   const inf = inferArt(q);
   if (inf) return inf;
-  const key = q.icon || CAT_ART[(q._cat && q._cat.id) || ''] || 'scroll';
+  const key = refineIcon(q, q.icon || CAT_ART[(q._cat && q._cat.id) || ''] || 'scroll');
   return `<div class="qart qart-wide print qart-ink" role="img" aria-label="Ilustração">${(QICON[key] || QICON.scroll)(104)}</div>`;
 }
 

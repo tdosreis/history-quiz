@@ -214,4 +214,184 @@ const ART = {
         <path d="M42 24 q4 -12 18 -12 q16 0 18 12 q-8 -6 -18 -4 q-10 -2 -18 4z" fill="#CFC6B0"/>
         <path d="M52 32h4M64 32h4M60 34v6M55 44q5 3 10 0" fill="none" stroke-width="1.6"/>`)}`);
   },
+
+  /* ── more vignettes, so a question about a painting is not a book ── */
+  quill(w) {
+    return this._frame(w, 'Pena e tinteiro', `
+      <rect width="120" height="80" fill="#E9DDC0"/>
+      <path d="M10 70 h100" stroke="#C9B48A" stroke-width="3"/>
+      ${this._g(`
+        <path d="M24 66 h30 v-15 q0 -6 -6 -6 h-18 q-6 0 -6 6z" fill="#2A3244"/>
+        <path d="M32 45 h14 v-5 h-14z" fill="#4A5266"/>
+        <path d="M100 6 C78 12 60 30 52 58 l3 2 C66 36 84 20 100 6z" fill="#F4ECD8"/>
+        <path d="M100 6 c-8 12 -20 21 -33 25 M94 12 c-7 8 -15 13 -24 16" fill="none" stroke-width="1.2"/>
+        <path d="M52 58 l-2 6" stroke-width="2.4"/>`)}
+      <path d="M62 68 q10 -5 21 0 q10 4 20 -2" fill="none" stroke="#2A3244" stroke-width="1.8" stroke-linecap="round"/>`);
+  },
+  telescope(w) {
+    return this._frame(w, 'Telescópio', `
+      <rect width="120" height="80" fill="#22304A"/>
+      ${[[14, 12], [30, 26], [52, 8], [86, 14], [104, 30], [70, 24], [96, 50]].map(([x, y], i) => `<circle cx="${x}" cy="${y}" r="${i % 3 ? 1.2 : 1.8}" fill="#F4E3B6"/>`).join('')}
+      <circle cx="98" cy="16" r="8" fill="#F4E3B6"/><circle cx="101" cy="14" r="7" fill="#22304A"/>
+      ${this._g(`
+        <path d="M30 30 L84 12 L88 22 L34 42z" fill="#C8922C"/>
+        <path d="M84 12 l6 -2 4 12 -6 2z" fill="#8A5A34"/>
+        <path d="M24 32 l8 -3 4 12 -8 3z" fill="#8A5A34"/>
+        <path d="M58 32 L44 74 M60 32 L60 74 M62 32 L76 74" fill="none" stroke-width="2.6"/>`, 1.8)}`);
+  },
+  flask(w) {
+    return this._frame(w, 'Laboratório', `
+      <rect width="120" height="80" fill="#D6E3DE"/>
+      <rect y="64" width="120" height="16" fill="#B9AE97"/>
+      ${this._g(`
+        <path d="M44 10 h14 M47 10 v18 l-16 30 q-3 7 4 8 h32 q7 -1 4 -8 l-16 -30 v-18" fill="#EEF4F2"/>
+        <path d="M36 54 q14 -6 30 0 l3 6 q1 4 -3 4 h-30 q-4 0 -3 -4z" fill="#7B1E3A"/>
+        <path d="M80 30 h20 v34 q0 6 -10 6 t-10 -6z" fill="#EEF4F2"/>
+        <path d="M80 48 h20 v16 q0 6 -10 6 t-10 -6z" fill="#3F7C8C"/>
+        <path d="M78 30 h24" stroke-width="2.6"/>`)}
+      <circle cx="54" cy="44" r="2" fill="#FFFFFF" opacity=".8"/><circle cx="58" cy="38" r="1.4" fill="#FFFFFF" opacity=".8"/>`);
+  },
+  palette(w) {
+    return this._frame(w, 'Paleta de pintor', `
+      <rect width="120" height="80" fill="#EAD9B8"/>
+      ${this._g(`
+        <path d="M60 10 C90 8 108 26 104 44 C100 58 86 56 80 52 C74 48 70 56 74 62 C78 70 66 74 54 72 C26 68 14 50 18 34 C22 18 40 11 60 10z" fill="#C9A06A"/>
+        <circle cx="44" cy="26" r="6" fill="#B3402F"/><circle cx="64" cy="22" r="6" fill="#E3B341"/>
+        <circle cx="84" cy="30" r="6" fill="#2F5D62"/><circle cx="34" cy="44" r="6" fill="#3F4F7A"/>
+        <circle cx="50" cy="56" r="6" fill="#F4ECD8"/>
+        <path d="M96 76 L70 40 l3 -2 L99 74z" fill="#8A5A34"/>`)}
+      <path d="M70 40 l-4 -6 4 1 3 3z" fill="#7B1E3A"/>`);
+  },
+  lyre(w) {
+    return this._frame(w, 'Lira', `
+      <rect width="120" height="80" fill="#E6D3B3"/>
+      ${this._g(`
+        <path d="M40 68 C26 54 30 24 42 10 M80 68 C94 54 90 24 78 10" fill="none" stroke="#C8922C" stroke-width="5"/>
+        <path d="M36 14 h48" stroke-width="3.2"/>
+        <path d="M40 68 h40" stroke-width="4"/>
+        <path d="M50 14 v54 M56 14 v54 M62 14 v54 M68 14 v54 M74 14 v54" fill="none" stroke-width="1"/>`)}
+      <path d="M96 22 v-12 l10 -3 v12" fill="none" stroke="${_INK}" stroke-width="1.6"/><ellipse cx="94" cy="23" rx="3" ry="2.2" fill="${_INK}"/><ellipse cx="104" cy="20" rx="3" ry="2.2" fill="${_INK}"/>
+      <path d="M16 46 v-10" stroke="${_INK}" stroke-width="1.6"/><ellipse cx="14" cy="47" rx="3" ry="2.2" fill="${_INK}"/>`);
+  },
+  masks(w) {
+    return this._frame(w, 'Máscaras de teatro', `
+      <rect width="120" height="80" fill="#3A1A24"/>
+      ${this._g(`
+        <path d="M22 16 q20 -6 38 0 v20 q0 22 -19 26 q-19 -4 -19 -26z" fill="#F4ECD8"/>
+        <path d="M30 30 q4 -4 8 0 M46 30 q4 -4 8 0" fill="none" stroke-width="2"/>
+        <path d="M31 44 q10 10 20 0" fill="#7B1E3A"/>
+        <path d="M62 24 q20 -6 38 0 v20 q0 22 -19 26 q-19 -4 -19 -26z" fill="#E3B341"/>
+        <path d="M70 40 q4 4 8 0 M86 40 q4 4 8 0" fill="none" stroke-width="2"/>
+        <path d="M72 58 q10 -10 20 0" fill="#3A1A24"/>`)}`);
+  },
+  helmet(w) {   /* a Corinthian helmet with its horsehair crest */
+    return this._frame(w, 'Elmo de guerreiro', `
+      <rect width="120" height="80" fill="#C9B48A"/>
+      ${this._g(`
+        <path d="M30 30 q4 -26 30 -26 q26 0 30 26 q-8 -12 -30 -14 q-22 2 -30 14z" fill="#B3402F"/>
+        <path d="M60 16 q-28 0 -30 30 v28 h18 v-14 q0 -4 4 -4 h16 q4 0 4 4 v14 h18 v-28 q-2 -30 -30 -30z" fill="#C8922C"/>
+        <path d="M44 40 h32 v8 h-10 v16 h-12 v-16 h-10z" fill="#3A2A1A"/>`)}
+      <path d="M38 30 q22 -12 44 0" fill="none" stroke="#F4E3B6" stroke-width="2" opacity=".55"/>`);
+  },
+  compass(w) {
+    return this._frame(w, 'Rosa dos ventos', `
+      <rect width="120" height="80" fill="#E8D9B0"/>
+      <path d="M0 20 q30 8 60 0 t60 0 M0 60 q30 -8 60 0 t60 0" fill="none" stroke="#C9B48A" stroke-width="1.4"/>
+      ${this._g(`
+        <circle cx="60" cy="40" r="28" fill="#F4ECD8"/>
+        <path d="M60 10 l6 30 -6 6 -6 -6z" fill="#7B1E3A"/><path d="M60 70 l-6 -30 6 -6 6 6z" fill="${_INK}"/>
+        <path d="M30 40 l30 -6 6 6 -6 6z" fill="#C8922C"/><path d="M90 40 l-30 6 -6 -6 6 -6z" fill="#C8922C"/>`, 1.6)}
+      <text x="60" y="9" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-weight="700" font-size="7" fill="${_INK}">N</text>`);
+  },
+  train(w) {
+    return this._frame(w, 'Locomotiva a vapor', `
+      <rect width="120" height="80" fill="#BFD3D9"/>
+      <rect y="62" width="120" height="18" fill="#8C8A7A"/>
+      <path d="M0 66 h120" stroke="#5A4C3D" stroke-width="2"/>
+      <circle cx="26" cy="14" r="8" fill="#E9E5DD"/><circle cx="16" cy="8" r="6" fill="#E9E5DD"/><circle cx="36" cy="20" r="5" fill="#E9E5DD"/>
+      ${this._g(`
+        <path d="M30 30 h10 v-8 h6 v8 h22 v28 H30z" fill="#2A3244"/>
+        <path d="M68 22 h26 v36 H68z" fill="#7B1E3A"/>
+        <path d="M74 28 h14 v12 h-14z" fill="#E9C46A"/>
+        <path d="M26 58 h72 v4 H26z" fill="#4A3523"/>
+        <circle cx="42" cy="64" r="7" fill="#C8922C"/><circle cx="62" cy="64" r="7" fill="#C8922C"/><circle cx="86" cy="64" r="9" fill="#C8922C"/>
+        <path d="M30 58 l-8 6 h8" fill="#8A5A34"/>`)}`);
+  },
+  plane(w) {
+    return this._frame(w, 'Avião', `
+      <rect width="120" height="80" fill="#A9C4D6"/>
+      <path d="M0 60 q20 -6 40 0 t40 0 t40 0 V80 H0z" fill="#E9E5DD"/>
+      ${this._g(`
+        <path d="M24 40 h66 q10 0 10 5 t-10 5 h-66z" fill="#C8922C"/>
+        <path d="M44 22 h28 v4 h-28z M44 60 h28 v4 h-28z" fill="#F4ECD8"/>
+        <path d="M48 26 v34 M68 26 v34" fill="none" stroke-width="1.6"/>
+        <path d="M24 40 l-8 -10 h8 l6 10" fill="#7B1E3A"/>
+        <path d="M100 40 v10 M100 45 h4" fill="none" stroke-width="2"/>`)}`);
+  },
+  chains(w) {
+    return this._frame(w, 'Correntes rompidas', `
+      <rect width="120" height="80" fill="#E9C98B"/>
+      ${Array.from({ length: 12 }, (_, i) => { const a = i * Math.PI / 6; return `<path d="M60 40 L${(60 + Math.cos(a) * 70).toFixed(1)} ${(40 + Math.sin(a) * 70).toFixed(1)}" stroke="#F4E3B6" stroke-width="6"/>`; }).join('')}
+      ${this._g(`
+        <rect x="8" y="34" width="22" height="12" rx="6" fill="none" stroke-width="4"/>
+        <rect x="24" y="34" width="22" height="12" rx="6" fill="none" stroke-width="4" transform="rotate(-12 35 40)"/>
+        <path d="M46 34 q6 -4 8 2" fill="none" stroke-width="4"/>
+        <path d="M74 46 q-6 4 -8 -2" fill="none" stroke-width="4"/>
+        <rect x="74" y="34" width="22" height="12" rx="6" fill="none" stroke-width="4" transform="rotate(12 85 40)"/>
+        <rect x="90" y="34" width="22" height="12" rx="6" fill="none" stroke-width="4"/>`, 2)}
+      <path d="M56 30 l4 6 4 -6 M56 50 l4 -6 4 6" stroke="#B3402F" stroke-width="2" fill="none"/>`);
+  },
+  scales(w) {
+    return this._frame(w, 'Balança da justiça', `
+      <rect width="120" height="80" fill="#DCCFB2"/>
+      ${this._g(`
+        <path d="M60 10 V70 M44 70 h32" fill="none" stroke-width="3"/>
+        <path d="M24 20 h72" stroke-width="3"/>
+        <circle cx="60" cy="10" r="3.4" fill="#C8922C"/>
+        <path d="M24 20 l-12 26 h24z M96 20 l-12 26 h24z" fill="none" stroke-width="1.4"/>
+        <path d="M10 46 q14 10 28 0z M82 46 q14 10 28 0z" fill="#C8922C"/>`)}`);
+  },
+  dove(w) {
+    return this._frame(w, 'Pomba da paz', `
+      <rect width="120" height="80" fill="#BFD3D9"/>
+      ${this._g(`
+        <path d="M26 46 q14 -22 40 -18 l18 -12 q4 8 -4 16 q16 2 22 12 q-14 2 -24 -2 q-6 14 -26 14 q-14 0 -26 -10z" fill="#F7F5EF"/>
+        <path d="M50 30 q4 -18 20 -22 q-2 14 -10 22" fill="#E9E5DD"/>
+        <path d="M86 18 l8 -2 -6 6" fill="#C8922C"/>
+        <path d="M96 22 q8 6 12 16" fill="none" stroke="#5E6B3A" stroke-width="2"/>`, 1.8)}
+      <circle cx="84" cy="20" r="1.4" fill="${_INK}"/>
+      <ellipse cx="104" cy="30" rx="2.4" ry="4" fill="#6E7A3A" transform="rotate(-30 104 30)"/><ellipse cx="108" cy="36" rx="2.4" ry="4" fill="#6E7A3A" transform="rotate(20 108 36)"/>`);
+  },
+  church(w) {
+    return this._frame(w, 'Catedral', `
+      <rect width="120" height="80" fill="#C7D6E0"/>
+      <rect y="66" width="120" height="14" fill="#9C968A"/>
+      ${this._g(`
+        <path d="M26 66 V30 l10 -18 10 18 V66z M74 66 V30 l10 -18 10 18 V66z" fill="#D6CCB5"/>
+        <path d="M46 66 V38 l14 -14 14 14 V66z" fill="#E4DCC7"/>
+        <circle cx="60" cy="44" r="7" fill="#3F4F7A"/>
+        <path d="M53 66 v-10 a7 7 0 0 1 14 0 v10z" fill="#4A3523"/>
+        <path d="M36 12 v-6 M84 12 v-6 M33 9 h6 M81 9 h6" fill="none" stroke-width="1.6"/>`)}
+      <path d="M60 37 v14 M53 44 h14" stroke="#E9C46A" stroke-width="1.2"/>`);
+  },
+  coins(w) {
+    return this._frame(w, 'Moedas', `
+      <rect width="120" height="80" fill="#5B3A2A"/>
+      ${this._g(`
+        <ellipse cx="40" cy="64" rx="18" ry="6" fill="#C8922C"/><path d="M22 64 v-6 a18 6 0 0 0 36 0 v6" fill="#A8781D"/>
+        <ellipse cx="40" cy="56" rx="18" ry="6" fill="#E3B341"/><path d="M22 56 v-6 a18 6 0 0 0 36 0 v6" fill="#C8922C"/>
+        <ellipse cx="40" cy="48" rx="18" ry="6" fill="#E9C46A"/>
+        <circle cx="80" cy="40" r="20" fill="#E3B341"/><circle cx="80" cy="40" r="15" fill="none" stroke-width="1.2"/>`)}
+      <path d="M74 46 q-2 -12 8 -14 q8 0 6 8 q-2 4 -8 4" fill="none" stroke="${_INK}" stroke-width="1.6"/><circle cx="83" cy="36" r="1.2" fill="${_INK}"/>`);
+  },
+  amphora(w) {
+    return this._frame(w, 'Ânfora grega', `
+      <rect width="120" height="80" fill="#E9C98B"/>
+      ${this._g(`
+        <path d="M52 8 h16 v6 q16 8 16 28 q0 22 -16 30 h-16 q-16 -8 -16 -30 q0 -20 16 -28z" fill="#C2662D"/>
+        <path d="M52 14 q-12 2 -12 12 M68 14 q12 2 12 12" fill="none" stroke-width="2.4"/>
+        <path d="M40 36 h40 v14 h-40z" fill="#1E1A16" stroke-width="0"/>`)}
+      <path d="M46 48 l4 -8 4 8 M58 40 v8 M62 44 q4 -6 8 0 q-4 6 -8 0" stroke="#C2662D" stroke-width="1.6" fill="none"/>
+      <path d="M38 54 h44 M40 32 h40" stroke="${_INK}" stroke-width="1" opacity=".6"/>`);
+  },
 };
