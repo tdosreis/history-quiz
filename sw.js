@@ -12,8 +12,9 @@
    that must reach installed copies at once; pictures live in their own cache.
    v2: the atelier textures (paper, brush strokes, answer slips, washes) the page
    always named but the first release never shipped — buttons, lifeline seals and
-   backgrounds were invisible without them. */
-const VERSION = 'v2';
+   backgrounds were invisible without them.
+   v3: History's own question formats and ~330 new questions. */
+const VERSION = 'v3';
 const CACHE   = 'history-quiz-' + VERSION;
 /* Photos, crests and flags never change under the same name (each file is
    named by its content), so they live in a cache of their own that survives

@@ -15,7 +15,7 @@ c.T('Qual animal doméstico representava a deusa egípcia Bastet?', 'Gato',
 c.T('Segundo a Bíblia, qual jovem pastor venceu o gigante Golias e depois se tornou rei de Israel?', 'Davi',
     ['Saul', 'Salomão', 'Josué', 'Sansão', 'Gideão'], d=1, crest='israel_antigo',
     src=('en', 'David', ['Goliath']),
-    x='Uma estela do século IX a.C., achada em Tel Dan, em Israel, menciona a "Casa de Davi": a dinastia era conhecida fora da Bíblia.')
+    x='Uma estela do século IX a.C., achada em Tel Dan, no norte de Israel, traz uma inscrição que a maioria dos estudiosos lê como "Casa de Davi".')
 c.T('Segundo a Bíblia, que torre os homens tentaram erguer até o céu, antes de Deus confundir suas línguas?', 'Torre de Babel',
     ['Torre de Davi', 'Torre de Jericó', 'Torre de Nínive', 'Torre de Sião', 'Torre de Ur'], d=1, icon='castle',
     src=('en', 'Tower of Babel', ['Etemenanki']),
@@ -23,9 +23,9 @@ c.T('Segundo a Bíblia, que torre os homens tentaram erguer até o céu, antes d
 c.P('Qual rainha do Egito, segundo a tradição, se matou com a picada de uma áspide?', 'cleopatra', d=1, who='augusto',
     src=('en', 'Cleopatra', ['asp']),
     x='Ela morreu em 30 a.C., depois da derrota para Otaviano; naquele mesmo ano o Egito virou província romana.')
-c.Q('Quem sou eu?', 'salomao', ['Meu pai foi um rei famoso, que na juventude venceu um gigante.',
+c.Q('Quem sou eu?', 'salomao', ['Recebi a visita de uma rainha vinda do reino de Sabá.',
     'Mandei construir o primeiro grande templo de Jerusalém.',
-    'Recebi a visita de uma rainha vinda do reino de Sabá.',
+    'Meu pai foi um rei famoso, que na juventude venceu um gigante.',
     'Ficou célebre minha sentença: propor dividir um bebê ao meio para descobrir a verdadeira mãe.'], 1,
     src=('en', 'Solomon', ['Sheba']),
     x='Até hoje, "decisão salomônica" quer dizer uma solução sábia para um caso difícil.')
@@ -34,20 +34,17 @@ c.DU('Duelo: qual destas maravilhas do mundo antigo continua de pé?', 'Grande P
      x='É a mais antiga das sete maravilhas e a única que sobreviveu; a existência dos Jardins Suspensos nunca foi comprovada.')
 c.DU('Duelo: quem reinou por mais tempo?', 'ramses_ii', 'tutancamon', 1, icon='crown',
      src=('en', 'Ramesses II', ['66']),
-     x='Ramsés II reinou 66 anos; Tutancâmon, menos de dez, e morreu antes dos 20.')
+     x='Ramsés II reinou 66 anos; Tutancâmon, só cerca de nove, e morreu antes dos 20.')
 c.DU('Duelo: qual destes povos escrevia com hieróglifos?', 'Egípcios', 'Sumérios', 1, typ='txt', icon='book',
-     src=('pt', 'Hieróglifo', ['Egito']),
+     src=('en', 'Egyptian hieroglyphs', ['Egyptian']),
      x='Os sumérios escreviam em cuneiforme, com uma cunha sobre placas de argila mole.')
 c.MY('As pirâmides de Gizé foram erguidas por multidões de escravos?', False, 1, stad='piramide_queops',
      src=('en', 'Great Pyramid of Giza', ['workers']),
-     x='Escavações em Gizé acharam a vila e os túmulos dos operários: eram trabalhadores egípcios pagos, em boa parte com pão e cerveja.')
-c.BT('Qual reino, comandado por Alexandre, o Grande, venceu esta batalha contra os persas?', 'macedonia', 'Gaugamela · 331 a.C.', '?', 'persia', d=1,
-     x='O rei persa Dario III fugiu do campo de batalha e foi assassinado por seus próprios nobres no ano seguinte.',
-     src=('en', 'Battle of Gaugamela', ['331']))
-c.O('Das pirâmides à tumba de Tutancâmon: em que ordem estes fatos aconteceram, do mais antigo ao mais recente?', [
+     x='Escavações em Gizé acharam a vila e os túmulos dos operários: eram trabalhadores egípcios, não escravos, e recebiam rações de pão e cerveja.')
+c.O('Em que ordem estes fatos aconteceram, do mais antigo ao mais recente?', [
     ('piramides', 'Pirâmides de Gizé', 'Antigo Império', -2560, {'crest': 'egito_antigo'}),
     ('cleopatra', 'Morte de Cleópatra', 'Fim do Egito ptolomaico', -30, {'face': 'cleopatra'}),
-    ('tumba', 'Abertura da tumba de Tutancâmon', 'Vale dos Reis', 1922, {'face': 'tutancamon'})], d=1,
+    ('tumba', 'Descoberta da tumba de Tutancâmon', 'Vale dos Reis', 1922, {'face': 'tutancamon'})], d=1,
     src=('pt', 'Tutancâmon', ['1922']))
 
 # ── d2 ──
@@ -74,13 +71,10 @@ c.T('Qual rei lendário de Uruk é o herói da mais antiga grande obra literári
 c.T('Como é chamado o período em que os judeus de Jerusalém foram deportados por Nabucodonosor II, no século VI a.C.?', 'Cativeiro da Babilônia',
     ['Êxodo', 'Diáspora romana', 'Exílio assírio', 'Cisma do Norte', 'Revolta dos Macabeus'], d=2, stad='portao_ishtar',
     src=('en', 'Babylonian captivity', ['Nebuchadnezzar']),
-    x='O exílio terminou em 539 a.C., quando os persas tomaram a Babilônia e permitiram a volta a Jerusalém.')
+    x='O exílio acabou depois que os persas de Ciro tomaram a Babilônia, em 539 a.C., e permitiram a volta a Jerusalém.')
 c.C('Qual civilização antiga dividia o ano em três estações (inundação, plantio e colheita) conforme as cheias de seu grande rio?', 'egito_antigo', d=2, icon='hourglass',
     src=('en', 'Egyptian calendar', ['Akhet']),
     x='As estações se chamavam Akhet, Peret e Shemu, cada uma com quatro meses de 30 dias; somavam-se cinco dias de festa no fim.')
-c.C('Qual cidade-Estado do norte da África foi fundada por colonos fenícios vindos de Tiro?', 'cartago', d=2, icon='ship',
-    src=('pt', 'Cartago', ['Tiro']),
-    x='Diz a lenda que a rainha Dido ganhou a terra que coubesse num couro de boi e o cortou em tiras finíssimas para cercar uma colina.')
 c.Q('Quem sou eu?', 'hamurabi', ['Reinei numa cidade às margens do Eufrates, no século XVIII a.C.',
     'Comecei com um reino pequeno e terminei senhor de quase toda a Mesopotâmia.',
     'Mandei gravar centenas de leis numa estela de pedra negra.',
@@ -91,17 +85,13 @@ c.LN('Quem completa a família divina: o pai, a mãe e o filho?', 'Hórus', 'A f
      kind='grupo', era='ant', typ='txt', wrong=['Seth', 'Anúbis', 'Rá', 'Thot', 'Ptah'],
      src=('en', 'Horus', ['Isis']),
      x='O Olho de Hórus, perdido e recuperado na luta contra Seth, virou amuleto de proteção e de cura.')
-c.LN('Quem é a governante que falta nestas três gerações?', 'cleopatra', 'Pai, filha e neto · Egito ptolomaico',
-     ['Ptolomeu XII', '?', 'Cesarião'], d=2, era='ant',
-     src=('en', 'Cleopatra', ['Caesarion', 'Ptolemy XII']),
-     x='Cesarião, que Cleópatra apresentava como filho de Júlio César, foi o último faraó ptolomaico; Otaviano mandou matá-lo aos 17 anos.')
 c.LN('Quem é o faraó que falta nesta dinastia?', 'ramses_ii', 'XIX dinastia · Egito', ['Ramsés I', 'Seti I', '?', 'Merneptá'], d=2, era='ant',
      src=('en', 'Ramesses II', ['Merneptah']),
-     x='Merneptá era o 13º filho: o pai viveu tanto que sobreviveu a doze herdeiros.')
+     x='Merneptá era o 13º filho: o pai viveu tanto que os doze irmãos mais velhos morreram antes dele.')
 c.BT('Qual império teve a capital saqueada nesta batalha?', 'assiria', 'Nínive · 612 a.C.', 'babilonia', '?', d=2,
      x='Babilônios e medos, aliados, arrasaram a cidade; em poucos anos o império derrotado desapareceu do mapa.',
      src=('en', 'Nineveh', ['612']))
-c.NW('Em que ano saiu esta manchete?', '1922', 'Tumba intacta de faraó é encontrada no Vale dos Reis', 2, paper='Correio do Cairo',
+c.NW('Em que ano saiu esta manchete?', '1922', 'Tumba de faraó é encontrada quase intacta no Vale dos Reis', 2, paper='Correio do Cairo',
      sub='Câmara selada há mais de 3 mil anos guarda carros, joias e estátuas douradas',
      wrong=['1899', '1912', '1919', '1926', '1932'], src=('pt', 'Tutancâmon', ['1922']),
      x='Quando lorde Carnarvon perguntou se via algo, Howard Carter teria respondido: "Sim, coisas maravilhosas".')
@@ -117,12 +107,12 @@ c.MY('A Esfinge de Gizé perdeu o nariz com um tiro de canhão dos soldados de N
 c.MY('A maldição de Tutancâmon matou quem abriu sua tumba?', False, 2, who='tutancamon',
      src=('en', 'Curse of the pharaohs', ['Carter']),
      x='Howard Carter, que liderou a escavação, viveu mais 16 anos; estudos não acharam mais mortes entre os presentes do que o esperado.')
-c.MY('Os 60 minutos da hora e os 360 graus do círculo vêm da matemática da Mesopotâmia?', True, 2, icon='hourglass',
+c.MY('A divisão da hora em 60 minutos, e do minuto em 60 segundos, vem da matemática da Mesopotâmia?', True, 2, icon='hourglass',
      src=('en', 'Sexagesimal', ['Babylonian']),
      x='Sumérios e babilônios contavam em base 60, número com muitos divisores; o sistema sobreviveu na medida do tempo e dos ângulos.')
 
 # ── d3 ──
-c.T('Na pesagem do coração, diante de Osíris, o coração do morto era posto na balança contra o quê?', 'Uma pena',
+c.T('No julgamento dos mortos, diante de Osíris, o coração do morto era pesado numa balança contra o quê?', 'Uma pena',
     ['Um grão de trigo', 'Um escaravelho de ouro', 'Uma moeda de prata', 'Um olho de Hórus', 'Uma pedra do Nilo'], d=3, icon='book',
     src=('en', 'Maat', ['feather']),
     x='A pena representava Maat, a verdade e a justiça; se o coração pesasse mais, era devorado pela monstruosa Ammit.')
@@ -135,10 +125,10 @@ c.T('Em que país ficam hoje as ruínas de Mohenjo-daro, uma das grandes cidades
     src=('en', 'Mohenjo-daro', ['Pakistan']),
     x='Por volta de 2500 a.C., a cidade já tinha ruas em grade, poços, banheiros nas casas e esgotos cobertos.')
 c.T('Qual achado de 1947, em cavernas de Qumran, revelou cópias da Bíblia hebraica mil anos mais antigas que as conhecidas?', 'Manuscritos do Mar Morto',
-    ['Códice Sinaítico', 'Biblioteca de Nag Hammadi', 'Cartas de Amarna', 'Papiros de Oxirrinco', 'Tabuletas de Ebla'], d=3, flag='ISR',
+    ['Códice Sinaítico', 'Biblioteca de Nag Hammadi', 'Cartas de Amarna', 'Papiros de Oxirrinco', 'Tabuletas de Ebla'], d=3, icon='scroll',
     src=('en', 'Dead Sea Scrolls', ['Qumran']),
-    x='Os primeiros rolos foram encontrados por pastores beduínos que procuravam uma cabra perdida.')
-c.P('Qual faraó assinou com os hititas um dos mais antigos tratados de paz conhecidos?', 'ramses_ii', d=3, stad='abu_simbel',
+    x='Segundo o relato mais conhecido, os primeiros rolos foram achados por pastores beduínos que procuravam uma cabra perdida.')
+c.P('Qual faraó assinou com os hititas um dos mais antigos tratados de paz conhecidos?', 'ramses_ii', d=3, flag='TUR',
     src=('en', 'Ramesses II', ['Hattusili']),
     x='O texto foi gravado em hieróglifos nos templos egípcios e, em acádio, em tabuletas da capital hitita; uma cópia está exposta na sede da ONU.')
 c.P('Segundo Heródoto, qual rei persa mandou chicotear o mar quando uma tempestade destruiu suas pontes sobre o Helesponto?', 'xerxes', d=3, who='herodoto',
@@ -159,7 +149,7 @@ c.Q('Quem sou eu?', 'aquenaton', ['Fui filho de Amenófis III, um dos faraós ma
     'Depois que morri, meus sucessores tentaram apagar minha memória dos monumentos.'], 3,
     src=('en', 'Akhenaten', ['Amarna']),
     x='Depois dele, o culto a Amon voltou: o jovem Tutancáton até trocou de nome para Tutancâmon.')
-c.QT('O Egito é uma dádiva do Nilo.', 'herodoto', 3, ctx='Frase das Histórias, obra de um viajante grego do século V a.C.',
+c.QT('O Egito é uma dádiva do Nilo.', 'herodoto', 3, ctx='Escrita por um viajante grego que visitou o Egito no século V a.C.',
      src=('en', 'Herodotus', ['Egypt']),
      x='O "pai da História" viajou pelo Egito e descreveu as cheias do rio, as pirâmides e até a mumificação.')
 c.QT('Rei do mundo, grande rei, rei poderoso, rei da Babilônia, rei da Suméria e da Acádia, rei dos quatro cantos do mundo.', 'ciro', 3,
@@ -168,9 +158,12 @@ c.QT('Rei do mundo, grande rei, rei poderoso, rei da Babilônia, rei da Suméria
      x='O cilindro foi encontrado em 1879 nas ruínas da Babilônia e hoje está no Museu Britânico.')
 c.LN('Quem é o rei persa que falta nesta linhagem?', 'xerxes', 'De pai para filho · Pérsia aquemênida', ['Dario I', '?', 'Artaxerxes I'], d=3, era='ant',
      src=('en', 'Xerxes I', ['Artaxerxes']),
-     x='Foi ele quem invadiu a Grécia em 480 a.C., passando pelas Termópilas e perdendo a frota em Salamina.')
+     x='Foi ele quem invadiu a Grécia em 480 a.C.: passou pelas Termópilas, mas teve a frota derrotada em Salamina.')
+c.BT('Qual reino os persas de Ciro derrotaram nesta batalha, pouco antes de tomar a capital inimiga?', 'babilonia', 'Ópis · 539 a.C.', 'persia', '?', d=3,
+     x='Semanas depois, a Babilônia caiu quase sem luta, e o rei Nabonido foi capturado.',
+     src=('en', 'Battle of Opis', ['Nabonidus']))
 c.NW('Em que ano saiu esta manchete?', '1822', 'Decifrado o segredo dos hieróglifos', 3, paper='Folha Literária de Paris',
-     sub='Estudioso francês lê os nomes de faraós escritos na Pedra de Roseta',
+     sub='Estudioso francês lê nomes de faraós com a ajuda da Pedra de Roseta',
      wrong=['1799', '1801', '1815', '1836', '1848'], src=('en', 'Jean-François Champollion', ['1822']),
      x='Diz-se que Champollion, ao entender o sistema, correu ao irmão gritando "Consegui!" e desmaiou.')
 c.MY('Ainda havia mamutes vivos quando a Grande Pirâmide de Gizé foi construída?', True, 3, icon='globe',
@@ -220,11 +213,11 @@ c.QT('Meu nome é Ozymandias, rei dos reis: contemplai minhas obras, ó poderoso
      t='Sobre qual faraó foi escrito este poema?', ctx='Soneto do poeta inglês Percy Shelley, 1818, sobre a estátua partida de um rei',
      src=('en', 'Ozymandias', ['Ramesses II']),
      x='Ozymandias era o nome grego de Ramsés II; no poema, da estátua colossal só restam as pernas e o rosto na areia.')
-c.BT('Quem o faraó Tutmés III enfrentou nesta batalha, a primeira descrita em detalhes na História?', 'Coalizão cananeia', 'Megido · século XV a.C.',
+c.BT('Quem o faraó Tutmés III enfrentou nesta batalha, considerada a primeira registrada em detalhes?', 'Coalizão cananeia', 'Megido · século XV a.C.',
      'egito_antigo', '?', d=4, typ='txt', wrong=['Hititas', 'Hicsos', 'Povos do Mar', 'Assírios', 'Núbios'],
      x='O nome da cidade deu origem a Armagedom, a batalha final do Apocalipse.',
      src=('en', 'Thutmose III', ['Megiddo']))
-c.BT('Qual exército, aliado aos últimos assírios, foi derrotado pelos babilônios nesta batalha?', 'egito_antigo', 'Carquemis · 605 a.C.',
+c.BT('Qual reino, aliado aos últimos assírios, foi derrotado pelos babilônios nesta batalha?', 'egito_antigo', 'Carquemis · 605 a.C.',
      'babilonia', '?', d=4,
      x='Os babilônios eram comandados pelo príncipe herdeiro Nabucodonosor, coroado rei naquele mesmo ano.',
      src=('en', 'Battle of Carchemish', ['605']))
@@ -236,7 +229,7 @@ c.O('Coloque estes capítulos da história egípcia em ordem, do mais antigo ao 
     ('persas', 'Conquista persa do Egito', 'Cambises II', -525, {'crest': 'persia'})], d=4,
     src=('en', 'Ancient Egypt', ['Narmer']))
 c.NW('Em que ano saiu esta manchete?', '1968', 'Templos de Abu Simbel são salvos das águas do Nilo', 4, paper='Diário do Nilo',
-     sub='Blocos cortados um a um foram remontados 65 metros acima, longe da nova represa de Assuã',
+     sub='Blocos cortados um a um foram remontados 65 metros acima, a salvo do lago da nova represa de Assuã',
      wrong=['1952', '1956', '1960', '1974', '1979'], src=('en', 'Abu Simbel temples', ['1968']),
      x='A operação, de 1964 a 1968, foi coordenada pela UNESCO e contou com ajuda de dezenas de países.')
 

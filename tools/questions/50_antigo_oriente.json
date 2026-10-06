@@ -85,7 +85,7 @@
      "Goliath"
     ]
    ],
-   "x": "Uma estela do século IX a.C., achada em Tel Dan, em Israel, menciona a \"Casa de Davi\": a dinastia era conhecida fora da Bíblia."
+   "x": "Uma estela do século IX a.C., achada em Tel Dan, no norte de Israel, traz uma inscrição que a maioria dos estudiosos lê como \"Casa de Davi\"."
   },
   {
    "t": "Segundo a Bíblia, que torre os homens tentaram erguer até o céu, antes de Deus confundir suas línguas?",
@@ -137,9 +137,9 @@
    "t": "Quem sou eu?",
    "type": "player",
    "clues": [
-    "Meu pai foi um rei famoso, que na juventude venceu um gigante.",
-    "Mandei construir o primeiro grande templo de Jerusalém.",
     "Recebi a visita de uma rainha vinda do reino de Sabá.",
+    "Mandei construir o primeiro grande templo de Jerusalém.",
+    "Meu pai foi um rei famoso, que na juventude venceu um gigante.",
     "Ficou célebre minha sentença: propor dividir um bebê ao meio para descobrir a verdadeira mãe."
    ],
    "a": [
@@ -204,7 +204,7 @@
      "66"
     ]
    ],
-   "x": "Ramsés II reinou 66 anos; Tutancâmon, menos de dez, e morreu antes dos 20."
+   "x": "Ramsés II reinou 66 anos; Tutancâmon, só cerca de nove, e morreu antes dos 20."
   },
   {
    "t": "Duelo: qual destes povos escrevia com hieróglifos?",
@@ -222,10 +222,10 @@
     "icon": "book"
    },
    "src": [
-    "pt",
-    "Hieróglifo",
+    "en",
+    "Egyptian hieroglyphs",
     [
-     "Egito"
+     "Egyptian"
     ]
    ],
    "x": "Os sumérios escreviam em cuneiforme, com uma cunha sobre placas de argila mole."
@@ -253,30 +253,10 @@
      "workers"
     ]
    ],
-   "x": "Escavações em Gizé acharam a vila e os túmulos dos operários: eram trabalhadores egípcios pagos, em boa parte com pão e cerveja."
+   "x": "Escavações em Gizé acharam a vila e os túmulos dos operários: eram trabalhadores egípcios, não escravos, e recebiam rações de pão e cerveja."
   },
   {
-   "t": "Qual reino, comandado por Alexandre, o Grande, venceu esta batalha contra os persas?",
-   "battle": {
-    "lbl": "Gaugamela · 331 a.C.",
-    "a": "?",
-    "b": "persia",
-    "x": "O rei persa Dario III fugiu do campo de batalha e foi assassinado por seus próprios nobres no ano seguinte."
-   },
-   "a": [
-    "macedonia"
-   ],
-   "d": 1,
-   "src": [
-    "en",
-    "Battle of Gaugamela",
-    [
-     "331"
-    ]
-   ]
-  },
-  {
-   "t": "Das pirâmides à tumba de Tutancâmon: em que ordem estes fatos aconteceram, do mais antigo ao mais recente?",
+   "t": "Em que ordem estes fatos aconteceram, do mais antigo ao mais recente?",
    "type": "order",
    "a": [
     "piramides",
@@ -301,7 +281,7 @@
     {
      "id": "tumba",
      "y": 1922,
-     "label": "Abertura da tumba de Tutancâmon",
+     "label": "Descoberta da tumba de Tutancâmon",
      "sub": "Vale dos Reis",
      "face": "tutancamon"
     }
@@ -475,7 +455,7 @@
      "Nebuchadnezzar"
     ]
    ],
-   "x": "O exílio terminou em 539 a.C., quando os persas tomaram a Babilônia e permitiram a volta a Jerusalém."
+   "x": "O exílio acabou depois que os persas de Ciro tomaram a Babilônia, em 539 a.C., e permitiram a volta a Jerusalém."
   },
   {
    "t": "Qual civilização antiga dividia o ano em três estações (inundação, plantio e colheita) conforme as cheias de seu grande rio?",
@@ -494,24 +474,6 @@
     ]
    ],
    "x": "As estações se chamavam Akhet, Peret e Shemu, cada uma com quatro meses de 30 dias; somavam-se cinco dias de festa no fim."
-  },
-  {
-   "t": "Qual cidade-Estado do norte da África foi fundada por colonos fenícios vindos de Tiro?",
-   "a": [
-    "cartago"
-   ],
-   "d": 2,
-   "art": {
-    "icon": "ship"
-   },
-   "src": [
-    "pt",
-    "Cartago",
-    [
-     "Tiro"
-    ]
-   ],
-   "x": "Diz a lenda que a rainha Dido ganhou a terra que coubesse num couro de boi e o cortou em tiras finíssimas para cercar uma colina."
   },
   {
    "t": "Quem sou eu?",
@@ -573,32 +535,6 @@
    "x": "O Olho de Hórus, perdido e recuperado na luta contra Seth, virou amuleto de proteção e de cura."
   },
   {
-   "t": "Quem é a governante que falta nestas três gerações?",
-   "type": "player",
-   "line": {
-    "t": "Pai, filha e neto · Egito ptolomaico",
-    "rows": [
-     "Ptolomeu XII",
-     "?",
-     "Cesarião"
-    ],
-    "era": "ant"
-   },
-   "a": [
-    "cleopatra"
-   ],
-   "d": 2,
-   "src": [
-    "en",
-    "Cleopatra",
-    [
-     "Caesarion",
-     "Ptolemy XII"
-    ]
-   ],
-   "x": "Cesarião, que Cleópatra apresentava como filho de Júlio César, foi o último faraó ptolomaico; Otaviano mandou matá-lo aos 17 anos."
-  },
-  {
    "t": "Quem é o faraó que falta nesta dinastia?",
    "type": "player",
    "line": {
@@ -622,7 +558,7 @@
      "Merneptah"
     ]
    ],
-   "x": "Merneptá era o 13º filho: o pai viveu tanto que sobreviveu a doze herdeiros."
+   "x": "Merneptá era o 13º filho: o pai viveu tanto que os doze irmãos mais velhos morreram antes dele."
   },
   {
    "t": "Qual império teve a capital saqueada nesta batalha?",
@@ -656,7 +592,7 @@
     "1932"
    ],
    "news": {
-    "h": "Tumba intacta de faraó é encontrada no Vale dos Reis",
+    "h": "Tumba de faraó é encontrada quase intacta no Vale dos Reis",
     "paper": "Correio do Cairo",
     "sub": "Câmara selada há mais de 3 mil anos guarda carros, joias e estátuas douradas"
    },
@@ -772,7 +708,7 @@
    "x": "Howard Carter, que liderou a escavação, viveu mais 16 anos; estudos não acharam mais mortes entre os presentes do que o esperado."
   },
   {
-   "t": "Os 60 minutos da hora e os 360 graus do círculo vêm da matemática da Mesopotâmia?",
+   "t": "A divisão da hora em 60 minutos, e do minuto em 60 segundos, vem da matemática da Mesopotâmia?",
    "type": "txt",
    "choices": [
     "Fato",
@@ -797,7 +733,7 @@
    "x": "Sumérios e babilônios contavam em base 60, número com muitos divisores; o sistema sobreviveu na medida do tempo e dos ângulos."
   },
   {
-   "t": "Na pesagem do coração, diante de Osíris, o coração do morto era posto na balança contra o quê?",
+   "t": "No julgamento dos mortos, diante de Osíris, o coração do morto era pesado numa balança contra o quê?",
    "type": "txt",
    "choices": [
     "Uma pena",
@@ -893,7 +829,7 @@
    ],
    "d": 3,
    "art": {
-    "flag": "ISR"
+    "icon": "scroll"
    },
    "src": [
     "en",
@@ -902,7 +838,7 @@
      "Qumran"
     ]
    ],
-   "x": "Os primeiros rolos foram encontrados por pastores beduínos que procuravam uma cabra perdida."
+   "x": "Segundo o relato mais conhecido, os primeiros rolos foram achados por pastores beduínos que procuravam uma cabra perdida."
   },
   {
    "t": "Qual faraó assinou com os hititas um dos mais antigos tratados de paz conhecidos?",
@@ -912,7 +848,7 @@
    ],
    "d": 3,
    "art": {
-    "stad": "abu_simbel"
+    "flag": "TUR"
    },
    "src": [
     "en",
@@ -1015,7 +951,7 @@
    "type": "player",
    "quote": {
     "q": "O Egito é uma dádiva do Nilo.",
-    "ctx": "Frase das Histórias, obra de um viajante grego do século V a.C."
+    "ctx": "Escrita por um viajante grego que visitou o Egito no século V a.C."
    },
    "a": [
     "herodoto"
@@ -1073,7 +1009,27 @@
      "Artaxerxes"
     ]
    ],
-   "x": "Foi ele quem invadiu a Grécia em 480 a.C., passando pelas Termópilas e perdendo a frota em Salamina."
+   "x": "Foi ele quem invadiu a Grécia em 480 a.C.: passou pelas Termópilas, mas teve a frota derrotada em Salamina."
+  },
+  {
+   "t": "Qual reino os persas de Ciro derrotaram nesta batalha, pouco antes de tomar a capital inimiga?",
+   "battle": {
+    "lbl": "Ópis · 539 a.C.",
+    "a": "persia",
+    "b": "?",
+    "x": "Semanas depois, a Babilônia caiu quase sem luta, e o rei Nabonido foi capturado."
+   },
+   "a": [
+    "babilonia"
+   ],
+   "d": 3,
+   "src": [
+    "en",
+    "Battle of Opis",
+    [
+     "Nabonidus"
+    ]
+   ]
   },
   {
    "t": "Em que ano saiu esta manchete?",
@@ -1089,7 +1045,7 @@
    "news": {
     "h": "Decifrado o segredo dos hieróglifos",
     "paper": "Folha Literária de Paris",
-    "sub": "Estudioso francês lê os nomes de faraós escritos na Pedra de Roseta"
+    "sub": "Estudioso francês lê nomes de faraós com a ajuda da Pedra de Roseta"
    },
    "a": [
     "1822"
@@ -1413,7 +1369,7 @@
    "x": "Ozymandias era o nome grego de Ramsés II; no poema, da estátua colossal só restam as pernas e o rosto na areia."
   },
   {
-   "t": "Quem o faraó Tutmés III enfrentou nesta batalha, a primeira descrita em detalhes na História?",
+   "t": "Quem o faraó Tutmés III enfrentou nesta batalha, considerada a primeira registrada em detalhes?",
    "type": "txt",
    "choices": [
     "Coalizão cananeia",
@@ -1442,7 +1398,7 @@
    ]
   },
   {
-   "t": "Qual exército, aliado aos últimos assírios, foi derrotado pelos babilônios nesta batalha?",
+   "t": "Qual reino, aliado aos últimos assírios, foi derrotado pelos babilônios nesta batalha?",
    "battle": {
     "lbl": "Carquemis · 605 a.C.",
     "a": "babilonia",
@@ -1531,7 +1487,7 @@
    "news": {
     "h": "Templos de Abu Simbel são salvos das águas do Nilo",
     "paper": "Diário do Nilo",
-    "sub": "Blocos cortados um a um foram remontados 65 metros acima, longe da nova represa de Assuã"
+    "sub": "Blocos cortados um a um foram remontados 65 metros acima, a salvo do lago da nova represa de Assuã"
    },
    "a": [
     "1968"

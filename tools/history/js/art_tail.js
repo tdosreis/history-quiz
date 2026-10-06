@@ -169,8 +169,12 @@ function optIndex() {
   PL.forEach(p => {
     if (!p.img || !p.n) return;
     const n = _fold(p.n); seen[n] = (seen[n] || 0) + 1; face[n] = p;
-    const w = n.replace(/[(),]/g, ' ').split(/\s+/).filter(x => x.length >= 4 && !/^(the|von|van|der|dos|das|del|della)$/.test(x));
-    if (w.length > 1) w.forEach(x => { part[x] = part[x] === undefined ? p : null; });
+    /* first names and titles are nobody's in particular: "Heitor" on a board
+       of Trojan heroes is Hector, not Villa-Lobos (see ART_STOP) */
+    const all = n.replace(/[(),]/g, ' ').split(/\s+/).filter(Boolean);
+    const w = all.filter(x => x.length >= 4 && !/^(the|von|van|der|dos|das|del|della)$/.test(x) && !ART_STOP.has(x));
+    /* "Cleópatra VII" is two words even though "VII" is too short to stand for her */
+    if (all.length > 1) w.forEach(x => { part[x] = part[x] === undefined ? p : null; });
   });
   Object.keys(seen).forEach(n => { if (seen[n] > 1) delete face[n]; });
   Object.keys(part).forEach(x => { if (part[x] && !(x in face) && !club[x] && !flag[x]) face[x] = part[x]; });
@@ -203,6 +207,9 @@ const OPT_LOOKS = /\b(bandeira|brasao|emblema|simbolo|cores?|retrato|rosto|foto|
    the answer itself (a year is a year whatever the question says). */
 const ROMAN_RX = /^(s[eé]c(ulo|\.)?\s*)?([ivxlc]+)(\s*a\.?\s?c\.?)?$/i;
 const OPT_TOPIC_Q = [
+  /* a question that opens by asking for a person wants people, whatever war or
+     treaty it mentions on the way ("Qual herói grego da Guerra de Troia…") */
+  ['person',  /^(qual|quais|que) (heroi|heroina|herois|rei|rainha|reis|imperador|imperatriz|farao|papa|presidente|general|lider|governante|filosofo|cientista|pintor|escritor|poeta|navegador|explorador|conquistador|sultao|czar|califa|santo|profeta|apostolo|faraos|imperadores|generais|lideres)\b/],
   ['century', /\bem que seculo\b|\bqual seculo\b|\bseculo em que\b/],
   ['year',    /\bem que ano\b|\bqual ano\b|\bano em que\b|\bque data\b|\bem que data\b/],
   ['date',    /\bem que (data|dia|mes)\b|\bque dia\b|\bqual (data|dia|mes)\b/],

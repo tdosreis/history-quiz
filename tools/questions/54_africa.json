@@ -1,0 +1,911 @@
+{
+ "id": "africa",
+ "name": "África",
+ "tag": "Reinos e impérios africanos",
+ "col": "#C07A2C",
+ "diff": "Variado",
+ "emoji": "🌍",
+ "qs": [
+  {
+   "t": "Qual deserto as caravanas de camelos cruzavam levando sal para o sul e trazendo de volta o ouro da África ocidental?",
+   "type": "txt",
+   "choices": [
+    "Saara",
+    "Kalahari",
+    "Namibe",
+    "Gobi",
+    "Atacama",
+    "Sonora"
+   ],
+   "a": [
+    "Saara"
+   ],
+   "d": 1,
+   "art": {
+    "flag": "MLI"
+   },
+   "src": [
+    "en",
+    "Trans-Saharan trade",
+    [
+     "salt"
+    ]
+   ],
+   "x": "Em Taghaza, no meio do deserto, até as casas e a mesquita eram feitas de blocos de sal, contou o viajante Ibn Battuta no século XIV."
+  },
+  {
+   "t": "Por causa da colonização, qual língua europeia é hoje a oficial de Angola, Moçambique e Cabo Verde?",
+   "type": "txt",
+   "choices": [
+    "Português",
+    "Francês",
+    "Inglês",
+    "Espanhol",
+    "Holandês",
+    "Italiano"
+   ],
+   "a": [
+    "Português"
+   ],
+   "d": 1,
+   "art": {
+    "flag": "AGO"
+   },
+   "src": [
+    "en",
+    "Portuguese-speaking African countries",
+    [
+     "Mozambique"
+    ]
+   ],
+   "x": "As cinco ex-colônias portuguesas na África, com Guiné-Bissau e São Tomé e Príncipe, ficaram independentes entre 1973 e 1975."
+  },
+  {
+   "t": "Por qual nome do seu clã, usado como apelido carinhoso, Nelson Mandela era chamado pelos sul-africanos?",
+   "type": "txt",
+   "choices": [
+    "Madiba",
+    "Mzee",
+    "Mwalimu",
+    "Osagyefo",
+    "Bwana",
+    "Ras"
+   ],
+   "a": [
+    "Madiba"
+   ],
+   "d": 2,
+   "art": {
+    "flag": "ZAF"
+   },
+   "src": [
+    "en",
+    "Nelson Mandela",
+    [
+     "Madiba"
+    ]
+   ],
+   "x": "Também o chamavam de Tata, \"pai\" em xhosa; Mzee, Mwalimu e Osagyefo eram os apelidos de Kenyatta, Nyerere e Nkrumah."
+  },
+  {
+   "t": "Qual rio passava junto a Tombuctu e Gao, as grandes cidades comerciais dos impérios do Mali e Songai?",
+   "type": "txt",
+   "choices": [
+    "Níger",
+    "Nilo",
+    "Congo",
+    "Zambeze",
+    "Senegal",
+    "Limpopo"
+   ],
+   "a": [
+    "Níger"
+   ],
+   "d": 2,
+   "art": {
+    "crest": "mali"
+   },
+   "src": [
+    "en",
+    "Niger River",
+    [
+     "Timbuktu"
+    ]
+   ],
+   "x": "O Níger faz uma grande curva em direção ao Saara; ali, onde o rio encontra o deserto, cresceram os entrepostos das caravanas."
+  },
+  {
+   "t": "Em qual país atual ficam as ruínas de Cartago, a grande rival de Roma?",
+   "type": "txt",
+   "choices": [
+    "Tunísia",
+    "Líbia",
+    "Marrocos",
+    "Argélia",
+    "Egito",
+    "Líbano"
+   ],
+   "a": [
+    "Tunísia"
+   ],
+   "d": 2,
+   "art": {
+    "crest": "cartago"
+   },
+   "src": [
+    "en",
+    "Carthage",
+    [
+     "Tunis"
+    ]
+   ],
+   "x": "Os restos de Cartago ficam num subúrbio de Túnis, a capital do país, e são Patrimônio Mundial da UNESCO desde 1979."
+  },
+  {
+   "t": "Qual reino da África ocidental, no sul da atual Nigéria, criou as placas e cabeças de metal saqueadas por uma expedição britânica em 1897?",
+   "type": "txt",
+   "choices": [
+    "Benin",
+    "Daomé",
+    "Axante",
+    "Oió",
+    "Congo",
+    "Songai"
+   ],
+   "a": [
+    "Benin"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "bust"
+   },
+   "src": [
+    "en",
+    "Benin Bronzes",
+    [
+     "1897"
+    ]
+   ],
+   "x": "Milhares de peças, conhecidas como \"bronzes do Benin\", foram levadas para museus da Europa e dos Estados Unidos; nos últimos anos, várias começaram a ser devolvidas à Nigéria."
+  },
+  {
+   "t": "Qual rei europeu governou o Estado Livre do Congo como propriedade pessoal, a partir de 1885, com um regime brutal de trabalho forçado?",
+   "type": "txt",
+   "choices": [
+    "Leopoldo II",
+    "Leopoldo I",
+    "Alberto I",
+    "Guilherme II",
+    "Napoleão III",
+    "Afonso XIII"
+   ],
+   "a": [
+    "Leopoldo II"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "crown"
+   },
+   "src": [
+    "en",
+    "Congo Free State",
+    [
+     "Leopold II"
+    ]
+   ],
+   "x": "As denúncias sobre a coleta de borracha causaram escândalo internacional, e a Bélgica assumiu o território como colônia em 1908."
+  },
+  {
+   "t": "Qual império, o primeiro grande reino do ouro na África ocidental, antecedeu o Mali e tinha sua capital em Kumbi Saleh?",
+   "type": "txt",
+   "choices": [
+    "Gana",
+    "Songai",
+    "Benin",
+    "Kanem",
+    "Axum",
+    "Congo"
+   ],
+   "a": [
+    "Gana"
+   ],
+   "d": 4,
+   "art": {
+    "icon": "coins"
+   },
+   "src": [
+    "en",
+    "Ghana Empire",
+    [
+     "Mali"
+    ]
+   ],
+   "x": "O país que hoje se chama Gana fica bem mais ao sul: só adotou o nome do antigo império ao se tornar independente, em 1957."
+  },
+  {
+   "t": "Qual reino da África central teve um rei cristão, Afonso I, que no século XVI trocava cartas com os reis de Portugal?",
+   "type": "txt",
+   "choices": [
+    "Reino do Congo",
+    "Reino de Ndongo",
+    "Reino do Benin",
+    "Império do Mali",
+    "Reino Zulu",
+    "Império Songai"
+   ],
+   "a": [
+    "Reino do Congo"
+   ],
+   "d": 4,
+   "art": {
+    "crest": "imperio_portugues"
+   },
+   "src": [
+    "en",
+    "Afonso I of Kongo",
+    [
+     "Portugal"
+    ]
+   ],
+   "x": "Numa dessas cartas, Afonso I se queixou ao rei D. João III do tráfico de escravizados que despovoava o seu reino."
+  },
+  {
+   "t": "Qual cidade, capital do reino de Cuxe no atual Sudão, deu nome a uma grande necrópole de pirâmides?",
+   "type": "txt",
+   "choices": [
+    "Méroe",
+    "Tebas",
+    "Axum",
+    "Cartago",
+    "Alexandria",
+    "Tombuctu"
+   ],
+   "a": [
+    "Méroe"
+   ],
+   "d": 5,
+   "art": {
+    "icon": "pyramid"
+   },
+   "src": [
+    "en",
+    "Meroë",
+    [
+     "pyramids"
+    ]
+   ],
+   "x": "As pirâmides de Cuxe são menores e mais íngremes que as do Egito, e foram erguidas muitos séculos depois delas."
+  },
+  {
+   "t": "Qual cidade da Etiópia é famosa pelas igrejas medievais escavadas inteiras na rocha?",
+   "type": "txt",
+   "choices": [
+    "Lalibela",
+    "Axum",
+    "Gondar",
+    "Adis Abeba",
+    "Harar",
+    "Méroe"
+   ],
+   "a": [
+    "Lalibela"
+   ],
+   "d": 4,
+   "art": {
+    "flag": "ETH"
+   },
+   "src": [
+    "en",
+    "Lalibela",
+    [
+     "churches"
+    ]
+   ],
+   "x": "A cidade leva o nome do rei que mandou escavar as igrejas, por volta do ano 1200, para criar uma \"nova Jerusalém\" na África."
+  },
+  {
+   "t": "Qual líder, futuro herói de outra independência, viveu mais de vinte anos na África do Sul, onde criou seus métodos de resistência não violenta?",
+   "type": "player",
+   "a": [
+    "gandhi"
+   ],
+   "d": 2,
+   "art": {
+    "flag": "ZAF"
+   },
+   "src": [
+    "en",
+    "Mahatma Gandhi",
+    [
+     "South Africa"
+    ]
+   ],
+   "x": "Em 1893, foi expulso de um vagão de primeira classe em Pietermaritzburg por ser indiano; o episódio mudou a sua vida."
+  },
+  {
+   "t": "Qual chanceler recebeu em sua capital, entre 1884 e 1885, a conferência que fixou as regras da partilha da África entre as potências europeias?",
+   "type": "player",
+   "a": [
+    "bismarck"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "map"
+   },
+   "src": [
+    "en",
+    "Berlin Conference",
+    [
+     "Bismarck"
+    ]
+   ],
+   "x": "Nenhum africano foi convidado: catorze países, quase todos europeus, decidiram as regras para ocupar o continente."
+  },
+  {
+   "t": "Qual império da África ocidental, com capital em Gao, dominou o comércio do Saara até ser derrotado por um exército marroquino armado de arcabuzes, em 1591?",
+   "a": [
+    "songai"
+   ],
+   "d": 3,
+   "art": {
+    "flag": "MAR"
+   },
+   "src": [
+    "en",
+    "Songhai Empire",
+    [
+     "1591"
+    ]
+   ],
+   "x": "Na Batalha de Tondibi, as armas de fogo marroquinas venceram um exército bem maior, que lutava com lanças, arcos e cavalaria."
+  },
+  {
+   "t": "Qual reino africano cunhava moedas próprias de ouro, prata e bronze e controlava o porto de Adúlis, no mar Vermelho?",
+   "a": [
+    "axum"
+   ],
+   "d": 4,
+   "art": {
+    "icon": "coins"
+   },
+   "src": [
+    "en",
+    "Kingdom of Aksum",
+    [
+     "Adulis"
+    ]
+   ],
+   "x": "No século III, o profeta persa Mani o contou entre as quatro grandes potências do mundo, ao lado de Roma, da Pérsia e da China."
+  },
+  {
+   "t": "Quem sou eu?",
+   "type": "player",
+   "clues": [
+    "Governei por mais de quarenta anos um antigo império cristão do leste da África.",
+    "Fui coroado imperador em 1930 e deposto por militares em 1974.",
+    "Em 1936, pedi ajuda à Liga das Nações contra a invasão do meu país pela Itália fascista.",
+    "O movimento rastafári, nascido na Jamaica, tirou seu nome da forma como eu era chamado antes da coroação: Ras Tafari."
+   ],
+   "a": [
+    "haile_selassie"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "crown"
+   },
+   "src": [
+    "en",
+    "Haile Selassie",
+    [
+     "Rastafari"
+    ]
+   ],
+   "x": "Seu nome de coroação significa \"Poder da Trindade\"; antes de reinar, ele já governava o país como regente desde 1916."
+  },
+  {
+   "t": "Quem sou eu?",
+   "type": "player",
+   "clues": [
+    "Fui filho de um chefe, mas cresci longe da corte do meu pai, ao lado da minha mãe, Nandi.",
+    "Armei meus guerreiros com uma lança curta de estocada e os fiz atacar em formação de \"chifres de búfalo\".",
+    "Transformei um pequeno clã num poderoso reino no sudeste da África, no início do século XIX.",
+    "Fui assassinado em 1828 por dois meios-irmãos; um deles me sucedeu no trono."
+   ],
+   "a": [
+    "shaka"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "sword"
+   },
+   "src": [
+    "en",
+    "Shaka",
+    [
+     "Dingane"
+    ]
+   ],
+   "x": "Seus regimentos eram formados por homens da mesma idade, e o exército chegou a reunir dezenas de milhares de guerreiros."
+  },
+  {
+   "t": "Coloque em ordem, do mais antigo ao mais recente?",
+   "type": "order",
+   "a": [
+    "anibal",
+    "musa",
+    "shaka",
+    "adwa",
+    "mandela"
+   ],
+   "order": [
+    {
+     "id": "anibal",
+     "y": -218,
+     "label": "Aníbal cruza os Alpes",
+     "sub": "O general de Cartago invade a Itália",
+     "face": "anibal"
+    },
+    {
+     "id": "musa",
+     "y": 1324,
+     "label": "Mansa Mussa vai a Meca",
+     "sub": "A peregrinação do rei do Mali",
+     "face": "mansa_musa"
+    },
+    {
+     "id": "shaka",
+     "y": 1816,
+     "label": "Shaka assume o poder",
+     "sub": "Nasce o Reino Zulu",
+     "face": "shaka"
+    },
+    {
+     "id": "adwa",
+     "y": 1896,
+     "label": "Batalha de Adwa",
+     "sub": "A Etiópia vence a Itália",
+     "flag": "ETH"
+    },
+    {
+     "id": "mandela",
+     "y": 1994,
+     "label": "Mandela toma posse",
+     "sub": "Fim do apartheid",
+     "face": "mandela"
+    }
+   ],
+   "d": 2,
+   "src": [
+    "en",
+    "Mansa Musa",
+    [
+     "1324"
+    ]
+   ]
+  },
+  {
+   "t": "Do mais antigo ao mais recente, ordene estes marcos do fim do domínio colonial na África?",
+   "type": "order",
+   "a": [
+    "egito",
+    "marrocos",
+    "mali",
+    "angola"
+   ],
+   "order": [
+    {
+     "id": "egito",
+     "y": 1922,
+     "label": "Egito deixa de ser protetorado britânico",
+     "sub": "Nasce o Reino do Egito",
+     "flag": "EGY"
+    },
+    {
+     "id": "marrocos",
+     "y": 1956,
+     "label": "Marrocos se livra do domínio francês",
+     "sub": "Fim do protetorado",
+     "flag": "MAR"
+    },
+    {
+     "id": "mali",
+     "y": 1960,
+     "label": "Mali se torna independente",
+     "sub": "O \"Ano da África\"",
+     "flag": "MLI"
+    },
+    {
+     "id": "angola",
+     "y": 1975,
+     "label": "Angola proclama a independência",
+     "sub": "Fim do domínio português",
+     "flag": "AGO"
+    }
+   ],
+   "d": 3,
+   "src": [
+    "en",
+    "Decolonisation of Africa",
+    [
+     "Angola"
+    ]
+   ]
+  },
+  {
+   "t": "Quem disse esta frase?",
+   "type": "player",
+   "quote": {
+    "q": "É um ideal pelo qual espero viver e que espero alcançar. Mas, se for preciso, é um ideal pelo qual estou preparado para morrer.",
+    "ctx": "Discurso no banco dos réus de um julgamento político em Pretória, 1964"
+   },
+   "a": [
+    "mandela"
+   ],
+   "d": 2,
+   "src": [
+    "en",
+    "Rivonia Trial",
+    [
+     "Mandela"
+    ]
+   ],
+   "x": "Condenado à prisão perpétua nesse mesmo julgamento, ele só deixaria a prisão em fevereiro de 1990."
+  },
+  {
+   "t": "Quem disse esta frase?",
+   "type": "txt",
+   "choices": [
+    "Kwame Nkrumah",
+    "Jomo Kenyatta",
+    "Patrice Lumumba",
+    "Julius Nyerere",
+    "Léopold Senghor",
+    "Nelson Mandela"
+   ],
+   "quote": {
+    "q": "Enfim, a batalha terminou! E assim Gana, a sua amada pátria, está livre para sempre!",
+    "ctx": "Discurso à meia-noite em Acra, 6 de março de 1957"
+   },
+   "a": [
+    "Kwame Nkrumah"
+   ],
+   "d": 4,
+   "src": [
+    "en",
+    "Kwame Nkrumah",
+    [
+     "1957"
+    ]
+   ],
+   "x": "Ele governou o país, a antiga Costa do Ouro, até ser deposto em 1966, e foi um dos grandes defensores do pan-africanismo."
+  },
+  {
+   "t": "Qual país europeu tentou conquistar a Etiópia e foi derrotado nesta batalha?",
+   "type": "txt",
+   "choices": [
+    "Itália",
+    "Reino Unido",
+    "França",
+    "Portugal",
+    "Alemanha",
+    "Bélgica"
+   ],
+   "battle": {
+    "lbl": "Adwa · 1896",
+    "a": "ETH",
+    "b": "?",
+    "x": "A vitória do imperador Menelik II garantiu a independência etíope e virou símbolo para todo o continente africano."
+   },
+   "a": [
+    "Itália"
+   ],
+   "d": 2,
+   "src": [
+    "en",
+    "Battle of Adwa",
+    [
+     "Menelik"
+    ]
+   ]
+  },
+  {
+   "t": "Quem os zulus derrotaram nesta batalha, um dos maiores reveses de um exército colonial na África?",
+   "type": "txt",
+   "choices": [
+    "Britânicos",
+    "Bôeres",
+    "Portugueses",
+    "Franceses",
+    "Alemães",
+    "Holandeses"
+   ],
+   "battle": {
+    "lbl": "Isandlwana · 1879",
+    "a": "Zulus",
+    "b": "?",
+    "x": "Armados sobretudo de lanças e escudos, os guerreiros do rei Cetshwayo venceram tropas com fuzis e artilharia."
+   },
+   "a": [
+    "Britânicos"
+   ],
+   "d": 3,
+   "src": [
+    "en",
+    "Battle of Isandlwana",
+    [
+     "Cetshwayo"
+    ]
+   ]
+  },
+  {
+   "t": "Qual reino perdeu nesta batalha, no Marrocos, o seu jovem rei, desaparecido em combate?",
+   "type": "txt",
+   "choices": [
+    "Portugal",
+    "Espanha",
+    "França",
+    "Inglaterra",
+    "Império Otomano",
+    "Veneza"
+   ],
+   "battle": {
+    "lbl": "Alcácer-Quibir · 1578",
+    "a": "?",
+    "b": "MAR",
+    "x": "O sumiço de D. Sebastião, sem herdeiros, levou Portugal à União Ibérica e deu origem ao sebastianismo."
+   },
+   "a": [
+    "Portugal"
+   ],
+   "d": 2,
+   "src": [
+    "en",
+    "Battle of Alcácer Quibir",
+    [
+     "1578"
+    ]
+   ]
+  },
+  {
+   "t": "Quem abre a lista de presidentes da África do Sul depois do apartheid?",
+   "type": "player",
+   "line": {
+    "t": "Presidentes da África do Sul · desde 1994",
+    "rows": [
+     "?",
+     "Thabo Mbeki",
+     "Kgalema Motlanthe",
+     "Jacob Zuma"
+    ],
+    "era": "new"
+   },
+   "a": [
+    "mandela"
+   ],
+   "d": 1,
+   "src": [
+    "en",
+    "President of South Africa",
+    [
+     "Mbeki"
+    ]
+   ],
+   "x": "Eleito em 1994, ele governou um só mandato e deixou o cargo em 1999, aos 80 anos."
+  },
+  {
+   "t": "Quem completa esta sucessão de reis zulus?",
+   "type": "txt",
+   "choices": [
+    "Dingane",
+    "Dinuzulu",
+    "Senzangakhona",
+    "Moshoeshoe",
+    "Mzilikazi",
+    "Sobhuza"
+   ],
+   "line": {
+    "t": "Reis zulus · século XIX",
+    "rows": [
+     "Shaka",
+     "?",
+     "Mpande",
+     "Cetshwayo"
+    ],
+    "era": "new"
+   },
+   "a": [
+    "Dingane"
+   ],
+   "d": 5,
+   "src": [
+    "en",
+    "Zulu Kingdom",
+    [
+     "Dingane"
+    ]
+   ],
+   "x": "Ele subiu ao trono depois de participar do assassinato do meio-irmão, em 1828, e foi derrotado pelos bôeres em Blood River, em 1838."
+  },
+  {
+   "t": "Em que ano saiu esta manchete?",
+   "type": "txt",
+   "choices": [
+    "1990",
+    "1985",
+    "1988",
+    "1989",
+    "1992",
+    "1994"
+   ],
+   "news": {
+    "h": "Mandela deixa a prisão depois de 27 anos",
+    "paper": "Diário do Cabo",
+    "sub": "De punho erguido, o líder do CNA caminha para fora da prisão Victor Verster"
+   },
+   "a": [
+    "1990"
+   ],
+   "d": 2,
+   "src": [
+    "en",
+    "Nelson Mandela",
+    [
+     "1990"
+    ]
+   ],
+   "x": "Quatro anos depois, nas primeiras eleições abertas a todos os sul-africanos, ele foi eleito presidente."
+  },
+  {
+   "t": "Em que ano saiu esta manchete?",
+   "type": "txt",
+   "choices": [
+    "1976",
+    "1960",
+    "1964",
+    "1970",
+    "1984",
+    "1990"
+   ],
+   "news": {
+    "h": "Estudantes marcham em Soweto contra o ensino em africâner",
+    "paper": "Jornal de Joanesburgo",
+    "sub": "Polícia reprime o protesto a tiros; o levante se espalha pelo país"
+   },
+   "a": [
+    "1976"
+   ],
+   "d": 4,
+   "src": [
+    "en",
+    "Soweto uprising",
+    [
+     "1976"
+    ]
+   ],
+   "x": "O 16 de junho, dia em que a marcha começou, é hoje feriado na África do Sul: o Dia da Juventude."
+  },
+  {
+   "t": "Duelo: quem viveu primeiro?",
+   "type": "player",
+   "fixed": [
+    "anibal",
+    "mansa_musa"
+   ],
+   "duel": true,
+   "a": [
+    "anibal"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "hourglass"
+   },
+   "src": [
+    "en",
+    "Hannibal",
+    [
+     "247"
+    ]
+   ],
+   "x": "Mais de 1.400 anos separam o general de Cartago do rei do Mali."
+  },
+  {
+   "t": "Duelo: quem nasceu primeiro?",
+   "type": "player",
+   "fixed": [
+    "nzinga",
+    "shaka"
+   ],
+   "duel": true,
+   "a": [
+    "nzinga"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "hourglass"
+   },
+   "src": [
+    "en",
+    "Nzinga of Ndongo and Matamba",
+    [
+     "1583"
+    ]
+   ],
+   "x": "A rainha angolana nasceu por volta de 1583, cerca de dois séculos antes do fundador do Reino Zulu."
+  },
+  {
+   "t": "Mansa Mussa levou tanto ouro em sua peregrinação a Meca que o preço do metal caiu no Cairo por anos?",
+   "type": "txt",
+   "choices": [
+    "Fato",
+    "Mito"
+   ],
+   "duel": true,
+   "myth": true,
+   "a": [
+    "Fato"
+   ],
+   "d": 2,
+   "art": {
+    "who": "mansa_musa"
+   },
+   "src": [
+    "en",
+    "Mansa Musa",
+    [
+     "Cairo"
+    ]
+   ],
+   "x": "O cronista al-Umari contou, uns doze anos depois, que o ouro ainda valia menos no Egito por causa dos gastos e presentes do rei do Mali."
+  },
+  {
+   "t": "As muralhas do Grande Zimbábue foram erguidas por povos vindos de fora da África, como fenícios ou árabes?",
+   "type": "txt",
+   "choices": [
+    "Fato",
+    "Mito"
+   ],
+   "duel": true,
+   "myth": true,
+   "a": [
+    "Mito"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "castle"
+   },
+   "src": [
+    "en",
+    "Great Zimbabwe",
+    [
+     "Shona"
+    ]
+   ],
+   "x": "Essa ideia foi espalhada por colonos europeus; a arqueologia mostra que a cidade foi construída por ancestrais do povo xona, entre os séculos XI e XV."
+  },
+  {
+   "t": "Depois de destruir Cartago, em 146 a.C., os romanos salgaram a terra para que nada mais crescesse ali?",
+   "type": "txt",
+   "choices": [
+    "Fato",
+    "Mito"
+   ],
+   "duel": true,
+   "myth": true,
+   "a": [
+    "Mito"
+   ],
+   "d": 4,
+   "art": {
+    "crest": "republica_romana"
+   },
+   "src": [
+    "en",
+    "Salting the earth",
+    [
+     "Carthage"
+    ]
+   ],
+   "x": "Nenhum texto antigo fala em sal: a história só aparece em autores modernos, e Roma acabou fundando uma nova Cartago no mesmo lugar."
+  }
+ ]
+}

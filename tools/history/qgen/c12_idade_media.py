@@ -7,12 +7,12 @@ c = Cat('idade_media', 'Idade Média', '🏰', 'Castelos, cruzadas e califas', '
 c.T('Que parte de um castelo medieval podia ser erguida para impedir a passagem sobre o fosso?', 'Ponte levadiça',
     ['Ameia', 'Torre de menagem', 'Seteira', 'Barbacã', 'Muralha'], d=1, icon='castle',
     src=('en', 'Drawbridge', ['moat']),
-    x='Erguida, a ponte também tapava a entrada; muitas vezes, logo atrás dela, ainda havia uma pesada grade de ferro, o rastrilho.')
+    x='Erguida, a ponte também tapava a entrada; muitas vezes, logo atrás dela, ainda havia o rastrilho, uma pesada grade que descia para fechar o portão.')
 c.T('Como se chamava o nobre que recebia terras de um senhor e, em troca, lhe jurava fidelidade e serviço militar?', 'Vassalo',
     ['Servo', 'Suserano', 'Burguês', 'Clérigo', 'Mercador'], d=1, icon='crown',
     src=('en', 'Vassal', ['fief']),
     x='Na cerimônia da homenagem, o vassalo punha as mãos entre as mãos do senhor e jurava fidelidade.')
-c.T('Como se chamavam os guerreiros nobres que combatiam a cavalo, com armadura, a serviço de um senhor feudal?', 'Cavaleiros',
+c.T('Na Europa medieval, como se chamavam os guerreiros nobres que combatiam a cavalo, com armadura, a serviço de um senhor feudal?', 'Cavaleiros',
     ['Samurais', 'Legionários', 'Hoplitas', 'Mosqueteiros', 'Gladiadores'], d=1, icon='sword',
     src=('en', 'Knight', ['horse']),
     x='Um menino nobre costumava começar como pajem, passar a escudeiro e só depois ser armado cavaleiro.')
@@ -27,7 +27,7 @@ c.T('Para qual cidade os muçulmanos se voltam na hora de rezar?', 'Meca',
 c.T('Qual é o livro sagrado do Islã, que reúne as revelações que Maomé teria recebido?', 'Alcorão',
     ['Torá', 'Talmude', 'Vedas', 'Avesta', 'Evangelho'], d=1, icon='book',
     src=('en', 'Quran', ['Uthman']),
-    x='O nome significa "recitação"; o texto foi reunido num livro único pouco depois da morte de Maomé, no governo do califa Otomão.')
+    x='O nome significa "recitação"; a versão-padrão do texto foi fixada por volta de 650, no governo do califa Otomão.')
 c.T('Como os muçulmanos chamavam a parte da Península Ibérica que estava sob seu domínio?', 'Al-Andalus',
     ['Magrebe', 'Levante', 'Ifríquia', 'Hejaz', 'Anatólia'], d=2, stad='alhambra',
     src=('en', 'Al-Andalus', ['Córdoba']),
@@ -39,11 +39,11 @@ c.T('Que arma incendiária, capaz de arder até sobre a água, era o trunfo secr
 c.T('Como se chamavam as associações medievais de artesãos de um mesmo ofício, que fixavam preços e formavam aprendizes?', 'Corporações de ofício',
     ['Sindicatos', 'Feiras', 'Comunas', 'Burgos', 'Ordens mendicantes'], d=2, icon='gear',
     src=('en', 'Guild', ['apprentice']),
-    x='Para virar mestre, o artesão muitas vezes tinha de apresentar uma peça exemplar, a "obra-prima" — daí a palavra.')
+    x='Para virar mestre, o artesão muitas vezes tinha de apresentar aos examinadores da corporação uma peça exemplar, a sua "obra-prima".')
 c.T('Qual arma fez a fama dos arqueiros ingleses e galeses na Guerra dos Cem Anos?', 'Arco longo',
     ['Besta', 'Lança', 'Catapulta', 'Mosquete', 'Funda'], d=2, flag='ENG',
     src=('en', 'English longbow', ['yew']),
-    x='Feito de teixo, tinha quase a altura de um homem; em Azincourt, em 1415, suas flechas dizimaram a cavalaria francesa.')
+    x='Feito de teixo, tinha quase a altura de um homem; em Azincourt, em 1415, suas flechas ajudaram a derrotar um exército francês maior.')
 c.T('Como se chama a mudança de Maomé de Meca para Medina, em 622, que marca o ano 1 do calendário islâmico?', 'Hégira',
     ['Ramadã', 'Haje', 'Jihad', 'Sharia', 'Sunna'], d=2, icon='hourglass',
     src=('en', 'Hijrah', ['622']),
@@ -52,7 +52,7 @@ c.T('Em que ano tropas muçulmanas atravessaram o estreito de Gibraltar e começ
     ['622', '732', '756', '800', '1085'], d=3, flag='MAR',
     src=('en', 'Umayyad conquest of Hispania', ['711']),
     x='O comandante era Tárique; o rochedo onde desembarcou, Jabal Tariq ("monte de Tárique"), deu origem ao nome Gibraltar.')
-c.T('Qual ordem religiosa segue a regra escrita em Monte Cassino, no século VI, resumida no lema "Ora et labora"?', 'Beneditinos',
+c.T('Qual ordem religiosa, nascida no mosteiro de Monte Cassino, na Itália do século VI, tem como lema "Ora et labora"?', 'Beneditinos',
     ['Franciscanos', 'Dominicanos', 'Jesuítas', 'Templários', 'Carmelitas'], d=3, icon='book',
     src=('en', 'Benedict of Nursia', ['Monte Cassino']),
     x='São Bento é padroeiro da Europa; no Brasil, o Mosteiro de São Bento do Rio de Janeiro foi fundado por monges da ordem no século XVI.')
@@ -64,7 +64,7 @@ c.T('Qual papa pregou a Primeira Cruzada no Concílio de Clermont, em 1095?', 'U
     ['Gregório VII', 'Inocêncio III', 'Leão III', 'Bonifácio VIII', 'Silvestre II'], d=3, flag='FRA',
     src=('en', 'Pope Urban II', ['Clermont']),
     x='Segundo os cronistas, a multidão respondeu ao discurso gritando "Deus vult!", ou seja, "Deus o quer!".')
-c.T('Em qual cidade os papas moraram entre 1309 e 1377, longe de Roma?', 'Avignon',
+c.T('Em qual cidade os papas moraram entre 1309 e 1376, longe de Roma?', 'Avignon',
     ['Lyon', 'Paris', 'Reims', 'Marselha', 'Toulouse'], d=3, crest='francia',
     src=('en', 'Avignon Papacy', ['1309']),
     x='Sete papas, todos franceses, viveram ali; o Palácio dos Papas, erguido nesse período, é um dos maiores edifícios góticos da Europa.')
@@ -72,7 +72,7 @@ c.T('Que tratado de 843 dividiu o império de Carlos Magno entre os seus três n
     ['Tratado de Tordesilhas', 'Tratado de Troyes', 'Concordata de Worms', 'Tratado de Zamora', 'Paz de Vestfália'], d=3, who='carlos_magno',
     src=('en', 'Treaty of Verdun', ['843']),
     x='Carlos, o Calvo, ficou com o oeste, embrião da França; Luís, o Germânico, com o leste; e Lotário, com a faixa do meio e o título de imperador.')
-c.T('Que imperador esperou três dias na neve, diante do castelo de Canossa, para ser perdoado pelo papa Gregório VII?', 'Henrique IV',
+c.T('Qual soberano do Sacro Império esperou três dias na neve, diante do castelo de Canossa, para obter o perdão do papa Gregório VII?', 'Henrique IV',
     ['Frederico Barba-Ruiva', 'Oto I', 'Frederico II', 'Conrado III', 'Carlos IV'], d=4, crest='sacro_imperio',
     src=('en', 'Investiture Controversy', ['Canossa']),
     x='Foi em 1077, no auge da Querela das Investiduras; "ir a Canossa" virou expressão para quem é obrigado a se humilhar.')
@@ -92,14 +92,14 @@ c.T('Qual rei ostrogodo governou a Itália a partir de Ravena entre 493 e 526?',
     ['Alarico I', 'Genserico', 'Totila', 'Vitiges', 'Gelimer'], d=5, crest='bizancio',
     src=('en', 'Theodoric the Great', ['Ravenna']),
     x='Passou a juventude como refém em Constantinopla; seu mausoléu em Ravena tem o teto feito de um único bloco de pedra.')
-c.T('Qual rei visigodo morreu ao enfrentar os muçulmanos de Tárique na batalha de Guadalete, em 711?', 'Rodrigo',
+c.T('Qual rei visigodo foi derrotado pelos muçulmanos de Tárique na batalha de Guadalete, em 711?', 'Rodrigo',
     ['Recaredo I', 'Alarico II', 'Leovigildo', 'Pelágio', 'Vamba'], d=5, icon='crown',
     src=('en', 'Roderic', ['Guadalete']),
     x='Toledo, a capital visigoda, caiu pouco depois; anos mais tarde, um nobre chamado Pelágio iniciou a resistência cristã nas Astúrias.')
 c.T('Qual califa omíada mandou erguer a Cúpula da Rocha, em Jerusalém, concluída por volta de 691?', 'Abd al-Malik',
-    ['Moáuia I', 'Iázide I', 'Ualide I', 'Hixame', 'Omar II'], d=5, icon='column',
+    ['Muawiya I', 'Yazid I', 'Al-Walid I', 'Hisham', 'Omar II'], d=5, icon='column',
     src=('en', 'Dome of the Rock', ['Abd al-Malik']),
-    x='É o mais antigo grande monumento islâmico ainda de pé; o revestimento dourado da cúpula, porém, só foi colocado no século XX.')
+    x='É a mais antiga obra da arquitetura islâmica ainda de pé; foi erguida no Monte do Templo, sobre a rocha sagrada que lhe dá o nome.')
 
 # ── Personagem: o rosto certo entre dez ──
 c.P('Qual rei da Inglaterra, num reinado de dez anos, passou só cerca de seis meses no próprio reino?', 'ricardo', d=3, crest='inglaterra',
@@ -116,7 +116,7 @@ c.P('Qual rei mandou fazer o Domesday Book, o grande levantamento das terras e b
     x='O apelido "Livro do Juízo Final" veio do povo: das suas informações não havia apelação, como no Juízo Final.')
 c.P('Qual califa enviou a Carlos Magno um elefante chamado Abul-Abbas?', 'harun', d=4, who='carlos_magno',
     src=('en', 'Abul-Abbas', ['Harun']),
-    x='O elefante chegou a Aachen em 802 e viveu até 810; anos depois, o califa ainda mandou ao imperador um relógio de água que espantou a corte.')
+    x='O elefante chegou a Aachen em 802 e viveu até 810; em 807, o califa ainda mandou ao imperador um relógio de água com autômatos.')
 
 # ── Estado: o brasão certo ──
 c.C('Qual reino teve Afonso Henriques como primeiro rei, no século XII?', 'portugal', d=1, icon='crown',
@@ -127,7 +127,7 @@ c.C('Os habitantes deste império medieval falavam grego, mas chamavam a si mesm
     x='O nome "bizantino" foi criado por historiadores ocidentais bem depois de 1453; os turcos chamavam esse povo de "Rum", ou seja, romanos.')
 c.C('Qual reino germânico, de Clóvis a Carlos Magno, deu origem às atuais França e Alemanha?', 'francos', d=2, who='carlos_magno',
     src=('en', 'Francia', ['Clovis']),
-    x='O nome França vem desse povo; Clóvis, batizado em Reims, fez dele o primeiro grande reino germânico católico.')
+    x='O nome França vem desse povo; Clóvis, batizado em Reims, adotou o catolicismo, e não o arianismo seguido por outros reis germânicos.')
 c.C('Qual república marítima, comandada pelo doge Enrico Dandolo, transportou a Quarta Cruzada que saqueou Constantinopla em 1204?', 'veneza', d=3, crest='bizancio',
     src=('en', 'Fourth Crusade', ['Dandolo']),
     x='Os quatro cavalos de bronze da Basílica de São Marcos foram levados do Hipódromo de Constantinopla nesse saque.')
@@ -187,7 +187,7 @@ c.QT('Nenhum homem livre será preso ou despojado de seus bens senão pelo julga
      wrong=['Bula de Ouro', 'Código de Justiniano', 'Édito de Milão', 'Concordata de Worms', 'Tratado de Tordesilhas'],
      ctx='Cláusula 39 de um pergaminho imposto por barões rebeldes, 1215',
      src=('en', 'Magna Carta', ['39']),
-     x='A cláusula ainda está em vigor na Inglaterra e inspirou a ideia de devido processo legal em constituições do mundo todo, inclusive a brasileira.')
+     x='Mantida nas versões posteriores da carta, a cláusula segue em vigor na Inglaterra e inspirou o devido processo legal, presente até na Constituição brasileira.')
 c.QT('Se não estou, que Deus me ponha nela; se estou, que Deus me guarde nela.', 'joana_darc', 3,
      ctx='Resposta a uma pergunta-armadilha sobre a graça de Deus, num julgamento em Ruão, 1431',
      src=('en', 'Joan of Arc', ['Rouen']),
@@ -205,12 +205,12 @@ c.BT("Quem levantou o cerco desta cidade, com Joana d'Arc à frente das tropas?"
 c.BT('Quem os francos de Carlos Martel detiveram nesta batalha?', 'califado_omiada', 'Poitiers · 732', 'francos', '?', d=2,
      x='A vitória deu enorme prestígio a Carlos Martel: seu filho Pepino se tornaria rei, e seu neto, Carlos Magno, imperador.',
      src=('en', 'Battle of Tours', ['Umayyad']))
-c.BT('Qual reino venceu esta batalha da Guerra dos Cem Anos, mesmo em grande desvantagem numérica?', 'inglaterra', 'Azincourt · 1415', '?', 'francia', d=2,
+c.BT('Qual reino venceu esta batalha da Guerra dos Cem Anos, mesmo em desvantagem numérica?', 'inglaterra', 'Azincourt · 1415', '?', 'francia', d=2,
      x='Henrique V venceu no dia de São Crispim; quase dois séculos depois, Shakespeare imortalizou a batalha na peça Henrique V.',
      src=('en', 'Battle of Agincourt', ['longbow']))
 c.BT('Quem os portugueses derrotaram nesta batalha, garantindo a coroa de D. João I?', 'Castela', 'Aljubarrota · 1385', 'portugal', '?', d=2, typ='txt',
-     wrong=['Aragão', 'Navarra', 'Granada', 'Inglaterra', 'Marrocos'],
-     x='Nuno Álvares Pereira comandou os portugueses; em agradecimento, D. João I mandou erguer o Mosteiro da Batalha.',
+     wrong=['Granada', 'Inglaterra', 'Marrocos', 'Sacro Império', 'Veneza'],
+     x='Ao lado do rei, o condestável Nuno Álvares Pereira comandou os portugueses; em agradecimento, D. João I mandou erguer o Mosteiro da Batalha.',
      src=('en', 'Battle of Aljubarrota', ['Castile']))
 c.BT('Quem derrotou o exército bizantino nesta batalha e capturou o imperador Romano IV?', 'Turcos seljúcidas', 'Manziquerta · 1071', 'bizancio', '?', d=3, typ='txt',
      wrong=['Turcos otomanos', 'Mamelucos', 'Mongóis', 'Árabes abássidas', 'Fatímidas'],
@@ -236,7 +236,7 @@ c.LN('Quem é o elo que falta nesta linhagem de governantes francos?', 'carlos_m
 c.LN('Quem completa a sucessão dos primeiros reis Plantagenetas da Inglaterra?', 'ricardo', 'Casa Plantageneta · Inglaterra',
      ['Henrique II', '?', 'João Sem Terra', 'Henrique III'], d=2, era='med',
      src=('en', 'House of Plantagenet', ['Henry II']),
-     x='Henrique II e Leonor da Aquitânia tiveram dois filhos reis: o cruzado e o irmão mais novo, que selou a Magna Carta.')
+     x='O cruzado e João Sem Terra eram irmãos, filhos de Henrique II e de Leonor da Aquitânia, que antes fora rainha da França.')
 c.LN('Quem fundou esta dinastia de reis da França, que governou por mais de três séculos?', 'Hugo Capeto', 'Reis da França · 987–1108',
      ['?', 'Roberto II', 'Henrique I', 'Filipe I'], d=4, era='med', typ='txt',
      wrong=['Clóvis I', 'Pepino, o Breve', 'Luís IX', 'Filipe Augusto', 'Carlos Martel'],
@@ -258,10 +258,10 @@ c.DU('Duelo: quem nasceu primeiro?', 'avicena', 'averroes', 3, icon='book',
 c.DU('Duelo: quem nasceu primeiro?', 'carlos_magno', 'harun', 4, icon='hourglass',
      src=('en', 'Harun al-Rashid', ['763']),
      x='Os dois foram contemporâneos e trocaram embaixadas; o califa morreu em 809, e Carlos Magno, mais velho, em 814.')
-c.DU('Duelo: qual destes reinos surgiu primeiro?', 'portugal', 'mali', 3, typ=None, icon='hourglass',
+c.DU('Duelo: qual destes estados surgiu primeiro?', 'portugal', 'mali', 3, typ=None, icon='hourglass',
      src=('en', 'Mali Empire', ['1235']),
      x='Portugal foi reconhecido como reino em 1143; o Império do Mali nasceu por volta de 1235, com Sundiata Keita.')
-c.DU('Duelo: qual destas catedrais começou a ser construída primeiro?', 'Notre-Dame de Paris', 'Catedral de Colônia', 4, typ='txt', icon='castle',
+c.DU('Duelo: qual destas catedrais começou a ser construída primeiro?', 'Notre-Dame de Paris', 'Catedral de Colônia', 4, typ='txt', icon='church',
      src=('en', 'Notre-Dame de Paris', ['1163']),
      x='Notre-Dame foi iniciada em 1163; a de Colônia, começada em 1248, só ficou pronta em 1880, mais de 600 anos depois.')
 
@@ -270,7 +270,7 @@ c.MY('A Guerra dos Cem Anos durou exatamente cem anos?', False, 1, crest='inglat
      x='Durou 116 anos, de 1337 a 1453, com longas tréguas no meio; o nome foi dado bem depois, por historiadores.',
      src=('en', "Hundred Years' War", ['116']))
 c.MY('As pessoas da Idade Média quase nunca tomavam banho?', False, 2, icon='castle',
-     x='Casas de banho públicas eram comuns nas cidades medievais; elas só entraram em declínio no século XVI, em parte pelo medo de espalhar doenças.',
+     x='Banhos públicos eram comuns nas cidades medievais; eles só entraram em declínio no século XVI, em parte pelo medo de que espalhassem doenças.',
      src=('en', 'Public bathing', ['Middle Ages']))
 c.MY('Os vikings chegaram à América do Norte quase 500 anos antes de Colombo?', True, 2, who='leif',
      x="As ruínas nórdicas de L'Anse aux Meadows, no Canadá, guardam madeira cortada ali com ferramentas de metal no ano 1021.",
@@ -287,7 +287,7 @@ c.MY('A Universidade de Oxford é mais antiga que o Império Asteca?', True, 2, 
 c.MY('Cavaleiros que partiam para as Cruzadas trancavam as esposas em cintos de castidade?', False, 3, icon='castle',
      x='Não há prova confiável disso; a maioria dos cintos de museu foi feita nos séculos XVIII e XIX, e vários museus os retiraram de exposição.',
      src=('en', 'Chastity belt', ['medieval']))
-c.MY('Na Idade Média, animais chegaram a ser levados a julgamento em tribunais?', True, 3, icon='scroll',
+c.MY('Na Idade Média, animais chegaram a ser levados a julgamento em tribunais?', True, 3, icon='scales',
      x='Em Falaise, na Normandia, em 1386, uma porca que matara uma criança foi julgada, condenada e executada em praça pública.',
      src=('en', 'Animal trial', ['Falaise']))
 c.MY('A Igreja medieval proibia completamente a dissecação de cadáveres?', False, 4, icon='book',

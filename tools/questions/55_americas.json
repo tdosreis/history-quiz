@@ -1,0 +1,933 @@
+{
+ "id": "americas",
+ "name": "Américas",
+ "tag": "Maias, astecas, incas e independências",
+ "col": "#2E7D6B",
+ "diff": "Variado",
+ "emoji": "🌎",
+ "qs": [
+  {
+   "t": "Em que dia os Estados Unidos comemoram a sua independência?",
+   "type": "txt",
+   "choices": [
+    "4 de julho",
+    "14 de julho",
+    "7 de setembro",
+    "1º de maio",
+    "12 de outubro",
+    "25 de dezembro"
+   ],
+   "a": [
+    "4 de julho"
+   ],
+   "d": 1,
+   "art": {
+    "flag": "USA"
+   },
+   "src": [
+    "en",
+    "Independence Day (United States)",
+    [
+     "July 4"
+    ]
+   ],
+   "x": "Nesse dia, em 1776, o Congresso Continental aprovou a Declaração de Independência, em Filadélfia."
+  },
+  {
+   "t": "Qual país sul-americano recebeu o nome em homenagem a Simón Bolívar?",
+   "type": "txt",
+   "choices": [
+    "Bolívia",
+    "Colômbia",
+    "Equador",
+    "Peru",
+    "Paraguai",
+    "Uruguai"
+   ],
+   "a": [
+    "Bolívia"
+   ],
+   "d": 1,
+   "art": {
+    "who": "bolivar"
+   },
+   "src": [
+    "en",
+    "Bolivia",
+    [
+     "Bolívar"
+    ]
+   ],
+   "x": "A república foi proclamada em 1825, no território que os espanhóis chamavam de Alto Peru."
+  },
+  {
+   "t": "Que animal, trazido pelos espanhóis, os astecas e os incas nunca tinham visto antes da conquista?",
+   "type": "txt",
+   "choices": [
+    "Cavalo",
+    "Lhama",
+    "Cachorro",
+    "Jaguar",
+    "Alpaca",
+    "Condor"
+   ],
+   "a": [
+    "Cavalo"
+   ],
+   "d": 1,
+   "art": {
+    "who": "cortes"
+   },
+   "src": [
+    "en",
+    "Columbian exchange",
+    [
+     "horse"
+    ]
+   ],
+   "x": "Os cavalos já tinham existido na América, mas se extinguiram lá há uns 10 mil anos; a cavalaria espanhola causou espanto nas batalhas."
+  },
+  {
+   "t": "Que ideia matemática os maias usavam muitos séculos antes de ela chegar à Europa?",
+   "type": "txt",
+   "choices": [
+    "O zero",
+    "Os números negativos",
+    "O número pi",
+    "Os logaritmos",
+    "As frações decimais",
+    "A raiz quadrada"
+   ],
+   "a": [
+    "O zero"
+   ],
+   "d": 2,
+   "art": {
+    "stad": "chichen_itza"
+   },
+   "src": [
+    "en",
+    "Maya numerals",
+    [
+     "zero"
+    ]
+   ],
+   "x": "Os maias contavam de 20 em 20 e escreviam o zero com o desenho de uma concha."
+  },
+  {
+   "t": "Qual líder camponês do sul do México comandou o Exército Libertador do Sul e lutou pela reforma agrária na Revolução Mexicana?",
+   "type": "txt",
+   "choices": [
+    "Emiliano Zapata",
+    "Pancho Villa",
+    "Francisco Madero",
+    "Venustiano Carranza",
+    "Porfirio Díaz",
+    "Benito Juárez"
+   ],
+   "a": [
+    "Emiliano Zapata"
+   ],
+   "d": 2,
+   "art": {
+    "flag": "MEX"
+   },
+   "src": [
+    "en",
+    "Emiliano Zapata",
+    [
+     "Morelos"
+    ]
+   ],
+   "x": "Seu Plano de Ayala, de 1911, exigia devolver aos povoados as terras tomadas pelas grandes fazendas."
+  },
+  {
+   "t": "Qual mulher indígena serviu de intérprete e conselheira de Hernán Cortés durante a conquista do México?",
+   "type": "txt",
+   "choices": [
+    "La Malinche",
+    "Pocahontas",
+    "Sacagawea",
+    "Anacaona",
+    "Bartolina Sisa",
+    "Micaela Bastidas"
+   ],
+   "a": [
+    "La Malinche"
+   ],
+   "d": 3,
+   "art": {
+    "who": "moctezuma"
+   },
+   "src": [
+    "en",
+    "La Malinche",
+    [
+     "Nahuatl"
+    ]
+   ],
+   "x": "Ela falava náuatle e maia; um espanhol que tinha vivido entre os maias passava as falas para o castelhano."
+  },
+  {
+   "t": "Qual cidade mineira da atual Bolívia, ao pé do \"Cerro Rico\", foi a mais famosa fonte de prata do Império Espanhol?",
+   "type": "txt",
+   "choices": [
+    "Potosí",
+    "Zacatecas",
+    "Guanajuato",
+    "Huancavelica",
+    "Ouro Preto",
+    "Cuzco"
+   ],
+   "a": [
+    "Potosí"
+   ],
+   "d": 3,
+   "art": {
+    "crest": "imperio_espanhol"
+   },
+   "src": [
+    "en",
+    "Potosí",
+    [
+     "silver"
+    ]
+   ],
+   "x": "A riqueza era tanta que \"vale um Potosí\" virou expressão espanhola para algo de valor enorme; até Cervantes cita as minas de Potosí no Dom Quixote."
+  },
+  {
+   "t": "Qual revolucionário mexicano atacou a cidade americana de Columbus, no Novo México, em 1916?",
+   "type": "txt",
+   "choices": [
+    "Pancho Villa",
+    "Emiliano Zapata",
+    "Francisco Madero",
+    "Venustiano Carranza",
+    "Álvaro Obregón",
+    "Victoriano Huerta"
+   ],
+   "a": [
+    "Pancho Villa"
+   ],
+   "d": 4,
+   "art": {
+    "flag": "USA"
+   },
+   "src": [
+    "en",
+    "Pancho Villa",
+    [
+     "Columbus"
+    ]
+   ],
+   "x": "Em resposta, os Estados Unidos mandaram ao México uma expedição de quase um ano, que nunca conseguiu capturá-lo."
+  },
+  {
+   "t": "Como se chamavam as \"ilhas\" de cultivo, feitas de lama e plantas, que os astecas criavam nas águas rasas dos lagos?",
+   "type": "txt",
+   "choices": [
+    "Chinampas",
+    "Socalcos",
+    "Polders",
+    "Quipus",
+    "Calpullis",
+    "Milpas"
+   ],
+   "a": [
+    "Chinampas"
+   ],
+   "d": 4,
+   "art": {
+    "crest": "asteca"
+   },
+   "src": [
+    "en",
+    "Chinampa",
+    [
+     "Aztec"
+    ]
+   ],
+   "x": "Ainda hoje há chinampas em Xochimilco, na Cidade do México, onde os turistas passeiam em barcos coloridos."
+  },
+  {
+   "t": "Qual soberano inca transformou o pequeno reino de Cuzco num grande império, a partir de 1438?",
+   "type": "txt",
+   "choices": [
+    "Pachacuti",
+    "Atahualpa",
+    "Huáscar",
+    "Manco Cápac",
+    "Huayna Cápac",
+    "Túpac Amaru"
+   ],
+   "a": [
+    "Pachacuti"
+   ],
+   "d": 4,
+   "art": {
+    "stad": "machu_picchu"
+   },
+   "src": [
+    "en",
+    "Pachacuti",
+    [
+     "1438"
+    ]
+   ],
+   "x": "Machu Picchu provavelmente foi construída como propriedade real para ele, por volta de 1450."
+  },
+  {
+   "t": "Qual líder indígena, que dizia descender dos incas, comandou em 1780, no Peru, uma grande rebelião contra o domínio espanhol?",
+   "type": "txt",
+   "choices": [
+    "Túpac Amaru II",
+    "Atahualpa",
+    "Manco Inca",
+    "Lautaro",
+    "Caupolicán",
+    "Guaicaipuro"
+   ],
+   "a": [
+    "Túpac Amaru II"
+   ],
+   "d": 4,
+   "art": {
+    "crest": "imperio_espanhol"
+   },
+   "src": [
+    "en",
+    "Túpac Amaru II",
+    [
+     "1780"
+    ]
+   ],
+   "x": "Seu nome verdadeiro era José Gabriel Condorcanqui; adotou o nome de Túpac Amaru, o último inca de Vilcabamba. Capturado, foi executado em Cuzco em 1781."
+  },
+  {
+   "t": "Qual general atravessou o rio Delaware na noite de Natal de 1776 para atacar de surpresa as tropas inimigas em Trenton?",
+   "type": "player",
+   "a": [
+    "washington"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "ship"
+   },
+   "src": [
+    "en",
+    "Battle of Trenton",
+    [
+     "Delaware"
+    ]
+   ],
+   "x": "A cena virou um quadro famoso, pintado em 1851 por um artista alemão-americano, com o general de pé no barco."
+  },
+  {
+   "t": "Qual país se tornou independente em 1804, depois da única revolta de escravizados que deu origem a uma nação?",
+   "a": [
+    "haiti"
+   ],
+   "d": 2,
+   "art": {
+    "flag": "FRA"
+   },
+   "src": [
+    "en",
+    "Haitian Revolution",
+    [
+     "1804"
+    ]
+   ],
+   "x": "Foi o segundo país das Américas a se tornar independente, depois dos Estados Unidos, e o primeiro da América Latina."
+  },
+  {
+   "t": "Qual república, criada em 1819 com Bolívar na presidência, se desfez em 1831 dando origem a três países, entre eles a Venezuela e o Equador?",
+   "a": [
+    "gran_colombia"
+   ],
+   "d": 3,
+   "art": {
+    "who": "bolivar"
+   },
+   "src": [
+    "en",
+    "Gran Colombia",
+    [
+     "1831"
+    ]
+   ],
+   "x": "O nome oficial era República de Colômbia; \"Grã-Colômbia\" é como os historiadores a chamam, para distingui-la do país atual."
+  },
+  {
+   "t": "Quem sou eu?",
+   "type": "player",
+   "clues": [
+    "Nasci escravizado numa colônia francesa do Caribe, por volta de 1743.",
+    "Já era livre quando estourou a grande revolta de 1791, da qual me tornei o principal general.",
+    "Lutei contra ingleses e espanhóis e cheguei a governar toda a ilha de São Domingos.",
+    "Preso a mando de Napoleão, morri em 1803 numa fortaleza nas montanhas do Jura, na França."
+   ],
+   "a": [
+    "toussaint"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "chains"
+   },
+   "src": [
+    "en",
+    "Toussaint Louverture",
+    [
+     "Joux"
+    ]
+   ],
+   "x": "Ele morreu meses antes da independência do Haiti, proclamada em 1º de janeiro de 1804 por seu antigo tenente Dessalines."
+  },
+  {
+   "t": "Quem sou eu?",
+   "type": "player",
+   "clues": [
+    "Nasci em 1778 no vice-reino do Rio da Prata, mas fui educado na Espanha.",
+    "Lutei no exército espanhol contra as tropas de Napoleão antes de voltar à América.",
+    "Atravessei a cordilheira dos Andes com o Exército dos Andes para libertar o Chile.",
+    "Proclamei a independência do Peru em Lima, em 1821, e me encontrei com Bolívar em Guayaquil."
+   ],
+   "a": [
+    "san_martin"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "bust"
+   },
+   "src": [
+    "en",
+    "José de San Martín",
+    [
+     "Guayaquil"
+    ]
+   ],
+   "x": "Depois do encontro com Bolívar, retirou-se da luta e passou os últimos anos exilado na França, onde morreu em 1850."
+  },
+  {
+   "t": "Do mais antigo ao mais recente, coloque estes marcos da América antiga em ordem?",
+   "type": "order",
+   "a": [
+    "olmeca",
+    "tenoch",
+    "pacha",
+    "colombo",
+    "cortes"
+   ],
+   "order": [
+    {
+     "id": "olmeca",
+     "y": -1200,
+     "label": "Olmecas esculpem cabeças colossais",
+     "sub": "San Lorenzo, Golfo do México",
+     "flag": "MEX"
+    },
+    {
+     "id": "tenoch",
+     "y": 1325,
+     "label": "Fundação de Tenochtitlán",
+     "sub": "Os mexicas no lago Texcoco",
+     "crest": "asteca"
+    },
+    {
+     "id": "pacha",
+     "y": 1438,
+     "label": "Pachacuti começa a expansão inca",
+     "sub": "A partir de Cuzco",
+     "crest": "inca"
+    },
+    {
+     "id": "colombo",
+     "y": 1492,
+     "label": "Colombo chega às Antilhas",
+     "sub": "A primeira viagem",
+     "face": "colombo"
+    },
+    {
+     "id": "cortes",
+     "y": 1519,
+     "label": "Cortés desembarca no México",
+     "sub": "Começa a conquista",
+     "face": "cortes"
+    }
+   ],
+   "d": 3,
+   "src": [
+    "en",
+    "Tenochtitlan",
+    [
+     "1325"
+    ]
+   ]
+  },
+  {
+   "t": "Coloque em ordem, da mais antiga à mais recente, estas independências nas Américas?",
+   "type": "order",
+   "a": [
+    "paraguai",
+    "argentina",
+    "chile",
+    "mexico",
+    "cuba"
+   ],
+   "order": [
+    {
+     "id": "paraguai",
+     "y": 1811,
+     "label": "Paraguai rompe com a Espanha",
+     "sub": "Revolução de maio em Assunção",
+     "flag": "PAR"
+    },
+    {
+     "id": "argentina",
+     "y": 1816,
+     "label": "Argentina declara a independência",
+     "sub": "Congresso de Tucumán",
+     "flag": "ARG"
+    },
+    {
+     "id": "chile",
+     "y": 1818,
+     "label": "Chile proclama a independência",
+     "sub": "Um ano depois de Chacabuco",
+     "flag": "CHI"
+    },
+    {
+     "id": "mexico",
+     "y": 1821,
+     "label": "México conquista a independência",
+     "sub": "O Exército Trigarante entra na capital",
+     "flag": "MEX"
+    },
+    {
+     "id": "cuba",
+     "y": 1902,
+     "label": "Nasce a República de Cuba",
+     "sub": "Fim da ocupação americana",
+     "flag": "CUB"
+    }
+   ],
+   "d": 4,
+   "src": [
+    "en",
+    "Latin American wars of independence",
+    [
+     "Chile"
+    ]
+   ]
+  },
+  {
+   "t": "Quem disse esta frase?",
+   "type": "player",
+   "quote": {
+    "q": "Que o governo do povo, pelo povo e para o povo não desapareça da Terra.",
+    "ctx": "Discurso num cemitério militar da Pensilvânia, novembro de 1863"
+   },
+   "a": [
+    "lincoln"
+   ],
+   "d": 2,
+   "src": [
+    "en",
+    "Gettysburg Address",
+    [
+     "people"
+    ]
+   ],
+   "x": "O discurso tem pouco mais de 270 palavras e durou uns dois minutos."
+  },
+  {
+   "t": "Quem disse esta frase?",
+   "type": "player",
+   "quote": {
+    "q": "A América é ingovernável para nós. Quem serve a uma revolução ara no mar.",
+    "ctx": "Carta de 1830, escrita semanas antes de morrer, desiludido com a desunião das novas repúblicas",
+    "kind": "carta"
+   },
+   "a": [
+    "bolivar"
+   ],
+   "d": 5,
+   "src": [
+    "en",
+    "Simón Bolívar",
+    [
+     "1830"
+    ]
+   ],
+   "x": "Ele morreu em dezembro de 1830, perto de Santa Marta, na Colômbia, quando se preparava para deixar o país."
+  },
+  {
+   "t": "Quem a União derrotou nesta batalha de três dias, na Pensilvânia?",
+   "type": "txt",
+   "choices": [
+    "Confederados",
+    "Britânicos",
+    "Mexicanos",
+    "Franceses",
+    "Espanhóis",
+    "Canadenses"
+   ],
+   "battle": {
+    "lbl": "Gettysburg · 1863",
+    "a": "União",
+    "b": "?",
+    "x": "Foi a batalha mais sangrenta da Guerra de Secessão e pôs fim à invasão do Norte comandada pelo general Lee."
+   },
+   "a": [
+    "Confederados"
+   ],
+   "d": 1,
+   "src": [
+    "en",
+    "Battle of Gettysburg",
+    [
+     "Lee"
+    ]
+   ]
+  },
+  {
+   "t": "Que jovem nação, com a ajuda da França, cercou e venceu os britânicos de Cornwallis nesta batalha?",
+   "battle": {
+    "lbl": "Yorktown · 1781",
+    "a": "?",
+    "b": "reino_unido",
+    "x": "A rendição britânica praticamente decidiu a guerra; a paz que reconheceu a independência foi assinada em Paris, em 1783."
+   },
+   "a": [
+    "estados_unidos"
+   ],
+   "d": 2,
+   "src": [
+    "en",
+    "Siege of Yorktown",
+    [
+     "Cornwallis"
+    ]
+   ]
+  },
+  {
+   "t": "Quem o exército mexicano derrotou nesta batalha, hoje lembrada no feriado de Cinco de Mayo?",
+   "type": "txt",
+   "choices": [
+    "Franceses",
+    "Espanhóis",
+    "Americanos",
+    "Britânicos",
+    "Texanos",
+    "Austríacos"
+   ],
+   "battle": {
+    "lbl": "Puebla · 1862",
+    "a": "MEX",
+    "b": "?",
+    "x": "A vitória só adiou a invasão: em 1863 os franceses tomaram a capital e, no ano seguinte, puseram Maximiliano no trono."
+   },
+   "a": [
+    "Franceses"
+   ],
+   "d": 3,
+   "src": [
+    "en",
+    "Battle of Puebla",
+    [
+     "1862"
+    ]
+   ]
+  },
+  {
+   "t": "Quem comandou os independentistas nesta batalha, que selou o fim do domínio espanhol na América do Sul?",
+   "type": "txt",
+   "choices": [
+    "Antonio José de Sucre",
+    "Simón Bolívar",
+    "José de San Martín",
+    "Bernardo O'Higgins",
+    "Francisco de Miranda",
+    "José Antonio Páez"
+   ],
+   "battle": {
+    "lbl": "Ayacucho · 1824",
+    "a": "ESP",
+    "b": "?",
+    "x": "Bolívar estava em Lima; a vitória coube ao seu general de confiança, então com 29 anos, que capturou o próprio vice-rei do Peru."
+   },
+   "a": [
+    "Antonio José de Sucre"
+   ],
+   "d": 4,
+   "src": [
+    "en",
+    "Battle of Ayacucho",
+    [
+     "Sucre"
+    ]
+   ]
+  },
+  {
+   "t": "Qual presidente completa o grupo esculpido no Monte Rushmore?",
+   "type": "player",
+   "line": {
+    "t": "Monte Rushmore · Dakota do Sul",
+    "rows": [
+     "George Washington",
+     "Thomas Jefferson",
+     "Theodore Roosevelt",
+     "?"
+    ],
+    "kind": "grupo",
+    "era": "new"
+   },
+   "a": [
+    "lincoln"
+   ],
+   "d": 2,
+   "src": [
+    "en",
+    "Mount Rushmore",
+    [
+     "Lincoln"
+    ]
+   ],
+   "x": "Cada rosto tem cerca de 18 metros de altura; a escultura foi feita entre 1927 e 1941."
+  },
+  {
+   "t": "Qual soberano asteca falta nesta sucessão?",
+   "type": "player",
+   "line": {
+    "t": "Tlatoanis de Tenochtitlán · 1486–1521",
+    "rows": [
+     "Ahuitzotl",
+     "?",
+     "Cuitláhuac",
+     "Cuauhtémoc"
+    ],
+    "era": "mod"
+   },
+   "a": [
+    "moctezuma"
+   ],
+   "d": 3,
+   "src": [
+    "en",
+    "Cuitláhuac",
+    [
+     "Cuauhtémoc"
+    ]
+   ],
+   "x": "Cuitláhuac reinou só uns 80 dias e morreu de varíola; Cuauhtémoc, o último, resistiu até o fim do cerco de Tenochtitlán."
+  },
+  {
+   "t": "Quem completa este grupo de comandantes da Revolução Cubana?",
+   "type": "player",
+   "line": {
+    "t": "Comandantes da Sierra Maestra · 1959",
+    "rows": [
+     "Fidel Castro",
+     "Raúl Castro",
+     "Camilo Cienfuegos",
+     "?"
+    ],
+    "kind": "grupo",
+    "era": "new"
+   },
+   "a": [
+    "che"
+   ],
+   "d": 2,
+   "src": [
+    "en",
+    "Cuban Revolution",
+    [
+     "Cienfuegos"
+    ]
+   ],
+   "x": "Era o único estrangeiro do grupo: nascido na Argentina, recebeu a cidadania cubana em 1959."
+  },
+  {
+   "t": "Em que ano saiu esta manchete?",
+   "type": "txt",
+   "choices": [
+    "1959",
+    "1953",
+    "1956",
+    "1957",
+    "1961",
+    "1962"
+   ],
+   "news": {
+    "h": "Batista foge e os rebeldes entram em Havana",
+    "paper": "El Heraldo Habanero",
+    "sub": "Os guerrilheiros barbudos da Sierra Maestra derrubam a ditadura"
+   },
+   "a": [
+    "1959"
+   ],
+   "d": 2,
+   "src": [
+    "en",
+    "Cuban Revolution",
+    [
+     "1959"
+    ]
+   ],
+   "x": "O ditador fugiu na madrugada do Ano-Novo; Fidel Castro chegou a Havana uma semana depois, aclamado pela multidão."
+  },
+  {
+   "t": "Em que ano saiu esta manchete?",
+   "type": "txt",
+   "choices": [
+    "1910",
+    "1876",
+    "1898",
+    "1905",
+    "1914",
+    "1917"
+   ],
+   "news": {
+    "h": "Madero chama o México às armas contra Porfirio Díaz",
+    "paper": "Gazeta do México",
+    "sub": "O levante está marcado para o dia 20 de novembro"
+   },
+   "a": [
+    "1910"
+   ],
+   "d": 3,
+   "src": [
+    "en",
+    "Mexican Revolution",
+    [
+     "1910"
+    ]
+   ],
+   "x": "Díaz governava o México havia mais de trinta anos; caiu em 1911, mas a revolução continuou por quase uma década."
+  },
+  {
+   "t": "Duelo: quem nasceu primeiro?",
+   "type": "player",
+   "fixed": [
+    "washington",
+    "bolivar"
+   ],
+   "duel": true,
+   "a": [
+    "washington"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "hourglass"
+   },
+   "src": [
+    "en",
+    "George Washington",
+    [
+     "1732"
+    ]
+   ],
+   "x": "Washington nasceu em 1732, mais de meio século antes do Libertador, que é de 1783."
+  },
+  {
+   "t": "Duelo: quem nasceu primeiro?",
+   "type": "player",
+   "fixed": [
+    "san_martin",
+    "bolivar"
+   ],
+   "duel": true,
+   "a": [
+    "san_martin"
+   ],
+   "d": 4,
+   "art": {
+    "icon": "hourglass"
+   },
+   "src": [
+    "en",
+    "José de San Martín",
+    [
+     "1778"
+    ]
+   ],
+   "x": "O argentino nasceu em 1778, cinco anos antes do venezuelano; os dois se encontraram uma única vez, em Guayaquil, em 1822."
+  },
+  {
+   "t": "Os maias previram que o mundo acabaria em 2012?",
+   "type": "txt",
+   "choices": [
+    "Fato",
+    "Mito"
+   ],
+   "duel": true,
+   "myth": true,
+   "a": [
+    "Mito"
+   ],
+   "d": 1,
+   "art": {
+    "crest": "maia"
+   },
+   "src": [
+    "en",
+    "2012 phenomenon",
+    [
+     "Maya"
+    ]
+   ],
+   "x": "Em 2012 terminava apenas um grande ciclo do calendário maia, a Conta Longa; nenhum texto maia fala em fim do mundo."
+  },
+  {
+   "t": "George Washington usava dentaduras de madeira?",
+   "type": "txt",
+   "choices": [
+    "Fato",
+    "Mito"
+   ],
+   "duel": true,
+   "myth": true,
+   "a": [
+    "Mito"
+   ],
+   "d": 2,
+   "art": {
+    "who": "washington"
+   },
+   "src": [
+    "en",
+    "George Washington",
+    [
+     "teeth"
+    ]
+   ],
+   "x": "Ele perdeu quase todos os dentes, mas suas dentaduras eram de marfim, metal e dentes humanos e de animais, nunca de madeira."
+  },
+  {
+   "t": "O chocolate já era consumido pelos maias e astecas antes da chegada dos europeus?",
+   "type": "txt",
+   "choices": [
+    "Fato",
+    "Mito"
+   ],
+   "duel": true,
+   "myth": true,
+   "a": [
+    "Fato"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "amphora"
+   },
+   "src": [
+    "en",
+    "History of chocolate",
+    [
+     "Maya"
+    ]
+   ],
+   "x": "Eles tomavam o cacau como uma bebida amarga e espumante, às vezes com pimenta; as sementes chegavam a servir de moeda."
+  }
+ ]
+}

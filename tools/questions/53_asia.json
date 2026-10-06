@@ -1,0 +1,1839 @@
+{
+ "id": "asia",
+ "name": "Ásia",
+ "tag": "China, Japão, Índia e as estepes",
+ "col": "#B23A2E",
+ "diff": "Variado",
+ "emoji": "🏯",
+ "qs": [
+  {
+   "t": "Que material um funcionário da corte chinesa passou a fabricar, por volta do ano 105, com casca de árvore, cânhamo, trapos e redes de pesca velhas?",
+   "type": "txt",
+   "choices": [
+    "Papel",
+    "Papiro",
+    "Pergaminho",
+    "Porcelana",
+    "Seda",
+    "Vidro"
+   ],
+   "a": [
+    "Papel"
+   ],
+   "d": 1,
+   "art": {
+    "crest": "han"
+   },
+   "src": [
+    "en",
+    "Cai Lun",
+    [
+     "105"
+    ]
+   ],
+   "x": "A tradição atribui a invenção a Cai Lun, funcionário da corte Han, por volta do ano 105; depois, arqueólogos acharam papéis ainda mais antigos."
+  },
+  {
+   "t": "Como eram chamados os pilotos japoneses que, na Segunda Guerra, jogavam seus aviões carregados de explosivos contra navios inimigos?",
+   "type": "txt",
+   "choices": [
+    "Kamikazes",
+    "Samurais",
+    "Ninjas",
+    "Ronins",
+    "Xoguns",
+    "Daimiôs"
+   ],
+   "a": [
+    "Kamikazes"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "plane"
+   },
+   "src": [
+    "en",
+    "Kamikaze",
+    [
+     "Okinawa"
+    ]
+   ],
+   "x": "A palavra quer dizer \"vento divino\" e lembra os tufões que, segundo a tradição, salvaram o Japão de duas invasões mongóis no século XIII."
+  },
+  {
+   "t": "Qual cidade a China cedeu aos britânicos depois da Primeira Guerra do Ópio e só recuperou em 1997?",
+   "type": "txt",
+   "choices": [
+    "Hong Kong",
+    "Macau",
+    "Xangai",
+    "Cantão",
+    "Nanquim",
+    "Cingapura"
+   ],
+   "a": [
+    "Hong Kong"
+   ],
+   "d": 1,
+   "art": {
+    "crest": "reino_unido"
+   },
+   "src": [
+    "en",
+    "Hong Kong",
+    [
+     "1997"
+    ]
+   ],
+   "x": "O Reino Unido devolveu a cidade sob a fórmula \"um país, dois sistemas\", com a promessa de 50 anos de autonomia."
+  },
+  {
+   "t": "Como se chama a espada longa e curva que se tornou o símbolo dos samurais?",
+   "type": "txt",
+   "choices": [
+    "Katana",
+    "Cimitarra",
+    "Gládio",
+    "Florete",
+    "Montante",
+    "Rapieira"
+   ],
+   "a": [
+    "Katana"
+   ],
+   "d": 1,
+   "art": {
+    "stad": "himeji"
+   },
+   "src": [
+    "en",
+    "Katana",
+    [
+     "samurai"
+    ]
+   ],
+   "x": "Nos primeiros séculos, a arma mais importante do samurai era o arco, usado a cavalo; a espada só depois virou o seu emblema."
+  },
+  {
+   "t": "Como se chama o sistema social da Índia que dividia as pessoas em grupos hereditários, cada um com suas profissões e regras?",
+   "type": "txt",
+   "choices": [
+    "Sistema de castas",
+    "Feudalismo",
+    "Mandarinato",
+    "Sistema de guildas",
+    "Sistema de clãs",
+    "Servidão"
+   ],
+   "a": [
+    "Sistema de castas"
+   ],
+   "d": 1,
+   "art": {
+    "flag": "IND"
+   },
+   "src": [
+    "en",
+    "Caste system in India",
+    [
+     "varna"
+    ]
+   ],
+   "x": "A Constituição da Índia, de 1950, proibiu a discriminação por casta e aboliu a prática da \"intocabilidade\"."
+  },
+  {
+   "t": "Qual religião, nascida na Índia, tem entre seus deuses mais venerados Brahma, Vishnu e Shiva?",
+   "type": "txt",
+   "choices": [
+    "Hinduísmo",
+    "Budismo",
+    "Jainismo",
+    "Siquismo",
+    "Xintoísmo",
+    "Zoroastrismo"
+   ],
+   "a": [
+    "Hinduísmo"
+   ],
+   "d": 1,
+   "art": {
+    "flag": "IND"
+   },
+   "src": [
+    "en",
+    "Trimurti",
+    [
+     "Vishnu"
+    ]
+   ],
+   "x": "Com mais de 1 bilhão de fiéis, é a terceira maior religião do mundo, atrás apenas do cristianismo e do islã."
+  },
+  {
+   "t": "Quem sou eu?",
+   "type": "player",
+   "clues": [
+    "Nasci príncipe, perto do Himalaia, há uns 2.500 anos.",
+    "Meu pai quis me afastar de toda visão de velhice, doença e morte.",
+    "Deixei o palácio, a esposa e o filho para buscar o fim do sofrimento.",
+    "Alcancei a iluminação meditando sob uma figueira, em Bodh Gaya."
+   ],
+   "a": [
+    "sidarta"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "bust"
+   },
+   "src": [
+    "en",
+    "The Buddha",
+    [
+     "Bodh Gaya"
+    ]
+   ],
+   "x": "A árvore ficou conhecida como Bodhi; uma muda que se diz descender dela é venerada há mais de 2 mil anos em Anuradhapura, no Sri Lanka."
+  },
+  {
+   "t": "Quem é o líder desta manchete?",
+   "type": "player",
+   "news": {
+    "h": "Marcha chega ao mar e desafia a lei do sal",
+    "paper": "Jornal de Bombaim",
+    "sub": "Depois de 24 dias a pé, líder pacifista recolhe sal na praia de Dandi"
+   },
+   "a": [
+    "gandhi"
+   ],
+   "d": 1,
+   "src": [
+    "en",
+    "Salt March",
+    [
+     "Dandi"
+    ]
+   ],
+   "x": "Nos meses seguintes, a desobediência se espalhou pela Índia e mais de 60 mil pessoas foram presas, entre elas o próprio líder."
+  },
+  {
+   "t": "Em que ano saiu esta manchete?",
+   "type": "txt",
+   "choices": [
+    "1947",
+    "1919",
+    "1930",
+    "1942",
+    "1945",
+    "1950"
+   ],
+   "news": {
+    "h": "Índia livre: termina o domínio britânico",
+    "paper": "Diário de Délhi",
+    "sub": "À meia-noite, nascem dois países independentes: Índia e Paquistão"
+   },
+   "a": [
+    "1947"
+   ],
+   "d": 1,
+   "src": [
+    "en",
+    "Partition of India",
+    [
+     "1947"
+    ]
+   ],
+   "x": "A partilha provocou uma das maiores migrações da história: entre 12 e 20 milhões de pessoas deixaram suas casas."
+  },
+  {
+   "t": "O Japão é o único país que já foi atacado com bombas atômicas numa guerra?",
+   "type": "txt",
+   "choices": [
+    "Fato",
+    "Mito"
+   ],
+   "duel": true,
+   "myth": true,
+   "a": [
+    "Fato"
+   ],
+   "d": 1,
+   "art": {
+    "flag": "JPN"
+   },
+   "src": [
+    "en",
+    "Atomic bombings of Hiroshima and Nagasaki",
+    [
+     "Nagasaki"
+    ]
+   ],
+   "x": "Hiroshima foi atingida em 6 de agosto de 1945, e Nagasaki, três dias depois; desde então, nenhuma arma nuclear foi usada em combate."
+  },
+  {
+   "t": "Duelo: quem governou a China primeiro?",
+   "type": "player",
+   "fixed": [
+    "qin_shi_huang",
+    "kublai"
+   ],
+   "duel": true,
+   "a": [
+    "qin_shi_huang"
+   ],
+   "d": 1,
+   "art": {
+    "flag": "CHN"
+   },
+   "src": [
+    "en",
+    "Qin Shi Huang",
+    [
+     "221"
+    ]
+   ],
+   "x": "Qin Shi Huang unificou a China em 221 a.C.; Kublai Khan fundou a dinastia Yuan quase 1.500 anos depois, em 1271."
+  },
+  {
+   "t": "Duelo: qual destes monumentos começou a ser erguido primeiro?",
+   "type": "txt",
+   "choices": [
+    "Grande Muralha da China",
+    "Taj Mahal"
+   ],
+   "duel": true,
+   "a": [
+    "Grande Muralha da China"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "hourglass"
+   },
+   "src": [
+    "en",
+    "Great Wall of China",
+    [
+     "Qin"
+    ]
+   ],
+   "x": "Trechos de muralha já eram erguidos na China séculos antes de Cristo; o Taj Mahal só começou a subir em 1632."
+  },
+  {
+   "t": "Coloque estes marcos da história da Ásia em ordem, do mais antigo ao mais recente?",
+   "type": "order",
+   "a": [
+    "qin",
+    "mongois",
+    "india"
+   ],
+   "order": [
+    {
+     "id": "qin",
+     "y": -221,
+     "label": "China unificada pela primeira vez",
+     "sub": "Qin Shi Huang",
+     "face": "qin_shi_huang"
+    },
+    {
+     "id": "mongois",
+     "y": 1206,
+     "label": "Fundação do Império Mongol",
+     "sub": "Gengis Khan",
+     "face": "gengis"
+    },
+    {
+     "id": "india",
+     "y": 1947,
+     "label": "Independência da Índia",
+     "sub": "Fim do domínio britânico",
+     "face": "gandhi"
+    }
+   ],
+   "d": 1,
+   "src": [
+    "en",
+    "Genghis Khan",
+    [
+     "1206"
+    ]
+   ]
+  },
+  {
+   "t": "Que produto chinês os britânicos compravam em tal quantidade, no século XIX, que passaram a vender ópio à China para pagar a conta?",
+   "type": "txt",
+   "choices": [
+    "Chá",
+    "Café",
+    "Tabaco",
+    "Cacau",
+    "Açúcar",
+    "Borracha"
+   ],
+   "a": [
+    "Chá"
+   ],
+   "d": 2,
+   "art": {
+    "crest": "qing"
+   },
+   "src": [
+    "en",
+    "First Opium War",
+    [
+     "tea"
+    ]
+   ],
+   "x": "Em 1839, o comissário Lin Zexu mandou destruir mais de mil toneladas de ópio apreendido em Humen; foi o estopim da guerra."
+  },
+  {
+   "t": "Como se chama o código de honra associado aos samurais, que exaltava a lealdade ao senhor e a coragem diante da morte?",
+   "type": "txt",
+   "choices": [
+    "Bushido",
+    "Xintoísmo",
+    "Ikebana",
+    "Kabuki",
+    "Sumô",
+    "Haicai"
+   ],
+   "a": [
+    "Bushido"
+   ],
+   "d": 2,
+   "art": {
+    "flag": "JPN"
+   },
+   "src": [
+    "en",
+    "Bushido",
+    [
+     "samurai"
+    ]
+   ],
+   "x": "O livro que levou a palavra ao Ocidente, \"Bushido: a alma do Japão\", foi escrito em inglês pelo japonês Inazo Nitobe, por volta de 1900."
+  },
+  {
+   "t": "Qual cidade do atual Uzbequistão, famosa pelas cúpulas azuis, foi uma das grandes paradas da Rota da Seda?",
+   "type": "txt",
+   "choices": [
+    "Samarcanda",
+    "Bagdá",
+    "Damasco",
+    "Cabul",
+    "Teerã",
+    "Lhasa"
+   ],
+   "a": [
+    "Samarcanda"
+   ],
+   "d": 2,
+   "art": {
+    "flag": "UZB"
+   },
+   "src": [
+    "en",
+    "Samarkand",
+    [
+     "Silk Road"
+    ]
+   ],
+   "x": "A praça Registan, cercada por três madraçais cobertos de azulejos, é o cartão-postal da cidade."
+  },
+  {
+   "t": "Qual país europeu governou Macau, no sul da China, até 1999?",
+   "type": "txt",
+   "choices": [
+    "Portugal",
+    "Espanha",
+    "Holanda",
+    "França",
+    "Inglaterra",
+    "Itália"
+   ],
+   "a": [
+    "Portugal"
+   ],
+   "d": 2,
+   "art": {
+    "flag": "CHN"
+   },
+   "src": [
+    "en",
+    "Macau",
+    [
+     "1999"
+    ]
+   ],
+   "x": "Os portugueses se instalaram ali em meados do século XVI; Macau foi a última colônia europeia na Ásia a ser devolvida."
+  },
+  {
+   "t": "Qual era o antigo nome de Tóquio, a cidade dos xoguns Tokugawa?",
+   "type": "txt",
+   "choices": [
+    "Edo",
+    "Quioto",
+    "Osaka",
+    "Nara",
+    "Kamakura",
+    "Nagasaki"
+   ],
+   "a": [
+    "Edo"
+   ],
+   "d": 2,
+   "art": {
+    "who": "tokugawa_ieyasu"
+   },
+   "src": [
+    "en",
+    "Edo",
+    [
+     "Tokugawa"
+    ]
+   ],
+   "x": "Em 1868, quando o poder voltou ao imperador, a cidade foi rebatizada Tóquio, \"capital do leste\", e o imperador passou a morar ali."
+  },
+  {
+   "t": "Que fio precioso a China guardou em segredo por séculos, até que monges levaram ovos do inseto que o produz para Bizâncio, no século VI?",
+   "type": "txt",
+   "choices": [
+    "Seda",
+    "Algodão",
+    "Linho",
+    "Lã",
+    "Caxemira",
+    "Juta"
+   ],
+   "a": [
+    "Seda"
+   ],
+   "d": 2,
+   "art": {
+    "crest": "bizancio"
+   },
+   "src": [
+    "en",
+    "Byzantine silk",
+    [
+     "Justinian"
+    ]
+   ],
+   "x": "Segundo um relato bizantino, os ovos viajaram escondidos dentro de bengalas ocas, a pedido do imperador Justiniano."
+  },
+  {
+   "t": "Qual dinastia, contemporânea do Império Romano, deu nome à etnia de mais de 90% dos chineses?",
+   "a": [
+    "han"
+   ],
+   "d": 2,
+   "art": {
+    "flag": "CHN"
+   },
+   "src": [
+    "en",
+    "Han Chinese",
+    [
+     "Han dynasty"
+    ]
+   ],
+   "x": "Foi nessa época que a Rota da Seda se firmou e que os chineses inventaram o papel."
+  },
+  {
+   "t": "Quem sou eu?",
+   "type": "player",
+   "clues": [
+    "Nasci numa família de mercadores de Veneza, no século XIII.",
+    "Ainda adolescente, parti com meu pai e meu tio rumo ao Oriente.",
+    "Passei 17 anos a serviço do grande cã dos mongóis, na China.",
+    "Preso pelos genoveses, ditei minhas memórias a um companheiro de cela."
+   ],
+   "a": [
+    "marco_polo"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "bust"
+   },
+   "src": [
+    "en",
+    "Marco Polo",
+    [
+     "Rustichello"
+    ]
+   ],
+   "x": "O companheiro de cela era Rustichello da Pisa, autor de romances de cavalaria, e o livro virou um sucesso na Europa."
+  },
+  {
+   "t": "Quem sou eu?",
+   "type": "player",
+   "clues": [
+    "Subi ao trono de um reino do oeste da China aos 13 anos.",
+    "Conquistei, um a um, todos os reinos rivais.",
+    "Padronizei a escrita, as moedas, os pesos e as medidas.",
+    "Meu túmulo, perto de Xi'an, é guardado por milhares de guerreiros de terracota."
+   ],
+   "a": [
+    "qin_shi_huang"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "bust"
+   },
+   "src": [
+    "en",
+    "Qin Shi Huang",
+    [
+     "terracotta"
+    ]
+   ],
+   "x": "Obcecado pela imortalidade, mandou expedições em busca de um elixir da vida eterna."
+  },
+  {
+   "t": "Quem disse esta frase?",
+   "type": "player",
+   "quote": {
+    "q": "Não faças aos outros o que não queres que façam a ti.",
+    "ctx": "Resposta a um discípulo que pediu uma só palavra para guiar a vida inteira; China, por volta de 500 a.C."
+   },
+   "a": [
+    "confucio"
+   ],
+   "d": 2,
+   "src": [
+    "en",
+    "Golden Rule",
+    [
+     "Confucius"
+    ]
+   ],
+   "x": "A mesma ideia, chamada de \"regra de ouro\", aparece em muitas tradições, do judaísmo ao cristianismo e ao islã."
+  },
+  {
+   "t": "Quem disse esta frase?",
+   "type": "player",
+   "quote": {
+    "q": "Se você conhece o inimigo e conhece a si mesmo, não precisa temer o resultado de cem batalhas.",
+    "ctx": "Tratado militar chinês em treze capítulos, do século V a.C."
+   },
+   "a": [
+    "sun_tzu"
+   ],
+   "d": 2,
+   "src": [
+    "en",
+    "The Art of War",
+    [
+     "Sun Tzu"
+    ]
+   ],
+   "x": "O livro é estudado até hoje em escolas militares e virou leitura também de executivos e técnicos esportivos."
+  },
+  {
+   "t": "Qual potência colonial foi derrotada pelos vietnamitas nesta batalha?",
+   "type": "txt",
+   "choices": [
+    "França",
+    "Estados Unidos",
+    "Reino Unido",
+    "Japão",
+    "China",
+    "Holanda"
+   ],
+   "battle": {
+    "lbl": "Dien Bien Phu · 1954",
+    "a": "VNM",
+    "b": "?",
+    "x": "A derrota levou aos Acordos de Genebra, que dividiram o Vietnã em dois na altura do paralelo 17."
+   },
+   "a": [
+    "França"
+   ],
+   "d": 2,
+   "src": [
+    "en",
+    "Battle of Dien Bien Phu",
+    [
+     "Geneva"
+    ]
+   ]
+  },
+  {
+   "t": "Em que ano saiu esta manchete?",
+   "type": "txt",
+   "choices": [
+    "1949",
+    "1911",
+    "1927",
+    "1937",
+    "1945",
+    "1959"
+   ],
+   "news": {
+    "h": "Comunistas proclamam a República Popular da China",
+    "paper": "Jornal de Pequim",
+    "sub": "Na Praça da Paz Celestial, Mao Tsé-tung anuncia o novo governo"
+   },
+   "a": [
+    "1949"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "República Popular da China",
+    [
+     "1949"
+    ]
+   ],
+   "x": "Derrotados na guerra civil, Chiang Kai-shek e os nacionalistas transferiram seu governo para a ilha de Taiwan."
+  },
+  {
+   "t": "Coloque estes marcos da história do Japão em ordem, do mais antigo ao mais recente?",
+   "type": "order",
+   "a": [
+    "mongois",
+    "sekigahara",
+    "meiji",
+    "hiroshima"
+   ],
+   "order": [
+    {
+     "id": "mongois",
+     "y": 1274,
+     "label": "Invasões mongóis",
+     "sub": "As frotas de Kublai Khan",
+     "crest": "imperio_mongol"
+    },
+    {
+     "id": "sekigahara",
+     "y": 1600,
+     "label": "Batalha de Sekigahara",
+     "sub": "Vitória de Tokugawa",
+     "face": "tokugawa_ieyasu"
+    },
+    {
+     "id": "meiji",
+     "y": 1868,
+     "label": "Restauração Meiji",
+     "sub": "Fim do poder dos xoguns",
+     "face": "meiji"
+    },
+    {
+     "id": "hiroshima",
+     "y": 1945,
+     "label": "Bomba atômica em Hiroshima",
+     "sub": "Fim da Segunda Guerra",
+     "flag": "JPN"
+    }
+   ],
+   "d": 2,
+   "src": [
+    "en",
+    "History of Japan",
+    [
+     "Sekigahara"
+    ]
+   ]
+  },
+  {
+   "t": "Coloque estes marcos da história da Índia em ordem, do mais antigo ao mais recente?",
+   "type": "order",
+   "a": [
+    "ashoka",
+    "vasco",
+    "mogol",
+    "independencia"
+   ],
+   "order": [
+    {
+     "id": "ashoka",
+     "y": -268,
+     "label": "Ashoka governa o Império Máuria",
+     "sub": "Éditos gravados em pedra",
+     "face": "ashoka"
+    },
+    {
+     "id": "vasco",
+     "y": 1498,
+     "label": "Vasco da Gama chega a Calicute",
+     "sub": "A rota do Cabo",
+     "face": "vasco_gama"
+    },
+    {
+     "id": "mogol",
+     "y": 1526,
+     "label": "Fundação do Império Mogol",
+     "sub": "Babur vence em Panipat",
+     "crest": "mogol"
+    },
+    {
+     "id": "independencia",
+     "y": 1947,
+     "label": "Independência da Índia",
+     "sub": "Partilha com o Paquistão",
+     "face": "gandhi"
+    }
+   ],
+   "d": 2,
+   "src": [
+    "en",
+    "History of India",
+    [
+     "Babur"
+    ]
+   ]
+  },
+  {
+   "t": "Marco Polo trouxe o macarrão da China para a Itália?",
+   "type": "txt",
+   "choices": [
+    "Fato",
+    "Mito"
+   ],
+   "duel": true,
+   "myth": true,
+   "a": [
+    "Mito"
+   ],
+   "d": 2,
+   "art": {
+    "who": "marco_polo"
+   },
+   "src": [
+    "en",
+    "Pasta",
+    [
+     "Marco Polo"
+    ]
+   ],
+   "x": "A lenda ganhou força com uma revista americana da indústria de massas; em 1154, o geógrafo al-Idrisi já descrevia a fabricação de massa seca na Sicília."
+  },
+  {
+   "t": "A Grande Muralha da China é uma única muralha contínua, erguida de uma só vez?",
+   "type": "txt",
+   "choices": [
+    "Fato",
+    "Mito"
+   ],
+   "duel": true,
+   "myth": true,
+   "a": [
+    "Mito"
+   ],
+   "d": 2,
+   "art": {
+    "stad": "muralha_china"
+   },
+   "src": [
+    "en",
+    "Great Wall of China",
+    [
+     "Ming"
+    ]
+   ],
+   "x": "É um conjunto de muralhas erguidas e refeitas por várias dinastias ao longo de uns 2 mil anos; os trechos mais visitados são da dinastia Ming."
+  },
+  {
+   "t": "Os antigos chineses usavam a pólvora só para fogos de artifício, e nunca na guerra?",
+   "type": "txt",
+   "choices": [
+    "Fato",
+    "Mito"
+   ],
+   "duel": true,
+   "myth": true,
+   "a": [
+    "Mito"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "cannon"
+   },
+   "src": [
+    "en",
+    "Gunpowder",
+    [
+     "Song dynasty"
+    ]
+   ],
+   "x": "Já no século X os chineses tinham lanças de fogo e, depois, bombas e foguetes; as primeiras armas de fogo da história surgiram na China."
+  },
+  {
+   "t": "Duelo: quem nasceu primeiro?",
+   "type": "player",
+   "fixed": [
+    "confucio",
+    "socrates"
+   ],
+   "duel": true,
+   "a": [
+    "confucio"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "hourglass"
+   },
+   "src": [
+    "en",
+    "Confucius",
+    [
+     "551"
+    ]
+   ],
+   "x": "Confúcio nasceu por volta de 551 a.C.; Sócrates, cerca de 80 anos depois, em Atenas."
+  },
+  {
+   "t": "Duelo: quem viveu primeiro?",
+   "type": "player",
+   "fixed": [
+    "sidarta",
+    "ashoka"
+   ],
+   "duel": true,
+   "a": [
+    "sidarta"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "hourglass"
+   },
+   "src": [
+    "en",
+    "Ashoka",
+    [
+     "Buddhism"
+    ]
+   ],
+   "x": "Buda viveu por volta dos séculos VI e V a.C.; Ashoka reinou no século III a.C. e ajudou a espalhar o budismo pela Ásia."
+  },
+  {
+   "t": "Como eram chamados os samurais sem senhor, como os 47 da célebre história de vingança do Japão do século XVIII?",
+   "type": "txt",
+   "choices": [
+    "Ronins",
+    "Ninjas",
+    "Xoguns",
+    "Daimiôs",
+    "Ashigarus",
+    "Hatamotos"
+   ],
+   "a": [
+    "Ronins"
+   ],
+   "d": 3,
+   "art": {
+    "crest": "tokugawa"
+   },
+   "src": [
+    "en",
+    "Forty-seven rōnin",
+    [
+     "Kira"
+    ]
+   ],
+   "x": "Depois da vingança, o xogunato ordenou que se matassem pelo ritual do seppuku; seus túmulos, no templo Sengaku-ji, em Tóquio, ainda recebem visitantes."
+  },
+  {
+   "t": "Em que ano o navio Kasato Maru trouxe ao porto de Santos a primeira leva oficial de imigrantes japoneses?",
+   "type": "txt",
+   "choices": [
+    "1908",
+    "1888",
+    "1898",
+    "1918",
+    "1924",
+    "1934"
+   ],
+   "a": [
+    "1908"
+   ],
+   "d": 3,
+   "art": {
+    "flag": "JPN"
+   },
+   "src": [
+    "pt",
+    "Imigração japonesa no Brasil",
+    [
+     "Kasato Maru"
+    ]
+   ],
+   "x": "Vieram 781 imigrantes para trabalhar nos cafezais; hoje o Brasil tem a maior comunidade de origem japonesa fora do Japão."
+  },
+  {
+   "t": "Qual cidade da Índia foi conquistada por Afonso de Albuquerque em 1510 e virou a capital do Estado Português da Índia?",
+   "type": "txt",
+   "choices": [
+    "Goa",
+    "Calicute",
+    "Cochim",
+    "Diu",
+    "Bombaim",
+    "Malaca"
+   ],
+   "a": [
+    "Goa"
+   ],
+   "d": 3,
+   "art": {
+    "who": "vasco_gama"
+   },
+   "src": [
+    "pt",
+    "Afonso de Albuquerque",
+    [
+     "Goa"
+    ]
+   ],
+   "x": "Goa continuou portuguesa por mais de 450 anos, até ser ocupada pela Índia em 1961."
+  },
+  {
+   "t": "Como se chama o alfabeto coreano criado no século XV pelo rei Sejong, o Grande?",
+   "type": "txt",
+   "choices": [
+    "Hangul",
+    "Kanji",
+    "Hiragana",
+    "Katakana",
+    "Pinyin",
+    "Devanágari"
+   ],
+   "a": [
+    "Hangul"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "book"
+   },
+   "src": [
+    "en",
+    "Hangul",
+    [
+     "Sejong"
+    ]
+   ],
+   "x": "Antes dele, os coreanos escreviam com caracteres chineses, que poucos dominavam; o rei queria uma escrita que qualquer pessoa aprendesse."
+  },
+  {
+   "t": "Qual império, fundado por Chandragupta por volta de 322 a.C., foi o primeiro a unir quase todo o subcontinente indiano?",
+   "a": [
+    "maurya"
+   ],
+   "d": 3,
+   "art": {
+    "who": "alexandre"
+   },
+   "src": [
+    "en",
+    "Maurya Empire",
+    [
+     "Chandragupta"
+    ]
+   ],
+   "x": "Chandragupta teve como conselheiro o sábio Kautilya, a quem se atribui o Arthashastra, um manual sobre a arte de governar."
+  },
+  {
+   "t": "Qual governo expulsou os portugueses do Japão, em 1639, e fechou o país quase por completo aos estrangeiros?",
+   "a": [
+    "tokugawa"
+   ],
+   "d": 3,
+   "art": {
+    "flag": "POR"
+   },
+   "src": [
+    "en",
+    "Sakoku",
+    [
+     "Portuguese"
+    ]
+   ],
+   "x": "Entre os europeus, só os holandeses puderam continuar negociando, confinados na ilhota artificial de Dejima, em Nagasaki."
+  },
+  {
+   "t": "Qual governante mongol mandou duas grandes frotas invadir o Japão, em 1274 e em 1281?",
+   "type": "player",
+   "a": [
+    "kublai"
+   ],
+   "d": 3,
+   "art": {
+    "flag": "JPN"
+   },
+   "src": [
+    "en",
+    "Mongol invasions of Japan",
+    [
+     "Kublai"
+    ]
+   ],
+   "x": "As duas invasões fracassaram; na segunda, um tufão destruiu boa parte dos navios ancorados perto da costa de Kyushu."
+  },
+  {
+   "t": "Qual conquistador turco-mongol invadiu a Índia e saqueou Délhi em 1398?",
+   "type": "player",
+   "a": [
+    "tamerlao"
+   ],
+   "d": 3,
+   "art": {
+    "flag": "IND"
+   },
+   "src": [
+    "en",
+    "Timur",
+    [
+     "Delhi"
+    ]
+   ],
+   "x": "Um de seus descendentes, Babur, voltaria à Índia mais de um século depois para fundar o Império Mogol, em 1526."
+  },
+  {
+   "t": "Quem sou eu?",
+   "type": "player",
+   "clues": [
+    "Fui neto do fundador de um grande império do norte da Índia.",
+    "Conquistei o reino de Kalinga numa guerra que deixou cerca de cem mil mortos.",
+    "Arrependido, adotei o budismo e passei a pregar a não violência.",
+    "Mandei gravar meus éditos em rochas e colunas espalhadas pelo império."
+   ],
+   "a": [
+    "ashoka"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "bust"
+   },
+   "src": [
+    "en",
+    "Ashoka",
+    [
+     "Kalinga"
+    ]
+   ],
+   "x": "O capitel com quatro leões de uma de suas colunas, achado em Sarnath, virou o emblema oficial da Índia."
+  },
+  {
+   "t": "Quem sou eu?",
+   "type": "player",
+   "clues": [
+    "Ainda jovem, deixei meu país trabalhando como ajudante de cozinha num navio francês.",
+    "Vivi em Paris e em Moscou e ajudei a fundar partidos comunistas.",
+    "Em 1945, em Hanói, li uma declaração de independência que citava a dos Estados Unidos.",
+    "Morri em 1969, e a antiga Saigon passou a levar o meu nome."
+   ],
+   "a": [
+    "ho_chi_minh"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "bust"
+   },
+   "src": [
+    "en",
+    "Ho Chi Minh",
+    [
+     "Saigon"
+    ]
+   ],
+   "x": "Ele pediu para ser cremado, mas seu corpo foi embalsamado e está exposto até hoje num mausoléu em Hanói."
+  },
+  {
+   "t": "Quem disse esta frase?",
+   "type": "txt",
+   "choices": [
+    "Jawaharlal Nehru",
+    "Mahatma Gandhi",
+    "Muhammad Ali Jinnah",
+    "Indira Gandhi",
+    "Lorde Mountbatten",
+    "Subhas Chandra Bose"
+   ],
+   "quote": {
+    "q": "Ao soar da meia-noite, enquanto o mundo dorme, a Índia despertará para a vida e a liberdade.",
+    "ctx": "Discurso na Assembleia Constituinte, em Nova Délhi, na noite de 14 para 15 de agosto de 1947"
+   },
+   "a": [
+    "Jawaharlal Nehru"
+   ],
+   "d": 3,
+   "src": [
+    "en",
+    "Tryst with Destiny",
+    [
+     "midnight"
+    ]
+   ],
+   "x": "Gandhi não estava em Délhi naquela noite: estava em Calcutá, tentando conter a violência entre hindus e muçulmanos."
+  },
+  {
+   "t": "Qual dinastia falta nesta sequência?",
+   "type": "txt",
+   "choices": [
+    "Yuan",
+    "Han",
+    "Qin",
+    "Sui",
+    "Zhou",
+    "Shang"
+   ],
+   "line": {
+    "t": "Grandes dinastias da China · 618–1912",
+    "rows": [
+     "Tang",
+     "Song",
+     "?",
+     "Ming",
+     "Qing"
+    ],
+    "era": "med"
+   },
+   "a": [
+    "Yuan"
+   ],
+   "d": 3,
+   "src": [
+    "en",
+    "Yuan dynasty",
+    [
+     "Kublai"
+    ]
+   ],
+   "x": "Fundada pelo mongol Kublai Khan, neto de Gengis Khan, foi a primeira dinastia estrangeira a governar toda a China."
+  },
+  {
+   "t": "Quem completa os três grandes unificadores do Japão?",
+   "type": "player",
+   "line": {
+    "t": "Os unificadores do Japão · 1568–1603",
+    "rows": [
+     "Oda Nobunaga",
+     "Toyotomi Hideyoshi",
+     "?"
+    ],
+    "era": "mod"
+   },
+   "a": [
+    "tokugawa_ieyasu"
+   ],
+   "d": 3,
+   "src": [
+    "en",
+    "Tokugawa Ieyasu",
+    [
+     "Hideyoshi"
+    ]
+   ],
+   "x": "Venceu a batalha de Sekigahara, em 1600, e três anos depois recebeu do imperador o título de xogum."
+  },
+  {
+   "t": "Quem derrotou o nababo de Bengala e seus aliados franceses nesta batalha?",
+   "type": "txt",
+   "choices": [
+    "Companhia Britânica das Índias Orientais",
+    "Companhia Holandesa das Índias Orientais",
+    "Companhia Francesa das Índias Orientais",
+    "Império Mogol",
+    "Império Português",
+    "Império Maratha"
+   ],
+   "battle": {
+    "lbl": "Plassey · 1757",
+    "a": "?",
+    "b": "Nababo de Bengala",
+    "x": "Robert Clive venceu com um exército bem menor, depois de comprar a traição de Mir Jafar, comandante das tropas do nababo."
+   },
+   "a": [
+    "Companhia Britânica das Índias Orientais"
+   ],
+   "d": 3,
+   "src": [
+    "en",
+    "Battle of Plassey",
+    [
+     "Mir Jafar"
+    ]
+   ]
+  },
+  {
+   "t": "Qual império teve sua frota destruída pelo Japão nesta batalha naval?",
+   "battle": {
+    "lbl": "Tsushima · 1905",
+    "a": "imperio_japones",
+    "b": "?",
+    "x": "A frota derrotada navegou cerca de 30 mil km, do mar Báltico ao Extremo Oriente, para ser aniquilada em dois dias."
+   },
+   "a": [
+    "imperio_russo"
+   ],
+   "d": 3,
+   "src": [
+    "en",
+    "Battle of Tsushima",
+    [
+     "Baltic"
+    ]
+   ]
+  },
+  {
+   "t": "Em que ano saiu esta manchete?",
+   "type": "txt",
+   "choices": [
+    "1974",
+    "1922",
+    "1949",
+    "1962",
+    "1981",
+    "1989"
+   ],
+   "news": {
+    "h": "Camponeses acham exército de barro enterrado na China",
+    "paper": "Gazeta do Oriente",
+    "sub": "Guerreiros em tamanho natural guardavam o túmulo do primeiro imperador, perto de Xi'an"
+   },
+   "a": [
+    "1974"
+   ],
+   "d": 3,
+   "src": [
+    "en",
+    "Terracotta Army",
+    [
+     "1974"
+    ]
+   ],
+   "x": "Os camponeses cavavam um poço quando acharam os primeiros fragmentos; estima-se que haja mais de 8 mil soldados."
+  },
+  {
+   "t": "Gandhi ganhou o Prêmio Nobel da Paz?",
+   "type": "txt",
+   "choices": [
+    "Fato",
+    "Mito"
+   ],
+   "duel": true,
+   "myth": true,
+   "a": [
+    "Mito"
+   ],
+   "d": 3,
+   "art": {
+    "who": "gandhi"
+   },
+   "src": [
+    "en",
+    "Mahatma Gandhi",
+    [
+     "Nobel"
+    ]
+   ],
+   "x": "Foi indicado cinco vezes, a última em 1948; naquele ano, depois do assassinato dele, o comitê preferiu não dar o prêmio a ninguém."
+  },
+  {
+   "t": "Coloque estas dinastias chinesas em ordem, da mais antiga à mais recente?",
+   "type": "order",
+   "a": [
+    "qin",
+    "han",
+    "tang",
+    "ming",
+    "qing"
+   ],
+   "order": [
+    {
+     "id": "qin",
+     "y": -221,
+     "label": "Dinastia Qin",
+     "sub": "O primeiro imperador",
+     "crest": "dinastia_qin"
+    },
+    {
+     "id": "han",
+     "y": -206,
+     "label": "Dinastia Han",
+     "sub": "O papel e a Rota da Seda",
+     "crest": "han"
+    },
+    {
+     "id": "tang",
+     "y": 618,
+     "label": "Dinastia Tang",
+     "sub": "Capital em Chang'an",
+     "crest": "tang"
+    },
+    {
+     "id": "ming",
+     "y": 1368,
+     "label": "Dinastia Ming",
+     "sub": "A Cidade Proibida",
+     "crest": "ming"
+    },
+    {
+     "id": "qing",
+     "y": 1644,
+     "label": "Dinastia Qing",
+     "sub": "Os últimos imperadores",
+     "crest": "qing"
+    }
+   ],
+   "d": 3,
+   "src": [
+    "en",
+    "Dynasties of China",
+    [
+     "Tang"
+    ]
+   ]
+  },
+  {
+   "t": "Qual cidade, erguida nas estepes no tempo de Gengis Khan e de seu filho Ögedei, foi a capital do Império Mongol?",
+   "type": "txt",
+   "choices": [
+    "Karakorum",
+    "Samarcanda",
+    "Ulan Bator",
+    "Bucara",
+    "Sarai",
+    "Tabriz"
+   ],
+   "a": [
+    "Karakorum"
+   ],
+   "d": 4,
+   "art": {
+    "flag": "MNG"
+   },
+   "src": [
+    "en",
+    "Karakorum",
+    [
+     "Ögedei"
+    ]
+   ],
+   "x": "O frade flamengo Guilherme de Rubruck viu ali uma árvore de prata que servia bebidas por bicas, obra de um ourives parisiense."
+  },
+  {
+   "t": "Qual imperador Ming transferiu a capital para Pequim e mandou erguer a Cidade Proibida?",
+   "type": "txt",
+   "choices": [
+    "Yongle",
+    "Hongwu",
+    "Kangxi",
+    "Qianlong",
+    "Wanli",
+    "Jiajing"
+   ],
+   "a": [
+    "Yongle"
+   ],
+   "d": 4,
+   "art": {
+    "stad": "cidade_proibida"
+   },
+   "src": [
+    "en",
+    "Yongle Emperor",
+    [
+     "Forbidden City"
+    ]
+   ],
+   "x": "Foi também ele quem enviou o almirante Zheng He nas grandes viagens pelo oceano Índico."
+  },
+  {
+   "t": "Qual império do norte da Índia, entre os séculos IV e VI, é lembrado como a \"idade de ouro\" da cultura clássica indiana?",
+   "type": "txt",
+   "choices": [
+    "Império Gupta",
+    "Império Máuria",
+    "Império Mogol",
+    "Império Kushan",
+    "Império Maratha",
+    "Império Sikh"
+   ],
+   "a": [
+    "Império Gupta"
+   ],
+   "d": 4,
+   "art": {
+    "flag": "IND"
+   },
+   "src": [
+    "en",
+    "Gupta Empire",
+    [
+     "golden age"
+    ]
+   ],
+   "x": "Na época, o astrônomo Aryabhata calculou pi com quatro casas decimais e defendeu que a Terra gira em torno do próprio eixo."
+  },
+  {
+   "t": "Em que material foram gravados os textos chineses mais antigos que se conhecem, da dinastia Shang?",
+   "type": "txt",
+   "choices": [
+    "Ossos e cascos de tartaruga",
+    "Tabuletas de argila",
+    "Folhas de palmeira",
+    "Rolos de seda",
+    "Tiras de bambu",
+    "Pergaminho"
+   ],
+   "a": [
+    "Ossos e cascos de tartaruga"
+   ],
+   "d": 4,
+   "art": {
+    "flag": "CHN"
+   },
+   "src": [
+    "en",
+    "Oracle bone",
+    [
+     "Shang"
+    ]
+   ],
+   "x": "Os adivinhos aqueciam os ossos até rachar e liam nas rachaduras a resposta dos ancestrais; depois gravavam ao lado a pergunta e o resultado."
+  },
+  {
+   "t": "Em qual dinastia chinesa viveram Li Bai e Du Fu, considerados os maiores poetas clássicos da China?",
+   "a": [
+    "tang"
+   ],
+   "d": 4,
+   "art": {
+    "icon": "quill"
+   },
+   "src": [
+    "en",
+    "Tang dynasty",
+    [
+     "Li Bai"
+    ]
+   ],
+   "x": "A antologia \"Trezentos Poemas Tang\", reunida no século XVIII, até hoje é decorada por estudantes chineses."
+  },
+  {
+   "t": "Quem disse esta frase?",
+   "type": "player",
+   "quote": {
+    "q": "Eis um mantra, bem curto, que lhes dou: \"fazer ou morrer\".",
+    "ctx": "Discurso que lançou o movimento \"Deixem a Índia\", em Bombaim, agosto de 1942"
+   },
+   "a": [
+    "gandhi"
+   ],
+   "d": 4,
+   "src": [
+    "en",
+    "Quit India Movement",
+    [
+     "Do or Die"
+    ]
+   ],
+   "x": "No dia seguinte, o orador e quase toda a direção do Partido do Congresso foram presos pelos britânicos."
+  },
+  {
+   "t": "Quem disse esta frase?",
+   "type": "txt",
+   "choices": [
+    "Deng Xiaoping",
+    "Mao Tsé-tung",
+    "Zhou Enlai",
+    "Sun Yat-sen",
+    "Chiang Kai-shek",
+    "Liu Shaoqi"
+   ],
+   "quote": {
+    "q": "Não importa se o gato é preto ou branco: se pega ratos, é um bom gato.",
+    "ctx": "Ditado do interior da China, adaptado num discurso de 1962; anos depois, virou o lema das reformas de mercado"
+   },
+   "a": [
+    "Deng Xiaoping"
+   ],
+   "d": 4,
+   "src": [
+    "en",
+    "Deng Xiaoping",
+    [
+     "cat"
+    ]
+   ],
+   "x": "O dirigente foi afastado duas vezes do poder durante a era Mao, mas voltou e, a partir de 1978, abriu a economia chinesa ao mercado."
+  },
+  {
+   "t": "Qual imperador mogol falta nesta linhagem?",
+   "type": "txt",
+   "choices": [
+    "Akbar",
+    "Aurangzeb",
+    "Bahadur Shah Zafar",
+    "Tipu Sultan",
+    "Ranjit Singh",
+    "Shah Abbas"
+   ],
+   "line": {
+    "t": "Imperadores mogóis · 1526–1658",
+    "rows": [
+     "Babur",
+     "Humayun",
+     "?",
+     "Jahangir",
+     "Shah Jahan"
+    ],
+    "era": "mod"
+   },
+   "a": [
+    "Akbar"
+   ],
+   "d": 4,
+   "src": [
+    "en",
+    "Akbar",
+    [
+     "Humayun"
+    ]
+   ],
+   "x": "Akbar, que segundo os relatos nunca aprendeu a ler, reunia na corte sábios de várias religiões para debater."
+  },
+  {
+   "t": "Qual dinastia chinesa foi derrotada pelos árabes nesta batalha, na Ásia Central?",
+   "battle": {
+    "lbl": "Talas · 751",
+    "a": "califado_abassida",
+    "b": "?",
+    "x": "Segundo a tradição, prisioneiros chineses levados a Samarcanda ensinaram aos árabes a fabricar papel."
+   },
+   "a": [
+    "tang"
+   ],
+   "d": 4,
+   "src": [
+    "en",
+    "Battle of Talas",
+    [
+     "Abbasid"
+    ]
+   ]
+  },
+  {
+   "t": "Qual país invasor perdeu esta batalha naval para o almirante coreano Yi Sun-sin?",
+   "type": "txt",
+   "choices": [
+    "Japão",
+    "China",
+    "Mongólia",
+    "Rússia",
+    "Portugal",
+    "Holanda"
+   ],
+   "battle": {
+    "lbl": "Ilha Hansan · 1592",
+    "a": "Coreia (Joseon)",
+    "b": "?",
+    "x": "O almirante usava os \"navios-tartaruga\", cobertos por um teto cravejado de pontas de ferro contra a abordagem."
+   },
+   "a": [
+    "Japão"
+   ],
+   "d": 4,
+   "src": [
+    "en",
+    "Battle of Hansan Island",
+    [
+     "Yi Sun-sin"
+    ]
+   ]
+  },
+  {
+   "t": "Em que ano saiu esta manchete?",
+   "type": "txt",
+   "choices": [
+    "1900",
+    "1842",
+    "1860",
+    "1895",
+    "1911",
+    "1927"
+   ],
+   "news": {
+    "h": "Rebeldes cercam as legações estrangeiras em Pequim",
+    "paper": "Correio do Oriente",
+    "sub": "Diplomatas resistem há semanas; tropas de oito nações marcham sobre a capital chinesa"
+   },
+   "a": [
+    "1900"
+   ],
+   "d": 4,
+   "src": [
+    "en",
+    "Boxer Rebellion",
+    [
+     "Eight-Nation Alliance"
+    ]
+   ],
+   "x": "Os ocidentais chamavam os rebeldes de \"boxers\" porque praticavam artes marciais, que julgavam capazes de torná-los imunes às balas."
+  },
+  {
+   "t": "Puyi, o último imperador da China, passou seus últimos anos como cidadão comum e chegou a trabalhar num jardim botânico?",
+   "type": "txt",
+   "choices": [
+    "Fato",
+    "Mito"
+   ],
+   "duel": true,
+   "myth": true,
+   "a": [
+    "Fato"
+   ],
+   "d": 4,
+   "art": {
+    "crest": "qing"
+   },
+   "src": [
+    "en",
+    "Puyi",
+    [
+     "Botanical"
+    ]
+   ],
+   "x": "Depois de quase dez anos preso num centro de reeducação, foi libertado em 1959 e trabalhou no jardim botânico de Pequim; morreu em 1967."
+  },
+  {
+   "t": "Qual artesão chinês do século XI inventou os tipos móveis de argila, cerca de 400 anos antes de Gutenberg?",
+   "type": "txt",
+   "choices": [
+    "Bi Sheng",
+    "Cai Lun",
+    "Zhang Heng",
+    "Shen Kuo",
+    "Su Song",
+    "Zu Chongzhi"
+   ],
+   "a": [
+    "Bi Sheng"
+   ],
+   "d": 5,
+   "art": {
+    "who": "gutenberg"
+   },
+   "src": [
+    "en",
+    "Bi Sheng",
+    [
+     "movable type"
+    ]
+   ],
+   "x": "O que se sabe dele vem do erudito Shen Kuo, que descreveu o método em 1088, num livro de ensaios."
+  },
+  {
+   "t": "Qual rei khmer mandou construir Angkor Wat, no início do século XII?",
+   "type": "txt",
+   "choices": [
+    "Suryavarman II",
+    "Jayavarman VII",
+    "Jayavarman II",
+    "Yasovarman I",
+    "Indravarman I",
+    "Rajendravarman II"
+   ],
+   "a": [
+    "Suryavarman II"
+   ],
+   "d": 5,
+   "art": {
+    "stad": "angkor_wat"
+   },
+   "src": [
+    "en",
+    "Angkor Wat",
+    [
+     "Suryavarman II"
+    ]
+   ],
+   "x": "O templo foi dedicado ao deus hindu Vishnu e só mais tarde se tornou budista; sua silhueta está na bandeira do Camboja."
+  },
+  {
+   "t": "Qual senhor da guerra do norte foi derrotado nesta batalha pelas forças de Liu Bei e Sun Quan?",
+   "type": "txt",
+   "choices": [
+    "Cao Cao",
+    "Dong Zhuo",
+    "Yuan Shao",
+    "Zhuge Liang",
+    "Lü Bu",
+    "Sima Yi"
+   ],
+   "battle": {
+    "lbl": "Penhascos Vermelhos · 208",
+    "a": "Liu Bei e Sun Quan",
+    "b": "?",
+    "x": "A batalha impediu a reunificação da China e abriu caminho para a era dos Três Reinos, tema de um dos grandes romances chineses."
+   },
+   "a": [
+    "Cao Cao"
+   ],
+   "d": 5,
+   "src": [
+    "en",
+    "Battle of Red Cliffs",
+    [
+     "Cao Cao"
+    ]
+   ]
+  },
+  {
+   "t": "Em que ano saiu esta manchete?",
+   "type": "txt",
+   "choices": [
+    "1857",
+    "1757",
+    "1799",
+    "1818",
+    "1876",
+    "1905"
+   ],
+   "news": {
+    "h": "Cipaios se revoltam em Meerut e marcham sobre Délhi",
+    "paper": "Gazeta de Calcutá",
+    "sub": "Soldados indianos da Companhia se rebelam contra os oficiais britânicos"
+   },
+   "a": [
+    "1857"
+   ],
+   "d": 5,
+   "src": [
+    "en",
+    "Indian Rebellion of 1857",
+    [
+     "Meerut"
+    ]
+   ],
+   "x": "Esmagada a revolta, a Coroa britânica tirou o governo da Índia das mãos da Companhia das Índias Orientais, em 1858."
+  },
+  {
+   "t": "Quem disse esta frase?",
+   "type": "txt",
+   "choices": [
+    "Imperador Qianlong",
+    "Imperador Kangxi",
+    "Imperatriz Cixi",
+    "Imperador Yongle",
+    "Imperador Puyi",
+    "Imperador Guangxu"
+   ],
+   "quote": {
+    "q": "Possuímos todas as coisas. Não damos valor a objetos estranhos ou engenhosos e não precisamos dos produtos do seu país.",
+    "ctx": "Carta ao rei Jorge III, depois da visita de uma embaixada britânica à China, 1793",
+    "kind": "carta"
+   },
+   "a": [
+    "Imperador Qianlong"
+   ],
+   "d": 5,
+   "src": [
+    "en",
+    "Macartney Embassy",
+    [
+     "Qianlong"
+    ]
+   ],
+   "x": "A embaixada de lorde Macartney queria abrir portos ao comércio e instalar um embaixador em Pequim; voltou sem conseguir nada."
+  }
+ ]
+}
