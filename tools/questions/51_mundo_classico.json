@@ -1,0 +1,1777 @@
+{
+ "id": "mundo_classico",
+ "name": "Grécia e Roma",
+ "tag": "Pólis, legiões e imperadores",
+ "col": "#7B1E3A",
+ "diff": "Variado",
+ "emoji": "🏛️",
+ "qs": [
+  {
+   "t": "Qual herói grego da Guerra de Troia só podia ser ferido no calcanhar?",
+   "type": "txt",
+   "choices": [
+    "Aquiles",
+    "Heitor",
+    "Ulisses",
+    "Agamenon",
+    "Pátroclo",
+    "Ájax"
+   ],
+   "a": [
+    "Aquiles"
+   ],
+   "d": 1,
+   "art": {
+    "who": "homero"
+   },
+   "src": [
+    "pt",
+    "Aquiles",
+    [
+     "calcanhar"
+    ]
+   ],
+   "x": "A Ilíada termina antes da morte do herói; a história do banho no rio Estige, que o deixou invulnerável exceto no calcanhar, é bem posterior a Homero."
+  },
+  {
+   "t": "Qual criatura mitológica, metade homem e metade touro, vivia no Labirinto de Creta?",
+   "type": "txt",
+   "choices": [
+    "Minotauro",
+    "Centauro",
+    "Ciclope",
+    "Sátiro",
+    "Quimera",
+    "Medusa"
+   ],
+   "a": [
+    "Minotauro"
+   ],
+   "d": 1,
+   "art": {
+    "flag": "GRC"
+   },
+   "src": [
+    "pt",
+    "Minotauro",
+    [
+     "Creta"
+    ]
+   ],
+   "x": "Na lenda, o labirinto foi construído por Dédalo para o rei Minos, cujo nome batizou a civilização minoica."
+  },
+  {
+   "t": "Segundo a lenda, que estratagema permitiu aos gregos entrar em Troia?",
+   "type": "txt",
+   "choices": [
+    "Um cavalo de madeira",
+    "Um túnel sob as muralhas",
+    "Uma torre de cerco",
+    "Uma ponte de barcos",
+    "Escadas de corda",
+    "Um aríete de bronze"
+   ],
+   "a": [
+    "Um cavalo de madeira"
+   ],
+   "d": 1,
+   "art": {
+    "flag": "TUR"
+   },
+   "src": [
+    "pt",
+    "Cavalo de Troia",
+    [
+     "Troia"
+    ]
+   ],
+   "x": "As ruínas de Troia ficam na colina de Hisarlik, na atual Turquia, escavada pelo alemão Heinrich Schliemann no século XIX."
+  },
+  {
+   "t": "Como se chamava, na Roma antiga, a camada de cidadãos comuns que lutou por direitos contra os patrícios?",
+   "type": "txt",
+   "choices": [
+    "Plebeus",
+    "Escravos",
+    "Libertos",
+    "Clientes",
+    "Equestres",
+    "Senadores"
+   ],
+   "a": [
+    "Plebeus"
+   ],
+   "d": 1,
+   "art": {
+    "crest": "republica_romana"
+   },
+   "src": [
+    "en",
+    "Conflict of the Orders",
+    [
+     "plebeians"
+    ]
+   ],
+   "x": "Depois de séculos de disputa, eles ganharam tribunos próprios e, em 367 a.C., o direito de chegar ao consulado."
+  },
+  {
+   "t": "Como se chamavam os grandes banhos públicos dos romanos, com piscinas quentes e frias?",
+   "type": "txt",
+   "choices": [
+    "Termas",
+    "Fóruns",
+    "Basílicas",
+    "Ínsulas",
+    "Aquedutos",
+    "Átrios"
+   ],
+   "a": [
+    "Termas"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "column"
+   },
+   "src": [
+    "en",
+    "Thermae",
+    [
+     "Caracalla"
+    ]
+   ],
+   "x": "As Termas de Caracala, em Roma, recebiam cerca de 1.600 banhistas ao mesmo tempo."
+  },
+  {
+   "t": "Que prêmio recebia o vencedor nos Jogos Olímpicos da Antiguidade?",
+   "type": "txt",
+   "choices": [
+    "Uma coroa de ramos de oliveira",
+    "Uma medalha de ouro",
+    "Uma coroa de louros",
+    "Uma taça de prata",
+    "Um escudo de bronze",
+    "Um saco de moedas"
+   ],
+   "a": [
+    "Uma coroa de ramos de oliveira"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "trophy"
+   },
+   "src": [
+    "en",
+    "Ancient Olympic Games",
+    [
+     "olive"
+    ]
+   ],
+   "x": "Os ramos vinham de uma oliveira sagrada de Olímpia; em casa, porém, os campeões podiam ganhar banquetes e honras para a vida toda."
+  },
+  {
+   "t": "Que nó, segundo a lenda, Alexandre, o Grande, cortou com a espada em vez de desatar?",
+   "type": "txt",
+   "choices": [
+    "O nó górdio",
+    "O nó de Hércules",
+    "O nó de Troia",
+    "O nó de Delfos",
+    "O nó persa",
+    "O nó de Creta"
+   ],
+   "a": [
+    "O nó górdio"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "sword"
+   },
+   "src": [
+    "pt",
+    "Nó górdio",
+    [
+     "Frígia"
+    ]
+   ],
+   "x": "Um oráculo dizia que quem desatasse o nó, em Górdio, na Frígia, dominaria a Ásia."
+  },
+  {
+   "t": "O que significava a sigla SPQR, gravada em monumentos e estandartes de Roma?",
+   "type": "txt",
+   "choices": [
+    "O Senado e o Povo Romano",
+    "A Sagrada Pátria de Quirino e Rômulo",
+    "O Senado e os Pretores de Roma",
+    "Salve a Paz e a Rainha Roma",
+    "Os Soldados e o Povo de Roma",
+    "O Sumo Pontífice e a República"
+   ],
+   "a": [
+    "O Senado e o Povo Romano"
+   ],
+   "d": 2,
+   "art": {
+    "stad": "forum_romano"
+   },
+   "src": [
+    "en",
+    "SPQR",
+    [
+     "Senatus Populusque Romanus"
+    ]
+   ],
+   "x": "A abreviação de Senatus Populusque Romanus ainda aparece nas tampas de bueiro e em prédios públicos de Roma."
+  },
+  {
+   "t": "Como se chamava a votação ateniense que podia mandar um cidadão para o exílio por dez anos?",
+   "type": "txt",
+   "choices": [
+    "Ostracismo",
+    "Plebiscito",
+    "Anátema",
+    "Proscrição",
+    "Decimação",
+    "Excomunhão"
+   ],
+   "a": [
+    "Ostracismo"
+   ],
+   "d": 3,
+   "art": {
+    "crest": "atenas"
+   },
+   "src": [
+    "en",
+    "Ostracism",
+    [
+     "ten years"
+    ]
+   ],
+   "x": "Os eleitores escreviam o nome do escolhido em cacos de cerâmica, os óstracos, que deram nome à votação."
+  },
+  {
+   "t": "Qual imperador levou o Império Romano à sua maior extensão, com a conquista da Dácia?",
+   "type": "txt",
+   "choices": [
+    "Trajano",
+    "Adriano",
+    "Augusto",
+    "Nero",
+    "Diocleciano",
+    "Vespasiano"
+   ],
+   "a": [
+    "Trajano"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "map"
+   },
+   "src": [
+    "pt",
+    "Trajano",
+    [
+     "Dácia"
+    ]
+   ],
+   "x": "A Coluna de Trajano, em Roma, conta essa guerra num friso em espiral de cerca de 200 metros."
+  },
+  {
+   "t": "Qual filósofo grego, segundo a tradição, morava num grande jarro de barro e desprezava todo luxo?",
+   "type": "txt",
+   "choices": [
+    "Diógenes",
+    "Epicuro",
+    "Zenão de Cítio",
+    "Heráclito",
+    "Tales de Mileto",
+    "Demócrito"
+   ],
+   "a": [
+    "Diógenes"
+   ],
+   "d": 3,
+   "art": {
+    "who": "alexandre"
+   },
+   "src": [
+    "pt",
+    "Diógenes de Sinope",
+    [
+     "Alexandre"
+    ]
+   ],
+   "x": "Conta-se que, quando Alexandre lhe ofereceu o que quisesse, ele pediu só que o rei saísse da frente do seu sol."
+  },
+  {
+   "t": "Segundo a tradição cristã, qual apóstolo foi crucificado de cabeça para baixo em Roma, no tempo de Nero?",
+   "type": "txt",
+   "choices": [
+    "Pedro",
+    "Paulo",
+    "André",
+    "Tiago",
+    "João",
+    "Tomé"
+   ],
+   "a": [
+    "Pedro"
+   ],
+   "d": 3,
+   "art": {
+    "who": "nero"
+   },
+   "src": [
+    "en",
+    "Saint Peter",
+    [
+     "upside down"
+    ]
+   ],
+   "x": "A Basílica de São Pedro, no Vaticano, foi erguida sobre o lugar onde a tradição situa o seu túmulo."
+  },
+  {
+   "t": "Qual povo germânico, liderado por Alarico, saqueou Roma em 410?",
+   "type": "txt",
+   "choices": [
+    "Visigodos",
+    "Vândalos",
+    "Hunos",
+    "Ostrogodos",
+    "Francos",
+    "Lombardos"
+   ],
+   "a": [
+    "Visigodos"
+   ],
+   "d": 3,
+   "art": {
+    "crest": "imperio_romano"
+   },
+   "src": [
+    "en",
+    "Sack of Rome (410)",
+    [
+     "Alaric"
+    ]
+   ],
+   "x": "Era a primeira vez em cerca de 800 anos que a cidade caía nas mãos de um inimigo; Santo Agostinho escreveu A Cidade de Deus em resposta."
+  },
+  {
+   "t": "Qual naturalista romano morreu em 79 d.C. ao levar navios para perto do Vesúvio em erupção?",
+   "type": "txt",
+   "choices": [
+    "Plínio, o Velho",
+    "Plínio, o Jovem",
+    "Sêneca",
+    "Tácito",
+    "Suetônio",
+    "Tito Lívio"
+   ],
+   "a": [
+    "Plínio, o Velho"
+   ],
+   "d": 4,
+   "art": {
+    "stad": "pompeia"
+   },
+   "src": [
+    "pt",
+    "Plínio, o Velho",
+    [
+     "Vesúvio"
+    ]
+   ],
+   "x": "Seu sobrinho assistiu a tudo do outro lado da baía e descreveu a erupção em duas cartas ao historiador Tácito."
+  },
+  {
+   "t": "Qual líder ateniense promoveu, por volta de 508 a.C., as reformas consideradas o nascimento da democracia?",
+   "type": "txt",
+   "choices": [
+    "Clístenes",
+    "Péricles",
+    "Sólon",
+    "Drácon",
+    "Pisístrato",
+    "Licurgo"
+   ],
+   "a": [
+    "Clístenes"
+   ],
+   "d": 4,
+   "art": {
+    "crest": "atenas"
+   },
+   "src": [
+    "en",
+    "Cleisthenes",
+    [
+     "508"
+    ]
+   ],
+   "x": "Ele reorganizou os cidadãos em dez tribos novas, misturando gente da cidade, do litoral e do interior."
+  },
+  {
+   "t": "Qual reino helenístico, fundado por um general de Alexandre, dominou a Síria, a Mesopotâmia e o Irã?",
+   "type": "txt",
+   "choices": [
+    "Império Selêucida",
+    "Reino Ptolomaico",
+    "Reino Antigônida",
+    "Reino de Pérgamo",
+    "Reino Greco-Báctrio",
+    "Reino do Ponto"
+   ],
+   "a": [
+    "Império Selêucida"
+   ],
+   "d": 4,
+   "art": {
+    "crest": "macedonia"
+   },
+   "src": [
+    "pt",
+    "Império Selêucida",
+    [
+     "Seleuco"
+    ]
+   ],
+   "x": "Seu fundador, Seleuco I, ergueu Antioquia, que se tornaria uma das maiores cidades do mundo romano."
+  },
+  {
+   "t": "Qual escrita micênica, decifrada por Michael Ventris em 1952, revelou ser uma forma antiga de grego?",
+   "type": "txt",
+   "choices": [
+    "Linear B",
+    "Linear A",
+    "Cuneiforme",
+    "Hieróglifos cretenses",
+    "Alfabeto fenício",
+    "Escrita do Indo"
+   ],
+   "a": [
+    "Linear B"
+   ],
+   "d": 5,
+   "art": {
+    "icon": "scroll"
+   },
+   "src": [
+    "pt",
+    "Linear B",
+    [
+     "Ventris"
+    ]
+   ],
+   "x": "A Linear A, usada antes pelos minoicos em Creta, continua sem decifração."
+  },
+  {
+   "t": "Qual invenção, uma ponte de abordagem com um gancho, ajudou Roma a vencer Cartago no mar na Primeira Guerra Púnica?",
+   "type": "txt",
+   "choices": [
+    "O corvo",
+    "O aríete",
+    "A balista",
+    "O onagro",
+    "A tartaruga",
+    "O escorpião"
+   ],
+   "a": [
+    "O corvo"
+   ],
+   "d": 5,
+   "art": {
+    "crest": "cartago"
+   },
+   "src": [
+    "en",
+    "Corvus (boarding device)",
+    [
+     "First Punic War"
+    ]
+   ],
+   "x": "A ponte cravava-se no convés inimigo e transformava a batalha naval numa luta de infantaria, em que os romanos eram mais fortes."
+  },
+  {
+   "t": "Em qual rio da Índia o exército de Alexandre se recusou a seguir adiante, em 326 a.C.?",
+   "type": "txt",
+   "choices": [
+    "Hífase",
+    "Ganges",
+    "Indo",
+    "Eufrates",
+    "Oxus",
+    "Tigre"
+   ],
+   "a": [
+    "Hífase"
+   ],
+   "d": 5,
+   "art": {
+    "icon": "map"
+   },
+   "src": [
+    "en",
+    "Beas River",
+    [
+     "Alexander"
+    ]
+   ],
+   "x": "Depois de oito anos de marcha desde a Macedônia, os soldados queriam voltar para casa; Alexandre cedeu e deu meia-volta."
+  },
+  {
+   "t": "Qual governante romano deu nome ao mês de agosto?",
+   "type": "player",
+   "a": [
+    "augusto"
+   ],
+   "d": 1,
+   "art": {
+    "who": "cesar"
+   },
+   "src": [
+    "pt",
+    "Agosto",
+    [
+     "Augusto"
+    ]
+   ],
+   "x": "O Senado rebatizou o antigo mês Sextilis em 8 a.C.; julho, antes Quintilis, já homenageava Júlio César, seu pai adotivo."
+  },
+  {
+   "t": "Qual imperador reconstruiu o Panteão de Roma, mas manteve na fachada o nome de Agripa, o construtor original?",
+   "type": "player",
+   "a": [
+    "adriano"
+   ],
+   "d": 3,
+   "art": {
+    "stad": "panteao"
+   },
+   "src": [
+    "en",
+    "Pantheon, Rome",
+    [
+     "Hadrian"
+    ]
+   ],
+   "x": "A cúpula tem no alto um óculo de cerca de 9 metros aberto para o céu; quando chove, a água escoa por furos no piso."
+  },
+  {
+   "t": "Qual poeta latino guia Dante pelo Inferno e pelo Purgatório na Divina Comédia?",
+   "type": "player",
+   "a": [
+    "virgilio"
+   ],
+   "d": 3,
+   "art": {
+    "who": "dante"
+   },
+   "src": [
+    "pt",
+    "Divina Comédia",
+    [
+     "Virgílio"
+    ]
+   ],
+   "x": "Dante o chama de “meu mestre”: a obra mais famosa desse poeta narra a viagem de Eneias de Troia até a Itália."
+  },
+  {
+   "t": "Qual pensador grego fundou em Crotona uma comunidade cujos membros, dizem, não podiam comer favas?",
+   "type": "player",
+   "a": [
+    "pitagoras"
+   ],
+   "d": 4,
+   "art": {
+    "icon": "book"
+   },
+   "src": [
+    "en",
+    "Pythagoras",
+    [
+     "beans"
+    ]
+   ],
+   "x": "Seus seguidores acreditavam na transmigração das almas e viam nos números a chave para entender o universo."
+  },
+  {
+   "t": "De qual imperador é a estátua equestre de bronze do Capitólio que escapou da destruição por ser confundida com Constantino?",
+   "type": "player",
+   "a": [
+    "marco_aurelio"
+   ],
+   "d": 4,
+   "art": {
+    "icon": "crown"
+   },
+   "src": [
+    "en",
+    "Equestrian Statue of Marcus Aurelius",
+    [
+     "Constantine"
+    ]
+   ],
+   "x": "Na Idade Média muitas estátuas pagãs foram derretidas; esta sobreviveu porque julgavam retratar o primeiro imperador cristão."
+  },
+  {
+   "t": "Qual pólis liderou a Liga de Delos e usou o tesouro da aliança para embelezar a própria cidade?",
+   "a": [
+    "atenas"
+   ],
+   "d": 2,
+   "art": {
+    "crest": "persia"
+   },
+   "src": [
+    "pt",
+    "Liga de Delos",
+    [
+     "Atenas"
+    ]
+   ],
+   "x": "Em 454 a.C., o tesouro da liga saiu da ilha de Delos para a Acrópole, e parte dele ajudou a pagar o Partenon."
+  },
+  {
+   "t": "Qual cidade, fundada por colonos fenícios de Tiro, foi arrasada pelos romanos em 146 a.C.?",
+   "a": [
+    "cartago"
+   ],
+   "d": 2,
+   "art": {
+    "crest": "republica_romana"
+   },
+   "src": [
+    "pt",
+    "Cartago",
+    [
+     "146 a.C."
+    ]
+   ],
+   "x": "No mesmo ano, Roma também destruiu Corinto, na Grécia: 146 a.C. selou o domínio romano sobre o Mediterrâneo."
+  },
+  {
+   "t": "Qual cidade grega tinha sempre dois reis ao mesmo tempo, de duas famílias diferentes?",
+   "a": [
+    "esparta"
+   ],
+   "d": 3,
+   "art": {
+    "crest": "atenas"
+   },
+   "src": [
+    "en",
+    "Sparta",
+    [
+     "Eurypontid"
+    ]
+   ],
+   "x": "Os reis vinham das casas dos Ágidas e dos Euripôntidas, e um conselho de anciãos, a gerúsia, limitava o seu poder."
+  },
+  {
+   "t": "Qual reino tinha Pela como capital e um exército de falanges armadas com longas lanças, as sarissas?",
+   "a": [
+    "macedonia"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "sword"
+   },
+   "src": [
+    "en",
+    "Sarissa",
+    [
+     "Macedonian"
+    ]
+   ],
+   "x": "A sarissa podia passar de 5 metros de comprimento: as primeiras fileiras da falange formavam uma muralha de pontas."
+  },
+  {
+   "t": "Quem sou eu?",
+   "type": "player",
+   "clues": [
+    "Nasci na Trácia e, segundo alguns relatos, servi como auxiliar no exército romano.",
+    "Fui vendido como escravo e treinado numa escola de gladiadores em Cápua.",
+    "Em 73 a.C., fugi com algumas dezenas de companheiros e reuni um exército de milhares.",
+    "Fui derrotado pelas legiões de Crasso, e milhares de seguidores foram crucificados ao longo da Via Ápia."
+   ],
+   "a": [
+    "espartaco"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "bust"
+   },
+   "src": [
+    "pt",
+    "Espártaco",
+    [
+     "Cápua"
+    ]
+   ],
+   "x": "A revolta durou de 73 a 71 a.C. e, quase dois mil anos depois, virou filme de Stanley Kubrick com Kirk Douglas, em 1960."
+  },
+  {
+   "t": "Quem sou eu?",
+   "type": "player",
+   "clues": [
+    "Meu pai me fez jurar, ainda menino, ódio eterno a Roma.",
+    "Parti da Hispânia e atravessei os Pireneus e os Alpes com meu exército.",
+    "Venci os romanos no lago Trasimeno e, em Canas, cerquei um exército inteiro.",
+    "Derrotado em Zama, acabei no exílio e tomei veneno para não ser entregue aos romanos."
+   ],
+   "a": [
+    "anibal"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "bust"
+   },
+   "src": [
+    "pt",
+    "Aníbal",
+    [
+     "Trasimeno"
+    ]
+   ],
+   "x": "Por cerca de 15 anos ele percorreu a Itália sem perder uma grande batalha, mas nunca chegou a atacar a cidade de Roma."
+  },
+  {
+   "t": "Quem sou eu?",
+   "type": "player",
+   "clues": [
+    "Meu pai era um dos quatro governantes do Império, e as tropas me aclamaram na Britânia.",
+    "Antes de uma batalha decisiva junto a uma ponte, teria visto um sinal no céu.",
+    "Convoquei o primeiro concílio geral da Igreja, em Niceia, no ano 325.",
+    "Refundei uma antiga cidade grega no Bósforo e dei a ela o meu nome."
+   ],
+   "a": [
+    "constantino"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "bust"
+   },
+   "src": [
+    "en",
+    "Constantine the Great",
+    [
+     "Nicaea"
+    ]
+   ],
+   "x": "Ele só foi batizado no leito de morte, em 337; a cidade que fundou foi capital imperial por quase 1.600 anos."
+  },
+  {
+   "t": "Coloque em ordem as fases de Roma, da mais antiga à mais recente?",
+   "type": "order",
+   "a": [
+    "fund",
+    "rep",
+    "imp",
+    "queda"
+   ],
+   "order": [
+    {
+     "id": "fund",
+     "y": -753,
+     "label": "Fundação de Roma",
+     "sub": "Segundo a lenda, por Rômulo",
+     "flag": "ITA"
+    },
+    {
+     "id": "rep",
+     "y": -509,
+     "label": "Início da República",
+     "sub": "O último rei é expulso",
+     "crest": "republica_romana"
+    },
+    {
+     "id": "imp",
+     "y": -27,
+     "label": "Augusto, primeiro imperador",
+     "sub": "Começa o Império",
+     "face": "augusto"
+    },
+    {
+     "id": "queda",
+     "y": 476,
+     "label": "Queda do Império do Ocidente",
+     "sub": "O último imperador é deposto",
+     "crest": "imperio_romano"
+    }
+   ],
+   "d": 1,
+   "src": [
+    "pt",
+    "Roma Antiga",
+    [
+     "753 a.C."
+    ]
+   ]
+  },
+  {
+   "t": "Ordene estes marcos da Grécia clássica, do mais antigo ao mais recente?",
+   "type": "order",
+   "a": [
+    "marat",
+    "pelop",
+    "socr",
+    "alex"
+   ],
+   "order": [
+    {
+     "id": "marat",
+     "y": -490,
+     "label": "Batalha de Maratona",
+     "sub": "Atenienses contra persas",
+     "crest": "persia"
+    },
+    {
+     "id": "pelop",
+     "y": -431,
+     "label": "Início da Guerra do Peloponeso",
+     "sub": "Atenas contra Esparta",
+     "crest": "esparta"
+    },
+    {
+     "id": "socr",
+     "y": -399,
+     "label": "Morte de Sócrates",
+     "sub": "Condenado a beber cicuta",
+     "face": "socrates"
+    },
+    {
+     "id": "alex",
+     "y": -323,
+     "label": "Morte de Alexandre",
+     "sub": "Fim de um império relâmpago",
+     "face": "alexandre"
+    }
+   ],
+   "d": 3,
+   "src": [
+    "pt",
+    "Grécia Antiga",
+    [
+     "Peloponeso"
+    ]
+   ]
+  },
+  {
+   "t": "Ponha em ordem estes fatos da República Romana, do mais antigo ao mais recente?",
+   "type": "order",
+   "a": [
+    "rei",
+    "pun1",
+    "cart",
+    "espart",
+    "cesar"
+   ],
+   "order": [
+    {
+     "id": "rei",
+     "y": -509,
+     "label": "Expulsão do último rei",
+     "sub": "Nasce a República",
+     "crest": "republica_romana"
+    },
+    {
+     "id": "pun1",
+     "y": -264,
+     "label": "Começa a Primeira Guerra Púnica",
+     "sub": "A disputa pela Sicília",
+     "crest": "cartago"
+    },
+    {
+     "id": "cart",
+     "y": -146,
+     "label": "Destruição de Cartago",
+     "sub": "Fim da Terceira Guerra Púnica",
+     "flag": "TUN"
+    },
+    {
+     "id": "espart",
+     "y": -73,
+     "label": "Revolta de Espártaco",
+     "sub": "Escravos em armas contra Roma",
+     "face": "espartaco"
+    },
+    {
+     "id": "cesar",
+     "y": -44,
+     "label": "Assassinato de Júlio César",
+     "sub": "Os Idos de Março",
+     "face": "cesar"
+    }
+   ],
+   "d": 4,
+   "src": [
+    "pt",
+    "República Romana",
+    [
+     "509 a.C."
+    ]
+   ]
+  },
+  {
+   "t": "Quem disse esta frase?",
+   "type": "player",
+   "quote": {
+    "q": "Até tu, Brutus?",
+    "ctx": "Últimas palavras atribuídas a ele nos Idos de Março, 44 a.C.; a forma famosa vem de Shakespeare"
+   },
+   "a": [
+    "cesar"
+   ],
+   "d": 1,
+   "src": [
+    "en",
+    "Et tu, Brute?",
+    [
+     "Suetonius"
+    ]
+   ],
+   "x": "Suetônio registra a frase em grego, “kai sy, teknon” (“também tu, filho?”), mas conta que, segundo outros, César morreu calado."
+  },
+  {
+   "t": "Quem disse esta frase?",
+   "type": "player",
+   "quote": {
+    "q": "O homem é, por natureza, um animal político.",
+    "ctx": "Livro I da Política, século IV a.C."
+   },
+   "a": [
+    "aristoteles"
+   ],
+   "d": 2,
+   "src": [
+    "en",
+    "Politics (Aristotle)",
+    [
+     "political animal"
+    ]
+   ],
+   "x": "Para o filósofo, quem vive fora da pólis, a cidade-Estado, ou é um animal selvagem ou é um deus."
+  },
+  {
+   "t": "Quem disse esta frase?",
+   "type": "player",
+   "quote": {
+    "q": "Encontrei Roma uma cidade de tijolos e deixei-a uma cidade de mármore.",
+    "ctx": "Frase atribuída ao governante pelo biógrafo Suetônio, sobre as obras do seu reinado"
+   },
+   "a": [
+    "augusto"
+   ],
+   "d": 2,
+   "src": [
+    "en",
+    "Augustus",
+    [
+     "Suetonius"
+    ]
+   ],
+   "x": "Do seu tempo são o Altar da Paz (Ara Pacis), o Fórum de Augusto e o primeiro Panteão, erguido por Agripa."
+  },
+  {
+   "t": "Quem escreveu este verso?",
+   "type": "txt",
+   "choices": [
+    "Horácio",
+    "Virgílio",
+    "Ovídio",
+    "Catulo",
+    "Juvenal",
+    "Lucrécio"
+   ],
+   "quote": {
+    "q": "Aproveita o dia e confia o mínimo possível no amanhã.",
+    "ctx": "Ode em latim, por volta de 23 a.C. — o famoso “carpe diem”"
+   },
+   "a": [
+    "Horácio"
+   ],
+   "d": 3,
+   "src": [
+    "pt",
+    "Carpe diem",
+    [
+     "Horácio"
+    ]
+   ],
+   "x": "O verso fala de colher o dia como se colhe um fruto maduro: “carpe” vem do verbo latino que significa colher."
+  },
+  {
+   "t": "Quem disse esta frase?",
+   "type": "player",
+   "quote": {
+    "q": "Venham buscá-las!",
+    "ctx": "Resposta registrada por Plutarco quando o rei persa exigiu que os gregos entregassem as armas, 480 a.C."
+   },
+   "a": [
+    "leonidas"
+   ],
+   "d": 3,
+   "src": [
+    "en",
+    "Molon labe",
+    [
+     "Leonidas"
+    ]
+   ],
+   "x": "Em grego, “molon labe”: a frase está gravada no monumento ao rei espartano erguido nas Termópilas em 1955."
+  },
+  {
+   "t": "Quem disse esta frase?",
+   "type": "txt",
+   "choices": [
+    "Catão, o Velho",
+    "Cícero",
+    "Cipião Africano",
+    "Sêneca",
+    "Júlio César",
+    "Pompeu"
+   ],
+   "quote": {
+    "q": "Cartago deve ser destruída.",
+    "ctx": "Frase com que, segundo a tradição, um senador romano encerrava seus discursos nos anos anteriores à Terceira Guerra Púnica"
+   },
+   "a": [
+    "Catão, o Velho"
+   ],
+   "d": 3,
+   "src": [
+    "en",
+    "Carthago delenda est",
+    [
+     "Cato"
+    ]
+   ],
+   "x": "Ele repetia a frase até em debates sobre outros assuntos; Cartago foi arrasada em 146 a.C., três anos depois da morte dele."
+  },
+  {
+   "t": "De qual autor romano vem esta máxima?",
+   "type": "txt",
+   "choices": [
+    "Vegécio",
+    "Cícero",
+    "Tácito",
+    "Sêneca",
+    "Tito Lívio",
+    "Plínio, o Velho"
+   ],
+   "quote": {
+    "q": "Se queres a paz, prepara a guerra.",
+    "ctx": "Adaptação de uma frase de um tratado militar romano tardio; em latim, “si vis pacem, para bellum”"
+   },
+   "a": [
+    "Vegécio"
+   ],
+   "d": 5,
+   "src": [
+    "en",
+    "Si vis pacem, para bellum",
+    [
+     "Vegetius"
+    ]
+   ],
+   "x": "O tratado, o Epitoma rei militaris, foi um dos manuais militares mais copiados e lidos da Idade Média."
+  },
+  {
+   "t": "Qual cidade grega venceu os persas nesta batalha, com a ajuda de Plateias?",
+   "battle": {
+    "lbl": "Maratona · 490 a.C.",
+    "a": "?",
+    "b": "persia",
+    "x": "A lenda do mensageiro que correu até Atenas para anunciar a vitória inspirou a prova da maratona dos Jogos Olímpicos modernos."
+   },
+   "a": [
+    "atenas"
+   ],
+   "d": 1,
+   "src": [
+    "pt",
+    "Batalha de Maratona",
+    [
+     "Dario"
+    ]
+   ]
+  },
+  {
+   "t": "Qual império Alexandre derrotou de vez nesta batalha?",
+   "battle": {
+    "lbl": "Gaugamela · 331 a.C.",
+    "a": "macedonia",
+    "b": "?",
+    "x": "O rei Dario III fugiu do campo de batalha e, no ano seguinte, foi assassinado por um de seus próprios sátrapas."
+   },
+   "a": [
+    "persia"
+   ],
+   "d": 1,
+   "src": [
+    "pt",
+    "Batalha de Gaugamela",
+    [
+     "Dario III"
+    ]
+   ]
+  },
+  {
+   "t": "Quem sofreu nesta batalha uma das piores derrotas de sua história, cercado pelas tropas de Aníbal?",
+   "battle": {
+    "lbl": "Canas · 216 a.C.",
+    "a": "cartago",
+    "b": "?",
+    "x": "Aníbal recuou o centro e fechou as alas sobre um exército maior: a manobra ainda é estudada nas academias militares."
+   },
+   "a": [
+    "republica_romana"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Batalha de Canas",
+    [
+     "Aníbal"
+    ]
+   ]
+  },
+  {
+   "t": "Qual povo, unido por Vercingetórix, foi derrotado por César neste cerco?",
+   "type": "txt",
+   "choices": [
+    "Gauleses",
+    "Germanos",
+    "Britanos",
+    "Iberos",
+    "Partos",
+    "Dácios"
+   ],
+   "battle": {
+    "lbl": "Alésia · 52 a.C.",
+    "a": "republica_romana",
+    "b": "?",
+    "x": "César cercou Alésia com duas linhas de muralhas: uma contra os sitiados e outra contra o exército que vinha socorrê-los."
+   },
+   "a": [
+    "Gauleses"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Batalha de Alésia",
+    [
+     "Vercingetórix"
+    ]
+   ]
+  },
+  {
+   "t": "Quem venceu esta batalha naval e, quatro anos depois, tornou-se o primeiro imperador de Roma?",
+   "type": "player",
+   "battle": {
+    "lbl": "Áccio · 31 a.C.",
+    "a": "?",
+    "b": "Marco Antônio e Cleópatra",
+    "x": "A frota vencedora era comandada por Agripa, amigo de juventude do vencedor e mais tarde seu genro."
+   },
+   "a": [
+    "augusto"
+   ],
+   "d": 2,
+   "src": [
+    "en",
+    "Battle of Actium",
+    [
+     "Agrippa"
+    ]
+   ]
+  },
+  {
+   "t": "Qual chefe germânico, que tinha servido ao exército romano, comandou esta emboscada?",
+   "type": "txt",
+   "choices": [
+    "Armínio",
+    "Vercingetórix",
+    "Alarico",
+    "Odoacro",
+    "Genserico",
+    "Maroboduo"
+   ],
+   "battle": {
+    "lbl": "Floresta de Teutoburgo · 9 d.C.",
+    "a": "?",
+    "b": "imperio_romano",
+    "x": "Três legiões foram aniquiladas; segundo Suetônio, Augusto gritava: “Varo, devolve-me as minhas legiões!”"
+   },
+   "a": [
+    "Armínio"
+   ],
+   "d": 4,
+   "src": [
+    "en",
+    "Battle of the Teutoburg Forest",
+    [
+     "Arminius"
+    ]
+   ]
+  },
+  {
+   "t": "Qual reino Roma derrotou nesta batalha, levando seu último rei, Perseu, como prisioneiro?",
+   "battle": {
+    "lbl": "Pidna · 168 a.C.",
+    "a": "republica_romana",
+    "b": "?",
+    "x": "A falange, imbatível em terreno plano, se desfez no terreno irregular, e as legiões, mais flexíveis, entraram pelas brechas."
+   },
+   "a": [
+    "macedonia"
+   ],
+   "d": 4,
+   "src": [
+    "en",
+    "Battle of Pydna",
+    [
+     "Perseus"
+    ]
+   ]
+  },
+  {
+   "t": "Quem completa esta família, a última a reinar no Egito antigo?",
+   "type": "player",
+   "line": {
+    "t": "Os últimos Ptolomeus · pai, filha e neto",
+    "rows": [
+     "Ptolomeu XII Auleta",
+     "?",
+     "Ptolomeu XV Cesarião"
+    ],
+    "era": "ant"
+   },
+   "a": [
+    "cleopatra"
+   ],
+   "d": 2,
+   "src": [
+    "en",
+    "Ptolemaic dynasty",
+    [
+     "Caesarion"
+    ]
+   ],
+   "x": "Cesarião, filho de Júlio César, foi morto por ordem de Otaviano em 30 a.C., ainda adolescente."
+  },
+  {
+   "t": "Quem completa a lista dos “cinco bons imperadores”?",
+   "type": "player",
+   "line": {
+    "t": "Os cinco bons imperadores · Roma, 96–180",
+    "rows": [
+     "Nerva",
+     "Trajano",
+     "?",
+     "Antonino Pio",
+     "Marco Aurélio"
+    ],
+    "era": "ant"
+   },
+   "a": [
+    "adriano"
+   ],
+   "d": 3,
+   "src": [
+    "en",
+    "Five Good Emperors",
+    [
+     "Hadrian"
+    ]
+   ],
+   "x": "Os quatro primeiros não deixaram filho homem vivo e adotaram o sucessor; a regra acabou quando Marco Aurélio passou o trono ao filho, Cômodo."
+  },
+  {
+   "t": "Quem completava o Segundo Triunvirato?",
+   "type": "txt",
+   "choices": [
+    "Lépido",
+    "Crasso",
+    "Pompeu",
+    "Bruto",
+    "Agripa",
+    "Cássio"
+   ],
+   "line": {
+    "t": "Segundo Triunvirato · Roma, 43 a.C.",
+    "rows": [
+     "Otaviano",
+     "Marco Antônio",
+     "?"
+    ],
+    "kind": "grupo",
+    "era": "ant"
+   },
+   "a": [
+    "Lépido"
+   ],
+   "d": 3,
+   "src": [
+    "pt",
+    "Segundo Triunvirato",
+    [
+     "Lépido"
+    ]
+   ],
+   "x": "Afastado por Otaviano em 36 a.C., perdeu o poder político, mas manteve até a morte o cargo de pontífice máximo."
+  },
+  {
+   "t": "Quem reinou entre o pai e o irmão nesta dinastia?",
+   "type": "txt",
+   "choices": [
+    "Tito",
+    "Nerva",
+    "Galba",
+    "Otão",
+    "Vitélio",
+    "Trajano"
+   ],
+   "line": {
+    "t": "Dinastia flaviana · Roma, 69–96",
+    "rows": [
+     "Vespasiano",
+     "?",
+     "Domiciano"
+    ],
+    "era": "ant"
+   },
+   "a": [
+    "Tito"
+   ],
+   "d": 4,
+   "src": [
+    "en",
+    "Flavian dynasty",
+    [
+     "Titus"
+    ]
+   ],
+   "x": "Em pouco mais de dois anos de governo, viu a erupção do Vesúvio e inaugurou o Coliseu, no ano 80."
+  },
+  {
+   "t": "Quem completava a primeira Tetrarquia, ao lado destes três?",
+   "type": "txt",
+   "choices": [
+    "Constâncio Cloro",
+    "Constantino",
+    "Maxêncio",
+    "Licínio",
+    "Severo",
+    "Aureliano"
+   ],
+   "line": {
+    "t": "Primeira Tetrarquia · 293",
+    "rows": [
+     "Diocleciano",
+     "Maximiano",
+     "Galério",
+     "?"
+    ],
+    "kind": "grupo",
+    "era": "ant"
+   },
+   "a": [
+    "Constâncio Cloro"
+   ],
+   "d": 5,
+   "src": [
+    "en",
+    "Tetrarchy",
+    [
+     "Constantius"
+    ]
+   ],
+   "x": "Era o pai de Constantino, aclamado imperador pelas tropas em Eboracum, atual York, quando ele morreu ali, em 306."
+  },
+  {
+   "t": "Em que ano saiu esta manchete?",
+   "type": "txt",
+   "choices": [
+    "1896",
+    "1880",
+    "1888",
+    "1892",
+    "1900",
+    "1904"
+   ],
+   "news": {
+    "h": "Jogos Olímpicos renascem em Atenas",
+    "paper": "Gazeta de Atenas",
+    "sub": "Grego vence a maratona e é carregado em triunfo no estádio Panatenaico"
+   },
+   "a": [
+    "1896"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Jogos Olímpicos de Verão de 1896",
+    [
+     "Louis"
+    ]
+   ],
+   "x": "O vencedor da maratona, Spyridon Louis, era um carregador de água de um vilarejo perto de Atenas."
+  },
+  {
+   "t": "Em que ano saiu esta manchete?",
+   "type": "txt",
+   "choices": [
+    "1900",
+    "1871",
+    "1884",
+    "1912",
+    "1922",
+    "1936"
+   ],
+   "news": {
+    "h": "Arqueólogo inglês desenterra em Creta o palácio do rei Minos",
+    "paper": "The Daily Courier",
+    "sub": "Escavações em Cnossos revelam afrescos e um enorme labirinto de salas"
+   },
+   "a": [
+    "1900"
+   ],
+   "d": 4,
+   "src": [
+    "en",
+    "Knossos",
+    [
+     "1900"
+    ]
+   ],
+   "x": "Arthur Evans comprou o terreno e chamou de “minoica” a civilização que encontrou ali, em homenagem ao rei lendário."
+  },
+  {
+   "t": "Em que ano saiu esta manchete?",
+   "type": "txt",
+   "choices": [
+    "1820",
+    "1798",
+    "1806",
+    "1815",
+    "1830",
+    "1848"
+   ],
+   "news": {
+    "h": "Camponês encontra estátua de Afrodite na ilha de Milos",
+    "paper": "Courrier de l’Égée",
+    "sub": "A escultura de mármore, sem os braços, deve seguir para Paris como presente ao rei"
+   },
+   "a": [
+    "1820"
+   ],
+   "d": 5,
+   "src": [
+    "en",
+    "Venus de Milo",
+    [
+     "1820"
+    ]
+   ],
+   "x": "Hoje no Louvre, a Vênus de Milo é do período helenístico, de cerca de 150 a 125 a.C.; os braços nunca foram encontrados."
+  },
+  {
+   "t": "Duelo: quem viveu primeiro?",
+   "type": "player",
+   "fixed": [
+    "socrates",
+    "cesar"
+   ],
+   "duel": true,
+   "a": [
+    "socrates"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "hourglass"
+   },
+   "src": [
+    "pt",
+    "Sócrates",
+    [
+     "399 a.C."
+    ]
+   ],
+   "x": "Sócrates morreu em 399 a.C., quase três séculos antes do nascimento de Júlio César."
+  },
+  {
+   "t": "Duelo: quem nasceu primeiro?",
+   "type": "player",
+   "fixed": [
+    "pitagoras",
+    "platao"
+   ],
+   "duel": true,
+   "a": [
+    "pitagoras"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "hourglass"
+   },
+   "src": [
+    "en",
+    "Pythagoras",
+    [
+     "570"
+    ]
+   ],
+   "x": "Pitágoras nasceu por volta de 570 a.C., mais de um século antes de Platão, que admirava suas ideias sobre a alma e os números."
+  },
+  {
+   "t": "Duelo: quem nasceu primeiro?",
+   "type": "player",
+   "fixed": [
+    "anibal",
+    "cipiao"
+   ],
+   "duel": true,
+   "a": [
+    "anibal"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "sword"
+   },
+   "src": [
+    "en",
+    "Hannibal",
+    [
+     "247"
+    ]
+   ],
+   "x": "O cartaginês era cerca de onze anos mais velho que o romano que o derrotaria em Zama."
+  },
+  {
+   "t": "Duelo: quem morreu primeiro?",
+   "type": "player",
+   "fixed": [
+    "cesar",
+    "cicero"
+   ],
+   "duel": true,
+   "a": [
+    "cesar"
+   ],
+   "d": 4,
+   "art": {
+    "icon": "sword"
+   },
+   "src": [
+    "en",
+    "Cicero",
+    [
+     "43 BC"
+    ]
+   ],
+   "x": "Cícero foi executado em dezembro de 43 a.C., por ordem de Marco Antônio, cerca de 21 meses depois dos Idos de Março."
+  },
+  {
+   "t": "Júlio César foi o primeiro imperador de Roma?",
+   "type": "txt",
+   "choices": [
+    "Fato",
+    "Mito"
+   ],
+   "duel": true,
+   "myth": true,
+   "a": [
+    "Mito"
+   ],
+   "d": 1,
+   "art": {
+    "who": "cesar"
+   },
+   "src": [
+    "pt",
+    "Júlio César",
+    [
+     "ditador"
+    ]
+   ],
+   "x": "Ele foi ditador vitalício, mas nunca imperador: o primeiro foi seu filho adotivo, Otaviano Augusto, a partir de 27 a.C."
+  },
+  {
+   "t": "Nero tocou violino enquanto Roma pegava fogo, em 64 d.C.?",
+   "type": "txt",
+   "choices": [
+    "Fato",
+    "Mito"
+   ],
+   "duel": true,
+   "myth": true,
+   "a": [
+    "Mito"
+   ],
+   "d": 2,
+   "art": {
+    "who": "nero"
+   },
+   "src": [
+    "en",
+    "Great Fire of Rome",
+    [
+     "Antium"
+    ]
+   ],
+   "x": "O violino só surgiria no século XVI; segundo Tácito, Nero estava em Âncio quando o fogo começou e voltou para organizar abrigos para quem perdera a casa."
+  },
+  {
+   "t": "Os romanos tinham salas, os vomitórios, para vomitar nos banquetes e continuar comendo?",
+   "type": "txt",
+   "choices": [
+    "Fato",
+    "Mito"
+   ],
+   "duel": true,
+   "myth": true,
+   "a": [
+    "Mito"
+   ],
+   "d": 2,
+   "art": {
+    "stad": "coliseu"
+   },
+   "src": [
+    "en",
+    "Vomitorium",
+    [
+     "amphitheatre"
+    ]
+   ],
+   "x": "Vomitorium era a passagem por onde o público “jorrava” para fora do anfiteatro; a sala para vomitar é invenção moderna."
+  },
+  {
+   "t": "Os atletas dos Jogos Olímpicos da Grécia Antiga competiam nus?",
+   "type": "txt",
+   "choices": [
+    "Fato",
+    "Mito"
+   ],
+   "duel": true,
+   "myth": true,
+   "a": [
+    "Fato"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "trophy"
+   },
+   "src": [
+    "en",
+    "Ancient Olympic Games",
+    [
+     "naked"
+    ]
+   ],
+   "x": "A palavra “ginásio” vem do grego gymnós, que significa “nu”."
+  },
+  {
+   "t": "Sócrates não deixou nenhum texto escrito?",
+   "type": "txt",
+   "choices": [
+    "Fato",
+    "Mito"
+   ],
+   "duel": true,
+   "myth": true,
+   "a": [
+    "Fato"
+   ],
+   "d": 2,
+   "art": {
+    "who": "platao"
+   },
+   "src": [
+    "pt",
+    "Sócrates",
+    [
+     "Xenofonte"
+    ]
+   ],
+   "x": "O que sabemos de suas ideias vem sobretudo dos diálogos de Platão e dos escritos de Xenofonte, seus discípulos."
+  },
+  {
+   "t": "A cesariana tem esse nome porque Júlio César nasceu de um parto assim?",
+   "type": "txt",
+   "choices": [
+    "Fato",
+    "Mito"
+   ],
+   "duel": true,
+   "myth": true,
+   "a": [
+    "Mito"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "bust"
+   },
+   "src": [
+    "en",
+    "Caesarean section",
+    [
+     "Caesar"
+    ]
+   ],
+   "x": "Na época, a operação só era feita em mães mortas ou morrendo, e a mãe de César, Aurélia, viveu até ele passar dos 40 anos."
+  },
+  {
+   "t": "As estátuas e os templos da Grécia Antiga eram brancos, sem pintura?",
+   "type": "txt",
+   "choices": [
+    "Fato",
+    "Mito"
+   ],
+   "duel": true,
+   "myth": true,
+   "a": [
+    "Mito"
+   ],
+   "d": 3,
+   "art": {
+    "stad": "partenon"
+   },
+   "src": [
+    "en",
+    "Ancient Greek sculpture",
+    [
+     "painted"
+    ]
+   ],
+   "x": "Vestígios de pigmentos mostram que esculturas e frisos eram pintados com cores vivas; o branco “clássico” é obra do tempo."
+  },
+  {
+   "t": "Na Roma antiga, o polegar para baixo era com certeza o sinal para matar o gladiador vencido?",
+   "type": "txt",
+   "choices": [
+    "Fato",
+    "Mito"
+   ],
+   "duel": true,
+   "myth": true,
+   "a": [
+    "Mito"
+   ],
+   "d": 4,
+   "art": {
+    "icon": "sword"
+   },
+   "src": [
+    "en",
+    "Pollice Verso (Gérôme)",
+    [
+     "1872"
+    ]
+   ],
+   "x": "Os textos romanos falam só em “polegar virado” (pollice verso), sem dizer a direção; a imagem popular vem de um quadro de Gérôme, de 1872."
+  }
+ ]
+}
