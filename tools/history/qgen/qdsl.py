@@ -97,10 +97,13 @@ class Cat:
         if kw.get("x"): r["x"] = kw["x"]
         self.qs.append(r)
 
-    def QT(self, quote, a, d=2, ctx=None, t="Quem disse esta frase?", typ="player", wrong=None, **kw):
-        """Citação: the sentence on a sheet; name who said or wrote it."""
+    def QT(self, quote, a, d=2, ctx=None, t="Quem disse esta frase?", typ="player", wrong=None, kind=None, **kw):
+        """Citação: the sentence on a sheet; name who said or wrote it.
+        kind: 'pedra' (carved), 'diario' (ship's log), 'carta' (sealed letter) —
+        left out, it is chosen from the speaker and the context."""
         v = {"q": quote}
         if ctx: v["ctx"] = ctx
+        if kind: v["kind"] = kind
         self._strip(t, a, d, typ, wrong, "quote", v, kw)
 
     def BT(self, t, a, lbl, side_a, side_b, d=2, x=None, typ=None, wrong=None, **kw):

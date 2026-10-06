@@ -76,14 +76,36 @@ const stripName = n => {
 const QUILL = `<svg viewBox="0 0 40 40" aria-hidden="true"><path d="M33 4C22 7 13 17 9.4 31l2 1C16 20 24 12 33 4Z" fill="#F4ECD8" stroke="#2A1D10" stroke-width=".9" stroke-linejoin="round"/>
   <path d="M33 4c-4 7-9 11-15 13M30 8c-3 4-7 7-11 8.6M26 12c-2 3-5 5-8 6" fill="none" stroke="#2A1D10" stroke-width=".6" opacity=".6"/>
   <path d="M9.4 31 7 37" stroke="#2A1D10" stroke-width="1.4" stroke-linecap="round"/><circle cx="6.6" cy="37.6" r="1.1" fill="#2A1D10"/></svg>`;
+/* What the sentence is written on. A writer may say (kind), otherwise it is
+   read from the speaker and the context: the ancients carved theirs in stone,
+   the navigators wrote in a ship's log, and a letter is a letter. */
+function quoteKind(st, q) {
+  if (st.kind) return st.kind;
+  const ctx = _fold(st.ctx || '');
+  if (/\b(carta|bilhete|escreveu a |escrita a )/.test(ctx)) return 'carta';
+  const p = q && q.type === 'player' ? PL.find(x => x.id === (q.a || [])[0]) : null;
+  if (p && p.era && p.era[0] < 400) return 'pedra';
+  if ((p && p.pos === 'EXP') || /\b(diario de bordo|bordo|viagem|expedicao)\b/.test(ctx)) return 'diario';
+  return '';
+}
+const COMPASS = `<svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="17" fill="#F4ECD8" stroke="#2A1D10" stroke-width="1"/>
+  <circle cx="20" cy="20" r="13.5" fill="none" stroke="#8A6A2C" stroke-width=".6"/>
+  <path d="M20 4 23 20 20 23 17 20Z" fill="#7B1E3A"/><path d="M20 36 17 20 20 17 23 20Z" fill="#2A1D10"/>
+  <path d="M4 20 20 17 23 20 20 23Z" fill="#8A6A2C" opacity=".7"/><path d="M36 20 20 23 17 20 20 17Z" fill="#8A6A2C" opacity=".7"/>
+  <circle cx="20" cy="20" r="1.6" fill="#F4ECD8" stroke="#2A1D10" stroke-width=".5"/></svg>`;
+const WAX = `<svg viewBox="0 0 40 40" aria-hidden="true"><path d="M20 3c4 0 5 3 8 3.6s5.6-.8 7 2 .2 5.2 1 8 3.4 4.2 2.6 7-3.8 3.2-5 5.8-.4 5.6-3 7-5-.4-7.8.2-4.4 2.6-7.2 1.8-3-3.6-5.6-4.8-5.6-.4-7-3 .4-5-.2-7.8S.8 18.6 1.6 15.8s3.8-3.2 5-5.8.4-5.6 3-7 5 .4 7.8-.2S17 3 20 3Z" fill="#8E2A2A"/>
+  <circle cx="20" cy="20" r="11" fill="none" stroke="#5E1616" stroke-width="1.2"/>
+  <text x="20" y="25" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-style="italic" font-weight="700" font-size="14" fill="#F3D9B8">H</text></svg>`;
 function quoteStrip(st, q) {
+  const kind = quoteKind(st, q);
   const words = String(st.q || '').split(/\s+/);
   const ink = words.map((w, i) => `<i style="animation-delay:${(i * 0.055 + 0.15).toFixed(3)}s">${w}</i>`).join(' ');
   const ctx = maskAnswer(st.ctx || '', q);
   /* at the reveal the sheet is signed */
   const sign = revealedSlot(q);
-  return `<div class="qstrip hs-quote" role="img" aria-label="Citação: ${String(st.q || '').replace(/"/g, '&quot;')}">
-    <span class="hs-quill">${QUILL}</span>
+  const mark = kind === 'diario' ? COMPASS : kind === 'carta' ? WAX : kind === 'pedra' ? '' : QUILL;
+  return `<div class="qstrip hs-quote${kind ? ' hs-quote-' + kind : ''}" role="img" aria-label="Citação: ${String(st.q || '').replace(/"/g, '&quot;')}">
+    ${kind === 'pedra' ? '' : `<span class="hs-quill">${mark}</span>`}
     <blockquote class="hs-q-text">${ink}</blockquote>
     ${ctx ? `<span class="hs-ctx">— ${ctx}</span>` : ''}
     ${sign ? `<span class="hs-sign">${sign}</span>` : ''}</div>`;
