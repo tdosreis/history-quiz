@@ -2487,11 +2487,25 @@
        is set over its foot; everything else is typography on the paper —
        a contents list, a fan of stickers — with no boxes around it. */
     .cover { padding: 0 0 26px; gap: 0; align-items: stretch; text-align: left; min-height: 100%; }
-    .cv-art { position: relative; margin: 0; height: min(64vh, 560px); min-height: 380px; overflow: hidden; }
-    .cv-art img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 22%;
-      -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 52%, rgba(0,0,0,.55) 74%, transparent 96%);
-              mask-image: linear-gradient(180deg, #000 0%, #000 52%, rgba(0,0,0,.55) 74%, transparent 96%);
+    .cv-art { position: relative; margin: 0; flex: none; height: clamp(380px, 100vw, 560px); overflow: hidden; }
+    /* The portraits are museum photographs and paintings cut 3:4 for the
+       figurinhas — a bust, a full-length king — so the cover shows the whole
+       picture, never a crop of it: the portrait stands in the middle and a
+       blurred copy of itself fills the sides and melts into the paper. */
+    .cv-art img { position: absolute; top: 0; bottom: 0; left: 0; right: 0; margin: 0 auto; width: auto; height: 100%; max-width: 100%;
+      object-fit: contain; object-position: 50% 0%;
+      -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 58%, rgba(0,0,0,.55) 78%, transparent 98%),
+                          linear-gradient(90deg, transparent 0%, #000 14%, #000 86%, transparent 100%);
+      -webkit-mask-composite: source-in;
+              mask-image: linear-gradient(180deg, #000 0%, #000 58%, rgba(0,0,0,.55) 78%, transparent 98%),
+                          linear-gradient(90deg, transparent 0%, #000 14%, #000 86%, transparent 100%);
+              mask-composite: intersect;
       animation: cvIn 1.1s cubic-bezier(.2,.7,.2,1) both; }
+    .cv-art img.cv-bg { width: 100%; max-width: none; object-fit: cover; object-position: 50% 30%; transform: scale(1.18);
+      filter: blur(22px) saturate(.85); opacity: .5; animation: cvBg 1.1s ease both;
+      -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 50%, transparent 92%); -webkit-mask-composite: source-over;
+              mask-image: linear-gradient(180deg, #000 0%, #000 50%, transparent 92%); mask-composite: add; }
+    @keyframes cvBg { from { opacity: 0; } to { opacity: .5; } }
     @keyframes cvIn { from { opacity: 0; transform: scale(1.06); } to { opacity: 1; transform: none; } }
     .cv-art::before { content: ''; position: absolute; inset: 0 0 auto; height: 96px; z-index: 1;
       background: linear-gradient(180deg, rgba(14,12,10,.55), transparent); pointer-events: none; }
@@ -3165,11 +3179,11 @@ function pinkNoise(ac) {
 }
 
 /* MUTE — read straight from storage so it survives a reload */
-let muted = (() => { try { return localStorage.getItem('fqbr_muted') === 'true'; }
+let muted = (() => { try { return (localStorage.getItem('hq_muted') ?? localStorage.getItem('fqbr_muted')) === 'true'; }
                      catch (e) { return false; } })();
 function setMuted(v) {
   muted = v;
-  try { localStorage.setItem('fqbr_muted', String(v)); } catch (e) {}
+  try { localStorage.setItem('hq_muted', String(v)); } catch (e) {}
 }
 
 /* ── The album's voice ──────────────────────────────────────
@@ -7619,10 +7633,12 @@ let lastMsg  = '';
 /* ═══════════════════════════════════════════════════
    COMBO SCORING + PERSISTENCE
 ═══════════════════════════════════════════════════ */
+/* History's own keys: 'hq_'. Futebol Quiz, on the same site, keeps 'fqbr_'
+   (see splitSave at the boot, which took History's part of that save back). */
 const LS = {
-  get(k, d) { try { const v = localStorage.getItem('fqbr_' + k);
+  get(k, d) { try { const v = localStorage.getItem('hq_' + k);
                     return v === null ? d : JSON.parse(v); } catch (e) { return d; } },
-  set(k, v) { try { localStorage.setItem('fqbr_' + k, JSON.stringify(v)); } catch (e) {} },
+  set(k, v) { try { localStorage.setItem('hq_' + k, JSON.stringify(v)); } catch (e) {} },
 };
 let scores     = LS.get('scores', {});      // best points per difficulty
 /* ── The album proper ───────────────────────────────────────
@@ -11504,6 +11520,7 @@ function html() {
     <div class="pg pg-home cover">
 
       <figure class="cv-art">
+        <img class="cv-bg" src="${hero.img}" alt="" aria-hidden="true" decoding="async">
         <img src="${hero.img}" alt="${hero.n}" decoding="async">
         <div class="cv-mast">
           <span>History Quiz</span><span>Edição ${year}</span>
@@ -13733,6 +13750,65 @@ HIDE_CRESTS.forEach(id => {
     : optBadge(heraldInk(clubName(id)), clubName(id)).replace('<svg ', '<svg xmlns="http://www.w3.org/2000/svg" ');
   LOGOS[id] = 'data:image/svg+xml,' + encodeURIComponent(svg);
 });
+
+/* ── One save per app ──
+   History Quiz and Futebol Quiz are served from the same site
+   (tdosreis.github.io), so they share one localStorage — and until now both
+   wrote 'fqbr_' keys: forty Futebol stickers showed as 40/402 here, one app's
+   daily challenge marked the other's as played. History writes 'hq_' now.
+   The first time it opens it takes back what is plainly its own from the
+   shared save: its figurinhas and their copies (vitrine, birthday editions,
+   collections), by id. Futebol keeps the rest, and both keep the ids the two
+   albums share (the nations; Sócrates, Leônidas and Adriano, who are
+   footballers there). Scores, insígnias and the daily streak cannot be told
+   apart, so they stay with Futebol and History counts afresh — unless the
+   shared album holds nothing but History's stickers, in which case the whole
+   save was History's and moves over. */
+const BOTH_ALBUMS = new Set(['leonidas', 'socrates', 'adriano', 's:GER', 's:ARG', 's:BEL', 's:BRA', 's:BUL', 's:COL',
+  's:CRO', 's:DEN', 's:EGY', 's:SCO', 's:ESP', 's:FRA', 's:NED', 's:HUN', 's:ENG', 's:IRL', 's:ITA', 's:JPN', 's:NOR',
+  's:PER', 's:POL', 's:POR', 's:RUS', 's:CZE']);
+(function splitSave() {
+  let ls;
+  try { ls = localStorage; if (ls.getItem('hq_split')) return; } catch (e) { return; }
+  const J = k => { try { const v = ls.getItem('fqbr_' + k); return v === null ? null : JSON.parse(v); } catch (e) { return null; } };
+  try {
+    const old = J('album');
+    if (Array.isArray(old) && old.length && !ls.getItem('hq_album')) {
+      const mine = old.filter(id => ALL_SET.has(id)), theirs = old.filter(id => !ALL_SET.has(id));
+      if (!theirs.length && !old.some(id => BOTH_ALBUMS.has(id))) {
+        Object.keys(ls).filter(k => k.startsWith('fqbr_')).forEach(k => {
+          ls.setItem('hq_' + k.slice(5), ls.getItem(k)); ls.removeItem(k); });
+      } else if (mine.length) {
+        const shared = id => BOTH_ALBUMS.has(id);
+        LS.set('album', mine);
+        ls.setItem('fqbr_album', JSON.stringify(theirs.concat(mine.filter(shared))));
+        const v = J('vault');
+        if (v && v.v === 1 && v.c) {
+          /* same seed: a copy's signature is checked against it */
+          const hv = { v: 1, seed: v.seed, n: v.n || 0, c: {}, lim: {}, sets: {}, fav: [], mig: 1 };
+          Object.keys(v.c).forEach(id => { if (ALL_SET.has(id)) { hv.c[id] = v.c[id]; if (!shared(id)) delete v.c[id]; } });
+          const born = new Set(Object.keys(BDAYS));
+          Object.keys(v.lim || {}).forEach(k => { const id = k.split(':')[0];
+            if (born.has(id)) { hv.lim[k] = v.lim[k]; if (!shared(id)) delete v.lim[k]; } });
+          const sets = new Set(figSets().map(x => x.id));
+          Object.keys(v.sets || {}).forEach(k => { if (sets.has(k)) { hv.sets[k] = v.sets[k]; delete v.sets[k]; } });
+          hv.fav = (v.fav || []).slice();   /* each vitrine shows only the favourites it holds a copy of */
+          LS.set('vault', hv);
+          ls.setItem('fqbr_vault', JSON.stringify(v));
+        }
+        if (ls.getItem('fqbr_albFlipped') !== null) ls.setItem('hq_albFlipped', ls.getItem('fqbr_albFlipped'));
+      }
+    }
+    if (ls.getItem('hq_muted') === null && ls.getItem('fqbr_muted') !== null) ls.setItem('hq_muted', ls.getItem('fqbr_muted'));
+    ls.setItem('hq_split', '1');
+  } catch (e) { return; }
+  /* what was read before the split, read again */
+  album  = new Set(LS.get('album', []));
+  scores = LS.get('scores', {});
+  stats  = LS.get('stats', { games:0, correct:0, answered:0, bestStreak:0 });
+  _vault = null;
+  try { muted = ls.getItem('hq_muted') === 'true'; } catch (e) {}
+})();
 
 go();
 
