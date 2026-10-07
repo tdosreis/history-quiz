@@ -1,7 +1,7 @@
 """Século XX (1914-2000): guerras mundiais, revoluções, Guerra Fria, descolonização e corrida espacial — all formats in one pack."""
 from qdsl import Cat
 
-c = Cat('seculo20', 'Século XX', '📻', 'Guerras, revoluções e a corrida espacial', '#37474F', order=58)
+c = Cat('seculo20', 'Século XX', '📻', 'Guerras, revoluções e a corrida espacial', '#37474F', order=21)
 
 # ── Texto: seis alternativas ──
 c.T('Qual foi o último czar da Rússia, derrubado pela revolução de 1917?', 'Nicolau II',

@@ -1,7 +1,7 @@
 """Antigo Oriente: Egito, Mesopotâmia, Pérsia, fenícios, hebreus e o Vale do Indo."""
 from qdsl import Cat
 
-c = Cat('antigo_oriente', 'Antigo Oriente', '🏺', 'Egito, Mesopotâmia, Pérsia e vizinhos', '#A0662A', order=50)
+c = Cat('egito_mesopotamia', 'Antigo Oriente', '🏺', 'Egito, Mesopotâmia, Pérsia e vizinhos', '#A0662A', order=50)
 
 # ── d1 ──
 c.T('Qual mar os navegadores fenícios dominaram com suas rotas de comércio?', 'Mediterrâneo',

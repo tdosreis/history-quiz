@@ -1,7 +1,7 @@
 from qdsl import Cat
 
 # ───────────────────────── As Guerras Mundiais ─────────────────────────
-c = Cat('guerras_mundiais', 'As Guerras Mundiais', '⚔️', '1914–1918 e 1939–1945', '#5A5A5A', order=21)
+c = Cat('guerras_mundiais', 'As Guerras Mundiais', '🪖', '1914–1918 e 1939–1945', '#5A5A5A', order=21)
 c.T('Qual assassinato em Sarajevo, em 1914, foi o estopim da Primeira Guerra Mundial?', 'O do arquiduque Francisco Ferdinando', ['O do czar Nicolau II', 'O do rei Alexandre da Sérvia', 'O do kaiser Guilherme II', 'O de Rosa Luxemburgo', 'O do presidente Wilson'], 2, crest='austria_hungria',
     src=('pt', 'Primeira Guerra Mundial', ['Sarajevo']))
 c.T('Quais eram as duas grandes alianças da Primeira Guerra Mundial?', 'Tríplice Entente e Tríplice Aliança', ['Eixo e Aliados', 'OTAN e Pacto de Varsóvia', 'Liga e Comintern', 'Santa Aliança e Concerto da Europa', 'Entente e Eixo'], 3, icon='cannon',

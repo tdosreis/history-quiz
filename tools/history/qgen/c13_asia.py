@@ -1,7 +1,7 @@
 """Ásia: China, Japão, Coreia, Índia, as estepes e o Sudeste Asiático, de todas as épocas."""
 from qdsl import Cat
 
-c = Cat('asia', 'Ásia', '🏯', 'China, Japão, Índia e as estepes', '#B23A2E', order=53)
+c = Cat('oriente', 'Ásia e Oriente', '🏯', 'China, Japão, Índia e as estepes', '#B23A2E', order=53)
 
 # ── d1 ──
 c.T('Que material um funcionário da corte chinesa passou a fabricar, por volta do ano 105, com casca de árvore, cânhamo, trapos e redes de pesca velhas?', 'Papel',

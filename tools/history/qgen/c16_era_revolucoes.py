@@ -1,7 +1,7 @@
 """Era das Revoluções (1750-1914): da Bastilha à Belle Époque — all formats mixed."""
 from qdsl import Cat
 
-c = Cat('era_revolucoes', 'Era das Revoluções', '🔥', 'Da Bastilha à Belle Époque', '#9A3412', order=57)
+c = Cat('revolucoes', 'Era das Revoluções', '🔥', 'Da Bastilha à Belle Époque', '#9A3412', order=57)
 
 # ── Texto: seis alternativas ──
 c.T('Qual canção, composta em 1792 para os soldados da Revolução, tornou-se o hino nacional da França?', 'A Marselhesa',

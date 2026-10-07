@@ -171,7 +171,7 @@ c.T('Qual a fonte de poder do rei, segundo a teoria absolutista de Bossuet?', 'D
 c.write()
 
 # ───────────────────────── Revoluções ─────────────────────────
-c = Cat('revolucoes', 'Revoluções', '🔥', 'Bastilhas, independências e fábricas', '#B3402F', order=19)
+c = Cat('revolucoes', 'Era das Revoluções', '🔥', 'Bastilhas, independências e fábricas', '#B3402F', order=19)
 c.T('Em que ano começou a Revolução Francesa, com a queda da Bastilha?', '1789', ['1776', '1799', '1804', '1815', '1848'], 1, icon='torch',
     src=('pt', 'Revolução Francesa', ['1789']))
 c.T('Qual o lema da Revolução Francesa?', 'Liberdade, Igualdade, Fraternidade', ['Ordem e Progresso', 'Deus, Pátria e Rei', 'União, Força, Fé', 'Paz, Pão e Terra', 'Vida, Liberdade e Felicidade'], 1, icon='torch',

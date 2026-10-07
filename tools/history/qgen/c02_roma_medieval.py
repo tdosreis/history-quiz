@@ -205,61 +205,64 @@ c.T('Qual conquistador turco-mongol do século XIV tinha sua capital em Samarcan
 c.write()
 
 # ───────────────────────── África e Américas antigas ─────────────────────────
-c = Cat('africa_americas', 'África e Américas Antigas', '🗿', 'Impérios do ouro, do milho e do sol', '#1F7A4D', order=15)
-c.T('Qual imperador do Mali ficou famoso por sua riqueza e sua peregrinação a Meca, em 1324?', 'Mansa Mussa', ['Sundiata Keita', 'Askia Mohammed', 'Sonni Ali', 'Shaka', 'Haile Selassie'], 3, icon='crown',
+# filed under África (f) and Américas (m), the themes of c14_africa_americas.py
+f = Cat('africa', 'África', '🌍', 'Reinos e impérios africanos', '#C07A2C', order=15)
+m = Cat('americas', 'Américas', '🌎', 'Maias, astecas, incas e independências', '#2E7D6B', order=15)
+f.T('Qual imperador do Mali ficou famoso por sua riqueza e sua peregrinação a Meca, em 1324?', 'Mansa Mussa', ['Sundiata Keita', 'Askia Mohammed', 'Sonni Ali', 'Shaka', 'Haile Selassie'], 3, icon='crown',
     src=('pt', 'Mansa Mussa', ['Meca']))
-c.P('Qual líder criou o poderoso reino dos zulus, no sul da África, no início do século XIX?', ['shaka'], 3, icon='sword',
+f.P('Qual líder criou o poderoso reino dos zulus, no sul da África, no início do século XIX?', ['shaka'], 3, icon='sword',
     src=('pt', 'Shaka', ['zulu']))
-c.P('Qual rainha de Ndongo e Matamba lutou contra o domínio português em Angola no século XVII?', ['nzinga'], 3, icon='crown',
+f.P('Qual rainha de Ndongo e Matamba lutou contra o domínio português em Angola no século XVII?', ['nzinga'], 3, icon='crown',
     src=('en', 'Nzinga of Ndongo and Matamba', ['Portuguese']))
-c.P('Qual imperador etíope, chamado “Leão de Judá”, discursou na Liga das Nações em 1936?', ['haile_selassie'], 4, icon='crown',
+f.P('Qual imperador etíope, chamado “Leão de Judá”, discursou na Liga das Nações em 1936?', ['haile_selassie'], 4, icon='crown',
     src=('pt', 'Hailé Selassié I', ['Liga das Nações']))
-c.T('Qual cidade do Mali foi famosa como centro de comércio de ouro e de estudos islâmicos?', 'Tombuctu', ['Gao', 'Mombaça', 'Zanzibar', 'Axum', 'Quíloa'], 3, icon='map',
+f.T('Qual cidade do Mali foi famosa como centro de comércio de ouro e de estudos islâmicos?', 'Tombuctu', ['Gao', 'Mombaça', 'Zanzibar', 'Axum', 'Quíloa'], 3, icon='map',
     src=('pt', 'Tombuctu', ['Mali']))
-c.T('Qual reino africano, no atual norte da Etiópia, adotou o cristianismo no século IV?', 'Axum', ['Kush', 'Songai', 'Zimbábue', 'Daomé', 'Benin'], 4, icon='column',
+f.T('Qual reino africano, no atual norte da Etiópia, adotou o cristianismo no século IV?', 'Axum', ['Kush', 'Songai', 'Zimbábue', 'Daomé', 'Benin'], 4, icon='column',
     src=('pt', 'Reino de Axum', ['cristianismo']))
-c.T('Qual a grande construção de pedra do sudeste da África, que dá nome a um país?', 'Grande Zimbábue', ['Axum', 'Meroé', 'Lalibela', 'Gizé', 'Kilwa'], 4, icon='castle',
+f.T('Qual a grande construção de pedra do sudeste da África, que dá nome a um país?', 'Grande Zimbábue', ['Axum', 'Meroé', 'Lalibela', 'Gizé', 'Kilwa'], 4, icon='castle',
     src=('pt', 'Grande Zimbábue', ['Zimbábue']))
-c.T('Qual comércio forçado levou milhões de africanos escravizados para as Américas?', 'Tráfico atlântico', ['Rota do sal', 'Comércio de ouro', 'Rota da seda', 'Caravana de marfim', 'Cabotagem'], 1, icon='ship',
+f.T('Qual comércio forçado levou milhões de africanos escravizados para as Américas?', 'Tráfico atlântico', ['Rota do sal', 'Comércio de ouro', 'Rota da seda', 'Caravana de marfim', 'Cabotagem'], 1, icon='ship',
     src=('pt', 'Tráfico atlântico de escravos', ['Américas']))
-c.T('Qual país recebeu o maior número de africanos escravizados nas Américas?', 'Brasil', ['Estados Unidos', 'Cuba', 'Haiti', 'Jamaica', 'Colômbia'], 2, icon='ship',
+m.T('Qual país recebeu o maior número de africanos escravizados nas Américas?', 'Brasil', ['Estados Unidos', 'Cuba', 'Haiti', 'Jamaica', 'Colômbia'], 2, icon='ship',
     src=('pt', 'Tráfico atlântico de escravos', ['Brasil']))
-c.T('Qual civilização mesoamericana construiu Tikal e Chichén Itzá, e criou um calendário e escrita próprios?', 'Maia', ['Asteca', 'Inca', 'Olmeca', 'Tolteca', 'Zapoteca'], 1, stad='chichen_itza',
+m.T('Qual civilização mesoamericana construiu Tikal e Chichén Itzá, e criou um calendário e escrita próprios?', 'Maia', ['Asteca', 'Inca', 'Olmeca', 'Tolteca', 'Zapoteca'], 1, stad='chichen_itza',
     src=('pt', 'Civilização maia', ['calendário']))
-c.T('Qual a capital do Império Asteca, construída sobre um lago, onde hoje é a Cidade do México?', 'Tenochtitlán', ['Cuzco', 'Teotihuacán', 'Tikal', 'Machu Picchu', 'Cholula'], 2, icon='pyramid',
+m.T('Qual a capital do Império Asteca, construída sobre um lago, onde hoje é a Cidade do México?', 'Tenochtitlán', ['Cuzco', 'Teotihuacán', 'Tikal', 'Machu Picchu', 'Cholula'], 2, icon='pyramid',
     src=('pt', 'Tenochtitlán', ['lago']))
-c.P('Qual conquistador espanhol derrubou o Império Asteca, entre 1519 e 1521?', ['cortes'], 2, icon='sword',
+m.P('Qual conquistador espanhol derrubou o Império Asteca, entre 1519 e 1521?', ['cortes'], 2, icon='sword',
     src=('pt', 'Hernán Cortés', ['asteca']))
-c.P('Qual imperador asteca recebeu os espanhóis em Tenochtitlán em 1519?', ['moctezuma'], 3, icon='crown',
+m.P('Qual imperador asteca recebeu os espanhóis em Tenochtitlán em 1519?', ['moctezuma'], 3, icon='crown',
     src=('pt', 'Montezuma II', ['Cortés']))
-c.P('Qual conquistador espanhol capturou o imperador inca Atahualpa, em 1532?', ['pizarro'], 2, icon='sword',
+m.P('Qual conquistador espanhol capturou o imperador inca Atahualpa, em 1532?', ['pizarro'], 2, icon='sword',
     src=('pt', 'Francisco Pizarro', ['Atahualpa']))
-c.P('Qual foi o último imperador inca independente, capturado em Cajamarca?', ['atahualpa'], 3, icon='crown',
+m.P('Qual foi o último imperador inca independente, capturado em Cajamarca?', ['atahualpa'], 3, icon='crown',
     src=('pt', 'Atahualpa', ['Cajamarca']))
-c.T('Qual a capital do Império Inca, nos Andes?', 'Cuzco', ['Machu Picchu', 'Lima', 'Quito', 'Tiahuanaco', 'La Paz'], 2, stad='machu_picchu',
+m.T('Qual a capital do Império Inca, nos Andes?', 'Cuzco', ['Machu Picchu', 'Lima', 'Quito', 'Tiahuanaco', 'La Paz'], 2, stad='machu_picchu',
     src=('pt', 'Cusco', ['inca']))
-c.T('Qual cidadela inca nos Andes, redescoberta em 1911 por Hiram Bingham, é Patrimônio Mundial?', 'Machu Picchu', ['Sacsayhuamán', 'Ollantaytambo', 'Chan Chan', 'Tikal', 'Cajamarca'], 1, stad='machu_picchu',
+m.T('Qual cidadela inca nos Andes, redescoberta em 1911 por Hiram Bingham, é Patrimônio Mundial?', 'Machu Picchu', ['Sacsayhuamán', 'Ollantaytambo', 'Chan Chan', 'Tikal', 'Cajamarca'], 1, stad='machu_picchu',
     src=('pt', 'Machu Picchu', ['1911']))
-c.T('Qual o nome do sistema de cordas com nós usado pelos incas para registrar informações?', 'Quipu', ['Códice', 'Glifo', 'Ábaco', 'Cartela', 'Tabuleta'], 3, icon='scroll',
+m.T('Qual o nome do sistema de cordas com nós usado pelos incas para registrar informações?', 'Quipu', ['Códice', 'Glifo', 'Ábaco', 'Cartela', 'Tabuleta'], 3, icon='scroll',
     src=('pt', 'Quipo', ['inca']))
-c.T('Qual cereal, domesticado na Mesoamérica, era a base da alimentação maia e asteca?', 'Milho', ['Trigo', 'Arroz', 'Cevada', 'Sorgo', 'Centeio'], 1, icon='globe',
+m.T('Qual cereal, domesticado na Mesoamérica, era a base da alimentação maia e asteca?', 'Milho', ['Trigo', 'Arroz', 'Cevada', 'Sorgo', 'Centeio'], 1, icon='globe',
     src=('pt', 'Milho', ['Mesoamérica']))
-c.T('Qual civilização andina produziu as misteriosas linhas desenhadas no deserto, no Peru?', 'Nazca', ['Inca', 'Chimu', 'Tiwanaku', 'Moche', 'Wari'], 3, icon='map',
+m.T('Qual civilização andina produziu as misteriosas linhas desenhadas no deserto, no Peru?', 'Nazca', ['Inca', 'Chimu', 'Tiwanaku', 'Moche', 'Wari'], 3, icon='map',
     src=('pt', 'Linhas de Nazca', ['Peru']))
-c.T('Qual civilização é conhecida pelas gigantescas cabeças de pedra na costa do Golfo do México?', 'Olmeca', ['Maia', 'Asteca', 'Inca', 'Tolteca', 'Mixteca'], 4, icon='bust',
+m.T('Qual civilização é conhecida pelas gigantescas cabeças de pedra na costa do Golfo do México?', 'Olmeca', ['Maia', 'Asteca', 'Inca', 'Tolteca', 'Mixteca'], 4, icon='bust',
     src=('pt', 'Olmecas', ['cabeça']))
-c.T('Qual a grande estátua de pedra da Ilha de Páscoa chamada?', 'Moai', ['Quipu', 'Totem', 'Menir', 'Ahu', 'Cairn'], 2, stad='moai',
+m.T('Qual a grande estátua de pedra da Ilha de Páscoa chamada?', 'Moai', ['Quipu', 'Totem', 'Menir', 'Ahu', 'Cairn'], 2, stad='moai',
     src=('pt', 'Moai', ['Ilha de Páscoa']))
-c.T('Qual doença trazida pelos europeus devastou as populações indígenas das Américas?', 'Varíola', ['Peste negra', 'Cólera', 'Escorbuto', 'Malária', 'Tuberculose bovina'], 2, icon='hourglass',
+m.T('Qual doença trazida pelos europeus devastou as populações indígenas das Américas?', 'Varíola', ['Peste negra', 'Cólera', 'Escorbuto', 'Malária', 'Tuberculose bovina'], 2, icon='hourglass',
     src=('pt', 'Varíola', ['América']))
-c.T('Qual povo indígena norte-americano liderou a vitória em Little Bighorn, em 1876?', 'Sioux e Cheyenne', ['Apaches', 'Navajos', 'Iroqueses', 'Cherokees', 'Comanches'], 3, icon='sword',
+m.T('Qual povo indígena norte-americano liderou a vitória em Little Bighorn, em 1876?', 'Sioux e Cheyenne', ['Apaches', 'Navajos', 'Iroqueses', 'Cherokees', 'Comanches'], 3, icon='sword',
     src=('pt', 'Batalha de Little Bighorn', ['Sioux']))
-c.P('Qual chefe sioux Hunkpapa liderou a resistência indígena e participou da vitória em Little Bighorn?', ['touro_sentado'], 3, icon='sword',
+m.P('Qual chefe sioux Hunkpapa liderou a resistência indígena e participou da vitória em Little Bighorn?', ['touro_sentado'], 3, icon='sword',
     src=('pt', 'Touro Sentado', ['Little Bighorn']))
-c.P('Qual líder de Palmares resistiu à escravidão no quilombo mais famoso do Brasil colonial?', ['zumbi'], 1, icon='flag',
+m.P('Qual líder de Palmares resistiu à escravidão no quilombo mais famoso do Brasil colonial?', ['zumbi'], 1, icon='flag',
     src=('pt', 'Zumbi dos Palmares', ['Palmares']))
-c.T('Qual o povo indígena que habitava o litoral do Brasil quando os portugueses chegaram e falava tupi?', 'Tupinambás', ['Yanomamis', 'Guaranis do Sul', 'Aimorés', 'Kayapós', 'Xavantes'], 3, icon='map',
+m.T('Qual o povo indígena que habitava o litoral do Brasil quando os portugueses chegaram e falava tupi?', 'Tupinambás', ['Yanomamis', 'Guaranis do Sul', 'Aimorés', 'Kayapós', 'Xavantes'], 3, icon='map',
     src=('pt', 'Tupinambás', ['tupi']))
-c.T('Qual a fronteira definida em 1494 entre as terras de Portugal e Espanha no Novo Mundo?', 'Tratado de Tordesilhas', ['Tratado de Madri', 'Tratado de Utrecht', 'Tratado de Vestfália', 'Tratado de Versalhes', 'Tratado de Santo Ildefonso'], 2, icon='map',
+m.T('Qual a fronteira definida em 1494 entre as terras de Portugal e Espanha no Novo Mundo?', 'Tratado de Tordesilhas', ['Tratado de Madri', 'Tratado de Utrecht', 'Tratado de Vestfália', 'Tratado de Versalhes', 'Tratado de Santo Ildefonso'], 2, icon='map',
     src=('pt', 'Tratado de Tordesilhas', ['1494']))
-c.write()
+f.write()
+m.write()

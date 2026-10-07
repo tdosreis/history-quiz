@@ -1,7 +1,7 @@
 """Idade Moderna (1450-1789): navegações, Renascimento, Reforma, absolutismo e Luzes — all formats in one pack."""
 from qdsl import Cat
 
-c = Cat('idade_moderna', 'Idade Moderna', '🧭', 'Navegações, Renascimento e reis absolutos', '#3F5F73', order=56)
+c = Cat('idade_moderna', 'Idade Moderna', '🧭', 'Navegações, Renascimento e reis absolutos', '#3F5F73', order=18)
 
 # ── Texto: seis alternativas ──
 c.T('Qual cidade italiana, governada pela família Médici, é considerada o berço do Renascimento?', 'Florença',

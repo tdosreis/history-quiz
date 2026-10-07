@@ -1,92 +1,11 @@
 {
- "id": "mundo_classico",
- "name": "Grécia e Roma",
- "tag": "Pólis, legiões e imperadores",
- "col": "#7B1E3A",
+ "id": "roma",
+ "name": "Roma Antiga",
+ "tag": "Da República ao fim do Império",
+ "col": "#9E1B1B",
  "diff": "Variado",
- "emoji": "🏛️",
+ "emoji": "🏟️",
  "qs": [
-  {
-   "t": "Qual herói grego da Guerra de Troia só podia ser ferido no calcanhar?",
-   "type": "txt",
-   "choices": [
-    "Aquiles",
-    "Heitor",
-    "Ulisses",
-    "Agamenon",
-    "Pátroclo",
-    "Ájax"
-   ],
-   "a": [
-    "Aquiles"
-   ],
-   "d": 1,
-   "art": {
-    "who": "homero"
-   },
-   "src": [
-    "pt",
-    "Aquiles",
-    [
-     "calcanhar"
-    ]
-   ],
-   "x": "A Ilíada termina antes da morte do herói; a história do banho no rio Estige, que o deixou invulnerável exceto no calcanhar, é bem posterior a Homero."
-  },
-  {
-   "t": "Qual criatura mitológica, metade homem e metade touro, vivia no Labirinto de Creta?",
-   "type": "txt",
-   "choices": [
-    "Minotauro",
-    "Centauro",
-    "Ciclope",
-    "Sátiro",
-    "Quimera",
-    "Medusa"
-   ],
-   "a": [
-    "Minotauro"
-   ],
-   "d": 1,
-   "art": {
-    "flag": "GRC"
-   },
-   "src": [
-    "pt",
-    "Minotauro",
-    [
-     "Creta"
-    ]
-   ],
-   "x": "Na lenda, o labirinto foi construído por Dédalo para o rei Minos, cujo nome batizou a civilização minoica."
-  },
-  {
-   "t": "Segundo a lenda, que estratagema permitiu aos gregos entrar em Troia?",
-   "type": "txt",
-   "choices": [
-    "Um cavalo de madeira",
-    "Um túnel sob as muralhas",
-    "Uma torre de cerco",
-    "Uma ponte de barcos",
-    "Escadas de corda",
-    "Um aríete de bronze"
-   ],
-   "a": [
-    "Um cavalo de madeira"
-   ],
-   "d": 1,
-   "art": {
-    "flag": "TUR"
-   },
-   "src": [
-    "pt",
-    "Cavalo de Troia",
-    [
-     "Troia"
-    ]
-   ],
-   "x": "As ruínas de Troia ficam na colina de Hisarlik, na atual Turquia, escavada pelo alemão Heinrich Schliemann no século XIX."
-  },
   {
    "t": "Como se chamava, na Roma antiga, a camada de cidadãos comuns que lutou por direitos contra os patrícios?",
    "type": "txt",
@@ -142,60 +61,6 @@
    "x": "As Termas de Caracala, em Roma, recebiam cerca de 1.600 banhistas ao mesmo tempo."
   },
   {
-   "t": "Que prêmio recebia o vencedor nos Jogos Olímpicos da Antiguidade?",
-   "type": "txt",
-   "choices": [
-    "Uma coroa de ramos de oliveira",
-    "Uma medalha de ouro",
-    "Uma coroa de louros",
-    "Uma taça de prata",
-    "Um escudo de bronze",
-    "Um saco de moedas"
-   ],
-   "a": [
-    "Uma coroa de ramos de oliveira"
-   ],
-   "d": 2,
-   "art": {
-    "icon": "trophy"
-   },
-   "src": [
-    "en",
-    "Ancient Olympic Games",
-    [
-     "olive"
-    ]
-   ],
-   "x": "Os ramos vinham de uma oliveira sagrada de Olímpia; em casa, porém, os campeões podiam ganhar banquetes e honras para a vida toda."
-  },
-  {
-   "t": "Que nó, segundo a lenda, Alexandre, o Grande, cortou com a espada em vez de desatar?",
-   "type": "txt",
-   "choices": [
-    "O nó górdio",
-    "O nó de Hércules",
-    "O nó de Troia",
-    "O nó de Delfos",
-    "O nó persa",
-    "O nó de Creta"
-   ],
-   "a": [
-    "O nó górdio"
-   ],
-   "d": 2,
-   "art": {
-    "icon": "sword"
-   },
-   "src": [
-    "pt",
-    "Nó górdio",
-    [
-     "Frígia"
-    ]
-   ],
-   "x": "Um oráculo dizia que quem desatasse o nó, em Górdio, na Frígia, dominaria a Ásia."
-  },
-  {
    "t": "O que significava a sigla SPQR, gravada em monumentos e estandartes de Roma?",
    "type": "txt",
    "choices": [
@@ -223,33 +88,6 @@
    "x": "A abreviação de Senatus Populusque Romanus ainda aparece nas tampas de bueiro e em prédios públicos de Roma."
   },
   {
-   "t": "Como se chamava a votação ateniense que podia mandar um cidadão para o exílio por dez anos?",
-   "type": "txt",
-   "choices": [
-    "Ostracismo",
-    "Plebiscito",
-    "Anátema",
-    "Proscrição",
-    "Decimação",
-    "Excomunhão"
-   ],
-   "a": [
-    "Ostracismo"
-   ],
-   "d": 3,
-   "art": {
-    "crest": "atenas"
-   },
-   "src": [
-    "en",
-    "Ostracism",
-    [
-     "ten years"
-    ]
-   ],
-   "x": "Os eleitores escreviam o nome do escolhido em cacos de cerâmica, os óstracos, que deram nome à votação."
-  },
-  {
    "t": "Qual imperador, conquistador da Dácia, levou o Império Romano à sua maior extensão?",
    "type": "txt",
    "choices": [
@@ -275,33 +113,6 @@
     ]
    ],
    "x": "A Coluna de Trajano, em Roma, conta essa guerra num friso em espiral de cerca de 200 metros."
-  },
-  {
-   "t": "Qual filósofo grego, segundo a tradição, morava num grande jarro de barro e desprezava todo luxo?",
-   "type": "txt",
-   "choices": [
-    "Diógenes",
-    "Epicuro",
-    "Zenão de Cítio",
-    "Heráclito",
-    "Tales de Mileto",
-    "Demócrito"
-   ],
-   "a": [
-    "Diógenes"
-   ],
-   "d": 3,
-   "art": {
-    "who": "alexandre"
-   },
-   "src": [
-    "pt",
-    "Diógenes de Sinope",
-    [
-     "Alexandre"
-    ]
-   ],
-   "x": "Conta-se que, quando Alexandre lhe ofereceu o que quisesse, ele pediu só que o rei saísse da frente do seu sol."
   },
   {
    "t": "Segundo a tradição cristã, qual apóstolo foi crucificado de cabeça para baixo em Roma, no tempo de Nero?",
@@ -385,87 +196,6 @@
    "x": "Seu sobrinho assistiu a tudo do outro lado da baía e descreveu a erupção em duas cartas ao historiador Tácito."
   },
   {
-   "t": "Qual líder ateniense promoveu, por volta de 508 a.C., as reformas consideradas o nascimento da democracia?",
-   "type": "txt",
-   "choices": [
-    "Clístenes",
-    "Péricles",
-    "Sólon",
-    "Drácon",
-    "Pisístrato",
-    "Licurgo"
-   ],
-   "a": [
-    "Clístenes"
-   ],
-   "d": 4,
-   "art": {
-    "crest": "atenas"
-   },
-   "src": [
-    "en",
-    "Cleisthenes",
-    [
-     "508"
-    ]
-   ],
-   "x": "Ele reorganizou os cidadãos em dez tribos novas, misturando gente da cidade, do litoral e do interior."
-  },
-  {
-   "t": "Qual reino helenístico, fundado por um general de Alexandre, dominou a Síria, a Mesopotâmia e o Irã?",
-   "type": "txt",
-   "choices": [
-    "Império Selêucida",
-    "Reino Ptolomaico",
-    "Reino Antigônida",
-    "Reino de Pérgamo",
-    "Reino Greco-Báctrio",
-    "Reino do Ponto"
-   ],
-   "a": [
-    "Império Selêucida"
-   ],
-   "d": 4,
-   "art": {
-    "crest": "macedonia"
-   },
-   "src": [
-    "pt",
-    "Império Selêucida",
-    [
-     "Seleuco"
-    ]
-   ],
-   "x": "Seu fundador, Seleuco I, ergueu Antioquia, que se tornaria uma das maiores cidades do mundo romano."
-  },
-  {
-   "t": "Qual escrita micênica, decifrada por Michael Ventris em 1952, revelou ser uma forma antiga de grego?",
-   "type": "txt",
-   "choices": [
-    "Linear B",
-    "Linear A",
-    "Cuneiforme",
-    "Hieróglifos cretenses",
-    "Alfabeto fenício",
-    "Escrita do Indo"
-   ],
-   "a": [
-    "Linear B"
-   ],
-   "d": 5,
-   "art": {
-    "icon": "scroll"
-   },
-   "src": [
-    "pt",
-    "Linear B",
-    [
-     "Ventris"
-    ]
-   ],
-   "x": "A Linear A, usada antes pelos minoicos em Creta, continua sem decifração."
-  },
-  {
    "t": "Qual invenção, uma ponte de abordagem com um gancho, ajudou Roma a vencer Cartago no mar na Primeira Guerra Púnica?",
    "type": "txt",
    "choices": [
@@ -491,33 +221,6 @@
     ]
    ],
    "x": "A ponte cravava-se no convés inimigo e transformava a batalha naval numa luta de infantaria, em que os romanos eram mais fortes."
-  },
-  {
-   "t": "Em qual rio da Índia o exército de Alexandre se recusou a seguir adiante, em 326 a.C.?",
-   "type": "txt",
-   "choices": [
-    "Hífase",
-    "Ganges",
-    "Indo",
-    "Eufrates",
-    "Oxus",
-    "Tigre"
-   ],
-   "a": [
-    "Hífase"
-   ],
-   "d": 5,
-   "art": {
-    "icon": "map"
-   },
-   "src": [
-    "en",
-    "Beas River",
-    [
-     "Alexander"
-    ]
-   ],
-   "x": "Depois de oito anos de marcha desde a Macedônia, os soldados queriam voltar para casa; Alexandre cedeu e deu meia-volta."
   },
   {
    "t": "Qual governante romano deu nome ao mês de agosto?",
@@ -577,25 +280,6 @@
    "x": "Dante o chama de “meu mestre”: a obra mais famosa desse poeta narra a viagem de Eneias de Troia até a Itália."
   },
   {
-   "t": "Qual pensador grego fundou em Crotona uma comunidade cujos membros, dizem, não podiam comer favas?",
-   "type": "player",
-   "a": [
-    "pitagoras"
-   ],
-   "d": 4,
-   "art": {
-    "icon": "book"
-   },
-   "src": [
-    "en",
-    "Pythagoras",
-    [
-     "beans"
-    ]
-   ],
-   "x": "Seus seguidores acreditavam na transmigração das almas e viam nos números a chave para entender o universo."
-  },
-  {
    "t": "De qual imperador é a estátua equestre de bronze do Capitólio que escapou da destruição por ser confundida com Constantino?",
    "type": "player",
    "a": [
@@ -615,24 +299,6 @@
    "x": "Na Idade Média muitas estátuas pagãs foram derretidas; esta sobreviveu porque julgavam retratar o primeiro imperador cristão."
   },
   {
-   "t": "Qual pólis liderou a Liga de Delos e usou o tesouro da aliança para embelezar a própria cidade?",
-   "a": [
-    "atenas"
-   ],
-   "d": 2,
-   "art": {
-    "crest": "persia"
-   },
-   "src": [
-    "pt",
-    "Liga de Delos",
-    [
-     "Atenas"
-    ]
-   ],
-   "x": "Em 454 a.C., o tesouro da liga saiu da ilha de Delos para a Acrópole, e parte dele ajudou a pagar o Partenon."
-  },
-  {
    "t": "Qual cidade, arrasada pelos romanos em 146 a.C. depois de um cerco de três anos, deu lugar à província romana da África?",
    "a": [
     "cartago"
@@ -649,42 +315,6 @@
     ]
    ],
    "x": "No mesmo ano, Roma também destruiu Corinto, na Grécia: 146 a.C. selou o domínio romano sobre o Mediterrâneo."
-  },
-  {
-   "t": "Qual cidade grega tinha sempre dois reis ao mesmo tempo, de duas famílias diferentes?",
-   "a": [
-    "esparta"
-   ],
-   "d": 3,
-   "art": {
-    "crest": "atenas"
-   },
-   "src": [
-    "en",
-    "Sparta",
-    [
-     "Eurypontid"
-    ]
-   ],
-   "x": "Os reis vinham das casas dos Ágidas e dos Euripôntidas, e cinco éforos, eleitos a cada ano, fiscalizavam o seu poder."
-  },
-  {
-   "t": "Qual reino tinha Pela como capital e um exército de falanges armadas com longas lanças, as sarissas?",
-   "a": [
-    "macedonia"
-   ],
-   "d": 3,
-   "art": {
-    "icon": "sword"
-   },
-   "src": [
-    "en",
-    "Sarissa",
-    [
-     "Macedonian"
-    ]
-   ],
-   "x": "A sarissa podia passar de 5 metros de comprimento: as primeiras fileiras da falange formavam uma muralha de pontas."
   },
   {
    "t": "Quem sou eu?",
@@ -810,54 +440,6 @@
    ]
   },
   {
-   "t": "Ordene estes marcos da Grécia clássica, do mais antigo ao mais recente?",
-   "type": "order",
-   "a": [
-    "marat",
-    "pelop",
-    "socr",
-    "alex"
-   ],
-   "order": [
-    {
-     "id": "marat",
-     "y": -490,
-     "label": "Batalha de Maratona",
-     "sub": "Atenienses contra persas",
-     "crest": "persia"
-    },
-    {
-     "id": "pelop",
-     "y": -431,
-     "label": "Início da Guerra do Peloponeso",
-     "sub": "Atenas contra Esparta",
-     "crest": "esparta"
-    },
-    {
-     "id": "socr",
-     "y": -399,
-     "label": "Morte de Sócrates",
-     "sub": "Condenado a beber cicuta",
-     "face": "socrates"
-    },
-    {
-     "id": "alex",
-     "y": -323,
-     "label": "Morte de Alexandre",
-     "sub": "Fim de um império relâmpago",
-     "face": "alexandre"
-    }
-   ],
-   "d": 3,
-   "src": [
-    "pt",
-    "Grécia Antiga",
-    [
-     "Peloponeso"
-    ]
-   ]
-  },
-  {
    "t": "Ponha em ordem estes fatos da República Romana, do mais antigo ao mais recente?",
    "type": "order",
    "a": [
@@ -937,26 +519,6 @@
    "t": "Quem disse esta frase?",
    "type": "player",
    "quote": {
-    "q": "O homem é, por natureza, um animal político.",
-    "ctx": "Livro I da Política, século IV a.C."
-   },
-   "a": [
-    "aristoteles"
-   ],
-   "d": 2,
-   "src": [
-    "en",
-    "Politics (Aristotle)",
-    [
-     "political animal"
-    ]
-   ],
-   "x": "Para o filósofo, quem vive fora da pólis, a cidade-Estado, ou é um animal selvagem ou é um deus."
-  },
-  {
-   "t": "Quem disse esta frase?",
-   "type": "player",
-   "quote": {
     "q": "Encontrei Roma uma cidade de tijolos e deixei-a uma cidade de mármore.",
     "ctx": "Frase atribuída ao governante pelo biógrafo Suetônio, sobre as obras do seu reinado"
    },
@@ -1000,26 +562,6 @@
     ]
    ],
    "x": "O verso fala de colher o dia como se colhe um fruto maduro: “carpe” vem do verbo latino que significa colher."
-  },
-  {
-   "t": "Quem disse esta frase?",
-   "type": "player",
-   "quote": {
-    "q": "Venham buscá-las!",
-    "ctx": "Resposta atribuída a ele por Plutarco, quando o rei persa exigiu que os gregos entregassem as armas, 480 a.C."
-   },
-   "a": [
-    "leonidas"
-   ],
-   "d": 3,
-   "src": [
-    "en",
-    "Molon labe",
-    [
-     "Leonidas"
-    ]
-   ],
-   "x": "Em grego, “molon labe”: a frase está gravada no monumento ao rei espartano erguido nas Termópilas em 1955."
   },
   {
    "t": "Quem disse esta frase?",
@@ -1076,26 +618,6 @@
     ]
    ],
    "x": "O tratado, o Epitoma rei militaris, foi um dos manuais militares mais copiados e lidos da Idade Média."
-  },
-  {
-   "t": "Qual cidade grega venceu os persas nesta batalha, com a ajuda de Plateias?",
-   "battle": {
-    "lbl": "Maratona · 490 a.C.",
-    "a": "?",
-    "b": "persia",
-    "x": "A lenda do mensageiro que correu até Atenas para anunciar a vitória inspirou a prova da maratona dos Jogos Olímpicos modernos."
-   },
-   "a": [
-    "atenas"
-   ],
-   "d": 1,
-   "src": [
-    "pt",
-    "Batalha de Maratona",
-    [
-     "Dario"
-    ]
-   ]
   },
   {
    "t": "Quem sofreu nesta batalha uma das piores derrotas de sua história, cercado pelas tropas de Aníbal?",
@@ -1346,141 +868,6 @@
    "x": "Era o pai de Constantino, que as tropas aclamaram imperador em Eboracum, atual York, quando o pai morreu ali, em 306."
   },
   {
-   "t": "Em que ano saiu esta manchete?",
-   "type": "txt",
-   "choices": [
-    "1896",
-    "1880",
-    "1888",
-    "1892",
-    "1900",
-    "1904"
-   ],
-   "news": {
-    "h": "Jogos Olímpicos renascem em Atenas",
-    "paper": "Gazeta de Atenas",
-    "sub": "Grego vence a maratona sob a ovação do estádio Panatenaico"
-   },
-   "a": [
-    "1896"
-   ],
-   "d": 2,
-   "src": [
-    "pt",
-    "Jogos Olímpicos de Verão de 1896",
-    [
-     "Louis"
-    ]
-   ],
-   "x": "O vencedor da maratona, Spyridon Louis, era um carregador de água de um vilarejo perto de Atenas."
-  },
-  {
-   "t": "Em que ano saiu esta manchete?",
-   "type": "txt",
-   "choices": [
-    "1900",
-    "1871",
-    "1884",
-    "1912",
-    "1922",
-    "1936"
-   ],
-   "news": {
-    "h": "Arqueólogo inglês desenterra em Creta o palácio do rei Minos",
-    "paper": "The Daily Courier",
-    "sub": "Escavações em Cnossos revelam afrescos e um enorme labirinto de salas"
-   },
-   "a": [
-    "1900"
-   ],
-   "d": 4,
-   "src": [
-    "en",
-    "Knossos",
-    [
-     "1900"
-    ]
-   ],
-   "x": "Arthur Evans comprou o terreno e chamou de “minoica” a civilização que encontrou ali, em homenagem ao rei lendário."
-  },
-  {
-   "t": "Em que ano saiu esta manchete?",
-   "type": "txt",
-   "choices": [
-    "1820",
-    "1798",
-    "1806",
-    "1815",
-    "1830",
-    "1848"
-   ],
-   "news": {
-    "h": "Camponês encontra estátua de Afrodite na ilha de Milos",
-    "paper": "Courrier de l’Égée",
-    "sub": "A escultura de mármore, sem os braços, deve seguir para Paris como presente ao rei"
-   },
-   "a": [
-    "1820"
-   ],
-   "d": 5,
-   "src": [
-    "en",
-    "Venus de Milo",
-    [
-     "1820"
-    ]
-   ],
-   "x": "Hoje no Louvre, a Vênus de Milo é do período helenístico, de cerca de 150 a 125 a.C.; ninguém sabe ao certo em que posição estavam os braços."
-  },
-  {
-   "t": "Duelo: quem viveu primeiro?",
-   "type": "player",
-   "fixed": [
-    "socrates",
-    "cesar"
-   ],
-   "duel": true,
-   "a": [
-    "socrates"
-   ],
-   "d": 1,
-   "art": {
-    "icon": "hourglass"
-   },
-   "src": [
-    "pt",
-    "Sócrates",
-    [
-     "399 a.C."
-    ]
-   ],
-   "x": "Sócrates morreu em 399 a.C., quase três séculos antes do nascimento de Júlio César."
-  },
-  {
-   "t": "Duelo: quem nasceu primeiro?",
-   "type": "player",
-   "fixed": [
-    "pitagoras",
-    "platao"
-   ],
-   "duel": true,
-   "a": [
-    "pitagoras"
-   ],
-   "d": 2,
-   "art": {
-    "icon": "hourglass"
-   },
-   "src": [
-    "en",
-    "Pythagoras",
-    [
-     "570"
-    ]
-   ],
-   "x": "Pitágoras nasceu por volta de 570 a.C., mais de um século antes de Platão, que admirava suas ideias sobre a alma e os números."
-  },
-  {
    "t": "Duelo: quem nasceu primeiro?",
    "type": "player",
    "fixed": [
@@ -1604,56 +991,6 @@
    "x": "Vomitorium era a passagem por onde o público “jorrava” para fora do anfiteatro; a sala para vomitar é invenção moderna."
   },
   {
-   "t": "Nos Jogos Olímpicos da Grécia Antiga, os atletas da maioria das provas competiam nus?",
-   "type": "txt",
-   "choices": [
-    "Fato",
-    "Mito"
-   ],
-   "duel": true,
-   "myth": true,
-   "a": [
-    "Fato"
-   ],
-   "d": 2,
-   "art": {
-    "icon": "trophy"
-   },
-   "src": [
-    "en",
-    "Ancient Olympic Games",
-    [
-     "nude"
-    ]
-   ],
-   "x": "A palavra “ginásio” vem do grego gymnós, que significa “nu”."
-  },
-  {
-   "t": "Sócrates não deixou nenhum texto escrito?",
-   "type": "txt",
-   "choices": [
-    "Fato",
-    "Mito"
-   ],
-   "duel": true,
-   "myth": true,
-   "a": [
-    "Fato"
-   ],
-   "d": 2,
-   "art": {
-    "who": "platao"
-   },
-   "src": [
-    "pt",
-    "Sócrates",
-    [
-     "Xenofonte"
-    ]
-   ],
-   "x": "O que sabemos de suas ideias vem sobretudo dos diálogos de Platão e dos escritos de Xenofonte, seus discípulos."
-  },
-  {
    "t": "A cesariana tem esse nome porque Júlio César nasceu de um parto assim?",
    "type": "txt",
    "choices": [
@@ -1677,31 +1014,6 @@
     ]
    ],
    "x": "Na época, a operação só era feita em mães mortas ou morrendo, e a mãe de César, Aurélia, viveu até ele passar dos 40 anos."
-  },
-  {
-   "t": "As estátuas e os templos da Grécia Antiga eram brancos, sem pintura?",
-   "type": "txt",
-   "choices": [
-    "Fato",
-    "Mito"
-   ],
-   "duel": true,
-   "myth": true,
-   "a": [
-    "Mito"
-   ],
-   "d": 3,
-   "art": {
-    "stad": "partenon"
-   },
-   "src": [
-    "en",
-    "Ancient Greek sculpture",
-    [
-     "painted"
-    ]
-   ],
-   "x": "Vestígios de pigmentos mostram que esculturas e frisos eram pintados com cores vivas; o branco “clássico” é obra do tempo."
   },
   {
    "t": "Na Roma antiga, o polegar para baixo era com certeza o sinal para matar o gladiador vencido?",

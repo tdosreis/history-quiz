@@ -1,7 +1,7 @@
 from qdsl import Cat
 
 # ───────────────────────── Egito e Mesopotâmia ─────────────────────────
-c = Cat('egito_mesopotamia', 'Egito e Mesopotâmia', '🏺', 'Faraós, cuneiforme e as primeiras cidades', '#B8860B', order=10)
+c = Cat('egito_mesopotamia', 'Antigo Oriente', '🏺', 'Egito, Mesopotâmia, Pérsia e vizinhos', '#B8860B', order=10)
 c.T('Qual rio fertilizava as terras do Egito Antigo?', 'Nilo', ['Tigre', 'Eufrates', 'Indo', 'Danúbio', 'Jordão'], 1, icon='pyramid',
     src=('pt', 'Egito Antigo', ['Nilo']), x='As cheias anuais do Nilo deixavam um limo fértil nas margens: sem ele, o Egito seria deserto.')
 c.T('Como se chamava a escrita sagrada dos antigos egípcios, feita de desenhos?', 'Hieróglifos', ['Cuneiforme', 'Runas', 'Alfabeto fenício', 'Linear B', 'Ogham'], 1, icon='scroll',

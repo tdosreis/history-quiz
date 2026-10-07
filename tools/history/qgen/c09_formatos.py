@@ -52,7 +52,7 @@ c.BT('Quem expulsou os holandeses de Pernambuco nos montes desta batalha?', 'Lus
 c.write()
 
 # ── Linhagens ── a succession or a council, one link missing
-c = Cat('linhagens', 'Dinastias e alianças', '👑', 'Complete a linhagem', '#7B5E1E', order=45)
+c = Cat('linhagens', 'Dinastias e alianças', '🌳', 'Complete a linhagem', '#7B5E1E', order=45)
 c.LN('Quem completa a dinastia Tudor?', 'elizabeth_i', 'Dinastia Tudor · Inglaterra', ['Henrique VII', 'Henrique VIII', 'Eduardo VI', 'Maria I', '?'], d=2, era='mod',
      src=('pt', 'Dinastia Tudor', ['Isabel']), x='A última dos Tudor reinou 44 anos e não deixou herdeiros.')
 c.LN('Quem é o elo que falta na Casa de Bragança no Brasil?', 'dom_pedro_i', 'Casa de Bragança no Brasil', ['Dom João VI', '?', 'Dom Pedro II'], d=1, era='new',

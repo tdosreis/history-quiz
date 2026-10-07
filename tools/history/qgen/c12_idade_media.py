@@ -1,7 +1,7 @@
 """Idade Média (476-1453), do mundo todo menos o Extremo Oriente — all formats in one pack."""
 from qdsl import Cat
 
-c = Cat('idade_media', 'Idade Média', '🏰', 'Castelos, cruzadas e califas', '#5B4636', order=52)
+c = Cat('medieval', 'Idade Média', '🏰', 'Castelos, cruzadas e califas', '#5B4636', order=52)
 
 # ── Texto: seis alternativas ──
 c.T('Que parte de um castelo medieval podia ser erguida para impedir a passagem sobre o fosso?', 'Ponte levadiça',

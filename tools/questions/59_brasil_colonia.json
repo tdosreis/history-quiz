@@ -1,122 +1,11 @@
 {
- "id": "brasil",
- "name": "História do Brasil",
- "tag": "Da Terra de Santa Cruz à Nova República",
+ "id": "brasil_colonia",
+ "name": "Brasil Colônia e Império",
+ "tag": "De 1500 a 1889",
  "col": "#1F7A4D",
  "diff": "Variado",
- "emoji": "🇧🇷",
+ "flag": "BRA",
  "qs": [
-  {
-   "t": "Na política do café com leite, durante a Primeira República, quais estados se revezavam no controle da Presidência?",
-   "type": "txt",
-   "choices": [
-    "São Paulo e Minas Gerais",
-    "Rio de Janeiro e Minas Gerais",
-    "São Paulo e Rio Grande do Sul",
-    "Bahia e Pernambuco",
-    "São Paulo e Rio de Janeiro",
-    "Minas Gerais e Rio Grande do Sul"
-   ],
-   "a": [
-    "São Paulo e Minas Gerais"
-   ],
-   "d": 1,
-   "art": {
-    "crest": "brasil_republica"
-   },
-   "src": [
-    "pt",
-    "Política do café com leite",
-    [
-     "Minas Gerais",
-     "São Paulo"
-    ]
-   ],
-   "x": "O revezamento não era perfeito: o gaúcho Hermes da Fonseca e o paraibano Epitácio Pessoa também chegaram à Presidência nesse período."
-  },
-  {
-   "t": "Qual estado pegou em armas contra o governo de Getúlio Vargas na Revolução Constitucionalista de 1932?",
-   "type": "txt",
-   "choices": [
-    "São Paulo",
-    "Minas Gerais",
-    "Rio Grande do Sul",
-    "Rio de Janeiro",
-    "Pernambuco",
-    "Bahia"
-   ],
-   "a": [
-    "São Paulo"
-   ],
-   "d": 1,
-   "art": {
-    "who": "getulio"
-   },
-   "src": [
-    "pt",
-    "Revolução Constitucionalista de 1932",
-    [
-     "9 de julho"
-    ]
-   ],
-   "x": "O levante começou em 9 de julho, hoje feriado estadual paulista; os rebeldes exigiam uma nova Constituição e resistiram por quase três meses."
-  },
-  {
-   "t": "Qual político mineiro foi eleito presidente pelo Colégio Eleitoral, em 1985, mas morreu antes de tomar posse?",
-   "type": "txt",
-   "choices": [
-    "Tancredo Neves",
-    "José Sarney",
-    "Ulysses Guimarães",
-    "Paulo Maluf",
-    "Franco Montoro",
-    "Leonel Brizola"
-   ],
-   "a": [
-    "Tancredo Neves"
-   ],
-   "d": 1,
-   "art": {
-    "crest": "brasil_republica"
-   },
-   "src": [
-    "pt",
-    "Tancredo Neves",
-    [
-     "1985",
-     "Colégio Eleitoral"
-    ]
-   ],
-   "x": "Adoeceu na véspera da posse e morreu em 21 de abril de 1985, data da morte de Tiradentes; quem governou foi o vice, José Sarney."
-  },
-  {
-   "t": "Os \"caras-pintadas\" foram às ruas em 1992 para pedir o impeachment de qual presidente?",
-   "type": "txt",
-   "choices": [
-    "Fernando Collor",
-    "José Sarney",
-    "Itamar Franco",
-    "Fernando Henrique Cardoso",
-    "João Figueiredo",
-    "Tancredo Neves"
-   ],
-   "a": [
-    "Fernando Collor"
-   ],
-   "d": 1,
-   "art": {
-    "stad": "catedral_brasilia"
-   },
-   "src": [
-    "pt",
-    "Fernando Collor de Mello",
-    [
-     "impeachment",
-     "1992"
-    ]
-   ],
-   "x": "Foi o primeiro presidente eleito pelo voto direto depois da ditadura; renunciou no dia do julgamento no Senado, mas teve os direitos políticos suspensos assim mesmo."
-  },
   {
    "t": "Como eram chamadas as comunidades formadas por pessoas escravizadas que fugiam do cativeiro, como Palmares?",
    "type": "txt",
@@ -143,33 +32,6 @@
     ]
    ],
    "x": "Muitas comunidades quilombolas existem até hoje, e a Constituição de 1988 garante a elas o direito às terras que ocupam."
-  },
-  {
-   "t": "Qual produto da floresta amazônica enriqueceu Manaus e Belém na virada do século XIX para o XX e pagou o luxuoso Teatro Amazonas?",
-   "type": "txt",
-   "choices": [
-    "Borracha",
-    "Cacau",
-    "Castanha-do-pará",
-    "Café",
-    "Açúcar",
-    "Algodão"
-   ],
-   "a": [
-    "Borracha"
-   ],
-   "d": 1,
-   "art": {
-    "icon": "coins"
-   },
-   "src": [
-    "pt",
-    "Ciclo da borracha",
-    [
-     "Manaus"
-    ]
-   ],
-   "x": "O ciclo entrou em crise nos anos 1910, quando a borracha das plantações britânicas na Ásia, nascidas de sementes levadas da Amazônia, dominou o mercado."
   },
   {
    "t": "Quem formava a principal mão de obra dos engenhos de açúcar do Nordeste colonial a partir do fim do século XVI?",
@@ -281,61 +143,6 @@
    "x": "O nome vem das cabanas de barro e palha onde vivia boa parte dos rebeldes, indígenas, negros e mestiços pobres das margens dos rios."
   },
   {
-   "t": "No bipartidarismo imposto pelo regime militar, qual partido fazia a oposição consentida ao governo?",
-   "type": "txt",
-   "choices": [
-    "MDB",
-    "ARENA",
-    "UDN",
-    "PTB",
-    "PSD",
-    "PCB"
-   ],
-   "a": [
-    "MDB"
-   ],
-   "d": 2,
-   "art": {
-    "crest": "brasil_republica"
-   },
-   "src": [
-    "pt",
-    "Aliança Renovadora Nacional",
-    [
-     "MDB"
-    ]
-   ],
-   "x": "O AI-2, de 1965, extinguiu os partidos existentes; a ARENA apoiava o governo e o MDB reunia a oposição tolerada pelo regime."
-  },
-  {
-   "t": "Qual marinheiro, apelidado de \"Almirante Negro\", liderou a Revolta da Chibata, em 1910?",
-   "type": "txt",
-   "choices": [
-    "João Cândido",
-    "Marcílio Dias",
-    "André Rebouças",
-    "Francisco José do Nascimento",
-    "Joaquim Nabuco",
-    "Almirante Tamandaré"
-   ],
-   "a": [
-    "João Cândido"
-   ],
-   "d": 2,
-   "art": {
-    "icon": "ship"
-   },
-   "src": [
-    "pt",
-    "Revolta da Chibata",
-    [
-     "João Cândido",
-     "1910"
-    ]
-   ],
-   "x": "Os marinheiros tomaram encouraçados na baía de Guanabara e exigiram o fim dos castigos com chibata, ainda aplicados mais de 20 anos depois da abolição."
-  },
-  {
    "t": "Quem foi o primeiro governador-geral do Brasil, enviado à Bahia em 1549 para fundar Salvador?",
    "type": "txt",
    "choices": [
@@ -361,34 +168,6 @@
     ]
    ],
    "x": "Com ele chegaram os primeiros jesuítas ao Brasil, liderados pelo padre Manuel da Nóbrega."
-  },
-  {
-   "t": "Qual conflito, entre 1912 e 1916, opôs sertanejos às forças do governo numa região disputada pelo Paraná e por Santa Catarina?",
-   "type": "txt",
-   "choices": [
-    "Guerra do Contestado",
-    "Guerra de Canudos",
-    "Revolução Federalista",
-    "Sedição de Juazeiro",
-    "Revolta dos Muckers",
-    "Revolta da Chibata"
-   ],
-   "a": [
-    "Guerra do Contestado"
-   ],
-   "d": 3,
-   "art": {
-    "icon": "train"
-   },
-   "src": [
-    "pt",
-    "Guerra do Contestado",
-    [
-     "1912",
-     "Santa Catarina"
-    ]
-   ],
-   "x": "A ferrovia entre São Paulo e o Rio Grande do Sul expulsou milhares de posseiros das terras à beira dos trilhos, e muitos seguiram líderes religiosos chamados de monges."
   },
   {
    "t": "Qual revolta de 1824, nascida em Pernambuco contra a Constituição outorgada por D. Pedro I, terminou com a execução de Frei Caneca?",
@@ -447,61 +226,6 @@
    "x": "Nasceu em Lisboa em 1608, veio criança para a Bahia e morreu em Salvador, em 1697, aos 89 anos."
   },
   {
-   "t": "De qual corrente filosófica, muito influente entre os militares republicanos, vem o lema \"Ordem e Progresso\" da bandeira brasileira?",
-   "type": "txt",
-   "choices": [
-    "Positivismo",
-    "Iluminismo",
-    "Liberalismo",
-    "Marxismo",
-    "Romantismo",
-    "Utilitarismo"
-   ],
-   "a": [
-    "Positivismo"
-   ],
-   "d": 3,
-   "art": {
-    "flag": "BRA"
-   },
-   "src": [
-    "pt",
-    "Bandeira do Brasil",
-    [
-     "Comte"
-    ]
-   ],
-   "x": "A bandeira republicana foi adotada em 19 de novembro de 1889; o círculo azul mostra o céu do Rio de Janeiro na manhã de 15 de novembro."
-  },
-  {
-   "t": "Qual tratado de 1903, negociado pelo Barão do Rio Branco com a Bolívia, incorporou o Acre ao Brasil?",
-   "type": "txt",
-   "choices": [
-    "Tratado de Petrópolis",
-    "Tratado de Madri",
-    "Tratado de Santo Ildefonso",
-    "Tratado de Ayacucho",
-    "Tratado de Assunção",
-    "Tratado de Badajoz"
-   ],
-   "a": [
-    "Tratado de Petrópolis"
-   ],
-   "d": 3,
-   "art": {
-    "who": "rio_branco"
-   },
-   "src": [
-    "pt",
-    "Tratado de Petrópolis",
-    [
-     "1903",
-     "Acre"
-    ]
-   ],
-   "x": "O Brasil pagou 2 milhões de libras esterlinas e se comprometeu a construir a Estrada de Ferro Madeira-Mamoré."
-  },
-  {
    "t": "Qual povoação os portugueses fundaram em 1680 na margem norte do Rio da Prata, bem em frente a Buenos Aires?",
    "type": "txt",
    "choices": [
@@ -556,33 +280,6 @@
    "x": "Foi assinada em 18 de setembro de 1850, duas semanas depois da Lei Eusébio de Queirós, que proibiu o tráfico de africanos."
   },
   {
-   "t": "Como ficou conhecida a onda de especulação e inflação do início da República, provocada pela emissão desenfreada de dinheiro na gestão do ministro Rui Barbosa?",
-   "type": "txt",
-   "choices": [
-    "Encilhamento",
-    "Funding Loan",
-    "Convênio de Taubaté",
-    "Crack de 1929",
-    "Plano Cruzado",
-    "Milagre econômico"
-   ],
-   "a": [
-    "Encilhamento"
-   ],
-   "d": 4,
-   "art": {
-    "who": "deodoro"
-   },
-   "src": [
-    "pt",
-    "Encilhamento",
-    [
-     "Rui Barbosa"
-    ]
-   ],
-   "x": "O nome vem do turfe: encilhamento é o momento em que os cavalos são selados e os apostadores fazem suas últimas apostas."
-  },
-  {
    "t": "Qual revolta liberal de 1848, em Pernambuco, foi a última das grandes rebeliões provinciais do Império?",
    "type": "txt",
    "choices": [
@@ -608,60 +305,6 @@
     ]
    ],
    "x": "O nome vem do jornal liberal Diário Novo, cuja sede ficava na Rua da Praia, no Recife."
-  },
-  {
-   "t": "Qual unidade de conta, criada em 1994, serviu de ponte entre o cruzeiro real e o real durante a implantação do Plano Real?",
-   "type": "txt",
-   "choices": [
-    "URV",
-    "ORTN",
-    "BTN",
-    "Cruzado Novo",
-    "UFIR",
-    "Cruzeiro"
-   ],
-   "a": [
-    "URV"
-   ],
-   "d": 4,
-   "art": {
-    "icon": "coins"
-   },
-   "src": [
-    "pt",
-    "Unidade Real de Valor",
-    [
-     "1994"
-    ]
-   ],
-   "x": "Por quatro meses, preços e salários foram expressos em URV; em 1º de julho de 1994, cada URV virou um real, e 2.750 cruzeiros reais viraram um real."
-  },
-  {
-   "t": "Que nome Antônio Conselheiro deu ao arraial que fundou às margens do rio Vaza-Barris e que ficou conhecido como Canudos?",
-   "type": "txt",
-   "choices": [
-    "Belo Monte",
-    "Monte Santo",
-    "Bom Jesus",
-    "Nova Jerusalém",
-    "Santa Cruz",
-    "Juazeiro"
-   ],
-   "a": [
-    "Belo Monte"
-   ],
-   "d": 5,
-   "art": {
-    "icon": "church"
-   },
-   "src": [
-    "pt",
-    "Guerra de Canudos",
-    [
-     "Belo Monte"
-    ]
-   ],
-   "x": "Em poucos anos, o arraial reuniu milhares de moradores; o Exército só o destruiu na quarta expedição, em outubro de 1897."
   },
   {
    "t": "Qual navegador espanhol chegou ao litoral do atual Brasil em janeiro de 1500, meses antes de Cabral?",
@@ -783,25 +426,6 @@
    "x": "Abdicou da coroa portuguesa em favor da filha, Maria da Glória, e anos depois voltou à Europa para lutar pelo trono dela numa guerra civil."
   },
   {
-   "t": "Qual militar brasileiro dividiu com o ex-presidente americano Theodore Roosevelt o comando de uma expedição pela Amazônia, em 1913 e 1914?",
-   "type": "player",
-   "a": [
-    "rondon"
-   ],
-   "d": 3,
-   "art": {
-    "flag": "USA"
-   },
-   "src": [
-    "pt",
-    "Cândido Rondon",
-    [
-     "Roosevelt"
-    ]
-   ],
-   "x": "Um rio que eles exploraram, até então chamado Rio da Dúvida, foi rebatizado como Rio Roosevelt."
-  },
-  {
    "t": "Qual militar recebeu seu primeiro título de nobreza, o de barão, depois de sufocar a Balaiada, no Maranhão?",
    "type": "player",
    "a": [
@@ -838,24 +462,6 @@
     ]
    ],
    "x": "A expedição era chefiada por Nicolas Durand de Villegagnon; na luta para expulsar os invasores, Estácio de Sá fundou a cidade do Rio de Janeiro, em 1565."
-  },
-  {
-   "t": "Qual país emprestou o dinheiro para construir a Companhia Siderúrgica Nacional, em Volta Redonda, num acordo que aproximou o Brasil dos Aliados na Segunda Guerra?",
-   "a": [
-    "estados_unidos"
-   ],
-   "d": 3,
-   "art": {
-    "who": "getulio"
-   },
-   "src": [
-    "pt",
-    "Companhia Siderúrgica Nacional",
-    [
-     "Volta Redonda"
-    ]
-   ],
-   "x": "A usina de Volta Redonda começou a produzir aço em 1946 e virou o grande símbolo da industrialização da Era Vargas."
   },
   {
    "t": "Qual estado ocupou Salvador, então capital do Brasil, entre 1624 e 1625?",
@@ -1061,63 +667,6 @@
    ]
   },
   {
-   "t": "Coloque em ordem, da mais antiga à mais recente, estas revoltas da Primeira República?",
-   "type": "order",
-   "a": [
-    "canudos",
-    "vacina",
-    "chibata",
-    "contestado",
-    "prestes"
-   ],
-   "order": [
-    {
-     "id": "canudos",
-     "y": 1896,
-     "label": "Guerra de Canudos",
-     "sub": "Sertão da Bahia",
-     "crest": "brasil_republica"
-    },
-    {
-     "id": "vacina",
-     "y": 1904,
-     "label": "Revolta da Vacina",
-     "sub": "Ruas do Rio de Janeiro",
-     "face": "oswaldo_cruz"
-    },
-    {
-     "id": "chibata",
-     "y": 1910,
-     "label": "Revolta da Chibata",
-     "sub": "Baía de Guanabara",
-     "flag": "BRA"
-    },
-    {
-     "id": "contestado",
-     "y": 1912,
-     "label": "Guerra do Contestado",
-     "sub": "Paraná e Santa Catarina",
-     "crest": "brasil_republica"
-    },
-    {
-     "id": "prestes",
-     "y": 1925,
-     "label": "Coluna Prestes",
-     "sub": "Marcha pelo interior",
-     "flag": "BRA"
-    }
-   ],
-   "d": 4,
-   "src": [
-    "pt",
-    "República Velha",
-    [
-     "Canudos",
-     "Chibata"
-    ]
-   ]
-  },
-  {
    "t": "Quem disse esta frase?",
    "type": "player",
    "quote": {
@@ -1136,54 +685,6 @@
     ]
    ],
    "x": "A data entrou para a história como o Dia do Fico, um passo decisivo rumo à Independência."
-  },
-  {
-   "t": "Quem disse esta frase?",
-   "type": "player",
-   "quote": {
-    "q": "Trabalhadores do Brasil!",
-    "ctx": "Saudação com que o presidente abria seus discursos do Dia do Trabalho, transmitidos pelo rádio"
-   },
-   "a": [
-    "getulio"
-   ],
-   "d": 2,
-   "src": [
-    "pt",
-    "Getúlio Vargas",
-    [
-     "trabalhadores"
-    ]
-   ],
-   "x": "O rádio foi a grande arma de propaganda do Estado Novo, com programas oficiais como A Hora do Brasil."
-  },
-  {
-   "t": "Quem disse esta frase?",
-   "type": "txt",
-   "choices": [
-    "Ulysses Guimarães",
-    "Tancredo Neves",
-    "José Sarney",
-    "Fernando Henrique Cardoso",
-    "Mário Covas",
-    "Franco Montoro"
-   ],
-   "quote": {
-    "q": "Temos ódio à ditadura. Ódio e nojo.",
-    "ctx": "Discurso do presidente da Assembleia Constituinte na promulgação da nova Constituição, 5 de outubro de 1988"
-   },
-   "a": [
-    "Ulysses Guimarães"
-   ],
-   "d": 3,
-   "src": [
-    "pt",
-    "Ulysses Guimarães",
-    [
-     "1988"
-    ]
-   ],
-   "x": "Ele chamou a nova Carta de \"Constituição Cidadã\"; morreu em 1992, num acidente de helicóptero no litoral do Rio, e seu corpo nunca foi encontrado."
   },
   {
    "t": "Quem disse esta frase?",
@@ -1260,26 +761,6 @@
     "Batalha de Tuiuti",
     [
      "1866"
-    ]
-   ]
-  },
-  {
-   "t": "Quem defendia esta posição na Itália, conquistada pela Força Expedicionária Brasileira?",
-   "battle": {
-    "lbl": "Monte Castelo · 1945",
-    "a": "brasil_republica",
-    "b": "?",
-    "x": "Depois de quatro ataques fracassados, os pracinhas tomaram o monte em 21 de fevereiro de 1945."
-   },
-   "a": [
-    "alemanha_nazista"
-   ],
-   "d": 2,
-   "src": [
-    "pt",
-    "Batalha de Monte Castelo",
-    [
-     "1945"
     ]
    ]
   },
@@ -1378,101 +859,6 @@
    "x": "O tratado da aliança foi assinado em Buenos Aires, em 1º de maio de 1865."
   },
   {
-   "t": "Quem é o presidente que falta nesta sequência?",
-   "type": "txt",
-   "choices": [
-    "Itamar Franco",
-    "Tancredo Neves",
-    "Ulysses Guimarães",
-    "Marco Maciel",
-    "Leonel Brizola",
-    "Luiz Inácio Lula da Silva"
-   ],
-   "line": {
-    "t": "Presidentes da Nova República",
-    "rows": [
-     "José Sarney",
-     "Fernando Collor",
-     "?",
-     "Fernando Henrique Cardoso"
-    ],
-    "era": "new"
-   },
-   "a": [
-    "Itamar Franco"
-   ],
-   "d": 2,
-   "src": [
-    "pt",
-    "Itamar Franco",
-    [
-     "1992"
-    ]
-   ],
-   "x": "Vice de Collor, assumiu a Presidência com o impeachment, em 1992, e seu governo lançou o Plano Real, em 1994."
-  },
-  {
-   "t": "Quem completa esta lista de presidentes eleitos pelo voto popular?",
-   "type": "player",
-   "line": {
-    "t": "Presidentes eleitos · 1945–1960",
-    "rows": [
-     "Eurico Gaspar Dutra",
-     "Getúlio Vargas",
-     "?",
-     "Jânio Quadros"
-    ],
-    "era": "new"
-   },
-   "a": [
-    "jk"
-   ],
-   "d": 2,
-   "src": [
-    "pt",
-    "Lista de presidentes do Brasil",
-    [
-     "Juscelino"
-    ]
-   ],
-   "x": "Juscelino venceu a eleição de 1955 com cerca de 36% dos votos: na época não havia segundo turno."
-  },
-  {
-   "t": "Qual general completa a lista dos presidentes do regime militar?",
-   "type": "txt",
-   "choices": [
-    "Emílio Médici",
-    "Eurico Dutra",
-    "Henrique Lott",
-    "Café Filho",
-    "Juarez Távora",
-    "Golbery do Couto e Silva"
-   ],
-   "line": {
-    "t": "Presidentes do regime militar · 1964–1985",
-    "rows": [
-     "Castelo Branco",
-     "Costa e Silva",
-     "?",
-     "Ernesto Geisel",
-     "João Figueiredo"
-    ],
-    "era": "new"
-   },
-   "a": [
-    "Emílio Médici"
-   ],
-   "d": 3,
-   "src": [
-    "pt",
-    "Emílio Garrastazu Médici",
-    [
-     "1969"
-    ]
-   ],
-   "x": "Entre Costa e Silva e Médici, o país foi governado por dois meses por uma junta formada pelos três ministros militares, em 1969."
-  },
-  {
    "t": "Qual poeta completa o trio de árcades envolvidos na Inconfidência Mineira?",
    "type": "txt",
    "choices": [
@@ -1536,114 +922,6 @@
    "x": "Em 17 de maio, uma missa campal no Rio, com a presença da princesa, reuniu milhares de pessoas para celebrar a abolição."
   },
   {
-   "t": "Quem é o líder desta manchete?",
-   "type": "player",
-   "news": {
-    "h": "Revolução vitoriosa: gaúcho assume o governo provisório",
-    "paper": "Jornal da Capital",
-    "sub": "Junta que depôs Washington Luís entrega o poder ao chefe da revolução; soldados do Sul amarram cavalos no obelisco da Avenida Rio Branco"
-   },
-   "a": [
-    "getulio"
-   ],
-   "d": 2,
-   "src": [
-    "pt",
-    "Revolução de 1930",
-    [
-     "Washington Luís"
-    ]
-   ],
-   "x": "Ele tomou posse em 3 de novembro de 1930: era o fim da Primeira República e o começo de 15 anos seguidos de Vargas no poder."
-  },
-  {
-   "t": "Em que ano saiu esta manchete?",
-   "type": "txt",
-   "choices": [
-    "1954",
-    "1945",
-    "1950",
-    "1951",
-    "1955",
-    "1956"
-   ],
-   "news": {
-    "h": "Morre o presidente; o país em comoção",
-    "paper": "Diário da Guanabara",
-    "sub": "Tiro no Palácio do Catete; carta deixada ao povo diz que ele sai da vida para entrar na História"
-   },
-   "a": [
-    "1954"
-   ],
-   "d": 2,
-   "src": [
-    "pt",
-    "Getúlio Vargas",
-    [
-     "1954"
-    ]
-   ],
-   "x": "A carta-testamento foi lida no rádio no mesmo dia, e multidões tomaram as ruas; ele foi sepultado em São Borja, sua cidade natal."
-  },
-  {
-   "t": "Em que ano saiu esta manchete?",
-   "type": "txt",
-   "choices": [
-    "1984",
-    "1979",
-    "1982",
-    "1985",
-    "1986",
-    "1989"
-   ],
-   "news": {
-    "h": "Emenda das diretas é derrotada na Câmara",
-    "paper": "Gazeta do Planalto",
-    "sub": "Faltaram 22 votos; milhões tinham ido às ruas pedir eleição direta para presidente"
-   },
-   "a": [
-    "1984"
-   ],
-   "d": 2,
-   "src": [
-    "pt",
-    "Emenda Dante de Oliveira",
-    [
-     "1984"
-    ]
-   ],
-   "x": "A emenda teve 298 votos a favor, mas precisava de 320; o presidente seguinte foi escolhido por um Colégio Eleitoral."
-  },
-  {
-   "t": "Em que ano saiu esta manchete?",
-   "type": "txt",
-   "choices": [
-    "1942",
-    "1939",
-    "1940",
-    "1941",
-    "1943",
-    "1944"
-   ],
-   "news": {
-    "h": "Brasil declara guerra à Alemanha e à Itália",
-    "paper": "Gazeta Carioca",
-    "sub": "Decisão vem depois do afundamento de navios mercantes brasileiros por submarinos"
-   },
-   "a": [
-    "1942"
-   ],
-   "d": 3,
-   "src": [
-    "pt",
-    "Brasil na Segunda Guerra Mundial",
-    [
-     "1942"
-    ]
-   ],
-   "x": "Em agosto daquele ano, um único submarino alemão afundou seis navios brasileiros na costa do Nordeste em poucos dias."
-  },
-  {
    "t": "Duelo: quem nasceu primeiro?",
    "type": "player",
    "fixed": [
@@ -1690,30 +968,6 @@
     ]
    ],
    "x": "A abolição veio em maio de 1888; a monarquia caiu um ano e meio depois, em novembro de 1889."
-  },
-  {
-   "t": "Duelo: quem nasceu primeiro?",
-   "type": "player",
-   "fixed": [
-    "oswaldo_cruz",
-    "santos_dumont"
-   ],
-   "duel": true,
-   "a": [
-    "oswaldo_cruz"
-   ],
-   "d": 4,
-   "art": {
-    "icon": "hourglass"
-   },
-   "src": [
-    "pt",
-    "Oswaldo Cruz",
-    [
-     "1872"
-    ]
-   ],
-   "x": "Oswaldo Cruz nasceu em agosto de 1872, em São Luiz do Paraitinga (SP); Santos Dumont, em julho de 1873, em Minas Gerais."
   },
   {
    "t": "D. Pedro I proclamou a Independência montado num cavalo imponente, como no famoso quadro de Pedro Américo?",

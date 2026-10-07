@@ -44,10 +44,12 @@ function refineIcon(q, key) {
 /* the mark of a category when a question carries no picture of its own */
 const CAT_ART = {
   egito_mesopotamia: 'pyramid', grecia: 'column', roma: 'sword', medieval: 'castle', oriente: 'globe',
-  africa_americas: 'pyramid', descobrimentos: 'ship', renascimento: 'book', absolutismo: 'crown', revolucoes: 'torch',
-  seculo19: 'gear', guerras_mundiais: 'cannon', guerra_fria: 'rocket', brasil_colonia: 'ship', brasil_republica: 'flag',
+  africa: 'map', americas: 'pyramid', descobrimentos: 'ship', renascimento: 'book', absolutismo: 'crown',
+  idade_moderna: 'compass', revolucoes: 'torch', seculo19: 'gear', guerras_mundiais: 'cannon', seculo20: 'plane',
+  guerra_fria: 'rocket', brasil_colonia: 'ship', brasil_republica: 'flag',
   ciencia: 'gear', artes: 'bust', mulheres: 'crown', personagens: 'bust', monumentos: 'column', curiosidades: 'scroll',
-  quem_sou_eu: 'bust', linha_do_tempo: 'hourglass', imperios: 'crown',
+  quem_sou_eu: 'bust', linha_do_tempo: 'hourglass', imperios: 'crown', citacoes: 'quill', batalhas: 'sword',
+  linhagens: 'crown', manchetes: 'scroll', duelos: 'hourglass', fato_mito: 'scales',
 };
 const FALLBACK_PHOTO = {};
 const NONFREE_CRESTS = new Set([]);
@@ -261,7 +263,7 @@ function optEra(q) {
   const cid = (q._cat && q._cat.id) || '';
   if (/egito|grecia|roma|antig/.test(cid)) return 'ant';
   if (/medieval|oriente/.test(cid)) return 'med';
-  if (/renasc|absolut|descobr|colonia/.test(cid)) return 'mod';
+  if (/renasc|absolut|descobr|colonia|idade_moderna/.test(cid)) return 'mod';
   return 'new';
 }
 const _disc = (inner, rim) => `<svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="18.5" fill="${G_PAPER}"/>${inner}

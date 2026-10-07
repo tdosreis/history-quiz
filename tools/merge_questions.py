@@ -3,6 +3,7 @@
 
 Each file is one category:
   { "id", "name", "emoji" | "flag", "tag", "col", "diff", "qs": [ row, ... ] }
+A later file (by name) with an id already used adds its rows to that category.
 
 A row is
   t        the question
@@ -216,7 +217,16 @@ def main():
             row.update({("uf" if k == "map" else k): v for k, v in art.items()})
             rows.append(row)
         total += len(rows)
-        cats.append((cat, rows))
+        # a later file with an id already taken adds to that category (its name,
+        # colour and tag come from the first file); a second id under the same
+        # name would be two identical tiles on the cover
+        same = next((c_ for c_ in cats if c_[0]["id"] == cat.get("id")), None)
+        if same:
+            same[1].extend(rows)
+        else:
+            twin = next((c_ for c_ in cats if fold(c_[0]["name"]) == fold(cat.get("name", ""))), None)
+            if twin: errs.append(f"{name}: '{cat['name']}' is already the name of '{twin[0]['id']}' — use that id to add to it")
+            cats.append((cat, rows))
 
     for e in errs: print("  !!", e)
     print(f"{total} questions in {len(cats)} categories, {len(errs)} problem(s)")

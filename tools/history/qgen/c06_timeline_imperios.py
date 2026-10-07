@@ -42,7 +42,7 @@ O('Linha do tempo: ordene o Muro de Berlim (construção), Mandela livre, o fim 
 c.write()
 
 # ───────────────────────── Impérios e civilizações ─────────────────────────
-c = Cat('imperios', 'Impérios e Civilizações', '🌍', 'Estados que fizeram a História', '#8A5A2B', order=42)
+c = Cat('imperios', 'Impérios e Civilizações', '🛡️', 'Estados que fizeram a História', '#8A5A2B', order=42)
 c.C('Qual estado, com capital em Cuzco, dominava os Andes quando os espanhóis chegaram?', 'inca', 1, icon='map', src=('pt', 'Império Inca', ['Cusco']))
 c.C('Qual estado, com capital em Tenochtitlán, foi derrubado por Cortés?', 'asteca', 1, icon='pyramid', src=('pt', 'Império Asteca', ['Tenochtitlán']))
 c.C('Qual civilização construiu as pirâmides de Gizé e os templos de Karnak?', 'egito_antigo', 1, icon='pyramid', src=('pt', 'Egito Antigo', ['Gizé']))
