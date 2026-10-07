@@ -26,7 +26,7 @@ Quiz de História em clima de auditório: 16 degraus até o milhão. 5 ajudas!
 ```
 📜 Quanto você sabe de História? Sente na cadeira e vá rumo ao milhão!
 
-Um quiz de História em clima de programa de auditório: refletor aceso, placa dourada e dezesseis degraus até R$ 1.000.000. Perguntas sobre faraós, imperadores, descobridores, revoluções, guerras, o Brasil e muito mais — com retratos, bustos, pinturas e fotos de monumentos de verdade. Mais de 1.000 perguntas em 24 temas, do Egito Antigo à Guerra Fria. Cada partida é montada na hora, então nunca se repete.
+Um quiz de História em clima de programa de auditório: refletor aceso, placa dourada e dezesseis degraus até R$ 1.000.000. Perguntas sobre faraós, imperadores, descobridores, revoluções, guerras, o Brasil e muito mais — com retratos, bustos, pinturas e fotos de monumentos de verdade. Quase 2.000 perguntas em 33 temas, do Egito Antigo à Nova República, do fácil ao difícil de verdade. Cada partida é montada na hora, então nunca se repete.
 
 💰 RUMO AO MILHÃO:
 • 16 perguntas, uma por degrau — cada uma vale mais e é mais difícil
@@ -37,6 +37,15 @@ Um quiz de História em clima de programa de auditório: refletor aceso, placa d
 • Quatro CARTAS ESPECIAIS no meio da subida:
   — Quem sou eu? — as pistas vêm uma de cada vez, e cada pista extra custa cinco segundos do relógio
   — Linha do tempo — quatro fatos para colocar em ordem, do mais antigo ao mais novo
+
+📜 PERGUNTAS DO JEITO DA HISTÓRIA:
+• Quem disse? — a frase aparece escrita a tinta, gravada em pedra, num diário de bordo ou numa carta lacrada
+• Batalha — dois estandartes, as espadas cruzadas e um lado escondido
+• Linhagem — a sucessão de reis ou o conselho com um elo faltando
+• Manchete — a primeira página do dia: em que ano saiu?
+• Duelo — só duas cartas na mesa: quem veio primeiro?
+• Fato ou mito? — o carimbo desce na hora da verdade
+• Hoje na História — na capa, o que aconteceu neste dia
 
 🆘 AS CINCO AJUDAS:
 • Cortar — queima metade das alternativas erradas
@@ -82,11 +91,12 @@ A history trivia game show: 16 steps to the million, 5 lifelines. (In Portuguese
 ```
 Think you know history? Take the chair and climb to the million!
 
-A history trivia game in the style of a TV quiz show: spotlight, golden plaque and sixteen steps to R$ 1,000,000. Over 1,000 questions in 24 themes — from Ancient Egypt to the Cold War: pharaohs, emperors, explorers, revolutions, wars, Brazil — with real portraits, busts, paintings and photographs of monuments.
+A history trivia game in the style of a TV quiz show: spotlight, golden plaque and sixteen steps to R$ 1,000,000. Almost 2,000 questions in 33 themes — from Ancient Egypt to the Cold War: pharaohs, emperors, explorers, revolutions, wars, Brazil — with real portraits, busts, paintings and photographs of monuments.
 
 The game is in Brazilian Portuguese.
 
 • Sixteen-question ladder with safe steps, five lifelines and special cards (Who am I? · Timeline)
+• History's own question formats: Who said it?, Battle, Line of succession, Headline, Duel, Fact or myth?
 • Sticker album with 230 historical figures, coats of arms, nations and monuments
 • Daily challenge, sudden-death mode and practice mode
 • No sign-up, no ads, no tracking — images from Wikimedia Commons, credited in the app
