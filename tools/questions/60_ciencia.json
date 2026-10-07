@@ -1,0 +1,897 @@
+{
+ "id": "ciencia",
+ "name": "Ciência e Invenções",
+ "tag": "Descobertas que mudaram o mundo",
+ "col": "#2E7D4F",
+ "diff": "Variado",
+ "emoji": "💡",
+ "qs": [
+  {
+   "t": "Qual descoberta do físico alemão Wilhelm Röntgen, em 1895, permitiu ver os ossos dentro do corpo humano?",
+   "type": "txt",
+   "choices": [
+    "Os raios X",
+    "A radioatividade",
+    "O ultrassom",
+    "A ressonância magnética",
+    "O eletrocardiograma",
+    "A tomografia"
+   ],
+   "a": [
+    "Os raios X"
+   ],
+   "d": 1,
+   "art": {
+    "crest": "imperio_alemao"
+   },
+   "src": [
+    "en",
+    "Wilhelm Röntgen",
+    [
+     "1895",
+     "1901"
+    ]
+   ],
+   "x": "A primeira radiografia famosa mostra a mão da esposa de Röntgen, com o anel de casamento. Em 1901, ele recebeu o primeiro Nobel de Física."
+  },
+  {
+   "t": "Qual instrumento, inventado pelo médico francês René Laennec em 1816, serve para ouvir os batimentos do coração e a respiração?",
+   "type": "txt",
+   "choices": [
+    "Estetoscópio",
+    "Termômetro clínico",
+    "Esfigmomanômetro",
+    "Otoscópio",
+    "Eletrocardiógrafo",
+    "Oxímetro"
+   ],
+   "a": [
+    "Estetoscópio"
+   ],
+   "d": 1,
+   "art": {
+    "flag": "FRA"
+   },
+   "src": [
+    "en",
+    "Stethoscope",
+    [
+     "Laennec",
+     "1816"
+    ]
+   ],
+   "x": "Laennec improvisou o primeiro com uma folha de papel enrolada, para não ter de encostar o ouvido no peito de uma jovem paciente; depois o fez de madeira."
+  },
+  {
+   "t": "Qual era o nome da ovelha que, em 1996, se tornou o primeiro mamífero clonado a partir de uma célula adulta?",
+   "type": "txt",
+   "choices": [
+    "Dolly",
+    "Lucy",
+    "Bella",
+    "Daisy",
+    "Shaun",
+    "Flora"
+   ],
+   "a": [
+    "Dolly"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "flask"
+   },
+   "src": [
+    "en",
+    "Dolly (sheep)",
+    [
+     "1996",
+     "Roslin"
+    ]
+   ],
+   "x": "Ela nasceu no Instituto Roslin, na Escócia, e ganhou o nome em homenagem à cantora Dolly Parton, porque foi clonada de uma célula de glândula mamária."
+  },
+  {
+   "t": "Qual médico brasileiro descreveu, em 1909, a doença transmitida pelo inseto barbeiro que hoje leva o seu nome?",
+   "type": "txt",
+   "choices": [
+    "Carlos Chagas",
+    "Oswaldo Cruz",
+    "Vital Brazil",
+    "Adolfo Lutz",
+    "Emílio Ribas",
+    "Miguel Couto"
+   ],
+   "a": [
+    "Carlos Chagas"
+   ],
+   "d": 2,
+   "art": {
+    "flag": "BRA"
+   },
+   "src": [
+    "pt",
+    "Carlos Chagas",
+    [
+     "1909",
+     "Trypanosoma cruzi"
+    ]
+   ],
+   "x": "Chagas descreveu o parasita, o inseto transmissor e a doença, e batizou o parasita de Trypanosoma cruzi em homenagem ao mestre Oswaldo Cruz."
+  },
+  {
+   "t": "Qual químico russo organizou os elementos numa tabela periódica, em 1869, deixando lacunas para elementos ainda não descobertos?",
+   "type": "txt",
+   "choices": [
+    "Dmitri Mendeleiev",
+    "Antoine Lavoisier",
+    "John Dalton",
+    "Amedeo Avogadro",
+    "Robert Boyle",
+    "Ivan Pavlov"
+   ],
+   "a": [
+    "Dmitri Mendeleiev"
+   ],
+   "d": 2,
+   "art": {
+    "crest": "imperio_russo"
+   },
+   "src": [
+    "en",
+    "Dmitri Mendeleev",
+    [
+     "1869",
+     "gallium"
+    ]
+   ],
+   "x": "Ele previu as propriedades de elementos que faltavam na tabela; o gálio, descoberto em 1875, confirmou suas previsões."
+  },
+  {
+   "t": "Qual instrumento o comerciante de tecidos holandês Antonie van Leeuwenhoek aperfeiçoou, no século XVII, para observar seres invisíveis a olho nu?",
+   "type": "txt",
+   "choices": [
+    "Microscópio",
+    "Telescópio",
+    "Periscópio",
+    "Caleidoscópio",
+    "Estetoscópio",
+    "Sextante"
+   ],
+   "a": [
+    "Microscópio"
+   ],
+   "d": 2,
+   "art": {
+    "crest": "holanda"
+   },
+   "src": [
+    "en",
+    "Antonie van Leeuwenhoek",
+    [
+     "microscope",
+     "Delft"
+    ]
+   ],
+   "x": "Ele foi o primeiro a descrever bactérias e protozoários, que chamou de \"animálculos\", em cartas enviadas à Royal Society de Londres."
+  },
+  {
+   "t": "Qual químico francês, guilhotinado em 1794, é considerado o pai da química moderna?",
+   "type": "txt",
+   "choices": [
+    "Antoine Lavoisier",
+    "Louis Pasteur",
+    "Joseph Priestley",
+    "John Dalton",
+    "Claude Berthollet",
+    "Joseph-Louis Gay-Lussac"
+   ],
+   "a": [
+    "Antoine Lavoisier"
+   ],
+   "d": 3,
+   "art": {
+    "crest": "franca_revolucionaria"
+   },
+   "src": [
+    "en",
+    "Antoine Lavoisier",
+    [
+     "1794",
+     "oxygen"
+    ]
+   ],
+   "x": "Ele mostrou que a massa se conserva nas reações químicas e deu nome ao oxigênio e ao hidrogênio. Foi executado por ter sido cobrador de impostos do Antigo Regime."
+  },
+  {
+   "t": "Qual médico americano apresentou, em 1955, a primeira vacina eficaz contra a poliomielite, aplicada por injeção?",
+   "type": "txt",
+   "choices": [
+    "Jonas Salk",
+    "Albert Sabin",
+    "Edward Jenner",
+    "Louis Pasteur",
+    "Robert Koch",
+    "Alexander Fleming"
+   ],
+   "a": [
+    "Jonas Salk"
+   ],
+   "d": 3,
+   "art": {
+    "flag": "USA"
+   },
+   "src": [
+    "en",
+    "Jonas Salk",
+    [
+     "1955",
+     "patent"
+    ]
+   ],
+   "x": "Salk não patenteou a vacina. Perguntado na TV sobre quem era o dono da patente, respondeu: \"O povo. Pode-se patentear o Sol?\""
+  },
+  {
+   "t": "Qual médico mineiro foi o primeiro diretor do Instituto Butantan e criou soros contra o veneno de cobras?",
+   "type": "txt",
+   "choices": [
+    "Vital Brazil",
+    "Carlos Chagas",
+    "Oswaldo Cruz",
+    "Adolfo Lutz",
+    "Emílio Ribas",
+    "Miguel Couto"
+   ],
+   "a": [
+    "Vital Brazil"
+   ],
+   "d": 3,
+   "art": {
+    "flag": "BRA"
+   },
+   "src": [
+    "pt",
+    "Vital Brazil",
+    [
+     "Butantan"
+    ]
+   ],
+   "x": "Ele descobriu que cada tipo de veneno exige um soro específico: o soro contra a jararaca não serve para a picada de cascavel."
+  },
+  {
+   "t": "Qual engenho grego de engrenagens, retirado de um naufrágio em 1901, calculava a posição do Sol e da Lua e previa eclipses?",
+   "type": "txt",
+   "choices": [
+    "Mecanismo de Anticítera",
+    "Eolípila de Heron",
+    "Clepsidra de Ctesíbio",
+    "Astrolábio de Hiparco",
+    "Dioptra de Heron",
+    "Odômetro de Vitrúvio"
+   ],
+   "a": [
+    "Mecanismo de Anticítera"
+   ],
+   "d": 4,
+   "art": {
+    "icon": "gear"
+   },
+   "src": [
+    "en",
+    "Antikythera mechanism",
+    [
+     "1901",
+     "eclipses"
+    ]
+   ],
+   "x": "Feito há mais de 2 mil anos, é chamado de primeiro computador analógico: nada tão complexo voltou a ser construído por mais de mil anos."
+  },
+  {
+   "t": "Qual sábio grego calculou a circunferência da Terra, no século III a.C., comparando as sombras do Sol em Siena (atual Assuã) e em Alexandria?",
+   "type": "txt",
+   "choices": [
+    "Eratóstenes",
+    "Ptolomeu",
+    "Hiparco",
+    "Aristarco de Samos",
+    "Euclides",
+    "Arquimedes"
+   ],
+   "a": [
+    "Eratóstenes"
+   ],
+   "d": 4,
+   "art": {
+    "icon": "globe"
+   },
+   "src": [
+    "en",
+    "Eratosthenes",
+    [
+     "circumference",
+     "Syene"
+    ]
+   ],
+   "x": "Ele também dirigiu a Biblioteca de Alexandria e é apontado como o criador da palavra \"geografia\"."
+  },
+  {
+   "t": "Qual médico mapeou os mortos por cólera em Londres, em 1854, e mostrou que a doença vinha da água de uma bomba pública?",
+   "type": "txt",
+   "choices": [
+    "John Snow",
+    "Joseph Lister",
+    "Edward Jenner",
+    "William Harvey",
+    "Robert Koch",
+    "Ignaz Semmelweis"
+   ],
+   "a": [
+    "John Snow"
+   ],
+   "d": 4,
+   "art": {
+    "crest": "reino_unido"
+   },
+   "src": [
+    "en",
+    "John Snow",
+    [
+     "Broad Street",
+     "1854"
+    ]
+   ],
+   "x": "Convencidas por ele, as autoridades retiraram a alavanca da bomba da Broad Street. Seu mapa dos casos é visto como um marco da epidemiologia."
+  },
+  {
+   "t": "Qual sábio chinês do século XI descreveu pela primeira vez a bússola de agulha magnética e a declinação magnética?",
+   "type": "txt",
+   "choices": [
+    "Shen Kuo",
+    "Bi Sheng",
+    "Zhang Heng",
+    "Cai Lun",
+    "Su Song",
+    "Zu Chongzhi"
+   ],
+   "a": [
+    "Shen Kuo"
+   ],
+   "d": 5,
+   "art": {
+    "icon": "compass"
+   },
+   "src": [
+    "en",
+    "Shen Kuo",
+    [
+     "compass",
+     "Dream Pool"
+    ]
+   ],
+   "x": "Ele registrou a descoberta nos \"Ensaios do Lago dos Sonhos\", de 1088, livro que trata de astronomia, geologia, medicina e música."
+  },
+  {
+   "t": "Qual sábio grego foi morto por um soldado romano durante a tomada de Siracusa, em 212 a.C.?",
+   "type": "player",
+   "a": [
+    "arquimedes"
+   ],
+   "d": 3,
+   "art": {
+    "crest": "republica_romana"
+   },
+   "src": [
+    "en",
+    "Archimedes",
+    [
+     "212 BC",
+     "Marcellus"
+    ]
+   ],
+   "x": "Segundo os relatos antigos, o general romano Marcelo tinha mandado poupá-lo e lamentou sua morte."
+  },
+  {
+   "t": "Sob qual dinastia chinesa foi impresso o Sutra do Diamante, de 868, o livro impresso com data mais antigo que se conhece?",
+   "a": [
+    "tang"
+   ],
+   "d": 4,
+   "art": {
+    "icon": "scroll"
+   },
+   "src": [
+    "en",
+    "Diamond Sutra",
+    [
+     "868",
+     "Dunhuang"
+    ]
+   ],
+   "x": "O rolo foi encontrado em 1900 nas grutas de Mogao, em Dunhuang, e hoje está na Biblioteca Britânica, em Londres."
+  },
+  {
+   "t": "Quem sou eu?",
+   "type": "player",
+   "clues": [
+    "Nasci em 1856, numa aldeia da atual Croácia, filho de um padre ortodoxo sérvio.",
+    "Em 1884, emigrei para Nova York e trabalhei por alguns meses para um inventor famoso, de quem depois fui rival.",
+    "Defendi a corrente alternada na chamada Guerra das Correntes.",
+    "A unidade de indução magnética do Sistema Internacional leva o meu nome."
+   ],
+   "a": [
+    "tesla"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "bust"
+   },
+   "src": [
+    "en",
+    "Nikola Tesla",
+    [
+     "Smiljan",
+     "1884"
+    ]
+   ],
+   "x": "Apesar das centenas de patentes, morreu endividado num quarto de hotel em Nova York, em 1943."
+  },
+  {
+   "t": "Quem sou eu?",
+   "type": "player",
+   "clues": [
+    "Sou a única filha legítima de um célebre poeta romântico, que se separou da minha mãe quando eu tinha pouco mais de um mês.",
+    "Minha mãe me fez estudar matemática desde menina.",
+    "Traduzi um artigo sobre a Máquina Analítica de Charles Babbage e acrescentei notas mais longas que o próprio texto.",
+    "Numa dessas notas, descrevi um método para calcular os números de Bernoulli, visto como o primeiro programa de computador."
+   ],
+   "a": [
+    "ada_lovelace"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "bust"
+   },
+   "src": [
+    "en",
+    "Ada Lovelace",
+    [
+     "Bernoulli",
+     "Byron"
+    ]
+   ],
+   "x": "A linguagem de programação Ada, criada para o Departamento de Defesa dos Estados Unidos, recebeu o seu nome em homenagem a ela."
+  },
+  {
+   "t": "Quem escreveu esta frase?",
+   "type": "player",
+   "quote": {
+    "q": "Estou convencido de que Ele não joga dados.",
+    "ctx": "Carta ao físico Max Born, 1926, contra o papel do acaso na mecânica quântica",
+    "kind": "carta"
+   },
+   "a": [
+    "einstein"
+   ],
+   "d": 2,
+   "src": [
+    "en",
+    "Bohr–Einstein debates",
+    [
+     "dice"
+    ]
+   ],
+   "x": "A frase ficou famosa como \"Deus não joga dados com o universo\" e resume sua desconfiança da física quântica."
+  },
+  {
+   "t": "Quem escreveu esta frase?",
+   "type": "player",
+   "quote": {
+    "q": "A vida é breve, a arte é longa, a ocasião é fugaz, a experiência enganosa e o julgamento difícil.",
+    "ctx": "Abertura dos Aforismos, coleção de conselhos médicos da Grécia antiga"
+   },
+   "a": [
+    "hipocrates"
+   ],
+   "d": 3,
+   "src": [
+    "en",
+    "Ars longa, vita brevis",
+    [
+     "Hippocrates"
+    ]
+   ],
+   "x": "Em latim, a frase ficou famosa como \"Ars longa, vita brevis\"; a \"arte\" de que ela fala é a medicina, que leva uma vida inteira para ser aprendida."
+  },
+  {
+   "t": "Quem escreveu esta frase?",
+   "type": "player",
+   "quote": {
+    "q": "Proponho considerar a questão: as máquinas podem pensar?",
+    "ctx": "Primeira frase de um artigo de 1950 que propôs o \"jogo da imitação\""
+   },
+   "a": [
+    "turing"
+   ],
+   "d": 3,
+   "src": [
+    "en",
+    "Computing Machinery and Intelligence",
+    [
+     "Can machines think"
+    ]
+   ],
+   "x": "O \"jogo da imitação\" descrito no artigo ficou conhecido como teste de Turing e virou referência nos debates sobre inteligência artificial."
+  },
+  {
+   "t": "Duelo: quem nasceu primeiro?",
+   "type": "player",
+   "fixed": [
+    "galileu",
+    "newton"
+   ],
+   "duel": true,
+   "a": [
+    "galileu"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "telescope"
+   },
+   "src": [
+    "pt",
+    "Galileu Galilei",
+    [
+     "1564"
+    ]
+   ],
+   "x": "Galileu nasceu em 1564 e morreu em janeiro de 1642; Newton nasceu no fim daquele mesmo ano, pelo calendário inglês da época."
+  },
+  {
+   "t": "Duelo: quem nasceu primeiro?",
+   "type": "player",
+   "fixed": [
+    "edison",
+    "tesla"
+   ],
+   "duel": true,
+   "a": [
+    "edison"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "gear"
+   },
+   "src": [
+    "en",
+    "Thomas Edison",
+    [
+     "1847"
+    ]
+   ],
+   "x": "Edison nasceu em 1847, e Tesla, em 1856; o jovem Tesla chegou a trabalhar para Edison em Nova York, em 1884."
+  },
+  {
+   "t": "Duelo: quem nasceu primeiro?",
+   "type": "player",
+   "fixed": [
+    "mendel",
+    "pasteur"
+   ],
+   "duel": true,
+   "a": [
+    "mendel"
+   ],
+   "d": 5,
+   "art": {
+    "icon": "flask"
+   },
+   "src": [
+    "en",
+    "Gregor Mendel",
+    [
+     "20 July 1822"
+    ]
+   ],
+   "x": "Os dois nasceram em 1822: Mendel em 20 de julho, e Pasteur em 27 de dezembro."
+  },
+  {
+   "t": "Thomas Edison inventou sozinho a primeira lâmpada elétrica da história?",
+   "type": "txt",
+   "choices": [
+    "Fato",
+    "Mito"
+   ],
+   "duel": true,
+   "myth": true,
+   "a": [
+    "Mito"
+   ],
+   "d": 2,
+   "art": {
+    "who": "edison"
+   },
+   "src": [
+    "en",
+    "Incandescent light bulb",
+    [
+     "Swan",
+     "1879"
+    ]
+   ],
+   "x": "Vários inventores já tinham feito lâmpadas incandescentes, como o inglês Joseph Swan. Em 1879, Edison criou uma versão durável e barata e montou o sistema para levar luz às casas."
+  },
+  {
+   "t": "Galileu Galilei foi o inventor do telescópio?",
+   "type": "txt",
+   "choices": [
+    "Fato",
+    "Mito"
+   ],
+   "duel": true,
+   "myth": true,
+   "a": [
+    "Mito"
+   ],
+   "d": 2,
+   "art": {
+    "who": "galileu"
+   },
+   "src": [
+    "en",
+    "Telescope",
+    [
+     "1608",
+     "Galileo"
+    ]
+   ],
+   "x": "Os primeiros telescópios surgiram nos Países Baixos, em 1608. Galileu soube da novidade, construiu os seus, mais potentes, e os apontou para o céu em 1609."
+  },
+  {
+   "t": "Albert Einstein ganhou o Prêmio Nobel pela teoria da relatividade?",
+   "type": "txt",
+   "choices": [
+    "Fato",
+    "Mito"
+   ],
+   "duel": true,
+   "myth": true,
+   "a": [
+    "Mito"
+   ],
+   "d": 3,
+   "art": {
+    "who": "einstein"
+   },
+   "src": [
+    "en",
+    "Albert Einstein",
+    [
+     "photoelectric",
+     "1921"
+    ]
+   ],
+   "x": "O Nobel de Física de 1921 premiou seus serviços à física teórica e, em especial, a lei do efeito fotoelétrico; a relatividade não foi citada."
+  },
+  {
+   "t": "Coloque estes marcos da ciência em ordem, do mais antigo ao mais recente?",
+   "type": "order",
+   "a": [
+    "prensa",
+    "jupiter",
+    "ervilhas",
+    "lua"
+   ],
+   "order": [
+    {
+     "id": "prensa",
+     "y": 1440,
+     "label": "Prensa de tipos móveis",
+     "sub": "Johannes Gutenberg",
+     "face": "gutenberg"
+    },
+    {
+     "id": "jupiter",
+     "y": 1610,
+     "label": "Luas de Júpiter vistas ao telescópio",
+     "sub": "Galileu, Pádua",
+     "face": "galileu"
+    },
+    {
+     "id": "ervilhas",
+     "y": 1866,
+     "label": "Leis da hereditariedade",
+     "sub": "Mendel e suas ervilhas",
+     "face": "mendel"
+    },
+    {
+     "id": "lua",
+     "y": 1969,
+     "label": "Primeiros passos na Lua",
+     "sub": "Missão Apollo 11",
+     "face": "armstrong"
+    }
+   ],
+   "d": 1,
+   "src": [
+    "en",
+    "Gregor Mendel",
+    [
+     "1866"
+    ]
+   ]
+  },
+  {
+   "t": "Coloque estes marcos da medicina em ordem, do mais antigo ao mais recente?",
+   "type": "order",
+   "a": [
+    "harvey",
+    "jenner",
+    "eter",
+    "penicilina"
+   ],
+   "order": [
+    {
+     "id": "harvey",
+     "y": 1628,
+     "label": "Descrita a circulação do sangue",
+     "sub": "William Harvey, Londres",
+     "crest": "inglaterra"
+    },
+    {
+     "id": "jenner",
+     "y": 1796,
+     "label": "Primeira vacina, contra a varíola",
+     "sub": "Edward Jenner, Inglaterra",
+     "crest": "reino_unido"
+    },
+    {
+     "id": "eter",
+     "y": 1846,
+     "label": "Primeira cirurgia pública com anestesia de éter",
+     "sub": "Boston, Estados Unidos",
+     "crest": "estados_unidos"
+    },
+    {
+     "id": "penicilina",
+     "y": 1928,
+     "label": "Descoberta da penicilina",
+     "sub": "Alexander Fleming, Londres",
+     "face": "fleming"
+    }
+   ],
+   "d": 2,
+   "src": [
+    "en",
+    "History of medicine",
+    [
+     "Harvey",
+     "penicillin"
+    ]
+   ]
+  },
+  {
+   "t": "Coloque estes marcos da computação em ordem, do mais antigo ao mais recente?",
+   "type": "order",
+   "a": [
+    "ada",
+    "turing",
+    "eniac",
+    "web"
+   ],
+   "order": [
+    {
+     "id": "ada",
+     "y": 1843,
+     "label": "Publicado o primeiro algoritmo para uma máquina",
+     "sub": "Ada Lovelace, Londres",
+     "face": "ada_lovelace"
+    },
+    {
+     "id": "turing",
+     "y": 1936,
+     "label": "Descrita a máquina universal",
+     "sub": "Alan Turing, Cambridge",
+     "face": "turing"
+    },
+    {
+     "id": "eniac",
+     "y": 1946,
+     "label": "O ENIAC é apresentado ao público",
+     "sub": "Filadélfia, Estados Unidos",
+     "flag": "USA"
+    },
+    {
+     "id": "web",
+     "y": 1989,
+     "label": "Proposta a World Wide Web",
+     "sub": "Tim Berners-Lee, CERN",
+     "flag": "CHE"
+    }
+   ],
+   "d": 3,
+   "src": [
+    "en",
+    "History of computing hardware",
+    [
+     "ENIAC"
+    ]
+   ]
+  },
+  {
+   "t": "Quem completa esta linha de mestres e discípulos da física atômica?",
+   "type": "player",
+   "line": {
+    "t": "Mestres e discípulos · física atômica",
+    "rows": [
+     "J. J. Thomson",
+     "Ernest Rutherford",
+     "?"
+    ],
+    "era": "new"
+   },
+   "a": [
+    "niels_bohr"
+   ],
+   "d": 4,
+   "src": [
+    "en",
+    "Niels Bohr",
+    [
+     "Rutherford",
+     "Thomson"
+    ]
+   ],
+   "x": "Thomson descobriu o elétron, Rutherford o núcleo atômico, e o discípulo seguinte pôs os elétrons em órbitas fixas ao redor do núcleo."
+  },
+  {
+   "t": "Quem é o cientista desta manchete?",
+   "type": "player",
+   "news": {
+    "h": "Menino mordido por cão raivoso é salvo por nova vacina",
+    "paper": "Le Temps",
+    "sub": "Joseph Meister, de nove anos, recebeu treze injeções num laboratório de Paris"
+   },
+   "a": [
+    "pasteur"
+   ],
+   "d": 2,
+   "src": [
+    "en",
+    "Louis Pasteur",
+    [
+     "Joseph Meister"
+    ]
+   ],
+   "x": "Meister sobreviveu e, já adulto, trabalhou como zelador do Instituto Pasteur, em Paris."
+  },
+  {
+   "t": "Em que ano saiu esta manchete?",
+   "type": "txt",
+   "choices": [
+    "1967",
+    "1954",
+    "1960",
+    "1963",
+    "1971",
+    "1975"
+   ],
+   "news": {
+    "h": "Cirurgião faz o primeiro transplante de coração humano",
+    "paper": "Gazeta do Cabo",
+    "sub": "Na Cidade do Cabo, um paciente recebe o coração de uma jovem morta num acidente de trânsito"
+   },
+   "a": [
+    "1967"
+   ],
+   "d": 3,
+   "src": [
+    "en",
+    "Christiaan Barnard",
+    [
+     "1967",
+     "Washkansky"
+    ]
+   ],
+   "x": "O cirurgião era Christiaan Barnard. O paciente, Louis Washkansky, viveu 18 dias depois da operação e morreu de pneumonia."
+  }
+ ]
+}

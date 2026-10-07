@@ -224,7 +224,7 @@ c.BT('Qual dinastia muçulmana foi derrotada pelos reinos cristãos ibéricos ne
      src=('en', 'Battle of Las Navas de Tolosa', ['Almohad']))
 c.BT('Quem o rei Oto I derrotou de vez nesta batalha, no sul da atual Alemanha?', 'Magiares', 'Lechfeld · 955', 'Reino da Germânia', '?', d=5, typ='txt',
      wrong=['Vikings', 'Eslavos', 'Ávaros', 'Sarracenos', 'Búlgaros'],
-     x='A vitória pôs fim às incursões húngaras no Ocidente e deu a Oto prestígio para ser coroado imperador em Roma, em 962.',
+     x='A vitória pôs fim às incursões daqueles cavaleiros das estepes no Ocidente e deu a Oto prestígio para ser coroado imperador em Roma, em 962.',
      src=('en', 'Battle of Lechfeld', ['Otto']))
 
 # ── Dinastias e alianças ──

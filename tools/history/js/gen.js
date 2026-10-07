@@ -170,7 +170,7 @@ function GEN_QS(tier) {
   pick(CL, 10).forEach(c => {
     out.push({
       t: `Qual destes estados surgiu ${REG_EM[c.s]}?`,
-      a: [c.id], pool: CL.filter(x => x.s !== c.s).map(x => x.id), _noClub: true, _cat: GC.pol, d: 1,
+      a: [c.id], pool: CL.filter(x => x.s !== c.s).map(x => x.id), _noClub: true, region: c.s, _cat: GC.pol, d: 1,
     });
   });
 

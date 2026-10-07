@@ -271,7 +271,7 @@ c.QT('A América é ingovernável para nós. Quem serve a uma revolução ara no
 # ── Batalhas ──
 c.BT('Quem a União derrotou nesta batalha de três dias, na Pensilvânia?', 'Confederados', 'Gettysburg · 1863', 'União', '?', d=1, typ='txt',
      wrong=['Britânicos', 'Mexicanos', 'Franceses', 'Espanhóis', 'Canadenses'],
-     x='Foi a batalha mais sangrenta da Guerra de Secessão e pôs fim à invasão do Norte comandada pelo general Lee.',
+     x='Foi a batalha mais sangrenta da Guerra de Secessão e pôs fim à única grande invasão do Norte.',
      src=('en', 'Battle of Gettysburg', ['Lee']))
 c.BT('Que jovem nação, com a ajuda da França, cercou e venceu os britânicos de Cornwallis nesta batalha?', 'estados_unidos', 'Yorktown · 1781', '?', 'reino_unido', d=2,
      x='A rendição britânica praticamente decidiu a guerra; a paz que reconheceu a independência foi assinada em Paris, em 1783.',

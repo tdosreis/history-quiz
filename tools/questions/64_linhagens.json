@@ -1,0 +1,859 @@
+{
+ "id": "linhagens",
+ "name": "Dinastias e alianças",
+ "tag": "Complete a linhagem",
+ "col": "#7B5E1E",
+ "diff": "Variado",
+ "emoji": "🌳",
+ "qs": [
+  {
+   "t": "Quem é o filho que completa esta linhagem de reis macedônios?",
+   "type": "player",
+   "line": {
+    "t": "De pai para filho · Macedônia",
+    "rows": [
+     "Amintas III",
+     "Filipe II da Macedônia",
+     "?"
+    ],
+    "era": "ant"
+   },
+   "a": [
+    "alexandre"
+   ],
+   "d": 1,
+   "src": [
+    "en",
+    "Philip II of Macedon",
+    [
+     "Amyntas III"
+    ]
+   ],
+   "x": "Filipe II escolheu Aristóteles para ser o preceptor do filho, que tinha então 13 anos."
+  },
+  {
+   "t": "Quem completa este grupo de líderes da conjuração mineira?",
+   "type": "player",
+   "line": {
+    "t": "Inconfidência Mineira · Vila Rica, 1789",
+    "rows": [
+     "Tomás Antônio Gonzaga",
+     "Freire de Andrade",
+     "Cláudio Manuel da Costa",
+     "?"
+    ],
+    "kind": "grupo",
+    "era": "mod"
+   },
+   "a": [
+    "tiradentes"
+   ],
+   "d": 1,
+   "src": [
+    "pt",
+    "Inconfidência Mineira",
+    [
+     "Cláudio Manuel da Costa",
+     "1792"
+    ]
+   ],
+   "x": "Dos condenados, só o alferes Joaquim José da Silva Xavier foi executado, em 21 de abril de 1792, no Rio de Janeiro."
+  },
+  {
+   "t": "Quem foi o primeiro a liderar a União Soviética?",
+   "type": "player",
+   "line": {
+    "t": "Líderes da União Soviética · 1922–1964",
+    "rows": [
+     "?",
+     "Josef Stálin",
+     "Gueorgui Malenkov",
+     "Nikita Khrushchov"
+    ],
+    "era": "new"
+   },
+   "a": [
+    "lenin"
+   ],
+   "d": 1,
+   "src": [
+    "en",
+    "Vladimir Lenin",
+    [
+     "1924"
+    ]
+   ],
+   "x": "Ele morreu em janeiro de 1924, pouco mais de um ano depois da criação da URSS, e seu corpo embalsamado foi exposto num mausoléu na Praça Vermelha."
+  },
+  {
+   "t": "Qual primeiro-ministro falta nesta sequência?",
+   "type": "player",
+   "line": {
+    "t": "Primeiros-ministros britânicos · 1937–1951",
+    "rows": [
+     "Neville Chamberlain",
+     "?",
+     "Clement Attlee"
+    ],
+    "era": "new"
+   },
+   "a": [
+    "churchill"
+   ],
+   "d": 1,
+   "src": [
+    "pt",
+    "Winston Churchill",
+    [
+     "Chamberlain",
+     "1940"
+    ]
+   ],
+   "x": "Ele perdeu a eleição de 1945, logo depois da vitória na Europa, mas voltou ao cargo em 1951."
+  },
+  {
+   "t": "Qual país completa os fundadores do Mercosul?",
+   "type": "txt",
+   "choices": [
+    "Paraguai",
+    "Chile",
+    "Peru",
+    "Colômbia",
+    "Equador",
+    "México"
+   ],
+   "line": {
+    "t": "Fundadores do Mercosul · 1991",
+    "rows": [
+     "Brasil",
+     "Argentina",
+     "Uruguai",
+     "?"
+    ],
+    "kind": "grupo",
+    "era": "new"
+   },
+   "a": [
+    "Paraguai"
+   ],
+   "d": 1,
+   "src": [
+    "pt",
+    "Mercosul",
+    [
+     "Assunção",
+     "1991"
+    ]
+   ],
+   "x": "O tratado que criou o bloco foi assinado em março de 1991 em Assunção, a capital paraguaia."
+  },
+  {
+   "t": "Quem completa o trio de grandes mestres do Alto Renascimento?",
+   "type": "player",
+   "line": {
+    "t": "Alto Renascimento · Itália",
+    "rows": [
+     "Leonardo da Vinci",
+     "Michelangelo",
+     "?"
+    ],
+    "kind": "grupo",
+    "era": "mod"
+   },
+   "a": [
+    "rafael"
+   ],
+   "d": 2,
+   "src": [
+    "en",
+    "Raphael",
+    [
+     "trinity",
+     "Michelangelo"
+    ]
+   ],
+   "x": "O mais jovem dos três morreu em Roma em 1520, aos 37 anos, e foi sepultado no Panteão."
+  },
+  {
+   "t": "Qual soberana falta nesta sucessão do trono britânico?",
+   "type": "player",
+   "line": {
+    "t": "Trono britânico · 1760–1910",
+    "rows": [
+     "Jorge III",
+     "Jorge IV",
+     "Guilherme IV",
+     "?",
+     "Eduardo VII"
+    ],
+    "era": "new"
+   },
+   "a": [
+    "victoria"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Vitória do Reino Unido",
+    [
+     "1837",
+     "Eduardo VII"
+    ]
+   ],
+   "x": "Ela subiu ao trono aos 18 anos, em 1837, e reinou por mais de 63 anos."
+  },
+  {
+   "t": "Qual rei falta nesta linhagem bíblica de pai para filho?",
+   "type": "player",
+   "line": {
+    "t": "Reis em Jerusalém · segundo a Bíblia",
+    "rows": [
+     "Davi",
+     "?",
+     "Roboão"
+    ],
+    "era": "ant"
+   },
+   "a": [
+    "salomao"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Salomão",
+    [
+     "Davi",
+     "Roboão"
+    ]
+   ],
+   "x": "Segundo a Bíblia, foi ele quem construiu o primeiro Templo de Jerusalém."
+  },
+  {
+   "t": "Qual presidente falta nesta sequência da Casa Branca?",
+   "type": "player",
+   "line": {
+    "t": "Presidentes dos EUA · 1953–1969",
+    "rows": [
+     "Dwight Eisenhower",
+     "?",
+     "Lyndon Johnson"
+    ],
+    "era": "new"
+   },
+   "a": [
+    "kennedy"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "John F. Kennedy",
+    [
+     "Eisenhower",
+     "Lyndon"
+    ]
+   ],
+   "x": "Ele foi o mais jovem presidente eleito dos Estados Unidos, aos 43 anos, e foi assassinado em Dallas em 1963."
+  },
+  {
+   "t": "Quem completa os \"pais da pátria\" da unificação italiana?",
+   "type": "player",
+   "line": {
+    "t": "Risorgimento · Itália, século XIX",
+    "rows": [
+     "Camillo Cavour",
+     "Giuseppe Mazzini",
+     "Vítor Emanuel II",
+     "?"
+    ],
+    "kind": "grupo",
+    "era": "new"
+   },
+   "a": [
+    "garibaldi"
+   ],
+   "d": 2,
+   "src": [
+    "en",
+    "Giuseppe Garibaldi",
+    [
+     "Mazzini",
+     "Cavour"
+    ]
+   ],
+   "x": "Antes de virar herói na Itália, ele combateu no sul do Brasil, na Revolução Farroupilha, onde conheceu Anita."
+  },
+  {
+   "t": "Quem ocupa o lugar vazio nesta lista de presidentes do Brasil?",
+   "type": "player",
+   "line": {
+    "t": "Presidentes do Brasil · 1930–1951",
+    "rows": [
+     "?",
+     "José Linhares",
+     "Eurico Gaspar Dutra"
+    ],
+    "era": "new"
+   },
+   "a": [
+    "getulio"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "José Linhares",
+    [
+     "Getúlio",
+     "Dutra"
+    ]
+   ],
+   "x": "Deposto em outubro de 1945, ele voltou ao Palácio do Catete em 1951, desta vez eleito pelo voto direto."
+  },
+  {
+   "t": "Quem completava o trio de cônsules que governou a França a partir de 1799?",
+   "type": "player",
+   "line": {
+    "t": "Consulado · França, 1799–1804",
+    "rows": [
+     "?",
+     "Cambacérès",
+     "Lebrun"
+    ],
+    "kind": "grupo",
+    "era": "new"
+   },
+   "a": [
+    "napoleao"
+   ],
+   "d": 2,
+   "src": [
+    "en",
+    "French Consulate",
+    [
+     "Cambacérès",
+     "Lebrun"
+    ]
+   ],
+   "x": "Nascido do golpe do 18 de Brumário, o Consulado durou até 1804, quando deu lugar a um império."
+  },
+  {
+   "t": "Qual potência completa a Tríplice Entente?",
+   "type": "txt",
+   "choices": [
+    "Império Russo",
+    "Império Alemão",
+    "Áustria-Hungria",
+    "Itália",
+    "Império Otomano",
+    "Espanha"
+   ],
+   "line": {
+    "t": "Tríplice Entente · 1907",
+    "rows": [
+     "França",
+     "Reino Unido",
+     "?"
+    ],
+    "kind": "grupo",
+    "era": "new"
+   },
+   "a": [
+    "Império Russo"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Tríplice Entente",
+    [
+     "Rússia",
+     "1907"
+    ]
+   ],
+   "x": "A aliança se fechou em 1907, quando um acordo anglo-russo se somou à Entente Cordiale franco-britânica de 1904."
+  },
+  {
+   "t": "Quem foi a primeira imperatriz do Brasil?",
+   "type": "player",
+   "line": {
+    "t": "Imperatrizes do Brasil · 1822–1889",
+    "rows": [
+     "?",
+     "Amélia de Leuchtenberg",
+     "Teresa Cristina"
+    ],
+    "era": "new"
+   },
+   "a": [
+    "leopoldina"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Amélia de Leuchtenberg",
+    [
+     "Leopoldina"
+    ]
+   ],
+   "x": "Como regente interina, ela presidiu a reunião do Conselho de Estado de 2 de setembro de 1822, que aconselhou dom Pedro a romper com Portugal."
+  },
+  {
+   "t": "Qual grão-cã falta nesta sucessão?",
+   "type": "player",
+   "line": {
+    "t": "Grandes cãs do Império Mongol · 1206–1294",
+    "rows": [
+     "Gengis Khan",
+     "Ogodei",
+     "Guyuk",
+     "Mongke",
+     "?"
+    ],
+    "era": "med"
+   },
+   "a": [
+    "kublai"
+   ],
+   "d": 3,
+   "src": [
+    "en",
+    "Kublai Khan",
+    [
+     "Möngke"
+    ]
+   ],
+   "x": "Ele fundou a dinastia Yuan e fez de Pequim, então chamada Dadu, a capital do seu império."
+  },
+  {
+   "t": "Qual sultão falta nesta linhagem de pai para filho?",
+   "type": "player",
+   "line": {
+    "t": "Sultões otomanos · 1481–1574",
+    "rows": [
+     "Bajazeto II",
+     "Selim I",
+     "?",
+     "Selim II"
+    ],
+    "era": "mod"
+   },
+   "a": [
+    "solimao"
+   ],
+   "d": 3,
+   "src": [
+    "en",
+    "Suleiman the Magnificent",
+    [
+     "Selim I",
+     "Selim II"
+    ]
+   ],
+   "x": "Seu reinado de 46 anos, de 1520 a 1566, foi o mais longo da história otomana."
+  },
+  {
+   "t": "Quem ocupa o trono que falta nesta sucessão russa?",
+   "type": "player",
+   "line": {
+    "t": "Soberanos da Rússia · 1741–1825",
+    "rows": [
+     "Isabel",
+     "Pedro III",
+     "?",
+     "Paulo I",
+     "Alexandre I"
+    ],
+    "era": "mod"
+   },
+   "a": [
+    "catarina_grande"
+   ],
+   "d": 3,
+   "src": [
+    "pt",
+    "Catarina II da Rússia",
+    [
+     "Pedro III",
+     "Paulo"
+    ]
+   ],
+   "x": "Nascida princesa alemã, ela chegou ao poder em 1762, num golpe contra o próprio marido."
+  },
+  {
+   "t": "Quem completa o Comitê dos Cinco, que redigiu a Declaração de Independência americana?",
+   "type": "player",
+   "line": {
+    "t": "Comitê dos Cinco · Filadélfia, 1776",
+    "rows": [
+     "John Adams",
+     "Thomas Jefferson",
+     "?",
+     "Roger Sherman",
+     "Robert Livingston"
+    ],
+    "kind": "grupo",
+    "era": "mod"
+   },
+   "a": [
+    "franklin"
+   ],
+   "d": 3,
+   "src": [
+    "en",
+    "Committee of Five",
+    [
+     "Franklin",
+     "Sherman"
+    ]
+   ],
+   "x": "Com 70 anos em 1776, ele era de longe o mais velho dos cinco."
+  },
+  {
+   "t": "Quem completa o trio de irmãos Andrada que marcou a Independência?",
+   "type": "player",
+   "line": {
+    "t": "Os irmãos Andrada · Independência do Brasil",
+    "rows": [
+     "?",
+     "Martim Francisco",
+     "Antônio Carlos"
+    ],
+    "kind": "grupo",
+    "era": "new"
+   },
+   "a": [
+    "jose_bonifacio"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "José Bonifácio de Andrada e Silva",
+    [
+     "Martim Francisco"
+    ]
+   ],
+   "x": "Os três nasceram em Santos e, depois que dom Pedro I dissolveu a Constituinte, em 1823, foram presos e exilados na França."
+  },
+  {
+   "t": "Qual imperador japonês falta nesta linhagem?",
+   "type": "player",
+   "line": {
+    "t": "Imperadores do Japão · 1846–1989",
+    "rows": [
+     "Komei",
+     "?",
+     "Taisho",
+     "Showa (Hirohito)"
+    ],
+    "era": "new"
+   },
+   "a": [
+    "meiji"
+   ],
+   "d": 2,
+   "src": [
+    "en",
+    "Emperor Meiji",
+    [
+     "Taishō",
+     "Kōmei"
+    ]
+   ],
+   "x": "Durante seu reinado, iniciado em 1867, o Japão deixou para trás o regime feudal e se tornou uma potência industrial."
+  },
+  {
+   "t": "Quem é o elo que falta nesta família ptolomaica?",
+   "type": "player",
+   "line": {
+    "t": "Três gerações · Egito ptolomaico",
+    "rows": [
+     "Ptolomeu XII",
+     "?",
+     "Cesarião"
+    ],
+    "era": "ant"
+   },
+   "a": [
+    "cleopatra"
+   ],
+   "d": 3,
+   "src": [
+    "en",
+    "Cleopatra",
+    [
+     "Ptolemy XII",
+     "Caesarion"
+    ]
+   ],
+   "x": "Ela foi a última governante ativa do Egito ptolomaico; seu filho com Júlio César foi morto por ordem de Otaviano."
+  },
+  {
+   "t": "Qual rei falta nesta sucessão da Prússia?",
+   "type": "player",
+   "line": {
+    "t": "Reis da Prússia · 1701–1797",
+    "rows": [
+     "Frederico I",
+     "Frederico Guilherme I",
+     "?",
+     "Frederico Guilherme II"
+    ],
+    "era": "mod"
+   },
+   "a": [
+    "frederico_grande"
+   ],
+   "d": 3,
+   "src": [
+    "pt",
+    "Frederico II da Prússia",
+    [
+     "Frederico Guilherme I"
+    ]
+   ],
+   "x": "Ele reinou de 1740 a 1786, tocava flauta e se correspondia com Voltaire."
+  },
+  {
+   "t": "Quem fecha esta sucessão de imperadores incas?",
+   "type": "player",
+   "line": {
+    "t": "Imperadores incas · 1438–1533",
+    "rows": [
+     "Pachacútec",
+     "Túpac Inca Yupanqui",
+     "Huayna Cápac",
+     "Huáscar",
+     "?"
+    ],
+    "era": "mod"
+   },
+   "a": [
+    "atahualpa"
+   ],
+   "d": 3,
+   "src": [
+    "pt",
+    "Atahualpa",
+    [
+     "Huáscar"
+    ]
+   ],
+   "x": "Capturado pelos espanhóis em Cajamarca, ele ofereceu encher uma sala de ouro pela liberdade, mas foi executado em 1533."
+  },
+  {
+   "t": "Quem é o elo que falta nesta linha de mestres e discípulos da música?",
+   "type": "player",
+   "line": {
+    "t": "Mestre e discípulo · Viena",
+    "rows": [
+     "Joseph Haydn",
+     "?",
+     "Carl Czerny",
+     "Franz Liszt"
+    ],
+    "era": "mod"
+   },
+   "a": [
+    "beethoven"
+   ],
+   "d": 4,
+   "src": [
+    "en",
+    "Carl Czerny",
+    [
+     "Beethoven",
+     "Liszt"
+    ]
+   ],
+   "x": "Haydn deu aulas ao jovem compositor em Viena a partir de 1792; Czerny, aluno dele ainda menino, depois ensinou Liszt."
+  },
+  {
+   "t": "Qual rei da Babilônia falta nesta linhagem?",
+   "type": "player",
+   "line": {
+    "t": "De pai para filho · Babilônia",
+    "rows": [
+     "Nabopolassar",
+     "?",
+     "Amel-Marduk"
+    ],
+    "era": "ant"
+   },
+   "a": [
+    "nabucodonosor"
+   ],
+   "d": 3,
+   "src": [
+    "en",
+    "Nebuchadnezzar II",
+    [
+     "Nabopolassar",
+     "Amel-Marduk"
+    ]
+   ],
+   "x": "Ele conquistou Jerusalém e levou parte de seus habitantes para o cativeiro na Babilônia."
+  },
+  {
+   "t": "Quem foi o último imperador desta sucessão etíope?",
+   "type": "player",
+   "line": {
+    "t": "Imperadores da Etiópia · 1889–1974",
+    "rows": [
+     "Menelik II",
+     "Iyasu V",
+     "Zauditu",
+     "?"
+    ],
+    "era": "new"
+   },
+   "a": [
+    "haile_selassie"
+   ],
+   "d": 3,
+   "src": [
+    "en",
+    "Haile Selassie",
+    [
+     "Zewditu",
+     "Menelik"
+    ]
+   ],
+   "x": "Coroado em 1930, ele foi deposto por uma junta militar em 1974; a monarquia foi abolida no ano seguinte."
+  },
+  {
+   "t": "Quem completa esta linhagem de imperadores máurias?",
+   "type": "player",
+   "line": {
+    "t": "Império Máuria · três gerações",
+    "rows": [
+     "Chandragupta Máuria",
+     "Bindusara",
+     "?"
+    ],
+    "era": "ant"
+   },
+   "a": [
+    "ashoka"
+   ],
+   "d": 4,
+   "src": [
+    "en",
+    "Ashoka",
+    [
+     "Bindusara",
+     "Kalinga"
+    ]
+   ],
+   "x": "O capitel dos leões que ele mandou erguer em Sarnath, com quatro leões de costas uns para os outros, é hoje o emblema nacional da Índia."
+  },
+  {
+   "t": "Quem é o elo que falta nesta família que dominou Florença de pai para filho?",
+   "type": "player",
+   "line": {
+    "t": "De pai para filho · Florença, 1434–1494",
+    "rows": [
+     "Cosme, o Velho",
+     "Piero, o Gotoso",
+     "?",
+     "Piero, o Desafortunado"
+    ],
+    "era": "mod"
+   },
+   "a": [
+    "lorenzo"
+   ],
+   "d": 4,
+   "src": [
+    "en",
+    "Lorenzo de' Medici",
+    [
+     "Piero",
+     "Botticelli"
+    ]
+   ],
+   "x": "Ele foi patrono de Botticelli e acolheu o jovem Michelangelo em sua casa."
+  },
+  {
+   "t": "Quem é o rei amorita que falta nesta linhagem de pai para filho?",
+   "type": "player",
+   "line": {
+    "t": "Primeira dinastia da Babilônia",
+    "rows": [
+     "Sin-Muballit",
+     "?",
+     "Samsu-iluna"
+    ],
+    "era": "ant"
+   },
+   "a": [
+    "hamurabi"
+   ],
+   "d": 4,
+   "src": [
+    "en",
+    "Hammurabi",
+    [
+     "Sin-Muballit",
+     "Samsu-iluna"
+    ]
+   ],
+   "x": "Seu código de leis, gravado numa estela de pedra encontrada em Susa, no atual Irã, está hoje no Museu do Louvre, em Paris."
+  },
+  {
+   "t": "Quem é o avô que abre esta linhagem de governantes da Ásia Central?",
+   "type": "player",
+   "line": {
+    "t": "Avô, pai e neto · séculos XIV–XV",
+    "rows": [
+     "?",
+     "Shah Rukh",
+     "Ulugh Beg"
+    ],
+    "era": "med"
+   },
+   "a": [
+    "tamerlao"
+   ],
+   "d": 5,
+   "src": [
+    "en",
+    "Ulugh Beg",
+    [
+     "Shah Rukh"
+    ]
+   ],
+   "x": "O neto, Ulugh Beg, construiu em Samarcanda um dos maiores observatórios astronômicos do século XV."
+  },
+  {
+   "t": "Quem completa a sucessão dos primeiros chefes da escola estoica?",
+   "type": "txt",
+   "choices": [
+    "Crisipo",
+    "Epicuro",
+    "Sêneca",
+    "Epicteto",
+    "Aristóteles",
+    "Antístenes"
+   ],
+   "line": {
+    "t": "A Stoa de Atenas · século III a.C.",
+    "rows": [
+     "Zenão de Cítio",
+     "Cleantes",
+     "?"
+    ],
+    "era": "ant"
+   },
+   "a": [
+    "Crisipo"
+   ],
+   "d": 5,
+   "src": [
+    "en",
+    "Chrysippus",
+    [
+     "Cleanthes"
+    ]
+   ],
+   "x": "Dizia-se na Antiguidade que, sem Crisipo, não haveria Stoa: foi ele quem deu forma sistemática ao estoicismo."
+  }
+ ]
+}

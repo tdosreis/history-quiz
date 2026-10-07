@@ -305,7 +305,14 @@ def main():
         s = s[:a] + "/*@@specials@@*/\n/*@@/specials@@*/\n" + s[e_:]
     s = put(s, "specials", io.open(os.path.join(H, "js", "specials.js"), encoding="utf-8").read())
     s = put(s, "flags_extra", io.open(os.path.join(H, "js", "flags_extra.js"), encoding="utf-8").read())
-    s = put(s, "art", "\n".join(io.open(os.path.join(H, "js", f), encoding="utf-8").read() for f in ("art_head.js", "art_tail.js")))
+    # the brasões (js/brasoes/: the frame in _core.js, one file per region) sit between the two halves
+    # js/brasoes/READY lists the regional files that are finished; the others stay out of the page
+    ready = os.path.join(H, "js", "brasoes", "READY")
+    done = set(io.open(ready, encoding="utf-8").read().split()) if os.path.exists(ready) else None
+    bras = ["brasoes/_core.js"] + ["brasoes/" + f for f in sorted(os.listdir(os.path.join(H, "js", "brasoes")))
+                                   if f.endswith(".js") and f != "_core.js" and (done is None or f in done)]
+    s = put(s, "art", "\n".join(io.open(os.path.join(H, "js", f), encoding="utf-8").read()
+                                 for f in ["art_head.js"] + bras + ["art_tail.js"]))
     s = put(s, "formats", "\n".join(io.open(os.path.join(H, "js", f), encoding="utf-8").read() for f in ("formats.js", "almanac.js")))
     s = put(s, "formats_css", io.open(os.path.join(H, "css", "formats.css"), encoding="utf-8").read())
     io.open(PAGE, "w", encoding="utf-8").write(s)

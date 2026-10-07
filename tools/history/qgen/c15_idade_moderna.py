@@ -229,7 +229,7 @@ c.BT('Qual reino sofreu esta derrota, em que o próprio rei foi feito prisioneir
      src=('en', 'Battle of Pavia', ['Francis I']))
 c.BT('Qual reino perdeu nesta batalha o seu jovem rei, Luís II, e começou a cair sob o domínio otomano?', 'Hungria', 'Mohács · 1526', '?', 'imperio_otomano', d=4, typ='txt',
      wrong=['Polônia', 'Sérvia', 'Valáquia', 'Áustria', 'Moldávia'],
-     x='O rei, de 20 anos, morreu afogado num riacho ao fugir; Buda caiu em 1541, e o centro do país ficou sob domínio otomano por cerca de 150 anos.',
+     x='O rei, de 20 anos, morreu afogado num riacho ao fugir; a capital caiu em 1541, e o centro do país ficou sob domínio otomano por cerca de 150 anos.',
      src=('en', 'Battle of Mohács', ['Louis II']))
 c.BT('Contra quem os suecos lutaram nesta batalha da Guerra dos Trinta Anos, em que morreu o rei Gustavo Adolfo?', 'sacro_imperio', 'Lützen · 1632', 'suecia', '?', d=4,
      x='Os suecos venceram, mas o rei morreu numa carga de cavalaria em meio à neblina e à fumaça; do outro lado, o comandante era Wallenstein.',

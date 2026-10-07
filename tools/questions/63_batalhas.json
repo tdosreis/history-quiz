@@ -1,0 +1,1604 @@
+{
+ "id": "batalhas",
+ "name": "Batalhas",
+ "tag": "Duas bandeiras, um lado escondido",
+ "col": "#8C2F2F",
+ "diff": "Variado",
+ "emoji": "⚔️",
+ "qs": [
+  {
+   "t": "Qual rei macedônio venceu esta batalha, decisiva para a sua conquista do Oriente?",
+   "type": "player",
+   "battle": {
+    "lbl": "Gaugamela · 331 a.C.",
+    "a": "?",
+    "b": "persia",
+    "x": "O rei derrotado fugiu do campo e, no ano seguinte, foi assassinado por um de seus próprios sátrapas."
+   },
+   "a": [
+    "alexandre"
+   ],
+   "d": 1,
+   "src": [
+    "en",
+    "Battle of Gaugamela",
+    [
+     "Darius",
+     "331"
+    ]
+   ]
+  },
+  {
+   "t": "Qual país tomou esta capital, levando ao fim da guerra na Europa?",
+   "battle": {
+    "lbl": "Berlim · 1945",
+    "a": "alemanha_nazista",
+    "b": "?",
+    "x": "O líder do país derrotado se matou num abrigo subterrâneo enquanto a batalha acontecia."
+   },
+   "a": [
+    "urss"
+   ],
+   "d": 1,
+   "src": [
+    "en",
+    "Battle of Berlin",
+    [
+     "Reichstag",
+     "Soviet"
+    ]
+   ]
+  },
+  {
+   "t": "Qual país comandou o cerco a esta cidade soviética, que durou quase 900 dias?",
+   "battle": {
+    "lbl": "Leningrado · 1941–1944",
+    "a": "urss",
+    "b": "?",
+    "x": "Centenas de milhares de civis morreram de fome e frio; a comida chegava por uma estrada sobre um lago congelado."
+   },
+   "a": [
+    "alemanha_nazista"
+   ],
+   "d": 1,
+   "src": [
+    "en",
+    "Siege of Leningrad",
+    [
+     "872",
+     "Ladoga"
+    ]
+   ]
+  },
+  {
+   "t": "Qual país desembarcou tropas nesta ilha, numa batalha eternizada pela foto de uma bandeira sendo hasteada?",
+   "battle": {
+    "lbl": "Iwo Jima · 1945",
+    "a": "?",
+    "b": "imperio_japones",
+    "x": "A famosa foto foi tirada no alto do monte Suribachi, o ponto mais elevado da ilha."
+   },
+   "a": [
+    "estados_unidos"
+   ],
+   "d": 1,
+   "src": [
+    "en",
+    "Battle of Iwo Jima",
+    [
+     "Suribachi",
+     "1945"
+    ]
+   ]
+  },
+  {
+   "t": "Quem os franceses e os britânicos detiveram nesta batalha, a poucas dezenas de quilômetros de Paris?",
+   "type": "txt",
+   "choices": [
+    "Alemanha",
+    "Áustria-Hungria",
+    "Império Otomano",
+    "Itália",
+    "Bulgária",
+    "Rússia"
+   ],
+   "battle": {
+    "lbl": "Marne · 1914",
+    "a": "França e Reino Unido",
+    "b": "?",
+    "x": "Táxis de Paris ajudaram a levar soldados de reforço para a frente de batalha."
+   },
+   "a": [
+    "Alemanha"
+   ],
+   "d": 1,
+   "src": [
+    "en",
+    "First Battle of the Marne",
+    [
+     "taxi",
+     "1914"
+    ]
+   ]
+  },
+  {
+   "t": "Qual conquistador espanhol capturou o imperador inca nesta emboscada?",
+   "type": "player",
+   "battle": {
+    "lbl": "Cajamarca · 1532",
+    "a": "?",
+    "b": "inca",
+    "x": "Preso, o soberano ofereceu encher um grande cômodo de ouro, e o dobro em prata, em troca da liberdade."
+   },
+   "a": [
+    "pizarro"
+   ],
+   "d": 1,
+   "src": [
+    "en",
+    "Battle of Cajamarca",
+    [
+     "Pizarro",
+     "Atahualpa"
+    ]
+   ]
+  },
+  {
+   "t": "Qual conquistador espanhol comandou o cerco a esta cidade, com milhares de aliados indígenas?",
+   "type": "player",
+   "battle": {
+    "lbl": "Tenochtitlán · 1521",
+    "a": "?",
+    "b": "asteca",
+    "x": "Sobre as ruínas da cidade, erguida numa ilha no meio de um lago, nasceu a atual Cidade do México."
+   },
+   "a": [
+    "cortes"
+   ],
+   "d": 1,
+   "src": [
+    "en",
+    "Fall of Tenochtitlan",
+    [
+     "Cortés",
+     "1521"
+    ]
+   ]
+  },
+  {
+   "t": "Contra quem os milicianos coloniais lutaram nestes primeiros combates da Revolução Americana?",
+   "type": "txt",
+   "choices": [
+    "Britânicos",
+    "Franceses",
+    "Espanhóis",
+    "Holandeses",
+    "Russos",
+    "Mexicanos"
+   ],
+   "battle": {
+    "lbl": "Lexington e Concord · 1775",
+    "a": "Milícias coloniais",
+    "b": "?",
+    "x": "Um poema de Ralph Waldo Emerson chamou o disparo dos milicianos na ponte de Concord de \"o tiro ouvido ao redor do mundo\"."
+   },
+   "a": [
+    "Britânicos"
+   ],
+   "d": 1,
+   "src": [
+    "en",
+    "Battles of Lexington and Concord",
+    [
+     "1775",
+     "Emerson"
+    ]
+   ]
+  },
+  {
+   "t": "Qual reino conquistou esta cidade do norte da África, dando início à sua expansão ultramarina?",
+   "type": "txt",
+   "choices": [
+    "Portugal",
+    "Castela",
+    "Aragão",
+    "Inglaterra",
+    "França",
+    "Veneza"
+   ],
+   "battle": {
+    "lbl": "Ceuta · 1415",
+    "a": "?",
+    "b": "Sultanato Merínida",
+    "x": "A cidade fica na margem africana do estreito de Gibraltar, passagem entre o Atlântico e o Mediterrâneo."
+   },
+   "a": [
+    "Portugal"
+   ],
+   "d": 1,
+   "src": [
+    "en",
+    "Conquest of Ceuta",
+    [
+     "1415",
+     "Marinid"
+    ]
+   ]
+  },
+  {
+   "t": "Qual guerrilheiro argentino comandou os rebeldes nesta batalha decisiva da Revolução Cubana?",
+   "type": "player",
+   "battle": {
+    "lbl": "Santa Clara · 1958",
+    "a": "?",
+    "b": "Exército de Batista",
+    "x": "O trem blindado que os rebeldes fizeram descarrilar virou monumento na cidade."
+   },
+   "a": [
+    "che"
+   ],
+   "d": 1,
+   "src": [
+    "en",
+    "Battle of Santa Clara",
+    [
+     "Guevara",
+     "1958"
+    ]
+   ]
+  },
+  {
+   "t": "Quem saqueou esta cidade, pondo fim ao Califado Abássida?",
+   "battle": {
+    "lbl": "Bagdá · 1258",
+    "a": "?",
+    "b": "califado_abassida",
+    "x": "Conta-se que as águas do rio Tigre ficaram escuras com a tinta dos livros jogados nelas."
+   },
+   "a": [
+    "imperio_mongol"
+   ],
+   "d": 2,
+   "src": [
+    "en",
+    "Siege of Baghdad (1258)",
+    [
+     "Hulagu",
+     "Abbasid"
+    ]
+   ]
+  },
+  {
+   "t": "Quem controlava esta cidade antes de ela ser conquistada por D. Afonso Henriques?",
+   "type": "txt",
+   "choices": [
+    "Mouros",
+    "Castelhanos",
+    "Leoneses",
+    "Normandos",
+    "Vikings",
+    "Bizantinos"
+   ],
+   "battle": {
+    "lbl": "Lisboa · 1147",
+    "a": "portugal",
+    "b": "?",
+    "x": "Cruzados ingleses, flamengos e alemães, de passagem a caminho da Terra Santa, ajudaram no cerco."
+   },
+   "a": [
+    "Mouros"
+   ],
+   "d": 2,
+   "src": [
+    "en",
+    "Siege of Lisbon",
+    [
+     "Afonso",
+     "1147"
+    ]
+   ]
+  },
+  {
+   "t": "Quem conquistou esta cidade, o último reduto muçulmano na Península Ibérica?",
+   "type": "txt",
+   "choices": [
+    "Reis Católicos",
+    "Almorávidas",
+    "Portugueses",
+    "Franceses",
+    "Otomanos",
+    "Almóadas"
+   ],
+   "battle": {
+    "lbl": "Granada · 1492",
+    "a": "?",
+    "b": "Emirado de Granada",
+    "x": "Ao se render, em 2 de janeiro, o último emir entregou as chaves da cidade aos vencedores."
+   },
+   "a": [
+    "Reis Católicos"
+   ],
+   "d": 2,
+   "src": [
+    "en",
+    "Granada War",
+    [
+     "Granada",
+     "1492"
+    ]
+   ]
+  },
+  {
+   "t": "Contra quem as tropas comandadas por Caxias lutaram nesta batalha?",
+   "type": "txt",
+   "choices": [
+    "Paraguai",
+    "Argentina",
+    "Uruguai",
+    "Bolívia",
+    "Chile",
+    "Peru"
+   ],
+   "battle": {
+    "lbl": "Avaí · 1868",
+    "a": "imperio_brasil",
+    "b": "?",
+    "x": "Pedro Américo retratou o combate numa tela gigantesca, uma das maiores pinturas históricas do Brasil."
+   },
+   "a": [
+    "Paraguai"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Batalha do Avaí",
+    [
+     "1868",
+     "Caxias"
+    ]
+   ]
+  },
+  {
+   "t": "Contra quem as tropas brasileiras lutaram nesta batalha da guerra de independência na Bahia?",
+   "type": "txt",
+   "choices": [
+    "Portugueses",
+    "Holandeses",
+    "Franceses",
+    "Espanhóis",
+    "Paraguaios",
+    "Argentinos"
+   ],
+   "battle": {
+    "lbl": "Pirajá · 1822",
+    "a": "Brasileiros",
+    "b": "?",
+    "x": "Segundo a tradição, um corneteiro tocou \"avançar\" em vez de \"recuar\" e mudou o rumo do combate."
+   },
+   "a": [
+    "Portugueses"
+   ],
+   "d": 2,
+   "src": [
+    "en",
+    "Battle of Pirajá",
+    [
+     "Pirajá",
+     "1822"
+    ]
+   ]
+  },
+  {
+   "t": "Qual líder comandou os patriotas que venceram esta batalha, decisiva para a independência da atual Colômbia?",
+   "type": "player",
+   "battle": {
+    "lbl": "Boyacá · 1819",
+    "a": "?",
+    "b": "Realistas espanhóis",
+    "x": "Três dias depois da vitória, os vencedores entraram em Bogotá, abandonada pelo vice-rei."
+   },
+   "a": [
+    "bolivar"
+   ],
+   "d": 2,
+   "src": [
+    "en",
+    "Battle of Boyacá",
+    [
+     "Bolívar",
+     "1819"
+    ]
+   ]
+  },
+  {
+   "t": "Qual país tomou esta missão fortificada, defendida por rebeldes texanos?",
+   "type": "txt",
+   "choices": [
+    "México",
+    "Espanha",
+    "Estados Unidos",
+    "França",
+    "Reino Unido",
+    "Cuba"
+   ],
+   "battle": {
+    "lbl": "Álamo · 1836",
+    "a": "?",
+    "b": "Texanos",
+    "x": "\"Lembrem-se do Álamo!\" virou o grito de guerra dos texanos poucas semanas depois."
+   },
+   "a": [
+    "México"
+   ],
+   "d": 2,
+   "src": [
+    "en",
+    "Battle of the Alamo",
+    [
+     "Santa Anna",
+     "1836"
+    ]
+   ]
+  },
+  {
+   "t": "Quem bombardeou este forte, dando início à Guerra de Secessão?",
+   "type": "txt",
+   "choices": [
+    "Confederados",
+    "Britânicos",
+    "Mexicanos",
+    "Franceses",
+    "Espanhóis",
+    "Seminoles"
+   ],
+   "battle": {
+    "lbl": "Forte Sumter · 1861",
+    "a": "?",
+    "b": "União",
+    "x": "O bombardeio durou cerca de 34 horas, e a guarnição se rendeu sem nenhuma morte em combate."
+   },
+   "a": [
+    "Confederados"
+   ],
+   "d": 2,
+   "src": [
+    "en",
+    "Battle of Fort Sumter",
+    [
+     "Confederate",
+     "1861"
+    ]
+   ]
+  },
+  {
+   "t": "Qual país organizou esta retirada por mar, com a ajuda de centenas de barcos civis?",
+   "type": "txt",
+   "choices": [
+    "Reino Unido",
+    "Estados Unidos",
+    "União Soviética",
+    "Canadá",
+    "Itália",
+    "Japão"
+   ],
+   "battle": {
+    "lbl": "Dunquerque · 1940",
+    "a": "?",
+    "b": "alemanha_nazista",
+    "x": "A operação de resgate recebeu o codinome de Operação Dínamo."
+   },
+   "a": [
+    "Reino Unido"
+   ],
+   "d": 2,
+   "src": [
+    "en",
+    "Dunkirk evacuation",
+    [
+     "Dynamo",
+     "1940"
+    ]
+   ]
+  },
+  {
+   "t": "Contra quem a Alemanha lançou esta ofensiva, palco de uma das maiores batalhas de tanques da história?",
+   "battle": {
+    "lbl": "Kursk · 1943",
+    "a": "alemanha_nazista",
+    "b": "?",
+    "x": "A ofensiva, de codinome Operação Cidadela, foi suspensa depois de pouco mais de uma semana."
+   },
+   "a": [
+    "urss"
+   ],
+   "d": 2,
+   "src": [
+    "en",
+    "Battle of Kursk",
+    [
+     "Citadel",
+     "1943"
+    ]
+   ]
+  },
+  {
+   "t": "Quem derrotou esta invasão de exilados treinados pela CIA?",
+   "battle": {
+    "lbl": "Baía dos Porcos · 1961",
+    "a": "?",
+    "b": "Brigada 2506",
+    "x": "O fracasso foi um vexame para o governo Kennedy, que tinha assumido apenas três meses antes."
+   },
+   "a": [
+    "cuba"
+   ],
+   "d": 2,
+   "src": [
+    "en",
+    "Bay of Pigs Invasion",
+    [
+     "Brigade 2506",
+     "Kennedy"
+    ]
+   ]
+  },
+  {
+   "t": "Quem tomou esta cidade e destruiu o Segundo Templo?",
+   "battle": {
+    "lbl": "Jerusalém · 70 d.C.",
+    "a": "Rebeldes judeus",
+    "b": "?",
+    "x": "O Muro das Lamentações é parte da antiga muralha de contenção da esplanada do templo destruído."
+   },
+   "a": [
+    "imperio_romano"
+   ],
+   "d": 2,
+   "src": [
+    "en",
+    "Siege of Jerusalem (70 CE)",
+    [
+     "Titus",
+     "Temple"
+    ]
+   ]
+  },
+  {
+   "t": "Quem lançou esta ofensiva-surpresa durante o feriado do Ano-Novo lunar?",
+   "type": "txt",
+   "choices": [
+    "Vietnã do Norte e vietcongues",
+    "Khmer Vermelho",
+    "China",
+    "União Soviética",
+    "Coreia do Norte",
+    "Pathet Lao"
+   ],
+   "battle": {
+    "lbl": "Ofensiva do Tet · 1968",
+    "a": "?",
+    "b": "Vietnã do Sul e EUA",
+    "x": "Militarmente foi um revés para os atacantes, mas abalou o apoio da opinião pública americana à guerra."
+   },
+   "a": [
+    "Vietnã do Norte e vietcongues"
+   ],
+   "d": 2,
+   "src": [
+    "en",
+    "Tet Offensive",
+    [
+     "Viet Cong",
+     "1968"
+    ]
+   ]
+  },
+  {
+   "t": "Qual reino foi derrotado pelos escoceses de Robert Bruce nesta batalha?",
+   "battle": {
+    "lbl": "Bannockburn · 1314",
+    "a": "Reino da Escócia",
+    "b": "?",
+    "x": "A independência escocesa acabou reconhecida num tratado assinado em 1328."
+   },
+   "a": [
+    "inglaterra"
+   ],
+   "d": 2,
+   "src": [
+    "en",
+    "Battle of Bannockburn",
+    [
+     "Bruce",
+     "1314"
+    ]
+   ]
+  },
+  {
+   "t": "Quem a aliança de romanos e visigodos deteve nesta batalha, na Gália?",
+   "type": "txt",
+   "choices": [
+    "Hunos",
+    "Vândalos",
+    "Lombardos",
+    "Ávaros",
+    "Magiares",
+    "Vikings"
+   ],
+   "battle": {
+    "lbl": "Campos Cataláunicos · 451",
+    "a": "Romanos e visigodos",
+    "b": "?",
+    "x": "O rei dos visigodos, Teodorico I, morreu em combate, mas seu exército saiu vitorioso."
+   },
+   "a": [
+    "Hunos"
+   ],
+   "d": 2,
+   "src": [
+    "en",
+    "Battle of the Catalaunian Plains",
+    [
+     "Attila",
+     "451"
+    ]
+   ]
+  },
+  {
+   "t": "Quem foi derrotado por Júlio César nesta batalha decisiva da guerra civil romana?",
+   "type": "txt",
+   "choices": [
+    "Pompeu",
+    "Crasso",
+    "Marco Antônio",
+    "Catilina",
+    "Espártaco",
+    "Vercingetórix"
+   ],
+   "battle": {
+    "lbl": "Farsalos · 48 a.C.",
+    "a": "Júlio César",
+    "b": "?",
+    "x": "O derrotado fugiu para o Egito, onde foi assassinado ao chegar, a mando do jovem rei Ptolomeu XIII."
+   },
+   "a": [
+    "Pompeu"
+   ],
+   "d": 2,
+   "src": [
+    "en",
+    "Battle of Pharsalus",
+    [
+     "Pompey",
+     "48 BC"
+    ]
+   ]
+  },
+  {
+   "t": "Qual rei inglês comandou os cruzados nesta vitória sobre as tropas de Saladino?",
+   "type": "player",
+   "battle": {
+    "lbl": "Arsuf · 1191",
+    "a": "?",
+    "b": "ayubida",
+    "x": "Os dois líderes nunca se encontraram pessoalmente, embora tenham negociado uma trégua no ano seguinte."
+   },
+   "a": [
+    "ricardo"
+   ],
+   "d": 2,
+   "src": [
+    "en",
+    "Battle of Arsuf",
+    [
+     "Richard",
+     "Saladin"
+    ]
+   ]
+  },
+  {
+   "t": "Qual reino perdeu esta batalha para os arqueiros ingleses?",
+   "type": "txt",
+   "choices": [
+    "França",
+    "Escócia",
+    "Castela",
+    "Portugal",
+    "Aragão",
+    "Flandres"
+   ],
+   "battle": {
+    "lbl": "Crécy · 1346",
+    "a": "inglaterra",
+    "b": "?",
+    "x": "Eduardo, o Príncipe Negro, então com apenas 16 anos, comandou uma das alas do exército vencedor."
+   },
+   "a": [
+    "França"
+   ],
+   "d": 2,
+   "src": [
+    "en",
+    "Battle of Crécy",
+    [
+     "longbow",
+     "1346"
+    ]
+   ]
+  },
+  {
+   "t": "Qual cidade, aliada de Tebas, foi derrotada pelos macedônios nesta batalha?",
+   "battle": {
+    "lbl": "Queroneia · 338 a.C.",
+    "a": "macedonia",
+    "b": "?",
+    "x": "O príncipe herdeiro do lado vencedor, então com 18 anos, comandou a cavalaria."
+   },
+   "a": [
+    "atenas"
+   ],
+   "d": 3,
+   "src": [
+    "en",
+    "Battle of Chaeronea (338 BC)",
+    [
+     "Philip",
+     "Athens"
+    ]
+   ]
+  },
+  {
+   "t": "Quem Constantino enfrentou nesta batalha às portas de Roma, depois de, segundo a tradição, ver um sinal no céu?",
+   "type": "txt",
+   "choices": [
+    "Maxêncio",
+    "Licínio",
+    "Diocleciano",
+    "Galério",
+    "Maximiano",
+    "Teodósio"
+   ],
+   "battle": {
+    "lbl": "Ponte Mílvia · 312",
+    "a": "Constantino I",
+    "b": "?",
+    "x": "O derrotado morreu afogado no rio Tibre durante a fuga."
+   },
+   "a": [
+    "Maxêncio"
+   ],
+   "d": 3,
+   "src": [
+    "en",
+    "Battle of the Milvian Bridge",
+    [
+     "Maxentius",
+     "312"
+    ]
+   ]
+  },
+  {
+   "t": "Qual império não conseguiu tomar esta ilha, defendida pelos Cavaleiros Hospitalários?",
+   "battle": {
+    "lbl": "Malta · 1565",
+    "a": "Cavaleiros Hospitalários",
+    "b": "?",
+    "x": "Os defensores resistiram por quase quatro meses, até a chegada de reforços vindos da Sicília."
+   },
+   "a": [
+    "imperio_otomano"
+   ],
+   "d": 3,
+   "src": [
+    "en",
+    "Great Siege of Malta",
+    [
+     "Hospitaller",
+     "1565"
+    ]
+   ]
+  },
+  {
+   "t": "Qual reino perdeu nesta batalha o posto de grande potência do norte da Europa?",
+   "battle": {
+    "lbl": "Poltava · 1709",
+    "a": "Czarado da Rússia",
+    "b": "?",
+    "x": "O rei derrotado fugiu para o Império Otomano, onde passou os cinco anos seguintes."
+   },
+   "a": [
+    "suecia"
+   ],
+   "d": 3,
+   "src": [
+    "en",
+    "Battle of Poltava",
+    [
+     "Charles XII",
+     "1709"
+    ]
+   ]
+  },
+  {
+   "t": "Quem foi derrotado nesta batalha, também conhecida como Batalha das Nações?",
+   "battle": {
+    "lbl": "Leipzig · 1813",
+    "a": "Sexta Coalizão",
+    "b": "?",
+    "x": "Mais de 500 mil soldados lutaram nela, a maior batalha da Europa até a Primeira Guerra Mundial."
+   },
+   "a": [
+    "imperio_frances"
+   ],
+   "d": 3,
+   "src": [
+    "en",
+    "Battle of Leipzig",
+    [
+     "Nations",
+     "1813"
+    ]
+   ]
+  },
+  {
+   "t": "Quem atravessou os Andes com seu exército e venceu esta batalha, decisiva para a independência do Chile?",
+   "type": "player",
+   "battle": {
+    "lbl": "Chacabuco · 1817",
+    "a": "?",
+    "b": "Realistas espanhóis",
+    "x": "O chileno Bernardo O'Higgins comandou uma das divisões e depois governou o país."
+   },
+   "a": [
+    "san_martin"
+   ],
+   "d": 3,
+   "src": [
+    "en",
+    "Battle of Chacabuco",
+    [
+     "San Martín",
+     "1817"
+    ]
+   ]
+  },
+  {
+   "t": "Contra quem a Brigada Ligeira britânica fez sua desastrosa carga nesta batalha?",
+   "battle": {
+    "lbl": "Balaclava · 1854",
+    "a": "reino_unido",
+    "b": "?",
+    "x": "Um poema de Tennyson eternizou a carga, provocada por uma ordem mal compreendida."
+   },
+   "a": [
+    "imperio_russo"
+   ],
+   "d": 3,
+   "src": [
+    "en",
+    "Battle of Balaclava",
+    [
+     "Light Brigade",
+     "1854"
+    ]
+   ]
+  },
+  {
+   "t": "Qual império perdeu sua frota nesta batalha, que abriu caminho para a independência da Grécia?",
+   "battle": {
+    "lbl": "Navarino · 1827",
+    "a": "Reino Unido, França e Rússia",
+    "b": "?",
+    "x": "Foi a última grande batalha naval travada só com navios a vela."
+   },
+   "a": [
+    "imperio_otomano"
+   ],
+   "d": 3,
+   "src": [
+    "en",
+    "Battle of Navarino",
+    [
+     "1827",
+     "Ottoman"
+    ]
+   ]
+  },
+  {
+   "t": "Qual governante argentino foi derrubado depois de perder esta batalha?",
+   "type": "txt",
+   "choices": [
+    "Juan Manuel de Rosas",
+    "Bartolomé Mitre",
+    "Domingo Sarmiento",
+    "Justo José de Urquiza",
+    "Manuel Belgrano",
+    "Juan Perón"
+   ],
+   "battle": {
+    "lbl": "Caseros · 1852",
+    "a": "Brasil, Uruguai e Entre Ríos",
+    "b": "?",
+    "x": "O derrotado partiu para o exílio na Inglaterra, onde viveu até morrer, em 1877."
+   },
+   "a": [
+    "Juan Manuel de Rosas"
+   ],
+   "d": 3,
+   "src": [
+    "en",
+    "Battle of Caseros",
+    [
+     "Rosas",
+     "1852"
+    ]
+   ]
+  },
+  {
+   "t": "Qual país teve sua frota destruída pelos americanos nesta batalha, nas Filipinas?",
+   "type": "txt",
+   "choices": [
+    "Espanha",
+    "Japão",
+    "Reino Unido",
+    "Alemanha",
+    "França",
+    "Portugal"
+   ],
+   "battle": {
+    "lbl": "Baía de Manila · 1898",
+    "a": "USA",
+    "b": "?",
+    "x": "Os vencedores não tiveram nenhum morto em combate."
+   },
+   "a": [
+    "Espanha"
+   ],
+   "d": 3,
+   "src": [
+    "en",
+    "Battle of Manila Bay",
+    [
+     "Dewey",
+     "1898"
+    ]
+   ]
+  },
+  {
+   "t": "Qual país perdeu um de seus navios mais modernos depois desta batalha, perto do Uruguai?",
+   "battle": {
+    "lbl": "Rio da Prata · 1939",
+    "a": "reino_unido",
+    "b": "?",
+    "x": "Avariado, o navio buscou abrigo em Montevidéu e depois foi afundado pela própria tripulação."
+   },
+   "a": [
+    "alemanha_nazista"
+   ],
+   "d": 3,
+   "src": [
+    "en",
+    "Battle of the River Plate",
+    [
+     "Graf Spee",
+     "Montevideo"
+    ]
+   ]
+  },
+  {
+   "t": "Quem venceu esta batalha no pampa gaúcho, contra as tropas do governo imperial?",
+   "type": "txt",
+   "choices": [
+    "Farroupilhas",
+    "Cabanos",
+    "Balaios",
+    "Sabinos",
+    "Praieiros",
+    "Maragatos"
+   ],
+   "battle": {
+    "lbl": "Seival · 1836",
+    "a": "?",
+    "b": "imperio_brasil",
+    "x": "No dia seguinte à vitória, os vencedores proclamaram uma república independente."
+   },
+   "a": [
+    "Farroupilhas"
+   ],
+   "d": 3,
+   "src": [
+    "en",
+    "Battle of Seival",
+    [
+     "Seival",
+     "1836"
+    ]
+   ]
+  },
+  {
+   "t": "Qual rei comandava o exército derrotado nesta batalha da Guerra Civil Inglesa?",
+   "type": "txt",
+   "choices": [
+    "Carlos I",
+    "Jaime I",
+    "Jaime II",
+    "Henrique VIII",
+    "Guilherme III",
+    "Ricardo III"
+   ],
+   "battle": {
+    "lbl": "Naseby · 1645",
+    "a": "Parlamentaristas",
+    "b": "?",
+    "x": "Cartas secretas do rei, capturadas no campo de batalha, foram publicadas pelos vencedores."
+   },
+   "a": [
+    "Carlos I"
+   ],
+   "d": 3,
+   "src": [
+    "en",
+    "Battle of Naseby",
+    [
+     "Charles I",
+     "1645"
+    ]
+   ]
+  },
+  {
+   "t": "Contra quem a Marinha Real britânica travou esta batalha, a maior batalha naval da Primeira Guerra?",
+   "battle": {
+    "lbl": "Jutlândia · 1916",
+    "a": "reino_unido",
+    "b": "?",
+    "x": "Os britânicos perderam mais navios, mas a frota inimiga quase não voltou a deixar o porto."
+   },
+   "a": [
+    "imperio_alemao"
+   ],
+   "d": 3,
+   "src": [
+    "en",
+    "Battle of Jutland",
+    [
+     "Jellicoe",
+     "1916"
+    ]
+   ]
+  },
+  {
+   "t": "Quem invadiu a Inglaterra e foi derrotado nesta batalha, semanas antes de Hastings?",
+   "type": "txt",
+   "choices": [
+    "Noruegueses",
+    "Normandos",
+    "Suecos",
+    "Francos",
+    "Bretões",
+    "Galeses"
+   ],
+   "battle": {
+    "lbl": "Stamford Bridge · 1066",
+    "a": "inglaterra",
+    "b": "?",
+    "x": "O irmão rebelde do rei inglês lutou ao lado dos invasores e morreu na batalha."
+   },
+   "a": [
+    "Noruegueses"
+   ],
+   "d": 3,
+   "src": [
+    "en",
+    "Battle of Stamford Bridge",
+    [
+     "Hardrada",
+     "Tostig"
+    ]
+   ]
+  },
+  {
+   "t": "Quem controlava esta cidade portuária, retomada num ousado desembarque anfíbio comandado por MacArthur?",
+   "type": "txt",
+   "choices": [
+    "Coreia do Norte",
+    "China",
+    "União Soviética",
+    "Japão",
+    "Coreia do Sul",
+    "Vietnã do Norte"
+   ],
+   "battle": {
+    "lbl": "Inchon · 1950",
+    "a": "Forças da ONU",
+    "b": "?",
+    "x": "O desembarque virou o rumo da guerra, e Seul foi retomada cerca de duas semanas depois."
+   },
+   "a": [
+    "Coreia do Norte"
+   ],
+   "d": 3,
+   "src": [
+    "en",
+    "Battle of Inchon",
+    [
+     "MacArthur",
+     "1950"
+    ]
+   ]
+  },
+  {
+   "t": "Qual cidade-Estado perdeu nesta batalha a fama de invencível em terra?",
+   "battle": {
+    "lbl": "Leuctra · 371 a.C.",
+    "a": "Tebas",
+    "b": "?",
+    "x": "O general vencedor, Epaminondas, concentrou suas tropas numa ala de profundidade fora do comum."
+   },
+   "a": [
+    "esparta"
+   ],
+   "d": 4,
+   "src": [
+    "en",
+    "Battle of Leuctra",
+    [
+     "Epaminondas",
+     "371"
+    ]
+   ]
+  },
+  {
+   "t": "Qual rei indiano enfrentou o exército de Alexandre nesta batalha, com elefantes de guerra?",
+   "type": "txt",
+   "choices": [
+    "Poro",
+    "Chandragupta Máuria",
+    "Ashoka",
+    "Bindusara",
+    "Dhana Nanda",
+    "Kanishka"
+   ],
+   "battle": {
+    "lbl": "Hidaspes · 326 a.C.",
+    "a": "macedonia",
+    "b": "?",
+    "x": "Impressionado com a coragem do rei derrotado, o vencedor o manteve no trono como aliado."
+   },
+   "a": [
+    "Poro"
+   ],
+   "d": 4,
+   "src": [
+    "en",
+    "Battle of the Hydaspes",
+    [
+     "Porus",
+     "326"
+    ]
+   ]
+  },
+  {
+   "t": "Quem destruiu o exército de Crasso nesta batalha, na Mesopotâmia?",
+   "type": "txt",
+   "choices": [
+    "Partos",
+    "Persas sassânidas",
+    "Selêucidas",
+    "Citas",
+    "Gauleses",
+    "Germanos"
+   ],
+   "battle": {
+    "lbl": "Carras · 53 a.C.",
+    "a": "republica_romana",
+    "b": "?",
+    "x": "As águias das legiões perdidas só voltaram a Roma em 20 a.C., num acordo negociado por Augusto."
+   },
+   "a": [
+    "Partos"
+   ],
+   "d": 4,
+   "src": [
+    "en",
+    "Battle of Carrhae",
+    [
+     "Crassus",
+     "Parthian"
+    ]
+   ]
+  },
+  {
+   "t": "Qual império perdeu a Síria depois desta derrota para os exércitos árabes?",
+   "battle": {
+    "lbl": "Yarmuk · 636",
+    "a": "Califado Rashidun",
+    "b": "?",
+    "x": "A batalha durou seis dias, às margens de um afluente do rio Jordão."
+   },
+   "a": [
+    "bizancio"
+   ],
+   "d": 4,
+   "src": [
+    "en",
+    "Battle of the Yarmuk",
+    [
+     "Rashidun",
+     "636"
+    ]
+   ]
+  },
+  {
+   "t": "Qual império da África Ocidental nasceu desta vitória sobre o reino de Sosso?",
+   "battle": {
+    "lbl": "Kirina · c. 1235",
+    "a": "?",
+    "b": "Reino de Sosso",
+    "x": "A história da batalha é contada até hoje pelos griôs, os contadores de histórias da região."
+   },
+   "a": [
+    "mali"
+   ],
+   "d": 4,
+   "src": [
+    "en",
+    "Battle of Kirina",
+    [
+     "Sundiata",
+     "Sosso"
+    ]
+   ]
+  },
+  {
+   "t": "Qual ordem militar foi derrotada por poloneses e lituanos nesta batalha?",
+   "type": "txt",
+   "choices": [
+    "Ordem Teutônica",
+    "Templários",
+    "Hospitalários",
+    "Ordem de Avis",
+    "Ordem de Calatrava",
+    "Ordem de Santiago"
+   ],
+   "battle": {
+    "lbl": "Grunwald · 1410",
+    "a": "Polônia e Lituânia",
+    "b": "?",
+    "x": "O grão-mestre da ordem morreu em combate, junto com boa parte de seus cavaleiros."
+   },
+   "a": [
+    "Ordem Teutônica"
+   ],
+   "d": 4,
+   "src": [
+    "en",
+    "Battle of Grunwald",
+    [
+     "Teutonic",
+     "1410"
+    ]
+   ]
+  },
+  {
+   "t": "Quem o príncipe de Moscou, Dmitri Donskoi, derrotou nesta batalha?",
+   "type": "txt",
+   "choices": [
+    "Horda de Ouro",
+    "Canato da Crimeia",
+    "Canato de Kazan",
+    "Império Otomano",
+    "Ordem Teutônica",
+    "Reino da Polônia"
+   ],
+   "battle": {
+    "lbl": "Kulikovo · 1380",
+    "a": "Grão-Principado de Moscou",
+    "b": "?",
+    "x": "A vitória não encerrou o domínio estrangeiro sobre a Rússia, que só terminou em 1480."
+   },
+   "a": [
+    "Horda de Ouro"
+   ],
+   "d": 4,
+   "src": [
+    "en",
+    "Battle of Kulikovo",
+    [
+     "Golden Horde",
+     "1380"
+    ]
+   ]
+  },
+  {
+   "t": "Qual reino europeu venceu esta batalha naval, que abriu caminho para o seu domínio do oceano Índico?",
+   "type": "txt",
+   "choices": [
+    "Portugal",
+    "Espanha",
+    "Veneza",
+    "Inglaterra",
+    "Holanda",
+    "França"
+   ],
+   "battle": {
+    "lbl": "Diu · 1509",
+    "a": "?",
+    "b": "Mamelucos e aliados indianos",
+    "x": "O vice-rei vencedor queria vingar a morte do filho, morto pela mesma coalizão um ano antes."
+   },
+   "a": [
+    "Portugal"
+   ],
+   "d": 4,
+   "src": [
+    "en",
+    "Battle of Diu",
+    [
+     "Almeida",
+     "1509"
+    ]
+   ]
+  },
+  {
+   "t": "Qual sultão indiano morreu defendendo esta fortaleza contra os britânicos?",
+   "type": "txt",
+   "choices": [
+    "Tipu Sultan",
+    "Haidar Ali",
+    "Siraj ud-Daulah",
+    "Aurangzeb",
+    "Bahadur Shah II",
+    "Ranjit Singh"
+   ],
+   "battle": {
+    "lbl": "Seringapatam · 1799",
+    "a": "Britânicos",
+    "b": "?",
+    "x": "Um dos oficiais do cerco era Arthur Wellesley, que anos depois venceria Napoleão em Waterloo."
+   },
+   "a": [
+    "Tipu Sultan"
+   ],
+   "d": 4,
+   "src": [
+    "en",
+    "Siege of Seringapatam (1799)",
+    [
+     "Tipu",
+     "Wellesley"
+    ]
+   ]
+  },
+  {
+   "t": "Quem o exército anglo-egípcio derrotou nesta batalha, no Sudão?",
+   "type": "txt",
+   "choices": [
+    "Mahdistas",
+    "Zulus",
+    "Bôeres",
+    "Axântis",
+    "Etíopes",
+    "Ndebeles"
+   ],
+   "battle": {
+    "lbl": "Omdurman · 1898",
+    "a": "Anglo-egípcios",
+    "b": "?",
+    "x": "O jovem Winston Churchill participou de uma carga de cavalaria nesta batalha."
+   },
+   "a": [
+    "Mahdistas"
+   ],
+   "d": 4,
+   "src": [
+    "en",
+    "Battle of Omdurman",
+    [
+     "Mahdist",
+     "Churchill"
+    ]
+   ]
+  },
+  {
+   "t": "Quem a Polônia deteve às portas de sua capital nesta batalha?",
+   "type": "txt",
+   "choices": [
+    "Exército Vermelho",
+    "Exército Branco",
+    "Exército austro-húngaro",
+    "Exército prussiano",
+    "Wehrmacht",
+    "Exército sueco"
+   ],
+   "battle": {
+    "lbl": "Varsóvia · 1920",
+    "a": "POL",
+    "b": "?",
+    "x": "Os poloneses chamam a vitória de \"Milagre do Vístula\"."
+   },
+   "a": [
+    "Exército Vermelho"
+   ],
+   "d": 4,
+   "src": [
+    "en",
+    "Battle of Warsaw (1920)",
+    [
+     "Vistula",
+     "Red Army"
+    ]
+   ]
+  },
+  {
+   "t": "Qual movimento rebelde perdeu sua capital neste cerco, que pôs fim a uma das guerras mais mortíferas do século XIX?",
+   "type": "txt",
+   "choices": [
+    "Taipings",
+    "Boxers",
+    "Turbantes Amarelos",
+    "Lótus Branco",
+    "Kuomintang",
+    "Guardas Vermelhos"
+   ],
+   "battle": {
+    "lbl": "Nanquim · 1864",
+    "a": "qing",
+    "b": "?",
+    "x": "A cidade caiu em julho, semanas depois da morte do líder rebelde."
+   },
+   "a": [
+    "Taipings"
+   ],
+   "d": 4,
+   "src": [
+    "en",
+    "Taiping Rebellion",
+    [
+     "Nanjing",
+     "1864"
+    ]
+   ]
+  },
+  {
+   "t": "Qual dos Reinos Combatentes esmagou o exército de Zhao nesta batalha, na China?",
+   "type": "txt",
+   "choices": [
+    "Qin",
+    "Chu",
+    "Qi",
+    "Yan",
+    "Wei",
+    "Han"
+   ],
+   "battle": {
+    "lbl": "Changping · 260 a.C.",
+    "a": "Reino de Zhao",
+    "b": "?",
+    "x": "Segundo as crônicas antigas, o vencedor mandou executar a maior parte dos soldados que se renderam."
+   },
+   "a": [
+    "Qin"
+   ],
+   "d": 5,
+   "src": [
+    "en",
+    "Battle of Changping",
+    [
+     "Zhao",
+     "Qin"
+    ]
+   ]
+  },
+  {
+   "t": "Quem foi derrotado pelas cidades da Liga Lombarda nesta batalha?",
+   "battle": {
+    "lbl": "Legnano · 1176",
+    "a": "Liga Lombarda",
+    "b": "?",
+    "x": "O comandante derrotado caiu do cavalo durante a luta e chegou a ser dado como morto."
+   },
+   "a": [
+    "sacro_imperio"
+   ],
+   "d": 5,
+   "src": [
+    "en",
+    "Battle of Legnano",
+    [
+     "Barbarossa",
+     "1176"
+    ]
+   ]
+  },
+  {
+   "t": "Qual clã teve sua célebre cavalaria destruída pelos arcabuzeiros inimigos nesta batalha?",
+   "type": "txt",
+   "choices": [
+    "Clã Takeda",
+    "Clã Mōri",
+    "Clã Hōjō",
+    "Clã Uesugi",
+    "Clã Shimazu",
+    "Clã Imagawa"
+   ],
+   "battle": {
+    "lbl": "Nagashino · 1575",
+    "a": "Clãs Oda e Tokugawa",
+    "b": "?",
+    "x": "Os atiradores ficaram protegidos atrás de paliçadas de madeira, à beira de um riacho."
+   },
+   "a": [
+    "Clã Takeda"
+   ],
+   "d": 5,
+   "src": [
+    "en",
+    "Battle of Nagashino",
+    [
+     "Takeda",
+     "arquebus"
+    ]
+   ]
+  },
+  {
+   "t": "Qual reino africano perdeu seu rei nesta batalha contra os portugueses?",
+   "type": "txt",
+   "choices": [
+    "Reino do Congo",
+    "Reino do Ndongo",
+    "Reino de Matamba",
+    "Império Monomotapa",
+    "Reino do Daomé",
+    "Império Axânti"
+   ],
+   "battle": {
+    "lbl": "Mbwila · 1665",
+    "a": "portugal",
+    "b": "?",
+    "x": "Depois da derrota, o reino mergulhou em décadas de guerras civis."
+   },
+   "a": [
+    "Reino do Congo"
+   ],
+   "d": 5,
+   "src": [
+    "en",
+    "Battle of Mbwila",
+    [
+     "Kongo",
+     "1665"
+    ]
+   ]
+  },
+  {
+   "t": "Qual país tomou este morro fortificado do Peru na Guerra do Pacífico?",
+   "type": "txt",
+   "choices": [
+    "Chile",
+    "Bolívia",
+    "Argentina",
+    "Equador",
+    "Colômbia",
+    "Brasil"
+   ],
+   "battle": {
+    "lbl": "Morro de Arica · 1880",
+    "a": "PER",
+    "b": "?",
+    "x": "O coronel Francisco Bolognesi morreu na defesa e virou herói nacional peruano."
+   },
+   "a": [
+    "Chile"
+   ],
+   "d": 5,
+   "src": [
+    "en",
+    "Battle of Arica",
+    [
+     "Bolognesi",
+     "1880"
+    ]
+   ]
+  }
+ ]
+}

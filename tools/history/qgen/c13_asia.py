@@ -198,7 +198,7 @@ c.LN('Quem completa os três grandes unificadores do Japão?', 'tokugawa_ieyasu'
 c.BT('Quem derrotou o nababo de Bengala e seus aliados franceses nesta batalha?', 'Companhia Britânica das Índias Orientais', 'Plassey · 1757',
      '?', 'Nababo de Bengala', d=3, typ='txt',
      wrong=['Companhia Holandesa das Índias Orientais', 'Companhia Francesa das Índias Orientais', 'Império Mogol', 'Império Português', 'Império Maratha'],
-     x='Robert Clive venceu com um exército bem menor, depois de comprar a traição de Mir Jafar, comandante das tropas do nababo.',
+     x='O vencedor tinha um exército bem menor, mas comprou a traição de Mir Jafar, comandante das tropas do nababo.',
      src=('en', 'Battle of Plassey', ['Mir Jafar']))
 c.BT('Qual império teve sua frota destruída pelo Japão nesta batalha naval?', 'imperio_russo', 'Tsushima · 1905', 'imperio_japones', '?', d=3,
      x='A frota derrotada navegou cerca de 30 mil km, do mar Báltico ao Extremo Oriente, para ser aniquilada em dois dias.',

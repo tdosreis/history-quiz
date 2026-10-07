@@ -1,0 +1,899 @@
+{
+ "id": "artes",
+ "name": "Artes e Letras",
+ "tag": "Pinturas, livros e partituras",
+ "col": "#8E4E9E",
+ "diff": "Variado",
+ "emoji": "🎭",
+ "qs": [
+  {
+   "t": "Qual estilo musical nasceu no Rio de Janeiro no fim dos anos 1950, com João Gilberto, Tom Jobim e Vinicius de Moraes?",
+   "type": "txt",
+   "choices": [
+    "Bossa nova",
+    "Tropicália",
+    "Jovem Guarda",
+    "Choro",
+    "Samba-enredo",
+    "Baião"
+   ],
+   "a": [
+    "Bossa nova"
+   ],
+   "d": 1,
+   "art": {
+    "flag": "BRA"
+   },
+   "src": [
+    "pt",
+    "Bossa nova",
+    [
+     "João Gilberto"
+    ]
+   ],
+   "x": "\"Garota de Ipanema\", de Tom Jobim e Vinicius de Moraes, está entre as canções mais gravadas do mundo."
+  },
+  {
+   "t": "Como se chama o fiel escudeiro que acompanha Dom Quixote em suas aventuras?",
+   "type": "txt",
+   "choices": [
+    "Sancho Pança",
+    "Rocinante",
+    "Dulcineia",
+    "Lazarilho",
+    "Sansão Carrasco",
+    "Gil Blas"
+   ],
+   "a": [
+    "Sancho Pança"
+   ],
+   "d": 1,
+   "art": {
+    "who": "cervantes"
+   },
+   "src": [
+    "pt",
+    "Dom Quixote",
+    [
+     "Sancho Pança"
+    ]
+   ],
+   "x": "O romance saiu em duas partes, em 1605 e 1615, e muitos o consideram o primeiro romance moderno."
+  },
+  {
+   "t": "Qual romance de 1818, que Mary Shelley começou a escrever aos 18 anos, conta a história de um cientista que dá vida a uma criatura?",
+   "type": "txt",
+   "choices": [
+    "Frankenstein",
+    "Drácula",
+    "O Médico e o Monstro",
+    "O Retrato de Dorian Gray",
+    "O Homem Invisível",
+    "A Ilha do Dr. Moreau"
+   ],
+   "a": [
+    "Frankenstein"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "book"
+   },
+   "src": [
+    "en",
+    "Frankenstein",
+    [
+     "1818",
+     "Villa Diodati"
+    ]
+   ],
+   "x": "A ideia surgiu em 1816, numa casa perto de Genebra, quando Lord Byron desafiou os amigos a escrever histórias de fantasmas."
+  },
+  {
+   "t": "Qual arquiteto catalão projetou a Sagrada Família, em Barcelona, e trabalhou nela por mais de 40 anos?",
+   "type": "txt",
+   "choices": [
+    "Antoni Gaudí",
+    "Joan Miró",
+    "Le Corbusier",
+    "Santiago Calatrava",
+    "Lluís Domènech i Montaner",
+    "Ricardo Bofill"
+   ],
+   "a": [
+    "Antoni Gaudí"
+   ],
+   "d": 2,
+   "art": {
+    "stad": "sagrada_familia"
+   },
+   "src": [
+    "en",
+    "Antoni Gaudí",
+    [
+     "Sagrada Família",
+     "1926"
+    ]
+   ],
+   "x": "Gaudí morreu em 1926, atropelado por um bonde; a basílica seguiu em obras, financiada por doações e pela venda de ingressos."
+  },
+  {
+   "t": "Qual compositor veneziano do Barroco escreveu os concertos para violino As Quatro Estações?",
+   "type": "txt",
+   "choices": [
+    "Antonio Vivaldi",
+    "Arcangelo Corelli",
+    "Claudio Monteverdi",
+    "Domenico Scarlatti",
+    "Tomaso Albinoni",
+    "Giuseppe Verdi"
+   ],
+   "a": [
+    "Antonio Vivaldi"
+   ],
+   "d": 2,
+   "art": {
+    "crest": "veneza"
+   },
+   "src": [
+    "en",
+    "The Four Seasons (Vivaldi)",
+    [
+     "1725"
+    ]
+   ],
+   "x": "Ele era padre, conhecido como \"o Padre Ruivo\", e ensinava música às meninas de um orfanato de Veneza, o Ospedale della Pietà."
+  },
+  {
+   "t": "Qual foi o primeiro longa-metragem de animação dos estúdios Disney, lançado em 1937?",
+   "type": "txt",
+   "choices": [
+    "Branca de Neve e os Sete Anões",
+    "Pinóquio",
+    "Fantasia",
+    "Dumbo",
+    "Bambi",
+    "Cinderela"
+   ],
+   "a": [
+    "Branca de Neve e os Sete Anões"
+   ],
+   "d": 2,
+   "art": {
+    "flag": "USA"
+   },
+   "src": [
+    "en",
+    "Snow White and the Seven Dwarfs (1937 film)",
+    [
+     "1937"
+    ]
+   ],
+   "x": "Em Hollywood, muitos chamavam o projeto de \"a loucura de Disney\", certos de que ninguém aguentaria um desenho tão longo."
+  },
+  {
+   "t": "Em qual país fica a caverna de Lascaux, com pinturas pré-históricas de cavalos e touros, descoberta por adolescentes em 1940?",
+   "type": "txt",
+   "choices": [
+    "França",
+    "Espanha",
+    "Portugal",
+    "Itália",
+    "Alemanha",
+    "Inglaterra"
+   ],
+   "a": [
+    "França"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "palette"
+   },
+   "src": [
+    "en",
+    "Lascaux",
+    [
+     "1940",
+     "1963"
+    ]
+   ],
+   "x": "As pinturas têm cerca de 17 mil anos. A caverna foi fechada ao público em 1963, porque o fôlego dos visitantes estava danificando as imagens."
+  },
+  {
+   "t": "Qual ópera de Carlos Gomes, baseada num romance de José de Alencar, estreou com sucesso no Teatro alla Scala de Milão, em 1870?",
+   "type": "txt",
+   "choices": [
+    "Il Guarany",
+    "Lo Schiavo",
+    "Fosca",
+    "Salvator Rosa",
+    "Aida",
+    "Maria Tudor"
+   ],
+   "a": [
+    "Il Guarany"
+   ],
+   "d": 3,
+   "art": {
+    "crest": "imperio_brasil"
+   },
+   "src": [
+    "en",
+    "Il Guarany",
+    [
+     "La Scala",
+     "1870"
+    ]
+   ],
+   "x": "A abertura da ópera virou o tema de abertura do programa de rádio A Voz do Brasil."
+  },
+  {
+   "t": "Qual pintor francês chegou ao Brasil com a Missão Artística de 1816 e retratou o cotidiano do Rio no livro Viagem Pitoresca e Histórica ao Brasil?",
+   "type": "txt",
+   "choices": [
+    "Jean-Baptiste Debret",
+    "Johann Moritz Rugendas",
+    "Nicolas-Antoine Taunay",
+    "Grandjean de Montigny",
+    "Frans Post",
+    "Victor Meirelles"
+   ],
+   "a": [
+    "Jean-Baptiste Debret"
+   ],
+   "d": 4,
+   "art": {
+    "crest": "brasil_colonia"
+   },
+   "src": [
+    "pt",
+    "Jean-Baptiste Debret",
+    [
+     "Viagem Pitoresca"
+    ]
+   ],
+   "x": "Debret também desenhou a bandeira do Império do Brasil, com o losango amarelo sobre o fundo verde."
+  },
+  {
+   "t": "Qual arquiteto romano escreveu o único tratado de arquitetura da Antiguidade que sobreviveu até hoje?",
+   "type": "txt",
+   "choices": [
+    "Vitrúvio",
+    "Apolodoro de Damasco",
+    "Ictino",
+    "Fídias",
+    "Hipódamo de Mileto",
+    "Calícrates"
+   ],
+   "a": [
+    "Vitrúvio"
+   ],
+   "d": 4,
+   "art": {
+    "icon": "column"
+   },
+   "src": [
+    "en",
+    "Vitruvius",
+    [
+     "De architectura"
+    ]
+   ],
+   "x": "Dele vem a ideia das proporções ideais do corpo humano, desenhadas por Leonardo da Vinci no Homem Vitruviano."
+  },
+  {
+   "t": "Qual pintor flamengo concluiu em 1432, depois da morte do irmão Hubert, o Retábulo de Gante?",
+   "type": "txt",
+   "choices": [
+    "Jan van Eyck",
+    "Hieronymus Bosch",
+    "Pieter Bruegel",
+    "Rogier van der Weyden",
+    "Hans Memling",
+    "Peter Paul Rubens"
+   ],
+   "a": [
+    "Jan van Eyck"
+   ],
+   "d": 5,
+   "art": {
+    "icon": "church"
+   },
+   "src": [
+    "en",
+    "Ghent Altarpiece",
+    [
+     "1432",
+     "Hubert"
+    ]
+   ],
+   "x": "O retábulo foi levado de Gante várias vezes ao longo dos séculos; um de seus painéis, roubado em 1934, nunca foi encontrado."
+  },
+  {
+   "t": "Qual ator e diretor ridicularizou Hitler no filme O Grande Ditador, de 1940?",
+   "type": "player",
+   "a": [
+    "chaplin"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "masks"
+   },
+   "src": [
+    "pt",
+    "O Grande Ditador",
+    [
+     "1940"
+    ]
+   ],
+   "x": "Foi o primeiro filme totalmente falado de Chaplin, e termina com um longo discurso do protagonista em defesa da liberdade e da paz."
+  },
+  {
+   "t": "Qual pintor holandês retratou, em 1632, uma aula pública de dissecação em A Lição de Anatomia do Dr. Tulp?",
+   "type": "player",
+   "a": [
+    "rembrandt"
+   ],
+   "d": 3,
+   "art": {
+    "crest": "holanda"
+   },
+   "src": [
+    "en",
+    "The Anatomy Lesson of Dr. Nicolaes Tulp",
+    [
+     "1632"
+    ]
+   ],
+   "x": "Pintado logo depois de sua mudança para Amsterdã, o quadro fez a sua fama; hoje está no museu Mauritshuis, em Haia."
+  },
+  {
+   "t": "Qual pintor espanhol retratou a família do rei Carlos IV e, já velho e surdo, cobriu as paredes de sua casa com as \"Pinturas Negras\"?",
+   "type": "player",
+   "a": [
+    "goya"
+   ],
+   "d": 4,
+   "art": {
+    "crest": "espanha"
+   },
+   "src": [
+    "en",
+    "Black Paintings",
+    [
+     "Quinta del Sordo"
+    ]
+   ],
+   "x": "A casa, nos arredores de Madri, era chamada de Quinta del Sordo, \"casa do surdo\"; o apelido vinha do dono anterior, também surdo."
+  },
+  {
+   "t": "Quem sou eu?",
+   "type": "player",
+   "clues": [
+    "Nasci em Caprese, na Toscana, em 1475.",
+    "Considerava-me antes de tudo escultor, e não pintor.",
+    "Ainda com vinte e poucos anos, esculpi uma Pietà hoje guardada na Basílica de São Pedro.",
+    "Pintei o teto da Capela Sistina e, anos depois, o Juízo Final na parede do altar."
+   ],
+   "a": [
+    "michelangelo"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "bust"
+   },
+   "src": [
+    "pt",
+    "Michelangelo",
+    [
+     "Caprese"
+    ]
+   ],
+   "x": "Viveu quase 89 anos, idade raríssima no século XVI, e trabalhou numa escultura até poucos dias antes de morrer."
+  },
+  {
+   "t": "Quem sou eu?",
+   "type": "player",
+   "clues": [
+    "Nasci em Vila Rica, filho de um mestre de obras português e de uma mulher escravizada.",
+    "Trabalhei como escultor e entalhador nas igrejas barrocas de Minas Gerais.",
+    "Uma doença deformou meu corpo na idade adulta, mas não parei de trabalhar.",
+    "Esculpi em pedra-sabão os doze profetas do santuário de Congonhas."
+   ],
+   "a": [
+    "aleijadinho"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "bust"
+   },
+   "src": [
+    "pt",
+    "Aleijadinho",
+    [
+     "Congonhas"
+    ]
+   ],
+   "x": "Seu nome de batismo era Antônio Francisco Lisboa; o apelido veio da doença que o deformou."
+  },
+  {
+   "t": "Quem sou eu?",
+   "type": "player",
+   "clues": [
+    "Nasci em Portsmouth, na Inglaterra, em 1812.",
+    "Aos doze anos, trabalhei numa fábrica de graxa de sapato enquanto meu pai estava preso por dívidas.",
+    "Publiquei quase todos os meus romances em capítulos, em revistas e fascículos.",
+    "Criei o órfão Oliver e o avarento Ebenezer Scrooge."
+   ],
+   "a": [
+    "dickens"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "bust"
+   },
+   "src": [
+    "en",
+    "Charles Dickens",
+    [
+     "Portsmouth",
+     "Marshalsea"
+    ]
+   ],
+   "x": "A miséria que viu na infância aparece em vários de seus livros, que denunciavam o trabalho infantil e as prisões por dívida."
+  },
+  {
+   "t": "Quem sou eu?",
+   "type": "player",
+   "clues": [
+    "Nasci perto de Varsóvia, em 1810, filho de pai francês.",
+    "Aos vinte anos deixei minha terra natal e nunca mais voltei.",
+    "Em Paris, vivi um longo romance com a escritora George Sand.",
+    "Compus quase só para piano: noturnos, mazurcas e polonaises.",
+    "Meu coração foi levado de volta e está numa igreja de Varsóvia."
+   ],
+   "a": [
+    "chopin"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "bust"
+   },
+   "src": [
+    "en",
+    "Frédéric Chopin",
+    [
+     "George Sand",
+     "Żelazowa Wola"
+    ]
+   ],
+   "x": "Morreu em Paris aos 39 anos, de uma doença pulmonar; a irmã levou o seu coração para a Polônia, como ele havia pedido."
+  },
+  {
+   "t": "Quem escreveu estes versos?",
+   "type": "player",
+   "quote": {
+    "q": "Amor é fogo que arde sem se ver; é ferida que dói, e não se sente.",
+    "ctx": "Primeiros versos de um soneto português do século XVI"
+   },
+   "a": [
+    "camoes"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Luís de Camões",
+    [
+     "sonetos"
+    ]
+   ],
+   "x": "O soneto tenta definir o amor por uma série de contradições, e é um dos poemas mais recitados da língua portuguesa."
+  },
+  {
+   "t": "Quem escreveu esta frase?",
+   "type": "player",
+   "quote": {
+    "q": "Ao vencido, ódio ou compaixão; ao vencedor, as batatas.",
+    "ctx": "Lema do \"Humanitismo\", filosofia inventada por um personagem de romance carioca de 1891"
+   },
+   "a": [
+    "machado"
+   ],
+   "d": 3,
+   "src": [
+    "pt",
+    "Quincas Borba",
+    [
+     "batatas"
+    ]
+   ],
+   "x": "A frase resume, com ironia, a filosofia do personagem Quincas Borba, que já aparecia em Memórias Póstumas de Brás Cubas."
+  },
+  {
+   "t": "Duelo: quem nasceu primeiro?",
+   "type": "player",
+   "fixed": [
+    "bach",
+    "mozart"
+   ],
+   "duel": true,
+   "a": [
+    "bach"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "lyre"
+   },
+   "src": [
+    "pt",
+    "Johann Sebastian Bach",
+    [
+     "1685"
+    ]
+   ],
+   "x": "Bach nasceu em 1685 e morreu em 1750, seis anos antes do nascimento de Mozart."
+  },
+  {
+   "t": "Duelo: qual destas obras foi publicada primeiro?",
+   "type": "txt",
+   "choices": [
+    "Os Lusíadas",
+    "Dom Quixote"
+   ],
+   "duel": true,
+   "a": [
+    "Os Lusíadas"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "book"
+   },
+   "src": [
+    "pt",
+    "Os Lusíadas",
+    [
+     "1572"
+    ]
+   ],
+   "x": "Os Lusíadas saíram em 1572; a primeira parte do Dom Quixote, em 1605."
+  },
+  {
+   "t": "Duelo: qual destes quadros foi pintado primeiro?",
+   "type": "txt",
+   "choices": [
+    "A Ronda Noturna",
+    "As Meninas"
+   ],
+   "duel": true,
+   "a": [
+    "A Ronda Noturna"
+   ],
+   "d": 4,
+   "art": {
+    "icon": "palette"
+   },
+   "src": [
+    "en",
+    "The Night Watch",
+    [
+     "1642"
+    ]
+   ],
+   "x": "Rembrandt terminou A Ronda Noturna em 1642; Velázquez pintou As Meninas em 1656."
+  },
+  {
+   "t": "Duelo: quem nasceu primeiro?",
+   "type": "player",
+   "fixed": [
+    "tchaikovsky",
+    "monet"
+   ],
+   "duel": true,
+   "a": [
+    "tchaikovsky"
+   ],
+   "d": 5,
+   "art": {
+    "icon": "hourglass"
+   },
+   "src": [
+    "en",
+    "Pyotr Ilyich Tchaikovsky",
+    [
+     "1840"
+    ]
+   ],
+   "x": "Os dois nasceram em 1840: Tchaikovsky em 7 de maio, e Monet em 14 de novembro."
+  },
+  {
+   "t": "O compositor Antonio Salieri envenenou Mozart por inveja?",
+   "type": "txt",
+   "choices": [
+    "Fato",
+    "Mito"
+   ],
+   "duel": true,
+   "myth": true,
+   "a": [
+    "Mito"
+   ],
+   "d": 2,
+   "art": {
+    "who": "mozart"
+   },
+   "src": [
+    "en",
+    "Antonio Salieri",
+    [
+     "Pushkin",
+     "Amadeus"
+    ]
+   ],
+   "x": "Não há prova alguma: o boato surgiu após a morte de Mozart e ganhou fama com uma peça de Púchkin, de 1830, e com o filme Amadeus, de 1984."
+  },
+  {
+   "t": "A Mona Lisa já foi roubada do Museu do Louvre?",
+   "type": "txt",
+   "choices": [
+    "Fato",
+    "Mito"
+   ],
+   "duel": true,
+   "myth": true,
+   "a": [
+    "Fato"
+   ],
+   "d": 2,
+   "art": {
+    "who": "leonardo"
+   },
+   "src": [
+    "en",
+    "Mona Lisa",
+    [
+     "Peruggia",
+     "1911"
+    ]
+   ],
+   "x": "Em 1911, o italiano Vincenzo Peruggia, que tinha trabalhado no museu, saiu com o quadro escondido. A pintura só foi recuperada em Florença, em 1913."
+  },
+  {
+   "t": "Shakespeare e Cervantes morreram exatamente no mesmo dia?",
+   "type": "txt",
+   "choices": [
+    "Fato",
+    "Mito"
+   ],
+   "duel": true,
+   "myth": true,
+   "a": [
+    "Mito"
+   ],
+   "d": 3,
+   "art": {
+    "who": "cervantes"
+   },
+   "src": [
+    "en",
+    "Miguel de Cervantes",
+    [
+     "1616",
+     "Shakespeare"
+    ]
+   ],
+   "x": "As datas registradas são 22 e 23 de abril de 1616, mas a Espanha já usava o calendário gregoriano e a Inglaterra, o juliano: Shakespeare morreu 11 dias depois."
+  },
+  {
+   "t": "A escultura O Pensador, de Rodin, foi criada originalmente para representar o poeta Dante?",
+   "type": "txt",
+   "choices": [
+    "Fato",
+    "Mito"
+   ],
+   "duel": true,
+   "myth": true,
+   "a": [
+    "Fato"
+   ],
+   "d": 4,
+   "art": {
+    "icon": "bust"
+   },
+   "src": [
+    "en",
+    "The Thinker",
+    [
+     "Dante",
+     "Gates of Hell"
+    ]
+   ],
+   "x": "A figura nasceu no alto da \"Porta do Inferno\", inspirada na Divina Comédia, e mostrava Dante meditando sobre o seu poema; só depois ganhou vida própria."
+  },
+  {
+   "t": "Coloque estas pinturas em ordem, da mais antiga à mais recente?",
+   "type": "order",
+   "a": [
+    "mona",
+    "ronda",
+    "impressao",
+    "avignon",
+    "memoria"
+   ],
+   "order": [
+    {
+     "id": "mona",
+     "y": 1503,
+     "label": "Mona Lisa",
+     "sub": "Leonardo da Vinci",
+     "face": "leonardo"
+    },
+    {
+     "id": "ronda",
+     "y": 1642,
+     "label": "A Ronda Noturna",
+     "sub": "Rembrandt",
+     "face": "rembrandt"
+    },
+    {
+     "id": "impressao",
+     "y": 1872,
+     "label": "Impressão, Nascer do Sol",
+     "sub": "Claude Monet",
+     "face": "monet"
+    },
+    {
+     "id": "avignon",
+     "y": 1907,
+     "label": "As Senhoritas de Avignon",
+     "sub": "Pablo Picasso",
+     "face": "picasso"
+    },
+    {
+     "id": "memoria",
+     "y": 1931,
+     "label": "A Persistência da Memória",
+     "sub": "Salvador Dalí",
+     "face": "dali"
+    }
+   ],
+   "d": 2,
+   "src": [
+    "en",
+    "Impression, Sunrise",
+    [
+     "1872"
+    ]
+   ]
+  },
+  {
+   "t": "Coloque estes livros brasileiros em ordem de publicação, do mais antigo ao mais recente?",
+   "type": "order",
+   "a": [
+    "guarani",
+    "bras",
+    "sertoes",
+    "macunaima",
+    "veredas"
+   ],
+   "order": [
+    {
+     "id": "guarani",
+     "y": 1857,
+     "label": "O Guarani",
+     "sub": "José de Alencar",
+     "crest": "imperio_brasil"
+    },
+    {
+     "id": "bras",
+     "y": 1881,
+     "label": "Memórias Póstumas de Brás Cubas",
+     "sub": "Machado de Assis",
+     "face": "machado"
+    },
+    {
+     "id": "sertoes",
+     "y": 1902,
+     "label": "Os Sertões",
+     "sub": "Euclides da Cunha",
+     "flag": "BRA"
+    },
+    {
+     "id": "macunaima",
+     "y": 1928,
+     "label": "Macunaíma",
+     "sub": "Mário de Andrade",
+     "flag": "BRA"
+    },
+    {
+     "id": "veredas",
+     "y": 1956,
+     "label": "Grande Sertão: Veredas",
+     "sub": "Guimarães Rosa",
+     "flag": "BRA"
+    }
+   ],
+   "d": 3,
+   "src": [
+    "pt",
+    "Grande Sertão: Veredas",
+    [
+     "1956"
+    ]
+   ]
+  },
+  {
+   "t": "Quem é o elo que falta nesta linha de mestres e discípulos?",
+   "type": "player",
+   "line": {
+    "t": "Mestre e discípulo · Florença e Milão",
+    "rows": [
+     "Andrea del Verrocchio",
+     "?",
+     "Francesco Melzi"
+    ],
+    "era": "mod"
+   },
+   "a": [
+    "leonardo"
+   ],
+   "d": 2,
+   "src": [
+    "en",
+    "Francesco Melzi",
+    [
+     "Leonardo"
+    ]
+   ],
+   "x": "Melzi acompanhou o mestre até a França e herdou os seus cadernos e desenhos."
+  },
+  {
+   "t": "Quem completa este grupo de participantes da Semana de Arte Moderna?",
+   "type": "player",
+   "line": {
+    "t": "Semana de Arte Moderna · São Paulo, 1922",
+    "rows": [
+     "Mário de Andrade",
+     "Oswald de Andrade",
+     "Anita Malfatti",
+     "?",
+     "Menotti Del Picchia"
+    ],
+    "kind": "grupo",
+    "era": "new"
+   },
+   "a": [
+    "villa_lobos"
+   ],
+   "d": 3,
+   "src": [
+    "pt",
+    "Semana de Arte Moderna",
+    [
+     "Villa-Lobos"
+    ]
+   ],
+   "x": "Tarsila do Amaral, tão ligada ao Modernismo, não participou: em fevereiro de 1922, ela estava em Paris."
+  },
+  {
+   "t": "Quem é o escritor desta manchete?",
+   "type": "player",
+   "news": {
+    "h": "Escritor condenado à morte é poupado diante do pelotão de fuzilamento",
+    "paper": "Gazeta de São Petersburgo",
+    "sub": "Membros do Círculo Petrachevski souberam no último instante que o czar trocou a pena por trabalhos forçados na Sibéria"
+   },
+   "a": [
+    "dostoievski"
+   ],
+   "d": 3,
+   "src": [
+    "en",
+    "Fyodor Dostoevsky",
+    [
+     "Petrashevsky",
+     "1849"
+    ]
+   ],
+   "x": "Ele passou quatro anos num presídio na Sibéria; a experiência inspirou o livro Recordações da Casa dos Mortos."
+  }
+ ]
+}

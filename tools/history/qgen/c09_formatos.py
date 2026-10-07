@@ -48,7 +48,7 @@ c.BT('Quem deteve o avanço dos mongóis nesta batalha, na Palestina?', 'Mameluc
      x='Foi a primeira grande derrota dos mongóis numa batalha campal.', src=('pt', 'Batalha de Ain Jalut', ['mamelucos']))
 c.BT('Quem expulsou os holandeses de Pernambuco nos montes desta batalha?', 'Luso-brasileiros', 'Guararapes · 1648', '?', 'holanda', d=3, typ='txt',
      wrong=['Franceses', 'Espanhóis', 'Ingleses', 'Suecos', 'Dinamarqueses'],
-     x='As duas batalhas dos Guararapes são lembradas como berço do Exército Brasileiro.', src=('pt', 'Batalhas dos Guararapes', ['holandeses']))
+     x='Houve duas batalhas nos montes Guararapes, em 1648 e 1649; em 1654, os holandeses deixaram o Recife.', src=('pt', 'Batalhas dos Guararapes', ['holandeses']))
 c.write()
 
 # ── Linhagens ── a succession or a council, one link missing
