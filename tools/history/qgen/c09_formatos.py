@@ -25,18 +25,18 @@ c.write()
 # ── Batalhas ── two banners and the crossed swords, one side hidden
 c = Cat('batalhas', 'Batalhas', '⚔️', 'Duas bandeiras, um lado escondido', '#8C2F2F', order=44)
 c.BT('Contra quem os 300 espartanos de Leônidas resistiram nesta batalha?', 'persia', 'Termópilas · 480 a.C.', 'esparta', '?', d=1,
-     x='O exército de Xerxes só passou pelo desfiladeiro depois de uma traição.', src=('pt', 'Batalha das Termópilas', ['Xerxes']))
+     x='Os invasores só passaram pelo desfiladeiro depois de uma traição.', src=('pt', 'Batalha das Termópilas', ['Xerxes']))
 c.BT('Qual cidade grega comandou a frota que venceu os persas nesta batalha naval?', 'atenas', 'Salamina · 480 a.C.', '?', 'persia', d=2,
      x='Temístocles atraiu as galeras persas para um estreito onde não podiam manobrar.', src=('pt', 'Batalha de Salamina', ['Temístocles']))
 c.BT('Quem Roma derrotou nesta batalha, pondo fim à Segunda Guerra Púnica?', 'cartago', 'Zama · 202 a.C.', 'republica_romana', '?', d=2,
-     x='Cipião enfrentou Aníbal no norte da África e venceu.', src=('pt', 'Batalha de Zama', ['Aníbal']))
+     x='Cipião levou a guerra ao norte da África e venceu o maior general inimigo.', src=('pt', 'Batalha de Zama', ['Aníbal']))
 c.BT('Quem derrotou o Primeiro Império Francês em Waterloo, ao lado da Prússia?', 'reino_unido', 'Waterloo · 1815', 'imperio_frances', '?', d=2,
-     x='O exército de Wellington resistiu até a chegada dos prussianos de Blücher.', src=('pt', 'Batalha de Waterloo', ['Wellington']))
+     x='A linha aliada resistiu o dia inteiro, até a chegada dos prussianos de Blücher.', src=('pt', 'Batalha de Waterloo', ['Wellington']))
 c.BT('Quem a União Soviética cercou e derrotou nesta batalha decisiva?', 'alemanha_nazista', 'Stalingrado · 1942–1943', 'urss', '?', d=1,
      x='O VI Exército alemão se rendeu em fevereiro de 1943.', src=('pt', 'Batalha de Stalingrado', ['1943']))
 c.BT('Quem invadiu a Inglaterra e venceu esta batalha?', 'Normandos', 'Hastings · 1066', '?', 'inglaterra', d=2, typ='txt',
      wrong=['Vikings', 'Escoceses', 'Francos', 'Bretões', 'Saxões'],
-     x='Guilherme, duque da Normandia, tornou-se rei da Inglaterra no Natal de 1066.', src=('pt', 'Batalha de Hastings', ['normandos']))
+     x='O comandante vencedor foi coroado rei da Inglaterra no Natal de 1066.', src=('pt', 'Batalha de Hastings', ['normandos']))
 c.BT('Contra quem o Egito de Ramsés II lutou nesta batalha de carros de guerra?', 'Hititas', 'Kadesh · c. 1274 a.C.', 'egito_antigo', '?', d=3, typ='txt',
      wrong=['Assírios', 'Babilônios', 'Núbios', 'Filisteus', 'Fenícios'],
      x='A batalha terminou sem vencedor claro e levou a um dos primeiros tratados de paz conhecidos.', src=('pt', 'Batalha de Kadesh', ['hititas']))

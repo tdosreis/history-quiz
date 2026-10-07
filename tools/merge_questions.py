@@ -34,6 +34,11 @@ CHROME = os.environ.get("CHROME", "/Applications/Google Chrome.app/Contents/MacO
 STRIPS = ("quote", "battle", "line", "news")   # history's own formats (tools/history/js/formats.js)
 BEGIN = "  /* NEW-QS:BEGIN — written by tools/merge_questions.py from tools/questions/*.json */"
 END = "  /* NEW-QS:END */"
+sys.path.insert(0, os.path.join(ROOT, "tools", "history"))
+try:
+    import qlint                     # history's own give-away checks (tools/history/qlint.py)
+except ImportError:
+    qlint = None
 
 
 def fold(x):
@@ -188,6 +193,7 @@ def main():
                 else:
                     bad(f"art: unknown key '{k}'")
 
+            if qlint: qlint.lint(q, bad)
             s_ = q.get("src")
             if not (isinstance(s_, list) and len(s_) == 3 and s_[2]): bad("src must be [lang, article, [terms]]")
 

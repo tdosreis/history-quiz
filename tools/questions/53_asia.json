@@ -1036,7 +1036,7 @@
    ],
    "d": 3,
    "art": {
-    "flag": "POR"
+    "crest": "imperio_portugues"
    },
    "src": [
     "en",
@@ -1055,7 +1055,7 @@
    ],
    "d": 3,
    "art": {
-    "flag": "JPN"
+    "icon": "ship"
    },
    "src": [
     "en",
@@ -1074,7 +1074,7 @@
    ],
    "d": 3,
    "art": {
-    "flag": "IND"
+    "icon": "sword"
    },
    "src": [
     "en",

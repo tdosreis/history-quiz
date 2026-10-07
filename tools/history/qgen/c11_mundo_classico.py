@@ -148,7 +148,7 @@ c.O('Ordene estes marcos da Grécia clássica, do mais antigo ao mais recente?',
 c.O('Ponha em ordem estes fatos da República Romana, do mais antigo ao mais recente?', [
     ('rei', 'Expulsão do último rei', 'Nasce a República', -509, {'crest': 'republica_romana'}),
     ('pun1', 'Começa a Primeira Guerra Púnica', 'A disputa pela Sicília', -264, {'crest': 'cartago'}),
-    ('cart', 'Destruição de Cartago', 'Fim da Terceira Guerra Púnica', -146, {'flag': 'TUN'}),
+    ('cart', 'Destruição de Cartago', 'Fim da Terceira Guerra Púnica', -146, {'crest': 'cartago'}),
     ('espart', 'Revolta de Espártaco', 'Escravos em armas contra Roma', -73, {'face': 'espartaco'}),
     ('cesar', 'Assassinato de Júlio César', 'Os Idos de Março', -44, {'face': 'cesar'})],
     d=4, src=('pt', 'República Romana', ['509 a.C.']))

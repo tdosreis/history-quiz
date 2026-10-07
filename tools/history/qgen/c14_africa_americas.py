@@ -59,7 +59,7 @@ c.P('Qual líder, futuro herói de outra independência, viveu mais de vinte ano
 c.P('Qual chanceler recebeu em sua capital, entre 1884 e 1885, a conferência que fixou as regras da partilha da África entre as potências europeias?', 'bismarck', d=3, icon='map',
     src=('en', 'Berlin Conference', ['Bismarck']),
     x='Nenhum africano foi convidado: catorze países, quase todos europeus, decidiram as regras para ocupar o continente.')
-c.C('Qual império da África ocidental, com capital em Gao, dominou o comércio do Saara até ser derrotado por um exército marroquino armado de arcabuzes, em 1591?', 'songai', d=3, flag='MAR',
+c.C('Qual império da África ocidental, com capital em Gao, dominou o comércio do Saara até ser derrotado por um exército marroquino armado de arcabuzes, em 1591?', 'songai', d=3, icon='cannon',
     src=('en', 'Songhai Empire', ['1591']),
     x='Na Batalha de Tondibi, as armas de fogo marroquinas venceram um exército bem maior, que lutava com lanças, arcos e cavalaria.')
 c.C('Qual reino africano cunhava moedas próprias de ouro, prata e bronze e controlava o porto de Adúlis, no mar Vermelho?', 'axum', d=4, icon='coins',
@@ -117,9 +117,9 @@ c.BT('Quem os zulus derrotaram nesta batalha, um dos maiores reveses de um exér
      wrong=['Bôeres', 'Portugueses', 'Franceses', 'Alemães', 'Holandeses'],
      x='Armados sobretudo de lanças e escudos, os guerreiros do rei Cetshwayo venceram tropas com fuzis e artilharia.',
      src=('en', 'Battle of Isandlwana', ['Cetshwayo']))
-c.BT('Qual reino perdeu nesta batalha, no Marrocos, o seu jovem rei, desaparecido em combate?', 'Portugal', 'Alcácer-Quibir · 1578', '?', 'MAR', d=2, typ='txt',
+c.BT('Qual reino perdeu nesta batalha, no Marrocos, o seu jovem rei, desaparecido em combate?', 'Portugal', 'Alcácer-Quibir · 1578', '?', 'Marrocos', d=2, typ='txt',
      wrong=['Espanha', 'França', 'Inglaterra', 'Império Otomano', 'Veneza'],
-     x='O sumiço de D. Sebastião, sem herdeiros, levou Portugal à União Ibérica e deu origem ao sebastianismo.',
+     x='O rei sumiu sem deixar herdeiros; dois anos depois, o reino perdeu a independência para a coroa vizinha, por 60 anos.',
      src=('en', 'Battle of Alcácer Quibir', ['1578']))
 
 # ── Linhagens ──

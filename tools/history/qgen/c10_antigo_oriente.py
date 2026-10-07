@@ -189,7 +189,7 @@ c.T('Qual povo estrangeiro dominou o norte do Egito entre o Médio e o Novo Imp�
     src=('en', 'Hyksos', ['Ahmose']),
     x='Foram expulsos por volta de 1550 a.C. por Amósis I, fundador da XVIII dinastia, que abriu o Novo Império.')
 c.T('Qual reino da Núbia conquistou o Egito no século VIII a.C. e reinou como a XXV dinastia?', 'Cuxe',
-    ['Axum', 'Punt', 'Sabá', 'Mitani', 'Elam'], d=4, flag='EGY',
+    ['Axum', 'Punt', 'Sabá', 'Mitani', 'Elam'], d=4, crest='egito_antigo',
     src=('en', 'Twenty-fifth Dynasty of Egypt', ['Kush']),
     x='Os reis cuxitas, como Piye e Taharqa, governaram do delta do Nilo ao atual Sudão até serem expulsos pelos assírios.')
 c.T('Qual era a capital do Império Hitita, na atual Turquia?', 'Hatusa',
@@ -223,7 +223,7 @@ c.BT('Qual reino, aliado aos últimos assírios, foi derrotado pelos babilônios
      src=('en', 'Battle of Carchemish', ['605']))
 c.O('Coloque estes capítulos da história egípcia em ordem, do mais antigo ao mais recente?', [
     ('unificacao', 'Unificação do Alto e do Baixo Egito', 'Narmer', -3100, {'crest': 'egito_antigo'}),
-    ('djoser', 'Pirâmide de degraus de Djoser', 'Sacará', -2670, {'flag': 'EGY'}),
+    ('djoser', 'Pirâmide de degraus de Djoser', 'Sacará', -2670, {'crest': 'egito_antigo'}),
     ('hatexepsute', 'Reinado de Hatexepsute', 'XVIII dinastia', -1479, {'face': 'hatexepsute'}),
     ('amarna', 'Aquenáton funda Amarna', 'Culto a Aton', -1346, {'face': 'aquenaton'}),
     ('persas', 'Conquista persa do Egito', 'Cambises II', -525, {'crest': 'persia'})], d=4,

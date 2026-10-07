@@ -348,7 +348,7 @@
    ],
    "d": 3,
    "art": {
-    "flag": "MAR"
+    "icon": "cannon"
    },
    "src": [
     "en",
@@ -651,8 +651,8 @@
    "battle": {
     "lbl": "Alcácer-Quibir · 1578",
     "a": "?",
-    "b": "MAR",
-    "x": "O sumiço de D. Sebastião, sem herdeiros, levou Portugal à União Ibérica e deu origem ao sebastianismo."
+    "b": "Marrocos",
+    "x": "O rei sumiu sem deixar herdeiros; dois anos depois, o reino perdeu a independência para a coroa vizinha, por 60 anos."
    },
    "a": [
     "Portugal"

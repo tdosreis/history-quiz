@@ -400,7 +400,7 @@
    ],
    "d": 3,
    "art": {
-    "flag": "FRA"
+    "crest": "francia"
    },
    "src": [
     "en",
@@ -1052,8 +1052,7 @@
     "clermont",
     "hattin",
     "acre1191",
-    "saque",
-    "acre1291"
+    "saque"
    ],
    "order": [
     {
@@ -1061,7 +1060,7 @@
      "y": 1095,
      "label": "Urbano II prega a cruzada",
      "sub": "Concílio de Clermont",
-     "flag": "FRA"
+     "crest": "francia"
     },
     {
      "id": "hattin",
@@ -1083,13 +1082,6 @@
      "label": "Cruzados saqueiam Constantinopla",
      "sub": "Venezianos e cavaleiros latinos",
      "crest": "bizancio"
-    },
-    {
-     "id": "acre1291",
-     "y": 1291,
-     "label": "Queda de Acre",
-     "sub": "Fim dos estados cruzados no Oriente",
-     "flag": "ISR"
     }
    ],
    "d": 4,
@@ -1097,7 +1089,7 @@
     "en",
     "Crusades",
     [
-     "1291"
+     "1204"
     ]
    ]
   },
@@ -1243,7 +1235,7 @@
     "lbl": "Azincourt · 1415",
     "a": "?",
     "b": "francia",
-    "x": "Henrique V venceu no dia de São Crispim; quase dois séculos depois, Shakespeare imortalizou a batalha na peça Henrique V."
+    "x": "A vitória veio no dia de São Crispim, graças sobretudo aos arqueiros com seus arcos longos."
    },
    "a": [
     "inglaterra"
@@ -1321,7 +1313,7 @@
     "lbl": "Hattin · 1187",
     "a": "?",
     "b": "Reino de Jerusalém",
-    "x": "Sem água, sob o calor de julho, os cruzados foram cercados; três meses depois, Saladino entrou em Jerusalém."
+    "x": "Sem água, sob o calor de julho, os cruzados foram cercados; três meses depois, o sultão vencedor entrou em Jerusalém."
    },
    "a": [
     "ayubida"

@@ -12,7 +12,7 @@
     "lbl": "Termópilas · 480 a.C.",
     "a": "esparta",
     "b": "?",
-    "x": "O exército de Xerxes só passou pelo desfiladeiro depois de uma traição."
+    "x": "Os invasores só passaram pelo desfiladeiro depois de uma traição."
    },
    "a": [
     "persia"
@@ -52,7 +52,7 @@
     "lbl": "Zama · 202 a.C.",
     "a": "republica_romana",
     "b": "?",
-    "x": "Cipião enfrentou Aníbal no norte da África e venceu."
+    "x": "Cipião levou a guerra ao norte da África e venceu o maior general inimigo."
    },
    "a": [
     "cartago"
@@ -72,7 +72,7 @@
     "lbl": "Waterloo · 1815",
     "a": "imperio_frances",
     "b": "?",
-    "x": "O exército de Wellington resistiu até a chegada dos prussianos de Blücher."
+    "x": "A linha aliada resistiu o dia inteiro, até a chegada dos prussianos de Blücher."
    },
    "a": [
     "reino_unido"
@@ -121,7 +121,7 @@
     "lbl": "Hastings · 1066",
     "a": "?",
     "b": "inglaterra",
-    "x": "Guilherme, duque da Normandia, tornou-se rei da Inglaterra no Natal de 1066."
+    "x": "O comandante vencedor foi coroado rei da Inglaterra no Natal de 1066."
    },
    "a": [
     "Normandos"

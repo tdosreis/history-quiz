@@ -1,0 +1,1844 @@
+{
+ "id": "brasil",
+ "name": "História do Brasil",
+ "tag": "Da Terra de Santa Cruz à Nova República",
+ "col": "#1F7A4D",
+ "diff": "Variado",
+ "emoji": "🇧🇷",
+ "qs": [
+  {
+   "t": "Na política do café com leite, durante a Primeira República, quais estados se revezavam no controle da Presidência?",
+   "type": "txt",
+   "choices": [
+    "São Paulo e Minas Gerais",
+    "Rio de Janeiro e Minas Gerais",
+    "São Paulo e Rio Grande do Sul",
+    "Bahia e Pernambuco",
+    "São Paulo e Rio de Janeiro",
+    "Minas Gerais e Rio Grande do Sul"
+   ],
+   "a": [
+    "São Paulo e Minas Gerais"
+   ],
+   "d": 1,
+   "art": {
+    "crest": "brasil_republica"
+   },
+   "src": [
+    "pt",
+    "Política do café com leite",
+    [
+     "Minas Gerais",
+     "São Paulo"
+    ]
+   ],
+   "x": "O revezamento não era perfeito: o gaúcho Hermes da Fonseca e o paraibano Epitácio Pessoa também chegaram à Presidência nesse período."
+  },
+  {
+   "t": "Qual estado pegou em armas contra o governo de Getúlio Vargas na Revolução Constitucionalista de 1932?",
+   "type": "txt",
+   "choices": [
+    "São Paulo",
+    "Minas Gerais",
+    "Rio Grande do Sul",
+    "Rio de Janeiro",
+    "Pernambuco",
+    "Bahia"
+   ],
+   "a": [
+    "São Paulo"
+   ],
+   "d": 1,
+   "art": {
+    "who": "getulio"
+   },
+   "src": [
+    "pt",
+    "Revolução Constitucionalista de 1932",
+    [
+     "9 de julho"
+    ]
+   ],
+   "x": "O levante começou em 9 de julho, hoje feriado estadual paulista; os rebeldes exigiam uma nova Constituição e resistiram por quase três meses."
+  },
+  {
+   "t": "Qual político mineiro foi eleito presidente pelo Colégio Eleitoral, em 1985, mas morreu antes de tomar posse?",
+   "type": "txt",
+   "choices": [
+    "Tancredo Neves",
+    "José Sarney",
+    "Ulysses Guimarães",
+    "Paulo Maluf",
+    "Franco Montoro",
+    "Leonel Brizola"
+   ],
+   "a": [
+    "Tancredo Neves"
+   ],
+   "d": 1,
+   "art": {
+    "crest": "brasil_republica"
+   },
+   "src": [
+    "pt",
+    "Tancredo Neves",
+    [
+     "1985",
+     "Colégio Eleitoral"
+    ]
+   ],
+   "x": "Adoeceu na véspera da posse e morreu em 21 de abril de 1985, data da morte de Tiradentes; quem governou foi o vice, José Sarney."
+  },
+  {
+   "t": "Os \"caras-pintadas\" foram às ruas em 1992 para pedir o impeachment de qual presidente?",
+   "type": "txt",
+   "choices": [
+    "Fernando Collor",
+    "José Sarney",
+    "Itamar Franco",
+    "Fernando Henrique Cardoso",
+    "João Figueiredo",
+    "Tancredo Neves"
+   ],
+   "a": [
+    "Fernando Collor"
+   ],
+   "d": 1,
+   "art": {
+    "stad": "catedral_brasilia"
+   },
+   "src": [
+    "pt",
+    "Fernando Collor de Mello",
+    [
+     "impeachment",
+     "1992"
+    ]
+   ],
+   "x": "Foi o primeiro presidente eleito pelo voto direto depois da ditadura; renunciou no dia do julgamento no Senado, mas teve os direitos políticos suspensos assim mesmo."
+  },
+  {
+   "t": "Como eram chamadas as comunidades formadas por pessoas escravizadas que fugiam do cativeiro, como Palmares?",
+   "type": "txt",
+   "choices": [
+    "Quilombos",
+    "Senzalas",
+    "Engenhos",
+    "Missões",
+    "Sesmarias",
+    "Capitanias"
+   ],
+   "a": [
+    "Quilombos"
+   ],
+   "d": 1,
+   "art": {
+    "who": "zumbi"
+   },
+   "src": [
+    "pt",
+    "Quilombo",
+    [
+     "Palmares"
+    ]
+   ],
+   "x": "Muitas comunidades quilombolas existem até hoje, e a Constituição de 1988 garante a elas o direito às terras que ocupam."
+  },
+  {
+   "t": "Qual produto da floresta amazônica enriqueceu Manaus e Belém na virada do século XIX para o XX e pagou o luxuoso Teatro Amazonas?",
+   "type": "txt",
+   "choices": [
+    "Borracha",
+    "Cacau",
+    "Castanha-do-pará",
+    "Café",
+    "Açúcar",
+    "Algodão"
+   ],
+   "a": [
+    "Borracha"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "coins"
+   },
+   "src": [
+    "pt",
+    "Ciclo da borracha",
+    [
+     "Manaus"
+    ]
+   ],
+   "x": "O ciclo entrou em crise nos anos 1910, quando a borracha das plantações britânicas na Ásia, nascidas de sementes levadas da Amazônia, dominou o mercado."
+  },
+  {
+   "t": "Quem formava a principal mão de obra dos engenhos de açúcar do Nordeste colonial a partir do fim do século XVI?",
+   "type": "txt",
+   "choices": [
+    "Africanos escravizados",
+    "Imigrantes italianos",
+    "Imigrantes japoneses",
+    "Colonos alemães",
+    "Operários assalariados",
+    "Prisioneiros holandeses"
+   ],
+   "a": [
+    "Africanos escravizados"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "chains"
+   },
+   "src": [
+    "pt",
+    "Escravidão no Brasil",
+    [
+     "açúcar"
+    ]
+   ],
+   "x": "Nas primeiras décadas, os engenhos usaram sobretudo indígenas escravizados; aos poucos, o tráfico atlântico substituiu essa mão de obra."
+  },
+  {
+   "t": "Em que ano a família real portuguesa desembarcou no Brasil, fugindo das tropas de Napoleão?",
+   "type": "txt",
+   "choices": [
+    "1808",
+    "1792",
+    "1800",
+    "1815",
+    "1821",
+    "1822"
+   ],
+   "a": [
+    "1808"
+   ],
+   "d": 1,
+   "art": {
+    "who": "dom_joao_vi"
+   },
+   "src": [
+    "pt",
+    "Transferência da corte portuguesa para o Brasil",
+    [
+     "1808"
+    ]
+   ],
+   "x": "A esquadra deixou Lisboa no fim de novembro de 1807; D. João desembarcou primeiro em Salvador, em janeiro, e só em março chegou ao Rio."
+  },
+  {
+   "t": "Como se chamava a cobrança forçada dos impostos atrasados sobre o ouro, cuja ameaça precipitou a Inconfidência Mineira?",
+   "type": "txt",
+   "choices": [
+    "Derrama",
+    "Capitação",
+    "Dízimo",
+    "Finta",
+    "Sisa",
+    "Talha"
+   ],
+   "a": [
+    "Derrama"
+   ],
+   "d": 2,
+   "art": {
+    "who": "tiradentes"
+   },
+   "src": [
+    "pt",
+    "Derrama",
+    [
+     "Inconfidência"
+    ]
+   ],
+   "x": "A Coroa exigia 100 arrobas de ouro por ano; com as minas em declínio, o que faltava seria cobrado de toda a população de uma só vez."
+  },
+  {
+   "t": "Qual revolta popular, iniciada no Grão-Pará em 1835, chegou a tomar Belém e a pôr um governo rebelde no poder?",
+   "type": "txt",
+   "choices": [
+    "Cabanagem",
+    "Balaiada",
+    "Sabinada",
+    "Revolução Farroupilha",
+    "Revolução Praieira",
+    "Revolta dos Malês"
+   ],
+   "a": [
+    "Cabanagem"
+   ],
+   "d": 2,
+   "art": {
+    "crest": "imperio_brasil"
+   },
+   "src": [
+    "pt",
+    "Cabanagem",
+    [
+     "Belém",
+     "1835"
+    ]
+   ],
+   "x": "O nome vem das cabanas de barro e palha onde vivia boa parte dos rebeldes, indígenas, negros e mestiços pobres das margens dos rios."
+  },
+  {
+   "t": "No bipartidarismo imposto pelo regime militar, qual partido fazia a oposição consentida ao governo?",
+   "type": "txt",
+   "choices": [
+    "MDB",
+    "ARENA",
+    "UDN",
+    "PTB",
+    "PSD",
+    "PCB"
+   ],
+   "a": [
+    "MDB"
+   ],
+   "d": 2,
+   "art": {
+    "crest": "brasil_republica"
+   },
+   "src": [
+    "pt",
+    "Aliança Renovadora Nacional",
+    [
+     "MDB"
+    ]
+   ],
+   "x": "O AI-2, de 1965, extinguiu os partidos existentes; a ARENA apoiava o governo e o MDB reunia a oposição tolerada pelo regime."
+  },
+  {
+   "t": "Qual marinheiro, apelidado de \"Almirante Negro\", liderou a Revolta da Chibata, em 1910?",
+   "type": "txt",
+   "choices": [
+    "João Cândido",
+    "Marcílio Dias",
+    "André Rebouças",
+    "Francisco José do Nascimento",
+    "Joaquim Nabuco",
+    "Almirante Tamandaré"
+   ],
+   "a": [
+    "João Cândido"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "ship"
+   },
+   "src": [
+    "pt",
+    "Revolta da Chibata",
+    [
+     "João Cândido",
+     "1910"
+    ]
+   ],
+   "x": "Os marinheiros tomaram encouraçados na baía de Guanabara e exigiram o fim dos castigos com chibata, ainda aplicados mais de 20 anos depois da abolição."
+  },
+  {
+   "t": "Quem foi o primeiro governador-geral do Brasil, enviado à Bahia em 1549 para fundar Salvador?",
+   "type": "txt",
+   "choices": [
+    "Tomé de Sousa",
+    "Duarte da Costa",
+    "Mem de Sá",
+    "Martim Afonso de Sousa",
+    "Duarte Coelho",
+    "Estácio de Sá"
+   ],
+   "a": [
+    "Tomé de Sousa"
+   ],
+   "d": 2,
+   "art": {
+    "crest": "brasil_colonia"
+   },
+   "src": [
+    "pt",
+    "Tomé de Sousa",
+    [
+     "1549"
+    ]
+   ],
+   "x": "Com ele chegaram os primeiros jesuítas ao Brasil, liderados pelo padre Manuel da Nóbrega."
+  },
+  {
+   "t": "Qual conflito, entre 1912 e 1916, opôs sertanejos às forças do governo numa região disputada pelo Paraná e por Santa Catarina?",
+   "type": "txt",
+   "choices": [
+    "Guerra do Contestado",
+    "Guerra de Canudos",
+    "Revolução Federalista",
+    "Sedição de Juazeiro",
+    "Revolta dos Muckers",
+    "Revolta da Chibata"
+   ],
+   "a": [
+    "Guerra do Contestado"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "train"
+   },
+   "src": [
+    "pt",
+    "Guerra do Contestado",
+    [
+     "1912",
+     "Santa Catarina"
+    ]
+   ],
+   "x": "A ferrovia entre São Paulo e o Rio Grande do Sul expulsou milhares de posseiros das terras à beira dos trilhos, e muitos seguiram líderes religiosos chamados de monges."
+  },
+  {
+   "t": "Qual revolta de 1824, nascida em Pernambuco contra a Constituição outorgada por D. Pedro I, terminou com a execução de Frei Caneca?",
+   "type": "txt",
+   "choices": [
+    "Confederação do Equador",
+    "Revolução Pernambucana",
+    "Revolução Praieira",
+    "Sabinada",
+    "Balaiada",
+    "Guerra dos Mascates"
+   ],
+   "a": [
+    "Confederação do Equador"
+   ],
+   "d": 3,
+   "art": {
+    "who": "dom_pedro_i"
+   },
+   "src": [
+    "pt",
+    "Confederação do Equador",
+    [
+     "Frei Caneca",
+     "1824"
+    ]
+   ],
+   "x": "Condenado à forca, Frei Caneca acabou fuzilado em 1825, porque nenhum carrasco aceitou enforcá-lo."
+  },
+  {
+   "t": "Qual jesuíta, chamado por Fernando Pessoa de \"Imperador da língua portuguesa\", defendeu os indígenas do Maranhão e escreveu o Sermão da Sexagésima?",
+   "type": "txt",
+   "choices": [
+    "Padre Antônio Vieira",
+    "José de Anchieta",
+    "Manuel da Nóbrega",
+    "Gregório de Matos",
+    "Bartolomeu de Gusmão",
+    "Frei Caneca"
+   ],
+   "a": [
+    "Padre Antônio Vieira"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "church"
+   },
+   "src": [
+    "en",
+    "António Vieira",
+    [
+     "1608",
+     "1697"
+    ]
+   ],
+   "x": "Nasceu em Lisboa em 1608, veio criança para a Bahia e morreu em Salvador, em 1697, aos 89 anos."
+  },
+  {
+   "t": "De qual corrente filosófica, muito influente entre os militares republicanos, vem o lema \"Ordem e Progresso\" da bandeira brasileira?",
+   "type": "txt",
+   "choices": [
+    "Positivismo",
+    "Iluminismo",
+    "Liberalismo",
+    "Marxismo",
+    "Romantismo",
+    "Utilitarismo"
+   ],
+   "a": [
+    "Positivismo"
+   ],
+   "d": 3,
+   "art": {
+    "flag": "BRA"
+   },
+   "src": [
+    "pt",
+    "Bandeira do Brasil",
+    [
+     "Comte"
+    ]
+   ],
+   "x": "A bandeira republicana foi adotada em 19 de novembro de 1889; o círculo azul mostra o céu do Rio de Janeiro na manhã de 15 de novembro."
+  },
+  {
+   "t": "Qual tratado de 1903, negociado pelo Barão do Rio Branco com a Bolívia, incorporou o Acre ao Brasil?",
+   "type": "txt",
+   "choices": [
+    "Tratado de Petrópolis",
+    "Tratado de Madri",
+    "Tratado de Santo Ildefonso",
+    "Tratado de Ayacucho",
+    "Tratado de Assunção",
+    "Tratado de Badajoz"
+   ],
+   "a": [
+    "Tratado de Petrópolis"
+   ],
+   "d": 3,
+   "art": {
+    "who": "rio_branco"
+   },
+   "src": [
+    "pt",
+    "Tratado de Petrópolis",
+    [
+     "1903",
+     "Acre"
+    ]
+   ],
+   "x": "O Brasil pagou 2 milhões de libras esterlinas e se comprometeu a construir a Estrada de Ferro Madeira-Mamoré."
+  },
+  {
+   "t": "Qual povoação os portugueses fundaram em 1680 na margem norte do Rio da Prata, bem em frente a Buenos Aires?",
+   "type": "txt",
+   "choices": [
+    "Colônia do Sacramento",
+    "Montevidéu",
+    "Laguna",
+    "Rio Grande",
+    "Maldonado",
+    "Assunção"
+   ],
+   "a": [
+    "Colônia do Sacramento"
+   ],
+   "d": 4,
+   "art": {
+    "crest": "imperio_portugues"
+   },
+   "src": [
+    "pt",
+    "Colônia do Sacramento",
+    [
+     "1680"
+    ]
+   ],
+   "x": "A colônia trocou de mãos várias vezes entre portugueses e espanhóis; hoje fica no Uruguai, e seu centro histórico é Patrimônio Mundial da UNESCO."
+  },
+  {
+   "t": "Qual lei de 1850 determinou que as terras públicas só poderiam ser obtidas por compra, dificultando o acesso de libertos e imigrantes pobres à propriedade?",
+   "type": "txt",
+   "choices": [
+    "Lei de Terras",
+    "Lei Eusébio de Queirós",
+    "Lei do Ventre Livre",
+    "Lei de Sesmarias",
+    "Código Comercial",
+    "Lei Saraiva"
+   ],
+   "a": [
+    "Lei de Terras"
+   ],
+   "d": 4,
+   "art": {
+    "icon": "map"
+   },
+   "src": [
+    "pt",
+    "Lei de Terras",
+    [
+     "1850"
+    ]
+   ],
+   "x": "Foi assinada em 18 de setembro de 1850, duas semanas depois da Lei Eusébio de Queirós, que proibiu o tráfico de africanos."
+  },
+  {
+   "t": "Como ficou conhecida a onda de especulação e inflação do início da República, provocada pela emissão desenfreada de dinheiro na gestão do ministro Rui Barbosa?",
+   "type": "txt",
+   "choices": [
+    "Encilhamento",
+    "Funding Loan",
+    "Convênio de Taubaté",
+    "Crack de 1929",
+    "Plano Cruzado",
+    "Milagre econômico"
+   ],
+   "a": [
+    "Encilhamento"
+   ],
+   "d": 4,
+   "art": {
+    "who": "deodoro"
+   },
+   "src": [
+    "pt",
+    "Encilhamento",
+    [
+     "Rui Barbosa"
+    ]
+   ],
+   "x": "O nome vem do turfe: encilhamento é o momento em que os cavalos são selados e os apostadores fazem suas últimas apostas."
+  },
+  {
+   "t": "Qual revolta liberal de 1848, em Pernambuco, foi a última das grandes rebeliões provinciais do Império?",
+   "type": "txt",
+   "choices": [
+    "Revolução Praieira",
+    "Confederação do Equador",
+    "Revolução Pernambucana",
+    "Sabinada",
+    "Cabanagem",
+    "Guerra dos Mascates"
+   ],
+   "a": [
+    "Revolução Praieira"
+   ],
+   "d": 4,
+   "art": {
+    "crest": "imperio_brasil"
+   },
+   "src": [
+    "pt",
+    "Revolução Praieira",
+    [
+     "1848"
+    ]
+   ],
+   "x": "O nome vem do jornal liberal Diário Novo, cuja sede ficava na Rua da Praia, no Recife."
+  },
+  {
+   "t": "Qual unidade de conta, criada em 1994, serviu de ponte entre o cruzeiro real e o real durante a implantação do Plano Real?",
+   "type": "txt",
+   "choices": [
+    "URV",
+    "ORTN",
+    "BTN",
+    "Cruzado Novo",
+    "UFIR",
+    "Cruzeiro"
+   ],
+   "a": [
+    "URV"
+   ],
+   "d": 4,
+   "art": {
+    "icon": "coins"
+   },
+   "src": [
+    "pt",
+    "Unidade Real de Valor",
+    [
+     "1994"
+    ]
+   ],
+   "x": "Por quatro meses, preços e salários foram expressos em URV; em 1º de julho de 1994, cada URV virou um real, e 2.750 cruzeiros reais viraram um real."
+  },
+  {
+   "t": "Que nome Antônio Conselheiro deu ao arraial que fundou às margens do rio Vaza-Barris e que ficou conhecido como Canudos?",
+   "type": "txt",
+   "choices": [
+    "Belo Monte",
+    "Monte Santo",
+    "Bom Jesus",
+    "Nova Jerusalém",
+    "Santa Cruz",
+    "Juazeiro"
+   ],
+   "a": [
+    "Belo Monte"
+   ],
+   "d": 5,
+   "art": {
+    "icon": "church"
+   },
+   "src": [
+    "pt",
+    "Guerra de Canudos",
+    [
+     "Belo Monte"
+    ]
+   ],
+   "x": "Em poucos anos, o arraial reuniu milhares de moradores; o Exército só o destruiu na quarta expedição, em outubro de 1897."
+  },
+  {
+   "t": "Qual navegador espanhol chegou ao litoral do atual Brasil em janeiro de 1500, meses antes de Cabral?",
+   "type": "txt",
+   "choices": [
+    "Vicente Yáñez Pinzón",
+    "Juan Díaz de Solís",
+    "Juan Sebastián Elcano",
+    "Francisco de Orellana",
+    "Fernão de Magalhães",
+    "Hernán Cortés"
+   ],
+   "a": [
+    "Vicente Yáñez Pinzón"
+   ],
+   "d": 5,
+   "art": {
+    "icon": "ship"
+   },
+   "src": [
+    "pt",
+    "Vicente Yáñez Pinzón",
+    [
+     "1500"
+    ]
+   ],
+   "x": "Pinzón havia comandado a caravela Niña na primeira viagem de Colombo, em 1492."
+  },
+  {
+   "t": "Qual bandeirante comandou, entre 1648 e 1651, uma expedição de milhares de quilômetros pelo interior que terminou descendo o rio Amazonas?",
+   "type": "txt",
+   "choices": [
+    "Antônio Raposo Tavares",
+    "Fernão Dias Pais",
+    "Domingos Jorge Velho",
+    "Bartolomeu Bueno da Silva",
+    "Manuel de Borba Gato",
+    "Pedro Teixeira"
+   ],
+   "a": [
+    "Antônio Raposo Tavares"
+   ],
+   "d": 5,
+   "art": {
+    "icon": "compass"
+   },
+   "src": [
+    "pt",
+    "Antônio Raposo Tavares",
+    [
+     "1648"
+    ]
+   ],
+   "x": "Antes disso, em 1628, ele atacou as missões jesuíticas do Guairá, no atual Paraná, e escravizou milhares de indígenas guaranis."
+  },
+  {
+   "t": "Qual padre paulista, regente único do Império entre 1835 e 1837, havia criado a Guarda Nacional quando era ministro da Justiça?",
+   "type": "txt",
+   "choices": [
+    "Diogo Antônio Feijó",
+    "Pedro de Araújo Lima",
+    "Francisco de Lima e Silva",
+    "Bernardo Pereira de Vasconcelos",
+    "Evaristo da Veiga",
+    "José Bonifácio"
+   ],
+   "a": [
+    "Diogo Antônio Feijó"
+   ],
+   "d": 5,
+   "art": {
+    "crest": "imperio_brasil"
+   },
+   "src": [
+    "pt",
+    "Diogo Antônio Feijó",
+    [
+     "Guarda Nacional"
+    ]
+   ],
+   "x": "Pressionado pela oposição e pelas revoltas nas províncias, renunciou em 1837 e deixou o cargo para Araújo Lima."
+  },
+  {
+   "t": "Qual rei foi aclamado no Rio de Janeiro, em 1818, dois anos depois da morte da mãe, a rainha D. Maria I?",
+   "type": "player",
+   "a": [
+    "dom_joao_vi"
+   ],
+   "d": 2,
+   "art": {
+    "crest": "portugal"
+   },
+   "src": [
+    "pt",
+    "João VI de Portugal",
+    [
+     "1818"
+    ]
+   ],
+   "x": "Ele já governava como príncipe regente desde 1799, porque a mãe sofria de uma doença mental."
+  },
+  {
+   "t": "Qual governante também foi rei de Portugal, com o nome de D. Pedro IV, em 1826?",
+   "type": "player",
+   "a": [
+    "dom_pedro_i"
+   ],
+   "d": 2,
+   "art": {
+    "crest": "portugal"
+   },
+   "src": [
+    "pt",
+    "Pedro I do Brasil",
+    [
+     "Pedro IV"
+    ]
+   ],
+   "x": "Abdicou da coroa portuguesa em favor da filha, Maria da Glória, e anos depois voltou à Europa para lutar pelo trono dela numa guerra civil."
+  },
+  {
+   "t": "Qual militar brasileiro dividiu com o ex-presidente americano Theodore Roosevelt o comando de uma expedição pela Amazônia, em 1913 e 1914?",
+   "type": "player",
+   "a": [
+    "rondon"
+   ],
+   "d": 3,
+   "art": {
+    "flag": "USA"
+   },
+   "src": [
+    "pt",
+    "Cândido Rondon",
+    [
+     "Roosevelt"
+    ]
+   ],
+   "x": "Um rio que eles exploraram, até então chamado Rio da Dúvida, foi rebatizado como Rio Roosevelt."
+  },
+  {
+   "t": "Qual militar recebeu seu primeiro título de nobreza, o de barão, depois de sufocar a Balaiada, no Maranhão?",
+   "type": "player",
+   "a": [
+    "duque_caxias"
+   ],
+   "d": 3,
+   "art": {
+    "crest": "imperio_brasil"
+   },
+   "src": [
+    "pt",
+    "Luís Alves de Lima e Silva",
+    [
+     "Balaiada"
+    ]
+   ],
+   "x": "O título veio de Caxias, cidade maranhense que ele retomou dos rebeldes; depois ele ainda seria conde, marquês e, por fim, duque."
+  },
+  {
+   "t": "Qual reino europeu tentou fundar uma colônia na baía de Guanabara, em 1555, até ser expulso pelos portugueses, em 1567?",
+   "a": [
+    "francia"
+   ],
+   "d": 3,
+   "art": {
+    "stad": "cristo_redentor"
+   },
+   "src": [
+    "pt",
+    "França Antártica",
+    [
+     "Villegagnon",
+     "1555"
+    ]
+   ],
+   "x": "A expedição era chefiada por Nicolas Durand de Villegagnon; na luta para expulsar os invasores, Estácio de Sá fundou a cidade do Rio de Janeiro, em 1565."
+  },
+  {
+   "t": "Qual país emprestou o dinheiro para construir a Companhia Siderúrgica Nacional, em Volta Redonda, num acordo que aproximou o Brasil dos Aliados na Segunda Guerra?",
+   "a": [
+    "estados_unidos"
+   ],
+   "d": 3,
+   "art": {
+    "who": "getulio"
+   },
+   "src": [
+    "pt",
+    "Companhia Siderúrgica Nacional",
+    [
+     "Volta Redonda"
+    ]
+   ],
+   "x": "A usina de Volta Redonda começou a produzir aço em 1946 e virou o grande símbolo da industrialização da Era Vargas."
+  },
+  {
+   "t": "Qual estado ocupou Salvador, então capital do Brasil, entre 1624 e 1625?",
+   "a": [
+    "holanda"
+   ],
+   "d": 3,
+   "art": {
+    "crest": "brasil_colonia"
+   },
+   "src": [
+    "pt",
+    "Invasões holandesas no Brasil",
+    [
+     "1624"
+    ]
+   ],
+   "x": "Uma grande frota luso-espanhola, a Jornada dos Vassalos, retomou a cidade em 1625; cinco anos depois, os invasores voltaram, desta vez a Pernambuco."
+  },
+  {
+   "t": "Quem sou eu?",
+   "type": "player",
+   "clues": [
+    "Gostava mais de livros, línguas e ciências do que de cerimônias, e conheci pessoalmente sábios como Pasteur e Victor Hugo.",
+    "Perdi a mãe com um ano de idade e, aos cinco, vi meu pai partir para a Europa.",
+    "Fui declarado maior de idade aos 14 anos para poder governar.",
+    "Governei por quase meio século, até ser deposto por um golpe militar em 1889."
+   ],
+   "a": [
+    "dom_pedro_ii"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "bust"
+   },
+   "src": [
+    "pt",
+    "Pedro II do Brasil",
+    [
+     "1825",
+     "1889"
+    ]
+   ],
+   "x": "Morreu no exílio, em Paris, em 1891; décadas depois, seus restos voltaram ao Brasil e hoje estão na catedral de Petrópolis."
+  },
+  {
+   "t": "Quem sou eu?",
+   "type": "player",
+   "clues": [
+    "Nasci em Viena, filha do imperador da Áustria, e era apaixonada por botânica e mineralogia.",
+    "Cientistas e pintores europeus vieram ao Brasil na comitiva do meu casamento.",
+    "Casei-me com o herdeiro do trono português e fui mãe de um futuro imperador.",
+    "Em setembro de 1822, presidi o Conselho de Estado e escrevi ao meu marido defendendo a separação de Portugal."
+   ],
+   "a": [
+    "leopoldina"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "bust"
+   },
+   "src": [
+    "pt",
+    "Maria Leopoldina da Áustria",
+    [
+     "Viena",
+     "1822"
+    ]
+   ],
+   "x": "Morreu em 1826, aos 29 anos; seus restos estão hoje na cripta do Monumento à Independência, no Ipiranga, em São Paulo."
+  },
+  {
+   "t": "Quem sou eu?",
+   "type": "player",
+   "clues": [
+    "Estudei em Coimbra e passei décadas na Europa como naturalista, descrevendo minerais novos.",
+    "Voltei ao Brasil em 1819, já com mais de 50 anos.",
+    "Em 1822 fui ministro e o principal conselheiro do príncipe regente.",
+    "Rompi com o imperador, fui exilado na França e, depois, nomeado tutor do filho dele.",
+    "Sou lembrado como o Patriarca da Independência."
+   ],
+   "a": [
+    "jose_bonifacio"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "bust"
+   },
+   "src": [
+    "pt",
+    "José Bonifácio de Andrada e Silva",
+    [
+     "Coimbra",
+     "Patriarca"
+    ]
+   ],
+   "x": "Como mineralogista, descreveu a petalita, o mineral em que o elemento lítio seria descoberto, em 1817."
+  },
+  {
+   "t": "Coloque em ordem, do mais antigo ao mais recente, estes marcos das capitais do Brasil?",
+   "type": "order",
+   "a": [
+    "salvador",
+    "rio",
+    "corte",
+    "brasilia"
+   ],
+   "order": [
+    {
+     "id": "salvador",
+     "y": 1549,
+     "label": "Fundação de Salvador",
+     "sub": "Primeira capital",
+     "crest": "brasil_colonia"
+    },
+    {
+     "id": "rio",
+     "y": 1763,
+     "label": "Capital vai para o Rio",
+     "sub": "O ouro de Minas",
+     "crest": "imperio_portugues"
+    },
+    {
+     "id": "corte",
+     "y": 1808,
+     "label": "Chegada da corte",
+     "sub": "Fuga de Napoleão",
+     "face": "dom_joao_vi"
+    },
+    {
+     "id": "brasilia",
+     "y": 1960,
+     "label": "Inauguração de Brasília",
+     "sub": "Capital no Planalto",
+     "face": "jk"
+    }
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Rio de Janeiro",
+    [
+     "1763",
+     "1960"
+    ]
+   ]
+  },
+  {
+   "t": "Coloque em ordem, do mais antigo ao mais recente, estes acontecimentos do Império?",
+   "type": "order",
+   "a": [
+    "equador",
+    "abdica",
+    "maioridade",
+    "eusebio",
+    "paraguai"
+   ],
+   "order": [
+    {
+     "id": "equador",
+     "y": 1824,
+     "label": "Confederação do Equador",
+     "sub": "Revolta em Pernambuco",
+     "crest": "imperio_brasil"
+    },
+    {
+     "id": "abdica",
+     "y": 1831,
+     "label": "Abdicação de D. Pedro I",
+     "sub": "Começa a Regência",
+     "face": "dom_pedro_i"
+    },
+    {
+     "id": "maioridade",
+     "y": 1840,
+     "label": "Golpe da Maioridade",
+     "sub": "Um imperador de 14 anos",
+     "face": "dom_pedro_ii"
+    },
+    {
+     "id": "eusebio",
+     "y": 1850,
+     "label": "Lei Eusébio de Queirós",
+     "sub": "Fim do tráfico de africanos",
+     "crest": "imperio_brasil"
+    },
+    {
+     "id": "paraguai",
+     "y": 1864,
+     "label": "Começa a Guerra do Paraguai",
+     "sub": "Invasão de Mato Grosso",
+     "flag": "PAR"
+    }
+   ],
+   "d": 3,
+   "src": [
+    "pt",
+    "Império do Brasil",
+    [
+     "1831",
+     "1840"
+    ]
+   ]
+  },
+  {
+   "t": "Coloque em ordem, da mais antiga à mais recente, estas revoltas da Primeira República?",
+   "type": "order",
+   "a": [
+    "canudos",
+    "vacina",
+    "chibata",
+    "contestado",
+    "prestes"
+   ],
+   "order": [
+    {
+     "id": "canudos",
+     "y": 1896,
+     "label": "Guerra de Canudos",
+     "sub": "Sertão da Bahia",
+     "crest": "brasil_republica"
+    },
+    {
+     "id": "vacina",
+     "y": 1904,
+     "label": "Revolta da Vacina",
+     "sub": "Ruas do Rio de Janeiro",
+     "face": "oswaldo_cruz"
+    },
+    {
+     "id": "chibata",
+     "y": 1910,
+     "label": "Revolta da Chibata",
+     "sub": "Baía de Guanabara",
+     "flag": "BRA"
+    },
+    {
+     "id": "contestado",
+     "y": 1912,
+     "label": "Guerra do Contestado",
+     "sub": "Paraná e Santa Catarina",
+     "crest": "brasil_republica"
+    },
+    {
+     "id": "prestes",
+     "y": 1925,
+     "label": "Coluna Prestes",
+     "sub": "Marcha pelo interior",
+     "flag": "BRA"
+    }
+   ],
+   "d": 4,
+   "src": [
+    "pt",
+    "República Velha",
+    [
+     "Canudos",
+     "Chibata"
+    ]
+   ]
+  },
+  {
+   "t": "Quem disse esta frase?",
+   "type": "player",
+   "quote": {
+    "q": "Se é para o bem de todos e felicidade geral da nação, estou pronto: diga ao povo que fico.",
+    "ctx": "Rio de Janeiro, 9 de janeiro de 1822, diante do pedido para que não voltasse a Portugal"
+   },
+   "a": [
+    "dom_pedro_i"
+   ],
+   "d": 1,
+   "src": [
+    "pt",
+    "Dia do Fico",
+    [
+     "1822"
+    ]
+   ],
+   "x": "A data entrou para a história como o Dia do Fico, um passo decisivo rumo à Independência."
+  },
+  {
+   "t": "Quem disse esta frase?",
+   "type": "player",
+   "quote": {
+    "q": "Trabalhadores do Brasil!",
+    "ctx": "Saudação com que o presidente abria seus discursos do Dia do Trabalho, transmitidos pelo rádio"
+   },
+   "a": [
+    "getulio"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Getúlio Vargas",
+    [
+     "trabalhadores"
+    ]
+   ],
+   "x": "O rádio foi a grande arma de propaganda do Estado Novo, com programas oficiais como A Hora do Brasil."
+  },
+  {
+   "t": "Quem disse esta frase?",
+   "type": "txt",
+   "choices": [
+    "Ulysses Guimarães",
+    "Tancredo Neves",
+    "José Sarney",
+    "Fernando Henrique Cardoso",
+    "Mário Covas",
+    "Franco Montoro"
+   ],
+   "quote": {
+    "q": "Temos ódio à ditadura. Ódio e nojo.",
+    "ctx": "Discurso do presidente da Assembleia Constituinte na promulgação da nova Constituição, 5 de outubro de 1988"
+   },
+   "a": [
+    "Ulysses Guimarães"
+   ],
+   "d": 3,
+   "src": [
+    "pt",
+    "Ulysses Guimarães",
+    [
+     "1988"
+    ]
+   ],
+   "x": "Ele chamou a nova Carta de \"Constituição Cidadã\"; morreu em 1992, num acidente de helicóptero no litoral do Rio, e seu corpo nunca foi encontrado."
+  },
+  {
+   "t": "Quem disse esta frase?",
+   "type": "txt",
+   "choices": [
+    "Joaquim Nabuco",
+    "Rui Barbosa",
+    "André Rebouças",
+    "José do Patrocínio",
+    "Castro Alves",
+    "Luís Gama"
+   ],
+   "quote": {
+    "q": "A escravidão permanecerá por muito tempo como a característica nacional do Brasil.",
+    "ctx": "Livro de memórias Minha Formação, 1900"
+   },
+   "a": [
+    "Joaquim Nabuco"
+   ],
+   "d": 4,
+   "src": [
+    "pt",
+    "Joaquim Nabuco",
+    [
+     "Minha Formação"
+    ]
+   ],
+   "x": "Pernambucano, foi um dos líderes da campanha abolicionista no Parlamento e, na República, o primeiro embaixador do Brasil nos Estados Unidos."
+  },
+  {
+   "t": "Quem venceu a esquadra paraguaia nesta batalha naval, travada no rio Paraná, perto de Corrientes?",
+   "battle": {
+    "lbl": "Riachuelo · 1865",
+    "a": "?",
+    "b": "PAR",
+    "x": "A esquadra do almirante Barroso afundou boa parte dos navios inimigos e garantiu aos aliados o controle dos rios."
+   },
+   "a": [
+    "imperio_brasil"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Batalha Naval do Riachuelo",
+    [
+     "Barroso",
+     "1865"
+    ]
+   ]
+  },
+  {
+   "t": "Qual país lançou este ataque de surpresa ao acampamento das tropas brasileiras, na que é considerada a maior batalha campal da América do Sul?",
+   "type": "txt",
+   "choices": [
+    "Paraguai",
+    "Bolívia",
+    "Chile",
+    "Peru",
+    "Argentina",
+    "Uruguai"
+   ],
+   "battle": {
+    "lbl": "Tuiuti · 1866",
+    "a": "?",
+    "b": "imperio_brasil",
+    "x": "Em 24 de maio de 1866, mais de 50 mil soldados se enfrentaram; o ataque fracassou e custou milhares de mortos aos atacantes."
+   },
+   "a": [
+    "Paraguai"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Batalha de Tuiuti",
+    [
+     "1866"
+    ]
+   ]
+  },
+  {
+   "t": "Quem defendia esta posição na Itália, conquistada pela Força Expedicionária Brasileira?",
+   "battle": {
+    "lbl": "Monte Castelo · 1945",
+    "a": "brasil_republica",
+    "b": "?",
+    "x": "Depois de quatro ataques fracassados, os pracinhas tomaram o monte em 21 de fevereiro de 1945."
+   },
+   "a": [
+    "alemanha_nazista"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Batalha de Monte Castelo",
+    [
+     "1945"
+    ]
+   ]
+  },
+  {
+   "t": "Contra quem os sertanejos lutaram nesta batalha no Piauí?",
+   "type": "txt",
+   "choices": [
+    "Portugueses",
+    "Holandeses",
+    "Franceses",
+    "Paraguaios",
+    "Argentinos",
+    "Ingleses"
+   ],
+   "battle": {
+    "lbl": "Jenipapo · Campo Maior, 1823",
+    "a": "Piauienses e cearenses",
+    "b": "?",
+    "x": "Os sertanejos perderam, mas a tropa do major Fidié, desgastada, recuou para o Maranhão, onde acabou se rendendo."
+   },
+   "a": [
+    "Portugueses"
+   ],
+   "d": 3,
+   "src": [
+    "pt",
+    "Batalha do Jenipapo",
+    [
+     "Fidié",
+     "1823"
+    ]
+   ]
+  },
+  {
+   "t": "Contra quem o exército imperial lutou nesta batalha da Guerra da Cisplatina?",
+   "type": "txt",
+   "choices": [
+    "Províncias Unidas do Rio da Prata",
+    "Paraguai",
+    "Bolívia",
+    "Chile",
+    "Peru",
+    "Grã-Colômbia"
+   ],
+   "battle": {
+    "lbl": "Passo do Rosário · 1827",
+    "a": "imperio_brasil",
+    "b": "?",
+    "x": "A guerra pela antiga Província Cisplatina terminou em 1828 com a criação de um novo país independente: o Uruguai."
+   },
+   "a": [
+    "Províncias Unidas do Rio da Prata"
+   ],
+   "d": 4,
+   "src": [
+    "pt",
+    "Batalha do Passo do Rosário",
+    [
+     "1827"
+    ]
+   ]
+  },
+  {
+   "t": "Qual país completa a aliança que enfrentou o Paraguai?",
+   "type": "txt",
+   "choices": [
+    "Uruguai",
+    "Chile",
+    "Bolívia",
+    "Peru",
+    "Portugal",
+    "Venezuela"
+   ],
+   "line": {
+    "t": "Tríplice Aliança · 1865",
+    "rows": [
+     "Império do Brasil",
+     "Argentina",
+     "?"
+    ],
+    "kind": "grupo",
+    "era": "new"
+   },
+   "a": [
+    "Uruguai"
+   ],
+   "d": 1,
+   "src": [
+    "pt",
+    "Guerra do Paraguai",
+    [
+     "Uruguai",
+     "Tríplice Aliança"
+    ]
+   ],
+   "x": "O tratado da aliança foi assinado em Buenos Aires, em 1º de maio de 1865."
+  },
+  {
+   "t": "Quem é o presidente que falta nesta sequência?",
+   "type": "txt",
+   "choices": [
+    "Itamar Franco",
+    "Tancredo Neves",
+    "Ulysses Guimarães",
+    "Marco Maciel",
+    "Leonel Brizola",
+    "Luiz Inácio Lula da Silva"
+   ],
+   "line": {
+    "t": "Presidentes da Nova República",
+    "rows": [
+     "José Sarney",
+     "Fernando Collor",
+     "?",
+     "Fernando Henrique Cardoso"
+    ],
+    "era": "new"
+   },
+   "a": [
+    "Itamar Franco"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Itamar Franco",
+    [
+     "1992"
+    ]
+   ],
+   "x": "Vice de Collor, assumiu a Presidência com o impeachment, em 1992, e seu governo lançou o Plano Real, em 1994."
+  },
+  {
+   "t": "Quem completa esta lista de presidentes eleitos pelo voto popular?",
+   "type": "player",
+   "line": {
+    "t": "Presidentes eleitos · 1945–1960",
+    "rows": [
+     "Eurico Gaspar Dutra",
+     "Getúlio Vargas",
+     "?",
+     "Jânio Quadros"
+    ],
+    "era": "new"
+   },
+   "a": [
+    "jk"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Lista de presidentes do Brasil",
+    [
+     "Juscelino"
+    ]
+   ],
+   "x": "Juscelino venceu a eleição de 1955 com cerca de 36% dos votos: na época não havia segundo turno."
+  },
+  {
+   "t": "Qual general completa a lista dos presidentes do regime militar?",
+   "type": "txt",
+   "choices": [
+    "Emílio Médici",
+    "Eurico Dutra",
+    "Henrique Lott",
+    "Café Filho",
+    "Juarez Távora",
+    "Golbery do Couto e Silva"
+   ],
+   "line": {
+    "t": "Presidentes do regime militar · 1964–1985",
+    "rows": [
+     "Castelo Branco",
+     "Costa e Silva",
+     "?",
+     "Ernesto Geisel",
+     "João Figueiredo"
+    ],
+    "era": "new"
+   },
+   "a": [
+    "Emílio Médici"
+   ],
+   "d": 3,
+   "src": [
+    "pt",
+    "Emílio Garrastazu Médici",
+    [
+     "1969"
+    ]
+   ],
+   "x": "Entre Costa e Silva e Médici, o país foi governado por dois meses por uma junta formada pelos três ministros militares, em 1969."
+  },
+  {
+   "t": "Qual poeta completa o trio de árcades envolvidos na Inconfidência Mineira?",
+   "type": "txt",
+   "choices": [
+    "Alvarenga Peixoto",
+    "Basílio da Gama",
+    "Santa Rita Durão",
+    "Gregório de Matos",
+    "Castro Alves",
+    "Gonçalves Dias"
+   ],
+   "line": {
+    "t": "Poetas da Inconfidência · 1789",
+    "rows": [
+     "Tomás Antônio Gonzaga",
+     "Cláudio Manuel da Costa",
+     "?"
+    ],
+    "kind": "grupo",
+    "era": "mod"
+   },
+   "a": [
+    "Alvarenga Peixoto"
+   ],
+   "d": 4,
+   "src": [
+    "pt",
+    "Inconfidência Mineira",
+    [
+     "Alvarenga Peixoto"
+    ]
+   ],
+   "x": "Gonzaga, autor de Marília de Dirceu, foi degredado para Moçambique; Cláudio Manuel da Costa morreu na prisão, em Vila Rica."
+  },
+  {
+   "t": "Em que ano saiu esta manchete?",
+   "type": "txt",
+   "choices": [
+    "1888",
+    "1871",
+    "1885",
+    "1886",
+    "1889",
+    "1891"
+   ],
+   "news": {
+    "h": "Extinta a escravidão no Brasil",
+    "paper": "Folha da Corte",
+    "sub": "Princesa regente assina a lei no Paço da Cidade; multidão festeja nas ruas do Rio"
+   },
+   "a": [
+    "1888"
+   ],
+   "d": 1,
+   "src": [
+    "pt",
+    "Lei Áurea",
+    [
+     "1888"
+    ]
+   ],
+   "x": "Em 17 de maio, uma missa campal no Rio, com a presença da princesa, reuniu milhares de pessoas para celebrar a abolição."
+  },
+  {
+   "t": "Quem é o líder desta manchete?",
+   "type": "player",
+   "news": {
+    "h": "Revolução vitoriosa: gaúcho assume o governo provisório",
+    "paper": "Jornal da Capital",
+    "sub": "Junta que depôs Washington Luís entrega o poder ao chefe da revolução; soldados do Sul amarram cavalos no obelisco da Avenida Rio Branco"
+   },
+   "a": [
+    "getulio"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Revolução de 1930",
+    [
+     "Washington Luís"
+    ]
+   ],
+   "x": "Ele tomou posse em 3 de novembro de 1930: era o fim da Primeira República e o começo de 15 anos seguidos de Vargas no poder."
+  },
+  {
+   "t": "Em que ano saiu esta manchete?",
+   "type": "txt",
+   "choices": [
+    "1954",
+    "1945",
+    "1950",
+    "1951",
+    "1955",
+    "1956"
+   ],
+   "news": {
+    "h": "Morre o presidente; o país em comoção",
+    "paper": "Diário da Guanabara",
+    "sub": "Tiro no Palácio do Catete; carta deixada ao povo diz que ele sai da vida para entrar na História"
+   },
+   "a": [
+    "1954"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Getúlio Vargas",
+    [
+     "1954"
+    ]
+   ],
+   "x": "A carta-testamento foi lida no rádio no mesmo dia, e multidões tomaram as ruas; ele foi sepultado em São Borja, sua cidade natal."
+  },
+  {
+   "t": "Em que ano saiu esta manchete?",
+   "type": "txt",
+   "choices": [
+    "1984",
+    "1979",
+    "1982",
+    "1985",
+    "1986",
+    "1989"
+   ],
+   "news": {
+    "h": "Emenda das diretas é derrotada na Câmara",
+    "paper": "Gazeta do Planalto",
+    "sub": "Faltaram 22 votos; milhões tinham ido às ruas pedir eleição direta para presidente"
+   },
+   "a": [
+    "1984"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Emenda Dante de Oliveira",
+    [
+     "1984"
+    ]
+   ],
+   "x": "A emenda teve 298 votos a favor, mas precisava de 320; o presidente seguinte foi escolhido por um Colégio Eleitoral."
+  },
+  {
+   "t": "Em que ano saiu esta manchete?",
+   "type": "txt",
+   "choices": [
+    "1942",
+    "1939",
+    "1940",
+    "1941",
+    "1943",
+    "1944"
+   ],
+   "news": {
+    "h": "Brasil declara guerra à Alemanha e à Itália",
+    "paper": "Gazeta Carioca",
+    "sub": "Decisão vem depois do afundamento de navios mercantes brasileiros por submarinos"
+   },
+   "a": [
+    "1942"
+   ],
+   "d": 3,
+   "src": [
+    "pt",
+    "Brasil na Segunda Guerra Mundial",
+    [
+     "1942"
+    ]
+   ],
+   "x": "Em agosto daquele ano, um único submarino alemão afundou seis navios brasileiros na costa do Nordeste em poucos dias."
+  },
+  {
+   "t": "Duelo: quem nasceu primeiro?",
+   "type": "player",
+   "fixed": [
+    "tiradentes",
+    "jose_bonifacio"
+   ],
+   "duel": true,
+   "a": [
+    "tiradentes"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "hourglass"
+   },
+   "src": [
+    "pt",
+    "Tiradentes",
+    [
+     "1746"
+    ]
+   ],
+   "x": "Tiradentes nasceu em 1746; José Bonifácio, em 1763, e viveu até 1838 — viu a Independência que o alferes não chegou a ver."
+  },
+  {
+   "t": "Duelo: o que aconteceu primeiro?",
+   "type": "txt",
+   "choices": [
+    "Lei Áurea",
+    "Proclamação da República"
+   ],
+   "duel": true,
+   "a": [
+    "Lei Áurea"
+   ],
+   "d": 1,
+   "art": {
+    "crest": "imperio_brasil"
+   },
+   "src": [
+    "pt",
+    "Lei Áurea",
+    [
+     "1888"
+    ]
+   ],
+   "x": "A abolição veio em maio de 1888; a monarquia caiu um ano e meio depois, em novembro de 1889."
+  },
+  {
+   "t": "Duelo: quem nasceu primeiro?",
+   "type": "player",
+   "fixed": [
+    "oswaldo_cruz",
+    "santos_dumont"
+   ],
+   "duel": true,
+   "a": [
+    "oswaldo_cruz"
+   ],
+   "d": 4,
+   "art": {
+    "icon": "hourglass"
+   },
+   "src": [
+    "pt",
+    "Oswaldo Cruz",
+    [
+     "1872"
+    ]
+   ],
+   "x": "Oswaldo Cruz nasceu em agosto de 1872, em São Luiz do Paraitinga (SP); Santos Dumont, em julho de 1873, em Minas Gerais."
+  },
+  {
+   "t": "D. Pedro I proclamou a Independência montado num cavalo imponente, como no famoso quadro de Pedro Américo?",
+   "type": "txt",
+   "choices": [
+    "Fato",
+    "Mito"
+   ],
+   "duel": true,
+   "myth": true,
+   "a": [
+    "Mito"
+   ],
+   "d": 2,
+   "art": {
+    "who": "dom_pedro_i"
+   },
+   "src": [
+    "pt",
+    "Independência do Brasil",
+    [
+     "Pedro Américo"
+    ]
+   ],
+   "x": "Testemunhas contam que ele montava uma besta, isto é, uma mula, animal mais resistente para subir a serra; o quadro, concluído em 1888, idealizou a cena."
+  },
+  {
+   "t": "Tiradentes foi enforcado no Rio de Janeiro, e não em Minas Gerais?",
+   "type": "txt",
+   "choices": [
+    "Fato",
+    "Mito"
+   ],
+   "duel": true,
+   "myth": true,
+   "a": [
+    "Fato"
+   ],
+   "d": 2,
+   "art": {
+    "stad": "ouro_preto"
+   },
+   "src": [
+    "pt",
+    "Tiradentes",
+    [
+     "1792"
+    ]
+   ],
+   "x": "Foi executado no Rio em 21 de abril de 1792; o corpo foi esquartejado e a cabeça, exposta em Vila Rica, a atual Ouro Preto."
+  },
+  {
+   "t": "A Revolta dos Malês, em Salvador, foi organizada principalmente por africanos muçulmanos?",
+   "type": "txt",
+   "choices": [
+    "Fato",
+    "Mito"
+   ],
+   "duel": true,
+   "myth": true,
+   "a": [
+    "Fato"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "scroll"
+   },
+   "src": [
+    "pt",
+    "Revolta dos Malês",
+    [
+     "1835"
+    ]
+   ],
+   "x": "Malê vem do iorubá imale, \"muçulmano\"; o levante estourou em janeiro de 1835, durante o Ramadã, e muitos rebeldes levavam amuletos com trechos do Alcorão."
+  },
+  {
+   "t": "A Lei Áurea garantiu indenização aos senhores pelos escravizados libertados?",
+   "type": "txt",
+   "choices": [
+    "Fato",
+    "Mito"
+   ],
+   "duel": true,
+   "myth": true,
+   "a": [
+    "Mito"
+   ],
+   "d": 3,
+   "art": {
+    "who": "princesa_isabel"
+   },
+   "src": [
+    "pt",
+    "Lei Áurea",
+    [
+     "1888"
+    ]
+   ],
+   "x": "O texto tinha só dois artigos: declarava extinta a escravidão e revogava as disposições em contrário. Não houve indenização aos senhores nem amparo aos libertos."
+  },
+  {
+   "t": "D. Pedro II já tinha uma câmera fotográfica aos 14 anos?",
+   "type": "txt",
+   "choices": [
+    "Fato",
+    "Mito"
+   ],
+   "duel": true,
+   "myth": true,
+   "a": [
+    "Fato"
+   ],
+   "d": 3,
+   "art": {
+    "stad": "museu_imperial"
+   },
+   "src": [
+    "en",
+    "Pedro II of Brazil",
+    [
+     "photograph"
+    ]
+   ],
+   "x": "Em 1840 ele comprou um daguerreótipo, meses depois de o aparelho chegar ao Brasil; tornou-se um grande colecionador de fotografias."
+  }
+ ]
+}

@@ -161,13 +161,13 @@ c.T('Como se chama o alfabeto coreano criado no século XV pelo rei Sejong, o Gr
 c.C('Qual império, fundado por Chandragupta por volta de 322 a.C., foi o primeiro a unir quase todo o subcontinente indiano?', 'maurya', d=3, who='alexandre',
     src=('en', 'Maurya Empire', ['Chandragupta']),
     x='Chandragupta teve como conselheiro o sábio Kautilya, a quem se atribui o Arthashastra, um manual sobre a arte de governar.')
-c.C('Qual governo expulsou os portugueses do Japão, em 1639, e fechou o país quase por completo aos estrangeiros?', 'tokugawa', d=3, flag='POR',
+c.C('Qual governo expulsou os portugueses do Japão, em 1639, e fechou o país quase por completo aos estrangeiros?', 'tokugawa', d=3, crest='imperio_portugues',
     src=('en', 'Sakoku', ['Portuguese']),
     x='Entre os europeus, só os holandeses puderam continuar negociando, confinados na ilhota artificial de Dejima, em Nagasaki.')
-c.P('Qual governante mongol mandou duas grandes frotas invadir o Japão, em 1274 e em 1281?', 'kublai', d=3, flag='JPN',
+c.P('Qual governante mongol mandou duas grandes frotas invadir o Japão, em 1274 e em 1281?', 'kublai', d=3, icon='ship',
     src=('en', 'Mongol invasions of Japan', ['Kublai']),
     x='As duas invasões fracassaram; na segunda, um tufão destruiu boa parte dos navios ancorados perto da costa de Kyushu.')
-c.P('Qual conquistador turco-mongol invadiu a Índia e saqueou Délhi em 1398?', 'tamerlao', d=3, flag='IND',
+c.P('Qual conquistador turco-mongol invadiu a Índia e saqueou Délhi em 1398?', 'tamerlao', d=3, icon='sword',
     src=('en', 'Timur', ['Delhi']),
     x='Um de seus descendentes, Babur, voltaria à Índia mais de um século depois para fundar o Império Mogol, em 1526.')
 c.Q('Quem sou eu?', 'ashoka', ['Fui neto do fundador de um grande império do norte da Índia.',

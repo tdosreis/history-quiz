@@ -1,0 +1,1807 @@
+{
+ "id": "seculo20",
+ "name": "Século XX",
+ "tag": "Guerras, revoluções e a corrida espacial",
+ "col": "#37474F",
+ "diff": "Variado",
+ "emoji": "📻",
+ "qs": [
+  {
+   "t": "Qual foi o último czar da Rússia, derrubado pela revolução de 1917?",
+   "type": "txt",
+   "choices": [
+    "Nicolau II",
+    "Alexandre III",
+    "Alexandre II",
+    "Nicolau I",
+    "Pedro III",
+    "Alexandre I"
+   ],
+   "a": [
+    "Nicolau II"
+   ],
+   "d": 1,
+   "art": {
+    "crest": "imperio_russo"
+   },
+   "src": [
+    "pt",
+    "Nicolau II da Rússia",
+    [
+     "1917",
+     "Ecaterimburgo"
+    ]
+   ],
+   "x": "Em julho de 1918, ele, a mulher e os cinco filhos foram fuzilados pelos bolcheviques em Ecaterimburgo, nos montes Urais."
+  },
+  {
+   "t": "Qual campo, na Polônia ocupada, foi o maior centro de extermínio do Holocausto, onde morreram cerca de 1,1 milhão de pessoas?",
+   "type": "txt",
+   "choices": [
+    "Auschwitz",
+    "Dachau",
+    "Buchenwald",
+    "Bergen-Belsen",
+    "Theresienstadt",
+    "Ravensbrück"
+   ],
+   "a": [
+    "Auschwitz"
+   ],
+   "d": 1,
+   "art": {
+    "flag": "POL"
+   },
+   "src": [
+    "en",
+    "Auschwitz concentration camp",
+    [
+     "Birkenau",
+     "27 January"
+    ]
+   ],
+   "x": "O Exército Vermelho libertou o campo em 27 de janeiro de 1945; a data é hoje o Dia Internacional em Memória das Vítimas do Holocausto."
+  },
+  {
+   "t": "Em qual usina da Ucrânia soviética aconteceu, em 1986, o mais grave acidente nuclear da história?",
+   "type": "txt",
+   "choices": [
+    "Chernobil",
+    "Three Mile Island",
+    "Fukushima",
+    "Kursk",
+    "Zaporíjia",
+    "Angra"
+   ],
+   "a": [
+    "Chernobil"
+   ],
+   "d": 1,
+   "art": {
+    "flag": "UKR"
+   },
+   "src": [
+    "pt",
+    "Acidente nuclear de Chernobil",
+    [
+     "1986"
+    ]
+   ],
+   "x": "A cidade vizinha de Pripyat, com quase 50 mil moradores, foi evacuada às pressas e nunca mais voltou a ser habitada."
+  },
+  {
+   "t": "Qual cadela soviética foi o primeiro animal a entrar em órbita da Terra, em 1957?",
+   "type": "txt",
+   "choices": [
+    "Laika",
+    "Belka",
+    "Strelka",
+    "Ham",
+    "Félicette",
+    "Zvezdochka"
+   ],
+   "a": [
+    "Laika"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "rocket"
+   },
+   "src": [
+    "pt",
+    "Laika",
+    [
+     "Sputnik 2",
+     "1957"
+    ]
+   ],
+   "x": "Ela viajou no Sputnik 2, numa missão sem volta; décadas depois, soube-se que morreu poucas horas após o lançamento."
+  },
+  {
+   "t": "Qual programa americano, que entrou em vigor em 1948, financiou a reconstrução da Europa Ocidental depois da Segunda Guerra?",
+   "type": "txt",
+   "choices": [
+    "Plano Marshall",
+    "Plano Dawes",
+    "New Deal",
+    "Doutrina Monroe",
+    "Plano Young",
+    "Plano Schlieffen"
+   ],
+   "a": [
+    "Plano Marshall"
+   ],
+   "d": 2,
+   "art": {
+    "flag": "USA"
+   },
+   "src": [
+    "en",
+    "Marshall Plan",
+    [
+     "1948"
+    ]
+   ],
+   "x": "Os EUA enviaram mais de 13 bilhões de dólares; a URSS proibiu os países sob sua influência de aceitar a ajuda."
+  },
+  {
+   "t": "Qual campanha, lançada por Mao Tsé-tung em 1966, mobilizou jovens Guardas Vermelhos contra professores, intelectuais e \"inimigos de classe\"?",
+   "type": "txt",
+   "choices": [
+    "Revolução Cultural",
+    "Grande Salto Adiante",
+    "Longa Marcha",
+    "Campanha das Cem Flores",
+    "Movimento Quatro de Maio",
+    "Revolta dos Boxers"
+   ],
+   "a": [
+    "Revolução Cultural"
+   ],
+   "d": 2,
+   "art": {
+    "crest": "china_popular"
+   },
+   "src": [
+    "en",
+    "Cultural Revolution",
+    [
+     "1966",
+     "Red Guards"
+    ]
+   ],
+   "x": "Escolas e universidades ficaram fechadas por anos, e milhões de jovens das cidades foram mandados para o campo \"aprender com os camponeses\"."
+  },
+  {
+   "t": "Qual país do norte da África conquistou a independência da França em 1962, depois de oito anos de guerra?",
+   "type": "txt",
+   "choices": [
+    "Argélia",
+    "Marrocos",
+    "Tunísia",
+    "Líbia",
+    "Egito",
+    "Mauritânia"
+   ],
+   "a": [
+    "Argélia"
+   ],
+   "d": 3,
+   "art": {
+    "flag": "FRA"
+   },
+   "src": [
+    "en",
+    "Algerian War",
+    [
+     "1954",
+     "1962"
+    ]
+   ],
+   "x": "A guerra derrubou a Quarta República francesa e trouxe Charles de Gaulle de volta ao poder, em 1958."
+  },
+  {
+   "t": "Qual lei americana, assinada em 1964, proibiu a segregação racial nos lugares públicos e a discriminação no trabalho?",
+   "type": "txt",
+   "choices": [
+    "Lei dos Direitos Civis",
+    "Lei do Direito ao Voto",
+    "Proclamação de Emancipação",
+    "Décima Terceira Emenda",
+    "Lei Seca",
+    "Lei dos Escravos Fugitivos"
+   ],
+   "a": [
+    "Lei dos Direitos Civis"
+   ],
+   "d": 3,
+   "art": {
+    "who": "mlk"
+   },
+   "src": [
+    "en",
+    "Civil Rights Act of 1964",
+    [
+     "segregation",
+     "Johnson"
+    ]
+   ],
+   "x": "Quem a assinou foi Lyndon Johnson, que assumira a presidência depois do assassinato de Kennedy, em novembro de 1963."
+  },
+  {
+   "t": "Qual presidente sul-africano libertou Nelson Mandela em 1990 e dividiu com ele o Nobel da Paz de 1993?",
+   "type": "txt",
+   "choices": [
+    "F. W. de Klerk",
+    "P. W. Botha",
+    "Jan Smuts",
+    "Hendrik Verwoerd",
+    "John Vorster",
+    "Desmond Tutu"
+   ],
+   "a": [
+    "F. W. de Klerk"
+   ],
+   "d": 3,
+   "art": {
+    "crest": "africa_do_sul"
+   },
+   "src": [
+    "en",
+    "F. W. de Klerk",
+    [
+     "1990",
+     "Nobel"
+    ]
+   ],
+   "x": "Em 1994, nas primeiras eleições abertas a todas as raças, Mandela foi eleito presidente e De Klerk tornou-se um dos seus vice-presidentes."
+  },
+  {
+   "t": "Ao longo de qual paralelo a Coreia foi dividida em 1945, entre uma zona soviética ao norte e uma americana ao sul?",
+   "type": "txt",
+   "choices": [
+    "Paralelo 38",
+    "Paralelo 17",
+    "Paralelo 49",
+    "Paralelo 42",
+    "Paralelo 33",
+    "Paralelo 24"
+   ],
+   "a": [
+    "Paralelo 38"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "map"
+   },
+   "src": [
+    "en",
+    "38th parallel north",
+    [
+     "Korea",
+     "1945"
+    ]
+   ],
+   "x": "A Guerra da Coreia (1950–1953) terminou só com um armistício, e a fronteira ficou perto da mesma linha, cercada por uma zona desmilitarizada."
+  },
+  {
+   "t": "Qual tratado de 1918 tirou a Rússia bolchevique da Primeira Guerra, à custa de enormes perdas de território?",
+   "type": "txt",
+   "choices": [
+    "Tratado de Brest-Litovsk",
+    "Tratado de Versalhes",
+    "Tratado de Trianon",
+    "Tratado de Sèvres",
+    "Tratado de Rapallo",
+    "Tratado de Saint-Germain"
+   ],
+   "a": [
+    "Tratado de Brest-Litovsk"
+   ],
+   "d": 4,
+   "art": {
+    "who": "lenin"
+   },
+   "src": [
+    "en",
+    "Treaty of Brest-Litovsk",
+    [
+     "1918",
+     "Ukraine"
+    ]
+   ],
+   "x": "A Rússia abriu mão da Polônia, dos países bálticos, da Finlândia e da Ucrânia; o tratado foi anulado meses depois, com a derrota alemã."
+  },
+  {
+   "t": "Qual telegrama alemão, interceptado pelos britânicos em 1917, propunha ao México uma aliança contra os Estados Unidos?",
+   "type": "txt",
+   "choices": [
+    "Telegrama Zimmermann",
+    "Telegrama Kruger",
+    "Despacho de Ems",
+    "Memorando Schlieffen",
+    "Telegrama Longo",
+    "Declaração Balfour"
+   ],
+   "a": [
+    "Telegrama Zimmermann"
+   ],
+   "d": 4,
+   "art": {
+    "flag": "MEX"
+   },
+   "src": [
+    "en",
+    "Zimmermann Telegram",
+    [
+     "Mexico",
+     "1917"
+    ]
+   ],
+   "x": "Em troca, o México recuperaria o Texas, o Novo México e o Arizona. A revelação da mensagem ajudou a levar os EUA à guerra, em abril de 1917."
+  },
+  {
+   "t": "Qual conferência de 1955, na Indonésia, reuniu 29 países da Ásia e da África e é vista como precursora do Movimento dos Não Alinhados?",
+   "type": "txt",
+   "choices": [
+    "Conferência de Bandung",
+    "Conferência de Genebra",
+    "Conferência de Bretton Woods",
+    "Conferência de Potsdam",
+    "Conferência Tricontinental",
+    "Conferência de Belgrado"
+   ],
+   "a": [
+    "Conferência de Bandung"
+   ],
+   "d": 5,
+   "art": {
+    "icon": "globe"
+   },
+   "src": [
+    "en",
+    "Bandung Conference",
+    [
+     "1955",
+     "Sukarno"
+    ]
+   ],
+   "x": "Entre os presentes estavam Nehru, da Índia, Nasser, do Egito, Zhou Enlai, da China, e o anfitrião, o presidente indonésio Sukarno."
+  },
+  {
+   "t": "Qual grupo de estudantes de Munique espalhou panfletos contra o regime nazista e teve seus líderes executados em 1943?",
+   "type": "txt",
+   "choices": [
+    "Rosa Branca",
+    "Orquestra Vermelha",
+    "Piratas de Edelweiss",
+    "Círculo de Kreisau",
+    "Juventude Swing",
+    "Igreja Confessante"
+   ],
+   "a": [
+    "Rosa Branca"
+   ],
+   "d": 5,
+   "art": {
+    "flag": "GER"
+   },
+   "src": [
+    "en",
+    "White Rose",
+    [
+     "Sophie Scholl",
+     "1943"
+    ]
+   ],
+   "x": "Sophie Scholl, de 21 anos, e o irmão Hans foram presos ao distribuir panfletos na Universidade de Munique e executados quatro dias depois."
+  },
+  {
+   "t": "Quem se tornou, em 1960, a primeira mulher do mundo eleita para chefiar um governo, como primeira-ministra do Ceilão?",
+   "type": "txt",
+   "choices": [
+    "Sirimavo Bandaranaike",
+    "Indira Gandhi",
+    "Golda Meir",
+    "Margaret Thatcher",
+    "Benazir Bhutto",
+    "Corazon Aquino"
+   ],
+   "a": [
+    "Sirimavo Bandaranaike"
+   ],
+   "d": 5,
+   "art": {
+    "who": "pankhurst"
+   },
+   "src": [
+    "en",
+    "Sirimavo Bandaranaike",
+    [
+     "1960",
+     "Ceylon"
+    ]
+   ],
+   "x": "Ela entrou na política depois do assassinato do marido, também primeiro-ministro, em 1959, e governou o atual Sri Lanka em três períodos diferentes."
+  },
+  {
+   "t": "Além do Brasil, qual país latino-americano mandou uma unidade de combate lutar fora das Américas na Segunda Guerra, o Esquadrão 201, de aviação de caça?",
+   "type": "txt",
+   "choices": [
+    "México",
+    "Argentina",
+    "Chile",
+    "Colômbia",
+    "Cuba",
+    "Venezuela"
+   ],
+   "a": [
+    "México"
+   ],
+   "d": 5,
+   "art": {
+    "icon": "plane"
+   },
+   "src": [
+    "en",
+    "201st Fighter Squadron",
+    [
+     "Philippines",
+     "P-47"
+    ]
+   ],
+   "x": "Os pilotos mexicanos voaram caças P-47 nas Filipinas, em 1945 — o mesmo avião do grupo de caça brasileiro do \"Senta a Pua!\", na Itália."
+  },
+  {
+   "t": "Qual líder revolucionário, morto em 1924, teve o corpo embalsamado e exposto num mausoléu na Praça Vermelha, em Moscou?",
+   "type": "player",
+   "a": [
+    "lenin"
+   ],
+   "d": 1,
+   "art": {
+    "stad": "kremlin"
+   },
+   "src": [
+    "en",
+    "Lenin's Mausoleum",
+    [
+     "1924"
+    ]
+   ],
+   "x": "O mausoléu fica colado à muralha do Kremlin; o corpo passa por banhos químicos regulares para se conservar."
+  },
+  {
+   "t": "Qual presidente americano prometeu, em 1961, levar um homem à Lua e trazê-lo de volta antes do fim da década?",
+   "type": "player",
+   "a": [
+    "kennedy"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "rocket"
+   },
+   "src": [
+    "en",
+    "We choose to go to the Moon",
+    [
+     "Rice University"
+    ]
+   ],
+   "x": "O discurso mais lembrado sobre a meta foi feito na Universidade Rice, em Houston, em 1962: \"Nós escolhemos ir à Lua\"."
+  },
+  {
+   "t": "Qual primeira-ministra britânica comandou a guerra contra a Argentina pelas Ilhas Malvinas, em 1982?",
+   "type": "player",
+   "a": [
+    "thatcher"
+   ],
+   "d": 2,
+   "art": {
+    "flag": "ARG"
+   },
+   "src": [
+    "pt",
+    "Guerra das Malvinas",
+    [
+     "Thatcher",
+     "1982"
+    ]
+   ],
+   "x": "O conflito durou 74 dias; a derrota apressou o fim da ditadura militar argentina, em 1983."
+  },
+  {
+   "t": "Qual estado nasceu em dezembro de 1922, unindo a Rússia, a Ucrânia, a Bielorrússia e a Transcaucásia?",
+   "a": [
+    "urss"
+   ],
+   "d": 1,
+   "art": {
+    "who": "lenin"
+   },
+   "src": [
+    "en",
+    "Treaty on the Creation of the Union of Soviet Socialist Republics",
+    [
+     "1922"
+    ]
+   ],
+   "x": "Chegou a reunir 15 repúblicas e cobria cerca de um sexto das terras do planeta; foi dissolvido em dezembro de 1991."
+  },
+  {
+   "t": "Qual império se desfez em 1918, no fim da Primeira Guerra, dando origem a novos países como a Tchecoslováquia?",
+   "a": [
+    "austria_hungria"
+   ],
+   "d": 2,
+   "art": {
+    "flag": "CZE"
+   },
+   "src": [
+    "pt",
+    "Áustria-Hungria",
+    [
+     "1918"
+    ]
+   ],
+   "x": "O império reunia mais de dez povos e línguas; o tiro que matou o seu herdeiro, em Sarajevo, foi o estopim da guerra que o destruiu."
+  },
+  {
+   "t": "Qual império, fundado por volta de 1300, teve seu sultanato abolido em 1922, abrindo caminho para a república de Atatürk?",
+   "a": [
+    "imperio_otomano"
+   ],
+   "d": 2,
+   "art": {
+    "who": "ataturk"
+   },
+   "src": [
+    "pt",
+    "Império Otomano",
+    [
+     "1922"
+    ]
+   ],
+   "x": "O último sultão, Mehmed VI, deixou Istambul a bordo de um navio de guerra britânico; o califado foi extinto em 1924."
+  },
+  {
+   "t": "Qual estado invadiu a Etiópia em 1935 e, por isso, sofreu sanções da Liga das Nações?",
+   "a": [
+    "italia_fascista"
+   ],
+   "d": 3,
+   "art": {
+    "who": "haile_selassie"
+   },
+   "src": [
+    "en",
+    "Second Italo-Ethiopian War",
+    [
+     "1935",
+     "League of Nations"
+    ]
+   ],
+   "x": "As sanções deixaram o petróleo de fora; em maio de 1936, o imperador partiu para o exílio e as tropas invasoras entraram em Adis Abeba."
+  },
+  {
+   "t": "Quem sou eu?",
+   "type": "player",
+   "clues": [
+    "Nasci em 1882 numa família rica do estado de Nova York.",
+    "Em 1921, uma doença me tirou o movimento das pernas, mas não me impediu de chegar à presidência.",
+    "Enfrentei a Grande Depressão com um pacote de programas chamado New Deal.",
+    "Fui o único presidente do meu país eleito quatro vezes."
+   ],
+   "a": [
+    "fdr"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "bust"
+   },
+   "src": [
+    "en",
+    "Franklin D. Roosevelt",
+    [
+     "New Deal",
+     "1882"
+    ]
+   ]
+  },
+  {
+   "t": "Quem sou eu?",
+   "type": "player",
+   "clues": [
+    "Fui ferido e feito prisioneiro em Verdun, na Primeira Guerra.",
+    "Em junho de 1940, falei de Londres pelo rádio e chamei meus compatriotas a continuar lutando.",
+    "Fundei uma nova República em 1958 e a presidi por mais de dez anos.",
+    "O maior aeroporto de Paris leva o meu nome."
+   ],
+   "a": [
+    "de_gaulle"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "bust"
+   },
+   "src": [
+    "en",
+    "Charles de Gaulle",
+    [
+     "Verdun",
+     "1958"
+    ]
+   ]
+  },
+  {
+   "t": "Quem sou eu?",
+   "type": "player",
+   "clues": [
+    "Nasci em 1881 em Salônica, cidade que hoje pertence à Grécia.",
+    "Em 1915, comandei tropas que barraram o desembarque aliado em Galípoli.",
+    "Troquei o alfabeto árabe pelo latino e dei às mulheres do meu país o direito de votar.",
+    "O parlamento me deu um sobrenome que significa \"pai dos turcos\"."
+   ],
+   "a": [
+    "ataturk"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "bust"
+   },
+   "src": [
+    "en",
+    "Mustafa Kemal Atatürk",
+    [
+     "Gallipoli",
+     "1881"
+    ]
+   ]
+  },
+  {
+   "t": "Coloque estes marcos da Segunda Guerra Mundial em ordem, do mais antigo ao mais recente?",
+   "type": "order",
+   "a": [
+    "polonia",
+    "pearl",
+    "stalingrado",
+    "diad",
+    "hiroshima"
+   ],
+   "order": [
+    {
+     "id": "polonia",
+     "y": 1939,
+     "label": "Invasão da Polônia",
+     "sub": "A Alemanha ataca e a guerra começa",
+     "flag": "POL"
+    },
+    {
+     "id": "pearl",
+     "y": 1941,
+     "label": "Ataque a Pearl Harbor",
+     "sub": "Os EUA entram na guerra",
+     "flag": "USA"
+    },
+    {
+     "id": "stalingrado",
+     "y": 1943,
+     "label": "Rendição em Stalingrado",
+     "sub": "O VI Exército alemão se entrega",
+     "crest": "urss"
+    },
+    {
+     "id": "diad",
+     "y": 1944,
+     "label": "Dia D",
+     "sub": "Desembarque aliado na Normandia",
+     "flag": "FRA"
+    },
+    {
+     "id": "hiroshima",
+     "y": 1945,
+     "label": "Bomba de Hiroshima",
+     "sub": "O Japão se rende dias depois",
+     "flag": "JPN"
+    }
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Segunda Guerra Mundial",
+    [
+     "Pearl Harbor",
+     "Stalingrado"
+    ]
+   ]
+  },
+  {
+   "t": "Coloque estes acontecimentos em ordem, do mais antigo ao mais recente?",
+   "type": "order",
+   "a": [
+    "sarajevo",
+    "outubro",
+    "versalhes",
+    "roma",
+    "crash"
+   ],
+   "order": [
+    {
+     "id": "sarajevo",
+     "y": 1914,
+     "label": "Atentado de Sarajevo",
+     "sub": "Morre o herdeiro austro-húngaro",
+     "crest": "austria_hungria"
+    },
+    {
+     "id": "outubro",
+     "y": 1917,
+     "label": "Revolução de Outubro",
+     "sub": "Os bolcheviques tomam o poder",
+     "face": "lenin"
+    },
+    {
+     "id": "versalhes",
+     "y": 1919,
+     "label": "Tratado de Versalhes",
+     "sub": "A paz imposta à Alemanha",
+     "face": "wilson"
+    },
+    {
+     "id": "roma",
+     "y": 1922,
+     "label": "Marcha sobre Roma",
+     "sub": "Mussolini chega ao poder",
+     "crest": "italia_fascista"
+    },
+    {
+     "id": "crash",
+     "y": 1929,
+     "label": "Quebra da Bolsa de Nova York",
+     "sub": "Começa a Grande Depressão",
+     "flag": "USA"
+    }
+   ],
+   "d": 2,
+   "src": [
+    "en",
+    "Interwar period",
+    [
+     "1919",
+     "1929"
+    ]
+   ]
+  },
+  {
+   "t": "Coloque estes marcos da corrida espacial em ordem, do mais antigo ao mais recente?",
+   "type": "order",
+   "a": [
+    "sputnik",
+    "gagarin",
+    "leonov",
+    "apollo",
+    "mir"
+   ],
+   "order": [
+    {
+     "id": "sputnik",
+     "y": 1957,
+     "label": "Sputnik 1",
+     "sub": "O primeiro satélite artificial",
+     "crest": "urss"
+    },
+    {
+     "id": "gagarin",
+     "y": 1961,
+     "label": "Voo de Gagarin",
+     "sub": "O primeiro ser humano no espaço",
+     "face": "gagarin"
+    },
+    {
+     "id": "leonov",
+     "y": 1965,
+     "label": "Primeira caminhada espacial",
+     "sub": "Alexei Leonov sai da nave em órbita",
+     "crest": "urss"
+    },
+    {
+     "id": "apollo",
+     "y": 1969,
+     "label": "Apollo 11",
+     "sub": "Os primeiros passos na Lua",
+     "face": "armstrong"
+    },
+    {
+     "id": "mir",
+     "y": 1986,
+     "label": "Estação Mir",
+     "sub": "O primeiro módulo entra em órbita",
+     "crest": "urss"
+    }
+   ],
+   "d": 3,
+   "src": [
+    "en",
+    "Space Race",
+    [
+     "Sputnik",
+     "Leonov"
+    ]
+   ]
+  },
+  {
+   "t": "Do mais antigo ao mais recente, em que ordem estes líderes chegaram ao poder?",
+   "type": "order",
+   "a": [
+    "lenin",
+    "ataturk",
+    "fdr",
+    "churchill",
+    "degaulle"
+   ],
+   "order": [
+    {
+     "id": "lenin",
+     "y": 1917,
+     "label": "Lênin",
+     "sub": "Assume o governo da Rússia",
+     "face": "lenin"
+    },
+    {
+     "id": "ataturk",
+     "y": 1923,
+     "label": "Atatürk",
+     "sub": "Primeiro presidente da Turquia",
+     "face": "ataturk"
+    },
+    {
+     "id": "fdr",
+     "y": 1933,
+     "label": "Franklin D. Roosevelt",
+     "sub": "Toma posse na Casa Branca",
+     "face": "fdr"
+    },
+    {
+     "id": "churchill",
+     "y": 1940,
+     "label": "Winston Churchill",
+     "sub": "Vira primeiro-ministro em plena guerra",
+     "face": "churchill"
+    },
+    {
+     "id": "degaulle",
+     "y": 1959,
+     "label": "Charles de Gaulle",
+     "sub": "Primeiro presidente da Quinta República",
+     "face": "de_gaulle"
+    }
+   ],
+   "d": 4,
+   "src": [
+    "en",
+    "Mustafa Kemal Atatürk",
+    [
+     "1923"
+    ]
+   ]
+  },
+  {
+   "t": "Quem disse esta frase?",
+   "type": "player",
+   "quote": {
+    "q": "Eu sou um berlinense.",
+    "ctx": "Discurso diante de uma multidão em Berlim Ocidental, junho de 1963"
+   },
+   "a": [
+    "kennedy"
+   ],
+   "d": 2,
+   "src": [
+    "en",
+    "Ich bin ein Berliner",
+    [
+     "1963"
+    ]
+   ]
+  },
+  {
+   "t": "Quem disse esta frase?",
+   "type": "player",
+   "quote": {
+    "q": "Vamos lá!",
+    "ctx": "No momento da decolagem da Vostok 1, em abril de 1961"
+   },
+   "a": [
+    "gagarin"
+   ],
+   "d": 1,
+   "src": [
+    "en",
+    "Yuri Gagarin",
+    [
+     "Poyekhali"
+    ]
+   ]
+  },
+  {
+   "t": "Quem disse esta frase?",
+   "type": "player",
+   "quote": {
+    "q": "A única coisa que devemos temer é o próprio medo.",
+    "ctx": "Primeiro discurso de posse, em plena Grande Depressão, março de 1933"
+   },
+   "a": [
+    "fdr"
+   ],
+   "d": 3,
+   "src": [
+    "en",
+    "First inauguration of Franklin D. Roosevelt",
+    [
+     "fear itself"
+    ]
+   ]
+  },
+  {
+   "t": "Quem disse esta frase?",
+   "type": "player",
+   "quote": {
+    "q": "De Stettin, no Báltico, até Trieste, no Adriático, uma cortina de ferro desceu sobre o continente.",
+    "ctx": "Discurso numa faculdade de Fulton, no Missouri, Estados Unidos, março de 1946"
+   },
+   "a": [
+    "churchill"
+   ],
+   "d": 3,
+   "src": [
+    "en",
+    "Iron Curtain",
+    [
+     "Fulton"
+    ]
+   ]
+  },
+  {
+   "t": "Quem disse esta frase?",
+   "type": "player",
+   "quote": {
+    "q": "O mundo precisa ser tornado seguro para a democracia.",
+    "ctx": "Discurso ao Congresso pedindo a declaração de guerra à Alemanha, abril de 1917"
+   },
+   "a": [
+    "wilson"
+   ],
+   "d": 4,
+   "src": [
+    "en",
+    "United States declaration of war on Germany (1917)",
+    [
+     "safe for democracy"
+    ]
+   ]
+  },
+  {
+   "t": "Quem disse esta frase?",
+   "type": "player",
+   "quote": {
+    "q": "Viva o Quebec livre!",
+    "ctx": "Da sacada da prefeitura de Montreal, numa visita oficial ao Canadá, julho de 1967"
+   },
+   "a": [
+    "de_gaulle"
+   ],
+   "d": 4,
+   "src": [
+    "en",
+    "Vive le Québec libre",
+    [
+     "1967"
+    ]
+   ]
+  },
+  {
+   "t": "Contra quem a Força Aérea Real defendeu os céus britânicos nesta batalha?",
+   "battle": {
+    "lbl": "Batalha da Inglaterra · 1940",
+    "a": "reino_unido",
+    "b": "?",
+    "x": "Foi a primeira grande campanha travada só no ar; sobre os pilotos da RAF, Churchill disse: \"Nunca tantos deveram tanto a tão poucos.\""
+   },
+   "a": [
+    "alemanha_nazista"
+   ],
+   "d": 1,
+   "src": [
+    "en",
+    "Battle of Britain",
+    [
+     "1940",
+     "Luftwaffe"
+    ]
+   ]
+  },
+  {
+   "t": "Quem defendia as praias da Normandia contra o desembarque aliado nesta batalha?",
+   "battle": {
+    "lbl": "Normandia · 1944",
+    "a": "Aliados",
+    "b": "?",
+    "x": "Em 6 de junho de 1944, mais de 150 mil soldados cruzaram o canal da Mancha: foi a maior invasão por mar da história."
+   },
+   "a": [
+    "alemanha_nazista"
+   ],
+   "d": 1,
+   "src": [
+    "en",
+    "Normandy landings",
+    [
+     "1944",
+     "Omaha"
+    ]
+   ]
+  },
+  {
+   "t": "Qual país atacou os franceses nesta batalha, a mais longa da Primeira Guerra Mundial?",
+   "type": "txt",
+   "choices": [
+    "Alemanha",
+    "Áustria-Hungria",
+    "Império Otomano",
+    "Bulgária",
+    "Rússia",
+    "Itália"
+   ],
+   "battle": {
+    "lbl": "Verdun · 1916",
+    "a": "FRA",
+    "b": "?",
+    "x": "Durou cerca de dez meses, de fevereiro a dezembro de 1916; o grito francês \"Eles não passarão!\" virou símbolo da resistência."
+   },
+   "a": [
+    "Alemanha"
+   ],
+   "d": 2,
+   "src": [
+    "en",
+    "Battle of Verdun",
+    [
+     "1916",
+     "Falkenhayn"
+    ]
+   ]
+  },
+  {
+   "t": "Qual país afundou quatro porta-aviões japoneses nesta batalha, a virada da guerra no Pacífico?",
+   "battle": {
+    "lbl": "Midway · 1942",
+    "a": "?",
+    "b": "imperio_japones",
+    "x": "Os vencedores tinham decifrado parte do código naval japonês e sabiam onde e quando viria o ataque."
+   },
+   "a": [
+    "estados_unidos"
+   ],
+   "d": 2,
+   "src": [
+    "en",
+    "Battle of Midway",
+    [
+     "1942",
+     "carriers"
+    ]
+   ]
+  },
+  {
+   "t": "Ao lado da França, qual país lançou esta ofensiva, que lhe custou quase 60 mil baixas só no primeiro dia?",
+   "type": "txt",
+   "choices": [
+    "Reino Unido",
+    "Estados Unidos",
+    "Itália",
+    "Rússia",
+    "Bélgica",
+    "Japão"
+   ],
+   "battle": {
+    "lbl": "Somme · 1916",
+    "a": "?",
+    "b": "imperio_alemao",
+    "x": "Foi uma das batalhas mais sangrentas da história, com mais de um milhão de mortos e feridos; em setembro, ali entraram em ação os primeiros tanques."
+   },
+   "a": [
+    "Reino Unido"
+   ],
+   "d": 3,
+   "src": [
+    "en",
+    "Battle of the Somme",
+    [
+     "1916",
+     "tanks"
+    ]
+   ]
+  },
+  {
+   "t": "Qual comandante alemão foi derrotado pelos britânicos de Montgomery nesta batalha, no Egito?",
+   "type": "txt",
+   "choices": [
+    "Erwin Rommel",
+    "Heinz Guderian",
+    "Erich von Manstein",
+    "Friedrich Paulus",
+    "Gerd von Rundstedt",
+    "Walter Model"
+   ],
+   "battle": {
+    "lbl": "El Alamein · 1942",
+    "a": "reino_unido",
+    "b": "?",
+    "x": "Churchill escreveu depois: \"Antes de Alamein, nunca tivemos uma vitória. Depois de Alamein, nunca tivemos uma derrota.\""
+   },
+   "a": [
+    "Erwin Rommel"
+   ],
+   "d": 3,
+   "src": [
+    "en",
+    "Second Battle of El Alamein",
+    [
+     "Rommel",
+     "Montgomery"
+    ]
+   ]
+  },
+  {
+   "t": "Qual império teve um exército inteiro cercado e destruído nesta batalha, nas primeiras semanas da Primeira Guerra?",
+   "battle": {
+    "lbl": "Tannenberg · 1914",
+    "a": "imperio_alemao",
+    "b": "?",
+    "x": "A vitória fez a fama dos generais Hindenburg e Ludendorff, que depois passaram a comandar todo o esforço de guerra alemão."
+   },
+   "a": [
+    "imperio_russo"
+   ],
+   "d": 4,
+   "src": [
+    "en",
+    "Battle of Tannenberg",
+    [
+     "Hindenburg",
+     "Ludendorff"
+    ]
+   ]
+  },
+  {
+   "t": "Quem completa o trio de líderes do Eixo Roma–Berlim–Tóquio?",
+   "type": "txt",
+   "choices": [
+    "Benito Mussolini",
+    "Francisco Franco",
+    "Philippe Pétain",
+    "Josef Stálin",
+    "António de Oliveira Salazar",
+    "Neville Chamberlain"
+   ],
+   "line": {
+    "t": "Potências do Eixo · Segunda Guerra Mundial",
+    "rows": [
+     "Adolf Hitler",
+     "?",
+     "Hideki Tojo"
+    ],
+    "kind": "grupo",
+    "era": "new"
+   },
+   "a": [
+    "Benito Mussolini"
+   ],
+   "d": 1,
+   "src": [
+    "en",
+    "Axis powers",
+    [
+     "Mussolini",
+     "Tojo"
+    ]
+   ],
+   "x": "Tojo era o primeiro-ministro japonês; depois da guerra, foi julgado e executado, enquanto o imperador Hirohito seguiu no trono."
+  },
+  {
+   "t": "Qual país completa os membros permanentes do Conselho de Segurança da ONU?",
+   "type": "txt",
+   "choices": [
+    "China",
+    "Japão",
+    "Alemanha",
+    "Índia",
+    "Brasil",
+    "Canadá"
+   ],
+   "line": {
+    "t": "Conselho de Segurança da ONU · 1945",
+    "rows": [
+     "Estados Unidos",
+     "União Soviética",
+     "Reino Unido",
+     "França",
+     "?"
+    ],
+    "kind": "grupo",
+    "era": "new"
+   },
+   "a": [
+    "China"
+   ],
+   "d": 2,
+   "src": [
+    "en",
+    "United Nations Security Council",
+    [
+     "veto",
+     "permanent"
+    ]
+   ],
+   "x": "Os cinco têm direito de veto; desde o fim de 1991, a cadeira soviética pertence à Rússia."
+  },
+  {
+   "t": "Quem foi o último desta linha de dirigentes soviéticos?",
+   "type": "player",
+   "line": {
+    "t": "Líderes do Partido Comunista da URSS · 1953–1991",
+    "rows": [
+     "Nikita Khrushchov",
+     "Leonid Brejnev",
+     "Iuri Andropov",
+     "Konstantin Tchernenko",
+     "?"
+    ],
+    "era": "new"
+   },
+   "a": [
+    "gorbachev"
+   ],
+   "d": 2,
+   "src": [
+    "en",
+    "List of leaders of the Soviet Union",
+    [
+     "Chernenko"
+    ]
+   ],
+   "x": "Ele assumiu em 1985, aos 54 anos, depois que três antecessores idosos morreram em menos de três anos."
+  },
+  {
+   "t": "Qual país completa os seis fundadores da Comunidade Econômica Europeia?",
+   "type": "txt",
+   "choices": [
+    "Luxemburgo",
+    "Reino Unido",
+    "Dinamarca",
+    "Espanha",
+    "Suíça",
+    "Áustria"
+   ],
+   "line": {
+    "t": "Tratado de Roma · 1957",
+    "rows": [
+     "França",
+     "Alemanha Ocidental",
+     "Itália",
+     "Bélgica",
+     "Holanda",
+     "?"
+    ],
+    "kind": "grupo",
+    "era": "new"
+   },
+   "a": [
+    "Luxemburgo"
+   ],
+   "d": 3,
+   "src": [
+    "en",
+    "Treaty of Rome",
+    [
+     "Luxembourg"
+    ]
+   ],
+   "x": "O Reino Unido só entrou em 1973, junto com a Irlanda e a Dinamarca, e saiu em 2020."
+  },
+  {
+   "t": "Quem completava os \"Quatro Grandes\" da Conferência de Paz de Paris?",
+   "type": "txt",
+   "choices": [
+    "Vittorio Orlando",
+    "Benito Mussolini",
+    "Giovanni Giolitti",
+    "Vítor Emanuel III",
+    "Gabriele D'Annunzio",
+    "Luigi Cadorna"
+   ],
+   "line": {
+    "t": "Os \"Quatro Grandes\" · Paris, 1919",
+    "rows": [
+     "Woodrow Wilson",
+     "David Lloyd George",
+     "Georges Clemenceau",
+     "?"
+    ],
+    "kind": "grupo",
+    "era": "new"
+   },
+   "a": [
+    "Vittorio Orlando"
+   ],
+   "d": 4,
+   "src": [
+    "en",
+    "Big Four (World War I)",
+    [
+     "Orlando"
+    ]
+   ],
+   "x": "O italiano chegou a abandonar a conferência em protesto, porque a Itália não recebeu todos os territórios que esperava."
+  },
+  {
+   "t": "Em que ano saiu esta manchete?",
+   "type": "txt",
+   "choices": [
+    "1929",
+    "1919",
+    "1923",
+    "1926",
+    "1933",
+    "1937"
+   ],
+   "news": {
+    "h": "Pânico em Wall Street: ações despencam",
+    "paper": "Diário Financeiro",
+    "sub": "Quinta-feira negra arrasa investidores; banqueiros tentam conter as vendas"
+   },
+   "a": [
+    "1929"
+   ],
+   "d": 1,
+   "src": [
+    "pt",
+    "Crise de 1929",
+    [
+     "1929"
+    ]
+   ],
+   "x": "O crash abriu a Grande Depressão: em 1933, perto de um quarto dos trabalhadores americanos estava sem emprego."
+  },
+  {
+   "t": "Em que ano saiu esta manchete?",
+   "type": "txt",
+   "choices": [
+    "1919",
+    "1914",
+    "1916",
+    "1917",
+    "1918",
+    "1920"
+   ],
+   "news": {
+    "h": "Paz assinada no Salão dos Espelhos",
+    "paper": "Gazeta de Paris",
+    "sub": "Alemanha aceita as duras condições impostas pelos vencedores da guerra"
+   },
+   "a": [
+    "1919"
+   ],
+   "d": 3,
+   "src": [
+    "pt",
+    "Tratado de Versalhes",
+    [
+     "1919"
+    ]
+   ],
+   "x": "O tratado foi assinado em 28 de junho de 1919, exatamente cinco anos depois do atentado de Sarajevo."
+  },
+  {
+   "t": "Em que ano saiu esta manchete?",
+   "type": "txt",
+   "choices": [
+    "1933",
+    "1923",
+    "1929",
+    "1931",
+    "1936",
+    "1939"
+   ],
+   "news": {
+    "h": "Hitler é nomeado chanceler da Alemanha",
+    "paper": "Correio de Berlim",
+    "sub": "O presidente Hindenburg entrega o governo ao líder do partido nazista"
+   },
+   "a": [
+    "1933"
+   ],
+   "d": 2,
+   "src": [
+    "en",
+    "Adolf Hitler",
+    [
+     "1933",
+     "Hindenburg"
+    ]
+   ],
+   "x": "Em menos de dois meses, uma lei deu a ele o poder de governar por decreto, sem o Parlamento."
+  },
+  {
+   "t": "Em que ano saiu esta manchete?",
+   "type": "txt",
+   "choices": [
+    "1948",
+    "1945",
+    "1946",
+    "1947",
+    "1949",
+    "1956"
+   ],
+   "news": {
+    "h": "Proclamado o Estado de Israel",
+    "paper": "Jornal do Oriente",
+    "sub": "Em Tel Aviv, David Ben-Gurion lê a declaração de independência"
+   },
+   "a": [
+    "1948"
+   ],
+   "d": 4,
+   "src": [
+    "en",
+    "Israeli Declaration of Independence",
+    [
+     "1948",
+     "Ben-Gurion"
+    ]
+   ],
+   "x": "No ano anterior, a sessão da ONU que aprovou a partilha da Palestina foi presidida pelo brasileiro Oswaldo Aranha."
+  },
+  {
+   "t": "Em que ano saiu esta manchete?",
+   "type": "txt",
+   "choices": [
+    "1962",
+    "1959",
+    "1960",
+    "1961",
+    "1963",
+    "1965"
+   ],
+   "news": {
+    "h": "Kennedy anuncia bloqueio naval a Cuba",
+    "paper": "Diário da Tarde",
+    "sub": "Fotos aéreas revelam mísseis soviéticos instalados na ilha"
+   },
+   "a": [
+    "1962"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Crise dos mísseis de Cuba",
+    [
+     "1962"
+    ]
+   ],
+   "x": "Por 13 dias de outubro, o mundo esteve perto de uma guerra nuclear; a crise acabou com a retirada dos mísseis."
+  },
+  {
+   "t": "Em que ano saiu esta manchete?",
+   "type": "txt",
+   "choices": [
+    "1968",
+    "1956",
+    "1961",
+    "1964",
+    "1972",
+    "1980"
+   ],
+   "news": {
+    "h": "Tanques do Pacto de Varsóvia entram em Praga",
+    "paper": "Gazeta de Viena",
+    "sub": "Invasão põe fim às reformas da \"Primavera\" tchecoslovaca"
+   },
+   "a": [
+    "1968"
+   ],
+   "d": 4,
+   "src": [
+    "en",
+    "Warsaw Pact invasion of Czechoslovakia",
+    [
+     "1968"
+    ]
+   ],
+   "x": "Doze anos antes, em 1956, os soviéticos já tinham esmagado com tanques uma revolta na Hungria."
+  },
+  {
+   "t": "Em que ano saiu esta manchete?",
+   "type": "txt",
+   "choices": [
+    "1975",
+    "1965",
+    "1968",
+    "1970",
+    "1973",
+    "1979"
+   ],
+   "news": {
+    "h": "Saigon cai e a guerra chega ao fim",
+    "paper": "Correio do Oriente",
+    "sub": "Tanques do Norte entram no palácio presidencial; últimos americanos saem de helicóptero"
+   },
+   "a": [
+    "1975"
+   ],
+   "d": 3,
+   "src": [
+    "en",
+    "Fall of Saigon",
+    [
+     "1975"
+    ]
+   ],
+   "x": "No ano seguinte, o Vietnã foi reunificado e Saigon passou a se chamar Cidade de Ho Chi Minh."
+  },
+  {
+   "t": "Quem é o líder desta manchete?",
+   "type": "txt",
+   "choices": [
+    "Willy Brandt",
+    "Konrad Adenauer",
+    "Helmut Kohl",
+    "Helmut Schmidt",
+    "Ludwig Erhard",
+    "Kurt Georg Kiesinger"
+   ],
+   "news": {
+    "h": "Chanceler alemão se ajoelha em Varsóvia",
+    "paper": "Gazeta de Varsóvia",
+    "sub": "Diante do memorial aos heróis do gueto, gesto silencioso surpreende o mundo"
+   },
+   "a": [
+    "Willy Brandt"
+   ],
+   "d": 5,
+   "src": [
+    "en",
+    "Kniefall von Warschau",
+    [
+     "Brandt",
+     "1970"
+    ]
+   ],
+   "x": "O gesto, em dezembro de 1970, virou símbolo do pedido de perdão alemão pelos crimes nazistas; no ano seguinte, ele ganhou o Nobel da Paz."
+  },
+  {
+   "t": "Duelo: quem morreu primeiro?",
+   "type": "player",
+   "fixed": [
+    "lenin",
+    "gandhi"
+   ],
+   "duel": true,
+   "a": [
+    "lenin"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "hourglass"
+   },
+   "src": [
+    "en",
+    "Vladimir Lenin",
+    [
+     "1924"
+    ]
+   ],
+   "x": "Lênin morreu em janeiro de 1924, aos 53 anos; Gandhi foi assassinado em janeiro de 1948."
+  },
+  {
+   "t": "Duelo: o que aconteceu primeiro?",
+   "type": "txt",
+   "choices": [
+    "Revolução Russa de Outubro",
+    "Fim da Primeira Guerra Mundial"
+   ],
+   "duel": true,
+   "a": [
+    "Revolução Russa de Outubro"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "hourglass"
+   },
+   "src": [
+    "pt",
+    "Revolução de Outubro",
+    [
+     "1917"
+    ]
+   ],
+   "x": "A revolução foi em 1917, e a Rússia bolchevique saiu da guerra antes mesmo do armistício de novembro de 1918."
+  },
+  {
+   "t": "Duelo: o que aconteceu primeiro?",
+   "type": "txt",
+   "choices": [
+    "Primeiro voo humano ao espaço",
+    "Início da construção do Muro de Berlim"
+   ],
+   "duel": true,
+   "a": [
+    "Primeiro voo humano ao espaço"
+   ],
+   "d": 4,
+   "art": {
+    "icon": "hourglass"
+   },
+   "src": [
+    "en",
+    "Vostok 1",
+    [
+     "12 April 1961"
+    ]
+   ],
+   "x": "Gagarin voou em 12 de abril de 1961; o Muro começou a ser erguido quatro meses depois, em 13 de agosto."
+  },
+  {
+   "t": "Durante toda a Guerra Fria, Estados Unidos e União Soviética nunca declararam guerra um ao outro?",
+   "type": "txt",
+   "choices": [
+    "Fato",
+    "Mito"
+   ],
+   "duel": true,
+   "myth": true,
+   "a": [
+    "Fato"
+   ],
+   "d": 1,
+   "art": {
+    "crest": "urss"
+   },
+   "src": [
+    "pt",
+    "Guerra Fria",
+    [
+     "Coreia"
+    ]
+   ],
+   "x": "Por isso a guerra foi \"fria\": as superpotências se enfrentaram de forma indireta, apoiando lados opostos em conflitos como os da Coreia, do Vietnã e do Afeganistão."
+  },
+  {
+   "t": "No Natal de 1914, soldados britânicos e alemães chegaram a parar de lutar e confraternizar entre as trincheiras?",
+   "type": "txt",
+   "choices": [
+    "Fato",
+    "Mito"
+   ],
+   "duel": true,
+   "myth": true,
+   "a": [
+    "Fato"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "dove"
+   },
+   "src": [
+    "en",
+    "Christmas truce",
+    [
+     "football"
+    ]
+   ],
+   "x": "Em vários trechos da frente, trocaram cigarros e comida, cantaram e enterraram seus mortos; há relatos até de partidas de futebol."
+  },
+  {
+   "t": "O Muro de Berlim cercava toda a Berlim Ocidental, e não apenas cortava a cidade ao meio?",
+   "type": "txt",
+   "choices": [
+    "Fato",
+    "Mito"
+   ],
+   "duel": true,
+   "myth": true,
+   "a": [
+    "Fato"
+   ],
+   "d": 3,
+   "art": {
+    "stad": "muro_berlim"
+   },
+   "src": [
+    "en",
+    "Berlin Wall",
+    [
+     "155"
+    ]
+   ],
+   "x": "Berlim Ocidental era uma ilha dentro da Alemanha Oriental: dos cerca de 155 km do Muro, só uns 43 km cortavam a cidade; o resto a separava do território oriental ao redor."
+  },
+  {
+   "t": "A Revolução de Outubro, na Rússia, aconteceu em novembro pelo calendário que usamos hoje?",
+   "type": "txt",
+   "choices": [
+    "Fato",
+    "Mito"
+   ],
+   "duel": true,
+   "myth": true,
+   "a": [
+    "Fato"
+   ],
+   "d": 3,
+   "art": {
+    "stad": "palacio_inverno"
+   },
+   "src": [
+    "en",
+    "October Revolution",
+    [
+     "Julian"
+    ]
+   ],
+   "x": "A Rússia ainda seguia o calendário juliano, 13 dias atrasado: o 25 de outubro de 1917 de lá era o nosso 7 de novembro."
+  },
+  {
+   "t": "Hitler chegou ao poder vencendo uma eleição com a maioria dos votos dos alemães?",
+   "type": "txt",
+   "choices": [
+    "Fato",
+    "Mito"
+   ],
+   "duel": true,
+   "myth": true,
+   "a": [
+    "Mito"
+   ],
+   "d": 3,
+   "art": {
+    "flag": "GER"
+   },
+   "src": [
+    "en",
+    "Adolf Hitler",
+    [
+     "Hindenburg",
+     "chancellor"
+    ]
+   ],
+   "x": "Na eleição livre mais favorável, em julho de 1932, os nazistas tiveram cerca de 37% dos votos; Hitler foi nomeado chanceler pelo presidente Hindenburg."
+  },
+  {
+   "t": "Os primeiros animais mandados de propósito ao espaço foram moscas-das-frutas?",
+   "type": "txt",
+   "choices": [
+    "Fato",
+    "Mito"
+   ],
+   "duel": true,
+   "myth": true,
+   "a": [
+    "Fato"
+   ],
+   "d": 4,
+   "art": {
+    "icon": "rocket"
+   },
+   "src": [
+    "en",
+    "Animals in space",
+    [
+     "fruit flies",
+     "1947"
+    ]
+   ],
+   "x": "Em 1947, os americanos lançaram moscas-das-frutas num foguete V-2 capturado dos alemães; a cápsula voltou de paraquedas com elas vivas."
+  }
+ ]
+}

@@ -1,0 +1,1765 @@
+{
+ "id": "era_revolucoes",
+ "name": "Era das Revoluções",
+ "tag": "Da Bastilha à Belle Époque",
+ "col": "#9A3412",
+ "diff": "Variado",
+ "emoji": "🔥",
+ "qs": [
+  {
+   "t": "Qual canção, composta em 1792 para os soldados da Revolução, tornou-se o hino nacional da França?",
+   "type": "txt",
+   "choices": [
+    "A Marselhesa",
+    "A Internacional",
+    "Ça Ira",
+    "A Carmanhola",
+    "Deus Salve o Rei",
+    "Hino da Carta"
+   ],
+   "a": [
+    "A Marselhesa"
+   ],
+   "d": 1,
+   "art": {
+    "stad": "arco_triunfo"
+   },
+   "src": [
+    "en",
+    "La Marseillaise",
+    [
+     "1792",
+     "Rouget de Lisle",
+     "Strasbourg"
+    ]
+   ],
+   "x": "Foi composta em Estrasburgo por Rouget de Lisle, mas ganhou o nome por ser cantada pelos voluntários de Marselha que marcharam até Paris."
+  },
+  {
+   "t": "Qual campanha de Napoleão, em 1812, terminou em desastre, com o exército dizimado pelo frio e pela fome na retirada?",
+   "type": "txt",
+   "choices": [
+    "A invasão da Rússia",
+    "A campanha do Egito",
+    "A campanha da Itália",
+    "A Guerra Peninsular",
+    "A campanha da Áustria",
+    "Os Cem Dias"
+   ],
+   "a": [
+    "A invasão da Rússia"
+   ],
+   "d": 1,
+   "art": {
+    "who": "napoleao"
+   },
+   "src": [
+    "en",
+    "French invasion of Russia",
+    [
+     "1812",
+     "Moscow"
+    ]
+   ],
+   "x": "Ao chegar a Moscou, Napoleão encontrou a cidade quase vazia e logo em chamas; a retirada no inverno destruiu a maior parte da Grande Armée."
+  },
+  {
+   "t": "Qual canal, aberto à navegação em 1914, ligou o oceano Atlântico ao Pacífico?",
+   "type": "txt",
+   "choices": [
+    "Canal do Panamá",
+    "Canal de Suez",
+    "Canal de Kiel",
+    "Canal de Corinto",
+    "Canal Erie",
+    "Canal da Nicarágua"
+   ],
+   "a": [
+    "Canal do Panamá"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "ship"
+   },
+   "src": [
+    "en",
+    "Panama Canal",
+    [
+     "1914",
+     "yellow fever"
+    ]
+   ],
+   "x": "Os franceses começaram a obra nos anos 1880 e desistiram depois de milhares de mortes por malária e febre amarela; os americanos a concluíram."
+  },
+  {
+   "t": "Qual combustível, tirado de minas, alimentava as máquinas a vapor e as locomotivas da Revolução Industrial?",
+   "type": "txt",
+   "choices": [
+    "Carvão",
+    "Petróleo",
+    "Gás natural",
+    "Diesel",
+    "Querosene",
+    "Álcool"
+   ],
+   "a": [
+    "Carvão"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "train"
+   },
+   "src": [
+    "en",
+    "Industrial Revolution",
+    [
+     "coal"
+    ]
+   ],
+   "x": "A Grã-Bretanha tinha grandes jazidas de carvão e de ferro, uma das razões de a Revolução Industrial ter começado lá."
+  },
+  {
+   "t": "Como ficou conhecido o período de 1837 a 1901 na história britânica, marcado pelas fábricas, pelas ferrovias e pela expansão do império?",
+   "type": "txt",
+   "choices": [
+    "Era Vitoriana",
+    "Era Georgiana",
+    "Era Eduardiana",
+    "Era Elisabetana",
+    "Era Tudor",
+    "Belle Époque"
+   ],
+   "a": [
+    "Era Vitoriana"
+   ],
+   "d": 1,
+   "art": {
+    "crest": "imperio_britanico"
+   },
+   "src": [
+    "en",
+    "Victorian era",
+    [
+     "1837",
+     "1901"
+    ]
+   ],
+   "x": "Foi a época de Charles Dickens, dos trens a vapor e da Grande Exposição de 1851, montada no Palácio de Cristal, em Londres."
+  },
+  {
+   "t": "Como ficou conhecida a corrida das potências europeias para dividir e colonizar o continente africano, no fim do século XIX?",
+   "type": "txt",
+   "choices": [
+    "Partilha da África",
+    "Grande Jogo",
+    "Destino Manifesto",
+    "Doutrina Monroe",
+    "Questão do Oriente",
+    "Corrida do Ouro"
+   ],
+   "a": [
+    "Partilha da África"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "map"
+   },
+   "src": [
+    "en",
+    "Scramble for Africa",
+    [
+     "1870",
+     "1914"
+    ]
+   ],
+   "x": "Em 1870, cerca de 10% da África estava sob controle europeu; em 1914, perto de 90%."
+  },
+  {
+   "t": "Qual medida de Napoleão, de 1806, proibiu os países sob seu domínio de comerciar com a Grã-Bretanha?",
+   "type": "txt",
+   "choices": [
+    "Bloqueio Continental",
+    "Código Civil",
+    "Concordata",
+    "Lei dos Suspeitos",
+    "Tratado de Tilsit",
+    "Pacto de Família"
+   ],
+   "a": [
+    "Bloqueio Continental"
+   ],
+   "d": 2,
+   "art": {
+    "crest": "imperio_frances"
+   },
+   "src": [
+    "en",
+    "Continental System",
+    [
+     "1806",
+     "Portugal"
+    ]
+   ],
+   "x": "Portugal se recusou a aderir e foi invadido pelos franceses; a família real portuguesa partiu então para o Brasil, no fim de 1807."
+  },
+  {
+   "t": "Qual romance antiescravista, publicado em 1852 por Harriet Beecher Stowe, tornou-se um dos livros mais vendidos do século XIX?",
+   "type": "txt",
+   "choices": [
+    "A Cabana do Pai Tomás",
+    "As Aventuras de Huckleberry Finn",
+    "Moby Dick",
+    "A Letra Escarlate",
+    "Mulherzinhas",
+    "O Último dos Moicanos"
+   ],
+   "a": [
+    "A Cabana do Pai Tomás"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "book"
+   },
+   "src": [
+    "en",
+    "Uncle Tom's Cabin",
+    [
+     "1852",
+     "300,000"
+    ]
+   ],
+   "x": "Só no primeiro ano, vendeu 300 mil exemplares nos Estados Unidos e ajudou a espalhar a causa abolicionista no Norte."
+  },
+  {
+   "t": "Como eram chamados os revolucionários populares de Paris que usavam calças compridas, e não os calções curtos da elite?",
+   "type": "txt",
+   "choices": [
+    "Sans-culottes",
+    "Girondinos",
+    "Jacobinos",
+    "Montanheses",
+    "Chouans",
+    "Termidorianos"
+   ],
+   "a": [
+    "Sans-culottes"
+   ],
+   "d": 3,
+   "art": {
+    "crest": "franca_revolucionaria"
+   },
+   "src": [
+    "en",
+    "Sans-culottes",
+    [
+     "culottes"
+    ]
+   ],
+   "x": "O nome quer dizer \"sem culotes\": os calções até o joelho, usados com meias de seda, eram roupa de nobres e burgueses ricos."
+  },
+  {
+   "t": "Qual movimento operário britânico, entre 1838 e 1857, reuniu milhões de assinaturas em petições pelo voto de todos os homens adultos?",
+   "type": "txt",
+   "choices": [
+    "Cartismo",
+    "Ludismo",
+    "Fabianismo",
+    "Owenismo",
+    "Sufragismo",
+    "Trabalhismo"
+   ],
+   "a": [
+    "Cartismo"
+   ],
+   "d": 3,
+   "art": {
+    "crest": "reino_unido"
+   },
+   "src": [
+    "en",
+    "Chartism",
+    [
+     "People's Charter",
+     "1838"
+    ]
+   ],
+   "x": "O nome vem da \"Carta do Povo\", de 1838. O movimento fracassou, mas quase todas as suas reivindicações, como o voto secreto, viraram lei décadas depois."
+  },
+  {
+   "t": "Qual padre escreveu, em 1789, o panfleto \"O que é o Terceiro Estado?\", que inflamou a Revolução Francesa?",
+   "type": "txt",
+   "choices": [
+    "Emmanuel Sieyès",
+    "Jean-Paul Marat",
+    "Camille Desmoulins",
+    "Mirabeau",
+    "Condorcet",
+    "Lafayette"
+   ],
+   "a": [
+    "Emmanuel Sieyès"
+   ],
+   "d": 4,
+   "art": {
+    "icon": "quill"
+   },
+   "src": [
+    "en",
+    "What Is the Third Estate?",
+    [
+     "Sieyès",
+     "1789"
+    ]
+   ],
+   "x": "O texto respondia assim: \"O que é o Terceiro Estado? Tudo. O que tem sido até agora? Nada. O que deseja? Ser alguma coisa.\""
+  },
+  {
+   "t": "Qual governante fugiu do exílio na ilha de Elba, em 1815, e voltou ao poder por cerca de cem dias?",
+   "type": "player",
+   "a": [
+    "napoleao"
+   ],
+   "d": 1,
+   "art": {
+    "crest": "imperio_frances"
+   },
+   "src": [
+    "en",
+    "Hundred Days",
+    [
+     "Elba",
+     "Grenoble"
+    ]
+   ],
+   "x": "Perto de Grenoble, as tropas enviadas para detê-lo passaram para o seu lado, e ele chegou a Paris sem combate, em 20 de março."
+  },
+  {
+   "t": "Qual compositor pretendia dedicar sua Terceira Sinfonia a Napoleão, mas riscou o nome dele da partitura quando o general se proclamou imperador?",
+   "type": "player",
+   "a": [
+    "beethoven"
+   ],
+   "d": 2,
+   "art": {
+    "who": "napoleao"
+   },
+   "src": [
+    "en",
+    "Symphony No. 3 (Beethoven)",
+    [
+     "Napoleon",
+     "Eroica"
+    ]
+   ],
+   "x": "A sinfonia acabou publicada como \"Eroica\", composta \"para celebrar a memória de um grande homem\"."
+  },
+  {
+   "t": "Qual general britânico expulsou os exércitos de Napoleão de Portugal e da Espanha, na Guerra Peninsular, antes de enfrentá-lo em pessoa?",
+   "type": "player",
+   "a": [
+    "wellington"
+   ],
+   "d": 2,
+   "art": {
+    "flag": "POR"
+   },
+   "src": [
+    "en",
+    "Lines of Torres Vedras",
+    [
+     "Wellington",
+     "Lisbon"
+    ]
+   ],
+   "x": "Para defender Lisboa, mandou erguer as Linhas de Torres Vedras, uma rede de fortes que os franceses não conseguiram atravessar."
+  },
+  {
+   "t": "Qual monarca visitou a Exposição do Centenário dos Estados Unidos, em 1876, e se encantou com o telefone de Alexander Graham Bell?",
+   "type": "player",
+   "a": [
+    "dom_pedro_ii"
+   ],
+   "d": 3,
+   "art": {
+    "flag": "USA"
+   },
+   "src": [
+    "en",
+    "Centennial Exposition",
+    [
+     "Pedro II",
+     "Bell"
+    ]
+   ],
+   "x": "Ele abriu a exposição, na Filadélfia, ao lado do presidente Ulysses Grant, e percorreu os Estados Unidos por cerca de três meses."
+  },
+  {
+   "t": "Qual escritor viveu quase vinte anos no exílio, a maior parte nas ilhas do Canal da Mancha, por se opor ao imperador Napoleão III?",
+   "type": "player",
+   "a": [
+    "victor_hugo"
+   ],
+   "d": 3,
+   "art": {
+    "flag": "FRA"
+   },
+   "src": [
+    "en",
+    "Victor Hugo",
+    [
+     "Guernsey",
+     "Napoleon III"
+    ]
+   ],
+   "x": "Em Guernsey, terminou Os Miseráveis, publicado em 1862; só voltou a Paris quando o Segundo Império caiu, em 1870."
+  },
+  {
+   "t": "Qual país comprou o Alasca do Império Russo, em 1867, por 7,2 milhões de dólares?",
+   "a": [
+    "estados_unidos"
+   ],
+   "d": 1,
+   "art": {
+    "crest": "imperio_russo"
+   },
+   "src": [
+    "en",
+    "Alaska Purchase",
+    [
+     "1867",
+     "Seward"
+    ]
+   ],
+   "x": "Críticos da época apelidaram a compra de \"a loucura de Seward\", nome do secretário de Estado americano que a negociou."
+  },
+  {
+   "t": "Qual império asiático venceu a China em 1895 e a Rússia em 1905, tornando-se uma potência mundial?",
+   "a": [
+    "imperio_japones"
+   ],
+   "d": 2,
+   "art": {
+    "crest": "qing"
+   },
+   "src": [
+    "en",
+    "First Sino-Japanese War",
+    [
+     "1895",
+     "Taiwan"
+    ]
+   ],
+   "x": "Na guerra contra a China, ficou com a ilha de Taiwan, que governou até 1945."
+  },
+  {
+   "t": "Qual reino, governado por Guilherme I e Bismarck, venceu em poucos anos a Dinamarca, a Áustria e a França?",
+   "a": [
+    "prussia"
+   ],
+   "d": 2,
+   "art": {
+    "who": "bismarck"
+   },
+   "src": [
+    "en",
+    "Unification of Germany",
+    [
+     "Denmark",
+     "Austria"
+    ]
+   ],
+   "x": "As três guerras, em 1864, 1866 e 1870–1871, terminaram com o rei Guilherme I proclamado imperador alemão."
+  },
+  {
+   "t": "Qual império foi apelidado de \"o doente da Europa\" no século XIX, enquanto perdia territórios nos Bálcãs?",
+   "a": [
+    "imperio_otomano"
+   ],
+   "d": 3,
+   "art": {
+    "flag": "GRC"
+   },
+   "src": [
+    "en",
+    "Sick man of Europe",
+    [
+     "Ottoman",
+     "Nicholas I"
+    ]
+   ],
+   "x": "A expressão é atribuída ao czar Nicolau I, da Rússia, que contava com a partilha dos territórios do vizinho."
+  },
+  {
+   "t": "Quem sou eu?",
+   "type": "player",
+   "clues": [
+    "Tornei-me rainha em 1837, com apenas 18 anos.",
+    "Casei-me com meu primo alemão Alberto, e tivemos nove filhos.",
+    "Meus filhos e netos se casaram em tantas casas reais que me chamaram de \"avó da Europa\".",
+    "Recebi também o título de Imperatriz da Índia, e meu nome batizou toda uma época britânica."
+   ],
+   "a": [
+    "victoria"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "crown"
+   },
+   "src": [
+    "en",
+    "Queen Victoria",
+    [
+     "Empress of India",
+     "Albert"
+    ]
+   ]
+  },
+  {
+   "t": "Quem sou eu?",
+   "type": "player",
+   "clues": [
+    "Nasci em Nice, em 1807, e fui marinheiro na juventude.",
+    "Exilado, lutei na América do Sul, inclusive na Revolução Farroupilha, no sul do Brasil.",
+    "Lá conheci minha companheira, uma catarinense que lutou ao meu lado.",
+    "Em 1860, desembarquei na Sicília com mil voluntários de camisa vermelha."
+   ],
+   "a": [
+    "garibaldi"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "sword"
+   },
+   "src": [
+    "en",
+    "Giuseppe Garibaldi",
+    [
+     "Nice",
+     "Anita"
+    ]
+   ]
+  },
+  {
+   "t": "Quem sou eu?",
+   "type": "player",
+   "clues": [
+    "Nasci em Arras, em 1758, e fui advogado.",
+    "Meus admiradores me chamavam de \"o Incorruptível\".",
+    "Fui a voz mais influente do Comitê de Salvação Pública durante o Terror.",
+    "Em julho de 1794, no golpe do 9 Termidor, fui preso e levado à guilhotina."
+   ],
+   "a": [
+    "robespierre"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "scales"
+   },
+   "src": [
+    "en",
+    "Maximilien Robespierre",
+    [
+     "Arras",
+     "Incorruptible"
+    ]
+   ]
+  },
+  {
+   "t": "Coloque estes marcos em ordem, do mais antigo ao mais recente?",
+   "type": "order",
+   "a": [
+    "eua",
+    "bastilha",
+    "waterloo",
+    "primavera"
+   ],
+   "order": [
+    {
+     "id": "eua",
+     "y": 1776,
+     "label": "Independência dos EUA",
+     "sub": "Declaração assinada na Filadélfia",
+     "flag": "USA"
+    },
+    {
+     "id": "bastilha",
+     "y": 1789,
+     "label": "Queda da Bastilha",
+     "sub": "Começa a Revolução Francesa",
+     "crest": "franca_revolucionaria"
+    },
+    {
+     "id": "waterloo",
+     "y": 1815,
+     "label": "Batalha de Waterloo",
+     "sub": "Napoleão é derrotado de vez",
+     "face": "wellington"
+    },
+    {
+     "id": "primavera",
+     "y": 1848,
+     "label": "Primavera dos Povos",
+     "sub": "Revoluções sacodem a Europa",
+     "face": "marx"
+    }
+   ],
+   "d": 2,
+   "src": [
+    "en",
+    "Age of Revolution",
+    [
+     "1776",
+     "1848"
+    ]
+   ]
+  },
+  {
+   "t": "Coloque em ordem, do mais antigo ao mais recente, estes marcos do fim da escravidão?",
+   "type": "order",
+   "a": [
+    "haiti",
+    "brit",
+    "franca",
+    "eua",
+    "brasil"
+   ],
+   "order": [
+    {
+     "id": "haiti",
+     "y": 1791,
+     "label": "Revolta dos escravizados em São Domingos",
+     "sub": "Começa a Revolução Haitiana",
+     "face": "toussaint"
+    },
+    {
+     "id": "brit",
+     "y": 1833,
+     "label": "Lei de abolição no Império Britânico",
+     "sub": "Aprovada pelo Parlamento em Londres",
+     "crest": "imperio_britanico"
+    },
+    {
+     "id": "franca",
+     "y": 1848,
+     "label": "França abole a escravidão nas colônias",
+     "sub": "Decreto da Segunda República",
+     "flag": "FRA"
+    },
+    {
+     "id": "eua",
+     "y": 1865,
+     "label": "13ª Emenda nos Estados Unidos",
+     "sub": "Abolição em todo o país",
+     "face": "lincoln"
+    },
+    {
+     "id": "brasil",
+     "y": 1888,
+     "label": "Lei Áurea",
+     "sub": "Assinada pela princesa regente",
+     "face": "princesa_isabel"
+    }
+   ],
+   "d": 3,
+   "src": [
+    "en",
+    "Abolitionism",
+    [
+     "1833",
+     "1888"
+    ]
+   ]
+  },
+  {
+   "t": "Coloque estas invenções em ordem, da mais antiga à mais recente?",
+   "type": "order",
+   "a": [
+    "watt",
+    "rocket",
+    "morse",
+    "lampada",
+    "14bis"
+   ],
+   "order": [
+    {
+     "id": "watt",
+     "y": 1769,
+     "label": "Máquina a vapor de Watt",
+     "sub": "Patente do condensador separado",
+     "flag": "SCO"
+    },
+    {
+     "id": "rocket",
+     "y": 1829,
+     "label": "Locomotiva Rocket",
+     "sub": "Vence a competição de Rainhill",
+     "flag": "ENG"
+    },
+    {
+     "id": "morse",
+     "y": 1844,
+     "label": "Primeira linha telegráfica de Morse",
+     "sub": "Washington–Baltimore",
+     "flag": "USA"
+    },
+    {
+     "id": "lampada",
+     "y": 1879,
+     "label": "Lâmpada incandescente de Edison",
+     "sub": "Teste em Menlo Park",
+     "face": "edison"
+    },
+    {
+     "id": "14bis",
+     "y": 1906,
+     "label": "Voo do 14-Bis",
+     "sub": "Campo de Bagatelle, Paris",
+     "face": "santos_dumont"
+    }
+   ],
+   "d": 3,
+   "src": [
+    "en",
+    "Stephenson's Rocket",
+    [
+     "1829",
+     "Rainhill"
+    ]
+   ]
+  },
+  {
+   "t": "Quem disse esta frase?",
+   "type": "player",
+   "quote": {
+    "q": "Soldados, do alto destas pirâmides, quarenta séculos vos contemplam!",
+    "ctx": "Frase atribuída ao general antes de uma batalha no Egito, julho de 1798"
+   },
+   "a": [
+    "napoleao"
+   ],
+   "d": 2,
+   "src": [
+    "en",
+    "Battle of the Pyramids",
+    [
+     "forty centuries"
+    ]
+   ],
+   "x": "Na batalha, os franceses derrotaram os mamelucos que dominavam o Egito."
+  },
+  {
+   "t": "Quem disse esta frase?",
+   "type": "player",
+   "quote": {
+    "q": "As grandes questões do nosso tempo não serão decididas por discursos e votos da maioria, mas por ferro e sangue.",
+    "ctx": "Discurso à comissão de orçamento do parlamento prussiano, setembro de 1862"
+   },
+   "a": [
+    "bismarck"
+   ],
+   "d": 2,
+   "src": [
+    "en",
+    "Blood and Iron (speech)",
+    [
+     "1862"
+    ]
+   ],
+   "x": "A expressão \"ferro e sangue\" virou o resumo da política que uniu a Alemanha por meio de três guerras."
+  },
+  {
+   "t": "Quem disse esta frase?",
+   "type": "player",
+   "quote": {
+    "q": "A Inglaterra espera que cada homem cumpra o seu dever.",
+    "ctx": "Sinal de bandeiras içado na nau capitânia antes de uma batalha naval, outubro de 1805"
+   },
+   "a": [
+    "nelson"
+   ],
+   "d": 3,
+   "src": [
+    "en",
+    "England expects that every man will do his duty",
+    [
+     "Trafalgar"
+    ]
+   ],
+   "x": "O almirante foi atingido por um atirador francês durante a batalha, mas ainda soube da vitória antes de morrer."
+  },
+  {
+   "t": "Quem disse esta frase?",
+   "type": "player",
+   "quote": {
+    "q": "Ao me derrubar, cortaram apenas o tronco da árvore da liberdade dos negros. Ela voltará a brotar pelas raízes, porque são numerosas e profundas.",
+    "ctx": "Ao ser embarcado preso num navio rumo à França, 1802"
+   },
+   "a": [
+    "toussaint"
+   ],
+   "d": 4,
+   "src": [
+    "en",
+    "Toussaint Louverture",
+    [
+     "Fort de Joux",
+     "1802"
+    ]
+   ],
+   "x": "Morreu numa prisão gelada nas montanhas do Jura, em abril de 1803, menos de um ano antes da independência do Haiti."
+  },
+  {
+   "t": "Quem disse esta frase?",
+   "type": "txt",
+   "choices": [
+    "Frederick Douglass",
+    "Harriet Tubman",
+    "John Brown",
+    "William Lloyd Garrison",
+    "Booker T. Washington",
+    "Sojourner Truth"
+   ],
+   "quote": {
+    "q": "O que é, para o escravo americano, o seu 4 de Julho?",
+    "ctx": "Discurso em Rochester, Nova York, a convite de abolicionistas, 5 de julho de 1852"
+   },
+   "a": [
+    "Frederick Douglass"
+   ],
+   "d": 4,
+   "src": [
+    "en",
+    "What to the Slave Is the Fourth of July?",
+    [
+     "Rochester",
+     "1852"
+    ]
+   ],
+   "x": "O orador tinha fugido da escravidão em Maryland e se tornou o mais célebre abolicionista negro dos Estados Unidos."
+  },
+  {
+   "t": "Quem disse esta frase?",
+   "type": "txt",
+   "choices": [
+    "Georges Danton",
+    "Jean-Paul Marat",
+    "Camille Desmoulins",
+    "Saint-Just",
+    "Mirabeau",
+    "Lafayette"
+   ],
+   "quote": {
+    "q": "Audácia, mais audácia, sempre audácia, e a França estará salva!",
+    "ctx": "Discurso à Assembleia em setembro de 1792, com os prussianos avançando sobre Paris"
+   },
+   "a": [
+    "Georges Danton"
+   ],
+   "d": 5,
+   "src": [
+    "en",
+    "Georges Danton",
+    [
+     "audace"
+    ]
+   ],
+   "x": "Em abril de 1794, o próprio orador acabou guilhotinado, em pleno Terror."
+  },
+  {
+   "t": "Quem disse esta frase?",
+   "type": "txt",
+   "choices": [
+    "Klemens von Metternich",
+    "Napoleão III",
+    "Lord Palmerston",
+    "Talleyrand",
+    "Francisco José I",
+    "Camillo Cavour"
+   ],
+   "quote": {
+    "q": "A Itália é apenas uma expressão geográfica.",
+    "ctx": "Correspondência diplomática de 1847, sobre a península dividida em vários Estados"
+   },
+   "a": [
+    "Klemens von Metternich"
+   ],
+   "d": 5,
+   "src": [
+    "en",
+    "Klemens von Metternich",
+    [
+     "Italy",
+     "Congress of Vienna"
+    ]
+   ],
+   "x": "Catorze anos depois, em 1861, foi proclamado o Reino da Itália."
+  },
+  {
+   "t": "Quem venceu esta batalha, também chamada \"dos Três Imperadores\"?",
+   "battle": {
+    "lbl": "Austerlitz · 1805",
+    "a": "?",
+    "b": "Rússia e Áustria",
+    "x": "O vencedor completava naquele dia um ano da sua coroação como imperador."
+   },
+   "a": [
+    "imperio_frances"
+   ],
+   "d": 2,
+   "src": [
+    "en",
+    "Battle of Austerlitz",
+    [
+     "Three Emperors"
+    ]
+   ]
+  },
+  {
+   "t": "Quem a frota britânica derrotou nesta batalha naval?",
+   "type": "txt",
+   "choices": [
+    "França e Espanha",
+    "França e Holanda",
+    "Espanha e Portugal",
+    "Rússia e Turquia",
+    "França e Rússia",
+    "Holanda e Dinamarca"
+   ],
+   "battle": {
+    "lbl": "Trafalgar · 1805",
+    "a": "reino_unido",
+    "b": "?",
+    "x": "A vitória consolidou a supremacia naval britânica, que duraria por todo o século XIX."
+   },
+   "a": [
+    "França e Espanha"
+   ],
+   "d": 2,
+   "src": [
+    "en",
+    "Battle of Trafalgar",
+    [
+     "Spanish"
+    ]
+   ]
+  },
+  {
+   "t": "Qual império enfrentou o exército de Napoleão nesta batalha sangrenta, a caminho de Moscou?",
+   "battle": {
+    "lbl": "Borodino · 1812",
+    "a": "imperio_frances",
+    "b": "?",
+    "x": "Foi o dia mais sangrento das guerras napoleônicas; uma semana depois, os franceses entraram em Moscou."
+   },
+   "a": [
+    "imperio_russo"
+   ],
+   "d": 1,
+   "src": [
+    "en",
+    "Battle of Borodino",
+    [
+     "Moscow",
+     "Kutuzov"
+    ]
+   ]
+  },
+  {
+   "t": "Qual reino, à frente dos estados alemães, capturou o imperador francês nesta batalha?",
+   "battle": {
+    "lbl": "Sedan · 1870",
+    "a": "?",
+    "b": "Segundo Império Francês",
+    "x": "Napoleão III foi feito prisioneiro, e dois dias depois Paris proclamou a república."
+   },
+   "a": [
+    "prussia"
+   ],
+   "d": 3,
+   "src": [
+    "en",
+    "Battle of Sedan",
+    [
+     "Napoleon III"
+    ]
+   ]
+  },
+  {
+   "t": "Quem o exército de Dessalines derrotou nesta batalha, a última antes da independência do Haiti?",
+   "type": "txt",
+   "choices": [
+    "França",
+    "Espanha",
+    "Reino Unido",
+    "Holanda",
+    "Portugal",
+    "Estados Unidos"
+   ],
+   "battle": {
+    "lbl": "Vertières · 1803",
+    "a": "HAI",
+    "b": "?",
+    "x": "Em 1º de janeiro de 1804, o Haiti declarou independência, a primeira nação nascida de uma revolta de escravizados."
+   },
+   "a": [
+    "França"
+   ],
+   "d": 3,
+   "src": [
+    "en",
+    "Battle of Vertières",
+    [
+     "Dessalines"
+    ]
+   ]
+  },
+  {
+   "t": "Quem teve a frota destruída por Nelson nesta batalha, deixando seu exército preso no Egito?",
+   "battle": {
+    "lbl": "Abukir (Nilo) · 1798",
+    "a": "reino_unido",
+    "b": "?",
+    "x": "O general que comandava a expedição voltou para casa no ano seguinte e deixou o exército para trás."
+   },
+   "a": [
+    "franca_revolucionaria"
+   ],
+   "d": 4,
+   "src": [
+    "en",
+    "Battle of the Nile",
+    [
+     "Aboukir"
+    ]
+   ]
+  },
+  {
+   "t": "Quem foi derrotado nesta batalha por franceses e piemonteses, na luta pela unificação italiana?",
+   "type": "txt",
+   "choices": [
+    "Império Austríaco",
+    "Império Russo",
+    "Reino da Prússia",
+    "Império Otomano",
+    "Reino das Duas Sicílias",
+    "Estados Papais"
+   ],
+   "battle": {
+    "lbl": "Solferino · 1859",
+    "a": "França e Piemonte-Sardenha",
+    "b": "?",
+    "x": "A carnificina impressionou o suíço Henry Dunant, que depois ajudou a fundar a Cruz Vermelha."
+   },
+   "a": [
+    "Império Austríaco"
+   ],
+   "d": 4,
+   "src": [
+    "en",
+    "Battle of Solferino",
+    [
+     "Dunant"
+    ]
+   ]
+  },
+  {
+   "t": "Quem foi o terceiro presidente dos Estados Unidos?",
+   "type": "player",
+   "line": {
+    "t": "Primeiros presidentes dos EUA",
+    "rows": [
+     "George Washington",
+     "John Adams",
+     "?",
+     "James Madison",
+     "James Monroe"
+    ],
+    "era": "mod"
+   },
+   "a": [
+    "jefferson"
+   ],
+   "d": 2,
+   "src": [
+    "en",
+    "List of presidents of the United States",
+    [
+     "Jefferson"
+    ]
+   ],
+   "x": "Em 1803, comprou da França o território da Louisiana, quase dobrando o tamanho do país."
+  },
+  {
+   "t": "Qual regime falta nesta sequência da França revolucionária?",
+   "type": "txt",
+   "choices": [
+    "Consulado",
+    "Restauração",
+    "Monarquia de Julho",
+    "Segunda República",
+    "Comuna de Paris",
+    "Regência"
+   ],
+   "line": {
+    "t": "França · 1789–1815",
+    "rows": [
+     "Monarquia constitucional",
+     "Convenção",
+     "Diretório",
+     "?",
+     "Império"
+    ],
+    "era": "mod"
+   },
+   "a": [
+    "Consulado"
+   ],
+   "d": 3,
+   "src": [
+    "en",
+    "French Consulate",
+    [
+     "Directory",
+     "Brumaire"
+    ]
+   ],
+   "x": "Napoleão chegou ao poder como Primeiro Cônsul com o golpe do 18 Brumário, em novembro de 1799."
+  },
+  {
+   "t": "Quem foi o segundo imperador da Alemanha unificada?",
+   "type": "txt",
+   "choices": [
+    "Frederico III",
+    "Frederico Guilherme IV",
+    "Frederico II",
+    "Luís II",
+    "Francisco José I",
+    "Oto I"
+   ],
+   "line": {
+    "t": "Imperadores alemães · 1871–1918",
+    "rows": [
+     "Guilherme I",
+     "?",
+     "Guilherme II"
+    ],
+    "era": "new"
+   },
+   "a": [
+    "Frederico III"
+   ],
+   "d": 4,
+   "src": [
+    "en",
+    "Frederick III, German Emperor",
+    [
+     "99 days"
+    ]
+   ],
+   "x": "Reinou só 99 dias em 1888, já doente de câncer na garganta: foi o \"Ano dos Três Imperadores\"."
+  },
+  {
+   "t": "Em que ano saiu esta manchete?",
+   "type": "txt",
+   "choices": [
+    "1789",
+    "1776",
+    "1783",
+    "1792",
+    "1793",
+    "1799"
+   ],
+   "news": {
+    "h": "Povo de Paris toma a Bastilha",
+    "paper": "Folha de Paris",
+    "sub": "Multidão invade a fortaleza-prisão em busca de pólvora; o governador é morto"
+   },
+   "a": [
+    "1789"
+   ],
+   "d": 1,
+   "src": [
+    "en",
+    "Storming of the Bastille",
+    [
+     "1789",
+     "gunpowder"
+    ]
+   ],
+   "x": "O 14 de julho virou a data nacional da França."
+  },
+  {
+   "t": "Quem é o presidente desta manchete?",
+   "type": "player",
+   "news": {
+    "h": "Presidente é baleado num teatro de Washington",
+    "paper": "The Evening Star",
+    "sub": "Ator simpatizante do Sul dispara no camarote; o país ainda celebrava o fim da guerra"
+   },
+   "a": [
+    "lincoln"
+   ],
+   "d": 1,
+   "src": [
+    "en",
+    "Assassination of Abraham Lincoln",
+    [
+     "Ford's Theatre",
+     "Booth"
+    ]
+   ],
+   "x": "John Wilkes Booth atirou no Teatro Ford em 14 de abril de 1865, cinco dias depois da rendição do general Lee."
+  },
+  {
+   "t": "Em que ano saiu esta manchete?",
+   "type": "txt",
+   "choices": [
+    "1804",
+    "1799",
+    "1802",
+    "1806",
+    "1808",
+    "1812"
+   ],
+   "news": {
+    "h": "General é coroado imperador em Notre-Dame",
+    "paper": "Le Moniteur Universel",
+    "sub": "O papa Pio VII abençoa a cerimônia na catedral de Paris"
+   },
+   "a": [
+    "1804"
+   ],
+   "d": 2,
+   "src": [
+    "en",
+    "Coronation of Napoleon",
+    [
+     "1804",
+     "Pius VII"
+    ]
+   ],
+   "x": "O quadro de Jacques-Louis David sobre a cerimônia, exposto no Louvre, tem quase dez metros de largura."
+  },
+  {
+   "t": "Em que ano saiu esta manchete?",
+   "type": "txt",
+   "choices": [
+    "1848",
+    "1815",
+    "1830",
+    "1851",
+    "1870",
+    "1871"
+   ],
+   "news": {
+    "h": "Rei Luís Filipe abdica e Paris proclama a república",
+    "paper": "Le National",
+    "sub": "Barricadas tomam a capital; a onda revolucionária se espalha pela Europa"
+   },
+   "a": [
+    "1848"
+   ],
+   "d": 3,
+   "src": [
+    "en",
+    "French Revolution of 1848",
+    [
+     "Louis Philippe",
+     "1848"
+    ]
+   ],
+   "x": "Naquele mesmo ano, a nova república francesa aboliu a escravidão em suas colônias."
+  },
+  {
+   "t": "Em que ano saiu esta manchete?",
+   "type": "txt",
+   "choices": [
+    "1871",
+    "1848",
+    "1862",
+    "1866",
+    "1870",
+    "1888"
+   ],
+   "news": {
+    "h": "Rei da Prússia é proclamado imperador alemão em Versalhes",
+    "paper": "Vossische Zeitung",
+    "sub": "Cerimônia na Galeria dos Espelhos sela a unificação da Alemanha"
+   },
+   "a": [
+    "1871"
+   ],
+   "d": 3,
+   "src": [
+    "en",
+    "Unification of Germany",
+    [
+     "Hall of Mirrors",
+     "1871"
+    ]
+   ],
+   "x": "Os alemães escolheram o palácio dos reis da França, enquanto suas tropas ainda cercavam Paris."
+  },
+  {
+   "t": "Quem é o explorador encontrado nesta manchete?",
+   "type": "player",
+   "news": {
+    "h": "Repórter encontra o missionário desaparecido na África",
+    "paper": "New York Herald",
+    "sub": "Enviado do jornal acha o escocês em Ujiji, às margens do lago Tanganica"
+   },
+   "a": [
+    "livingstone"
+   ],
+   "d": 3,
+   "src": [
+    "en",
+    "David Livingstone",
+    [
+     "Ujiji",
+     "Stanley"
+    ]
+   ],
+   "x": "Ao encontrá-lo, o jornalista Henry Stanley teria dito a frase que ficou famosa: \"Dr. Livingstone, eu presumo?\""
+  },
+  {
+   "t": "Em que ano saiu esta manchete?",
+   "type": "txt",
+   "choices": [
+    "1895",
+    "1876",
+    "1889",
+    "1901",
+    "1906",
+    "1912"
+   ],
+   "news": {
+    "h": "Fotografias animadas encantam o público num café de Paris",
+    "paper": "Le Petit Journal",
+    "sub": "Irmãos Lumière cobram ingresso pela primeira sessão pública de cinema"
+   },
+   "a": [
+    "1895"
+   ],
+   "d": 3,
+   "src": [
+    "en",
+    "Auguste and Louis Lumière",
+    [
+     "1895",
+     "Grand Café"
+    ]
+   ],
+   "x": "A primeira sessão, em 28 de dezembro, exibiu dez filmes curtos, entre eles a saída dos operários da fábrica dos Lumière, em Lyon."
+  },
+  {
+   "t": "Em que ano saiu esta manchete?",
+   "type": "txt",
+   "choices": [
+    "1861",
+    "1825",
+    "1848",
+    "1855",
+    "1870",
+    "1881"
+   ],
+   "news": {
+    "h": "Czar liberta milhões de servos",
+    "paper": "Gazeta de São Petersburgo",
+    "sub": "Manifesto de Alexandre II põe fim à servidão na Rússia"
+   },
+   "a": [
+    "1861"
+   ],
+   "d": 4,
+   "src": [
+    "en",
+    "Emancipation reform of 1861",
+    [
+     "1861",
+     "Alexander II"
+    ]
+   ],
+   "x": "Mais de 20 milhões de servos ganharam a liberdade, quase dois anos antes da Proclamação de Emancipação de Lincoln."
+  },
+  {
+   "t": "Em que ano saiu esta manchete?",
+   "type": "txt",
+   "choices": [
+    "1870",
+    "1848",
+    "1859",
+    "1861",
+    "1866",
+    "1871"
+   ],
+   "news": {
+    "h": "Tropas italianas entram em Roma pela Porta Pia",
+    "paper": "La Nazione",
+    "sub": "O papa perde o que restava dos Estados Pontifícios"
+   },
+   "a": [
+    "1870"
+   ],
+   "d": 5,
+   "src": [
+    "en",
+    "Capture of Rome",
+    [
+     "Porta Pia",
+     "1870"
+    ]
+   ],
+   "x": "A guarnição francesa que protegia o papa tinha partido para lutar contra a Prússia, abrindo caminho para os italianos."
+  },
+  {
+   "t": "Duelo: quem chegou primeiro ao poder?",
+   "type": "player",
+   "fixed": [
+    "napoleao",
+    "bismarck"
+   ],
+   "duel": true,
+   "a": [
+    "napoleao"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "crown"
+   },
+   "src": [
+    "en",
+    "Otto von Bismarck",
+    [
+     "1862"
+    ]
+   ],
+   "x": "Napoleão tomou o poder em 1799; Bismarck só passou a chefiar o governo prussiano em 1862."
+  },
+  {
+   "t": "Duelo: qual destes estados surgiu primeiro?",
+   "fixed": [
+    "haiti",
+    "imperio_brasil"
+   ],
+   "duel": true,
+   "a": [
+    "haiti"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "hourglass"
+   },
+   "src": [
+    "en",
+    "Haiti",
+    [
+     "1804"
+    ]
+   ],
+   "x": "O Haiti declarou independência em 1804; o Brasil, em 1822."
+  },
+  {
+   "t": "Duelo: qual destas guerras terminou primeiro?",
+   "type": "txt",
+   "choices": [
+    "Guerra de Secessão",
+    "Guerra do Paraguai"
+   ],
+   "duel": true,
+   "a": [
+    "Guerra de Secessão"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "sword"
+   },
+   "src": [
+    "en",
+    "Paraguayan War",
+    [
+     "1870"
+    ]
+   ],
+   "x": "A Guerra de Secessão acabou em 1865; a do Paraguai, só em 1870."
+  },
+  {
+   "t": "Duelo: quem nasceu primeiro?",
+   "type": "player",
+   "fixed": [
+    "wellington",
+    "napoleao"
+   ],
+   "duel": true,
+   "a": [
+    "wellington"
+   ],
+   "d": 4,
+   "art": {
+    "icon": "hourglass"
+   },
+   "src": [
+    "en",
+    "Arthur Wellesley, 1st Duke of Wellington",
+    [
+     "1769"
+    ]
+   ],
+   "x": "Os dois nasceram em 1769: Wellington, provavelmente em 1º de maio; Napoleão, em 15 de agosto."
+  },
+  {
+   "t": "Duelo: quem morreu primeiro?",
+   "type": "player",
+   "fixed": [
+    "beethoven",
+    "bolivar"
+   ],
+   "duel": true,
+   "a": [
+    "beethoven"
+   ],
+   "d": 5,
+   "art": {
+    "icon": "hourglass"
+   },
+   "src": [
+    "en",
+    "Ludwig van Beethoven",
+    [
+     "1827"
+    ]
+   ],
+   "x": "Beethoven morreu em Viena em março de 1827; Bolívar, na Colômbia, em dezembro de 1830."
+  },
+  {
+   "t": "Quando foi tomada, em 1789, a Bastilha estava lotada de presos políticos?",
+   "type": "txt",
+   "choices": [
+    "Fato",
+    "Mito"
+   ],
+   "duel": true,
+   "myth": true,
+   "a": [
+    "Mito"
+   ],
+   "d": 2,
+   "art": {
+    "crest": "franca_revolucionaria"
+   },
+   "src": [
+    "en",
+    "Storming of the Bastille",
+    [
+     "forgers"
+    ]
+   ],
+   "x": "Havia só sete presos: quatro falsificadores, dois considerados loucos e um nobre detido a pedido da própria família."
+  },
+  {
+   "t": "Na coroação de 1804, foi o papa quem pôs a coroa na cabeça de Napoleão?",
+   "type": "txt",
+   "choices": [
+    "Fato",
+    "Mito"
+   ],
+   "duel": true,
+   "myth": true,
+   "a": [
+    "Mito"
+   ],
+   "d": 2,
+   "art": {
+    "stad": "notre_dame"
+   },
+   "src": [
+    "en",
+    "Coronation of Napoleon",
+    [
+     "Pius VII",
+     "Josephine"
+    ]
+   ],
+   "x": "O papa Pio VII abençoou a cerimônia, mas Napoleão coroou a si mesmo e depois coroou a imperatriz Josefina."
+  },
+  {
+   "t": "Abraham Lincoln foi o primeiro presidente dos Estados Unidos a ser assassinado?",
+   "type": "txt",
+   "choices": [
+    "Fato",
+    "Mito"
+   ],
+   "duel": true,
+   "myth": true,
+   "a": [
+    "Fato"
+   ],
+   "d": 2,
+   "art": {
+    "flag": "USA"
+   },
+   "src": [
+    "en",
+    "Assassination of Abraham Lincoln",
+    [
+     "first",
+     "Booth"
+    ]
+   ],
+   "x": "Depois dele, também foram assassinados James Garfield (1881), William McKinley (1901) e John F. Kennedy (1963)."
+  },
+  {
+   "t": "A rainha Vitória teve o reinado mais longo da história britânica?",
+   "type": "txt",
+   "choices": [
+    "Fato",
+    "Mito"
+   ],
+   "duel": true,
+   "myth": true,
+   "a": [
+    "Mito"
+   ],
+   "d": 2,
+   "art": {
+    "crest": "reino_unido"
+   },
+   "src": [
+    "en",
+    "Queen Victoria",
+    [
+     "Elizabeth II"
+    ]
+   ],
+   "x": "Reinou 63 anos e 7 meses, recorde até 2015, quando foi superada por Elizabeth II, que ficou mais de 70 anos no trono."
+  },
+  {
+   "t": "A Torre Eiffel foi erguida para durar só 20 anos e depois ser desmontada?",
+   "type": "txt",
+   "choices": [
+    "Fato",
+    "Mito"
+   ],
+   "duel": true,
+   "myth": true,
+   "a": [
+    "Fato"
+   ],
+   "d": 2,
+   "art": {
+    "stad": "torre_eiffel"
+   },
+   "src": [
+    "en",
+    "Eiffel Tower",
+    [
+     "20 years",
+     "radio"
+    ]
+   ],
+   "x": "A licença previa a demolição em 1909; a torre foi salva por sua utilidade como antena de rádio e telégrafo."
+  },
+  {
+   "t": "A guilhotina recebeu o nome de quem a inventou?",
+   "type": "txt",
+   "choices": [
+    "Fato",
+    "Mito"
+   ],
+   "duel": true,
+   "myth": true,
+   "a": [
+    "Mito"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "scales"
+   },
+   "src": [
+    "en",
+    "Joseph-Ignace Guillotin",
+    [
+     "Antoine Louis"
+    ]
+   ],
+   "x": "O médico Joseph-Ignace Guillotin só propôs um método de execução igual para todos; a máquina foi projetada pelo cirurgião Antoine Louis."
+  },
+  {
+   "t": "A Proclamação de Emancipação de Lincoln, de 1863, libertou de imediato todos os escravizados dos Estados Unidos?",
+   "type": "txt",
+   "choices": [
+    "Fato",
+    "Mito"
+   ],
+   "duel": true,
+   "myth": true,
+   "a": [
+    "Mito"
+   ],
+   "d": 3,
+   "art": {
+    "who": "lincoln"
+   },
+   "src": [
+    "en",
+    "Emancipation Proclamation",
+    [
+     "Thirteenth Amendment"
+    ]
+   ],
+   "x": "Ela valia só para os estados rebeldes do Sul; a escravidão acabou em todo o país com a 13ª Emenda, em 1865."
+  },
+  {
+   "t": "Para ter a independência reconhecida, o Haiti foi obrigado a pagar uma indenização à França?",
+   "type": "txt",
+   "choices": [
+    "Fato",
+    "Mito"
+   ],
+   "duel": true,
+   "myth": true,
+   "a": [
+    "Fato"
+   ],
+   "d": 4,
+   "art": {
+    "flag": "HAI"
+   },
+   "src": [
+    "en",
+    "Haitian independence debt",
+    [
+     "indemnity",
+     "1825"
+    ]
+   ],
+   "x": "Em 1825, sob a ameaça de navios de guerra, o Haiti aceitou pagar 150 milhões de francos aos antigos colonos e teve de se endividar por décadas para quitar a conta."
+  },
+  {
+   "t": "Tropas britânicas já incendiaram a Casa Branca, em Washington?",
+   "type": "txt",
+   "choices": [
+    "Fato",
+    "Mito"
+   ],
+   "duel": true,
+   "myth": true,
+   "a": [
+    "Fato"
+   ],
+   "d": 4,
+   "art": {
+    "stad": "capitolio"
+   },
+   "src": [
+    "en",
+    "Burning of Washington",
+    [
+     "1814",
+     "White House"
+    ]
+   ],
+   "x": "Em agosto de 1814, na Guerra de 1812, os britânicos tomaram Washington e queimaram a residência do presidente e o Capitólio."
+  }
+ ]
+}

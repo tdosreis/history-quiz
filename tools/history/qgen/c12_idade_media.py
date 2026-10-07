@@ -61,7 +61,7 @@ c.T('Em que ano os cruzados da Primeira Cruzada tomaram Jerusalém?', '1099',
     src=('en', 'Siege of Jerusalem (1099)', ['1099']),
     x='O cerco terminou em julho de 1099 com o massacre de grande parte dos moradores muçulmanos e judeus da cidade.')
 c.T('Qual papa pregou a Primeira Cruzada no Concílio de Clermont, em 1095?', 'Urbano II',
-    ['Gregório VII', 'Inocêncio III', 'Leão III', 'Bonifácio VIII', 'Silvestre II'], d=3, flag='FRA',
+    ['Gregório VII', 'Inocêncio III', 'Leão III', 'Bonifácio VIII', 'Silvestre II'], d=3, crest='francia',
     src=('en', 'Pope Urban II', ['Clermont']),
     x='Segundo os cronistas, a multidão respondeu ao discurso gritando "Deus vult!", ou seja, "Deus o quer!".')
 c.T('Em qual cidade os papas moraram entre 1309 e 1376, longe de Roma?', 'Avignon',
@@ -170,12 +170,11 @@ c.O('Ordene estes personagens medievais pela data de nascimento, do mais antigo 
     ('joana', "Joana d'Arc", 'Heroína francesa', 1412, {'face': 'joana_darc'})], d=3,
     src=('en', 'Saladin', ['1137']))
 c.O('Ordene estes episódios das Cruzadas, do mais antigo ao mais recente?', [
-    ('clermont', 'Urbano II prega a cruzada', 'Concílio de Clermont', 1095, {'flag': 'FRA'}),
+    ('clermont', 'Urbano II prega a cruzada', 'Concílio de Clermont', 1095, {'crest': 'francia'}),
     ('hattin', 'Saladino vence em Hattin', 'Jerusalém volta ao domínio muçulmano', 1187, {'face': 'saladino'}),
     ('acre1191', 'Ricardo Coração de Leão toma Acre', 'Cerco ao lado de Filipe Augusto', 1191, {'face': 'ricardo'}),
-    ('saque', 'Cruzados saqueiam Constantinopla', 'Venezianos e cavaleiros latinos', 1204, {'crest': 'bizancio'}),
-    ('acre1291', 'Queda de Acre', 'Fim dos estados cruzados no Oriente', 1291, {'flag': 'ISR'})], d=4,
-    src=('en', 'Crusades', ['1291']))
+    ('saque', 'Cruzados saqueiam Constantinopla', 'Venezianos e cavaleiros latinos', 1204, {'crest': 'bizancio'})], d=4,
+    src=('en', 'Crusades', ['1204']))
 
 # ── Quem disse? ──
 c.QT('Deixai toda esperança, vós que entrais.', 'dante', 1, t='Quem escreveu esta frase?',
@@ -206,7 +205,7 @@ c.BT('Quem os francos de Carlos Martel detiveram nesta batalha?', 'califado_omia
      x='A vitória deu enorme prestígio a Carlos Martel: seu filho Pepino se tornaria rei, e seu neto, Carlos Magno, imperador.',
      src=('en', 'Battle of Tours', ['Umayyad']))
 c.BT('Qual reino venceu esta batalha da Guerra dos Cem Anos, mesmo em desvantagem numérica?', 'inglaterra', 'Azincourt · 1415', '?', 'francia', d=2,
-     x='Henrique V venceu no dia de São Crispim; quase dois séculos depois, Shakespeare imortalizou a batalha na peça Henrique V.',
+     x='A vitória veio no dia de São Crispim, graças sobretudo aos arqueiros com seus arcos longos.',
      src=('en', 'Battle of Agincourt', ['longbow']))
 c.BT('Quem os portugueses derrotaram nesta batalha, garantindo a coroa de D. João I?', 'Castela', 'Aljubarrota · 1385', 'portugal', '?', d=2, typ='txt',
      wrong=['Granada', 'Inglaterra', 'Marrocos', 'Sacro Império', 'Veneza'],
@@ -217,7 +216,7 @@ c.BT('Quem derrotou o exército bizantino nesta batalha e capturou o imperador R
      x='A derrota abriu a Anatólia aos turcos; anos depois, Bizâncio pediu ajuda ao Ocidente, e o papa convocou a Primeira Cruzada.',
      src=('en', 'Battle of Manzikert', ['Alp Arslan']))
 c.BT('Qual estado muçulmano esmagou o exército cruzado nesta batalha, perto do mar da Galileia?', 'ayubida', 'Hattin · 1187', '?', 'Reino de Jerusalém', d=3,
-     x='Sem água, sob o calor de julho, os cruzados foram cercados; três meses depois, Saladino entrou em Jerusalém.',
+     x='Sem água, sob o calor de julho, os cruzados foram cercados; três meses depois, o sultão vencedor entrou em Jerusalém.',
      src=('en', 'Battle of Hattin', ['Saladin']))
 c.BT('Qual dinastia muçulmana foi derrotada pelos reinos cristãos ibéricos nesta batalha?', 'Almóadas', 'Las Navas de Tolosa · 1212', 'Reinos cristãos', '?', d=4, typ='txt',
      wrong=['Almorávidas', 'Omíadas', 'Nacéridas', 'Abássidas', 'Merínidas'],

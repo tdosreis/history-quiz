@@ -1,0 +1,1903 @@
+{
+ "id": "idade_moderna",
+ "name": "Idade Moderna",
+ "tag": "Navegações, Renascimento e reis absolutos",
+ "col": "#3F5F73",
+ "diff": "Variado",
+ "emoji": "🧭",
+ "qs": [
+  {
+   "t": "Qual cidade italiana, governada pela família Médici, é considerada o berço do Renascimento?",
+   "type": "txt",
+   "choices": [
+    "Florença",
+    "Roma",
+    "Veneza",
+    "Milão",
+    "Nápoles",
+    "Gênova"
+   ],
+   "a": [
+    "Florença"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "palette"
+   },
+   "src": [
+    "en",
+    "Florence",
+    [
+     "Renaissance"
+    ]
+   ],
+   "x": "Ali trabalharam Brunelleschi, Botticelli, Leonardo e o jovem Michelangelo, muitos deles com dinheiro dos Médici, uma família de banqueiros."
+  },
+  {
+   "t": "Que nome recebeu o movimento religioso iniciado por Martinho Lutero em 1517?",
+   "type": "txt",
+   "choices": [
+    "Reforma Protestante",
+    "Contrarreforma",
+    "Renascimento",
+    "Iluminismo",
+    "Cisma do Oriente",
+    "Cruzadas"
+   ],
+   "a": [
+    "Reforma Protestante"
+   ],
+   "d": 1,
+   "art": {
+    "who": "lutero"
+   },
+   "src": [
+    "en",
+    "Reformation",
+    [
+     "1517"
+    ]
+   ],
+   "x": "O nome \"protestante\" surgiu em 1529, quando príncipes luteranos protestaram formalmente contra uma decisão da Dieta de Espira."
+  },
+  {
+   "t": "Para qual língua Lutero traduziu a Bíblia, aproximando o texto sagrado das pessoas comuns?",
+   "type": "txt",
+   "choices": [
+    "Alemão",
+    "Latim",
+    "Grego",
+    "Hebraico",
+    "Holandês",
+    "Inglês"
+   ],
+   "a": [
+    "Alemão"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "book"
+   },
+   "src": [
+    "en",
+    "Luther Bible",
+    [
+     "1534"
+    ]
+   ],
+   "x": "O Novo Testamento saiu em 1522, e a Bíblia completa, em 1534; a tradução ajudou a firmar o alemão escrito moderno."
+  },
+  {
+   "t": "Qual movimento intelectual do século XVIII defendia a razão contra o absolutismo e a intolerância religiosa?",
+   "type": "txt",
+   "choices": [
+    "Iluminismo",
+    "Renascimento",
+    "Romantismo",
+    "Humanismo",
+    "Barroco",
+    "Positivismo"
+   ],
+   "a": [
+    "Iluminismo"
+   ],
+   "d": 1,
+   "art": {
+    "who": "voltaire"
+   },
+   "src": [
+    "pt",
+    "Iluminismo",
+    [
+     "século XVIII"
+    ]
+   ],
+   "x": "As ideias circulavam em salões, cafés e livros proibidos, e inspiraram a independência dos Estados Unidos e a Revolução Francesa."
+  },
+  {
+   "t": "Como se chama o sistema em que o rei concentra todos os poderes, comum na Europa dos séculos XVII e XVIII?",
+   "type": "txt",
+   "choices": [
+    "Absolutismo",
+    "Parlamentarismo",
+    "Feudalismo",
+    "Federalismo",
+    "Republicanismo",
+    "Anarquismo"
+   ],
+   "a": [
+    "Absolutismo"
+   ],
+   "d": 1,
+   "art": {
+    "who": "luis_xiv"
+   },
+   "src": [
+    "en",
+    "Absolute monarchy",
+    [
+     "Louis XIV"
+    ]
+   ],
+   "x": "Na Inglaterra, o modelo perdeu a disputa: em 1689, a Declaração de Direitos submeteu o rei às leis aprovadas pelo Parlamento."
+  },
+  {
+   "t": "Qual era o nome da nau capitânia de Colombo na viagem de 1492?",
+   "type": "txt",
+   "choices": [
+    "Santa Maria",
+    "Pinta",
+    "Niña",
+    "São Gabriel",
+    "Victoria",
+    "Mayflower"
+   ],
+   "a": [
+    "Santa Maria"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "ship"
+   },
+   "src": [
+    "en",
+    "Christopher Columbus",
+    [
+     "Santa María"
+    ]
+   ],
+   "x": "A Santa Maria encalhou no litoral do Haiti na noite de Natal de 1492; com a madeira dela, os marinheiros ergueram o forte La Navidad."
+  },
+  {
+   "t": "Que oceano Fernão de Magalhães batizou assim por causa das águas calmas que encontrou ao entrar nele?",
+   "type": "txt",
+   "choices": [
+    "Pacífico",
+    "Atlântico",
+    "Índico",
+    "Ártico",
+    "Antártico",
+    "Mar Tenebroso"
+   ],
+   "a": [
+    "Pacífico"
+   ],
+   "d": 2,
+   "art": {
+    "who": "magalhaes"
+   },
+   "src": [
+    "en",
+    "Ferdinand Magellan",
+    [
+     "Pacific"
+    ]
+   ],
+   "x": "A travessia durou mais de três meses quase sem comida: os marinheiros chegaram a comer o couro que protegia as vergas dos navios."
+  },
+  {
+   "t": "Que doença, causada pela falta de vitamina C, matava muitos marinheiros nas longas viagens das Grandes Navegações?",
+   "type": "txt",
+   "choices": [
+    "Escorbuto",
+    "Peste bubônica",
+    "Malária",
+    "Varíola",
+    "Cólera",
+    "Febre amarela"
+   ],
+   "a": [
+    "Escorbuto"
+   ],
+   "d": 2,
+   "art": {
+    "who": "vasco_gama"
+   },
+   "src": [
+    "en",
+    "Scurvy",
+    [
+     "vitamin C"
+    ]
+   ],
+   "x": "Na viagem de Vasco da Gama à Índia, a doença matou dezenas de homens; frutas cítricas só viraram regra na marinha britânica no fim do século XVIII."
+  },
+  {
+   "t": "Qual é o salão mais famoso do Palácio de Versalhes, com 73 metros de comprimento e 17 janelas voltadas para os jardins?",
+   "type": "txt",
+   "choices": [
+    "Galeria dos Espelhos",
+    "Salão de Hércules",
+    "Sala do Trono",
+    "Capela Real",
+    "Galeria das Batalhas",
+    "Salão da Paz"
+   ],
+   "a": [
+    "Galeria dos Espelhos"
+   ],
+   "d": 2,
+   "art": {
+    "stad": "versalhes"
+   },
+   "src": [
+    "en",
+    "Hall of Mirrors",
+    [
+     "357"
+    ]
+   ],
+   "x": "Diante das janelas, 357 espelhos, um luxo caríssimo na época, refletem a luz; ali foram proclamados o Império Alemão, em 1871, e assinado o tratado que encerrou a Primeira Guerra, em 1919."
+  },
+  {
+   "t": "Qual flor provocou na Holanda, em 1637, uma das primeiras bolhas especulativas da história?",
+   "type": "txt",
+   "choices": [
+    "Tulipa",
+    "Rosa",
+    "Orquídea",
+    "Lírio",
+    "Girassol",
+    "Cravo"
+   ],
+   "a": [
+    "Tulipa"
+   ],
+   "d": 2,
+   "art": {
+    "crest": "holanda"
+   },
+   "src": [
+    "en",
+    "Tulip mania",
+    [
+     "1637"
+    ]
+   ],
+   "x": "No auge, alguns bulbos raros eram vendidos por mais de dez vezes o salário anual de um artesão; os preços despencaram em fevereiro de 1637."
+  },
+  {
+   "t": "Como ficou conhecido o período de 1580 a 1640 em que Portugal e Espanha tiveram o mesmo rei?",
+   "type": "txt",
+   "choices": [
+    "União Ibérica",
+    "Restauração",
+    "Reconquista",
+    "Pacto Ibérico",
+    "Regência",
+    "Interregno"
+   ],
+   "a": [
+    "União Ibérica"
+   ],
+   "d": 2,
+   "art": {
+    "crest": "espanha"
+   },
+   "src": [
+    "pt",
+    "União Ibérica",
+    [
+     "1580"
+    ]
+   ],
+   "x": "A crise começou com o sumiço de D. Sebastião em Alcácer-Quibir; em 1º de dezembro de 1640, uma revolta em Lisboa pôs D. João IV no trono e devolveu a independência a Portugal."
+  },
+  {
+   "t": "Qual ministro do rei D. José I expulsou os jesuítas de Portugal e de todo o império português, em 1759?",
+   "type": "txt",
+   "choices": [
+    "Marquês de Pombal",
+    "Conde de Linhares",
+    "Duque de Palmela",
+    "Marquês de Sá da Bandeira",
+    "Conde da Barca",
+    "Marquês de Marialva"
+   ],
+   "a": [
+    "Marquês de Pombal"
+   ],
+   "d": 2,
+   "art": {
+    "crest": "portugal"
+   },
+   "src": [
+    "en",
+    "Suppression of the Society of Jesus",
+    [
+     "Pombal"
+    ]
+   ],
+   "x": "No mesmo governo, a capital do Brasil passou de Salvador para o Rio de Janeiro, em 1763."
+  },
+  {
+   "t": "Qual concílio, reunido entre 1545 e 1563, organizou a resposta da Igreja Católica à Reforma?",
+   "type": "txt",
+   "choices": [
+    "Concílio de Trento",
+    "Concílio de Niceia",
+    "Concílio de Constança",
+    "Concílio Vaticano I",
+    "Concílio de Latrão",
+    "Concílio de Basileia"
+   ],
+   "a": [
+    "Concílio de Trento"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "church"
+   },
+   "src": [
+    "en",
+    "Council of Trent",
+    [
+     "1545"
+    ]
+   ],
+   "x": "Trento fica no norte da atual Itália; o concílio criou os seminários para formar padres e padronizou a missa, rezada em latim até a década de 1960."
+  },
+  {
+   "t": "Qual cardeal foi o principal ministro de Luís XIII de 1624 até morrer, em 1642, e ajudou a fortalecer o absolutismo francês?",
+   "type": "txt",
+   "choices": [
+    "Cardeal Richelieu",
+    "Cardeal Mazarin",
+    "Cardeal Fleury",
+    "Cardeal Wolsey",
+    "Cardeal Cisneros",
+    "Cardeal Granvelle"
+   ],
+   "a": [
+    "Cardeal Richelieu"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "church"
+   },
+   "src": [
+    "en",
+    "Cardinal Richelieu",
+    [
+     "Louis XIII"
+    ]
+   ],
+   "x": "Ele é o grande vilão de Os Três Mosqueteiros, de Alexandre Dumas, e fundou a Academia Francesa, em 1635."
+  },
+  {
+   "t": "Em que cidade alemã Lutero era professor quando divulgou suas 95 teses, em 1517?",
+   "type": "txt",
+   "choices": [
+    "Wittenberg",
+    "Worms",
+    "Augsburgo",
+    "Nuremberg",
+    "Leipzig",
+    "Erfurt"
+   ],
+   "a": [
+    "Wittenberg"
+   ],
+   "d": 3,
+   "art": {
+    "who": "lutero"
+   },
+   "src": [
+    "en",
+    "Ninety-five Theses",
+    [
+     "Wittenberg"
+    ]
+   ],
+   "x": "Segundo a tradição, ele pregou as teses na porta da Igreja do Castelo; certo é que as enviou ao arcebispo de Mainz em 31 de outubro de 1517."
+  },
+  {
+   "t": "Como ficou conhecido o massacre de protestantes franceses, os huguenotes, iniciado em Paris em agosto de 1572?",
+   "type": "txt",
+   "choices": [
+    "Noite de São Bartolomeu",
+    "Vésperas Sicilianas",
+    "Noite de São João",
+    "Massacre de Vassy",
+    "Dia das Barricadas",
+    "Noite das Facas Longas"
+   ],
+   "a": [
+    "Noite de São Bartolomeu"
+   ],
+   "d": 3,
+   "art": {
+    "crest": "francia"
+   },
+   "src": [
+    "en",
+    "St. Bartholomew's Day massacre",
+    [
+     "1572"
+    ]
+   ],
+   "x": "A matança começou dias depois do casamento do protestante Henrique de Navarra, futuro Henrique IV, com a católica Margarida de Valois."
+  },
+  {
+   "t": "Qual empresa holandesa, fundada em 1602, é apontada como a primeira a ter ações negociadas em bolsa?",
+   "type": "txt",
+   "choices": [
+    "Companhia das Índias Orientais",
+    "Companhia das Índias Ocidentais",
+    "Companhia de Moscóvia",
+    "Liga Hanseática",
+    "Companhia da Baía de Hudson",
+    "Companhia do Mississippi"
+   ],
+   "a": [
+    "Companhia das Índias Orientais"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "ship"
+   },
+   "src": [
+    "en",
+    "Dutch East India Company",
+    [
+     "1602"
+    ]
+   ],
+   "x": "A VOC tinha exército e frota próprios, podia firmar tratados e fundou a Cidade do Cabo, em 1652, como escala na rota para a Ásia."
+  },
+  {
+   "t": "Como se chamavam os soldados de infantaria de elite do sultão otomano, recrutados ainda meninos em famílias cristãs dos Bálcãs?",
+   "type": "txt",
+   "choices": [
+    "Janízaros",
+    "Mamelucos",
+    "Sipaios",
+    "Cossacos",
+    "Hussardos",
+    "Pretorianos"
+   ],
+   "a": [
+    "Janízaros"
+   ],
+   "d": 3,
+   "art": {
+    "crest": "imperio_otomano"
+   },
+   "src": [
+    "en",
+    "Janissary",
+    [
+     "devshirme"
+    ]
+   ],
+   "x": "O recrutamento se chamava devshirme: os meninos eram convertidos ao islã e treinados por anos. O corpo foi extinto pelo próprio sultão em 1826."
+  },
+  {
+   "t": "Como se chamava o trabalho forçado, herdado do tempo dos incas, que os espanhóis impuseram aos indígenas nas minas de prata de Potosí?",
+   "type": "txt",
+   "choices": [
+    "Mita",
+    "Encomienda",
+    "Sesmaria",
+    "Corveia",
+    "Peonagem",
+    "Capitação"
+   ],
+   "a": [
+    "Mita"
+   ],
+   "d": 4,
+   "art": {
+    "icon": "coins"
+   },
+   "src": [
+    "en",
+    "Mit'a",
+    [
+     "Potosí"
+    ]
+   ],
+   "x": "Entre os incas, a mita era um turno de trabalho devido ao Estado; o vice-rei Francisco de Toledo a transformou, na década de 1570, em recrutamento em massa para as minas."
+  },
+  {
+   "t": "A quantas léguas a oeste das ilhas de Cabo Verde passava a linha do Tratado de Tordesilhas?",
+   "type": "txt",
+   "choices": [
+    "370 léguas",
+    "100 léguas",
+    "170 léguas",
+    "270 léguas",
+    "500 léguas",
+    "1.000 léguas"
+   ],
+   "a": [
+    "370 léguas"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "map"
+   },
+   "src": [
+    "en",
+    "Treaty of Tordesillas",
+    [
+     "370"
+    ]
+   ],
+   "x": "A bula Inter caetera, de 1493, fixava a linha a 100 léguas; Portugal negociou e a empurrou para oeste, o que deixou parte do futuro Brasil do seu lado."
+  },
+  {
+   "t": "Qual édito, assinado por Henrique IV em 1598, garantiu liberdade de culto aos protestantes franceses?",
+   "type": "txt",
+   "choices": [
+    "Édito de Nantes",
+    "Édito de Milão",
+    "Édito de Fontainebleau",
+    "Édito de Worms",
+    "Édito de Potsdam",
+    "Édito de Tessalônica"
+   ],
+   "a": [
+    "Édito de Nantes"
+   ],
+   "d": 4,
+   "art": {
+    "crest": "francia"
+   },
+   "src": [
+    "en",
+    "Edict of Nantes",
+    [
+     "1598"
+    ]
+   ],
+   "x": "Luís XIV revogou o édito em 1685, e milhares de huguenotes fugiram para a Holanda, a Inglaterra e a Prússia."
+  },
+  {
+   "t": "Qual ministro de Luís XIV aplicou o mercantilismo criando manufaturas reais e uma companhia francesa das Índias Orientais?",
+   "type": "txt",
+   "choices": [
+    "Jean-Baptiste Colbert",
+    "Nicolas Fouquet",
+    "Cardeal Mazarin",
+    "Jacques Necker",
+    "Duque de Sully",
+    "Turgot"
+   ],
+   "a": [
+    "Jean-Baptiste Colbert"
+   ],
+   "d": 4,
+   "art": {
+    "who": "luis_xiv"
+   },
+   "src": [
+    "en",
+    "Jean-Baptiste Colbert",
+    [
+     "Louis XIV"
+    ]
+   ],
+   "x": "Colbert também criou a Academia de Ciências, em 1666, e reorganizou a marinha francesa; na França, seu protecionismo ganhou o nome de colbertismo."
+  },
+  {
+   "t": "Qual tratado de 1529 dividiu entre Portugal e Espanha o outro lado do mundo, resolvendo a disputa pelas ilhas Molucas?",
+   "type": "txt",
+   "choices": [
+    "Tratado de Saragoça",
+    "Tratado de Tordesilhas",
+    "Tratado de Madri",
+    "Tratado de Alcáçovas",
+    "Tratado de Lisboa",
+    "Tratado de Utrecht"
+   ],
+   "a": [
+    "Tratado de Saragoça"
+   ],
+   "d": 5,
+   "art": {
+    "icon": "globe"
+   },
+   "src": [
+    "en",
+    "Treaty of Zaragoza",
+    [
+     "1529"
+    ]
+   ],
+   "x": "A Espanha abriu mão das Molucas, as ilhas do cravo-da-índia, em troca de 350 mil ducados pagos por Portugal."
+  },
+  {
+   "t": "Qual tratado de 1648 reconheceu oficialmente a independência da República Holandesa em relação à Espanha?",
+   "type": "txt",
+   "choices": [
+    "Paz de Münster",
+    "Tratado de Utrecht",
+    "Paz de Augsburgo",
+    "Tratado dos Pireneus",
+    "Tratado de Nimega",
+    "Tratado de Ryswick"
+   ],
+   "a": [
+    "Paz de Münster"
+   ],
+   "d": 5,
+   "art": {
+    "crest": "holanda"
+   },
+   "src": [
+    "en",
+    "Peace of Münster",
+    [
+     "1648"
+    ]
+   ],
+   "x": "Assinada em Münster como parte da Paz de Vestfália, encerrou a Guerra dos Oitenta Anos, iniciada em 1568."
+  },
+  {
+   "t": "Qual anatomista de Bruxelas publicou em 1543 A Estrutura do Corpo Humano, livro que fundou a anatomia moderna?",
+   "type": "txt",
+   "choices": [
+    "André Vesálio",
+    "William Harvey",
+    "Ambroise Paré",
+    "Paracelso",
+    "Miguel Servet",
+    "Gabriele Falloppio"
+   ],
+   "a": [
+    "André Vesálio"
+   ],
+   "d": 5,
+   "art": {
+    "who": "galeno"
+   },
+   "src": [
+    "en",
+    "Andreas Vesalius",
+    [
+     "1543"
+    ]
+   ],
+   "x": "Dissecando cadáveres pessoalmente, ele corrigiu erros de Galeno, que se baseara em macacos e outros animais; o livro saiu no mesmo ano da obra de Copérnico."
+  },
+  {
+   "t": "Qual monarca espanhol é homenageado no nome do arquipélago asiático colonizado pela Espanha a partir de 1565?",
+   "type": "player",
+   "a": [
+    "felipe_ii"
+   ],
+   "d": 2,
+   "art": {
+    "crest": "imperio_espanhol"
+   },
+   "src": [
+    "en",
+    "Philippines",
+    [
+     "Philip II"
+    ]
+   ],
+   "x": "O nome foi dado pela expedição de Ruy López de Villalobos, no começo da década de 1540, quando Filipe ainda era príncipe herdeiro."
+  },
+  {
+   "t": "Qual rainha mandou executar a prima Maria Stuart, rainha da Escócia, em 1587?",
+   "type": "player",
+   "a": [
+    "elizabeth_i"
+   ],
+   "d": 2,
+   "art": {
+    "flag": "SCO"
+   },
+   "src": [
+    "en",
+    "Mary, Queen of Scots",
+    [
+     "1587"
+    ]
+   ],
+   "x": "Maria Stuart passou quase 19 anos presa na Inglaterra; ironicamente, foi o filho dela, Jaime, quem herdou a coroa inglesa em 1603."
+  },
+  {
+   "t": "Qual imperador abdicou entre 1555 e 1556, dividindo seus domínios entre o filho e o irmão, e se recolheu ao mosteiro de Yuste?",
+   "type": "player",
+   "a": [
+    "carlos_v"
+   ],
+   "d": 3,
+   "art": {
+    "crest": "sacro_imperio"
+   },
+   "src": [
+    "en",
+    "Charles V, Holy Roman Emperor",
+    [
+     "Yuste"
+    ]
+   ],
+   "x": "O filho, Filipe II, ficou com a Espanha, a Itália e as Américas; o irmão, Fernando, que já governava a Áustria, herdou o título imperial."
+  },
+  {
+   "t": "Qual artista alemão fez a famosa gravura de um rinoceronte, em 1515, sem nunca ter visto o animal?",
+   "type": "player",
+   "a": [
+    "durer"
+   ],
+   "d": 4,
+   "art": {
+    "icon": "palette"
+   },
+   "src": [
+    "en",
+    "Dürer's Rhinoceros",
+    [
+     "1515"
+    ]
+   ],
+   "x": "Ele se baseou numa carta e num esboço de um rinoceronte indiano que chegara a Lisboa como presente para o rei D. Manuel I."
+  },
+  {
+   "t": "Qual estado viveu uma Era de Ouro no século XVII, com pintores como Rembrandt e Vermeer e a bolsa de valores de Amsterdã?",
+   "a": [
+    "holanda"
+   ],
+   "d": 2,
+   "art": {
+    "who": "rembrandt"
+   },
+   "src": [
+    "en",
+    "Dutch Golden Age",
+    [
+     "Rembrandt"
+    ]
+   ],
+   "x": "Pequena e sem rei, a república tinha a maior frota mercante da Europa e chegou a dominar parte do Nordeste brasileiro."
+  },
+  {
+   "t": "Qual república, governada por um doge, perdeu a ilha de Chipre para os otomanos em 1571?",
+   "a": [
+    "veneza"
+   ],
+   "d": 2,
+   "art": {
+    "crest": "imperio_otomano"
+   },
+   "src": [
+    "en",
+    "Republic of Venice",
+    [
+     "Cyprus"
+    ]
+   ],
+   "x": "Meses depois, a frota veneziana ajudou a vencer os otomanos em Lepanto, mas Chipre não foi recuperada."
+  },
+  {
+   "t": "Qual império de fé xiita, rival dos otomanos, viveu seu auge com o xá Abbas I, que fez de Isfahan a sua capital?",
+   "a": [
+    "safavida"
+   ],
+   "d": 4,
+   "art": {
+    "icon": "crown"
+   },
+   "src": [
+    "en",
+    "Abbas the Great",
+    [
+     "Isfahan"
+    ]
+   ],
+   "x": "Com ajuda de navios ingleses, Abbas I tomou dos portugueses a ilha de Ormuz, no golfo Pérsico, em 1622."
+  },
+  {
+   "t": "Quem sou eu?",
+   "type": "player",
+   "clues": [
+    "Nasci em Sines, no litoral do Alentejo.",
+    "Em 1497, parti de Lisboa com quatro navios, a serviço de D. Manuel I.",
+    "Depois de contornar a África, cheguei a Calicute em 1498.",
+    "Morri em Cochim, em 1524, como vice-rei da Índia."
+   ],
+   "a": [
+    "vasco_gama"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "bust"
+   },
+   "src": [
+    "en",
+    "Vasco da Gama",
+    [
+     "Sines"
+    ]
+   ],
+   "x": "A viagem de ida e volta durou mais de dois anos, e só cerca de um terço dos homens voltou vivo a Lisboa."
+  },
+  {
+   "t": "Quem sou eu?",
+   "type": "player",
+   "clues": [
+    "Nasci em Alcalá de Henares, em 1547.",
+    "Fui ferido em Lepanto e perdi o movimento da mão esquerda.",
+    "Passei cinco anos cativo de piratas em Argel.",
+    "Criei um fidalgo que enfrentava moinhos de vento, ao lado do escudeiro Sancho Pança."
+   ],
+   "a": [
+    "cervantes"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "bust"
+   },
+   "src": [
+    "en",
+    "Miguel de Cervantes",
+    [
+     "Algiers"
+    ]
+   ],
+   "x": "Dom Quixote saiu em duas partes, em 1605 e 1615, e costuma ser apontado como o primeiro romance moderno."
+  },
+  {
+   "t": "Quem sou eu?",
+   "type": "player",
+   "clues": [
+    "Nasci em Portugal e combati na Índia e em Malaca.",
+    "Sem o apoio do rei português, ofereci meus serviços à Espanha.",
+    "Em 1520, encontrei uma passagem no extremo sul da América.",
+    "Fui morto nas Filipinas, em 1521, e minha expedição completou a volta ao mundo sem mim."
+   ],
+   "a": [
+    "magalhaes"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "bust"
+   },
+   "src": [
+    "en",
+    "Ferdinand Magellan",
+    [
+     "Mactan"
+    ]
+   ],
+   "x": "Das cinco naus que partiram em 1519, só a Victoria voltou à Espanha, em 1522, com 18 homens, sob o comando de Juan Sebastián Elcano."
+  },
+  {
+   "t": "Quem sou eu?",
+   "type": "player",
+   "clues": [
+    "Nasci em Trebizonda, às margens do mar Negro, em 1494.",
+    "Tomei Belgrado e a ilha de Rodes no começo do meu reinado.",
+    "Venci em Mohács, em 1526, e cerquei Viena em 1529, sem conseguir tomá-la.",
+    "Meus súditos me chamavam de \"o Legislador\"."
+   ],
+   "a": [
+    "solimao"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "bust"
+   },
+   "src": [
+    "en",
+    "Suleiman the Magnificent",
+    [
+     "Lawgiver"
+    ]
+   ],
+   "x": "No seu reinado, o arquiteto Sinan ergueu em Istambul a mesquita Süleymaniye, uma das maiores da cidade."
+  },
+  {
+   "t": "Quem sou eu?",
+   "type": "player",
+   "clues": [
+    "Nasci princesa alemã, em Stettin, com o nome de Sofia.",
+    "Cheguei ao trono em 1762, num golpe contra o meu próprio marido.",
+    "Troquei cartas com Voltaire e comprei a biblioteca de Diderot.",
+    "Anexei a Crimeia e governei por 34 anos."
+   ],
+   "a": [
+    "catarina_grande"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "bust"
+   },
+   "src": [
+    "en",
+    "Catherine the Great",
+    [
+     "Diderot"
+    ]
+   ],
+   "x": "No seu reinado, a Rússia ganhou saída para o mar Negro e fundou cidades como Odessa, em 1794."
+  },
+  {
+   "t": "Coloque estes marcos das Grandes Navegações em ordem, do mais antigo ao mais recente?",
+   "type": "order",
+   "a": [
+    "dias",
+    "colombo",
+    "gama",
+    "cabral",
+    "volta"
+   ],
+   "order": [
+    {
+     "id": "dias",
+     "y": 1488,
+     "label": "Bartolomeu Dias dobra o cabo da Boa Esperança",
+     "sub": "Extremo sul da África",
+     "crest": "portugal"
+    },
+    {
+     "id": "colombo",
+     "y": 1492,
+     "label": "Colombo chega à América",
+     "sub": "Primeira viagem, a serviço da Espanha",
+     "face": "colombo"
+    },
+    {
+     "id": "gama",
+     "y": 1498,
+     "label": "Vasco da Gama chega à Índia",
+     "sub": "Calicute, pela rota do Cabo",
+     "face": "vasco_gama"
+    },
+    {
+     "id": "cabral",
+     "y": 1500,
+     "label": "Cabral chega ao Brasil",
+     "sub": "A frota seguia para a Índia",
+     "face": "cabral"
+    },
+    {
+     "id": "volta",
+     "y": 1522,
+     "label": "Fim da primeira volta ao mundo",
+     "sub": "A nau Victoria regressa à Espanha",
+     "face": "magalhaes"
+    }
+   ],
+   "d": 2,
+   "src": [
+    "en",
+    "Age of Discovery",
+    [
+     "1488"
+    ]
+   ]
+  },
+  {
+   "t": "Coloque estes episódios da Reforma e da Contrarreforma em ordem, do mais antigo ao mais recente?",
+   "type": "order",
+   "a": [
+    "teses",
+    "supremacia",
+    "institutas",
+    "trento",
+    "bartolomeu"
+   ],
+   "order": [
+    {
+     "id": "teses",
+     "y": 1517,
+     "label": "Lutero divulga as 95 teses",
+     "sub": "Wittenberg",
+     "face": "lutero"
+    },
+    {
+     "id": "supremacia",
+     "y": 1534,
+     "label": "Henrique VIII vira chefe da Igreja inglesa",
+     "sub": "Ato de Supremacia",
+     "face": "henrique_viii"
+    },
+    {
+     "id": "institutas",
+     "y": 1536,
+     "label": "Calvino publica as Institutas",
+     "sub": "Primeira edição, em Basileia",
+     "face": "calvino"
+    },
+    {
+     "id": "trento",
+     "y": 1545,
+     "label": "Abertura do Concílio de Trento",
+     "sub": "A resposta católica à Reforma",
+     "crest": "sacro_imperio"
+    },
+    {
+     "id": "bartolomeu",
+     "y": 1572,
+     "label": "Massacre da Noite de São Bartolomeu",
+     "sub": "Paris",
+     "crest": "francia"
+    }
+   ],
+   "d": 3,
+   "src": [
+    "en",
+    "Reformation",
+    [
+     "1517"
+    ]
+   ]
+  },
+  {
+   "t": "Coloque estas obras da Revolução Científica em ordem de publicação, da mais antiga à mais recente?",
+   "type": "order",
+   "a": [
+    "revolutionibus",
+    "mensageiro",
+    "metodo",
+    "principia"
+   ],
+   "order": [
+    {
+     "id": "revolutionibus",
+     "y": 1543,
+     "label": "Das Revoluções das Esferas Celestes",
+     "sub": "A Terra sai do centro do Universo",
+     "face": "copernico"
+    },
+    {
+     "id": "mensageiro",
+     "y": 1610,
+     "label": "O Mensageiro das Estrelas",
+     "sub": "As luas de Júpiter vistas pela luneta",
+     "face": "galileu"
+    },
+    {
+     "id": "metodo",
+     "y": 1637,
+     "label": "Discurso do Método",
+     "sub": "A dúvida como ponto de partida",
+     "face": "descartes"
+    },
+    {
+     "id": "principia",
+     "y": 1687,
+     "label": "Principia",
+     "sub": "A gravitação universal",
+     "face": "newton"
+    }
+   ],
+   "d": 3,
+   "src": [
+    "en",
+    "Scientific Revolution",
+    [
+     "1543"
+    ]
+   ]
+  },
+  {
+   "t": "Coloque estes acontecimentos do século XVII em ordem, do mais antigo ao mais recente?",
+   "type": "order",
+   "a": [
+    "vestfalia",
+    "carlos",
+    "nantes",
+    "gloriosa"
+   ],
+   "order": [
+    {
+     "id": "vestfalia",
+     "y": 1648,
+     "label": "Paz de Vestfália",
+     "sub": "Fim da Guerra dos Trinta Anos",
+     "crest": "sacro_imperio"
+    },
+    {
+     "id": "carlos",
+     "y": 1649,
+     "label": "Execução do rei Carlos I",
+     "sub": "Londres, depois da Guerra Civil",
+     "crest": "inglaterra"
+    },
+    {
+     "id": "nantes",
+     "y": 1685,
+     "label": "Revogação do Édito de Nantes",
+     "sub": "Luís XIV proíbe o culto protestante",
+     "face": "luis_xiv"
+    },
+    {
+     "id": "gloriosa",
+     "y": 1688,
+     "label": "Revolução Gloriosa",
+     "sub": "Guilherme de Orange desembarca na Inglaterra",
+     "flag": "NED"
+    }
+   ],
+   "d": 5,
+   "src": [
+    "en",
+    "Peace of Westphalia",
+    [
+     "1648"
+    ]
+   ]
+  },
+  {
+   "t": "Quem disse esta frase?",
+   "type": "player",
+   "quote": {
+    "q": "E, no entanto, ela se move.",
+    "ctx": "Frase que a lenda põe na boca de um sábio forçado pela Inquisição a negar que a Terra gira, 1633"
+   },
+   "a": [
+    "galileu"
+   ],
+   "d": 1,
+   "src": [
+    "en",
+    "And yet it moves",
+    [
+     "Galileo"
+    ]
+   ],
+   "x": "Não há registro de que tenha dito isso diante dos juízes, o que seria arriscado demais; ele passou o resto da vida em prisão domiciliar, perto de Florença."
+  },
+  {
+   "t": "Quem disse esta frase?",
+   "type": "player",
+   "quote": {
+    "q": "Não posso nem quero me retratar de nada, pois agir contra a consciência não é seguro nem correto.",
+    "ctx": "Diante do imperador Carlos V e dos príncipes alemães, em Worms, 1521"
+   },
+   "a": [
+    "lutero"
+   ],
+   "d": 2,
+   "src": [
+    "en",
+    "Diet of Worms",
+    [
+     "1521"
+    ]
+   ],
+   "x": "O imperador o declarou fora da lei; a caminho de casa, ele foi \"sequestrado\" por aliados e escondido no castelo de Wartburg."
+  },
+  {
+   "t": "Quem escreveu esta frase?",
+   "type": "player",
+   "quote": {
+    "q": "É muito mais seguro ser temido do que amado, quando se tem de escolher entre os dois.",
+    "ctx": "Capítulo XVII de um pequeno tratado sobre como conquistar e manter o poder, escrito em 1513"
+   },
+   "a": [
+    "maquiavel"
+   ],
+   "d": 2,
+   "src": [
+    "en",
+    "The Prince",
+    [
+     "1513"
+    ]
+   ],
+   "x": "O livro circulou em cópias manuscritas e só foi impresso em 1532, cinco anos depois da morte do autor."
+  },
+  {
+   "t": "Quem disse esta frase?",
+   "type": "player",
+   "quote": {
+    "q": "Sei que tenho o corpo de uma mulher fraca e frágil, mas tenho o coração e o estômago de um rei.",
+    "ctx": "Discurso às tropas reunidas em Tilbury, diante da ameaça de invasão espanhola, 1588"
+   },
+   "a": [
+    "elizabeth_i"
+   ],
+   "d": 3,
+   "src": [
+    "en",
+    "Speech to the Troops at Tilbury",
+    [
+     "1588"
+    ]
+   ],
+   "x": "Quando o discurso foi feito, a frota inimiga já tinha sido batida, mas ainda se temia um desembarque de tropas vindas de Flandres."
+  },
+  {
+   "t": "Quem disse esta frase?",
+   "type": "txt",
+   "choices": [
+    "Henrique IV",
+    "Luís XIV",
+    "Francisco I",
+    "Carlos IX",
+    "Luís XIII",
+    "Henrique III"
+   ],
+   "quote": {
+    "q": "Paris bem vale uma missa.",
+    "ctx": "Frase atribuída a um rei protestante que se converteu ao catolicismo para ser aceito no trono da França, 1593"
+   },
+   "a": [
+    "Henrique IV"
+   ],
+   "d": 3,
+   "src": [
+    "en",
+    "Henry IV of France",
+    [
+     "1593"
+    ]
+   ],
+   "x": "Não há prova de que ele tenha dito a frase, mas a conversão foi real: no ano seguinte, Paris abriu as portas ao primeiro rei Bourbon."
+  },
+  {
+   "t": "Quem escreveu esta frase?",
+   "type": "player",
+   "quote": {
+    "q": "Ousa saber! Tem a coragem de servir-te de teu próprio entendimento.",
+    "ctx": "Ensaio de 1784 que responde à pergunta \"O que é o Esclarecimento?\""
+   },
+   "a": [
+    "kant"
+   ],
+   "d": 4,
+   "src": [
+    "en",
+    "Sapere aude",
+    [
+     "Kant"
+    ]
+   ],
+   "x": "O lema em latim, Sapere aude, vem do poeta romano Horácio; o ensaio o transformou na divisa do Iluminismo."
+  },
+  {
+   "t": "Qual reino derrotou a Invencível Armada enviada por Filipe II?",
+   "battle": {
+    "lbl": "Invencível Armada · 1588",
+    "a": "?",
+    "b": "espanha",
+    "x": "Brulotes, navios incendiados lançados contra a frota ancorada em Calais, desfizeram a formação espanhola; tempestades fizeram o resto na volta."
+   },
+   "a": [
+    "inglaterra"
+   ],
+   "d": 1,
+   "src": [
+    "en",
+    "Spanish Armada",
+    [
+     "Calais"
+    ]
+   ]
+  },
+  {
+   "t": "Qual império teve de levantar o cerco desta cidade, derrotado por um exército de socorro cristão?",
+   "battle": {
+    "lbl": "Viena · 1683",
+    "a": "sacro_imperio",
+    "b": "?",
+    "x": "A carga dos hussardos alados do rei polonês João III Sobieski decidiu a batalha e marcou o início do recuo otomano na Europa."
+   },
+   "a": [
+    "imperio_otomano"
+   ],
+   "d": 2,
+   "src": [
+    "en",
+    "Battle of Vienna",
+    [
+     "Sobieski"
+    ]
+   ]
+  },
+  {
+   "t": "Qual reino sofreu esta derrota, em que o próprio rei foi feito prisioneiro?",
+   "battle": {
+    "lbl": "Pavia · 1525",
+    "a": "sacro_imperio",
+    "b": "?",
+    "x": "Francisco I foi levado preso para Madri e só foi solto em 1526, depois de assinar um tratado que logo renegou."
+   },
+   "a": [
+    "francia"
+   ],
+   "d": 3,
+   "src": [
+    "en",
+    "Battle of Pavia",
+    [
+     "Francis I"
+    ]
+   ]
+  },
+  {
+   "t": "Qual reino perdeu nesta batalha o seu jovem rei, Luís II, e começou a cair sob o domínio otomano?",
+   "type": "txt",
+   "choices": [
+    "Hungria",
+    "Polônia",
+    "Sérvia",
+    "Valáquia",
+    "Áustria",
+    "Moldávia"
+   ],
+   "battle": {
+    "lbl": "Mohács · 1526",
+    "a": "?",
+    "b": "imperio_otomano",
+    "x": "O rei, de 20 anos, morreu afogado num riacho ao fugir; Buda caiu em 1541, e o centro do país ficou sob domínio otomano por cerca de 150 anos."
+   },
+   "a": [
+    "Hungria"
+   ],
+   "d": 4,
+   "src": [
+    "en",
+    "Battle of Mohács",
+    [
+     "Louis II"
+    ]
+   ]
+  },
+  {
+   "t": "Contra quem os suecos lutaram nesta batalha da Guerra dos Trinta Anos, em que morreu o rei Gustavo Adolfo?",
+   "battle": {
+    "lbl": "Lützen · 1632",
+    "a": "suecia",
+    "b": "?",
+    "x": "Os suecos venceram, mas o rei morreu numa carga de cavalaria em meio à neblina e à fumaça; do outro lado, o comandante era Wallenstein."
+   },
+   "a": [
+    "sacro_imperio"
+   ],
+   "d": 4,
+   "src": [
+    "en",
+    "Battle of Lützen (1632)",
+    [
+     "Wallenstein"
+    ]
+   ]
+  },
+  {
+   "t": "Quem venceu esta batalha, que abalou a fama de invencíveis dos terços espanhóis?",
+   "battle": {
+    "lbl": "Rocroi · 1643",
+    "a": "?",
+    "b": "espanha",
+    "x": "O comandante vitorioso, o duque de Enghien, futuro \"Grande Condé\", tinha apenas 21 anos."
+   },
+   "a": [
+    "francia"
+   ],
+   "d": 5,
+   "src": [
+    "en",
+    "Battle of Rocroi",
+    [
+     "Enghien"
+    ]
+   ]
+  },
+  {
+   "t": "Qual rei completa esta sequência de Bourbons no trono da França?",
+   "type": "player",
+   "line": {
+    "t": "Reis Bourbon da França · 1589–1792",
+    "rows": [
+     "Henrique IV",
+     "Luís XIII",
+     "?",
+     "Luís XV",
+     "Luís XVI"
+    ],
+    "era": "mod"
+   },
+   "a": [
+    "luis_xiv"
+   ],
+   "d": 1,
+   "src": [
+    "en",
+    "House of Bourbon",
+    [
+     "Louis XIV"
+    ]
+   ],
+   "x": "Luís XV era bisneto do Rei Sol: o filho e o neto de Luís XIV morreram antes dele, e o trono saltou duas gerações."
+  },
+  {
+   "t": "Quem abre esta linhagem de reis Habsburgo da Espanha?",
+   "type": "player",
+   "line": {
+    "t": "Habsburgos da Espanha · 1516–1700",
+    "rows": [
+     "?",
+     "Filipe II",
+     "Filipe III",
+     "Filipe IV",
+     "Carlos II"
+    ],
+    "era": "mod"
+   },
+   "a": [
+    "carlos_v"
+   ],
+   "d": 3,
+   "src": [
+    "en",
+    "Habsburg Spain",
+    [
+     "Philip II"
+    ]
+   ],
+   "x": "Na Espanha ele era Carlos I; a morte de Carlos II sem filhos, em 1700, levou os Bourbon ao trono de Madri."
+  },
+  {
+   "t": "Quem fecha a linhagem dos Stuart no trono inglês?",
+   "type": "txt",
+   "choices": [
+    "Ana",
+    "Maria I",
+    "Jorge I",
+    "Elizabeth I",
+    "Vitória",
+    "Eduardo VI"
+   ],
+   "line": {
+    "t": "Os Stuart no trono inglês · 1603–1714",
+    "rows": [
+     "Jaime I",
+     "Carlos I",
+     "Carlos II",
+     "Jaime II",
+     "Guilherme III e Maria II",
+     "?"
+    ],
+    "era": "mod"
+   },
+   "a": [
+    "Ana"
+   ],
+   "d": 4,
+   "src": [
+    "en",
+    "House of Stuart",
+    [
+     "Anne"
+    ]
+   ],
+   "x": "No reinado dela, os Atos de União de 1707 criaram a Grã-Bretanha; morreu sem filhos vivos, e o trono passou a Jorge I, de Hanôver."
+  },
+  {
+   "t": "Quem é o soberano que falta nesta linha da Casa de Bragança?",
+   "type": "txt",
+   "choices": [
+    "Maria I",
+    "João VI",
+    "Carlota Joaquina",
+    "Sebastião",
+    "Maria II",
+    "Afonso Henriques"
+   ],
+   "line": {
+    "t": "Casa de Bragança · Portugal, 1640–1816",
+    "rows": [
+     "João IV",
+     "Afonso VI",
+     "Pedro II",
+     "João V",
+     "José I",
+     "?"
+    ],
+    "era": "mod"
+   },
+   "a": [
+    "Maria I"
+   ],
+   "d": 4,
+   "src": [
+    "pt",
+    "Maria I de Portugal",
+    [
+     "1816"
+    ]
+   ],
+   "x": "Já afastada do governo por doença mental, chegou ao Brasil com a corte em 1808 e morreu no Rio de Janeiro, em 1816; o filho reinou depois como D. João VI."
+  },
+  {
+   "t": "Em que ano saiu esta manchete?",
+   "type": "txt",
+   "choices": [
+    "1755",
+    "1640",
+    "1703",
+    "1750",
+    "1762",
+    "1777"
+   ],
+   "news": {
+    "h": "Terremoto, maremoto e incêndio destroem Lisboa",
+    "paper": "Gazeta do Reino",
+    "sub": "Tremor no Dia de Todos os Santos derruba igrejas cheias de fiéis"
+   },
+   "a": [
+    "1755"
+   ],
+   "d": 3,
+   "src": [
+    "en",
+    "1755 Lisbon earthquake",
+    [
+     "All Saints"
+    ]
+   ],
+   "x": "A reconstrução da Baixa, com ruas retas e prédios de estrutura antissísmica, foi comandada pelo futuro Marquês de Pombal."
+  },
+  {
+   "t": "Quem é o comandante desta manchete?",
+   "type": "player",
+   "news": {
+    "h": "Endeavour volta a Londres depois de três anos no Pacífico",
+    "paper": "Gazeta de Londres",
+    "sub": "Expedição mapeou a Nova Zelândia e a costa leste da Nova Holanda"
+   },
+   "a": [
+    "cook"
+   ],
+   "d": 3,
+   "src": [
+    "en",
+    "James Cook",
+    [
+     "Endeavour"
+    ]
+   ],
+   "x": "A missão oficial da viagem era observar, no Taiti, a passagem de Vênus diante do Sol, em 1769."
+  },
+  {
+   "t": "Em que ano saiu esta manchete?",
+   "type": "txt",
+   "choices": [
+    "1783",
+    "1752",
+    "1769",
+    "1776",
+    "1789",
+    "1794"
+   ],
+   "news": {
+    "h": "Homens sobem aos céus num balão de ar quente",
+    "paper": "Correio de Paris",
+    "sub": "Primeiro voo livre com tripulantes cruza a cidade diante de uma multidão"
+   },
+   "a": [
+    "1783"
+   ],
+   "d": 4,
+   "src": [
+    "en",
+    "Montgolfier brothers",
+    [
+     "1783"
+    ]
+   ],
+   "x": "Em 21 de novembro, Pilâtre de Rozier e o marquês d'Arlandes voaram uns 9 km sobre Paris num balão dos irmãos Montgolfier."
+  },
+  {
+   "t": "Duelo: quem viveu primeiro?",
+   "type": "player",
+   "fixed": [
+    "shakespeare",
+    "voltaire"
+   ],
+   "duel": true,
+   "a": [
+    "shakespeare"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "hourglass"
+   },
+   "src": [
+    "en",
+    "Voltaire",
+    [
+     "1694"
+    ]
+   ],
+   "x": "Shakespeare morreu em 1616; Voltaire nasceu em 1694 e foi um dos primeiros a apresentar o dramaturgo inglês ao público francês."
+  },
+  {
+   "t": "Duelo: quem nasceu primeiro?",
+   "type": "player",
+   "fixed": [
+    "michelangelo",
+    "rafael"
+   ],
+   "duel": true,
+   "a": [
+    "michelangelo"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "palette"
+   },
+   "src": [
+    "en",
+    "Raphael",
+    [
+     "1483"
+    ]
+   ],
+   "x": "Michelangelo nasceu em 1475; Rafael, em 1483, morreu bem antes dele, em 1520, com apenas 37 anos."
+  },
+  {
+   "t": "Duelo: o que aconteceu primeiro?",
+   "type": "txt",
+   "choices": [
+    "Fundação de São Paulo",
+    "Fundação de Nova Amsterdã (Nova York)"
+   ],
+   "duel": true,
+   "a": [
+    "Fundação de São Paulo"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "map"
+   },
+   "src": [
+    "pt",
+    "São Paulo",
+    [
+     "1554"
+    ]
+   ],
+   "x": "São Paulo nasceu em 1554 com um colégio jesuíta; Nova Amsterdã, a futura Nova York, só surgiu na década de 1620, como entreposto holandês."
+  },
+  {
+   "t": "Duelo: quem nasceu primeiro?",
+   "type": "player",
+   "fixed": [
+    "cervantes",
+    "shakespeare"
+   ],
+   "duel": true,
+   "a": [
+    "cervantes"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "quill"
+   },
+   "src": [
+    "en",
+    "Miguel de Cervantes",
+    [
+     "1547"
+    ]
+   ],
+   "x": "Cervantes nasceu em 1547, e Shakespeare, em 1564; os dois morreram em 1616, e o 23 de abril virou o Dia Mundial do Livro."
+  },
+  {
+   "t": "Duelo: quem morreu primeiro?",
+   "type": "player",
+   "fixed": [
+    "kepler",
+    "galileu"
+   ],
+   "duel": true,
+   "a": [
+    "kepler"
+   ],
+   "d": 4,
+   "art": {
+    "icon": "telescope"
+   },
+   "src": [
+    "en",
+    "Johannes Kepler",
+    [
+     "1630"
+    ]
+   ],
+   "x": "Galileu nasceu sete anos antes, em 1564, mas sobreviveu a Kepler, morto em 1630, por mais de onze anos."
+  },
+  {
+   "t": "Duelo: qual destes reinos surgiu primeiro?",
+   "fixed": [
+    "prussia",
+    "reino_unido"
+   ],
+   "duel": true,
+   "a": [
+    "prussia"
+   ],
+   "d": 5,
+   "art": {
+    "icon": "crown"
+   },
+   "src": [
+    "en",
+    "Kingdom of Prussia",
+    [
+     "1701"
+    ]
+   ],
+   "x": "O Reino da Prússia nasceu em 1701, quando o eleitor de Brandemburgo se coroou rei; a Grã-Bretanha surgiu da união da Inglaterra com a Escócia, em 1707."
+  },
+  {
+   "t": "Colombo teve de provar que a Terra era redonda, contra quem achava que ela era plana?",
+   "type": "txt",
+   "choices": [
+    "Fato",
+    "Mito"
+   ],
+   "duel": true,
+   "myth": true,
+   "a": [
+    "Mito"
+   ],
+   "d": 1,
+   "art": {
+    "who": "colombo"
+   },
+   "src": [
+    "en",
+    "Myth of the flat Earth",
+    [
+     "Columbus"
+    ]
+   ],
+   "x": "Os sábios do século XV já sabiam que a Terra é esférica; a discussão era sobre o tamanho dela, que Colombo subestimou muito."
+  },
+  {
+   "t": "A rainha Elizabeth I da Inglaterra nunca se casou?",
+   "type": "txt",
+   "choices": [
+    "Fato",
+    "Mito"
+   ],
+   "duel": true,
+   "myth": true,
+   "a": [
+    "Fato"
+   ],
+   "d": 1,
+   "art": {
+    "who": "elizabeth_i"
+   },
+   "src": [
+    "en",
+    "Elizabeth I",
+    [
+     "Virgin Queen"
+    ]
+   ],
+   "x": "Chamada de \"Rainha Virgem\", inspirou o nome da colônia da Virgínia; sem filhos, deixou o trono para Jaime VI da Escócia."
+  },
+  {
+   "t": "Uma maçã caiu na cabeça de Isaac Newton e lhe deu a ideia da gravitação?",
+   "type": "txt",
+   "choices": [
+    "Fato",
+    "Mito"
+   ],
+   "duel": true,
+   "myth": true,
+   "a": [
+    "Mito"
+   ],
+   "d": 2,
+   "art": {
+    "who": "newton"
+   },
+   "src": [
+    "en",
+    "Isaac Newton",
+    [
+     "apple"
+    ]
+   ],
+   "x": "Newton contou ter pensado na gravidade ao ver uma maçã cair no jardim da família; a pancada na cabeça foi acrescentada à história depois."
+  },
+  {
+   "t": "Voltaire escreveu \"Posso não concordar com uma palavra do que dizes, mas defenderei até a morte o teu direito de dizê-lo\"?",
+   "type": "txt",
+   "choices": [
+    "Fato",
+    "Mito"
+   ],
+   "duel": true,
+   "myth": true,
+   "a": [
+    "Mito"
+   ],
+   "d": 3,
+   "art": {
+    "who": "voltaire"
+   },
+   "src": [
+    "en",
+    "Evelyn Beatrice Hall",
+    [
+     "1906"
+    ]
+   ],
+   "x": "A frase foi criada em 1906 pela escritora inglesa Evelyn Beatrice Hall, para resumir a atitude dele numa biografia."
+  },
+  {
+   "t": "O czar Pedro, o Grande, cobrava um imposto de quem quisesse manter a barba?",
+   "type": "txt",
+   "choices": [
+    "Fato",
+    "Mito"
+   ],
+   "duel": true,
+   "myth": true,
+   "a": [
+    "Fato"
+   ],
+   "d": 3,
+   "art": {
+    "who": "pedro_grande"
+   },
+   "src": [
+    "en",
+    "Beard tax",
+    [
+     "1698"
+    ]
+   ],
+   "x": "Em 1698, para \"europeizar\" a Rússia, ele mandou raspar as barbas; quem pagava a taxa recebia uma ficha que servia de comprovante."
+  },
+  {
+   "t": "Michelangelo pintou o teto da Capela Sistina deitado de costas num andaime?",
+   "type": "txt",
+   "choices": [
+    "Fato",
+    "Mito"
+   ],
+   "duel": true,
+   "myth": true,
+   "a": [
+    "Mito"
+   ],
+   "d": 3,
+   "art": {
+    "who": "michelangelo"
+   },
+   "src": [
+    "en",
+    "Sistine Chapel ceiling",
+    [
+     "scaffold"
+    ]
+   ],
+   "x": "Ele trabalhou de pé, num andaime que ele mesmo projetou, com a cabeça inclinada para trás; chegou a escrever um poema reclamando da posição."
+  }
+ ]
+}
