@@ -185,8 +185,16 @@
       .hs-news .hs-dateline { display: none; }
       .hs-news .hs-mast { margin-bottom: 4px; }
     }
+    /* shorter still: the battle's caption and the front page's subhead are colour, not
+       clues, and give their lines back; the slips under a strip go one notch tighter */
     @media (max-width: 699px) and (max-height: 720px) {
       .hs-q-text { font-size: 14px; }
       .hs-head { font-size: 14.5px; }
-      .hs-x { -webkit-line-clamp: 2; display: -webkit-box; -webkit-box-orient: vertical; overflow: hidden; }
+      .hs-x, .hs-sub { display: none; }
+      .hs-quote, .hs-quote-pedra { padding-top: 8px; padding-bottom: 7px; }
+      .hs-battle { padding: 6px 12px 7px; }
+      .hs-lbl { margin-bottom: 3px; }
+      .qcard-strip ~ .board-2-tight .b-text { min-height: 40px; padding-top: 6px; padding-bottom: 6px; }
+      .qcard-strip ~ .board-2-tight .b-text.b-art { gap: 3px; padding-top: 5px; padding-bottom: 5px; }
+      .qcard-strip ~ .board-2-tight .opt-crest, .qcard-strip ~ .board-2-tight .opt-face { width: 26px; height: 26px; }
     }
