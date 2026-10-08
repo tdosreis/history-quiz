@@ -41,6 +41,16 @@ do seu jeito — cada formato é a própria figura do cartão, com um efeito e u
 Toda resposta escrita tem figura (rosto, brasão, bandeira, foto do monumento ou um desenho do tipo
 de resposta), e toda pergunta mostra o personagem, monumento ou estado que menciona.
 
+## Os brasões
+
+Cada estado tem o seu emblema histórico, desenhado em SVG no escudo da sua cultura — o Λ num hoplon
+espartano, a águia e os raios num scutum, a coruja numa tetradracma, os três leões num escudo inglês,
+o mon dos Tokugawa, a águia no nopal num chimalli asteca, a bandeira de uma república moderna
+(`tools/history/js/brasoes/`: as formas, a paleta e os ajudantes em `_core.js`, as feras heráldicas em
+`01_bestas.js`, um arquivo por região). `node tools/history/brasao_preview.js saida.png [ids | arquivo.js]`
+mostra cada brasão grande e nos discos do jogo, no claro e no escuro. Só entram na página os arquivos
+listados em `brasoes/READY`.
+
 ## Arte com Gemini
 
 `tools/gemini/` repinta os retratos e as fotos de monumentos no traço do ateliê. Rode pela aba

@@ -1,1 +1,9 @@
 # finished regional brasões files, one per line (build.py includes only these)
+00_exemplo.js
+01_bestas.js
+10_antiguidade.js
+20_asia.js
+30_medieval_islam_africa.js
+40_reinos_europa.js
+50_americas_brasil.js
+60_europa_moderna.js

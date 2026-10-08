@@ -136,10 +136,10 @@
   const dragonHead = c =>
     /* mane: flame-locks streaming back from the nape */
     P('M1.4 -5C3.6 -6.4 6.6 -6.8 10.2 -9C9.6 -6.6 8.2 -5 6.6 -4.2C8.8 -4 10.8 -2.8 12 -.6C9.8 -1 8 -.8 6.6 -.2'
-      + 'C8.4 1 9.4 2.8 9.4 5C7.6 3.4 5.6 2.6 3.6 2.6C4.2 3.8 4.2 5.4 3.4 6.6C2.8 4.8 1.4 3.6 -.4 3.2Z', c.fin, c.line, .65)
-    + L('M3.4 -4.2C5.6 -5 7.6 -6 9 -7.4M4.4 -1.2C6.6 -1.4 8.6 -1.2 10.4 -.4M4 1.6C5.6 2.2 7 3 8 4.2', c.scale, .6, 'opacity=".75"')
+      + 'C8.4 1 9.4 2.8 9.4 5C7.6 3.4 5.6 2.6 3.6 2.6C4.2 3.8 4.2 5.4 3.4 6.6C2.8 4.8 1.4 3.6 -.4 3.2Z', c.mane, c.line, .65)
+    + L('M3.4 -4.2C5.6 -5 7.6 -6 9 -7.4M4.4 -1.2C6.6 -1.4 8.6 -1.2 10.4 -.4M4 1.6C5.6 2.2 7 3 8 4.2', c.line, .55, 'opacity=".55"')
     /* antlers, rising back, one tine */
-    + P(tube([[1, -8.4, 1.1], [.2, -10.2, .8], [-1.4, -11.6, .4]], 5).d + tube([[-1.2, -5, 1.9], [-.2, -8, 1.5], [2.2, -10.6, 1.1], [5.8, -12, .45]], 6).d, c.horn, c.line, .55)
+    + P(tube([[.6, -8.6, 1.5], [-.4, -10.8, 1.1], [-2.4, -12.4, .45]], 5).d + tube([[-1.6, -4.6, 2.5], [-.6, -8.2, 2], [2, -11.2, 1.4], [6, -13, .5]], 6).d, c.horn, c.line, .6)
     /* the lower jaw, a little open, and the dark of the mouth */
     + P('M-4.4 .4L-13 .6C-13.8 .8 -14 2.2 -13.2 2.6C-10.4 3.6 -6.6 3.8 -3.6 3.2C-2 2.8 -1 1.8 -1.2 .8Z', c.body, c.line, .75)
     + P('M-4.6 0L-14 -1.2L-13.2 .7Z', c.mouth)
@@ -152,14 +152,14 @@
     /* light along the bridge, the nostril curl, the cheek fold */
     + L('M-12.4 -3.2C-10.4 -2.6 -8.4 -2.8 -6.6 -3.4', c.scale, .8)
     + L('M-14.8 -3.4C-14.6 -4.4 -13.4 -4.4 -13.6 -3.4', c.line, .65)
-    + L('M-3.2 -.8C-1.8 -2 -.4 -2 .8 -1', c.line, .6)
+    + L('M-1.2 1.4C-2.8 1 -2.8 -1.2 -1.1 -1.5C.4 -1.7 1.3 -.3 .5 .6', c.line, .6)
     /* the heavy brow ridge, flaring back into a flame */
-    + P('M-8.4 -4.2C-7.2 -6.4 -4.8 -7.4 -2.4 -7C-.8 -6.8 .6 -7.6 1.6 -8.8C1.8 -6.6 .6 -5 -1 -4.6C-3 -4.2 -5 -4.6 -6.6 -3.6Z', c.fin, c.line, .65)
+    + P('M-8.4 -4.2C-7.2 -6.4 -4.8 -7.4 -2.4 -7C-.8 -6.8 .6 -7.6 1.6 -8.8C1.8 -6.6 .6 -5 -1 -4.6C-3 -4.2 -5 -4.6 -6.6 -3.6Z', c.mane, c.line, .65)
     /* the eye: a small almond under the brow, no white */
     + P('M-7.2 -3.2C-6.2 -4.4 -4.6 -4.5 -3.8 -3.8C-4.8 -2.8 -6.2 -2.7 -7.2 -3.2Z', c.eye)
     + `<circle cx="-4.9" cy="-3.6" r=".34" fill="${c.glint}"/>`
     /* whiskers: long barbels from the lip, trailing back */
-    + L('M-15.4 -1.8C-16.8 1.4 -15.4 5.2 -11.8 6.6C-8.6 7.8 -5.6 7.4 -3.6 9.6C-2.6 10.8 -3.4 12.2 -4.6 11.8', c.whisker, .75)
+    + L('M-15.4 -1.8C-17.4 .6 -16.6 3.8 -13.6 4.8C-10.6 5.8 -7.2 5 -4.4 6.4C-2.6 7.4 -2.4 9.2 -3.8 9.8', c.whisker, .75)
     + L('M-14.2 -5.8C-13.6 -8.4 -11 -9.6 -8.2 -9.2C-6.2 -9 -5 -10 -5.2 -11.6', c.whisker, .75);
 
   Object.assign(BRASAO, {
@@ -387,7 +387,7 @@
         s += B.wedges(9.8, 20, 2.4, 5.8, 9, '#E2652A', .24, -Math.PI / 2);
         s += `<circle cx="9.8" cy="20" r="3.1" fill="#C8211E" stroke="#7E1210" stroke-width=".7"/>`;
         s += L('M8.3 19.4Q9.2 17.7 10.8 18.6', '#F9B2A0', .8);
-        const c = { body: '#2D63B8', line: '#13336E', fin: '#1C4A94', belly: '#C9DCF2', scale: '#6C9BDD', claw: '#F4E8BE', horn: '#F4E8BE',
+        const c = { body: '#2D63B8', line: '#13336E', fin: '#1C4A94', belly: '#C9DCF2', scale: '#6C9BDD', claw: '#F4E8BE', horn: '#8DB3E8', mane: '#4F86D4',
           mouth: '#5E0E0E', eye: '#0D1F45', glint: '#F6D36A', whisker: '#13336E' };
         /* body, legs and tail, drawn a little smaller so the tail stays on the cloth */
         s += `<g transform="translate(1.8 2.2) scale(.92)">${dragon(c)}</g>`;
@@ -453,8 +453,8 @@
         /* the inlaid marble border, a gold boss at each corner */
         s += `<rect x="11.4" y="11.4" width="37.2" height="37.2" rx="3.8" fill="none" stroke="${In}" stroke-width=".9"/>`;
         s += [[12.5, 12.5], [47.5, 12.5], [12.5, 47.5], [47.5, 47.5]].map(([x, y]) => `<circle cx="${x}" cy="${y}" r="1.05" fill="${G}" stroke="${Gl}" stroke-width=".4"/>`).join('');
-        /* the long pool of the charbagh, running out to the foot of the panel */
-        s += P('M28.4 45.6H31.6L32.6 51.2H27.4Z', '#5FA3A0', '#2D6461', .6) + L('M29.2 46.6L28.8 50.4', '#A9DCD6', .7);
+        /* the long pool of the charbagh, running down to the foot of the panel */
+        s += P('M28.4 45.6H31.6L32.6 51H27.4Z', '#5FA3A0', '#2D6461', .6) + L('M29.2 46.6L28.8 50.4', '#A9DCD6', .7);
         /* minarets on the corners of the platform: tapering, three galleries, a chhatri on top */
         const mx = 15.2;
         const minaret = P(`M${mx - 1.55} 43.6L${mx - 1.1} 24.8H${mx + 1.1}L${mx + 1.55} 43.6Z`, `url(#${u}mn)`, Wl, .7)
@@ -464,9 +464,9 @@
         /* the platform */
         s += P('M13.8 43.2H46.2V45.9H13.8Z', W, Wl, .7) + L('M14.4 44.6H45.6', Ws, .6);
         /* dome on its drum, the gilt finial */
-        s += L('M30 12.8V15.8', Gl, 1.2) + L('M30 12.8V15.8', G, .6) + `<circle cx="30" cy="14.2" r=".85" fill="${G}" stroke="${Gl}" stroke-width=".4"/>`;
+        s += L('M30 12.6V15.2', Gl, 1.2) + L('M30 12.6V15.2', G, .6) + `<circle cx="30" cy="13.8" r=".85" fill="${G}" stroke="${Gl}" stroke-width=".4"/>`;
         s += P('M24.6 26.4V24.6H35.4V26.4Z', Ws, Wl, .6);
-        s += P('M30 15.6C31.2 17.3 34.4 17.8 36.4 19.6C38.6 21.6 38.2 24.2 35.8 25.6H24.2C21.8 24.2 21.4 21.6 23.6 19.6C25.6 17.8 28.8 17.3 30 15.6Z', `url(#${u}dm)`, Wl, .8);
+        s += P('M30 14.8C31 16.8 34.6 17.5 36.6 19.6C38.6 21.8 38 24.4 35.6 25.6H24.4C22 24.4 21.4 21.8 23.4 19.6C25.4 17.5 29 16.8 30 14.8Z', `url(#${u}dm)`, Wl, .8);
         s += L('M27.8 17.6Q30 18.6 32.2 17.6', Ws, .7) + L('M25 20.4Q24.2 22.2 25 24', '#fff', .9, 'opacity=".9"');
         /* chhatris on the corners of the roof */
         s += both(P('M20.2 30.4V27.2H23.4V30.4Z', W, Wl, .6) + P('M19.8 27.4Q19.8 24.4 21.8 23.4Q23.8 24.4 23.8 27.4Z', W, Wl, .6) + L('M21.8 23.4V22.4', Gl, .6));

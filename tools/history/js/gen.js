@@ -43,7 +43,7 @@ function GEN_QS(tier) {
     const p = rndOf(byCtry[c]);
     out.push({
       t: `Qual destes personagens nasceu ${ctryEm(c)}?`,
-      a: [p.id], type: 'player', flag: c,
+      a: [p.id], type: 'player', flag: c, _flagIsQ: true,   /* the country is the question */
       pool: PL.filter(x => x.ctry !== c).map(x => x.id), _cat: GC.nat,
       d: c === 'BRA' ? 1 : 2,
     });
@@ -55,14 +55,14 @@ function GEN_QS(tier) {
     const oldest = set.reduce((a, b) => (a.f <= b.f ? a : b));
     if (set.filter(c => c.f === oldest.f).length > 1) continue;
     out.push({ t: 'Qual destes estados surgiu primeiro?',
-               a: [oldest.id], fixed: set.map(c => c.id), _cat: GC.hist, d: 2 });
+               a: [oldest.id], fixed: set.map(c => c.id), icon: 'hourglass', _cat: GC.hist, d: 2 });
   }
   for (let i = 0; i < 4; i++) {
     const set = pick(CL, 10);
     const newest = set.reduce((a, b) => (a.f >= b.f ? a : b));
     if (set.filter(c => c.f === newest.f).length > 1) continue;
     out.push({ t: 'Qual destes estados é o mais recente — surgiu por último?',
-               a: [newest.id], fixed: set.map(c => c.id), _cat: GC.hist, d: 3 });
+               a: [newest.id], fixed: set.map(c => c.id), icon: 'hourglass', _cat: GC.hist, d: 3 });
   }
   for (let i = 0; i < 4; i++) {
     const set = pick(CL.filter(c => c.e !== 0), 10);
@@ -70,7 +70,7 @@ function GEN_QS(tier) {
     const top = set.reduce((a, b) => (len(a) >= len(b) ? a : b));
     if (set.length < 10 || set.filter(c => len(c) === len(top)).length > 1) continue;
     out.push({ t: 'Qual destes estados durou mais tempo?',
-               a: [top.id], fixed: set.map(c => c.id), _cat: GC.hist, d: 3 });
+               a: [top.id], fixed: set.map(c => c.id), icon: 'hourglass', _cat: GC.hist, d: 3 });
   }
 
   /* ── 4. Multi-select: states of the ancient world among the later ones ── */
@@ -79,14 +79,14 @@ function GEN_QS(tier) {
     const rest = pick(CL.filter(c => c.f >= 1000), 7);
     if (old.length < 3 || rest.length < 7) break;
     out.push({ t: 'Selecione os estados que já existiam antes de Cristo',
-               a: old.map(c => c.id), fixed: old.concat(rest).map(c => c.id), _cat: GC.hist, d: 2 });
+               a: old.map(c => c.id), fixed: old.concat(rest).map(c => c.id), icon: 'column', _cat: GC.hist, d: 2 });
   }
   for (let i = 0; i < 3; i++) {
     const gone = pick(CL.filter(c => c.e !== 0), 3);
     const live = pick(CL.filter(c => c.e === 0), 7);
     if (gone.length < 3 || live.length < 7) break;
     out.push({ t: 'Selecione os estados que deixaram de existir',
-               a: gone.map(c => c.id), fixed: gone.concat(live).map(c => c.id), _cat: GC.hist, d: 2 });
+               a: gone.map(c => c.id), fixed: gone.concat(live).map(c => c.id), icon: 'hourglass', _cat: GC.hist, d: 2 });
   }
 
   /* ── 5. Who else is tied to this state? ── */

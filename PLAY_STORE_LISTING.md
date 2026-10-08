@@ -57,7 +57,7 @@ Um quiz de História em clima de programa de auditório: refletor aceso, placa d
 📔 O ÁLBUM DE FIGURINHAS:
 • Mais de 400 figurinhas: 230 personagens, 69 brasões, nações e 51 monumentos
 • De Hatexepsute e Péricles a Mandela e Gagarin
-• Os brasões de impérios e civilizações, a folha das nações e a mais difícil de todas: a dos monumentos
+• Os brasões de impérios e civilizações, cada um com o seu emblema histórico no escudo da sua época — do Λ espartano ao crisântemo imperial —, a folha das nações e a mais difícil de todas: a dos monumentos
 • Acertou o personagem? A figurinha é colada no álbum para sempre
 • Toque na figurinha e ela vira: quando viveu, onde nasceu, a que estados esteve ligado
 
