@@ -1,0 +1,885 @@
+{
+ "id": "fato_mito",
+ "name": "Fato ou mito?",
+ "tag": "O que todo mundo repete",
+ "col": "#455A64",
+ "diff": "Variado",
+ "emoji": "🔎",
+ "qs": [
+  {
+   "t": "Galileu Galilei foi condenado pela Inquisição a morrer na fogueira?",
+   "type": "txt",
+   "choices": [
+    "Fato",
+    "Mito"
+   ],
+   "duel": true,
+   "myth": true,
+   "a": [
+    "Mito"
+   ],
+   "d": 1,
+   "art": {
+    "who": "galileu"
+   },
+   "src": [
+    "pt",
+    "Galileu Galilei",
+    [
+     "1633"
+    ]
+   ],
+   "x": "Condenado em 1633, ele passou o resto da vida em prisão domiciliar e morreu em casa, em 1642. Quem morreu na fogueira, em 1600, foi o filósofo Giordano Bruno."
+  },
+  {
+   "t": "O Taj Mahal, na Índia, foi construído para ser o palácio de um imperador?",
+   "type": "txt",
+   "choices": [
+    "Fato",
+    "Mito"
+   ],
+   "duel": true,
+   "myth": true,
+   "a": [
+    "Mito"
+   ],
+   "d": 1,
+   "art": {
+    "stad": "taj_mahal"
+   },
+   "src": [
+    "pt",
+    "Taj Mahal",
+    [
+     "mausoléu"
+    ]
+   ],
+   "x": "É um mausoléu: o imperador mogol Shah Jahan o ergueu para a esposa Mumtaz Mahal, morta em 1631, e ele mesmo foi sepultado ali."
+  },
+  {
+   "t": "O Cristo Redentor é uma das Sete Maravilhas do Mundo Antigo?",
+   "type": "txt",
+   "choices": [
+    "Fato",
+    "Mito"
+   ],
+   "duel": true,
+   "myth": true,
+   "a": [
+    "Mito"
+   ],
+   "d": 1,
+   "art": {
+    "stad": "cristo_redentor"
+   },
+   "src": [
+    "pt",
+    "Cristo Redentor",
+    [
+     "2007"
+    ]
+   ],
+   "x": "Inaugurado em 1931, ele entrou em 2007 na lista das \"Novas Sete Maravilhas\", feita por votação popular; das antigas, só a Grande Pirâmide continua de pé."
+  },
+  {
+   "t": "Charles Darwin afirmou que o ser humano descende dos macacos de hoje, como o chimpanzé?",
+   "type": "txt",
+   "choices": [
+    "Fato",
+    "Mito"
+   ],
+   "duel": true,
+   "myth": true,
+   "a": [
+    "Mito"
+   ],
+   "d": 1,
+   "art": {
+    "who": "darwin"
+   },
+   "src": [
+    "pt",
+    "Charles Darwin",
+    [
+     "evolução"
+    ]
+   ],
+   "x": "Ele defendeu que humanos e macacos têm ancestrais em comum: chimpanzés e gorilas são nossos parentes, e não nossos avós."
+  },
+  {
+   "t": "Santos Dumont inventou o relógio de pulso?",
+   "type": "txt",
+   "choices": [
+    "Fato",
+    "Mito"
+   ],
+   "duel": true,
+   "myth": true,
+   "a": [
+    "Mito"
+   ],
+   "d": 2,
+   "art": {
+    "who": "santos_dumont"
+   },
+   "src": [
+    "pt",
+    "Santos Dumont",
+    [
+     "Cartier"
+    ]
+   ],
+   "x": "Relógios de pulso já existiam; em 1904, Louis Cartier criou um modelo para o amigo aviador ver as horas sem soltar os comandos, e a moda pegou entre os homens."
+  },
+  {
+   "t": "O Titanic levava botes salva-vidas suficientes para todos a bordo?",
+   "type": "txt",
+   "choices": [
+    "Fato",
+    "Mito"
+   ],
+   "duel": true,
+   "myth": true,
+   "a": [
+    "Mito"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "ship"
+   },
+   "src": [
+    "pt",
+    "RMS Titanic",
+    [
+     "botes"
+    ]
+   ],
+   "x": "Os 20 botes comportavam cerca de 1.180 pessoas, pouco mais da metade das cerca de 2.200 a bordo; as regras da época não exigiam mais que isso."
+  },
+  {
+   "t": "Leonardo da Vinci desenhou projetos de máquinas voadoras, séculos antes do avião?",
+   "type": "txt",
+   "choices": [
+    "Fato",
+    "Mito"
+   ],
+   "duel": true,
+   "myth": true,
+   "a": [
+    "Fato"
+   ],
+   "d": 1,
+   "art": {
+    "who": "leonardo"
+   },
+   "src": [
+    "en",
+    "Leonardo da Vinci",
+    [
+     "flying machine"
+    ]
+   ],
+   "x": "Seus cadernos têm esboços de asas que batiam como as de um pássaro, de um parafuso aéreo que lembra o helicóptero e de um paraquedas."
+  },
+  {
+   "t": "A suástica foi inventada pelos nazistas?",
+   "type": "txt",
+   "choices": [
+    "Fato",
+    "Mito"
+   ],
+   "duel": true,
+   "myth": true,
+   "a": [
+    "Mito"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "scroll"
+   },
+   "src": [
+    "pt",
+    "Suástica",
+    [
+     "hindu"
+    ]
+   ],
+   "x": "O símbolo tem milhares de anos e é sagrado até hoje no hinduísmo, no budismo e no jainismo; os nazistas se apropriaram dele nos anos 1920."
+  },
+  {
+   "t": "Quando os portugueses chegaram, todos os povos indígenas do Brasil falavam a mesma língua, o tupi?",
+   "type": "txt",
+   "choices": [
+    "Fato",
+    "Mito"
+   ],
+   "duel": true,
+   "myth": true,
+   "a": [
+    "Mito"
+   ],
+   "d": 2,
+   "art": {
+    "crest": "brasil_colonia"
+   },
+   "src": [
+    "pt",
+    "Povos indígenas do Brasil",
+    [
+     "línguas"
+    ]
+   ],
+   "x": "Havia centenas de línguas, de troncos e famílias diferentes, como o macro-jê e o aruaque; o tupi era falado em boa parte do litoral, onde os portugueses desembarcaram."
+  },
+  {
+   "t": "Pompeia foi destruída por rios de lava do Vesúvio?",
+   "type": "txt",
+   "choices": [
+    "Fato",
+    "Mito"
+   ],
+   "duel": true,
+   "myth": true,
+   "a": [
+    "Mito"
+   ],
+   "d": 2,
+   "art": {
+    "stad": "pompeia"
+   },
+   "src": [
+    "pt",
+    "Pompeia",
+    [
+     "cinzas"
+    ]
+   ],
+   "x": "A cidade foi soterrada por cinzas, pedra-pomes e nuvens de gás e detritos ardentes; foi esse material que guardou as formas dos corpos encontrados."
+  },
+  {
+   "t": "A família de Cleópatra, a dinastia ptolomaica, tinha origem grega, e não egípcia?",
+   "type": "txt",
+   "choices": [
+    "Fato",
+    "Mito"
+   ],
+   "duel": true,
+   "myth": true,
+   "a": [
+    "Fato"
+   ],
+   "d": 2,
+   "art": {
+    "who": "cleopatra"
+   },
+   "src": [
+    "pt",
+    "Cleópatra VII",
+    [
+     "Ptolomeu"
+    ]
+   ],
+   "x": "A dinastia descendia de Ptolomeu, general macedônio de Alexandre, o Grande; Cleópatra teria sido a primeira da família a aprender a língua egípcia."
+  },
+  {
+   "t": "Cristóvão Colombo morreu acreditando que tinha chegado à Ásia?",
+   "type": "txt",
+   "choices": [
+    "Fato",
+    "Mito"
+   ],
+   "duel": true,
+   "myth": true,
+   "a": [
+    "Fato"
+   ],
+   "d": 2,
+   "art": {
+    "who": "colombo"
+   },
+   "src": [
+    "pt",
+    "Cristóvão Colombo",
+    [
+     "1506"
+    ]
+   ],
+   "x": "Até morrer, em 1506, ele sustentou que as terras que encontrou ficavam nas Índias; por isso os povos da América foram chamados de \"índios\"."
+  },
+  {
+   "t": "Nas Termópilas, os 300 espartanos lutaram sozinhos contra o exército persa?",
+   "type": "txt",
+   "choices": [
+    "Fato",
+    "Mito"
+   ],
+   "duel": true,
+   "myth": true,
+   "a": [
+    "Mito"
+   ],
+   "d": 2,
+   "art": {
+    "crest": "esparta"
+   },
+   "src": [
+    "pt",
+    "Batalha das Termópilas",
+    [
+     "Leônidas"
+    ]
+   ],
+   "x": "O rei Leônidas comandava alguns milhares de gregos de várias cidades; no último dia, além dos espartanos, ficaram centenas de téspios e de tebanos."
+  },
+  {
+   "t": "O rei Henrique VIII mandou executar quatro de suas seis esposas?",
+   "type": "txt",
+   "choices": [
+    "Fato",
+    "Mito"
+   ],
+   "duel": true,
+   "myth": true,
+   "a": [
+    "Mito"
+   ],
+   "d": 2,
+   "art": {
+    "who": "henrique_viii"
+   },
+   "src": [
+    "pt",
+    "Henrique VIII de Inglaterra",
+    [
+     "Ana Bolena"
+    ]
+   ],
+   "x": "Só duas foram decapitadas: Ana Bolena, em 1536, e Catarina Howard, em 1542. Das outras, duas tiveram o casamento anulado, uma morreu após o parto e a última sobreviveu ao rei."
+  },
+  {
+   "t": "Quando foi inaugurada, em 1886, a Estátua da Liberdade tinha cor de cobre, e não verde?",
+   "type": "txt",
+   "choices": [
+    "Fato",
+    "Mito"
+   ],
+   "duel": true,
+   "myth": true,
+   "a": [
+    "Fato"
+   ],
+   "d": 2,
+   "art": {
+    "stad": "estatua_liberdade"
+   },
+   "src": [
+    "pt",
+    "Estátua da Liberdade",
+    [
+     "cobre"
+    ]
+   ],
+   "x": "Feita de chapas de cobre, ela tinha a cor de uma moeda nova; a camada verde, a pátina, formou-se aos poucos, com a chuva e o ar do mar, nas décadas seguintes."
+  },
+  {
+   "t": "O Rio de Janeiro já foi a sede do governo de todo o Império Português?",
+   "type": "txt",
+   "choices": [
+    "Fato",
+    "Mito"
+   ],
+   "duel": true,
+   "myth": true,
+   "a": [
+    "Fato"
+   ],
+   "d": 2,
+   "art": {
+    "who": "dom_joao_vi"
+   },
+   "src": [
+    "pt",
+    "Transferência da corte portuguesa para o Brasil",
+    [
+     "1808"
+    ]
+   ],
+   "x": "Entre 1808 e 1821, com a corte instalada na cidade, era do Rio que se governavam Portugal e todas as suas colônias."
+  },
+  {
+   "t": "A Torre de Pisa começou a inclinar ainda durante a construção?",
+   "type": "txt",
+   "choices": [
+    "Fato",
+    "Mito"
+   ],
+   "duel": true,
+   "myth": true,
+   "a": [
+    "Fato"
+   ],
+   "d": 2,
+   "art": {
+    "stad": "torre_pisa"
+   },
+   "src": [
+    "pt",
+    "Torre de Pisa",
+    [
+     "1173"
+    ]
+   ],
+   "x": "A obra começou em 1173 e, por causa do solo mole, a torre já afundava de um lado quando chegou ao segundo andar; os andares de cima foram feitos um pouco tortos para compensar."
+  },
+  {
+   "t": "A França ainda executava condenados na guilhotina em 1977?",
+   "type": "txt",
+   "choices": [
+    "Fato",
+    "Mito"
+   ],
+   "duel": true,
+   "myth": true,
+   "a": [
+    "Fato"
+   ],
+   "d": 3,
+   "art": {
+    "flag": "FRA"
+   },
+   "src": [
+    "en",
+    "Guillotine",
+    [
+     "1977"
+    ]
+   ],
+   "x": "A última execução foi em 10 de setembro de 1977, em Marselha; a pena de morte só foi abolida no país em 1981."
+  },
+  {
+   "t": "A Biblioteca de Alexandria foi destruída de uma só vez, num grande incêndio?",
+   "type": "txt",
+   "choices": [
+    "Fato",
+    "Mito"
+   ],
+   "duel": true,
+   "myth": true,
+   "a": [
+    "Mito"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "book"
+   },
+   "src": [
+    "pt",
+    "Biblioteca de Alexandria",
+    [
+     "César"
+    ]
+   ],
+   "x": "O incêndio de 48 a.C., na guerra de Júlio César, foi só um episódio: a biblioteca definhou ao longo de séculos, com cortes de verbas, expurgos e guerras."
+  },
+  {
+   "t": "Stonehenge foi construído pelos druidas celtas?",
+   "type": "txt",
+   "choices": [
+    "Fato",
+    "Mito"
+   ],
+   "duel": true,
+   "myth": true,
+   "a": [
+    "Mito"
+   ],
+   "d": 3,
+   "art": {
+    "stad": "stonehenge"
+   },
+   "src": [
+    "en",
+    "Stonehenge",
+    [
+     "Druid"
+    ]
+   ],
+   "x": "As pedras foram erguidas entre cerca de 3000 e 2000 a.C., muito antes dos druidas; a ligação com eles foi inventada por antiquários dos séculos XVII e XVIII."
+  },
+  {
+   "t": "O céu estrelado da bandeira do Brasil reproduz o céu do Rio de Janeiro na manhã de 15 de novembro de 1889?",
+   "type": "txt",
+   "choices": [
+    "Fato",
+    "Mito"
+   ],
+   "duel": true,
+   "myth": true,
+   "a": [
+    "Fato"
+   ],
+   "d": 3,
+   "art": {
+    "flag": "BRA"
+   },
+   "src": [
+    "pt",
+    "Bandeira do Brasil",
+    [
+     "1889"
+    ]
+   ],
+   "x": "Cada estrela representa um estado ou o Distrito Federal; o céu aparece como se fosse visto de fora da esfera celeste, por isso fica invertido."
+  },
+  {
+   "t": "Os samurais lutavam só com espadas e arcos, sem usar armas de fogo?",
+   "type": "txt",
+   "choices": [
+    "Fato",
+    "Mito"
+   ],
+   "duel": true,
+   "myth": true,
+   "a": [
+    "Mito"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "helmet"
+   },
+   "src": [
+    "en",
+    "Battle of Nagashino",
+    [
+     "arquebus"
+    ]
+   ],
+   "x": "Os portugueses levaram o arcabuz ao Japão em 1543, e logo os japoneses fabricavam milhares; em batalhas como a de Nagashino, em 1575, ele foi usado em massa."
+  },
+  {
+   "t": "O coração de D. Pedro I está guardado numa igreja de Portugal?",
+   "type": "txt",
+   "choices": [
+    "Fato",
+    "Mito"
+   ],
+   "duel": true,
+   "myth": true,
+   "a": [
+    "Fato"
+   ],
+   "d": 3,
+   "art": {
+    "who": "dom_pedro_i"
+   },
+   "src": [
+    "pt",
+    "Pedro I do Brasil",
+    [
+     "coração"
+    ]
+   ],
+   "x": "Ele o deixou à cidade do Porto, que defendeu na guerra civil portuguesa; o coração fica na Igreja da Lapa e veio ao Brasil em 2022, no bicentenário da Independência."
+  },
+  {
+   "t": "A gripe espanhola de 1918 começou na Espanha?",
+   "type": "txt",
+   "choices": [
+    "Fato",
+    "Mito"
+   ],
+   "duel": true,
+   "myth": true,
+   "a": [
+    "Mito"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "flask"
+   },
+   "src": [
+    "pt",
+    "Gripe espanhola",
+    [
+     "Espanha"
+    ]
+   ],
+   "x": "A origem é incerta, mas nada aponta para a Espanha: o nome pegou porque o país, neutro na guerra, noticiava a doença livremente, enquanto os países em combate censuravam a imprensa."
+  },
+  {
+   "t": "Em 1582, dez dias sumiram do calendário em países como Portugal, Espanha e Itália?",
+   "type": "txt",
+   "choices": [
+    "Fato",
+    "Mito"
+   ],
+   "duel": true,
+   "myth": true,
+   "a": [
+    "Fato"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "hourglass"
+   },
+   "src": [
+    "pt",
+    "Calendário gregoriano",
+    [
+     "1582"
+    ]
+   ],
+   "x": "Para corrigir o atraso do calendário juliano, o papa Gregório XIII decretou que o dia seguinte a 4 de outubro seria 15 de outubro."
+  },
+  {
+   "t": "Albert Einstein foi convidado para ser presidente de Israel?",
+   "type": "txt",
+   "choices": [
+    "Fato",
+    "Mito"
+   ],
+   "duel": true,
+   "myth": true,
+   "a": [
+    "Fato"
+   ],
+   "d": 3,
+   "art": {
+    "who": "einstein"
+   },
+   "src": [
+    "pt",
+    "Albert Einstein",
+    [
+     "Israel"
+    ]
+   ],
+   "x": "Em 1952, após a morte de Chaim Weizmann, o governo israelense lhe ofereceu o cargo; ele recusou, dizendo não ter aptidão nem experiência para lidar com pessoas."
+  },
+  {
+   "t": "A Declaração de Independência dos Estados Unidos foi assinada pela maioria dos delegados no dia 4 de julho de 1776?",
+   "type": "txt",
+   "choices": [
+    "Fato",
+    "Mito"
+   ],
+   "duel": true,
+   "myth": true,
+   "a": [
+    "Mito"
+   ],
+   "d": 4,
+   "art": {
+    "crest": "estados_unidos"
+   },
+   "src": [
+    "en",
+    "United States Declaration of Independence",
+    [
+     "August 2"
+    ]
+   ],
+   "x": "Em 4 de julho o Congresso aprovou o texto; a cópia oficial em pergaminho só foi assinada pela maioria em 2 de agosto, e algumas assinaturas vieram depois."
+  },
+  {
+   "t": "Durante a Lei Seca, nos Estados Unidos, era crime consumir bebidas alcoólicas?",
+   "type": "txt",
+   "choices": [
+    "Fato",
+    "Mito"
+   ],
+   "duel": true,
+   "myth": true,
+   "a": [
+    "Mito"
+   ],
+   "d": 4,
+   "art": {
+    "flag": "USA"
+   },
+   "src": [
+    "en",
+    "Prohibition in the United States",
+    [
+     "1933"
+    ]
+   ],
+   "x": "De 1920 a 1933, a lei proibia fabricar, transportar e vender bebidas alcoólicas, mas não consumi-las: quem tinha estoque em casa podia beber."
+  },
+  {
+   "t": "O Partenon ficou em ruínas por causa de uma explosão de pólvora no século XVII?",
+   "type": "txt",
+   "choices": [
+    "Fato",
+    "Mito"
+   ],
+   "duel": true,
+   "myth": true,
+   "a": [
+    "Fato"
+   ],
+   "d": 4,
+   "art": {
+    "stad": "partenon"
+   },
+   "src": [
+    "pt",
+    "Partenon",
+    [
+     "1687"
+    ]
+   ],
+   "x": "Em 1687, os otomanos usavam o templo como paiol; durante um cerco, um disparo da artilharia veneziana acertou a pólvora, e a explosão derrubou boa parte da estrutura."
+  },
+  {
+   "t": "O Hino Nacional Brasileiro foi tocado por décadas sem uma letra oficial?",
+   "type": "txt",
+   "choices": [
+    "Fato",
+    "Mito"
+   ],
+   "duel": true,
+   "myth": true,
+   "a": [
+    "Fato"
+   ],
+   "d": 4,
+   "art": {
+    "icon": "lyre"
+   },
+   "src": [
+    "pt",
+    "Hino Nacional Brasileiro",
+    [
+     "1922"
+    ]
+   ],
+   "x": "A melodia de Francisco Manuel da Silva já era tocada nos anos 1830; a letra de Osório Duque-Estrada, escrita em 1909, só foi oficializada em 1922."
+  },
+  {
+   "t": "O Brasil declarou guerra à Alemanha e participou da Primeira Guerra Mundial?",
+   "type": "txt",
+   "choices": [
+    "Fato",
+    "Mito"
+   ],
+   "duel": true,
+   "myth": true,
+   "a": [
+    "Fato"
+   ],
+   "d": 4,
+   "art": {
+    "flag": "BRA"
+   },
+   "src": [
+    "en",
+    "Brazil during World War I",
+    [
+     "1917"
+    ]
+   ],
+   "x": "Depois do afundamento de navios brasileiros por submarinos alemães, o país entrou na guerra em 1917; mandou uma divisão naval para patrulhar o Atlântico e uma missão médica à França."
+  },
+  {
+   "t": "O imperador Calígula nomeou seu cavalo, Incitatus, cônsul de Roma?",
+   "type": "txt",
+   "choices": [
+    "Fato",
+    "Mito"
+   ],
+   "duel": true,
+   "myth": true,
+   "a": [
+    "Mito"
+   ],
+   "d": 4,
+   "art": {
+    "crest": "imperio_romano"
+   },
+   "src": [
+    "en",
+    "Incitatus",
+    [
+     "consul"
+    ]
+   ],
+   "x": "Os autores antigos dizem apenas que ele planejava fazer isso, e a história pode ser fofoca de inimigos; o cavalo nunca ocupou o cargo."
+  },
+  {
+   "t": "Para ter a independência reconhecida por Portugal, o Brasil aceitou pagar uma indenização?",
+   "type": "txt",
+   "choices": [
+    "Fato",
+    "Mito"
+   ],
+   "duel": true,
+   "myth": true,
+   "a": [
+    "Fato"
+   ],
+   "d": 5,
+   "art": {
+    "crest": "imperio_brasil"
+   },
+   "src": [
+    "pt",
+    "Independência do Brasil",
+    [
+     "1825"
+    ]
+   ],
+   "x": "Pelo tratado de 1825, com mediação britânica, o Brasil pagou 2 milhões de libras esterlinas, em boa parte para cobrir um empréstimo português em Londres."
+  },
+  {
+   "t": "Os Estados Unidos já tiveram um presidente que nunca foi eleito nem para presidente nem para vice?",
+   "type": "txt",
+   "choices": [
+    "Fato",
+    "Mito"
+   ],
+   "duel": true,
+   "myth": true,
+   "a": [
+    "Fato"
+   ],
+   "d": 5,
+   "art": {
+    "flag": "USA"
+   },
+   "src": [
+    "pt",
+    "Gerald Ford",
+    [
+     "1974"
+    ]
+   ],
+   "x": "Gerald Ford virou vice em 1973, nomeado após a renúncia de Spiro Agnew, e assumiu a Presidência em 1974, quando Nixon renunciou; perdeu a eleição de 1976."
+  },
+  {
+   "t": "Os médicos já usavam a famosa máscara em forma de bico durante a Peste Negra, no século XIV?",
+   "type": "txt",
+   "choices": [
+    "Fato",
+    "Mito"
+   ],
+   "duel": true,
+   "myth": true,
+   "a": [
+    "Mito"
+   ],
+   "d": 5,
+   "art": {
+    "icon": "flask"
+   },
+   "src": [
+    "en",
+    "Plague doctor",
+    [
+     "Lorme"
+    ]
+   ],
+   "x": "Na Peste Negra, de 1347 a 1351, ela não existia: a máscara de bico, recheada de ervas aromáticas, surgiu no século XVII e é atribuída ao médico francês Charles de Lorme."
+  }
+ ]
+}

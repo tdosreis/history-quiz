@@ -1,0 +1,1036 @@
+{
+ "id": "quem_sou_eu",
+ "name": "Quem sou eu?",
+ "tag": "Pistas escritas: descubra o personagem",
+ "col": "#7E57C2",
+ "diff": "Variado",
+ "emoji": "🕵️",
+ "qs": [
+  {
+   "t": "Quem sou eu?",
+   "type": "player",
+   "clues": [
+    "Nasci em Ohio, em 1930, e fui piloto da Marinha na Guerra da Coreia.",
+    "Fui piloto de testes do avião-foguete X-15.",
+    "Comandei a missão Apollo 11.",
+    "Em julho de 1969, fui o primeiro ser humano a pisar na Lua."
+   ],
+   "a": [
+    "armstrong"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "bust"
+   },
+   "src": [
+    "pt",
+    "Neil Armstrong",
+    [
+     "Apollo 11"
+    ]
+   ],
+   "x": "Antes da Lua, ele já tinha feito a primeira acoplagem de duas naves no espaço, na missão Gemini 8, em 1966."
+  },
+  {
+   "t": "Quem sou eu?",
+   "type": "player",
+   "clues": [
+    "Nasci em Londres, em 1889, e cresci na pobreza; minha mãe cantava em teatros de variedades.",
+    "Fui para os Estados Unidos com uma trupe de comédia e logo entrei no cinema mudo.",
+    "Meu personagem mais famoso usava chapéu-coco, bengala e um bigodinho.",
+    "Em 1940, ridicularizei Hitler no filme O Grande Ditador."
+   ],
+   "a": [
+    "chaplin"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "bust"
+   },
+   "src": [
+    "pt",
+    "Charlie Chaplin",
+    [
+     "Grande Ditador"
+    ]
+   ],
+   "x": "Além de atuar, ele escrevia, dirigia, produzia e compunha a música de muitos de seus filmes."
+  },
+  {
+   "t": "Quem sou eu?",
+   "type": "player",
+   "clues": [
+    "Nasci em Skopje, em 1910, numa família albanesa.",
+    "Tornei-me freira e fui dar aulas num colégio na Índia.",
+    "Fundei as Missionárias da Caridade, para cuidar dos mais pobres e dos doentes.",
+    "Recebi o Nobel da Paz em 1979 e fui proclamada santa em 2016."
+   ],
+   "a": [
+    "madre_teresa"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "bust"
+   },
+   "src": [
+    "pt",
+    "Madre Teresa de Calcutá",
+    [
+     "1979"
+    ]
+   ],
+   "x": "Seu nome de batismo era Anjezë Gonxhe Bojaxhiu; ela adotou o nome Teresa ao fazer os votos."
+  },
+  {
+   "t": "Quem sou eu?",
+   "type": "player",
+   "clues": [
+    "Nasci em Massachusetts, em 1917, numa família rica e numerosa.",
+    "Na Segunda Guerra, comandei uma lancha torpedeira que foi afundada no Pacífico.",
+    "Fui o primeiro católico eleito presidente de meu país.",
+    "Fui assassinado em Dallas, em novembro de 1963."
+   ],
+   "a": [
+    "kennedy"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "bust"
+   },
+   "src": [
+    "pt",
+    "John F. Kennedy",
+    [
+     "Dallas"
+    ]
+   ],
+   "x": "Aos 43 anos, foi o mais jovem presidente eleito dos Estados Unidos."
+  },
+  {
+   "t": "Quem sou eu?",
+   "type": "player",
+   "clues": [
+    "Governei como regente porque minha mãe, a rainha, foi considerada incapaz.",
+    "Para escapar das tropas de Napoleão, atravessei o Atlântico com a corte.",
+    "Abri os portos do Brasil às nações amigas e criei o Banco do Brasil.",
+    "Em 1815, elevei o Brasil a Reino Unido a Portugal e Algarves."
+   ],
+   "a": [
+    "dom_joao_vi"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "bust"
+   },
+   "src": [
+    "pt",
+    "João VI de Portugal",
+    [
+     "1808"
+    ]
+   ],
+   "x": "Ele foi aclamado rei no Rio de Janeiro, em 1818, dois anos depois da morte de sua mãe, D. Maria I."
+  },
+  {
+   "t": "Quem sou eu?",
+   "type": "player",
+   "clues": [
+    "Nasci em Rosário, na Argentina, em 1928, e estudei Medicina.",
+    "Atravessei a América do Sul de motocicleta, numa viagem que virou livro e filme.",
+    "Lutei na guerrilha de Sierra Maestra ao lado de Fidel Castro.",
+    "Fui capturado e executado na Bolívia, em 1967."
+   ],
+   "a": [
+    "che"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "bust"
+   },
+   "src": [
+    "pt",
+    "Che Guevara",
+    [
+     "Bolívia"
+    ]
+   ],
+   "x": "O apelido vem da interjeição “che”, muito usada pelos argentinos para chamar alguém."
+  },
+  {
+   "t": "Quem sou eu?",
+   "type": "player",
+   "clues": [
+    "Nasci no Rio de Janeiro, em 1907, e vivi até quase os 105 anos.",
+    "Projetei o conjunto da Pampulha, em Belo Horizonte.",
+    "Participei do projeto da sede da ONU, em Nova York.",
+    "Desenhei o Congresso Nacional e outros prédios de Brasília, inaugurada em 1960."
+   ],
+   "a": [
+    "niemeyer"
+   ],
+   "d": 1,
+   "art": {
+    "icon": "bust"
+   },
+   "src": [
+    "pt",
+    "Oscar Niemeyer",
+    [
+     "Pampulha"
+    ]
+   ],
+   "x": "Ele recebeu o Prêmio Pritzker, o mais importante da arquitetura, em 1988."
+  },
+  {
+   "t": "Quem sou eu?",
+   "type": "player",
+   "clues": [
+    "Nasci em Atenas, numa família aristocrática, por volta de 428 a.C.",
+    "Fui discípulo de um filósofo condenado a beber cicuta.",
+    "Escrevi diálogos, como A República, em que conto o mito da caverna.",
+    "Fundei a Academia, onde estudou Aristóteles."
+   ],
+   "a": [
+    "platao"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "bust"
+   },
+   "src": [
+    "pt",
+    "Platão",
+    [
+     "Academia"
+    ]
+   ],
+   "x": "A Academia funcionou por séculos, e seu nome deu origem à palavra que usamos para escolas e instituições de ensino."
+  },
+  {
+   "t": "Quem sou eu?",
+   "type": "player",
+   "clues": [
+    "Nasci em Siracusa, na Sicília, no século III a.C.",
+    "Calculei com ótima aproximação a razão entre a circunferência e o diâmetro.",
+    "Segundo a lenda, saí do banho gritando “Eureka!”.",
+    "Fui morto por um soldado romano durante o cerco de minha cidade."
+   ],
+   "a": [
+    "arquimedes"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "bust"
+   },
+   "src": [
+    "pt",
+    "Arquimedes",
+    [
+     "Siracusa"
+    ]
+   ],
+   "x": "Durante o cerco, ele teria inventado máquinas para defender a cidade, como uma garra que erguia os navios inimigos."
+  },
+  {
+   "t": "Quem sou eu?",
+   "type": "player",
+   "clues": [
+    "Fui rei de uma cidade grega famosa pela disciplina militar.",
+    "Fui casado com Gorgo, filha de um rei anterior.",
+    "Em 480 a.C., marchei para enfrentar o exército de Xerxes.",
+    "Morri com meus trezentos guerreiros no desfiladeiro das Termópilas."
+   ],
+   "a": [
+    "leonidas"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "bust"
+   },
+   "src": [
+    "pt",
+    "Leônidas I",
+    [
+     "Termópilas"
+    ]
+   ],
+   "x": "Além dos trezentos espartanos, milhares de soldados de outras cidades gregas lutaram nas Termópilas."
+  },
+  {
+   "t": "Quem sou eu?",
+   "type": "player",
+   "clues": [
+    "Subi ao trono aos 16 anos, adotado por meu tio-avô.",
+    "Tive como tutor o filósofo Sêneca.",
+    "Mandei matar minha própria mãe, Agripina.",
+    "Fui acusado de causar o grande incêndio de Roma, em 64 d.C."
+   ],
+   "a": [
+    "nero"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "bust"
+   },
+   "src": [
+    "pt",
+    "Nero",
+    [
+     "Sêneca"
+    ]
+   ],
+   "x": "Ele culpou os cristãos pelo incêndio e deu início à primeira grande perseguição contra eles em Roma."
+  },
+  {
+   "t": "Quem sou eu?",
+   "type": "player",
+   "clues": [
+    "Nasci em Mainz, por volta de 1400, e trabalhei com metais.",
+    "Desenvolvi tipos móveis de metal e uma tinta à base de óleo.",
+    "Adaptei uma prensa, parecida com as de fazer vinho, para imprimir.",
+    "Por volta de 1455, imprimi uma Bíblia de 42 linhas por página."
+   ],
+   "a": [
+    "gutenberg"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "bust"
+   },
+   "src": [
+    "pt",
+    "Johannes Gutenberg",
+    [
+     "Mainz"
+    ]
+   ],
+   "x": "Restam menos de cinquenta exemplares, completos ou não, de sua famosa Bíblia."
+  },
+  {
+   "t": "Quem sou eu?",
+   "type": "player",
+   "clues": [
+    "Nasci em Toruń, em 1473, e estudei na Itália.",
+    "Fui cônego de uma catedral e também cuidei de medicina e de economia.",
+    "Defendi que a Terra e os planetas giram em torno do Sol.",
+    "Meu livro sobre as revoluções das esferas celestes saiu em 1543, ano de minha morte."
+   ],
+   "a": [
+    "copernico"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "bust"
+   },
+   "src": [
+    "pt",
+    "Nicolau Copérnico",
+    [
+     "1543"
+    ]
+   ],
+   "x": "Ele também formulou uma ideia que mais tarde virou a “Lei de Gresham”: a moeda ruim expulsa a boa de circulação."
+  },
+  {
+   "t": "Quem sou eu?",
+   "type": "player",
+   "clues": [
+    "Nasci em Viena, em 1755, filha de uma imperatriz.",
+    "Casei aos 14 anos com o herdeiro do trono francês.",
+    "Atribuíram-me, sem prova, a frase “que comam brioches”.",
+    "Fui guilhotinada em Paris, em outubro de 1793."
+   ],
+   "a": [
+    "maria_antonieta"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "bust"
+   },
+   "src": [
+    "pt",
+    "Maria Antonieta",
+    [
+     "1793"
+    ]
+   ],
+   "x": "Ela foi a 15.ª dos 16 filhos da imperatriz Maria Teresa da Áustria."
+  },
+  {
+   "t": "Quem sou eu?",
+   "type": "player",
+   "clues": [
+    "Nasci em Ohio, em 1847, e quase não frequentei a escola.",
+    "Quando garoto, vendi jornais em trens e depois fui telegrafista.",
+    "Montei um laboratório em Menlo Park e registrei mais de mil patentes.",
+    "Inventei o fonógrafo e aperfeiçoei a lâmpada incandescente."
+   ],
+   "a": [
+    "edison"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "bust"
+   },
+   "src": [
+    "pt",
+    "Thomas Edison",
+    [
+     "Menlo Park"
+    ]
+   ],
+   "x": "Por causa do laboratório em Menlo Park, ele ganhou o apelido de “O Feiticeiro de Menlo Park”."
+  },
+  {
+   "t": "Quem sou eu?",
+   "type": "player",
+   "clues": [
+    "Nasci no interior de São Paulo, em 1886, filha de fazendeiros.",
+    "Estudei pintura em Paris com mestres ligados ao cubismo, como Fernand Léger.",
+    "Fui casada com o escritor Oswald de Andrade.",
+    "Pintei o Abaporu, que inspirou o Movimento Antropófago."
+   ],
+   "a": [
+    "tarsila"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "bust"
+   },
+   "src": [
+    "pt",
+    "Tarsila do Amaral",
+    [
+     "Abaporu"
+    ]
+   ],
+   "x": "“Abaporu” vem do tupi e quer dizer “homem que come gente”."
+  },
+  {
+   "t": "Quem sou eu?",
+   "type": "player",
+   "clues": [
+    "Nasci em São Luiz do Paraitinga, em 1872, e formei-me médico no Rio de Janeiro.",
+    "Aperfeiçoei meus estudos no Instituto Pasteur, em Paris.",
+    "Comandei campanhas contra a febre amarela e a peste bubônica no Rio.",
+    "A vacinação obrigatória que defendi provocou uma revolta em 1904."
+   ],
+   "a": [
+    "oswaldo_cruz"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "bust"
+   },
+   "src": [
+    "pt",
+    "Oswaldo Cruz",
+    [
+     "1904"
+    ]
+   ],
+   "x": "O instituto que ele dirigiu, em Manguinhos, hoje leva seu nome e deu origem à Fiocruz."
+  },
+  {
+   "t": "Quem sou eu?",
+   "type": "player",
+   "clues": [
+    "Nasci em 1926, filho de um rico fazendeiro, e formei-me advogado.",
+    "Liderei um ataque fracassado a um quartel, em 26 de julho de 1953.",
+    "Voltei do exílio a bordo do iate Granma e lutei em Sierra Maestra.",
+    "Governei uma ilha do Caribe por quase cinquenta anos."
+   ],
+   "a": [
+    "fidel"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "bust"
+   },
+   "src": [
+    "pt",
+    "Fidel Castro",
+    [
+     "Granma"
+    ]
+   ],
+   "x": "O nome do iate, Granma, virou o nome do jornal oficial do Partido Comunista Cubano."
+  },
+  {
+   "t": "Quem sou eu?",
+   "type": "player",
+   "clues": [
+    "Nasci em Santa Catarina, em 1821.",
+    "Ainda casada com outro homem, parti com um revolucionário estrangeiro, em 1839.",
+    "Lutei na Revolução Farroupilha e, depois, na Itália.",
+    "Sou lembrada como a “heroína dos dois mundos”."
+   ],
+   "a": [
+    "anita"
+   ],
+   "d": 2,
+   "art": {
+    "icon": "bust"
+   },
+   "src": [
+    "pt",
+    "Anita Garibaldi",
+    [
+     "Laguna"
+    ]
+   ],
+   "x": "Ela morreu em 1849, na Itália, durante a retirada após a queda da República Romana."
+  },
+  {
+   "t": "Quem sou eu?",
+   "type": "player",
+   "clues": [
+    "Nasci no século VI a.C., no pequeno estado de Lu.",
+    "Fui funcionário e, depois, mestre itinerante, cercado de discípulos.",
+    "Ensinei o respeito aos pais, aos ritos e aos ancestrais.",
+    "Meus ditos, reunidos nos Analectos, moldaram a China por dois mil anos."
+   ],
+   "a": [
+    "confucio"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "bust"
+   },
+   "src": [
+    "pt",
+    "Confúcio",
+    [
+     "Analectos"
+    ]
+   ],
+   "x": "Na dinastia Han, seus ensinamentos se tornaram a doutrina oficial do Estado chinês."
+  },
+  {
+   "t": "Quem sou eu?",
+   "type": "player",
+   "clues": [
+    "Nasci em Florença, em 1265.",
+    "Amei desde a infância uma jovem chamada Beatriz.",
+    "Fui exilado de minha cidade em 1302, por causa de disputas políticas.",
+    "Em meu poema mais famoso, atravesso o Inferno guiado por Virgílio."
+   ],
+   "a": [
+    "dante"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "bust"
+   },
+   "src": [
+    "pt",
+    "Dante Alighieri",
+    [
+     "Beatriz"
+    ]
+   ],
+   "x": "Ao escrever a Divina Comédia em toscano, e não em latim, ajudou a formar a língua italiana."
+  },
+  {
+   "t": "Quem sou eu?",
+   "type": "player",
+   "clues": [
+    "Nasci em Florença, em 1469.",
+    "Fui secretário e diplomata da república de minha cidade.",
+    "Quando os Médici voltaram ao poder, fui preso, torturado e afastado.",
+    "Escrevi um pequeno tratado sobre como conquistar e manter o poder."
+   ],
+   "a": [
+    "maquiavel"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "bust"
+   },
+   "src": [
+    "pt",
+    "Nicolau Maquiavel",
+    [
+     "O Príncipe"
+    ]
+   ],
+   "x": "O Príncipe só foi publicado em 1532, cinco anos depois da morte do autor."
+  },
+  {
+   "t": "Quem sou eu?",
+   "type": "player",
+   "clues": [
+    "Nasci em Eisenach, em 1685, numa família de músicos.",
+    "Tive vinte filhos, e vários deles também foram compositores.",
+    "Por 27 anos, dirigi a música da Igreja de São Tomé, em Leipzig.",
+    "Compus os Concertos de Brandemburgo e O Cravo Bem Temperado."
+   ],
+   "a": [
+    "bach"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "bust"
+   },
+   "src": [
+    "pt",
+    "Johann Sebastian Bach",
+    [
+     "Leipzig"
+    ]
+   ],
+   "x": "Depois de sua morte, sua obra ficou meio esquecida até ser redescoberta por Felix Mendelssohn, em 1829."
+  },
+  {
+   "t": "Quem sou eu?",
+   "type": "player",
+   "clues": [
+    "Nasci em 1815, numa família de nobres prussianos.",
+    "Disse que as grandes questões se decidem “a ferro e sangue”.",
+    "Conduzi meu país em guerras vitoriosas contra a Dinamarca, a Áustria e a França.",
+    "Fui o primeiro chanceler do Império Alemão, proclamado em Versalhes em 1871."
+   ],
+   "a": [
+    "bismarck"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "bust"
+   },
+   "src": [
+    "pt",
+    "Otto von Bismarck",
+    [
+     "1871"
+    ]
+   ],
+   "x": "Ele criou um dos primeiros sistemas de seguro social do mundo, com seguro-doença e aposentadoria."
+  },
+  {
+   "t": "Quem sou eu?",
+   "type": "player",
+   "clues": [
+    "Nasci em 1820, numa família inglesa rica que não queria que eu trabalhasse.",
+    "Recebi o nome da cidade italiana onde nasci.",
+    "Liderei enfermeiras num hospital militar durante a Guerra da Crimeia.",
+    "Os soldados me chamavam de “a dama da lâmpada”."
+   ],
+   "a": [
+    "nightingale"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "bust"
+   },
+   "src": [
+    "pt",
+    "Florence Nightingale",
+    [
+     "Crimeia"
+    ]
+   ],
+   "x": "Ela também foi pioneira da estatística e usou gráficos para mostrar que a maioria dos soldados morria de doenças."
+  },
+  {
+   "t": "Quem sou eu?",
+   "type": "player",
+   "clues": [
+    "Nasci em Mato Grosso, em 1865, e tinha ascendência indígena.",
+    "Estendi linhas telegráficas pelo sertão até a Amazônia.",
+    "Acompanhei o ex-presidente americano Theodore Roosevelt pelo rio da Dúvida.",
+    "Meu lema era “morrer, se preciso for; matar, nunca”."
+   ],
+   "a": [
+    "rondon"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "bust"
+   },
+   "src": [
+    "pt",
+    "Cândido Rondon",
+    [
+     "Roosevelt"
+    ]
+   ],
+   "x": "Ele foi o primeiro diretor do Serviço de Proteção aos Índios, criado em 1910."
+  },
+  {
+   "t": "Quem sou eu?",
+   "type": "player",
+   "clues": [
+    "Nasci livre em Salvador, em 1830, filho de uma africana liberta.",
+    "Aos dez anos, fui vendido como escravo por meu próprio pai.",
+    "Aprendi a ler aos 17 anos e consegui provar que tinha nascido livre.",
+    "Sem diploma, defendi escravizados nos tribunais e libertei centenas deles."
+   ],
+   "a": [
+    "luis_gama"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "bust"
+   },
+   "src": [
+    "pt",
+    "Luís Gama",
+    [
+     "1830"
+    ]
+   ],
+   "x": "Em 2015, a OAB lhe concedeu, postumamente, o título de advogado."
+  },
+  {
+   "t": "Quem sou eu?",
+   "type": "player",
+   "clues": [
+    "Nasci em Londres, em 1912, e estudei Matemática em Cambridge.",
+    "Em 1936, descrevi uma máquina teórica capaz de executar qualquer cálculo.",
+    "Na Segunda Guerra, ajudei a quebrar os códigos da máquina Enigma.",
+    "Propus um teste para saber se uma máquina consegue pensar."
+   ],
+   "a": [
+    "turing"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "bust"
+   },
+   "src": [
+    "pt",
+    "Alan Turing",
+    [
+     "Enigma"
+    ]
+   ],
+   "x": "O prêmio mais importante da computação, criado em 1966, leva o seu nome."
+  },
+  {
+   "t": "Quem sou eu?",
+   "type": "player",
+   "clues": [
+    "Nasci em Yorkshire, em 1728, filho de um lavrador, e comecei na marinha mercante.",
+    "Observei a passagem de Vênus diante do Sol a partir do Taiti, em 1769.",
+    "Mapeei a costa da Nova Zelândia e a costa leste da Austrália.",
+    "Fui morto no Havaí, em 1779, na minha terceira grande viagem."
+   ],
+   "a": [
+    "cook"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "bust"
+   },
+   "src": [
+    "pt",
+    "James Cook",
+    [
+     "1779"
+    ]
+   ],
+   "x": "Em suas viagens, ele combateu o escorbuto da tripulação com chucrute e frutas frescas."
+  },
+  {
+   "t": "Quem sou eu?",
+   "type": "player",
+   "clues": [
+    "Nasci no Rio de Janeiro, em 1847.",
+    "Separei-me do marido e passei a me sustentar dando aulas de piano.",
+    "Fui a primeira mulher a reger uma orquestra no Brasil.",
+    "Compus a marchinha “Ó Abre Alas”, para o Carnaval de 1899."
+   ],
+   "a": [
+    "chiquinha"
+   ],
+   "d": 3,
+   "art": {
+    "icon": "bust"
+   },
+   "src": [
+    "pt",
+    "Chiquinha Gonzaga",
+    [
+     "Abre Alas"
+    ]
+   ],
+   "x": "Ela também lutou pela abolição e vendeu partituras para comprar a alforria de um músico escravizado."
+  },
+  {
+   "t": "Quem sou eu?",
+   "type": "player",
+   "clues": [
+    "Fui filha de um faraó e esposa de outro.",
+    "Comecei como regente de meu enteado e acabei coroada faraó.",
+    "Fui representada com barba postiça, como os faraós homens.",
+    "Enviei uma expedição à terra de Punt e construí um templo em Deir el-Bahari."
+   ],
+   "a": [
+    "hatexepsute"
+   ],
+   "d": 4,
+   "art": {
+    "icon": "bust"
+   },
+   "src": [
+    "pt",
+    "Hatexepsute",
+    [
+     "Punt"
+    ]
+   ],
+   "x": "Depois de sua morte, muitas de suas imagens foram apagadas dos monumentos."
+  },
+  {
+   "t": "Quem sou eu?",
+   "type": "player",
+   "clues": [
+    "Nasci numa família de camponeses e fui adotado por meu tio, que chegou ao trono.",
+    "Casei-me com Teodora, uma ex-atriz.",
+    "Mandei reunir todo o direito romano num grande código.",
+    "Reconstruí a igreja de Santa Sofia, em Constantinopla."
+   ],
+   "a": [
+    "justiniano"
+   ],
+   "d": 4,
+   "art": {
+    "icon": "bust"
+   },
+   "src": [
+    "pt",
+    "Justiniano I",
+    [
+     "Teodora"
+    ]
+   ],
+   "x": "Na Revolta de Nika, em 532, Teodora o convenceu a não fugir da cidade."
+  },
+  {
+   "t": "Quem sou eu?",
+   "type": "player",
+   "clues": [
+    "Fui filho de um soberano que governava os Andes.",
+    "Venci meu meio-irmão Huáscar numa guerra civil.",
+    "Fui capturado pelos espanhóis em Cajamarca, em 1532.",
+    "Enchi um quarto de ouro como resgate, mas fui executado mesmo assim."
+   ],
+   "a": [
+    "atahualpa"
+   ],
+   "d": 4,
+   "art": {
+    "icon": "bust"
+   },
+   "src": [
+    "pt",
+    "Atahualpa",
+    [
+     "Cajamarca"
+    ]
+   ],
+   "x": "Em Cajamarca, poucas centenas de espanhóis capturaram o soberano no meio de milhares de soldados."
+  },
+  {
+   "t": "Quem sou eu?",
+   "type": "player",
+   "clues": [
+    "Nasci por volta de 1583, filha de um rei na África Centro-Ocidental.",
+    "Fui batizada como Ana de Sousa, durante uma missão diplomática em Luanda.",
+    "Conta-se que, sem cadeira, me sentei sobre uma serva para negociar com o governador português.",
+    "Governei Ndongo e Matamba e resisti aos portugueses por décadas."
+   ],
+   "a": [
+    "nzinga"
+   ],
+   "d": 4,
+   "art": {
+    "icon": "bust"
+   },
+   "src": [
+    "en",
+    "Nzinga of Ndongo and Matamba",
+    [
+     "Matamba",
+     "Ana de Sousa"
+    ]
+   ],
+   "x": "Ela governou até morrer, em 1663, já com mais de 80 anos."
+  },
+  {
+   "t": "Quem sou eu?",
+   "type": "player",
+   "clues": [
+    "Nasci na Noruega, em 1872.",
+    "Fui o primeiro a atravessar por mar a Passagem do Noroeste.",
+    "Venci uma corrida contra uma expedição britânica rumo ao sul.",
+    "Cheguei ao Polo Sul em dezembro de 1911."
+   ],
+   "a": [
+    "amundsen"
+   ],
+   "d": 4,
+   "art": {
+    "icon": "bust"
+   },
+   "src": [
+    "pt",
+    "Roald Amundsen",
+    [
+     "1911"
+    ]
+   ],
+   "x": "Ele desapareceu em 1928, quando voava para resgatar a tripulação de um dirigível perdido no Ártico."
+  },
+  {
+   "t": "Quem sou eu?",
+   "type": "player",
+   "clues": [
+    "Nasci em Manchester, em 1858, numa família de ativistas políticos.",
+    "Em 1903, fundei uma união de mulheres cujo lema era “Ações, não palavras”.",
+    "Fui presa várias vezes e fiz greve de fome.",
+    "Liderei as sufragistas britânicas na luta pelo voto feminino."
+   ],
+   "a": [
+    "pankhurst"
+   ],
+   "d": 4,
+   "art": {
+    "icon": "bust"
+   },
+   "src": [
+    "pt",
+    "Emmeline Pankhurst",
+    [
+     "1903"
+    ]
+   ],
+   "x": "Ela morreu em junho de 1928, semanas antes de as britânicas conquistarem o voto em igualdade com os homens."
+  },
+  {
+   "t": "Quem sou eu?",
+   "type": "player",
+   "clues": [
+    "Nasci no sul da Alemanha, em 1571.",
+    "Fui assistente do astrônomo dinamarquês Tycho Brahe, em Praga.",
+    "Defendi minha mãe, acusada de bruxaria.",
+    "Descobri que os planetas giram em órbitas elípticas."
+   ],
+   "a": [
+    "kepler"
+   ],
+   "d": 4,
+   "art": {
+    "icon": "bust"
+   },
+   "src": [
+    "pt",
+    "Johannes Kepler",
+    [
+     "Tycho Brahe"
+    ]
+   ],
+   "x": "Um telescópio espacial da NASA, lançado em 2009 para procurar planetas fora do Sistema Solar, recebeu seu nome."
+  },
+  {
+   "t": "Quem sou eu?",
+   "type": "player",
+   "clues": [
+    "Trabalhei em Bagdá, na Casa da Sabedoria, no século IX.",
+    "Ajudei a difundir os algarismos indianos, que hoje chamamos de arábicos.",
+    "Um livro meu sobre “al-jabr” deu nome à álgebra.",
+    "Meu nome, em latim, deu origem à palavra “algoritmo”."
+   ],
+   "a": [
+    "al_khwarizmi"
+   ],
+   "d": 4,
+   "art": {
+    "icon": "bust"
+   },
+   "src": [
+    "pt",
+    "Al-Khwarizmi",
+    [
+     "álgebra"
+    ]
+   ],
+   "x": "Ele também trabalhou em astronomia e geografia, corrigindo dados herdados de Ptolomeu."
+  },
+  {
+   "t": "Quem sou eu?",
+   "type": "player",
+   "clues": [
+    "Nasci perto de Samarcanda, em 1336.",
+    "Ferimentos me deixaram manco do lado direito.",
+    "Derrotei e capturei o sultão otomano Bajazeto em Ancara, em 1402.",
+    "Morri em 1405, quando marchava para invadir a China."
+   ],
+   "a": [
+    "tamerlao"
+   ],
+   "d": 5,
+   "art": {
+    "icon": "bust"
+   },
+   "src": [
+    "pt",
+    "Tamerlão",
+    [
+     "Ancara"
+    ]
+   ],
+   "x": "Seu túmulo em Samarcanda, o Gur-e Amir, inspirou mais tarde a arquitetura do Taj Mahal."
+  },
+  {
+   "t": "Quem sou eu?",
+   "type": "player",
+   "clues": [
+    "Vivi em Alexandria, no Egito, quando ele era governado por Roma.",
+    "Fui filha do matemático Téon.",
+    "Ensinei filosofia, matemática e astronomia a alunos pagãos e cristãos.",
+    "Fui assassinada por uma multidão de cristãos, em 415."
+   ],
+   "a": [
+    "hipacia"
+   ],
+   "d": 5,
+   "art": {
+    "icon": "bust"
+   },
+   "src": [
+    "pt",
+    "Hipátia",
+    [
+     "415"
+    ]
+   ],
+   "x": "Ela é a primeira mulher matemática cuja vida é razoavelmente bem documentada."
+  },
+  {
+   "t": "Quem sou eu?",
+   "type": "player",
+   "clues": [
+    "Nasci em Yunnan, numa família muçulmana, em 1371.",
+    "Fui capturado ainda menino e servi como eunuco a um príncipe que depois virou imperador.",
+    "Comandei sete grandes expedições marítimas, com centenas de navios.",
+    "Minhas frotas chegaram à costa oriental da África décadas antes de Vasco da Gama chegar à Índia."
+   ],
+   "a": [
+    "zheng_he"
+   ],
+   "d": 5,
+   "art": {
+    "icon": "bust"
+   },
+   "src": [
+    "pt",
+    "Zheng He",
+    [
+     "Yongle"
+    ]
+   ],
+   "x": "Depois da última viagem, em 1433, a corte Ming abandonou as grandes expedições marítimas."
+  }
+ ]
+}

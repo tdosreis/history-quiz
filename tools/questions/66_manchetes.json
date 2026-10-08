@@ -1,0 +1,697 @@
+{
+ "id": "manchetes",
+ "name": "Manchetes",
+ "tag": "A primeira página do dia",
+ "col": "#37474F",
+ "diff": "Variado",
+ "emoji": "📰",
+ "qs": [
+  {
+   "t": "Em que ano saiu esta manchete?",
+   "type": "txt",
+   "choices": [
+    "1822",
+    "1808",
+    "1815",
+    "1817",
+    "1821",
+    "1824"
+   ],
+   "news": {
+    "h": "Brasil rompe com Portugal e declara sua independência",
+    "paper": "Diário do Rio",
+    "sub": "Às margens do riacho Ipiranga, em São Paulo, o príncipe regente proclama o fim dos laços com Lisboa"
+   },
+   "a": [
+    "1822"
+   ],
+   "d": 1,
+   "src": [
+    "pt",
+    "Independência do Brasil",
+    [
+     "1822"
+    ]
+   ],
+   "x": "Dom Pedro foi aclamado imperador em 12 de outubro daquele ano e coroado em 1º de dezembro, no Rio de Janeiro."
+  },
+  {
+   "t": "Em que ano saiu esta manchete?",
+   "type": "txt",
+   "choices": [
+    "1950",
+    "1938",
+    "1954",
+    "1958",
+    "1962",
+    "1966"
+   ],
+   "news": {
+    "h": "Uruguai vence no Maracanã e fica com a Copa do Mundo",
+    "paper": "Diário Esportivo",
+    "sub": "Diante de cerca de 200 mil pessoas, a seleção brasileira perde de virada, por 2 a 1, o jogo decisivo"
+   },
+   "a": [
+    "1950"
+   ],
+   "d": 1,
+   "src": [
+    "pt",
+    "Copa do Mundo FIFA de 1950",
+    [
+     "Ghiggia"
+    ]
+   ],
+   "x": "O gol da virada foi de Alcides Ghiggia, a 11 minutos do fim; a derrota ficou conhecida como Maracanaço."
+  },
+  {
+   "t": "Em que ano saiu esta manchete?",
+   "type": "txt",
+   "choices": [
+    "1970",
+    "1958",
+    "1962",
+    "1966",
+    "1974",
+    "1982"
+   ],
+   "news": {
+    "h": "Brasil é tricampeão e fica com a Taça Jules Rimet para sempre",
+    "paper": "Jornal dos Esportes",
+    "sub": "No Estádio Azteca, a seleção vence a Itália por 4 a 1 na final da Copa do México"
+   },
+   "a": [
+    "1970"
+   ],
+   "d": 1,
+   "src": [
+    "pt",
+    "Copa do Mundo FIFA de 1970",
+    [
+     "Jules Rimet"
+    ]
+   ],
+   "x": "A taça ficou com o Brasil por ser o primeiro tricampeão, mas foi roubada da sede da CBF, no Rio, em 1983, e nunca foi recuperada."
+  },
+  {
+   "t": "De qual cientista é a teoria confirmada nesta manchete?",
+   "type": "player",
+   "news": {
+    "h": "Eclipse confirma a teoria da relatividade",
+    "paper": "Correio Científico",
+    "sub": "Fotos tiradas em Sobral, no Ceará, e na ilha do Príncipe mostram a luz das estrelas desviada pelo Sol"
+   },
+   "a": [
+    "einstein"
+   ],
+   "d": 1,
+   "src": [
+    "en",
+    "Eddington experiment",
+    [
+     "Sobral"
+    ]
+   ],
+   "x": "O eclipse foi em 29 de maio de 1919; quando o resultado foi anunciado, em novembro, o físico virou celebridade mundial."
+  },
+  {
+   "t": "Em que ano saiu esta manchete?",
+   "type": "txt",
+   "choices": [
+    "1961",
+    "1949",
+    "1953",
+    "1956",
+    "1958",
+    "1963"
+   ],
+   "news": {
+    "h": "Arame farpado divide Berlim da noite para o dia",
+    "paper": "Diário de Berlim",
+    "sub": "Soldados da Alemanha Oriental fecham a passagem entre os setores da cidade; famílias ficam separadas"
+   },
+   "a": [
+    "1961"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Muro de Berlim",
+    [
+     "1961"
+    ]
+   ],
+   "x": "A cerca de arame foi erguida em poucas horas, na madrugada de 13 de agosto; nos dias seguintes, começou a subir o muro de concreto."
+  },
+  {
+   "t": "Em que ano saiu esta manchete?",
+   "type": "txt",
+   "choices": [
+    "1953",
+    "1939",
+    "1945",
+    "1950",
+    "1956",
+    "1961"
+   ],
+   "news": {
+    "h": "Nasce a Petrobras: \"o petróleo é nosso\"",
+    "paper": "Correio Nacional",
+    "sub": "Lei sancionada pelo presidente cria a estatal que terá o monopólio da exploração de petróleo no país"
+   },
+   "a": [
+    "1953"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Petrobras",
+    [
+     "1953"
+    ]
+   ],
+   "x": "A lei foi sancionada por Getúlio Vargas em 3 de outubro, depois de uma campanha popular que mobilizou estudantes, militares e intelectuais."
+  },
+  {
+   "t": "Quem é a rainha desta manchete?",
+   "type": "player",
+   "news": {
+    "h": "Morre a rainha que deu nome a uma era",
+    "paper": "Correio de Londres",
+    "sub": "Depois de mais de seis décadas no trono, a monarca morre na ilha de Wight; o filho, Eduardo VII, assume a coroa"
+   },
+   "a": [
+    "victoria"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Vitória do Reino Unido",
+    [
+     "1901"
+    ]
+   ],
+   "x": "Ela teve nove filhos, e tantos netos casados em cortes estrangeiras que ganhou o apelido de \"avó da Europa\"."
+  },
+  {
+   "t": "Quem é o líder desta manchete?",
+   "type": "player",
+   "news": {
+    "h": "Líder dos direitos civis é morto a tiros em Memphis",
+    "paper": "Diário de Washington",
+    "sub": "O pastor batista, Nobel da Paz de 1964, estava na sacada de um motel; tinha ido à cidade apoiar uma greve de lixeiros"
+   },
+   "a": [
+    "mlk"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Martin Luther King Jr.",
+    [
+     "Memphis"
+    ]
+   ],
+   "x": "Na véspera, num discurso, ele dissera ter visto \"a terra prometida\" e que talvez não chegasse lá com seus ouvintes."
+  },
+  {
+   "t": "Quem é o guerrilheiro desta manchete?",
+   "type": "player",
+   "news": {
+    "h": "Guerrilheiro argentino é morto na Bolívia",
+    "paper": "Jornal das Américas",
+    "sub": "Capturado pelo Exército boliviano perto de La Higuera, o ex-ministro do governo cubano foi executado no dia seguinte"
+   },
+   "a": [
+    "che"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Che Guevara",
+    [
+     "Bolívia"
+    ]
+   ],
+   "x": "Seus restos só foram localizados em 1997, numa vala perto da pista de pouso de Vallegrande, e levados para Santa Clara, em Cuba."
+  },
+  {
+   "t": "Quem é o médico desta manchete?",
+   "type": "player",
+   "news": {
+    "h": "Médico vienense de 82 anos troca a Áustria anexada por Londres",
+    "paper": "Gazeta de Viena",
+    "sub": "O criador da psicanálise deixa a cidade com a família, fugindo da perseguição nazista"
+   },
+   "a": [
+    "freud"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Sigmund Freud",
+    [
+     "1938"
+    ]
+   ],
+   "x": "Ele morreu em Londres no ano seguinte, em setembro de 1939; a casa onde passou seu último ano virou o Museu Freud."
+  },
+  {
+   "t": "Quem é o general aclamado nesta manchete?",
+   "type": "player",
+   "news": {
+    "h": "General desfila pelos Champs-Élysées na Paris libertada",
+    "paper": "Le Courrier de Paris",
+    "sub": "Um dia depois da rendição alemã na cidade, ele caminha do Arco do Triunfo à praça da Concórdia sob aplausos"
+   },
+   "a": [
+    "de_gaulle"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Libertação de Paris",
+    [
+     "1944"
+    ]
+   ],
+   "x": "Na noite da libertação, no Hôtel de Ville, ele discursou: \"Paris ultrajada! Paris quebrada! Paris martirizada! Mas Paris libertada!\""
+  },
+  {
+   "t": "Quem é o revolucionário desta manchete?",
+   "type": "player",
+   "news": {
+    "h": "Exilado volta à Rússia e é recebido por multidão em Petrogrado",
+    "paper": "Jornal do Norte",
+    "sub": "O líder bolchevique atravessou a Alemanha num trem lacrado e desembarcou na Estação Finlândia"
+   },
+   "a": [
+    "lenin"
+   ],
+   "d": 2,
+   "src": [
+    "en",
+    "Finland Station",
+    [
+     "Lenin"
+    ]
+   ],
+   "x": "Os alemães facilitaram a viagem esperando que ele tirasse a Rússia da guerra, o que de fato aconteceu meses depois."
+  },
+  {
+   "t": "Quem é o premiado desta manchete?",
+   "type": "player",
+   "news": {
+    "h": "Primeiro-ministro britânico ganha o Nobel de Literatura",
+    "paper": "Diário de Estocolmo",
+    "sub": "A Academia Sueca premia suas memórias da Segunda Guerra Mundial e seus discursos"
+   },
+   "a": [
+    "churchill"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Winston Churchill",
+    [
+     "Nobel"
+    ]
+   ],
+   "x": "Ocupado com uma conferência internacional nas Bermudas, ele não foi a Estocolmo: a esposa, Clementine, recebeu o prêmio em seu lugar."
+  },
+  {
+   "t": "Em que ano saiu esta manchete?",
+   "type": "txt",
+   "choices": [
+    "1974",
+    "1968",
+    "1970",
+    "1972",
+    "1976",
+    "1980"
+   ],
+   "news": {
+    "h": "Cravos nos fuzis: cai a ditadura em Portugal",
+    "paper": "Diário de Lisboa",
+    "sub": "Capitães do Movimento das Forças Armadas derrubam o regime do Estado Novo quase sem disparar um tiro"
+   },
+   "a": [
+    "1974"
+   ],
+   "d": 3,
+   "src": [
+    "pt",
+    "Revolução dos Cravos",
+    [
+     "Grândola"
+    ]
+   ],
+   "x": "A senha para as tropas saírem dos quartéis foi a canção \"Grândola, Vila Morena\", transmitida pelo rádio pouco depois da meia-noite de 25 de abril."
+  },
+  {
+   "t": "Em que ano saiu esta manchete?",
+   "type": "txt",
+   "choices": [
+    "1937",
+    "1925",
+    "1929",
+    "1933",
+    "1941",
+    "1946"
+   ],
+   "news": {
+    "h": "Dirigível gigante pega fogo ao pousar nos Estados Unidos",
+    "paper": "The Morning Ledger",
+    "sub": "O Hindenburg explode em Lakehurst, Nova Jersey, diante de repórteres e câmeras de cinema"
+   },
+   "a": [
+    "1937"
+   ],
+   "d": 3,
+   "src": [
+    "en",
+    "Hindenburg disaster",
+    [
+     "Lakehurst"
+    ]
+   ],
+   "x": "Das 97 pessoas a bordo, 35 morreram; a tragédia encerrou a era dos grandes dirigíveis de passageiros."
+  },
+  {
+   "t": "Em que ano saiu esta manchete?",
+   "type": "txt",
+   "choices": [
+    "1975",
+    "1961",
+    "1968",
+    "1971",
+    "1974",
+    "1979"
+   ],
+   "news": {
+    "h": "Angola proclama sua independência",
+    "paper": "Jornal de Luanda",
+    "sub": "Em Luanda, Agostinho Neto anuncia o nascimento da nova república, em meio à guerra civil"
+   },
+   "a": [
+    "1975"
+   ],
+   "d": 3,
+   "src": [
+    "pt",
+    "Angola",
+    [
+     "1975"
+    ]
+   ],
+   "x": "No mesmo ano ficaram independentes Moçambique, Cabo Verde e São Tomé e Príncipe; o Brasil foi o primeiro país a reconhecer a independência angolana."
+  },
+  {
+   "t": "Em que ano saiu esta manchete?",
+   "type": "txt",
+   "choices": [
+    "1936",
+    "1924",
+    "1928",
+    "1932",
+    "1948",
+    "1952"
+   ],
+   "news": {
+    "h": "Atleta negro americano conquista quatro medalhas de ouro em Berlim",
+    "paper": "Gazeta Olímpica",
+    "sub": "Diante das tribunas nazistas, ele vence os 100 m, os 200 m, o salto em distância e o revezamento"
+   },
+   "a": [
+    "1936"
+   ],
+   "d": 3,
+   "src": [
+    "pt",
+    "Jesse Owens",
+    [
+     "1936"
+    ]
+   ],
+   "x": "O campeão, Jesse Owens, recebeu em 1976 a Medalha Presidencial da Liberdade, uma das maiores honrarias civis dos Estados Unidos."
+  },
+  {
+   "t": "Em que ano saiu esta manchete?",
+   "type": "txt",
+   "choices": [
+    "1986",
+    "1979",
+    "1981",
+    "1983",
+    "1988",
+    "1990"
+   ],
+   "news": {
+    "h": "Ônibus espacial explode 73 segundos depois do lançamento",
+    "paper": "Diário da Flórida",
+    "sub": "Os sete tripulantes do Challenger morrem; entre eles estava uma professora que daria aulas do espaço"
+   },
+   "a": [
+    "1986"
+   ],
+   "d": 3,
+   "src": [
+    "en",
+    "Space Shuttle Challenger disaster",
+    [
+     "O-ring"
+    ]
+   ],
+   "x": "A causa foi a falha de um anel de vedação num dos foguetes laterais, endurecido pelo frio daquela manhã."
+  },
+  {
+   "t": "Quem é o chanceler desta manchete?",
+   "type": "player",
+   "news": {
+    "h": "Jovem Kaiser força a saída do chanceler que unificou a Alemanha",
+    "paper": "Berliner Abendblatt",
+    "sub": "Depois de quase 20 anos à frente do governo imperial, o velho estadista prussiano entrega o cargo"
+   },
+   "a": [
+    "bismarck"
+   ],
+   "d": 3,
+   "src": [
+    "pt",
+    "Otto von Bismarck",
+    [
+     "1890"
+    ]
+   ],
+   "x": "A revista inglesa Punch publicou uma charge famosa da saída, \"Dispensando o piloto\", com o velho chanceler descendo de um navio."
+  },
+  {
+   "t": "Quem é o líder desta manchete?",
+   "type": "player",
+   "news": {
+    "h": "Em Hanói, líder revolucionário proclama a independência do Vietnã",
+    "paper": "Correio do Oriente",
+    "sub": "Diante de uma multidão na praça Ba Dinh, ele cita a Declaração de Independência dos Estados Unidos"
+   },
+   "a": [
+    "ho_chi_minh"
+   ],
+   "d": 3,
+   "src": [
+    "pt",
+    "Ho Chi Minh",
+    [
+     "1945"
+    ]
+   ],
+   "x": "A guerra contra os franceses só terminaria em 1954, com a vitória vietnamita em Dien Bien Phu."
+  },
+  {
+   "t": "Quem é o escritor homenageado nesta manchete?",
+   "type": "player",
+   "news": {
+    "h": "Dois milhões de pessoas acompanham o poeta até o Panteão",
+    "paper": "Le Petit Journal",
+    "sub": "Depois de passar a noite sob o Arco do Triunfo, o caixão do velho romancista recebe funeral de Estado"
+   },
+   "a": [
+    "victor_hugo"
+   ],
+   "d": 3,
+   "src": [
+    "en",
+    "Victor Hugo",
+    [
+     "Panthéon"
+    ]
+   ],
+   "x": "Ele pediu em testamento para ser levado no \"carro fúnebre dos pobres\", e assim atravessou Paris."
+  },
+  {
+   "t": "Em que ano saiu esta manchete?",
+   "type": "txt",
+   "choices": [
+    "1927",
+    "1909",
+    "1915",
+    "1921",
+    "1935",
+    "1939"
+   ],
+   "news": {
+    "h": "Aviador cruza o Atlântico sozinho e pousa em Paris",
+    "paper": "Le Matin des Ailes",
+    "sub": "Depois de 33 horas e meia sem escalas desde Nova York, o Spirit of St. Louis aterrissa em Le Bourget"
+   },
+   "a": [
+    "1927"
+   ],
+   "d": 4,
+   "src": [
+    "pt",
+    "Charles Lindbergh",
+    [
+     "1927"
+    ]
+   ],
+   "x": "O piloto, Charles Lindbergh, tinha 25 anos e ganhou um prêmio de 25 mil dólares oferecido a quem fizesse o voo entre as duas cidades."
+  },
+  {
+   "t": "Em que ano saiu esta manchete?",
+   "type": "txt",
+   "choices": [
+    "1985",
+    "1972",
+    "1977",
+    "1981",
+    "1989",
+    "1993"
+   ],
+   "news": {
+    "h": "Destroços do Titanic são achados no fundo do Atlântico",
+    "paper": "Diário do Mar",
+    "sub": "Câmeras rebocadas por um navio filmam o casco partido em dois a quase 4 mil metros de profundidade"
+   },
+   "a": [
+    "1985"
+   ],
+   "d": 4,
+   "src": [
+    "en",
+    "Wreck of the Titanic",
+    [
+     "Ballard"
+    ]
+   ],
+   "x": "A expedição franco-americana foi liderada por Robert Ballard e Jean-Louis Michel, 73 anos depois do naufrágio."
+  },
+  {
+   "t": "Em que ano saiu esta manchete?",
+   "type": "txt",
+   "choices": [
+    "1991",
+    "1979",
+    "1983",
+    "1987",
+    "1995",
+    "1998"
+   ],
+   "news": {
+    "h": "Múmia de mais de 5 mil anos é achada no gelo dos Alpes",
+    "paper": "Gazeta Alpina",
+    "sub": "Caminhantes encontram o corpo na fronteira entre a Áustria e a Itália; ele ainda carregava um machado de cobre"
+   },
+   "a": [
+    "1991"
+   ],
+   "d": 4,
+   "src": [
+    "pt",
+    "Ötzi",
+    [
+     "1991"
+    ]
+   ],
+   "x": "Batizado de Ötzi, ele tinha uma ponta de flecha cravada no ombro, que só foi descoberta em 2001, numa radiografia."
+  },
+  {
+   "t": "Quem é o escritor desta manchete?",
+   "type": "player",
+   "news": {
+    "h": "Escritor de 82 anos morre numa estação de trem",
+    "paper": "Gazeta de Moscou",
+    "sub": "O conde tinha fugido de sua propriedade de Iasnaia Poliana dias antes; repórteres acompanharam sua agonia em Astapovo"
+   },
+   "a": [
+    "tolstoi"
+   ],
+   "d": 4,
+   "src": [
+    "en",
+    "Leo Tolstoy",
+    [
+     "Astapovo"
+    ]
+   ],
+   "x": "Ele foi enterrado num bosque de Iasnaia Poliana, num túmulo simples, sem cruz nem lápide."
+  },
+  {
+   "t": "Em que ano saiu esta manchete?",
+   "type": "txt",
+   "choices": [
+    "1939",
+    "1922",
+    "1928",
+    "1934",
+    "1946",
+    "1952"
+   ],
+   "news": {
+    "h": "Navio funerário anglo-saxão é desenterrado na Inglaterra",
+    "paper": "The East Anglian Courier",
+    "sub": "Em Sutton Hoo, arqueólogos acham um elmo de ferro, joias de ouro e a marca de um barco de 27 metros no solo"
+   },
+   "a": [
+    "1939"
+   ],
+   "d": 5,
+   "src": [
+    "en",
+    "Sutton Hoo",
+    [
+     "1939"
+    ]
+   ],
+   "x": "A dona do terreno, Edith Pretty, doou todo o tesouro ao Museu Britânico, onde ele está até hoje."
+  },
+  {
+   "t": "Em que ano saiu esta manchete?",
+   "type": "txt",
+   "choices": [
+    "1898",
+    "1871",
+    "1885",
+    "1894",
+    "1906",
+    "1914"
+   ],
+   "news": {
+    "h": "\"Eu acuso...!\"",
+    "paper": "L'Aurore",
+    "sub": "Em carta aberta ao presidente da República, Émile Zola denuncia a condenação de um capitão inocente"
+   },
+   "a": [
+    "1898"
+   ],
+   "d": 5,
+   "src": [
+    "pt",
+    "Caso Dreyfus",
+    [
+     "1898"
+    ]
+   ],
+   "x": "O capitão Alfred Dreyfus, condenado em 1894 por uma traição que não cometeu, só foi inocentado em 1906."
+  }
+ ]
+}

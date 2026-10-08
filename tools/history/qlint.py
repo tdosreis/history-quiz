@@ -74,6 +74,10 @@ def lint(q, bad):
                if re.search(r"(^|[^a-z])" + re.escape(w) + r"([^a-z]|$)", cap)]
         if hit:
             bad(f"the battle caption names someone of the hidden side ({hit[0]})")
+    # a timeline card shows its label and subtitle while the question is open; only the year is held back
+    for e in q.get("order") or []:
+        if re.search(r"(?<![\d.,])\d{3,4}(?![\d.,]?\d)", str(e.get("sub", ""))):
+            bad(f"timeline card '{e.get('label')}': the subtitle shows a year, which gives the order away")
     flag = (q.get("art") or {}).get("flag")
     if flag in FLAG_SINCE:
         ys = years(q.get("t", ""))

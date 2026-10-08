@@ -1,0 +1,1701 @@
+{
+ "id": "linha_do_tempo",
+ "name": "Linha do tempo",
+ "tag": "Ordene do mais antigo ao mais novo",
+ "col": "#0f7b6c",
+ "diff": "Variado",
+ "emoji": "⏳",
+ "qs": [
+  {
+   "t": "Em que ordem nasceram estes personagens, do mais antigo ao mais recente?",
+   "type": "order",
+   "a": [
+    "alexandre",
+    "gengis",
+    "shakespeare",
+    "gandhi"
+   ],
+   "order": [
+    {
+     "id": "alexandre",
+     "y": -356,
+     "label": "Alexandre, o Grande",
+     "sub": "Nascimento",
+     "face": "alexandre"
+    },
+    {
+     "id": "gengis",
+     "y": 1162,
+     "label": "Gengis Khan",
+     "sub": "Nascimento",
+     "face": "gengis"
+    },
+    {
+     "id": "shakespeare",
+     "y": 1564,
+     "label": "William Shakespeare",
+     "sub": "Nascimento",
+     "face": "shakespeare"
+    },
+    {
+     "id": "gandhi",
+     "y": 1869,
+     "label": "Mahatma Gandhi",
+     "sub": "Nascimento",
+     "face": "gandhi"
+    }
+   ],
+   "d": 1,
+   "src": [
+    "pt",
+    "Mahatma Gandhi",
+    [
+     "1869"
+    ]
+   ]
+  },
+  {
+   "t": "Do mais antigo ao mais recente, em que ordem aconteceram estes episódios célebres?",
+   "type": "order",
+   "a": [
+    "termopilas",
+    "orleans",
+    "waterloo",
+    "lua"
+   ],
+   "order": [
+    {
+     "id": "termopilas",
+     "y": -480,
+     "label": "Batalha das Termópilas",
+     "sub": "Espartanos contra persas",
+     "face": "leonidas"
+    },
+    {
+     "id": "orleans",
+     "y": 1429,
+     "label": "Libertação de Orléans",
+     "sub": "Guerra dos Cem Anos",
+     "face": "joana_darc"
+    },
+    {
+     "id": "waterloo",
+     "y": 1815,
+     "label": "Batalha de Waterloo",
+     "sub": "Derrota final de Napoleão",
+     "face": "napoleao"
+    },
+    {
+     "id": "lua",
+     "y": 1969,
+     "label": "Primeiros passos na Lua",
+     "sub": "Apollo 11",
+     "face": "armstrong"
+    }
+   ],
+   "d": 1,
+   "src": [
+    "pt",
+    "Batalha de Waterloo",
+    [
+     "1815"
+    ]
+   ]
+  },
+  {
+   "t": "Coloque estes marcos da história do Brasil em ordem, do mais antigo ao mais recente?",
+   "type": "order",
+   "a": [
+    "corte",
+    "aurea",
+    "republica",
+    "constituicao"
+   ],
+   "order": [
+    {
+     "id": "corte",
+     "y": 1808,
+     "label": "A corte portuguesa chega ao Brasil",
+     "sub": "Fugindo das tropas de Napoleão",
+     "face": "dom_joao_vi"
+    },
+    {
+     "id": "aurea",
+     "y": 1888,
+     "label": "Lei Áurea",
+     "sub": "Fim da escravidão",
+     "face": "princesa_isabel"
+    },
+    {
+     "id": "republica",
+     "y": 1889,
+     "label": "Proclamação da República",
+     "sub": "15 de novembro",
+     "face": "deodoro"
+    },
+    {
+     "id": "constituicao",
+     "y": 1988,
+     "label": "Constituição Cidadã",
+     "sub": "Redemocratização",
+     "flag": "BRA"
+    }
+   ],
+   "d": 1,
+   "src": [
+    "pt",
+    "Proclamação da República do Brasil",
+    [
+     "1889"
+    ]
+   ]
+  },
+  {
+   "t": "Do mais antigo ao mais recente, em que ordem nasceram estes cientistas?",
+   "type": "order",
+   "a": [
+    "arquimedes",
+    "newton",
+    "darwin",
+    "hawking"
+   ],
+   "order": [
+    {
+     "id": "arquimedes",
+     "y": -287,
+     "label": "Arquimedes",
+     "sub": "Nascimento",
+     "face": "arquimedes"
+    },
+    {
+     "id": "newton",
+     "y": 1643,
+     "label": "Isaac Newton",
+     "sub": "Nascimento",
+     "face": "newton"
+    },
+    {
+     "id": "darwin",
+     "y": 1809,
+     "label": "Charles Darwin",
+     "sub": "Nascimento",
+     "face": "darwin"
+    },
+    {
+     "id": "hawking",
+     "y": 1942,
+     "label": "Stephen Hawking",
+     "sub": "Nascimento",
+     "face": "hawking"
+    }
+   ],
+   "d": 1,
+   "src": [
+    "pt",
+    "Stephen Hawking",
+    [
+     "1942"
+    ]
+   ]
+  },
+  {
+   "t": "Ordene estes marcos de grandes governantes, do mais antigo ao mais recente?",
+   "type": "order",
+   "a": [
+    "hamurabi",
+    "qin",
+    "carlos",
+    "napoleao"
+   ],
+   "order": [
+    {
+     "id": "hamurabi",
+     "y": -1792,
+     "label": "Hamurabi",
+     "sub": "Torna-se rei da Babilônia",
+     "face": "hamurabi"
+    },
+    {
+     "id": "qin",
+     "y": -221,
+     "label": "Qin Shi Huang",
+     "sub": "Unifica a China",
+     "face": "qin_shi_huang"
+    },
+    {
+     "id": "carlos",
+     "y": 800,
+     "label": "Carlos Magno",
+     "sub": "Coroado imperador",
+     "face": "carlos_magno"
+    },
+    {
+     "id": "napoleao",
+     "y": 1804,
+     "label": "Napoleão Bonaparte",
+     "sub": "Coroado imperador",
+     "face": "napoleao"
+    }
+   ],
+   "d": 1,
+   "src": [
+    "pt",
+    "Carlos Magno",
+    [
+     "800"
+    ]
+   ]
+  },
+  {
+   "t": "Do mais antigo ao mais recente, em que ordem nasceram estas mulheres?",
+   "type": "order",
+   "a": [
+    "cleopatra",
+    "elizabeth",
+    "curie",
+    "anne"
+   ],
+   "order": [
+    {
+     "id": "cleopatra",
+     "y": -69,
+     "label": "Cleópatra VII",
+     "sub": "Nascimento",
+     "face": "cleopatra"
+    },
+    {
+     "id": "elizabeth",
+     "y": 1533,
+     "label": "Elizabeth I",
+     "sub": "Nascimento",
+     "face": "elizabeth_i"
+    },
+    {
+     "id": "curie",
+     "y": 1867,
+     "label": "Marie Curie",
+     "sub": "Nascimento",
+     "face": "marie_curie"
+    },
+    {
+     "id": "anne",
+     "y": 1929,
+     "label": "Anne Frank",
+     "sub": "Nascimento",
+     "face": "anne_frank"
+    }
+   ],
+   "d": 1,
+   "src": [
+    "pt",
+    "Anne Frank",
+    [
+     "1929"
+    ]
+   ]
+  },
+  {
+   "t": "Em que ordem estes presidentes assumiram o governo dos Estados Unidos?",
+   "type": "order",
+   "a": [
+    "washington",
+    "lincoln",
+    "fdr",
+    "kennedy"
+   ],
+   "order": [
+    {
+     "id": "washington",
+     "y": 1789,
+     "label": "George Washington",
+     "sub": "Toma posse",
+     "face": "washington"
+    },
+    {
+     "id": "lincoln",
+     "y": 1861,
+     "label": "Abraham Lincoln",
+     "sub": "Toma posse",
+     "face": "lincoln"
+    },
+    {
+     "id": "fdr",
+     "y": 1933,
+     "label": "Franklin D. Roosevelt",
+     "sub": "Toma posse",
+     "face": "fdr"
+    },
+    {
+     "id": "kennedy",
+     "y": 1961,
+     "label": "John F. Kennedy",
+     "sub": "Toma posse",
+     "face": "kennedy"
+    }
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Lista de presidentes dos Estados Unidos",
+    [
+     "Lincoln"
+    ]
+   ]
+  },
+  {
+   "t": "Coloque estas construções em ordem, da mais antiga à mais recente?",
+   "type": "order",
+   "a": [
+    "machu",
+    "taj",
+    "eiffel",
+    "cristo"
+   ],
+   "order": [
+    {
+     "id": "machu",
+     "y": 1450,
+     "label": "Machu Picchu",
+     "sub": "Cidadela inca",
+     "crest": "inca"
+    },
+    {
+     "id": "taj",
+     "y": 1632,
+     "label": "Taj Mahal",
+     "sub": "Início das obras",
+     "crest": "mogol"
+    },
+    {
+     "id": "eiffel",
+     "y": 1889,
+     "label": "Torre Eiffel",
+     "sub": "Exposição Universal de Paris",
+     "flag": "FRA"
+    },
+    {
+     "id": "cristo",
+     "y": 1931,
+     "label": "Cristo Redentor",
+     "sub": "Inauguração",
+     "flag": "BRA"
+    }
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Cristo Redentor",
+    [
+     "1931"
+    ]
+   ]
+  },
+  {
+   "t": "Coloque estes livros em ordem de publicação, do mais antigo ao mais recente?",
+   "type": "order",
+   "a": [
+    "lusiadas",
+    "quixote",
+    "miseraveis",
+    "casmurro",
+    "1984"
+   ],
+   "order": [
+    {
+     "id": "lusiadas",
+     "y": 1572,
+     "label": "Os Lusíadas",
+     "sub": "Luís de Camões",
+     "face": "camoes"
+    },
+    {
+     "id": "quixote",
+     "y": 1605,
+     "label": "Dom Quixote",
+     "sub": "Primeira parte",
+     "face": "cervantes"
+    },
+    {
+     "id": "miseraveis",
+     "y": 1862,
+     "label": "Os Miseráveis",
+     "sub": "Victor Hugo",
+     "face": "victor_hugo"
+    },
+    {
+     "id": "casmurro",
+     "y": 1899,
+     "label": "Dom Casmurro",
+     "sub": "Machado de Assis",
+     "face": "machado"
+    },
+    {
+     "id": "1984",
+     "y": 1949,
+     "label": "“1984”",
+     "sub": "George Orwell",
+     "face": "orwell"
+    }
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Dom Casmurro",
+    [
+     "1899"
+    ]
+   ]
+  },
+  {
+   "t": "Ordene estes brasileiros pela data de nascimento, do mais antigo ao mais recente?",
+   "type": "order",
+   "a": [
+    "zumbi",
+    "tiradentes",
+    "bonifacio",
+    "pedro2",
+    "dumont"
+   ],
+   "order": [
+    {
+     "id": "zumbi",
+     "y": 1655,
+     "label": "Zumbi dos Palmares",
+     "sub": "Nascimento",
+     "face": "zumbi"
+    },
+    {
+     "id": "tiradentes",
+     "y": 1746,
+     "label": "Tiradentes",
+     "sub": "Nascimento",
+     "face": "tiradentes"
+    },
+    {
+     "id": "bonifacio",
+     "y": 1763,
+     "label": "José Bonifácio",
+     "sub": "Nascimento",
+     "face": "jose_bonifacio"
+    },
+    {
+     "id": "pedro2",
+     "y": 1825,
+     "label": "Dom Pedro II",
+     "sub": "Nascimento",
+     "face": "dom_pedro_ii"
+    },
+    {
+     "id": "dumont",
+     "y": 1873,
+     "label": "Santos Dumont",
+     "sub": "Nascimento",
+     "face": "santos_dumont"
+    }
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "José Bonifácio de Andrada e Silva",
+    [
+     "1763"
+    ]
+   ]
+  },
+  {
+   "t": "Do mais antigo ao mais recente, em que ordem aconteceram estes fatos do Brasil república?",
+   "type": "order",
+   "a": [
+    "vacina",
+    "semana",
+    "estado_novo",
+    "brasilia"
+   ],
+   "order": [
+    {
+     "id": "vacina",
+     "y": 1904,
+     "label": "Revolta da Vacina",
+     "sub": "Rio de Janeiro",
+     "face": "oswaldo_cruz"
+    },
+    {
+     "id": "semana",
+     "y": 1922,
+     "label": "Semana de Arte Moderna",
+     "sub": "Theatro Municipal de São Paulo",
+     "face": "villa_lobos"
+    },
+    {
+     "id": "estado_novo",
+     "y": 1937,
+     "label": "Golpe do Estado Novo",
+     "sub": "Ditadura de Vargas",
+     "face": "getulio"
+    },
+    {
+     "id": "brasilia",
+     "y": 1960,
+     "label": "Inauguração de Brasília",
+     "sub": "Nova capital",
+     "face": "niemeyer"
+    }
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Semana de Arte Moderna",
+    [
+     "1922"
+    ]
+   ]
+  },
+  {
+   "t": "Coloque estes acontecimentos da segunda metade do século XX em ordem?",
+   "type": "order",
+   "a": [
+    "cuba",
+    "misseis",
+    "thatcher",
+    "gorbachev",
+    "mandela"
+   ],
+   "order": [
+    {
+     "id": "cuba",
+     "y": 1959,
+     "label": "Revolução Cubana",
+     "sub": "Queda de Batista",
+     "face": "fidel"
+    },
+    {
+     "id": "misseis",
+     "y": 1962,
+     "label": "Crise dos mísseis",
+     "sub": "Cuba, outubro",
+     "face": "kennedy"
+    },
+    {
+     "id": "thatcher",
+     "y": 1979,
+     "label": "Thatcher vira primeira-ministra",
+     "sub": "Reino Unido",
+     "face": "thatcher"
+    },
+    {
+     "id": "gorbachev",
+     "y": 1985,
+     "label": "Gorbachev chega ao poder",
+     "sub": "União Soviética",
+     "face": "gorbachev"
+    },
+    {
+     "id": "mandela",
+     "y": 1994,
+     "label": "Mandela toma posse como presidente",
+     "sub": "África do Sul",
+     "face": "mandela"
+    }
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Crise dos mísseis de Cuba",
+    [
+     "1962"
+    ]
+   ]
+  },
+  {
+   "t": "Ordene estas façanhas de exploradores, da mais antiga à mais recente?",
+   "type": "order",
+   "a": [
+    "polo",
+    "gama",
+    "cook",
+    "amundsen",
+    "gagarin"
+   ],
+   "order": [
+    {
+     "id": "polo",
+     "y": 1275,
+     "label": "Marco Polo chega à corte de Kublai Khan",
+     "sub": "China",
+     "face": "marco_polo"
+    },
+    {
+     "id": "gama",
+     "y": 1498,
+     "label": "Vasco da Gama chega a Calicute",
+     "sub": "Índia",
+     "face": "vasco_gama"
+    },
+    {
+     "id": "cook",
+     "y": 1770,
+     "label": "Cook explora a costa leste da Austrália",
+     "sub": "Viagem do Endeavour",
+     "face": "cook"
+    },
+    {
+     "id": "amundsen",
+     "y": 1911,
+     "label": "Amundsen chega ao Polo Sul",
+     "sub": "Antártida",
+     "face": "amundsen"
+    },
+    {
+     "id": "gagarin",
+     "y": 1961,
+     "label": "Gagarin dá a volta na Terra",
+     "sub": "Vostok 1",
+     "face": "gagarin"
+    }
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Roald Amundsen",
+    [
+     "1911"
+    ]
+   ]
+  },
+  {
+   "t": "Do mais antigo ao mais recente, em que ordem surgiram estes impérios?",
+   "type": "order",
+   "a": [
+    "roma",
+    "mongol",
+    "otomano",
+    "brasil",
+    "alemao"
+   ],
+   "order": [
+    {
+     "id": "roma",
+     "y": -27,
+     "label": "Império Romano",
+     "sub": "Augusto, primeiro imperador",
+     "crest": "imperio_romano"
+    },
+    {
+     "id": "mongol",
+     "y": 1206,
+     "label": "Império Mongol",
+     "sub": "Gengis Khan é proclamado",
+     "crest": "imperio_mongol"
+    },
+    {
+     "id": "otomano",
+     "y": 1299,
+     "label": "Império Otomano",
+     "sub": "Osmã I",
+     "crest": "imperio_otomano"
+    },
+    {
+     "id": "brasil",
+     "y": 1822,
+     "label": "Império do Brasil",
+     "sub": "Independência",
+     "crest": "imperio_brasil"
+    },
+    {
+     "id": "alemao",
+     "y": 1871,
+     "label": "Império Alemão",
+     "sub": "Proclamado em Versalhes",
+     "crest": "imperio_alemao"
+    }
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Império Otomano",
+    [
+     "1299"
+    ]
+   ]
+  },
+  {
+   "t": "Em que ordem estes imperadores romanos subiram ao trono?",
+   "type": "order",
+   "a": [
+    "augusto",
+    "nero",
+    "adriano",
+    "marco",
+    "constantino"
+   ],
+   "order": [
+    {
+     "id": "augusto",
+     "y": -27,
+     "label": "Augusto",
+     "sub": "Primeiro imperador",
+     "face": "augusto"
+    },
+    {
+     "id": "nero",
+     "y": 54,
+     "label": "Nero",
+     "sub": "Último júlio-claudiano",
+     "face": "nero"
+    },
+    {
+     "id": "adriano",
+     "y": 117,
+     "label": "Adriano",
+     "sub": "Construtor da muralha",
+     "face": "adriano"
+    },
+    {
+     "id": "marco",
+     "y": 161,
+     "label": "Marco Aurélio",
+     "sub": "O imperador filósofo",
+     "face": "marco_aurelio"
+    },
+    {
+     "id": "constantino",
+     "y": 306,
+     "label": "Constantino",
+     "sub": "Aclamado em York",
+     "face": "constantino"
+    }
+   ],
+   "d": 3,
+   "src": [
+    "pt",
+    "Lista de imperadores romanos",
+    [
+     "Adriano"
+    ]
+   ]
+  },
+  {
+   "t": "Do mais antigo ao mais recente, em que ordem estes monarcas subiram ao trono da Inglaterra?",
+   "type": "order",
+   "a": [
+    "guilherme",
+    "ricardo",
+    "henrique",
+    "elizabeth",
+    "vitoria"
+   ],
+   "order": [
+    {
+     "id": "guilherme",
+     "y": 1066,
+     "label": "Guilherme, o Conquistador",
+     "sub": "Coroado após Hastings",
+     "face": "guilherme_conquistador"
+    },
+    {
+     "id": "ricardo",
+     "y": 1189,
+     "label": "Ricardo Coração de Leão",
+     "sub": "Coroação",
+     "face": "ricardo"
+    },
+    {
+     "id": "henrique",
+     "y": 1509,
+     "label": "Henrique VIII",
+     "sub": "Início do reinado",
+     "face": "henrique_viii"
+    },
+    {
+     "id": "elizabeth",
+     "y": 1558,
+     "label": "Elizabeth I",
+     "sub": "Início do reinado",
+     "face": "elizabeth_i"
+    },
+    {
+     "id": "vitoria",
+     "y": 1837,
+     "label": "Rainha Vitória",
+     "sub": "Início do reinado",
+     "face": "victoria"
+    }
+   ],
+   "d": 3,
+   "src": [
+    "en",
+    "List of English monarchs",
+    [
+     "Henry VIII",
+     "Richard I"
+    ]
+   ]
+  },
+  {
+   "t": "Ordene estes pintores pela data de nascimento, do mais antigo ao mais recente?",
+   "type": "order",
+   "a": [
+    "botticelli",
+    "rafael",
+    "rembrandt",
+    "goya",
+    "monet"
+   ],
+   "order": [
+    {
+     "id": "botticelli",
+     "y": 1445,
+     "label": "Sandro Botticelli",
+     "sub": "Nascimento",
+     "face": "botticelli"
+    },
+    {
+     "id": "rafael",
+     "y": 1483,
+     "label": "Rafael Sanzio",
+     "sub": "Nascimento",
+     "face": "rafael"
+    },
+    {
+     "id": "rembrandt",
+     "y": 1606,
+     "label": "Rembrandt",
+     "sub": "Nascimento",
+     "face": "rembrandt"
+    },
+    {
+     "id": "goya",
+     "y": 1746,
+     "label": "Francisco de Goya",
+     "sub": "Nascimento",
+     "face": "goya"
+    },
+    {
+     "id": "monet",
+     "y": 1840,
+     "label": "Claude Monet",
+     "sub": "Nascimento",
+     "face": "monet"
+    }
+   ],
+   "d": 3,
+   "src": [
+    "pt",
+    "Rafael Sanzio",
+    [
+     "1483"
+    ]
+   ]
+  },
+  {
+   "t": "Coloque estes episódios da era napoleônica em ordem, do mais antigo ao mais recente?",
+   "type": "order",
+   "a": [
+    "coroacao",
+    "trafalgar",
+    "corte",
+    "russia",
+    "waterloo"
+   ],
+   "order": [
+    {
+     "id": "coroacao",
+     "y": 1804,
+     "label": "Napoleão é coroado imperador",
+     "sub": "Notre-Dame de Paris",
+     "crest": "imperio_frances"
+    },
+    {
+     "id": "trafalgar",
+     "y": 1805,
+     "label": "Batalha de Trafalgar",
+     "sub": "Vitória naval britânica",
+     "face": "nelson"
+    },
+    {
+     "id": "corte",
+     "y": 1808,
+     "label": "A corte portuguesa chega ao Rio",
+     "sub": "Fuga para o Brasil",
+     "crest": "portugal"
+    },
+    {
+     "id": "russia",
+     "y": 1812,
+     "label": "Invasão da Rússia",
+     "sub": "Grande Armée",
+     "crest": "imperio_russo"
+    },
+    {
+     "id": "waterloo",
+     "y": 1815,
+     "label": "Batalha de Waterloo",
+     "sub": "Bélgica",
+     "face": "wellington"
+    }
+   ],
+   "d": 3,
+   "src": [
+    "pt",
+    "Guerras Napoleônicas",
+    [
+     "Trafalgar"
+    ]
+   ]
+  },
+  {
+   "t": "Em que ordem nasceram estes filósofos, do mais antigo ao mais recente?",
+   "type": "order",
+   "a": [
+    "descartes",
+    "locke",
+    "voltaire",
+    "kant",
+    "nietzsche"
+   ],
+   "order": [
+    {
+     "id": "descartes",
+     "y": 1596,
+     "label": "René Descartes",
+     "sub": "Nascimento",
+     "face": "descartes"
+    },
+    {
+     "id": "locke",
+     "y": 1632,
+     "label": "John Locke",
+     "sub": "Nascimento",
+     "face": "locke"
+    },
+    {
+     "id": "voltaire",
+     "y": 1694,
+     "label": "Voltaire",
+     "sub": "Nascimento",
+     "face": "voltaire"
+    },
+    {
+     "id": "kant",
+     "y": 1724,
+     "label": "Immanuel Kant",
+     "sub": "Nascimento",
+     "face": "kant"
+    },
+    {
+     "id": "nietzsche",
+     "y": 1844,
+     "label": "Friedrich Nietzsche",
+     "sub": "Nascimento",
+     "face": "nietzsche"
+    }
+   ],
+   "d": 3,
+   "src": [
+    "pt",
+    "Immanuel Kant",
+    [
+     "1724"
+    ]
+   ]
+  },
+  {
+   "t": "Coloque estas leis do caminho para a abolição no Brasil em ordem, da mais antiga à mais recente?",
+   "type": "order",
+   "a": [
+    "eusebio",
+    "ventre",
+    "sexagenarios",
+    "aurea"
+   ],
+   "order": [
+    {
+     "id": "eusebio",
+     "y": 1850,
+     "label": "Lei Eusébio de Queirós",
+     "sub": "Fim do tráfico negreiro",
+     "crest": "imperio_brasil"
+    },
+    {
+     "id": "ventre",
+     "y": 1871,
+     "label": "Lei do Ventre Livre",
+     "sub": "Filhos de escravizadas nascem livres",
+     "face": "princesa_isabel"
+    },
+    {
+     "id": "sexagenarios",
+     "y": 1885,
+     "label": "Lei dos Sexagenários",
+     "sub": "Libertação dos idosos",
+     "face": "dom_pedro_ii"
+    },
+    {
+     "id": "aurea",
+     "y": 1888,
+     "label": "Lei Áurea",
+     "sub": "Abolição",
+     "face": "patrocinio"
+    }
+   ],
+   "d": 3,
+   "src": [
+    "pt",
+    "Lei dos Sexagenários",
+    [
+     "1885"
+    ]
+   ]
+  },
+  {
+   "t": "Ordene estas conquistas da ciência, da mais antiga à mais recente?",
+   "type": "order",
+   "a": [
+    "origem",
+    "raiva",
+    "nobel",
+    "relatividade",
+    "penicilina"
+   ],
+   "order": [
+    {
+     "id": "origem",
+     "y": 1859,
+     "label": "A Origem das Espécies",
+     "sub": "Seleção natural",
+     "face": "darwin"
+    },
+    {
+     "id": "raiva",
+     "y": 1885,
+     "label": "Vacina contra a raiva",
+     "sub": "Primeiro paciente salvo",
+     "face": "pasteur"
+    },
+    {
+     "id": "nobel",
+     "y": 1903,
+     "label": "Primeiro Nobel de Marie Curie",
+     "sub": "Física",
+     "face": "marie_curie"
+    },
+    {
+     "id": "relatividade",
+     "y": 1915,
+     "label": "Teoria da relatividade geral",
+     "sub": "Gravidade e espaço-tempo",
+     "face": "einstein"
+    },
+    {
+     "id": "penicilina",
+     "y": 1928,
+     "label": "Descoberta da penicilina",
+     "sub": "Mofo numa placa",
+     "face": "fleming"
+    }
+   ],
+   "d": 3,
+   "src": [
+    "pt",
+    "Marie Curie",
+    [
+     "1903"
+    ]
+   ]
+  },
+  {
+   "t": "Do mais antigo ao mais recente, em que ordem nasceram estes músicos?",
+   "type": "order",
+   "a": [
+    "bach",
+    "chopin",
+    "chiquinha",
+    "villa"
+   ],
+   "order": [
+    {
+     "id": "bach",
+     "y": 1685,
+     "label": "Johann Sebastian Bach",
+     "sub": "Nascimento",
+     "face": "bach"
+    },
+    {
+     "id": "chopin",
+     "y": 1810,
+     "label": "Frédéric Chopin",
+     "sub": "Nascimento",
+     "face": "chopin"
+    },
+    {
+     "id": "chiquinha",
+     "y": 1847,
+     "label": "Chiquinha Gonzaga",
+     "sub": "Nascimento",
+     "face": "chiquinha"
+    },
+    {
+     "id": "villa",
+     "y": 1887,
+     "label": "Heitor Villa-Lobos",
+     "sub": "Nascimento",
+     "face": "villa_lobos"
+    }
+   ],
+   "d": 3,
+   "src": [
+    "pt",
+    "Heitor Villa-Lobos",
+    [
+     "1887"
+    ]
+   ]
+  },
+  {
+   "t": "Coloque estas obras de ficção do século XX em ordem de publicação?",
+   "type": "order",
+   "a": [
+    "metamorfose",
+    "velho",
+    "solidao",
+    "estrela"
+   ],
+   "order": [
+    {
+     "id": "metamorfose",
+     "y": 1915,
+     "label": "A Metamorfose",
+     "sub": "Franz Kafka",
+     "face": "kafka"
+    },
+    {
+     "id": "velho",
+     "y": 1952,
+     "label": "O Velho e o Mar",
+     "sub": "Ernest Hemingway",
+     "face": "hemingway"
+    },
+    {
+     "id": "solidao",
+     "y": 1967,
+     "label": "Cem Anos de Solidão",
+     "sub": "Gabriel García Márquez",
+     "face": "garcia_marquez"
+    },
+    {
+     "id": "estrela",
+     "y": 1977,
+     "label": "A Hora da Estrela",
+     "sub": "Clarice Lispector",
+     "face": "clarice"
+    }
+   ],
+   "d": 3,
+   "src": [
+    "pt",
+    "Cem Anos de Solidão",
+    [
+     "1967"
+    ]
+   ]
+  },
+  {
+   "t": "Ordene estas grandes viagens, da mais antiga à mais recente?",
+   "type": "order",
+   "a": [
+    "leif",
+    "battuta",
+    "zheng",
+    "magalhaes"
+   ],
+   "order": [
+    {
+     "id": "leif",
+     "y": 1000,
+     "label": "Leif Erikson chega à América",
+     "sub": "Vinlândia",
+     "face": "leif"
+    },
+    {
+     "id": "battuta",
+     "y": 1325,
+     "label": "Ibn Battuta parte de Tânger",
+     "sub": "Rumo a Meca",
+     "face": "ibn_battuta"
+    },
+    {
+     "id": "zheng",
+     "y": 1405,
+     "label": "Zheng He inicia suas expedições",
+     "sub": "Frota do tesouro",
+     "face": "zheng_he"
+    },
+    {
+     "id": "magalhaes",
+     "y": 1519,
+     "label": "Magalhães parte da Espanha",
+     "sub": "Primeira volta ao mundo",
+     "face": "magalhaes"
+    }
+   ],
+   "d": 4,
+   "src": [
+    "pt",
+    "Zheng He",
+    [
+     "1405"
+    ]
+   ]
+  },
+  {
+   "t": "Ordene estes marcos políticos do século XIX, do mais antigo ao mais recente?",
+   "type": "order",
+   "a": [
+    "colombia",
+    "italia",
+    "meiji",
+    "alemanha"
+   ],
+   "order": [
+    {
+     "id": "colombia",
+     "y": 1819,
+     "label": "Grã-Colômbia",
+     "sub": "Congresso de Angostura",
+     "face": "bolivar"
+    },
+    {
+     "id": "italia",
+     "y": 1861,
+     "label": "Reino da Itália",
+     "sub": "Unificação italiana",
+     "face": "garibaldi"
+    },
+    {
+     "id": "meiji",
+     "y": 1868,
+     "label": "Restauração Meiji",
+     "sub": "Fim do xogunato",
+     "face": "meiji"
+    },
+    {
+     "id": "alemanha",
+     "y": 1871,
+     "label": "Império Alemão",
+     "sub": "Unificação alemã",
+     "face": "bismarck"
+    }
+   ],
+   "d": 4,
+   "src": [
+    "pt",
+    "Unificação italiana",
+    [
+     "1861"
+    ]
+   ]
+  },
+  {
+   "t": "Coloque estes momentos do Império Persa em ordem, do mais antigo ao mais recente?",
+   "type": "order",
+   "a": [
+    "babilonia",
+    "dario",
+    "xerxes",
+    "gaugamela"
+   ],
+   "order": [
+    {
+     "id": "babilonia",
+     "y": -539,
+     "label": "Ciro toma a Babilônia",
+     "sub": "Fim do Império Neobabilônico",
+     "face": "ciro"
+    },
+    {
+     "id": "dario",
+     "y": -522,
+     "label": "Dario I sobe ao trono",
+     "sub": "Aquemênidas",
+     "face": "dario"
+    },
+    {
+     "id": "xerxes",
+     "y": -480,
+     "label": "Xerxes invade a Grécia",
+     "sub": "Segunda Guerra Médica",
+     "face": "xerxes"
+    },
+    {
+     "id": "gaugamela",
+     "y": -331,
+     "label": "Batalha de Gaugamela",
+     "sub": "Vitória macedônia",
+     "face": "alexandre"
+    }
+   ],
+   "d": 4,
+   "src": [
+    "pt",
+    "Império Aquemênida",
+    [
+     "Gaugamela"
+    ]
+   ]
+  },
+  {
+   "t": "Em que ordem aconteceram estes fatos da Antiguidade tardia e da Idade Média?",
+   "type": "order",
+   "a": [
+    "atila",
+    "sofia",
+    "harun",
+    "gengis",
+    "yuan"
+   ],
+   "order": [
+    {
+     "id": "atila",
+     "y": 451,
+     "label": "Átila invade a Gália",
+     "sub": "Campos Cataláunicos",
+     "face": "atila"
+    },
+    {
+     "id": "sofia",
+     "y": 537,
+     "label": "Inauguração da nova Santa Sofia",
+     "sub": "Constantinopla",
+     "face": "justiniano"
+    },
+    {
+     "id": "harun",
+     "y": 786,
+     "label": "Harune Arraxide torna-se califa",
+     "sub": "Bagdá",
+     "face": "harun"
+    },
+    {
+     "id": "gengis",
+     "y": 1206,
+     "label": "Gengis Khan é proclamado",
+     "sub": "Unificação mongol",
+     "face": "gengis"
+    },
+    {
+     "id": "yuan",
+     "y": 1271,
+     "label": "Kublai Khan funda a dinastia Yuan",
+     "sub": "China",
+     "face": "kublai"
+    }
+   ],
+   "d": 4,
+   "src": [
+    "pt",
+    "Kublai Khan",
+    [
+     "Yuan"
+    ]
+   ]
+  },
+  {
+   "t": "Ordene estas governantes pelo início do reinado, do mais antigo ao mais recente?",
+   "type": "order",
+   "a": [
+    "wu",
+    "isabel",
+    "nzinga",
+    "maria_teresa",
+    "catarina"
+   ],
+   "order": [
+    {
+     "id": "wu",
+     "y": 690,
+     "label": "Wu Zetian",
+     "sub": "Imperatriz da China",
+     "face": "wu_zetian"
+    },
+    {
+     "id": "isabel",
+     "y": 1474,
+     "label": "Isabel I de Castela",
+     "sub": "Rainha de Castela",
+     "face": "isabel_castela"
+    },
+    {
+     "id": "nzinga",
+     "y": 1624,
+     "label": "Rainha Nzinga",
+     "sub": "Rainha do Ndongo",
+     "face": "nzinga"
+    },
+    {
+     "id": "maria_teresa",
+     "y": 1740,
+     "label": "Maria Teresa",
+     "sub": "Herda os domínios dos Habsburgo",
+     "face": "maria_teresa"
+    },
+    {
+     "id": "catarina",
+     "y": 1762,
+     "label": "Catarina, a Grande",
+     "sub": "Imperatriz da Rússia",
+     "face": "catarina_grande"
+    }
+   ],
+   "d": 4,
+   "src": [
+    "pt",
+    "Catarina II da Rússia",
+    [
+     "1762"
+    ]
+   ]
+  },
+  {
+   "t": "Coloque estes marcos da Península Ibérica em ordem, do mais antigo ao mais recente?",
+   "type": "order",
+   "a": [
+    "portugal",
+    "ceuta",
+    "granada",
+    "uniao"
+   ],
+   "order": [
+    {
+     "id": "portugal",
+     "y": 1143,
+     "label": "Portugal reconhecido como reino",
+     "sub": "Tratado de Zamora",
+     "crest": "portugal"
+    },
+    {
+     "id": "ceuta",
+     "y": 1415,
+     "label": "Tomada de Ceuta",
+     "sub": "Início da expansão portuguesa",
+     "face": "henrique_navegador"
+    },
+    {
+     "id": "granada",
+     "y": 1492,
+     "label": "Queda de Granada",
+     "sub": "Fim da Reconquista",
+     "face": "isabel_castela"
+    },
+    {
+     "id": "uniao",
+     "y": 1580,
+     "label": "União Ibérica",
+     "sub": "Um só rei para Portugal e Espanha",
+     "face": "felipe_ii"
+    }
+   ],
+   "d": 4,
+   "src": [
+    "pt",
+    "União Ibérica",
+    [
+     "1580"
+    ]
+   ]
+  },
+  {
+   "t": "Ordene estes marcos da história africana, do mais antigo ao mais recente?",
+   "type": "order",
+   "a": [
+    "axum",
+    "mali",
+    "tombuctu",
+    "selassie"
+   ],
+   "order": [
+    {
+     "id": "axum",
+     "y": 330,
+     "label": "Axum adota o cristianismo",
+     "sub": "Rei Ezana",
+     "crest": "axum"
+    },
+    {
+     "id": "mali",
+     "y": 1235,
+     "label": "Fundação do Império do Mali",
+     "sub": "Sundiata Keita",
+     "crest": "mali"
+    },
+    {
+     "id": "tombuctu",
+     "y": 1468,
+     "label": "O Songai toma Tombuctu",
+     "sub": "Sonni Ali",
+     "crest": "songai"
+    },
+    {
+     "id": "selassie",
+     "y": 1930,
+     "label": "Hailé Selassié é coroado",
+     "sub": "Etiópia",
+     "face": "haile_selassie"
+    }
+   ],
+   "d": 4,
+   "src": [
+    "en",
+    "Songhai Empire",
+    [
+     "Timbuktu",
+     "Sonni Ali"
+    ]
+   ]
+  },
+  {
+   "t": "Em que ordem estes faraós começaram a reinar, do mais antigo ao mais recente?",
+   "type": "order",
+   "a": [
+    "hatexepsute",
+    "aquenaton",
+    "tutancamon",
+    "ramses"
+   ],
+   "order": [
+    {
+     "id": "hatexepsute",
+     "y": -1479,
+     "label": "Hatexepsute",
+     "sub": "A rainha que virou faraó",
+     "face": "hatexepsute"
+    },
+    {
+     "id": "aquenaton",
+     "y": -1353,
+     "label": "Aquenáton",
+     "sub": "O culto ao deus Aton",
+     "face": "aquenaton"
+    },
+    {
+     "id": "tutancamon",
+     "y": -1332,
+     "label": "Tutancâmon",
+     "sub": "O faraó menino",
+     "face": "tutancamon"
+    },
+    {
+     "id": "ramses",
+     "y": -1279,
+     "label": "Ramsés II",
+     "sub": "Batalha de Kadesh",
+     "face": "ramses_ii"
+    }
+   ],
+   "d": 5,
+   "src": [
+    "pt",
+    "Ramessés II",
+    [
+     "1279"
+    ]
+   ]
+  },
+  {
+   "t": "Coloque estes marcos da Ásia islâmica em ordem, do mais antigo ao mais recente?",
+   "type": "order",
+   "a": [
+    "delhi",
+    "safavida",
+    "panipat",
+    "bagda"
+   ],
+   "order": [
+    {
+     "id": "delhi",
+     "y": 1398,
+     "label": "Tamerlão saqueia Délhi",
+     "sub": "Índia",
+     "face": "tamerlao"
+    },
+    {
+     "id": "safavida",
+     "y": 1501,
+     "label": "Fundação do Império Safávida",
+     "sub": "Xá Ismail I",
+     "crest": "safavida"
+    },
+    {
+     "id": "panipat",
+     "y": 1526,
+     "label": "Babur vence em Panipat",
+     "sub": "Nasce o Império Mogol",
+     "crest": "mogol"
+    },
+    {
+     "id": "bagda",
+     "y": 1534,
+     "label": "Os otomanos tomam Bagdá",
+     "sub": "Campanha de Solimão",
+     "face": "solimao"
+    }
+   ],
+   "d": 5,
+   "src": [
+    "en",
+    "First Battle of Panipat",
+    [
+     "1526",
+     "Babur"
+    ]
+   ]
+  },
+  {
+   "t": "Do mais antigo ao mais recente, em que ordem aconteceram estes marcos da Europa Central?",
+   "type": "order",
+   "a": [
+    "carlos",
+    "viena",
+    "fim",
+    "dual"
+   ],
+   "order": [
+    {
+     "id": "carlos",
+     "y": 1519,
+     "label": "Carlos V é eleito imperador",
+     "sub": "Sacro Império",
+     "face": "carlos_v"
+    },
+    {
+     "id": "viena",
+     "y": 1683,
+     "label": "Segundo cerco otomano a Viena",
+     "sub": "Início do recuo otomano",
+     "crest": "imperio_otomano"
+    },
+    {
+     "id": "fim",
+     "y": 1806,
+     "label": "Fim do Sacro Império",
+     "sub": "Dissolvido sob pressão de Napoleão",
+     "crest": "sacro_imperio"
+    },
+    {
+     "id": "dual",
+     "y": 1867,
+     "label": "Criação da Áustria-Hungria",
+     "sub": "Monarquia dual",
+     "crest": "austria_hungria"
+    }
+   ],
+   "d": 5,
+   "src": [
+    "pt",
+    "Sacro Império Romano-Germânico",
+    [
+     "1806"
+    ]
+   ]
+  }
+ ]
+}

@@ -404,7 +404,7 @@
      "id": "eua",
      "y": 1776,
      "label": "Independência dos EUA",
-     "sub": "Declaração de 1776",
+     "sub": "Declaração assinada na Filadélfia",
      "face": "jefferson"
     },
     {
@@ -466,7 +466,7 @@
      "id": "fim",
      "y": 1945,
      "label": "Fim da Segunda Guerra",
-     "sub": "1945",
+     "sub": "Rendição do Japão",
      "face": "churchill"
     },
     {
@@ -617,7 +617,7 @@
      "id": "queda",
      "y": 476,
      "label": "Queda de Roma do Ocidente",
-     "sub": "476",
+     "sub": "Odoacro depõe o último imperador",
      "crest": "imperio_romano"
     }
    ],
@@ -658,7 +658,7 @@
      "id": "peste",
      "y": 1347,
      "label": "Peste Negra chega à Europa",
-     "sub": "1347",
+     "sub": "Navios trazem a peste à Sicília",
      "crest": "veneza"
     },
     {
@@ -740,28 +740,28 @@
      "id": "muro",
      "y": 1961,
      "label": "Construção do Muro de Berlim",
-     "sub": "1961",
+     "sub": "Berlim dividida da noite para o dia",
      "crest": "urss"
     },
     {
      "id": "queda",
      "y": 1989,
      "label": "Queda do Muro de Berlim",
-     "sub": "1989",
+     "sub": "Os berlinenses abrem a passagem",
      "crest": "urss"
     },
     {
      "id": "mandela",
      "y": 1990,
      "label": "Mandela é libertado",
-     "sub": "1990",
+     "sub": "Depois de 27 anos na prisão",
      "face": "mandela"
     },
     {
      "id": "onze",
      "y": 2001,
      "label": "Atentados de 11 de setembro",
-     "sub": "2001",
+     "sub": "Ataques em Nova York e Washington",
      "crest": "estados_unidos"
     }
    ],

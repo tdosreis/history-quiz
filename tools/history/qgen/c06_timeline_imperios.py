@@ -24,21 +24,21 @@ O('Linha do tempo: ordene a queda de Constantinopla, a Magna Carta, o Tratado de
 O('Linha do tempo: quem nasceu primeiro — Mozart, Beethoven, Chopin ou Tchaikovsky?',
   [('mozart','Mozart','Nascimento',1756,F('mozart')),('beethoven','Beethoven','Nascimento',1770,F('beethoven')),('chopin','Chopin','Nascimento',1810,F('chopin')),('tchaikovsky','Tchaikovsky','Nascimento',1840,F('tchaikovsky'))], 3, ('pt','Frédéric Chopin',['1810']))
 O('Linha do tempo: ordene a independência dos EUA, a do Haiti, a do Brasil e a da Índia.',
-  [('eua','Independência dos EUA','Declaração de 1776',1776,F('jefferson')),('haiti','Independência do Haiti','Toussaint e Dessalines',1804,F('toussaint')),('brasil','Independência do Brasil','D. Pedro I',1822,F('dom_pedro_i')),('india','Independência da Índia','Gandhi',1947,F('gandhi'))], 2, ('pt','Independência da Índia',['1947']))
+  [('eua','Independência dos EUA','Declaração assinada na Filadélfia',1776,F('jefferson')),('haiti','Independência do Haiti','Toussaint e Dessalines',1804,F('toussaint')),('brasil','Independência do Brasil','D. Pedro I',1822,F('dom_pedro_i')),('india','Independência da Índia','Gandhi',1947,F('gandhi'))], 2, ('pt','Independência da Índia',['1947']))
 O('Linha do tempo: ordene o voo de Santos Dumont, a Revolução Russa, o fim da Segunda Guerra e a chegada à Lua.',
-  [('dumont','Voo do 14-Bis','Santos Dumont',1906,F('santos_dumont')),('russa','Revolução Russa','Lênin',1917,F('lenin')),('fim','Fim da Segunda Guerra','1945',1945,F('churchill')),('lua','Homem na Lua','Apollo 11',1969,F('armstrong'))], 1, ('pt','Apollo 11',['1969']))
+  [('dumont','Voo do 14-Bis','Santos Dumont',1906,F('santos_dumont')),('russa','Revolução Russa','Lênin',1917,F('lenin')),('fim','Fim da Segunda Guerra','Rendição do Japão',1945,F('churchill')),('lua','Homem na Lua','Apollo 11',1969,F('armstrong'))], 1, ('pt','Apollo 11',['1969']))
 O('Linha do tempo: ordene a morte de Tutancâmon, de Péricles, de Augusto e de Maomé II.',
   [('tut','Tutancâmon','Morte',-1323,F('tutancamon')),('pericles','Péricles','Morte',-429,F('pericles')),('augusto','Augusto','Morte',14,F('augusto')),('maome','Maomé II','Morte',1481,F('maome_ii'))], 4, ('pt','Augusto',['14']))
 O('Linha do tempo: ordene o nascimento de Darwin, Marx, Tolstói e Freud.',
   [('darwin','Darwin','Nascimento',1809,F('darwin')),('marx','Karl Marx','Nascimento',1818,F('marx')),('tolstoi','Tolstói','Nascimento',1828,F('tolstoi')),('freud','Sigmund Freud','Nascimento',1856,F('freud'))], 3, ('pt','Sigmund Freud',['1856']))
 O('Linha do tempo: ordene Maratona, a travessia dos Alpes por Aníbal, o Rubicão de César e a queda de Roma.',
-  [('medicas','Batalha de Maratona','Guerras Médicas',-490,C('atenas')),('punicas','Aníbal atravessa os Alpes','Guerras Púnicas',-218,F('anibal')),('cesar','César cruza o Rubicão','Guerra civil',-49,F('cesar')),('queda','Queda de Roma do Ocidente','476',476,C('imperio_romano'))], 3, ('pt','Guerras Púnicas',['218 a.C.']))
+  [('medicas','Batalha de Maratona','Guerras Médicas',-490,C('atenas')),('punicas','Aníbal atravessa os Alpes','Guerras Púnicas',-218,F('anibal')),('cesar','César cruza o Rubicão','Guerra civil',-49,F('cesar')),('queda','Queda de Roma do Ocidente','Odoacro depõe o último imperador',476,C('imperio_romano'))], 3, ('pt','Guerras Púnicas',['218 a.C.']))
 O('Linha do tempo: ordene a Primeira Cruzada, a Guerra dos Cem Anos, a Peste Negra e a Primeira Guerra Mundial.',
-  [('cruz','Primeira Cruzada','Início',1096,F('saladino')),('cem','Guerra dos Cem Anos','Início',1337,F('joana_darc')),('peste','Peste Negra chega à Europa','1347',1347,C('veneza')),('guerra','Primeira Guerra Mundial','Início',1914,C('imperio_alemao'))], 4, ('pt','Peste Negra',['1347']))
+  [('cruz','Primeira Cruzada','Início',1096,F('saladino')),('cem','Guerra dos Cem Anos','Início',1337,F('joana_darc')),('peste','Peste Negra chega à Europa','Navios trazem a peste à Sicília',1347,C('veneza')),('guerra','Primeira Guerra Mundial','Início',1914,C('imperio_alemao'))], 4, ('pt','Peste Negra',['1347']))
 O('Linha do tempo: ordene a morte de Zumbi, a de Tiradentes, a de D. Pedro I e a de Getúlio Vargas.',
   [('zumbi','Zumbi dos Palmares','Morte',1695,F('zumbi')),('tira','Tiradentes','Morte',1792,F('tiradentes')),('pedro','Dom Pedro I','Morte',1834,F('dom_pedro_i')),('getulio','Getúlio Vargas','Morte',1954,F('getulio'))], 2, ('pt','Getúlio Vargas',['1954']))
 O('Linha do tempo: ordene o Muro de Berlim (construção), Mandela livre, o fim da URSS e o 11 de setembro.',
-  [('muro','Construção do Muro de Berlim','1961',1961,C('urss')),('queda','Queda do Muro de Berlim','1989',1989,C('urss')),('mandela','Mandela é libertado','1990',1990,F('mandela')),('onze','Atentados de 11 de setembro','2001',2001,C('estados_unidos'))], 3, ('pt','Muro de Berlim',['1961']))
+  [('muro','Construção do Muro de Berlim','Berlim dividida da noite para o dia',1961,C('urss')),('queda','Queda do Muro de Berlim','Os berlinenses abrem a passagem',1989,C('urss')),('mandela','Mandela é libertado','Depois de 27 anos na prisão',1990,F('mandela')),('onze','Atentados de 11 de setembro','Ataques em Nova York e Washington',2001,C('estados_unidos'))], 3, ('pt','Muro de Berlim',['1961']))
 c.write()
 
 # ───────────────────────── Impérios e civilizações ─────────────────────────
