@@ -64,27 +64,39 @@
     /* ── FRANKS: a gold-and-garnet bee from the tomb of Childeric I at Tournai ── */
     francos: { shape: 'roundel', field: '#1F3F78', what: 'uma abelha de ouro e granadas do túmulo de Childerico I (Tournai)',
       draw: u => {
-        const g = BK.gold, gl = BK.goldLo, gr = `url(#${u}ga)`;
-        let s = `<defs>${rad(u, 'ga', '38%', '30%', '75%', [[0, '#C9303F'], [.55, '#8A1626'], [1, '#4E0912']])}</defs>`;
-        /* the right half, cell by cell; the left is its mirror */
-        const wing = 'M34 21C40.8 19.6 46 24.4 45.6 31.6C45.2 38.2 42.6 44 39.8 48.2C37 42 34.9 33.4 34 21Z';
-        const body = 'M30 24.4H33.9C34.7 32.6 33.4 41.2 30 50.4Z';
-        const head = 'M30 10.2C33.7 10.2 35.5 12.6 35.5 15.3C35.5 18 33.4 19.8 30 19.8Z';
-        const thorax = 'M30 19.6H34.3Q36.2 22 34.3 24.4H30Z';
-        const half = P(wing, gr, gl, .8) + P(body, gr, gl, .8)
-          + L('M35.4 23.2C39 26.6 40.8 33.4 40.6 44M30 29.8H33.8M30 35.2H33.6M30 40.4H32.6M30 45.4H31.6', g, 1.25)
-          + L(wing, g, 1.3) + L('M33.9 24.4C34.7 32.6 33.4 41.2 30 50.4', g, 1.3)
-          + P(thorax, g, gl, .8) + P('M30 20.9H33.5Q34.6 22 33.5 23.1H30Z', gr)
-          + P(head, g, gl, .8) + `<circle cx="32.4" cy="14.9" r="1.55" fill="${gr}" stroke="${gl}" stroke-width=".5"/>`
-          + L('M36.6 22.2C39.6 21.6 42.4 22.8 43.8 25.4', '#fff', .6, 'opacity=".35"');
+        const g = BK.gold, gl = BK.goldLo, gh = BK.goldHi, gr = `url(#${u}ga)`;
+        let s = `<defs>${rad(u, 'ga', '36%', '28%', '80%', [[0, '#D03A44'], [.5, '#921A2A'], [1, '#520A14']])}</defs>`;
+        /* the right half, cloison by cloison; the left is its mirror */
+        const wing = 'M33.6 20.6C38.6 18.8 44.4 20.8 46.4 26.2C48.2 31.4 46 39.2 41.2 46.6C38 40.4 35 31.6 33.6 20.6Z';
+        const body = 'M30 23.2C33.2 23.2 35.2 26 35.2 30.8C35.2 37.8 33.2 44.4 30 50.4Z';
+        const thorax = 'M30 17.8H33.4C35.4 18.6 35.8 22.6 33.6 24.2H30Z';
+        const head = 'M30 9.6C32.4 9.8 34 11.2 34.4 13.4C34.7 15.4 33.6 17.4 31.6 18.4H30Z';
+        const half = P(wing, gr, gl, .8)
+          /* the wing's cloisons: its gold border, a long vein and the cross walls */
+          + L(wing, g, 1.4) + L('M34.6 22.4C38.8 25.8 41.6 33.4 41.6 44.4M36.6 27L46.6 28.6M39.4 36.4L45.4 36.2', g, 1.1)
+          + L('M36.4 21.4C40.2 20.6 43.6 22 45.4 25', '#fff', .55, 'opacity=".4"')
+          + P(body, gr, gl, .8) + L(body.replace('Z', ''), g, 1.4)
+          + L('M30 28.2H34.8M30 33.4H35.1M30 38.6H34.4M30 43.6H33.2', g, 1.15)
+          + P(thorax, g, gl, .8) + P('M30 19.4H32.8C33.8 20 34 21.8 33 22.6H30Z', gr)
+          + P(head, g, gl, .8) + P('M30 12.4H31.6L30 15.6Z', gr)
+          /* the eye: a round garnet set on the side of the head */
+          + `<circle cx="33.5" cy="14.2" r="2" fill="${gr}" stroke="${g}" stroke-width="1"/>`
+          + `<circle cx="33" cy="13.6" r=".55" fill="#fff" opacity=".55"/>`;
         s += both(half);
-        s += L('M30 20V50', gl, .5, 'opacity=".6"') + L('M28.2 11.6Q30 10.9 31.8 11.6', BK.goldHi, .6);
+        s += L('M30 23.6V49', gl, .6, 'opacity=".7"') + L('M28.4 10.6Q30 10 31.6 10.6', gh, .6);
         return s;
       } },
 
     /* ── HOLY ROMAN EMPIRE: the Reichsadler, double-headed and haloed, sable on or ── */
     sacro_imperio: { shape: 'heater', field: '#E4B940', what: 'a águia bicéfala imperial negra, com auréolas de ouro, sobre ouro',
-      draw: () => BEAST.eagle(11, 12, 38, 42, { heads: 2, halo: true, accent: BK.red, tongue: BK.red }) },
+      draw: () => {
+        /* the eagle's box, and the design-box points of its two haloes (centre 32.31,10.37 r 11.24 and its mirror) */
+        const x = 12, y = 11.6, w = 36, h = 40, sc = Math.min(w / 100, h / 106);
+        const ox = x + (w - 100 * sc) / 2, oy = y + (h - 106 * sc) / 2 + 6 * sc;
+        /* a sable rim under each nimbus, so the gold haloes read against the gold field */
+        const rim = [32.31, 67.69].map(hx => `<circle cx="${F(ox + hx * sc)}" cy="${F(oy + 10.37 * sc)}" r="${F(11.24 * sc + .75)}" fill="${BK.sable}"/>`).join('');
+        return rim + BEAST.eagle(x, y, w, h, { heads: 2, halo: '#F3D477', accent: BK.red, tongue: BK.red });
+      } },
 
     /* ── UMAYYADS: the Dome of the Rock, raised by Abd al-Malik in 691 ── */
     califado_omiada: { shape: 'roundel', field: '#F2EEE3', what: 'a Cúpula da Rocha de Abd al-Malik: cúpula de ouro sobre o octógono, no branco omíada',
@@ -93,63 +105,73 @@
         let s = `<defs>${lin(u, 'dm', [0, 0], [1, 0], [[0, BK.goldHi], [.4, BK.gold], [1, BK.goldLo]])}</defs>`;
         /* the platform of the Haram */
         s += P('M0 46.4H60V60H0Z', '#D9CFBA') + L('M0 46.4H60', '#A29478', 1);
-        /* the octagon: a face to the front, two turned away */
-        s += P('M12.8 32.4H23V46.4H12.8Z', tqHi, tqLo, .9) + P('M23 32.4H37V46.4H23Z', tq, tqLo, .9) + P('M37 32.4H47.2V46.4H37Z', tqLo, tqLo, .9);
+        /* the octagon, seen corner-on: one face square to us, two turned 45° away (0.71 as wide) */
+        const x0 = 9.6, x1 = 21.6, x2 = 38.4, x3 = 50.4, top = 33, foot = 46.4;
+        s += P(`M${x0} ${top}H${x1}V${foot}H${x0}Z`, tqHi, tqLo, .9) + P(`M${x1} ${top}H${x2}V${foot}H${x1}Z`, tq, tqLo, .9)
+          + P(`M${x2} ${top}H${x3}V${foot}H${x2}Z`, tqLo, tqLo, .9);
         /* the marble dado */
-        s += P('M12.8 42.4H47.2V46.4H12.8Z', '#E4DED0', '#9C9482', .7);
-        /* arched windows */
+        s += P(`M${x0} 42.6H${x3}V${foot}H${x0}Z`, '#E4DED0', '#9C9482', .7) + L(`M${x1} 42.6V${foot}M${x2} 42.6V${foot}`, '#9C9482', .6);
+        /* arched windows: five on the near face, four (foreshortened) on each far one */
         const arch = (x, w, y0, y1) => `M${F(x - w / 2)} ${y1}V${F(y0 + w * .6)}Q${F(x - w / 2)} ${y0} ${x} ${F(y0 - w * .25)}Q${F(x + w / 2)} ${y0} ${F(x + w / 2)} ${F(y0 + w * .6)}V${y1}Z`;
         let w = '';
-        [26, 30, 34].forEach(x => { w += arch(x, 2.4, 35, 41.2); });
-        [15.6, 20.2].forEach(x => { w += arch(x, 1.7, 35, 41.2); });
-        [39.8, 44.4].forEach(x => { w += arch(x, 1.7, 35, 41.2); });
-        s += P(w, win, BK.gold, .6);
+        [0, 1, 2, 3, 4].forEach(i => { w += arch(F(x1 + 2.4 + i * 3), 1.9, 35.6, 41.2); });
+        [0, 1, 2, 3].forEach(i => { w += arch(F(x0 + 2 + i * 2.67), 1.3, 35.6, 41.2) + arch(F(x2 + 2 + i * 2.67), 1.3, 35.6, 41.2); });
+        s += P(w, win, BK.gold, .55);
         /* the parapet */
-        s += P('M12.2 31.2H47.8V33.4H12.2Z', BK.gold, BK.goldLo, .7);
+        s += P(`M${x0 - .6} 31.6H${x3 + .6}V33.8H${x0 - .6}Z`, BK.gold, BK.goldLo, .7);
         /* the drum, with its windows */
-        s += P('M19.4 24.8H40.6V31.2H19.4Z', tq, tqLo, .9);
+        s += P('M20.4 25.4H39.6V31.6H20.4Z', tq, tqLo, .9) + P('M33.6 25.4H39.6V31.6H33.6Z', tqLo, null, 0, 'opacity=".5"');
         let dw = '';
-        [22.4, 26.2, 30, 33.8, 37.6].forEach((x, i) => { dw += arch(x, i === 0 || i === 4 ? 1.3 : 1.8, 26.8, 30.2); });
+        [23.2, 26.8, 30.4, 34, 37].forEach((x, i) => { dw += arch(x, i === 0 || i === 4 ? 1.2 : 1.7, 27.2, 30.4); });
         s += P(dw, win);
-        s += P('M18.8 24H41.2V25.4H18.8Z', BK.gold, BK.goldLo, .6);
-        /* the golden dome and its finial */
-        s += L('M30 9V4.6', BK.goldLo, 1.4) + `<circle cx="30" cy="6.4" r="1.1" fill="${BK.gold}" stroke="${BK.goldLo}" stroke-width=".5"/>`;
-        s += P('M18.6 24.4C18.6 16.4 23.2 10.6 30 8.6C36.8 10.6 41.4 16.4 41.4 24.4Z', `url(#${u}dm)`, BK.goldLo, 1);
-        s += P('M21.6 22.6C21.8 17.4 24.2 13.4 27.8 11C26 14 25 18 25 22.6Z', BK.goldHi, null, 0, 'opacity=".7"');
-        return s;
+        s += P('M19.8 24.6H40.2V26H19.8Z', BK.gold, BK.goldLo, .6);
+        /* the golden dome, a little pointed, and its finial */
+        s += L('M30 12V6.6', BK.goldLo, 1.3) + `<circle cx="30" cy="8.6" r="1.15" fill="${BK.gold}" stroke="${BK.goldLo}" stroke-width=".5"/>`
+          + `<circle cx="30" cy="11.3" r=".8" fill="${BK.gold}" stroke="${BK.goldLo}" stroke-width=".45"/>`;
+        s += P('M19.2 25C19.2 18.2 23.4 13.6 30 11.8C36.6 13.6 40.8 18.2 40.8 25Z', `url(#${u}dm)`, BK.goldLo, 1);
+        s += P('M22 23.4C22.2 19.2 24.2 16 27.8 13.8C26.2 16.6 25.4 19.8 25.4 23.4Z', BK.goldHi, null, 0, 'opacity=".7"');
+        return `<g transform="translate(0 1.8)">${s}</g>`;
       } },
 
-    /* ── ABBASIDS: Madinat al-Salam, al-Mansur's Round City of Baghdad, from above ── */
-    califado_abassida: { shape: 'roundel', field: '#17130F', what: 'a Cidade Redonda de Bagdá vista de cima: muralhas, quatro portas e a Cúpula Verde, em ouro sobre o negro abássida',
-      draw: u => {
+    /* ── ABBASIDS: Madinat al-Salam, al-Mansur's Round City of Baghdad (762), from above ── */
+    califado_abassida: { shape: 'roundel', field: '#17130F', what: 'a Cidade Redonda de Bagdá vista de cima: fosso, muralhas, quatro portas e a Cúpula Verde, em ouro sobre o negro abássida',
+      draw: () => {
         const g = BK.gold, gl = BK.goldLo, gh = BK.goldHi, blk = '#17130F';
         let s = '';
-        /* the moat, the outer wall, the great wall with its towers */
-        s += B.ring(30, 30, 23.2, 1.3, '#2C5476');
-        s += B.ring(30, 30, 21.6, 1.1, g);
-        s += B.ring(30, 30, 18.8, 2.6, g) + B.dots(30, 30, 18.8, 28, 1.35, g, Math.PI / 28);
-        /* the ring of houses: faint radial lanes */
+        /* the moat, fed from the Tigris */
+        s += B.ring(30, 30, 23.5, 2.2, '#2D5C86') + B.ring(30, 30, 22.8, .5, '#5E8DB4', 'opacity=".8"');
+        /* the outer wall, then the great wall with its round towers */
+        s += B.ring(30, 30, 21.1, 1.2, g);
+        s += B.dots(30, 30, 19.3, 28, 1.45, gl, Math.PI / 28) + B.ring(30, 30, 18.7, 2.8, g) + B.dots(30, 30, 19.3, 28, 1.05, g, Math.PI / 28);
+        s += B.ring(30, 30, 17.6, .5, gh, 'opacity=".7"');
+        /* the ring of houses, cut by lanes, round a circular street */
         let lanes = '';
-        for (let i = 0; i < 40; i++) {
-          const a = i * Math.PI / 20;
-          lanes += `M${pol(30, 30, a, 12.8).join(' ')}L${pol(30, 30, a, 17).join(' ')}`;
+        for (let i = 0; i < 48; i++) {
+          const a = (i + .5) * Math.PI / 24;
+          lanes += `M${pol(30, 30, a, 13.4).join(' ')}L${pol(30, 30, a, 16.6).join(' ')}`;
         }
-        s += L(lanes, gl, .6, 'opacity=".75"') + B.ring(30, 30, 14.9, .7, gl);
-        /* the inner wall */
-        s += B.ring(30, 30, 12, 1.5, g);
-        /* four roads from the four gates (Khorasan, Basra, Kufa, Syria) */
+        s += B.ring(30, 30, 15, 3.4, '#6B4E22') + L(lanes, blk, .7) + B.ring(30, 30, 15, .8, blk);
+        /* the inner wall round the great court */
+        s += B.ring(30, 30, 12.3, 1.7, g);
+        /* the four arcaded avenues, from the four gates (Khorasan, Basra, Kufa, Syria) to the court */
         let roads = '', gates = '';
-        [1, 3, 5, 7].forEach(k => {
-          const a = k * Math.PI / 4;
-          roads += `<g transform="rotate(${k * 45} 30 30)"><path d="M41 28.2H52.6V31.8H41Z" fill="${blk}"/><path d="M41.6 28.2H52.4M41.6 31.8H52.4" stroke="${g}" stroke-width=".9"/></g>`;
-          gates += `<g transform="rotate(${k * 45} 30 30)"><path d="M46.6 26.6H51.6V33.4H46.6Z" fill="${g}" stroke="${gl}" stroke-width=".7"/><path d="M48 29Q49.1 27.8 50.2 29V31H48Z" fill="${blk}"/>`
-            + `<path d="M40.6 27.6H43.4V32.4H40.6Z" fill="${g}" stroke="${gl}" stroke-width=".6"/></g>`;
+        [0, 90, 180, 270].forEach(k => {
+          const R = s2 => `<g transform="rotate(${k} 30 30)">${s2}</g>`;
+          roads += R(`<path d="M41.4 28.3H54V31.7H41.4Z" fill="${blk}"/>` + L('M42.4 28.3H47M42.4 31.7H47', g, .8));
+          gates += R(
+            /* the bridge over the moat and the outer gate */
+            P('M50.4 28H54.4V32H50.4Z', g, gl, .7)
+            /* the great gate-house with its domed audience hall */
+            + P('M45.6 26.4H50.2V33.6H45.6Z', g, gl, .8) + `<circle cx="47.9" cy="30" r="1.55" fill="${gh}" stroke="${gl}" stroke-width=".6"/>`
+            /* the gate of the inner wall */
+            + P('M40.6 28.4H42.8V31.6H40.6Z', g, gl, .6));
         });
         s += roads + gates;
-        /* the central court: the palace of the Golden Gate under its Green Dome, and the mosque */
-        s += `<g transform="rotate(45 30 30)"><path d="M25.6 25.6H34.4V34.4H25.6Z" fill="${g}" stroke="${gl}" stroke-width=".8"/>`
-          + `<path d="M34.8 26.8H38.4V33.2H34.8Z" fill="${g}" stroke="${gl}" stroke-width=".7"/></g>`;
-        s += `<circle cx="30" cy="30" r="3.1" fill="#2E8A55" stroke="#14492B" stroke-width=".8"/><circle cx="29" cy="29" r="1" fill="#7FCB98" opacity=".8"/>`;
+        /* the court: the mosque against the palace of the Golden Gate, under its Green Dome */
+        s += P('M27.4 19.6H32.6V24.2H27.4Z', g, gl, .7) + P('M28.8 20.8H31.2V22.8H28.8Z', blk);
+        s += P('M24.8 24.8H35.2V35.2H24.8Z', g, gl, .8);
+        s += `<circle cx="30" cy="30" r="3.5" fill="#2E8A55" stroke="#14492B" stroke-width=".8"/>`
+          + `<path d="M28 28.6A2.6 2.6 0 0 1 30.6 27.4" fill="none" stroke="#9CDDB0" stroke-width=".8" stroke-linecap="round"/>`;
         return s;
       } },
 
@@ -173,7 +195,7 @@
             + `<ellipse cx="${x}" cy="${F(top - big - .6)}" rx=".85" ry="1.05" fill="#F6F0E2" stroke="${ln}" stroke-width=".4"/>`
             + L(`M${F(x - w0 / 2 + 1.2)} 44L${F(x - w1 / 2 + 1)} ${top + 1.5}`, mHi, .8, 'opacity=".8"');
         };
-        s += tower(18, 8, 6.4, 22, 4.4) + tower(42, 8, 6.4, 22, 4.4) + tower(30, 10.4, 8.4, 16.6, 6);
+        s += tower(18, 8, 6.4, 23, 4.2) + tower(42, 8, 6.4, 23, 4.2) + tower(30, 10.4, 8.4, 18.4, 5.2);
         /* the toron: palm beams sticking out in rows */
         let t = '';
         const row = (x0, x1, y) => { for (let x = x0; x <= x1 + .01; x += 2.6) t += `M${F(x)} ${y}h1.3`; };
@@ -192,42 +214,44 @@
     /* ── SONGHAI: the Tomb of Askia at Gao (1495), a mud pyramid bristling with beams ── */
     songai: { shape: 'stele', field: '#1C4A78', what: 'o Túmulo dos Áskia em Gao: pirâmide de barro eriçada de vigas, sobre o azul do Níger',
       draw: u => {
-        const m = '#B2643A', mHi = '#D48A58', mLo = '#844222', ln = '#55280F', tor = '#2E1808';
-        let s = `<defs>${lin(u, 'nk', [0, 0], [0, 1], [[0, '#163C66'], [1, '#2F6C9E']])}</defs>`;
+        const m = '#B5683C', mHi = '#D99460', mLo = '#82401E', ln = '#55280F', tor = '#2E1808';
+        let s = `<defs>${lin(u, 'nk', [0, 0], [0, 1], [[0, '#143862'], [.75, '#2C6A9E'], [1, '#5B8FB8']])}</defs>`;
         s += P('M0 0H60V60H0Z', `url(#${u}nk)`);
-        /* the river at its foot */
-        s += P('M0 51H60V60H0Z', '#C59A62') + L('M0 51.2H60', '#8E6A3C', .8);
-        /* five tiers, each a little set back from the one below */
-        const T = [[50.6, 12.6], [43, 10.6], [35.6, 8.6], [28.2, 6.8], [21, 5.2], [14, 3.8]];
-        let body = '';
-        for (let i = 0; i < 5; i++) {
-          const [y0, h0] = T[i], [y1, h1] = T[i + 1];
-          const hw = h1 + .6;
-          body += `M${F(30 - h0)} ${y0}Q${F(30 - h0 + .4)} ${F((y0 + y1) / 2)} ${F(30 - hw)} ${F(y1 + .6)}L${F(30 - hw)} ${y1}H${F(30 + hw)}L${F(30 + hw)} ${F(y1 + .6)}Q${F(30 + h0 - .4)} ${F((y0 + y1) / 2)} ${F(30 + h0)} ${y0}Z`;
-        }
-        body += `M${F(30 - 4.4)} 14H${F(30 + 4.4)}V12.4H${F(30 - 4.4)}Z`;
-        s += P(body, m, ln, .9);
-        /* the shaded east face */
-        let sh = '';
-        for (let i = 0; i < 5; i++) {
-          const [y0, h0] = T[i], [y1, h1] = T[i + 1];
-          sh += `M${F(30 + h0 * .55)} ${y0}L${F(30 + (h1 + .6) * .55)} ${y1}H${F(30 + h1 + .6)}L${F(30 + h1 + .6)} ${F(y1 + .6)}Q${F(30 + h0 - .4)} ${F((y0 + y1) / 2)} ${F(30 + h0)} ${y0}Z`;
-        }
-        s += P(sh, mLo, null, 0, 'opacity=".55"');
-        s += L('M21.6 49Q22.2 45 23.2 43.6M23.6 41.6Q24 38 25 36.4', mHi, .8, 'opacity=".8"');
-        /* the beams, out past both sides and in rows across the face */
-        let t = '';
-        for (let i = 0; i < 5; i++) {
-          const [y0, h0] = T[i], [y1] = T[i + 1];
-          [.3, .7].forEach(k => {
-            const y = F(y0 + (y1 - y0) * k), hw = h0 - (h0 - T[i + 1][1]) * k;
-            t += `M${F(30 - hw - 2.2)} ${y}H${F(30 - hw + .4)}M${F(30 + hw - .4)} ${y}H${F(30 + hw + 2.2)}`;
+        /* the sand of the court at its foot */
+        s += P('M0 50.6H60V60H0Z', '#C99E64') + L('M0 50.8H60', '#8E6A3C', .8);
+        /* tiers: [base y, half-width at the base, half-width under the next ledge] */
+        const T = [[51, 12.6, 11.4], [45.2, 10.6, 9.4], [39.6, 8.7, 7.6], [34.2, 6.9, 5.9], [29, 5.2, 4.3], [24.2, 3.7, 3]];
+        const TOP = 20.2;
+        const yAt = i => i + 1 < T.length ? T[i + 1][0] : TOP;
+        let body = '', shade = '', hi = '';
+        T.forEach(([y0, a, b], i) => {
+          const y1 = yAt(i), r = .9;
+          /* a tier with slightly bowed sides and rounded shoulders */
+          body += `M${F(30 - a)} ${y0}Q${F(30 - (a + b) / 2 - .5)} ${F((y0 + y1) / 2)} ${F(30 - b)} ${F(y1 + r)}Q${F(30 - b)} ${y1} ${F(30 - b + r)} ${y1}`
+            + `H${F(30 + b - r)}Q${F(30 + b)} ${y1} ${F(30 + b)} ${F(y1 + r)}Q${F(30 + (a + b) / 2 + .5)} ${F((y0 + y1) / 2)} ${F(30 + a)} ${y0}Z`;
+          /* the east face in shadow, the west catching the light */
+          shade += `M${F(30 + a * .42)} ${y0}L${F(30 + b * .42)} ${y1}H${F(30 + b - r)}Q${F(30 + b)} ${y1} ${F(30 + b)} ${F(y1 + r)}Q${F(30 + (a + b) / 2 + .5)} ${F((y0 + y1) / 2)} ${F(30 + a)} ${y0}Z`;
+          hi += `M${F(30 - a + 1.2)} ${F(y0 - .8)}Q${F(30 - (a + b) / 2 + .3)} ${F((y0 + y1) / 2)} ${F(30 - b + .8)} ${F(y1 + 1.4)}`;
+        });
+        /* the little cap on top, and the stake through it */
+        body += 'M27.6 20.6Q27.8 18.2 30 17.8Q32.2 18.2 32.4 20.6Z';
+        s += P(body, m, ln, .9) + P(shade, mLo, null, 0, 'opacity=".5"') + L(hi, mHi, .8, 'opacity=".75"');
+        /* the toron: beams out past both edges of every tier, and their ends across its face */
+        let side = '', ends = '';
+        T.forEach(([y0, a, b], i) => {
+          const y1 = yAt(i);
+          [.28, .7].forEach(k => {
+            const y = F(y0 + (y1 - y0) * k), hw = a + (b - a) * k - .2;
+            side += `M${F(30 - hw - 2.1)} ${y}H${F(30 - hw + .6)}M${F(30 + hw - .6)} ${y}H${F(30 + hw + 2.1)}`;
           });
-          const y = F((y0 + y1) / 2 + .2);
-          for (let x = -h0 + 3; x < h0 - 2.4; x += 3.2) t += `M${F(30 + x)} ${y}h1.1`;
-        }
-        t += 'M30 12.4V9.4';
-        s += L(t, tor, 1.1, 'stroke-linecap="butt"');
+          const y = F(y0 + (y1 - y0) * .5), hw = (a + b) / 2 - 2.2;
+          const n = Math.max(1, Math.round(hw * 2 / 3));
+          for (let j = 0; j <= n; j++) {
+            const x = F(30 - hw + j * 2 * hw / n);
+            ends += `M${F(x - .55)} ${F(y - .55)}h1.1v1.1h-1.1Z`;
+          }
+        });
+        s += L(side, tor, 1.1, 'stroke-linecap="butt"') + P(ends, tor) + L('M30 18V13.6', tor, 1.1);
         return s;
       } },
 
@@ -235,36 +259,76 @@
     ayubida: { shape: 'heater', field: '#1E3B2F', what: 'a águia de Saladino (Cidadela do Cairo), de cabeça voltada, em ouro',
       draw: () => BEAST.eagle(10.5, 11, 39, 43, { fill: BK.gold, wings: 'down', tongue: false }) },
 
-    /* ── OTTOMANS: a sultan's tughra — loops, three staffs with their pennants, the long arms ── */
+    /* ── OTTOMANS: a sultan's tughra — the two loops, three staffs with their pennants, the long arms ── */
     imperio_otomano: { shape: 'roundel', field: '#A11B1F', what: 'a tughra, o monograma caligráfico do sultão, em ouro sobre o vermelho otomano',
-      draw: u => {
+      draw: () => {
         const g = BK.gold, gl = BK.goldLo, gh = BK.goldHi;
-        /* a reed pen: the same stroke laid along a slanted nib, broad across and fine along it */
-        const nx = .7, ny = -1.25, n = 6;
-        const nib = (d, w, col) => {
-          let r = '';
-          for (let i = 0; i <= n; i++) r += `<path d="${d}" transform="translate(${F(nx * (i / n - .5))} ${F(ny * (i / n - .5))})"/>`;
-          return `<g fill="none" stroke="${col}" stroke-width="${w}" stroke-linecap="round" stroke-linejoin="round">${r}</g>`;
+        /* points along a smooth (Catmull-Rom) curve through pts, k samples per span */
+        const curve = (pts, k) => {
+          const out = [], n = pts.length, at = i => pts[Math.max(0, Math.min(n - 1, i))];
+          for (let i = 0; i < n - 1; i++) {
+            const p0 = at(i - 1), p1 = at(i), p2 = at(i + 1), p3 = at(i + 2);
+            for (let j = 0; j < k; j++) {
+              const t = j / k, t2 = t * t, t3 = t2 * t;
+              out.push([0, 1].map(c => .5 * (2 * p1[c] + (p2[c] - p0[c]) * t + (2 * p0[c] - 5 * p1[c] + 4 * p2[c] - p3[c]) * t2 + (3 * p1[c] - p0[c] - 3 * p2[c] + p3[c]) * t3)));
+            }
+          }
+          out.push(pts[n - 1]);
+          return out;
         };
-        /* the two loops (beyze), whose upper strokes run on to the right as the arms */
-        const outer = 'M31 40.6C24 43.6 12.6 42.6 10.2 35C8.2 28.6 13 23.6 20 24C25 24.4 28 25.6 31.4 26.2';
-        const inner = 'M30.4 39C26 40.8 18.6 40.4 16.9 35.4C15.7 31.8 18.2 29.4 22 29.6C25.4 29.8 28 30.6 31.4 31';
-        const arms = 'M29 25.3C37 25.6 45 25.1 52.4 24.1C45 26.3 37 27.5 29 27.9Z' + 'M29 30.1C37 30.5 44 30.5 50.6 30.1C44 31.9 37 32.7 29 32.7Z';
-        /* the three staffs (tuğ), each with its pennant (zülfe) */
-        const shafts = [[31.6, 10.6], [35.6, 11.2], [39.6, 12]].map(([x, t]) => `M${F(x - .95)} 41L${F(x - .6)} ${F(t + 1.4)}L${F(x + .3)} ${t}L${F(x + .7)} ${F(t + .7)}L${F(x + .95)} 41Z`).join('');
-        const zulfe = [0, 1, 2].map(i => { const x = 31.6 + i * 4, y = 17.4 + i * 1.6; return `M${x} ${F(y)}C${F(x + 2.2)} ${F(y - 2.6)} ${F(x + 3.6)} ${F(y + 2.4)} ${F(x + 7)} ${F(y + .6)}`; }).join('');
-        /* the base (sere): the name and titles, written small */
-        const sere = 'M24.6 43.4C30 45.8 38 45.2 44.6 41.2M41.8 41C43 39.2 41.8 37.4 40.2 38C39 38.6 39.6 40.4 41 40.2M27.6 42V38.6M35.4 42.4C36.4 41 36 39.6 34.8 39.2';
+        /* a reed-pen stroke along that curve: broad across the nib, fine along it, tapering at the ends */
+        const NIB = 62 * Math.PI / 180;
+        const pen = (pts, wmax, wmin, t0, t1) => {
+          const c = curve(pts, 14), L = [], R = [];
+          let len = [0];
+          for (let i = 1; i < c.length; i++) len.push(len[i - 1] + Math.hypot(c[i][0] - c[i - 1][0], c[i][1] - c[i - 1][1]));
+          const tot = len[len.length - 1];
+          c.forEach((p, i) => {
+            const a = c[Math.max(0, i - 1)], b = c[Math.min(c.length - 1, i + 1)];
+            const th = Math.atan2(b[1] - a[1], b[0] - a[0]);
+            const s = len[i] / tot;
+            const tp = Math.min(1, t0 ? Math.sqrt(s / t0) : 1, t1 ? Math.sqrt((1 - s) / t1) : 1);
+            const w = (wmin + (wmax - wmin) * Math.abs(Math.sin(th - NIB))) * Math.max(.18, tp) / 2;
+            const nx = -Math.sin(th) * w, ny = Math.cos(th) * w;
+            L.push(F(p[0] + nx) + ' ' + F(p[1] + ny)); R.push(F(p[0] - nx) + ' ' + F(p[1] - ny));
+          });
+          return 'M' + L.join('L') + 'L' + R.reverse().join('L') + 'Z';
+        };
+        const smoothClosed = pts => 'M' + curve(pts.concat([pts[0]]), 10).map(p => F(p[0]) + ' ' + F(p[1])).join('L') + 'Z';
+
+        /* the loops (beyze), each running on to the right as an arm (kol) */
+        const outer = [[33, 42.4], [24, 43.6], [14.6, 41.6], [9.6, 35.2], [10.8, 28.2], [16.6, 24.4], [24.4, 24.2], [32.4, 24.8], [41.4, 24.4], [47.6, 23.3], [51, 22.2]];
+        const inner = [[32.4, 39.4], [25.2, 40], [19, 38.6], [15.8, 34.6], [16.8, 30.6], [21, 28.9], [27.4, 29.1], [34.4, 29.8], [42.2, 29.7], [49.6, 28.6]];
+        /* the three staffs (tuğ), each with its pennant (zülfe) streaming to the right */
+        const tug = [[31.6, 9.8], [35.6, 10.6], [39.6, 11.8]].map(([x, t]) => [[x - .4, 42.4], [x - .1, 32], [x, 20], [x + .4, t + 1.6], [x + 1.4, t]]);
+        const zul = [0, 1, 2].map(i => { const x = 31.4 + i * 4, y = 14.6 + i * 1.4; return [[x - .4, y], [x + 1.8, y - .4], [x + 3.6, y + 1.4], [x + 5.4, y + 3.8], [x + 8, y + 4.6]]; });
+        /* the base (sere): the sultan's name and titles, in a few strokes */
+        const sere = [
+          [[22.6, 44.2], [30, 46.6], [38.6, 46], [44.6, 42.6], [46, 38.8]],
+          [[41, 36.2], [42.6, 38.6], [42.4, 41.2], [40.4, 43.4]],
+          [[36.8, 37.4], [37.6, 39.8], [37, 42.2], [35.4, 43.8]],
+          [[27.6, 44], [27.8, 40.4], [28.6, 37.6]],
+        ];
+        const strokes = [
+          pen(outer, 2.9, .9, .05, .3), pen(inner, 2.5, .8, .06, .3),
+          ...tug.map(t => pen(t, 1.9, 1.2, 0, .12)),
+          ...zul.map(z => pen(z, 1.7, .7, .1, .3)),
+          pen(sere[0], 2.4, .9, .1, .2), ...sere.slice(1).map(q => pen(q, 1.7, .9, .15, .25)),
+        ].join('');
+
         let s = '';
-        /* the loops' insides, illuminated in lapis */
-        s += P(outer + 'Z', '#1C3D8C', null, 0, 'opacity=".9"') + P(inner + 'Z', '#2A55A8');
-        s += L('M14.6 33.6Q15.4 30.6 18 29.8M13.4 37.4Q14.4 39.8 18 40.4', g, .6, 'opacity=".7"');
-        /* the dark edge of every stroke, then the gold */
-        s += nib(outer + inner + sere, 2.2, gl) + nib(zulfe, 1.8, gl) + L(arms + shafts, gl, 1.2);
-        s += nib(outer + inner + sere, 1, g) + nib(zulfe, .6, g) + P(arms + shafts, g);
-        s += P('M33.6 37.4l.9-.9l.9.9l-.9.9zM37.8 38.6l.9-.9l.9.9l-.9.9z', g, gl, .4);
-        s += L('M11.4 32.6C11.6 28.6 15 25.6 19.6 25.6', gh, .5, 'opacity=".7"');
-        return s;
+        /* the loops' insides, illuminated in lapis, with gold scrolls */
+        s += P(smoothClosed(outer.slice(0, 8)), BK.lapis) + P(smoothClosed(inner.slice(0, 8)), '#2F5DB0');
+        s += L('M13.6 33.4Q14.6 29.4 18.4 27.4M12.4 36.6Q14 40.2 19 41.2', g, .7, 'opacity=".75"');
+        s += B.dots(23, 34.2, 0, 1, .9, g) + P('M21.8 34.2Q23 32.8 24.2 34.2Q23 35.6 21.8 34.2Z', g);
+        /* every stroke edged in dark gold, then laid in gold */
+        s += `<path d="${strokes}" fill="${gl}" stroke="${gl}" stroke-width="1.3" stroke-linejoin="round"/>`;
+        s += `<path d="${strokes}" fill="${g}"/>`;
+        /* the dots (nuqta), lozenges as a reed pen leaves them */
+        s += P('M33.2 36.4l1-1l1 1l-1 1zM44.4 35.6l1-1l1 1l-1 1zM24.4 41.6l.9-.9l.9.9l-.9.9z', g, gl, .5);
+        /* light along the loops */
+        s += L('M11.2 31.8C11.8 27.8 14.6 25.4 18.8 24.9M16.9 32.6C17.4 30.6 18.8 29.6 21 29.4', gh, .55, 'opacity=".8"');
+        return `<g transform="translate(1.4 0)">${s}</g>`;
       } },
 
     /* ── TURKEY: the Ay Yıldız, to the proportions of the Turkish Flag Law ── */
