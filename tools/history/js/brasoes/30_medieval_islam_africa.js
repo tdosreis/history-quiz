@@ -256,8 +256,8 @@
       } },
 
     /* ── AYYUBIDS: the Eagle of Saladin, from the Citadel of Cairo ── */
-    ayubida: { shape: 'heater', field: '#1E3B2F', what: 'a águia de Saladino (Cidadela do Cairo), de cabeça voltada, em ouro',
-      draw: () => BEAST.eagle(10.5, 11, 39, 43, { fill: BK.gold, wings: 'down', tongue: false }) },
+    ayubida: { shape: 'roundel', field: '#1E3B2F', what: 'a águia de Saladino (relevo da Cidadela do Cairo), toda em ouro, num brasão redondo à maneira aiúbida e mameluca',
+      draw: () => BEAST.eagle(11, 10, 38, 40, { fill: BK.gold, accent: BK.goldLo, wings: 'down', tongue: false }) },
 
     /* ── OTTOMANS: a sultan's tughra — the two loops, three staffs with their pennants, the long arms ── */
     imperio_otomano: { shape: 'roundel', field: '#A11B1F', what: 'a tughra, o monograma caligráfico do sultão, em ouro sobre o vermelho otomano',

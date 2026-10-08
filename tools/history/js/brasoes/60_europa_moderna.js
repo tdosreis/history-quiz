@@ -89,8 +89,8 @@
       draw: () => {
         const G = BK.gold, Lo = BK.goldLo, Hi = BK.goldHi;
         let s = '';
-        [[14.8, 29.4], [45.2, 29.4], [15.6, 45.2], [44.4, 45.2], [30, 51.4]].forEach(([x, y]) => { s += at(x, y, .7, bee(G, Lo, Hi)); });
-        s += BEAST.eagleNapoleon(12.4, 11, 35.2, 37, { fill: G });
+        [[14.8, 30.4], [45.2, 30.4], [15.6, 45.2], [44.4, 45.2], [30, 51.4]].forEach(([x, y]) => { s += at(x, y, .7, bee(G, Lo, Hi)); });
+        s += BEAST.eagleNapoleon(13.6, 13.2, 32.8, 35, { fill: G });
         return s;
       } },
 

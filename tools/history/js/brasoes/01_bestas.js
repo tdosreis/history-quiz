@@ -382,14 +382,17 @@ const BEAST = (() => {
     s += line('M72 30Q77 36 74 42M46 32Q49 37 46 42', P.detail, lw * .6);
     /* near hind leg, the hock bent back */
     s += path(tube([[77, 33, 14.4], [80.6, 44, 10.4], [82, 50, 8], [78.6, 56.4, 7], [74, 59.4, 6.6]]), P.fill, P.line, lw) + paw(P, 71.6, 60, 184, 7.8, lw, -1);
-    /* near foreleg, raised */
-    s += (o.underPaw || '') + path(tube([[31, 36, 11.4], [24.6, 44, 8.6], [18, 44.4, 7.4], [13, 40.6, 7]]), P.fill, P.line, lw) + paw(P, 10.8, 38.4, 206, 8, lw, 1);
-    /* mane and head */
+    s += o.underPaw || '';
     if (o.halo) {
-      const hc = o.face === 'profile' ? [21, 15] : [22, 17];
-      s += `<circle cx="${hc[0]}" cy="${hc[1]}" r="18.6" fill="${o.halo}" stroke="${P.line}" stroke-width="${N(lw)}"/>`
-        + B.ring(hc[0], hc[1], 16.4, lw * .6, P.line, 'opacity=".55"');
+      /* the nimbus: a pale disc well clear of the mane, set a little above the head, with an
+         inner ring so a broad band of halo shows all round */
+      const hc = o.face === 'profile' ? [21, 12] : [22, 14], hr = 23;
+      s += `<circle cx="${hc[0]}" cy="${hc[1]}" r="${hr}" fill="${mix(o.halo, '#fff', .1)}" fill-opacity=".92" stroke="${P.line}" stroke-width="${N(lw)}"/>`
+        + B.ring(hc[0], hc[1], hr - 2.6, N(lw * .6), P.line, 'opacity=".5"');
     }
+    /* near foreleg, raised (in front of the nimbus) */
+    s += path(tube([[31, 36, 11.4], [24.6, 44, 8.6], [18, 44.4, 7.4], [13, 40.6, 7]]), P.fill, P.line, lw) + paw(P, 10.8, 38.4, 206, 8, lw, 1);
+    /* mane and head */
     if (o.face === 'profile') {
       s += path(smooth([[14, 8], [24, 3], [35, 8], [38, 18], [36, 30], [28, 36], [20, 30], [14, 20]]), P.fill, P.line, lw);
       s += mane(P, lw, 25, 17, 8, -110, 110, 9, 9, 7.4, 22);
@@ -512,9 +515,20 @@ const BEAST = (() => {
       + B.wedges(cx, cy, r + 1, r + 7.6, 16, sun, Math.PI / 16 * .5, 0).replace('/>', ` stroke="${sunLo}" stroke-width="${N(lw * .8)}" stroke-linejoin="round"/>`);
     s += `<circle cx="${cx}" cy="${cy}" r="${r}" fill="${sun}" stroke="${sunLo}" stroke-width="${N(lw)}"/>`;
     if (o.face !== false) {
+      /* the khorshid's serene face, as on Qajar tiles and coins: almond eyes under arched brows
+         that meet over a long straight nose, small closed lips — all in a soft tone of the sun */
+      const fk = mix(sun, '#000', .35), fw = lw * .6;
+      const eye = path('M-6.8 -1.1Q-4.3 -3.2 -1.7 -1.3Q-4.2 .4 -6.8 -1.1Z', mix(sun, '#fff', .5))
+        + `<circle cx="-4" cy="-1.3" r=".95" fill="${fk}"/>`
+        + line('M-7.1 -.9Q-4.4 -3.6 -1.5 -1.4', fk, fw)
+        + line('M-6.4 -.8Q-4.2 .5 -2 -1.1', fk, fw * .8, 'opacity=".55"');
       s += `<g transform="translate(${cx} ${cy - 1})">`
-        + line('M-7 -3.4Q-4.4 -5.2 -1.8 -3.6M7 -3.4Q4.4 -5.2 1.8 -3.6M-.6 -2.6Q-1.6 1.6 -.6 3.2Q.6 3.6 1.4 3M-3.6 6.4Q0 8.2 3.6 6.4', sunLo, lw * .7)
-        + `<ellipse cx="-4.2" cy="-1.4" rx="1.8" ry="1.1" fill="${sunLo}"/><ellipse cx="4.2" cy="-1.4" rx="1.8" ry="1.1" fill="${sunLo}"/></g>`;
+        + eye + `<g transform="scale(-1 1)">${eye}</g>`
+        + line('M-7.7 -3.4Q-4.5 -6.3 -1.1 -4.5Q0 -3.9 1.1 -4.5Q4.5 -6.3 7.7 -3.4', fk, fw)
+        + line('M-.5 -4.1C-.8 -1.4 -1.3 1 -1.5 2.3Q-.6 3.3 .7 2.7', fk, fw)
+        + path('M-2.5 5.5Q-1.4 4.3 -.5 4.8Q0 5.1 .5 4.8Q1.4 4.3 2.5 5.5Q1.3 7 0 7Q-1.3 7 -2.5 5.5Z', fk, null, 0, 'opacity=".7"')
+        + line('M-2.4 5.5Q0 6 2.4 5.5', sunLo, fw * .8)
+        + '</g>';
     }
     /* a shamshir brandished forward, its blade curving back at the point */
     const sword = o.sword ? path('M8.6 35.4C2.6 28 -3.6 18 -6.6 7.6C-8 2.6 -8 -2.4 -6.4 -6.6C-5 -1.8 -2.6 3 .4 8.6C3.8 15 8 22 11.6 32.8Z', BK.silver, BK.silverLo, lw * .8)

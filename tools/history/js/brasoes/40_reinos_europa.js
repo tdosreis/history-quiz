@@ -81,20 +81,50 @@
   Object.assign(BRASAO, {
     /* Gules, three lions passant guardant in pale Or, armed and langued azure */
     inglaterra: { shape: 'heater', field: '#A8222A', rim: '#6E1418', what: 'três leões passantes, ouro sobre vermelho (armas de Ricardo I)',
-      draw: () => {
-        /* the leopards of England are long-bodied: each lion is drawn, then drawn out sideways */
-        const L = (cy, h, k) => {
-          const w = h * 100 / 64;
-          return `<g transform="translate(30 ${cy}) scale(${k} 1) translate(-30 ${-cy})">${BEAST.lionPassant(30 - w / 2, cy - h / 2, w, h, {})}</g>`;
+      draw: u => {
+        /* the leopards of England are long-bodied. The lion is drawn once, in its own design
+           units, and laid three times through three cuts at the chest (design x 40.5–45.5, where
+           only the back and the belly cross): the head, mane and forelegs stay as drawn, the
+           haunches and tail move back by `D`, and only that slice of torso is drawn out to bridge
+           them — so the faces and paws keep their shape and every outline its weight. Its line
+           width is the one BEAST gives the smallest of the three, so none falls under .45 */
+        const a = 40.5, b = 44.8, s0 = 10 / 64;
+        /* masks rather than clip-paths: a mask cuts the lion after it is painted, so the shapes
+           hidden under its body cannot bleed through along the cut */
+        const cut = (id, x0, x1) => `<mask id="${u}${id}" maskUnits="userSpaceOnUse" x="-20" y="-20" width="160" height="110">`
+          + `<path d="M${x0} -20H${x1}V90H${x0}Z" fill="#fff"/></mask>`;
+        const defs = `<defs>${cut('l0', -20, a + .3)}${cut('l1', a - .1, b + .1)}${cut('l2', b - .3, 130)}`
+          + `<g id="${u}lp" transform="scale(${f(1 / s0)})">${BEAST.lionPassant(0, 0, 100 * s0, 64 * s0, {})}</g></defs>`;
+        const use = `<use href="#${u}lp"/>`;
+        const L = (cy, h, D) => {
+          const s = h / 64, k = (b - a + D) / (b - a);
+          return `<g transform="translate(${f(30 - (100 + D) * s / 2)} ${f(cy - h / 2)}) scale(${f(s)})">`
+            + `<g transform="translate(${a} 0) scale(${f(k)} 1) translate(${-a} 0)"><g mask="url(#${u}l1)">${use}</g></g>`
+            + `<g mask="url(#${u}l0)">${use}</g>`
+            + `<g transform="translate(${D} 0)"><g mask="url(#${u}l2)">${use}</g></g></g>`;
         };
-        return L(18.2, 13.6, 1.34) + L(32, 12.8, 1.34) + L(44.8, 10.6, 1.3);
+        return defs + L(18.9, 13.6, 24) + L(32.4, 12.6, 24) + L(44.7, 10, 22);
       } },
 
-    /* Azure, three fleurs-de-lis Or — France moderne, from Charles V */
-    francia: { shape: 'heater', field: '#1F4A9A', what: 'três flores-de-lis de ouro sobre azul (França moderna)',
-      draw: () => {
-        const fl = fleur(BK.gold, BK.goldLo, BK.goldHi, .7);
-        return at(20.4, 22.2, .78, fl) + at(39.6, 22.2, .78, fl) + at(30, 41.4, .78, fl);
+    /* the bannière de France: azure, three fleurs-de-lis Or (France moderne, from Charles V),
+       the king's own banner, carried before him — a square of cloth, not a shield, so the
+       lilies cannot be mistaken for Sweden's crowns on their heater */
+    francia: { shape: 'banner', field: '#173C8C', what: 'a bandeira real: três flores-de-lis de ouro sobre azul (França moderna)',
+      draw: u => {
+        const fl = fleur(BK.gold, BK.goldLo, BK.goldHi, .9);
+        /* the cloth's folds: light where it bellies toward us, shade where it falls back */
+        const folds = `<defs><linearGradient id="${u}fo" x1="5" y1="0" x2="55" y2="0" gradientUnits="userSpaceOnUse">`
+          + `<stop offset="0" stop-color="#000" stop-opacity=".16"/><stop offset=".25" stop-color="#fff" stop-opacity=".1"/>`
+          + `<stop offset=".5" stop-color="#000" stop-opacity=".02"/><stop offset=".75" stop-color="#000" stop-opacity=".18"/>`
+          + `<stop offset="1" stop-color="#fff" stop-opacity=".06"/></linearGradient></defs>`
+          + `<path d="M0 0H60V60H0Z" fill="url(#${u}fo)"/>`;
+        /* each lily rides the wave: where the cloth swells toward us (the hoist) it is drawn a
+           little taller, where it falls away (the fly) a little shorter, about the cloth's middle */
+        const ride = (x, y, s) => {
+          const t = x < 30 ? (x - 5) / 25 : (x - 30) / 25, c = (x < 30 ? 1 : -1) * 4.8 * t * (1 - t) / 15;
+          return `<g transform="translate(${f(x)} ${f(30 + (y - 30) * (1 + c))}) scale(${s} ${f(s * (1 + c))})">${fl}</g>`;
+        };
+        return folds + ride(19, 24, .56) + ride(41, 24, .56) + ride(30, 36.9, .55);
       } },
 
     /* Argent, a fleur-de-lis florencé gules — the giglio bottonato of Florence */
@@ -139,22 +169,48 @@
     holanda: { shape: 'french', field: '#B3262B', what: 'o leão das Sete Províncias, com a espada e o feixe de sete flechas',
       draw: () => {
         const box = [11.6, 10.4, 37.6, 42.4], vb = [-12, -8, 112, 108];
-        /* the sheaf of seven arrows, bound Or, gripped in the lower forepaw (beast coordinates):
-           fanned above and below the binding, points down */
-        const bx = 15.4, by = 57, up = 25, dn = 14;
-        let shafts = '', heads = '', fl = '';
-        for (let i = 0; i < 7; i++) {
-          const a = (118 + (i - 3) * 6.4) * Math.PI / 180, ux = Math.cos(a), uy = Math.sin(a), nx = -uy, ny = ux;
-          const hx = bx + ux * up, hy = by + uy * up, tx = bx - ux * dn, ty = by - uy * dn;
-          shafts += `M${f(tx)} ${f(ty)}L${f(hx)} ${f(hy)}`;
-          heads += `M${f(hx + ux * 6.6)} ${f(hy + uy * 6.6)}L${f(hx + nx * 1.45)} ${f(hy + ny * 1.45)}L${f(hx + ux * .7)} ${f(hy + uy * .7)}L${f(hx - nx * 1.45)} ${f(hy - ny * 1.45)}Z`;
-          fl += `M${f(tx + ux * 5 + nx * .2)} ${f(ty + uy * 5 + ny * .2)}L${f(tx + nx * 1.6)} ${f(ty + ny * 1.6)}M${f(tx + ux * 5 - nx * .2)} ${f(ty + uy * 5 - ny * .2)}L${f(tx - nx * 1.6)} ${f(ty - ny * 1.6)}`;
-        }
-        const sheaf = ln(fl, BK.silverLo, 1.2)
-          + ln(shafts, BK.silverLo, 2.3) + ln(shafts, BK.silver, 1.2)
-          + fp(heads, BK.gold, BK.goldLo, .9)
-          + `<g transform="rotate(28 ${bx} ${by})"><rect x="${bx - 4.6}" y="${by - 2}" width="9.2" height="4" rx="1.2" fill="${BK.gold}" stroke="${BK.goldLo}" stroke-width="1"/>`
-          + ln(`M${bx - 3.6} ${by - .9}H${bx + 3.6}`, BK.goldHi, .8, 'opacity=".8"') + `</g>`;
+        /* the sheaf of seven arrows argent, pointed and bound Or, gripped in the lower forepaw
+           (beast coordinates): seven straight shafts side by side, pinched where the cord ties
+           them and opening only a little (fan° a shaft) toward the points and the feathers;
+           points down. x, y, a: the cord and the sheaf's heading; up, dn: shaft lengths either
+           side of it; hl, hw: a head's length and half-width; st: the long rank's extra reach;
+           fl, fw: a vane's length and spread */
+        const SHEAF = { x: 15.4, y: 57, a: 118, up: 19, dn: 17, p0: 1.5, fan: 2.4, hl: 7.4, hw: 1.9, st: 4.6, fw: 1.6, fl: 5.6 };
+        const bx = SHEAF.x, by = SHEAF.y, A = SHEAF.a * Math.PI / 180, up = SHEAF.up, dn = SHEAF.dn;
+        const ux = Math.cos(A), uy = Math.sin(A), nx = -uy, ny = ux;
+        const p0 = SHEAF.p0, t = Math.tan(SHEAF.fan * Math.PI / 180);
+        /* a point on arrow k, d along the sheaf from the cord (d > 0 toward the points) */
+        const P = (k, d) => { const l = k * (p0 + Math.abs(d) * t); return [bx + ux * d + nx * l, by + uy * d + ny * l]; };
+        const Q = p => `${f(p[0])} ${f(p[1])}`;
+        const add = (p, v, s) => [p[0] + v[0] * s, p[1] + v[1] * s];
+        const unit = v => { const l = Math.hypot(v[0], v[1]); return [v[0] / l, v[1] / l]; };
+        const wood = '#7D776A';
+        let shafts = '', heads = '', vanes = '', gleam = '';
+        [-3, 3, -2, 2, -1, 1, 0].forEach(k => {
+          /* the points in two ranks, alternate arrows a little longer, so each head shows whole */
+          const hu = up + (k % 2 ? SHEAF.st : 0);
+          shafts += `M${Q(P(k, -dn))}L${Q(P(k, 0))}L${Q(P(k, hu))}`;
+          /* the barbed head, along the shaft's own heading */
+          const v = unit([ux + nx * k * t, uy + ny * k * t]), w = [-v[1], v[0]], H = P(k, hu);
+          const T = add(H, v, SHEAF.hl), hw = SHEAF.hw;
+          heads += `M${Q(T)}Q${Q(add(add(H, v, SHEAF.hl * .42), w, hw * .95))} ${Q(add(add(H, v, -.5), w, hw))}`
+            + `L${Q(add(add(H, v, .7), w, .5))}L${Q(add(add(H, v, .7), w, -.5))}`
+            + `L${Q(add(add(H, v, -.5), w, -hw))}Q${Q(add(add(H, v, SHEAF.hl * .42), w, -hw * .95))} ${Q(T)}Z`;
+          gleam += `M${Q(add(add(H, v, SHEAF.hl * .7), w, .3))}L${Q(add(add(H, v, .9), w, .6))}`;
+          /* the fletching: a vane either side of the nock end, the far one in shade; each
+             arrow's feathers laid over its neighbour's, so the seven ends read one by one */
+          const e = unit([ux - nx * k * t, uy - ny * k * t]), m = [-e[1], e[0]], E = P(k, -dn), fw = SHEAF.fw, fl = SHEAF.fl;
+          const vane = sd => `M${Q(add(E, e, fl))}Q${Q(add(add(E, e, fl * .62), m, fw * sd))} ${Q(add(add(E, e, fl * .3), m, fw * sd))}`
+            + `L${Q(add(add(E, e, -.5), m, fw * sd))}L${Q(add(E, e, .5))}Z`;
+          vanes += fp(vane(1), BK.silver, wood, .5) + fp(vane(-1), BK.silverLo, wood, .5)
+            + ln(`M${Q(add(E, e, -.3))}L${Q(add(E, e, fl + .4))}`, wood, .7);
+        });
+        const sheaf = ln(shafts, wood, 2.4) + ln(shafts, BK.silver, 1.4) + vanes
+          + fp(heads, BK.gold, BK.goldLo, .7) + ln(gleam, BK.goldHi, .45, 'opacity=".85"')
+          + `<g transform="rotate(${SHEAF.a - 90} ${bx} ${by})">`
+          + `<rect x="${f(bx - 6)}" y="${f(by - 2.3)}" width="12" height="4.6" rx="1.4" fill="${BK.gold}" stroke="${BK.goldLo}" stroke-width=".9"/>`
+          + ln(`M${f(bx - 5.4)} ${by}H${f(bx + 5.4)}`, BK.goldLo, .6)
+          + ln(`M${f(bx - 4.8)} ${f(by - 1.2)}H${f(bx + 4.8)}`, BK.goldHi, .6, 'opacity=".8"') + `</g>`;
         return BEAST.lionRampant(...box, { crown: true, sword: true })
           + `<g transform="${fitTr(...box, vb)}">${sheaf}</g>`;
       } },
@@ -166,7 +222,7 @@
     /* Or, a double eagle sable under three crowns, sceptre and orb, St George on the breast */
     imperio_russo: { shape: 'oval', field: '#D9AC3F', what: 'a águia bicéfala negra sob três coroas, com São Jorge no peito, sobre ouro',
       draw: () => {
-        const box = [10.2, 7.8, 39.6, 43.2], vb = [0, -6, 100, 106];
+        const box = [12.8, 13.2, 34.4, 39.6], vb = [0, -6, 100, 106];
         /* the arms of Moscow on the breast (beast coordinates; the shield is 22 by 29 from 39,36):
            St George in silver on a silver horse, his cloak azure, riding to dexter and spearing
            the black dragon; the shield edged gold, as the collar of St Andrew rings it */

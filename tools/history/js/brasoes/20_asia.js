@@ -78,7 +78,7 @@
 
   /* ── the azure dragon of the Qing flag ── */
   const dragon = c => {
-    const T = tube([[19.8, 29.6, 4.2], [22.2, 34.2, 4.8], [26.6, 37, 5.2], [31.6, 34.4, 5.4], [34.4, 27.4, 5.2], [38.6, 21.4, 5], [44, 21, 4.6],
+    const T = tube([[20.8, 31, 4.2], [22.6, 34.6, 4.8], [26.6, 37, 5.2], [31.6, 34.4, 5.4], [34.4, 27.4, 5.2], [38.6, 21.4, 5], [44, 21, 4.6],
       [47.4, 26.2, 4.2], [47.6, 32.4, 3.6], [49.4, 36.8, 2.8], [52.6, 36, 2], [53.8, 32, .9]], 10);
     const N = T.sp.length;
     let s = '';
@@ -127,25 +127,40 @@
     s += L(cuts, c.line, .4, 'opacity=".6"');
     s += leg([[29, 37, 3.2], [28.2, 42, 2.4], [26.2, 44, 2]], 150);
     s += leg([[47.4, 30.4, 3], [51.4, 33.2, 2.4], [52.6, 37.6, 2]], 75);
-    /* the head, mouth open, looking up at the pearl */
-    s += `<g transform="translate(18.6 27.6) rotate(-26) scale(1.22)">`
-      /* mane, streaming back */
-      + P('M1 -2.6C3 -3.8 5 -3.8 6.8 -5.4C6.4 -3.4 5.4 -2.4 4.4 -1.6C6 -1.4 7.4 -.6 8.4 .8C6.6 .8 5 1 3.8 2C4.6 2.8 5.2 3.8 5.2 5C3.8 3.8 2.2 3.2 .6 3Z', c.fin, c.line, .5)
-      /* horns */
-      + rib('M-.6 -3.4C1.2 -5.6 3 -7.6 5.6 -8.4M2.2 -6.2C2.2 -7.6 1.8 -8.6 1.2 -9.2', c.horn, c.line, .7)
-      /* the skull and upper jaw, nose turned up */
-      + P('M1.6 -3.2C-.8 -4.8 -3.4 -4.6 -5.2 -3.4C-6.2 -2.8 -7.4 -2.8 -8.6 -3.2C-10 -3.6 -11.2 -2.6 -11.2 -1.2C-11.2 -.2 -10.4 .4 -9.4 .4'
-        + 'L-5 .6C-4.2 .8 -3.6 1.4 -3.4 2L-9.2 3.2C-9.8 3.6 -9.6 4.6 -8.8 4.6C-6.2 4.8 -3 4.6 -.4 3.4C1.4 2.6 2.6 1 2.2 -1Z', c.body, c.line, .6)
-      + P('M-9.4 .4L-5 .6C-4.2 .8 -3.6 1.4 -3.4 2L-9.2 3.2C-10 2.4 -10 1.2 -9.4 .4Z', c.mouth)
-      + P('M-8.6 .4L-8.2 1.6L-7.6 .5ZM-8.4 3L-7.9 2.1L-7.4 2.9Z', '#fff')
-      + P('M-8 1.8C-6.4 1.4 -5 1.6 -4 1.8C-5.4 2.4 -7 2.6 -8.4 2.4Z', c.tongue)
-      + `<circle cx="-4.4" cy="-1.8" r="1.15" fill="${c.eye}" stroke="${c.line}" stroke-width=".4"/><circle cx="-4.6" cy="-1.8" r=".5" fill="${c.line}"/>`
-      + L('M-6.2 -3.2Q-4.4 -4.4 -2.6 -3.2', c.line, .5)
-      /* whiskers */
-      + L('M-10.2 -1.6C-12.8 -3.6 -12.4 -6.6 -10 -7.8M-9.4 4.2C-11.4 5.6 -11.4 8 -9.6 9', c.whisker, .55)
-      + '</g>';
     return s;
   };
+
+  /* the dragon's head in profile, after the 1889 flag: a long muzzle with the nose turned up, a heavy
+     brow over a small almond eye, the jaw a little open, antlers, mane and whiskers streaming back.
+     Drawn pointing left with the jaw hinge at (0,0). */
+  const dragonHead = c =>
+    /* mane: flame-locks streaming back from the nape */
+    P('M1.4 -5C3.6 -6.4 6.6 -6.8 10.2 -9C9.6 -6.6 8.2 -5 6.6 -4.2C8.8 -4 10.8 -2.8 12 -.6C9.8 -1 8 -.8 6.6 -.2'
+      + 'C8.4 1 9.4 2.8 9.4 5C7.6 3.4 5.6 2.6 3.6 2.6C4.2 3.8 4.2 5.4 3.4 6.6C2.8 4.8 1.4 3.6 -.4 3.2Z', c.fin, c.line, .65)
+    + L('M3.4 -4.2C5.6 -5 7.6 -6 9 -7.4M4.4 -1.2C6.6 -1.4 8.6 -1.2 10.4 -.4M4 1.6C5.6 2.2 7 3 8 4.2', c.scale, .6, 'opacity=".75"')
+    /* antlers, rising back, one tine */
+    + P(tube([[1, -8.4, 1.1], [.2, -10.2, .8], [-1.4, -11.6, .4]], 5).d + tube([[-1.2, -5, 1.9], [-.2, -8, 1.5], [2.2, -10.6, 1.1], [5.8, -12, .45]], 6).d, c.horn, c.line, .55)
+    /* the lower jaw, a little open, and the dark of the mouth */
+    + P('M-4.4 .4L-13 .6C-13.8 .8 -14 2.2 -13.2 2.6C-10.4 3.6 -6.6 3.8 -3.6 3.2C-2 2.8 -1 1.8 -1.2 .8Z', c.body, c.line, .75)
+    + P('M-4.6 0L-14 -1.2L-13.2 .7Z', c.mouth)
+    + P('M-12.6 -1.2L-12.1 .5L-11.4 -1Z', c.claw)
+    /* beard under the chin */
+    + P('M-10.6 3.2C-11.4 5.2 -10.4 7 -8.4 7.8C-9 6.2 -8.4 4.8 -7.2 3.6Z', c.fin, c.line, .55)
+    /* skull and upper jaw: the crown, the long bridge, the bulbous nose turned up */
+    + P('M2.6 -1C2.4 -3.6 .6 -5.6 -2 -5.8C-3.8 -5.9 -5.4 -5 -6.8 -4.4C-8.6 -3.8 -10.4 -3.8 -12 -4.8'
+      + 'C-13.2 -5.8 -15 -5.8 -15.8 -4.6C-16.4 -3.6 -16 -2 -14.6 -1.4L-4.6 0C-3.4 .2 -2.2 1.8 -.4 2.4C1.2 2.8 2.8 1.2 2.6 -1Z', c.body, c.line, .85)
+    /* light along the bridge, the nostril curl, the cheek fold */
+    + L('M-12.4 -3.2C-10.4 -2.6 -8.4 -2.8 -6.6 -3.4', c.scale, .8)
+    + L('M-14.8 -3.4C-14.6 -4.4 -13.4 -4.4 -13.6 -3.4', c.line, .65)
+    + L('M-3.2 -.8C-1.8 -2 -.4 -2 .8 -1', c.line, .6)
+    /* the heavy brow ridge, flaring back into a flame */
+    + P('M-8.4 -4.2C-7.2 -6.4 -4.8 -7.4 -2.4 -7C-.8 -6.8 .6 -7.6 1.6 -8.8C1.8 -6.6 .6 -5 -1 -4.6C-3 -4.2 -5 -4.6 -6.6 -3.6Z', c.fin, c.line, .65)
+    /* the eye: a small almond under the brow, no white */
+    + P('M-7.2 -3.2C-6.2 -4.4 -4.6 -4.5 -3.8 -3.8C-4.8 -2.8 -6.2 -2.7 -7.2 -3.2Z', c.eye)
+    + `<circle cx="-4.9" cy="-3.6" r=".34" fill="${c.glint}"/>`
+    /* whiskers: long barbels from the lip, trailing back */
+    + L('M-15.4 -1.8C-16.8 1.4 -15.4 5.2 -11.8 6.6C-8.6 7.8 -5.6 7.4 -3.6 9.6C-2.6 10.8 -3.4 12.2 -4.6 11.8', c.whisker, .75)
+    + L('M-14.2 -5.8C-13.6 -8.4 -11 -9.6 -8.2 -9.2C-6.2 -9 -5 -10 -5.2 -11.6', c.whisker, .75);
 
   Object.assign(BRASAO, {
     /* ── QIN: the Ban Liang, the round coin with the square hole that Qin imposed on all China ── */
@@ -369,11 +384,15 @@
       draw: u => {
         let s = '';
         /* the flaming pearl, top of the hoist */
-        s += B.wedges(11, 20, 2.6, 6.6, 9, '#E2652A', .24, -Math.PI / 2);
-        s += `<circle cx="11" cy="20" r="3.4" fill="#C8211E" stroke="#7E1210" stroke-width=".7"/>`;
-        s += L('M9.4 19.4Q10.4 17.6 12 18.6', '#F9B2A0', .8);
-        s += dragon({ body: '#2D63B8', line: '#13336E', fin: '#1C4A94', belly: '#C9DCF2', scale: '#6C9BDD', claw: '#F4E8BE', horn: '#F4E8BE',
-          mouth: '#7E1210', tongue: '#D8423A', eye: '#FFF4C8', whisker: '#13336E' });
+        s += B.wedges(9.8, 20, 2.4, 5.8, 9, '#E2652A', .24, -Math.PI / 2);
+        s += `<circle cx="9.8" cy="20" r="3.1" fill="#C8211E" stroke="#7E1210" stroke-width=".7"/>`;
+        s += L('M8.3 19.4Q9.2 17.7 10.8 18.6', '#F9B2A0', .8);
+        const c = { body: '#2D63B8', line: '#13336E', fin: '#1C4A94', belly: '#C9DCF2', scale: '#6C9BDD', claw: '#F4E8BE', horn: '#F4E8BE',
+          mouth: '#5E0E0E', eye: '#0D1F45', glint: '#F6D36A', whisker: '#13336E' };
+        /* body, legs and tail, drawn a little smaller so the tail stays on the cloth */
+        s += `<g transform="translate(1.8 2.2) scale(.92)">${dragon(c)}</g>`;
+        /* the head, raised toward the pearl */
+        s += `<g transform="translate(23 33.4) rotate(18) scale(.84)">${dragonHead(c)}</g>`;
         return s;
       } },
 
@@ -426,33 +445,37 @@
         return s;
       } },
 
-    /* ── MUGHAL: the Taj Mahal, white marble, on Mughal green ── */
-    mogol: { shape: 'french', field: '#185A39', what: 'o Taj Mahal em mármore branco: a cúpula, o grande iwan e os minaretes',
+    /* ── MUGHAL: the Taj Mahal in white marble, inlaid like a pietra-dura panel (parchin kari) in Mughal green ── */
+    mogol: { shape: 'tablet', field: '#185A39', rim: '#8F879E', what: 'o Taj Mahal em mármore branco, num painel embutido (pietra dura): a cúpula, o grande iwan e os minaretes',
       draw: u => {
-        const W = '#F7F4EE', Ws = '#D4CFD9', Wl = '#857E92', Ar = '#A39DB2', Ad = '#6F6883', G = BK.gold, Gl = BK.goldLo;
-        let s = `<defs>${lin(u, 'dm', [0, 0], [1, 0], [[0, '#FFFFFF'], [.45, W], [1, '#C9C3D2']])}</defs>`;
-        /* the long pool of the charbagh */
-        s += `<path d="M28.4 48.6H31.6V56H28.4Z" fill="#5FA3A0" stroke="#2D6461" stroke-width=".6"/>`;
-        /* minarets, tapering, three balconies, a chhatri on top */
-        const minaret = P('M12 47L12.5 21H14.9L15.4 47Z', W, Wl, .7)
-          + L('M11.2 21.2H16.2M11.4 28.4H16M11.6 35.6H15.8', Wl, 1.1)
-          + P('M11.8 21Q11.8 18 13.7 16.6Q15.6 18 15.6 21Z', W, Wl, .6) + L('M13.7 16.6V15', Gl, .7);
+        const W = '#F7F4EE', Ws = '#D9D4DE', Wl = '#857E92', Ar = '#A39DB2', Ad = '#5E5772', G = BK.gold, Gl = BK.goldLo, In = '#C9C3D2';
+        let s = `<defs>${lin(u, 'dm', [0, 0], [1, 0], [[0, '#FFFFFF'], [.42, W], [1, '#C4BDCF']])}${lin(u, 'mn', [0, 0], [1, 0], [[0, '#FFFFFF'], [.5, W], [1, '#CFC9D8']])}</defs>`;
+        /* the inlaid marble border, a gold boss at each corner */
+        s += `<rect x="11.4" y="11.4" width="37.2" height="37.2" rx="3.8" fill="none" stroke="${In}" stroke-width=".9"/>`;
+        s += [[12.5, 12.5], [47.5, 12.5], [12.5, 47.5], [47.5, 47.5]].map(([x, y]) => `<circle cx="${x}" cy="${y}" r="1.05" fill="${G}" stroke="${Gl}" stroke-width=".4"/>`).join('');
+        /* the long pool of the charbagh, running out to the foot of the panel */
+        s += P('M28.4 45.6H31.6L32.6 51.2H27.4Z', '#5FA3A0', '#2D6461', .6) + L('M29.2 46.6L28.8 50.4', '#A9DCD6', .7);
+        /* minarets on the corners of the platform: tapering, three galleries, a chhatri on top */
+        const mx = 15.2;
+        const minaret = P(`M${mx - 1.55} 43.6L${mx - 1.1} 24.8H${mx + 1.1}L${mx + 1.55} 43.6Z`, `url(#${u}mn)`, Wl, .7)
+          + L(`M${mx - 2.1} 25H${mx + 2.1}M${mx - 2.2} 31.4H${mx + 2.2}M${mx - 2.3} 37.8H${mx + 2.3}`, Wl, 1.1)
+          + P(`M${mx - 1.9} 24.8Q${mx - 1.9} 22.2 ${mx} 21.2Q${mx + 1.9} 22.2 ${mx + 1.9} 24.8Z`, W, Wl, .6) + L(`M${mx} 21.2V19.8`, Gl, .7);
         s += both(minaret);
-        /* plinth */
-        s += P('M12.4 46H47.6V48.8H12.4Z', W, Wl, .7);
+        /* the platform */
+        s += P('M13.8 43.2H46.2V45.9H13.8Z', W, Wl, .7) + L('M14.4 44.6H45.6', Ws, .6);
         /* dome on its drum, the gilt finial */
-        s += L('M30 9.6V14.4', Gl, 1.2) + L('M30 9.6V14.4', G, .6) + `<circle cx="30" cy="12.4" r=".9" fill="${G}" stroke="${Gl}" stroke-width=".4"/>`;
-        s += P('M30 14.2C31.2 15.8 34.4 16.6 36.6 18.6C39 20.8 38.8 24.6 36.4 26.8C35.8 27.4 35.2 27.8 34.6 28H25.4C24.8 27.8 24.2 27.4 23.6 26.8C21.2 24.6 21 20.8 23.4 18.6C25.6 16.6 28.8 15.8 30 14.2Z', `url(#${u}dm)`, Wl, .8);
-        s += L('M27.4 16.4Q30 17.6 32.6 16.4', Ws, .7);
-        s += P('M24 28H36V31H24Z', W, Wl, .7);
+        s += L('M30 12.8V15.8', Gl, 1.2) + L('M30 12.8V15.8', G, .6) + `<circle cx="30" cy="14.2" r=".85" fill="${G}" stroke="${Gl}" stroke-width=".4"/>`;
+        s += P('M24.6 26.4V24.6H35.4V26.4Z', Ws, Wl, .6);
+        s += P('M30 15.6C31.2 17.3 34.4 17.8 36.4 19.6C38.6 21.6 38.2 24.2 35.8 25.6H24.2C21.8 24.2 21.4 21.6 23.6 19.6C25.6 17.8 28.8 17.3 30 15.6Z', `url(#${u}dm)`, Wl, .8);
+        s += L('M27.8 17.6Q30 18.6 32.2 17.6', Ws, .7) + L('M25 20.4Q24.2 22.2 25 24', '#fff', .9, 'opacity=".9"');
         /* chhatris on the corners of the roof */
-        s += both(P('M19.4 30.6V27.4H23V30.6Z', W, Wl, .6) + P('M19 27.6Q19 24.4 21.2 23.4Q23.4 24.4 23.4 27.6Z', W, Wl, .6) + L('M21.2 23.4V22.4', Gl, .6));
-        /* the main block with its pishtaq and the great iwan */
-        s += P('M18.4 46V30.6H41.6V46Z', W, Wl, .8);
-        s += P('M24.4 46V29H35.6V46Z', W, Wl, .8);
-        s += P('M26 46V37.4C26 34.2 28.2 32.6 30 31.2C31.8 32.6 34 34.2 34 37.4V46Z', Ws, Wl, .6);
-        s += P('M27.6 46V39.6C27.6 37.8 28.8 36.8 30 36C31.2 36.8 32.4 37.8 32.4 39.6V46Z', Ad);
-        s += both(P('M20 38.6V35C20 33.6 20.8 32.8 21.6 32.2C22.4 32.8 23.2 33.6 23.2 35V38.6Z', Ar) + P('M20 45.4V42C20 40.6 20.8 39.8 21.6 39.2C22.4 39.8 23.2 40.6 23.2 42V45.4Z', Ar));
+        s += both(P('M20.2 30.4V27.2H23.4V30.4Z', W, Wl, .6) + P('M19.8 27.4Q19.8 24.4 21.8 23.4Q23.8 24.4 23.8 27.4Z', W, Wl, .6) + L('M21.8 23.4V22.4', Gl, .6));
+        /* the main block, its pishtaq and the great iwan */
+        s += P('M19.2 43.2V30H40.8V43.2Z', W, Wl, .8);
+        s += P('M24.4 43.2V27.6H35.6V43.2Z', W, Wl, .8);
+        s += P('M26 43.2V35.6C26 32.8 28.2 31.2 30 30C31.8 31.2 34 32.8 34 35.6V43.2Z', Ws, Wl, .6);
+        s += P('M27.5 43.2V38C27.5 36.2 28.8 35.2 30 34.4C31.2 35.2 32.5 36.2 32.5 38V43.2Z', Ad);
+        s += both(P('M20.4 36.6V33.6C20.4 32.4 21.1 31.6 21.9 31.1C22.7 31.6 23.4 32.4 23.4 33.6V36.6Z', Ar) + P('M20.4 42.6V39.8C20.4 38.6 21.1 37.8 21.9 37.3C22.7 37.8 23.4 38.6 23.4 39.8V42.6Z', Ar));
         return s;
       } },
 
@@ -460,16 +483,27 @@
     safavida: { shape: 'roundel', field: '#2C7A45', what: 'o Leão e o Sol (Shir-o-Khorshid), em ouro sobre o verde safávida',
       draw: u => BEAST.lionSun(8.4, 11, 43.2, 39.8, { accent: '#8C5A1E', tongue: BK.red }) },
 
-    /* ── EMPIRE OF JAPAN: the Rising Sun flag, sixteen rays ── */
-    imperio_japones: { shape: 'banner', field: '#F4F1EA', what: 'a bandeira do Sol Nascente, de dezesseis raios',
+    /* ── EMPIRE OF JAPAN: the Imperial Seal, the sixteen-petalled double chrysanthemum (jūroku-yae-giku) ── */
+    imperio_japones: { shape: 'mon', field: '#B8202E', rim: '#7A1019', what: 'o Selo Imperial: o crisântemo dourado de dezesseis pétalas, em fileira dupla',
       draw: u => {
-        const R = '#BE1E2D', cx = 27, cy = 30;
-        let d = '';
-        for (let i = 0; i < 16; i++) {
-          const a = i * Math.PI / 8, h = Math.PI / 32;
-          d += `M${cx} ${cy}L${pt(pol(cx, cy, a - h, 60))}L${pt(pol(cx, cy, a + h, 60))}Z`;
-        }
-        return `<path d="${d}" fill="${R}"/><circle cx="${cx}" cy="${cy}" r="8.6" fill="${R}"/>`;
+        /* one petal pointing up from (0,0): two radial sides at ±th, closed by a round cap tangent to both */
+        const petal = (r0, rc, th) => {
+          const s = Math.sin(th), c = Math.cos(th), w = rc * s;
+          const a = [rc * c * s, -rc * c * c], i0 = [r0 * s, -r0 * c];
+          return `M${pt([-i0[0], i0[1]])}L${pt([-a[0], a[1]])}A${F(w)} ${F(w)} 0 1 1 ${pt(a)}L${pt(i0)}Z`;
+        };
+        const back = petal(4, 21.8, Math.PI / 16 * .9), front = petal(4, 19.9, Math.PI / 16 * .94);
+        const ring = (d, rot0) => Array.from({ length: 16 }, (_, i) => `<path d="${d}" transform="rotate(${F(rot0 + i * 22.5)})"/>`).join('');
+        let s = `<defs>${lin(u, 'kf', [0, 0], [.7, 1], [[0, '#F8DE8C'], [.45, '#E2B547'], [1, '#B98425']])}`
+          + `${rad(u, 'kd', '40%', '35%', '70%', [[0, '#FBE7A6'], [.6, '#E0B248'], [1, '#B07A22']])}</defs>`;
+        s += `<g transform="translate(30 30)">`
+          /* the back row shows its tips between the front petals */
+          + `<g fill="#A97B2C" stroke="#5A3A0E" stroke-width=".7" stroke-linejoin="round">${ring(back, 11.25)}</g>`
+          + `<g fill="url(#${u}kf)" stroke="#6E4A12" stroke-width=".75" stroke-linejoin="round">${ring(front, 0)}</g>`
+          + `<circle r="5.2" fill="url(#${u}kd)" stroke="#6E4A12" stroke-width=".8"/>`
+          + `<circle r="3.9" fill="none" stroke="#FFF0B8" stroke-opacity=".45" stroke-width=".6"/>`
+          + `</g>`;
+        return s;
       } },
 
     /* ── PEOPLE'S REPUBLIC OF CHINA: the five gold stars on red ── */

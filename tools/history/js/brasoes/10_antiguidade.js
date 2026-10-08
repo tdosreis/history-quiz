@@ -1,6 +1,6 @@
 /* ═══════════════════════════════════════════════════
    ANTIGUIDADE — the ancient states, each on the sign its own people used:
-   the wedjat of Egypt, the Ishtar Gate lion of Babylon, Ashur's winged disc,
+   the wedjat of Egypt, the Ishtar Gate lion of Babylon, the lamassu of Assyria,
    the Faravahar of the Achaemenids, the Temple menorah, Athena's owl,
    the Vergina sun, the sign of Tanit, the legionary scutum, the Hunnic bow.
 ═══════════════════════════════════════════════════ */
@@ -40,6 +40,88 @@
       + `<circle cx="${x}" cy="${y}" r="${f(r * .34)}" fill="#E8B83C" stroke="#8C6420" stroke-width=".4"/>`;
   };
 
+  /* ── Assyria: the lamassu, drawn in its own 100×100 box, facing left, standing on y = 97 ── */
+  const ALB = '#E6DCC4', ALBLO = '#7A6A4E', ALBSH = '#C9BC9C', ALBHI = '#F7F1E2';
+  const lamassu = () => {
+    const A = ALB, AL = ALBLO, AS = ALBSH, AH = ALBHI, w = 2.6, wd = 1.6;
+    const P = p => f(p[0]) + ' ' + f(p[1]);
+    const lerp = (a, b, t) => [a[0] + (b[0] - a[0]) * t, a[1] + (b[1] - a[1]) * t];
+    const cub = (c, t) => { const u = 1 - t; return [0, 1].map(i => u * u * u * c[0][i] + 3 * u * u * t * c[1][i] + 3 * u * t * t * c[2][i] + t * t * t * c[3][i]); };
+    const tan = (c, t) => { const u = 1 - t; return [0, 1].map(i => 3 * u * u * (c[1][i] - c[0][i]) + 6 * u * t * (c[2][i] - c[1][i]) + 3 * t * t * (c[3][i] - c[2][i])); };
+    const unit = v => { const l = Math.hypot(v[0], v[1]); return [v[0] / l, v[1] / l]; };
+    /* the first part (0..s) of a cubic, by de Casteljau */
+    const part = (c, s) => { const a = lerp(c[0], c[1], s), b = lerp(c[1], c[2], s), d = lerp(c[2], c[3], s), e = lerp(a, b, s), g = lerp(b, d, s); return [c[0], a, e, lerp(e, g, s)]; };
+    const rev = c => [c[3], c[2], c[1], c[0]];
+    const C = c => `C${P(c[1])} ${P(c[2])} ${P(c[3])}`;
+    let s = '';
+    /* far legs, in shadow */
+    s += fp('M28.6 62C31.6 71 33 79 33 86L32 97H41.4L39.8 91C39.6 84 39.6 74 39.4 62Z', AS, AL, w)
+      + fp('M64 60C66.6 70 68.6 79 68.8 87L67.8 97H76.8L76.2 91C76.6 83 76.6 71 76 60Z', AS, AL, w)
+      + fp('M32 97L33.4 91.6H39.8L41.4 97ZM67.8 97L69 91.6H76.2L76.8 97Z', '#B4A685', AL, wd);
+    /* the tail, hanging behind the hind leg */
+    const tail = 'M91.4 46.6C95.6 51.6 95.8 61.6 94.4 71.6C93.8 76.6 93.4 80.6 93.6 83.6';
+    s += ln(tail, AL, 4.8) + ln(tail, A, 2.2);
+    /* body and the near legs, one outline */
+    s += fp('M32 42C48 44 70 44 85 44C91 44 95 48 95 54C95 62 92 68 90.6 74L91 79C89.4 81 88.4 83.4 88.4 86V91.4L89.8 97H78.6L80 91.6V86C80 81.6 79 77 77 72.6'
+      + 'C74 69.4 70 68.4 64 68.6C54 69.4 42 69.6 34 68.4C30 68 27.4 70 26.4 74C25.2 78 24.6 83 24.6 88V91.4L26 97H14.8L16 91.4V84C16 77 13.4 70 13.4 63C13.4 56 16 50 20 46C24 42 28 41 32 42Z', A, AL, w);
+    /* hooves, cloven */
+    s += fp('M14.8 97L16 91.4H24.6L26 97ZM78.6 97L80 91.6H88.4L89.8 97Z', AS, AL, wd) + ln('M20.4 92.4V96.4M84.2 92.6V96.4', AL, wd);
+    /* the sinews, and the rows of curls along the belly */
+    let fr = '';
+    for (let x = 36; x < 72; x += 4.4) fr += `M${f(x)} ${f(68.8)}q-1.4 3 .7 3.8q1.5 .4 1.7-1.1`;
+    s += ln(fr, AL, wd) + ln('M18.6 64C20 71 20.4 78 20.2 86M83.2 79C84.6 82 85 85 84.6 89M89.4 50C89.6 58 88 65 86.4 70', AL, wd, 'opacity=".5"');
+    /* the tuft */
+    s += fp('M93.6 81.4C97.2 82.6 98.4 87.6 97 91.8C95.8 95.4 91.4 96 90 93C88.8 90.2 90 84.4 93.6 81.4Z', A, AL, w)
+      + ln('M92.8 84.6C95.4 85 96.2 87.8 94.6 89M91.4 88.4C93.6 88.8 94.4 91.4 93 92.8', AL, wd);
+    /* the wing: long feathers swept up and back from the shoulder, coverts at the root */
+    const R1 = [34, 29], R2 = [29, 58], U = [R1, [50, 21], [74, 11], [91, 2.6]], L = [R2, [44, 47], [66, 44.6], [86.4, 43.8]];
+    const at = t => [0, 1, 2, 3].map(i => lerp(U[i], L[i], t));
+    const N = 5;
+    let strips = [];
+    for (let k = N - 1; k >= 0; k--) {
+      const a = at(k / N), b = at((k + 1) / N), dir = unit(lerp(unit(tan(a, 1)), unit(tan(b, 1)), .5));
+      const m = lerp(a[3], b[3], .5), cap = [m[0] + dir[0] * 4.2, m[1] + dir[1] * 4.2];
+      const mid = [0, 1, 2, 3].map(i => lerp(a[i], b[i], .5));
+      strips.push([`M${P(a[0])}${C(a)}Q${P(cap)} ${P(b[3])}${C(rev(b))}Z`, `M${P(mid[0])}${C(part(mid, .93))}`]);
+    }
+    let wing = strips.map(([d]) => fp(d, A, AL, w)).join('') + strips.map(([d, m]) => fp(d, A, AL, 1.3) + ln(m, AH, 1.3)).join('');
+    /* covert rows: scallops across the feathers near the root */
+    [[.34, A], [.2, AH]].forEach(([s0, fill]) => {
+      let d = `M${P(R1)}${C(part(U, s0))}`;
+      for (let k = 0; k < N; k++) {
+        const a = cub(at(k / N), s0), b = cub(at((k + 1) / N), s0), tg = unit(tan(at((k + .5) / N), s0)), m = lerp(a, b, .5);
+        d += `Q${P([m[0] + tg[0] * 4.4, m[1] + tg[1] * 4.4])} ${P(b)}`;
+      }
+      wing += fp(d + `${C(rev(part(L, s0)))}Q24.6 42 ${P(R1)}Z`, fill, AL, 1.6);
+    });
+    s += wing;
+    /* the hair, falling to the shoulder in rows of curls */
+    s += fp('M24 18H35C37 24 38.4 31 37.6 37C37 41 34 43.6 30 43.6C26.4 43.6 23.6 41.4 23 38Z', A, AL, w);
+    let curls = '';
+    [[26.4, 39.6], [30.4, 40.2], [34.4, 38.6], [28.6, 35.4], [32.6, 34.8]].forEach(([x, y]) => { curls += `<circle cx="${x}" cy="${y}" r="1.8"/>`; });
+    s += `<g fill="${AS}" stroke="${AL}" stroke-width="${wd}">${curls}</g>` + ln('M27 22Q28 27 27.4 32M31 22Q32.4 27 31.6 32M34.6 22Q36 27 35.6 32', AL, wd);
+    /* the face in profile, the eye, the ear and its earring */
+    s += fp('M13.6 18.6C13.2 20.6 12.6 22 12 23.4L7.4 28.6C6.9 29.3 7.3 30.2 8.2 30.2L10.6 30.4C10.8 31.2 10.6 32 10.2 33L27 32V18.6Z', A, AL, w);
+    s += fp('M12.6 25.6Q15.6 23.2 19.2 25Q15.6 27.4 12.6 25.6Z', AH, AL, wd) + `<circle cx="15.6" cy="25.2" r="1.3" fill="${AL}"/>`
+      + ln('M12 22.4Q15.6 20.6 20 22', AL, 2.2)
+      + fp('M22.4 22.6C25 22 26.6 24 26.2 26.4C25.8 28.6 23.6 29.4 22.2 28.6Z', A, AL, wd) + `<circle cx="23.6" cy="31.4" r="1.5" fill="${AS}" stroke="${AL}" stroke-width="${wd}"/>`;
+    /* the long square beard, in rows of curls */
+    s += fp('M9.6 31.6C14 32 20 31.2 26.6 30.4L27.6 51.4C27.6 53.4 26.4 54.4 24.4 54.4H12.2C10.2 54.4 9 53.4 8.8 51.4Z', A, AL, w);
+    let bc = '';
+    [38.6, 43.6, 48.6].forEach((y, r) => { for (let x = 11.8 + (r % 2) * 1.6; x < 26; x += 3.2) bc += `<circle cx="${f(x)}" cy="${y}" r="1.4"/>`; });
+    s += ln('M9.4 36.2Q18 36.6 26.8 35.4M9.2 41.2Q18 41.6 27 40.6M9 46.2Q18 46.6 27.2 45.8', AL, wd)
+      + `<g fill="${AS}" stroke="${AL}" stroke-width="1.2">${bc}</g>`
+      + ln('M10.4 32.6Q14 34.4 18.8 32.4', AL, 2);
+    /* the horned tiara: a feathered crown over the horns */
+    const horns = 'M33.4 17.4C26 19 17.6 17.6 12.4 13M33.8 13.2C26.4 14.6 18 13.6 11.8 9.2';
+    s += fp('M12.6 19.6L11 5.6H35L33.4 19.6Z', A, AL, w)
+      + ln(horns, AL, 3.4) + ln(horns, AH, 1.4)
+      + fp('M11 5.6L10.6 2.4Q23 .6 35.4 2.4L35 5.6Z', AS, AL, wd)
+      + ln('M14 2.6V5.4M17.4 2.2V5.4M20.8 1.9V5.4M24.2 1.8V5.4M27.6 1.9V5.4M31 2.2V5.4', AL, 1.2)
+      + fp('M12.4 19.6H33.6V21.4H12.4Z', AS, AL, wd);
+    return s;
+  };
+
   Object.assign(BRASAO, {
     /* the wedjat, the sound eye of Horus, in lapis on gold */
     egito_antigo: { shape: 'cartouche', field: '#D9AE48', what: 'o olho de Hórus (wedjat) em lápis-lazúli sobre ouro',
@@ -66,48 +148,24 @@
           + BEAST.lionStriding(10, 19.8, 40, 21, { fill: '#E9BE4E', mane: '#C4682C', accent: '#F4EAD0' });
       } },
 
-    /* Ashur's winged disc above registers of cuneiform, on a royal stele */
-    assiria: { shape: 'stele', field: '#8E3B22', what: 'o disco alado de Assur numa estela real, sobre registros cuneiformes',
+    /* the lamassu of Khorsabad: the human-headed winged bull of the palace gates, in gypsum alabaster */
+    assiria: { shape: 'stele', field: '#3E3A4A', what: 'o lamassu de Khorsabad: o touro alado de cabeça humana que guardava as portas do palácio',
       draw: () => {
-        const G = BK.gold, GL = BK.goldLo, cy = 22.4;
-        /* the right wing: five rows of long feathers, coverts at the root */
-        const rows = [[17.4, 19.4, 42.5], [19.4, 21.4, 42.2], [21.4, 23.4, 41.6], [23.4, 25.4, 40.6], [25.4, 27.4, 39.2]];
-        let d = `M33 ${rows[0][0]}`;
-        rows.forEach(([t, b, x]) => { d += `L${f(x - 1)} ${t}Q${f(x + .3)} ${t} ${f(x + .3)} ${f((t + b) / 2)}Q${f(x + .3)} ${b} ${f(x - 1)} ${b}`; });
-        d += `L33 ${rows[4][1]}Z`;
-        let fl = 'M36.8 17.4V27.4';
-        rows.slice(0, 4).forEach(([t, b, x], i) => { fl += `M36.8 ${b}H${f(Math.min(x, rows[i + 1][2]) - 1.1)}`; });
-        let sc = '';
-        for (let y = 17.4; y < 27; y += 2) sc += `M34.6 ${f(y)}q1.6 1 0 2`;
-        const wing = fp(d, G, GL, .7) + ln(fl, GL, .5) + ln(sc, GL, .5)
-          + ln('M37.6 18.3H41.2', BK.goldHi, .5, 'opacity=".8"');
-        /* the tail, a fan of five feathers */
-        const xs = [35.2, 33.12, 31.04, 28.96, 26.88, 24.8];
-        let tail = 'M27.6 26.4H32.4L35.2 37.2';
-        for (let i = 0; i < 5; i++) tail += `Q${f((xs[i] + xs[i + 1]) / 2)} 39.6 ${xs[i + 1]} 37.2`;
-        tail += 'Z';
-        let tl = '';
-        for (let i = 1; i < 5; i++) tl += `M${f(27.6 + i * .96)} 27.6L${xs[i]} 37.2`;
-        const streamer = 'M27.4 27.8C24.6 28.8 21.8 29.8 20.4 32C19.4 33.8 20.4 35.8 22.2 35.6C23.6 35.4 23.8 33.6 22.6 33.2';
-        /* cuneiform: wedges in registers below */
+        /* the bull, carved in relief (a shadow to the lower right), stands on a base of cuneiform registers */
         let wedge = '', rule = '';
         const W = (x, y, k) => k === 0 ? `M${f(x)} ${f(y - .8)}L${f(x + 1.3)} ${f(y)}L${f(x)} ${f(y + .8)}ZM${f(x + 1)} ${f(y - .18)}h1.9v.36h-1.9Z`
           : k === 1 ? `M${f(x - .8)} ${f(y - 1.4)}L${f(x + .8)} ${f(y - 1.4)}L${f(x)} ${f(y - .1)}ZM${f(x - .18)} ${f(y - .4)}h.36v1.9h-.36Z`
           : `M${f(x + 1.4)} ${f(y - 1.2)}L${f(x)} ${f(y)}L${f(x + 1.4)} ${f(y + 1.2)}L${f(x + .9)} ${f(y)}Z`;
         const seq = [0, 1, 2, 0, 0, 1, 1, 2, 0, 1, 0, 2, 2, 0, 1, 0, 0, 2, 1, 1, 0, 2, 0, 1, 2, 0, 1, 0];
         let n = 0;
-        [43.6, 48.2, 52.8].forEach((y, r) => {
-          rule += `M17.4 ${f(y + 2.3)}H42.6`;
+        [46, 51.2].forEach((y, r) => {
+          rule += `M17.4 ${f(y + 2.4)}H42.6`;
           for (let x = 18.6 + (r % 2) * 1.2; x < 40.4; x += 3.1) wedge += W(x, y, seq[n++ % seq.length]);
         });
-        return fp(wedge, '#5A2010', null, 0, 'opacity=".6"') + ln(rule, '#5A2010', .5, 'opacity=".5"')
-          + ln('M17 41.2H43', G, 1.2) + ln('M17 41.2H43', GL, .4, 'opacity=".6"')
-          + bar(streamer, G, GL, 1.4) + bar(streamer, G, GL, 1.4, 'transform="matrix(-1 0 0 1 60 0)"')
-          + fp(tail, G, GL, .7) + ln(tl, GL, .5)
-          + wing + mir(wing)
-          + `<circle cx="30" cy="${cy}" r="4.5" fill="${G}" stroke="${GL}" stroke-width=".8"/>`
-          + B.ring(30, cy, 2.9, 1, GL) + `<circle cx="30" cy="${cy}" r="1.5" fill="${BK.goldHi}" stroke="${GL}" stroke-width=".5"/>`
-          + `<path d="M26.9 ${cy - 2.2}Q28.2 ${cy - 3.6} 30 ${cy - 3.7}" fill="none" stroke="#fff" stroke-opacity=".5" stroke-width=".6" stroke-linecap="round"/>`;
+        return fp(wedge, ALB, null, 0, 'opacity=".38"') + ln(rule, ALB, .5, 'opacity=".25"')
+          + `<g transform="translate(16.3 13.9) scale(.27)" opacity=".55">${lamassu().replace(/(fill|stroke)="#[0-9A-Fa-f]{6}"/g, '$1="#211E29"')}</g>`
+          + fp('M16 39.5H44V42H16Z', ALBSH, ALBLO, .6)
+          + `<g transform="translate(15.7 13.3) scale(.27)">${lamassu()}</g>`;
       } },
 
     /* the Faravahar of Persepolis: the winged disc with the crowned figure */
@@ -183,12 +241,21 @@
       } },
 
     /* Athena's owl, olive sprig and crescent, as on the silver tetradrachm, with ΑΘΕ */
-    atenas: { shape: 'coin', field: '#D8D2C4', what: 'a coruja de Atena com o ramo de oliveira, do tetradracma (ΑΘΕ)',
-      draw: () => `<rect x="11.5" y="11.5" width="37" height="37" rx="5" fill="#CBC4B3"/>`
-        + `<path d="M11.5 44V16.5Q11.5 11.5 16.5 11.5H44" fill="none" stroke="#8F8878" stroke-width="1" opacity=".5"/>`
-        + `<path d="M48.5 16V43.5Q48.5 48.5 43.5 48.5H16" fill="none" stroke="#fff" stroke-width=".8" opacity=".35"/>`
-        + BEAST.owl(9, 11.6, 36.5, 36.5, { fill: '#EFEADF', line: '#5A5345', leaf: '#C9C2B0' })
-        + B.text(43.6, 23.4, 'Α', 6.2, '#5A5345') + B.text(43.6, 30.6, 'Θ', 6.2, '#5A5345') + B.text(43.6, 37.8, 'Ε', 6.2, '#5A5345') },
+    atenas: { shape: 'coin', field: '#CFC8B8', what: 'a coruja de Atena com o ramo de oliveira, do tetradracma (ΑΘΕ)',
+      draw: () => {
+        const OWL = [9, 11.6, 36.5, 36.5], INK = '#3A342A';
+        /* the owl again in ink, its lines thickened, behind the struck one: a heavy outline round the
+           silhouette (twice the line for the bird, a little more for the sprig and the moon) */
+        const ink = (o, k) => BEAST.owl(...OWL, Object.assign({ fill: INK, line: INK, leaf: INK, shade: INK }, o))
+          .replace(/stroke-width="([\d.]+)"/g, (m, w) => `stroke-width="${f(w * k)}"`);
+        const halo = ink({}, 1.3) + ink({ olive: false, moon: false }, 2);
+        return `<rect x="11.5" y="11.5" width="37" height="37" rx="5" fill="#B3AB98"/>`
+          + `<path d="M11.5 44V16.5Q11.5 11.5 16.5 11.5H44" fill="none" stroke="#6F6858" stroke-width="1.1" opacity=".55"/>`
+          + `<path d="M48.5 16V43.5Q48.5 48.5 43.5 48.5H16" fill="none" stroke="#fff" stroke-width=".9" opacity=".4"/>`
+          + halo
+          + BEAST.owl(...OWL, { fill: '#DAD4C5', line: INK, leaf: '#A39B87' })
+          + B.text(43.6, 23.4, 'Α', 6.2, '#4A4436') + B.text(43.6, 30.6, 'Θ', 6.2, '#4A4436') + B.text(43.6, 37.8, 'Ε', 6.2, '#4A4436');
+      } },
 
     /* the sixteen-rayed star of the Vergina larnax */
     macedonia: { shape: 'hoplon', field: '#4A1F5E', rim: '#BE8A45', what: 'o sol de Vergina de 16 raios, do larnax de Filipe II',
