@@ -32,7 +32,7 @@ c.Q('Quem sou eu?', 'salomao', ['Recebi a visita de uma rainha vinda do reino de
 c.DU('Duelo: qual destas maravilhas do mundo antigo continua de pé?', 'Grande Pirâmide de Gizé', 'Jardins Suspensos da Babilônia', 1,
      typ='txt', icon='column', src=('en', 'Seven Wonders of the Ancient World', ['Giza']),
      x='É a mais antiga das sete maravilhas e a única que sobreviveu; a existência dos Jardins Suspensos nunca foi comprovada.')
-c.DU('Duelo: quem reinou por mais tempo?', 'ramses_ii', 'tutancamon', 1, icon='crown',
+c.DU('Duelo: quem reinou por mais tempo?', 'ramses_ii', 'tutancamon', 1, scene='duelo_governou', icon='crown',
      src=('en', 'Ramesses II', ['66']),
      x='Ramsés II reinou 66 anos; Tutancâmon, só cerca de nove, e morreu antes dos 20.')
 c.DU('Duelo: qual destes povos escrevia com hieróglifos?', 'Egípcios', 'Sumérios', 1, typ='txt', icon='book',
@@ -95,10 +95,10 @@ c.NW('Em que ano saiu esta manchete?', '1922', 'Tumba de faraó é encontrada qu
      sub='Câmara selada há mais de 3 mil anos guarda carros, joias e estátuas douradas',
      wrong=['1899', '1912', '1919', '1926', '1932'], src=('pt', 'Tutancâmon', ['1922']),
      x='Quando lorde Carnarvon perguntou se via algo, Howard Carter teria respondido: "Sim, coisas maravilhosas".')
-c.DU('Duelo: qual escrita surgiu primeiro?', 'Cuneiforme', 'Alfabeto fenício', 2, typ='txt', icon='scroll',
+c.DU('Duelo: qual escrita surgiu primeiro?', 'Cuneiforme', 'Alfabeto fenício', 2, typ='txt', scene='duelo_surgiu', icon='scroll',
      src=('en', 'Cuneiform', ['Sumer']),
      x='O cuneiforme surgiu na Suméria por volta de 3200 a.C.; o alfabeto fenício, cerca de dois mil anos depois.')
-c.DU('Duelo: o que aconteceu primeiro?', 'Reinado de Tutancâmon', 'Fundação de Roma', 2, typ='txt', icon='hourglass',
+c.DU('Duelo: o que aconteceu primeiro?', 'Reinado de Tutancâmon', 'Fundação de Roma', 2, typ='txt', scene='duelo_aconteceu', icon='hourglass',
      src=('en', 'Tutankhamun', ['1332']),
      x='Tutancâmon morreu por volta de 1323 a.C.; Roma, pela tradição, foi fundada em 753 a.C., quase 600 anos depois.')
 c.MY('A Esfinge de Gizé perdeu o nariz com um tiro de canhão dos soldados de Napoleão?', False, 2, stad='esfinge',

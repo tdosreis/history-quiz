@@ -230,19 +230,19 @@ c.NW('Em que ano saiu esta manchete?', '1870', 'Tropas italianas entram em Roma 
      x='A guarnição francesa que protegia o papa tinha partido para lutar contra a Prússia, abrindo caminho para os italianos.')
 
 # ── Duelos ──
-c.DU('Duelo: quem chegou primeiro ao poder?', 'napoleao', 'bismarck', 1, icon='crown',
+c.DU('Duelo: quem chegou primeiro ao poder?', 'napoleao', 'bismarck', 1, scene='duelo_governou', icon='crown',
      src=('en', 'Otto von Bismarck', ['1862']),
      x='Napoleão tomou o poder em 1799; Bismarck só passou a chefiar o governo prussiano em 1862.')
-c.DU('Duelo: qual destes estados surgiu primeiro?', 'haiti', 'imperio_brasil', 2, typ=None, icon='hourglass',
+c.DU('Duelo: qual destes estados surgiu primeiro?', 'haiti', 'imperio_brasil', 2, typ=None, scene='duelo_surgiu', icon='hourglass',
      src=('en', 'Haiti', ['1804']),
      x='O Haiti declarou independência em 1804; o Brasil, em 1822.')
-c.DU('Duelo: qual destas guerras terminou primeiro?', 'Guerra de Secessão', 'Guerra do Paraguai', 2, typ='txt', icon='sword',
+c.DU('Duelo: qual destas guerras terminou primeiro?', 'Guerra de Secessão', 'Guerra do Paraguai', 2, typ='txt', scene='duelo_aconteceu', icon='sword',
      src=('en', 'Paraguayan War', ['1870']),
      x='A Guerra de Secessão acabou em 1865; a do Paraguai, só em 1870.')
-c.DU('Duelo: quem nasceu primeiro?', 'wellington', 'napoleao', 4, icon='hourglass',
+c.DU('Duelo: quem nasceu primeiro?', 'wellington', 'napoleao', 4, scene='duelo_nasceu', icon='hourglass',
      src=('en', 'Arthur Wellesley, 1st Duke of Wellington', ['1769']),
      x='Os dois nasceram em 1769: Wellington, provavelmente em 1º de maio; Napoleão, em 15 de agosto.')
-c.DU('Duelo: quem morreu primeiro?', 'beethoven', 'bolivar', 5, icon='hourglass',
+c.DU('Duelo: quem morreu primeiro?', 'beethoven', 'bolivar', 5, scene='duelo_morreu', icon='hourglass',
      src=('en', 'Ludwig van Beethoven', ['1827']),
      x='Beethoven morreu em Viena em março de 1827; Bolívar, na Colômbia, em dezembro de 1830.')
 

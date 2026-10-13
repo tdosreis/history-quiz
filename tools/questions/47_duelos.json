@@ -19,7 +19,7 @@
    ],
    "d": 1,
    "art": {
-    "icon": "hourglass"
+    "scene": "duelo_nasceu"
    },
    "src": [
     "pt",
@@ -42,7 +42,7 @@
    ],
    "d": 2,
    "art": {
-    "icon": "hourglass"
+    "scene": "duelo_nasceu"
    },
    "src": [
     "pt",
@@ -65,7 +65,7 @@
    ],
    "d": 1,
    "art": {
-    "icon": "hourglass"
+    "scene": "duelo_aconteceu"
    },
    "src": [
     "pt",
@@ -88,7 +88,7 @@
    ],
    "d": 1,
    "art": {
-    "icon": "pyramid"
+    "scene": "duelo_governou"
    },
    "src": [
     "pt",
@@ -111,7 +111,7 @@
    ],
    "d": 2,
    "art": {
-    "icon": "sword"
+    "scene": "duelo_morreu"
    },
    "src": [
     "pt",
@@ -133,7 +133,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "hourglass"
+    "scene": "duelo_surgiu"
    },
    "src": [
     "pt",
@@ -156,7 +156,7 @@
    ],
    "d": 1,
    "art": {
-    "icon": "ship"
+    "scene": "duelo_aconteceu"
    },
    "src": [
     "pt",
@@ -179,7 +179,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "gear"
+    "scene": "duelo_invencao"
    },
    "src": [
     "pt",
@@ -202,7 +202,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "column"
+    "scene": "duelo_construiu"
    },
    "src": [
     "pt",
@@ -225,7 +225,7 @@
    ],
    "d": 2,
    "art": {
-    "icon": "flag"
+    "scene": "duelo_governou"
    },
    "src": [
     "pt",

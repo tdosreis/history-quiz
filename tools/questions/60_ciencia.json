@@ -534,7 +534,7 @@
    ],
    "d": 1,
    "art": {
-    "icon": "telescope"
+    "scene": "duelo_nasceu"
    },
    "src": [
     "pt",
@@ -558,7 +558,7 @@
    ],
    "d": 2,
    "art": {
-    "icon": "gear"
+    "scene": "duelo_nasceu"
    },
    "src": [
     "en",
@@ -582,7 +582,7 @@
    ],
    "d": 5,
    "art": {
-    "icon": "flask"
+    "scene": "duelo_nasceu"
    },
    "src": [
     "en",

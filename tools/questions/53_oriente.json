@@ -305,7 +305,7 @@
    ],
    "d": 1,
    "art": {
-    "icon": "hourglass"
+    "scene": "duelo_construiu"
    },
    "src": [
     "en",
@@ -868,7 +868,7 @@
    ],
    "d": 2,
    "art": {
-    "icon": "hourglass"
+    "scene": "duelo_nasceu"
    },
    "src": [
     "en",
@@ -892,7 +892,7 @@
    ],
    "d": 2,
    "art": {
-    "icon": "hourglass"
+    "scene": "duelo_aconteceu"
    },
    "src": [
     "en",

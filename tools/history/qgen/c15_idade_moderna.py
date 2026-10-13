@@ -275,22 +275,22 @@ c.NW('Em que ano saiu esta manchete?', '1783', 'Homens sobem aos céus num balã
      x="Em 21 de novembro, Pilâtre de Rozier e o marquês d'Arlandes voaram uns 9 km sobre Paris num balão dos irmãos Montgolfier.")
 
 # ── Duelo ──
-c.DU('Duelo: quem viveu primeiro?', 'shakespeare', 'voltaire', 1, icon='hourglass',
+c.DU('Duelo: quem viveu primeiro?', 'shakespeare', 'voltaire', 1, scene='duelo_aconteceu', icon='hourglass',
      src=('en', 'Voltaire', ['1694']),
      x='Shakespeare morreu em 1616; Voltaire nasceu em 1694 e foi um dos primeiros a apresentar o dramaturgo inglês ao público francês.')
-c.DU('Duelo: quem nasceu primeiro?', 'michelangelo', 'rafael', 2, icon='palette',
+c.DU('Duelo: quem nasceu primeiro?', 'michelangelo', 'rafael', 2, scene='duelo_nasceu', icon='palette',
      src=('en', 'Raphael', ['1483']),
      x='Michelangelo nasceu em 1475; Rafael, em 1483, morreu bem antes dele, em 1520, com apenas 37 anos.')
-c.DU('Duelo: o que aconteceu primeiro?', 'Fundação de São Paulo', 'Fundação de Nova Amsterdã (Nova York)', 2, typ='txt', icon='map',
+c.DU('Duelo: o que aconteceu primeiro?', 'Fundação de São Paulo', 'Fundação de Nova Amsterdã (Nova York)', 2, typ='txt', scene='duelo_aconteceu', icon='map',
      src=('pt', 'São Paulo', ['1554']),
      x='São Paulo nasceu em 1554 com um colégio jesuíta; Nova Amsterdã, a futura Nova York, só surgiu na década de 1620, como entreposto holandês.')
-c.DU('Duelo: quem nasceu primeiro?', 'cervantes', 'shakespeare', 3, icon='quill',
+c.DU('Duelo: quem nasceu primeiro?', 'cervantes', 'shakespeare', 3, scene='duelo_nasceu', icon='quill',
      src=('en', 'Miguel de Cervantes', ['1547']),
      x='Cervantes nasceu em 1547, e Shakespeare, em 1564; os dois morreram em 1616, e o 23 de abril virou o Dia Mundial do Livro.')
-c.DU('Duelo: quem morreu primeiro?', 'kepler', 'galileu', 4, icon='telescope',
+c.DU('Duelo: quem morreu primeiro?', 'kepler', 'galileu', 4, scene='duelo_morreu', icon='telescope',
      src=('en', 'Johannes Kepler', ['1630']),
      x='Galileu nasceu sete anos antes, em 1564, mas sobreviveu a Kepler, morto em 1630, por mais de onze anos.')
-c.DU('Duelo: qual destes reinos surgiu primeiro?', 'prussia', 'reino_unido', 5, typ=None, icon='crown',
+c.DU('Duelo: qual destes reinos surgiu primeiro?', 'prussia', 'reino_unido', 5, typ=None, scene='duelo_surgiu', icon='crown',
      src=('en', 'Kingdom of Prussia', ['1701']),
      x='O Reino da Prússia nasceu em 1701, quando o eleitor de Brandemburgo se coroou rei; a Grã-Bretanha surgiu da união da Inglaterra com a Escócia, em 1707.')
 

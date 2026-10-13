@@ -248,19 +248,19 @@ c.LN('Quem completa o trio de soberanos que liderou a Terceira Cruzada?', 'Frede
      x='O imperador morreu afogado num rio da Anatólia, em 1190, antes de chegar à Terra Santa; boa parte do seu exército voltou para casa.')
 
 # ── Duelo ──
-c.DU('Duelo: quem viveu primeiro?', 'carlos_magno', 'joana_darc', 1, icon='hourglass',
+c.DU('Duelo: quem viveu primeiro?', 'carlos_magno', 'joana_darc', 1, scene='duelo_aconteceu', icon='hourglass',
      src=('en', 'Charlemagne', ['800']),
      x='Carlos Magno morreu em 814; Joana d\'Arc nasceu cerca de seis séculos depois, por volta de 1412.')
-c.DU('Duelo: quem nasceu primeiro?', 'avicena', 'averroes', 3, icon='book',
+c.DU('Duelo: quem nasceu primeiro?', 'avicena', 'averroes', 3, scene='duelo_nasceu', icon='book',
      src=('en', 'Avicenna', ['980']),
      x='Avicena nasceu perto de Bukhara, em 980; Averróis, em Córdoba, em 1126 — quase um século e meio depois.')
-c.DU('Duelo: quem nasceu primeiro?', 'carlos_magno', 'harun', 4, icon='hourglass',
+c.DU('Duelo: quem nasceu primeiro?', 'carlos_magno', 'harun', 4, scene='duelo_nasceu', icon='hourglass',
      src=('en', 'Harun al-Rashid', ['763']),
      x='Os dois foram contemporâneos e trocaram embaixadas; o califa morreu em 809, e Carlos Magno, mais velho, em 814.')
-c.DU('Duelo: qual destes estados surgiu primeiro?', 'portugal', 'mali', 3, typ=None, icon='hourglass',
+c.DU('Duelo: qual destes estados surgiu primeiro?', 'portugal', 'mali', 3, typ=None, scene='duelo_surgiu', icon='hourglass',
      src=('en', 'Mali Empire', ['1235']),
      x='Portugal foi reconhecido como reino em 1143; o Império do Mali nasceu por volta de 1235, com Sundiata Keita.')
-c.DU('Duelo: qual destas catedrais começou a ser construída primeiro?', 'Notre-Dame de Paris', 'Catedral de Colônia', 4, typ='txt', icon='church',
+c.DU('Duelo: qual destas catedrais começou a ser construída primeiro?', 'Notre-Dame de Paris', 'Catedral de Colônia', 4, typ='txt', scene='duelo_construiu', icon='church',
      src=('en', 'Notre-Dame de Paris', ['1163']),
      x='Notre-Dame foi iniciada em 1163; a de Colônia, começada em 1248, só ficou pronta em 1880, mais de 600 anos depois.')
 

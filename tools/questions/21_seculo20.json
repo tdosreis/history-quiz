@@ -1592,7 +1592,7 @@
    ],
    "d": 2,
    "art": {
-    "icon": "hourglass"
+    "scene": "duelo_morreu"
    },
    "src": [
     "en",
@@ -1616,7 +1616,7 @@
    ],
    "d": 2,
    "art": {
-    "icon": "hourglass"
+    "scene": "duelo_aconteceu"
    },
    "src": [
     "pt",
@@ -1640,7 +1640,7 @@
    ],
    "d": 4,
    "art": {
-    "icon": "hourglass"
+    "scene": "duelo_aconteceu"
    },
    "src": [
     "en",

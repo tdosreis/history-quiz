@@ -19,7 +19,7 @@
    ],
    "d": 1,
    "art": {
-    "icon": "lyre"
+    "scene": "duelo_aconteceu"
    },
    "src": [
     "pt",
@@ -43,7 +43,7 @@
    ],
    "d": 1,
    "art": {
-    "icon": "lyre"
+    "scene": "duelo_nasceu"
    },
    "src": [
     "pt",
@@ -67,7 +67,7 @@
    ],
    "d": 1,
    "art": {
-    "icon": "palette"
+    "scene": "duelo_nasceu"
    },
    "src": [
     "pt",
@@ -91,7 +91,7 @@
    ],
    "d": 1,
    "art": {
-    "icon": "quill"
+    "scene": "duelo_nasceu"
    },
    "src": [
     "pt",
@@ -115,7 +115,7 @@
    ],
    "d": 1,
    "art": {
-    "icon": "gear"
+    "scene": "duelo_invencao"
    },
    "src": [
     "pt",
@@ -139,7 +139,7 @@
    ],
    "d": 1,
    "art": {
-    "icon": "hourglass"
+    "scene": "duelo_construiu"
    },
    "src": [
     "pt",
@@ -163,7 +163,7 @@
    ],
    "d": 1,
    "art": {
-    "icon": "hourglass"
+    "scene": "duelo_nasceu"
    },
    "src": [
     "pt",
@@ -187,7 +187,7 @@
    ],
    "d": 2,
    "art": {
-    "icon": "book"
+    "scene": "duelo_aconteceu"
    },
    "src": [
     "pt",
@@ -211,7 +211,7 @@
    ],
    "d": 2,
    "art": {
-    "icon": "telescope"
+    "scene": "duelo_nasceu"
    },
    "src": [
     "pt",
@@ -259,7 +259,7 @@
    ],
    "d": 2,
    "art": {
-    "icon": "compass"
+    "scene": "duelo_nasceu"
    },
    "src": [
     "pt",
@@ -283,7 +283,7 @@
    ],
    "d": 2,
    "art": {
-    "icon": "map"
+    "scene": "duelo_surgiu"
    },
    "src": [
     "pt",
@@ -307,7 +307,7 @@
    ],
    "d": 2,
    "art": {
-    "icon": "map"
+    "scene": "duelo_construiu"
    },
    "src": [
     "pt",
@@ -331,7 +331,7 @@
    ],
    "d": 2,
    "art": {
-    "icon": "torch"
+    "scene": "duelo_aconteceu"
    },
    "src": [
     "pt",
@@ -355,7 +355,7 @@
    ],
    "d": 2,
    "art": {
-    "icon": "church"
+    "scene": "duelo_construiu"
    },
    "src": [
     "en",
@@ -379,7 +379,7 @@
    ],
    "d": 2,
    "art": {
-    "icon": "ship"
+    "scene": "duelo_aconteceu"
    },
    "src": [
     "pt",
@@ -403,7 +403,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "quill"
+    "scene": "duelo_nasceu"
    },
    "src": [
     "pt",
@@ -427,7 +427,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "crown"
+    "scene": "duelo_governou"
    },
    "src": [
     "pt",
@@ -477,7 +477,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "crown"
+    "scene": "duelo_governou"
    },
    "src": [
     "en",
@@ -501,7 +501,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "hourglass"
+    "scene": "duelo_aconteceu"
    },
    "src": [
     "pt",
@@ -525,7 +525,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "palette"
+    "scene": "duelo_viveu"
    },
    "src": [
     "pt",
@@ -548,7 +548,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "hourglass"
+    "scene": "duelo_surgiu"
    },
    "src": [
     "pt",
@@ -572,7 +572,7 @@
    ],
    "d": 4,
    "art": {
-    "icon": "book"
+    "scene": "duelo_nasceu"
    },
    "src": [
     "pt",
@@ -596,7 +596,7 @@
    ],
    "d": 4,
    "art": {
-    "icon": "hourglass"
+    "scene": "duelo_nasceu"
    },
    "src": [
     "pt",
@@ -620,7 +620,7 @@
    ],
    "d": 4,
    "art": {
-    "icon": "hourglass"
+    "scene": "duelo_morreu"
    },
    "src": [
     "pt",
@@ -644,7 +644,7 @@
    ],
    "d": 4,
    "art": {
-    "icon": "hourglass"
+    "scene": "duelo_construiu"
    },
    "src": [
     "pt",
@@ -669,7 +669,7 @@
    ],
    "d": 4,
    "art": {
-    "icon": "flag"
+    "scene": "duelo_surgiu"
    },
    "src": [
     "pt",
@@ -693,7 +693,7 @@
    ],
    "d": 5,
    "art": {
-    "icon": "crown"
+    "scene": "duelo_nasceu"
    },
    "src": [
     "en",
@@ -718,7 +718,7 @@
    ],
    "d": 5,
    "art": {
-    "icon": "hourglass"
+    "scene": "duelo_morreu"
    },
    "src": [
     "pt",

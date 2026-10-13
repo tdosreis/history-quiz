@@ -195,7 +195,7 @@
    ],
    "d": 1,
    "art": {
-    "icon": "crown"
+    "scene": "duelo_governou"
    },
    "src": [
     "en",
@@ -622,7 +622,7 @@
    ],
    "d": 2,
    "art": {
-    "icon": "scroll"
+    "scene": "duelo_surgiu"
    },
    "src": [
     "en",
@@ -646,7 +646,7 @@
    ],
    "d": 2,
    "art": {
-    "icon": "hourglass"
+    "scene": "duelo_aconteceu"
    },
    "src": [
     "en",

@@ -819,7 +819,7 @@
    ],
    "d": 1,
    "art": {
-    "icon": "hourglass"
+    "scene": "duelo_nasceu"
    },
    "src": [
     "en",
@@ -843,7 +843,7 @@
    ],
    "d": 4,
    "art": {
-    "icon": "hourglass"
+    "scene": "duelo_nasceu"
    },
    "src": [
     "en",

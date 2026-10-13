@@ -1518,7 +1518,7 @@
    ],
    "d": 1,
    "art": {
-    "icon": "hourglass"
+    "scene": "duelo_aconteceu"
    },
    "src": [
     "en",
@@ -1542,7 +1542,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "book"
+    "scene": "duelo_nasceu"
    },
    "src": [
     "en",
@@ -1566,7 +1566,7 @@
    ],
    "d": 4,
    "art": {
-    "icon": "hourglass"
+    "scene": "duelo_nasceu"
    },
    "src": [
     "en",
@@ -1589,7 +1589,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "hourglass"
+    "scene": "duelo_surgiu"
    },
    "src": [
     "en",
@@ -1613,7 +1613,7 @@
    ],
    "d": 4,
    "art": {
-    "icon": "church"
+    "scene": "duelo_construiu"
    },
    "src": [
     "en",

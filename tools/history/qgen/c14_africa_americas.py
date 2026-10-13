@@ -144,10 +144,10 @@ c.NW('Em que ano saiu esta manchete?', '1976', 'Estudantes marcham em Soweto con
      x='O 16 de junho, dia em que a marcha começou, é hoje feriado na África do Sul: o Dia da Juventude.')
 
 # ── Duelo ──
-c.DU('Duelo: quem viveu primeiro?', 'anibal', 'mansa_musa', 1, icon='hourglass',
+c.DU('Duelo: quem viveu primeiro?', 'anibal', 'mansa_musa', 1, scene='duelo_aconteceu', icon='hourglass',
      src=('en', 'Hannibal', ['247']),
      x='Mais de 1.400 anos separam o general de Cartago do rei do Mali.')
-c.DU('Duelo: quem nasceu primeiro?', 'nzinga', 'shaka', 3, icon='hourglass',
+c.DU('Duelo: quem nasceu primeiro?', 'nzinga', 'shaka', 3, scene='duelo_nasceu', icon='hourglass',
      src=('en', 'Nzinga of Ndongo and Matamba', ['1583']),
      x='A rainha angolana nasceu por volta de 1583, cerca de dois séculos antes do fundador do Reino Zulu.')
 
@@ -310,10 +310,10 @@ c.NW('Em que ano saiu esta manchete?', '1910', 'Madero chama o México às armas
      x='Díaz governava o México havia mais de trinta anos; caiu em 1911, mas a revolução continuou por quase uma década.')
 
 # ── Duelo ──
-c.DU('Duelo: quem nasceu primeiro?', 'washington', 'bolivar', 1, icon='hourglass',
+c.DU('Duelo: quem nasceu primeiro?', 'washington', 'bolivar', 1, scene='duelo_nasceu', icon='hourglass',
      src=('en', 'George Washington', ['1732']),
      x='Washington nasceu em 1732, mais de meio século antes do Libertador, que é de 1783.')
-c.DU('Duelo: quem nasceu primeiro?', 'san_martin', 'bolivar', 4, icon='hourglass',
+c.DU('Duelo: quem nasceu primeiro?', 'san_martin', 'bolivar', 4, scene='duelo_nasceu', icon='hourglass',
      src=('en', 'José de San Martín', ['1778']),
      x='O argentino nasceu em 1778, cinco anos antes do venezuelano; os dois se encontraram uma única vez, em Guayaquil, em 1822.')
 

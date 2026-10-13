@@ -243,13 +243,13 @@ c.NW('Quem é o líder desta manchete?', 'Willy Brandt', 'Chanceler alemão se a
      x='O gesto, em dezembro de 1970, virou símbolo do pedido de perdão alemão pelos crimes nazistas; no ano seguinte, ele ganhou o Nobel da Paz.')
 
 # ── Duelos ──
-c.DU('Duelo: quem morreu primeiro?', 'lenin', 'gandhi', 2, icon='hourglass',
+c.DU('Duelo: quem morreu primeiro?', 'lenin', 'gandhi', 2, scene='duelo_morreu', icon='hourglass',
      src=('en', 'Vladimir Lenin', ['1924']),
      x='Lênin morreu em janeiro de 1924, aos 53 anos; Gandhi foi assassinado em janeiro de 1948.')
-c.DU('Duelo: o que aconteceu primeiro?', 'Revolução Russa de Outubro', 'Fim da Primeira Guerra Mundial', 2, typ='txt', icon='hourglass',
+c.DU('Duelo: o que aconteceu primeiro?', 'Revolução Russa de Outubro', 'Fim da Primeira Guerra Mundial', 2, typ='txt', scene='duelo_aconteceu', icon='hourglass',
      src=('pt', 'Revolução de Outubro', ['1917']),
      x='A revolução foi em 1917, e a Rússia bolchevique saiu da guerra antes mesmo do armistício de novembro de 1918.')
-c.DU('Duelo: o que aconteceu primeiro?', 'Primeiro voo humano ao espaço', 'Início da construção do Muro de Berlim', 4, typ='txt', icon='hourglass',
+c.DU('Duelo: o que aconteceu primeiro?', 'Primeiro voo humano ao espaço', 'Início da construção do Muro de Berlim', 4, typ='txt', scene='duelo_aconteceu', icon='hourglass',
      src=('en', 'Vostok 1', ['12 April 1961']),
      x='Gagarin voou em 12 de abril de 1961; o Muro começou a ser erguido quatro meses depois, em 13 de agosto.')
 

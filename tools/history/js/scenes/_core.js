@@ -87,13 +87,13 @@ function _ruler(y0, from, to, lit) {
 }
 
 /* a mystery figure in a medallion, for the duels */
-function _medal(x, fill, flip) {
+function _medal(x, fill, flip, bare) {
   return `<g transform="translate(${x} 38)${flip ? ' scale(-1 1)' : ''}">
     <ellipse rx="19" ry="23" fill="${SCK.gold}" stroke="${SCK.ink}" stroke-width="2"/>
     <ellipse rx="15" ry="19" fill="${fill}" stroke="${SCK.ink}" stroke-width="1.2"/>
-    <path d="M-12 17c1-8 5-11 11-11s10 3 11 11z" fill="${SCK.ink}" opacity=".85"/>
-    <path d="M-1 6.6c-5 0-8-4-8-9.4s3.6-9 8.4-9 8 3.6 7.6 8.6c2 .6 2.4 2.6.6 3.4l-1.6 4.4c-1.6 1.6-4.6 2-7 2z" fill="${SCK.ink}" opacity=".85"/>
-    <text x="0" y="1" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-weight="700" font-size="12" fill="${SCK.goldHi}"${flip ? ' transform="scale(-1 1)"' : ''}>?</text></g>`;
+    ${bare ? '' : `<path d="M-12 17c1-8 5-11 11-11s10 3 11 11z" fill="${SCK.ink}" opacity=".85"/>
+    <path d="M-1 6.6c-5 0-8-4-8-9.4s3.6-9 8.4-9 8 3.6 7.6 8.6c2 .6 2.4 2.6.6 3.4l-1.6 4.4c-1.6 1.6-4.6 2-7 2z" fill="${SCK.ink}" opacity=".85"/>`}
+    <text x="0" y="${bare ? 6 : 1}" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-weight="700" font-size="${bare ? 18 : 12}" fill="${SCK.goldHi}"${flip ? ' transform="scale(-1 1)"' : ''}>?</text></g>`;
 }
 /* the little sign over a duel that says what is being compared */
 const DUEL_CUE = {
@@ -103,11 +103,12 @@ const DUEL_CUE = {
   governou:  `<path d="M-9 6l-1.4-11 5.4 4.4 5-7 5 7 5.4-4.4-1.4 11z" fill="${SCK.gold}" stroke="${SCK.ink}" stroke-width="1.2" stroke-linejoin="round"/><path d="M-9 6h18v3h-18z" fill="${SCK.goldLo}" stroke="${SCK.ink}" stroke-width="1"/>`,
   aconteceu: `<rect x="-8" y="-8" width="16" height="17" rx="1.6" fill="${SCK.white}" stroke="${SCK.ink}" stroke-width="1.2"/><path d="M-8 -3h16" stroke="${SCK.ink}" stroke-width="1"/><rect x="-8" y="-8" width="16" height="5" rx="1.6" fill="${SCK.red}"/><path d="M-4 1h8M-4 4.6h5" stroke="${SCK.ink}" stroke-width="1.2"/>`,
   invencao:  `<path d="M0 -10a7 7 0 0 1 4.4 12.4V5h-8.8V2.4A7 7 0 0 1 0 -10z" fill="${SCK.goldHi}" stroke="${SCK.ink}" stroke-width="1.2"/><path d="M-4 7h8M-3 9.4h6" stroke="${SCK.ink}" stroke-width="1.4"/><path d="M-2 0l2 3 2-3" fill="none" stroke="${SCK.ink}" stroke-width="1"/>`,
+  construiu: `<path d="M-9 -3 0 -9l9 6z" fill="${SCK.stone}" stroke="${SCK.ink}" stroke-width="1.1" stroke-linejoin="round"/><path d="M-8 -3h16v2h-16z" fill="${SCK.stoneLo}" stroke="${SCK.ink}" stroke-width=".9"/><path d="M-6.4 -1h2.6v8h-2.6zM-1.3 -1h2.6v8h-2.6zM3.8 -1h2.6v8h-2.6z" fill="${SCK.white}" stroke="${SCK.ink}" stroke-width=".8"/><path d="M-9 7h18v2.4h-18z" fill="${SCK.stoneLo}" stroke="${SCK.ink}" stroke-width=".9"/>`,
   morreu:    `<path d="M-6 -9h12M-6 9h12" stroke="${SCK.ink}" stroke-width="2"/><path d="M-5 -8q0 6 5 8q-5 2-5 8h10q0-6-5-8q5-2 5-8z" fill="${SCK.white}" stroke="${SCK.ink}" stroke-width="1.2"/><path d="M-4 -7h8l-4 5z" fill="${SCK.sand}"/>`,
 };
 function _duel(cue) {
   return SCH.bg('#D8C39A') + `<path d="M0 64h120v16H0z" fill="#C9A66B"/>`
-    + _medal(26, SCK.burg) + _medal(94, SCK.teal, true)
+    + _medal(26, SCK.burg, false, /^(construiu|invencao|aconteceu|surgiu)$/.test(cue)) + _medal(94, SCK.teal, true, /^(construiu|invencao|aconteceu|surgiu)$/.test(cue))
     + SCH.g(`<path d="M44 58 76 22" stroke="#E4E6EA" stroke-width="4.4" fill="none"/><path d="M76 58 44 22" stroke="#D4D7DC" stroke-width="4.4" fill="none"/>
       <path d="M41 52l9 9M79 52l-9 9" stroke="${SCK.gold}" stroke-width="3.4" fill="none"/>`, 1.2)
     + `<g transform="translate(60 18)"><circle r="11.5" fill="${SCK.paper}" stroke="${SCK.ink}" stroke-width="1.6"/>${DUEL_CUE[cue] || DUEL_CUE.aconteceu}</g>`;
@@ -156,13 +157,14 @@ Object.assign(SCENE, {
 
   /* the duels: two mystery medallions, crossed swords, and the sign of what
      the duel is about */
-  duelo_nasceu:    { label: 'Duelo: quem nasceu primeiro', draw: () => _duel('nasceu') },
-  duelo_viveu:     { label: 'Duelo: quem viveu mais', draw: () => _duel('viveu') },
-  duelo_morreu:    { label: 'Duelo: quem morreu mais jovem', draw: () => _duel('morreu') },
-  duelo_surgiu:    { label: 'Duelo: qual estado surgiu primeiro', draw: () => _duel('surgiu') },
-  duelo_governou:  { label: 'Duelo: quem governou primeiro', draw: () => _duel('governou') },
-  duelo_aconteceu: { label: 'Duelo: o que aconteceu primeiro', draw: () => _duel('aconteceu') },
-  duelo_invencao:  { label: 'Duelo: qual invenção veio primeiro', draw: () => _duel('invencao') },
+  duelo_nasceu:    { label: 'Duelo de dois medalhões, sob um berço', draw: () => _duel('nasceu') },
+  duelo_viveu:     { label: 'Duelo de dois medalhões, sob uma ampulheta', draw: () => _duel('viveu') },
+  duelo_morreu:    { label: 'Duelo de dois medalhões, sob uma ampulheta quase vazia', draw: () => _duel('morreu') },
+  duelo_surgiu:    { label: 'Duelo de dois medalhões, sob uma coroa na pedra fundamental', draw: () => _duel('surgiu') },
+  duelo_governou:  { label: 'Duelo de dois medalhões, sob uma coroa', draw: () => _duel('governou') },
+  duelo_aconteceu: { label: 'Duelo de dois medalhões, sob uma folha de calendário', draw: () => _duel('aconteceu') },
+  duelo_construiu: { label: 'Duelo de dois medalhões, sob um templo', draw: () => _duel('construiu') },
+  duelo_invencao:  { label: 'Duelo de dois medalhões, sob uma lâmpada', draw: () => _duel('invencao') },
 
   /* the states: which came first, which is the newest, which lasted, which fell */
   estado_primeiro: {

@@ -1619,7 +1619,7 @@
    ],
    "d": 1,
    "art": {
-    "icon": "hourglass"
+    "scene": "duelo_aconteceu"
    },
    "src": [
     "en",
@@ -1643,7 +1643,7 @@
    ],
    "d": 2,
    "art": {
-    "icon": "palette"
+    "scene": "duelo_nasceu"
    },
    "src": [
     "en",
@@ -1667,7 +1667,7 @@
    ],
    "d": 2,
    "art": {
-    "icon": "map"
+    "scene": "duelo_aconteceu"
    },
    "src": [
     "pt",
@@ -1691,7 +1691,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "quill"
+    "scene": "duelo_nasceu"
    },
    "src": [
     "en",
@@ -1715,7 +1715,7 @@
    ],
    "d": 4,
    "art": {
-    "icon": "telescope"
+    "scene": "duelo_morreu"
    },
    "src": [
     "en",
@@ -1738,7 +1738,7 @@
    ],
    "d": 5,
    "art": {
-    "icon": "crown"
+    "scene": "duelo_surgiu"
    },
    "src": [
     "en",

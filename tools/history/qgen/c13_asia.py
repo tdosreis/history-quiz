@@ -48,7 +48,7 @@ c.MY('O Japão é o único país que já foi atacado com bombas atômicas numa g
 c.DU('Duelo: quem governou a China primeiro?', 'qin_shi_huang', 'kublai', 1, flag='CHN',
      src=('en', 'Qin Shi Huang', ['221']),
      x='Qin Shi Huang unificou a China em 221 a.C.; Kublai Khan fundou a dinastia Yuan quase 1.500 anos depois, em 1271.')
-c.DU('Duelo: qual destes monumentos começou a ser erguido primeiro?', 'Grande Muralha da China', 'Taj Mahal', 1, typ='txt', icon='hourglass',
+c.DU('Duelo: qual destes monumentos começou a ser erguido primeiro?', 'Grande Muralha da China', 'Taj Mahal', 1, typ='txt', scene='duelo_construiu', icon='hourglass',
      src=('en', 'Great Wall of China', ['Qin']),
      x='Trechos de muralha já eram erguidos na China séculos antes de Cristo; o Taj Mahal só começou a subir em 1632.')
 c.O('Coloque estes marcos da história da Ásia em ordem, do mais antigo ao mais recente?', [
@@ -134,10 +134,10 @@ c.MY('A Grande Muralha da China é uma única muralha contínua, erguida de uma 
 c.MY('Os antigos chineses usavam a pólvora só para fogos de artifício, e nunca na guerra?', False, 2, icon='cannon',
      src=('en', 'Gunpowder', ['Song dynasty']),
      x='Já no século X os chineses tinham lanças de fogo e, depois, bombas e foguetes; as primeiras armas de fogo da história surgiram na China.')
-c.DU('Duelo: quem nasceu primeiro?', 'confucio', 'socrates', 2, icon='hourglass',
+c.DU('Duelo: quem nasceu primeiro?', 'confucio', 'socrates', 2, scene='duelo_nasceu', icon='hourglass',
      src=('en', 'Confucius', ['551']),
      x='Confúcio nasceu por volta de 551 a.C.; Sócrates, cerca de 80 anos depois, em Atenas.')
-c.DU('Duelo: quem viveu primeiro?', 'sidarta', 'ashoka', 2, icon='hourglass',
+c.DU('Duelo: quem viveu primeiro?', 'sidarta', 'ashoka', 2, scene='duelo_aconteceu', icon='hourglass',
      src=('en', 'Ashoka', ['Buddhism']),
      x='Buda viveu por volta dos séculos VI e V a.C.; Ashoka reinou no século III a.C. e ajudou a espalhar o budismo pela Ásia.')
 

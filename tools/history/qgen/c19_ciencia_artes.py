@@ -96,13 +96,13 @@ c.QT('Proponho considerar a questão: as máquinas podem pensar?', 'turing', 3, 
      x='O "jogo da imitação" descrito no artigo ficou conhecido como teste de Turing e virou referência nos debates sobre inteligência artificial.')
 
 # ── Duelo ──
-c.DU('Duelo: quem nasceu primeiro?', 'galileu', 'newton', 1, icon='telescope',
+c.DU('Duelo: quem nasceu primeiro?', 'galileu', 'newton', 1, scene='duelo_nasceu', icon='telescope',
      src=('pt', 'Galileu Galilei', ['1564']),
      x='Galileu nasceu em 1564 e morreu em janeiro de 1642; Newton nasceu no fim daquele mesmo ano, pelo calendário inglês da época.')
-c.DU('Duelo: quem nasceu primeiro?', 'edison', 'tesla', 2, icon='gear',
+c.DU('Duelo: quem nasceu primeiro?', 'edison', 'tesla', 2, scene='duelo_nasceu', icon='gear',
      src=('en', 'Thomas Edison', ['1847']),
      x='Edison nasceu em 1847, e Tesla, em 1856; o jovem Tesla chegou a trabalhar para Edison em Nova York, em 1884.')
-c.DU('Duelo: quem nasceu primeiro?', 'mendel', 'pasteur', 5, icon='flask',
+c.DU('Duelo: quem nasceu primeiro?', 'mendel', 'pasteur', 5, scene='duelo_nasceu', icon='flask',
      src=('en', 'Gregor Mendel', ['20 July 1822']),
      x='Os dois nasceram em 1822: Mendel em 20 de julho, e Pasteur em 27 de dezembro.')
 
@@ -254,16 +254,16 @@ c.QT('Ao vencido, ódio ou compaixão; ao vencedor, as batatas.', 'machado', 3, 
      x='A frase resume, com ironia, a filosofia do personagem Quincas Borba, que já aparecia em Memórias Póstumas de Brás Cubas.')
 
 # ── Duelo ──
-c.DU('Duelo: quem nasceu primeiro?', 'bach', 'mozart', 1, icon='lyre',
+c.DU('Duelo: quem nasceu primeiro?', 'bach', 'mozart', 1, scene='duelo_nasceu', icon='lyre',
      src=('pt', 'Johann Sebastian Bach', ['1685']),
      x='Bach nasceu em 1685 e morreu em 1750, seis anos antes do nascimento de Mozart.')
-c.DU('Duelo: qual destas obras foi publicada primeiro?', 'Os Lusíadas', 'Dom Quixote', 3, typ='txt', icon='book',
+c.DU('Duelo: qual destas obras foi publicada primeiro?', 'Os Lusíadas', 'Dom Quixote', 3, typ='txt', scene='duelo_aconteceu', icon='book',
      src=('pt', 'Os Lusíadas', ['1572']),
      x='Os Lusíadas saíram em 1572; a primeira parte do Dom Quixote, em 1605.')
-c.DU('Duelo: qual destes quadros foi pintado primeiro?', 'A Ronda Noturna', 'As Meninas', 4, typ='txt', icon='palette',
+c.DU('Duelo: qual destes quadros foi pintado primeiro?', 'A Ronda Noturna', 'As Meninas', 4, typ='txt', scene='duelo_aconteceu', icon='palette',
      src=('en', 'The Night Watch', ['1642']),
      x='Rembrandt terminou A Ronda Noturna em 1642; Velázquez pintou As Meninas em 1656.')
-c.DU('Duelo: quem nasceu primeiro?', 'tchaikovsky', 'monet', 5, icon='hourglass',
+c.DU('Duelo: quem nasceu primeiro?', 'tchaikovsky', 'monet', 5, scene='duelo_nasceu', icon='hourglass',
      src=('en', 'Pyotr Ilyich Tchaikovsky', ['1840']),
      x='Os dois nasceram em 1840: Tchaikovsky em 7 de maio, e Monet em 14 de novembro.')
 

@@ -147,102 +147,102 @@ c.write()
 c = Cat('duelos', 'Duelo', '🤺', 'Só dois na disputa', '#5D4037', order=65)
 
 # d1
-c.DU('Duelo: quem viveu primeiro?', 'homero', 'virgilio', 1, icon='lyre',
+c.DU('Duelo: quem viveu primeiro?', 'homero', 'virgilio', 1, scene='duelo_aconteceu', icon='lyre',
      src=('pt', 'Eneida', ['Homero']),
      x='Virgílio escreveu a Eneida inspirado na Ilíada e na Odisseia, compostas uns sete séculos antes.')
-c.DU('Duelo: quem nasceu primeiro?', 'mozart', 'beethoven', 1, icon='lyre',
+c.DU('Duelo: quem nasceu primeiro?', 'mozart', 'beethoven', 1, scene='duelo_nasceu', icon='lyre',
      src=('pt', 'Wolfgang Amadeus Mozart', ['1756']),
      x='Mozart nasceu em 1756, catorze anos antes de Beethoven, e morreu em 1791, aos 35 anos.')
-c.DU('Duelo: qual destes pintores nasceu primeiro?', 'van_gogh', 'picasso', 1, icon='palette',
+c.DU('Duelo: qual destes pintores nasceu primeiro?', 'van_gogh', 'picasso', 1, scene='duelo_nasceu', icon='palette',
      src=('pt', 'Vincent van Gogh', ['1853']),
      x='Van Gogh morreu em 1890, quando Picasso tinha apenas 8 anos.')
-c.DU('Duelo: qual destes escritores nasceu primeiro?', 'machado', 'drummond', 1, icon='quill',
+c.DU('Duelo: qual destes escritores nasceu primeiro?', 'machado', 'drummond', 1, scene='duelo_nasceu', icon='quill',
      src=('pt', 'Machado de Assis', ['1839']),
      x='Machado de Assis morreu em 1908; Drummond nasceu em 1902, em Itabira, Minas Gerais.')
-c.DU('Duelo: qual destas invenções surgiu primeiro?', 'Prensa de Gutenberg', 'Máquina a vapor de Watt', 1, typ='txt', icon='gear',
+c.DU('Duelo: qual destas invenções surgiu primeiro?', 'Prensa de Gutenberg', 'Máquina a vapor de Watt', 1, typ='txt', scene='duelo_invencao', icon='gear',
      src=('pt', 'Johannes Gutenberg', ['Bíblia']),
      x='A Bíblia de Gutenberg foi impressa na década de 1450; a máquina a vapor de James Watt foi patenteada em 1769.')
-c.DU('Duelo: qual destes monumentos foi inaugurado primeiro?', 'Torre Eiffel', 'Cristo Redentor', 1, typ='txt', icon='hourglass',
+c.DU('Duelo: qual destes monumentos foi inaugurado primeiro?', 'Torre Eiffel', 'Cristo Redentor', 1, typ='txt', scene='duelo_construiu', icon='hourglass',
      src=('pt', 'Cristo Redentor', ['1931']),
      x='A torre ficou pronta para a Exposição Universal de Paris, em 1889; o Cristo do Corcovado, só em 1931.')
-c.DU('Duelo: quem nasceu primeiro?', 'washington', 'napoleao', 1, icon='hourglass',
+c.DU('Duelo: quem nasceu primeiro?', 'washington', 'napoleao', 1, scene='duelo_nasceu', icon='hourglass',
      src=('pt', 'George Washington', ['1732']),
      x='Washington nasceu em 1732 e morreu em 1799, o ano em que Napoleão tomou o poder na França.')
 
 # d2
-c.DU('Duelo: qual destes poetas viveu primeiro?', 'dante', 'camoes', 2, icon='book',
+c.DU('Duelo: qual destes poetas viveu primeiro?', 'dante', 'camoes', 2, scene='duelo_aconteceu', icon='book',
      src=('pt', 'Dante Alighieri', ['1265']),
      x='A Divina Comédia é do início do século XIV; Os Lusíadas só foram publicados em 1572.')
-c.DU('Duelo: quem nasceu primeiro?', 'copernico', 'galileu', 2, icon='telescope',
+c.DU('Duelo: quem nasceu primeiro?', 'copernico', 'galileu', 2, scene='duelo_nasceu', icon='telescope',
      src=('pt', 'Nicolau Copérnico', ['1473']),
      x='Copérnico morreu em 1543, 21 anos antes do nascimento de Galileu, que defenderia as suas ideias.')
 c.DU('Duelo: quem governou Roma por mais tempo?', 'augusto', 'nero', 2, crest='imperio_romano',
      src=('en', 'Augustus', ['Octavian']),
      x='Augusto governou por cerca de 40 anos, de 27 a.C. a 14 d.C.; Nero, por 14, de 54 a 68.')
-c.DU('Duelo: quem nasceu primeiro?', 'kublai', 'marco_polo', 2, icon='compass',
+c.DU('Duelo: quem nasceu primeiro?', 'kublai', 'marco_polo', 2, scene='duelo_nasceu', icon='compass',
      src=('pt', 'Marco Polo', ['Kublai']),
      x='Kublai Khan nasceu em 1215; o viajante veneziano que serviu em sua corte nasceu por volta de 1254.')
-c.DU('Duelo: qual destas cidades foi fundada primeiro?', 'São Paulo', 'Rio de Janeiro', 2, typ='txt', icon='map',
+c.DU('Duelo: qual destas cidades foi fundada primeiro?', 'São Paulo', 'Rio de Janeiro', 2, typ='txt', scene='duelo_surgiu', icon='map',
      src=('pt', 'São Paulo', ['1554']),
      x='São Paulo nasceu com o colégio dos jesuítas, em 1554; o Rio foi fundado por Estácio de Sá em 1565.')
-c.DU('Duelo: qual destas capitais planejadas foi inaugurada primeiro?', 'Belo Horizonte', 'Brasília', 2, typ='txt', icon='map',
+c.DU('Duelo: qual destas capitais planejadas foi inaugurada primeiro?', 'Belo Horizonte', 'Brasília', 2, typ='txt', scene='duelo_construiu', icon='map',
      src=('pt', 'Belo Horizonte', ['1897']),
      x='Belo Horizonte foi inaugurada em 1897 para substituir Ouro Preto como capital de Minas Gerais.')
-c.DU('Duelo: o que aconteceu primeiro?', 'Declaração de Independência dos EUA', 'Tomada da Bastilha', 2, typ='txt', icon='torch',
+c.DU('Duelo: o que aconteceu primeiro?', 'Declaração de Independência dos EUA', 'Tomada da Bastilha', 2, typ='txt', scene='duelo_aconteceu', icon='torch',
      src=('pt', 'Declaração de Independência dos Estados Unidos', ['1776']),
      x='A Declaração é de 4 de julho de 1776; a Bastilha caiu em 14 de julho de 1789.')
-c.DU('Duelo: qual destes templos foi construído primeiro?', 'Santa Sofia', 'Notre-Dame de Paris', 2, typ='txt', icon='church',
+c.DU('Duelo: qual destes templos foi construído primeiro?', 'Santa Sofia', 'Notre-Dame de Paris', 2, typ='txt', scene='duelo_construiu', icon='church',
      src=('en', 'Hagia Sophia', ['537']),
      x='A atual Santa Sofia foi concluída em 537, sob Justiniano; Notre-Dame começou a ser erguida em 1163.')
-c.DU('Duelo: quem partiu primeiro para sua grande viagem?', 'vasco_gama', 'magalhaes', 2, icon='ship',
+c.DU('Duelo: quem partiu primeiro para sua grande viagem?', 'vasco_gama', 'magalhaes', 2, scene='duelo_aconteceu', icon='ship',
      src=('pt', 'Vasco da Gama', ['1497']),
      x='Vasco da Gama zarpou de Lisboa rumo à Índia em 1497; Magalhães partiu da Espanha em 1519, na expedição que deu a primeira volta ao mundo.')
 
 # d3
-c.DU('Duelo: qual destes filósofos nasceu primeiro?', 'voltaire', 'kant', 3, icon='quill',
+c.DU('Duelo: qual destes filósofos nasceu primeiro?', 'voltaire', 'kant', 3, scene='duelo_nasceu', icon='quill',
      src=('pt', 'Voltaire', ['1694']),
      x='Voltaire nasceu em 1694, trinta anos antes de Kant, que passou quase toda a vida em Königsberg.')
-c.DU('Duelo: quem reinou por mais tempo?', 'luis_xiv', 'victoria', 3, icon='crown',
+c.DU('Duelo: quem reinou por mais tempo?', 'luis_xiv', 'victoria', 3, scene='duelo_governou', icon='crown',
      src=('pt', 'Luís XIV de França', ['1643', '1715']),
      x='Luís XIV ficou 72 anos no trono, de 1643 a 1715; a rainha Vitória, 63, de 1837 a 1901.')
 c.DU('Duelo: quem ficou mais tempo no trono inglês?', 'elizabeth_i', 'henrique_viii', 3, crest='inglaterra',
      src=('pt', 'Isabel I de Inglaterra', ['1558', '1603']),
      x='Henrique VIII reinou de 1509 a 1547; sua filha, de 1558 a 1603, por 44 anos.')
-c.DU('Duelo: quem governou primeiro?', 'moctezuma', 'atahualpa', 3, icon='crown',
+c.DU('Duelo: quem governou primeiro?', 'moctezuma', 'atahualpa', 3, scene='duelo_governou', icon='crown',
      src=('en', 'Moctezuma II', ['1502']),
      x='Montezuma II chegou ao trono asteca em 1502; Atahualpa só se tornou o soberano inca em 1532, depois de vencer o irmão Huáscar numa guerra civil.')
-c.DU('Duelo: o que aconteceu primeiro?', 'Chegada da família real portuguesa ao Brasil', 'Batalha de Waterloo', 3, typ='txt', icon='hourglass',
+c.DU('Duelo: o que aconteceu primeiro?', 'Chegada da família real portuguesa ao Brasil', 'Batalha de Waterloo', 3, typ='txt', scene='duelo_aconteceu', icon='hourglass',
      src=('pt', 'Transferência da corte portuguesa para o Brasil', ['1808']),
      x='A corte desembarcou no Brasil em 1808, fugindo das tropas de Napoleão, sete anos antes de Waterloo.')
-c.DU('Duelo: quem viveu mais anos?', 'michelangelo', 'leonardo', 3, icon='palette',
+c.DU('Duelo: quem viveu mais anos?', 'michelangelo', 'leonardo', 3, scene='duelo_viveu', icon='palette',
      src=('pt', 'Michelangelo', ['1564']),
      x='Michelangelo morreu em 1564, aos 88 anos; Leonardo morreu em 1519, aos 67.')
-c.DU('Duelo: qual destes estados surgiu primeiro?', 'imperio_otomano', 'ming', 3, typ=None, icon='hourglass',
+c.DU('Duelo: qual destes estados surgiu primeiro?', 'imperio_otomano', 'ming', 3, typ=None, scene='duelo_surgiu', icon='hourglass',
      src=('pt', 'Império Otomano', ['1299']),
      x='Os otomanos surgiram na Anatólia por volta de 1299; a dinastia Ming foi fundada na China em 1368.')
 
 # d4
-c.DU('Duelo: qual destes romancistas nasceu primeiro?', 'victor_hugo', 'dickens', 4, icon='book',
+c.DU('Duelo: qual destes romancistas nasceu primeiro?', 'victor_hugo', 'dickens', 4, scene='duelo_nasceu', icon='book',
      src=('pt', 'Victor Hugo', ['1802']),
      x='Victor Hugo nasceu em 1802, dez anos antes de Dickens, e sobreviveu a ele por quinze anos.')
-c.DU('Duelo: quem nasceu primeiro?', 'gandhi', 'churchill', 4, icon='hourglass',
+c.DU('Duelo: quem nasceu primeiro?', 'gandhi', 'churchill', 4, scene='duelo_nasceu', icon='hourglass',
      src=('pt', 'Mahatma Gandhi', ['1869']),
      x='Gandhi nasceu em 1869 e Churchill, em 1874; o indiano morreu em 1948, e o britânico, só em 1965.')
-c.DU('Duelo: quem morreu mais jovem?', 'mozart', 'van_gogh', 4, icon='hourglass',
+c.DU('Duelo: quem morreu mais jovem?', 'mozart', 'van_gogh', 4, scene='duelo_morreu', icon='hourglass',
      src=('pt', 'Wolfgang Amadeus Mozart', ['1791']),
      x='Mozart morreu aos 35 anos, em 1791; Van Gogh, aos 37, em 1890.')
-c.DU('Duelo: qual destas obras de engenharia ficou pronta primeiro?', 'Estátua da Liberdade', 'Torre Eiffel', 4, typ='txt', icon='hourglass',
+c.DU('Duelo: qual destas obras de engenharia ficou pronta primeiro?', 'Estátua da Liberdade', 'Torre Eiffel', 4, typ='txt', scene='duelo_construiu', icon='hourglass',
      src=('pt', 'Estátua da Liberdade', ['1886', 'Eiffel']),
      x='A estátua foi inaugurada em Nova York em 1886; sua estrutura interna foi projetada por Gustave Eiffel, o mesmo da torre de 1889.')
-c.DU('Duelo: qual destes países se tornou independente primeiro?', 'México', 'Brasil', 4, typ='txt', icon='flag',
+c.DU('Duelo: qual destes países se tornou independente primeiro?', 'México', 'Brasil', 4, typ='txt', scene='duelo_surgiu', icon='flag',
      src=('pt', 'Independência do México', ['1821']),
      x='O México consumou sua independência em setembro de 1821, um ano antes do Grito do Ipiranga.')
 
 # d5
-c.DU('Duelo: quem nasceu primeiro?', 'solimao', 'carlos_v', 5, icon='crown',
+c.DU('Duelo: quem nasceu primeiro?', 'solimao', 'carlos_v', 5, scene='duelo_nasceu', icon='crown',
      src=('en', 'Suleiman the Magnificent', ['1494', 'Charles V']),
      x='O sultão nasceu poucos anos antes do imperador, que é de 1500: os dois rivais disputaram a Europa Central e o Mediterrâneo por décadas.')
-c.DU('Duelo: quem morreu primeiro?', 'bolivar', 'dom_pedro_i', 5, icon='hourglass',
+c.DU('Duelo: quem morreu primeiro?', 'bolivar', 'dom_pedro_i', 5, scene='duelo_morreu', icon='hourglass',
      src=('pt', 'Simón Bolívar', ['1830']),
      x='Bolívar morreu em 1830, aos 47 anos; Dom Pedro I, em 1834, aos 35, em Portugal.')
 c.write()

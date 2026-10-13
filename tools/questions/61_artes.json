@@ -521,7 +521,7 @@
    ],
    "d": 1,
    "art": {
-    "icon": "lyre"
+    "scene": "duelo_nasceu"
    },
    "src": [
     "pt",
@@ -545,7 +545,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "book"
+    "scene": "duelo_aconteceu"
    },
    "src": [
     "pt",
@@ -569,7 +569,7 @@
    ],
    "d": 4,
    "art": {
-    "icon": "palette"
+    "scene": "duelo_aconteceu"
    },
    "src": [
     "en",
@@ -593,7 +593,7 @@
    ],
    "d": 5,
    "art": {
-    "icon": "hourglass"
+    "scene": "duelo_nasceu"
    },
    "src": [
     "en",
