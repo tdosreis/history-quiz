@@ -13,7 +13,8 @@ A row is
   choices  txt only: six options, the answers among them
   d        tier, 1 (easy) to 5 (for the few)
   art      exactly one of {"who": playerId} {"crest": clubId} {"flag": CODE}
-           {"stad": key} {"icon": key} {"map": UF} — what the question is illustrated with
+           {"stad": key} {"icon": key} {"scene": id} {"map": UF} — what the question is
+           illustrated with; a scene (tools/history/js/scenes/) is the subject itself, drawn
   src      [lang, article, [terms]] — the Wikipedia article that settles it and
            the words that must appear there (tools/check_questions.py)
   x        optional: the "Você sabia?" line shown after the answer
@@ -55,6 +56,7 @@ def inventory(src):
              "var o={pl:PL.map(function(p){return [p.id,p.n]}),cl:CL.map(function(c){return [c.id,c.n]}),"
              "logos:CL.map(function(c){return c.id}),flags:Object.keys(FLAGS),ctry:CTRY_NAME,"
              "stad:Object.keys(STAD_IMGS),icons:Object.keys(QICON),ufs:[],"
+             "scenes:Object.keys(SCENE).map(function(k){return [k,SCENE[k].rx?SCENE[k].rx.source:'']}),"
              "texts:[].concat.apply([],CATS.map(function(c){return c.qs.map(function(q){return q.t})}))};"
              "var p=document.createElement('pre');p.id='inv';p.textContent=JSON.stringify(o);"
              "document.body.appendChild(p);},200);});</script>")
@@ -79,6 +81,7 @@ def main():
     inv = inventory(src)
     pl = dict(inv["pl"]); cl = dict(inv["cl"])
     logos, flags, stad, icons = set(inv["logos"]), set(inv["flags"]), set(inv["stad"]), set(inv["icons"])
+    scenes = dict(inv.get("scenes") or [])
     ufs = set(inv["ufs"])
     seen = {fold(t): "existing" for t in inv["texts"]}
 
@@ -189,6 +192,14 @@ def main():
                     if v not in stad: bad(f"art: no stadium photo '{v}'")
                 elif k == "icon":
                     if v not in icons: bad(f"art: no icon '{v}'")
+                elif k == "scene":
+                    sid = str(v).split(":")[0]
+                    if sid not in scenes: bad(f"art: no scene '{sid}'")
+                    elif scenes[sid]:
+                        # a scene of something among the answers or the choices pictures an answer
+                        shown = [fold(x) for x in (q.get("choices") or [])] + [fold(pl.get(x, cl.get(x, x))) for x in a]
+                        hit = [x for x in shown if re.search(scenes[sid], " " + x + " ")]
+                        if hit: bad(f"art: the scene '{sid}' pictures a choice or the answer ({hit[0]})")
                 elif k == "map":
                     if v not in ufs: bad(f"art: the map has no state '{v}'")
                 else:

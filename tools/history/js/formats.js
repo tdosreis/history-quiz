@@ -128,6 +128,24 @@ function battleStrip(st, q) {
     ${x ? `<span class="hs-x">${x}</span>` : ''}</div>`;
 }
 
+/* One link of a line: a figure's face, a state's brasão, a country's flag —
+   the Security Council is five flags, not five strangers — or, for a link
+   that is none of these, a bust in the clothes of its age when the line is
+   of people, and the engraving of its kind otherwise (a regime, a dynasty). */
+function lineMark(n, q, st) {
+  const r = optResolve(n) || (() => {
+    /* "Tang" in a line of Chinese dynasties is the Dinastia Tang */
+    const f = _fold(n), c = CL.find(x => _fold(x.n) === 'dinastia ' + f || _fold(x.n) === 'imperio ' + f);
+    return c ? { k: 'club', id: c.id } : null; })();
+  if (r && r.k === 'face') return `<span class="hs-mark hs-face"><img src="${r.img}" alt="" aria-hidden="true" onerror="this.style.visibility='hidden'" /></span>`;
+  if (r && r.k === 'club') return `<span class="hs-mark hs-crest">${clubArt(r.id, '', false)}</span>`;
+  if (r && r.k === 'ctry') return `<span class="hs-mark hs-flag"><svg viewBox="0 0 9 6" preserveAspectRatio="none" aria-hidden="true">${FLAGS[r.iso[0]] || ''}</svg></span>`;
+  const topic = optTopic('', _fold((q && q.t) || ''));
+  return topic && topic !== 'person' && topic !== 'title'
+    ? `<span class="hs-mark hs-ink">${topicGlyph(topic, n, st.era || 'med')}</span>`
+    : `<span class="hs-mark hs-ink">${bustGlyph(n, st.era || 'med')}</span>`;
+}
+
 /* ── a linhagem ── a succession reads left to right with arrows; a council
    or an alliance ("grupo") is joined by plus signs */
 function lineStrip(st, q) {
@@ -136,7 +154,7 @@ function lineStrip(st, q) {
   const rows = (st.rows || []).map(n => n === '?' && shown ? '\u0001' + shown : n);
   const cells = rows.map((n, i) => `${i ? `<span class="hs-join" style="animation-delay:${(i * .14).toFixed(2)}s">${grp ? '+' : '→'}</span>` : ''}
     <span class="hs-link${n === '?' ? ' hs-link-q' : ''}${n[0] === '\u0001' ? ' hs-link-shown' : ''}" style="animation-delay:${(i * .14 + .05).toFixed(2)}s">
-      ${n === '?' ? '<span class="hs-mark hs-q">?</span>' : (n = n.replace('\u0001', ''), (() => { const r = optResolve(n); return r && r.k === 'face' ? `<span class="hs-mark hs-face"><img src="${r.img}" alt="" aria-hidden="true" onerror="this.style.visibility='hidden'" /></span>` : `<span class="hs-mark hs-ink">${bustGlyph(n, st.era || 'med')}</span>`; })())}
+      ${n === '?' ? '<span class="hs-mark hs-q">?</span>' : (n = n.replace('\u0001', ''), lineMark(n, q, st))}
       <b>${n === '?' ? '???' : n}</b>${st.sub && st.sub[i] ? `<em>${st.sub[i]}</em>` : ''}</span>`).join('');
   return `<div class="qstrip hs-line${grp ? ' hs-line-grp' : ''}" role="img" aria-label="${grp ? 'Grupo' : 'Linhagem'}">
     <span class="hs-lbl">${st.t || ''}</span><div class="hs-chain">${cells}</div></div>`;

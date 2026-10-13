@@ -23,12 +23,17 @@ function GEN_QS(tier) {
   const cent = p => centTxt(born(p));
   const overlap = (p, ev) => p.era[0] <= ev.y[1] && p.era[1] >= ev.y[0];
   const natOk = p => !NAT_SKIP.has(p.id) && CTRY_NAME[p.ctry] && FLAGS[p.ctry];
+  /* "o Duque de Caxias", "a Rainha Vitória" — a name that opens with a title takes the article */
+  const figArt = p => /^(Rei|Infante|Duque|Barão|Marechal|Imperador)\b/.test(p.n) ? 'o' : /^(Princesa|Rainha|Madre)\b/.test(p.n) ? 'a' : '';
+  const theFig = p => (figArt(p) ? figArt(p) + ' ' : '') + p.n;
+  const toFig = p => ({ o: 'ao ', a: 'à ', '': 'a ' }[figArt(p)]) + p.n;
+  const ofFig = p => ({ o: 'do ', a: 'da ', '': 'de ' }[figArt(p)]) + p.n;
 
   /* ── 1. Which state is tied to this figure? ── */
   pick(PL.filter(p => (p.clubs || []).length), 26).forEach(p => {
     const mine = p.clubs;
     out.push({
-      t: `Qual destes estados está ligado a ${p.n}?`,
+      t: `Qual destes estados está ligado ${toFig(p)}?`,
       a: [rndOf(mine)],
       pool: CL.filter(c => !mine.includes(c.id)).map(c => c.id),
       face: p.img, _cat: GC.pol,
@@ -55,14 +60,14 @@ function GEN_QS(tier) {
     const oldest = set.reduce((a, b) => (a.f <= b.f ? a : b));
     if (set.filter(c => c.f === oldest.f).length > 1) continue;
     out.push({ t: 'Qual destes estados surgiu primeiro?',
-               a: [oldest.id], fixed: set.map(c => c.id), icon: 'hourglass', _cat: GC.hist, d: 2 });
+               a: [oldest.id], fixed: set.map(c => c.id), icon: 'hourglass', scene: 'estado_primeiro', _cat: GC.hist, d: 2 });
   }
   for (let i = 0; i < 4; i++) {
     const set = pick(CL, 10);
     const newest = set.reduce((a, b) => (a.f >= b.f ? a : b));
     if (set.filter(c => c.f === newest.f).length > 1) continue;
     out.push({ t: 'Qual destes estados é o mais recente — surgiu por último?',
-               a: [newest.id], fixed: set.map(c => c.id), icon: 'hourglass', _cat: GC.hist, d: 3 });
+               a: [newest.id], fixed: set.map(c => c.id), icon: 'hourglass', scene: 'estado_ultimo', _cat: GC.hist, d: 3 });
   }
   for (let i = 0; i < 4; i++) {
     const set = pick(CL.filter(c => c.e !== 0), 10);
@@ -70,7 +75,7 @@ function GEN_QS(tier) {
     const top = set.reduce((a, b) => (len(a) >= len(b) ? a : b));
     if (set.length < 10 || set.filter(c => len(c) === len(top)).length > 1) continue;
     out.push({ t: 'Qual destes estados durou mais tempo?',
-               a: [top.id], fixed: set.map(c => c.id), icon: 'hourglass', _cat: GC.hist, d: 3 });
+               a: [top.id], fixed: set.map(c => c.id), icon: 'hourglass', scene: 'estado_durou', _cat: GC.hist, d: 3 });
   }
 
   /* ── 4. Multi-select: states of the ancient world among the later ones ── */
@@ -79,14 +84,14 @@ function GEN_QS(tier) {
     const rest = pick(CL.filter(c => c.f >= 1000), 7);
     if (old.length < 3 || rest.length < 7) break;
     out.push({ t: 'Selecione os estados que já existiam antes de Cristo',
-               a: old.map(c => c.id), fixed: old.concat(rest).map(c => c.id), icon: 'column', _cat: GC.hist, d: 2 });
+               a: old.map(c => c.id), fixed: old.concat(rest).map(c => c.id), icon: 'column', scene: 'antes_de_cristo', _cat: GC.hist, d: 2 });
   }
   for (let i = 0; i < 3; i++) {
     const gone = pick(CL.filter(c => c.e !== 0), 3);
     const live = pick(CL.filter(c => c.e === 0), 7);
     if (gone.length < 3 || live.length < 7) break;
     out.push({ t: 'Selecione os estados que deixaram de existir',
-               a: gone.map(c => c.id), fixed: gone.concat(live).map(c => c.id), icon: 'hourglass', _cat: GC.hist, d: 2 });
+               a: gone.map(c => c.id), fixed: gone.concat(live).map(c => c.id), icon: 'hourglass', scene: 'estado_extinto', _cat: GC.hist, d: 2 });
   }
 
   /* ── 5. Who else is tied to this state? ── */
@@ -119,7 +124,7 @@ function GEN_QS(tier) {
     out.push({
       t: `Qual destes personagens nasceu no ${cent(p)}?`,
       a: [p.id], type: 'player',
-      pool: others.map(x => x.id), _cat: GC.era, d: 3,
+      pool: others.map(x => x.id), scene: 'seculo:' + born(p), _cat: GC.era, d: 3,
     });
   });
   pick(PL, 12).forEach(p => {
@@ -129,7 +134,7 @@ function GEN_QS(tier) {
     const near = [...new Set(pool)].filter(c => c !== mine);
     const opts = pick(near.sort((a, b) => Math.abs(near.indexOf(a) - near.indexOf(mine)) - Math.abs(near.indexOf(b) - near.indexOf(mine)) + (rnd() - .5) * 4).slice(0, 9), 5);
     out.push({
-      t: `Em que século nasceu ${p.n}?`, type: 'txt',
+      t: `Em que século nasceu ${theFig(p)}?`, type: 'txt',
       choices: shuf([mine].concat(opts)), a: [mine], face: p.img, _cat: GC.count, d: 3,
     });
   });
@@ -181,21 +186,21 @@ function GEN_QS(tier) {
     if (span(two[0]) === span(two[1]) || Math.abs(span(two[0]) - span(two[1])) < 8) continue;
     const longer = span(two[0]) > span(two[1]) ? two[0] : two[1];
     out.push({ t: 'Quem viveu mais tempo?', a: [longer.id], type: 'player',
-               fixed: two.map(p => p.id), _cat: GC.era, d: 2 });
+               fixed: two.map(p => p.id), scene: 'viveu_mais', _cat: GC.era, d: 2 });
   }
   for (let i = 0; i < 5; i++) {
     const set = pick(PL, 10);
     const first = set.reduce((a, b) => (born(a) <= born(b) ? a : b));
     if (set.filter(p => born(p) === born(first)).length > 1) continue;
     out.push({ t: 'Qual destes personagens nasceu primeiro?',
-               a: [first.id], type: 'player', fixed: set.map(p => p.id), _cat: GC.era, d: 3 });
+               a: [first.id], type: 'player', fixed: set.map(p => p.id), scene: 'nasceu_primeiro', _cat: GC.era, d: 3 });
   }
   for (let i = 0; i < 4; i++) {
     const set = pick(PL, 10);
     const last = set.reduce((a, b) => (born(a) >= born(b) ? a : b));
     if (set.filter(p => born(p) === born(last)).length > 1) continue;
     out.push({ t: 'Qual destes personagens nasceu por último?',
-               a: [last.id], type: 'player', fixed: set.map(p => p.id), _cat: GC.era, d: 3 });
+               a: [last.id], type: 'player', fixed: set.map(p => p.id), scene: 'nasceu_ultimo', _cat: GC.era, d: 3 });
   }
 
   /* ── 11. The intruder from another age ── */
@@ -208,7 +213,7 @@ function GEN_QS(tier) {
     out.push({
       t: `Nove destes personagens nasceram no ${cent(c)}. Qual é o intruso?`,
       a: [o.id], type: 'player',
-      fixed: pick(same, 9).map(p => p.id).concat(o.id), _cat: GC.era, d: 3,
+      fixed: pick(same, 9).map(p => p.id).concat(o.id), scene: 'seculo:' + born(c), _cat: GC.era, d: 3,
     });
   }
 
@@ -221,7 +226,7 @@ function GEN_QS(tier) {
     if (!mates.length || strangers.length < 9) return;
     const mate = rndOf(mates);
     out.push({
-      t: `Quem foi contemporâneo de ${p.n}?`,
+      t: `Quem foi contemporâneo ${ofFig(p)}?`,
       a: [mate.id], type: 'player',
       fixed: pick(strangers, 9).map(x => x.id).concat(mate.id),
       face: p.img, _cat: GC.era, d: 3,
@@ -238,7 +243,7 @@ function GEN_QS(tier) {
     out.push({
       t: `Qual destes personagens viveu durante ${theEvent(ev)} (${yearTxt(E_.y[0])}–${yearTxt(E_.y[1])})?`,
       a: [rndOf(yes).id], type: 'player',
-      pool: no.map(p => p.id), _cat: GC.event, d: 3,
+      pool: no.map(p => p.id), scene: eventScene(ev), _cat: GC.event, d: 3,
     });
   });
   pick(evIds.filter(ev => PL.filter(p => p.ev.includes(ev) && overlap(p, EVENTS[ev])).length >= 2), 5).forEach(ev => {
@@ -249,7 +254,7 @@ function GEN_QS(tier) {
     out.push({
       t: `Selecione os 2 personagens que viveram durante ${theEvent(ev)}`,
       a: yes.map(p => p.id), type: 'player',
-      fixed: yes.concat(no).map(p => p.id), _cat: GC.event, d: 3,
+      fixed: yes.concat(no).map(p => p.id), scene: eventScene(ev), _cat: GC.event, d: 3,
     });
   });
 
@@ -262,14 +267,14 @@ function GEN_QS(tier) {
     out.push({
       t: 'Selecione os 2 personagens que ganharam o Prêmio Nobel',
       a: two.map(p => p.id), type: 'player',
-      fixed: two.concat(pick(no, 8)).map(p => p.id), _cat: GC.nobel, d: 3,
+      fixed: two.concat(pick(no, 8)).map(p => p.id), scene: 'nobel', _cat: GC.nobel, d: 3,
     });
   }
   pick(PL.filter(p => p.nb > 0), 5).forEach(p => {
     out.push({
       t: 'Qual destes personagens ganhou o Prêmio Nobel?',
       a: [p.id], type: 'player',
-      pool: PL.filter(x => !x.nb && x.era[1] >= 1901).map(x => x.id), _cat: GC.nobel, d: 2,
+      pool: PL.filter(x => !x.nb && x.era[1] >= 1901).map(x => x.id), scene: 'nobel', _cat: GC.nobel, d: 2,
     });
   });
   { const set = PL.filter(p => p.nb > 0);
@@ -277,7 +282,7 @@ function GEN_QS(tier) {
     if (two.length) out.push({
       t: 'Qual destes personagens ganhou DOIS prêmios Nobel?',
       a: [two[0].id], type: 'player',
-      fixed: [two[0]].concat(pick(set.filter(p => p.nb === 1), 9)).map(p => p.id), _cat: GC.nobel, d: 3,
+      fixed: [two[0]].concat(pick(set.filter(p => p.nb === 1), 9)).map(p => p.id), scene: 'nobel:2', _cat: GC.nobel, d: 3,
     });
   }
 
@@ -293,7 +298,7 @@ function GEN_QS(tier) {
     out.push({
       t: `Quem é conhecido como "${p.nick}"?`,
       a: [p.id], type: 'player',
-      pool: PL.filter(x => x.id !== p.id).map(x => x.id), _cat: GC.nick,
+      pool: PL.filter(x => x.id !== p.id).map(x => x.id), scene: 'epiteto:' + p.nick, _cat: GC.nick,
       d: FAMOUS.has(p.id) ? 1 : 3,
     });
   });
@@ -301,7 +306,7 @@ function GEN_QS(tier) {
     const others = pick(PL.filter(x => x.nick && x.id !== p.id && x.pos === p.pos && nickOk(x)), 5);
     if (others.length < 5) return;
     out.push({
-      t: `Qual epíteto acompanha ${p.n}?`, type: 'txt',
+      t: `Qual epíteto acompanha ${theFig(p)}?`, type: 'txt',
       choices: shuf([p.nick].concat(others.map(x => x.nick))), a: [p.nick], face: p.img, _cat: GC.nick, d: 3,
     });
   });
@@ -310,7 +315,7 @@ function GEN_QS(tier) {
   pick(PL.filter(natOk), 12).forEach(p => {
     const all = Object.keys(CTRY_NAME).filter(c => c !== p.ctry && FLAGS[c]);
     out.push({
-      t: `Em que país nasceu ${p.n}?`, type: 'txt',
+      t: `Em que país nasceu ${theFig(p)}?`, type: 'txt',
       choices: shuf([CTRY_NAME[p.ctry]].concat(pick(all, 5).map(c => CTRY_NAME[c]))), a: [CTRY_NAME[p.ctry]],
       face: p.img, _cat: GC.nat, d: 2,
     });
@@ -332,7 +337,7 @@ function GEN_QS(tier) {
     const opts = new Set();
     while (opts.size < 5) { const o = y + Math.round((rnd() - .5) * 2 * 22); if (o !== y && o > born(p) + 12) opts.add(o); }
     out.push({
-      t: `Em que ano morreu ${p.n}?`, type: 'txt',
+      t: `Em que ano morreu ${theFig(p)}?`, type: 'txt',
       choices: shuf([String(y)].concat([...opts].map(String))), a: [String(y)], face: p.img, _cat: GC.count, d: 4,
     });
   });
@@ -341,7 +346,7 @@ function GEN_QS(tier) {
     const opts = new Set();
     while (opts.size < 5) { const o = y + Math.round((rnd() - .5) * 2 * 20); if (o !== y) opts.add(o); }
     out.push({
-      t: `Em que ano nasceu ${p.n}?`, type: 'txt',
+      t: `Em que ano nasceu ${theFig(p)}?`, type: 'txt',
       choices: shuf([String(y)].concat([...opts].map(String))), a: [String(y)], face: p.img, _cat: GC.count, d: 4,
     });
   });
@@ -357,7 +362,7 @@ function GEN_QS(tier) {
     if (!p1 || !p2 || !sure(born(p1), born(p2))) continue;
     const first = born(p1) < born(p2) ? p1 : p2;
     out.push({ t: 'Duelo: quem nasceu primeiro?', type: 'player', a: [first.id], fixed: [p1.id, p2.id], duel: true,
-               icon: 'hourglass', _cat: GC.duel, d: duelD(Math.abs(born(p1) - born(p2))) });
+               icon: 'hourglass', scene: 'duelo_nasceu', _cat: GC.duel, d: duelD(Math.abs(born(p1) - born(p2))) });
     made++;
   }
   for (let i = 0, made = 0; i < 40 && made < 6; i++) {
@@ -365,7 +370,7 @@ function GEN_QS(tier) {
     if (!c1 || !c2 || !sure(c1.f, c2.f)) continue;
     const first = c1.f < c2.f ? c1 : c2;
     out.push({ t: 'Duelo: qual destes estados surgiu primeiro?', a: [first.id], fixed: [c1.id, c2.id], duel: true,
-               icon: 'hourglass', _cat: GC.duel, d: duelD(Math.abs(c1.f - c2.f)) });
+               icon: 'hourglass', scene: 'duelo_surgiu', _cat: GC.duel, d: duelD(Math.abs(c1.f - c2.f)) });
     made++;
   }
   /* who lived longer: only figures born after 1400, whose dates are certain,
@@ -376,7 +381,7 @@ function GEN_QS(tier) {
     const l1 = p1.era[1] - p1.era[0], l2 = p2.era[1] - p2.era[0];
     if (Math.abs(l1 - l2) < 8) continue;
     out.push({ t: 'Duelo: quem viveu mais anos?', type: 'player', a: [l1 > l2 ? p1.id : p2.id], fixed: [p1.id, p2.id], duel: true,
-               icon: 'hourglass', _cat: GC.duel, d: Math.abs(l1 - l2) < 20 ? 3 : 2 });
+               icon: 'hourglass', scene: 'duelo_viveu', _cat: GC.duel, d: Math.abs(l1 - l2) < 20 ? 3 : 2 });
     made++;
   }
 

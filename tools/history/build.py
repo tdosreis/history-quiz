@@ -85,7 +85,7 @@ def stmt_end(s, decl_start):
 ART_OF = {  # article used before a polity's name; '' = none ("em Atenas")
     "atenas": "", "esparta": "", "babilonia": "", "cartago": "", "portugal": "", "cuba": "", "israel_antigo": "o",
     "haiti": "o", "veneza": "", "republica_florentina": "a", "estados_unidos": "os", "brasil_republica": "o",
-    "india": "a", "turquia": "a", "suecia": "a", "holanda": "a", "espanha": "a", "inglaterra": "a", "francia": "a",
+    "india": "a", "turquia": "a", "suecia": "a", "holanda": "a", "espanha": "a", "inglaterra": "o", "francia": "o",
     "prussia": "a", "gran_colombia": "a", "africa_do_sul": "a", "urss": "a", "italia_fascista": "a",
     "alemanha_nazista": "a", "china_popular": "a", "reino_unido": "o", "franca_revolucionaria": "a",
 }
@@ -311,8 +311,14 @@ def main():
     done = set(io.open(ready, encoding="utf-8").read().split()) if os.path.exists(ready) else None
     bras = ["brasoes/_core.js"] + ["brasoes/" + f for f in sorted(os.listdir(os.path.join(H, "js", "brasoes")))
                                    if f.endswith(".js") and f != "_core.js" and (done is None or f in done)]
+    # the scenes (js/scenes/: helpers and the generated questions' own in _core.js, one file per
+    # theme), gated the same way by js/scenes/READY
+    ready = os.path.join(H, "js", "scenes", "READY")
+    done = set(io.open(ready, encoding="utf-8").read().split()) if os.path.exists(ready) else None
+    scenes = ["scenes/_core.js"] + ["scenes/" + f for f in sorted(os.listdir(os.path.join(H, "js", "scenes")))
+                                    if f.endswith(".js") and f != "_core.js" and (done is None or f in done)]
     s = put(s, "art", "\n".join(io.open(os.path.join(H, "js", f), encoding="utf-8").read()
-                                 for f in ["art_head.js"] + bras + ["art_tail.js"]))
+                                 for f in ["art_head.js"] + bras + scenes + ["art_tail.js"]))
     s = put(s, "formats", "\n".join(io.open(os.path.join(H, "js", f), encoding="utf-8").read() for f in ("formats.js", "almanac.js")))
     s = put(s, "formats_css", io.open(os.path.join(H, "css", "formats.css"), encoding="utf-8").read())
     io.open(PAGE, "w", encoding="utf-8").write(s)

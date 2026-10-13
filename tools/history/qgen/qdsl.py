@@ -24,7 +24,7 @@ class Cat:
 
     @staticmethod
     def _art(kw):
-        for k in ("icon", "who", "crest", "flag", "stad"):
+        for k in ("scene", "icon", "who", "crest", "flag", "stad"):
             if kw.get(k):
                 return {k: kw[k]}
         return {"icon": "scroll"}

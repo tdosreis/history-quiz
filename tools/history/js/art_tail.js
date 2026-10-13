@@ -680,6 +680,9 @@ function questionArtRaw(q) {
   }
   if (q.clues || /\bquem sou eu\b/i.test(q.t || ''))
     return `<div class="qart qart-wide print qart-ink" role="img" aria-label="Busto misterioso">${ART.bust(104)}</div>`;
+  /* a scene of its own subject (js/scenes/) */
+  const sc = sceneOf(q);
+  if (sc) return `<div class="qart qart-wide print qart-ink qart-scene">${sceneSvg(sc, 104)}</div>`;
   /* a question drawn with a generic vignette that names someone or something
      the album has a picture of shows that picture instead */
   const inf = inferArt(q);
