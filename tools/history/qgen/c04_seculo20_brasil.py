@@ -4,49 +4,49 @@ from qdsl import Cat
 c = Cat('guerras_mundiais', 'As Guerras Mundiais', '🪖', '1914–1918 e 1939–1945', '#5A5A5A', order=21)
 c.T('Qual assassinato em Sarajevo, em 1914, foi o estopim da Primeira Guerra Mundial?', 'O do arquiduque Francisco Ferdinando', ['O do czar Nicolau II', 'O do rei Alexandre da Sérvia', 'O do kaiser Guilherme II', 'O de Rosa Luxemburgo', 'O do presidente Wilson'], 2, crest='austria_hungria',
     src=('pt', 'Primeira Guerra Mundial', ['Sarajevo']))
-c.T('Quais eram as duas grandes alianças da Primeira Guerra Mundial?', 'Tríplice Entente e Tríplice Aliança', ['Eixo e Aliados', 'OTAN e Pacto de Varsóvia', 'Liga e Comintern', 'Santa Aliança e Concerto da Europa', 'Entente e Eixo'], 3, icon='cannon',
+c.T('Quais eram as duas grandes alianças da Primeira Guerra Mundial?', 'Tríplice Entente e Tríplice Aliança', ['Eixo e Aliados', 'OTAN e Pacto de Varsóvia', 'Liga e Comintern', 'Santa Aliança e Concerto da Europa', 'Entente e Eixo'], 3, scene='ev_primeira_guerra', icon='cannon',
     src=('pt', 'Primeira Guerra Mundial', ['Tríplice Entente']))
 c.T('Qual tipo de combate marcou a Frente Ocidental na Primeira Guerra Mundial?', 'Guerra de trincheiras', ['Guerra naval', 'Guerra-relâmpago', 'Guerra de guerrilhas', 'Guerra nuclear', 'Guerra aérea'], 1, icon='cannon',
     src=('pt', 'Guerra de trincheiras', ['Primeira Guerra']))
-c.T('Em que ano terminou a Primeira Guerra Mundial?', '1918', ['1914', '1916', '1919', '1920', '1945'], 1, icon='cannon',
+c.T('Em que ano terminou a Primeira Guerra Mundial?', '1918', ['1914', '1916', '1919', '1920', '1945'], 1, scene='ev_primeira_guerra', icon='cannon',
     src=('pt', 'Primeira Guerra Mundial', ['1918']))
 c.T('Qual tratado de 1919 impôs duras condições à Alemanha após a Primeira Guerra?', 'Tratado de Versalhes', ['Tratado de Tordesilhas', 'Tratado de Vestfália', 'Tratado de Paris', 'Pacto de Locarno', 'Paz de Brest-Litovsk'], 2, stad='versalhes',
     src=('pt', 'Tratado de Versalhes', ['1919']))
-c.P('Qual presidente americano propôs os Quatorze Pontos e a criação da Liga das Nações?', ['wilson'], 3, icon='scroll',
+c.P('Qual presidente americano propôs os Quatorze Pontos e a criação da Liga das Nações?', ['wilson'], 3, scene='ev_primeira_guerra', icon='scroll',
     src=('pt', 'Woodrow Wilson', ['Liga das Nações']))
 c.P('Qual líder turco comandou a defesa de Galípoli e fundou a República da Turquia, em 1923?', ['ataturk'], 3, icon='flag',
     src=('pt', 'Mustafa Kemal Atatürk', ['Galípoli']))
 c.T('Qual a data do início da Segunda Guerra Mundial, com a invasão da Polônia pela Alemanha?', '1º de setembro de 1939', ['28 de junho de 1914', '7 de dezembro de 1941', '6 de junho de 1944', '8 de maio de 1945', '11 de novembro de 1918'], 2, flag='POL',
     src=('pt', 'Segunda Guerra Mundial', ['1939']))
-c.T('Quais eram as principais potências do Eixo na Segunda Guerra Mundial?', 'Alemanha, Itália e Japão', ['Reino Unido, França e URSS', 'Alemanha, Áustria e Turquia', 'Japão, China e Coreia', 'Itália, Espanha e Portugal', 'Alemanha, Rússia e Japão'], 1, icon='cannon',
+c.T('Quais eram as principais potências do Eixo na Segunda Guerra Mundial?', 'Alemanha, Itália e Japão', ['Reino Unido, França e URSS', 'Alemanha, Áustria e Turquia', 'Japão, China e Coreia', 'Itália, Espanha e Portugal', 'Alemanha, Rússia e Japão'], 1, scene='ev_segunda_guerra', icon='cannon',
     src=('pt', 'Eixo (Segunda Guerra Mundial)', ['Itália']))
 c.P('Qual primeiro-ministro britânico liderou o Reino Unido durante a maior parte da Segunda Guerra?', ['churchill'], 1, icon='cannon',
     src=('pt', 'Winston Churchill', ['Segunda Guerra']))
-c.P('Qual presidente americano governou os EUA durante a maior parte da Segunda Guerra, e morreu em abril de 1945?', ['fdr'], 2, icon='cannon',
+c.P('Qual presidente americano governou os EUA durante a maior parte da Segunda Guerra, e morreu em abril de 1945?', ['fdr'], 2, scene='ev_segunda_guerra', icon='cannon',
     src=('pt', 'Franklin D. Roosevelt', ['1945']))
-c.P('Qual general liderou a França Livre a partir de Londres, após a ocupação alemã?', ['de_gaulle'], 2, icon='cannon',
+c.P('Qual general liderou a França Livre a partir de Londres, após a ocupação alemã?', ['de_gaulle'], 2, scene='ev_segunda_guerra', icon='cannon',
     src=('pt', 'Charles de Gaulle', ['França Livre']))
-c.P('Qual adolescente judia escreveu um diário enquanto se escondia dos nazistas em Amsterdã?', ['anne_frank'], 1, icon='book',
+c.P('Qual adolescente judia escreveu um diário enquanto se escondia dos nazistas em Amsterdã?', ['anne_frank'], 1, scene='anexo_secreto', icon='book',
     src=('pt', 'Anne Frank', ['diário']))
-c.P('Qual matemático britânico decifrou o código Enigma e é considerado pai da computação?', ['turing'], 2, icon='gear',
+c.P('Qual matemático britânico decifrou o código Enigma e é considerado pai da computação?', ['turing'], 2, scene='maquina_enigma', icon='gear',
     src=('pt', 'Alan Turing', ['Enigma']))
 c.T('Qual operação aliada desembarcou na Normandia, em 6 de junho de 1944?', 'Dia D', ['Operação Barbarossa', 'Operação Overlord só no Pacífico', 'Batalha das Ardenas', 'Operação Torch', 'Blitz'], 2, icon='cannon',
     src=('pt', 'Operação Overlord', ['6 de junho de 1944']))
 c.T('Qual a campanha alemã de invasão da União Soviética, iniciada em 1941?', 'Operação Barbarossa', ['Operação Overlord', 'Blitzkrieg', 'Operação Leão-Marinho', 'Operação Torch', 'Operação Market Garden'], 3, icon='cannon',
     src=('pt', 'Operação Barbarossa', ['1941']))
-c.T('Qual ataque japonês de 7 de dezembro de 1941 levou os EUA à Segunda Guerra?', 'Pearl Harbor', ['Midway', 'Iwo Jima', 'Hiroshima', 'Okinawa', 'Singapura'], 2, icon='ship',
+c.T('Qual ataque japonês de 7 de dezembro de 1941 levou os EUA à Segunda Guerra?', 'Pearl Harbor', ['Midway', 'Iwo Jima', 'Hiroshima', 'Okinawa', 'Singapura'], 2, scene='porta_avioes', icon='ship',
     src=('pt', 'Ataque a Pearl Harbor', ['7 de dezembro']))
 c.T('Quais cidades japonesas sofreram bombas atômicas em agosto de 1945?', 'Hiroshima e Nagasaki', ['Tóquio e Osaka', 'Quioto e Nagoia', 'Hiroshima e Quioto', 'Nagasaki e Yokohama', 'Tóquio e Hiroshima'], 1, icon='cannon',
     src=('pt', 'Bombardeamentos atómicos de Hiroshima e Nagasaki', ['agosto de 1945']))
 c.T('Qual o nome do genocídio de seis milhões de judeus pelo regime nazista?', 'Holocausto', ['Gulag', 'Nakba', 'Armênio', 'Purga', 'Kristallnacht'], 1, icon='scroll',
     src=('pt', 'O Holocausto', ['seis milhões']))
-c.T('Em que ano terminou a Segunda Guerra Mundial?', '1945', ['1939', '1941', '1943', '1948', '1950'], 1, icon='cannon',
+c.T('Em que ano terminou a Segunda Guerra Mundial?', '1945', ['1939', '1941', '1943', '1948', '1950'], 1, scene='ev_segunda_guerra', icon='cannon',
     src=('pt', 'Segunda Guerra Mundial', ['1945']))
 c.T('Qual organização foi criada em 1945 para manter a paz mundial?', 'Organização das Nações Unidas', ['Liga das Nações', 'OTAN', 'União Europeia', 'Cruz Vermelha', 'Comintern'], 1, icon='globe',
     src=('pt', 'Organização das Nações Unidas', ['1945']))
 c.T('Qual a participação brasileira na Segunda Guerra, enviada à Itália em 1944?', 'Força Expedicionária Brasileira', ['Legião Verde', 'Exército da Borracha', 'Corpo de Paz', 'Brigada Aérea', 'Guarda Nacional'], 2, icon='flag',
     src=('pt', 'Força Expedicionária Brasileira', ['1944']))
-c.P('Qual presidente brasileiro decidiu entrar na Segunda Guerra ao lado dos Aliados?', ['getulio'], 2, icon='flag',
+c.P('Qual presidente brasileiro decidiu entrar na Segunda Guerra ao lado dos Aliados?', ['getulio'], 2, scene='caca_p47', icon='flag',
     src=('pt', 'Getúlio Vargas', ['Segunda Guerra']))
 c.T('Qual cidade alemã sediou os julgamentos de criminosos nazistas depois da guerra?', 'Nuremberg', ['Berlim', 'Munique', 'Frankfurt', 'Viena', 'Hamburgo'], 3, icon='scroll',
     src=('pt', 'Julgamento de Nuremberg', ['nazist']))
@@ -120,21 +120,21 @@ c.write()
 
 # ───────────────────────── Brasil Colônia e Império ─────────────────────────
 c = Cat('brasil_colonia', 'Brasil Colônia e Império', '', 'De 1500 a 1889', '#1F7A4D', flag='BRA', order=23)
-c.T('Qual foi o primeiro nome dado ao Brasil pelos portugueses, em 1500?', 'Ilha de Vera Cruz', ['Terra do Fogo', 'Santa Cruz do Sul', 'Brasil Novo', 'Terra dos Papagaios', 'Pindorama'], 2, icon='map',
+c.T('Qual foi o primeiro nome dado ao Brasil pelos portugueses, em 1500?', 'Ilha de Vera Cruz', ['Terra do Fogo', 'Santa Cruz do Sul', 'Brasil Novo', 'Terra dos Papagaios', 'Pindorama'], 2, scene='chegada_cabral', icon='map',
     src=('pt', 'História do Brasil', ['Vera Cruz']))
 c.T('Qual a primeira vila fundada pelos portugueses no Brasil, em 1532?', 'São Vicente', ['Salvador', 'Olinda', 'Santos', 'Piratininga', 'Paranaguá'], 3, icon='map',
     src=('pt', 'São Vicente (São Paulo)', ['1532']))
-c.T('Qual cidade foi fundada em 1554 por jesuítas, no planalto paulista?', 'São Paulo', ['Santos', 'Campinas', 'Sorocaba', 'Jundiaí', 'Curitiba'], 2, icon='map',
+c.T('Qual cidade foi fundada em 1554 por jesuítas, no planalto paulista?', 'São Paulo', ['Santos', 'Campinas', 'Sorocaba', 'Jundiaí', 'Curitiba'], 2, scene='patio_do_colegio', icon='map',
     src=('pt', 'História da cidade de São Paulo', ['1554']))
-c.T('Qual jesuíta, junto a Nóbrega, fundou o Colégio de São Paulo de Piratininga?', 'José de Anchieta', ['Antônio Vieira', 'Manuel da Nóbrega apenas', 'Gonçalo de Azevedo', 'Fernão Cardim', 'Pero Correia'], 3, icon='book',
+c.T('Qual jesuíta, junto a Nóbrega, fundou o Colégio de São Paulo de Piratininga?', 'José de Anchieta', ['Antônio Vieira', 'Manuel da Nóbrega apenas', 'Gonçalo de Azevedo', 'Fernão Cardim', 'Pero Correia'], 3, scene='patio_do_colegio', icon='book',
     src=('pt', 'José de Anchieta', ['Piratininga']))
 c.T('Qual foi o principal produto da economia colonial no Nordeste, no século XVI?', 'Açúcar', ['Café', 'Ouro', 'Algodão', 'Borracha', 'Cacau'], 1, icon='ship',
     src=('pt', 'Ciclo do açúcar', ['engenho']))
 c.T('Como se chamava a propriedade rural açucareira, com plantação, moenda e casa-grande?', 'Engenho', ['Fazenda de café', 'Quilombo', 'Reduções', 'Sesmaria', 'Estância'], 2, icon='gear',
     src=('pt', 'Engenho', ['açúcar']))
-c.T('Qual país invadiu Pernambuco em 1630 e criou o Brasil Holandês?', 'Países Baixos', ['França', 'Inglaterra', 'Espanha', 'Dinamarca', 'Suécia'], 2, icon='ship',
+c.T('Qual país invadiu Pernambuco em 1630 e criou o Brasil Holandês?', 'Países Baixos', ['França', 'Inglaterra', 'Espanha', 'Dinamarca', 'Suécia'], 2, scene='olinda', icon='ship',
     src=('pt', 'Brasil Holandês', ['1630']))
-c.T('Qual conde governou o Brasil Holandês e transformou Recife numa cidade moderna?', 'Maurício de Nassau', ['Duarte Coelho', 'Tomé de Sousa', 'Mem de Sá', 'Estácio de Sá', 'Salvador Correia'], 3, icon='map',
+c.T('Qual conde governou o Brasil Holandês e transformou Recife numa cidade moderna?', 'Maurício de Nassau', ['Duarte Coelho', 'Tomé de Sousa', 'Mem de Sá', 'Estácio de Sá', 'Salvador Correia'], 3, scene='olinda', icon='map',
     src=('pt', 'Maurício de Nassau', ['Recife']))
 c.T('Qual o nome dos grupos de exploradores paulistas que penetraram o interior atrás de indígenas e riquezas?', 'Bandeirantes', ['Inconfidentes', 'Jesuítas', 'Tropeiros', 'Quilombolas', 'Farroupilhas'], 1, icon='map',
     src=('pt', 'Bandeirantes', ['sertão']))
@@ -144,19 +144,19 @@ c.T('Qual imposto cobrava 20% do ouro extraído no Brasil colonial?', 'Quinto', 
     src=('pt', 'Quinto (imposto)', ['ouro']))
 c.P('Qual escultor e arquiteto mineiro criou os Profetas de Congonhas e a Igreja de São Francisco de Assis, em Ouro Preto?', ['aleijadinho'], 2, stad='ouro_preto',
     src=('pt', 'Aleijadinho', ['Congonhas']))
-c.P('Qual líder quilombola resistiu à escravidão no Quilombo dos Palmares, até sua morte em 1695?', ['zumbi'], 1, icon='flag',
+c.P('Qual líder quilombola resistiu à escravidão no Quilombo dos Palmares, até sua morte em 1695?', ['zumbi'], 1, scene='quilombo_palmares', icon='flag',
     src=('pt', 'Zumbi dos Palmares', ['1695']), x='O 20 de novembro, dia de sua morte, é lembrado como Dia da Consciência Negra.')
 c.P('Qual alferes mineiro foi enforcado em 1792 por liderar a Inconfidência Mineira?', ['tiradentes'], 1, stad='ouro_preto',
     src=('pt', 'Tiradentes', ['1792']))
 c.T('Qual o lema da bandeira de Minas Gerais, usado pelos inconfidentes?', 'Libertas quae sera tamen', ['Ordem e Progresso', 'Plus Ultra', 'Sempre Fiel', 'Pro Brasilia Fiant Eximia', 'Per Aspera ad Astra'], 3, stad='ouro_preto',
     src=('pt', 'Inconfidência Mineira', ['Libertas quae sera tamen']))
-c.T('Qual revolta baiana de 1798, com participação popular e ideais igualitários, foi duramente reprimida?', 'Conjuração Baiana', ['Revolta dos Malês', 'Sabinada', 'Balaiada', 'Cabanagem', 'Guerra dos Mascates'], 3, icon='flag',
+c.T('Qual revolta baiana de 1798, com participação popular e ideais igualitários, foi duramente reprimida?', 'Conjuração Baiana', ['Revolta dos Malês', 'Sabinada', 'Balaiada', 'Cabanagem', 'Guerra dos Mascates'], 3, scene='salvador_colonial', icon='flag',
     src=('pt', 'Conjuração Baiana', ['1798']))
 c.P('Qual monarca transferiu a corte portuguesa para o Rio de Janeiro, em 1808, fugindo de Napoleão?', ['dom_joao_vi'], 1, stad='museu_imperial',
     src=('pt', 'João VI de Portugal', ['1808']))
-c.T('Qual o ato de 1808 que abriu os portos brasileiros às nações amigas?', 'Abertura dos Portos', ['Lei do Ventre Livre', 'Lei Eusébio de Queirós', 'Lei dos Sexagenários', 'Alvará de 1785', 'Tratado de 1810'], 2, icon='ship',
+c.T('Qual o ato de 1808 que abriu os portos brasileiros às nações amigas?', 'Abertura dos Portos', ['Lei do Ventre Livre', 'Lei Eusébio de Queirós', 'Lei dos Sexagenários', 'Alvará de 1785', 'Tratado de 1810'], 2, scene='corte_1808', icon='ship',
     src=('pt', 'Abertura dos portos às nações amigas', ['1808']))
-c.T('Qual título o Brasil recebeu em 1815, ao deixar de ser colônia dentro do reino?', 'Reino Unido de Portugal, Brasil e Algarves', ['Império do Brasil', 'República dos Estados Unidos do Brasil', 'Vice-Reino do Brasil', 'Reino do Brasil e Plata', 'Capitania Geral'], 4, icon='crown',
+c.T('Qual título o Brasil recebeu em 1815, ao deixar de ser colônia dentro do reino?', 'Reino Unido de Portugal, Brasil e Algarves', ['Império do Brasil', 'República dos Estados Unidos do Brasil', 'Vice-Reino do Brasil', 'Reino do Brasil e Plata', 'Capitania Geral'], 4, scene='corte_1808', icon='crown',
     src=('pt', 'Reino Unido de Portugal, Brasil e Algarves', ['1815']))
 c.P('Qual a imperatriz austríaca que apoiou a independência do Brasil e escreveu a carta a D. Pedro, em 1822?', ['leopoldina'], 3, stad='museu_ipiranga',
     src=('pt', 'Maria Leopoldina de Áustria', ['independência']))
@@ -172,7 +172,7 @@ c.P('Qual imperador reinou por quase 50 anos, de 1840 a 1889, e era apaixonado p
     src=('pt', 'Pedro II do Brasil', ['1889']))
 c.T('Qual guerra, entre 1864 e 1870, opôs o Paraguai à Tríplice Aliança?', 'Guerra do Paraguai', ['Guerra dos Farrapos', 'Guerra do Contestado', 'Guerra de Canudos', 'Guerra da Cisplatina', 'Guerra dos Mascates'], 2, icon='cannon',
     src=('pt', 'Guerra do Paraguai', ['1864']))
-c.P('Qual militar, patrono do Exército, comandou as forças brasileiras na Guerra do Paraguai e foi pacificador de revoltas?', ['duque_caxias'], 3, icon='sword',
+c.P('Qual militar, patrono do Exército, comandou as forças brasileiras na Guerra do Paraguai e foi pacificador de revoltas?', ['duque_caxias'], 3, scene='humaita', icon='sword',
     src=('pt', 'Duque de Caxias', ['Paraguai']))
 c.P('Qual catarinense lutou na Guerra dos Farrapos ao lado de Giuseppe Garibaldi?', ['anita'], 3, icon='flag',
     src=('pt', 'Anita Garibaldi', ['Farrapos']))
@@ -182,19 +182,19 @@ c.T('Qual lei de 1850 proibiu o tráfico de africanos para o Brasil?', 'Lei Eus�
     src=('pt', 'Lei Eusébio de Queirós', ['1850']))
 c.T('Qual lei de 1871 declarou livres os filhos de escravizadas nascidos a partir dela?', 'Lei do Ventre Livre', ['Lei Áurea', 'Lei Eusébio de Queirós', 'Lei dos Sexagenários', 'Lei Rio Branco só nominal', 'Lei Saraiva-Cotegipe'], 2, icon='scroll',
     src=('pt', 'Lei do Ventre Livre', ['1871']))
-c.T('Em que data foi assinada a Lei Áurea, que aboliu a escravidão no Brasil?', '13 de maio de 1888', ['7 de setembro de 1822', '15 de novembro de 1889', '28 de setembro de 1871', '20 de novembro de 1695', '21 de abril de 1792'], 1, icon='scroll',
+c.T('Em que data foi assinada a Lei Áurea, que aboliu a escravidão no Brasil?', '13 de maio de 1888', ['7 de setembro de 1822', '15 de novembro de 1889', '28 de setembro de 1871', '20 de novembro de 1695', '21 de abril de 1792'], 1, scene='ev_abolicao_br', icon='scroll',
     src=('pt', 'Lei Áurea', ['13 de maio de 1888']))
 c.P('Qual princesa assinou a Lei Áurea, enquanto o pai estava na Europa?', ['princesa_isabel'], 1, stad='museu_imperial',
     src=('pt', 'Isabel, Princesa Imperial do Brasil', ['Lei Áurea']))
-c.P('Qual jornalista abolicionista, “o Tigre da Abolição”, foi um dos grandes oradores da campanha?', ['patrocinio'], 3, icon='scroll',
+c.P('Qual jornalista abolicionista, “o Tigre da Abolição”, foi um dos grandes oradores da campanha?', ['patrocinio'], 3, scene='ev_abolicao_br', icon='scroll',
     src=('pt', 'José do Patrocínio', ['abolicion']))
-c.P('Qual advogado ex-escravizado libertou centenas de cativos nos tribunais de São Paulo?', ['luis_gama'], 4, icon='scroll',
+c.P('Qual advogado ex-escravizado libertou centenas de cativos nos tribunais de São Paulo?', ['luis_gama'], 4, scene='ev_abolicao_br', icon='scroll',
     src=('pt', 'Luís Gama', ['abolicion']))
-c.P('Qual marechal proclamou a República do Brasil, em 15 de novembro de 1889?', ['deodoro'], 1, icon='flag',
+c.P('Qual marechal proclamou a República do Brasil, em 15 de novembro de 1889?', ['deodoro'], 1, scene='republica_1889', icon='flag',
     src=('pt', 'Deodoro da Fonseca', ['1889']))
-c.P('Qual escritor carioca, fundador da Academia Brasileira de Letras, escreveu Dom Casmurro?', ['machado'], 1, icon='book',
+c.P('Qual escritor carioca, fundador da Academia Brasileira de Letras, escreveu Dom Casmurro?', ['machado'], 1, scene='rio_oitocentista', icon='book',
     src=('pt', 'Machado de Assis', ['Dom Casmurro']))
-c.P('Qual compositora carioca escreveu a marcha “Ó Abre Alas”, o primeiro sucesso do Carnaval?', ['chiquinha'], 3, icon='book',
+c.P('Qual compositora carioca escreveu a marcha “Ó Abre Alas”, o primeiro sucesso do Carnaval?', ['chiquinha'], 3, scene='carnaval_cordao', icon='book',
     src=('pt', 'Chiquinha Gonzaga', ['Ó Abre Alas']))
 c.write()
 

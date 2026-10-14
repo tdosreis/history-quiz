@@ -258,9 +258,9 @@ m.T('Qual povo indígena norte-americano liderou a vitória em Little Bighorn, e
     src=('pt', 'Batalha de Little Bighorn', ['Sioux']))
 m.P('Qual chefe sioux Hunkpapa liderou a resistência indígena e participou da vitória em Little Bighorn?', ['touro_sentado'], 3, scene='pradarias_sioux', icon='sword',
     src=('pt', 'Touro Sentado', ['Little Bighorn']))
-m.P('Qual líder de Palmares resistiu à escravidão no quilombo mais famoso do Brasil colonial?', ['zumbi'], 1, icon='flag',
+m.P('Qual líder de Palmares resistiu à escravidão no quilombo mais famoso do Brasil colonial?', ['zumbi'], 1, scene='quilombo_palmares', icon='flag',
     src=('pt', 'Zumbi dos Palmares', ['Palmares']))
-m.T('Qual o povo indígena que habitava o litoral do Brasil quando os portugueses chegaram e falava tupi?', 'Tupinambás', ['Yanomamis', 'Guaranis do Sul', 'Aimorés', 'Kayapós', 'Xavantes'], 3, icon='map',
+m.T('Qual o povo indígena que habitava o litoral do Brasil quando os portugueses chegaram e falava tupi?', 'Tupinambás', ['Yanomamis', 'Guaranis do Sul', 'Aimorés', 'Kayapós', 'Xavantes'], 3, scene='chegada_cabral', icon='map',
     src=('pt', 'Tupinambás', ['tupi']))
 m.T('Qual a fronteira definida em 1494 entre as terras de Portugal e Espanha no Novo Mundo?', 'Tratado de Tordesilhas', ['Tratado de Madri', 'Tratado de Utrecht', 'Tratado de Vestfália', 'Tratado de Versalhes', 'Tratado de Santo Ildefonso'], 2, icon='map',
     src=('pt', 'Tratado de Tordesilhas', ['1494']))

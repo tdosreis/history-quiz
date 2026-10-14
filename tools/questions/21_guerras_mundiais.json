@@ -48,7 +48,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "cannon"
+    "scene": "ev_primeira_guerra"
    },
    "src": [
     "pt",
@@ -100,7 +100,7 @@
    ],
    "d": 1,
    "art": {
-    "icon": "cannon"
+    "scene": "ev_primeira_guerra"
    },
    "src": [
     "pt",
@@ -144,7 +144,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "scroll"
+    "scene": "ev_primeira_guerra"
    },
    "src": [
     "pt",
@@ -214,7 +214,7 @@
    ],
    "d": 1,
    "art": {
-    "icon": "cannon"
+    "scene": "ev_segunda_guerra"
    },
    "src": [
     "pt",
@@ -250,7 +250,7 @@
    ],
    "d": 2,
    "art": {
-    "icon": "cannon"
+    "scene": "ev_segunda_guerra"
    },
    "src": [
     "pt",
@@ -268,7 +268,7 @@
    ],
    "d": 2,
    "art": {
-    "icon": "cannon"
+    "scene": "ev_segunda_guerra"
    },
    "src": [
     "pt",
@@ -286,7 +286,7 @@
    ],
    "d": 1,
    "art": {
-    "icon": "book"
+    "scene": "anexo_secreto"
    },
    "src": [
     "pt",
@@ -304,7 +304,7 @@
    ],
    "d": 2,
    "art": {
-    "icon": "gear"
+    "scene": "maquina_enigma"
    },
    "src": [
     "pt",
@@ -382,7 +382,7 @@
    ],
    "d": 2,
    "art": {
-    "icon": "ship"
+    "scene": "porta_avioes"
    },
    "src": [
     "pt",
@@ -460,7 +460,7 @@
    ],
    "d": 1,
    "art": {
-    "icon": "cannon"
+    "scene": "ev_segunda_guerra"
    },
    "src": [
     "pt",
@@ -530,7 +530,7 @@
    ],
    "d": 2,
    "art": {
-    "icon": "flag"
+    "scene": "caca_p47"
    },
    "src": [
     "pt",

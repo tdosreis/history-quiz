@@ -60,7 +60,7 @@ c.C('Qual estado indiano, de Akbar a Aurangzeb, construiu o Taj Mahal?', 'mogol'
 c.C('Qual império do oeste africano, famoso pelo ouro e por Mansa Mussa, tinha Tombuctu como centro cultural?', 'mali', 3, icon='map', src=('pt', 'Império do Mali', ['Mansa Mussa']))
 c.C('Qual estado europeu, liderado por Frederico, o Grande, tinha Berlim como centro?', 'prussia', 3, stad='brandemburgo', src=('pt', 'Prússia', ['Frederico']))
 c.C('Qual império, de Pedro, o Grande a Nicolau II, era governado por czares?', 'imperio_russo', 2, stad='kremlin', src=('pt', 'Império Russo', ['czar']))
-c.C('Qual estado nasceu com a Revolução de 1917 e acabou em 1991?', 'urss', 1, icon='flag', src=('pt', 'União Soviética', ['1991']))
+c.C('Qual estado nasceu com a Revolução de 1917 e acabou em 1991?', 'urss', 1, scene='ev_revolucao_russa', icon='flag', src=('pt', 'União Soviética', ['1991']))
 c.C('Qual estado europeu foi governado por Napoleão como imperador?', 'imperio_frances', 2, stad='arco_triunfo', src=('pt', 'Primeiro Império Francês', ['Napoleão']))
 c.C('Qual estado, no século XIX, teve a rainha Vitória e dominou colônias em todos os continentes?', 'imperio_britanico', 1, stad='torre_londres', src=('pt', 'Império Britânico', ['Vitória']))
 c.C('Qual império, com sede na Península Ibérica, tinha Madri como centro e o Escorial como símbolo?', 'imperio_espanhol', 2, stad='escorial', src=('pt', 'Império Espanhol', ['Filipe II']))

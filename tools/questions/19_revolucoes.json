@@ -602,7 +602,7 @@
    ],
    "d": 2,
    "art": {
-    "icon": "torch"
+    "scene": "ev_revolucao_russa"
    },
    "src": [
     "pt",
@@ -620,7 +620,7 @@
    ],
    "d": 2,
    "art": {
-    "icon": "torch"
+    "scene": "ev_revolucao_russa"
    },
    "src": [
     "pt",

@@ -416,7 +416,7 @@
    ],
    "d": 1,
    "art": {
-    "icon": "flag"
+    "scene": "quilombo_palmares"
    },
    "src": [
     "pt",
@@ -442,7 +442,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "map"
+    "scene": "chegada_cabral"
    },
    "src": [
     "pt",

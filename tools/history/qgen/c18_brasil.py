@@ -32,7 +32,7 @@ p.T('Qual produto da floresta amazônica enriqueceu Manaus e Belém na virada do
     src=('pt', 'Ciclo da borracha', ['Manaus']),
     x='O ciclo entrou em crise nos anos 1910, quando a borracha das plantações britânicas na Ásia, nascidas de sementes levadas da Amazônia, dominou o mercado.')
 k.T('Quem formava a principal mão de obra dos engenhos de açúcar do Nordeste colonial a partir do fim do século XVI?', 'Africanos escravizados',
-    ['Imigrantes italianos', 'Imigrantes japoneses', 'Colonos alemães', 'Operários assalariados', 'Prisioneiros holandeses'], d=1, icon='chains',
+    ['Imigrantes italianos', 'Imigrantes japoneses', 'Colonos alemães', 'Operários assalariados', 'Prisioneiros holandeses'], d=1, scene='engenho_moenda', icon='chains',
     src=('pt', 'Escravidão no Brasil', ['açúcar']),
     x='Nas primeiras décadas, os engenhos usaram sobretudo indígenas escravizados; aos poucos, o tráfico atlântico substituiu essa mão de obra.')
 k.T('Em que ano a família real portuguesa desembarcou no Brasil, fugindo das tropas de Napoleão?', '1808',
@@ -70,7 +70,7 @@ k.T('Qual revolta de 1824, nascida em Pernambuco contra a Constituição outorga
     src=('pt', 'Confederação do Equador', ['Frei Caneca', '1824']),
     x='Condenado à forca, Frei Caneca acabou fuzilado em 1825, porque nenhum carrasco aceitou enforcá-lo.')
 k.T('Qual jesuíta, chamado por Fernando Pessoa de "Imperador da língua portuguesa", defendeu os indígenas do Maranhão e escreveu o Sermão da Sexagésima?', 'Padre Antônio Vieira',
-    ['José de Anchieta', 'Manuel da Nóbrega', 'Gregório de Matos', 'Bartolomeu de Gusmão', 'Frei Caneca'], d=3, icon='church',
+    ['José de Anchieta', 'Manuel da Nóbrega', 'Gregório de Matos', 'Bartolomeu de Gusmão', 'Frei Caneca'], d=3, scene='pulpito_barroco', icon='church',
     src=('en', 'António Vieira', ['1608', '1697']),
     x='Nasceu em Lisboa em 1608, veio criança para a Bahia e morreu em Salvador, em 1697, aos 89 anos.')
 p.T('De qual corrente filosófica, muito influente entre os militares republicanos, vem o lema "Ordem e Progresso" da bandeira brasileira?', 'Positivismo',
@@ -112,7 +112,7 @@ k.T('Qual navegador espanhol chegou ao litoral do atual Brasil em janeiro de 150
     src=('pt', 'Vicente Yáñez Pinzón', ['1500']),
     x='Pinzón havia comandado a caravela Niña na primeira viagem de Colombo, em 1492.')
 k.T('Qual bandeirante comandou, entre 1648 e 1651, uma expedição de milhares de quilômetros pelo interior que terminou descendo o rio Amazonas?', 'Antônio Raposo Tavares',
-    ['Fernão Dias Pais', 'Domingos Jorge Velho', 'Bartolomeu Bueno da Silva', 'Manuel de Borba Gato', 'Pedro Teixeira'], d=5, icon='compass',
+    ['Fernão Dias Pais', 'Domingos Jorge Velho', 'Bartolomeu Bueno da Silva', 'Manuel de Borba Gato', 'Pedro Teixeira'], d=5, scene='bandeira_canoas', icon='compass',
     src=('pt', 'Antônio Raposo Tavares', ['1648']),
     x='Antes disso, em 1628, ele atacou as missões jesuíticas do Guairá, no atual Paraná, e escravizou milhares de indígenas guaranis.')
 k.T('Qual padre paulista, regente único do Império entre 1835 e 1837, havia criado a Guarda Nacional quando era ministro da Justiça?', 'Diogo Antônio Feijó',
@@ -283,7 +283,7 @@ k.MY('D. Pedro I proclamou a Independência montado num cavalo imponente, como n
 k.MY('Tiradentes foi enforcado no Rio de Janeiro, e não em Minas Gerais?', True, 2, stad='ouro_preto',
      x='Foi executado no Rio em 21 de abril de 1792; o corpo foi esquartejado e a cabeça, exposta em Vila Rica, a atual Ouro Preto.',
      src=('pt', 'Tiradentes', ['1792']))
-k.MY('A Revolta dos Malês, em Salvador, foi organizada principalmente por africanos muçulmanos?', True, 3, icon='scroll',
+k.MY('A Revolta dos Malês, em Salvador, foi organizada principalmente por africanos muçulmanos?', True, 3, scene='salvador_colonial', icon='scroll',
      x='Malê vem do iorubá imale, "muçulmano"; o levante estourou em janeiro de 1835, durante o Ramadã, e muitos rebeldes levavam amuletos com trechos do Alcorão.',
      src=('pt', 'Revolta dos Malês', ['1835']))
 k.MY('A Lei Áurea garantiu indenização aos senhores pelos escravizados libertados?', False, 3, who='princesa_isabel',

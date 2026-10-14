@@ -6,7 +6,7 @@ c.P('Qual príncipe português impulsionou a exploração do litoral africano na
     src=('en', 'Prince Henry the Navigator', ['Sagres']))
 c.P('Qual navegador português chegou à Índia por mar, em 1498, contornando a África?', ['vasco_gama'], 1, scene='ev_grandes_navegacoes', icon='ship',
     src=('pt', 'Vasco da Gama', ['1498']))
-c.P('Qual navegador português chegou ao Brasil em 22 de abril de 1500?', ['cabral'], 1, icon='ship',
+c.P('Qual navegador português chegou ao Brasil em 22 de abril de 1500?', ['cabral'], 1, scene='chegada_cabral', icon='ship',
     src=('pt', 'Pedro Álvares Cabral', ['1500']))
 c.P('Qual navegador a serviço da Espanha chegou à América em 1492, buscando uma rota para as Índias?', ['colombo'], 1, icon='ship',
     src=('pt', 'Cristóvão Colombo', ['1492']))
@@ -30,7 +30,7 @@ c.T('Em que data, segundo a tradição, Cabral chegou ao litoral do Brasil?', '2
     src=('pt', 'Pedro Álvares Cabral', ['22 de abril']))
 c.T('Como se chamou o monte avistado por Cabral e que deu nome ao primeiro marco do Brasil?', 'Monte Pascoal', ['Pão de Açúcar', 'Corcovado', 'Pico da Neblina', 'Serra do Mar', 'Monte Roraima'], 3, icon='map',
     src=('pt', 'Monte Pascoal', ['Cabral']))
-c.T('Qual escritor português registrou a chegada ao Brasil na famosa “Carta ao rei D. Manuel”?', 'Pero Vaz de Caminha', ['Luís de Camões', 'Gil Vicente', 'Fernão Lopes', 'Gomes Eanes de Zurara', 'Eça de Queirós'], 2, icon='scroll',
+c.T('Qual escritor português registrou a chegada ao Brasil na famosa “Carta ao rei D. Manuel”?', 'Pero Vaz de Caminha', ['Luís de Camões', 'Gil Vicente', 'Fernão Lopes', 'Gomes Eanes de Zurara', 'Eça de Queirós'], 2, scene='chegada_cabral', icon='scroll',
     src=('pt', 'Pero Vaz de Caminha', ['carta']))
 c.T('Qual poema épico de Camões narra a viagem de Vasco da Gama à Índia?', 'Os Lusíadas', ['A Odisseia', 'A Eneida', 'Mensagem', 'Peregrinação', 'Dom Quixote'], 1, icon='book',
     src=('pt', 'Os Lusíadas', ['Vasco da Gama']))
@@ -40,7 +40,7 @@ c.T('Qual país de língua portuguesa fica na costa da África, descoberto pelos
     src=('pt', 'Cabo Verde', ['portugueses']))
 c.T('Quem completou a primeira circum-navegação do globo, em 1522, depois da morte de Magalhães?', 'Juan Sebastián Elcano', ['Américo Vespúcio', 'Francis Drake', 'James Cook', 'Pedro Álvares Cabral', 'Bartolomeu Dias'], 4, icon='ship',
     src=('pt', 'Juan Sebastián Elcano', ['1522']))
-c.T('Qual país, no século XVII, chegou a dominar o nordeste brasileiro por 24 anos?', 'Holanda', ['França', 'Inglaterra', 'Espanha', 'Dinamarca', 'Suécia'], 2, icon='ship',
+c.T('Qual país, no século XVII, chegou a dominar o nordeste brasileiro por 24 anos?', 'Holanda', ['França', 'Inglaterra', 'Espanha', 'Dinamarca', 'Suécia'], 2, scene='olinda', icon='ship',
     src=('pt', 'Brasil Holandês', ['1630']))
 c.T('Qual a unidade de moeda portuguesa em ouro, base do sistema monetário do império?', 'Cruzado', ['Peso', 'Ducado', 'Florim', 'Soldo', 'Dobrão do rei Henrique'], 4, icon='crown',
     src=('pt', 'Cruzado (moeda)', ['ouro']))
@@ -52,7 +52,7 @@ c.T('Qual a primeira capital do Brasil colonial, fundada em 1549?', 'Salvador', 
     src=('pt', 'Salvador', ['1549']))
 c.T('Qual foi o sistema de divisão do Brasil em 15 faixas de terra entregues a donatários?', 'Capitanias hereditárias', ['Sesmarias', 'Quilombos', 'Bandeiras', 'Reduções', 'Engenhos'], 2, scene='tordesilhas', icon='map',
     src=('pt', 'Capitanias hereditárias', ['donatário']))
-c.T('Qual foi a primeira atividade econômica explorada pelos portugueses no Brasil?', 'Extração de pau-brasil', ['Cana-de-açúcar', 'Mineração de ouro', 'Café', 'Borracha', 'Algodão'], 2, icon='ship',
+c.T('Qual foi a primeira atividade econômica explorada pelos portugueses no Brasil?', 'Extração de pau-brasil', ['Cana-de-açúcar', 'Mineração de ouro', 'Café', 'Borracha', 'Algodão'], 2, scene='chegada_cabral', icon='ship',
     src=('pt', 'Pau-brasil', ['primeira']))
 c.write()
 
@@ -224,9 +224,9 @@ c.T('Qual obra de 1848, de Marx e Engels, começa com “Um espectro ronda a Eur
     src=('pt', 'Manifesto Comunista', ['1848']))
 c.T('Qual ciclo de revoluções liberais sacudiu a Europa em 1848?', 'Primavera dos Povos', ['Revolução Gloriosa', 'Era do Terror', 'Guerra Fria', 'Primavera Árabe', 'Revolução de Veludo'], 3, icon='torch',
     src=('pt', 'Primavera dos Povos', ['1848']))
-c.T('Em que ano ocorreu a Revolução Russa que levou os bolcheviques ao poder?', '1917', ['1905', '1914', '1923', '1939', '1991'], 2, icon='torch',
+c.T('Em que ano ocorreu a Revolução Russa que levou os bolcheviques ao poder?', '1917', ['1905', '1914', '1923', '1939', '1991'], 2, scene='ev_revolucao_russa', icon='torch',
     src=('pt', 'Revolução Russa', ['1917']))
-c.P('Qual líder bolchevique comandou a Revolução de Outubro?', ['lenin'], 2, icon='torch',
+c.P('Qual líder bolchevique comandou a Revolução de Outubro?', ['lenin'], 2, scene='ev_revolucao_russa', icon='torch',
     src=('pt', 'Vladimir Lenin', ['Outubro']))
 c.write()
 

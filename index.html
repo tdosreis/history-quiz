@@ -4077,7 +4077,7 @@ const CATS = [
       {"t": "Em que ano a monarquia chinesa acabou, com a queda da dinastia Qing?", "a": ["1912"], "type": "txt", "choices": ["1912", "1849", "1899", "1949", "1900", "1937"], "d": 4, "icon": "crown"},
       {"t": "Qual conquistador turco-mongol do século XIV tinha sua capital em Samarcanda?", "a": ["Tamerlão"], "type": "txt", "choices": ["Tamerlão", "Gengis Khan", "Átila", "Babur", "Saladino", "Kublai"], "d": 3, "scene": "samarcanda"},
       {"t": "Que material um funcionário da corte chinesa passou a fabricar, por volta do ano 105, com casca de árvore, cânhamo, trapos e redes de pesca velhas?", "a": ["Papel"], "type": "txt", "choices": ["Papel", "Papiro", "Pergaminho", "Porcelana", "Seda", "Vidro"], "d": 1, "x": "A tradição atribui a invenção a Cai Lun, funcionário da corte Han, por volta do ano 105; depois, arqueólogos acharam papéis ainda mais antigos.", "crest": "han"},
-      {"t": "Como eram chamados os pilotos japoneses que, na Segunda Guerra, jogavam seus aviões carregados de explosivos contra navios inimigos?", "a": ["Kamikazes"], "type": "txt", "choices": ["Kamikazes", "Samurais", "Ninjas", "Ronins", "Xoguns", "Daimiôs"], "d": 1, "x": "A palavra quer dizer \"vento divino\" e lembra os tufões que, segundo a tradição, salvaram o Japão de duas invasões mongóis no século XIII.", "icon": "plane"},
+      {"t": "Como eram chamados os pilotos japoneses que, na Segunda Guerra, jogavam seus aviões carregados de explosivos contra navios inimigos?", "a": ["Kamikazes"], "type": "txt", "choices": ["Kamikazes", "Samurais", "Ninjas", "Ronins", "Xoguns", "Daimiôs"], "d": 1, "x": "A palavra quer dizer \"vento divino\" e lembra os tufões que, segundo a tradição, salvaram o Japão de duas invasões mongóis no século XIII.", "scene": "porta_avioes"},
       {"t": "Qual cidade a China cedeu aos britânicos depois da Primeira Guerra do Ópio e só recuperou em 1997?", "a": ["Hong Kong"], "type": "txt", "choices": ["Hong Kong", "Macau", "Xangai", "Cantão", "Nanquim", "Cingapura"], "d": 1, "x": "O Reino Unido devolveu a cidade sob a fórmula \"um país, dois sistemas\", com a promessa de 50 anos de autonomia.", "crest": "reino_unido"},
       {"t": "Como se chama a espada longa e curva que se tornou o símbolo dos samurais?", "a": ["Katana"], "type": "txt", "choices": ["Katana", "Cimitarra", "Gládio", "Florete", "Montante", "Rapieira"], "d": 1, "x": "Nos primeiros séculos, a arma mais importante do samurai era o arco, usado a cavalo; a espada só depois virou o seu emblema.", "stad": "himeji"},
       {"t": "Como se chama o sistema social da Índia que dividia as pessoas em grupos hereditários, cada um com suas profissões e regras?", "a": ["Sistema de castas"], "type": "txt", "choices": ["Sistema de castas", "Feudalismo", "Mandarinato", "Sistema de guildas", "Sistema de clãs", "Servidão"], "d": 1, "x": "A Constituição da Índia, de 1950, proibiu a discriminação por casta e aboliu a prática da \"intocabilidade\".", "flag": "IND"},
@@ -4214,8 +4214,8 @@ const CATS = [
       {"t": "Qual doença trazida pelos europeus devastou as populações indígenas das Américas?", "a": ["Varíola"], "type": "txt", "choices": ["Varíola", "Peste negra", "Cólera", "Escorbuto", "Malária", "Tuberculose bovina"], "d": 2, "scene": "tenochtitlan"},
       {"t": "Qual povo indígena norte-americano liderou a vitória em Little Bighorn, em 1876?", "a": ["Sioux e Cheyenne"], "type": "txt", "choices": ["Sioux e Cheyenne", "Apaches", "Navajos", "Iroqueses", "Cherokees", "Comanches"], "d": 3, "scene": "pradarias_sioux"},
       {"t": "Qual chefe sioux Hunkpapa liderou a resistência indígena e participou da vitória em Little Bighorn?", "a": ["touro_sentado"], "type": "player", "d": 3, "scene": "pradarias_sioux"},
-      {"t": "Qual líder de Palmares resistiu à escravidão no quilombo mais famoso do Brasil colonial?", "a": ["zumbi"], "type": "player", "d": 1, "icon": "flag"},
-      {"t": "Qual o povo indígena que habitava o litoral do Brasil quando os portugueses chegaram e falava tupi?", "a": ["Tupinambás"], "type": "txt", "choices": ["Tupinambás", "Yanomamis", "Guaranis do Sul", "Aimorés", "Kayapós", "Xavantes"], "d": 3, "icon": "map"},
+      {"t": "Qual líder de Palmares resistiu à escravidão no quilombo mais famoso do Brasil colonial?", "a": ["zumbi"], "type": "player", "d": 1, "scene": "quilombo_palmares"},
+      {"t": "Qual o povo indígena que habitava o litoral do Brasil quando os portugueses chegaram e falava tupi?", "a": ["Tupinambás"], "type": "txt", "choices": ["Tupinambás", "Yanomamis", "Guaranis do Sul", "Aimorés", "Kayapós", "Xavantes"], "d": 3, "scene": "chegada_cabral"},
       {"t": "Qual a fronteira definida em 1494 entre as terras de Portugal e Espanha no Novo Mundo?", "a": ["Tratado de Tordesilhas"], "type": "txt", "choices": ["Tratado de Tordesilhas", "Tratado de Madri", "Tratado de Utrecht", "Tratado de Vestfália", "Tratado de Versalhes", "Tratado de Santo Ildefonso"], "d": 2, "icon": "map"},
       {"t": "Em que dia os Estados Unidos comemoram a sua independência?", "a": ["4 de julho"], "type": "txt", "choices": ["4 de julho", "14 de julho", "7 de setembro", "1º de maio", "12 de outubro", "25 de dezembro"], "d": 1, "x": "Nesse dia, em 1776, o Congresso Continental aprovou a Declaração de Independência, em Filadélfia.", "flag": "USA"},
       {"t": "Qual país sul-americano recebeu o nome em homenagem a Simón Bolívar?", "a": ["Bolívia"], "type": "txt", "choices": ["Bolívia", "Colômbia", "Equador", "Peru", "Paraguai", "Uruguai"], "d": 1, "x": "A república foi proclamada em 1825, no território que os espanhóis chamavam de Alto Peru.", "who": "bolivar"},
@@ -4259,7 +4259,7 @@ const CATS = [
     qs:[
       {"t": "Qual príncipe português impulsionou a exploração do litoral africano na Escola de Sagres?", "a": ["henrique_navegador"], "type": "player", "d": 2, "scene": "ev_grandes_navegacoes"},
       {"t": "Qual navegador português chegou à Índia por mar, em 1498, contornando a África?", "a": ["vasco_gama"], "type": "player", "d": 1, "scene": "ev_grandes_navegacoes"},
-      {"t": "Qual navegador português chegou ao Brasil em 22 de abril de 1500?", "a": ["cabral"], "type": "player", "d": 1, "icon": "ship"},
+      {"t": "Qual navegador português chegou ao Brasil em 22 de abril de 1500?", "a": ["cabral"], "type": "player", "d": 1, "scene": "chegada_cabral"},
       {"t": "Qual navegador a serviço da Espanha chegou à América em 1492, buscando uma rota para as Índias?", "a": ["colombo"], "type": "player", "d": 1, "icon": "ship"},
       {"t": "Qual navegador português comandou a expedição que deu a primeira volta ao mundo, mas morreu nas Filipinas?", "a": ["magalhaes"], "type": "player", "d": 2, "scene": "ev_grandes_navegacoes"},
       {"t": "Qual navegador italiano deu nome ao continente americano?", "a": ["vespucio"], "type": "player", "d": 2, "scene": "ev_grandes_navegacoes"},
@@ -4271,18 +4271,18 @@ const CATS = [
       {"t": "Qual cidade turca foi tomada pelos otomanos em 1453, dificultando as rotas terrestres para o Oriente?", "a": ["Constantinopla"], "type": "txt", "choices": ["Constantinopla", "Esmirna", "Antioquia", "Ankara", "Bagdá", "Alexandria"], "d": 2, "stad": "santa_sofia"},
       {"t": "Em que data, segundo a tradição, Cabral chegou ao litoral do Brasil?", "a": ["22 de abril de 1500"], "type": "txt", "choices": ["22 de abril de 1500", "7 de setembro de 1822", "15 de novembro de 1889", "12 de outubro de 1492", "1º de janeiro de 1500", "21 de abril de 1792"], "d": 2, "icon": "ship"},
       {"t": "Como se chamou o monte avistado por Cabral e que deu nome ao primeiro marco do Brasil?", "a": ["Monte Pascoal"], "type": "txt", "choices": ["Monte Pascoal", "Pão de Açúcar", "Corcovado", "Pico da Neblina", "Serra do Mar", "Monte Roraima"], "d": 3, "icon": "map"},
-      {"t": "Qual escritor português registrou a chegada ao Brasil na famosa “Carta ao rei D. Manuel”?", "a": ["Pero Vaz de Caminha"], "type": "txt", "choices": ["Pero Vaz de Caminha", "Luís de Camões", "Gil Vicente", "Fernão Lopes", "Gomes Eanes de Zurara", "Eça de Queirós"], "d": 2, "icon": "scroll"},
+      {"t": "Qual escritor português registrou a chegada ao Brasil na famosa “Carta ao rei D. Manuel”?", "a": ["Pero Vaz de Caminha"], "type": "txt", "choices": ["Pero Vaz de Caminha", "Luís de Camões", "Gil Vicente", "Fernão Lopes", "Gomes Eanes de Zurara", "Eça de Queirós"], "d": 2, "scene": "chegada_cabral"},
       {"t": "Qual poema épico de Camões narra a viagem de Vasco da Gama à Índia?", "a": ["Os Lusíadas"], "type": "txt", "choices": ["Os Lusíadas", "A Odisseia", "A Eneida", "Mensagem", "Peregrinação", "Dom Quixote"], "d": 1, "icon": "book"},
       {"t": "Qual poeta português é autor de Os Lusíadas?", "a": ["camoes"], "type": "player", "d": 1, "scene": "adamastor"},
       {"t": "Qual país de língua portuguesa fica na costa da África, descoberto pelos navegadores em 1444, e deu nome a um cabo?", "a": ["Cabo Verde"], "type": "txt", "choices": ["Cabo Verde", "Angola", "Moçambique", "Guiné-Bissau", "São Tomé", "Gâmbia"], "d": 3, "scene": "ev_grandes_navegacoes"},
       {"t": "Quem completou a primeira circum-navegação do globo, em 1522, depois da morte de Magalhães?", "a": ["Juan Sebastián Elcano"], "type": "txt", "choices": ["Juan Sebastián Elcano", "Américo Vespúcio", "Francis Drake", "James Cook", "Pedro Álvares Cabral", "Bartolomeu Dias"], "d": 4, "icon": "ship"},
-      {"t": "Qual país, no século XVII, chegou a dominar o nordeste brasileiro por 24 anos?", "a": ["Holanda"], "type": "txt", "choices": ["Holanda", "França", "Inglaterra", "Espanha", "Dinamarca", "Suécia"], "d": 2, "icon": "ship"},
+      {"t": "Qual país, no século XVII, chegou a dominar o nordeste brasileiro por 24 anos?", "a": ["Holanda"], "type": "txt", "choices": ["Holanda", "França", "Inglaterra", "Espanha", "Dinamarca", "Suécia"], "d": 2, "scene": "olinda"},
       {"t": "Qual a unidade de moeda portuguesa em ouro, base do sistema monetário do império?", "a": ["Cruzado"], "type": "txt", "choices": ["Cruzado", "Peso", "Ducado", "Florim", "Soldo", "Dobrão do rei Henrique"], "d": 4, "icon": "crown"},
       {"t": "Qual alimento americano foi levado à Europa e à Ásia após 1492 e mudou a dieta mundial?", "a": ["Batata"], "type": "txt", "choices": ["Batata", "Arroz", "Trigo", "Cevada", "Lentilha", "Aveia"], "d": 2, "icon": "globe"},
       {"t": "Como se chama a troca de plantas, animais, doenças e pessoas entre Velho e Novo Mundo, após 1492?", "a": ["Troca colombiana"], "type": "txt", "choices": ["Troca colombiana", "Troca de Tordesilhas", "Rota da Seda", "Revolução Verde", "Mercantilismo", "Comércio triangular"], "d": 4, "scene": "ev_grandes_navegacoes"},
       {"t": "Qual a primeira capital do Brasil colonial, fundada em 1549?", "a": ["Salvador"], "type": "txt", "choices": ["Salvador", "Rio de Janeiro", "Recife", "São Vicente", "Olinda", "São Paulo"], "d": 2, "icon": "map"},
       {"t": "Qual foi o sistema de divisão do Brasil em 15 faixas de terra entregues a donatários?", "a": ["Capitanias hereditárias"], "type": "txt", "choices": ["Capitanias hereditárias", "Sesmarias", "Quilombos", "Bandeiras", "Reduções", "Engenhos"], "d": 2, "scene": "tordesilhas"},
-      {"t": "Qual foi a primeira atividade econômica explorada pelos portugueses no Brasil?", "a": ["Extração de pau-brasil"], "type": "txt", "choices": ["Extração de pau-brasil", "Cana-de-açúcar", "Mineração de ouro", "Café", "Borracha", "Algodão"], "d": 2, "icon": "ship"},
+      {"t": "Qual foi a primeira atividade econômica explorada pelos portugueses no Brasil?", "a": ["Extração de pau-brasil"], "type": "txt", "choices": ["Extração de pau-brasil", "Cana-de-açúcar", "Mineração de ouro", "Café", "Borracha", "Algodão"], "d": 2, "scene": "chegada_cabral"},
     ]
   },
   {
@@ -4458,8 +4458,8 @@ const CATS = [
       {"t": "Qual movimento de trabalhadores ingleses quebrou máquinas no início do século XIX?", "a": ["Ludismo"], "type": "txt", "choices": ["Ludismo", "Cartismo", "Sindicalismo", "Anarquismo", "Jacobinismo", "Fabianismo"], "d": 3, "scene": "fabrica_chamines"},
       {"t": "Qual obra de 1848, de Marx e Engels, começa com “Um espectro ronda a Europa”?", "a": ["Manifesto Comunista"], "type": "txt", "choices": ["Manifesto Comunista", "O Capital", "A Riqueza das Nações", "O Contrato Social", "A Utopia", "Ideologia Alemã"], "d": 2, "scene": "fabrica_chamines"},
       {"t": "Qual ciclo de revoluções liberais sacudiu a Europa em 1848?", "a": ["Primavera dos Povos"], "type": "txt", "choices": ["Primavera dos Povos", "Revolução Gloriosa", "Era do Terror", "Guerra Fria", "Primavera Árabe", "Revolução de Veludo"], "d": 3, "icon": "torch"},
-      {"t": "Em que ano ocorreu a Revolução Russa que levou os bolcheviques ao poder?", "a": ["1917"], "type": "txt", "choices": ["1917", "1905", "1914", "1923", "1939", "1991"], "d": 2, "icon": "torch"},
-      {"t": "Qual líder bolchevique comandou a Revolução de Outubro?", "a": ["lenin"], "type": "player", "d": 2, "icon": "torch"},
+      {"t": "Em que ano ocorreu a Revolução Russa que levou os bolcheviques ao poder?", "a": ["1917"], "type": "txt", "choices": ["1917", "1905", "1914", "1923", "1939", "1991"], "d": 2, "scene": "ev_revolucao_russa"},
+      {"t": "Qual líder bolchevique comandou a Revolução de Outubro?", "a": ["lenin"], "type": "player", "d": 2, "scene": "ev_revolucao_russa"},
       {"t": "Qual canção, composta em 1792 para os soldados da Revolução, tornou-se o hino nacional da França?", "a": ["A Marselhesa"], "type": "txt", "choices": ["A Marselhesa", "A Internacional", "Ça Ira", "A Carmanhola", "Deus Salve o Rei", "Hino da Carta"], "d": 1, "x": "Foi composta em Estrasburgo por Rouget de Lisle, mas ganhou o nome por ser cantada pelos voluntários de Marselha que marcharam até Paris.", "stad": "arco_triunfo"},
       {"t": "Qual campanha de Napoleão, em 1812, terminou em desastre, com o exército dizimado pelo frio e pela fome na retirada?", "a": ["A invasão da Rússia"], "type": "txt", "choices": ["A invasão da Rússia", "A campanha do Egito", "A campanha da Itália", "A Guerra Peninsular", "A campanha da Áustria", "Os Cem Dias"], "d": 1, "x": "Ao chegar a Moscou, Napoleão encontrou a cidade quase vazia e logo em chamas; a retirada no inverno destruiu a maior parte da Grande Armée.", "who": "napoleao"},
       {"t": "Qual canal, aberto à navegação em 1914, ligou o oceano Atlântico ao Pacífico?", "a": ["Canal do Panamá"], "type": "txt", "choices": ["Canal do Panamá", "Canal de Suez", "Canal de Kiel", "Canal de Corinto", "Canal Erie", "Canal da Nicarágua"], "d": 1, "x": "Os franceses começaram a obra nos anos 1880 e desistiram depois de milhares de mortes por malária e febre amarela; os americanos a concluíram.", "icon": "ship"},
@@ -4568,28 +4568,28 @@ const CATS = [
     tag:"1914–1918 e 1939–1945", col:"#5A5A5A", diff:"Variado",
     qs:[
       {"t": "Qual assassinato em Sarajevo, em 1914, foi o estopim da Primeira Guerra Mundial?", "a": ["O do arquiduque Francisco Ferdinando"], "type": "txt", "choices": ["O do arquiduque Francisco Ferdinando", "O do czar Nicolau II", "O do rei Alexandre da Sérvia", "O do kaiser Guilherme II", "O de Rosa Luxemburgo", "O do presidente Wilson"], "d": 2, "crest": "austria_hungria"},
-      {"t": "Quais eram as duas grandes alianças da Primeira Guerra Mundial?", "a": ["Tríplice Entente e Tríplice Aliança"], "type": "txt", "choices": ["Tríplice Entente e Tríplice Aliança", "Eixo e Aliados", "OTAN e Pacto de Varsóvia", "Liga e Comintern", "Santa Aliança e Concerto da Europa", "Entente e Eixo"], "d": 3, "icon": "cannon"},
+      {"t": "Quais eram as duas grandes alianças da Primeira Guerra Mundial?", "a": ["Tríplice Entente e Tríplice Aliança"], "type": "txt", "choices": ["Tríplice Entente e Tríplice Aliança", "Eixo e Aliados", "OTAN e Pacto de Varsóvia", "Liga e Comintern", "Santa Aliança e Concerto da Europa", "Entente e Eixo"], "d": 3, "scene": "ev_primeira_guerra"},
       {"t": "Qual tipo de combate marcou a Frente Ocidental na Primeira Guerra Mundial?", "a": ["Guerra de trincheiras"], "type": "txt", "choices": ["Guerra de trincheiras", "Guerra naval", "Guerra-relâmpago", "Guerra de guerrilhas", "Guerra nuclear", "Guerra aérea"], "d": 1, "icon": "cannon"},
-      {"t": "Em que ano terminou a Primeira Guerra Mundial?", "a": ["1918"], "type": "txt", "choices": ["1918", "1914", "1916", "1919", "1920", "1945"], "d": 1, "icon": "cannon"},
+      {"t": "Em que ano terminou a Primeira Guerra Mundial?", "a": ["1918"], "type": "txt", "choices": ["1918", "1914", "1916", "1919", "1920", "1945"], "d": 1, "scene": "ev_primeira_guerra"},
       {"t": "Qual tratado de 1919 impôs duras condições à Alemanha após a Primeira Guerra?", "a": ["Tratado de Versalhes"], "type": "txt", "choices": ["Tratado de Versalhes", "Tratado de Tordesilhas", "Tratado de Vestfália", "Tratado de Paris", "Pacto de Locarno", "Paz de Brest-Litovsk"], "d": 2, "stad": "versalhes"},
-      {"t": "Qual presidente americano propôs os Quatorze Pontos e a criação da Liga das Nações?", "a": ["wilson"], "type": "player", "d": 3, "icon": "scroll"},
+      {"t": "Qual presidente americano propôs os Quatorze Pontos e a criação da Liga das Nações?", "a": ["wilson"], "type": "player", "d": 3, "scene": "ev_primeira_guerra"},
       {"t": "Qual líder turco comandou a defesa de Galípoli e fundou a República da Turquia, em 1923?", "a": ["ataturk"], "type": "player", "d": 3, "icon": "flag"},
       {"t": "Qual a data do início da Segunda Guerra Mundial, com a invasão da Polônia pela Alemanha?", "a": ["1º de setembro de 1939"], "type": "txt", "choices": ["1º de setembro de 1939", "28 de junho de 1914", "7 de dezembro de 1941", "6 de junho de 1944", "8 de maio de 1945", "11 de novembro de 1918"], "d": 2, "flag": "POL"},
-      {"t": "Quais eram as principais potências do Eixo na Segunda Guerra Mundial?", "a": ["Alemanha, Itália e Japão"], "type": "txt", "choices": ["Alemanha, Itália e Japão", "Reino Unido, França e URSS", "Alemanha, Áustria e Turquia", "Japão, China e Coreia", "Itália, Espanha e Portugal", "Alemanha, Rússia e Japão"], "d": 1, "icon": "cannon"},
+      {"t": "Quais eram as principais potências do Eixo na Segunda Guerra Mundial?", "a": ["Alemanha, Itália e Japão"], "type": "txt", "choices": ["Alemanha, Itália e Japão", "Reino Unido, França e URSS", "Alemanha, Áustria e Turquia", "Japão, China e Coreia", "Itália, Espanha e Portugal", "Alemanha, Rússia e Japão"], "d": 1, "scene": "ev_segunda_guerra"},
       {"t": "Qual primeiro-ministro britânico liderou o Reino Unido durante a maior parte da Segunda Guerra?", "a": ["churchill"], "type": "player", "d": 1, "icon": "cannon"},
-      {"t": "Qual presidente americano governou os EUA durante a maior parte da Segunda Guerra, e morreu em abril de 1945?", "a": ["fdr"], "type": "player", "d": 2, "icon": "cannon"},
-      {"t": "Qual general liderou a França Livre a partir de Londres, após a ocupação alemã?", "a": ["de_gaulle"], "type": "player", "d": 2, "icon": "cannon"},
-      {"t": "Qual adolescente judia escreveu um diário enquanto se escondia dos nazistas em Amsterdã?", "a": ["anne_frank"], "type": "player", "d": 1, "icon": "book"},
-      {"t": "Qual matemático britânico decifrou o código Enigma e é considerado pai da computação?", "a": ["turing"], "type": "player", "d": 2, "icon": "gear"},
+      {"t": "Qual presidente americano governou os EUA durante a maior parte da Segunda Guerra, e morreu em abril de 1945?", "a": ["fdr"], "type": "player", "d": 2, "scene": "ev_segunda_guerra"},
+      {"t": "Qual general liderou a França Livre a partir de Londres, após a ocupação alemã?", "a": ["de_gaulle"], "type": "player", "d": 2, "scene": "ev_segunda_guerra"},
+      {"t": "Qual adolescente judia escreveu um diário enquanto se escondia dos nazistas em Amsterdã?", "a": ["anne_frank"], "type": "player", "d": 1, "scene": "anexo_secreto"},
+      {"t": "Qual matemático britânico decifrou o código Enigma e é considerado pai da computação?", "a": ["turing"], "type": "player", "d": 2, "scene": "maquina_enigma"},
       {"t": "Qual operação aliada desembarcou na Normandia, em 6 de junho de 1944?", "a": ["Dia D"], "type": "txt", "choices": ["Dia D", "Operação Barbarossa", "Operação Overlord só no Pacífico", "Batalha das Ardenas", "Operação Torch", "Blitz"], "d": 2, "icon": "cannon"},
       {"t": "Qual a campanha alemã de invasão da União Soviética, iniciada em 1941?", "a": ["Operação Barbarossa"], "type": "txt", "choices": ["Operação Barbarossa", "Operação Overlord", "Blitzkrieg", "Operação Leão-Marinho", "Operação Torch", "Operação Market Garden"], "d": 3, "icon": "cannon"},
-      {"t": "Qual ataque japonês de 7 de dezembro de 1941 levou os EUA à Segunda Guerra?", "a": ["Pearl Harbor"], "type": "txt", "choices": ["Pearl Harbor", "Midway", "Iwo Jima", "Hiroshima", "Okinawa", "Singapura"], "d": 2, "icon": "ship"},
+      {"t": "Qual ataque japonês de 7 de dezembro de 1941 levou os EUA à Segunda Guerra?", "a": ["Pearl Harbor"], "type": "txt", "choices": ["Pearl Harbor", "Midway", "Iwo Jima", "Hiroshima", "Okinawa", "Singapura"], "d": 2, "scene": "porta_avioes"},
       {"t": "Quais cidades japonesas sofreram bombas atômicas em agosto de 1945?", "a": ["Hiroshima e Nagasaki"], "type": "txt", "choices": ["Hiroshima e Nagasaki", "Tóquio e Osaka", "Quioto e Nagoia", "Hiroshima e Quioto", "Nagasaki e Yokohama", "Tóquio e Hiroshima"], "d": 1, "icon": "cannon"},
       {"t": "Qual o nome do genocídio de seis milhões de judeus pelo regime nazista?", "a": ["Holocausto"], "type": "txt", "choices": ["Holocausto", "Gulag", "Nakba", "Armênio", "Purga", "Kristallnacht"], "d": 1, "icon": "scroll"},
-      {"t": "Em que ano terminou a Segunda Guerra Mundial?", "a": ["1945"], "type": "txt", "choices": ["1945", "1939", "1941", "1943", "1948", "1950"], "d": 1, "icon": "cannon"},
+      {"t": "Em que ano terminou a Segunda Guerra Mundial?", "a": ["1945"], "type": "txt", "choices": ["1945", "1939", "1941", "1943", "1948", "1950"], "d": 1, "scene": "ev_segunda_guerra"},
       {"t": "Qual organização foi criada em 1945 para manter a paz mundial?", "a": ["Organização das Nações Unidas"], "type": "txt", "choices": ["Organização das Nações Unidas", "Liga das Nações", "OTAN", "União Europeia", "Cruz Vermelha", "Comintern"], "d": 1, "icon": "globe"},
       {"t": "Qual a participação brasileira na Segunda Guerra, enviada à Itália em 1944?", "a": ["Força Expedicionária Brasileira"], "type": "txt", "choices": ["Força Expedicionária Brasileira", "Legião Verde", "Exército da Borracha", "Corpo de Paz", "Brigada Aérea", "Guarda Nacional"], "d": 2, "icon": "flag"},
-      {"t": "Qual presidente brasileiro decidiu entrar na Segunda Guerra ao lado dos Aliados?", "a": ["getulio"], "type": "player", "d": 2, "icon": "flag"},
+      {"t": "Qual presidente brasileiro decidiu entrar na Segunda Guerra ao lado dos Aliados?", "a": ["getulio"], "type": "player", "d": 2, "scene": "caca_p47"},
       {"t": "Qual cidade alemã sediou os julgamentos de criminosos nazistas depois da guerra?", "a": ["Nuremberg"], "type": "txt", "choices": ["Nuremberg", "Berlim", "Munique", "Frankfurt", "Viena", "Hamburgo"], "d": 3, "icon": "scroll"},
       {"t": "Qual a política alemã de guerra de movimento rápido, com blindados e aviões, no início da Segunda Guerra?", "a": ["Blitzkrieg"], "type": "txt", "choices": ["Blitzkrieg", "Guerra de atrito", "Terra arrasada", "Defesa em profundidade", "Linha Maginot", "Cerco total"], "d": 3, "icon": "cannon"},
       {"t": "Qual batalha entre 1942 e 1943 marcou a virada na Frente Oriental, com a derrota alemã?", "a": ["Stalingrado"], "type": "txt", "choices": ["Stalingrado", "Berlim", "Kursk", "Moscou", "Leningrado", "Dunquerque"], "d": 2, "icon": "cannon"},
@@ -4616,7 +4616,7 @@ const CATS = [
       {"t": "Qual conferência de 1955, na Indonésia, reuniu 29 países da Ásia e da África e é vista como precursora do Movimento dos Não Alinhados?", "a": ["Conferência de Bandung"], "type": "txt", "choices": ["Conferência de Bandung", "Conferência de Genebra", "Conferência de Bretton Woods", "Conferência de Potsdam", "Conferência Tricontinental", "Conferência de Belgrado"], "d": 5, "x": "Entre os presentes estavam Nehru, da Índia, Nasser, do Egito, Zhou Enlai, da China, e o anfitrião, o presidente indonésio Sukarno.", "scene": "ev_descolonizacao"},
       {"t": "Qual grupo de estudantes de Munique espalhou panfletos contra o regime nazista e teve seus líderes executados em 1943?", "a": ["Rosa Branca"], "type": "txt", "choices": ["Rosa Branca", "Orquestra Vermelha", "Piratas de Edelweiss", "Círculo de Kreisau", "Juventude Swing", "Igreja Confessante"], "d": 5, "x": "Sophie Scholl, de 21 anos, e o irmão Hans foram presos ao distribuir panfletos na Universidade de Munique e executados quatro dias depois.", "flag": "GER"},
       {"t": "Quem se tornou, em 1960, a primeira mulher do mundo eleita para chefiar um governo, como primeira-ministra do Ceilão?", "a": ["Sirimavo Bandaranaike"], "type": "txt", "choices": ["Sirimavo Bandaranaike", "Indira Gandhi", "Golda Meir", "Margaret Thatcher", "Benazir Bhutto", "Corazon Aquino"], "d": 5, "x": "Ela entrou na política depois do assassinato do marido, também primeiro-ministro, em 1959, e governou o atual Sri Lanka em três períodos diferentes.", "who": "pankhurst"},
-      {"t": "Além do Brasil, qual país latino-americano mandou uma unidade de combate lutar fora das Américas na Segunda Guerra, o Esquadrão 201, de aviação de caça?", "a": ["México"], "type": "txt", "choices": ["México", "Argentina", "Chile", "Colômbia", "Cuba", "Venezuela"], "d": 5, "x": "Os pilotos mexicanos voaram caças P-47 nas Filipinas, em 1945 — o mesmo avião do grupo de caça brasileiro do \"Senta a Pua!\", na Itália.", "icon": "plane"},
+      {"t": "Além do Brasil, qual país latino-americano mandou uma unidade de combate lutar fora das Américas na Segunda Guerra, o Esquadrão 201, de aviação de caça?", "a": ["México"], "type": "txt", "choices": ["México", "Argentina", "Chile", "Colômbia", "Cuba", "Venezuela"], "d": 5, "x": "Os pilotos mexicanos voaram caças P-47 nas Filipinas, em 1945 — o mesmo avião do grupo de caça brasileiro do \"Senta a Pua!\", na Itália.", "scene": "caca_p47"},
       {"t": "Qual líder revolucionário, morto em 1924, teve o corpo embalsamado e exposto num mausoléu na Praça Vermelha, em Moscou?", "a": ["lenin"], "type": "player", "d": 1, "x": "O mausoléu fica colado à muralha do Kremlin; o corpo passa por banhos químicos regulares para se conservar.", "stad": "kremlin"},
       {"t": "Qual presidente americano prometeu, em 1961, levar um homem à Lua e trazê-lo de volta antes do fim da década?", "a": ["kennedy"], "type": "player", "d": 1, "x": "O discurso mais lembrado sobre a meta foi feito na Universidade Rice, em Houston, em 1962: \"Nós escolhemos ir à Lua\".", "scene": "ev_corrida_espacial"},
       {"t": "Qual primeira-ministra britânica comandou a guerra contra a Argentina pelas Ilhas Malvinas, em 1982?", "a": ["thatcher"], "type": "player", "d": 2, "x": "O conflito durou 74 dias; a derrota apressou o fim da ditadura militar argentina, em 1983.", "flag": "ARG"},
@@ -4661,7 +4661,7 @@ const CATS = [
       {"t": "Duelo: o que aconteceu primeiro?", "a": ["Revolução Russa de Outubro"], "type": "txt", "choices": ["Revolução Russa de Outubro", "Fim da Primeira Guerra Mundial"], "duel": true, "d": 2, "x": "A revolução foi em 1917, e a Rússia bolchevique saiu da guerra antes mesmo do armistício de novembro de 1918.", "scene": "duelo_aconteceu"},
       {"t": "Duelo: o que aconteceu primeiro?", "a": ["Primeiro voo humano ao espaço"], "type": "txt", "choices": ["Primeiro voo humano ao espaço", "Início da construção do Muro de Berlim"], "duel": true, "d": 4, "x": "Gagarin voou em 12 de abril de 1961; o Muro começou a ser erguido quatro meses depois, em 13 de agosto.", "scene": "duelo_aconteceu"},
       {"t": "Durante toda a Guerra Fria, Estados Unidos e União Soviética nunca declararam guerra um ao outro?", "a": ["Fato"], "type": "txt", "choices": ["Fato", "Mito"], "duel": true, "myth": true, "d": 1, "x": "Por isso a guerra foi \"fria\": as superpotências se enfrentaram de forma indireta, apoiando lados opostos em conflitos como os da Coreia, do Vietnã e do Afeganistão.", "crest": "urss"},
-      {"t": "No Natal de 1914, soldados britânicos e alemães chegaram a parar de lutar e confraternizar entre as trincheiras?", "a": ["Fato"], "type": "txt", "choices": ["Fato", "Mito"], "duel": true, "myth": true, "d": 2, "x": "Em vários trechos da frente, trocaram cigarros e comida, cantaram e enterraram seus mortos; há relatos até de partidas de futebol.", "icon": "dove"},
+      {"t": "No Natal de 1914, soldados britânicos e alemães chegaram a parar de lutar e confraternizar entre as trincheiras?", "a": ["Fato"], "type": "txt", "choices": ["Fato", "Mito"], "duel": true, "myth": true, "d": 2, "x": "Em vários trechos da frente, trocaram cigarros e comida, cantaram e enterraram seus mortos; há relatos até de partidas de futebol.", "scene": "ev_primeira_guerra"},
       {"t": "O Muro de Berlim cercava toda a Berlim Ocidental, e não apenas cortava a cidade ao meio?", "a": ["Fato"], "type": "txt", "choices": ["Fato", "Mito"], "duel": true, "myth": true, "d": 3, "x": "Berlim Ocidental era uma ilha dentro da Alemanha Oriental: dos cerca de 155 km do Muro, só uns 43 km cortavam a cidade; o resto a separava do território oriental ao redor.", "stad": "muro_berlim"},
       {"t": "A Revolução de Outubro, na Rússia, aconteceu em novembro pelo calendário que usamos hoje?", "a": ["Fato"], "type": "txt", "choices": ["Fato", "Mito"], "duel": true, "myth": true, "d": 3, "x": "A Rússia ainda seguia o calendário juliano, 13 dias atrasado: o 25 de outubro de 1917 de lá era o nosso 7 de novembro.", "stad": "palacio_inverno"},
       {"t": "Hitler chegou ao poder vencendo uma eleição com a maioria dos votos dos alemães?", "a": ["Mito"], "type": "txt", "choices": ["Fato", "Mito"], "duel": true, "myth": true, "d": 3, "x": "Na eleição livre mais favorável, em julho de 1932, os nazistas tiveram cerca de 37% dos votos; Hitler foi nomeado chanceler pelo presidente Hindenburg.", "flag": "GER"},
@@ -4705,25 +4705,25 @@ const CATS = [
     id:"brasil_colonia", name:"Brasil Colônia e Império", flag:"BRA",
     tag:"De 1500 a 1889", col:"#1F7A4D", diff:"Variado",
     qs:[
-      {"t": "Qual foi o primeiro nome dado ao Brasil pelos portugueses, em 1500?", "a": ["Ilha de Vera Cruz"], "type": "txt", "choices": ["Ilha de Vera Cruz", "Terra do Fogo", "Santa Cruz do Sul", "Brasil Novo", "Terra dos Papagaios", "Pindorama"], "d": 2, "icon": "map"},
+      {"t": "Qual foi o primeiro nome dado ao Brasil pelos portugueses, em 1500?", "a": ["Ilha de Vera Cruz"], "type": "txt", "choices": ["Ilha de Vera Cruz", "Terra do Fogo", "Santa Cruz do Sul", "Brasil Novo", "Terra dos Papagaios", "Pindorama"], "d": 2, "scene": "chegada_cabral"},
       {"t": "Qual a primeira vila fundada pelos portugueses no Brasil, em 1532?", "a": ["São Vicente"], "type": "txt", "choices": ["São Vicente", "Salvador", "Olinda", "Santos", "Piratininga", "Paranaguá"], "d": 3, "icon": "map"},
-      {"t": "Qual cidade foi fundada em 1554 por jesuítas, no planalto paulista?", "a": ["São Paulo"], "type": "txt", "choices": ["São Paulo", "Santos", "Campinas", "Sorocaba", "Jundiaí", "Curitiba"], "d": 2, "icon": "map"},
-      {"t": "Qual jesuíta, junto a Nóbrega, fundou o Colégio de São Paulo de Piratininga?", "a": ["José de Anchieta"], "type": "txt", "choices": ["José de Anchieta", "Antônio Vieira", "Manuel da Nóbrega apenas", "Gonçalo de Azevedo", "Fernão Cardim", "Pero Correia"], "d": 3, "icon": "book"},
+      {"t": "Qual cidade foi fundada em 1554 por jesuítas, no planalto paulista?", "a": ["São Paulo"], "type": "txt", "choices": ["São Paulo", "Santos", "Campinas", "Sorocaba", "Jundiaí", "Curitiba"], "d": 2, "scene": "patio_do_colegio"},
+      {"t": "Qual jesuíta, junto a Nóbrega, fundou o Colégio de São Paulo de Piratininga?", "a": ["José de Anchieta"], "type": "txt", "choices": ["José de Anchieta", "Antônio Vieira", "Manuel da Nóbrega apenas", "Gonçalo de Azevedo", "Fernão Cardim", "Pero Correia"], "d": 3, "scene": "patio_do_colegio"},
       {"t": "Qual foi o principal produto da economia colonial no Nordeste, no século XVI?", "a": ["Açúcar"], "type": "txt", "choices": ["Açúcar", "Café", "Ouro", "Algodão", "Borracha", "Cacau"], "d": 1, "icon": "ship"},
       {"t": "Como se chamava a propriedade rural açucareira, com plantação, moenda e casa-grande?", "a": ["Engenho"], "type": "txt", "choices": ["Engenho", "Fazenda de café", "Quilombo", "Reduções", "Sesmaria", "Estância"], "d": 2, "icon": "gear"},
-      {"t": "Qual país invadiu Pernambuco em 1630 e criou o Brasil Holandês?", "a": ["Países Baixos"], "type": "txt", "choices": ["Países Baixos", "França", "Inglaterra", "Espanha", "Dinamarca", "Suécia"], "d": 2, "icon": "ship"},
-      {"t": "Qual conde governou o Brasil Holandês e transformou Recife numa cidade moderna?", "a": ["Maurício de Nassau"], "type": "txt", "choices": ["Maurício de Nassau", "Duarte Coelho", "Tomé de Sousa", "Mem de Sá", "Estácio de Sá", "Salvador Correia"], "d": 3, "icon": "map"},
+      {"t": "Qual país invadiu Pernambuco em 1630 e criou o Brasil Holandês?", "a": ["Países Baixos"], "type": "txt", "choices": ["Países Baixos", "França", "Inglaterra", "Espanha", "Dinamarca", "Suécia"], "d": 2, "scene": "olinda"},
+      {"t": "Qual conde governou o Brasil Holandês e transformou Recife numa cidade moderna?", "a": ["Maurício de Nassau"], "type": "txt", "choices": ["Maurício de Nassau", "Duarte Coelho", "Tomé de Sousa", "Mem de Sá", "Estácio de Sá", "Salvador Correia"], "d": 3, "scene": "olinda"},
       {"t": "Qual o nome dos grupos de exploradores paulistas que penetraram o interior atrás de indígenas e riquezas?", "a": ["Bandeirantes"], "type": "txt", "choices": ["Bandeirantes", "Inconfidentes", "Jesuítas", "Tropeiros", "Quilombolas", "Farroupilhas"], "d": 1, "icon": "map"},
       {"t": "Qual ciclo econômico do século XVIII fez de Vila Rica (Ouro Preto) uma das maiores cidades da América?", "a": ["Ciclo do ouro"], "type": "txt", "choices": ["Ciclo do ouro", "Ciclo do açúcar", "Ciclo do café", "Ciclo da borracha", "Ciclo do algodão", "Ciclo do pau-brasil"], "d": 1, "stad": "ouro_preto"},
       {"t": "Qual imposto cobrava 20% do ouro extraído no Brasil colonial?", "a": ["Quinto"], "type": "txt", "choices": ["Quinto", "Dízimo", "Derrama", "Capitação", "Alcabala", "Imposto de renda"], "d": 2, "stad": "ouro_preto"},
       {"t": "Qual escultor e arquiteto mineiro criou os Profetas de Congonhas e a Igreja de São Francisco de Assis, em Ouro Preto?", "a": ["aleijadinho"], "type": "player", "d": 2, "stad": "ouro_preto"},
-      {"t": "Qual líder quilombola resistiu à escravidão no Quilombo dos Palmares, até sua morte em 1695?", "a": ["zumbi"], "type": "player", "d": 1, "x": "O 20 de novembro, dia de sua morte, é lembrado como Dia da Consciência Negra.", "icon": "flag"},
+      {"t": "Qual líder quilombola resistiu à escravidão no Quilombo dos Palmares, até sua morte em 1695?", "a": ["zumbi"], "type": "player", "d": 1, "x": "O 20 de novembro, dia de sua morte, é lembrado como Dia da Consciência Negra.", "scene": "quilombo_palmares"},
       {"t": "Qual alferes mineiro foi enforcado em 1792 por liderar a Inconfidência Mineira?", "a": ["tiradentes"], "type": "player", "d": 1, "stad": "ouro_preto"},
       {"t": "Qual o lema da bandeira de Minas Gerais, usado pelos inconfidentes?", "a": ["Libertas quae sera tamen"], "type": "txt", "choices": ["Libertas quae sera tamen", "Ordem e Progresso", "Plus Ultra", "Sempre Fiel", "Pro Brasilia Fiant Eximia", "Per Aspera ad Astra"], "d": 3, "stad": "ouro_preto"},
-      {"t": "Qual revolta baiana de 1798, com participação popular e ideais igualitários, foi duramente reprimida?", "a": ["Conjuração Baiana"], "type": "txt", "choices": ["Conjuração Baiana", "Revolta dos Malês", "Sabinada", "Balaiada", "Cabanagem", "Guerra dos Mascates"], "d": 3, "icon": "flag"},
+      {"t": "Qual revolta baiana de 1798, com participação popular e ideais igualitários, foi duramente reprimida?", "a": ["Conjuração Baiana"], "type": "txt", "choices": ["Conjuração Baiana", "Revolta dos Malês", "Sabinada", "Balaiada", "Cabanagem", "Guerra dos Mascates"], "d": 3, "scene": "salvador_colonial"},
       {"t": "Qual monarca transferiu a corte portuguesa para o Rio de Janeiro, em 1808, fugindo de Napoleão?", "a": ["dom_joao_vi"], "type": "player", "d": 1, "stad": "museu_imperial"},
-      {"t": "Qual o ato de 1808 que abriu os portos brasileiros às nações amigas?", "a": ["Abertura dos Portos"], "type": "txt", "choices": ["Abertura dos Portos", "Lei do Ventre Livre", "Lei Eusébio de Queirós", "Lei dos Sexagenários", "Alvará de 1785", "Tratado de 1810"], "d": 2, "icon": "ship"},
-      {"t": "Qual título o Brasil recebeu em 1815, ao deixar de ser colônia dentro do reino?", "a": ["Reino Unido de Portugal, Brasil e Algarves"], "type": "txt", "choices": ["Reino Unido de Portugal, Brasil e Algarves", "Império do Brasil", "República dos Estados Unidos do Brasil", "Vice-Reino do Brasil", "Reino do Brasil e Plata", "Capitania Geral"], "d": 4, "icon": "crown"},
+      {"t": "Qual o ato de 1808 que abriu os portos brasileiros às nações amigas?", "a": ["Abertura dos Portos"], "type": "txt", "choices": ["Abertura dos Portos", "Lei do Ventre Livre", "Lei Eusébio de Queirós", "Lei dos Sexagenários", "Alvará de 1785", "Tratado de 1810"], "d": 2, "scene": "corte_1808"},
+      {"t": "Qual título o Brasil recebeu em 1815, ao deixar de ser colônia dentro do reino?", "a": ["Reino Unido de Portugal, Brasil e Algarves"], "type": "txt", "choices": ["Reino Unido de Portugal, Brasil e Algarves", "Império do Brasil", "República dos Estados Unidos do Brasil", "Vice-Reino do Brasil", "Reino do Brasil e Plata", "Capitania Geral"], "d": 4, "scene": "corte_1808"},
       {"t": "Qual a imperatriz austríaca que apoiou a independência do Brasil e escreveu a carta a D. Pedro, em 1822?", "a": ["leopoldina"], "type": "player", "d": 3, "stad": "museu_ipiranga"},
       {"t": "Qual político, “Patriarca da Independência”, foi conselheiro de D. Pedro I?", "a": ["jose_bonifacio"], "type": "player", "d": 3, "stad": "museu_ipiranga"},
       {"t": "Em que local, às margens de um riacho em São Paulo, D. Pedro I teria proclamado a independência?", "a": ["Ipiranga"], "type": "txt", "choices": ["Ipiranga", "Paranapiacaba", "Tietê", "Santos", "Morumbi", "Anhangabaú"], "d": 1, "stad": "museu_ipiranga"},
@@ -4731,31 +4731,31 @@ const CATS = [
       {"t": "Em que ano D. Pedro I abdicou do trono brasileiro em favor do filho?", "a": ["1831"], "type": "txt", "choices": ["1831", "1822", "1824", "1840", "1850", "1889"], "d": 3, "icon": "crown"},
       {"t": "Qual imperador reinou por quase 50 anos, de 1840 a 1889, e era apaixonado por ciência e artes?", "a": ["dom_pedro_ii"], "type": "player", "d": 1, "stad": "museu_imperial"},
       {"t": "Qual guerra, entre 1864 e 1870, opôs o Paraguai à Tríplice Aliança?", "a": ["Guerra do Paraguai"], "type": "txt", "choices": ["Guerra do Paraguai", "Guerra dos Farrapos", "Guerra do Contestado", "Guerra de Canudos", "Guerra da Cisplatina", "Guerra dos Mascates"], "d": 2, "icon": "cannon"},
-      {"t": "Qual militar, patrono do Exército, comandou as forças brasileiras na Guerra do Paraguai e foi pacificador de revoltas?", "a": ["duque_caxias"], "type": "player", "d": 3, "icon": "sword"},
+      {"t": "Qual militar, patrono do Exército, comandou as forças brasileiras na Guerra do Paraguai e foi pacificador de revoltas?", "a": ["duque_caxias"], "type": "player", "d": 3, "scene": "humaita"},
       {"t": "Qual catarinense lutou na Guerra dos Farrapos ao lado de Giuseppe Garibaldi?", "a": ["anita"], "type": "player", "d": 3, "icon": "flag"},
       {"t": "Qual empresário e banqueiro do Império foi pioneiro da industrialização e construiu a primeira ferrovia do Brasil?", "a": ["maua"], "type": "player", "d": 3, "scene": "locomotiva_vapor"},
       {"t": "Qual lei de 1850 proibiu o tráfico de africanos para o Brasil?", "a": ["Lei Eusébio de Queirós"], "type": "txt", "choices": ["Lei Eusébio de Queirós", "Lei do Ventre Livre", "Lei Áurea", "Lei dos Sexagenários", "Lei Saraiva", "Lei Feijó"], "d": 3, "icon": "scroll"},
       {"t": "Qual lei de 1871 declarou livres os filhos de escravizadas nascidos a partir dela?", "a": ["Lei do Ventre Livre"], "type": "txt", "choices": ["Lei do Ventre Livre", "Lei Áurea", "Lei Eusébio de Queirós", "Lei dos Sexagenários", "Lei Rio Branco só nominal", "Lei Saraiva-Cotegipe"], "d": 2, "icon": "scroll"},
-      {"t": "Em que data foi assinada a Lei Áurea, que aboliu a escravidão no Brasil?", "a": ["13 de maio de 1888"], "type": "txt", "choices": ["13 de maio de 1888", "7 de setembro de 1822", "15 de novembro de 1889", "28 de setembro de 1871", "20 de novembro de 1695", "21 de abril de 1792"], "d": 1, "icon": "scroll"},
+      {"t": "Em que data foi assinada a Lei Áurea, que aboliu a escravidão no Brasil?", "a": ["13 de maio de 1888"], "type": "txt", "choices": ["13 de maio de 1888", "7 de setembro de 1822", "15 de novembro de 1889", "28 de setembro de 1871", "20 de novembro de 1695", "21 de abril de 1792"], "d": 1, "scene": "ev_abolicao_br"},
       {"t": "Qual princesa assinou a Lei Áurea, enquanto o pai estava na Europa?", "a": ["princesa_isabel"], "type": "player", "d": 1, "stad": "museu_imperial"},
-      {"t": "Qual jornalista abolicionista, “o Tigre da Abolição”, foi um dos grandes oradores da campanha?", "a": ["patrocinio"], "type": "player", "d": 3, "icon": "scroll"},
-      {"t": "Qual advogado ex-escravizado libertou centenas de cativos nos tribunais de São Paulo?", "a": ["luis_gama"], "type": "player", "d": 4, "icon": "scroll"},
-      {"t": "Qual marechal proclamou a República do Brasil, em 15 de novembro de 1889?", "a": ["deodoro"], "type": "player", "d": 1, "icon": "flag"},
-      {"t": "Qual escritor carioca, fundador da Academia Brasileira de Letras, escreveu Dom Casmurro?", "a": ["machado"], "type": "player", "d": 1, "icon": "book"},
-      {"t": "Qual compositora carioca escreveu a marcha “Ó Abre Alas”, o primeiro sucesso do Carnaval?", "a": ["chiquinha"], "type": "player", "d": 3, "icon": "book"},
+      {"t": "Qual jornalista abolicionista, “o Tigre da Abolição”, foi um dos grandes oradores da campanha?", "a": ["patrocinio"], "type": "player", "d": 3, "scene": "ev_abolicao_br"},
+      {"t": "Qual advogado ex-escravizado libertou centenas de cativos nos tribunais de São Paulo?", "a": ["luis_gama"], "type": "player", "d": 4, "scene": "ev_abolicao_br"},
+      {"t": "Qual marechal proclamou a República do Brasil, em 15 de novembro de 1889?", "a": ["deodoro"], "type": "player", "d": 1, "scene": "republica_1889"},
+      {"t": "Qual escritor carioca, fundador da Academia Brasileira de Letras, escreveu Dom Casmurro?", "a": ["machado"], "type": "player", "d": 1, "scene": "rio_oitocentista"},
+      {"t": "Qual compositora carioca escreveu a marcha “Ó Abre Alas”, o primeiro sucesso do Carnaval?", "a": ["chiquinha"], "type": "player", "d": 3, "scene": "carnaval_cordao"},
       {"t": "Como eram chamadas as comunidades formadas por pessoas escravizadas que fugiam do cativeiro, como Palmares?", "a": ["Quilombos"], "type": "txt", "choices": ["Quilombos", "Senzalas", "Engenhos", "Missões", "Sesmarias", "Capitanias"], "d": 1, "x": "Muitas comunidades quilombolas existem até hoje, e a Constituição de 1988 garante a elas o direito às terras que ocupam.", "who": "zumbi"},
-      {"t": "Quem formava a principal mão de obra dos engenhos de açúcar do Nordeste colonial a partir do fim do século XVI?", "a": ["Africanos escravizados"], "type": "txt", "choices": ["Africanos escravizados", "Imigrantes italianos", "Imigrantes japoneses", "Colonos alemães", "Operários assalariados", "Prisioneiros holandeses"], "d": 1, "x": "Nas primeiras décadas, os engenhos usaram sobretudo indígenas escravizados; aos poucos, o tráfico atlântico substituiu essa mão de obra.", "icon": "chains"},
+      {"t": "Quem formava a principal mão de obra dos engenhos de açúcar do Nordeste colonial a partir do fim do século XVI?", "a": ["Africanos escravizados"], "type": "txt", "choices": ["Africanos escravizados", "Imigrantes italianos", "Imigrantes japoneses", "Colonos alemães", "Operários assalariados", "Prisioneiros holandeses"], "d": 1, "x": "Nas primeiras décadas, os engenhos usaram sobretudo indígenas escravizados; aos poucos, o tráfico atlântico substituiu essa mão de obra.", "scene": "engenho_moenda"},
       {"t": "Em que ano a família real portuguesa desembarcou no Brasil, fugindo das tropas de Napoleão?", "a": ["1808"], "type": "txt", "choices": ["1808", "1792", "1800", "1815", "1821", "1822"], "d": 1, "x": "A esquadra deixou Lisboa no fim de novembro de 1807; D. João desembarcou primeiro em Salvador, em janeiro, e só em março chegou ao Rio.", "who": "dom_joao_vi"},
       {"t": "Como se chamava a cobrança forçada dos impostos atrasados sobre o ouro, cuja ameaça precipitou a Inconfidência Mineira?", "a": ["Derrama"], "type": "txt", "choices": ["Derrama", "Capitação", "Dízimo", "Finta", "Sisa", "Talha"], "d": 2, "x": "A Coroa exigia 100 arrobas de ouro por ano; com as minas em declínio, o que faltava seria cobrado de toda a população de uma só vez.", "who": "tiradentes"},
       {"t": "Qual revolta popular, iniciada no Grão-Pará em 1835, chegou a tomar Belém e a pôr um governo rebelde no poder?", "a": ["Cabanagem"], "type": "txt", "choices": ["Cabanagem", "Balaiada", "Sabinada", "Revolução Farroupilha", "Revolução Praieira", "Revolta dos Malês"], "d": 2, "x": "O nome vem das cabanas de barro e palha onde vivia boa parte dos rebeldes, indígenas, negros e mestiços pobres das margens dos rios.", "crest": "imperio_brasil"},
       {"t": "Quem foi o primeiro governador-geral do Brasil, enviado à Bahia em 1549 para fundar Salvador?", "a": ["Tomé de Sousa"], "type": "txt", "choices": ["Tomé de Sousa", "Duarte da Costa", "Mem de Sá", "Martim Afonso de Sousa", "Duarte Coelho", "Estácio de Sá"], "d": 2, "x": "Com ele chegaram os primeiros jesuítas ao Brasil, liderados pelo padre Manuel da Nóbrega.", "crest": "brasil_colonia"},
       {"t": "Qual revolta de 1824, nascida em Pernambuco contra a Constituição outorgada por D. Pedro I, terminou com a execução de Frei Caneca?", "a": ["Confederação do Equador"], "type": "txt", "choices": ["Confederação do Equador", "Revolução Pernambucana", "Revolução Praieira", "Sabinada", "Balaiada", "Guerra dos Mascates"], "d": 3, "x": "Condenado à forca, Frei Caneca acabou fuzilado em 1825, porque nenhum carrasco aceitou enforcá-lo.", "who": "dom_pedro_i"},
-      {"t": "Qual jesuíta, chamado por Fernando Pessoa de \"Imperador da língua portuguesa\", defendeu os indígenas do Maranhão e escreveu o Sermão da Sexagésima?", "a": ["Padre Antônio Vieira"], "type": "txt", "choices": ["Padre Antônio Vieira", "José de Anchieta", "Manuel da Nóbrega", "Gregório de Matos", "Bartolomeu de Gusmão", "Frei Caneca"], "d": 3, "x": "Nasceu em Lisboa em 1608, veio criança para a Bahia e morreu em Salvador, em 1697, aos 89 anos.", "icon": "church"},
+      {"t": "Qual jesuíta, chamado por Fernando Pessoa de \"Imperador da língua portuguesa\", defendeu os indígenas do Maranhão e escreveu o Sermão da Sexagésima?", "a": ["Padre Antônio Vieira"], "type": "txt", "choices": ["Padre Antônio Vieira", "José de Anchieta", "Manuel da Nóbrega", "Gregório de Matos", "Bartolomeu de Gusmão", "Frei Caneca"], "d": 3, "x": "Nasceu em Lisboa em 1608, veio criança para a Bahia e morreu em Salvador, em 1697, aos 89 anos.", "scene": "pulpito_barroco"},
       {"t": "Qual povoação os portugueses fundaram em 1680 na margem norte do Rio da Prata, bem em frente a Buenos Aires?", "a": ["Colônia do Sacramento"], "type": "txt", "choices": ["Colônia do Sacramento", "Montevidéu", "Laguna", "Rio Grande", "Maldonado", "Assunção"], "d": 4, "x": "A colônia trocou de mãos várias vezes entre portugueses e espanhóis; hoje fica no Uruguai, e seu centro histórico é Patrimônio Mundial da UNESCO.", "crest": "imperio_portugues"},
       {"t": "Qual lei de 1850 determinou que as terras públicas só poderiam ser obtidas por compra, dificultando o acesso de libertos e imigrantes pobres à propriedade?", "a": ["Lei de Terras"], "type": "txt", "choices": ["Lei de Terras", "Lei Eusébio de Queirós", "Lei do Ventre Livre", "Lei de Sesmarias", "Código Comercial", "Lei Saraiva"], "d": 4, "x": "Foi assinada em 18 de setembro de 1850, duas semanas depois da Lei Eusébio de Queirós, que proibiu o tráfico de africanos.", "icon": "map"},
       {"t": "Qual revolta liberal de 1848, em Pernambuco, foi a última das grandes rebeliões provinciais do Império?", "a": ["Revolução Praieira"], "type": "txt", "choices": ["Revolução Praieira", "Confederação do Equador", "Revolução Pernambucana", "Sabinada", "Cabanagem", "Guerra dos Mascates"], "d": 4, "x": "O nome vem do jornal liberal Diário Novo, cuja sede ficava na Rua da Praia, no Recife.", "crest": "imperio_brasil"},
       {"t": "Qual navegador espanhol chegou ao litoral do atual Brasil em janeiro de 1500, meses antes de Cabral?", "a": ["Vicente Yáñez Pinzón"], "type": "txt", "choices": ["Vicente Yáñez Pinzón", "Juan Díaz de Solís", "Juan Sebastián Elcano", "Francisco de Orellana", "Fernão de Magalhães", "Hernán Cortés"], "d": 5, "x": "Pinzón havia comandado a caravela Niña na primeira viagem de Colombo, em 1492.", "icon": "ship"},
-      {"t": "Qual bandeirante comandou, entre 1648 e 1651, uma expedição de milhares de quilômetros pelo interior que terminou descendo o rio Amazonas?", "a": ["Antônio Raposo Tavares"], "type": "txt", "choices": ["Antônio Raposo Tavares", "Fernão Dias Pais", "Domingos Jorge Velho", "Bartolomeu Bueno da Silva", "Manuel de Borba Gato", "Pedro Teixeira"], "d": 5, "x": "Antes disso, em 1628, ele atacou as missões jesuíticas do Guairá, no atual Paraná, e escravizou milhares de indígenas guaranis.", "icon": "compass"},
+      {"t": "Qual bandeirante comandou, entre 1648 e 1651, uma expedição de milhares de quilômetros pelo interior que terminou descendo o rio Amazonas?", "a": ["Antônio Raposo Tavares"], "type": "txt", "choices": ["Antônio Raposo Tavares", "Fernão Dias Pais", "Domingos Jorge Velho", "Bartolomeu Bueno da Silva", "Manuel de Borba Gato", "Pedro Teixeira"], "d": 5, "x": "Antes disso, em 1628, ele atacou as missões jesuíticas do Guairá, no atual Paraná, e escravizou milhares de indígenas guaranis.", "scene": "bandeira_canoas"},
       {"t": "Qual padre paulista, regente único do Império entre 1835 e 1837, havia criado a Guarda Nacional quando era ministro da Justiça?", "a": ["Diogo Antônio Feijó"], "type": "txt", "choices": ["Diogo Antônio Feijó", "Pedro de Araújo Lima", "Francisco de Lima e Silva", "Bernardo Pereira de Vasconcelos", "Evaristo da Veiga", "José Bonifácio"], "d": 5, "x": "Pressionado pela oposição e pelas revoltas nas províncias, renunciou em 1837 e deixou o cargo para Araújo Lima.", "crest": "imperio_brasil"},
       {"t": "Qual rei foi aclamado no Rio de Janeiro, em 1818, dois anos depois da morte da mãe, a rainha D. Maria I?", "a": ["dom_joao_vi"], "type": "player", "d": 2, "x": "Ele já governava como príncipe regente desde 1799, porque a mãe sofria de uma doença mental.", "crest": "portugal"},
       {"t": "Qual governante também foi rei de Portugal, com o nome de D. Pedro IV, em 1826?", "a": ["dom_pedro_i"], "type": "player", "d": 2, "x": "Abdicou da coroa portuguesa em favor da filha, Maria da Glória, e anos depois voltou à Europa para lutar pelo trono dela numa guerra civil.", "crest": "portugal"},
@@ -4780,7 +4780,7 @@ const CATS = [
       {"t": "Duelo: o que aconteceu primeiro?", "a": ["Lei Áurea"], "type": "txt", "choices": ["Lei Áurea", "Proclamação da República"], "duel": true, "d": 1, "x": "A abolição veio em maio de 1888; a monarquia caiu um ano e meio depois, em novembro de 1889.", "crest": "imperio_brasil"},
       {"t": "D. Pedro I proclamou a Independência montado num cavalo imponente, como no famoso quadro de Pedro Américo?", "a": ["Mito"], "type": "txt", "choices": ["Fato", "Mito"], "duel": true, "myth": true, "d": 2, "x": "Testemunhas contam que ele montava uma besta, isto é, uma mula, animal mais resistente para subir a serra; o quadro, concluído em 1888, idealizou a cena.", "who": "dom_pedro_i"},
       {"t": "Tiradentes foi enforcado no Rio de Janeiro, e não em Minas Gerais?", "a": ["Fato"], "type": "txt", "choices": ["Fato", "Mito"], "duel": true, "myth": true, "d": 2, "x": "Foi executado no Rio em 21 de abril de 1792; o corpo foi esquartejado e a cabeça, exposta em Vila Rica, a atual Ouro Preto.", "stad": "ouro_preto"},
-      {"t": "A Revolta dos Malês, em Salvador, foi organizada principalmente por africanos muçulmanos?", "a": ["Fato"], "type": "txt", "choices": ["Fato", "Mito"], "duel": true, "myth": true, "d": 3, "x": "Malê vem do iorubá imale, \"muçulmano\"; o levante estourou em janeiro de 1835, durante o Ramadã, e muitos rebeldes levavam amuletos com trechos do Alcorão.", "icon": "scroll"},
+      {"t": "A Revolta dos Malês, em Salvador, foi organizada principalmente por africanos muçulmanos?", "a": ["Fato"], "type": "txt", "choices": ["Fato", "Mito"], "duel": true, "myth": true, "d": 3, "x": "Malê vem do iorubá imale, \"muçulmano\"; o levante estourou em janeiro de 1835, durante o Ramadã, e muitos rebeldes levavam amuletos com trechos do Alcorão.", "scene": "salvador_colonial"},
       {"t": "A Lei Áurea garantiu indenização aos senhores pelos escravizados libertados?", "a": ["Mito"], "type": "txt", "choices": ["Fato", "Mito"], "duel": true, "myth": true, "d": 3, "x": "O texto tinha só dois artigos: declarava extinta a escravidão e revogava as disposições em contrário. Não houve indenização aos senhores nem amparo aos libertos.", "who": "princesa_isabel"},
       {"t": "D. Pedro II já tinha uma câmera fotográfica aos 14 anos?", "a": ["Fato"], "type": "txt", "choices": ["Fato", "Mito"], "duel": true, "myth": true, "d": 3, "x": "Em 1840 ele comprou um daguerreótipo, meses depois de o aparelho chegar ao Brasil; tornou-se um grande colecionador de fotografias.", "stad": "museu_imperial"},
     ]
@@ -4854,13 +4854,13 @@ const CATS = [
     id:"ciencia", name:"Ciência e Invenções", emoji:"💡",
     tag:"Descobertas que mudaram o mundo", col:"#2E7D4F", diff:"Variado",
     qs:[
-      {"t": "Qual cientista polonesa descobriu o polônio e o rádio e ganhou dois prêmios Nobel?", "a": ["marie_curie"], "type": "player", "d": 1, "icon": "book"},
+      {"t": "Qual cientista polonesa descobriu o polônio e o rádio e ganhou dois prêmios Nobel?", "a": ["marie_curie"], "type": "player", "d": 1, "scene": "radio_curie"},
       {"t": "Qual físico formulou a teoria da relatividade?", "a": ["einstein"], "type": "player", "d": 1, "icon": "globe"},
-      {"t": "Qual físico dinamarquês propôs um modelo quântico do átomo, em 1913?", "a": ["niels_bohr"], "type": "player", "d": 4, "icon": "book"},
+      {"t": "Qual físico dinamarquês propôs um modelo quântico do átomo, em 1913?", "a": ["niels_bohr"], "type": "player", "d": 4, "scene": "atomo_bohr"},
       {"t": "Qual escocês descobriu a penicilina, em 1928?", "a": ["fleming"], "type": "player", "d": 2, "icon": "book"},
-      {"t": "Qual industrial americano popularizou a linha de montagem na produção de automóveis?", "a": ["ford"], "type": "player", "d": 2, "icon": "gear"},
+      {"t": "Qual industrial americano popularizou a linha de montagem na produção de automóveis?", "a": ["ford"], "type": "player", "d": 2, "scene": "linha_montagem"},
       {"t": "Qual médico brasileiro combateu a febre amarela e a peste bubônica no Rio de Janeiro?", "a": ["oswaldo_cruz"], "type": "player", "d": 3, "icon": "book"},
-      {"t": "Qual cientista britânico decifrou o Enigma e formalizou a ideia de computador universal?", "a": ["turing"], "type": "player", "d": 2, "icon": "gear"},
+      {"t": "Qual cientista britânico decifrou o Enigma e formalizou a ideia de computador universal?", "a": ["turing"], "type": "player", "d": 2, "scene": "maquina_enigma"},
       {"t": "Qual matemático grego escreveu Os Elementos, base da geometria por mais de dois mil anos?", "a": ["euclides"], "type": "player", "d": 3, "scene": "geometria_areia"},
       {"t": "Qual cientista de Siracusa descobriu o princípio do empuxo e inventou a alavanca como máquina?", "a": ["arquimedes"], "type": "player", "d": 2, "scene": "banheira_eureka"},
       {"t": "Qual médico grego é conhecido como o pai da Medicina?", "a": ["hipocrates"], "type": "player", "d": 1, "scene": "medico_grego"},
@@ -4937,7 +4937,7 @@ const CATS = [
       {"t": "Qual arquiteto carioca desenhou o Palácio da Alvorada e o Congresso Nacional?", "a": ["niemeyer"], "type": "player", "d": 2, "stad": "catedral_brasilia"},
       {"t": "Qual pintora brasileira criou o Abaporu, símbolo do movimento antropofágico?", "a": ["tarsila"], "type": "player", "d": 2, "icon": "bust"},
       {"t": "Qual compositor brasileiro uniu o folclore ao erudito e criou o Trenzinho do Caipira?", "a": ["villa_lobos"], "type": "player", "d": 3, "icon": "book"},
-      {"t": "Qual escritor brasileiro criou Brás Cubas, que narra suas memórias depois de morto?", "a": ["machado"], "type": "player", "d": 2, "icon": "book"},
+      {"t": "Qual escritor brasileiro criou Brás Cubas, que narra suas memórias depois de morto?", "a": ["machado"], "type": "player", "d": 2, "scene": "rio_oitocentista"},
       {"t": "Qual pintura de Leonardo da Vinci retrata uma mulher de sorriso enigmático, exposta no Louvre?", "a": ["Mona Lisa"], "type": "txt", "choices": ["Mona Lisa", "A Última Ceia", "A Dama do Arminho", "A Virgem dos Rochedos", "São João Batista", "O Homem Vitruviano"], "d": 1, "icon": "bust"},
       {"t": "Qual obra de Michelangelo decora o teto de uma capela do Vaticano?", "a": ["A Criação de Adão"], "type": "txt", "choices": ["A Criação de Adão", "A Escola de Atenas", "O Nascimento de Vênus", "O Beijo", "A Ronda Noturna", "A Piedade"], "d": 2, "stad": "sao_pedro"},
       {"t": "Qual escultura de Michelangelo representa o herói bíblico que derrotou Golias?", "a": ["Davi"], "type": "txt", "choices": ["Davi", "Moisés", "Pietà", "O Pensador", "Laocoonte", "Apolo"], "d": 2, "stad": "duomo_florenca"},
@@ -4998,18 +4998,18 @@ const CATS = [
       {"t": "Qual cientista foi a primeira mulher a ganhar um Nobel?", "a": ["marie_curie"], "type": "player", "d": 1, "icon": "book"},
       {"t": "Qual condessa inglesa escreveu o primeiro algoritmo para uma máquina, nos anos 1840?", "a": ["ada_lovelace"], "type": "player", "d": 3, "icon": "gear"},
       {"t": "Qual enfermeira transformou os hospitais militares e criou a enfermagem moderna?", "a": ["nightingale"], "type": "player", "d": 2, "scene": "dama_lampada"},
-      {"t": "Qual líder inglesa fundou a União Social e Política das Mulheres, pelo voto feminino?", "a": ["pankhurst"], "type": "player", "d": 3, "icon": "flag"},
+      {"t": "Qual líder inglesa fundou a União Social e Política das Mulheres, pelo voto feminino?", "a": ["pankhurst"], "type": "player", "d": 3, "scene": "sufragistas"},
       {"t": "Qual escritora francesa publicou O Segundo Sexo, em 1949?", "a": ["beauvoir"], "type": "player", "d": 3, "icon": "book"},
       {"t": "Qual costureira do Alabama desafiou a segregação nos ônibus, em 1955?", "a": ["rosa_parks"], "type": "player", "d": 1, "scene": "onibus_montgomery"},
       {"t": "Qual imperatriz austríaca foi decisiva para a independência do Brasil?", "a": ["leopoldina"], "type": "player", "d": 3, "stad": "museu_ipiranga"},
       {"t": "Qual princesa regente do Brasil assinou a Lei Áurea?", "a": ["princesa_isabel"], "type": "player", "d": 1, "stad": "museu_imperial"},
-      {"t": "Qual heroína gaúcha-catarinense lutou ao lado do marido na Guerra dos Farrapos?", "a": ["anita"], "type": "player", "d": 3, "icon": "flag"},
+      {"t": "Qual heroína gaúcha-catarinense lutou ao lado do marido na Guerra dos Farrapos?", "a": ["anita"], "type": "player", "d": 3, "scene": "farrapos_pampa"},
       {"t": "Qual compositora e pianista abriu caminho para as mulheres na música popular brasileira?", "a": ["chiquinha"], "type": "player", "d": 3, "icon": "book"},
       {"t": "Qual escritora brasileira de origem ucraniana escreveu Perto do Coração Selvagem?", "a": ["clarice"], "type": "player", "d": 3, "icon": "book"},
       {"t": "Qual religiosa nascida em Skopje dedicou a vida aos mais pobres de Calcutá?", "a": ["madre_teresa"], "type": "player", "d": 2, "scene": "ponte_howrah"},
       {"t": "Qual pintora mexicana se casou com o muralista Diego Rivera?", "a": ["frida"], "type": "player", "d": 2, "icon": "bust"},
       {"t": "Qual primeira-ministra britânica foi a primeira mulher no cargo, em 1979?", "a": ["thatcher"], "type": "player", "d": 2, "scene": "downing_street"},
-      {"t": "Qual adolescente escreveu um diário que virou símbolo contra o Holocausto?", "a": ["anne_frank"], "type": "player", "d": 1, "icon": "book"},
+      {"t": "Qual adolescente escreveu um diário que virou símbolo contra o Holocausto?", "a": ["anne_frank"], "type": "player", "d": 1, "scene": "anexo_secreto"},
       {"t": "Qual rainha britânica deu nome à era vitoriana e reinou por 63 anos?", "a": ["victoria"], "type": "player", "d": 1, "scene": "palacio_cristal"},
       {"t": "Qual rainha da França, a última antes da Revolução, foi guilhotinada em 1793?", "a": ["maria_antonieta"], "type": "player", "d": 1, "scene": "guilhotina"},
       {"t": "Qual imperatriz dos Habsburgos reinou de 1740 a 1780 e teve 16 filhos?", "a": ["maria_teresa"], "type": "player", "d": 3, "scene": "schonbrunn"},
@@ -5038,14 +5038,14 @@ const CATS = [
       {"t": "Qual rainha de Angola do século XVII negociou e guerreou contra os portugueses?", "a": ["nzinga"], "type": "player", "d": 3, "scene": "fortaleza_luanda"},
       {"t": "Qual presidente americano foi assassinado em Dallas, em 1963?", "a": ["kennedy"], "type": "player", "d": 1, "scene": "carreata_dallas"},
       {"t": "Qual político alemão, o Chanceler de Ferro, criou o primeiro sistema moderno de previdência social?", "a": ["bismarck"], "type": "player", "d": 4, "scene": "pickelhaube"},
-      {"t": "Qual líder turco aboliu o califado e modernizou o país após 1923?", "a": ["ataturk"], "type": "player", "d": 3, "icon": "flag"},
+      {"t": "Qual líder turco aboliu o califado e modernizou o país após 1923?", "a": ["ataturk"], "type": "player", "d": 3, "scene": "fez_chapeu"},
       {"t": "Qual imperador etíope foi derrubado em 1974 após reinar por mais de 40 anos?", "a": ["haile_selassie"], "type": "player", "d": 4, "scene": "leao_de_juda"},
       {"t": "Qual cientista dinamarquês debateu física quântica com Einstein?", "a": ["niels_bohr"], "type": "player", "d": 4, "icon": "book"},
-      {"t": "Qual explorador norueguês foi o primeiro a chegar ao Polo Sul, em 1911?", "a": ["amundsen"], "type": "player", "d": 3, "icon": "map"},
+      {"t": "Qual explorador norueguês foi o primeiro a chegar ao Polo Sul, em 1911?", "a": ["amundsen"], "type": "player", "d": 3, "scene": "polo_sul"},
       {"t": "Qual santo e filósofo dominicano escreveu sobre fé e razão no século XIII?", "a": ["tomas_aquino"], "type": "player", "d": 3, "scene": "aula_medieval"},
       {"t": "Qual imperador japonês assistiu à transição de xogunato para monarquia moderna?", "a": ["meiji"], "type": "player", "d": 3, "scene": "meiji_ginza"},
       {"t": "Qual líder indígena sioux ficou famoso pela resistência às invasões das Black Hills?", "a": ["touro_sentado"], "type": "player", "d": 3, "scene": "pradarias_sioux"},
-      {"t": "Qual ex-presidente americano é lembrado pelo New Deal contra a Grande Depressão?", "a": ["fdr"], "type": "player", "d": 2, "icon": "flag"},
+      {"t": "Qual ex-presidente americano é lembrado pelo New Deal contra a Grande Depressão?", "a": ["fdr"], "type": "player", "d": 2, "scene": "new_deal_represa"},
     ]
   },
   {
@@ -5324,7 +5324,7 @@ const CATS = [
       {"t": "Qual império do oeste africano, famoso pelo ouro e por Mansa Mussa, tinha Tombuctu como centro cultural?", "a": ["mali"], "d": 3, "icon": "map"},
       {"t": "Qual estado europeu, liderado por Frederico, o Grande, tinha Berlim como centro?", "a": ["prussia"], "d": 3, "stad": "brandemburgo"},
       {"t": "Qual império, de Pedro, o Grande a Nicolau II, era governado por czares?", "a": ["imperio_russo"], "d": 2, "stad": "kremlin"},
-      {"t": "Qual estado nasceu com a Revolução de 1917 e acabou em 1991?", "a": ["urss"], "d": 1, "icon": "flag"},
+      {"t": "Qual estado nasceu com a Revolução de 1917 e acabou em 1991?", "a": ["urss"], "d": 1, "scene": "ev_revolucao_russa"},
       {"t": "Qual estado europeu foi governado por Napoleão como imperador?", "a": ["imperio_frances"], "d": 2, "stad": "arco_triunfo"},
       {"t": "Qual estado, no século XIX, teve a rainha Vitória e dominou colônias em todos os continentes?", "a": ["imperio_britanico"], "d": 1, "stad": "torre_londres"},
       {"t": "Qual império, com sede na Península Ibérica, tinha Madri como centro e o Escorial como símbolo?", "a": ["imperio_espanhol"], "d": 2, "stad": "escorial"},
@@ -5655,7 +5655,7 @@ const CATS = [
       {"t": "O Cristo Redentor é uma das Sete Maravilhas do Mundo Antigo?", "a": ["Mito"], "type": "txt", "choices": ["Fato", "Mito"], "duel": true, "myth": true, "d": 1, "x": "Inaugurado em 1931, ele entrou em 2007 na lista das \"Novas Sete Maravilhas\", feita por votação popular; das antigas, só a Grande Pirâmide continua de pé.", "stad": "cristo_redentor"},
       {"t": "Charles Darwin afirmou que o ser humano descende dos macacos de hoje, como o chimpanzé?", "a": ["Mito"], "type": "txt", "choices": ["Fato", "Mito"], "duel": true, "myth": true, "d": 1, "x": "Ele defendeu que humanos e macacos têm ancestrais em comum: chimpanzés e gorilas são nossos parentes, e não nossos avós.", "who": "darwin"},
       {"t": "Santos Dumont inventou o relógio de pulso?", "a": ["Mito"], "type": "txt", "choices": ["Fato", "Mito"], "duel": true, "myth": true, "d": 2, "x": "Relógios de pulso já existiam; em 1904, Louis Cartier criou um modelo para o amigo aviador ver as horas sem soltar os comandos, e a moda pegou entre os homens.", "who": "santos_dumont"},
-      {"t": "O Titanic levava botes salva-vidas suficientes para todos a bordo?", "a": ["Mito"], "type": "txt", "choices": ["Fato", "Mito"], "duel": true, "myth": true, "d": 1, "x": "Os 20 botes comportavam cerca de 1.180 pessoas, pouco mais da metade das cerca de 2.200 a bordo; as regras da época não exigiam mais que isso.", "icon": "ship"},
+      {"t": "O Titanic levava botes salva-vidas suficientes para todos a bordo?", "a": ["Mito"], "type": "txt", "choices": ["Fato", "Mito"], "duel": true, "myth": true, "d": 1, "x": "Os 20 botes comportavam cerca de 1.180 pessoas, pouco mais da metade das cerca de 2.200 a bordo; as regras da época não exigiam mais que isso.", "scene": "titanic"},
       {"t": "Leonardo da Vinci desenhou projetos de máquinas voadoras, séculos antes do avião?", "a": ["Fato"], "type": "txt", "choices": ["Fato", "Mito"], "duel": true, "myth": true, "d": 1, "x": "Seus cadernos têm esboços de asas que batiam como as de um pássaro, de um parafuso aéreo que lembra o helicóptero e de um paraquedas.", "who": "leonardo"},
       {"t": "A suástica foi inventada pelos nazistas?", "a": ["Mito"], "type": "txt", "choices": ["Fato", "Mito"], "duel": true, "myth": true, "d": 2, "x": "O símbolo tem milhares de anos e é sagrado até hoje no hinduísmo, no budismo e no jainismo; os nazistas se apropriaram dele nos anos 1920.", "icon": "scroll"},
       {"t": "Quando os portugueses chegaram, todos os povos indígenas do Brasil falavam a mesma língua, o tupi?", "a": ["Mito"], "type": "txt", "choices": ["Fato", "Mito"], "duel": true, "myth": true, "d": 2, "x": "Havia centenas de línguas, de troncos e famílias diferentes, como o macro-jê e o aruaque; o tupi era falado em boa parte do litoral, onde os portugueses desembarcaram.", "crest": "brasil_colonia"},
@@ -16202,6 +16202,372 @@ Object.assign(SCENE, {
     } },
 });
 
+/* Século XX — the scenes of the twentieth century: the two world wars, the liners and the poles, the Russian revolution, the laboratory and the factory (conventions in _core.js) */
+Object.assign(SCENE, {
+  /* the Western Front: a sandbag parapet with a British and a French helmet on it, a ladder, the duckboards; beyond, barbed wire and shattered trees under a grey sky */
+  ev_primeira_guerra: {
+    label: 'Uma trincheira com sacos de areia, arame farpado e capacetes de aço, sob céu cinzento',
+    rx: /\b(primeira guerra|grande guerra|trincheira|trincheiras|arame farpado)\b/,
+    ev: 'primeira_guerra',
+    draw: () => {
+      const K = SCK.ink;
+      /* the sandbags: each row one dashed stroke, ink under paper-sack */
+      const row = (y, o, c) => `<path d="M${o} ${y}h130" stroke="${K}" stroke-width="9.8" stroke-dasharray="7 8" stroke-linecap="round"/><path d="M${o} ${y}h130" stroke="${c}" stroke-width="7.4" stroke-dasharray="7 8" stroke-linecap="round"/>`;
+      const stake = x => `M${x - 3} 47 ${x + 2.4} 35M${x + 3} 47 ${x - 2.4} 35`;
+      return SCH.bg('#B8BEB6') + `<path d="M0 8q30-6 60-2t60-1v8q-30 4-60 0T0 16z" fill="#A9B0A9"/>`
+        + `<path d="M0 36q20-4 40-1t40 0 40-2v17H0z" fill="#867857"/>`
+        + `<ellipse cx="50" cy="41" rx="9" ry="2.2" fill="#6C5F44"/><ellipse cx="50" cy="41.4" rx="5" ry="1" fill="#A3ADA8"/><ellipse cx="96" cy="43" rx="7" ry="1.8" fill="#6C5F44"/>`
+        + SCH.g(`<path d="M18 42l1-17-4-7 4.4 3.4L20 8l2.4 9.4 4-5.4-2.6 9.6.4 20.4z" fill="#3E352A"/>
+          <path d="M82 40l.6-12-3.6-5 4 2 .6-9 2 8 3-3-2.4 6.4.4 12.6z" fill="#3E352A"/><path d="M110 38l.4-7-2.4-3 2.8 1.4 1-5 1 5.6-.4 8z" fill="#3E352A"/>`, 1.2)
+        + `<path d="${[8, 34, 62, 92, 114].map(stake).join('')}" stroke="${K}" stroke-width="1.4"/>`
+        + `<path d="M0 41h120" stroke="${K}" stroke-width="6" stroke-dasharray=".6 2.2" opacity=".55"/><path d="M0 38q8 3 15 0t15 0 15 0 15 0 15 0 15 0 15 0 15 0" fill="none" stroke="${K}" stroke-width=".8" opacity=".7"/>`
+        + `<path d="M0 66h120v8H0z" fill="#5A4632"/><path d="M0 70h120" stroke="${K}" stroke-width="8" stroke-dasharray="1 13" opacity=".5"/>`
+        + row(65, -1, '#B09968') + row(58, -8.5, '#C4AD80') + row(51, -1, '#BDA578')
+        + `<path d="M-1 51h130M-8.5 58h130M-1 65h130" stroke="${K}" stroke-width="5" stroke-dasharray=".7 14.3" stroke-dashoffset="-1.6" opacity=".3"/>`
+        + SCH.g(`<path d="M0 74h120v6H0z" fill="${SCK.wood}"/>`, 1.4)
+        + `<path d="M2 77h120" stroke="${K}" stroke-width="5" stroke-dasharray="1.2 4.8" opacity=".55"/>`
+        + `<path d="M97 78 100 40M108 78 105 40" fill="none" stroke="${K}" stroke-width="3.8"/><path d="M97 78 100 40M108 78 105 40M97.6 70h10M98.2 62h8.6M98.8 54h7.4M99.4 46h6.2" fill="none" stroke="${SCK.wood}" stroke-width="2.2"/>`
+        + `<g stroke="${K}" stroke-width="1.4" stroke-linejoin="round"><g transform="translate(34 47.2) scale(1.4)"><path d="M-6.6 0q.6-6.6 6.6-6.6T6.6 0z" fill="#6A6A40"/><path d="M-11 .3q11 3 22 0-11-2.6-22 0z" fill="#5E5E38"/></g>
+          <g transform="translate(70 47.2) scale(1.4)"><path d="M-6.2 0q0-7.4 6.2-7.4T6.2 0z" fill="#7D91A8"/><path d="M-10 1.6q2-2.4 4.6-2h10.8q2.6-.4 4.6 2z" fill="#6E8299"/><path d="M-4.2-5.8q4.2-4.4 8.4 0" fill="none" stroke-width="2"/></g></g>`
+        + `<path d="M27 43q2-4 6-4.8M64 43q1.6-4.6 5-5.4" fill="none" stroke="#F4ECD8" stroke-width="1.2" opacity=".5"/>`;
+    } },
+
+  /* D-Day: landing craft with their square ramps run in towards a beach of steel hedgehogs below the bluffs; warships and barrage balloons on the grey horizon */
+  ev_segunda_guerra: {
+    label: 'Lanchas de desembarque aproximam-se de uma praia, com balões de barragem no céu',
+    rx: /\b(segunda guerra|desembarque|normandia|dia d|lancha de desembarque|lanchas de desembarque)\b/,
+    ev: 'segunda_guerra',
+    draw: () => {
+      const K = SCK.ink, G = '#7C867D';
+      const balloon = (x, y, s) => `<g transform="translate(${x} ${y}) scale(${s})"><path d="M3-2 9.4-6.4h3L11 0l1.4 6.4h-3L3 2z" fill="#A4AAA6"/><ellipse rx="8.6" ry="4.6" fill="#CDD0CB"/><path d="M4 0h8.4" stroke-width="1.4"/></g>`;
+      const lcvp = (x, y, s) => `<g transform="translate(${x} ${y}) scale(${s})">`
+        + `<path d="M11 -9.6h23" stroke="${K}" stroke-width="4.4" stroke-dasharray="0 3.6" stroke-linecap="round"/><path d="M11 -9.6h23" stroke="#5E6B3A" stroke-width="2.6" stroke-dasharray="0 3.6" stroke-linecap="round"/>`
+        + SCH.g(`<path d="M0 0 1-9h35l4-2.4 1.6 10.4q-3 4-11 4H4Q1 3 0 0z" fill="${G}"/><path d="M1-9h6v-4.4H2z" fill="#6A746B"/>`, (1.6 / s).toFixed(1))
+        + `<path d="M3-4.6h33M36.4-9.6l1.4 10" stroke="${K}" stroke-width="${(.8 / s).toFixed(1)}" opacity=".45"/></g>`;
+      const hog = x => `M${x - 3.4} 57.6l6.8-7M${x + 3.4} 57.6l-6.8-7M${x} 58.4v-8.8`;
+      return SCH.bg('#C5CDC9') + `<path d="M0 0h120v10q-40 5-120 0z" fill="#B4BEBB"/>`
+        + `<path d="M16 16v22M42 13v24M72 18v19" stroke="${K}" stroke-width=".6" opacity=".6"/>`
+        + SCH.g(balloon(17, 12, 1) + balloon(43, 9, .9) + balloon(73, 15, .8), 1.2)
+        + `<path d="M92 9h10M96 7v5M104 16h7M107 14.6v3.6" stroke="${K}" stroke-width="1.6" stroke-linecap="round"/>`
+        + `<path d="M0 38h4l2-3h3l1-4h3l1 4h6l1-6h2l1 6h8l2-3h4l2 3h5v3H0zM48 38h3l1-2h3l1 2h5v1H48z" fill="#7D8790"/>`
+        + `<path d="M0 39h120v41H0z" fill="${SCK.sea}"/>`
+        + SCH.g(`<path d="M120 26q-14 0-24 6t-22 8l6 4h40z" fill="#8C8A58"/><path d="M68 44q20-6 52-4v18H62z" fill="#D9C08C"/>`, 1.4)
+        + `<path d="M76 41q10-4 20-6M90 38q8-4 18-6" stroke="${K}" stroke-width=".8" opacity=".35" fill="none"/>`
+        + `<path d="${[72, 84, 96, 108].map(hog).join('')}" stroke="${K}" stroke-width="1.8" stroke-linecap="round"/>`
+        + `<path d="M58 59q16 2 62-2" stroke="${SCK.white}" stroke-width="1.6" fill="none"/>`
+        + lcvp(56, 52, .6) + `<path d="M40 52.6h14" stroke="${SCK.white}" stroke-width="1.2" opacity=".8"/>`
+        + lcvp(14, 70, 1)
+        + `<path d="M0 71q5 2 13 0M56 66q2-4 0-8" stroke="${SCK.white}" stroke-width="2" fill="none" stroke-linecap="round"/>`
+        + SCH.waves(76, '#7FA2B8', 1.2) + `<path d="M0 46q10-2 20 0t20 0" stroke="#7FA2B8" stroke-width="1" fill="none"/>`;
+    } },
+
+  /* the four-funnelled liner at full speed on a starry, moonless night, black sea, steaming bow-first towards the iceberg that looms ahead */
+  titanic: {
+    label: 'Um transatlântico de quatro chaminés à noite, junto a um iceberg',
+    rx: /\b(titanic|iceberg|transatlantico)\b/,
+    draw: () => {
+      const K = SCK.ink;
+      let st = '';
+      for (const [x, y] of [[8, 8], [22, 14], [34, 5], [47, 12], [58, 4], [70, 10], [84, 6], [96, 12], [112, 5], [14, 26], [40, 22], [76, 18], [116, 22], [5, 34], [64, 24]]) st += `M${x} ${y}h0`;
+      let ports = '';
+      for (let x = 10; x < 76; x += 3.6) ports += `M${x.toFixed(1)} 50.4h0`;
+      /* a funnel raked aft (to the left), r its forward foot */
+      const fun = r => `<path d="M${r} 38l-3-18h-6.4l2.6 18z" fill="#D2A050"/><path d="M${r - 3} 20h-6.4l.7 4.2h6.4z" fill="#1A1714"/>`;
+      return SCH.bg('#26324D') + `<path d="${st}" stroke="#F4ECD8" stroke-width="1.4" stroke-linecap="round"/>`
+        + `<path d="M0 58h120v22H0z" fill="#111722"/>`
+        + `<path d="M94 64h18M88 70h26M100 75h14" stroke="#9FB4BE" stroke-width="1.2" opacity=".5"/><path d="M16 62h6M30 64h4M44 62h6M58 64h4" stroke="${SCK.goldHi}" stroke-width="1" opacity=".55"/>`
+        + SCH.g(`<path d="M86 58l4-14 5-6 3-14 6-6 4 6 3-2 4 10 2-2 3 14v14z" fill="#DCE5E8"/>`, 1.6)
+        + `<path d="M104 18l-2 18-6 10 2 12h22V44l-3-14-2 2-4-10-3 2z" fill="#AFC2CB"/><path d="M95 40l5 6M110 26l2 10M90 50l6 2" stroke="${K}" stroke-width=".8" opacity=".5"/>`
+        + `<path d="M72 46V17M11 44V13M72 18 11 14" stroke="#C9BFA8" stroke-width=".8"/>`
+        + SCH.g(`<path d="M66 45V40h-4v-3H16v3h-4v5z" fill="${SCK.white}"/>` + fun(26) + fun(37) + fun(48) + fun(59)
+          + `<path d="M2 45h66l13-2.4-1.6 15.4H10q-5.4-3-8-13z" fill="#1A1714"/>`, 1.4)
+        + `<path d="M8 55.6h71.4" stroke="${SCK.red}" stroke-width="1.6"/><path d="M4 46.6h76" stroke="${SCK.goldHi}" stroke-width=".7" opacity=".7"/>`
+        + `<path d="${ports}" stroke="${SCK.goldHi}" stroke-width="1.3" stroke-linecap="round"/>`
+        + `<path d="M18 42.6h44" stroke="${SCK.goldHi}" stroke-width="1.2" stroke-dasharray="1.2 1.6"/>`;
+    } },
+
+  /* a Second World War aircraft carrier steaming in profile on a calm sea: the long flat-top with planes ranged aft, the island with its funnel and mast, an escort far off */
+  porta_avioes: {
+    label: 'Um porta-aviões no mar aberto sob nuvens',
+    rx: /\b(porta-avioes|porta avioes|porta-aviao)\b/,
+    draw: () => {
+      const K = SCK.ink, H = '#8D979B';
+      const cloud = (x, y, s) => `<path transform="translate(${x} ${y}) scale(${s})" d="M0 0h30q0-6-6-6-1-6-8-6-6 0-8 5Q0-7 0 0z" fill="${SCK.white}"/>`;
+      /* a plane parked on the deck, seen from the side: the fin, the cockpit, the wing under it, the wheels */
+      const pl = x => `<g transform="translate(${x} 35.4) scale(1.4)"><path d="M0-2 .4-7H2l1.2 3.6 4.6-.8Q11-4.6 11.6-3.4V-2q-1 .8-3.6.8H1z" fill="#3B4C63"/><path d="M5.8-4q.6-2 2.6-1.8l.8 1.4z" fill="#D7E4E8" stroke-width=".6"/><path d="M5.4-2h5.8l-.6 1.1H5.8z" fill="#2E3A4C" stroke-width=".6"/><path d="M12.2-5.6v4.6M9.8-1v1M-.6-3H3" fill="none"/></g>`;
+      return SCH.bg(SCK.sky) + cloud(8, 16, .8) + cloud(88, 12, .6)
+        + `<path d="M0 38h120v42H0z" fill="${SCK.sea}"/><path d="M8 37.6l.8-2h4.4l.6-1.6h1.4l.6 1.6h4l.8 2z" fill="#6E7E8A"/>`
+        + SCH.g(`<path d="M12 43.4h100l-8.4 14H19q-4-6-7-14z" fill="${H}"/>
+          <path d="M14 40h92v3.4H14z" fill="#6F7A7F" stroke-width="1.2"/><path d="M1 37.4h117l1 3H2z" fill="#6F7A7F"/><path d="M4 34.6h110l4 2.8H1z" fill="#B4AA8E" stroke-width="1.2"/>`, 1.6)
+        + `<path d="M18 41.7h10M34 41.7h10M50 41.7h10M90 41.7h10" stroke="#2E3A44" stroke-width="1.8"/><path d="M6 40.4l6 3M114 40.4l-4 3" stroke="${K}" stroke-width="1.2"/><path d="M16 49h93" stroke="${K}" stroke-width=".8" opacity=".35"/>`
+        + `<path d="M0 56q10-3 20 0t20 0 20 0 20 0 20 0 20 0v24H0z" fill="${SCK.sea}"/><path d="M100 56q8-1 12-6M22 57q-10-3-20-1" stroke="${SCK.white}" stroke-width="1.8" fill="none" stroke-linecap="round"/>`
+        + SCH.waves(68, '#7FA2B8', 1.2) + SCH.waves(76, '#7FA2B8', 1)
+        + SCH.g(pl(6) + pl(24) + pl(42), .8)
+        + SCH.g(`<path d="M80 20V5M76 8.6h8" fill="none" stroke-width="1.4"/><path d="M77.6 8v-3h4.8v3z" fill="#6F7A7F" stroke-width="1"/>
+          <path d="M64 34.6 65.4 22h7.8l.8 12.6z" fill="#6F7A7F"/><path d="M65.4 22h7.8l-.4-3.6h-7z" fill="#2E2A28" stroke-width="1.2"/>
+          <path d="M73 34.6V24h13l2.4 4v6.6z" fill="${H}"/><path d="M75.4 24v-4.4h8.4V24z" fill="#A3ACAF" stroke-width="1.2"/>`, 1.4)
+        + `<path d="M75.6 27.4h11" stroke="#2E3A44" stroke-width="1.8"/><path d="M74 31.4h13" stroke="${K}" stroke-width=".8" opacity=".5"/>`;
+    } },
+
+  /* the P-47 Thunderbolt in olive drab, banking past in three-quarter view: the fat body, the big radial cowling seen face-on, the bubble canopy, the elliptical wings and the blur of the propeller, over the green Apennines and a hill town with its bell tower and cypresses */
+  caca_p47: {
+    label: 'Um caça de motor radial sobrevoando montanhas da Itália',
+    rx: /\b(thunderbolt|caca|avioes de caca|aviao de caca|cacas)\b/,
+    draw: () => {
+      const K = SCK.ink, O = '#646C3E';
+      return SCH.bg(SCK.sky) + `<path d="M6 10h20M12 7h9M84 7h24M92 4h10" stroke="${SCK.white}" stroke-width="2.4" stroke-linecap="round"/>`
+        + `<path d="M0 48q14-8 30-4t30-6 30 2 30-4v44H0z" fill="#9DB08A"/><path d="M0 64q20-10 46-4t26-2q16-10 30-8t18 2v28H0z" fill="${SCK.green}"/>`
+        + SCH.g(`<path d="M97 60v-6h5v-4l3-2.4 3 2.4v4h4v-3h3l2 3v6zM104 47.6V36h3.4v11.6z" fill="#DCCDA8" stroke-width="1"/><path d="M96.4 54.4l3.2-2.6 3.2 2.6zM111.4 51.4l3-2.2 3 2.2zM103.2 36l2.4-3.4 2.4 3.4z" fill="#B5583A" stroke-width=".9"/>`, 1)
+        + `<path d="M105.2 39.4h1.2" stroke="${K}" stroke-width="2"/><path d="M94 62q-2.4-7 0-14 2.4 7 0 14zM118.6 60q-2.4-7 0-14 2.4 7 0 14z" fill="#3E4A2A"/>`
+        + `<path d="M0 72q30-8 60-2t60-4v14H0z" fill="${SCK.olive}"/><path d="M8 76h10M40 73h12M70 76h14" stroke="${K}" stroke-width=".8" opacity=".3"/>`
+        + SCH.g(`<path d="M69.9 40.3L71.3 37.5L72.6 34.8L73.9 32.1L75 29.3L76 26.6L76.7 23.8L77.2 21L77.4 18.2L76.8 15.4L72.6 12.4L66.6 14.8L63.5 17.5L61 20.1L58.9 22.8L56.9 25.5L55.1 28.2L53.5 30.9L51.9 33.6L50.4 36.4L49 39.1Z" fill="#545B32"/><path d="M24 33.2L25 31.7L25.9 30.2L26.7 28.6L27.3 27.1L27.4 25.6L25.7 23.9L21.2 25.2L19 26.7L17.3 28.1L15.9 29.6L14.6 31.1L13.5 32.6Z" fill="#545B32"/><path d="M32.2 28.5L23 23.8L17.2 18.6L13.5 17.5L10.9 18.3L10.3 22.4L11.3 30.8Z" fill="${O}"/><path d="M86 29.4L78.9 28.6L65.1 28.2L48.5 27.7L35.1 29.4L17.4 30.5L11.3 30.8L12 34.5L22.7 36.7L37.2 40.1L51.7 44.2L67.2 45.9L82.3 46.1L89.2 46.1Z" fill="${O}"/><path d="M53 28L53.3 26.2L54.9 24.8L57.6 23.9L60.8 23.8L64.2 24.3L67.2 25.5L69.4 27.1L70.4 28.9Z" fill="#D7E4E8"/><path d="M78.2 28.5L85.9 28.9L89.3 46.5L81.7 46.1Z" fill="#5A6236"/><path d="M86.2 29L85.1 31L84.3 33.7L83.9 36.9L83.8 40.1L84.2 43L84.9 45.5L85.9 47.2L87.1 47.9L88.4 47.7L89.6 46.5L90.7 44.5L91.5 41.7L92 38.6L92.1 35.4L91.7 32.5L91 30L90 28.3L88.8 27.5L87.5 27.8Z" fill="#4A5030"/><path d="M87.3 32.5L86.6 33.7L86.1 35.4L85.9 37.2L85.8 39.1L86 40.9L86.5 42.4L87.1 43.4L87.8 43.9L88.6 43.7L89.3 43L90 41.8L90.4 40.2L90.7 38.3L90.8 36.4L90.6 34.6L90.1 33.1L89.5 32.1L88.8 31.6L88 31.8Z" fill="#2E3020"/><path d="M24 33.2L22.9 34.7L21.6 36.2L20.3 37.7L18.7 39.1L16.7 40.6L12.8 41.9L10.5 40.2L10.5 38.7L10.9 37.1L11.6 35.6L12.5 34.1L13.5 32.6Z" fill="#737C47"/><path d="M69.9 40.3L67.8 42.4L65.7 44.5L63.5 46.6L61.1 48.8L58.6 50.9L55.9 53L53 55L49.6 57.1L45.6 59.1L37.9 60.9L35.4 58.5L35.8 56.3L36.8 54.1L38.1 51.9L39.6 49.8L41.3 47.6L43.1 45.5L45 43.4L47 41.2L49 39.1Z" fill="#737C47"/>`, 1.4)
+        + `<path d="M61 24v4.6M78.2 28.5 81.7 46.1" stroke="${K}" stroke-width=".9" opacity=".6"/><path d="M36 30.6l14-2 15 .4" stroke="#A0A86E" stroke-width="1.4" fill="none"/><path d="M45 50.6l13-9" stroke="${K}" stroke-width=".8" opacity=".45"/>`
+        + `<path d="M88.6 21.7L86.9 24.8L85.5 28.8L84.6 33.4L84.1 38.3L84.2 43.2L84.8 47.7L85.8 51.6L87.3 54.6L89.1 56.4L91 56.9L93 56.2L94.9 54.2L96.6 51.1L98 47.1L98.9 42.5L99.4 37.6L99.3 32.7L98.8 28.2L97.7 24.3L96.2 21.4L94.5 19.5L92.5 19L90.5 19.7Z" fill="${SCK.white}" opacity=".4"/><path d="M91.8 38 87.9 23.5M91.8 38 95.6 52.4" stroke="${K}" stroke-width="2.2" stroke-linecap="round"/><circle cx="92.5" cy="38" r="1.8" fill="${K}"/>`;
+    } },
+  /* the secret annex: the hinged bookcase of binders swung open on the steep stair behind it; under the attic window and its chestnut tree, a desk with an open checked diary and a pencil */
+  anexo_secreto: {
+    label: 'Uma estante giratória que esconde uma escada e, sobre a mesa, um diário aberto',
+    rx: /\b(estante|diario|anexo|esconderijo)\b/,
+    draw: () => {
+      const K = SCK.ink, P = SCH.uid('ck');
+      let st = '';
+      for (let i = 0; i < 8; i++) { const y = 66 - i * 6.8, a = 22 + i * .7, b = 46 - i * .7; st += `M${a.toFixed(1)} ${y.toFixed(1)}H${b.toFixed(1)}`; }
+      const sh = t => `M50 ${(14 + t * 52).toFixed(1)} 72 ${(9 + t * 62).toFixed(1)}`;
+      const bk = {};
+      [[0, .25, [53, 56, 59, 62, 65, 68]], [.25, .5, [53, 56, 59, 63, 66, 69]], [.5, .75, [52, 55, 58, 61, 64, 68]], [.75, 1, [53, 56, 60, 63, 66, 69]]].forEach(([t0, t1, xs], j) => xs.forEach((x, i) => {
+        const c = [SCK.burg, SCK.sand, SCK.teal, SCK.stone][(i + j) % 4], y0 = 14 + t0 * 52 + (x - 50) * (-5 + 10 * t0) / 22, y1 = 14 + t1 * 52 + (x - 50) * (-5 + 10 * t1) / 22;
+        bk[c] = (bk[c] || '') + `M${x} ${(y1 - .8).toFixed(1)}V${(y0 + 2.4).toFixed(1)}`; }));
+      return SCH.bg('#D3BE94') + `<path d="M0 40h120" stroke="#C6B084" stroke-width="80" stroke-dasharray="1.2 5"/>`
+        + `<defs><pattern id="${P}" width="3" height="3" patternUnits="userSpaceOnUse"><rect width="3" height="3" fill="${SCK.white}"/><path d="M0 0h1.5v1.5H0zM1.5 1.5H3V3H1.5z" fill="${SCK.red}"/></pattern></defs>`
+        + SCH.g(`<path d="M0 68h120v12H0z" fill="#7A5232"/><path d="M20 12h28v56H20z" fill="#2E2116"/>`, 1.6)
+        + `<path d="M0 74h120" stroke="${K}" stroke-width=".8" opacity=".4"/>`
+        + `<path d="${st}" stroke="#6B4A2E" stroke-width="6.4"/><path d="${st}" stroke="#C4996A" stroke-width="1.8"/><path d="M45 66 43 14" stroke="#C9A66B" stroke-width="1"/>`
+        + SCH.g(`<path d="M48 12 74 5v70l-26-7z" fill="#9A6A3E"/><path d="M51 15.4 71 10v61.6l-20-5z" fill="#4E3622" stroke-width="1"/>`, 1.6)
+        + Object.entries(bk).map(([c, d]) => `<path d="${d}" stroke="${c}" stroke-width="2.8"/>`).join('')
+        + `<path d="${sh(.25)}${sh(.5)}${sh(.75)}" stroke="#9A6A3E" stroke-width="2"/><path d="M47 14v52" stroke="${K}" stroke-width="1.2" opacity=".5"/>`
+        + SCH.g(`<path d="M84 8h30v32H84z" fill="${SCK.sky}"/>`, 1.8)
+        + `<path d="M99 40V27M99 31l-5-4M99 29l4-4" stroke="#4A3626" stroke-width="2"/><path d="M88 28q-4-8 3-12 2-8 10-6 8-2 10 6 6 3 2 10-4 6-12 4-9 4-13-2z" fill="${SCK.green}" stroke="${K}" stroke-width="1.2"/><path d="M92 20q4-3 8 0M101 16q4-2 7 1" stroke="#4E6B40" stroke-width="1.4" fill="none"/>`
+        + SCH.g(`<path d="M84 24h30M99 8v32" stroke="${SCK.white}" stroke-width="2.6" fill="none"/>`, 1)
+        + `<path d="M84 24h30M99 8v32" stroke="${SCK.white}" stroke-width="1.6"/><path d="M82 40h34v3H82z" fill="${SCK.white}" stroke="${K}" stroke-width="1.2"/>`
+        + SCH.g(`<path d="M78 54h42v4H78zM81 58h4v14h-4zM114 58h4v14h-4z" fill="${SCK.wood}"/>
+          <path d="M84 54l4-6h22l4 6z" fill="url(#${P})"/><path d="M86 53.4l3.4-4.6h9.4V53.4zM99 53.4v-4.6h9.6l3 4.6z" fill="${SCK.white}" stroke-width="1"/>`, 1.4)
+        + `<path d="M90 50.4h7M89 52h8M101 50.4h7M101 52h8" stroke="${K}" stroke-width=".5" opacity=".5"/>`
+        + `<path d="M104 56.4l12-4" stroke="${K}" stroke-width="2.6" stroke-linecap="round"/><path d="M105 56l10.6-3.6" stroke="${SCK.gold}" stroke-width="1.4"/><path d="M103.6 56.6l1.4-.6" stroke="#F0C9A0" stroke-width="1.4"/>`;
+    } },
+
+  /* the cipher machine in its open wooden case: three serrated rotors at the back, the lampboard with one lamp lit, the keyboard, the plugboard and its cables, under a desk lamp */
+  maquina_enigma: {
+    label: 'Uma máquina de cifrar com rotores e teclado, numa caixa de madeira',
+    rx: /\b(enigma|maquina de cifrar|rotores|maquina de criptografia)\b/,
+    draw: () => {
+      const K = SCK.ink;
+      /* a row of n round keys or lamps: one dashed stroke for the rim, one for the face */
+      const row = (y, n, r, f, s) => { const w = 54 + (y - 22) * .5, d = (w / (n - 1)).toFixed(1), m = `M${(60 - w / 2).toFixed(1)} ${y}h${w.toFixed(1)}`;
+        return `<path d="${m}" stroke="${s}" stroke-width="${2 * r + 1.2}" stroke-dasharray="0 ${d}" stroke-linecap="round"/><path d="${m}" stroke="${f}" stroke-width="${(2 * r - .6).toFixed(1)}" stroke-dasharray="0 ${d}" stroke-linecap="round"/>`; };
+      return SCH.bg('#2C3830') + `<path d="M0 33h120" stroke="#33423A" stroke-width="66" stroke-dasharray="2 5"/>`
+        + `<path d="M0 66h120v14H0z" fill="#5A3C22"/><path d="M0 66h120" stroke="${K}" stroke-width="1.4"/>`
+        + `<path d="M4 2 20 2 46 64H-14z" fill="#F2D27A" opacity=".1"/>`
+        + SCH.g(`<path d="M22 22 26 4h68l4 18z" fill="#6E4A2A"/><path d="M26 18 29 8h62l3 10z" fill="#4A3220" stroke-width="1"/>
+          <path d="M22 22h76l8 40v10H14V62z" fill="${SCK.wood}"/><path d="M26 25h68l6.4 34H19.6z" fill="#2E2A26" stroke-width="1.2"/>
+          <path d="M14 62h92" fill="none" stroke-width="1.2"/>`, 1.8)
+        + `<path d="M49 21.6h0M60 21.6h0M71 21.6h0" stroke="${K}" stroke-width="15" stroke-linecap="round"/><path d="M49 21.6h0M60 21.6h0M71 21.6h0" stroke="#B9B3A3" stroke-width="12.4" stroke-linecap="round"/>`
+        + `<g fill="none" stroke="${K}" stroke-width="2.2" stroke-dasharray="1.2 1.1"><circle cx="49" cy="21.6" r="5.6"/><circle cx="60" cy="21.6" r="5.6"/><circle cx="71" cy="21.6" r="5.6"/></g>`
+        + SCH.g(`<path d="M40 24h40v4.6H40z" fill="#8E8A80"/>`, 1.2)
+        + `<path d="M49 18v4M60 18v4M71 18v4" stroke="${K}" stroke-width="1" opacity=".5"/>`
+        + row(32, 9, 1.9, '#D9D2BC', '#1A1714') + row(37, 8, 1.9, '#D9D2BC', '#1A1714') + row(42, 9, 1.9, '#D9D2BC', '#1A1714')
+        + `<circle cx="56" cy="37" r="5" fill="${SCK.goldHi}" opacity=".35"/><circle cx="56" cy="37" r="2" fill="${SCK.goldHi}" stroke="${K}" stroke-width="1"/>`
+        + row(48, 9, 2.4, '#1A1714', '#C9C3B4') + row(53.4, 8, 2.4, '#1A1714', '#C9C3B4') + row(58.6, 9, 2.4, '#1A1714', '#C9C3B4')
+        + `<path d="M22 66h76" stroke="#1A1714" stroke-width="2.4" stroke-dasharray="1.4 2.2"/><path d="M20 69h80" stroke="#1A1714" stroke-width="1.6" stroke-dasharray="1 2.6" opacity=".7"/>`
+        + `<path d="M31 66q-2 10 8 12t14-4 2-8M71 66q4 12-6 12-8 0-10-8M88 69q2 10 10 8" fill="none" stroke="${K}" stroke-width="2.6"/><path d="M31 66q-2 10 8 12t14-4 2-8M71 66q4 12-6 12-8 0-10-8M88 69q2 10 10 8" fill="none" stroke="${SCK.red}" stroke-width="1.4"/>`
+        + SCH.g(`<path d="M6 0 12 10" stroke-width="2.4" fill="none"/><path d="M4 8q8-6 16-2l2 6q-10-2-18 4z" fill="${SCK.teal}" stroke-width="1.4"/>`, 1)
+        + `<path d="M8 16q6-4 14-3" stroke="${SCK.goldHi}" stroke-width="1.6" fill="none"/>`;
+    } },
+
+  /* the hat reform: a red fez with its black tassel and a grey brimmed hat side by side on a table, a window on the new city */
+  fez_chapeu: {
+    label: 'Um fez vermelho e um chapéu de aba lado a lado sobre uma mesa',
+    rx: /\b(fez|chapeu de aba|chapeu|chapeus|lei do chapeu)\b/,
+    draw: () => {
+      const K = SCK.ink;
+      return SCH.bg('#E2D2AE') + `<path d="M0 0h120v80H0z" fill="none" stroke="#D6C49C" stroke-width="160" stroke-dasharray="1 7"/>`
+        + SCH.g(`<path d="M26 4h68v42H26z" fill="#C7D8DE"/>`, 1.8)
+        + `<path d="M28 46V28h8v-6h6v24zM44 46V18h10v28zM58 46V24h6v-4h4v4h6v22zM78 46V30h14v16z" fill="#A9A493"/><path d="M47 22v22M51 22v22M61 28v16M71 28v16M81 34h8M81 38h8M81 42h8M30 32h4M30 36h4M30 40h4" stroke="#7E7A6A" stroke-width="1.2"/>`
+        + `<path d="M64 20h4l-2-6z" fill="#A9A493"/>`
+        + SCH.g(`<path d="M60 4v42M26 25h68" fill="none" stroke="${SCK.white}" stroke-width="3"/>`, 1)
+        + `<path d="M60 5v40M27 25h66" stroke="${SCK.white}" stroke-width="2"/><path d="M22 46h76v4H22z" fill="${SCK.white}" stroke="${K}" stroke-width="1.4"/>`
+        + SCH.g(`<path d="M0 60h120v20H0z" fill="${SCK.wood}"/><path d="M0 60h120v4H0z" fill="#A06C40"/>`, 1.6)
+        + `<path d="M0 70h120M0 76h120" stroke="${K}" stroke-width=".8" opacity=".3"/>`
+        + `<ellipse cx="38" cy="63" rx="14" ry="2.4" fill="#5A3A20" opacity=".6"/><ellipse cx="84" cy="64" rx="22" ry="3" fill="#5A3A20" opacity=".6"/>`
+        + SCH.g(`<path d="M26 62l4-25h18l4 25q-13 3-26 0z" fill="#B0242A"/><ellipse cx="39" cy="37" rx="9" ry="2.6" fill="#8E1A1F"/>
+          <path d="M66 62q18 4 36 0 6 1 0 3-18 4-36 0-6-2 0-3z" fill="#8C8A82"/>
+          <path d="M70 61q-1-10 2-18 4-4 12-4t12 4q3 8 2 18-14 3-28 0z" fill="#9B998F"/><path d="M70.6 55q13.4 3 26.8 0l.4 5q-14 3-27.6 0z" fill="#2E2A28"/>`, 1.6)
+        + `<path d="M74 43q10-5 20 0" stroke="${K}" stroke-width="1.2" fill="none" opacity=".55"/><path d="M73 52q2-8 1-11M95 52q-2-8-1-11" stroke="#B5B3AA" stroke-width="1.4" fill="none"/><path d="M45 40l2 20" stroke="#D44A4E" stroke-width="1.4" opacity=".6"/>`
+        + `<path d="M39 37q10-1 12 7l1 4" fill="none" stroke="#1A1714" stroke-width="1.8"/><path d="M52 47l-2.4 10h5.4z" fill="#1A1714" stroke="${K}" stroke-width="1"/>`;
+    } },
+
+  /* the pole reached: a small dark tent with a plain pennant on the white plateau, the loaded sledge and the harnessed huskies, a low sun on the horizon */
+  polo_sul: {
+    label: 'Uma barraca solitária no planalto gelado, com trenó e cães',
+    rx: /\b(polo sul|treno|tenda|barraca|caes de treno)\b/,
+    draw: () => {
+      const K = SCK.ink;
+      const dog = (x, y) => `<g transform="translate(${x} ${y}) scale(1.2)"><path d="M0-4q2-3 5-2l1.4-2.4.8 2.6q2 1 1.4 3l-3 .6-1 2.6h6q4-2 7 0l2.6-3.6q1 4-1.6 5.6l1 4.4h-1.6l-1-3.4h-6l-1 3.4H8l-.4-4Q2 1 0-4z" fill="#686E74"/><path d="M2-3.4q2 1 4 .2" stroke="${SCK.white}" stroke-width="1" fill="none"/></g>`;
+      return SCH.bg('#C9D9E0') + `<path d="M0 30h120v16H0z" fill="#D9E3E4"/>` + SCH.sun(34, 44, 9, '#F4E3B6') + `<circle cx="34" cy="44" r="14" fill="none" stroke="#F4E3B6" stroke-width="1.2" opacity=".8"/>`
+        + `<path d="M0 44h120v36H0z" fill="#F1EEE6"/><path d="M0 44h120" stroke="#A9B8BE" stroke-width="1.2"/>`
+        + `<path d="M8 52q10-2 18 0M40 50q8-1 14 0M66 52q12-2 20 0M98 50q8-1 16 0M6 76q14-3 26 0M60 74q16-3 30 0" stroke="#A9B8BE" stroke-width="1" fill="none"/>`
+        + `<path d="M78 66h42l-8-3H84zM42 66h38l-6-3H46zM0 72h48l-4-2H2z" fill="#C3D0D6"/>`
+        + SCH.g(`<path d="M97 13V30" stroke-width="1.4" fill="none"/><path d="M97.6 13l9 2.4-9 2.4z" fill="${SCK.burg}" stroke-width="1"/>
+          <path d="M80 66 97 28l17 38z" fill="#2E3440"/><path d="M93 66l4-14 4 14z" fill="#1A1E26"/>`, 1.6)
+        + `<path d="M97 28 122 62M97 28 76 62" stroke="${K}" stroke-width=".6" opacity=".5"/><path d="M88 46q-3 10-4 20M106 46q3 10 4 20" stroke="#4A5466" stroke-width="1" fill="none"/>`
+        + SCH.g(`<path d="M77 64H50q-4 0-5-4" fill="none" stroke-width="2"/><path d="M51 60v4M63 60v4M75 60v4" stroke-width="1.4"/>
+          <path d="M48 60l2-8h24l2 8z" fill="${SCK.ochre}"/><path d="M53 52l2-5h14l2 5z" fill="#8A7A5A"/>`, 1.4)
+        + `<path d="M56 52l1.6 8M63 52v8M70 52l-1.6 8" stroke="${K}" stroke-width=".9" opacity=".6"/><path d="M45 61 8 60" stroke="${K}" stroke-width=".8"/>`
+        + SCH.g(dog(2, 63) + dog(23, 66), .8);
+    } },
+
+  /* the discovery of radium: on a dim laboratory bench, a rack of glass tubes glowing a pale blue-green in the dark, a small balance, a gold-leaf electrometer under its bell jar, a crucible on its tripod */
+  radio_curie: {
+    label: 'Frascos que brilham no escuro, sobre a bancada de um laboratório',
+    rx: /\b(radio|polonio|frascos luminosos|radioatividade|radioativo)\b/,
+    draw: () => {
+      const K = SCK.ink, gl = '#A8EAD6';
+      const tube = x => `<path d="M${x - 3.4} 27v24.6a3.4 3.4 0 0 0 6.8 0V27z" fill="${gl}"/>`;
+      const X = [45, 55, 65, 75];
+      return SCH.bg('#1F2A3E') + `<path d="M6 10h32v24H6z" fill="#26344A" stroke="#33445E" stroke-width="1.4"/><path d="M22 10v24M6 22h32" stroke="#33445E" stroke-width="1.4"/>`
+        + `<circle cx="60" cy="42" r="34" fill="${gl}" opacity=".06"/><circle cx="60" cy="42" r="25" fill="${gl}" opacity=".1"/><circle cx="60" cy="42" r="17" fill="${gl}" opacity=".14"/>`
+        + SCH.g(`<path d="M0 60h120v20H0z" fill="#4A3220"/><path d="M0 60h120v4H0z" fill="${SCK.wood}"/>`, 1.6)
+        + `<path d="M0 72h120" stroke="${K}" stroke-width=".8" opacity=".4"/>`
+        + `<g transform="translate(2 12) scale(.8)">` + SCH.g(`<path d="M8 60h28v-3H8zM20 57V30h4v27z" fill="${SCK.goldLo}"/><path d="M6 31h32" stroke-width="1.8" fill="none"/><path d="M8 31v12M36 31v10" stroke-width=".9" fill="none"/>
+          <path d="M3 43h10l-2 3H5zM31 41h10l-2 3h-6z" fill="${SCK.gold}" stroke-width="1.2"/><path d="M22 27l-2 3h4z" fill="${SCK.gold}" stroke-width="1"/>`, 1.6) + `</g>`
+        + SCH.g(`<path d="M38 57h44v3H38zM38 40h44v3.4H38z" fill="${SCK.wood}"/><path d="M40 43.4v13.6M80 43.4v13.6" stroke-width="1.6"/>`, 1.2)
+        + SCH.g(X.map(tube).join(''), 1.4)
+        + `<path d="${X.map(x => `M${x - 1.6} 29v20`).join('')}" stroke="${SCK.white}" stroke-width="1" opacity=".9"/>`
+        + `<path d="${X.map(x => `M${x - 4} 27h8`).join('')}" stroke="${SCK.stone}" stroke-width="2.6"/><path d="${X.map(x => `M${x - 4} 27h8`).join('')}" stroke="${K}" stroke-width=".8" opacity=".6"/>`
+        + `<g transform="translate(17.8 9) scale(.85)">` + SCH.g(`<path d="M84 60V40q0-9 8-9t8 9v20z" fill="#3C4C64"/><path d="M92 31v-6" stroke-width="1.6" fill="none"/><circle cx="92" cy="23.4" r="2.6" fill="${SCK.gold}" stroke-width="1.2"/>
+          <path d="M82 60h20v-3H82z" fill="${SCK.goldLo}"/>`, 1.6)
+        + `<path d="M92 31v13" stroke="${SCK.goldLo}" stroke-width="1.4"/><path d="M92 44l-4 7M92 44l4 7" stroke="${SCK.goldHi}" stroke-width="1.8" stroke-linecap="round"/><path d="M87 38q0-4 3-5" stroke="${SCK.white}" stroke-width="1" fill="none" opacity=".6"/></g>`
+        + SCH.g(`<path d="M108 60l4-10 4 10M106 50h12" fill="none" stroke-width="1.4"/><path d="M108 50l1-6h6l1 6z" fill="${SCK.white}" stroke-width="1.2"/>`, 1)
+        + `<path d="M110 42q1-3 0-5M113 42q-1-3 0-6" stroke="${SCK.stone}" stroke-width=".9" fill="none" opacity=".6"/>`;
+    } },
+  /* a New Deal dam rising across a forested valley: concrete blocks poured to uneven heights, wooden forms, derricks, a cableway between two towers, tiny workers in hard hats, the river let through below */
+  new_deal_represa: {
+    label: 'Operários constroem uma grande represa de concreto num cânion',
+    rx: /\b(represa|barragem|new deal|usina hidreletrica)\b/,
+    draw: () => {
+      const K = SCK.ink, T = [27, 25, 28, 24, 26, 22, 27, 25, 21, 26, 23, 28, 24, 22, 27, 25, 26];
+      let blk = 'M8 76', j = '', lift = '';
+      T.forEach((t, i) => { blk += `V${t}h6`; if (i) j += `M${8 + i * 6} ${Math.max(t, T[i - 1])}V72`; });
+      for (let y = 32; y < 72; y += 5) lift += `M8 ${y}h102`;
+      const W = [[37, 25], [41, 25], [56, 24], [74, 21], [88, 24]];
+      const tree = [[3, 16], [8, 21], [4, 27], [12, 28], [6, 34], [14, 38], [3, 42], [20, 44], [10, 48], [24, 54], [4, 55], [16, 58], [28, 62], [8, 64], [20, 68], [32, 71], [2, 72], [14, 75],
+        [116, 14], [110, 18], [117, 24], [108, 27], [112, 32], [102, 37], [117, 40], [107, 43], [97, 48], [112, 50], [100, 54], [118, 58], [90, 61], [106, 62], [96, 66], [114, 68], [86, 72], [102, 74]];
+      return SCH.bg(SCK.sky) + `<path d="M0 22q20-10 40-6t40-4 40 4v14H0z" fill="#9DB08A"/>`
+        + SCH.g(`<path d="${blk}V76z" fill="#D6CFBD"/>`, 1.6)
+        + `<path d="${j}" stroke="${K}" stroke-width=".9" opacity=".45"/><path d="${lift}" stroke="${K}" stroke-width=".6" opacity=".25"/>`
+        + SCH.g(`<path d="M44 25h6v-3h-6zM62 28h6v-3h-6zM80 30h6v-3h-6z" fill="${SCK.wood}" stroke-width="1"/>
+          <path d="M48 72v-7h5v7zM57.4 72v-7h5.2v7zM67 72v-7h5v7z" fill="#3A3330" stroke-width="1.2"/>`, 1)
+        + `<path d="M0 72h120v8H0z" fill="${SCK.sea}"/><path d="M48 73q2.6 4 5 0M57.4 73q2.6 4 5.2 0M67 73q2.6 4 5 0M40 78q20 3 40 0" stroke="${SCK.white}" stroke-width="1.6" fill="none"/>`
+        + SCH.g(`<path d="M0 8q8 0 12 6l30 62H0zM120 6q-6 0-10 4L78 76h42z" fill="${SCK.green}"/>`, 1.6)
+        + `<path d="${tree.map(([x, y]) => `M${x} ${y}h0`).join('')}" stroke="${SCK.olive}" stroke-width="6" stroke-linecap="round"/>`
+        + `<path d="M5 12 8 1l3 11M109 10l3-10 3 10M6 7h4M110 5h4" fill="none" stroke="${K}" stroke-width="1.4"/><path d="M8 2q52 10 104 -1" fill="none" stroke="${K}" stroke-width=".9"/>`
+        + `<path d="M62 7v6" stroke="${K}" stroke-width=".8"/>` + SCH.g(`<path d="M58.4 13h7.2l-1.4 4.6h-4.4z" fill="${SCK.goldLo}"/>`, 1)
+        + `<path d="M34 25V10l13 9M34 11l-6 14M90 24V9l-12 9M90 10l6 14" fill="none" stroke="${K}" stroke-width="1.2"/><path d="M47 19v3M78 18v3" stroke="${K}" stroke-width=".7"/>`
+        + `<path d="${W.map(([x, y]) => `M${x} ${y}v-3`).join('')}" stroke="#2E3A4A" stroke-width="1.8"/><path d="${W.map(([x, y]) => `M${x} ${y - 4}h0`).join('')}" stroke="${SCK.white}" stroke-width="2.2" stroke-linecap="round"/>`;
+    } },
+
+  /* the suffragettes marching down a London street in white and dark Edwardian dress, wide plumed hats and sashes, under a striped purple, white and green banner; a gas lamp */
+  sufragistas: {
+    label: 'Mulheres em marcha com faixas e chapéus, numa rua de Londres',
+    rx: /\b(sufragistas|sufragista|sufragetes|sufragete|faixas|marcha)\b/,
+    draw: () => {
+      const K = SCK.ink, F = SCH.uid('sf'), V = '#5E2B5C';
+      const wom = (x, y, c) => `<use href="#${F}" x="${x}" y="${y}" fill="${c}"/>`;
+      return SCH.bg('#C7BFAE') + `<path d="M0 6h120v58H0z" fill="#A65E44"/><path d="M0 12h120M0 24h120M0 36h120M0 48h120M0 60h120" stroke="#8C4A34" stroke-width="1"/>`
+        + `<path d="M6 30h14v24H6zM34 30h14v24H34zM62 30h14v24H62zM90 30h14v24H90z" fill="#3A3330" stroke="${SCK.white}" stroke-width="2"/><path d="M13 30v24M41 30v24M69 30v24M97 30v24M6 42h14M34 42h14M62 42h14M90 42h14" stroke="${SCK.white}" stroke-width="1"/>`
+        + `<path d="M0 64h120v16H0z" fill="#B5AB93"/><path d="M0 64h120" stroke="${K}" stroke-width="1.2"/><path d="M0 70h120" stroke="${K}" stroke-width=".7" opacity=".3"/>`
+        + SCH.g(`<path d="M113 66V20" stroke-width="2.6" fill="none"/><path d="M109 20h8l-1-7h-6z" fill="${SCK.goldHi}" stroke-width="1.2"/><path d="M108.4 13h9.2l-4.6-3.4z" fill="#3A3330" stroke-width="1.2"/>`, 1.2)
+        + `<defs><g id="${F}" stroke="${K}" stroke-width="1" stroke-linejoin="round"><path d="M-6.4 0-3.6-16h7.2L6.8 0z"/><path d="M-3.6-16-3.2-26q3.2-2 6.4 0l.4 10z"/>
+          <path d="M2.8-25.6-3.4-16.6" stroke="${SCK.white}" stroke-width="2.8"/><path d="M2.8-25.6-3.4-16.6" stroke="${V}" stroke-width=".8" stroke-dasharray="3 1 3 1"/>
+          <circle cx=".4" cy="-29" r="2.6" fill="#E3B48C"/><path d="M-6.6-31q7-2.6 13.4 0l-1.6-1.6q-5-1.4-10 0zM-3-32.4q0-3.6 3-3.6t3 3.6z" fill="#2E2A28"/><path d="M-3.4-35.4q-4-1-5 2" fill="none" stroke="${SCK.white}" stroke-width="1.6"/></g></defs>`
+        + `<path d="M22 54V8M96 54V8" stroke="${K}" stroke-width="2.4"/><path d="M22 54V8M96 54V8" stroke="${SCK.wood}" stroke-width="1"/>`
+        + SCH.g(`<path d="M22 10h74v24H22z" fill="${SCK.white}"/>`, 1.6)
+        + `<path d="M23 13.4h72M23 30.6h72" stroke="${V}" stroke-width="5.6"/><path d="M23 18h72M23 26h72" stroke="${SCK.green}" stroke-width="2.6"/><path d="M22 10h74v24H22z" fill="none" stroke="${K}" stroke-width="1.6"/>`
+        + `<path d="M24 34h70" stroke="${SCK.goldHi}" stroke-width="2.2" stroke-dasharray="1 1.4"/>`
+        + wom(22, 76, SCK.white) + wom(42, 74, '#3A3A4A') + wom(60, 76, SCK.white) + wom(78, 74, SCK.stone) + wom(96, 76, '#3A3A4A')
+        + `<path d="M20 50h4M94 50h4" stroke="#E3B48C" stroke-width="2.4" stroke-linecap="round"/>`;
+    } },
+
+  /* October 1917, a snowy night: the long green-and-white Baroque front of the palace with its lit windows and its roofline of statues, a few armed men in greatcoats on the quay before it, and on the river the three-funnelled cruiser, its searchlight raking the sky */
+  ev_revolucao_russa: {
+    label: 'O cruzador atracado no rio, diante da longa fachada de um palácio, na noite de neve',
+    rx: /\b(revolucao russa|revolucao de outubro|palacio de inverno|aurora|cruzador)\b/,
+    ev: 'revolucao_russa',
+    draw: () => {
+      const K = SCK.ink;
+      let sn = '';
+      for (let i = 0; i < 30; i++) sn += `M${(i * 37 % 117 + 1.5)} ${(i * 23 % 76 + 2)}h0`;
+      const man = x => `M${x - 2.2} 44l.6-5.6q.2-1.6 1.6-1.8 1.4.2 1.6 1.8l.6 5.6zM${x - 1.1} 37.2a1.2 1.2 0 1 0 2.2 0 1.2 1.2 0 1 0-2.2 0z`;
+      const M = [101, 106, 111, 116];
+      return SCH.bg('#1E2842')
+        + SCH.g(`<path d="M0 44V16h44v-4h32v4h44v28z" fill="#4F8270"/>`, 1.4)
+        + `<path d="M0 14.6h44M76 14.6h44M44 10.6h32" stroke="#D8DCD4" stroke-width="2.6" stroke-dasharray="1.2 4.8"/>`
+        + `<path d="M0 17h44M76 17h44M44 13h32M0 29h120" stroke="${SCK.white}" stroke-width="1.4"/>`
+        + `<path d="M5.5 16v28M8.5 16v28M17.5 16v28M20.5 16v28M29.5 16v28M32.5 16v28M45 12v32M48 12v32M72 12v32M75 12v32M87.5 16v28M90.5 16v28M99.5 16v28M102.5 16v28M111.5 16v28M114.5 16v28" stroke="${SCK.white}" stroke-width="1.3"/>`
+        + `<path d="M-1 22.6h120" stroke="${SCK.goldHi}" stroke-width="5" stroke-dasharray="3.4 8.6"/><path d="M-1 36.4h120" stroke="${SCK.goldHi}" stroke-width="6.4" stroke-dasharray="3.4 8.6"/>`
+        + `<path d="M0 44h120v3H0z" fill="#5E5A56" stroke="${K}" stroke-width="1"/>`
+        + `<path d="M0 47h120v33H0z" fill="#172033"/><path d="M-1 51h120M5 55h120" stroke="${SCK.goldHi}" stroke-width="1" stroke-dasharray="2.4 9.6" opacity=".45"/>`
+        + `<path d="M83 45 101 0h19z" fill="#E8F0F2" opacity=".14"/>`
+        + `<path d="${M.map(x => `M${x + 2.4} 43.4l.8-12.4`).join('')}" stroke="${K}" stroke-width="1.6"/><path d="${M.map(x => `M${x + 3.2} 31l.3-3.4`).join('')}" stroke="#E4E6EA" stroke-width="1"/>`
+        + `<path d="${M.map(man).join('')}" fill="#15110E"/><path d="${M.map(x => `M${x - 1.6} 36.2h3.4`).join('')}" stroke="#15110E" stroke-width="1.2"/>`
+        + `<g transform="translate(0 5)"><path d="M24 50V15M70 49V11M18 18h12M64 15h12" stroke="${K}" stroke-width="1.4"/><path d="M67.4 22h5.2" stroke="${K}" stroke-width="3"/>`
+        + SCH.g(`<path d="M35 50l1-25h5l-1 25zM47 50l1-25h5l-1 25zM59 50l1-25h5l-1 25z" fill="#5A5650"/>
+          <path d="M20 54v-5h56v5zM74 49v-6h9v6z" fill="#7A7A72" stroke-width="1.2"/>
+          <path d="M5 54.6 92 53q1 6 6 11H12q-5-3-7-9.4z" fill="#33363E"/>`, 1.6)
+        + `<path d="M36 26.6h5M48 26.6h5M60 26.6h5" stroke="${K}" stroke-width="2.4"/><path d="M6 56.6h86" stroke="#7A7A72" stroke-width="1.6"/><path d="M14 59.6h76" stroke="${SCK.goldHi}" stroke-width="1.3" stroke-dasharray="1.2 3.2"/>`
+        + `<path d="M84 52h8M10 53h-6" stroke="${K}" stroke-width="1.6"/><circle cx="81" cy="41.4" r="2" fill="${SCK.goldHi}" stroke="${K}" stroke-width="1"/></g>`
+        + SCH.waves(75, '#3A4A66', 1.2) + `<path d="M0 69.4h120" stroke="#2C3A56" stroke-width="1"/>`
+        + `<path d="${sn}" stroke="${SCK.white}" stroke-width="1.4" stroke-linecap="round" opacity=".85"/>`;
+    } },
+
+  /* Bohr's atom: a nucleus of red and blue spheres, three circular orbits with their electrons, one electron leaping down an orbit and giving off a wavy photon */
+  atomo_bohr: {
+    label: 'Um núcleo cercado por órbitas circulares com elétrons',
+    rx: /\b(atomo|atomos|orbita|orbitas|eletron|eletrons|modelo atomico)\b/,
+    draw: () => {
+      const K = SCK.ink;
+      const e = (a, r) => { const x = 60 + r * Math.cos(a), y = 40 + r * Math.sin(a); return `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="3.3"/>`; };
+      const N = [[0, 0, 1], [-4, -2, 0], [4, -2.4, 1], [-2, 3.6, 1], [3, 3.4, 0], [-5.4, 2, 1], [5.6, 1.6, 0], [0, -5, 0], [.6, 6, 0], [-.6, .6, 0]];
+      return SCH.bg('#22304A') + `<path d="M8 8h0M112 10h0M20 70h0M104 72h0M6 44h0M114 40h0" stroke="${SCK.sky}" stroke-width="1.4" stroke-linecap="round" opacity=".6"/>`
+        + `<circle cx="60" cy="40" r="12.4" fill="${SCK.goldHi}" opacity=".14"/>`
+        + `<g fill="none" stroke="${SCK.sky}" stroke-width="1.8"><circle cx="60" cy="40" r="14"/><circle cx="60" cy="40" r="24"/><circle cx="60" cy="40" r="35"/></g>`
+        + `<g stroke="${K}" stroke-width="1.2">${N.map(([x, y, r]) => `<circle cx="${(60 + x * 1.2).toFixed(1)}" cy="${(40 + y * 1.2).toFixed(1)}" r="4.3" fill="${r ? '#B5332E' : SCK.sea}"/>`).join('')}</g>`
+        + `<path d="${N.map(([x, y]) => `M${(58.8 + x * 1.2).toFixed(1)} ${(38.4 + y * 1.2).toFixed(1)}h0`).join('')}" stroke="${SCK.white}" stroke-width="1.4" stroke-linecap="round" opacity=".6"/>`
+        + `<g fill="${SCK.goldHi}" stroke="${K}" stroke-width="1.2">${e(2.4, 14) + e(-.8, 14) + e(-2.2, 24) + e(.7, 24) + e(1.9, 35) + e(3.4, 35)}</g>`
+        + `<path d="M89 21.6q-2 3-5.8 4.6" fill="none" stroke="${SCK.goldHi}" stroke-width="1.2" stroke-dasharray="1.6 1.4"/><path d="M82 27.6l1.6-3.4 1.6 3z" fill="${SCK.goldHi}"/>`
+        + `<circle cx="82.4" cy="27.4" r="3.3" fill="${SCK.goldHi}" stroke="${K}" stroke-width="1.2"/><circle cx="90.4" cy="19.6" r="3.3" fill="none" stroke="${SCK.goldHi}" stroke-width="1" stroke-dasharray="1.4 1.2"/>`
+        + `<path d="M86 30q2-3 4 0t4 0 4 0 4 0 4 0" fill="none" stroke="${SCK.goldHi}" stroke-width="1.8" transform="rotate(20 86 30)"/><path d="M107 42l3.6-.6-2.4-3z" fill="${SCK.goldHi}" stroke="${SCK.goldHi}" stroke-width="1" stroke-linejoin="round"/>`;
+    } },
+
+  /* the moving assembly line: identical black motor cars on the track under a sawtooth roof, wheels coming down the overhead conveyor, workers in caps at their stations */
+  linha_montagem: {
+    label: 'Automóveis pretos alinhados numa linha de montagem de fábrica',
+    rx: /\b(linha de montagem|automovel|automoveis|modelo t|fabrica de automoveis)\b/,
+    draw: () => {
+      const K = SCK.ink, C = SCH.uid('lm'), M = SCH.uid('lw');
+      const wheel = (x, y) => `<circle cx="${x}" cy="${y}" r="4.8" fill="#3A3330" stroke="${K}" stroke-width="1.4"/><circle cx="${x}" cy="${y}" r="3" fill="none" stroke="${SCK.stone}" stroke-width="2" stroke-dasharray=".5 1.4"/><circle cx="${x}" cy="${y}" r="1" fill="${SCK.stone}"/>`;
+      return SCH.bg('#D9D2C0') + `<path d="M0 0h120v16H0z" fill="#8E8A80"/><path d="M0 16 10 4V16zM20 16 30 4V16zM40 16 50 4V16zM60 16 70 4V16zM80 16 90 4V16zM100 16 110 4V16z" fill="${SCK.sky}" stroke="${K}" stroke-width="1"/><path d="M0 16h120" stroke="${K}" stroke-width="1.6"/>`
+        + `<path d="M0 22h120" stroke="${K}" stroke-width="2"/><path d="M10 22v6M34 22v6M58 22v6M82 22v6M106 22v6" stroke="${K}" stroke-width="1"/>`
+        + `<path d="M10 28.6h0M34 28.6h0M58 28.6h0M82 28.6h0M106 28.6h0" stroke="${K}" stroke-width="8.4" stroke-linecap="round"/><path d="M10 28.6h0M34 28.6h0M58 28.6h0M82 28.6h0M106 28.6h0" stroke="#3A3330" stroke-width="6" stroke-linecap="round"/><path d="M10 28.6h0M34 28.6h0M58 28.6h0M82 28.6h0M106 28.6h0" stroke="${SCK.stone}" stroke-width="2.4" stroke-linecap="round"/>`
+        + `<path d="M0 34h120v28H0z" fill="#C9C1AC"/><path d="M0 40h120M0 48h120M0 56h120" stroke="${K}" stroke-width=".6" opacity=".25"/>`
+        + `<defs><g id="${C}"><g stroke="${K}" stroke-width="1.4" stroke-linejoin="round"><path d="M1 -6h8v-6.6l3-.6 1-9h14l1 9.6h2q2 0 2 3v4z" fill="#1E1C1A"/>
+          <path d="M-1 -4q1-6 7-6t7 5h8q1-5 7-5t7 6z" fill="#1E1C1A"/></g><path d="M15-20h4v6h-4zM21-20h4v6h-4z" fill="${SCK.sky}"/><path d="M1-12h3" stroke="${SCK.goldLo}" stroke-width="2"/></g></defs>`
+        + `<path d="M0 66h120v14H0z" fill="#8E8A80"/><path d="M0 64h120" stroke="${K}" stroke-width="3"/><path d="M0 64h120" stroke="${SCK.goldLo}" stroke-width="1.4" stroke-dasharray="3 1.4"/>`
+        + [4, 42, 80].map(x => `<use href="#${C}" x="${x}" y="60"/>` + wheel(x + 6, 59) + wheel(x + 25, 59)).join('')
+        + `<defs><g id="${M}" stroke="${K}" stroke-width="1" stroke-linejoin="round"><path d="M-3 0v-9q0-3 3-3t3 3v9z" fill="${SCK.sea}"/><circle cy="-14.4" r="2.4" fill="#E3B48C"/><path d="M-2.8-15.6q0-2.6 2.8-2.6t2.8 2.6z" fill="#3A3330"/></g></defs>`
+        + `<use href="#${M}" x="39" y="66"/><use href="#${M}" x="77" y="66"/><use href="#${M}" x="115" y="66"/>`;
+    } },
+});
+
 /* Guerra Fria — the scenes of the Cold War and its age: the Wall, the race to space and the Moon, Cuba, Dallas, Vietnam, the end of empires, the civil rights, India and Mandela's island (conventions in _core.js) */
 Object.assign(SCENE, {
   /* the Wall at dusk: the concrete slabs with their round coping and coils of wire, a watchtower sweeping its searchlight, the Brandenburg Gate and its Quadriga against a low red sun */
@@ -16216,7 +16582,6 @@ Object.assign(SCENE, {
       for (let x = 6; x < 120; x += 24) slabs += `M${x} 50.2h12v14.4h-12z`;
       for (let i = 0; i < 30; i++) coil += 'c6-4.4-2-4.4 4 0';
       return SCH.bg('#7C8BA3') + `<path d="M0 22h120v30H0z" fill="#9A8C98"/><path d="M0 34h120v18H0z" fill="#C0907E"/>`
-        + SCH.sun(60, 19, 13, '#B4462F')
         + `<path d="M0 52V38h5v-5h7v3h5v-8h8v24zM95 52V36h5v-5h6v3h4v-7h6v6h4v19z" fill="#4E586B"/><path d="M105.6 52V14h1.8v38zM106.5 14V2" stroke="#4E586B" stroke-width="1.4"/><circle cx="106.5" cy="18" r="3.4" fill="#4E586B"/>`
         + `<path d="M20 6 94 -2 98 17z" fill="${SCK.goldHi}" opacity=".34"/>`
         + SCH.g(`<path d="M18 52V38h14v14zM88 52V38h14v14z" fill="${SCK.stoneLo}"/><path d="M16 38.4h18v-3H16zM86 38.4h18v-3H86z" fill="${SCK.stone}"/>
@@ -16290,7 +16655,7 @@ Object.assign(SCENE, {
         + `<path d="M0 34q40-5 80 0t40-1M0 76q40-4 70 0t50-2" stroke="#7C9A66" stroke-width="2" fill="none" opacity=".7"/>`
         + `<path d="M58 80q2-8 10-13" stroke="#B8A374" stroke-width="5" fill="none"/>`
         + `<ellipse cx="60" cy="46" rx="48" ry="20" transform="rotate(-12 60 46)" fill="#D7C597" stroke="#8C7A50" stroke-width="1"/>`
-        + `<path d="M27 31h11l2 5H29zM41 27h11l2 5H43zM33 39h10l2 4.4H35z" fill="${SCK.white}" stroke="${SCK.ink}" stroke-width=".9" stroke-linejoin="round"/><path d="M28 33.5h11M42 29.5h11M34 41.2h10" stroke="${SCK.ink}" stroke-width=".6"/>`
+        + `<path d="M27 31h11l2 5H29zM41 27h11l2 5H43zM33 39h10l2 4.4H35z" fill="${SCK.white}"/><path d="M28 33.5h11l1 2.5H29zM42 29.5h11l1 2.5H43zM34 41.2h10l1 2.2H35z" fill="#B9B29E"/><path d="M27 31h11l2 5H29zM41 27h11l2 5H43zM33 39h10l2 4.4H35z" fill="none" stroke="${SCK.ink}" stroke-width=".9" stroke-linejoin="round"/><path d="M28 33.5h11M42 29.5h11M34 41.2h10" stroke="${SCK.ink}" stroke-width=".9"/>`
         + SCH.g(`<path d="M74 59h12v5H74zM86 59.6h4v3.8h-4zM84 50h12v5H84zM96 50.6h4v3.8h-4z" fill="${SCK.olive}"/>`, .9)
         + `<g transform="translate(60 45) rotate(-18)">`
         + SCH.g(`<path d="M-36-7h58v14h-58z" fill="#4C5534"/><path d="M-42-4.6h56l17 4.6-17 4.6h-56z" fill="${SCK.white}"/><path d="M-42-4.6l-6-4h7l4 4zM-42 4.6l-6 4h7l4-4z" fill="${SCK.stone}" stroke-width="1"/>`, 1.4)
@@ -16309,12 +16674,13 @@ Object.assign(SCENE, {
       return SCH.bg(SCK.sky) + SCH.sun(92, 14, 7, '#F2EBD4')
         + `<defs><g id="${M}"><path d="M-1-10-4.4 0M1-10 4 0" stroke="${SCK.ink}" stroke-width="4.8" stroke-linecap="round"/><path d="M-1-10-4.4 0M1-10 4 0" stroke="#55603A" stroke-width="2.8" stroke-linecap="round"/>`
         + `<path d="M-6 0h3M3 0h3" stroke="${SCK.ink}" stroke-width="2.4" stroke-linecap="round"/>`
-        + `<path d="M4-12.6-7-33" stroke="${SCK.ink}" stroke-width="2.6" stroke-linecap="round"/><path d="M4-12.6-7-33" stroke="#4A3523" stroke-width="1" stroke-linecap="round"/>`
-        + SCH.g(`<path d="M-7.6-21h4v9h-4z" fill="${SCK.wood}"/><path d="M-3.6-10-3.8-19.6Q0-21.6 3.6-19.6L3.4-10z" fill="${SCK.olive}"/>
-          <path d="M3-18.4 5-13.4 3.4-12.6" fill="none"/><circle cx=".6" cy="-23.6" r="2.8" fill="#C79A72"/>
-          <path d="M-1.4-22.6q.6 3.6 3 3.4 1.8-.2 1.8-3.2l-1.2-.6q-1.4 1.2-3.6.4z" fill="#2E2620" stroke-width=".6"/>
-          <path d="M-2.4-24.8v-3.2h5.6v3.2zM3.2-25.4h2.4" fill="${SCK.olive}" stroke-width="1"/>`, 1)
-        + `<path d="M-2.4-15.6h5.8" stroke="${SCK.ink}" stroke-width=".6" opacity=".5"/></g>`
+        + SCH.g(`<path d="M-7.6-21h4v9h-4z" fill="${SCK.wood}"/><path d="M-3.6-10-3.8-19.6Q0-21.6 3.6-19.6L3.4-10z" fill="${SCK.olive}"/>`, 1)
+        + `<path d="M-2.4-15.6h5.8" stroke="${SCK.ink}" stroke-width=".6" opacity=".5"/>`
+        + `<g transform="translate(4.6 -12.4) rotate(-130) scale(1.1)" stroke="${SCK.ink}" stroke-width=".6" stroke-linejoin="round"><path d="M-2.4-1.1v3.2L4.4.8V-.7zM7-.75h5.6v1.5H7z" fill="#9A6A3E"/><path d="M4.4-.85h2.6v1.7H4.4zM5 .85h1.4v1.8H5zM12.6-.5h7v1h-7z" fill="#3A3F45"/></g>`
+        + `<path d="M1.4-18.4 4.4-15.2 4.8-12.8" stroke="${SCK.ink}" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M1.4-18.4 4.4-15.2 4.8-12.8" stroke="${SCK.olive}" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>`
+        + SCH.g(`<circle cx="4.9" cy="-12.6" r="1.1" fill="#C79A72" stroke-width=".6"/><circle cx=".6" cy="-23.6" r="2.8" fill="#C79A72"/>
+          <path d="M-1-22.2q.6 3.2 2.8 3 1.8-.2 1.8-2.8l-1-.4q-1.6 1-3.6.2z" fill="#3A2C22" stroke-width=".6"/>
+          <path d="M-2.4-25.2v-3h5.6v3zM3.2-25.6h2.4" fill="${SCK.olive}" stroke-width="1"/>`, 1) + `</g>`
         + `<g id="${L}">` + SCH.g(`<path d="M-1 0q-1-14 2-26h2q-2 12-1 26z" fill="${SCK.wood}"/>
           <path d="M2-26q-10-4-16 2 8-2 16-1zM2-26q10-4 16 2-8-2-16-1zM2-26q-6-8-14-8 8 3 13 9zM2-26q6-8 14-8-8 3-13 9zM2-26q-3 8-10 12 5-6 9-12zM2-26q3 8 10 12-5-6-9-12z" fill="#3E6B3A" stroke-width="1"/>`, 1.1) + `</g></defs>`
         + `<path d="M0 34 18 16l10 8 14-14 18 18 14-10 18 14 12-8 16 10v14H0z" fill="#93AAA2"/>`
@@ -16410,25 +16776,25 @@ Object.assign(SCENE, {
     label: 'Uma ilha com prisão de pedra, vista do mar, com a montanha da Mesa ao fundo',
     rx: /\b(robben|ilha|prisao)\b/,
     draw: () => {
-      let win = '';
-      for (let x = 24; x < 74; x += 5) win += `M${x} 44h2v3h-2z`;
-      for (let x = 40; x < 66; x += 5) win += `M${x} 35h2v3h-2z`;
-      let fence = 'M6 47.6h90M6 50.6h90M6 53.6h90';
-      for (let x = 7; x < 97; x += 5) fence += `M${x} 54.6v-8.4`;
-      return SCH.bg('#C6D6DA') + `<path d="M0 0h120v12H0z" fill="#B4C8CE"/>`
-        + `<path d="M12 30l8-8 4 2 6-6h34l4 3 4-4q6 0 8 6 4 0 6 7z" fill="#8FA2AE"/><path d="M28 18.6q16-4 36 0" stroke="${SCK.white}" stroke-width="2" fill="none" opacity=".8"/>`
-        + `<path d="M0 30h120v50H0z" fill="${SCK.sea}"/>` + SCH.waves(36, '#9DB8C6', 1)
-        + `<path d="M0 52q8-6 20-7h80q12 1 20 6v5H0z" fill="#B3A884"/><path d="M0 55q60-5 120 0v3H0z" fill="#8E8466"/>`
-        + SCH.g(`<path d="M20 51V42h56v9z" fill="${SCK.stone}"/><path d="M18 42.4 22 39h52l4 3.4z" fill="#7E8890"/>
-          <path d="M36 42v-8h32v8z" fill="#D6CCB5"/><path d="M34 34.4l3-3h30l3 3z" fill="#7E8890"/>
-          <path d="M80 51v-5h12v5z" fill="${SCK.stone}"/><path d="M79 46.4l2-2h10l2 2z" fill="#7E8890"/>`, 1.2)
-        + `<path d="${win}" fill="${SCK.ink}" opacity=".75"/><path d="${fence}" stroke="${SCK.ink}" stroke-width=".9" fill="none"/><path d="M6 46.6h90" stroke="${SCK.ink}" stroke-width="1.8" stroke-dasharray=".8 1.6"/>`
-        + SCH.g(`<path d="M8 55l1.8-14M16 55l-1.8-14" fill="none" stroke-width="1.6"/><path d="M7 41h10v-5.4H7z" fill="${SCK.stone}"/><path d="M5.6 35.8 12 32l6.4 3.8z" fill="#7E8890"/>`, 1.1) + `<path d="M8.6 37h6.8v2.2H8.6z" fill="${SCK.ink}"/>`
-        + SCH.g(`<path d="M99 52l1.6-30h6.8l1.6 30z" fill="${SCK.white}"/><path d="M99 22h10v-2H99z" fill="#4A5258"/><path d="M100.6 20v-5h6.8v5z" fill="#F2E6C0"/><path d="M99.6 15a4.4 4 0 0 1 8.8 0z" fill="#4A5258"/>`, 1.2)
-        + `<path d="M101 30h6M100.6 38h7" stroke="${SCK.ink}" stroke-width=".7" opacity=".4"/><path d="M98 24 74 20v8z" fill="${SCK.white}" opacity=".18"/>`
-        + `<path d="M0 60h120v20H0z" fill="#46708A"/>` + SCH.waves(62, '#A9C4D2', 1.4) + SCH.waves(70, '#7FA2B8', 1.4) + SCH.waves(77, '#A9C4D2', 1.2)
-        + SCH.g(`<path d="M2 62q4-6 10-4l4 4zM108 63q4-5 10-3v3z" fill="#5A5E60"/>`, 1)
-        + `<path d="M84 10q3-2.6 5 0 2-2.6 5 0M64 14q2-2 4 0 2-2 4 0" stroke="${SCK.ink}" stroke-width="1" fill="none"/>`;
+      let win = '', joint = '', wire = 'M20 41.6';
+      for (let x = 33; x < 76; x += 5.4) win += `M${x.toFixed(1)} 34.6h2.2v3.8h-2.2z`;
+      for (let x = 26; x < 88; x += 8) joint += `M${x} 44.6v4M${x + 4} 48.6v4`;
+      for (let i = 0; i < 17; i++) wire += 'c2.6-2.8 0-2.8 4 0';
+      return SCH.bg('#C9D8DC') + `<path d="M0 0h120v10H0z" fill="#B8CBD1"/>`
+        + `<path d="M2 33 14 25l4 1 6-8 4-2h36l4 3 5 4 6 1q4-8 8-6 3 3 5 10l10 5z" fill="#8597A4"/><path d="M29 16.6q18-4.2 34 0" stroke="${SCK.white}" stroke-width="2.4" stroke-linecap="round" fill="none" opacity=".85"/>`
+        + `<path d="M0 32h120v48H0z" fill="${SCK.sea}"/>` + SCH.waves(36, '#8FB0C2', 1)
+        + SCH.g(`<path d="M-2 60v-8q10-8 24-8h56q8-6 16-6t14 6q10 1 14 6v10z" fill="#B9AD86"/>`, 1.4)
+        + `<path d="M0 56.6h120v3.4H0z" fill="#9A8E6C"/>`
+        + SCH.g(`<path d="M30 44V33h50v11z" fill="#D6CCB5"/><path d="M27 33.4l4-4.4h48l4 4.4z" fill="#6E7A84"/>
+          <path d="M20 56V43h68v13z" fill="${SCK.stone}"/><path d="M19 43.6h70v-2.4H19z" fill="#8E949A"/>`, 1.3)
+        + `<path d="${win}" fill="${SCK.ink}" opacity=".8"/><path d="M20 48.6h68M20 52.6h68${joint}" stroke="${SCK.ink}" stroke-width=".7" opacity=".35"/><path d="${wire}" stroke="${SCK.ink}" stroke-width=".7" fill="none"/>`
+        + SCH.g(`<path d="M9.4 56l1.6-22M18.6 56 17 34" fill="none" stroke-width="1.8"/><path d="M10.4 47h7.2" fill="none" stroke-width="1.2"/><path d="M8 34h12v-7.4H8z" fill="${SCK.stone}"/><path d="M6.4 27 14 22.4l7.6 4.6z" fill="#6E7A84"/>`, 1.2)
+        + `<path d="M10 28.4h8v3h-8z" fill="${SCK.ink}"/>`
+        + SCH.g(`<path d="M94.6 42l1.6-27.4h6.6l1.6 27.4z" fill="${SCK.white}"/><path d="M94.6 14.8h9.8v-2.4h-9.8z" fill="#4A5258"/><path d="M96.2 12.4V7.6h6.6v4.8z" fill="#F2E6C0"/><path d="M95.8 7.6a3.7 3.6 0 0 1 7.4 0z" fill="#4A5258"/>`, 1.2)
+        + `<path d="M96.4 23h6.2M96 32h7" stroke="${SCK.ink}" stroke-width=".7" opacity=".4"/><path d="M94.6 9.6 72 5v9z" fill="${SCK.white}" opacity=".2"/>`
+        + `<path d="M0 60h120v20H0z" fill="#46708A"/>` + SCH.waves(64, '#A9C4D2', 1.4) + SCH.waves(71, '#7FA2B8', 1.4) + SCH.waves(77, '#A9C4D2', 1.2)
+        + SCH.g(`<path d="M2 62q4-6 10-4l4 4zM104 62q4-5 10-3l4 3z" fill="#5A5E60"/>`, 1)
+        + `<path d="M40 8q3-2.6 5 0 2-2.6 5 0M56 11q2-2 4 0 2-2 4 0" stroke="${SCK.ink}" stroke-width="1" fill="none"/>`;
     } },
 
   /* the March: a great peaceful crowd lining the long reflecting pool, blank placards held high, the white colonnade of the memorial at its end and in the water */
@@ -16473,8 +16839,8 @@ Object.assign(SCENE, {
           <path d="M94 26h10v38H94z" fill="#23262C" stroke-width="1.2"/><path d="M94 26h2.4v38H94zM101.6 26h2.4v38h-2.4z" fill="#8C9AA4" stroke-width=".8"/><path d="M96.4 59h5.2v5h-5.2z" fill="${SCK.stone}" stroke-width=".8"/>
           <path d="M104 21.6h8v3.4h-8z" fill="#F4F0E4" stroke-width="1"/><path d="M18 64a8 8 0 0 1 16 0zM76 64a8 8 0 0 1 16 0z" fill="#23262C" stroke-width="1"/>
           <circle cx="26" cy="65" r="5.6" fill="#26262A"/><circle cx="84" cy="65" r="5.6" fill="#26262A"/><circle cx="114" cy="54" r="1.8" fill="${SCK.goldHi}" stroke-width="1"/>
-          <path d="M3 76V44" stroke-width="2.4"/><path d="M-1 34h8v10h-8z" fill="${SCK.white}" stroke-width="1.2"/>`, 1.4)
-        + `<path d="M3 75V45" stroke="#7E8890" stroke-width="1"/><path d="M0 36.4h6" stroke="#3F6B4A" stroke-width="2"/>`
+          <path d="M3 76V44" stroke-width="2.4"/><path d="M.6 34h6v9.6h-6z" fill="${SCK.white}" stroke-width="1.2"/>`, 1.4)
+        + `<path d="M3 75V45" stroke="#7E8890" stroke-width="1"/><path d="M1.2 36.6h4.8" stroke="#3F6B4A" stroke-width="2"/>`
         + `<circle cx="26" cy="65" r="2.4" fill="#A9AFB6"/><circle cx="84" cy="65" r="2.4" fill="#A9AFB6"/><path d="M99 28v28" stroke="#C3C8CE" stroke-width=".8"/><path d="M19 30l4 4M40 30l4 4M61 30l4 4M108 29l3 3" stroke="${SCK.sky}" stroke-width="1.2" opacity=".6"/>`
         + `<path d="M9 51h5M9 54h5M9 57h5" stroke="${SCK.ink}" stroke-width=".9" opacity=".7"/><path d="M7 57.4h87M104 57.4h11" stroke="${SCK.ink}" stroke-width=".7" opacity=".5"/><path d="M106 63.6h10" stroke="#C3C8CE" stroke-width="2"/><path d="M20 20.6h0M60 20h0M96 20.6h0" stroke="${SCK.gold}" stroke-width="1.8" stroke-linecap="round"/>`;
     } },
@@ -16583,6 +16949,357 @@ Object.assign(SCENE, {
         + `<path d="M18 72l7 6M25 72l-7 6M94 72l7 6M101 72l-7 6" stroke="${SCK.ink}" stroke-width=".7"/>`
         + fig(46, 78, SCK.burg, 1) + fig(74, 78, SCK.teal, 1) + fig(4, 82, SCK.teal, 0) + fig(116, 82, SCK.burg, 0)
         + `<g stroke-linecap="round"><path d="${arms}" stroke="${SCK.ink}" stroke-width="2.6"/><path d="${arms}" stroke="#6B4630" stroke-width="1.2"/></g>`;
+    } },
+});
+
+/* Brasil — the scenes of colonial and imperial Brazil, from the landfall of 1500 to the Republic (conventions in _core.js) */
+Object.assign(SCENE, {
+  /* the landfall of 1500: a long forested coast with its beach, the great round hill inland, naus with plain sails anchored in the bay and a boat rowing in */
+  chegada_cabral: {
+    label: 'Uma costa verde com praia e um monte alto e redondo, com naus ancoradas na baía',
+    rx: /\b(monte pascoal|porto seguro|nau|naus)\b/,
+    draw: () => {
+      const R = v => Math.round(v * 10) / 10;
+      const nau = (x, y, s) => `<g transform="translate(${x} ${y}) scale(${s})">` + SCH.g(`<path d="M-1-5V-27M-9.4-5V-21M8-8V-20" fill="none" stroke-width="1.8"/><path d="M-6.4-19h10.8q1.6 5.4 0 10.8H-6.4q-1.6-5.4 0-10.8zM-4.8-26.6h7.6q1 3 0 6h-7.6q-1-3 0-6zM-14-18h9.2q1.4 4.4 0 8.8H-14q-1.4-4.4 0-8.8zM8.6-20.6 14-10H8.6z" fill="${SCK.white}" stroke-width="1.3"/><path d="M-16-6h20l3-3.4h6.4L12-3q-2 5-9 5H-9q-6 0-7-8z" fill="#6E4426"/><path d="M-14-2.6h24" stroke="${SCK.ochre}" stroke-width="1.2"/>`, 1.5) + `</g>`;
+      let top = '';
+      for (let i = 0; i < 14; i++) top += `q3 ${R(-1.4 - i * .32 - (i % 2) * .8)} 6 -.7`;
+      return SCH.bg('#CDE0E1') + SCH.sun(22, 15, 6, '#F6EBCB')
+        + `<path d="M0 44h120v36H0z" fill="${SCK.sea}"/>`
+        + SCH.g(`<path d="M44 47C54 40 60 26 70 17 78 9 92 8 99 16 106 24 110 34 120 37V50H44z" fill="#5E7A44"/>`, 1.8)
+        + `<path d="M72 22q8-6 16-5M66 32q6-2 10 1M94 24q5 4 7 10M82 30q4-2 8 0" stroke="#3E5430" stroke-width="1.2" fill="none" opacity=".7"/><path d="M76 14q8-4 16 0" stroke="#89A46C" stroke-width="1.6" fill="none"/>`
+        + SCH.g(`<path d="M26 48Q60 50 82 62 94 70 98 80H120V44H26z" fill="${SCK.sand}"/><path d="M34 48.4${top}H122V62Q104 60 90 56 66 50 34 48.4z" fill="#4A6636"/>`, 1.6)
+        + `<path d="M50 51v-3M60 52v-4M72 54v-5M84 55v-6M98 57v-6M110 58v-7M66 46v-2M90 43v-3M104 41v-3" stroke="#2E4422" stroke-width="1.2" opacity=".6"/>`
+        + `<path d="M26 49.6Q60 52 80 63 90 70 93 80H84Q80 70 70 64 52 54 26 50z" fill="#6F9AAE"/><path d="M26 48.8Q60 51 82 63 94 71 98 80" stroke="${SCK.white}" stroke-width="1.8" fill="none"/>`
+        + `<path d="M0 58q8-3 16 0t16 0M30 62q8-3 16 0M0 76q8-3 16 0t16 0t16 0" stroke="#7FA3B8" stroke-width="1.2" fill="none"/>`
+        + nau(9, 49, .5) + nau(55, 55, .6) + nau(26, 70, 1)
+        + SCH.g(`<path d="M63 68h12l-1.6 2.6H65z" fill="#6E4426"/><path d="M60 72l5-3M70 72l3-3M80 72l-4-4" fill="none" stroke-width=".9"/>`, 1.1)
+        + `<path d="M66.6 65a1.3 1.3 0 1 0 .1 0zM70.6 65a1.3 1.3 0 1 0 .1 0zM74 64.6a1.3 1.3 0 1 0 .1 0z" fill="${SCK.ink}"/>`;
+    } },
+
+  /* the mission on the plateau, 1554: a whitewashed chapel with its bell gable and a long thatched college inside a palisade, Atlantic forest and an araucaria, the river below, two black-robed fathers */
+  patio_do_colegio: {
+    label: 'Uma pequena igreja e colégio de taipa no alto do planalto, entre a mata',
+    rx: /\b(colegio|taipa|piratininga|planalto)\b/,
+    draw: () => {
+      const id = SCH.uid('pl');
+      let fr = '', fh = '', fc = '';
+      for (const [x, y] of [[31, 70], [50, 72]]) { fr += `M${x - 2.4} ${y}q0-7 2.4-9 2.4 2 2.4 9z`; fh += `M${x} ${y - 12}a1.6 1.6 0 1 0 .1 0z`; fc += `M${x - 2.6} ${y - 11.4}h5.2`; }
+      return SCH.bg('#C8DCDD') + `<ellipse cx="94" cy="12" rx="14" ry="2.4" fill="${SCK.white}" opacity=".7"/>`
+        + `<path d="M0 36Q20 26 44 32T86 28 120 32V50H0z" fill="#A3B9A6"/>`
+        + SCH.g(`<path d="M-2 82V56Q10 50 24 49H96Q110 50 122 56V82z" fill="#A7AE6A"/><path d="M-2 82V40q4-6 9-2 3-6 9-1 4-5 8 0 3 4 2 12-4 4-8 6l-6 6Q8 66 14 82zM122 82V42q-4-6-9-2-4-5-9 0-4-3-7 2-1 6 3 10l6 5q4 6-1 25z" fill="#4A6636"/>`, 1.6)
+        + SCH.g(`<path d="M11.6 52V28h2.8v24zM13 32l-6-6M13 30l5-6" fill="#5A3E26" stroke-width="1.2"/><path d="M1 26q-3-6 3-9 0-7 7-7 4-5 10 0 7 0 6 7 4 4 0 8-3 4-8 2-3 3-8 1-4 3-8 0-4 1-2-2z" fill="#3E5A30"/>`, 1.4)
+        + `<path d="M6 18q3-2 6 0M15 14q3-2 6 0M14 22q3-2 6 0" stroke="#2A3E20" stroke-width="1.1" fill="none"/>`
+        + SCH.g(`<path d="M46 50V36h44v14z" fill="${SCK.white}"/><path d="M43 37 49 28.6H88L94 37z" fill="${SCK.ochre}"/><path d="M30 51V34l8-8 8 8v17z" fill="${SCK.white}"/><path d="M35.6 26.6V19.4q2.4-3 4.8 0v7.2z" fill="${SCK.white}" stroke-width="1.3"/><path d="M35.4 51V45q2.6-4 5.2 0v6z" fill="#4A3523" stroke-width="1.3"/>`, 1.6)
+        + `<path d="M36.8 22.4h2.4v2.6h-2.4z" fill="${SCK.goldLo}"/><path d="M37 38h2v3h-2zM51 40h3v4h-3zM60 40h3v4h-3zM69 40h3v4h-3zM78 40h3v4h-3z" fill="#4A3523"/>`
+        + `<path d="M50 32h36M47 35h42" stroke="#8A6A3A" stroke-width=".8" opacity=".8"/><path d="M30 46h60" stroke="${SCK.ochre}" stroke-width="1" opacity=".6"/>`
+        + `<defs><pattern id="${id}" x="13.5" y="50.6" width="3.4" height="13" patternUnits="userSpaceOnUse"><path d="M.5 11.4V3l1.2-2.4L2.9 3v8.4z" fill="${SCK.wood}" stroke="${SCK.ink}" stroke-width=".9" stroke-linejoin="round"/></pattern></defs>`
+        + `<path d="M13.5 50.6h20.4V62H13.5zM40.7 50.6h68V62h-68z" fill="url(#${id})"/><path d="M14 58h20M43 58h65" stroke="${SCK.ink}" stroke-width=".8" opacity=".5"/>`
+        + `<path d="M35 62q-2 8 8 12t2 8h8q4-6-4-11t-6-9z" fill="#C9B07A" opacity=".8"/>`
+        + `<path d="${fr}" fill="#1E1A1C"/><path d="${fh}" fill="#D4A47C"/><path d="${fc}" stroke="#1E1A1C" stroke-width="1.4"/>`
+        + `<path d="M-2 76Q20 70 36 76T70 78 122 74" stroke="${SCK.sea}" stroke-width="3.6" fill="none"/><path d="M-2 76Q20 70 36 76T70 78 122 74" stroke="#9CC0CF" stroke-width="1" fill="none"/>`;
+    } },
+
+  /* Palmares on the Serra da Barriga: big thatched houses crowd the flat top of the forested mountain inside a curving stockade of pointed stakes, the smoke of the cooking fires rising, palms all round */
+  quilombo_palmares: {
+    label: 'Uma aldeia cercada por paliçada no alto da serra, entre palmeiras',
+    rx: /\b(quilombo|quilombos|palicada|serra da barriga)\b/,
+    draw: () => {
+      const R = v => Math.round(v * 10) / 10;
+      const F = 'M0 0q9-6 17 3-9-3-17 1zM0 0q-9-6-17 3 9-3 17 1zM0 0q5-9 13-8-7 2-13 9zM0 0q-5-9-13-8 7 2 13 9zM0 0q7 1 10 9-4-6-10-7zM0 0q-7 1-10 9 4-6 10-7zM0 0q-1-8 3-11-1 5-1 11z';
+      const palms = ps => { let t = '', f = ''; for (const [x, y, h, b, s] of ps) { const w = R(1.8 * s); t += `M${R(x - w)} ${y}Q${R(x + b * .3)} ${R(y - h / 2)} ${R(x + b - w / 2)} ${y - h}h${w}Q${R(x + b * .3 + w)} ${R(y - h / 2)} ${R(x + w)} ${y}z`; f += F.replace(/-?\d*\.?\d+/g, n => R(n * s)).replace(/M0 0/g, `M${R(x + b)} ${y - h}`); } return SCH.g(`<path d="${t}" fill="#7A5A3A"/><path d="${f}" fill="#3F6B34"/>`, 1.3); };
+      const top = x => R(35.4 + 8.6 * ((x - 60) / 37) ** 2);
+      let st = '', hw = '', hr = '', hd = '', th = '';
+      for (let x = 23.6; x < 96; x += 3) st += `M${R(x)} ${R(top(x) + 11)}V${top(x)}l1.3-2.4 1.3 2.4V${R(top(x) + 11)}z`;
+      for (const [x, y, w] of [[60, 37, 20], [42, 40, 16], [78, 40, 16], [29, 45, 12], [91, 45, 12]]) {
+        hw += `M${x - w / 2} ${y}v-12h${w}v12z`; hr += `M${x - w / 2 - 3} ${y - 11}L${x} ${R(y - 12 - w * .62)} ${x + w / 2 + 3} ${y - 11}z`;
+        hd += `M${x - 2} ${y - 2}v-6q2-2 4 0v6z`; th += `M${R(x - w * .3)} ${R(y - 15)}l-3 3M${R(x + w * .3)} ${R(y - 15)}l3 3M${x} ${R(y - 17 - w * .2)}v4`;
+      }
+      return SCH.bg('#DCE5CF') + SCH.sun(104, 12, 6, '#F6EBCB')
+        + `<path d="M0 46Q16 36 34 40T76 36 120 42V64H0z" fill="#A6BBA4"/>`
+        + `<path d="M53 18q-4-5 1-9t0-9M70 21q4-5-1-9t2-10" stroke="${SCK.white}" stroke-width="2.6" fill="none" opacity=".85" stroke-linecap="round"/>`
+        + SCH.g(`<path d="${hw}" fill="#B98552"/><path d="${hr}" fill="${SCK.ochre}"/>`, 1.4) + `<path d="${hd}" fill="#3A2A1C"/><path d="${th}" stroke="#8A6A3A" stroke-width=".9"/>`
+        + SCH.g(`<path d="M-2 82V64Q8 60 14 52 20 44 26 44H94Q100 44 106 52 112 60 122 64V82z" fill="#6E8C5A"/>`, 1.6)
+        + SCH.g(`<path d="${st}" fill="${SCK.wood}"/>`, .9) + `<path d="M24 ${R(top(24) + 6)}Q60 32 96 ${R(top(96) + 6)}" stroke="${SCK.ink}" stroke-width="1" fill="none" opacity=".6"/>`
+        + `<path d="M18 60q5-3 10 0M40 58q5-3 10 0M70 58q5-3 10 0M92 60q5-3 10 0M50 64q5-3 10 0" stroke="#3E5430" stroke-width="1.1" fill="none" opacity=".8"/>`
+        + SCH.g(`<path d="M-2 82V72q5-5 11-2 5-5 11-1 6-5 12-1 5-4 11 0 6-5 12-1 5-4 11 0 6-5 12-1 5-4 11 0 6-5 12-1 5-4 11 0V82z" fill="#4A6636" stroke-width="1.4"/>`, 1.6)
+        + `<path d="M14 77q4-2 8 0M40 76q4-2 8 0M66 77q4-2 8 0M92 76q4-2 8 0" stroke="#2E4422" stroke-width="1.1" fill="none" opacity=".7"/>`
+        + palms([[30, 72, 18, -2, .7], [90, 72, 18, 2, .7], [11, 82, 50, 5, 1], [109, 82, 46, -5, 1]]);
+    } },
+
+  /* Olinda: a white baroque church with twin towers and its convent crown the green hill above red roofs and coconut palms; a sugar caravel in the bay, the reef breaking offshore */
+  olinda: {
+    label: 'Igrejas brancas no alto das colinas de uma vila costeira, com o mar e coqueiros',
+    rx: /\b(olinda|pernambuco)\b/,
+    draw: () => {
+      const R = v => Math.round(v * 10) / 10;
+      const F = 'M0 0q8-5 15 2-8-2-15 1zM0 0q-8-5-15 2 8-2 15 1zM0 0q4-8 11-7-6 2-11 8zM0 0q-4-8-11-7 6 2 11 8zM0 0q6 1 9 8-4-5-9-6zM0 0q-6 1-9 8 4-5 9-6z';
+      let t = '', f = '', hr = '', hn = '';
+      const hw = {};
+      for (const [x, y, h, b, s] of [[9, 82, 32, 4, 1], [22, 82, 16, -2.4, .8], [74, 80, 11.2, -2.1, .7]]) {
+        const w = R(1.4 * s); t += `M${R(x - w)} ${y}Q${R(x + b * .3)} ${R(y - h / 2)} ${R(x + b - w / 2)} ${R(y - h)}h${w}Q${R(x + b * .3 + w)} ${R(y - h / 2)} ${R(x + w)} ${y}z`;
+        f += F.replace(/-?\d*\.?\d+/g, n => R(n * s)).replace(/M0 0/g, `M${R(x + b)} ${R(y - h)}`);
+      }
+      for (const [x, y, w, c] of [[36, 46, 8, '#E9C98B'], [26, 54, 8, SCK.white], [40, 54, 7, '#C9DAB8'], [52, 54, 8, SCK.white], [32, 62, 8, '#E8B9A8'], [46, 62, 7, '#E9C98B'], [60, 62, 8, SCK.white], [52, 70, 7, SCK.white], [66, 70, 8, '#E9C98B']]) {
+        hw[c] = (hw[c] || '') + `M${x} ${y}v-6h${w}v6z`; hr += `M${x - 1} ${y - 6}l2-3.4h${w - 2}l2 3.4z`; hn += `M${x + 1.6} ${y - 4.4}h1.8v2.6h-1.8z`;
+      }
+      return SCH.bg('#CBDFE2') + `<ellipse cx="94" cy="12" rx="13" ry="2.4" fill="${SCK.white}" opacity=".7"/>`
+        + `<path d="M0 36h120v44H0z" fill="${SCK.sea}"/><path d="M72 45h48" stroke="#3E6278" stroke-width="2.6"/><path d="M72 44q4-2 8 0t8 0 8 0 8 0 8 0 8 0" stroke="${SCK.white}" stroke-width="1.4" fill="none"/>`
+        + `<path d="M84 58q8-3 16 0t16 0M92 74q8-3 16 0" stroke="#7FA3B8" stroke-width="1.2" fill="none"/>`
+        + SCH.g(`<path d="M92 62h22l-3 4.4H95z" fill="#6E4426"/><path d="M100 62V46M108 62V50" fill="none" stroke-width="1.3"/><path d="M100.6 47q7 6 0 13.4zM108.6 51q5 4 0 9.6z" fill="${SCK.white}" stroke-width="1"/>`, 1.2)
+        + SCH.g(`<path d="M-2 82V38H48Q58 40 66 50 78 64 86 82z" fill="${SCK.green}" stroke-width="1.6"/>` + Object.keys(hw).map(c => `<path d="${hw[c]}" fill="${c}"/>`).join('') + `<path d="${hr}" fill="#B0533A"/>`, 1.1) + `<path d="${hn}" fill="#4A3523"/>`
+        + SCH.g(`<path d="M44 38V28h20v10z" fill="${SCK.white}"/><path d="M43 28.6l3-4h16l3 4z" fill="#B0533A" stroke-width="1.2"/><path d="M8 38V15h8v23zM36 38V15h8v23zM16 38V21h20v17z" fill="${SCK.white}"/><path d="M16 21q0-3 3-3 2 0 3-3 1-4 4-4t4 4q1 3 3 3 3 0 3 3z" fill="${SCK.white}"/><path d="M7 12.6h10V15H7zM35 12.6h10V15H35z" fill="${SCK.stone}" stroke-width="1.2"/><path d="M8 12.6l4-6.6 4 6.6zM36 12.6l4-6.6 4 6.6z" fill="${SCK.stone}" stroke-width="1.2"/><path d="M26 11V4.6M23.6 6.8h4.8" fill="none" stroke-width="1.4"/>`, 1.5)
+        + `<path d="M12 4.2a1 1 0 1 0 .1 0zM40 4.2a1 1 0 1 0 .1 0z" fill="${SCK.ink}"/><path d="M10.4 22.4v-4q1.6-2.6 3.2 0v4zM38.4 22.4v-4q1.6-2.6 3.2 0v4z" fill="#4A3523"/>`
+        + `<path d="M23.4 38v-6q2.6-4 5.2 0v6z" fill="#4A3523" stroke="${SCK.ink}" stroke-width="1"/><path d="M19 25h3v4h-3zM30 25h3v4h-3zM47 31h2.4v3H47zM52 31h2.4v3H52zM57 31h2.4v3H57zM10.4 28h3.2v3h-3.2zM38.4 28h3.2v3h-3.2zM26 14.8a1.6 1.6 0 1 0 .1 0z" fill="#4A3523"/>`
+        + `<path d="M16 21h20M8 24.6h8M36 24.6h8" stroke="${SCK.ochre}" stroke-width="1"/>`
+        + SCH.g(`<path d="${t}" fill="#7A5A3A"/><path d="${f}" fill="#3F6B34"/>`, 1.2);
+    } },
+
+  /* the bandeira on the great river: two long dugouts of men in wide hats with muskets and paddles, the rainforest walls, the morning mist */
+  bandeira_canoas: {
+    label: 'Canoas de exploradores descendo um rio largo na floresta',
+    rx: /\b(canoa|canoas|rio amazonas|amazonas)\b/,
+    draw: () => {
+      const R = v => Math.round(v * 10) / 10;
+      const crew = (ms, cx, w) => {
+        const b = {}; let hd = '', ht = '', gn = '';
+        for (const [x, c, g] of ms) { b[c] = (b[c] || '') + `M${x - 3} 0q0-6 3-6.6 3 .6 3 6.6z`; hd += `M${x}-9.8a1.8 1.8 0 1 0 .1 0z`; ht += `M${R(x - 4.4)}-9.2h8.8M${x - 2}-9.4q0-2.6 2-2.6t2 2.6`; gn += g ? `M${R(x + 2.4)}-3 ${x + 6}-17` : `M${x + 1}-4 ${x + 7} 6`; }
+        return SCH.g(Object.keys(b).map(c => `<path d="${b[c]}" fill="${c}"/>`).join('') + `<path d="${hd}" fill="#C79A6E"/><path d="${ht}" fill="#5A4026"/><path d="${gn}" fill="none" stroke-width="1.4"/><path d="M${cx} 0q2 4 8 4h${w - 16}q6 0 8-4z" fill="#5E3A1E" stroke-width="1.3"/>`, 1)
+          + `<path d="M${cx + 3} 1h${w - 6}" stroke="#8A5A34" stroke-width="1"/>`;
+      };
+      const L = '#E9DDBF', O = SCK.ochre;
+      return SCH.bg('#E8E0C0') + SCH.sun(64, 22, 8, '#F7EBC4')
+        + `<path d="M0 32h120v48H0z" fill="#8C7A4C"/><path d="M-2 64Q20 46 26 36l4 2Q26 50 -2 72zM84 38q30 10 38 26v8Q110 50 82 42z" fill="#55573A"/><path d="M57 34h14M53 38h22M56 42h16M50 47h28M55 52h18M46 58h36" stroke="#E6CF92" stroke-width="1.6" stroke-linecap="round"/><path d="M30 40h14M86 41h12M20 52h18M92 54h16M10 62h16M98 64h14" stroke="#B9A672" stroke-width="1.2" stroke-linecap="round"/>`
+        + SCH.g(`<path d="M-2 66V8q4-4 8 0 3-6 9-2 4-3 7 2 4-2 6 3 4-1 5 4 3 0 4 5 4 1 4 6 3 2 3 6 3 2 3 6Q24 44 -2 66z" fill="#4A6636"/><path d="M122 66V10q-4-4-8 0-3-5-8-1-4-2-6 3-4-1-5 4-3 0-4 5-3 1-3 6-3 2-2 6l-2 6q30 10 38 27z" fill="#3E5430"/>`, 1.6)
+        + `<path d="M8 20q3-2 6 0M14 32q3-2 6 0M6 44q3-2 6 0M24 30q2-2 4 0M104 22q3-2 6 0M98 36q3-2 6 0M108 46q3-2 6 0M88 28q2-2 4 0" stroke="#2A3E20" stroke-width="1.2" fill="none"/>`
+        + `<path d="M0 30q20-4 40-1t40 0 40-2v5q-20 3-40 1t-40 1-40-1z" fill="${SCK.white}" opacity=".5"/><path d="M14 41q16-3 32 0t32 0 30-1v3q-16 3-32 1t-32 0-30 0z" fill="${SCK.white}" opacity=".35"/>`
+        + `<g transform="translate(64 45) scale(.7)">` + crew([[-6, L], [0, O, 1], [6, L]], -14, 28) + `</g>`
+        + `<path d="M8 74q8-3 16 0M98 74q8-3 16 0" stroke="#E6CF92" stroke-width="1.4" fill="none"/>`
+        + `<g transform="translate(-11 69) scale(1.25)">` + crew([[26, L], [38, SCK.burg, 1], [50, O], [62, L, 1], [74, L], [86, O]], 16, 82) + `</g>`
+        + `<path d="M6 78q10-2 20 0M40 78.6q10-2 20 0M78 78.6q10-2 20 0" stroke="#7E6438" stroke-width="1.2" fill="none"/>`;
+    } },
+
+  /* an engenho on its stream: the overshot water wheel turning the mill under its tiled roof, the three rollers inside, the boiling-house chimney smoking, the casa-grande with its veranda and the chapel on the rise, cane in front */
+  engenho_moenda: {
+    label: "Um engenho de açúcar com roda d'água, casa-grande e capela, sem pessoas",
+    rx: /\b(engenho|engenhos|moenda|cana|canavial|acucar|casa-grande)\b/,
+    draw: () => {
+      let pad = '', cane = '';
+      for (let i = 0; i < 12; i++) { const a = i * Math.PI / 6, c = Math.cos(a), s = Math.sin(a); pad += `M${(c * 12.6).toFixed(1)} ${(s * 12.6).toFixed(1)}L${(c * 17).toFixed(1)} ${(s * 17).toFixed(1)}`; }
+      for (let x = 66; x < 122; x += 3) cane += `M${x} 81V${62 + (x % 2) * 3}`;
+      const sp = 'M-12 0H12M0-12V12M-8.5-8.5 8.5 8.5M8.5-8.5-8.5 8.5', W = '#A87A4A';
+      return SCH.bg('#CFE0DF')
+        + `<path d="M0 30Q24 18 50 24T100 20 120 24V50H0z" fill="#A3B9A6"/>`
+        + `<path d="M78 15q6-3 4-7M82 17q8-2 10-8" stroke="${SCK.white}" stroke-width="2.6" fill="none" opacity=".8" stroke-linecap="round"/>`
+        + SCH.g(`<path d="M-2 50V46Q14 44 30 38 60 30 90 31T122 30V50z" fill="#9DB57A"/><path d="M110 40V29l5-5 5 5v11z" fill="${SCK.white}"/><path d="M113 24.4V20q2-2.6 4 0v4.4z" fill="${SCK.white}" stroke-width="1.1"/><path d="M84 40V27h24v13z" fill="${SCK.white}"/><path d="M81 28l5-6h20l5 6z" fill="#B0533A"/><path d="M81 33h28l1.6 2.6H79.4z" fill="#B0533A" stroke-width="1.1"/><path d="M74 50V18h6v32z" fill="#B0533A"/><path d="M73 18h8v2.6h-8z" fill="#8E3F2C" stroke-width="1.1"/>`, 1.4)
+        + `<path d="M113.6 40v-4q1.4-2.4 2.8 0v4zM114.2 21.4h1.6v2h-1.6zM88 28.4h2v2.4h-2zM94 28.4h2v2.4h-2zM100 28.4h2v2.4h-2z" fill="#4A3523"/><path d="M82 35.6v4.4M88 35.6v4.4M94 35.6v4.4M100 35.6v4.4M106 35.6v4.4" stroke="${SCK.ink}" stroke-width="1"/>`
+        + `<path d="M75 26h4M75 34h4M75 42h4" stroke="${SCK.ink}" stroke-width=".7" opacity=".5"/>`
+        + SCH.g(`<path d="M64 81V58Q92 52 122 54V81z" fill="#7FA05A"/>`, 1.4) + `<path d="${cane}" stroke="#4E6B3A" stroke-width="1.6"/><path d="M66 64l4-3M72 62l-3-2M78 63l4-3M84 61l-3-2M90 62l4-3M96 60l-3-2M102 61l4-3M108 59l-3-2M114 60l4-3" stroke="#4E6B3A" stroke-width="1.2" fill="none"/>`
+        + SCH.g(`<path d="M36 68V46h36v22z" fill="#4E3A28"/><path d="M47 66V52h4v14zM52 66V52h4v14zM57 66V52h4v14z" fill="${SCK.ochre}" stroke-width="1"/><path d="M45 52h18" stroke-width="2"/>`, 1.4)
+        + `<path d="M38 46v22M54 46v6M70 46v22" stroke="${SCK.wood}" stroke-width="2.6"/>`
+        + SCH.g(`<path d="M30 48l8-13h34l8 13z" fill="#A8553A"/>`, 1.6) + `<path d="M36 39h38M33 43.4h44" stroke="#6E2E1E" stroke-width="1" opacity=".7"/>`
+        + `<path d="M-2 75Q14 71 30 75T66 77V82H-2z" fill="${SCK.sea}"/><path d="M4 76q6-2 12 0M36 78q6-2 12 0" stroke="#9CC0CF" stroke-width="1.2" fill="none"/>`
+        + SCH.g(`<path d="M-2 34.6h28v4H-2z" fill="${SCK.wood}"/><path d="M4 38.6v24M16 38.6v18" fill="none" stroke-width="2"/>`, 1.3)
+        + `<path d="M25 37q4 0 5 4" stroke="#9CC0CF" stroke-width="2.6" fill="none"/>`
+        + `<g transform="translate(22 56)" fill="none"><path d="${pad}" stroke="${SCK.ink}" stroke-width="3.8"/><path d="${pad}" stroke="${W}" stroke-width="2"/><circle r="13" stroke="${SCK.ink}" stroke-width="3.6"/><circle r="13" stroke="${W}" stroke-width="1.8"/><path d="${sp}" stroke="${SCK.ink}" stroke-width="2.8"/><path d="${sp}" stroke="${W}" stroke-width="1.2"/><circle r="3" fill="${SCK.wood}" stroke="${SCK.ink}" stroke-width="1.4"/></g>`;
+    } },
+
+  /* Salvador, the city on the cliff: churches, towers and the governor's palace along the top of the escarpment, ladeiras climbing the green face, the warehouses of the lower town at the water's edge, ships riding in the bay */
+  salvador_colonial: {
+    label: 'A cidade alta com igrejas sobre a escarpa e a baía com veleiros',
+    rx: /\b(salvador|baia de todos os santos|pelourinho)\b/,
+    draw: () => {
+      const ship = (x, y, s, f) => `<g transform="translate(${x} ${y}) scale(${s})">` + SCH.g(`<path d="M-8-6V-${f ? 27 : 21}M0-6V-${f ? 30 : 23}M8-6V-${f ? 25 : 20}M-14-6l-7-4" fill="none" stroke-width="1.6"/><path d="M-12.4-17h8.8q1 4.4 0 8.8h-8.8q-1-4.4 0-8.8zM-4.4-19h8.8q1 5 0 10h-8.8q-1-5 0-10zM4-16h8q1 4 0 8H4q-1-4 0-8z${f ? 'M-11.4-25h6.8q.8 3 0 6h-6.8q-.8-3 0-6zM-3.4-28h6.8q.8 3.4 0 6.8h-6.8q-.8-3.4 0-6.8zM4.8-23h6.4q.8 2.6 0 5.2H4.8q-.8-2.6 0-5.2z' : ''}" fill="${SCK.white}" stroke-width="1.2"/><path d="M-16-6h31l-2 5q-2 3-6 3H-10q-4 0-6-8z" fill="#5E3A1E"/><path d="M-14-3.4h27" stroke="${SCK.ochre}" stroke-width="1.2"/>`, 1.5) + `</g>`;
+      const row = hs => { const w = {}; let r = ''; for (const [x, y, wd, h, c] of hs) { w[c] = (w[c] || '') + `M${x} ${y}v${-h}h${wd}v${h}z`; r += `M${x - 1} ${y - h}l2-3h${wd - 2}l2 3z`; } return Object.keys(w).map(c => `<path d="${w[c]}" fill="${c}"/>`).join('') + `<path d="${r}" fill="#B0533A"/>`; };
+      const Y = '#E9C98B', P = '#E8B9A8', Wh = SCK.white;
+      return SCH.bg('#CBDFE2') + `<ellipse cx="96" cy="8" rx="14" ry="2.4" fill="${SCK.white}" opacity=".7"/>`
+        + SCH.g(row([[0, 36, 9, 8, Wh], [10, 36, 9, 10, Y], [94, 36, 10, 9, Wh], [106, 36, 14, 7, P], [50, 36, 28, 14, Wh]])
+          + `<path d="M82 36V14h8v22z" fill="${SCK.white}"/><path d="M81 14.4l5-7 5 7z" fill="${SCK.stone}"/><path d="M22 36V12h7v24zM40 36V12h7v24zM29 36V20h11v16z" fill="${SCK.white}"/><path d="M29 20q0-2 2-2 1.4-4 3.6-4t3.4 4q2 0 2 2z" fill="${SCK.white}"/><path d="M21 9.6h9V12h-9zM39 9.6h9V12h-9z" fill="${SCK.stone}" stroke-width="1.1"/><path d="M22 9.6l3.5-5.6 3.5 5.6zM40 9.6l3.5-5.6 3.5 5.6z" fill="${SCK.stone}" stroke-width="1.1"/>`, 1.3)
+        + `<path d="M24 19v-3q1.5-2 3 0v3zM42 19v-3q1.5-2 3 0v3zM84.4 21v-3q1.6-2 3.2 0v3zM33 36v-5q1.6-2.6 3.2 0v5zM53 25h2v3h-2zM58 25h2v3h-2zM63 25h2v3h-2zM68 25h2v3h-2zM73 25h2v3h-2zM53 30.6h2v3h-2zM58 30.6h2v3h-2zM68 30.6h2v3h-2zM73 30.6h2v3h-2zM63 30.4h2v5.6h-2zM3 29h2v3H3zM13 28h2v3h-2zM16 31h2v3h-2zM98 30h2v3h-2zM110 32h2v2.6h-2z" fill="#4A3523"/>`
+        + SCH.g(`<path d="M-2 82V36H122V82z" fill="${SCK.green}"/>`, 1.6)
+        + `<path d="M4 53 26 45 10 40M46 53 70 45 54 39 62 37M90 53 110 45 96 39" stroke="#D9BC8C" stroke-width="2.6" fill="none" stroke-linejoin="round"/>`
+        + `<path d="M30 40q2-3 5-2 3-2 5 1 2 3-1 4h-8q-3-1-1-3zM78 46q2-3 5-2 3-2 5 1 2 3-1 4h-8q-3-1-1-3zM112 51q2-3 5-2 3-2 5 1 2 3-1 4h-8q-3-1-1-3zM16 49q2-3 5-2 3-2 5 1 2 3-1 4h-8q-3-1-1-3z" fill="#4A6636"/>`
+        + SCH.g(row([[2, 60, 10, 6, Wh], [14, 60, 12, 7, Y], [28, 60, 10, 6, Wh], [40, 60, 14, 7, P], [56, 60, 10, 6, Wh], [68, 60, 12, 7, Y], [82, 60, 10, 6, Wh], [94, 60, 12, 7, '#C9DAB8'], [108, 60, 12, 6, Wh]]), 1.1)
+        + `<path d="M6 57.4h2v2.6H6zM19 57h2v3h-2zM32 57.4h2v2.6h-2zM46 57h2v3h-2zM60 57.4h2v2.6h-2zM73 57h2v3h-2zM86 57.4h2v2.6h-2zM99 57h2v3h-2zM113 57.4h2v2.6h-2z" fill="#4A3523"/>`
+        + `<path d="M-2 60h124v22H-2z" fill="${SCK.sea}" stroke="${SCK.ink}" stroke-width="1.4"/><path d="M0 62h120" stroke="${SCK.stone}" stroke-width="1.4"/>`
+        + `<path d="M8 72q8-3 16 0t16 0M50 78q8-3 16 0" stroke="#7FA3B8" stroke-width="1.2" fill="none"/>`
+        + ship(28, 72, .6) + ship(94, 77, .9, 1);
+    } },
+
+  /* 1808: a squadron of ships of the line under full sail enters the bay at sunrise, past the granite Sugarloaf and the fort at its foot */
+  corte_1808: {
+    label: 'Uma frota de naus entra numa baía guardada por um morro de pedra em forma de pão',
+    rx: /\b(pao de acucar|baia de guanabara|esquadra)\b/,
+    draw: () => {
+      const sail = (mx, y, w, h) => `M${mx - w / 2} ${y}h${w}q1 ${h / 2} 0 ${h}h${-w}q-1 ${-h / 2} 0 ${-h}z`;
+      const ship = (x, y, s, f) => `<g transform="translate(${x} ${y}) scale(${s})">` + SCH.g(`<path d="M-10-8V-40M2-8V-44M13-8V-36M-20-10l-10-6" fill="none" stroke-width="1.8"/><path d="${sail(-10, -22, 12, 12) + sail(-10, -31, 10, 8) + sail(2, -24, 14, 14) + sail(2, -35, 11, 9) + sail(13, -20, 10, 10) + sail(13, -28, 8, 7) + (f ? sail(-10, -38, 7, 5) + sail(2, -43, 8, 6) + sail(13, -34, 6, 4.6) + 'M-20-10l-10-6v6z' : '')}" fill="${SCK.white}" stroke-width="1.3"/><path d="M-22-10h40l4-3h4l-2 9q-3 6-10 6H-14q-6 0-8-12z" fill="#4A2E1A"/><path d="M-19-6.6h38M-17-2.4h34" stroke="${SCK.ochre}" stroke-width="2"/>`, 1.6)
+        + (f ? `<path d="M-17-6.6h34M-15-2.4h30" stroke="${SCK.ink}" stroke-width="1.4" stroke-dasharray="1.4 2.6"/>` : '') + `</g>`;
+      return SCH.bg('#EFD3A4') + `<path d="M0 30h120v24H0z" fill="#F4DFB4"/>` + SCH.sun(100, 30, 9, '#F8E9BC')
+        + `<path d="M40 54Q54 40 68 44T98 38 122 42V56H40z" fill="#8FA894"/>`
+        + SCH.g(`<path d="M-2 58V30Q0 10 12 6 22 4 26 20 28 36 34 58z" fill="#B3A991"/>`, 1.8)
+        + `<path d="M8 12q-4 10-3 24M16 9q2 12 0 30M22 14q4 14 4 30" stroke="${SCK.ink}" stroke-width="1" fill="none" opacity=".35"/><path d="M6 10q4-3 10-3" stroke="${SCK.white}" stroke-width="1.6" fill="none" opacity=".7"/>`
+        + SCH.g(`<path d="M-2 58V48q8-6 16-2 8-8 18-2 6-4 12 2 4 4 4 12z" fill="${SCK.green}"/><path d="M26 58q4-14 14-14 10 0 12 14z" fill="#5E7A44"/>`, 1.6)
+        + `<path d="M0 56h120v26H0z" fill="#5F86A0"/><path d="M84 60h22M88 64h14M90 68h10" stroke="#F4D88E" stroke-width="1.4"/>`
+        + SCH.g(`<path d="M-2 58v-7h30l5 7z" fill="${SCK.stone}"/><path d="M24 51v-4.4h5V51z" fill="${SCK.stone}" stroke-width="1.1"/><path d="M23.4 46.8q3.1-4 6.2 0z" fill="${SCK.stoneLo}" stroke-width="1.1"/>`, 1.4)
+        + `<path d="M2 53h3v2H2zM9 53h3v2H9zM16 53h3v2h-3z" fill="#4A3523"/><path d="M0 56.4h30" stroke="${SCK.ink}" stroke-width=".7" opacity=".5"/>`
+        + `<path d="M6 66q8-3 16 0M30 74q8-3 16 0t16 0M88 76q8-3 16 0" stroke="#86A6BA" stroke-width="1.2" fill="none"/>`
+        + ship(84, 57, .3) + ship(103, 65, .5) + ship(60, 77, .95, 1);
+    } },
+
+  /* the Paraguay river, 1868: low casemate ironclads, one funnel each, steam upstream past the long brick battery on the bank, its guns smoking in the arched embrasures under the earth parapet, a shot splashing short */
+  humaita: {
+    label: 'Encouraçados de casco baixo avançam num rio diante de uma fortaleza',
+    rx: /\b(humaita|encouracado|encouracados|fortaleza)\b/,
+    draw: () => {
+      const iron = (x, y, s) => `<g transform="translate(${x} ${y}) scale(${s})">`
+        + `<path d="M-4-20q-8-6-18-4t-18-6" stroke="#3E3E44" stroke-width="5" fill="none" stroke-linecap="round" opacity=".85"/>`
+        + SCH.g(`<path d="M-30-6V-20M24-6V-18" fill="none" stroke-width="1.4"/><path d="M-38-6H30l8 3-6 5H-34z" fill="#34363C"/><path d="M-14-6l3-8h22l3 8z" fill="#5A5C64"/><path d="M-3-14V-25h5v11z" fill="#26262C"/>`, 1.5)
+        + `<path d="M-9-11h3.4v3.4h-3.4zM-1.6-11h3.4v3.4h-3.4zM5.8-11h3.4v3.4H5.8z" fill="#141418" stroke="#8A8C94" stroke-width=".7"/><path d="M-3-22.6h5" stroke="${SCK.red}" stroke-width="1.4"/><path d="M38-3q4 2 8 1M30 2q6 1 10-1M-30 3q8 2 16 0" stroke="${SCK.white}" stroke-width="1.4" fill="none"/></g>`;
+      let emb = '', mz = '';
+      for (let x = 47; x < 120; x += 9) { emb += `M${x} 44v-5q2.4-3.6 4.8 0v5z`; mz += `M${x + .8} 41.6h3.2`; }
+      return SCH.bg('#D3DED8') + SCH.sun(22, 14, 6, '#F2EAD0')
+        + `<path d="M-2 36q8-4 14-2 6-4 12-1 6-3 12 0 5-3 10-1V46H-2z" fill="${SCK.olive}"/>`
+        + `<path d="M0 44h120v36H0z" fill="#6F8C98"/>`
+        + SCH.g(`<path d="M24 50q8-1 12-10l8-12h78v22z" fill="#8C8A52"/><path d="M44 47V30h78v17z" fill="#A8553A"/><path d="M40 30.4q3-7.6 10-8.4h72v8.4z" fill="#6E7E40"/>`, 1.6)
+        + `<path d="M44 34.4h78M44 38.8h78M30 44l6-1M34 40l6-1" stroke="#6E2E1E" stroke-width=".7" opacity=".55"/><path d="M45 27h77" stroke="#4E5A2C" stroke-width="1" opacity=".6"/>`
+        + `<path d="${emb}" fill="${SCK.ink}"/><path d="${mz}" stroke="#6A6A70" stroke-width="1.8"/><path d="M52 25q8-2 16 0M78 24.6q8-2 16 0M104 25q8-2 16 0" stroke="#4E5A2C" stroke-width="1.1" fill="none"/>`
+        + `<path d="M62 44q-7 1-8-3 0-5 6-4 1-5 6-3 5-1 5 4 0 4-4 5zM89 44q-7 1-8-3 0-5 6-4 1-5 6-3 5-1 5 4 0 4-4 5zM87 25q-6 0-6-3t5-3q2-4 6-2 4 0 3 4-1 3-5 3z" fill="${SCK.white}" opacity=".9"/><path d="M68 34a3 3 0 1 0 .1 0zM96 33a3.4 3.4 0 1 0 .1 0zM90 16a2.4 2.4 0 1 0 .1 0z" fill="${SCK.white}" opacity=".6"/>`
+        + `<path d="M0 47h120" stroke="#9FB6BE" stroke-width="1.4"/><path d="M8 56q6-2 12 0M58 58q6-2 12 0M100 64q6-2 12 0M20 77q8-2 16 0M74 78q8-2 16 0" stroke="#A8C0C8" stroke-width="1.2" fill="none"/>`
+        + `<path d="M76 66q1-8 3-9 2 1 3 9z" fill="${SCK.white}" stroke="#A8C0C8" stroke-width=".8"/><path d="M73 66q6-2 12 0" stroke="${SCK.white}" stroke-width="1.4" fill="none"/>`
+        + iron(98, 59, .58) + iron(42, 74, 1.12);
+    } },
+
+  /* the Lei Áurea: a golden quill on a sealed parchment beside a vase of white camellias, on a green velvet table */
+  ev_abolicao_br: {
+    label: 'Uma pena de ouro sobre um pergaminho com selo, entre camélias brancas',
+    rx: /\b(lei aurea|abolicao|camelia|camelias|pena de ouro)\b/,
+    ev: 'abolicao_br',
+    draw: () => {
+      const R = v => Math.round(v * 10) / 10;
+      let cb = '', cp = '', cc = '';
+      for (const [x, y, r] of [[86, 30, 6.4], [104, 26, 6.4], [95, 16, 5.6], [100, 38, 5.6], [80, 40, 5]]) {
+        cb += `M${x} ${R(y - r)}a${r} ${r} 0 1 0 .1 0z`; cc += `M${x} ${R(y - r * .25)}a${R(r * .25)} ${R(r * .25)} 0 1 0 .1 0z`;
+        cp += `M${R(x - r * .6)} ${R(y - r * .2)}q${R(r * .6)} ${R(-r * .7)} ${R(r * 1.2)} 0M${R(x - r * .7)} ${R(y + r * .3)}q${R(r * .7)} ${R(r * .6)} ${R(r * 1.4)} 0M${R(x - r * .3)} ${R(y - r * .6)}q${R(r * .3)} ${R(r * .5)} ${R(r * .6)} 0`;
+      }
+      return SCH.bg('#2F3B35') + `<path d="M0 0h120v40H0z" fill="#34433B"/><path d="M8 0v40M40 0v40M72 0v40M104 0v40" stroke="#26302B" stroke-width="2"/>`
+        + SCH.g(`<path d="M-2 40h124v42H-2z" fill="#3E6B4A"/>`, 1.6) + `<path d="M0 43h120" stroke="#5A8A64" stroke-width="1.4"/><path d="M10 60q10 2 20 0M60 76q12 2 24 0M4 74q8 2 16 0" stroke="#2E5238" stroke-width="1.2" fill="none"/>`
+        + `<g transform="rotate(-7 44 60)">` + SCH.g(`<path d="M14 46h58v28H14z" fill="${SCK.paper}"/><path d="M14 46q-4 0-4 3t4 3M72 74q4 0 4-3t-4-3" fill="#E2D4AE"/>`, 1.5)
+        + `<path d="M22 52h40M22 56.4h44M22 60.8h36M22 65.2h30" stroke="${SCK.ink}" stroke-width="1.2" opacity=".3" stroke-linecap="round"/>`
+        + SCH.g(`<path d="M60 68l-3 9 4-2 2 3 1-9z" fill="${SCK.red}" stroke-width=".9"/><path d="M62 61.6a5.4 5.4 0 1 0 .1 0z" fill="${SCK.red}"/>`, 1.3) + `<path d="M62 64a3 3 0 1 0 .1 0z" fill="none" stroke="#C8504A" stroke-width="1"/></g>`
+        + SCH.g(`<path d="M26 74 72 34q4-2 4 2-8 14-40 34z" fill="${SCK.goldHi}"/><path d="M26 74l10-8" fill="none" stroke-width="2.6"/>`, 1.4)
+        + `<path d="M34 67 72 36M44 60l3 4M52 53l3 4M60 46l3 4M66 41l3 3" stroke="${SCK.goldLo}" stroke-width="1" fill="none"/><path d="M26 74l5-4" stroke="${SCK.gold}" stroke-width="1.4"/>`
+        + SCH.g(`<path d="M84 34q8 6 18-2M88 30q-4-10-10-12M98 28q2-10 10-12" fill="none" stroke="#2E4422" stroke-width="1.6"/><path d="M80 30q-6-6-2-12 6 4 2 12zM110 30q6-6 2-12-6 4-2 12zM94 40q-4-8 2-12 4 6-2 12zM104 40q8-2 10 4-6 2-10-4z" fill="#3E6B3A" stroke-width="1.1"/><path d="M86 74q-4-14 2-26h18q6 12 2 26z" fill="${SCK.sea}"/><path d="M86 48h22v-4H86z" fill="#3E6278" stroke-width="1.2"/>`, 1.4)
+        + `<path d="M88 58h18M87 66h20" stroke="${SCK.white}" stroke-width="1.6" opacity=".8"/>`
+        + SCH.g(`<path d="${cb}" fill="${SCK.white}"/>`, 1.3) + `<path d="${cp}" stroke="#B9AE97" stroke-width=".9" fill="none"/><path d="${cc}" fill="${SCK.gold}"/>`;
+    } },
+
+  /* dawn, 15 November 1889: a rank of infantry in blue tunics and kepis with shouldered rifles and a line of lancers on matched bays, drawn up in the tree-lined square before the long white barracks with its clock */
+  republica_1889: {
+    label: 'Tropas a cavalo em formação numa praça arborizada, ao amanhecer',
+    rx: /\b(campo de santana|tropas|quartel|cavalaria)\b/,
+    draw: () => {
+      const I = SCH.uid('in'), C = SCH.uid('cv'), B = '#2B3A6A';
+      let win = '', tt = '', tc = '', inf = '';
+      for (let x = 14; x < 108; x += 7) if (x < 46 || x > 72) win += `M${x} 31h3v4h-3zM${x} 39.6h3v5h-3z`;
+      for (const [x, y, r] of [[5, 56, 11], [115, 56, 11], [33, 51, 6], [87, 51, 6]]) { tt += `M${x - 1.6} ${y}v${-r}h3.2V${y}z`; const k = Math.round(r * 6) / 10; tc += `M${x - r} ${y - r}q0-${r} ${r}-${r}t${r} ${r}q0 ${k}-${r} ${k}t-${r}-${k}z`; }
+      for (let i = 0; i < 9; i++) inf += `<use href="#${I}" transform="translate(${16 + i * 11} 56.6) scale(1.1)"/>`;
+      return SCH.bg('#EDC9A2') + `<path d="M0 32h120v18H0z" fill="#F4DDBA"/>` + SCH.sun(98, 14, 7, '#F9EAC8')
+        + `<defs><g id="${I}" stroke-linejoin="round"><path d="M-2.2 0v-5h4.4v5z" fill="${SCK.white}" stroke="${SCK.ink}" stroke-width=".8"/><path d="M-2.6-5.4V-11q2.6-1.4 5.2 0v5.6z" fill="${B}" stroke="${SCK.ink}" stroke-width=".8"/><circle cy="-12.6" r="1.6" fill="#C9906A"/><path d="M-1.8-13.4v-2.6h3.6v2.6z" fill="${B}"/><path d="M-1.8-14h3.6" stroke="${SCK.red}" stroke-width=".8"/><path d="M2.6-5V-20" stroke="${SCK.ink}" stroke-width="1"/></g>`
+        + `<g id="${C}">` + SCH.g(`<path d="M-8-1V-10M-5-1V-10M7-1V-10M10-1V-10" fill="none" stroke-width="2.6"/><path d="M-12-15q0-5 5-5h12q3 0 4-2l3-6q1-2 3-1l3 2 3 5q1 2-1 2h-3l-3 1-2 6q-1 4-5 4H-7q-5 0-5-6z" fill="#6E4426"/><path d="M-12-15q-3 3-3 9" fill="none" stroke-width="2"/><path d="M-4-20l1-9h6l1 9z" fill="${B}"/><circle cy="-31" r="2.2" fill="#C9906A"/><path d="M-2-32.6v-3h4v3z" fill="${B}" stroke-width="1"/><path d="M0-20l2 6" fill="none" stroke-width="2"/><path d="M5-14 9-44" fill="none" stroke-width="1.2"/><path d="M8.6-44l.6-4 .8 4z" fill="#C3C8CE" stroke-width=".8"/>`, 1.7) + `<path d="M-1.6-33h4" stroke="${SCK.red}" stroke-width="1"/><path d="M-6-18.6h7" stroke="${SCK.ochre}" stroke-width="1.6"/></g></defs>`
+        + SCH.g(`<path d="M10 49V27h100v22z" fill="${SCK.white}"/><path d="M8 27.6h104V24H8z" fill="${SCK.stone}"/><path d="M47 49V21h26v28z" fill="${SCK.white}"/><path d="M45 21.6 60 11l15 10.6z" fill="${SCK.stone}"/>`, 1.4)
+        + `<path d="${win}M50 30h3v4h-3zM67 30h3v4h-3zM55.6 39q4.4-5 8.8 0v10h-8.8z" fill="#4A3523"/><path d="M47 24h26M10 46h100" stroke="${SCK.stoneLo}" stroke-width="1"/><circle cx="60" cy="17" r="3" fill="${SCK.white}" stroke="${SCK.ink}" stroke-width="1"/><path d="M60 15v2l1.4 1" stroke="${SCK.ink}" stroke-width=".8" fill="none"/>`
+        + `<path d="M0 49h120v31H0z" fill="#D8BE8A"/><path d="M0 49h120" stroke="${SCK.ink}" stroke-width="1.2"/><path d="M4 70h12M50 72h14M100 70h12" stroke="#B89A62" stroke-width="1.4"/>`
+        + SCH.g(`<path d="${tt}" fill="#6E4A2A"/><path d="${tc}" fill="#4E6B3A"/>`, 1.4) + `<path d="M0 50h6M114 50h6" stroke="#3E5430" stroke-width="1" opacity=".6"/>`
+        + inf + `<path d="M12 56.6h100" stroke="${SCK.ink}" stroke-width=".8" opacity=".4"/>`
+        + [21, 61, 101].map(x => `<use href="#${C}" transform="translate(${x} 79.4) scale(.98)"/>`).join('');
+    } },
+
+  /* the Rua do Ouvidor in the 1880s: two-storey sobrados with iron balconies and striped shop awnings, a gas lamp, a hooded carriage passing with its coachman, a top hat and a parasol on the pavement */
+  rio_oitocentista: {
+    label: 'Uma rua estreita do Rio do século XIX, com sobrados de sacadas de ferro e uma carruagem',
+    rx: /\b(rua do ouvidor|sobrado|sobrados|carruagem)\b/,
+    draw: () => {
+      let fa = '', op = '', bal = '', aw = '';
+      const st = {};
+      for (const [x, w, c, a] of [[-2, 40, '#E9DDBF', SCK.red], [38, 42, '#C9DAB8', SCK.sea], [80, 42, '#E8C8B0', SCK.red]]) {
+        fa += `<path d="M${x} 58V14h${w}v44z" fill="${c}"/><path d="M${x - 1} 14h${w + 2}v-3H${x - 1}z" fill="${SCK.stone}"/><path d="M${x} 40.6h${w}" fill="none" stroke-width="1.2"/>`;
+        for (let i = 0; i < 3; i++) { const cx = x + w * (i + .5) / 3, X = d => Math.round((cx + d) * 10) / 10; op += `M${X(-2.4)} 33V24q2.4-2.4 4.8 0v9zM${X(-2.6)} 58V47q2.6-3 5.2 0v11z`; bal += `M${X(-4)} 33h8v4h-8zM${X(-2.6)} 33v4M${X(0)} 33v4M${X(2.6)} 33v4`; }
+        const ax = x + 4; aw += `M${ax} 42h22l3 5H${ax - 3}z`; st[a] = (st[a] || '') + `M${ax + 1} 42.4l-1.4 4.4M${ax + 7} 42.4l.6 4.4M${ax + 13} 42.4l2 4.4M${ax + 19} 42.4l3 4.4`;
+      }
+      return SCH.bg('#CFE0E2') + SCH.g(fa, 1.4)
+        + `<path d="${op}" fill="#3A3540"/><path d="${bal}" fill="none" stroke="${SCK.ink}" stroke-width="1"/>`
+        + `<path d="M-2 11h124" stroke="#B0533A" stroke-width="2.4"/>` + SCH.g(`<path d="${aw}" fill="${SCK.white}"/>`, 1.1) + Object.keys(st).map(c => `<path d="${st[c]}" stroke="${c}" stroke-width="3"/>`).join('')
+        + `<path d="M0 58h120v22H0z" fill="${SCK.stone}"/><path d="M0 58h120M0 61h120" stroke="${SCK.ink}" stroke-width="1"/><path d="M6 68h8M24 74h10M96 70h8M108 76h8" stroke="${SCK.ink}" stroke-width=".8" opacity=".35"/>`
+        + SCH.g(`<path d="M10 62V30" fill="none" stroke-width="1.8"/><path d="M7 30h6l-1-5H8z" fill="${SCK.goldHi}" stroke-width="1.1"/><path d="M8 25l2-2.4 2 2.4z" fill="${SCK.ink}" stroke-width=".8"/><path d="M18 63q0-10 3-12h1q3 2 3 12z" fill="#7B1E3A" stroke-width="1"/><path d="M21.6 46.8a1.8 1.8 0 1 0 .1 0zM106 45.6a1.8 1.8 0 1 0 .1 0z" fill="#E2B892" stroke-width=".8"/><path d="M21 47q-5-7 0-10M15 40q6-6 13 0z" fill="${SCK.white}" stroke-width="1"/><path d="M104 62v-6h4v6zM102.6 56.4q0-7 3.4-7.4 3.4.4 3.4 7.4zM104.2 46v-4.6h3.6V46zM103 46h6" fill="#26262E" stroke-width="1"/>`, 1.2)
+        + `<g transform="translate(70 78)">` + SCH.g(`<path d="M-18-14h28" fill="none" stroke-width="1.2"/><g transform="translate(-53 0) scale(-1 1)"><path d="M-16-1l2-10M-20-1l-2-10M-30-1l3-9M-34-1l-1-9" fill="none" stroke-width="2.4"/><path d="M-38-16q0-5 5-5h10l4-6q1-2 3-1l2 2 2 4q0 1.6-1.6 1.6H-19l-2 6q-1 4-5 4h-7q-5 0-5-5z" fill="#3A2A1E"/><path d="M-38-17q-4 2-4 8" fill="none" stroke-width="1.8"/></g><path d="M-8-9V-18h20v9q0 3-3 3H-5q-3 0-3-3z" fill="${SCK.burg}"/><path d="M-2-18q0-10 10-12 6 0 6 12z" fill="#26262E"/><path d="M-4-8a4 4 0 1 0 .1 0zM9-10a5 5 0 1 0 .1 0z" fill="none" stroke-width="1.6"/><path d="M-10.4-18v-6q2.6-1.6 5.2 0v6zM-9.6-28v-3.8h3.6v3.8zM-10.6-28h5.6" fill="#26262E" stroke-width="1"/><path d="M-7.8-28.6a1.8 1.8 0 1 0 .1 0z" fill="#E2B892" stroke-width=".8"/><path d="M-6-21.6-33-24" fill="none" stroke-width=".7"/>`, 1.3)
+        + `<path d="M-4-8v8M-8-4h8M9-10v10M4-5h10" stroke="${SCK.ink}" stroke-width=".7"/></g>`;
+    } },
+
+  /* a carnival cordão of the 1890s: the banner-bearer holding the fringed banner on its pole, a harlequin in his lozenge suit, a masked dancer and a drummer, confetti and paper streamers in the night air */
+  carnaval_cordao: {
+    label: 'Um cordão de Carnaval com confetes, serpentinas e um tambor',
+    rx: /\b(carnaval|confete|confetes|serpentina|serpentinas)\b/,
+    draw: () => {
+      const P = SCH.uid('hq'), C = [SCK.goldHi, SCK.red, SCK.white, '#7FB0D0', '#E58AA0'], cf = ['', '', '', '', ''];
+      for (let i = 0; i < 25; i++) cf[i % 5] += `M${i * 37 % 112 + 4} ${i * 23 % 40 + 3}h.1`;
+      return SCH.bg('#33416A')
+        + `<path d="M34 64V22h18v42zM88 64V18h22v46z" fill="#283453"/><path d="M38 28h4v6h-4zM45 28h4v6h-4zM92 24h4v6h-4zM101 24h4v6h-4zM96 40h4v6h-4z" fill="#F2C94C" opacity=".8"/>`
+        + `<path d="M-2 64h124v18H-2z" fill="#8A7A64" stroke="${SCK.ink}" stroke-width="1.2"/>`
+        + cf.map((d, i) => `<path d="${d}" stroke="${C[i]}" stroke-width="2.6" stroke-linecap="round"/>`).join('')
+        + `<g fill="none" stroke-width="1.8"><path d="M30 4q10 10 22 6t20 8 24-4M70 2q8 12 20 8t32 6" stroke="${SCK.goldHi}"/><path d="M34 20q14 6 28-2t26 6M64 30q14-8 28 0t30-4" stroke="#E58AA0"/></g>`
+        + `<g transform="translate(-13 -6)">` + SCH.g(`<path d="M30 84V14" fill="none" stroke="${SCK.wood}" stroke-width="2"/><path d="M18 16h24v18l-12 6-12-6z" fill="${SCK.red}"/><path d="M28 12h4v4h-4z" fill="${SCK.gold}" stroke-width="1"/>`, 1.4)
+        + `<path d="M21 19h18v13l-9 4.6-9-4.6z" fill="none" stroke="${SCK.goldHi}" stroke-width="1"/><path d="M22.6 24q0-3.6 4-3.6 2.6 0 3.4 1.6.8-1.6 3.4-1.6 4 0 4 3.6t-4 3.6q-2.6 0-3.4-2-.8 2-3.4 2-4 0-4-3.6zM24.6 23.6q1.4-1.4 3 0-1.6 1.6-3 0zM32.4 23.6q1.4-1.4 3 0-1.6 1.6-3 0z" fill="${SCK.goldHi}" fill-rule="evenodd" stroke="${SCK.ink}" stroke-width=".9"/>`
+        + `<path d="M18 34l1 3M24 37v3M30 40v3M36 37v3M42 34l-1 3" stroke="${SCK.gold}" stroke-width="1.4"/></g>`
+        + `<defs><pattern id="${P}" width="5" height="6" patternUnits="userSpaceOnUse"><rect width="5" height="6" fill="${SCK.red}"/><path d="M2.5 0 5 3 2.5 6 0 3z" fill="${SCK.goldHi}" stroke="${SCK.ink}" stroke-width=".5"/></pattern></defs>`
+        + SCH.g(`<g transform="translate(13 80) scale(1.38)"><path d="M-6 0l1-14h8l2 14z" fill="${SCK.sea}"/><path d="M-5-14l1-10h6l1 10z" fill="${SCK.white}"/><path d="M0-30a3 3 0 1 0 .1 0z" fill="#C9906A"/><path d="M-4-29q4-4 8 0l-1-3q-3-2-6 0z" fill="${SCK.ink}" stroke-width=".8"/><path d="M-3-21 3-25" fill="none" stroke-width="1.6"/></g>`
+          + `<g transform="translate(42 80) scale(1.38)"><path d="M-6.4 0q-1.2-12 1-24h10.8q2.2 12 1 24z" fill="url(#${P})"/><path d="M0 0v-9M-5.6-12h11.2" fill="none" stroke-width=".9"/><path d="M-5.4-21l-7-7M5.4-21l6-8" fill="none" stroke-width="2.6"/><path d="M-6.6-24.4q2 3 4.4 1 2.2 2 4.4 0 2.4 2 4.4-1l-1-2h-11.2z" fill="${SCK.white}" stroke-width="1"/><path d="M0-31.4a3.4 3.4 0 1 0 .1 0z" fill="#E2B892" stroke-width="1"/><path d="M-6-30q6-7.4 12 0-6-1.6-12 0z" fill="${SCK.ink}" stroke-width=".8"/><path d="M-3.4-29.4h6.8v2.2h-6.8z" fill="${SCK.ink}" stroke="none"/></g>`
+          + `<g transform="translate(74 80) scale(1.38)"><path d="M-8 0q2-12 4-16h8q2 4 4 16z" fill="#E58AA0"/><path d="M-4-16l1-8h6l1 8z" fill="${SCK.white}"/><path d="M0-30a3 3 0 1 0 .1 0z" fill="#B98060"/><path d="M-4-30q4-6 9-2l-1 2q-4-1-8 0z" fill="${SCK.red}" stroke-width=".9"/><path d="M4-31q6-6 8 0-4-2-8 0z" fill="${SCK.white}" stroke-width=".9"/><path d="M-4-22l-6-7M4-22l6-6" fill="none" stroke-width="2.2"/><path d="M-3.4-27.6h6.8v2h-6.8z" fill="${SCK.ink}" stroke="none"/><path d="M-6-8h12M-7-4h14" stroke="${SCK.white}" stroke-width="1.4"/></g>`
+          + `<g transform="translate(104 80) scale(1.38)"><path d="M-6 0l1-14h8l1 14z" fill="${SCK.burg}"/><path d="M-5-14l1-10h6l1 10z" fill="${SCK.white}"/><path d="M0-30a3 3 0 1 0 .1 0z" fill="#8A5A3A"/><path d="M-4-29.4h8v-3h-8z" fill="${SCK.red}" stroke-width=".9"/><path d="M-10-20h16v10h-16z" fill="${SCK.red}"/><path d="M-10-20l4 10 4-10 4 10 4-10" fill="none" stroke="${SCK.goldHi}" stroke-width="1.1"/><path d="M-8-20v10M4-20v10" fill="none" stroke-width="1.1"/><path d="M3-22 10-30M-4-22-12-27" fill="none" stroke-width="1.4"/><ellipse cx="-2" cy="-20" rx="8" ry="1.6" fill="${SCK.white}" stroke-width="1"/></g>`, 1.2);
+    } },
+
+  /* the Farroupilha: gauchos in ponchos and wide hats gallop with levelled lances across the open green pampa, a lone ombu tree under a huge sky */
+  farrapos_pampa: {
+    label: 'Cavaleiros de poncho e lança galopam pelo pampa',
+    rx: /\b(pampa|pampas|farrapos|gaucho|gauchos)\b/,
+    draw: () => {
+      const id = SCH.uid('gr'), lg = 'M6-13 12-8 18-9M3-12 8-5 13-4M-10-14-16-9-22-8M-8-12-12-5-17-4';
+      const rider = (pc, hc) => SCH.g(`<path d="${lg}" fill="none" stroke-width="3"/><path d="${lg}" fill="none" stroke="${hc}" stroke-width="1.6"/><path d="M-13-19Q-21-18-25-10-19-14-14-15z" fill="${SCK.ink}" stroke-width="1"/><path d="M-14-17Q-14-21-9-21H3Q6-22 9-26L12-30 12.6-33 14.4-30.4Q16-30 17-28L21.6-23Q22.4-21 20.4-20.4L17-21.2Q14-21.6 12.4-20L10-15Q8-11 3-11H-8Q-14-11-14-17Z" fill="${hc}"/><path d="M4-21.4Q8-24 10.6-28.6" fill="none" stroke-width="1.6"/><path d="M-10-25 31-34" fill="none" stroke-width="1.4"/><path d="M30.7-35.6 35.9-35.1 31.3-32.4z" fill="#C3C8CE" stroke-width=".8"/><path d="M-1-17l1 7" fill="none" stroke-width="2.2"/><path d="M-7-17l3-10h7l3 10q-6 2-13 0z" fill="${pc}"/><path d="M1-31.8a2.2 2.2 0 1 0 .1 0z" fill="#C9906A" stroke-width=".9"/><path d="M-4-31.6q5-1.6 10 0" fill="none" stroke-width="1.8"/><path d="M-1-31.8v-2.4h4.4v2.4z" fill="${SCK.ink}" stroke-width=".8"/><path d="M4-19.4 19-22" fill="none" stroke-width=".9"/>`, 1.3);
+      const far = (x, y, s) => `<use href="#${id}" transform="translate(${x} ${y}) scale(${s})"/>`;
+      return SCH.bg('#C7DCE3') + `<ellipse cx="30" cy="14" rx="18" ry="4" fill="${SCK.white}" opacity=".8"/><ellipse cx="82" cy="8" rx="14" ry="3" fill="${SCK.white}" opacity=".7"/><ellipse cx="66" cy="22" rx="10" ry="2.4" fill="${SCK.white}" opacity=".6"/>`
+        + `<defs><g id="${id}">${rider('#7B1E3A', '#8A5A34')}</g></defs>`
+        + `<path d="M0 50q30-3 60-1t60-1v32H0z" fill="#8FAE6A"/><path d="M0 50q30-3 60-1t60-1" stroke="${SCK.ink}" stroke-width="1.2" fill="none"/>`
+        + SCH.g(`<path d="M100 52q-1-6 1-10l-3-4h4l2 3 2-3 2 2 1-2h3l-3 4q2 4 1 10z" fill="#5A4030"/><path d="M84 36q-4-8 4-12 0-8 10-8 6-6 14-2 8-1 10 6 6 4 2 10 2 6-6 8-8 4-16 2-6 3-12 0-8 0-8-4z" fill="#3E5A30"/>`, 1.5)
+        + `<path d="M92 26q4-3 8 0M104 20q4-3 8 0M100 32q4-3 8 0M112 30q3-2 6 0" stroke="#2A3E20" stroke-width="1.2" fill="none"/>`
+        + `<path d="M6 60h14M30 72h20M70 64h12M96 74h16M10 76h10" stroke="#5E7A44" stroke-width="1.2"/>`
+        + far(16, 55, .5) + far(91, 61, .58)
+        + `<g transform="translate(46 79) scale(1.3)">${rider(SCK.red, '#5A3A22')}<path d="M-5-23h9" stroke="${SCK.white}" stroke-width="1" opacity=".7"/></g>`
+        + `<path d="M18 79.4h18M64 79.4h12" stroke="#B8A27A" stroke-width="1.6" opacity=".8"/>`;
+    } },
+
+  /* inside a colonial church: a gilded carved pulpit with its crowned sounding board on a white pillar, the curved stair with its gilt rail, candles burning, a blue-and-white azulejo dado */
+  pulpito_barroco: {
+    label: 'Um púlpito barroco de talha dourada numa igreja colonial, à luz de velas',
+    rx: /\b(pulpito|pulpitos|sermao|sermoes|talha dourada)\b/,
+    draw: () => {
+      const id = SCH.uid('az');
+      let cg = '', cs = '', cw = '', cl = '';
+      for (const [x, h] of [[96, 30], [108, 24]]) {
+        const t = 78 - h;
+        cg += `M${x} ${t - 10}a5 5 0 1 0 .1 0z`; cs += `M${x - 4} 78l2-4h4l2 4zM${x - .8} 74V${t + 4}h1.6V74zM${x - 3} ${t + 4}h6l-1 2h-4z`;
+        cw += `M${x - 1.2} ${t + 4}v-6h2.4v6z`; cl += `M${x} ${t - 2}q-2-2 0-5 2 3 0 5z`;
+      }
+      const st = 'M6 75Q18 68 22 58 26 44 40 38', rl = 'M5 66Q15 60 18 50 22 37 38 30';
+      return SCH.bg('#3E302A') + `<path d="M0 72V30q0-14 10-22M120 72V30q0-14-10-22" stroke="#54443A" stroke-width="5" fill="none"/>`
+        + `<defs><pattern id="${id}" width="6" height="6" patternUnits="userSpaceOnUse"><rect width="6" height="6" fill="#F1ECE0"/><path d="M3 .6 5.4 3 3 5.4.6 3z" fill="#3F6AA0"/><circle cx="3" cy="3" r=".9" fill="#F1ECE0"/><path d="M0 0h1M5 0h1M0 6h1" stroke="#3F6AA0" stroke-width="1"/></pattern></defs>`
+        + SCH.g(`<path d="M36 82V-2h48v84z" fill="#F1E7CF"/><path d="M-2 54h124v20H-2z" fill="url(#${id})"/><path d="M-2 52h124v2.4H-2z" fill="#2F5A8A" stroke-width="1"/>`, 1.4)
+        + `<path d="M40 0v52M80 0v52" stroke="#D8CCB0" stroke-width="1.6"/>`
+        + `<path d="M-2 74h124v8H-2z" fill="#6A5444" stroke="${SCK.ink}" stroke-width="1.4"/><path d="M20 74l-6 8M60 74v8M100 74l6 8" stroke="${SCK.ink}" stroke-width=".8" opacity=".5"/>`
+        + SCH.g(`<path d="${st}V74H6z" fill="#5A3E2A"/>`, 1.4) + `<path d="M12 74V70M18 74V65M24 74V56M30 74V44" stroke="#3E2A1C" stroke-width="1" opacity=".8"/>`
+        + `<path d="M8 72.6v-6M12 70.4v-6.4M16 67.4v-6.6M19 63.6v-7M21.4 58.6v-7.4M23.4 52.6v-7.6M26 46v-7.6M30 41.4v-7.4M34.4 39v-7" stroke="${SCK.goldLo}" stroke-width="1.6"/>`
+        + `<path d="${st}${rl}" fill="none" stroke="${SCK.ink}" stroke-width="4.4" stroke-linecap="round"/><path d="${st}" fill="none" stroke="${SCK.gold}" stroke-width="2.8" stroke-linecap="round"/><path d="${rl}" fill="none" stroke="${SCK.goldHi}" stroke-width="2.4" stroke-linecap="round"/>`
+        + SCH.g(`<path d="M51 14h18v22H51z" fill="${SCK.burg}"/><path d="M38 9h44l-3 4H41zM44 9q16-12 32 0z" fill="${SCK.gold}"/><path d="M58.4 3.4h3.2V1h-3.2z" fill="${SCK.goldHi}" stroke-width="1"/><path d="M41 13h38l-1 3q-2 2-4 0-2 2-4 0-2 2-4 0-2 2-4 0-2 2-4 0-2 2-4 0-2 2-4 0-2 2-4 0-2 2-4 0z" fill="${SCK.goldHi}" stroke-width="1.1"/><path d="M41 36h38v2q0 11-9 15H50q-9-4-9-15zM51 53h18l-6 9h-6z" fill="${SCK.gold}"/><path d="M38 33h44v3.4H38zM60 62a2 2 0 1 0 .1 0z" fill="${SCK.goldHi}"/>`, 1.5)
+        + `<path d="M53 17h14v16H53z" fill="none" stroke="${SCK.gold}" stroke-width="1"/><path d="M60 19v12M55 25h10" stroke="#9E4A5E" stroke-width="1"/><path d="M50 7q10-7 20 0" stroke="${SCK.goldLo}" stroke-width="1.2" fill="none"/>`
+        + `<path d="M46 39q4 6 0 10M74 39q-4 6 0 10M52 40q8-4 16 0M52 47q8 4 16 0M56 56h8" stroke="${SCK.goldLo}" stroke-width="1.3" fill="none"/><path d="M60 40.6a3 3 0 1 0 .1 0z" fill="${SCK.red}" stroke="${SCK.goldLo}" stroke-width="1"/>`
+        + `<path d="${cg}" fill="${SCK.goldHi}" opacity=".25"/>` + SCH.g(`<path d="${cs}" fill="${SCK.gold}"/><path d="${cw}" fill="${SCK.white}"/>`, 1) + `<path d="${cl}" fill="#F7C14A" stroke="#C0601E" stroke-width=".6"/>`;
     } },
 });
 

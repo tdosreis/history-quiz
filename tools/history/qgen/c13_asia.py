@@ -9,7 +9,7 @@ c.T('Que material um funcionário da corte chinesa passou a fabricar, por volta 
     src=('en', 'Cai Lun', ['105']),
     x='A tradição atribui a invenção a Cai Lun, funcionário da corte Han, por volta do ano 105; depois, arqueólogos acharam papéis ainda mais antigos.')
 c.T('Como eram chamados os pilotos japoneses que, na Segunda Guerra, jogavam seus aviões carregados de explosivos contra navios inimigos?', 'Kamikazes',
-    ['Samurais', 'Ninjas', 'Ronins', 'Xoguns', 'Daimiôs'], d=1, icon='plane',
+    ['Samurais', 'Ninjas', 'Ronins', 'Xoguns', 'Daimiôs'], d=1, scene='porta_avioes', icon='plane',
     src=('en', 'Kamikaze', ['Okinawa']),
     x='A palavra quer dizer "vento divino" e lembra os tufões que, segundo a tradição, salvaram o Japão de duas invasões mongóis no século XIII.')
 c.T('Qual cidade a China cedeu aos britânicos depois da Primeira Guerra do Ópio e só recuperou em 1997?', 'Hong Kong',

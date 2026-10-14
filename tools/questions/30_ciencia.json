@@ -14,7 +14,7 @@
    ],
    "d": 1,
    "art": {
-    "icon": "book"
+    "scene": "radio_curie"
    },
    "src": [
     "pt",
@@ -50,7 +50,7 @@
    ],
    "d": 4,
    "art": {
-    "icon": "book"
+    "scene": "atomo_bohr"
    },
    "src": [
     "pt",
@@ -86,7 +86,7 @@
    ],
    "d": 2,
    "art": {
-    "icon": "gear"
+    "scene": "linha_montagem"
    },
    "src": [
     "pt",
@@ -122,7 +122,7 @@
    ],
    "d": 2,
    "art": {
-    "icon": "gear"
+    "scene": "maquina_enigma"
    },
    "src": [
     "pt",

@@ -65,7 +65,7 @@ c.T('Quem se tornou, em 1960, a primeira mulher do mundo eleita para chefiar um 
     src=('en', 'Sirimavo Bandaranaike', ['1960', 'Ceylon']),
     x='Ela entrou na política depois do assassinato do marido, também primeiro-ministro, em 1959, e governou o atual Sri Lanka em três períodos diferentes.')
 c.T('Além do Brasil, qual país latino-americano mandou uma unidade de combate lutar fora das Américas na Segunda Guerra, o Esquadrão 201, de aviação de caça?', 'México',
-    ['Argentina', 'Chile', 'Colômbia', 'Cuba', 'Venezuela'], d=5, icon='plane',
+    ['Argentina', 'Chile', 'Colômbia', 'Cuba', 'Venezuela'], d=5, scene='caca_p47', icon='plane',
     src=('en', '201st Fighter Squadron', ['Philippines', 'P-47']),
     x='Os pilotos mexicanos voaram caças P-47 nas Filipinas, em 1945 — o mesmo avião do grupo de caça brasileiro do "Senta a Pua!", na Itália.')
 
@@ -257,7 +257,7 @@ c.DU('Duelo: o que aconteceu primeiro?', 'Primeiro voo humano ao espaço', 'Iní
 c.MY('Durante toda a Guerra Fria, Estados Unidos e União Soviética nunca declararam guerra um ao outro?', True, 1, crest='urss',
      x='Por isso a guerra foi "fria": as superpotências se enfrentaram de forma indireta, apoiando lados opostos em conflitos como os da Coreia, do Vietnã e do Afeganistão.',
      src=('pt', 'Guerra Fria', ['Coreia']))
-c.MY('No Natal de 1914, soldados britânicos e alemães chegaram a parar de lutar e confraternizar entre as trincheiras?', True, 2, icon='dove',
+c.MY('No Natal de 1914, soldados britânicos e alemães chegaram a parar de lutar e confraternizar entre as trincheiras?', True, 2, scene='ev_primeira_guerra', icon='dove',
      x='Em vários trechos da frente, trocaram cigarros e comida, cantaram e enterraram seus mortos; há relatos até de partidas de futebol.',
      src=('en', 'Christmas truce', ['football']))
 c.MY('O Muro de Berlim cercava toda a Berlim Ocidental, e não apenas cortava a cidade ao meio?', True, 3, stad='muro_berlim',

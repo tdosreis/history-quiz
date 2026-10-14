@@ -356,7 +356,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "flag"
+    "scene": "fez_chapeu"
    },
    "src": [
     "pt",
@@ -410,7 +410,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "map"
+    "scene": "polo_sul"
    },
    "src": [
     "pt",
@@ -482,7 +482,7 @@
    ],
    "d": 2,
    "art": {
-    "icon": "flag"
+    "scene": "new_deal_represa"
    },
    "src": [
     "pt",

@@ -440,7 +440,7 @@
    ],
    "d": 5,
    "art": {
-    "icon": "plane"
+    "scene": "caca_p47"
    },
    "src": [
     "en",
@@ -1690,7 +1690,7 @@
    ],
    "d": 2,
    "art": {
-    "icon": "dove"
+    "scene": "ev_primeira_guerra"
    },
    "src": [
     "en",

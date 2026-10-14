@@ -147,7 +147,7 @@ c.MY('Charles Darwin afirmou que o ser humano descende dos macacos de hoje, como
 c.MY('Santos Dumont inventou o relógio de pulso?', False, 2, who='santos_dumont',
      x='Relógios de pulso já existiam; em 1904, Louis Cartier criou um modelo para o amigo aviador ver as horas sem soltar os comandos, e a moda pegou entre os homens.',
      src=('pt', 'Santos Dumont', ['Cartier']))
-c.MY('O Titanic levava botes salva-vidas suficientes para todos a bordo?', False, 1, icon='ship',
+c.MY('O Titanic levava botes salva-vidas suficientes para todos a bordo?', False, 1, scene='titanic', icon='ship',
      x='Os 20 botes comportavam cerca de 1.180 pessoas, pouco mais da metade das cerca de 2.200 a bordo; as regras da época não exigiam mais que isso.',
      src=('pt', 'RMS Titanic', ['botes']))
 c.MY('Leonardo da Vinci desenhou projetos de máquinas voadoras, séculos antes do avião?', True, 1, who='leonardo',

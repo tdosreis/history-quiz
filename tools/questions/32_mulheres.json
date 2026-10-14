@@ -230,7 +230,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "flag"
+    "scene": "sufragistas"
    },
    "src": [
     "pt",
@@ -320,7 +320,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "flag"
+    "scene": "farrapos_pampa"
    },
    "src": [
     "pt",
@@ -428,7 +428,7 @@
    ],
    "d": 1,
    "art": {
-    "icon": "book"
+    "scene": "anexo_secreto"
    },
    "src": [
     "pt",

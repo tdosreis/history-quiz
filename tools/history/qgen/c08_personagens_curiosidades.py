@@ -22,14 +22,14 @@ c.P('Qual imperador mongol fundou a dinastia Yuan e recebeu Marco Polo?', ['kubl
 c.P('Qual rainha de Angola do século XVII negociou e guerreou contra os portugueses?', ['nzinga'], 3, scene='fortaleza_luanda', icon='crown', src=('en', 'Nzinga of Ndongo and Matamba', ['Portuguese']))
 c.P('Qual presidente americano foi assassinado em Dallas, em 1963?', ['kennedy'], 1, scene='carreata_dallas', icon='flag', src=('pt', 'John F. Kennedy', ['Dallas']))
 c.P('Qual político alemão, o Chanceler de Ferro, criou o primeiro sistema moderno de previdência social?', ['bismarck'], 4, scene='pickelhaube', icon='cannon', src=('pt', 'Otto von Bismarck', ['previdência']))
-c.P('Qual líder turco aboliu o califado e modernizou o país após 1923?', ['ataturk'], 3, icon='flag', src=('pt', 'Mustafa Kemal Atatürk', ['califado']))
+c.P('Qual líder turco aboliu o califado e modernizou o país após 1923?', ['ataturk'], 3, scene='fez_chapeu', icon='flag', src=('pt', 'Mustafa Kemal Atatürk', ['califado']))
 c.P('Qual imperador etíope foi derrubado em 1974 após reinar por mais de 40 anos?', ['haile_selassie'], 4, scene='leao_de_juda', icon='crown', src=('pt', 'Hailé Selassié I', ['1974']))
 c.P('Qual cientista dinamarquês debateu física quântica com Einstein?', ['niels_bohr'], 4, icon='book', src=('pt', 'Niels Bohr', ['Einstein']))
-c.P('Qual explorador norueguês foi o primeiro a chegar ao Polo Sul, em 1911?', ['amundsen'], 3, icon='map', src=('pt', 'Roald Amundsen', ['Polo Sul']))
+c.P('Qual explorador norueguês foi o primeiro a chegar ao Polo Sul, em 1911?', ['amundsen'], 3, scene='polo_sul', icon='map', src=('pt', 'Roald Amundsen', ['Polo Sul']))
 c.P('Qual santo e filósofo dominicano escreveu sobre fé e razão no século XIII?', ['tomas_aquino'], 3, scene='aula_medieval', icon='book', src=('pt', 'Tomás de Aquino', ['dominicano']))
 c.P('Qual imperador japonês assistiu à transição de xogunato para monarquia moderna?', ['meiji'], 3, scene='meiji_ginza', icon='crown', src=('pt', 'Imperador Meiji', ['xogunato']))
 c.P('Qual líder indígena sioux ficou famoso pela resistência às invasões das Black Hills?', ['touro_sentado'], 3, scene='pradarias_sioux', icon='sword', src=('pt', 'Touro Sentado', ['Black Hills']))
-c.P('Qual ex-presidente americano é lembrado pelo New Deal contra a Grande Depressão?', ['fdr'], 2, icon='flag', src=('pt', 'Franklin D. Roosevelt', ['New Deal']))
+c.P('Qual ex-presidente americano é lembrado pelo New Deal contra a Grande Depressão?', ['fdr'], 2, scene='new_deal_represa', icon='flag', src=('pt', 'Franklin D. Roosevelt', ['New Deal']))
 c.write()
 
 # ───────────────────────── Monumentos e Lugares ─────────────────────────

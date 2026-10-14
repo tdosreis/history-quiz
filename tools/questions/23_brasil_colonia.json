@@ -22,7 +22,7 @@
    ],
    "d": 2,
    "art": {
-    "icon": "map"
+    "scene": "chegada_cabral"
    },
    "src": [
     "pt",
@@ -74,7 +74,7 @@
    ],
    "d": 2,
    "art": {
-    "icon": "map"
+    "scene": "patio_do_colegio"
    },
    "src": [
     "pt",
@@ -100,7 +100,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "book"
+    "scene": "patio_do_colegio"
    },
    "src": [
     "pt",
@@ -178,7 +178,7 @@
    ],
    "d": 2,
    "art": {
-    "icon": "ship"
+    "scene": "olinda"
    },
    "src": [
     "pt",
@@ -204,7 +204,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "map"
+    "scene": "olinda"
    },
    "src": [
     "pt",
@@ -318,7 +318,7 @@
    ],
    "d": 1,
    "art": {
-    "icon": "flag"
+    "scene": "quilombo_palmares"
    },
    "src": [
     "pt",
@@ -389,7 +389,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "flag"
+    "scene": "salvador_colonial"
    },
    "src": [
     "pt",
@@ -433,7 +433,7 @@
    ],
    "d": 2,
    "art": {
-    "icon": "ship"
+    "scene": "corte_1808"
    },
    "src": [
     "pt",
@@ -459,7 +459,7 @@
    ],
    "d": 4,
    "art": {
-    "icon": "crown"
+    "scene": "corte_1808"
    },
    "src": [
     "pt",
@@ -635,7 +635,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "sword"
+    "scene": "humaita"
    },
    "src": [
     "pt",
@@ -749,7 +749,7 @@
    ],
    "d": 1,
    "art": {
-    "icon": "scroll"
+    "scene": "ev_abolicao_br"
    },
    "src": [
     "pt",
@@ -785,7 +785,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "scroll"
+    "scene": "ev_abolicao_br"
    },
    "src": [
     "pt",
@@ -803,7 +803,7 @@
    ],
    "d": 4,
    "art": {
-    "icon": "scroll"
+    "scene": "ev_abolicao_br"
    },
    "src": [
     "pt",
@@ -821,7 +821,7 @@
    ],
    "d": 1,
    "art": {
-    "icon": "flag"
+    "scene": "republica_1889"
    },
    "src": [
     "pt",
@@ -839,7 +839,7 @@
    ],
    "d": 1,
    "art": {
-    "icon": "book"
+    "scene": "rio_oitocentista"
    },
    "src": [
     "pt",
@@ -857,7 +857,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "book"
+    "scene": "carnaval_cordao"
    },
    "src": [
     "pt",
