@@ -94,37 +94,37 @@ c.T('Qual templo domina a Acrópole de Atenas, dedicado à deusa Atena?', 'Parte
     src=('pt', 'Partenon', ['Atena']), x='O Partenon foi concluído em 432 a.C., na época de Péricles, e sobreviveu a séculos como templo, igreja e mesquita.')
 c.P('Qual estadista dominou Atenas na sua Era de Ouro e liderou a construção do Partenon?', ['pericles'], 2, stad='partenon',
     src=('pt', 'Péricles', ['Partenon']))
-c.P('Qual rei espartano morreu com seus guerreiros na Batalha das Termópilas, em 480 a.C.?', ['leonidas'], 1, icon='sword',
+c.P('Qual rei espartano morreu com seus guerreiros na Batalha das Termópilas, em 480 a.C.?', ['leonidas'], 1, scene='ev_guerras_persas', icon='sword',
     src=('pt', 'Leônidas I', ['Termópilas']), x='Os famosos “300” eram a guarda pessoal de Leônidas; milhares de outros gregos lutaram ao lado deles.')
-c.C('Qual cidade-Estado grega educava seus meninos desde os sete anos para a vida militar?', 'esparta', 1, icon='sword',
+c.C('Qual cidade-Estado grega educava seus meninos desde os sete anos para a vida militar?', 'esparta', 1, scene='agoge_esparta', icon='sword',
     src=('pt', 'Esparta', ['agogê']))
 c.T('Quais povos se enfrentaram nas Guerras Médicas?', 'Gregos e persas', ['Gregos e romanos', 'Persas e egípcios', 'Atenienses e fenícios', 'Gregos e cartagineses', 'Macedônios e hititas'], 2, icon='sword',
     src=('pt', 'Guerras greco-persas', ['persas']))
-c.T('Em que batalha de 490 a.C. os atenienses derrotaram os persas, dando nome a uma corrida de longa distância?', 'Maratona', ['Salamina', 'Plateias', 'Termópilas', 'Egospótamos', 'Queroneia'], 2, icon='sword',
+c.T('Em que batalha de 490 a.C. os atenienses derrotaram os persas, dando nome a uma corrida de longa distância?', 'Maratona', ['Salamina', 'Plateias', 'Termópilas', 'Egospótamos', 'Queroneia'], 2, scene='mensageiro_maratona', icon='sword',
     src=('pt', 'Batalha de Maratona', ['490 a.C.']), x='Segundo a lenda, um mensageiro correu de Maratona a Atenas para anunciar a vitória — e caiu morto de exaustão.')
-c.P('Qual filósofo ateniense foi condenado a beber cicuta, em 399 a.C.?', ['socrates'], 1, icon='bust',
+c.P('Qual filósofo ateniense foi condenado a beber cicuta, em 399 a.C.?', ['socrates'], 1, scene='cicuta', icon='bust',
     src=('pt', 'Sócrates', ['cicuta']))
 c.P('Qual filósofo, discípulo de Sócrates, fundou a Academia e escreveu A República?', ['platao'], 2, icon='book',
     src=('pt', 'Platão', ['Academia']))
 c.P('Qual filósofo foi tutor de Alexandre, o Grande, e fundou o Liceu?', ['aristoteles'], 2, icon='book',
     src=('pt', 'Aristóteles', ['Alexandre']))
-c.P('Qual matemático grego dá nome a um célebre teorema sobre triângulos retângulos?', ['pitagoras'], 1, icon='book',
+c.P('Qual matemático grego dá nome a um célebre teorema sobre triângulos retângulos?', ['pitagoras'], 1, scene='geometria_areia', icon='book',
     src=('pt', 'Pitágoras', ['teorema']))
-c.P('Qual médico grego é chamado “pai da Medicina” e dá nome a um juramento?', ['hipocrates'], 2, icon='book',
+c.P('Qual médico grego é chamado “pai da Medicina” e dá nome a um juramento?', ['hipocrates'], 2, scene='medico_grego', icon='book',
     src=('pt', 'Hipócrates', ['juramento']))
-c.P('Qual matemático de Siracusa teria gritado “Eureka!” ao descobrir o princípio do empuxo?', ['arquimedes'], 2, icon='gear',
+c.P('Qual matemático de Siracusa teria gritado “Eureka!” ao descobrir o princípio do empuxo?', ['arquimedes'], 2, scene='banheira_eureka', icon='gear',
     src=('pt', 'Arquimedes', ['Eureka']))
-c.P('Qual autor dos Elementos é chamado “pai da Geometria”?', ['euclides'], 3, icon='book',
+c.P('Qual autor dos Elementos é chamado “pai da Geometria”?', ['euclides'], 3, scene='geometria_areia', icon='book',
     src=('pt', 'Euclides', ['Elementos']))
-c.P('Qual poeta é tradicionalmente apontado como autor da Ilíada e da Odisseia?', ['homero'], 2, icon='book',
+c.P('Qual poeta é tradicionalmente apontado como autor da Ilíada e da Odisseia?', ['homero'], 2, scene='cavalo_de_troia', icon='book',
     src=('pt', 'Homero', ['Ilíada']))
-c.P('Qual dramaturgo ateniense escreveu Édipo Rei?', ['sofocles'], 3, icon='scroll',
+c.P('Qual dramaturgo ateniense escreveu Édipo Rei?', ['sofocles'], 3, scene='teatro_grego', icon='scroll',
     src=('pt', 'Sófocles', ['Édipo']))
-c.P('Qual historiador grego é chamado “pai da História” por suas Histórias sobre as Guerras Médicas?', ['herodoto'], 3, icon='book',
+c.P('Qual historiador grego é chamado “pai da História” por suas Histórias sobre as Guerras Médicas?', ['herodoto'], 3, scene='ev_guerras_persas', icon='book',
     src=('pt', 'Heródoto', ['Guerras']))
-c.T('Qual a cidade grega que sediava os jogos em honra a Zeus, a cada quatro anos?', 'Olímpia', ['Atenas', 'Delfos', 'Corinto', 'Esparta', 'Micenas'], 2, icon='trophy',
+c.T('Qual a cidade grega que sediava os jogos em honra a Zeus, a cada quatro anos?', 'Olímpia', ['Atenas', 'Delfos', 'Corinto', 'Esparta', 'Micenas'], 2, scene='estadio_olimpia', icon='trophy',
     src=('pt', 'Olímpia (Grécia)', ['Zeus']), x='Os Jogos Olímpicos da Antiguidade começaram em 776 a.C. e duraram mais de mil anos, até serem proibidos em 393 d.C.')
-c.T('Em qual cidade grega ficava o famoso oráculo consultado antes de grandes decisões?', 'Delfos', ['Olímpia', 'Atenas', 'Esparta', 'Tebas', 'Corinto'], 2, icon='column',
+c.T('Em qual cidade grega ficava o famoso oráculo consultado antes de grandes decisões?', 'Delfos', ['Olímpia', 'Atenas', 'Esparta', 'Tebas', 'Corinto'], 2, scene='oraculo_delfos', icon='column',
     src=('pt', 'Oráculo de Delfos', ['Apolo']))
 c.T('Como se chamavam as cidades-Estado gregas, independentes entre si?', 'Pólis', ['Satrapias', 'Províncias', 'Feudos', 'Nomos', 'Colônias'], 2, icon='column',
     src=('pt', 'Pólis', ['cidade-Estado']))
@@ -134,13 +134,13 @@ c.T('Qual a guerra entre Atenas e Esparta e seus aliados, entre 431 e 404 a.C.?'
     src=('pt', 'Guerra do Peloponeso', ['Esparta']))
 c.T('Qual guerra mitológica, narrada por Homero, teria sido causada pelo rapto de Helena?', 'Guerra de Troia', ['Guerra do Peloponeso', 'Guerra de Corinto', 'Guerra Médica', 'Guerra de Tebas', 'Guerra de Creta'], 1, icon='sword',
     src=('pt', 'Guerra de Troia', ['Helena']))
-c.T('Qual civilização anterior à Grécia clássica construiu o palácio de Cnossos, em Creta?', 'Minoica', ['Micênica', 'Fenícia', 'Hitita', 'Dórica', 'Etrusca'], 4, icon='column',
+c.T('Qual civilização anterior à Grécia clássica construiu o palácio de Cnossos, em Creta?', 'Minoica', ['Micênica', 'Fenícia', 'Hitita', 'Dórica', 'Etrusca'], 4, scene='knossos', icon='column',
     src=('pt', 'Civilização minoica', ['Cnossos']))
-c.T('Qual rei macedônio, pai de Alexandre, unificou a Grécia após a Batalha de Queroneia?', 'Filipe II', ['Filipe V', 'Pirro', 'Cassandro', 'Perseu', 'Antígono'], 3, icon='crown',
+c.T('Qual rei macedônio, pai de Alexandre, unificou a Grécia após a Batalha de Queroneia?', 'Filipe II', ['Filipe V', 'Pirro', 'Cassandro', 'Perseu', 'Antígono'], 3, scene='ev_conquistas_alexandre', icon='crown',
     src=('pt', 'Filipe II da Macedônia', ['Queroneia']))
-c.P('Qual rei da Macedônia criou, em pouco mais de uma década, um império do Egito à Índia?', ['alexandre'], 1, icon='sword',
+c.P('Qual rei da Macedônia criou, em pouco mais de uma década, um império do Egito à Índia?', ['alexandre'], 1, scene='ev_conquistas_alexandre', icon='sword',
     src=('pt', 'Alexandre, o Grande', ['Índia']))
-c.T('Como se chama o período da cultura grega espalhada pelo mundo após as conquistas de Alexandre?', 'Helenístico', ['Clássico', 'Arcaico', 'Homérico', 'Micênico', 'Bizantino'], 3, icon='globe',
+c.T('Como se chama o período da cultura grega espalhada pelo mundo após as conquistas de Alexandre?', 'Helenístico', ['Clássico', 'Arcaico', 'Homérico', 'Micênico', 'Bizantino'], 3, scene='biblioteca_alexandria', icon='globe',
     src=('pt', 'Período helenístico', ['Alexandre']))
 c.T('Qual o nome do cavalo de Alexandre, o Grande?', 'Bucéfalo', ['Pégaso', 'Incitatus', 'Bayard', 'Marengo', 'Sleipnir'], 3, icon='sword',
     src=('pt', 'Bucéfalo', ['Alexandre']))
@@ -156,7 +156,7 @@ c.T('Qual obra de Homero narra a volta de Odisseu para casa depois da Guerra de 
     src=('pt', 'Odisseia', ['Odisseu']))
 c.T('Qual formação militar grega de soldados com escudos e lanças, lado a lado, era a base dos exércitos das pólis?', 'Falange', ['Legião', 'Testudo', 'Coorte', 'Esquadrão', 'Cunha'], 3, icon='sword',
     src=('pt', 'Falange', ['hoplita']))
-c.T('Qual poeta grega da ilha de Lesbos ficou conhecida pelos versos líricos sobre o amor?', 'Safo', ['Hipácia', 'Aspásia', 'Corina', 'Erina', 'Safira'], 4, icon='book',
+c.T('Qual poeta grega da ilha de Lesbos ficou conhecida pelos versos líricos sobre o amor?', 'Safo', ['Hipácia', 'Aspásia', 'Corina', 'Erina', 'Safira'], 4, scene='lira_lesbos', icon='book',
     src=('pt', 'Safo', ['Lesbos']))
 c.T('Qual civilização grega arcaica de Micenas foi lembrada nos poemas de Homero?', 'Micênica', ['Minoica', 'Dórica', 'Jônica', 'Etrusca', 'Fenícia'], 4, icon='column',
     src=('pt', 'Civilização micênica', ['Micenas']))

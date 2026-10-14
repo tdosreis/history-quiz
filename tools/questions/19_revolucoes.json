@@ -384,7 +384,7 @@
    ],
    "d": 1,
    "art": {
-    "icon": "flag"
+    "scene": "ev_independencias_latam"
    },
    "src": [
     "pt",
@@ -402,7 +402,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "flag"
+    "scene": "ev_independencias_latam"
    },
    "src": [
     "pt",

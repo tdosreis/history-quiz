@@ -32,7 +32,7 @@
    ],
    "d": 1,
    "art": {
-    "icon": "crown"
+    "scene": "biblioteca_alexandria"
    },
    "src": [
     "pt",
@@ -50,7 +50,7 @@
    ],
    "d": 4,
    "art": {
-    "icon": "book"
+    "scene": "biblioteca_alexandria"
    },
    "src": [
     "pt",
@@ -68,7 +68,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "crown"
+    "scene": "tang_pagode"
    },
    "src": [
     "pt",
@@ -86,7 +86,7 @@
    ],
    "d": 1,
    "art": {
-    "icon": "sword"
+    "scene": "ev_guerra_cem_anos"
    },
    "src": [
     "pt",
@@ -158,7 +158,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "sword"
+    "scene": "fortaleza_luanda"
    },
    "src": [
     "en",

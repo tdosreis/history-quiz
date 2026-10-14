@@ -85,7 +85,7 @@
    ],
    "d": 1,
    "art": {
-    "icon": "sword"
+    "scene": "ev_guerras_persas"
    },
    "src": [
     "pt",
@@ -103,7 +103,7 @@
    ],
    "d": 1,
    "art": {
-    "icon": "sword"
+    "scene": "agoge_esparta"
    },
    "src": [
     "pt",
@@ -155,7 +155,7 @@
    ],
    "d": 2,
    "art": {
-    "icon": "sword"
+    "scene": "mensageiro_maratona"
    },
    "src": [
     "pt",
@@ -174,7 +174,7 @@
    ],
    "d": 1,
    "art": {
-    "icon": "bust"
+    "scene": "cicuta"
    },
    "src": [
     "pt",
@@ -228,7 +228,7 @@
    ],
    "d": 1,
    "art": {
-    "icon": "book"
+    "scene": "geometria_areia"
    },
    "src": [
     "pt",
@@ -246,7 +246,7 @@
    ],
    "d": 2,
    "art": {
-    "icon": "book"
+    "scene": "medico_grego"
    },
    "src": [
     "pt",
@@ -264,7 +264,7 @@
    ],
    "d": 2,
    "art": {
-    "icon": "gear"
+    "scene": "banheira_eureka"
    },
    "src": [
     "pt",
@@ -282,7 +282,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "book"
+    "scene": "geometria_areia"
    },
    "src": [
     "pt",
@@ -300,7 +300,7 @@
    ],
    "d": 2,
    "art": {
-    "icon": "book"
+    "scene": "cavalo_de_troia"
    },
    "src": [
     "pt",
@@ -318,7 +318,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "scroll"
+    "scene": "teatro_grego"
    },
    "src": [
     "pt",
@@ -336,7 +336,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "book"
+    "scene": "ev_guerras_persas"
    },
    "src": [
     "pt",
@@ -362,7 +362,7 @@
    ],
    "d": 2,
    "art": {
-    "icon": "trophy"
+    "scene": "estadio_olimpia"
    },
    "src": [
     "pt",
@@ -389,7 +389,7 @@
    ],
    "d": 2,
    "art": {
-    "icon": "column"
+    "scene": "oraculo_delfos"
    },
    "src": [
     "pt",
@@ -519,7 +519,7 @@
    ],
    "d": 4,
    "art": {
-    "icon": "column"
+    "scene": "knossos"
    },
    "src": [
     "pt",
@@ -545,7 +545,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "crown"
+    "scene": "ev_conquistas_alexandre"
    },
    "src": [
     "pt",
@@ -563,7 +563,7 @@
    ],
    "d": 1,
    "art": {
-    "icon": "sword"
+    "scene": "ev_conquistas_alexandre"
    },
    "src": [
     "pt",
@@ -589,7 +589,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "globe"
+    "scene": "biblioteca_alexandria"
    },
    "src": [
     "pt",
@@ -797,7 +797,7 @@
    ],
    "d": 4,
    "art": {
-    "icon": "book"
+    "scene": "lira_lesbos"
    },
    "src": [
     "pt",

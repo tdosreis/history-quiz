@@ -22,7 +22,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "crown"
+    "scene": "caravana_mali"
    },
    "src": [
     "pt",
@@ -40,7 +40,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "sword"
+    "scene": "impi_zulu"
    },
    "src": [
     "pt",
@@ -58,7 +58,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "crown"
+    "scene": "fortaleza_luanda"
    },
    "src": [
     "en",
@@ -76,7 +76,7 @@
    ],
    "d": 4,
    "art": {
-    "icon": "crown"
+    "scene": "leao_de_juda"
    },
    "src": [
     "pt",
@@ -102,7 +102,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "map"
+    "scene": "caravana_mali"
    },
    "src": [
     "pt",
@@ -128,7 +128,7 @@
    ],
    "d": 4,
    "art": {
-    "icon": "column"
+    "scene": "ouro_axumita"
    },
    "src": [
     "pt",

@@ -190,7 +190,7 @@ c.MY('A Torre de Pisa começou a inclinar ainda durante a construção?', True, 
 c.MY('A França ainda executava condenados na guilhotina em 1977?', True, 3, flag='FRA',
      x='A última execução foi em 10 de setembro de 1977, em Marselha; a pena de morte só foi abolida no país em 1981.',
      src=('en', 'Guillotine', ['1977']))
-c.MY('A Biblioteca de Alexandria foi destruída de uma só vez, num grande incêndio?', False, 3, icon='book',
+c.MY('A Biblioteca de Alexandria foi destruída de uma só vez, num grande incêndio?', False, 3, scene='biblioteca_alexandria', icon='book',
      x='O incêndio de 48 a.C., na guerra de Júlio César, foi só um episódio: a biblioteca definhou ao longo de séculos, com cortes de verbas, expurgos e guerras.',
      src=('pt', 'Biblioteca de Alexandria', ['César']))
 c.MY('Stonehenge foi construído pelos druidas celtas?', False, 3, stad='stonehenge',
@@ -199,7 +199,7 @@ c.MY('Stonehenge foi construído pelos druidas celtas?', False, 3, stad='stonehe
 c.MY('O céu estrelado da bandeira do Brasil reproduz o céu do Rio de Janeiro na manhã de 15 de novembro de 1889?', True, 3, flag='BRA',
      x='Cada estrela representa um estado ou o Distrito Federal; o céu aparece como se fosse visto de fora da esfera celeste, por isso fica invertido.',
      src=('pt', 'Bandeira do Brasil', ['1889']))
-c.MY('Os samurais lutavam só com espadas e arcos, sem usar armas de fogo?', False, 3, icon='helmet',
+c.MY('Os samurais lutavam só com espadas e arcos, sem usar armas de fogo?', False, 3, scene='castelo_japones', icon='helmet',
      x='Os portugueses levaram o arcabuz ao Japão em 1543, e logo os japoneses fabricavam milhares; em batalhas como a de Nagashino, em 1575, ele foi usado em massa.',
      src=('en', 'Battle of Nagashino', ['arquebus']))
 c.MY('O coração de D. Pedro I está guardado numa igreja de Portugal?', True, 3, who='dom_pedro_i',
@@ -242,7 +242,7 @@ c.MY('Para ter a independência reconhecida por Portugal, o Brasil aceitou pagar
 c.MY('Os Estados Unidos já tiveram um presidente que nunca foi eleito nem para presidente nem para vice?', True, 5, flag='USA',
      x='Gerald Ford virou vice em 1973, nomeado após a renúncia de Spiro Agnew, e assumiu a Presidência em 1974, quando Nixon renunciou; perdeu a eleição de 1976.',
      src=('pt', 'Gerald Ford', ['1974']))
-c.MY('Os médicos já usavam a famosa máscara em forma de bico durante a Peste Negra, no século XIV?', False, 5, icon='flask',
+c.MY('Os médicos já usavam a famosa máscara em forma de bico durante a Peste Negra, no século XIV?', False, 5, scene='peste_negra', icon='flask',
      x='Na Peste Negra, de 1347 a 1351, ela não existia: a máscara de bico, recheada de ervas aromáticas, surgiu no século XVII e é atribuída ao médico francês Charles de Lorme.',
      src=('en', 'Plague doctor', ['Lorme']))
 c.write()

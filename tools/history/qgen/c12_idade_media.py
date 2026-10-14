@@ -17,15 +17,15 @@ c.T('Na Europa medieval, como se chamavam os guerreiros nobres que combatiam a c
     src=('en', 'Knight', ['horse']),
     x='Um menino nobre costumava começar como pajem, passar a escudeiro e só depois ser armado cavaleiro.')
 c.T('Que língua a Igreja e as universidades usavam na Europa ocidental durante a Idade Média?', 'Latim',
-    ['Grego', 'Francês', 'Hebraico', 'Aramaico', 'Alemão'], d=1, icon='book',
+    ['Grego', 'Francês', 'Hebraico', 'Aramaico', 'Alemão'], d=1, scene='aula_medieval', icon='book',
     src=('en', 'Medieval Latin', ['Church']),
     x='Por isso um estudante podia sair de Lisboa e assistir às aulas em Paris ou Bolonha sem aprender outra língua.')
 c.T('Para qual cidade os muçulmanos se voltam na hora de rezar?', 'Meca',
-    ['Medina', 'Jerusalém', 'Bagdá', 'Damasco', 'Cairo'], d=1, icon='map',
+    ['Medina', 'Jerusalém', 'Bagdá', 'Damasco', 'Cairo'], d=1, scene='mihrab', icon='map',
     src=('en', 'Qibla', ['Kaaba']),
     x='Nos primeiros anos do Islã, os fiéis rezavam voltados para Jerusalém; a direção mudou para a Caaba, em Meca, em 624.')
 c.T('Qual é o livro sagrado do Islã, que reúne as revelações que Maomé teria recebido?', 'Alcorão',
-    ['Torá', 'Talmude', 'Vedas', 'Avesta', 'Evangelho'], d=1, icon='book',
+    ['Torá', 'Talmude', 'Vedas', 'Avesta', 'Evangelho'], d=1, scene='mihrab', icon='book',
     src=('en', 'Quran', ['Uthman']),
     x='O nome significa "recitação"; a versão-padrão do texto foi fixada por volta de 650, no governo do califa Otomão.')
 c.T('Como os muçulmanos chamavam a parte da Península Ibérica que estava sob seu domínio?', 'Al-Andalus',
@@ -37,7 +37,7 @@ c.T('Que arma incendiária, capaz de arder até sobre a água, era o trunfo secr
     src=('en', 'Greek fire', ['Byzantine']),
     x='A receita era tão bem guardada que se perdeu: até hoje não se sabe exatamente do que ele era feito.')
 c.T('Como se chamavam as associações medievais de artesãos de um mesmo ofício, que fixavam preços e formavam aprendizes?', 'Corporações de ofício',
-    ['Sindicatos', 'Feiras', 'Comunas', 'Burgos', 'Ordens mendicantes'], d=2, icon='gear',
+    ['Sindicatos', 'Feiras', 'Comunas', 'Burgos', 'Ordens mendicantes'], d=2, scene='oficina_artesao', icon='gear',
     src=('en', 'Guild', ['apprentice']),
     x='Para virar mestre, o artesão muitas vezes tinha de apresentar aos examinadores da corporação uma peça exemplar, a sua "obra-prima".')
 c.T('Qual arma fez a fama dos arqueiros ingleses e galeses na Guerra dos Cem Anos?', 'Arco longo',
@@ -53,11 +53,11 @@ c.T('Em que ano tropas muçulmanas atravessaram o estreito de Gibraltar e começ
     src=('en', 'Umayyad conquest of Hispania', ['711']),
     x='O comandante era Tárique; o rochedo onde desembarcou, Jabal Tariq ("monte de Tárique"), deu origem ao nome Gibraltar.')
 c.T('Qual ordem religiosa, nascida no mosteiro de Monte Cassino, na Itália do século VI, tem como lema "Ora et labora"?', 'Beneditinos',
-    ['Franciscanos', 'Dominicanos', 'Jesuítas', 'Templários', 'Carmelitas'], d=3, icon='book',
+    ['Franciscanos', 'Dominicanos', 'Jesuítas', 'Templários', 'Carmelitas'], d=3, scene='monte_cassino', icon='book',
     src=('en', 'Benedict of Nursia', ['Monte Cassino']),
     x='São Bento é padroeiro da Europa; no Brasil, o Mosteiro de São Bento do Rio de Janeiro foi fundado por monges da ordem no século XVI.')
 c.T('Em que ano os cruzados da Primeira Cruzada tomaram Jerusalém?', '1099',
-    ['1095', '1071', '1147', '1187', '1204'], d=3, icon='sword',
+    ['1095', '1071', '1147', '1187', '1204'], d=3, scene='ev_cruzadas', icon='sword',
     src=('en', 'Siege of Jerusalem (1099)', ['1099']),
     x='O cerco terminou em julho de 1099 com o massacre de grande parte dos moradores muçulmanos e judeus da cidade.')
 c.T('Qual papa pregou a Primeira Cruzada no Concílio de Clermont, em 1095?', 'Urbano II',
@@ -93,11 +93,11 @@ c.T('Qual rei ostrogodo governou a Itália a partir de Ravena entre 493 e 526?',
     src=('en', 'Theodoric the Great', ['Ravenna']),
     x='Passou a juventude como refém em Constantinopla; seu mausoléu em Ravena tem o teto feito de um único bloco de pedra.')
 c.T('Qual rei visigodo foi derrotado pelos muçulmanos de Tárique na batalha de Guadalete, em 711?', 'Rodrigo',
-    ['Recaredo I', 'Alarico II', 'Leovigildo', 'Pelágio', 'Vamba'], d=5, icon='crown',
+    ['Recaredo I', 'Alarico II', 'Leovigildo', 'Pelágio', 'Vamba'], d=5, scene='mouros_batalha', icon='crown',
     src=('en', 'Roderic', ['Guadalete']),
     x='Toledo, a capital visigoda, caiu pouco depois; anos mais tarde, um nobre chamado Pelágio iniciou a resistência cristã nas Astúrias.')
 c.T('Qual califa omíada mandou erguer a Cúpula da Rocha, em Jerusalém, concluída por volta de 691?', 'Abd al-Malik',
-    ['Muawiya I', 'Yazid I', 'Al-Walid I', 'Hisham', 'Omar II'], d=5, icon='column',
+    ['Muawiya I', 'Yazid I', 'Al-Walid I', 'Hisham', 'Omar II'], d=5, scene='cupula_da_rocha', icon='column',
     src=('en', 'Dome of the Rock', ['Abd al-Malik']),
     x='É a mais antiga obra da arquitetura islâmica ainda de pé; foi erguida no Monte do Templo, sobre a rocha sagrada que lhe dá o nome.')
 
@@ -274,7 +274,7 @@ c.MY('As pessoas da Idade Média quase nunca tomavam banho?', False, 2, icon='ca
 c.MY('Os vikings chegaram à América do Norte quase 500 anos antes de Colombo?', True, 2, who='leif',
      x="As ruínas nórdicas de L'Anse aux Meadows, no Canadá, guardam madeira cortada ali com ferramentas de metal no ano 1021.",
      src=('en', "L'Anse aux Meadows", ['1021']))
-c.MY('Os cavaleiros de armadura eram tão pesados que precisavam de um guindaste para subir no cavalo?', False, 2, icon='sword',
+c.MY('Os cavaleiros de armadura eram tão pesados que precisavam de um guindaste para subir no cavalo?', False, 2, scene='ev_guerra_cem_anos', icon='sword',
      x='Uma armadura completa pesava em geral de 15 a 25 kg, bem distribuídos pelo corpo; o cavaleiro montava sozinho, corria e se levantava do chão.',
      src=('en', 'Plate armour', ['kg']))
 c.MY('Os algarismos que usamos hoje, como 1, 2 e 3, foram inventados pelos árabes?', False, 2, who='al_khwarizmi',
@@ -283,13 +283,13 @@ c.MY('Os algarismos que usamos hoje, como 1, 2 e 3, foram inventados pelos árab
 c.MY('A Universidade de Oxford é mais antiga que o Império Asteca?', True, 2, icon='book',
      x='Já se dava aula em Oxford em 1096; a cidade asteca de Tenochtitlán só foi fundada em 1325, e o império, por volta de 1428.',
      src=('en', 'University of Oxford', ['1096']))
-c.MY('Cavaleiros que partiam para as Cruzadas trancavam as esposas em cintos de castidade?', False, 3, icon='castle',
+c.MY('Cavaleiros que partiam para as Cruzadas trancavam as esposas em cintos de castidade?', False, 3, scene='ev_cruzadas', icon='castle',
      x='Não há prova confiável disso; a maioria dos cintos de museu foi feita nos séculos XVIII e XIX, e vários museus os retiraram de exposição.',
      src=('en', 'Chastity belt', ['medieval']))
 c.MY('Na Idade Média, animais chegaram a ser levados a julgamento em tribunais?', True, 3, icon='scales',
      x='Em Falaise, na Normandia, em 1386, uma porca que matara uma criança foi julgada, condenada e executada em praça pública.',
      src=('en', 'Animal trial', ['Falaise']))
-c.MY('A Igreja medieval proibia completamente a dissecação de cadáveres?', False, 4, icon='book',
+c.MY('A Igreja medieval proibia completamente a dissecação de cadáveres?', False, 4, scene='aula_medieval', icon='book',
      x='Em Bolonha, Mondino de Luzzi dissecava cadáveres em aulas públicas por volta de 1315 e escreveu um manual de anatomia usado por dois séculos.',
      src=('en', 'Mondino de Luzzi', ['dissection']))
 

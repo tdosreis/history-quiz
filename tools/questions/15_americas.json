@@ -110,7 +110,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "crown"
+    "scene": "tenochtitlan"
    },
    "src": [
     "pt",
@@ -146,7 +146,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "crown"
+    "scene": "muralha_inca"
    },
    "src": [
     "pt",
@@ -224,7 +224,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "scroll"
+    "scene": "muralha_inca"
    },
    "src": [
     "pt",
@@ -250,7 +250,7 @@
    ],
    "d": 1,
    "art": {
-    "icon": "globe"
+    "scene": "tikal"
    },
    "src": [
     "pt",
@@ -302,7 +302,7 @@
    ],
    "d": 4,
    "art": {
-    "icon": "bust"
+    "scene": "cabeca_olmeca"
    },
    "src": [
     "pt",
@@ -354,7 +354,7 @@
    ],
    "d": 2,
    "art": {
-    "icon": "hourglass"
+    "scene": "tenochtitlan"
    },
    "src": [
     "pt",
@@ -380,7 +380,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "sword"
+    "scene": "pradarias_sioux"
    },
    "src": [
     "pt",
@@ -398,7 +398,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "sword"
+    "scene": "pradarias_sioux"
    },
    "src": [
     "pt",

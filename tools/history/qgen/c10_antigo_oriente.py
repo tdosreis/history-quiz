@@ -121,7 +121,7 @@ c.T('Qual religião antiga do Irã tem Ahura Mazda como deus supremo?', 'Zoroast
     src=('en', 'Zoroastrianism', ['Ahura Mazda']),
     x='Ainda hoje há fiéis, sobretudo no Irã e na Índia, onde são chamados parses.')
 c.T('Em que país ficam hoje as ruínas de Mohenjo-daro, uma das grandes cidades do Vale do Indo?', 'Paquistão',
-    ['Índia', 'Afeganistão', 'Irã', 'Bangladesh', 'Nepal'], d=3, icon='map',
+    ['Índia', 'Afeganistão', 'Irã', 'Bangladesh', 'Nepal'], d=3, scene='mohenjo_daro', icon='map',
     src=('en', 'Mohenjo-daro', ['Pakistan']),
     x='Por volta de 2500 a.C., a cidade já tinha ruas em grade, poços, banheiros nas casas e esgotos cobertos.')
 c.T('Qual achado de 1947, em cavernas de Qumran, revelou cópias da Bíblia hebraica mil anos mais antigas que as conhecidas?', 'Manuscritos do Mar Morto',

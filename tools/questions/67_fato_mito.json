@@ -470,7 +470,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "book"
+    "scene": "biblioteca_alexandria"
    },
    "src": [
     "pt",
@@ -545,7 +545,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "helmet"
+    "scene": "castelo_japones"
    },
    "src": [
     "en",
@@ -870,7 +870,7 @@
    ],
    "d": 5,
    "art": {
-    "icon": "flask"
+    "scene": "peste_negra"
    },
    "src": [
     "en",

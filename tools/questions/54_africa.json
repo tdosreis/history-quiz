@@ -157,7 +157,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "bust"
+    "scene": "bronzes_benin"
    },
    "src": [
     "en",
@@ -184,7 +184,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "crown"
+    "scene": "rio_congo"
    },
    "src": [
     "en",
@@ -211,7 +211,7 @@
    ],
    "d": 4,
    "art": {
-    "icon": "coins"
+    "scene": "caravana_mali"
    },
    "src": [
     "en",
@@ -348,7 +348,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "cannon"
+    "scene": "caravana_mali"
    },
    "src": [
     "en",
@@ -366,7 +366,7 @@
    ],
    "d": 4,
    "art": {
-    "icon": "coins"
+    "scene": "ouro_axumita"
    },
    "src": [
     "en",
@@ -871,7 +871,7 @@
    ],
    "d": 2,
    "art": {
-    "icon": "castle"
+    "scene": "muralhas_zimbabue"
    },
    "src": [
     "en",

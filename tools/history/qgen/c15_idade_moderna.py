@@ -77,7 +77,7 @@ c.T('Como se chamavam os soldados de infantaria de elite do sultão otomano, rec
     src=('en', 'Janissary', ['devshirme']),
     x='O recrutamento se chamava devshirme: os meninos eram convertidos ao islã e treinados por anos. O corpo foi extinto pelo próprio sultão em 1826.')
 c.T('Como se chamava o trabalho forçado, herdado do tempo dos incas, que os espanhóis impuseram aos indígenas nas minas de prata de Potosí?', 'Mita',
-    ['Encomienda', 'Sesmaria', 'Corveia', 'Peonagem', 'Capitação'], d=4, icon='coins',
+    ['Encomienda', 'Sesmaria', 'Corveia', 'Peonagem', 'Capitação'], d=4, scene='potosi', icon='coins',
     src=('en', "Mit'a", ['Potosí']),
     x='Entre os incas, a mita era um turno de trabalho devido ao Estado; o vice-rei Francisco de Toledo a transformou, na década de 1570, em recrutamento em massa para as minas.')
 c.T('A quantas léguas a oeste das ilhas de Cabo Verde passava a linha do Tratado de Tordesilhas?', '370 léguas',
@@ -126,7 +126,7 @@ c.C('Qual estado viveu uma Era de Ouro no século XVII, com pintores como Rembra
 c.C('Qual república, governada por um doge, perdeu a ilha de Chipre para os otomanos em 1571?', 'veneza', d=2, crest='imperio_otomano',
     src=('en', 'Republic of Venice', ['Cyprus']),
     x='Meses depois, a frota veneziana ajudou a vencer os otomanos em Lepanto, mas Chipre não foi recuperada.')
-c.C('Qual império de fé xiita, rival dos otomanos, viveu seu auge com o xá Abbas I, que fez de Isfahan a sua capital?', 'safavida', d=4, icon='crown',
+c.C('Qual império de fé xiita, rival dos otomanos, viveu seu auge com o xá Abbas I, que fez de Isfahan a sua capital?', 'safavida', d=4, scene='ponte_isfahan', icon='crown',
     src=('en', 'Abbas the Great', ['Isfahan']),
     x='Com ajuda de navios ingleses, Abbas I tomou dos portugueses a ilha de Ormuz, no golfo Pérsico, em 1622.')
 

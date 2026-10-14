@@ -1000,7 +1000,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "book"
+    "scene": "palacio_coreano"
    },
    "src": [
     "en",
@@ -1055,7 +1055,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "ship"
+    "scene": "frota_tufao"
    },
    "src": [
     "en",
@@ -1074,7 +1074,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "sword"
+    "scene": "qutb_minar"
    },
    "src": [
     "en",
@@ -1497,7 +1497,7 @@
    ],
    "d": 4,
    "art": {
-    "icon": "quill"
+    "scene": "tang_pagode"
    },
    "src": [
     "en",

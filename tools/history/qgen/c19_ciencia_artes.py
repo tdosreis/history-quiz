@@ -47,7 +47,7 @@ c.T('Qual engenho grego de engrenagens, retirado de um naufrágio em 1901, calcu
     src=('en', 'Antikythera mechanism', ['1901', 'eclipses']),
     x='Feito há mais de 2 mil anos, é chamado de primeiro computador analógico: nada tão complexo voltou a ser construído por mais de mil anos.')
 c.T('Qual sábio grego calculou a circunferência da Terra, no século III a.C., comparando as sombras do Sol em Siena (atual Assuã) e em Alexandria?', 'Eratóstenes',
-    ['Ptolomeu', 'Hiparco', 'Aristarco de Samos', 'Euclides', 'Arquimedes'], d=4, icon='globe',
+    ['Ptolomeu', 'Hiparco', 'Aristarco de Samos', 'Euclides', 'Arquimedes'], d=4, scene='biblioteca_alexandria', icon='globe',
     src=('en', 'Eratosthenes', ['circumference', 'Syene']),
     x='Ele também dirigiu a Biblioteca de Alexandria e é apontado como o criador da palavra "geografia".')
 c.T('Qual médico mapeou os mortos por cólera em Londres, em 1854, e mostrou que a doença vinha da água de uma bomba pública?', 'John Snow',
@@ -55,7 +55,7 @@ c.T('Qual médico mapeou os mortos por cólera em Londres, em 1854, e mostrou qu
     src=('en', 'John Snow', ['Broad Street', '1854']),
     x='Convencidas por ele, as autoridades retiraram a alavanca da bomba da Broad Street. Seu mapa dos casos é visto como um marco da epidemiologia.')
 c.T('Qual sábio chinês do século XI descreveu pela primeira vez a bússola de agulha magnética e a declinação magnética?', 'Shen Kuo',
-    ['Bi Sheng', 'Zhang Heng', 'Cai Lun', 'Su Song', 'Zu Chongzhi'], d=5, icon='compass',
+    ['Bi Sheng', 'Zhang Heng', 'Cai Lun', 'Su Song', 'Zu Chongzhi'], d=5, scene='bussola_chinesa', icon='compass',
     src=('en', 'Shen Kuo', ['compass', 'Dream Pool']),
     x='Ele registrou a descoberta nos "Ensaios do Lago dos Sonhos", de 1088, livro que trata de astronomia, geologia, medicina e música.')
 
@@ -63,7 +63,7 @@ c.T('Qual sábio chinês do século XI descreveu pela primeira vez a bússola de
 c.P('Qual sábio grego foi morto por um soldado romano durante a tomada de Siracusa, em 212 a.C.?', 'arquimedes', d=3, crest='republica_romana',
     src=('en', 'Archimedes', ['212 BC', 'Marcellus']),
     x='Segundo os relatos antigos, o general romano Marcelo tinha mandado poupá-lo e lamentou sua morte.')
-c.C('Sob qual dinastia chinesa foi impresso o Sutra do Diamante, de 868, o livro impresso com data mais antigo que se conhece?', 'tang', d=4, icon='scroll',
+c.C('Sob qual dinastia chinesa foi impresso o Sutra do Diamante, de 868, o livro impresso com data mais antigo que se conhece?', 'tang', d=4, scene='tang_pagode', icon='scroll',
     src=('en', 'Diamond Sutra', ['868', 'Dunhuang']),
     x='O rolo foi encontrado em 1900 nas grutas de Mogao, em Dunhuang, e hoje está na Biblioteca Britânica, em Londres.')
 

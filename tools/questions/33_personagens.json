@@ -50,7 +50,7 @@
    ],
    "d": 4,
    "art": {
-    "icon": "sword"
+    "scene": "mensageiro_maratona"
    },
    "src": [
     "pt",
@@ -140,7 +140,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "map"
+    "scene": "dhow_oceano"
    },
    "src": [
     "pt",
@@ -158,7 +158,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "sword"
+    "scene": "samarcanda"
    },
    "src": [
     "pt",
@@ -266,7 +266,7 @@
    ],
    "d": 2,
    "art": {
-    "icon": "crown"
+    "scene": "torre_branca"
    },
    "src": [
     "pt",
@@ -302,7 +302,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "crown"
+    "scene": "fortaleza_luanda"
    },
    "src": [
     "en",
@@ -374,7 +374,7 @@
    ],
    "d": 4,
    "art": {
-    "icon": "crown"
+    "scene": "leao_de_juda"
    },
    "src": [
     "pt",
@@ -428,7 +428,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "book"
+    "scene": "aula_medieval"
    },
    "src": [
     "pt",
@@ -446,7 +446,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "crown"
+    "scene": "meiji_ginza"
    },
    "src": [
     "pt",
@@ -464,7 +464,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "sword"
+    "scene": "pradarias_sioux"
    },
    "src": [
     "pt",

@@ -32,7 +32,7 @@ c.P('Qual imperador legalizou o cristianismo com o Edito de Milão, em 313, e fu
     src=('pt', 'Constantino I', ['Edito de Milão']))
 c.P('Qual poeta romano escreveu a Eneida, epopeia da origem de Roma?', ['virgilio'], 3, scene='loba_capitolina', icon='book',
     src=('pt', 'Virgílio', ['Eneida']))
-c.P('Qual médico grego a serviço dos gladiadores e dos imperadores influenciou a Medicina por mais de mil anos?', ['galeno'], 4, icon='book',
+c.P('Qual médico grego a serviço dos gladiadores e dos imperadores influenciou a Medicina por mais de mil anos?', ['galeno'], 4, scene='medico_grego', icon='book',
     src=('pt', 'Galeno', ['gladiador']))
 c.T('Qual anfiteatro de Roma, inaugurado no ano 80, sediava lutas de gladiadores?', 'Coliseu', ['Circo Máximo', 'Panteão', 'Fórum', 'Termas de Caracala', 'Teatro de Marcelo'], 1, stad='coliseu',
     src=('pt', 'Coliseu', ['gladiador']))
@@ -72,23 +72,23 @@ c.write()
 
 # ───────────────────────── Idade Média ─────────────────────────
 c = Cat('medieval', 'Idade Média', '🏰', 'Cavaleiros, mosteiros e cruzadas', '#5B4A7A', order=13)
-c.P('Qual rei franco foi coroado imperador pelo papa no Natal do ano 800?', ['carlos_magno'], 2, icon='crown',
+c.P('Qual rei franco foi coroado imperador pelo papa no Natal do ano 800?', ['carlos_magno'], 2, scene='coroacao_800', icon='crown',
     src=('pt', 'Carlos Magno', ['800']))
-c.P('Qual duque da Normandia conquistou a Inglaterra na Batalha de Hastings, em 1066?', ['guilherme_conquistador'], 2, icon='sword',
+c.P('Qual duque da Normandia conquistou a Inglaterra na Batalha de Hastings, em 1066?', ['guilherme_conquistador'], 2, scene='torre_branca', icon='sword',
     src=('pt', 'Guilherme I de Inglaterra', ['Hastings']))
-c.P('Qual rei inglês, conhecido como Coração de Leão, liderou a Terceira Cruzada?', ['ricardo'], 2, icon='sword',
+c.P('Qual rei inglês, conhecido como Coração de Leão, liderou a Terceira Cruzada?', ['ricardo'], 2, scene='ev_cruzadas', icon='sword',
     src=('pt', 'Ricardo I de Inglaterra', ['Cruzada']))
-c.P('Qual sultão reconquistou Jerusalém dos cruzados em 1187?', ['saladino'], 2, icon='sword',
+c.P('Qual sultão reconquistou Jerusalém dos cruzados em 1187?', ['saladino'], 2, scene='ev_cruzadas', icon='sword',
     src=('pt', 'Saladino', ['Jerusalém']))
-c.P('Qual jovem camponesa francesa liderou tropas na Guerra dos Cem Anos e foi queimada em 1431?', ['joana_darc'], 1, icon='sword',
+c.P('Qual jovem camponesa francesa liderou tropas na Guerra dos Cem Anos e foi queimada em 1431?', ['joana_darc'], 1, scene='ev_guerra_cem_anos', icon='sword',
     src=('pt', 'Joana d\'Arc', ['1431']))
 c.P('Qual teólogo italiano escreveu a Suma Teológica, unindo Aristóteles e a fé cristã?', ['tomas_aquino'], 3, icon='book',
     src=('pt', 'Tomás de Aquino', ['Suma Teológica']))
-c.P('Qual poeta florentino escreveu a Divina Comédia?', ['dante'], 2, icon='book',
+c.P('Qual poeta florentino escreveu a Divina Comédia?', ['dante'], 2, scene='selva_dante', icon='book',
     src=('pt', 'Dante Alighieri', ['Divina Comédia']))
 c.P('Qual alemão inventou a prensa de tipos móveis por volta de 1440?', ['gutenberg'], 1, icon='book',
     src=('pt', 'Johannes Gutenberg', ['1440']))
-c.T('Qual sistema econômico e social medieval se baseava na terra e na relação entre senhores e servos?', 'Feudalismo', ['Mercantilismo', 'Capitalismo', 'Escravismo antigo', 'Socialismo', 'Absolutismo'], 1, icon='castle',
+c.T('Qual sistema econômico e social medieval se baseava na terra e na relação entre senhores e servos?', 'Feudalismo', ['Mercantilismo', 'Capitalismo', 'Escravismo antigo', 'Socialismo', 'Absolutismo'], 1, scene='campo_feudal', icon='castle',
     src=('pt', 'Feudalismo', ['servo']))
 c.T('Como se chamava a terra que um senhor feudal concedia a um vassalo?', 'Feudo', ['Latifúndio', 'Sesmaria', 'Pólis', 'Aldeia', 'Burgo'], 2, icon='castle',
     src=('pt', 'Feudo', ['vassalo']))
@@ -96,25 +96,25 @@ c.T('Qual foi a epidemia que matou cerca de um terço dos europeus entre 1347 e 
     src=('pt', 'Peste Negra', ['1347']))
 c.T('Qual guerra opôs Inglaterra e França entre 1337 e 1453?', 'Guerra dos Cem Anos', ['Guerra das Duas Rosas', 'Guerra dos Trinta Anos', 'Guerra de Sucessão Espanhola', 'Guerra dos Sete Anos', 'Guerra do Peloponeso'], 1, icon='cannon',
     src=('pt', 'Guerra dos Cem Anos', ['1337']))
-c.T('Qual documento de 1215 limitou o poder do rei João Sem Terra, na Inglaterra?', 'Magna Carta', ['Bill of Rights', 'Declaração de Direitos', 'Código de Justiniano', 'Édito de Nantes', 'Petição de Direito'], 2, icon='scroll',
+c.T('Qual documento de 1215 limitou o poder do rei João Sem Terra, na Inglaterra?', 'Magna Carta', ['Bill of Rights', 'Declaração de Direitos', 'Código de Justiniano', 'Édito de Nantes', 'Petição de Direito'], 2, scene='runnymede', icon='scroll',
     src=('pt', 'Magna Carta', ['1215']))
-c.T('Qual movimento armado cristão, a partir de 1096, buscou conquistar Jerusalém?', 'Cruzadas', ['Reconquista', 'Inquisição', 'Guerra Santa Islâmica', 'Cisma do Oriente', 'Peregrinações'], 1, icon='sword',
+c.T('Qual movimento armado cristão, a partir de 1096, buscou conquistar Jerusalém?', 'Cruzadas', ['Reconquista', 'Inquisição', 'Guerra Santa Islâmica', 'Cisma do Oriente', 'Peregrinações'], 1, scene='cupula_da_rocha', icon='sword',
     src=('pt', 'Cruzadas', ['1096']))
 c.T('Como se chamava o processo de retomada da Península Ibérica dos mouros pelos reinos cristãos?', 'Reconquista', ['Cruzada', 'Inquisição', 'Renascença', 'Conquista', 'Restauração'], 2, icon='sword',
     src=('pt', 'Reconquista', ['Península Ibérica']))
 c.T('Em que ano caiu o último reino mouro da Península Ibérica, Granada?', '1492', ['1453', '1212', '1236', '1066', '1517'], 3, stad='alhambra',
     src=('pt', 'Reconquista', ['1492']))
-c.T('Qual a grande cisão da Igreja, em 1054, entre Roma e Constantinopla?', 'Cisma do Oriente', ['Reforma Protestante', 'Cisma do Ocidente', 'Inquisição', 'Concílio de Niceia', 'Cruzada dos Pobres'], 3, icon='book',
+c.T('Qual a grande cisão da Igreja, em 1054, entre Roma e Constantinopla?', 'Cisma do Oriente', ['Reforma Protestante', 'Cisma do Ocidente', 'Inquisição', 'Concílio de Niceia', 'Cruzada dos Pobres'], 3, scene='hagia_sofia', icon='book',
     src=('pt', 'Cisma do Oriente', ['1054']))
 c.T('Qual povo escandinavo atacava e comerciava pelos rios e mares da Europa nos séculos IX–XI?', 'Vikings', ['Visigodos', 'Hunos', 'Magiares', 'Mouros', 'Francos'], 1, icon='ship',
     src=('pt', 'Vikings', ['Escandinávia']))
-c.P('Qual explorador viking chegou à América do Norte por volta do ano 1000?', ['leif'], 3, icon='ship',
+c.P('Qual explorador viking chegou à América do Norte por volta do ano 1000?', ['leif'], 3, scene='drakkar', icon='ship',
     src=('pt', 'Leif Eriksson', ['América']))
 c.T('Qual era a ordem social dos três estados na Europa medieval?', 'Clero, nobreza e povo', ['Rei, burgueses e escravos', 'Papa, imperador e servos', 'Nobres, soldados e mercadores', 'Clero, burgueses e camponeses livres', 'Cavaleiros, escudeiros e pajens'], 3, icon='castle',
     src=('pt', 'Idade Média', ['clero']))
 c.T('Como se chamava o código de conduta dos cavaleiros medievais?', 'Cavalaria', ['Vassalagem', 'Heráldica', 'Torneio', 'Chancelaria', 'Cortesia'], 2, icon='sword',
     src=('pt', 'Cavalaria', ['cavaleiro']))
-c.T('Qual a universidade mais antiga da Europa ainda em funcionamento, fundada em 1088?', 'Bolonha', ['Oxford', 'Paris', 'Salamanca', 'Coimbra', 'Pádua'], 3, icon='book',
+c.T('Qual a universidade mais antiga da Europa ainda em funcionamento, fundada em 1088?', 'Bolonha', ['Oxford', 'Paris', 'Salamanca', 'Coimbra', 'Pádua'], 3, scene='aula_medieval', icon='book',
     src=('pt', 'Universidade de Bolonha', ['1088']))
 c.T('Qual estilo arquitetônico medieval é marcado por arcos ogivais e vitrais, como Notre-Dame?', 'Gótico', ['Românico', 'Barroco', 'Bizantino', 'Neoclássico', 'Manuelino'], 2, stad='notre_dame',
     src=('pt', 'Arquitetura gótica', ['ogiva']))
@@ -122,13 +122,13 @@ c.T('Qual império medieval, com capital em Constantinopla, foi a continuação 
     src=('pt', 'Império Bizantino', ['Constantinopla']))
 c.T('Em que ano os otomanos conquistaram Constantinopla, encerrando o Império Bizantino?', '1453', ['1204', '1492', '1389', '1517', '1071'], 2, stad='santa_sofia',
     src=('pt', 'Queda de Constantinopla', ['1453']), x='O sultão Maomé II tinha apenas 21 anos quando tomou a cidade, após um cerco de 53 dias.')
-c.T('Qual foi a revolta camponesa inglesa de 1381?', 'Revolta dos Camponeses', ['Revolta dos Ciompi', 'Jacquerie', 'Guerra das Rosas', 'Cruzada dos Pobres', 'Revolta de Jack Cade'], 4, icon='sword',
+c.T('Qual foi a revolta camponesa inglesa de 1381?', 'Revolta dos Camponeses', ['Revolta dos Ciompi', 'Jacquerie', 'Guerra das Rosas', 'Cruzada dos Pobres', 'Revolta de Jack Cade'], 4, scene='torre_branca', icon='sword',
     src=('pt', 'Revolta dos Camponeses', ['1381']))
-c.T('Qual foi a data da Batalha de Poitiers, em que os francos de Carlos Martel detiveram o avanço muçulmano?', '732', ['711', '800', '1066', '476', '1095'], 4, icon='sword',
+c.T('Qual foi a data da Batalha de Poitiers, em que os francos de Carlos Martel detiveram o avanço muçulmano?', '732', ['711', '800', '1066', '476', '1095'], 4, scene='mouros_batalha', icon='sword',
     src=('pt', 'Batalha de Poitiers (732)', ['732']))
 c.T('Qual obra de Marco Polo descreve suas viagens à China de Kublai Khan?', 'O Livro das Maravilhas', ['A Divina Comédia', 'Os Lusíadas', 'A Utopia', 'O Decameron', 'Crônicas de Froissart'], 3, icon='map',
     src=('pt', 'Marco Polo', ['Kublai']))
-c.T('Qual a ordem militar religiosa fundada para proteger peregrinos em Jerusalém, depois destruída em 1312?', 'Templários', ['Hospitalários', 'Teutônicos', 'Jesuítas', 'Beneditinos', 'Cistercienses'], 3, icon='sword',
+c.T('Qual a ordem militar religiosa fundada para proteger peregrinos em Jerusalém, depois destruída em 1312?', 'Templários', ['Hospitalários', 'Teutônicos', 'Jesuítas', 'Beneditinos', 'Cistercienses'], 3, scene='cupula_da_rocha', icon='sword',
     src=('pt', 'Ordem dos Templários', ['1312']))
 c.T('Qual instituição preservava e copiava livros na Europa medieval?', 'Os mosteiros', ['As universidades de Oxford', 'As guildas de ferreiros', 'As feiras de Champagne', 'Os castelos', 'As cortes de justiça'], 2, icon='book',
     src=('pt', 'Mosteiro', ['livros']))
@@ -136,21 +136,21 @@ c.write()
 
 # ───────────────────────── Ásia e Oriente ─────────────────────────
 c = Cat('oriente', 'Ásia e Oriente', '🐉', 'Dinastias, sultões e xoguns', '#C8731F', order=14)
-c.P('Qual chefe mongol unificou as tribos das estepes e fundou o maior império contíguo da História?', ['gengis'], 1, icon='sword',
+c.P('Qual chefe mongol unificou as tribos das estepes e fundou o maior império contíguo da História?', ['gengis'], 1, scene='mongois_estepe', icon='sword',
     src=('pt', 'Gengis Khan', ['mongol']))
 c.P('Qual neto de Gengis Khan fundou a dinastia Yuan na China?', ['kublai'], 3, icon='crown',
     src=('pt', 'Kublai Khan', ['Yuan']))
-c.P('Qual primeiro imperador da China unificou o país em 221 a.C. e foi enterrado com um exército de terracota?', ['qin_shi_huang'], 2, icon='crown',
+c.P('Qual primeiro imperador da China unificou o país em 221 a.C. e foi enterrado com um exército de terracota?', ['qin_shi_huang'], 2, scene='exercito_terracota', icon='crown',
     src=('pt', 'Qin Shi Huang', ['terracota']))
 c.P('Qual a única mulher a governar a China como imperatriz por direito próprio, na dinastia Tang?', ['wu_zetian'], 3, icon='crown',
     src=('pt', 'Wu Zetian', ['imperatriz']))
-c.P('Qual filósofo chinês, do século VI a.C., ensinava a harmonia social e o respeito aos mais velhos?', ['confucio'], 1, icon='book',
+c.P('Qual filósofo chinês, do século VI a.C., ensinava a harmonia social e o respeito aos mais velhos?', ['confucio'], 1, scene='rolo_bambu', icon='book',
     src=('pt', 'Confúcio', ['filósofo']))
-c.P('Qual estrategista chinês é autor de A Arte da Guerra?', ['sun_tzu'], 2, icon='book',
+c.P('Qual estrategista chinês é autor de A Arte da Guerra?', ['sun_tzu'], 2, scene='rolo_bambu', icon='book',
     src=('pt', 'Sun Tzu', ['A Arte da Guerra']))
-c.P('Qual príncipe indiano deixou a vida de luxo para buscar a iluminação e fundou o budismo?', ['sidarta'], 1, icon='bust',
+c.P('Qual príncipe indiano deixou a vida de luxo para buscar a iluminação e fundou o budismo?', ['sidarta'], 1, scene='stupa_bodhi', icon='bust',
     src=('pt', 'Sidarta Gautama', ['budismo']))
-c.P('Qual imperador indiano converteu-se ao budismo depois de uma sangrenta guerra em Kalinga?', ['ashoka'], 3, icon='crown',
+c.P('Qual imperador indiano converteu-se ao budismo depois de uma sangrenta guerra em Kalinga?', ['ashoka'], 3, scene='stupa_bodhi', icon='crown',
     src=('pt', 'Ashoka', ['Kalinga']))
 c.T('Qual imperador mogol mandou construir o Taj Mahal em memória da esposa Mumtaz Mahal?', 'Shah Jahan', ['Akbar', 'Babur', 'Aurangzeb', 'Humayun', 'Tamerlão'], 3, stad='taj_mahal',
     src=('pt', 'Taj Mahal', ['Shah Jahan']))
@@ -164,15 +164,15 @@ c.T('Qual invento chinês foi essencial para a navegação e chegou à Europa na
     src=('pt', 'Bússola', ['China']))
 c.T('Quais invenções são tradicionalmente atribuídas à China antiga?', 'Papel, pólvora, bússola e imprensa', ['Alfabeto, moeda e roda', 'Vidro, cimento e aço', 'Relógio, lente e microscópio', 'Álgebra, zero e xadrez', 'Seda, algodão e tinta'], 2, icon='gear',
     src=('pt', 'Quatro grandes invenções', ['pólvora']))
-c.T('Como se chamava o governante militar do Japão feudal, que na prática detinha o poder?', 'Xogum', ['Mikado', 'Daimyo', 'Samurai', 'Imperador', 'Ronin'], 2, icon='sword',
+c.T('Como se chamava o governante militar do Japão feudal, que na prática detinha o poder?', 'Xogum', ['Mikado', 'Daimyo', 'Samurai', 'Imperador', 'Ronin'], 2, scene='castelo_japones', icon='sword',
     src=('pt', 'Xogum', ['Japão']))
-c.T('Como eram chamados os guerreiros a serviço dos senhores feudais no Japão?', 'Samurais', ['Ninjas', 'Ronins', 'Xoguns', 'Daimyos', 'Monges guerreiros'], 1, icon='sword',
+c.T('Como eram chamados os guerreiros a serviço dos senhores feudais no Japão?', 'Samurais', ['Ninjas', 'Ronins', 'Xoguns', 'Daimyos', 'Monges guerreiros'], 1, scene='castelo_japones', icon='sword',
     src=('pt', 'Samurai', ['Japão']))
 c.P('Qual senhor da guerra unificou o Japão e fundou o Xogunato Tokugawa, em 1603?', ['tokugawa_ieyasu'], 3, stad='himeji',
     src=('pt', 'Tokugawa Ieyasu', ['1603']))
-c.P('Qual imperador japonês liderou a modernização do país após 1868?', ['meiji'], 3, icon='crown',
+c.P('Qual imperador japonês liderou a modernização do país após 1868?', ['meiji'], 3, scene='meiji_ginza', icon='crown',
     src=('pt', 'Imperador Meiji', ['1868']))
-c.T('Qual esquadra chinesa de “navios do tesouro” chegou à África no início do século XV?', 'A de Zheng He', ['A de Kublai Khan', 'A de Marco Polo', 'A de Gengis Khan', 'A de Sun Tzu', 'A de Tamerlão'], 3, icon='ship',
+c.T('Qual esquadra chinesa de “navios do tesouro” chegou à África no início do século XV?', 'A de Zheng He', ['A de Kublai Khan', 'A de Marco Polo', 'A de Gengis Khan', 'A de Sun Tzu', 'A de Tamerlão'], 3, scene='navio_tesouro', icon='ship',
     src=('pt', 'Zheng He', ['África']))
 c.P('Qual almirante chinês comandou as grandes expedições marítimas da dinastia Ming?', ['zheng_he'], 3, icon='ship',
     src=('pt', 'Zheng He', ['Ming']))
@@ -180,13 +180,13 @@ c.T('Qual religião fundada por Maomé no século VII se espalhou da Arábia ao 
     src=('pt', 'Islão', ['Maomé']))
 c.T('Qual cidade era a capital do Califado Abássida e centro do saber islâmico a partir de 762?', 'Bagdá', ['Damasco', 'Meca', 'Cairo', 'Córdoba', 'Isfahan'], 2, icon='book',
     src=('pt', 'Bagdá', ['Abássida']))
-c.P('Qual matemático persa, do século IX, deu nome à palavra “algoritmo” e escreveu sobre álgebra?', ['al_khwarizmi'], 3, icon='book',
+c.P('Qual matemático persa, do século IX, deu nome à palavra “algoritmo” e escreveu sobre álgebra?', ['al_khwarizmi'], 3, scene='casa_sabedoria', icon='book',
     src=('pt', 'Al-Khwarizmi', ['álgebra']))
-c.P('Qual médico persa escreveu o Cânone da Medicina, usado na Europa por séculos?', ['avicena'], 3, icon='book',
+c.P('Qual médico persa escreveu o Cânone da Medicina, usado na Europa por séculos?', ['avicena'], 3, scene='casa_sabedoria', icon='book',
     src=('pt', 'Avicena', ['Cânone']))
-c.P('Qual califa abássida é associado ao auge de Bagdá e às histórias das Mil e Uma Noites?', ['harun'], 4, icon='crown',
+c.P('Qual califa abássida é associado ao auge de Bagdá e às histórias das Mil e Uma Noites?', ['harun'], 4, scene='casa_sabedoria', icon='crown',
     src=('pt', 'Harune Arraxide', ['Bagdá']))
-c.P('Qual imperador otomano, conhecido como “o Magnífico”, levou o império ao auge no século XVI?', ['solimao'], 2, icon='crown',
+c.P('Qual imperador otomano, conhecido como “o Magnífico”, levou o império ao auge no século XVI?', ['solimao'], 2, scene='suleymaniye', icon='crown',
     src=('pt', 'Solimão, o Magnífico', ['Otomano']))
 c.P('Qual sultão otomano conquistou Constantinopla aos 21 anos?', ['maome_ii'], 3, stad='santa_sofia',
     src=('en', 'Mehmed the Conqueror', ['Constantinople']))
@@ -200,7 +200,7 @@ c.T('Qual guerra de 1839–1842 opôs a China ao Reino Unido por causa do comér
     src=('pt', 'Primeira Guerra do Ópio', ['1839']))
 c.T('Em que ano a monarquia chinesa acabou, com a queda da dinastia Qing?', '1912', ['1849', '1899', '1949', '1900', '1937'], 4, icon='crown',
     src=('pt', 'Dinastia Qing', ['1912']))
-c.T('Qual conquistador turco-mongol do século XIV tinha sua capital em Samarcanda?', 'Tamerlão', ['Gengis Khan', 'Átila', 'Babur', 'Saladino', 'Kublai'], 3, icon='sword',
+c.T('Qual conquistador turco-mongol do século XIV tinha sua capital em Samarcanda?', 'Tamerlão', ['Gengis Khan', 'Átila', 'Babur', 'Saladino', 'Kublai'], 3, scene='samarcanda', icon='sword',
     src=('pt', 'Tamerlão', ['Samarcanda']))
 c.write()
 
@@ -208,17 +208,17 @@ c.write()
 # filed under África (f) and Américas (m), the themes of c14_africa_americas.py
 f = Cat('africa', 'África', '🌍', 'Reinos e impérios africanos', '#C07A2C', order=15)
 m = Cat('americas', 'Américas', '🌎', 'Maias, astecas, incas e independências', '#2E7D6B', order=15)
-f.T('Qual imperador do Mali ficou famoso por sua riqueza e sua peregrinação a Meca, em 1324?', 'Mansa Mussa', ['Sundiata Keita', 'Askia Mohammed', 'Sonni Ali', 'Shaka', 'Haile Selassie'], 3, icon='crown',
+f.T('Qual imperador do Mali ficou famoso por sua riqueza e sua peregrinação a Meca, em 1324?', 'Mansa Mussa', ['Sundiata Keita', 'Askia Mohammed', 'Sonni Ali', 'Shaka', 'Haile Selassie'], 3, scene='caravana_mali', icon='crown',
     src=('pt', 'Mansa Mussa', ['Meca']))
-f.P('Qual líder criou o poderoso reino dos zulus, no sul da África, no início do século XIX?', ['shaka'], 3, icon='sword',
+f.P('Qual líder criou o poderoso reino dos zulus, no sul da África, no início do século XIX?', ['shaka'], 3, scene='impi_zulu', icon='sword',
     src=('pt', 'Shaka', ['zulu']))
-f.P('Qual rainha de Ndongo e Matamba lutou contra o domínio português em Angola no século XVII?', ['nzinga'], 3, icon='crown',
+f.P('Qual rainha de Ndongo e Matamba lutou contra o domínio português em Angola no século XVII?', ['nzinga'], 3, scene='fortaleza_luanda', icon='crown',
     src=('en', 'Nzinga of Ndongo and Matamba', ['Portuguese']))
-f.P('Qual imperador etíope, chamado “Leão de Judá”, discursou na Liga das Nações em 1936?', ['haile_selassie'], 4, icon='crown',
+f.P('Qual imperador etíope, chamado “Leão de Judá”, discursou na Liga das Nações em 1936?', ['haile_selassie'], 4, scene='leao_de_juda', icon='crown',
     src=('pt', 'Hailé Selassié I', ['Liga das Nações']))
-f.T('Qual cidade do Mali foi famosa como centro de comércio de ouro e de estudos islâmicos?', 'Tombuctu', ['Gao', 'Mombaça', 'Zanzibar', 'Axum', 'Quíloa'], 3, icon='map',
+f.T('Qual cidade do Mali foi famosa como centro de comércio de ouro e de estudos islâmicos?', 'Tombuctu', ['Gao', 'Mombaça', 'Zanzibar', 'Axum', 'Quíloa'], 3, scene='caravana_mali', icon='map',
     src=('pt', 'Tombuctu', ['Mali']))
-f.T('Qual reino africano, no atual norte da Etiópia, adotou o cristianismo no século IV?', 'Axum', ['Kush', 'Songai', 'Zimbábue', 'Daomé', 'Benin'], 4, icon='column',
+f.T('Qual reino africano, no atual norte da Etiópia, adotou o cristianismo no século IV?', 'Axum', ['Kush', 'Songai', 'Zimbábue', 'Daomé', 'Benin'], 4, scene='ouro_axumita', icon='column',
     src=('pt', 'Reino de Axum', ['cristianismo']))
 f.T('Qual a grande construção de pedra do sudeste da África, que dá nome a um país?', 'Grande Zimbábue', ['Axum', 'Meroé', 'Lalibela', 'Gizé', 'Kilwa'], 4, icon='castle',
     src=('pt', 'Grande Zimbábue', ['Zimbábue']))
@@ -232,31 +232,31 @@ m.T('Qual a capital do Império Asteca, construída sobre um lago, onde hoje é 
     src=('pt', 'Tenochtitlán', ['lago']))
 m.P('Qual conquistador espanhol derrubou o Império Asteca, entre 1519 e 1521?', ['cortes'], 2, icon='sword',
     src=('pt', 'Hernán Cortés', ['asteca']))
-m.P('Qual imperador asteca recebeu os espanhóis em Tenochtitlán em 1519?', ['moctezuma'], 3, icon='crown',
+m.P('Qual imperador asteca recebeu os espanhóis em Tenochtitlán em 1519?', ['moctezuma'], 3, scene='tenochtitlan', icon='crown',
     src=('pt', 'Montezuma II', ['Cortés']))
 m.P('Qual conquistador espanhol capturou o imperador inca Atahualpa, em 1532?', ['pizarro'], 2, icon='sword',
     src=('pt', 'Francisco Pizarro', ['Atahualpa']))
-m.P('Qual foi o último imperador inca independente, capturado em Cajamarca?', ['atahualpa'], 3, icon='crown',
+m.P('Qual foi o último imperador inca independente, capturado em Cajamarca?', ['atahualpa'], 3, scene='muralha_inca', icon='crown',
     src=('pt', 'Atahualpa', ['Cajamarca']))
 m.T('Qual a capital do Império Inca, nos Andes?', 'Cuzco', ['Machu Picchu', 'Lima', 'Quito', 'Tiahuanaco', 'La Paz'], 2, stad='machu_picchu',
     src=('pt', 'Cusco', ['inca']))
 m.T('Qual cidadela inca nos Andes, redescoberta em 1911 por Hiram Bingham, é Patrimônio Mundial?', 'Machu Picchu', ['Sacsayhuamán', 'Ollantaytambo', 'Chan Chan', 'Tikal', 'Cajamarca'], 1, stad='machu_picchu',
     src=('pt', 'Machu Picchu', ['1911']))
-m.T('Qual o nome do sistema de cordas com nós usado pelos incas para registrar informações?', 'Quipu', ['Códice', 'Glifo', 'Ábaco', 'Cartela', 'Tabuleta'], 3, icon='scroll',
+m.T('Qual o nome do sistema de cordas com nós usado pelos incas para registrar informações?', 'Quipu', ['Códice', 'Glifo', 'Ábaco', 'Cartela', 'Tabuleta'], 3, scene='muralha_inca', icon='scroll',
     src=('pt', 'Quipo', ['inca']))
-m.T('Qual cereal, domesticado na Mesoamérica, era a base da alimentação maia e asteca?', 'Milho', ['Trigo', 'Arroz', 'Cevada', 'Sorgo', 'Centeio'], 1, icon='globe',
+m.T('Qual cereal, domesticado na Mesoamérica, era a base da alimentação maia e asteca?', 'Milho', ['Trigo', 'Arroz', 'Cevada', 'Sorgo', 'Centeio'], 1, scene='tikal', icon='globe',
     src=('pt', 'Milho', ['Mesoamérica']))
 m.T('Qual civilização andina produziu as misteriosas linhas desenhadas no deserto, no Peru?', 'Nazca', ['Inca', 'Chimu', 'Tiwanaku', 'Moche', 'Wari'], 3, icon='map',
     src=('pt', 'Linhas de Nazca', ['Peru']))
-m.T('Qual civilização é conhecida pelas gigantescas cabeças de pedra na costa do Golfo do México?', 'Olmeca', ['Maia', 'Asteca', 'Inca', 'Tolteca', 'Mixteca'], 4, icon='bust',
+m.T('Qual civilização é conhecida pelas gigantescas cabeças de pedra na costa do Golfo do México?', 'Olmeca', ['Maia', 'Asteca', 'Inca', 'Tolteca', 'Mixteca'], 4, scene='cabeca_olmeca', icon='bust',
     src=('pt', 'Olmecas', ['cabeça']))
 m.T('Qual a grande estátua de pedra da Ilha de Páscoa chamada?', 'Moai', ['Quipu', 'Totem', 'Menir', 'Ahu', 'Cairn'], 2, stad='moai',
     src=('pt', 'Moai', ['Ilha de Páscoa']))
-m.T('Qual doença trazida pelos europeus devastou as populações indígenas das Américas?', 'Varíola', ['Peste negra', 'Cólera', 'Escorbuto', 'Malária', 'Tuberculose bovina'], 2, icon='hourglass',
+m.T('Qual doença trazida pelos europeus devastou as populações indígenas das Américas?', 'Varíola', ['Peste negra', 'Cólera', 'Escorbuto', 'Malária', 'Tuberculose bovina'], 2, scene='tenochtitlan', icon='hourglass',
     src=('pt', 'Varíola', ['América']))
-m.T('Qual povo indígena norte-americano liderou a vitória em Little Bighorn, em 1876?', 'Sioux e Cheyenne', ['Apaches', 'Navajos', 'Iroqueses', 'Cherokees', 'Comanches'], 3, icon='sword',
+m.T('Qual povo indígena norte-americano liderou a vitória em Little Bighorn, em 1876?', 'Sioux e Cheyenne', ['Apaches', 'Navajos', 'Iroqueses', 'Cherokees', 'Comanches'], 3, scene='pradarias_sioux', icon='sword',
     src=('pt', 'Batalha de Little Bighorn', ['Sioux']))
-m.P('Qual chefe sioux Hunkpapa liderou a resistência indígena e participou da vitória em Little Bighorn?', ['touro_sentado'], 3, icon='sword',
+m.P('Qual chefe sioux Hunkpapa liderou a resistência indígena e participou da vitória em Little Bighorn?', ['touro_sentado'], 3, scene='pradarias_sioux', icon='sword',
     src=('pt', 'Touro Sentado', ['Little Bighorn']))
 m.P('Qual líder de Palmares resistiu à escravidão no quilombo mais famoso do Brasil colonial?', ['zumbi'], 1, icon='flag',
     src=('pt', 'Zumbi dos Palmares', ['Palmares']))

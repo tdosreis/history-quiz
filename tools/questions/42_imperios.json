@@ -13,7 +13,7 @@
    ],
    "d": 1,
    "art": {
-    "icon": "map"
+    "scene": "muralha_inca"
    },
    "src": [
     "pt",
@@ -30,7 +30,7 @@
    ],
    "d": 1,
    "art": {
-    "icon": "pyramid"
+    "scene": "tenochtitlan"
    },
    "src": [
     "pt",
@@ -81,7 +81,7 @@
    ],
    "d": 1,
    "art": {
-    "icon": "sword"
+    "scene": "agoge_esparta"
    },
    "src": [
     "pt",
@@ -98,7 +98,7 @@
    ],
    "d": 1,
    "art": {
-    "icon": "column"
+    "scene": "teatro_grego"
    },
    "src": [
     "pt",
@@ -166,7 +166,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "book"
+    "scene": "casa_sabedoria"
    },
    "src": [
     "pt",
@@ -506,7 +506,7 @@
    ],
    "d": 4,
    "art": {
-    "icon": "column"
+    "scene": "ouro_axumita"
    },
    "src": [
     "pt",

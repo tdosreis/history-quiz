@@ -14,7 +14,7 @@
    ],
    "d": 2,
    "art": {
-    "icon": "crown"
+    "scene": "coroacao_800"
    },
    "src": [
     "pt",
@@ -32,7 +32,7 @@
    ],
    "d": 2,
    "art": {
-    "icon": "sword"
+    "scene": "torre_branca"
    },
    "src": [
     "pt",
@@ -50,7 +50,7 @@
    ],
    "d": 2,
    "art": {
-    "icon": "sword"
+    "scene": "ev_cruzadas"
    },
    "src": [
     "pt",
@@ -68,7 +68,7 @@
    ],
    "d": 2,
    "art": {
-    "icon": "sword"
+    "scene": "ev_cruzadas"
    },
    "src": [
     "pt",
@@ -86,7 +86,7 @@
    ],
    "d": 1,
    "art": {
-    "icon": "sword"
+    "scene": "ev_guerra_cem_anos"
    },
    "src": [
     "pt",
@@ -122,7 +122,7 @@
    ],
    "d": 2,
    "art": {
-    "icon": "book"
+    "scene": "selva_dante"
    },
    "src": [
     "pt",
@@ -166,7 +166,7 @@
    ],
    "d": 1,
    "art": {
-    "icon": "castle"
+    "scene": "campo_feudal"
    },
    "src": [
     "pt",
@@ -270,7 +270,7 @@
    ],
    "d": 2,
    "art": {
-    "icon": "scroll"
+    "scene": "runnymede"
    },
    "src": [
     "pt",
@@ -296,7 +296,7 @@
    ],
    "d": 1,
    "art": {
-    "icon": "sword"
+    "scene": "cupula_da_rocha"
    },
    "src": [
     "pt",
@@ -374,7 +374,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "book"
+    "scene": "hagia_sofia"
    },
    "src": [
     "pt",
@@ -418,7 +418,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "ship"
+    "scene": "drakkar"
    },
    "src": [
     "pt",
@@ -496,7 +496,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "book"
+    "scene": "aula_medieval"
    },
    "src": [
     "pt",
@@ -601,7 +601,7 @@
    ],
    "d": 4,
    "art": {
-    "icon": "sword"
+    "scene": "torre_branca"
    },
    "src": [
     "pt",
@@ -627,7 +627,7 @@
    ],
    "d": 4,
    "art": {
-    "icon": "sword"
+    "scene": "mouros_batalha"
    },
    "src": [
     "pt",
@@ -679,7 +679,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "sword"
+    "scene": "cupula_da_rocha"
    },
    "src": [
     "pt",

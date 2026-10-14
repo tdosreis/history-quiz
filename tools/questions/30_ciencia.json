@@ -140,7 +140,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "book"
+    "scene": "geometria_areia"
    },
    "src": [
     "pt",
@@ -158,7 +158,7 @@
    ],
    "d": 2,
    "art": {
-    "icon": "gear"
+    "scene": "banheira_eureka"
    },
    "src": [
     "pt",
@@ -176,7 +176,7 @@
    ],
    "d": 1,
    "art": {
-    "icon": "book"
+    "scene": "medico_grego"
    },
    "src": [
     "pt",

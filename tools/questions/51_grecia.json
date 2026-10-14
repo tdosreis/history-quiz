@@ -103,7 +103,7 @@
    ],
    "d": 2,
    "art": {
-    "icon": "trophy"
+    "scene": "estadio_olimpia"
    },
    "src": [
     "en",
@@ -292,7 +292,7 @@
    ],
    "d": 5,
    "art": {
-    "icon": "map"
+    "scene": "ev_conquistas_alexandre"
    },
    "src": [
     "en",
@@ -311,7 +311,7 @@
    ],
    "d": 4,
    "art": {
-    "icon": "book"
+    "scene": "favas_crotona"
    },
    "src": [
     "en",
@@ -365,7 +365,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "sword"
+    "scene": "ev_conquistas_alexandre"
    },
    "src": [
     "en",
@@ -633,7 +633,7 @@
    ],
    "d": 2,
    "art": {
-    "icon": "trophy"
+    "scene": "estadio_olimpia"
    },
    "src": [
     "en",

@@ -28,15 +28,15 @@ c.T('Em qual país atual ficam as ruínas de Cartago, a grande rival de Roma?', 
     src=('en', 'Carthage', ['Tunis']),
     x='Os restos de Cartago ficam num subúrbio de Túnis, a capital do país, e são Patrimônio Mundial da UNESCO desde 1979.')
 c.T('Qual reino da África ocidental, no sul da atual Nigéria, criou as placas e cabeças de metal saqueadas por uma expedição britânica em 1897?', 'Benin',
-    ['Daomé', 'Axante', 'Oió', 'Congo', 'Songai'], d=3, icon='bust',
+    ['Daomé', 'Axante', 'Oió', 'Congo', 'Songai'], d=3, scene='bronzes_benin', icon='bust',
     src=('en', 'Benin Bronzes', ['1897']),
     x='Milhares de peças, conhecidas como "bronzes do Benin", foram levadas para museus da Europa e dos Estados Unidos; nos últimos anos, várias começaram a ser devolvidas à Nigéria.')
 c.T('Qual rei europeu governou o Estado Livre do Congo como propriedade pessoal, a partir de 1885, com um regime brutal de trabalho forçado?', 'Leopoldo II',
-    ['Leopoldo I', 'Alberto I', 'Guilherme II', 'Napoleão III', 'Afonso XIII'], d=3, icon='crown',
+    ['Leopoldo I', 'Alberto I', 'Guilherme II', 'Napoleão III', 'Afonso XIII'], d=3, scene='rio_congo', icon='crown',
     src=('en', 'Congo Free State', ['Leopold II']),
     x='As denúncias sobre a coleta de borracha causaram escândalo internacional, e a Bélgica assumiu o território como colônia em 1908.')
 c.T('Qual império, o primeiro grande reino do ouro na África ocidental, antecedeu o Mali e tinha sua capital em Kumbi Saleh?', 'Gana',
-    ['Songai', 'Benin', 'Kanem', 'Axum', 'Congo'], d=4, icon='coins',
+    ['Songai', 'Benin', 'Kanem', 'Axum', 'Congo'], d=4, scene='caravana_mali', icon='coins',
     src=('en', 'Ghana Empire', ['Mali']),
     x='O país que hoje se chama Gana fica bem mais ao sul: só adotou o nome do antigo império ao se tornar independente, em 1957.')
 c.T('Qual reino da África central teve um rei cristão, Afonso I, que no século XVI trocava cartas com os reis de Portugal?', 'Reino do Congo',
@@ -59,10 +59,10 @@ c.P('Qual líder, futuro herói de outra independência, viveu mais de vinte ano
 c.P('Qual chanceler recebeu em sua capital, entre 1884 e 1885, a conferência que fixou as regras da partilha da África entre as potências europeias?', 'bismarck', d=3, icon='map',
     src=('en', 'Berlin Conference', ['Bismarck']),
     x='Nenhum africano foi convidado: catorze países, quase todos europeus, decidiram as regras para ocupar o continente.')
-c.C('Qual império da África ocidental, com capital em Gao, dominou o comércio do Saara até ser derrotado por um exército marroquino armado de arcabuzes, em 1591?', 'songai', d=3, icon='cannon',
+c.C('Qual império da África ocidental, com capital em Gao, dominou o comércio do Saara até ser derrotado por um exército marroquino armado de arcabuzes, em 1591?', 'songai', d=3, scene='caravana_mali', icon='cannon',
     src=('en', 'Songhai Empire', ['1591']),
     x='Na Batalha de Tondibi, as armas de fogo marroquinas venceram um exército bem maior, que lutava com lanças, arcos e cavalaria.')
-c.C('Qual reino africano cunhava moedas próprias de ouro, prata e bronze e controlava o porto de Adúlis, no mar Vermelho?', 'axum', d=4, icon='coins',
+c.C('Qual reino africano cunhava moedas próprias de ouro, prata e bronze e controlava o porto de Adúlis, no mar Vermelho?', 'axum', d=4, scene='ouro_axumita', icon='coins',
     src=('en', 'Kingdom of Aksum', ['Adulis']),
     x='No século III, o profeta persa Mani o contou entre as quatro grandes potências do mundo, ao lado de Roma, da Pérsia e da China.')
 
@@ -155,7 +155,7 @@ c.DU('Duelo: quem nasceu primeiro?', 'nzinga', 'shaka', 3, scene='duelo_nasceu',
 c.MY('Mansa Mussa levou tanto ouro em sua peregrinação a Meca que o preço do metal caiu no Cairo por anos?', True, 2, who='mansa_musa',
      x='O cronista al-Umari contou, uns doze anos depois, que o ouro ainda valia menos no Egito por causa dos gastos e presentes do rei do Mali.',
      src=('en', 'Mansa Musa', ['Cairo']))
-c.MY('As muralhas do Grande Zimbábue foram erguidas por povos vindos de fora da África, como fenícios ou árabes?', False, 2, icon='castle',
+c.MY('As muralhas do Grande Zimbábue foram erguidas por povos vindos de fora da África, como fenícios ou árabes?', False, 2, scene='muralhas_zimbabue', icon='castle',
      x='Essa ideia foi espalhada por colonos europeus; a arqueologia mostra que a cidade foi construída por ancestrais do povo xona, entre os séculos XI e XV.',
      src=('en', 'Great Zimbabwe', ['Shona']))
 c.MY('Depois de destruir Cartago, em 146 a.C., os romanos salgaram a terra para que nada mais crescesse ali?', False, 4, crest='republica_romana',
@@ -324,7 +324,7 @@ c.MY('Os maias previram que o mundo acabaria em 2012?', False, 1, crest='maia',
 c.MY('George Washington usava dentaduras de madeira?', False, 2, who='washington',
      x='Ele perdeu quase todos os dentes, mas suas dentaduras eram de marfim, metal e dentes humanos e de animais, nunca de madeira.',
      src=('en', 'George Washington', ['teeth']))
-c.MY('O chocolate já era consumido pelos maias e astecas antes da chegada dos europeus?', True, 1, icon='amphora',
+c.MY('O chocolate já era consumido pelos maias e astecas antes da chegada dos europeus?', True, 1, scene='tikal', icon='amphora',
      x='Eles tomavam o cacau como uma bebida amarga e espumante, às vezes com pimenta; as sementes chegavam a servir de moeda.',
      src=('en', 'History of chocolate', ['Maya']))
 c.write()

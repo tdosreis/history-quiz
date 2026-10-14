@@ -301,7 +301,7 @@
    ],
    "d": 4,
    "art": {
-    "icon": "globe"
+    "scene": "biblioteca_alexandria"
    },
    "src": [
     "en",
@@ -357,7 +357,7 @@
    ],
    "d": 5,
    "art": {
-    "icon": "compass"
+    "scene": "bussola_chinesa"
    },
    "src": [
     "en",
@@ -396,7 +396,7 @@
    ],
    "d": 4,
    "art": {
-    "icon": "scroll"
+    "scene": "tang_pagode"
    },
    "src": [
     "en",

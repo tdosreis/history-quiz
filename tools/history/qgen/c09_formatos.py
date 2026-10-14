@@ -114,13 +114,13 @@ c = Cat('fato_mito', 'Fato ou mito?', '🔎', 'O que todo mundo repete', '#455A6
 c.MY('Napoleão Bonaparte era um homem muito baixo para a sua época?', False, 2, who='napoleao',
      x='Media por volta de 1,69 m, a altura comum de um francês do seu tempo; a fama veio da propaganda inglesa e da confusão entre polegadas francesas e inglesas.',
      src=('en', 'Napoleon', ['height']))
-c.MY('Os vikings usavam capacetes com chifres nas batalhas?', False, 1, icon='sword',
+c.MY('Os vikings usavam capacetes com chifres nas batalhas?', False, 1, scene='drakkar', icon='sword',
      x='Nenhum capacete viking com chifres foi encontrado: a imagem nasceu nos figurinos de óperas do século XIX.', src=('pt', 'Vikings', ['capacete']))
 c.MY('Charles Darwin e Abraham Lincoln nasceram no mesmo dia?', True, 3, icon='hourglass',
      x='Os dois nasceram em 12 de fevereiro de 1809, um na Inglaterra e o outro no Kentucky.', src=('pt', 'Charles Darwin', ['12 de fevereiro de 1809']))
 c.MY('Cleópatra viveu mais perto da chegada do homem à Lua do que da construção da Grande Pirâmide de Gizé?', True, 2, icon='pyramid',
      x='A Grande Pirâmide tem cerca de 4.500 anos; Cleópatra morreu em 30 a.C., uns 2.000 anos antes da Apollo 11.', src=('pt', 'Cleópatra VII', ['30 a.C.']))
-c.MY('Na Idade Média, a maioria dos sábios acreditava que a Terra era plana?', False, 2, icon='globe',
+c.MY('Na Idade Média, a maioria dos sábios acreditava que a Terra era plana?', False, 2, scene='aula_medieval', icon='globe',
      x='Os estudiosos medievais sabiam que a Terra é redonda desde os gregos; o mito da "Terra plana medieval" foi espalhado no século XIX.', src=('pt', 'Mito da Terra plana', ['século XIX']))
 c.MY('A Grande Muralha da China pode ser vista da Lua a olho nu?', False, 1, icon='castle',
      x='É longa, mas estreita demais: nenhum astronauta das missões Apollo a viu da Lua.', src=('pt', 'Grande Muralha da China', ['Lua']))

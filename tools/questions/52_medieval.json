@@ -103,7 +103,7 @@
    ],
    "d": 1,
    "art": {
-    "icon": "book"
+    "scene": "aula_medieval"
    },
    "src": [
     "en",
@@ -130,7 +130,7 @@
    ],
    "d": 1,
    "art": {
-    "icon": "map"
+    "scene": "mihrab"
    },
    "src": [
     "en",
@@ -157,7 +157,7 @@
    ],
    "d": 1,
    "art": {
-    "icon": "book"
+    "scene": "mihrab"
    },
    "src": [
     "en",
@@ -238,7 +238,7 @@
    ],
    "d": 2,
    "art": {
-    "icon": "gear"
+    "scene": "oficina_artesao"
    },
    "src": [
     "en",
@@ -346,7 +346,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "book"
+    "scene": "monte_cassino"
    },
    "src": [
     "en",
@@ -373,7 +373,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "sword"
+    "scene": "ev_cruzadas"
    },
    "src": [
     "en",
@@ -616,7 +616,7 @@
    ],
    "d": 5,
    "art": {
-    "icon": "crown"
+    "scene": "mouros_batalha"
    },
    "src": [
     "en",
@@ -643,7 +643,7 @@
    ],
    "d": 5,
    "art": {
-    "icon": "column"
+    "scene": "cupula_da_rocha"
    },
    "src": [
     "en",
@@ -1713,7 +1713,7 @@
    ],
    "d": 2,
    "art": {
-    "icon": "sword"
+    "scene": "ev_guerra_cem_anos"
    },
    "src": [
     "en",
@@ -1788,7 +1788,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "castle"
+    "scene": "ev_cruzadas"
    },
    "src": [
     "en",
@@ -1838,7 +1838,7 @@
    ],
    "d": 4,
    "art": {
-    "icon": "book"
+    "scene": "aula_medieval"
    },
    "src": [
     "en",

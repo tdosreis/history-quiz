@@ -508,7 +508,7 @@
    ],
    "d": 4,
    "art": {
-    "icon": "coins"
+    "scene": "potosi"
    },
    "src": [
     "en",
@@ -800,7 +800,7 @@
    ],
    "d": 4,
    "art": {
-    "icon": "crown"
+    "scene": "ponte_isfahan"
    },
    "src": [
     "en",

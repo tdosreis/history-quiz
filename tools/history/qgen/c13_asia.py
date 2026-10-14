@@ -155,7 +155,7 @@ c.T('Qual cidade da Índia foi conquistada por Afonso de Albuquerque em 1510 e v
     src=('pt', 'Afonso de Albuquerque', ['Goa']),
     x='Goa continuou portuguesa por mais de 450 anos, até ser ocupada pela Índia em 1961.')
 c.T('Como se chama o alfabeto coreano criado no século XV pelo rei Sejong, o Grande?', 'Hangul',
-    ['Kanji', 'Hiragana', 'Katakana', 'Pinyin', 'Devanágari'], d=3, icon='book',
+    ['Kanji', 'Hiragana', 'Katakana', 'Pinyin', 'Devanágari'], d=3, scene='palacio_coreano', icon='book',
     src=('en', 'Hangul', ['Sejong']),
     x='Antes dele, os coreanos escreviam com caracteres chineses, que poucos dominavam; o rei queria uma escrita que qualquer pessoa aprendesse.')
 c.C('Qual império, fundado por Chandragupta por volta de 322 a.C., foi o primeiro a unir quase todo o subcontinente indiano?', 'maurya', d=3, who='alexandre',
@@ -164,10 +164,10 @@ c.C('Qual império, fundado por Chandragupta por volta de 322 a.C., foi o primei
 c.C('Qual governo expulsou os portugueses do Japão, em 1639, e fechou o país quase por completo aos estrangeiros?', 'tokugawa', d=3, crest='imperio_portugues',
     src=('en', 'Sakoku', ['Portuguese']),
     x='Entre os europeus, só os holandeses puderam continuar negociando, confinados na ilhota artificial de Dejima, em Nagasaki.')
-c.P('Qual governante mongol mandou duas grandes frotas invadir o Japão, em 1274 e em 1281?', 'kublai', d=3, icon='ship',
+c.P('Qual governante mongol mandou duas grandes frotas invadir o Japão, em 1274 e em 1281?', 'kublai', d=3, scene='frota_tufao', icon='ship',
     src=('en', 'Mongol invasions of Japan', ['Kublai']),
     x='As duas invasões fracassaram; na segunda, um tufão destruiu boa parte dos navios ancorados perto da costa de Kyushu.')
-c.P('Qual conquistador turco-mongol invadiu a Índia e saqueou Délhi em 1398?', 'tamerlao', d=3, icon='sword',
+c.P('Qual conquistador turco-mongol invadiu a Índia e saqueou Délhi em 1398?', 'tamerlao', d=3, scene='qutb_minar', icon='sword',
     src=('en', 'Timur', ['Delhi']),
     x='Um de seus descendentes, Babur, voltaria à Índia mais de um século depois para fundar o Império Mogol, em 1526.')
 c.Q('Quem sou eu?', 'ashoka', ['Fui neto do fundador de um grande império do norte da Índia.',
@@ -235,7 +235,7 @@ c.T('Em que material foram gravados os textos chineses mais antigos que se conhe
     ['Tabuletas de argila', 'Folhas de palmeira', 'Rolos de seda', 'Tiras de bambu', 'Pergaminho'], d=4, flag='CHN',
     src=('en', 'Oracle bone', ['Shang']),
     x='Os adivinhos aqueciam os ossos até rachar e liam nas rachaduras a resposta dos ancestrais; depois gravavam ao lado a pergunta e o resultado.')
-c.C('Em qual dinastia chinesa viveram Li Bai e Du Fu, considerados os maiores poetas clássicos da China?', 'tang', d=4, icon='quill',
+c.C('Em qual dinastia chinesa viveram Li Bai e Du Fu, considerados os maiores poetas clássicos da China?', 'tang', d=4, scene='tang_pagode', icon='quill',
     src=('en', 'Tang dynasty', ['Li Bai']),
     x='A antologia "Trezentos Poemas Tang", reunida no século XVIII, até hoje é decorada por estudantes chineses.')
 c.QT('Eis um mantra, bem curto, que lhes dou: "fazer ou morrer".', 'gandhi', 4,

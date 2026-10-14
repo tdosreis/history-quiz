@@ -14,7 +14,7 @@
    ],
    "d": 1,
    "art": {
-    "icon": "sword"
+    "scene": "mongois_estepe"
    },
    "src": [
     "pt",
@@ -50,7 +50,7 @@
    ],
    "d": 2,
    "art": {
-    "icon": "crown"
+    "scene": "exercito_terracota"
    },
    "src": [
     "pt",
@@ -86,7 +86,7 @@
    ],
    "d": 1,
    "art": {
-    "icon": "book"
+    "scene": "rolo_bambu"
    },
    "src": [
     "pt",
@@ -104,7 +104,7 @@
    ],
    "d": 2,
    "art": {
-    "icon": "book"
+    "scene": "rolo_bambu"
    },
    "src": [
     "pt",
@@ -122,7 +122,7 @@
    ],
    "d": 1,
    "art": {
-    "icon": "bust"
+    "scene": "stupa_bodhi"
    },
    "src": [
     "pt",
@@ -140,7 +140,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "crown"
+    "scene": "stupa_bodhi"
    },
    "src": [
     "pt",
@@ -322,7 +322,7 @@
    ],
    "d": 2,
    "art": {
-    "icon": "sword"
+    "scene": "castelo_japones"
    },
    "src": [
     "pt",
@@ -348,7 +348,7 @@
    ],
    "d": 1,
    "art": {
-    "icon": "sword"
+    "scene": "castelo_japones"
    },
    "src": [
     "pt",
@@ -384,7 +384,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "crown"
+    "scene": "meiji_ginza"
    },
    "src": [
     "pt",
@@ -410,7 +410,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "ship"
+    "scene": "navio_tesouro"
    },
    "src": [
     "pt",
@@ -498,7 +498,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "book"
+    "scene": "casa_sabedoria"
    },
    "src": [
     "pt",
@@ -516,7 +516,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "book"
+    "scene": "casa_sabedoria"
    },
    "src": [
     "pt",
@@ -534,7 +534,7 @@
    ],
    "d": 4,
    "art": {
-    "icon": "crown"
+    "scene": "casa_sabedoria"
    },
    "src": [
     "pt",
@@ -552,7 +552,7 @@
    ],
    "d": 2,
    "art": {
-    "icon": "crown"
+    "scene": "suleymaniye"
    },
    "src": [
     "pt",
@@ -726,7 +726,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "sword"
+    "scene": "samarcanda"
    },
    "src": [
     "pt",

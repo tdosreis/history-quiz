@@ -27,7 +27,7 @@ r.T('Como se chamavam os grandes banhos públicos dos romanos, com piscinas quen
     src=('en', 'Thermae', ['Caracalla']),
     x='As Termas de Caracala, em Roma, recebiam cerca de 1.600 banhistas ao mesmo tempo.')
 g.T('Que prêmio recebia o vencedor nos Jogos Olímpicos da Antiguidade?', 'Uma coroa de ramos de oliveira',
-    ['Uma medalha de ouro', 'Uma coroa de louros', 'Uma taça de prata', 'Um escudo de bronze', 'Um saco de moedas'], d=2, icon='trophy',
+    ['Uma medalha de ouro', 'Uma coroa de louros', 'Uma taça de prata', 'Um escudo de bronze', 'Um saco de moedas'], d=2, scene='estadio_olimpia', icon='trophy',
     src=('en', 'Ancient Olympic Games', ['olive']),
     x='Os ramos vinham de uma oliveira sagrada de Olímpia; em casa, porém, os campeões podiam ganhar banquetes e honras para a vida toda.')
 g.T('Que nó, segundo a lenda, Alexandre, o Grande, cortou com a espada em vez de desatar?', 'O nó górdio',
@@ -80,7 +80,7 @@ r.T('Qual invenção, uma ponte de abordagem com um gancho, ajudou Roma a vencer
     src=('en', 'Corvus (boarding device)', ['First Punic War']),
     x='A ponte cravava-se no convés inimigo e transformava a batalha naval numa luta de infantaria, em que os romanos eram mais fortes.')
 g.T('Em qual rio da Índia o exército de Alexandre se recusou a seguir adiante, em 326 a.C.?', 'Hífase',
-    ['Ganges', 'Indo', 'Eufrates', 'Oxus', 'Tigre'], d=5, icon='map',
+    ['Ganges', 'Indo', 'Eufrates', 'Oxus', 'Tigre'], d=5, scene='ev_conquistas_alexandre', icon='map',
     src=('en', 'Beas River', ['Alexander']),
     x='Depois de oito anos de marcha desde a Macedônia, os soldados queriam voltar para casa; Alexandre cedeu e deu meia-volta.')
 
@@ -94,7 +94,7 @@ r.P('Qual imperador reconstruiu o Panteão de Roma, mas manteve na fachada o nom
 r.P('Qual poeta latino guia Dante pelo Inferno e pelo Purgatório na Divina Comédia?', 'virgilio', d=3, who='dante',
     src=('pt', 'Divina Comédia', ['Virgílio']),
     x='Dante o chama de “meu mestre”: a obra mais famosa desse poeta narra a viagem de Eneias de Troia até a Itália.')
-g.P('Qual pensador grego fundou em Crotona uma comunidade cujos membros, dizem, não podiam comer favas?', 'pitagoras', d=4, icon='book',
+g.P('Qual pensador grego fundou em Crotona uma comunidade cujos membros, dizem, não podiam comer favas?', 'pitagoras', d=4, scene='favas_crotona', icon='book',
     src=('en', 'Pythagoras', ['beans']),
     x='Seus seguidores acreditavam na transmigração das almas e viam nos números a chave para entender o universo.')
 r.P('De qual imperador é a estátua equestre de bronze do Capitólio que escapou da destruição por ser confundida com Constantino?', 'marco_aurelio', d=4, scene='estatua_equestre', icon='crown',
@@ -110,7 +110,7 @@ r.C('Qual cidade, arrasada pelos romanos em 146 a.C. depois de um cerco de três
 g.C('Qual cidade grega tinha sempre dois reis ao mesmo tempo, de duas famílias diferentes?', 'esparta', d=3, crest='atenas',
     src=('en', 'Sparta', ['Eurypontid']),
     x='Os reis vinham das casas dos Ágidas e dos Euripôntidas, e cinco éforos, eleitos a cada ano, fiscalizavam o seu poder.')
-g.C('Qual reino tinha Pela como capital e um exército de falanges armadas com longas lanças, as sarissas?', 'macedonia', d=3, icon='sword',
+g.C('Qual reino tinha Pela como capital e um exército de falanges armadas com longas lanças, as sarissas?', 'macedonia', d=3, scene='ev_conquistas_alexandre', icon='sword',
     src=('en', 'Sarissa', ['Macedonian']),
     x='A sarissa podia passar de 5 metros de comprimento: as primeiras fileiras da falange formavam uma muralha de pontas.')
 
@@ -262,7 +262,7 @@ r.MY('Nero tocou violino enquanto Roma pegava fogo, em 64 d.C.?', False, 2, who=
 r.MY('Os romanos tinham salas, os vomitórios, para vomitar nos banquetes e continuar comendo?', False, 2, stad='coliseu',
      x='Vomitorium era a passagem por onde o público “jorrava” para fora do anfiteatro; a sala para vomitar é invenção moderna.',
      src=('en', 'Vomitorium', ['amphitheatre']))
-g.MY('Nos Jogos Olímpicos da Grécia Antiga, os atletas da maioria das provas competiam nus?', True, 2, icon='trophy',
+g.MY('Nos Jogos Olímpicos da Grécia Antiga, os atletas da maioria das provas competiam nus?', True, 2, scene='estadio_olimpia', icon='trophy',
      x='A palavra “ginásio” vem do grego gymnós, que significa “nu”.',
      src=('en', 'Ancient Olympic Games', ['nude']))
 g.MY('Sócrates não deixou nenhum texto escrito?', True, 2, who='platao',

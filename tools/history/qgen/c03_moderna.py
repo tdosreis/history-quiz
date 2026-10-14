@@ -206,9 +206,9 @@ c.T('Qual a máxima dos colonos americanos contra os impostos britânicos?', 'Se
     src=('pt', 'Taxação sem representação', ['representação']))
 c.P('Qual ex-escravizado liderou a revolução que fez do Haiti a primeira república negra livre?', ['toussaint'], 3, icon='flag',
     src=('pt', 'Toussaint Louverture', ['Haiti']))
-c.P('Qual venezuelano, “o Libertador”, liderou a independência de vários países da América do Sul?', ['bolivar'], 1, icon='flag',
+c.P('Qual venezuelano, “o Libertador”, liderou a independência de vários países da América do Sul?', ['bolivar'], 1, scene='ev_independencias_latam', icon='flag',
     src=('pt', 'Simón Bolívar', ['Libertador']))
-c.P('Qual general argentino atravessou os Andes para libertar o Chile e o Peru?', ['san_martin'], 3, icon='flag',
+c.P('Qual general argentino atravessou os Andes para libertar o Chile e o Peru?', ['san_martin'], 3, scene='ev_independencias_latam', icon='flag',
     src=('pt', 'José de San Martín', ['Andes']))
 c.P('Qual príncipe português proclamou a independência do Brasil, em 7 de setembro de 1822?', ['dom_pedro_i'], 1, stad='museu_ipiranga',
     src=('pt', 'Pedro I do Brasil', ['1822']))
