@@ -58,6 +58,11 @@ const ids = want.length
       if (!SCENE[id]) { bad.push(full); return `<div class="row"><div class="lab"><code>${full}</code></div><div class="missing">no SCENE entry</div></div>`; }
       let svg = '';
       try { svg = sceneSvg({ id, p }, 120); } catch (e) { bad.push(full + ': ' + e.message); }
+      /* well-formed, no lettering where none is wanted, nothing outside the page */
+      const doc = new DOMParser().parseFromString(svg.replace('<svg ', '<svg xmlns="http://www.w3.org/2000/svg" '), 'image/svg+xml');
+      if (doc.querySelector('parsererror')) bad.push(full + ': not well-formed SVG — ' + doc.querySelector('parsererror').textContent.slice(0, 120));
+      if (/<image\b|href="http|<foreignObject/i.test(svg)) bad.push(full + ': external or embedded content');
+      if (svg.length > 6000) bad.push(full + ': ' + svg.length + ' bytes (keep a scene under ~4 KB)');
       const lab = SCENE[id].label, l = typeof lab === 'function' ? lab(p) : lab;
       return `<div class="row"><div class="lab"><code>${full}</code><b>${l}</b>${SCENE[id].ev ? `<i>ev: ${SCENE[id].ev}</i>` : ''}</div><div class="big">${svg}</div>
         <div class="pair light"><span class="mat m124">${svg}</span><span class="mat m88">${svg}</span></div>

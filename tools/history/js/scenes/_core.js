@@ -34,7 +34,7 @@ const SCH = {
   /* a fresh id for a clip-path or pattern: the same scene can be on screen twice */
   uid: p => (p || 'sc') + (++_sceneN).toString(36),
   text: (x, y, s, size, fill, extra) => `<text x="${x}" y="${y}" ${/text-anchor/.test(extra || '') ? '' : 'text-anchor="middle"'} font-family="Fraunces, Georgia, serif" font-weight="700" font-size="${size}" fill="${fill}" ${extra || ''}>${_esc(s)}</text>`,
-  caps: (x, y, s, size, fill, extra) => `<text x="${x}" y="${y}" ${/text-anchor/.test(extra || '') ? '' : 'text-anchor="middle"'} font-family="'Archivo Narrow', Archivo, system-ui, sans-serif" font-weight="700" font-size="${size}" fill="${fill}" letter-spacing="1.2" ${extra || ''}>${_esc(s)}</text>`,
+  caps: (x, y, s, size, fill, extra) => `<text x="${x}" y="${y}" ${/text-anchor/.test(extra || '') ? '' : 'text-anchor="middle"'} font-family="'Archivo Narrow', Archivo, system-ui, sans-serif" font-weight="700" font-size="${size}" fill="${fill}" ${/letter-spacing/.test(extra || '') ? '' : 'letter-spacing="1.2"'} ${extra || ''}>${_esc(s)}</text>`,
   sun: (x, y, r, c) => `<circle cx="${x}" cy="${y}" r="${r}" fill="${c || '#F4E3B6'}"/>`,
   waves: (y, c, sw) => `<path d="M0 ${y} q10 -5 20 0 t20 0 t20 0 t20 0 t20 0 t20 0" stroke="${c || '#EAF2F4'}" stroke-width="${sw || 2}" fill="none"/>`,
   /* a five-pointed star */

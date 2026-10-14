@@ -3,12 +3,12 @@ from qdsl import Cat, ROOT
 
 # ───────────────────────── Quem foi? ─────────────────────────
 c = Cat('personagens', 'Quem foi?', '👤', 'Feitos de reis, sábios e rebeldes', '#6D4C41', order=33)
-c.P('Qual faraó fundou uma nova capital e tentou impor o culto a Aton?', ['aquenaton'], 3, icon='pyramid', src=('pt', 'Aquenáton', ['Amarna']))
+c.P('Qual faraó fundou uma nova capital e tentou impor o culto a Aton?', ['aquenaton'], 3, scene='disco_aton', icon='pyramid', src=('pt', 'Aquenáton', ['Amarna']))
 c.P('Qual rei persa fundou o primeiro grande império e libertou os judeus do cativeiro na Babilônia?', ['ciro'], 3, icon='crown', src=('pt', 'Ciro II, o Grande', ['Babilônia']))
 c.P('Qual rei persa comandou a primeira invasão da Grécia, derrotada em Maratona?', ['dario'], 4, icon='sword', src=('pt', 'Dario I', ['Maratona']))
 c.P('Qual rei persa, filho de Dario, invadiu a Grécia em 480 a.C. e foi derrotado em Salamina?', ['xerxes'], 4, icon='sword', src=('pt', 'Xerxes I', ['Salamina']))
 c.P('Qual imperador bizantino reconquistou parte do Ocidente, construiu Santa Sofia e codificou o direito romano?', ['justiniano'], 3, stad='santa_sofia', src=('pt', 'Justiniano I', ['Santa Sofia']))
-c.P('Qual chefe huno invadiu a Gália e a Itália em meados do século V?', ['atila'], 2, icon='sword', src=('pt', 'Átila', ['Gália']))
+c.P('Qual chefe huno invadiu a Gália e a Itália em meados do século V?', ['atila'], 2, scene='hunos_cavaleiros', icon='sword', src=('pt', 'Átila', ['Gália']))
 c.P('Qual filósofo árabe de Córdoba comentou Aristóteles e influenciou o pensamento europeu?', ['averroes'], 4, icon='book', src=('pt', 'Averróis', ['Aristóteles']))
 c.P('Qual viajante marroquino percorreu cerca de 120 mil km pelo mundo islâmico no século XIV?', ['ibn_battuta'], 3, icon='map', src=('pt', 'Ibn Battuta', ['viagens']))
 c.P('Qual conquistador turco-mongol fundou um império com capital em Samarcanda no século XIV?', ['tamerlao'], 3, icon='sword', src=('pt', 'Tamerlão', ['Samarcanda']))
@@ -69,7 +69,7 @@ c.write()
 
 # ───────────────────────── Curiosidades ─────────────────────────
 c = Cat('curiosidades', 'Curiosidades da História', '🎲', 'Fatos que poucos sabem', '#00897B', order=35)
-c.T('Qual o animal que, segundo os romanos, salvou o Capitólio com seus gritos, quando os gauleses atacaram?', 'Gansos', ['Cães', 'Cavalos', 'Corujas', 'Galos', 'Lobos'], 3, icon='castle', src=('pt', 'Saque de Roma (387 a.C.)', ['gansos']))
+c.T('Qual o animal que, segundo os romanos, salvou o Capitólio com seus gritos, quando os gauleses atacaram?', 'Gansos', ['Cães', 'Cavalos', 'Corujas', 'Galos', 'Lobos'], 3, scene='capitolio_noite', icon='castle', src=('pt', 'Saque de Roma (387 a.C.)', ['gansos']))
 c.T('Qual jogo de tabuleiro, surgido na Índia por volta do século VI, chegou à Europa pelos árabes?', 'Xadrez', ['Gamão', 'Go', 'Damas', 'Senet', 'Mahjong'], 2, icon='gear', src=('pt', 'Xadrez', ['Índia']))
 c.T('Qual doença matou mais soldados que as batalhas na Guerra da Crimeia, segundo Florence Nightingale?', 'Doenças infecciosas e falta de higiene', ['Frio extremo', 'Fome apenas', 'Afogamentos', 'Intoxicação por gás', 'Acidentes de cavalo'], 4, icon='torch', src=('pt', 'Florence Nightingale', ['higiene']))
 c.T('Em que século surgiu a imprensa de tipos móveis na Europa, com Gutenberg?', 'XV', ['XII', 'XIII', 'XIV', 'XVI', 'XVII'], 2, icon='book', src=('pt', 'Johannes Gutenberg', ['século XV']))
@@ -80,7 +80,7 @@ c.T('Qual o nome do navio de Charles Darwin na viagem que inspirou sua teoria?',
 c.T('Qual a ilha onde Napoleão morreu em 1821, no Atlântico Sul?', 'Santa Helena', ['Elba', 'Ascensão', 'Trindade', 'Córsega', 'Madeira'], 2, icon='ship', src=('pt', 'Santa Helena', ['Napoleão']))
 c.T('Qual a mulher que, em 1903, ganhou o Nobel de Física e depois o de Química, em 1911?', 'Marie Curie', ['Irène Joliot-Curie', 'Lise Meitner', 'Rosalind Franklin', 'Dorothy Hodgkin', 'Ada Lovelace'], 2, icon='book', src=('pt', 'Marie Curie', ['1911']))
 c.T('Qual o animal que Aníbal levou na travessia dos Alpes?', 'Elefantes', ['Camelos', 'Rinocerontes', 'Cavalos brancos', 'Touros', 'Mamutes'], 1, icon='sword', src=('pt', 'Aníbal', ['elefantes']))
-c.T('Qual país tem o maior número de pirâmides do mundo, mais que o Egito?', 'Sudão', ['México', 'Peru', 'China', 'Indonésia', 'Etiópia'], 5, icon='pyramid', src=('pt', 'Pirâmides núbias', ['Sudão']))
+c.T('Qual país tem o maior número de pirâmides do mundo, mais que o Egito?', 'Sudão', ['México', 'Peru', 'China', 'Indonésia', 'Etiópia'], 5, scene='piramides_gize', icon='pyramid', src=('pt', 'Pirâmides núbias', ['Sudão']))
 c.T('Qual o maior império da história por área contínua, no século XIII?', 'Mongol', ['Romano', 'Persa', 'Otomano', 'Britânico', 'Inca'], 2, icon='sword', src=('pt', 'Império Mongol', ['maior']))
 c.T('Qual objeto de ouro e ferro era usado para identificar os imperadores do Sacro Império, e hoje está em Viena?', 'A coroa imperial', ['A espada de Carlos Magno', 'O cetro de Otão', 'O Santo Graal', 'A lança do destino', 'O manto de Cristo'], 5, icon='crown', src=('pt', 'Coroa Imperial do Sacro Império Romano-Germânico', ['Viena']))
 c.T('Qual alimento, trazido do Peru, salvou a Europa de várias fomes a partir do século XVIII?', 'Batata', ['Milho', 'Mandioca', 'Tomate', 'Cacau', 'Feijão'], 2, icon='globe', src=('pt', 'Batata', ['Peru']))

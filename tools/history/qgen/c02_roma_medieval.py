@@ -4,33 +4,33 @@ from qdsl import Cat
 c = Cat('roma', 'Roma Antiga', '🏟️', 'Da República ao fim do Império', '#9E1B1B', order=12)
 c.T('Segundo a lenda, quem fundou Roma em 753 a.C.?', 'Rômulo', ['Remo', 'Eneias', 'Numa Pompílio', 'Tarquínio', 'Brutus'], 1, stad='forum_romano',
     src=('pt', 'Roma', ['Rômulo']), x='A lenda diz que os gêmeos Rômulo e Remo foram amamentados por uma loba.')
-c.T('Qual era o regime político de Roma entre 509 a.C. e 27 a.C.?', 'República', ['Monarquia absoluta', 'Democracia direta', 'Teocracia', 'Tirania', 'Federação'], 1, icon='column',
+c.T('Qual era o regime político de Roma entre 509 a.C. e 27 a.C.?', 'República', ['Monarquia absoluta', 'Democracia direta', 'Teocracia', 'Tirania', 'Federação'], 1, scene='forum_romano', icon='column',
     src=('pt', 'República Romana', ['509 a.C.']))
-c.T('Como se chamava o órgão aristocrático que aconselhava e governava Roma?', 'Senado', ['Conselho dos Quinhentos', 'Eclésia', 'Areópago', 'Cúria Ducal', 'Parlamento'], 1, icon='column',
+c.T('Como se chamava o órgão aristocrático que aconselhava e governava Roma?', 'Senado', ['Conselho dos Quinhentos', 'Eclésia', 'Areópago', 'Cúria Ducal', 'Parlamento'], 1, scene='forum_romano', icon='column',
     src=('pt', 'Senado romano', ['Roma']))
-c.T('Contra qual potência Roma travou as três Guerras Púnicas?', 'Cartago', ['Grécia', 'Pérsia', 'Egito', 'Macedônia', 'Gália'], 1, icon='ship',
+c.T('Contra qual potência Roma travou as três Guerras Púnicas?', 'Cartago', ['Grécia', 'Pérsia', 'Egito', 'Macedônia', 'Gália'], 1, scene='corvo_romano', icon='ship',
     src=('pt', 'Guerras Púnicas', ['Cartago']))
-c.P('Qual general cartaginês atravessou os Alpes com elefantes para invadir a Itália?', ['anibal'], 1, icon='sword',
+c.P('Qual general cartaginês atravessou os Alpes com elefantes para invadir a Itália?', ['anibal'], 1, scene='ev_guerras_punicas', icon='sword',
     src=('pt', 'Aníbal', ['Alpes']))
 c.P('Qual general romano derrotou Aníbal na Batalha de Zama, em 202 a.C.?', ['cipiao'], 3, icon='sword',
     src=('pt', 'Cipião Africano', ['Zama']))
-c.P('Qual líder romano conquistou a Gália e cruzou o Rubicão, em 49 a.C.?', ['cesar'], 1, icon='sword',
+c.P('Qual líder romano conquistou a Gália e cruzou o Rubicão, em 49 a.C.?', ['cesar'], 1, scene='ev_fim_republica', icon='sword',
     src=('pt', 'Júlio César', ['Rubicão']), x='“A sorte está lançada” teria dito César ao cruzar o rio, iniciando a guerra civil.')
-c.P('Qual escravizado liderou a maior revolta de gladiadores contra Roma, entre 73 e 71 a.C.?', ['espartaco'], 2, icon='sword',
+c.P('Qual escravizado liderou a maior revolta de gladiadores contra Roma, entre 73 e 71 a.C.?', ['espartaco'], 2, scene='arena_gladiadores', icon='sword',
     src=('pt', 'Espártaco', ['gladiador']))
-c.P('Qual orador romano denunciou Catilina em famosos discursos no Senado?', ['cicero'], 3, icon='scroll',
+c.P('Qual orador romano denunciou Catilina em famosos discursos no Senado?', ['cicero'], 3, scene='forum_romano', icon='scroll',
     src=('pt', 'Cícero', ['Catilina']))
-c.P('Quem se tornou o primeiro imperador de Roma, em 27 a.C.?', ['augusto'], 1, icon='crown',
+c.P('Quem se tornou o primeiro imperador de Roma, em 27 a.C.?', ['augusto'], 1, scene='ev_fim_republica', icon='crown',
     src=('pt', 'Augusto', ['27 a.C.']))
-c.P('Qual imperador romano é lembrado, na tradição, pelo Grande Incêndio de Roma em 64 d.C.?', ['nero'], 1, icon='crown',
+c.P('Qual imperador romano é lembrado, na tradição, pelo Grande Incêndio de Roma em 64 d.C.?', ['nero'], 1, scene='incendio_roma', icon='crown',
     src=('pt', 'Nero', ['incêndio']))
-c.P('Qual imperador-filósofo escreveu as Meditações em grego?', ['marco_aurelio'], 2, icon='book',
+c.P('Qual imperador-filósofo escreveu as Meditações em grego?', ['marco_aurelio'], 2, scene='tenda_meditacoes', icon='book',
     src=('pt', 'Marco Aurélio', ['Meditações']))
 c.P('Qual imperador mandou erguer uma muralha na fronteira norte da Britânia?', ['adriano'], 3, stad='muralha_adriano',
     src=('pt', 'Adriano', ['Muralha']))
-c.P('Qual imperador legalizou o cristianismo com o Edito de Milão, em 313, e fundou Constantinopla?', ['constantino'], 2, icon='crown',
+c.P('Qual imperador legalizou o cristianismo com o Edito de Milão, em 313, e fundou Constantinopla?', ['constantino'], 2, scene='labaro_constantino', icon='crown',
     src=('pt', 'Constantino I', ['Edito de Milão']))
-c.P('Qual poeta romano escreveu a Eneida, epopeia da origem de Roma?', ['virgilio'], 3, icon='book',
+c.P('Qual poeta romano escreveu a Eneida, epopeia da origem de Roma?', ['virgilio'], 3, scene='loba_capitolina', icon='book',
     src=('pt', 'Virgílio', ['Eneida']))
 c.P('Qual médico grego a serviço dos gladiadores e dos imperadores influenciou a Medicina por mais de mil anos?', ['galeno'], 4, icon='book',
     src=('pt', 'Galeno', ['gladiador']))
@@ -42,13 +42,13 @@ c.T('Qual era o nome da grande estrada militar que ligava Roma a Brindisi?', 'Vi
     src=('pt', 'Via Ápia', ['Roma']))
 c.T('Qual a unidade básica do exército romano, de cerca de 5 mil homens?', 'Legião', ['Falange', 'Coorte', 'Esquadra', 'Centúria', 'Manípulo'], 2, icon='sword',
     src=('pt', 'Legião romana', ['legião']))
-c.T('Qual língua era falada em Roma e deu origem ao português, espanhol e italiano?', 'Latim', ['Grego', 'Etrusco', 'Osco', 'Fenício', 'Aramaico'], 1, icon='book',
+c.T('Qual língua era falada em Roma e deu origem ao português, espanhol e italiano?', 'Latim', ['Grego', 'Etrusco', 'Osco', 'Fenício', 'Aramaico'], 1, scene='forum_romano', icon='book',
     src=('pt', 'Latim', ['português']))
 c.T('Qual obra pública romana levava água às cidades por arcos de pedra?', 'Aqueduto', ['Termas', 'Basílica', 'Anfiteatro', 'Fórum', 'Cloaca'], 1, stad='aqueduto_segovia',
     src=('pt', 'Aqueduto', ['romano']))
 c.T('Em que ano, tradicionalmente, caiu o Império Romano do Ocidente?', '476', ['395', '330', '800', '1453', '410'], 2, icon='crown',
     src=('pt', 'Queda do Império Romano do Ocidente', ['476']), x='O último imperador, Rômulo Augústulo, foi deposto pelo chefe germânico Odoacro.')
-c.T('Qual foi o líder huno apelidado “Flagelo de Deus”, que ameaçou Roma no século V?', 'Átila', ['Alarico', 'Genserico', 'Odoacro', 'Teodorico', 'Gengis Khan'], 2, icon='sword',
+c.T('Qual foi o líder huno apelidado “Flagelo de Deus”, que ameaçou Roma no século V?', 'Átila', ['Alarico', 'Genserico', 'Odoacro', 'Teodorico', 'Gengis Khan'], 2, scene='hunos_cavaleiros', icon='sword',
     src=('pt', 'Átila', ['huno']))
 c.T('Em qual cidade foi assassinado Júlio César, nos Idos de Março de 44 a.C.?', 'Roma', ['Alexandria', 'Cartago', 'Atenas', 'Ravena', 'Milão'], 2, icon='sword',
     src=('pt', 'Júlio César', ['44 a.C.']))
@@ -56,11 +56,11 @@ c.T('Qual foi o imperador que dividiu o Império Romano entre seus filhos, em 39
     src=('pt', 'Teodósio I', ['395']))
 c.T('Qual religião, antes perseguida, tornou-se a oficial do Império Romano com Teodósio?', 'Cristianismo', ['Judaísmo', 'Mitraísmo', 'Culto a Ísis', 'Zoroastrismo', 'Maniqueísmo'], 3, icon='column',
     src=('pt', 'Teodósio I', ['cristianismo']))
-c.T('Como os romanos chamavam o Mar Mediterrâneo?', 'Mare Nostrum', ['Mare Clausum', 'Pontus Euxinus', 'Mare Rubrum', 'Oceanus', 'Mare Tyrrhenum'], 3, icon='ship',
+c.T('Como os romanos chamavam o Mar Mediterrâneo?', 'Mare Nostrum', ['Mare Clausum', 'Pontus Euxinus', 'Mare Rubrum', 'Oceanus', 'Mare Tyrrhenum'], 3, scene='corvo_romano', icon='ship',
     src=('pt', 'Mare Nostrum', ['romano']))
-c.T('Qual a data tradicional da fundação de Roma?', '753 a.C.', ['509 a.C.', '27 a.C.', '1000 a.C.', '264 a.C.', '146 a.C.'], 3, icon='hourglass',
+c.T('Qual a data tradicional da fundação de Roma?', '753 a.C.', ['509 a.C.', '27 a.C.', '1000 a.C.', '264 a.C.', '146 a.C.'], 3, scene='loba_capitolina', icon='hourglass',
     src=('pt', 'Roma', ['753 a.C.']))
-c.T('Qual cidade fundada por Constantino se tornou a nova capital do Império, em 330?', 'Constantinopla', ['Ravena', 'Milão', 'Alexandria', 'Antioquia', 'Nicomédia'], 2, icon='crown',
+c.T('Qual cidade fundada por Constantino se tornou a nova capital do Império, em 330?', 'Constantinopla', ['Ravena', 'Milão', 'Alexandria', 'Antioquia', 'Nicomédia'], 2, scene='labaro_constantino', icon='crown',
     src=('pt', 'Constantinopla', ['330']))
 c.T('O que eram os “pães e circo” da política romana?', 'Alimento e espetáculos para agradar o povo', ['Impostos sobre padarias', 'Festas religiosas obrigatórias', 'Pagamento de soldados', 'Um tipo de moeda', 'Leis sobre o comércio'], 3, stad='coliseu',
     src=('pt', 'Pão e circo', ['circo']))

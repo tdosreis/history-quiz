@@ -5,7 +5,7 @@ c = Cat('egito_mesopotamia', 'Antigo Oriente', '🏺', 'Egito, Mesopotâmia, Pé
 
 # ── d1 ──
 c.T('Qual mar os navegadores fenícios dominaram com suas rotas de comércio?', 'Mediterrâneo',
-    ['Mar Báltico', 'Mar do Norte', 'Mar Cáspio', 'Mar da China', 'Mar de Aral'], d=1, icon='ship',
+    ['Mar Báltico', 'Mar do Norte', 'Mar Cáspio', 'Mar da China', 'Mar de Aral'], d=1, scene='navio_fenicio', icon='ship',
     src=('en', 'Phoenicia', ['Mediterranean']),
     x='Fundaram colônias de Chipre à Espanha, como Cádis e Cartago, e espalharam seu alfabeto pelo Mediterrâneo.')
 c.T('Qual animal doméstico representava a deusa egípcia Bastet?', 'Gato',
@@ -49,7 +49,7 @@ c.O('Em que ordem estes fatos aconteceram, do mais antigo ao mais recente?', [
 
 # ── d2 ──
 c.T('Qual deus egípcio, senhor do mundo dos mortos, era pintado como uma múmia de pele verde?', 'Osíris',
-    ['Rá', 'Anúbis', 'Hórus', 'Seth', 'Amon'], d=2, icon='pyramid',
+    ['Rá', 'Anúbis', 'Hórus', 'Seth', 'Amon'], d=2, scene='julgamento_mortos', icon='pyramid',
     src=('en', 'Osiris', ['green']),
     x='Segundo o mito, foi morto e despedaçado pelo irmão Seth; Ísis reuniu os pedaços e o trouxe de volta à vida.')
 c.T('Qual inseto, que rola bolas de esterco, era sagrado no Egito e simbolizava o Sol nascente?', 'Escaravelho',
@@ -107,13 +107,13 @@ c.MY('A Esfinge de Gizé perdeu o nariz com um tiro de canhão dos soldados de N
 c.MY('A maldição de Tutancâmon matou quem abriu sua tumba?', False, 2, who='tutancamon',
      src=('en', 'Curse of the pharaohs', ['Carter']),
      x='Howard Carter, que liderou a escavação, viveu mais 16 anos; estudos não acharam mais mortes entre os presentes do que o esperado.')
-c.MY('A divisão da hora em 60 minutos, e do minuto em 60 segundos, vem da matemática da Mesopotâmia?', True, 2, icon='hourglass',
+c.MY('A divisão da hora em 60 minutos, e do minuto em 60 segundos, vem da matemática da Mesopotâmia?', True, 2, scene='zigurate_ur', icon='hourglass',
      src=('en', 'Sexagesimal', ['Babylonian']),
      x='Sumérios e babilônios contavam em base 60, número com muitos divisores; o sistema sobreviveu na medida do tempo e dos ângulos.')
 
 # ── d3 ──
 c.T('No julgamento dos mortos, diante de Osíris, o coração do morto era pesado numa balança contra o quê?', 'Uma pena',
-    ['Um grão de trigo', 'Um escaravelho de ouro', 'Uma moeda de prata', 'Um olho de Hórus', 'Uma pedra do Nilo'], d=3, icon='book',
+    ['Um grão de trigo', 'Um escaravelho de ouro', 'Uma moeda de prata', 'Um olho de Hórus', 'Uma pedra do Nilo'], d=3, scene='julgamento_mortos', icon='book',
     src=('en', 'Maat', ['feather']),
     x='A pena representava Maat, a verdade e a justiça; se o coração pesasse mais, era devorado pela monstruosa Ammit.')
 c.T('Qual religião antiga do Irã tem Ahura Mazda como deus supremo?', 'Zoroastrismo',
@@ -125,7 +125,7 @@ c.T('Em que país ficam hoje as ruínas de Mohenjo-daro, uma das grandes cidades
     src=('en', 'Mohenjo-daro', ['Pakistan']),
     x='Por volta de 2500 a.C., a cidade já tinha ruas em grade, poços, banheiros nas casas e esgotos cobertos.')
 c.T('Qual achado de 1947, em cavernas de Qumran, revelou cópias da Bíblia hebraica mil anos mais antigas que as conhecidas?', 'Manuscritos do Mar Morto',
-    ['Códice Sinaítico', 'Biblioteca de Nag Hammadi', 'Cartas de Amarna', 'Papiros de Oxirrinco', 'Tabuletas de Ebla'], d=3, icon='scroll',
+    ['Códice Sinaítico', 'Biblioteca de Nag Hammadi', 'Cartas de Amarna', 'Papiros de Oxirrinco', 'Tabuletas de Ebla'], d=3, scene='qumran', icon='scroll',
     src=('en', 'Dead Sea Scrolls', ['Qumran']),
     x='Segundo o relato mais conhecido, os primeiros rolos foram achados por pastores beduínos que procuravam uma cabra perdida.')
 c.P('Qual faraó assinou com os hititas um dos mais antigos tratados de paz conhecidos?', 'ramses_ii', d=3, flag='TUR',
@@ -166,7 +166,7 @@ c.NW('Em que ano saiu esta manchete?', '1822', 'Decifrado o segredo dos hierógl
      sub='Estudioso francês lê nomes de faraós com a ajuda da Pedra de Roseta',
      wrong=['1799', '1801', '1815', '1836', '1848'], src=('en', 'Jean-François Champollion', ['1822']),
      x='Diz-se que Champollion, ao entender o sistema, correu ao irmão gritando "Consegui!" e desmaiou.')
-c.MY('Ainda havia mamutes vivos quando a Grande Pirâmide de Gizé foi construída?', True, 3, icon='globe',
+c.MY('Ainda havia mamutes vivos quando a Grande Pirâmide de Gizé foi construída?', True, 3, scene='piramides_gize', icon='globe',
      src=('en', 'Woolly mammoth', ['Wrangel']),
      x='Uma população isolada sobreviveu na ilha de Wrangel, no Ártico, até cerca de 4 mil anos atrás, séculos depois da pirâmide.')
 c.MY('Na mumificação, os egípcios retiravam o cérebro do morto pelo nariz?', True, 3, crest='egito_antigo',
@@ -185,7 +185,7 @@ c.O('Do mais antigo ao mais recente, em que ordem aconteceram estes marcos?', [
 
 # ── d4 ──
 c.T('Qual povo estrangeiro dominou o norte do Egito entre o Médio e o Novo Império?', 'Hicsos',
-    ['Hititas', 'Núbios', 'Líbios', 'Assírios', 'Povos do Mar'], d=4, icon='sword',
+    ['Hititas', 'Núbios', 'Líbios', 'Assírios', 'Povos do Mar'], d=4, scene='cheia_do_nilo', icon='sword',
     src=('en', 'Hyksos', ['Ahmose']),
     x='Foram expulsos por volta de 1550 a.C. por Amósis I, fundador da XVIII dinastia, que abriu o Novo Império.')
 c.T('Qual reino da Núbia conquistou o Egito no século VIII a.C. e reinou como a XXV dinastia?', 'Cuxe',
@@ -196,7 +196,7 @@ c.T('Qual era a capital do Império Hitita, na atual Turquia?', 'Hatusa',
     ['Nínive', 'Susa', 'Ugarit', 'Mari', 'Assur'], d=4, flag='TUR',
     src=('en', 'Hattusa', ['Hittite']),
     x='Lá foram achadas milhares de tabuletas, entre elas a versão hitita do tratado de paz com Ramsés II.')
-c.P('Qual faraó enviou uma célebre expedição de navios à Terra de Punt, em busca de incenso e mirra, e a retratou em seu templo funerário?', 'hatexepsute', d=4, icon='ship',
+c.P('Qual faraó enviou uma célebre expedição de navios à Terra de Punt, em busca de incenso e mirra, e a retratou em seu templo funerário?', 'hatexepsute', d=4, scene='deir_el_bahari', icon='ship',
     src=('en', 'Hatshepsut', ['Punt']),
     x='Os relevos mostram navios carregados de árvores de incenso, ébano, marfim e até babuínos vivos.')
 c.P('Qual rei persa foi sepultado num túmulo de pedra em Pasárgada, a capital que ele mesmo fundou?', 'ciro', d=4, crest='persia',
@@ -239,7 +239,7 @@ c.T('Qual faraó, pai de Quéops, construiu a Pirâmide Vermelha e a Pirâmide C
     src=('en', 'Sneferu', ['Bent Pyramid']),
     x='A Pirâmide Curvada muda de inclinação no meio da subida; a Vermelha, logo depois, foi a primeira pirâmide de faces lisas bem-sucedida.')
 c.T('Em que língua foi escrita a maior parte das Cartas de Amarna, a correspondência diplomática dos faraós?', 'Acádio',
-    ['Egípcio', 'Aramaico', 'Hitita', 'Hebraico', 'Grego'], d=5, icon='scroll',
+    ['Egípcio', 'Aramaico', 'Hitita', 'Hebraico', 'Grego'], d=5, scene='disco_aton', icon='scroll',
     src=('en', 'Amarna letters', ['Akkadian']),
     x='Escritas em cuneiforme, em tabuletas de argila, mostram faraós trocando presentes e queixas com reis da Babilônia, de Mitani e dos hititas.')
 c.T('Que invasores o faraó Ramsés III derrotou numa grande batalha naval, por volta de 1175 a.C., retratada no templo de Medinet Habu?', 'Povos do Mar',

@@ -72,7 +72,7 @@ g.T('Qual reino helenístico, fundado por um general de Alexandre, dominou a Sí
     src=('pt', 'Império Selêucida', ['Seleuco']),
     x='Seu fundador, Seleuco I, ergueu Antioquia, que se tornaria uma das maiores cidades do mundo romano.')
 g.T('Qual escrita micênica, decifrada por Michael Ventris em 1952, revelou ser uma forma antiga de grego?', 'Linear B',
-    ['Linear A', 'Cuneiforme', 'Hieróglifos cretenses', 'Alfabeto fenício', 'Escrita do Indo'], d=5, icon='scroll',
+    ['Linear A', 'Cuneiforme', 'Hieróglifos cretenses', 'Alfabeto fenício', 'Escrita do Indo'], d=5, scene='decifracao', icon='scroll',
     src=('pt', 'Linear B', ['Ventris']),
     x='A Linear A, usada antes pelos minoicos em Creta, continua sem decifração.')
 r.T('Qual invenção, uma ponte de abordagem com um gancho, ajudou Roma a vencer Cartago no mar na Primeira Guerra Púnica?', 'O corvo',
@@ -97,7 +97,7 @@ r.P('Qual poeta latino guia Dante pelo Inferno e pelo Purgatório na Divina Com�
 g.P('Qual pensador grego fundou em Crotona uma comunidade cujos membros, dizem, não podiam comer favas?', 'pitagoras', d=4, icon='book',
     src=('en', 'Pythagoras', ['beans']),
     x='Seus seguidores acreditavam na transmigração das almas e viam nos números a chave para entender o universo.')
-r.P('De qual imperador é a estátua equestre de bronze do Capitólio que escapou da destruição por ser confundida com Constantino?', 'marco_aurelio', d=4, icon='crown',
+r.P('De qual imperador é a estátua equestre de bronze do Capitólio que escapou da destruição por ser confundida com Constantino?', 'marco_aurelio', d=4, scene='estatua_equestre', icon='crown',
     src=('en', 'Equestrian Statue of Marcus Aurelius', ['Constantine']),
     x='Na Idade Média muitas estátuas pagãs foram derretidas; esta sobreviveu porque julgavam retratar o primeiro imperador cristão.')
 
@@ -274,7 +274,7 @@ r.MY('A cesariana tem esse nome porque Júlio César nasceu de um parto assim?',
 g.MY('As estátuas e os templos da Grécia Antiga eram brancos, sem pintura?', False, 3, stad='partenon',
      x='Vestígios de pigmentos mostram que esculturas e frisos eram pintados com cores vivas; o branco “clássico” é obra do tempo.',
      src=('en', 'Ancient Greek sculpture', ['painted']))
-r.MY('Na Roma antiga, o polegar para baixo era com certeza o sinal para matar o gladiador vencido?', False, 4, icon='sword',
+r.MY('Na Roma antiga, o polegar para baixo era com certeza o sinal para matar o gladiador vencido?', False, 4, scene='arena_gladiadores', icon='sword',
      x='Os textos romanos falam só em “polegar virado” (pollice verso), sem dizer a direção; a imagem popular vem de um quadro de Gérôme, de 1872.',
      src=('en', 'Pollice Verso (Gérôme)', ['1872']))
 

@@ -49,7 +49,7 @@
    ],
    "d": 1,
    "art": {
-    "icon": "scroll"
+    "scene": "escriba_egipcio"
    },
    "src": [
     "pt",
@@ -75,7 +75,7 @@
    ],
    "d": 2,
    "art": {
-    "icon": "scroll"
+    "scene": "decifracao"
    },
    "src": [
     "pt",
@@ -112,7 +112,7 @@
    ],
    "d": 1,
    "art": {
-    "icon": "pyramid"
+    "scene": "tumba_aberta"
    },
    "src": [
     "pt",
@@ -131,7 +131,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "crown"
+    "scene": "deir_el_bahari"
    },
    "src": [
     "pt",
@@ -149,7 +149,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "pyramid"
+    "scene": "disco_aton"
    },
    "src": [
     "pt",
@@ -221,7 +221,7 @@
    ],
    "d": 1,
    "art": {
-    "icon": "pyramid"
+    "scene": "piramides_gize"
    },
    "src": [
     "pt",
@@ -247,7 +247,7 @@
    ],
    "d": 1,
    "art": {
-    "icon": "pyramid"
+    "scene": "tumba_aberta"
    },
    "src": [
     "pt",
@@ -273,7 +273,7 @@
    ],
    "d": 2,
    "art": {
-    "icon": "pyramid"
+    "scene": "julgamento_mortos"
    },
    "src": [
     "pt",
@@ -299,7 +299,7 @@
    ],
    "d": 2,
    "art": {
-    "icon": "pyramid"
+    "scene": "cheia_do_nilo"
    },
    "src": [
     "pt",
@@ -377,7 +377,7 @@
    ],
    "d": 2,
    "art": {
-    "icon": "scroll"
+    "scene": "tabuleta_cuneiforme"
    },
    "src": [
     "pt",
@@ -404,7 +404,7 @@
    ],
    "d": 1,
    "art": {
-    "icon": "map"
+    "scene": "zigurate_ur"
    },
    "src": [
     "pt",
@@ -460,7 +460,7 @@
    ],
    "d": 4,
    "art": {
-    "icon": "book"
+    "scene": "tabuleta_cuneiforme"
    },
    "src": [
     "pt",
@@ -512,7 +512,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "gear"
+    "scene": "zigurate_ur"
    },
    "src": [
     "pt",
@@ -590,7 +590,7 @@
    ],
    "d": 4,
    "art": {
-    "icon": "crown"
+    "scene": "cheia_do_nilo"
    },
    "src": [
     "pt",
@@ -642,7 +642,7 @@
    ],
    "d": 1,
    "art": {
-    "icon": "scroll"
+    "scene": "arca_alianca"
    },
    "src": [
     "pt",
@@ -660,7 +660,7 @@
    ],
    "d": 2,
    "art": {
-    "icon": "crown"
+    "scene": "arca_alianca"
    },
    "src": [
     "pt",
@@ -738,7 +738,7 @@
    ],
    "d": 5,
    "art": {
-    "icon": "book"
+    "scene": "escriba_egipcio"
    },
    "src": [
     "en",
@@ -764,7 +764,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "hourglass"
+    "scene": "cheia_do_nilo"
    },
    "src": [
     "pt",
@@ -790,7 +790,7 @@
    ],
    "d": 4,
    "art": {
-    "icon": "crown"
+    "scene": "cheia_do_nilo"
    },
    "src": [
     "pt",
@@ -895,7 +895,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "pyramid"
+    "scene": "zigurate_ur"
    },
    "src": [
     "pt",
@@ -973,7 +973,7 @@
    ],
    "d": 5,
    "art": {
-    "icon": "globe"
+    "scene": "cheia_do_nilo"
    },
    "src": [
     "pt",

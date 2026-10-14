@@ -47,7 +47,7 @@
    ],
    "d": 1,
    "art": {
-    "icon": "pyramid"
+    "scene": "piramides_gize"
    },
    "src": [
     "pt",
@@ -115,7 +115,7 @@
    ],
    "d": 1,
    "art": {
-    "icon": "ship"
+    "scene": "corvo_romano"
    },
    "src": [
     "pt",

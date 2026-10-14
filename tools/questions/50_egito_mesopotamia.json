@@ -22,7 +22,7 @@
    ],
    "d": 1,
    "art": {
-    "icon": "ship"
+    "scene": "navio_fenicio"
    },
    "src": [
     "en",
@@ -311,7 +311,7 @@
    ],
    "d": 2,
    "art": {
-    "icon": "pyramid"
+    "scene": "julgamento_mortos"
    },
    "src": [
     "en",
@@ -721,7 +721,7 @@
    ],
    "d": 2,
    "art": {
-    "icon": "hourglass"
+    "scene": "zigurate_ur"
    },
    "src": [
     "en",
@@ -748,7 +748,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "book"
+    "scene": "julgamento_mortos"
    },
    "src": [
     "en",
@@ -829,7 +829,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "scroll"
+    "scene": "qumran"
    },
    "src": [
     "en",
@@ -1074,7 +1074,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "globe"
+    "scene": "piramides_gize"
    },
    "src": [
     "en",
@@ -1207,7 +1207,7 @@
    ],
    "d": 4,
    "art": {
-    "icon": "sword"
+    "scene": "cheia_do_nilo"
    },
    "src": [
     "en",
@@ -1280,7 +1280,7 @@
    ],
    "d": 4,
    "art": {
-    "icon": "ship"
+    "scene": "deir_el_bahari"
    },
    "src": [
     "en",
@@ -1545,7 +1545,7 @@
    ],
    "d": 5,
    "art": {
-    "icon": "scroll"
+    "scene": "disco_aton"
    },
    "src": [
     "en",

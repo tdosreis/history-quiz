@@ -4,69 +4,69 @@ from qdsl import Cat
 c = Cat('egito_mesopotamia', 'Antigo Oriente', '🏺', 'Egito, Mesopotâmia, Pérsia e vizinhos', '#B8860B', order=10)
 c.T('Qual rio fertilizava as terras do Egito Antigo?', 'Nilo', ['Tigre', 'Eufrates', 'Indo', 'Danúbio', 'Jordão'], 1, icon='pyramid',
     src=('pt', 'Egito Antigo', ['Nilo']), x='As cheias anuais do Nilo deixavam um limo fértil nas margens: sem ele, o Egito seria deserto.')
-c.T('Como se chamava a escrita sagrada dos antigos egípcios, feita de desenhos?', 'Hieróglifos', ['Cuneiforme', 'Runas', 'Alfabeto fenício', 'Linear B', 'Ogham'], 1, icon='scroll',
+c.T('Como se chamava a escrita sagrada dos antigos egípcios, feita de desenhos?', 'Hieróglifos', ['Cuneiforme', 'Runas', 'Alfabeto fenício', 'Linear B', 'Ogham'], 1, scene='escriba_egipcio', icon='scroll',
     src=('pt', 'Hieróglifo', ['Egito']))
-c.T('Qual pedra, encontrada em 1799, ajudou a decifrar os hieróglifos?', 'Pedra de Roseta', ['Pedra de Roma', 'Código de Hamurabi', 'Estela de Merneptá', 'Pedra do Sol', 'Obelisco de Karnak'], 2, icon='scroll',
+c.T('Qual pedra, encontrada em 1799, ajudou a decifrar os hieróglifos?', 'Pedra de Roseta', ['Pedra de Roma', 'Código de Hamurabi', 'Estela de Merneptá', 'Pedra do Sol', 'Obelisco de Karnak'], 2, scene='decifracao', icon='scroll',
     src=('pt', 'Pedra de Roseta', ['1799']), x='Jean-François Champollion decifrou os hieróglifos em 1822, comparando os três textos gravados na pedra.')
 c.P('Qual faraó mandou construir os templos de Abu Simbel e reinou por mais de sessenta anos?', ['ramses_ii'], 2, stad='abu_simbel',
     src=('pt', 'Ramessés II', ['Abu Simbel']))
-c.P('Qual faraó teve a tumba descoberta quase intacta por Howard Carter, em 1922?', ['tutancamon'], 1, icon='pyramid',
+c.P('Qual faraó teve a tumba descoberta quase intacta por Howard Carter, em 1922?', ['tutancamon'], 1, scene='tumba_aberta', icon='pyramid',
     src=('pt', 'Tutancâmon', ['Howard Carter']), x='O faraó-menino morreu por volta dos 18 anos; sua máscara de ouro virou símbolo do Egito Antigo.')
-c.P('Qual mulher governou o Egito como faraó por cerca de vinte anos, usando barba cerimonial?', ['hatexepsute'], 3, icon='crown',
+c.P('Qual mulher governou o Egito como faraó por cerca de vinte anos, usando barba cerimonial?', ['hatexepsute'], 3, scene='deir_el_bahari', icon='crown',
     src=('pt', 'Hatexepsute', ['faraó']))
-c.P('Qual faraó tentou impor o culto a um único deus, o disco solar Aton?', ['aquenaton'], 3, icon='pyramid',
+c.P('Qual faraó tentou impor o culto a um único deus, o disco solar Aton?', ['aquenaton'], 3, scene='disco_aton', icon='pyramid',
     src=('pt', 'Aquenáton', ['Aton']))
 c.P('Qual rainha do Egito se aliou a Júlio César e depois a Marco Antônio?', ['cleopatra'], 1, icon='crown',
     src=('pt', 'Cleópatra VII', ['César', 'Antônio']))
 c.T('Qual é a maior das pirâmides de Gizé?', 'A de Quéops', ['A de Quéfren', 'A de Miquerinos', 'A de Djoser', 'A de Medum', 'A de Snefru'], 2, stad='piramide_queops',
     src=('pt', 'Pirâmide de Quéops', ['Quéops']), x='Por mais de 3.800 anos, a Grande Pirâmide foi a construção mais alta feita pelo ser humano.')
-c.T('Para que serviam as pirâmides do Egito?', 'Tumbas de faraós', ['Observatórios astronômicos', 'Celeiros reais', 'Templos de sacrifício', 'Fortalezas militares', 'Palácios de verão'], 1, icon='pyramid',
+c.T('Para que serviam as pirâmides do Egito?', 'Tumbas de faraós', ['Observatórios astronômicos', 'Celeiros reais', 'Templos de sacrifício', 'Fortalezas militares', 'Palácios de verão'], 1, scene='piramides_gize', icon='pyramid',
     src=('pt', 'Pirâmide', ['tumba']))
-c.T('Qual processo preservava o corpo dos faraós após a morte?', 'Mumificação', ['Cremação', 'Embalsamamento grego', 'Congelamento', 'Petrificação', 'Defumação'], 1, icon='pyramid',
+c.T('Qual processo preservava o corpo dos faraós após a morte?', 'Mumificação', ['Cremação', 'Embalsamamento grego', 'Congelamento', 'Petrificação', 'Defumação'], 1, scene='tumba_aberta', icon='pyramid',
     src=('pt', 'Mumificação', ['Egito']))
-c.T('Qual deus egípcio, de cabeça de chacal, guiava os mortos e cuidava da mumificação?', 'Anúbis', ['Hórus', 'Rá', 'Osíris', 'Thot', 'Seth'], 2, icon='pyramid',
+c.T('Qual deus egípcio, de cabeça de chacal, guiava os mortos e cuidava da mumificação?', 'Anúbis', ['Hórus', 'Rá', 'Osíris', 'Thot', 'Seth'], 2, scene='julgamento_mortos', icon='pyramid',
     src=('pt', 'Anúbis', ['chacal']))
-c.T('Qual era o deus-sol principal do panteão egípcio?', 'Rá', ['Osíris', 'Anúbis', 'Hórus', 'Ptah', 'Sobek'], 2, icon='pyramid',
+c.T('Qual era o deus-sol principal do panteão egípcio?', 'Rá', ['Osíris', 'Anúbis', 'Hórus', 'Ptah', 'Sobek'], 2, scene='cheia_do_nilo', icon='pyramid',
     src=('pt', 'Rá', ['Sol']))
 c.T('Como se chamava o soberano do Egito Antigo?', 'Faraó', ['Sultão', 'Califa', 'Imperador', 'Xá', 'Regente'], 1, icon='crown',
     src=('pt', 'Faraó', ['Egito']))
 c.T('O que o Egito Antigo escrevia sobre rolos feitos de uma planta do Nilo?', 'Papiro', ['Pergaminho', 'Argila', 'Seda', 'Bambu', 'Couro'], 1, icon='scroll',
     src=('pt', 'Papiro', ['Egito']))
-c.T('Qual civilização criou a escrita cuneiforme, em placas de argila?', 'Sumérios', ['Egípcios', 'Fenícios', 'Gregos', 'Hititas', 'Persas'], 2, icon='scroll',
+c.T('Qual civilização criou a escrita cuneiforme, em placas de argila?', 'Sumérios', ['Egípcios', 'Fenícios', 'Gregos', 'Hititas', 'Persas'], 2, scene='tabuleta_cuneiforme', icon='scroll',
     src=('pt', 'Escrita cuneiforme', ['sumér']), x='A palavra “cuneiforme” vem do latim cuneus, “cunha”: o formato dos sinais feitos por uma cunha na argila.')
-c.T('Entre quais rios se desenvolveu a Mesopotâmia?', 'Tigre e Eufrates', ['Nilo e Jordão', 'Indo e Ganges', 'Danúbio e Reno', 'Tigre e Nilo', 'Eufrates e Jordão'], 1, icon='map',
+c.T('Entre quais rios se desenvolveu a Mesopotâmia?', 'Tigre e Eufrates', ['Nilo e Jordão', 'Indo e Ganges', 'Danúbio e Reno', 'Tigre e Nilo', 'Eufrates e Jordão'], 1, scene='zigurate_ur', icon='map',
     src=('pt', 'Mesopotâmia', ['Tigre', 'Eufrates']), x='“Mesopotâmia” significa “terra entre rios”, em grego.')
 c.P('Qual rei da Babilônia ordenou um dos primeiros códigos de leis escritos, com a regra “olho por olho”?', ['hamurabi'], 2, icon='scroll',
     src=('pt', 'Hamurabi', ['código']), x='O Código de Hamurabi foi gravado numa estela de basalto de mais de dois metros, hoje no Museu do Louvre.')
 c.P('Qual rei babilônico, segundo a tradição, mandou erguer os Jardins Suspensos?', ['nabucodonosor'], 3, stad='portao_ishtar',
     src=('pt', 'Nabucodonosor II', ['Jardins Suspensos']))
-c.C('Qual império mesopotâmico tinha a cidade de Nínive como capital e uma biblioteca com milhares de tabuletas?', 'assiria', 4, icon='book',
+c.C('Qual império mesopotâmico tinha a cidade de Nínive como capital e uma biblioteca com milhares de tabuletas?', 'assiria', 4, scene='tabuleta_cuneiforme', icon='book',
     src=('pt', 'Império Assírio', ['Nínive']))
 c.T('Qual cidade da Mesopotâmia era famosa pelo Portão de Ishtar e pelos Jardins Suspensos?', 'Babilônia', ['Nínive', 'Ur', 'Susa', 'Persépolis', 'Tebas'], 2, stad='portao_ishtar',
     src=('pt', 'Babilônia', ['Ishtar']))
-c.T('Qual civilização mesopotâmica inventou a roda e o arado, segundo os achados arqueológicos?', 'Sumérios', ['Hititas', 'Acádios', 'Assírios', 'Caldeus', 'Elamitas'], 3, icon='gear',
+c.T('Qual civilização mesopotâmica inventou a roda e o arado, segundo os achados arqueológicos?', 'Sumérios', ['Hititas', 'Acádios', 'Assírios', 'Caldeus', 'Elamitas'], 3, scene='zigurate_ur', icon='gear',
     src=('pt', 'Suméria', ['roda']))
 c.T('Qual o nome dos templos em degraus da Mesopotâmia, ligados à Torre de Babel?', 'Zigurates', ['Pirâmides', 'Obeliscos', 'Mastabas', 'Pagodes', 'Tholos'], 2, icon='pyramid',
     src=('pt', 'Zigurate', ['templo']))
 c.T('Qual povo do Oriente Médio criou um alfabeto que deu origem ao alfabeto grego?', 'Fenícios', ['Hebreus', 'Egípcios', 'Persas', 'Assírios', 'Lídios'], 2, icon='ship',
     src=('pt', 'Fenícia', ['alfabeto']))
-c.T('Qual o nome do primeiro faraó a reunir o Alto e o Baixo Egito, segundo a tradição?', 'Narmer (Menés)', ['Djoser', 'Quéops', 'Ramsés', 'Tutmés', 'Akhenaton'], 4, icon='crown',
+c.T('Qual o nome do primeiro faraó a reunir o Alto e o Baixo Egito, segundo a tradição?', 'Narmer (Menés)', ['Djoser', 'Quéops', 'Ramsés', 'Tutmés', 'Akhenaton'], 4, scene='cheia_do_nilo', icon='crown',
     src=('pt', 'Narmer', ['Alto e Baixo Egito']))
 c.T('Qual construção do Egito Antigo é considerada a pirâmide mais antiga, em degraus?', 'A de Djoser, em Sacará', ['A de Quéops', 'A de Miquerinos', 'A Pirâmide Vermelha', 'A de Quéfren', 'A de Unas'], 4, icon='pyramid',
     src=('pt', 'Pirâmide de Djoser', ['Sacará']))
-c.T('Quem, segundo a Bíblia, libertou os hebreus da escravidão no Egito?', 'Moisés', ['Abraão', 'Davi', 'Salomão', 'Josué', 'Isaque'], 1, icon='scroll',
+c.T('Quem, segundo a Bíblia, libertou os hebreus da escravidão no Egito?', 'Moisés', ['Abraão', 'Davi', 'Salomão', 'Josué', 'Isaque'], 1, scene='arca_alianca', icon='scroll',
     src=('pt', 'Moisés', ['Egito']))
-c.P('Qual rei de Israel, filho de Davi, é lembrado pela sabedoria e pela construção do Primeiro Templo em Jerusalém?', ['salomao'], 2, icon='crown',
+c.P('Qual rei de Israel, filho de Davi, é lembrado pela sabedoria e pela construção do Primeiro Templo em Jerusalém?', ['salomao'], 2, scene='arca_alianca', icon='crown',
     src=('pt', 'Salomão', ['Templo']))
 c.T('Qual a grande estátua com corpo de leão e rosto humano que guarda as pirâmides de Gizé?', 'Esfinge', ['Colosso', 'Quimera', 'Grifo', 'Minotauro', 'Anúbis'], 1, stad='esfinge',
     src=('pt', 'Esfinge de Gizé', ['leão']))
 c.T('Em qual cidade egípcia ficam os templos de Karnak e o Vale dos Reis?', 'Luxor (antiga Tebas)', ['Alexandria', 'Mênfis', 'Gizé', 'Assuã', 'Heliópolis'], 3, stad='karnak',
     src=('pt', 'Luxor', ['Karnak']))
-c.T('Como os egípcios chamavam a “Casa da Vida”, onde se copiavam textos e se ensinava a escrever?', 'Per-Ankh', ['Pirâmide', 'Serapeu', 'Mastaba', 'Cartela', 'Naos'], 5, icon='book',
+c.T('Como os egípcios chamavam a “Casa da Vida”, onde se copiavam textos e se ensinava a escrever?', 'Per-Ankh', ['Pirâmide', 'Serapeu', 'Mastaba', 'Cartela', 'Naos'], 5, scene='escriba_egipcio', icon='book',
     src=('en', 'House of Life', ['Per-Ankh']))
-c.T('Qual dessas invenções é atribuída aos antigos egípcios?', 'Calendário solar de 365 dias', ['Pólvora', 'Imprensa', 'Bússola', 'Relógio mecânico', 'Papel de arroz'], 3, icon='hourglass',
+c.T('Qual dessas invenções é atribuída aos antigos egípcios?', 'Calendário solar de 365 dias', ['Pólvora', 'Imprensa', 'Bússola', 'Relógio mecânico', 'Papel de arroz'], 3, scene='cheia_do_nilo', icon='hourglass',
     src=('pt', 'Calendário egípcio', ['365']))
-c.T('Qual povo conquistou o Egito em 525 a.C. e o incorporou ao seu império?', 'Persas', ['Romanos', 'Gregos', 'Assírios', 'Hititas', 'Babilônios'], 4, icon='crown',
+c.T('Qual povo conquistou o Egito em 525 a.C. e o incorporou ao seu império?', 'Persas', ['Romanos', 'Gregos', 'Assírios', 'Hititas', 'Babilônios'], 4, scene='cheia_do_nilo', icon='crown',
     src=('pt', 'Egito Antigo', ['525 a.C.']))
 c.T('Qual cidade fundada por Alexandre, o Grande, tornou-se capital do Egito ptolomaico?', 'Alexandria', ['Mênfis', 'Tebas', 'Gizé', 'Cairo', 'Heliópolis'], 2, icon='ship',
     src=('pt', 'Alexandria', ['Alexandre']), x='A Biblioteca de Alexandria chegou a guardar centenas de milhares de rolos e atraiu sábios de todo o mundo antigo.')
@@ -74,13 +74,13 @@ c.T('Qual a última dinastia a governar o Egito Antigo, da qual Cleópatra fez p
     src=('pt', 'Dinastia ptolomaica', ['Cleópatra']))
 c.T('O Código de Hamurabi está gravado em qual material?', 'Basalto', ['Mármore', 'Argila crua', 'Ouro', 'Papiro', 'Madeira'], 4, icon='scroll',
     src=('pt', 'Código de Hamurabi', ['basalto']))
-c.T('Qual civilização construiu a cidade de Ur, uma das primeiras do mundo?', 'Sumérios', ['Egípcios', 'Persas', 'Hititas', 'Fenícios', 'Gregos'], 3, icon='pyramid',
+c.T('Qual civilização construiu a cidade de Ur, uma das primeiras do mundo?', 'Sumérios', ['Egípcios', 'Persas', 'Hititas', 'Fenícios', 'Gregos'], 3, scene='zigurate_ur', icon='pyramid',
     src=('pt', 'Ur', ['sumér']))
 c.T('Em que região do mundo surgiram as primeiras cidades e a escrita?', 'Mesopotâmia', ['Vale do Indo', 'China', 'Egito', 'Grécia', 'Mesoamérica'], 2, icon='map',
     src=('pt', 'Mesopotâmia', ['primeiras cidades']))
 c.T('Qual título era dado aos escribas do Egito, indispensáveis à administração do Estado?', 'Escribas', ['Vizires', 'Sacerdotes', 'Nomarcas', 'Capatazes', 'Arquitetos'], 3, icon='scroll',
     src=('pt', 'Escriba', ['Egito']))
-c.T('Qual constelação ou estrela os egípcios associavam à cheia do Nilo?', 'Sírio', ['Polaris', 'Órion', 'Vega', 'Antares', 'Cruzeiro do Sul'], 5, icon='globe',
+c.T('Qual constelação ou estrela os egípcios associavam à cheia do Nilo?', 'Sírio', ['Polaris', 'Órion', 'Vega', 'Antares', 'Cruzeiro do Sul'], 5, scene='cheia_do_nilo', icon='globe',
     src=('pt', 'Sírius', ['Egito']))
 c.T('Como era chamado o vale na margem oeste do Nilo, onde ficam as tumbas de Tutancâmon e Ramsés?', 'Vale dos Reis', ['Vale das Rainhas', 'Vale do Indo', 'Vale da Morte', 'Vale de Gizé', 'Vale dos Nobres'], 3, icon='pyramid',
     src=('pt', 'Vale dos Reis', ['Tutancâmon']))

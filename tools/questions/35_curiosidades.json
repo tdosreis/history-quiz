@@ -22,7 +22,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "castle"
+    "scene": "capitolio_noite"
    },
    "src": [
     "pt",
@@ -308,7 +308,7 @@
    ],
    "d": 5,
    "art": {
-    "icon": "pyramid"
+    "scene": "piramides_gize"
    },
    "src": [
     "pt",

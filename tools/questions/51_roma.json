@@ -287,7 +287,7 @@
    ],
    "d": 4,
    "art": {
-    "icon": "crown"
+    "scene": "estatua_equestre"
    },
    "src": [
     "en",
@@ -1029,7 +1029,7 @@
    ],
    "d": 4,
    "art": {
-    "icon": "sword"
+    "scene": "arena_gladiadores"
    },
    "src": [
     "en",

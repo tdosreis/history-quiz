@@ -65,7 +65,7 @@ c.write()
 
 # ───────────────────────── Mulheres na História ─────────────────────────
 c = Cat('mulheres', 'Mulheres na História', '👩', 'Rainhas, cientistas e rebeldes', '#C0568E', order=32)
-c.P('Qual faraó mulher construiu um templo magnífico em Deir el-Bahari?', ['hatexepsute'], 3, icon='crown', src=('pt', 'Hatexepsute', ['Deir el-Bahari']))
+c.P('Qual faraó mulher construiu um templo magnífico em Deir el-Bahari?', ['hatexepsute'], 3, scene='deir_el_bahari', icon='crown', src=('pt', 'Hatexepsute', ['Deir el-Bahari']))
 c.P('Qual rainha do Egito foi a última governante da dinastia ptolomaica?', ['cleopatra'], 1, icon='crown', src=('pt', 'Cleópatra VII', ['Ptolomaica']))
 c.P('Qual matemática e filósofa de Alexandria foi assassinada por uma multidão, em 415?', ['hipacia'], 4, icon='book', src=('pt', 'Hipácia', ['Alexandria']))
 c.P('Qual imperatriz chinesa governou sob o nome de dinastia Zhou, no século VII?', ['wu_zetian'], 3, icon='crown', src=('pt', 'Wu Zetian', ['Zhou']))

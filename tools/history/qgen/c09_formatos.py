@@ -132,7 +132,7 @@ c.MY('Maria Antonieta disse "Que comam brioches!" ao saber que o povo não tinha
      x='Não há registro de que tenha dito: a frase aparece nas Confissões de Rousseau, escritas quando ela ainda era criança na Áustria.', src=('pt', 'Que comam brioches', ['Rousseau']))
 c.MY('Tutancâmon tornou-se faraó ainda criança?', True, 1, icon='pyramid',
      x='Subiu ao trono por volta dos nove anos de idade e morreu perto dos 18.', src=('pt', 'Tutancâmon', ['nove']))
-c.MY('Os gladiadores romanos sempre lutavam até a morte?', False, 2, icon='sword',
+c.MY('Os gladiadores romanos sempre lutavam até a morte?', False, 2, scene='arena_gladiadores', icon='sword',
      x='Gladiadores custavam caro para treinar; muitos combates terminavam com a rendição de um deles, e a morte era a exceção.', src=('pt', 'Gladiador', ['morte']))
 c.MY('O Brasil foi o último país das Américas a abolir a escravidão?', True, 1, flag='BRA',
      x='A Lei Áurea, de 13 de maio de 1888, fez do Brasil o último país independente das Américas a abolir a escravidão.', src=('pt', 'Lei Áurea', ['1888']))

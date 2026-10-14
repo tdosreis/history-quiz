@@ -14,7 +14,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "pyramid"
+    "scene": "disco_aton"
    },
    "src": [
     "pt",
@@ -104,7 +104,7 @@
    ],
    "d": 2,
    "art": {
-    "icon": "sword"
+    "scene": "hunos_cavaleiros"
    },
    "src": [
     "pt",

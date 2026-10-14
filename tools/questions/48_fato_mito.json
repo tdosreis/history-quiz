@@ -270,7 +270,7 @@
    ],
    "d": 2,
    "art": {
-    "icon": "sword"
+    "scene": "arena_gladiadores"
    },
    "src": [
     "pt",
