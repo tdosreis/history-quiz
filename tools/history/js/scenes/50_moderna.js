@@ -37,13 +37,13 @@ Object.assign(SCENE, {
       + `<path d="M45 27q5-3 10 0q-5 2.4-10 0zM63 27q5-3 10 0q-5 2.4-10 0z" fill="#E6ECE4"/>`
       + `<path d="M59 25q-1 8-4 12q4 2 8 0M47 42q6-4 12-1q6-3 12 1" stroke="#7A90AA" stroke-width="1.6" fill="none"/>`
       + `<path d="M46 45q-2 6 1 12M53 46q-1 7 1 13M60 46v14M67 46q1 7-1 13M74 45q2 6-1 12M38 16q4-4 9-4M70 12q5 0 8 4" stroke="#4E6382" stroke-width="1.4" fill="none"/>`
-      + SCH.g(`<path d="M29 46l-9 11h6l-12 13 20-16h-6l7-8z" fill="${SCK.goldHi}"/>`, 1.1)
       + `<g transform="translate(101 62) rotate(-10) scale(1.2)">` + SCH.g(`<path d="M-1 -4V-25M8 -3V-19M-9 -4V-17" fill="none" stroke-width="1.1"/>
         <path d="M-6 -22h10q1.6 6 0 12H-6q-1.6-6 0-12zM5 -17h7q1 4 0 8H5q-1-4 0-8zM-13 -16l5-1v8h-5z" fill="${SCK.white}" stroke-width="1"/>
         <path d="M-14 -6h6l1 2h12l3-2 6-1-2 4q-3 7-12 7H-7q-6 0-7-6z" fill="#6E4426" stroke-width="1.2"/>`) + `<path d="M-1 -19.6v5M-3.4 -17h4.8" stroke="${SCK.red}" stroke-width="1.4"/></g>`
       + `<path d="M0 62q8-12 18-8q-6 4 0 8q10-12 24-6q-8 6 0 10q14-14 30-6q-8 6 2 8q10-10 22-6q-6 6 4 6q8-8 20-4V80H0z" fill="${SCK.sea}"/>`
       + `<path d="M0 62q8-12 18-8q-6 4 0 8q10-12 24-6q-8 6 0 10q14-14 30-6q-8 6 2 8q10-10 22-6q-6 6 4 6q8-8 20-4" stroke="${SCK.white}" stroke-width="1.8" fill="none"/>`
-      + `<path d="M0 74q10-5 20 0t20 0t20 0t20 0t20 0t20 0" stroke="#7FA3B8" stroke-width="1.4" fill="none"/>` },
+      + `<path d="M0 74q10-5 20 0t20 0t20 0t20 0t20 0t20 0" stroke="#7FA3B8" stroke-width="1.4" fill="none"/>`
+      + SCH.g(`<path d="M27 37h10l-8 11h6L16 69l6-16h-6z" fill="${SCK.goldHi}"/>`, 1.3) },
 
   /* the Armada in its crescent on a grey Channel: galleons with high castles, and fire-ships ablaze drifting down on them; the white cliffs far off */
   invencivel_armada: {
@@ -181,8 +181,9 @@ Object.assign(SCENE, {
         + SCH.g(`<path d="M48 27L10 36" stroke-width="5" fill="none"/>`, 1) + `<path d="M48 27L10 36" stroke="#8C9096" stroke-width="2.6"/>` + SCH.g(`<path d="M5 33.4l6-1.4 1.4 6-6 1.4z" fill="${SCK.wood}"/>`, 1.2)
         + SCH.g(`<path d="M4 60h40l-2 16H2z" fill="${SCK.wood}"/><path d="M6 62h36l-1.4 12H4.6z" fill="#7C8188" stroke-width=".9"/>`, 1.5)
         + `<path d="${dots}" stroke="#C3C7CC" stroke-width="1.2"/><path d="M5.6 66h36M5 70h36M12 62l-.4 4M18 62l-.4 4M24 62l-.4 4M30 62l-.4 4M36 62l-.4 4M16 66l-.6 8M29 66l-.6 8M10 70l-.3 4M22 70l-.3 4M35 70l-.3 4" stroke="${SCK.wood}" stroke-width="1.2"/>`
-        + SCH.g(`<path d="M88 72q0-8 7-8t7 8zM100 72q0-8 7-8t7 8z" fill="#3B2A1E"/><path d="M95 64v-8M107 64v-8" stroke-width="3" fill="none"/>`, 1.2)
-        + `<path d="M95 63v-6M107 63v-6" stroke="${SCK.wood}" stroke-width="1.4"/>`;
+        + SCH.g(`<path d="M81 63h22v7H81z" fill="${SCK.wood}"/><path d="M82 61.4h20V63H82z" fill="#1E1A18" stroke-width=".9"/>
+          <path d="M83 61.4q0-5 5-5t5 5zM91.6 61.4q0-5 5-5t5 5z" fill="#5A3A26"/><path d="M87 56.4v-2.4h2v2.4zM95.6 56.4v-2.4h2v2.4z" fill="${SCK.wood}" stroke-width="1"/>`, 1.2)
+        + `<path d="M84.6 59.6q3.4-2.4 6.8 0M93.2 59.6q3.4-2.4 6.8 0M83 66h20" stroke="#A0805A" stroke-width=".8" fill="none"/>`;
     } },
 
   /* a brass orrery by night: the gold Sun on its column, planets on their arms, Jupiter with four moons and ringed Saturn; a telescope on its tripod aimed out of the window at the cratered Moon */
@@ -248,11 +249,11 @@ Object.assign(SCENE, {
         + `<path d="M60 24v-3" stroke="${SCK.gold}" stroke-width="2"/><circle cx="60" cy="20.4" r="1.4" fill="${SCK.gold}"/>`
         + `<path d="M0 74L39 45.4h42L120 74v6H0z" fill="#B59C72"/>`
         + SCH.g(`<path d="${face}" fill="${SCK.wood}"/><path d="${top}" fill="#4E7A4A"/>`, 1.2)
-        + SCH.g(`<path d="M52.6 51h14.8l4 11.6H48.6z" fill="${SCK.wood}"/><path d="M48.6 62.6h22.8v4H48.6z" fill="#6E4426"/><path d="M50 66.6v7M70 66.6v7" fill="none" stroke-width="2"/>
-          <path d="M38 56.6h32" stroke-width="5" fill="none"/>`, 1.2)
-        + `<path d="M38 56.6h32" stroke="${SCK.gold}" stroke-width="3" stroke-linecap="round"/><path d="M44 56.6h1.2M53 56.6h1.2M62 56.6h1.2" stroke="${SCK.goldLo}" stroke-width="3.4"/>`
-        + SCH.g(`<path d="M69 54h12v3q-6 4-12 0z" fill="${SCK.gold}"/><path d="M69 54l-1-7 3.4 2.6L75 44l3.6 5.6L82 47l-1 7z" fill="${SCK.gold}"/><circle cx="75" cy="42" r="1.8" fill="${SCK.gold}" stroke-width="1"/>`, 1.2)
-        + `<path d="M75 40.2v-3M73.6 38.6h2.8" stroke="${SCK.ink}" stroke-width="1"/><path d="M70 53h10" stroke="${SCK.red}" stroke-width="1.4"/><path d="M40 55.6h28" stroke="${SCK.goldHi}" stroke-width=".8"/></g>`;
+        + SCH.g(`<path d="M45 50h30l5 11H40z" fill="${SCK.wood}"/><path d="M40 61h40v3.6H40z" fill="#6E4426"/><path d="M43 64.6v8.4M77 64.6v8.4" fill="none" stroke-width="2"/>
+          <path d="M45 56h20" stroke-width="5" fill="none"/>`, 1.2)
+        + `<path d="M45 56h20" stroke="${SCK.gold}" stroke-width="2.8" stroke-linecap="round"/><path d="M50 54v4M55.6 54v4M61 54v4" stroke="${SCK.goldLo}" stroke-width="1.6"/>`
+        + SCH.g(`<path d="M64 54.4l7-2.8v8.8l-7-2.8z" fill="${SCK.gold}"/><path d="M71 51.6q5.6.4 5.6 4.4T71 60.4z" fill="${SCK.gold}"/><circle cx="78.2" cy="56" r="1.4" fill="${SCK.gold}" stroke-width="1"/>`, 1.2)
+        + `<path d="M79.6 56h2.2M80.8 54.8v2.4" stroke="${SCK.ink}" stroke-width="1"/><path d="M73 52.6v6.8" stroke="${SCK.red}" stroke-width="1.4"/><path d="M46 55h18" stroke="${SCK.goldHi}" stroke-width=".8"/></g>`;
     } },
 
   /* the Hall of Mirrors down its length: tall windows on the left, arched mirrors answering them on the right, crystal chandeliers under the gilded painted vault, a parquet floor */
