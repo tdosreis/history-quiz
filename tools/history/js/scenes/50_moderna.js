@@ -58,11 +58,11 @@ Object.assign(SCENE, {
         + SCH.g(`<path d="M-1 -2V-22" stroke-width="1.2"/><path d="M-13 -5l3 2h20l3-3-3 8H-9z" fill="#4A3020"/><path d="M-10 -3q-2-7 2-11q1 4 3 3q-1-8 4-12q1 6 4 8q1-3 0-6q6 6 3 18z" fill="${SCK.red}"/>`, 1.2)
         + `<path d="M-5 -4q0-4 2-6q1 3 2 2q0-4 3-6q1 5 2 6q1 2-1 4z" fill="${SCK.goldHi}"/></g>`;
       return SCH.bg('#C8CDC8') + `<ellipse cx="86" cy="10" rx="26" ry="4" fill="${SCK.white}" opacity=".5"/>`
-        + SCH.g(`<path d="M-2 35V27q8-5 16-3q10-4 20 1l6 10z" fill="#F1EBDC"/>`, 1.2) + `<path d="M-2 27q8-5 16-3q10-4 20 1" stroke="${SCK.green}" stroke-width="2.4" fill="none"/>`
+        + SCH.g(`<path d="M44 35l3-8q8-4 15-2q8-3 14 1l4 9z" fill="#F1EBDC"/>`, 1.2) + `<path d="M47 27q8-4 15-2q8-3 14 1" stroke="${SCK.green}" stroke-width="2.4" fill="none"/>`
         + `<path d="M0 35h120v45H0z" fill="#6F8794"/><path d="M4 42h20M60 38h14M90 37h20M40 50h14" stroke="#93A8B2" stroke-width="1.2"/>`
-        + gal(40, 41, .3, 0) + gal(108, 42, .4, 0) + gal(62, 46, .5, 1) + gal(88, 57, .8, 1)
-        + SCH.waves(66, '#93A8B2', 1.2)
-        + fire(16, 66) + fire(42, 74);
+        + gal(46, 43, .3, 0) + gal(75, 44, .3, 0) + gal(17, 62, .7, 1) + gal(104, 64, .7, 1)
+        + SCH.waves(68, '#93A8B2', 1.2)
+        + fire(43, 71) + fire(71, 77);
     } },
 
   /* a Dutch East Indiaman with its high gilt stern moored at the quay; brick warehouses with stepped gables hoist a crate, barrels and bales stacked below */
@@ -162,7 +162,7 @@ Object.assign(SCENE, {
       + `<circle cx="98" cy="49" r="7" fill="${SCK.goldHi}" opacity=".35"/>` + SCH.g(`<path d="M96 66V53h4v13z" fill="${SCK.white}"/><path d="M92 70l2-4h8l2 4z" fill="${SCK.gold}"/>`, 1.2)
       + `<path d="M98 53v-2" stroke="${SCK.ink}" stroke-width="1"/><path d="M98 51q-2.4-3 0-7q2.4 4 0 7z" fill="${SCK.gold}" stroke="${SCK.goldLo}" stroke-width=".6"/>` },
 
-  /* a wooden screw press: the twin cheeks and head, the iron screw and its bar, the tympan raised with a fresh sheet; the case of metal sorts and the ink balls in front */
+  /* a wooden screw press: the twin cheeks and head, the iron screw and its bar, the tympan raised with a fresh sheet; the case of metal sorts in front, the ink balls resting on the ink block */
   prensa_tipos: {
     label: 'Uma prensa de madeira de parafuso, com uma caixa de tipos móveis',
     rx: /\b(prensa|imprensa|tipos moveis|tipografia)\b/,
@@ -262,11 +262,14 @@ Object.assign(SCENE, {
     rx: /\b(versalhes|galeria dos espelhos|espelhos|lustres)\b/,
     draw: () => {
       const R = v => Math.round(v * 10) / 10, P = (x, y, s) => `${R(60 + (x - 60) * s)} ${R(40 + (y - 40) * s)}`, S = d => 1 / (1 + .35 * d), fc = SCH.uid('fc');
-      let win = '', mir = '', pil = '', vault = '', rib = '', par = '', grid = '';
+      let win = '', mir = '', pil = '', vault = '', rib = '', par = '', grid = '', gar = '', mul = '', gl = '';
       for (let i = 0; i < 3; i++) { const a = S(2 * i + .4), b = S(2 * i + 1.4), m = S(2 * i + .9), c = S(2 * i + 1.6), e = S(2 * i + 2.2);
         const q = x => `M${P(x, 72, a)}L${P(x, 36, a)}Q${P(x, 24, m)} ${P(x, 36, b)}L${P(x, 72, b)}z`;
         win += q(0); mir += q(120);
-        grid += `M${P(120, 54, a)}L${P(120, 54, b)}M${P(120, 72, m)}L${P(120, 32, m)}`;
+        gar += `M${P(0, 72, a)}L${P(0, 61, a)}L${P(0, 61, b)}L${P(0, 72, b)}z`; mul += `M${P(0, 61, m)}L${P(0, 30, m)}M${P(0, 46, a)}L${P(0, 46, b)}`;
+        gl += `M${P(120, 70, a)}L${P(120, 38, b)}`;
+        for (const y of [44, 52, 60, 68]) grid += `M${P(120, y, a)}L${P(120, y, b)}`;
+        grid += `M${P(120, 72, m)}L${P(120, 30, m)}`;
         for (const x of [0, 120]) pil += `M${P(x, 22, c)}L${P(x, 22, e)}L${P(x, 78, e)}L${P(x, 78, c)}z`; }
       const ks = [1, .78, .6, .46, .36, .25];
       ks.forEach((k, i) => { const arc = `${P(0, 20, k)}Q${P(60, -26, k)} ${P(120, 20, k)}`; rib += 'M' + arc; if (i % 2 === 0) vault += `M${arc}L${P(120, 20, ks[i + 1])}Q${P(60, -26, ks[i + 1])} ${P(0, 20, ks[i + 1])}z`; });
@@ -280,8 +283,10 @@ Object.assign(SCENE, {
         + `<path d="M0 -2h120v22L75 35H45L0 20z" fill="${SCK.gold}"/><path d="${vault}" fill="#9A4A3A" opacity=".55"/><path d="${rib}" stroke="${SCK.goldHi}" stroke-width="2.4" fill="none"/>`
         + `<path d="M0 78L45 49.5h30L120 78v2H0z" fill="#B07A48"/><path d="${par}" stroke="#7A4E2C" stroke-width=".8" opacity=".7"/>`
         + `<path d="M0 20L45 35v14.5L0 78zM120 20L75 35v14.5L120 78zM45 35h30v14.5H45z" fill="#EFE6D2" stroke="${SCK.ink}" stroke-width="1"/><path d="${pil}" fill="${SCK.burg}"/><path d="M55 49.5V41q5-6 10 0v8.5z" fill="#DCE8EA" stroke="${SCK.ink}" stroke-width=".8"/>`
-        + `<path d="${win}" fill="#E8F1F2" stroke="${SCK.goldLo}" stroke-width="1.6"/><path d="${mir}" fill="#9DB3BC" stroke="${SCK.goldLo}" stroke-width="1.6"/><path d="${grid}" stroke="${SCK.goldHi}" stroke-width=".8"/>`
-        + ch(31, .4) + ch(17, .9) + '</g>';
+        + `<path d="${win}" fill="#CFE3EA" stroke="${SCK.goldLo}" stroke-width="1.6"/><path d="${gar}" fill="${SCK.green}"/><path d="${mul}" stroke="${SCK.white}" stroke-width=".9"/>`
+        + `<path d="${mir}" fill="#93A9B3" stroke="${SCK.goldLo}" stroke-width="1.6"/><path d="${gl}" stroke="${SCK.white}" stroke-width="1.6" opacity=".7"/><path d="${grid}" stroke="${SCK.goldHi}" stroke-width=".8"/>`
+        + `<path d="M60 26v5" stroke="${SCK.ink}" stroke-width=".6"/><path d="M55.4 31.4q.6 4.2 4.6 6q4-1.8 4.6-6z" fill="${SCK.white}" stroke="${SCK.goldLo}" stroke-width=".7"/><ellipse cx="60" cy="31.4" rx="5" ry="1.1" fill="${SCK.gold}"/><path d="M56 30h.1M60 29.4h.1M64 30h.1" stroke="${SCK.goldHi}" stroke-width="1.4" stroke-linecap="round"/>`
+        + ch(17, .9) + '</g>';
     } },
 
   /* Schönbrunn from the parterre: the long yellow palace with green shutters, beds and a fountain in front, the Gloriette's colonnade on the hill behind */

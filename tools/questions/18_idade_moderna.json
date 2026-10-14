@@ -346,7 +346,7 @@
    ],
    "d": 2,
    "art": {
-    "icon": "church"
+    "scene": "ev_reforma"
    },
    "src": [
     "en",
@@ -454,7 +454,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "ship"
+    "scene": "porto_amsterda"
    },
    "src": [
     "en",
@@ -535,7 +535,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "map"
+    "scene": "tordesilhas"
    },
    "src": [
     "en",

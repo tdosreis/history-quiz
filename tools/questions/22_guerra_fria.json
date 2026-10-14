@@ -22,7 +22,7 @@
    ],
    "d": 1,
    "art": {
-    "icon": "rocket"
+    "scene": "ev_guerra_fria"
    },
    "src": [
     "pt",
@@ -136,7 +136,7 @@
    ],
    "d": 2,
    "art": {
-    "icon": "rocket"
+    "scene": "crise_misseis"
    },
    "src": [
     "pt",
@@ -154,7 +154,7 @@
    ],
    "d": 1,
    "art": {
-    "icon": "flag"
+    "scene": "sierra_maestra"
    },
    "src": [
     "pt",
@@ -172,7 +172,7 @@
    ],
    "d": 1,
    "art": {
-    "icon": "flag"
+    "scene": "sierra_maestra"
    },
    "src": [
     "pt",
@@ -190,7 +190,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "flag"
+    "scene": "arrozal_vietna"
    },
    "src": [
     "pt",
@@ -208,7 +208,7 @@
    ],
    "d": 2,
    "art": {
-    "icon": "flag"
+    "scene": "downing_street"
    },
    "src": [
     "pt",
@@ -226,7 +226,7 @@
    ],
    "d": 1,
    "art": {
-    "icon": "rocket"
+    "scene": "ev_corrida_espacial"
    },
    "src": [
     "pt",
@@ -244,7 +244,7 @@
    ],
    "d": 1,
    "art": {
-    "icon": "rocket"
+    "scene": "pouso_lua"
    },
    "src": [
     "pt",
@@ -270,7 +270,7 @@
    ],
    "d": 2,
    "art": {
-    "icon": "rocket"
+    "scene": "ev_corrida_espacial"
    },
    "src": [
     "pt",
@@ -296,7 +296,7 @@
    ],
    "d": 1,
    "art": {
-    "icon": "rocket"
+    "scene": "ev_corrida_espacial"
    },
    "src": [
     "pt",
@@ -322,7 +322,7 @@
    ],
    "d": 2,
    "art": {
-    "icon": "globe"
+    "scene": "ev_guerra_fria"
    },
    "src": [
     "pt",
@@ -392,7 +392,7 @@
    ],
    "d": 1,
    "art": {
-    "flag": "ZAF"
+    "scene": "robben_island"
    },
    "src": [
     "pt",
@@ -410,7 +410,7 @@
    ],
    "d": 1,
    "art": {
-    "icon": "flag"
+    "scene": "ev_direitos_civis"
    },
    "src": [
     "pt",
@@ -428,7 +428,7 @@
    ],
    "d": 1,
    "art": {
-    "icon": "flag"
+    "scene": "onibus_montgomery"
    },
    "src": [
     "pt",
@@ -446,7 +446,7 @@
    ],
    "d": 1,
    "art": {
-    "icon": "flag"
+    "scene": "roca_gandhi"
    },
    "src": [
     "pt",
@@ -464,7 +464,7 @@
    ],
    "d": 2,
    "art": {
-    "icon": "flag"
+    "scene": "ponte_howrah"
    },
    "src": [
     "pt",
@@ -586,7 +586,7 @@
    ],
    "d": 2,
    "art": {
-    "icon": "map"
+    "scene": "zona_desmilitarizada"
    },
    "src": [
     "pt",

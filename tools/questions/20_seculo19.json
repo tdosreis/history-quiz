@@ -14,7 +14,7 @@
    ],
    "d": 2,
    "art": {
-    "icon": "cannon"
+    "scene": "pickelhaube"
    },
    "src": [
     "pt",
@@ -32,7 +32,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "flag"
+    "scene": "ev_unificacao_italia"
    },
    "src": [
     "pt",
@@ -68,7 +68,7 @@
    ],
    "d": 1,
    "art": {
-    "icon": "crown"
+    "scene": "palacio_cristal"
    },
    "src": [
     "pt",
@@ -140,7 +140,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "torch"
+    "scene": "dama_lampada"
    },
    "src": [
     "pt",
@@ -176,7 +176,7 @@
    ],
    "d": 2,
    "art": {
-    "icon": "book"
+    "scene": "fabrica_chamines"
    },
    "src": [
     "pt",
@@ -212,7 +212,7 @@
    ],
    "d": 2,
    "art": {
-    "icon": "book"
+    "scene": "ev_guerras_napoleonicas"
    },
    "src": [
     "pt",
@@ -356,7 +356,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "map"
+    "scene": "cataratas_vitoria"
    },
    "src": [
     "pt",

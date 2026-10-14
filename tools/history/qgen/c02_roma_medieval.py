@@ -86,7 +86,7 @@ c.P('Qual teólogo italiano escreveu a Suma Teológica, unindo Aristóteles e a 
     src=('pt', 'Tomás de Aquino', ['Suma Teológica']))
 c.P('Qual poeta florentino escreveu a Divina Comédia?', ['dante'], 2, scene='selva_dante', icon='book',
     src=('pt', 'Dante Alighieri', ['Divina Comédia']))
-c.P('Qual alemão inventou a prensa de tipos móveis por volta de 1440?', ['gutenberg'], 1, icon='book',
+c.P('Qual alemão inventou a prensa de tipos móveis por volta de 1440?', ['gutenberg'], 1, scene='prensa_tipos', icon='book',
     src=('pt', 'Johannes Gutenberg', ['1440']))
 c.T('Qual sistema econômico e social medieval se baseava na terra e na relação entre senhores e servos?', 'Feudalismo', ['Mercantilismo', 'Capitalismo', 'Escravismo antigo', 'Socialismo', 'Absolutismo'], 1, scene='campo_feudal', icon='castle',
     src=('pt', 'Feudalismo', ['servo']))

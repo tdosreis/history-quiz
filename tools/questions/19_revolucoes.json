@@ -22,7 +22,7 @@
    ],
    "d": 1,
    "art": {
-    "icon": "torch"
+    "scene": "ev_revolucao_francesa"
    },
    "src": [
     "pt",
@@ -48,7 +48,7 @@
    ],
    "d": 1,
    "art": {
-    "icon": "torch"
+    "scene": "ev_revolucao_francesa"
    },
    "src": [
     "pt",
@@ -92,7 +92,7 @@
    ],
    "d": 2,
    "art": {
-    "icon": "torch"
+    "scene": "guilhotina"
    },
    "src": [
     "pt",
@@ -110,7 +110,7 @@
    ],
    "d": 1,
    "art": {
-    "icon": "crown"
+    "scene": "guilhotina"
    },
    "src": [
     "pt",
@@ -128,7 +128,7 @@
    ],
    "d": 1,
    "art": {
-    "icon": "sword"
+    "scene": "ev_guerras_napoleonicas"
    },
    "src": [
     "pt",
@@ -164,7 +164,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "ship"
+    "scene": "trafalgar"
    },
    "src": [
     "pt",
@@ -322,7 +322,7 @@
    ],
    "d": 2,
    "art": {
-    "icon": "torch"
+    "scene": "ev_independencia_eua"
    },
    "src": [
     "pt",
@@ -348,7 +348,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "torch"
+    "scene": "ev_independencia_eua"
    },
    "src": [
     "pt",
@@ -498,7 +498,7 @@
    ],
    "d": 2,
    "art": {
-    "icon": "gear"
+    "scene": "fabrica_chamines"
    },
    "src": [
     "pt",
@@ -524,7 +524,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "gear"
+    "scene": "fabrica_chamines"
    },
    "src": [
     "pt",
@@ -550,7 +550,7 @@
    ],
    "d": 2,
    "art": {
-    "icon": "book"
+    "scene": "fabrica_chamines"
    },
    "src": [
     "pt",

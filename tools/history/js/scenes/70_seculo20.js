@@ -57,7 +57,7 @@ Object.assign(SCENE, {
         + SCH.waves(76, '#7FA2B8', 1.2) + `<path d="M0 46q10-2 20 0t20 0" stroke="#7FA2B8" stroke-width="1" fill="none"/>`;
     } },
 
-  /* the four-funnelled liner at full speed on a starry, moonless night, black sea, the iceberg looming ahead */
+  /* the four-funnelled liner at full speed on a starry, moonless night, black sea, steaming bow-first towards the iceberg that looms ahead */
   titanic: {
     label: 'Um transatlântico de quatro chaminés à noite, junto a um iceberg',
     rx: /\b(titanic|iceberg|transatlantico)\b/,
@@ -66,43 +66,43 @@ Object.assign(SCENE, {
       let st = '';
       for (const [x, y] of [[8, 8], [22, 14], [34, 5], [47, 12], [58, 4], [70, 10], [84, 6], [96, 12], [112, 5], [14, 26], [40, 22], [76, 18], [116, 22], [5, 34], [64, 24]]) st += `M${x} ${y}h0`;
       let ports = '';
-      for (let x = 14; x < 78; x += 3.6) ports += `M${x.toFixed(1)} 50.4h0`;
-      const fun = x => `<path d="M${x} 38l3-18h6.4l-2.6 18z" fill="#D2A050"/><path d="M${x + 3} 20h6.4l-.7 4.2h-6.4z" fill="#1A1714"/>`;
+      for (let x = 10; x < 76; x += 3.6) ports += `M${x.toFixed(1)} 50.4h0`;
+      /* a funnel raked aft (to the left), r its forward foot */
+      const fun = r => `<path d="M${r} 38l-3-18h-6.4l2.6 18z" fill="#D2A050"/><path d="M${r - 3} 20h-6.4l.7 4.2h6.4z" fill="#1A1714"/>`;
       return SCH.bg('#26324D') + `<path d="${st}" stroke="#F4ECD8" stroke-width="1.4" stroke-linecap="round"/>`
         + `<path d="M0 58h120v22H0z" fill="#111722"/>`
-        + `<path d="M94 64h18M88 70h26M100 75h14" stroke="#9FB4BE" stroke-width="1.2" opacity=".5"/><path d="M20 62h6M34 64h4M48 62h6M62 64h4" stroke="${SCK.goldHi}" stroke-width="1" opacity=".55"/>`
-        + SCH.g(`<path d="M84 58l4-14 5-6 3-14 6-6 4 6 3-2 4 10 2-2 5 14v14z" fill="#DCE5E8"/>`, 1.6)
-        + `<path d="M102 18l-2 18-6 10 2 12h24V44l-5-14-2 2-4-10-3 2z" fill="#AFC2CB"/><path d="M93 40l5 6M108 26l2 10M88 50l6 2" stroke="${K}" stroke-width=".8" opacity=".5"/>`
-        + `<path d="M12 46V17M73 44V13M12 18 73 14" stroke="#C9BFA8" stroke-width=".8"/>`
-        + SCH.g(`<path d="M18 46V40h4v-3h46v3h4v6z" fill="${SCK.white}"/>` + fun(25) + fun(36) + fun(47) + fun(58)
-          + `<path d="M4 46q2-1 10-1h66l3-2 1 2q-2 8-4 13H12q-6-4-8-12z" fill="#1A1714"/>`, 1.4)
-        + `<path d="M8 55.6h71" stroke="${SCK.red}" stroke-width="1.6"/><path d="M8 46.6h71" stroke="${SCK.goldHi}" stroke-width=".7" opacity=".7"/>`
+        + `<path d="M94 64h18M88 70h26M100 75h14" stroke="#9FB4BE" stroke-width="1.2" opacity=".5"/><path d="M16 62h6M30 64h4M44 62h6M58 64h4" stroke="${SCK.goldHi}" stroke-width="1" opacity=".55"/>`
+        + SCH.g(`<path d="M86 58l4-14 5-6 3-14 6-6 4 6 3-2 4 10 2-2 3 14v14z" fill="#DCE5E8"/>`, 1.6)
+        + `<path d="M104 18l-2 18-6 10 2 12h22V44l-3-14-2 2-4-10-3 2z" fill="#AFC2CB"/><path d="M95 40l5 6M110 26l2 10M90 50l6 2" stroke="${K}" stroke-width=".8" opacity=".5"/>`
+        + `<path d="M72 46V17M11 44V13M72 18 11 14" stroke="#C9BFA8" stroke-width=".8"/>`
+        + SCH.g(`<path d="M66 45V40h-4v-3H16v3h-4v5z" fill="${SCK.white}"/>` + fun(26) + fun(37) + fun(48) + fun(59)
+          + `<path d="M2 45h66l13-2.4-1.6 15.4H10q-5.4-3-8-13z" fill="#1A1714"/>`, 1.4)
+        + `<path d="M8 55.6h71.4" stroke="${SCK.red}" stroke-width="1.6"/><path d="M4 46.6h76" stroke="${SCK.goldHi}" stroke-width=".7" opacity=".7"/>`
         + `<path d="${ports}" stroke="${SCK.goldHi}" stroke-width="1.3" stroke-linecap="round"/>`
-        + `<path d="M22 42.6h44" stroke="${SCK.goldHi}" stroke-width="1.2" stroke-dasharray="1.2 1.6"/>`;
+        + `<path d="M18 42.6h44" stroke="${SCK.goldHi}" stroke-width="1.2" stroke-dasharray="1.2 1.6"/>`;
     } },
 
-  /* a Second World War aircraft carrier in profile on a calm sea: the long flight deck with planes parked aft, the island and its mast, an escort far off */
+  /* a Second World War aircraft carrier steaming in profile on a calm sea: the long flat-top with planes ranged aft, the island with its funnel and mast, an escort far off */
   porta_avioes: {
     label: 'Um porta-aviões no mar aberto sob nuvens',
     rx: /\b(porta-avioes|porta avioes|porta-aviao)\b/,
     draw: () => {
       const K = SCK.ink, H = '#8D979B';
-      /* the deck is drawn in the ship's own plane: x from stern to bow, y across */
-      const f = v => +v.toFixed(1), plane = (x, y) => `M${f(x - 4.6)} ${f(y - .8)}h8.6l1.2.8-1.2.8h-8.6zM${x} ${f(y - 4.4)}h2.4v8.8H${x}zM${f(x - 4.6)} ${y - 2}h1.4v4h-1.4z`;
-      const P = [[6, -4], [6, 4], [20, -4], [20, 4], [34, -4], [34, 4], [50, 3]];
       const cloud = (x, y, s) => `<path transform="translate(${x} ${y}) scale(${s})" d="M0 0h30q0-6-6-6-1-6-8-6-6 0-8 5Q0-7 0 0z" fill="${SCK.white}"/>`;
-      return SCH.bg(SCK.sky) + cloud(4, 10, .7) + cloud(70, 8, .9)
-        + `<path d="M0 14h120v66H0z" fill="${SCK.sea}"/><path d="M8 13.6l1-2h5l1-1.6h1.4v1.6h5l1 2z" fill="#6E7E8A"/>`
-        + SCH.waves(22, '#7FA2B8', 1) + SCH.waves(50, '#7FA2B8', 1) + SCH.waves(74, '#7FA2B8', 1.2)
-        + `<path d="M0 66q10 4 14 12M0 74q4 2 6 6" stroke="${SCK.white}" stroke-width="2" fill="none"/>`
-        + SCH.g(`<path d="M6.5 70.1 114.5 34.5 113 39q-6 5-14 7L10 80H6z" fill="${H}"/>`, 1.6)
-        + `<path d="M12 72.6 108 40.8" stroke="${K}" stroke-width="3" stroke-dasharray="5 3" opacity=".45"/><path d="M8 77.6 104 45.4" stroke="${K}" stroke-width=".8" opacity=".4"/>`
-        + `<g transform="matrix(1 -.33 .5 .9 2 62)">` + SCH.g(`<path d="M-6-9h114l2 3v12l-2 3H-6z" fill="#A9A08A"/>`, 1.6)
-        + `<path d="M-6 0h112" stroke="${SCK.white}" stroke-width="1" stroke-dasharray="4 3"/><path d="M-6-6.6h112M-6 6.6h112" stroke="${K}" stroke-width=".5" opacity=".3"/>`
-        + `<path d="${P.map(([x, y]) => plane(x, y)).join('')}" fill="#3B4C63" stroke="${K}" stroke-width=".7" stroke-linejoin="round"/></g>`
-        + SCH.g(`<path d="M79 15V2M76 5l6-2" fill="none" stroke-width="1.2"/><path d="M73.6 18l-.4-7 6-2 .4 7z" fill="#6F7A7F" stroke-width="1.2"/>
-          <path d="M70 33.4V19l14-4.6V29z" fill="${H}"/><path d="M70 19l14-4.6" fill="none" stroke-width="1.2"/>`, 1.4)
-        + `<path d="M71.4 23.4l11-3.6M71.4 27.6l11-3.6" stroke="${K}" stroke-width=".8" opacity=".5"/><path d="M73.4 11l6-2" stroke="#2E2A28" stroke-width="2"/>`;
+      /* a plane parked on the deck, seen from the side: the fin, the cockpit, the wing under it, the wheels */
+      const pl = x => `<g transform="translate(${x} 35.4) scale(1.4)"><path d="M0-2 .4-7H2l1.2 3.6 4.6-.8Q11-4.6 11.6-3.4V-2q-1 .8-3.6.8H1z" fill="#3B4C63"/><path d="M5.8-4q.6-2 2.6-1.8l.8 1.4z" fill="#D7E4E8" stroke-width=".6"/><path d="M5.4-2h5.8l-.6 1.1H5.8z" fill="#2E3A4C" stroke-width=".6"/><path d="M12.2-5.6v4.6M9.8-1v1M-.6-3H3" fill="none"/></g>`;
+      return SCH.bg(SCK.sky) + cloud(8, 16, .8) + cloud(88, 12, .6)
+        + `<path d="M0 38h120v42H0z" fill="${SCK.sea}"/><path d="M8 37.6l.8-2h4.4l.6-1.6h1.4l.6 1.6h4l.8 2z" fill="#6E7E8A"/>`
+        + SCH.g(`<path d="M12 43.4h100l-8.4 14H19q-4-6-7-14z" fill="${H}"/>
+          <path d="M14 40h92v3.4H14z" fill="#6F7A7F" stroke-width="1.2"/><path d="M1 37.4h117l1 3H2z" fill="#6F7A7F"/><path d="M4 34.6h110l4 2.8H1z" fill="#B4AA8E" stroke-width="1.2"/>`, 1.6)
+        + `<path d="M18 41.7h10M34 41.7h10M50 41.7h10M90 41.7h10" stroke="#2E3A44" stroke-width="1.8"/><path d="M6 40.4l6 3M114 40.4l-4 3" stroke="${K}" stroke-width="1.2"/><path d="M16 49h93" stroke="${K}" stroke-width=".8" opacity=".35"/>`
+        + `<path d="M0 56q10-3 20 0t20 0 20 0 20 0 20 0 20 0v24H0z" fill="${SCK.sea}"/><path d="M100 56q8-1 12-6M22 57q-10-3-20-1" stroke="${SCK.white}" stroke-width="1.8" fill="none" stroke-linecap="round"/>`
+        + SCH.waves(68, '#7FA2B8', 1.2) + SCH.waves(76, '#7FA2B8', 1)
+        + SCH.g(pl(6) + pl(24) + pl(42), .8)
+        + SCH.g(`<path d="M80 20V5M76 8.6h8" fill="none" stroke-width="1.4"/><path d="M77.6 8v-3h4.8v3z" fill="#6F7A7F" stroke-width="1"/>
+          <path d="M64 34.6 65.4 22h7.8l.8 12.6z" fill="#6F7A7F"/><path d="M65.4 22h7.8l-.4-3.6h-7z" fill="#2E2A28" stroke-width="1.2"/>
+          <path d="M73 34.6V24h13l2.4 4v6.6z" fill="${H}"/><path d="M75.4 24v-4.4h8.4V24z" fill="#A3ACAF" stroke-width="1.2"/>`, 1.4)
+        + `<path d="M75.6 27.4h11" stroke="#2E3A44" stroke-width="1.8"/><path d="M74 31.4h13" stroke="${K}" stroke-width=".8" opacity=".5"/>`;
     } },
 
   /* the P-47 Thunderbolt in olive drab, all radial nose and bubble canopy, banking over the green Apennines and a hill town with its bell tower and cypresses */

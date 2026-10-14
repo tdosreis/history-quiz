@@ -105,7 +105,7 @@
    ],
    "d": 2,
    "art": {
-    "icon": "book"
+    "scene": "ev_iluminismo"
    },
    "src": [
     "pt",
@@ -123,7 +123,7 @@
    ],
    "d": 2,
    "art": {
-    "icon": "book"
+    "scene": "ev_iluminismo"
    },
    "src": [
     "pt",
@@ -141,7 +141,7 @@
    ],
    "d": 2,
    "art": {
-    "icon": "book"
+    "scene": "ev_iluminismo"
    },
    "src": [
     "pt",
@@ -159,7 +159,7 @@
    ],
    "d": 2,
    "art": {
-    "icon": "book"
+    "scene": "ev_iluminismo"
    },
    "src": [
     "pt",
@@ -177,7 +177,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "book"
+    "scene": "ev_iluminismo"
    },
    "src": [
     "pt",
@@ -195,7 +195,7 @@
    ],
    "d": 2,
    "art": {
-    "icon": "book"
+    "scene": "fabrica_chamines"
    },
    "src": [
     "pt",
@@ -363,7 +363,7 @@
    ],
    "d": 1,
    "art": {
-    "icon": "torch"
+    "scene": "ev_iluminismo"
    },
    "src": [
     "pt",
@@ -415,7 +415,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "cannon"
+    "scene": "prefeitura_munster"
    },
    "src": [
     "pt",
@@ -441,7 +441,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "crown"
+    "scene": "camara_comuns"
    },
    "src": [
     "pt",
@@ -467,7 +467,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "crown"
+    "scene": "camara_comuns"
    },
    "src": [
     "pt",
@@ -493,7 +493,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "crown"
+    "scene": "camara_comuns"
    },
    "src": [
     "pt",
@@ -545,7 +545,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "crown"
+    "scene": "versalhes_espelhos"
    },
    "src": [
     "pt",

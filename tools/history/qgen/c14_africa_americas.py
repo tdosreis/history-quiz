@@ -56,7 +56,7 @@ c.T('Qual cidade da Etiópia é famosa pelas igrejas medievais escavadas inteira
 c.P('Qual líder, futuro herói de outra independência, viveu mais de vinte anos na África do Sul, onde criou seus métodos de resistência não violenta?', 'gandhi', d=2, flag='ZAF',
     src=('en', 'Mahatma Gandhi', ['South Africa']),
     x='Em 1893, foi expulso de um vagão de primeira classe em Pietermaritzburg por ser indiano; o episódio mudou a sua vida.')
-c.P('Qual chanceler recebeu em sua capital, entre 1884 e 1885, a conferência que fixou as regras da partilha da África entre as potências europeias?', 'bismarck', d=3, icon='map',
+c.P('Qual chanceler recebeu em sua capital, entre 1884 e 1885, a conferência que fixou as regras da partilha da África entre as potências europeias?', 'bismarck', d=3, scene='pickelhaube', icon='map',
     src=('en', 'Berlin Conference', ['Bismarck']),
     x='Nenhum africano foi convidado: catorze países, quase todos europeus, decidiram as regras para ocupar o continente.')
 c.C('Qual império da África ocidental, com capital em Gao, dominou o comércio do Saara até ser derrotado por um exército marroquino armado de arcabuzes, em 1591?', 'songai', d=3, scene='caravana_mali', icon='cannon',
@@ -216,7 +216,7 @@ c.T('Qual líder indígena, que dizia descender dos incas, comandou em 1780, no 
     x='Seu nome verdadeiro era José Gabriel Condorcanqui; adotou o nome de Túpac Amaru, o último inca de Vilcabamba. Capturado, foi executado em Cuzco em 1781.')
 
 # ── Personagens e estados ──
-c.P('Qual general atravessou o rio Delaware na noite de Natal de 1776 para atacar de surpresa as tropas inimigas em Trenton?', 'washington', d=2, icon='ship',
+c.P('Qual general atravessou o rio Delaware na noite de Natal de 1776 para atacar de surpresa as tropas inimigas em Trenton?', 'washington', d=2, scene='ev_independencia_eua', icon='ship',
     src=('en', 'Battle of Trenton', ['Delaware']),
     x='A cena virou um quadro famoso, pintado em 1851 por um artista alemão-americano, com o general de pé no barco.')
 c.C('Qual país se tornou independente em 1804, depois da única revolta de escravizados que deu origem a uma nação?', 'haiti', d=2, flag='FRA',

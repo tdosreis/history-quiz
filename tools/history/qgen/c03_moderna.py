@@ -2,25 +2,25 @@ from qdsl import Cat
 
 # ───────────────────────── Grandes Navegações ─────────────────────────
 c = Cat('descobrimentos', 'Grandes Navegações', '⛵', 'Caravelas, rotas e novos mundos', '#1F6E8C', order=16)
-c.P('Qual príncipe português impulsionou a exploração do litoral africano na Escola de Sagres?', ['henrique_navegador'], 2, icon='ship',
+c.P('Qual príncipe português impulsionou a exploração do litoral africano na Escola de Sagres?', ['henrique_navegador'], 2, scene='ev_grandes_navegacoes', icon='ship',
     src=('en', 'Prince Henry the Navigator', ['Sagres']))
-c.P('Qual navegador português chegou à Índia por mar, em 1498, contornando a África?', ['vasco_gama'], 1, icon='ship',
+c.P('Qual navegador português chegou à Índia por mar, em 1498, contornando a África?', ['vasco_gama'], 1, scene='ev_grandes_navegacoes', icon='ship',
     src=('pt', 'Vasco da Gama', ['1498']))
 c.P('Qual navegador português chegou ao Brasil em 22 de abril de 1500?', ['cabral'], 1, icon='ship',
     src=('pt', 'Pedro Álvares Cabral', ['1500']))
 c.P('Qual navegador a serviço da Espanha chegou à América em 1492, buscando uma rota para as Índias?', ['colombo'], 1, icon='ship',
     src=('pt', 'Cristóvão Colombo', ['1492']))
-c.P('Qual navegador português comandou a expedição que deu a primeira volta ao mundo, mas morreu nas Filipinas?', ['magalhaes'], 2, icon='globe',
+c.P('Qual navegador português comandou a expedição que deu a primeira volta ao mundo, mas morreu nas Filipinas?', ['magalhaes'], 2, scene='ev_grandes_navegacoes', icon='globe',
     src=('pt', 'Fernão de Magalhães', ['Filipinas']))
-c.P('Qual navegador italiano deu nome ao continente americano?', ['vespucio'], 2, icon='map',
+c.P('Qual navegador italiano deu nome ao continente americano?', ['vespucio'], 2, scene='ev_grandes_navegacoes', icon='map',
     src=('pt', 'Américo Vespúcio', ['América']))
 c.T('Qual cabo, no extremo sul da África, foi contornado por Bartolomeu Dias em 1488?', 'Cabo da Boa Esperança', ['Cabo Verde', 'Cabo Horn', 'Cabo Bojador', 'Cabo Finisterra', 'Cabo São Roque'], 2, icon='ship',
     src=('pt', 'Bartolomeu Dias', ['1488']))
 c.T('Qual o tipo de navio leve e ágil usado pelos portugueses nas navegações do século XV?', 'Caravela', ['Galera', 'Trirreme', 'Drácar', 'Junco', 'Fragata'], 1, icon='ship',
     src=('pt', 'Caravela', ['portugu']))
-c.T('Qual instrumento ajudava os navegadores a medir a latitude pela altura dos astros?', 'Astrolábio', ['Relógio de sol', 'Sismógrafo', 'Cronômetro', 'Telescópio', 'Ábaco'], 2, icon='globe',
+c.T('Qual instrumento ajudava os navegadores a medir a latitude pela altura dos astros?', 'Astrolábio', ['Relógio de sol', 'Sismógrafo', 'Cronômetro', 'Telescópio', 'Ábaco'], 2, scene='ev_grandes_navegacoes', icon='globe',
     src=('pt', 'Astrolábio', ['latitude']))
-c.T('Qual produto asiático era tão valioso que motivou a busca de rotas marítimas para as Índias?', 'Especiarias', ['Chá', 'Café', 'Tabaco', 'Cacau', 'Batata'], 1, icon='ship',
+c.T('Qual produto asiático era tão valioso que motivou a busca de rotas marítimas para as Índias?', 'Especiarias', ['Chá', 'Café', 'Tabaco', 'Cacau', 'Batata'], 1, scene='ev_grandes_navegacoes', icon='ship',
     src=('pt', 'Especiaria', ['Índia']))
 c.T('Qual cidade italiana controlava o comércio de especiarias com o Oriente antes das navegações?', 'Veneza', ['Gênova', 'Florença', 'Roma', 'Nápoles', 'Milão'], 3, stad='sao_marcos',
     src=('pt', 'República de Veneza', ['especiarias']))
@@ -34,9 +34,9 @@ c.T('Qual escritor português registrou a chegada ao Brasil na famosa “Carta a
     src=('pt', 'Pero Vaz de Caminha', ['carta']))
 c.T('Qual poema épico de Camões narra a viagem de Vasco da Gama à Índia?', 'Os Lusíadas', ['A Odisseia', 'A Eneida', 'Mensagem', 'Peregrinação', 'Dom Quixote'], 1, icon='book',
     src=('pt', 'Os Lusíadas', ['Vasco da Gama']))
-c.P('Qual poeta português é autor de Os Lusíadas?', ['camoes'], 1, icon='book',
+c.P('Qual poeta português é autor de Os Lusíadas?', ['camoes'], 1, scene='adamastor', icon='book',
     src=('pt', 'Luís de Camões', ['Lusíadas']))
-c.T('Qual país de língua portuguesa fica na costa da África, descoberto pelos navegadores em 1444, e deu nome a um cabo?', 'Cabo Verde', ['Angola', 'Moçambique', 'Guiné-Bissau', 'São Tomé', 'Gâmbia'], 3, icon='map',
+c.T('Qual país de língua portuguesa fica na costa da África, descoberto pelos navegadores em 1444, e deu nome a um cabo?', 'Cabo Verde', ['Angola', 'Moçambique', 'Guiné-Bissau', 'São Tomé', 'Gâmbia'], 3, scene='ev_grandes_navegacoes', icon='map',
     src=('pt', 'Cabo Verde', ['portugueses']))
 c.T('Quem completou a primeira circum-navegação do globo, em 1522, depois da morte de Magalhães?', 'Juan Sebastián Elcano', ['Américo Vespúcio', 'Francis Drake', 'James Cook', 'Pedro Álvares Cabral', 'Bartolomeu Dias'], 4, icon='ship',
     src=('pt', 'Juan Sebastián Elcano', ['1522']))
@@ -46,11 +46,11 @@ c.T('Qual a unidade de moeda portuguesa em ouro, base do sistema monetário do i
     src=('pt', 'Cruzado (moeda)', ['ouro']))
 c.T('Qual alimento americano foi levado à Europa e à Ásia após 1492 e mudou a dieta mundial?', 'Batata', ['Arroz', 'Trigo', 'Cevada', 'Lentilha', 'Aveia'], 2, icon='globe',
     src=('pt', 'Batata', ['América']))
-c.T('Como se chama a troca de plantas, animais, doenças e pessoas entre Velho e Novo Mundo, após 1492?', 'Troca colombiana', ['Troca de Tordesilhas', 'Rota da Seda', 'Revolução Verde', 'Mercantilismo', 'Comércio triangular'], 4, icon='globe',
+c.T('Como se chama a troca de plantas, animais, doenças e pessoas entre Velho e Novo Mundo, após 1492?', 'Troca colombiana', ['Troca de Tordesilhas', 'Rota da Seda', 'Revolução Verde', 'Mercantilismo', 'Comércio triangular'], 4, scene='ev_grandes_navegacoes', icon='globe',
     src=('pt', 'Troca colombiana', ['1492']))
 c.T('Qual a primeira capital do Brasil colonial, fundada em 1549?', 'Salvador', ['Rio de Janeiro', 'Recife', 'São Vicente', 'Olinda', 'São Paulo'], 2, icon='map',
     src=('pt', 'Salvador', ['1549']))
-c.T('Qual foi o sistema de divisão do Brasil em 15 faixas de terra entregues a donatários?', 'Capitanias hereditárias', ['Sesmarias', 'Quilombos', 'Bandeiras', 'Reduções', 'Engenhos'], 2, icon='map',
+c.T('Qual foi o sistema de divisão do Brasil em 15 faixas de terra entregues a donatários?', 'Capitanias hereditárias', ['Sesmarias', 'Quilombos', 'Bandeiras', 'Reduções', 'Engenhos'], 2, scene='tordesilhas', icon='map',
     src=('pt', 'Capitanias hereditárias', ['donatário']))
 c.T('Qual foi a primeira atividade econômica explorada pelos portugueses no Brasil?', 'Extração de pau-brasil', ['Cana-de-açúcar', 'Mineração de ouro', 'Café', 'Borracha', 'Algodão'], 2, icon='ship',
     src=('pt', 'Pau-brasil', ['primeira']))
@@ -66,27 +66,27 @@ c.P('Qual pintor renascentista criou a Escola de Atenas, no Vaticano?', ['rafael
     src=('pt', 'Rafael Sanzio', ['Escola de Atenas']))
 c.P('Qual pintor florentino criou O Nascimento de Vênus?', ['botticelli'], 3, icon='bust',
     src=('pt', 'Sandro Botticelli', ['Nascimento de Vênus']))
-c.P('Qual banqueiro e governante de Florença foi o grande mecenas do Renascimento?', ['lorenzo'], 3, icon='crown',
+c.P('Qual banqueiro e governante de Florença foi o grande mecenas do Renascimento?', ['lorenzo'], 3, scene='ev_renascimento', icon='crown',
     src=('pt', 'Lourenço de Médici', ['Florença']))
-c.P('Qual diplomata florentino escreveu O Príncipe, tratado sobre o poder?', ['maquiavel'], 2, icon='book',
+c.P('Qual diplomata florentino escreveu O Príncipe, tratado sobre o poder?', ['maquiavel'], 2, scene='leao_raposa', icon='book',
     src=('pt', 'Nicolau Maquiavel', ['O Príncipe']))
-c.P('Qual humanista de Roterdã escreveu Elogio da Loucura?', ['erasmo'], 4, icon='book',
+c.P('Qual humanista de Roterdã escreveu Elogio da Loucura?', ['erasmo'], 4, scene='gorro_bobo', icon='book',
     src=('pt', 'Erasmo de Roterdão', ['Elogio da Loucura']))
 c.P('Qual artista alemão ficou famoso por gravuras como Cavaleiro, Morte e Diabo?', ['durer'], 4, icon='bust',
     src=('pt', 'Albrecht Dürer', ['gravura']))
-c.P('Qual monge alemão afixou 95 teses contra a venda de indulgências, em 1517?', ['lutero'], 1, icon='scroll',
+c.P('Qual monge alemão afixou 95 teses contra a venda de indulgências, em 1517?', ['lutero'], 1, scene='ev_reforma', icon='scroll',
     src=('pt', 'Martinho Lutero', ['95 teses']))
-c.P('Qual reformador francês pregou a predestinação e liderou a Reforma em Genebra?', ['calvino'], 3, icon='book',
+c.P('Qual reformador francês pregou a predestinação e liderou a Reforma em Genebra?', ['calvino'], 3, scene='ev_reforma', icon='book',
     src=('pt', 'João Calvino', ['Genebra']))
-c.P('Qual rei inglês rompeu com Roma para se divorciar e criou a Igreja Anglicana?', ['henrique_viii'], 2, icon='crown',
+c.P('Qual rei inglês rompeu com Roma para se divorciar e criou a Igreja Anglicana?', ['henrique_viii'], 2, scene='ev_reforma', icon='crown',
     src=('pt', 'Henrique VIII de Inglaterra', ['anglicana']))
-c.P('Qual rainha inglesa, filha de Ana Bolena, governou por 44 anos, derrotando a Invencível Armada?', ['elizabeth_i'], 2, icon='crown',
+c.P('Qual rainha inglesa, filha de Ana Bolena, governou por 44 anos, derrotando a Invencível Armada?', ['elizabeth_i'], 2, scene='invencivel_armada', icon='crown',
     src=('pt', 'Isabel I de Inglaterra', ['Armada']))
-c.P('Qual astrônomo polonês propôs que a Terra gira em torno do Sol?', ['copernico'], 1, icon='globe',
+c.P('Qual astrônomo polonês propôs que a Terra gira em torno do Sol?', ['copernico'], 1, scene='ev_revolucao_cientifica', icon='globe',
     src=('pt', 'Nicolau Copérnico', ['Sol']))
-c.P('Qual cientista italiano foi julgado pela Inquisição por defender o heliocentrismo?', ['galileu'], 1, icon='globe',
+c.P('Qual cientista italiano foi julgado pela Inquisição por defender o heliocentrismo?', ['galileu'], 1, scene='ev_revolucao_cientifica', icon='globe',
     src=('pt', 'Galileu Galilei', ['Inquisição']))
-c.P('Qual astrônomo alemão formulou as três leis do movimento dos planetas?', ['kepler'], 3, icon='globe',
+c.P('Qual astrônomo alemão formulou as três leis do movimento dos planetas?', ['kepler'], 3, scene='ev_revolucao_cientifica', icon='globe',
     src=('pt', 'Johannes Kepler', ['planetas']))
 c.P('Qual dramaturgo inglês escreveu Hamlet e Romeu e Julieta?', ['shakespeare'], 1, icon='book',
     src=('pt', 'William Shakespeare', ['Hamlet']))
@@ -98,9 +98,9 @@ c.T('Em qual país nasceu o Renascimento, no século XIV?', 'Itália', ['França
     src=('pt', 'Renascimento', ['Itália']))
 c.T('Qual a catedral de Florença cuja cúpula foi projetada por Brunelleschi?', 'Santa Maria del Fiore', ['São Pedro', 'São Marcos', 'Notre-Dame', 'Santa Sofia', 'Duomo de Milão'], 3, stad='duomo_florenca',
     src=('pt', 'Catedral de Santa Maria del Fiore', ['Brunelleschi']))
-c.T('Qual a corrente de pensamento do Renascimento que colocava o ser humano no centro do mundo?', 'Humanismo', ['Escolástica', 'Positivismo', 'Marxismo', 'Iluminismo', 'Utilitarismo'], 2, icon='book',
+c.T('Qual a corrente de pensamento do Renascimento que colocava o ser humano no centro do mundo?', 'Humanismo', ['Escolástica', 'Positivismo', 'Marxismo', 'Iluminismo', 'Utilitarismo'], 2, scene='ev_renascimento', icon='book',
     src=('pt', 'Humanismo renascentista', ['homem']))
-c.T('Qual o nome do movimento da Igreja Católica, nos séculos XVI–XVII, em resposta à Reforma Protestante?', 'Contrarreforma', ['Cruzada', 'Inquisição medieval', 'Cisma do Oriente', 'Concílio de Niceia', 'Reconquista'], 2, icon='book',
+c.T('Qual o nome do movimento da Igreja Católica, nos séculos XVI–XVII, em resposta à Reforma Protestante?', 'Contrarreforma', ['Cruzada', 'Inquisição medieval', 'Cisma do Oriente', 'Concílio de Niceia', 'Reconquista'], 2, scene='ev_reforma', icon='book',
     src=('pt', 'Contrarreforma', ['Reforma']))
 c.T('Qual ordem religiosa, fundada por Inácio de Loyola em 1534, foi decisiva na Contrarreforma e na educação no Brasil colonial?', 'Companhia de Jesus', ['Franciscanos', 'Dominicanos', 'Beneditinos', 'Carmelitas', 'Templários'], 2, icon='book',
     src=('pt', 'Companhia de Jesus', ['Loyola']))
@@ -126,17 +126,17 @@ c.P('Qual rei da Prússia, filósofo e flautista, foi chamado “o Grande”?', 
     src=('pt', 'Frederico II da Prússia', ['Grande']))
 c.P('Qual imperatriz dos Habsburgos teve 16 filhos, entre eles Maria Antonieta?', ['maria_teresa'], 4, icon='crown',
     src=('pt', 'Maria Teresa da Áustria', ['Maria Antonieta']))
-c.P('Qual filósofo inglês é considerado o pai do liberalismo e defendeu os direitos naturais?', ['locke'], 2, icon='book',
+c.P('Qual filósofo inglês é considerado o pai do liberalismo e defendeu os direitos naturais?', ['locke'], 2, scene='ev_iluminismo', icon='book',
     src=('pt', 'John Locke', ['liberalismo']))
-c.P('Qual pensador francês defendeu a separação dos três poderes em O Espírito das Leis?', ['montesquieu'], 2, icon='book',
+c.P('Qual pensador francês defendeu a separação dos três poderes em O Espírito das Leis?', ['montesquieu'], 2, scene='ev_iluminismo', icon='book',
     src=('pt', 'Montesquieu', ['Espírito das Leis']))
-c.P('Qual iluminista francês combateu a intolerância e escreveu Cândido?', ['voltaire'], 2, icon='book',
+c.P('Qual iluminista francês combateu a intolerância e escreveu Cândido?', ['voltaire'], 2, scene='ev_iluminismo', icon='book',
     src=('pt', 'Voltaire', ['Cândido']))
-c.P('Qual filósofo genebrino escreveu O Contrato Social?', ['rousseau'], 2, icon='book',
+c.P('Qual filósofo genebrino escreveu O Contrato Social?', ['rousseau'], 2, scene='ev_iluminismo', icon='book',
     src=('pt', 'Jean-Jacques Rousseau', ['Contrato Social']))
-c.P('Qual filósofo alemão escreveu a Crítica da Razão Pura?', ['kant'], 3, icon='book',
+c.P('Qual filósofo alemão escreveu a Crítica da Razão Pura?', ['kant'], 3, scene='ev_iluminismo', icon='book',
     src=('pt', 'Immanuel Kant', ['Crítica da Razão Pura']))
-c.P('Qual economista escocês escreveu A Riqueza das Nações, em 1776?', ['adam_smith'], 2, icon='book',
+c.P('Qual economista escocês escreveu A Riqueza das Nações, em 1776?', ['adam_smith'], 2, scene='fabrica_chamines', icon='book',
     src=('pt', 'Adam Smith', ['Riqueza das Nações']))
 c.P('Qual cientista inglês formulou a lei da gravitação universal?', ['newton'], 1, icon='globe',
     src=('pt', 'Isaac Newton', ['gravitação']))
@@ -152,41 +152,41 @@ c.T('Qual rei francês teria dito “O Estado sou eu”, símbolo do absolutismo
     src=('pt', 'Luís XIV de França', ['O Estado sou eu']))
 c.T('Qual palácio foi a residência da corte francesa a partir de 1682?', 'Versalhes', ['Louvre', 'Fontainebleau', 'Tulherias', 'Chambord', 'Luxemburgo'], 1, stad='versalhes',
     src=('pt', 'Palácio de Versalhes', ['1682']))
-c.T('Qual o século chamado “das Luzes”, em que a razão desafiou a tradição?', 'XVIII', ['XVI', 'XVII', 'XIX', 'XV', 'XX'], 1, icon='torch',
+c.T('Qual o século chamado “das Luzes”, em que a razão desafiou a tradição?', 'XVIII', ['XVI', 'XVII', 'XIX', 'XV', 'XX'], 1, scene='ev_iluminismo', icon='torch',
     src=('pt', 'Iluminismo', ['século XVIII']))
 c.T('Qual o grande dicionário do conhecimento do Iluminismo, organizado por Diderot e d\'Alembert?', 'Enciclopédia', ['Suma Teológica', 'Dicionário de Oxford', 'Etimologias', 'Almanaque Real', 'Pandectas'], 3, icon='book',
     src=('pt', 'Encyclopédie', ['Diderot']))
-c.T('Qual guerra de 1618 a 1648 devastou a Europa Central e terminou com a Paz de Vestfália?', 'Guerra dos Trinta Anos', ['Guerra dos Cem Anos', 'Guerra dos Sete Anos', 'Guerra da Sucessão Espanhola', 'Guerra Civil Inglesa', 'Guerra do Peloponeso'], 3, icon='cannon',
+c.T('Qual guerra de 1618 a 1648 devastou a Europa Central e terminou com a Paz de Vestfália?', 'Guerra dos Trinta Anos', ['Guerra dos Cem Anos', 'Guerra dos Sete Anos', 'Guerra da Sucessão Espanhola', 'Guerra Civil Inglesa', 'Guerra do Peloponeso'], 3, scene='prefeitura_munster', icon='cannon',
     src=('pt', 'Guerra dos Trinta Anos', ['Vestfália']))
-c.T('Qual revolução inglesa de 1688 limitou o poder do rei e deu poderes ao Parlamento?', 'Revolução Gloriosa', ['Revolução Puritana', 'Revolução Industrial', 'Guerra das Rosas', 'Revolução Americana', 'Revolta dos Camponeses'], 3, icon='crown',
+c.T('Qual revolução inglesa de 1688 limitou o poder do rei e deu poderes ao Parlamento?', 'Revolução Gloriosa', ['Revolução Puritana', 'Revolução Industrial', 'Guerra das Rosas', 'Revolução Americana', 'Revolta dos Camponeses'], 3, scene='camara_comuns', icon='crown',
     src=('pt', 'Revolução Gloriosa', ['1688']))
-c.T('Qual rei inglês foi executado em 1649, após a Guerra Civil?', 'Carlos I', ['Henrique VIII', 'Jaime II', 'Ricardo III', 'Eduardo II', 'Carlos II'], 3, icon='crown',
+c.T('Qual rei inglês foi executado em 1649, após a Guerra Civil?', 'Carlos I', ['Henrique VIII', 'Jaime II', 'Ricardo III', 'Eduardo II', 'Carlos II'], 3, scene='camara_comuns', icon='crown',
     src=('pt', 'Carlos I de Inglaterra', ['1649']))
-c.T('Qual o líder da República da Inglaterra, depois da execução do rei?', 'Oliver Cromwell', ['William Pitt', 'Winston Churchill', 'Thomas More', 'John Hampden', 'Walter Raleigh'], 3, icon='crown',
+c.T('Qual o líder da República da Inglaterra, depois da execução do rei?', 'Oliver Cromwell', ['William Pitt', 'Winston Churchill', 'Thomas More', 'John Hampden', 'Walter Raleigh'], 3, scene='camara_comuns', icon='crown',
     src=('pt', 'Oliver Cromwell', ['Lord Protector']))
 c.T('Qual a política econômica do absolutismo que buscava acumular metais preciosos e proteger a produção nacional?', 'Mercantilismo', ['Liberalismo', 'Fisiocracia', 'Socialismo', 'Capitalismo industrial', 'Escambo'], 2, icon='ship',
     src=('pt', 'Mercantilismo', ['metais']))
-c.T('Qual a fonte de poder do rei, segundo a teoria absolutista de Bossuet?', 'Direito divino', ['Contrato social', 'Voto popular', 'Força militar', 'Herança de terras', 'Constituição'], 3, icon='crown',
+c.T('Qual a fonte de poder do rei, segundo a teoria absolutista de Bossuet?', 'Direito divino', ['Contrato social', 'Voto popular', 'Força militar', 'Herança de terras', 'Constituição'], 3, scene='versalhes_espelhos', icon='crown',
     src=('pt', 'Direito divino dos reis', ['Bossuet']))
 c.write()
 
 # ───────────────────────── Revoluções ─────────────────────────
 c = Cat('revolucoes', 'Era das Revoluções', '🔥', 'Bastilhas, independências e fábricas', '#B3402F', order=19)
-c.T('Em que ano começou a Revolução Francesa, com a queda da Bastilha?', '1789', ['1776', '1799', '1804', '1815', '1848'], 1, icon='torch',
+c.T('Em que ano começou a Revolução Francesa, com a queda da Bastilha?', '1789', ['1776', '1799', '1804', '1815', '1848'], 1, scene='ev_revolucao_francesa', icon='torch',
     src=('pt', 'Revolução Francesa', ['1789']))
-c.T('Qual o lema da Revolução Francesa?', 'Liberdade, Igualdade, Fraternidade', ['Ordem e Progresso', 'Deus, Pátria e Rei', 'União, Força, Fé', 'Paz, Pão e Terra', 'Vida, Liberdade e Felicidade'], 1, icon='torch',
+c.T('Qual o lema da Revolução Francesa?', 'Liberdade, Igualdade, Fraternidade', ['Ordem e Progresso', 'Deus, Pátria e Rei', 'União, Força, Fé', 'Paz, Pão e Terra', 'Vida, Liberdade e Felicidade'], 1, scene='ev_revolucao_francesa', icon='torch',
     src=('pt', 'Revolução Francesa', ['Liberdade']))
 c.T('Qual prisão parisiense foi tomada pelo povo em 14 de julho de 1789?', 'Bastilha', ['Conciergerie', 'Torre do Templo', 'Louvre', 'Santé', 'Châtelet'], 1, icon='torch',
     src=('pt', 'Queda da Bastilha', ['14 de julho']))
-c.P('Qual líder jacobino conduziu o período do Terror, em 1793–1794?', ['robespierre'], 2, icon='torch',
+c.P('Qual líder jacobino conduziu o período do Terror, em 1793–1794?', ['robespierre'], 2, scene='guilhotina', icon='torch',
     src=('pt', 'Maximilien de Robespierre', ['Terror']))
-c.P('Qual rainha francesa, nascida na Áustria, foi guilhotinada em 1793?', ['maria_antonieta'], 1, icon='crown',
+c.P('Qual rainha francesa, nascida na Áustria, foi guilhotinada em 1793?', ['maria_antonieta'], 1, scene='guilhotina', icon='crown',
     src=('pt', 'Maria Antonieta', ['guilhotin']))
-c.P('Qual general corso tomou o poder na França em 1799 e se coroou imperador em 1804?', ['napoleao'], 1, icon='sword',
+c.P('Qual general corso tomou o poder na França em 1799 e se coroou imperador em 1804?', ['napoleao'], 1, scene='ev_guerras_napoleonicas', icon='sword',
     src=('pt', 'Napoleão Bonaparte', ['1804']))
 c.P('Qual duque britânico derrotou Napoleão em Waterloo, em 1815?', ['wellington'], 2, icon='sword',
     src=('pt', 'Arthur Wellesley, 1.º Duque de Wellington', ['Waterloo']))
-c.P('Qual almirante britânico venceu a Batalha de Trafalgar, em 1805, e morreu nela?', ['nelson'], 3, icon='ship',
+c.P('Qual almirante britânico venceu a Batalha de Trafalgar, em 1805, e morreu nela?', ['nelson'], 3, scene='trafalgar', icon='ship',
     src=('pt', 'Horatio Nelson', ['Trafalgar']))
 c.T('Em que ilha Napoleão foi exilado definitivamente, em 1815?', 'Santa Helena', ['Elba', 'Córsega', 'Malta', 'Creta', 'Sardenha'], 2, icon='ship',
     src=('pt', 'Napoleão Bonaparte', ['Santa Helena']))
@@ -200,9 +200,9 @@ c.P('Qual o principal redator da Declaração de Independência dos Estados Unid
     src=('pt', 'Thomas Jefferson', ['Declaração de Independência']))
 c.P('Qual general comandou o exército continental e foi o primeiro presidente dos EUA?', ['washington'], 1, stad='capitolio',
     src=('pt', 'George Washington', ['primeiro presidente']))
-c.P('Qual cientista e diplomata americano inventou o para-raios e ajudou a redigir a independência?', ['franklin'], 2, icon='torch',
+c.P('Qual cientista e diplomata americano inventou o para-raios e ajudou a redigir a independência?', ['franklin'], 2, scene='ev_independencia_eua', icon='torch',
     src=('pt', 'Benjamin Franklin', ['para-raios']))
-c.T('Qual a máxima dos colonos americanos contra os impostos britânicos?', 'Sem representação, nada de impostos', ['Dê-me liberdade ou dê-me a morte', 'Pão, paz e terra', 'Um por todos', 'Ordem e progresso', 'Liberdade ainda que tardia'], 3, icon='torch',
+c.T('Qual a máxima dos colonos americanos contra os impostos britânicos?', 'Sem representação, nada de impostos', ['Dê-me liberdade ou dê-me a morte', 'Pão, paz e terra', 'Um por todos', 'Ordem e progresso', 'Liberdade ainda que tardia'], 3, scene='ev_independencia_eua', icon='torch',
     src=('pt', 'Taxação sem representação', ['representação']))
 c.P('Qual ex-escravizado liderou a revolução que fez do Haiti a primeira república negra livre?', ['toussaint'], 3, icon='flag',
     src=('pt', 'Toussaint Louverture', ['Haiti']))
@@ -216,11 +216,11 @@ c.T('Qual a revolução, iniciada na Inglaterra por volta de 1760, que mecanizou
     src=('pt', 'Revolução Industrial', ['1760']))
 c.T('Qual invenção de James Watt, aperfeiçoada em 1769, moveu fábricas e locomotivas?', 'Máquina a vapor', ['Tear mecânico', 'Dínamo', 'Motor a combustão', 'Lâmpada', 'Telégrafo'], 2, icon='gear',
     src=('pt', 'Máquina a vapor', ['Watt']))
-c.T('Qual setor industrial inglês foi pioneiro, com o tear mecânico?', 'Têxtil', ['Siderúrgico', 'Naval', 'Químico', 'Alimentício', 'Automobilístico'], 2, icon='gear',
+c.T('Qual setor industrial inglês foi pioneiro, com o tear mecânico?', 'Têxtil', ['Siderúrgico', 'Naval', 'Químico', 'Alimentício', 'Automobilístico'], 2, scene='fabrica_chamines', icon='gear',
     src=('pt', 'Revolução Industrial', ['têxtil']))
-c.T('Qual movimento de trabalhadores ingleses quebrou máquinas no início do século XIX?', 'Ludismo', ['Cartismo', 'Sindicalismo', 'Anarquismo', 'Jacobinismo', 'Fabianismo'], 3, icon='gear',
+c.T('Qual movimento de trabalhadores ingleses quebrou máquinas no início do século XIX?', 'Ludismo', ['Cartismo', 'Sindicalismo', 'Anarquismo', 'Jacobinismo', 'Fabianismo'], 3, scene='fabrica_chamines', icon='gear',
     src=('pt', 'Ludismo', ['máquinas']))
-c.T('Qual obra de 1848, de Marx e Engels, começa com “Um espectro ronda a Europa”?', 'Manifesto Comunista', ['O Capital', 'A Riqueza das Nações', 'O Contrato Social', 'A Utopia', 'Ideologia Alemã'], 2, icon='book',
+c.T('Qual obra de 1848, de Marx e Engels, começa com “Um espectro ronda a Europa”?', 'Manifesto Comunista', ['O Capital', 'A Riqueza das Nações', 'O Contrato Social', 'A Utopia', 'Ideologia Alemã'], 2, scene='fabrica_chamines', icon='book',
     src=('pt', 'Manifesto Comunista', ['1848']))
 c.T('Qual ciclo de revoluções liberais sacudiu a Europa em 1848?', 'Primavera dos Povos', ['Revolução Gloriosa', 'Era do Terror', 'Guerra Fria', 'Primavera Árabe', 'Revolução de Veludo'], 3, icon='torch',
     src=('pt', 'Primavera dos Povos', ['1848']))
@@ -232,13 +232,13 @@ c.write()
 
 # ───────────────────────── Século XIX ─────────────────────────
 c = Cat('seculo19', 'Século XIX', '🎩', 'Nações, impérios e ciência', '#4A6A8A', order=20)
-c.P('Qual chanceler prussiano unificou a Alemanha em 1871?', ['bismarck'], 2, icon='cannon',
+c.P('Qual chanceler prussiano unificou a Alemanha em 1871?', ['bismarck'], 2, scene='pickelhaube', icon='cannon',
     src=('pt', 'Otto von Bismarck', ['1871']))
-c.P('Qual revolucionário italiano, o “Herói dos Dois Mundos”, liderou os Mil Camisas Vermelhas?', ['garibaldi'], 3, icon='flag',
+c.P('Qual revolucionário italiano, o “Herói dos Dois Mundos”, liderou os Mil Camisas Vermelhas?', ['garibaldi'], 3, scene='ev_unificacao_italia', icon='flag',
     src=('pt', 'Giuseppe Garibaldi', ['Camisas Vermelhas']))
 c.P('Qual presidente americano abolicionista liderou a União na Guerra de Secessão?', ['lincoln'], 1, stad='capitolio',
     src=('pt', 'Abraham Lincoln', ['Guerra de Secessão']))
-c.P('Qual rainha britânica dá nome a uma era de 63 anos e a um império onde o sol nunca se punha?', ['victoria'], 1, icon='crown',
+c.P('Qual rainha britânica dá nome a uma era de 63 anos e a um império onde o sol nunca se punha?', ['victoria'], 1, scene='palacio_cristal', icon='crown',
     src=('pt', 'Vitória do Reino Unido', ['63 anos']))
 c.P('Qual naturalista inglês publicou A Origem das Espécies, em 1859?', ['darwin'], 1, icon='book',
     src=('pt', 'Charles Darwin', ['Origem das Espécies']))
@@ -246,15 +246,15 @@ c.P('Qual monge austríaco descobriu as leis da hereditariedade com ervilhas?', 
     src=('pt', 'Gregor Mendel', ['ervilha']))
 c.P('Qual cientista francês criou a vacina contra a raiva e a pasteurização?', ['pasteur'], 2, icon='book',
     src=('pt', 'Louis Pasteur', ['raiva']))
-c.P('Qual enfermeira inglesa, “a Dama da Lâmpada”, reformou os hospitais na Guerra da Crimeia?', ['nightingale'], 3, icon='torch',
+c.P('Qual enfermeira inglesa, “a Dama da Lâmpada”, reformou os hospitais na Guerra da Crimeia?', ['nightingale'], 3, scene='dama_lampada', icon='torch',
     src=('pt', 'Florence Nightingale', ['Crimeia']))
 c.P('Qual matemática inglesa é considerada a primeira programadora da história?', ['ada_lovelace'], 3, icon='gear',
     src=('pt', 'Ada Lovelace', ['programa']))
-c.P('Qual filósofo alemão escreveu O Capital, com sua análise do capitalismo?', ['marx'], 2, icon='book',
+c.P('Qual filósofo alemão escreveu O Capital, com sua análise do capitalismo?', ['marx'], 2, scene='fabrica_chamines', icon='book',
     src=('pt', 'Karl Marx', ['O Capital']))
 c.P('Qual filósofo alemão proclamou “Deus está morto”?', ['nietzsche'], 3, icon='book',
     src=('pt', 'Friedrich Nietzsche', ['Deus está morto']))
-c.P('Qual escritor russo é autor de Guerra e Paz e Anna Karênina?', ['tolstoi'], 2, icon='book',
+c.P('Qual escritor russo é autor de Guerra e Paz e Anna Karênina?', ['tolstoi'], 2, scene='ev_guerras_napoleonicas', icon='book',
     src=('pt', 'Liev Tolstói', ['Guerra e Paz']))
 c.P('Qual escritor russo escreveu Crime e Castigo?', ['dostoievski'], 2, icon='book',
     src=('pt', 'Fiódor Dostoiévski', ['Crime e Castigo']))
@@ -270,7 +270,7 @@ c.P('Qual inventor americano criou a lâmpada elétrica comercial e o fonógrafo
     src=('pt', 'Thomas Edison', ['lâmpada']))
 c.P('Qual inventor sérvio-americano desenvolveu o sistema de corrente alternada?', ['tesla'], 2, icon='gear',
     src=('pt', 'Nikola Tesla', ['corrente alternada']))
-c.P('Qual explorador escocês atravessou a África e encontrou as Cataratas Vitória?', ['livingstone'], 3, icon='map',
+c.P('Qual explorador escocês atravessou a África e encontrou as Cataratas Vitória?', ['livingstone'], 3, scene='cataratas_vitoria', icon='map',
     src=('pt', 'David Livingstone', ['Vitória']))
 c.P('Qual médico vienense criou a psicanálise?', ['freud'], 1, icon='book',
     src=('pt', 'Sigmund Freud', ['psicanálise']))

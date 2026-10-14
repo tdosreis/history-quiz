@@ -62,7 +62,7 @@ c.write()
 
 # ───────────────────────── Guerra Fria e Mundo Atual ─────────────────────────
 c = Cat('guerra_fria', 'Guerra Fria e Mundo Atual', '🚀', 'Muros, foguetes e novos tempos', '#3F6FB5', order=22)
-c.T('Quais eram as duas superpotências da Guerra Fria?', 'Estados Unidos e União Soviética', ['Estados Unidos e China', 'Reino Unido e França', 'Alemanha e Japão', 'União Soviética e China', 'Índia e Paquistão'], 1, icon='rocket',
+c.T('Quais eram as duas superpotências da Guerra Fria?', 'Estados Unidos e União Soviética', ['Estados Unidos e China', 'Reino Unido e França', 'Alemanha e Japão', 'União Soviética e China', 'Índia e Paquistão'], 1, scene='ev_guerra_fria', icon='rocket',
     src=('pt', 'Guerra Fria', ['superpotência']))
 c.T('Qual o nome da barreira que dividiu Berlim entre 1961 e 1989?', 'Muro de Berlim', ['Linha Maginot', 'Muralha de Adriano', 'Cortina de Ferro', 'Linha Siegfried', 'Grande Muralha'], 1, stad='muro_berlim',
     src=('pt', 'Muro de Berlim', ['1961']))
@@ -72,39 +72,39 @@ c.T('Em que ano foi dissolvida a União Soviética?', '1991', ['1985', '1989', '
     src=('pt', 'Dissolução da União Soviética', ['1991']))
 c.P('Qual líder soviético iniciou a glasnost e a perestroika?', ['gorbachev'], 2, crest='urss',
     src=('pt', 'Mikhail Gorbachev', ['perestroika']))
-c.P('Qual presidente americano enfrentou a Crise dos Mísseis de Cuba, em 1962?', ['kennedy'], 2, icon='rocket',
+c.P('Qual presidente americano enfrentou a Crise dos Mísseis de Cuba, em 1962?', ['kennedy'], 2, scene='crise_misseis', icon='rocket',
     src=('pt', 'John F. Kennedy', ['Crise dos Mísseis']))
-c.P('Qual líder da Revolução Cubana governou Cuba por quase meio século?', ['fidel'], 1, icon='flag',
+c.P('Qual líder da Revolução Cubana governou Cuba por quase meio século?', ['fidel'], 1, scene='sierra_maestra', icon='flag',
     src=('pt', 'Fidel Castro', ['Revolução Cubana']))
-c.P('Qual médico argentino, guerrilheiro, tornou-se símbolo da Revolução Cubana?', ['che'], 1, icon='flag',
+c.P('Qual médico argentino, guerrilheiro, tornou-se símbolo da Revolução Cubana?', ['che'], 1, scene='sierra_maestra', icon='flag',
     src=('pt', 'Che Guevara', ['Cuba']))
-c.P('Qual líder vietnamita liderou a luta pela independência e deu nome a uma cidade?', ['ho_chi_minh'], 3, icon='flag',
+c.P('Qual líder vietnamita liderou a luta pela independência e deu nome a uma cidade?', ['ho_chi_minh'], 3, scene='arrozal_vietna', icon='flag',
     src=('pt', 'Ho Chi Minh', ['Vietnã']))
-c.P('Qual primeira-ministra britânica, apelidada de “Dama de Ferro”, governou de 1979 a 1990?', ['thatcher'], 2, icon='flag',
+c.P('Qual primeira-ministra britânica, apelidada de “Dama de Ferro”, governou de 1979 a 1990?', ['thatcher'], 2, scene='downing_street', icon='flag',
     src=('pt', 'Margaret Thatcher', ['Dama de Ferro']))
-c.P('Qual cosmonauta soviético foi o primeiro ser humano a ir ao espaço, em 1961?', ['gagarin'], 1, icon='rocket',
+c.P('Qual cosmonauta soviético foi o primeiro ser humano a ir ao espaço, em 1961?', ['gagarin'], 1, scene='ev_corrida_espacial', icon='rocket',
     src=('pt', 'Yuri Gagarin', ['1961']))
-c.P('Qual astronauta americano foi o primeiro a pisar na Lua, em 1969?', ['armstrong'], 1, icon='rocket',
+c.P('Qual astronauta americano foi o primeiro a pisar na Lua, em 1969?', ['armstrong'], 1, scene='pouso_lua', icon='rocket',
     src=('pt', 'Neil Armstrong', ['1969']))
-c.T('Qual o satélite soviético lançado em 1957, que iniciou a corrida espacial?', 'Sputnik', ['Apollo', 'Vostok', 'Explorer', 'Voyager', 'Luna'], 2, icon='rocket',
+c.T('Qual o satélite soviético lançado em 1957, que iniciou a corrida espacial?', 'Sputnik', ['Apollo', 'Vostok', 'Explorer', 'Voyager', 'Luna'], 2, scene='ev_corrida_espacial', icon='rocket',
     src=('pt', 'Sputnik 1', ['1957']))
-c.T('Qual a missão que levou o homem à Lua pela primeira vez?', 'Apollo 11', ['Apollo 13', 'Gemini 4', 'Vostok 1', 'Apollo 8', 'Skylab'], 1, icon='rocket',
+c.T('Qual a missão que levou o homem à Lua pela primeira vez?', 'Apollo 11', ['Apollo 13', 'Gemini 4', 'Vostok 1', 'Apollo 8', 'Skylab'], 1, scene='ev_corrida_espacial', icon='rocket',
     src=('pt', 'Apollo 11', ['Lua']))
-c.T('Qual a aliança militar ocidental criada em 1949 durante a Guerra Fria?', 'OTAN', ['Pacto de Varsóvia', 'Eixo', 'SEATO', 'ONU', 'Liga Árabe'], 2, icon='globe',
+c.T('Qual a aliança militar ocidental criada em 1949 durante a Guerra Fria?', 'OTAN', ['Pacto de Varsóvia', 'Eixo', 'SEATO', 'ONU', 'Liga Árabe'], 2, scene='ev_guerra_fria', icon='globe',
     src=('pt', 'Organização do Tratado do Atlântico Norte', ['1949']))
 c.T('Como se chamou o conflito de 1955 a 1975 em que os EUA apoiaram o sul contra o Vietnã do Norte?', 'Guerra do Vietnã', ['Guerra da Coreia', 'Guerra do Golfo', 'Guerra do Afeganistão', 'Guerra Civil Chinesa', 'Guerra do Iraque'], 1, icon='cannon',
     src=('pt', 'Guerra do Vietnã', ['1975']))
 c.T('Qual o regime de segregação racial legal da África do Sul, que durou até 1994?', 'Apartheid', ['Colonialismo', 'Nazismo', 'Fascismo', 'Escravidão', 'Segregação de Jim Crow'], 1, flag='ZAF',
     src=('pt', 'Apartheid', ['África do Sul']))
 c.P('Qual líder, preso por 27 anos, tornou-se o primeiro presidente negro da África do Sul?', ['mandela'], 1, flag='ZAF',
-    src=('pt', 'Nelson Mandela', ['27 anos']))
-c.P('Qual pastor americano liderou a luta pelos direitos civis e proferiu “Eu tenho um sonho”?', ['mlk'], 1, icon='flag',
+    scene='robben_island', src=('pt', 'Nelson Mandela', ['27 anos']))
+c.P('Qual pastor americano liderou a luta pelos direitos civis e proferiu “Eu tenho um sonho”?', ['mlk'], 1, scene='ev_direitos_civis', icon='flag',
     src=('pt', 'Martin Luther King Jr.', ['sonho']))
-c.P('Qual costureira negra recusou ceder o lugar em um ônibus no Alabama, em 1955?', ['rosa_parks'], 1, icon='flag',
+c.P('Qual costureira negra recusou ceder o lugar em um ônibus no Alabama, em 1955?', ['rosa_parks'], 1, scene='onibus_montgomery', icon='flag',
     src=('pt', 'Rosa Parks', ['1955']))
-c.P('Qual líder indiano conquistou a independência com a não violência, em 1947?', ['gandhi'], 1, icon='flag',
+c.P('Qual líder indiano conquistou a independência com a não violência, em 1947?', ['gandhi'], 1, scene='roca_gandhi', icon='flag',
     src=('pt', 'Mahatma Gandhi', ['não violência']))
-c.P('Qual religiosa nascida na Macedônia dedicou a vida aos pobres de Calcutá e ganhou o Nobel da Paz?', ['madre_teresa'], 2, icon='flag',
+c.P('Qual religiosa nascida na Macedônia dedicou a vida aos pobres de Calcutá e ganhou o Nobel da Paz?', ['madre_teresa'], 2, scene='ponte_howrah', icon='flag',
     src=('pt', 'Madre Teresa de Calcutá', ['Nobel']))
 c.T('Qual o tratado de 1957 que criou a base da atual União Europeia?', 'Tratado de Roma', ['Tratado de Maastricht', 'Tratado de Lisboa', 'Tratado de Versalhes', 'Tratado de Paris', 'Acordo de Schengen'], 4, icon='globe',
     src=('pt', 'Tratado de Roma', ['1957']))
@@ -114,7 +114,7 @@ c.T('Qual rede mundial de computadores se popularizou na década de 1990?', 'Int
     src=('pt', 'Internet', ['1990']))
 c.P('Qual físico britânico escreveu Uma Breve História do Tempo e estudou os buracos negros?', ['hawking'], 1, icon='globe',
     src=('pt', 'Stephen Hawking', ['Breve História do Tempo']))
-c.T('Qual país asiático foi dividido em dois após a Guerra da Coreia, em 1953?', 'Coreia', ['Vietnã', 'Índia', 'Japão', 'China', 'Tailândia'], 2, icon='map',
+c.T('Qual país asiático foi dividido em dois após a Guerra da Coreia, em 1953?', 'Coreia', ['Vietnã', 'Índia', 'Japão', 'China', 'Tailândia'], 2, scene='zona_desmilitarizada', icon='map',
     src=('pt', 'Guerra da Coreia', ['1953']))
 c.write()
 
@@ -176,7 +176,7 @@ c.P('Qual militar, patrono do Exército, comandou as forças brasileiras na Guer
     src=('pt', 'Duque de Caxias', ['Paraguai']))
 c.P('Qual catarinense lutou na Guerra dos Farrapos ao lado de Giuseppe Garibaldi?', ['anita'], 3, icon='flag',
     src=('pt', 'Anita Garibaldi', ['Farrapos']))
-c.P('Qual empresário e banqueiro do Império foi pioneiro da industrialização e construiu a primeira ferrovia do Brasil?', ['maua'], 3, icon='gear',
+c.P('Qual empresário e banqueiro do Império foi pioneiro da industrialização e construiu a primeira ferrovia do Brasil?', ['maua'], 3, scene='locomotiva_vapor', icon='gear',
     src=('pt', 'Irineu Evangelista de Sousa', ['Mauá']))
 c.T('Qual lei de 1850 proibiu o tráfico de africanos para o Brasil?', 'Lei Eusébio de Queirós', ['Lei do Ventre Livre', 'Lei Áurea', 'Lei dos Sexagenários', 'Lei Saraiva', 'Lei Feijó'], 3, icon='scroll',
     src=('pt', 'Lei Eusébio de Queirós', ['1850']))

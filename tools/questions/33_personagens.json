@@ -212,7 +212,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "ship"
+    "scene": "endeavour_havai"
    },
    "src": [
     "pt",
@@ -320,7 +320,7 @@
    ],
    "d": 1,
    "art": {
-    "icon": "flag"
+    "scene": "carreata_dallas"
    },
    "src": [
     "pt",
@@ -338,7 +338,7 @@
    ],
    "d": 4,
    "art": {
-    "icon": "cannon"
+    "scene": "pickelhaube"
    },
    "src": [
     "pt",

@@ -105,7 +105,7 @@
    ],
    "d": 1,
    "art": {
-    "icon": "rocket"
+    "scene": "ev_corrida_espacial"
    },
    "src": [
     "pt",
@@ -272,7 +272,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "map"
+    "scene": "zona_desmilitarizada"
    },
    "src": [
     "en",
@@ -356,7 +356,7 @@
    ],
    "d": 5,
    "art": {
-    "icon": "globe"
+    "scene": "ev_descolonizacao"
    },
    "src": [
     "en",
@@ -479,7 +479,7 @@
    ],
    "d": 1,
    "art": {
-    "icon": "rocket"
+    "scene": "ev_corrida_espacial"
    },
    "src": [
     "en",
@@ -1791,7 +1791,7 @@
    ],
    "d": 4,
    "art": {
-    "icon": "rocket"
+    "scene": "ev_corrida_espacial"
    },
    "src": [
     "en",

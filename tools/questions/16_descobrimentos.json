@@ -14,7 +14,7 @@
    ],
    "d": 2,
    "art": {
-    "icon": "ship"
+    "scene": "ev_grandes_navegacoes"
    },
    "src": [
     "en",
@@ -32,7 +32,7 @@
    ],
    "d": 1,
    "art": {
-    "icon": "ship"
+    "scene": "ev_grandes_navegacoes"
    },
    "src": [
     "pt",
@@ -86,7 +86,7 @@
    ],
    "d": 2,
    "art": {
-    "icon": "globe"
+    "scene": "ev_grandes_navegacoes"
    },
    "src": [
     "pt",
@@ -104,7 +104,7 @@
    ],
    "d": 2,
    "art": {
-    "icon": "map"
+    "scene": "ev_grandes_navegacoes"
    },
    "src": [
     "pt",
@@ -182,7 +182,7 @@
    ],
    "d": 2,
    "art": {
-    "icon": "globe"
+    "scene": "ev_grandes_navegacoes"
    },
    "src": [
     "pt",
@@ -208,7 +208,7 @@
    ],
    "d": 1,
    "art": {
-    "icon": "ship"
+    "scene": "ev_grandes_navegacoes"
    },
    "src": [
     "pt",
@@ -382,7 +382,7 @@
    ],
    "d": 1,
    "art": {
-    "icon": "book"
+    "scene": "adamastor"
    },
    "src": [
     "pt",
@@ -408,7 +408,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "map"
+    "scene": "ev_grandes_navegacoes"
    },
    "src": [
     "pt",
@@ -538,7 +538,7 @@
    ],
    "d": 4,
    "art": {
-    "icon": "globe"
+    "scene": "ev_grandes_navegacoes"
    },
    "src": [
     "pt",
@@ -590,7 +590,7 @@
    ],
    "d": 2,
    "art": {
-    "icon": "map"
+    "scene": "tordesilhas"
    },
    "src": [
     "pt",

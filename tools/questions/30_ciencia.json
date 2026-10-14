@@ -194,7 +194,7 @@
    ],
    "d": 1,
    "art": {
-    "icon": "globe"
+    "scene": "ev_revolucao_cientifica"
    },
    "src": [
     "pt",
@@ -318,7 +318,7 @@
    ],
    "d": 2,
    "art": {
-    "icon": "rocket"
+    "scene": "pouso_lua"
    },
    "src": [
     "pt",
@@ -526,7 +526,7 @@
    ],
    "d": 2,
    "art": {
-    "icon": "rocket"
+    "scene": "ev_corrida_espacial"
    },
    "src": [
     "pt",
@@ -630,7 +630,7 @@
    ],
    "d": 4,
    "art": {
-    "icon": "gear"
+    "scene": "locomotiva_vapor"
    },
    "src": [
     "pt",

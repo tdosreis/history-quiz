@@ -53,7 +53,7 @@ c.T('Qual ministro do rei D. José I expulsou os jesuítas de Portugal e de todo
     src=('en', 'Suppression of the Society of Jesus', ['Pombal']),
     x='No mesmo governo, a capital do Brasil passou de Salvador para o Rio de Janeiro, em 1763.')
 c.T('Qual concílio, reunido entre 1545 e 1563, organizou a resposta da Igreja Católica à Reforma?', 'Concílio de Trento',
-    ['Concílio de Niceia', 'Concílio de Constança', 'Concílio Vaticano I', 'Concílio de Latrão', 'Concílio de Basileia'], d=2, icon='church',
+    ['Concílio de Niceia', 'Concílio de Constança', 'Concílio Vaticano I', 'Concílio de Latrão', 'Concílio de Basileia'], d=2, scene='ev_reforma', icon='church',
     src=('en', 'Council of Trent', ['1545']),
     x='Trento fica no norte da atual Itália; o concílio criou os seminários para formar padres e padronizou a missa, rezada em latim até a década de 1960.')
 c.T('Qual cardeal foi o principal ministro de Luís XIII de 1624 até morrer, em 1642, e ajudou a fortalecer o absolutismo francês?', 'Cardeal Richelieu',
@@ -69,7 +69,7 @@ c.T('Como ficou conhecido o massacre de protestantes franceses, os huguenotes, i
     src=('en', "St. Bartholomew's Day massacre", ['1572']),
     x='A matança começou dias depois do casamento do protestante Henrique de Navarra, futuro Henrique IV, com a católica Margarida de Valois.')
 c.T('Qual empresa holandesa, fundada em 1602, é apontada como a primeira a ter ações negociadas em bolsa?', 'Companhia das Índias Orientais',
-    ['Companhia das Índias Ocidentais', 'Companhia de Moscóvia', 'Liga Hanseática', 'Companhia da Baía de Hudson', 'Companhia do Mississippi'], d=3, icon='ship',
+    ['Companhia das Índias Ocidentais', 'Companhia de Moscóvia', 'Liga Hanseática', 'Companhia da Baía de Hudson', 'Companhia do Mississippi'], d=3, scene='porto_amsterda', icon='ship',
     src=('en', 'Dutch East India Company', ['1602']),
     x='A VOC tinha exército e frota próprios, podia firmar tratados e fundou a Cidade do Cabo, em 1652, como escala na rota para a Ásia.')
 c.T('Como se chamavam os soldados de infantaria de elite do sultão otomano, recrutados ainda meninos em famílias cristãs dos Bálcãs?', 'Janízaros',
@@ -81,7 +81,7 @@ c.T('Como se chamava o trabalho forçado, herdado do tempo dos incas, que os esp
     src=('en', "Mit'a", ['Potosí']),
     x='Entre os incas, a mita era um turno de trabalho devido ao Estado; o vice-rei Francisco de Toledo a transformou, na década de 1570, em recrutamento em massa para as minas.')
 c.T('A quantas léguas a oeste das ilhas de Cabo Verde passava a linha do Tratado de Tordesilhas?', '370 léguas',
-    ['100 léguas', '170 léguas', '270 léguas', '500 léguas', '1.000 léguas'], d=3, icon='map',
+    ['100 léguas', '170 léguas', '270 léguas', '500 léguas', '1.000 léguas'], d=3, scene='tordesilhas', icon='map',
     src=('en', 'Treaty of Tordesillas', ['370']),
     x='A bula Inter caetera, de 1493, fixava a linha a 100 léguas; Portugal negociou e a empurrou para oeste, o que deixou parte do futuro Brasil do seu lado.')
 c.T('Qual édito, assinado por Henrique IV em 1598, garantiu liberdade de culto aos protestantes franceses?', 'Édito de Nantes',

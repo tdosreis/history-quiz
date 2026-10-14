@@ -17,7 +17,7 @@ c.T('Qual canal, aberto à navegação em 1914, ligou o oceano Atlântico ao Pac
     src=('en', 'Panama Canal', ['1914', 'yellow fever']),
     x='Os franceses começaram a obra nos anos 1880 e desistiram depois de milhares de mortes por malária e febre amarela; os americanos a concluíram.')
 c.T('Qual combustível, tirado de minas, alimentava as máquinas a vapor e as locomotivas da Revolução Industrial?', 'Carvão',
-    ['Petróleo', 'Gás natural', 'Diesel', 'Querosene', 'Álcool'], d=1, icon='train',
+    ['Petróleo', 'Gás natural', 'Diesel', 'Querosene', 'Álcool'], d=1, scene='locomotiva_vapor', icon='train',
     src=('en', 'Industrial Revolution', ['coal']),
     x='A Grã-Bretanha tinha grandes jazidas de carvão e de ferro, uma das razões de a Revolução Industrial ter começado lá.')
 c.T('Como ficou conhecido o período de 1837 a 1901 na história britânica, marcado pelas fábricas, pelas ferrovias e pela expansão do império?', 'Era Vitoriana',
@@ -45,7 +45,7 @@ c.T('Qual movimento operário britânico, entre 1838 e 1857, reuniu milhões de 
     src=('en', 'Chartism', ["People's Charter", '1838']),
     x='O nome vem da "Carta do Povo", de 1838. O movimento fracassou, mas quase todas as suas reivindicações, como o voto secreto, viraram lei décadas depois.')
 c.T('Qual padre escreveu, em 1789, o panfleto "O que é o Terceiro Estado?", que inflamou a Revolução Francesa?', 'Emmanuel Sieyès',
-    ['Jean-Paul Marat', 'Camille Desmoulins', 'Mirabeau', 'Condorcet', 'Lafayette'], d=4, icon='quill',
+    ['Jean-Paul Marat', 'Camille Desmoulins', 'Mirabeau', 'Condorcet', 'Lafayette'], d=4, scene='ev_revolucao_francesa', icon='quill',
     src=('en', 'What Is the Third Estate?', ['Sieyès', '1789']),
     x='O texto respondia assim: "O que é o Terceiro Estado? Tudo. O que tem sido até agora? Nada. O que deseja? Ser alguma coisa."')
 
@@ -262,7 +262,7 @@ c.MY('A rainha Vitória teve o reinado mais longo da história britânica?', Fal
 c.MY('A Torre Eiffel foi erguida para durar só 20 anos e depois ser desmontada?', True, 2, stad='torre_eiffel',
      x='A licença previa a demolição em 1909; a torre foi salva por sua utilidade como antena de rádio e telégrafo.',
      src=('en', 'Eiffel Tower', ['20 years', 'radio']))
-c.MY('A guilhotina recebeu o nome de quem a inventou?', False, 3, icon='scales',
+c.MY('A guilhotina recebeu o nome de quem a inventou?', False, 3, scene='guilhotina', icon='scales',
      x='O médico Joseph-Ignace Guillotin só propôs um método de execução igual para todos; a máquina foi projetada pelo cirurgião Antoine Louis.',
      src=('en', 'Joseph-Ignace Guillotin', ['Antoine Louis']))
 c.MY('A Proclamação de Emancipação de Lincoln, de 1863, libertou de imediato todos os escravizados dos Estados Unidos?', False, 3, who='lincoln',

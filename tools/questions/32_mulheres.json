@@ -212,7 +212,7 @@
    ],
    "d": 2,
    "art": {
-    "icon": "torch"
+    "scene": "dama_lampada"
    },
    "src": [
     "pt",
@@ -266,7 +266,7 @@
    ],
    "d": 1,
    "art": {
-    "icon": "flag"
+    "scene": "onibus_montgomery"
    },
    "src": [
     "pt",
@@ -374,7 +374,7 @@
    ],
    "d": 2,
    "art": {
-    "icon": "flag"
+    "scene": "ponte_howrah"
    },
    "src": [
     "pt",
@@ -410,7 +410,7 @@
    ],
    "d": 2,
    "art": {
-    "icon": "flag"
+    "scene": "downing_street"
    },
    "src": [
     "pt",
@@ -446,7 +446,7 @@
    ],
    "d": 1,
    "art": {
-    "icon": "crown"
+    "scene": "palacio_cristal"
    },
    "src": [
     "pt",
@@ -464,7 +464,7 @@
    ],
    "d": 1,
    "art": {
-    "icon": "crown"
+    "scene": "guilhotina"
    },
    "src": [
     "pt",
@@ -482,7 +482,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "crown"
+    "scene": "schonbrunn"
    },
    "src": [
     "pt",

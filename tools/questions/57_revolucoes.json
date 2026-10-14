@@ -107,7 +107,7 @@
    ],
    "d": 1,
    "art": {
-    "icon": "train"
+    "scene": "locomotiva_vapor"
    },
    "src": [
     "en",
@@ -301,7 +301,7 @@
    ],
    "d": 4,
    "art": {
-    "icon": "quill"
+    "scene": "ev_revolucao_francesa"
    },
    "src": [
     "en",
@@ -1673,7 +1673,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "scales"
+    "scene": "guilhotina"
    },
    "src": [
     "en",

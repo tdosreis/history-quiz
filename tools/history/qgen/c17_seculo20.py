@@ -17,7 +17,7 @@ c.T('Em qual usina da Ucrânia soviética aconteceu, em 1986, o mais grave acide
     src=('pt', 'Acidente nuclear de Chernobil', ['1986']),
     x='A cidade vizinha de Pripyat, com quase 50 mil moradores, foi evacuada às pressas e nunca mais voltou a ser habitada.')
 c.T('Qual cadela soviética foi o primeiro animal a entrar em órbita da Terra, em 1957?', 'Laika',
-    ['Belka', 'Strelka', 'Ham', 'Félicette', 'Zvezdochka'], d=1, icon='rocket',
+    ['Belka', 'Strelka', 'Ham', 'Félicette', 'Zvezdochka'], d=1, scene='ev_corrida_espacial', icon='rocket',
     src=('pt', 'Laika', ['Sputnik 2', '1957']),
     x='Ela viajou no Sputnik 2, numa missão sem volta; décadas depois, soube-se que morreu poucas horas após o lançamento.')
 c.T('Qual programa americano, que entrou em vigor em 1948, financiou a reconstrução da Europa Ocidental depois da Segunda Guerra?', 'Plano Marshall',
@@ -41,7 +41,7 @@ c.T('Qual presidente sul-africano libertou Nelson Mandela em 1990 e dividiu com 
     src=('en', 'F. W. de Klerk', ['1990', 'Nobel']),
     x='Em 1994, nas primeiras eleições abertas a todas as raças, Mandela foi eleito presidente e De Klerk tornou-se um dos seus vice-presidentes.')
 c.T('Ao longo de qual paralelo a Coreia foi dividida em 1945, entre uma zona soviética ao norte e uma americana ao sul?', 'Paralelo 38',
-    ['Paralelo 17', 'Paralelo 49', 'Paralelo 42', 'Paralelo 33', 'Paralelo 24'], d=3, icon='map',
+    ['Paralelo 17', 'Paralelo 49', 'Paralelo 42', 'Paralelo 33', 'Paralelo 24'], d=3, scene='zona_desmilitarizada', icon='map',
     src=('en', '38th parallel north', ['Korea', '1945']),
     x='A Guerra da Coreia (1950–1953) terminou só com um armistício, e a fronteira ficou perto da mesma linha, cercada por uma zona desmilitarizada.')
 c.T('Qual tratado de 1918 tirou a Rússia bolchevique da Primeira Guerra, à custa de enormes perdas de território?', 'Tratado de Brest-Litovsk',
@@ -53,7 +53,7 @@ c.T('Qual telegrama alemão, interceptado pelos britânicos em 1917, propunha ao
     src=('en', 'Zimmermann Telegram', ['Mexico', '1917']),
     x='Em troca, o México recuperaria o Texas, o Novo México e o Arizona. A revelação da mensagem ajudou a levar os EUA à guerra, em abril de 1917.')
 c.T('Qual conferência de 1955, na Indonésia, reuniu 29 países da Ásia e da África e é vista como precursora do Movimento dos Não Alinhados?', 'Conferência de Bandung',
-    ['Conferência de Genebra', 'Conferência de Bretton Woods', 'Conferência de Potsdam', 'Conferência Tricontinental', 'Conferência de Belgrado'], d=5, icon='globe',
+    ['Conferência de Genebra', 'Conferência de Bretton Woods', 'Conferência de Potsdam', 'Conferência Tricontinental', 'Conferência de Belgrado'], d=5, scene='ev_descolonizacao', icon='globe',
     src=('en', 'Bandung Conference', ['1955', 'Sukarno']),
     x='Entre os presentes estavam Nehru, da Índia, Nasser, do Egito, Zhou Enlai, da China, e o anfitrião, o presidente indonésio Sukarno.')
 c.T('Qual grupo de estudantes de Munique espalhou panfletos contra o regime nazista e teve seus líderes executados em 1943?', 'Rosa Branca',
@@ -73,7 +73,7 @@ c.T('Além do Brasil, qual país latino-americano mandou uma unidade de combate 
 c.P('Qual líder revolucionário, morto em 1924, teve o corpo embalsamado e exposto num mausoléu na Praça Vermelha, em Moscou?', 'lenin', d=1, stad='kremlin',
     src=('en', "Lenin's Mausoleum", ['1924']),
     x='O mausoléu fica colado à muralha do Kremlin; o corpo passa por banhos químicos regulares para se conservar.')
-c.P('Qual presidente americano prometeu, em 1961, levar um homem à Lua e trazê-lo de volta antes do fim da década?', 'kennedy', d=1, icon='rocket',
+c.P('Qual presidente americano prometeu, em 1961, levar um homem à Lua e trazê-lo de volta antes do fim da década?', 'kennedy', d=1, scene='ev_corrida_espacial', icon='rocket',
     src=('en', 'We choose to go to the Moon', ['Rice University']),
     x='O discurso mais lembrado sobre a meta foi feito na Universidade Rice, em Houston, em 1962: "Nós escolhemos ir à Lua".')
 c.P('Qual primeira-ministra britânica comandou a guerra contra a Argentina pelas Ilhas Malvinas, em 1982?', 'thatcher', d=2, flag='ARG',
@@ -269,7 +269,7 @@ c.MY('A Revolução de Outubro, na Rússia, aconteceu em novembro pelo calendár
 c.MY('Hitler chegou ao poder vencendo uma eleição com a maioria dos votos dos alemães?', False, 3, flag='GER',
      x='Na eleição livre mais favorável, em julho de 1932, os nazistas tiveram cerca de 37% dos votos; Hitler foi nomeado chanceler pelo presidente Hindenburg.',
      src=('en', 'Adolf Hitler', ['Hindenburg', 'chancellor']))
-c.MY('Os primeiros animais mandados de propósito ao espaço foram moscas-das-frutas?', True, 4, icon='rocket',
+c.MY('Os primeiros animais mandados de propósito ao espaço foram moscas-das-frutas?', True, 4, scene='ev_corrida_espacial', icon='rocket',
      x='Em 1947, os americanos lançaram moscas-das-frutas num foguete V-2 capturado dos alemães; a cápsula voltou de paraquedas com elas vivas.',
      src=('en', 'Animals in space', ['fruit flies', '1947']))
 
