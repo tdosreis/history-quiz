@@ -8,6 +8,7 @@ ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 CHROME = os.environ.get("CHROME", "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome")
 EXTRA = ["--no-sandbox"] if os.environ.get("CI") else []
 OUT = os.path.join(ROOT, "store-assets")
+CHROME_H = 87   # the part of a headless window that is not page (see probe_fit.py)
 os.makedirs(OUT, exist_ok=True)
 
 SEED = """album=new Set(PL.filter(function(p,i){return i%3!==1}).map(function(p){return p.id})); LS.set('album',[...album]);
@@ -24,6 +25,7 @@ STATES = {
  "shot-05-linha": ("diffKey='dificil'; cat=buildGame('dificil'); var q=CATS.find(function(c){return c.id==='linha_do_tempo'}).qs[3]; cat.qs=[q]; qi=0; sel.clear(); pts=72; streak=5; runLog=[3,3,3,3,3]; sc='quiz'; tMax=50; tLeft=36; disp=getDisp(q); go();"),
  "shot-07-batalha": Q("batalhas", "q.battle && q.battle.lbl.indexOf('Waterloo')===0"),
  "shot-08-citacao": Q("citacoes", "q.quote && q.quote.q.indexOf('Vim, vi')===0"),
+ "shot-09-cena": Q("grecia", "q.t.indexOf('Termópilas')>0"),
  "shot-06-milhao": ("isMil=true; rung=10; banked=5000; diffKey='moderado'; var g=buildMilhao(); cat=g; qi=10; sel.clear(); pts=480; streak=4; runLog=[3,3,3,3,3,3,3,3,3,3]; sc='quiz'; tMax=30; tLeft=22; disp=getDisp(cat.qs[qi]); go();"),
 }
 
@@ -39,11 +41,16 @@ def shot(name, js, w=500, h=900, scale=2, light=True):
     out = os.path.join(OUT, name + ".png")
     try:
         subprocess.run([CHROME] + EXTRA + ["--headless", "--disable-gpu", "--hide-scrollbars", "--allow-file-access-from-files",
-                        "--window-size=%d,%d" % (w, h), "--force-device-scale-factor=%d" % scale,
+                        "--window-size=%d,%d" % (w, h + CHROME_H), "--force-device-scale-factor=%d" % scale,
                         "--virtual-time-budget=6000", "--screenshot=" + out, "file://" + tmp],
                        capture_output=True, timeout=120)
     finally:
         os.remove(tmp)
+    # headless Chrome keeps CHROME_H px of the window for itself and leaves them
+    # blank under the page: the window is that much taller, and the blank cut off
+    from PIL import Image
+    im = Image.open(out)
+    im.crop((0, 0, w * scale, h * scale)).save(out)
     print("wrote", out)
 
 def feature():
