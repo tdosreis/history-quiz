@@ -145,20 +145,23 @@ Object.assign(SCENE, {
         + SCH.g(`<path d="M0 0h7v74H0zM113 0h7v74h-7z" fill="#3F6E66"/><path d="M-1 6h9v3h-9zM112 6h9v3h-9z" fill="${SCK.gold}" stroke-width="1.1"/>`, 1.4);
     } },
 
-  /* homage to the Modernist canvas of 1928: a huge bare leg and foot planted on the green, a paddle cactus crowned by a round lemon sun, flat planes of blue and green */
+  /* the sertão the canvas of 1928 sprang from, drawn as land and not as the painting: noon over red cracked earth, a tall candelabra mandacaru, dry caatinga twigs, the round white sun high in the haze, and one giant bare footprint pressed into the dust in the foreground */
   abaporu: {
     label: 'Um pé gigante, um cacto e um sol redondo, em cores vivas',
     rx: /\b(abaporu|cacto|mandacaru)\b/,
-    draw: () => SCH.bg('#5C8DB0') + `<path d="M60 0h60v40H60z" fill="#6E9CC0"/>`
-      + `<path d="M0 58q40-10 70-6t50 0v28H0z" fill="#3F7A44"/><path d="M0 66q50-6 120 2v12H0z" fill="#6FA052"/>`
-      + SCH.sun(88, 20, 13, '#F2C230') + `<circle cx="88" cy="20" r="13" fill="none" stroke="${SCK.ink}" stroke-width="1.8"/><circle cx="88" cy="20" r="8.4" fill="#F7DE7A"/><path d="M88 11.6v16.8M79.6 20h16.8M82 14l12 12M94 14 82 26" stroke="#E2AE22" stroke-width="1"/>`
-      + SCH.g(`<path d="M86 76V48q0-4 3-4t3 4v28z" fill="#3C7A3A"/><ellipse cx="89" cy="38" rx="6.4" ry="9" fill="#4E9444"/>
-        <ellipse cx="77" cy="52" rx="5.4" ry="8" fill="#4E9444" transform="rotate(-24 77 52)"/><ellipse cx="101" cy="50" rx="5.4" ry="8" fill="#4E9444" transform="rotate(26 101 50)"/>
-        <ellipse cx="72" cy="40" rx="4" ry="6" fill="#5FA850" transform="rotate(-10 72 40)"/><ellipse cx="107" cy="38" rx="4" ry="6" fill="#5FA850" transform="rotate(12 107 38)"/>`, 1.6)
-      + `<path d="M89 31v14M77 46v12M101 44v12M72 36v8M107 34v8" stroke="#2C5A2A" stroke-width="1" opacity=".7"/>`
-      + SCH.g(`<path d="M0-2h38q10 22 4 44-2 8-4 14 14 2 26 7 6 3 5 7-1 4-10 4H16q-9 0-10-8 0-9 4-16Q2 36 0 16z" fill="#E3A47A"/>`, 2)
-      + `<path d="M52 64.6q3 1 2.6 4M58 66q2.6 1 2.2 3.6M63 67.4q2 1 1.6 3M24 50q-4 6-2 14M30 10q4 14 2 30" stroke="${SCK.ink}" stroke-width="1.1" fill="none" opacity=".55"/>`
-      + `<path d="M14 6q6 20 4 36" stroke="#F2C6A2" stroke-width="3" fill="none" stroke-linecap="round" opacity=".8"/>` },
+    draw: () => SCH.bg('#EFD9A2') + SCH.sun(30, 15, 10, '#FBEFC8') + `<circle cx="30" cy="15" r="10" fill="none" stroke="#E9C46A" stroke-width="2"/>`
+      + `<path d="M0 42q14-8 28-5t26-3 30 2 36-4v12H0z" fill="#C7A06A"/><path d="M0 44q20-5 40-3t40 0 40-1v6H0z" fill="#B38652" opacity=".6"/>`
+      + SCH.g(`<path d="M-2 82V46q30-4 62-2t62 2v36z" fill="#C9824A"/>`, 1.4)
+      + `<path d="M-2 58q62-6 124 0v24H-2z" fill="#D59A5E"/>`
+      + `<path d="M6 52l6 3 5-2M24 56l7-2 4 3M70 52l6 3 6-2M100 56l6-2 5 3M10 74l8-3 5 4M78 72l7 3 8-2 6 3M104 66l8 2" stroke="${SCK.ink}" stroke-width=".9" fill="none" opacity=".45"/>`
+      + `<path d="M20 47q-1-5 2-8M20 44l-4-3M22 41l3-3M112 48q1-6-2-9M111 43l4-3M58 45q0-4 2-6M58 43l-3-2" stroke="#6A4A30" stroke-width="1.3" fill="none" stroke-linecap="round"/>`
+      + SCH.g(`<path d="M88 64V22q0-5 4.5-5t4.5 5v42z" fill="#4F7A3E"/>
+        <path d="M88 46h-6q-4 0-4-4V30q0-4 3-4t3 4v10h4zM97 40h5V28q0-4 3-4t3 4v12q0 6-6 6h-5z" fill="#5E8C48"/>`, 1.6)
+      + `<path d="M90.4 22v40M92.5 19v44M94.6 22v40M81 30v12M105 28v12" stroke="#2F5226" stroke-width=".8" opacity=".7"/>`
+      + `<ellipse cx="93" cy="65" rx="11" ry="2.2" fill="#A8683A" opacity=".6"/>`
+      + `<g transform="translate(44 67) scale(1.45 .8) rotate(72)">` + SCH.g(`<path d="M0 13C-5 13-6.6 8-6 3-5.6-1-4-3-4.4-6-5-10-4-15.2 1-15.6 6-16 8.2-12 7.4-7 7-3 4 0 4.6 4 5 9 4.6 13 0 13z" fill="#A9693A"/>
+        <circle cx="6.4" cy="-20" r="3" fill="#A9693A"/><circle cx="1.6" cy="-21.6" r="2.1" fill="#A9693A"/><circle cx="-2.4" cy="-21" r="1.8" fill="#A9693A"/><circle cx="-5.8" cy="-19" r="1.6" fill="#A9693A"/><circle cx="-8.2" cy="-15.8" r="1.4" fill="#A9693A"/>`, 1.2) + `</g>`
+      + `<path d="M28 74q12 3 28 0" stroke="#E7B47A" stroke-width="1.4" fill="none" opacity=".8"/>` },
 
   /* the composer's forest: a cello standing on its endpin on the pale river beach, the bow leaning on it, the rainforest wall on the far bank and red macaws flying over */
   violoncelo_floresta: {
@@ -187,29 +190,31 @@ Object.assign(SCENE, {
         + SCH.g(`<path d="M81 72h4l2 4h-4z" fill="#2E2218"/>`, 1);
     } },
 
-  /* the uprooted family on the dry road: a man with a bundle on a stick, a woman with a sack on her head and a baby in her arm, two children, a bare tree, cracked earth, the pale sun and the circling vultures */
+  /* the uprooted family on the dry road, seen small and side-on as they go: a long dirt track across the caatinga under the white noon sun, a father with a bundle on a stick leading, a mother with a sack on her head, two children and a thin donkey with its panniers, a mandacaru and a bare tree by the road */
   retirantes_cafe: {
     label: 'Uma família de retirantes com trouxas caminhando por uma terra seca',
     rx: /\b(retirantes|retirante|terra seca|seca)\b/,
     draw: () => {
-      const legs = (x, y, h, w, c) => `<path d="M${x - 1.6} ${y}l${(-h * .28).toFixed(1)} ${h}M${x + 1.6} ${y}l${(h * .2).toFixed(1)} ${h}" stroke="${c}" stroke-width="${w}" fill="none"/>`;
-      return SCH.bg('#E8DEC4') + SCH.sun(96, 14, 10, '#F4EAD0') + SCH.sun(96, 14, 6.4, '#FAF4E4')
-        + `<path d="M58 10q2.4-2.4 4.8 0 2.4-2.4 4.8 0M76 20q1.8-1.8 3.6 0 1.8-1.8 3.6 0M46 18q1.6-1.6 3.2 0 1.6-1.6 3.2 0" stroke="${SCK.ink}" stroke-width="1.3" fill="none"/>`
-        + `<path d="M0 44q16-8 34-4t30-2 30 0 26-2v10H0z" fill="#C2AE88"/>`
-        + `<path d="M0 46q60-4 120 0v34H0z" fill="#CFA466"/>`
-        + `<path d="M0 66q60-8 120-6v8q-60 0-120 6z" fill="#E2C690"/>`
-        + `<path d="M2 52l8 2 4-3 10 1M88 56l8-3 10 2M98 50l6 2M4 78l10-2 6 3M30 79l6-4 10 1M58 78l8 2 6-3M84 78l10-3 8 3 10-1" stroke="${SCK.ink}" stroke-width=".9" fill="none" opacity=".4"/>`
-        + `<path d="M106 66q-1-12 1-20-4-6-10-8M107 52q3-6 9-8M106 46q2-8 0-14M106 38q-4-2-6-6M106 34l4-6M98 38l-4-1M115 44l4-4" stroke="#5A4636" stroke-width="2.2" fill="none" stroke-linecap="round"/>`
-        + `<path d="M106 66q-1-12 1-20" stroke="#5A4636" stroke-width="3.6" fill="none"/>`
-        + `<ellipse cx="48" cy="72" rx="40" ry="2.6" fill="#B8925A" opacity=".55"/>`
-        + SCH.g(legs(24, 52, 19, 3.4, '#6A5A4A') + legs(48, 60, 11, 2.6, '#7A4E30') + legs(68, 58, 14, 2.6, '#6A5A4A') + legs(84, 62, 10, 2.2, '#7A4E30'), 1)
-        + SCH.g(`<path d="M18 53l-1-13q0-6 7-6t7 6l-1 13z" fill="#EFE6D0"/><circle cx="24" cy="30" r="3.6" fill="#7A4E30"/><path d="M15.6 27.6h16.8M19.6 27.6q0-5 4.4-5t4.4 5z" fill="${SCK.ochre}"/>
-          <path d="M27 36q6-4 10 2 4 8-1 14-6 1-9-3z" fill="${SCK.stone}"/><path d="M27 38l3-3" fill="none" stroke-width="1.6"/>
-          <path d="M42 62l1-16q0-7 5-7t5 7l1 16z" fill="${SCK.burg}"/><circle cx="48" cy="34" r="3.2" fill="#7A4E30"/><path d="M44.4 33q0-5 3.6-5t3.6 5l1 3-1.6-2q-3-2.4-6 0l-1.6 2z" fill="${SCK.white}"/>
-          <ellipse cx="48" cy="26.6" rx="7" ry="3.8" fill="${SCK.ochre}"/><path d="M45 23.6q3 2.4 6 0" fill="none" stroke-width="1"/><path d="M44 44q-4 2-3 6t6 3 3-5-6-4z" fill="${SCK.white}"/>
-          <path d="M64 58v-9q0-4 4-4t4 4v9z" fill="${SCK.stone}"/><circle cx="68" cy="41.6" r="2.6" fill="#7A4E30"/>
-          <path d="M81 62v-6q0-3 3-3t3 3v6z" fill="${SCK.white}"/><circle cx="84" cy="50" r="2.2" fill="#7A4E30"/>`, 1.3)
-        + `<path d="M53 48l11 3M71 50l10 4" stroke="${SCK.ink}" stroke-width="1.2" opacity=".75"/>`;
+      const walk = (x, y, k, shirt, pants, extra) => `<g transform="translate(${x} ${y}) scale(${k})">`
+        + SCH.g(`<path d="M-1-8-4 0M1-8 3 0" stroke="${pants}" stroke-width="2.6" fill="none"/><path d="M-3-7.6-2.6-15.4Q0-17.4 2.6-15.4L3-7.6z" fill="${shirt}"/><circle cx=".6" cy="-18.4" r="2.3" fill="#7A4E30"/>${extra || ''}`, 1.1) + `</g>`;
+      const hat = `<path d="M-3.4-20h8M-1.6-20q0-3.4 2.2-3.4t2.2 3.4z" fill="${SCK.ochre}"/>`;
+      const stick = `<path d="M2-14-8-21" stroke="${SCK.wood}" stroke-width="1.2" fill="none"/><circle cx="-8" cy="-20.6" r="3" fill="${SCK.stone}"/>`;
+      const sack = `<ellipse cx=".6" cy="-22" rx="3.6" ry="1.8" fill="${SCK.white}"/><path d="M-3-9q3 4 6.6 0" fill="${SCK.burg}"/>`;
+      return SCH.bg('#ECE0C2') + SCH.sun(88, 13, 8, '#FAF2DC') + `<circle cx="88" cy="13" r="8" fill="none" stroke="#EAD7A4" stroke-width="2"/>`
+        + `<path d="M0 40q20-5 40-2t40-1 40 1v8H0z" fill="#BFA37A"/>`
+        + SCH.g(`<path d="M-2 82V44q62-4 124 0v38z" fill="#CFA466"/>`, 1.4)
+        + `<path d="M-2 61q62-5 124-3v9q-62-2-124 3z" fill="#E4CC98"/><path d="M4 64q20-1 30-1M70 62q16-1 30 0" stroke="#C9A878" stroke-width="1" fill="none"/>`
+        + `<path d="M8 50l6 2 4-2M72 52l8 2 5-2M96 60l8-2 6 3M10 70l8 2 6-3M66 74l8-2 6 3M98 76l8-2" stroke="${SCK.ink}" stroke-width=".9" fill="none" opacity=".4"/>`
+        + `<path d="M64 47q0-4 2-6M64 44l-3-2M66 42l3-2M30 47q-1-4 1-6M30 45l-3-2" stroke="#6A4A30" stroke-width="1.2" fill="none" stroke-linecap="round"/>`
+        + `<path d="M104 64q-1-12 1-20-4-6-9-8M105 50q3-6 9-8M104 44q2-8 0-14M104 36q-4-2-6-6M104 32l4-6" stroke="#5A4636" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M104 64q-1-12 1-20" stroke="#5A4636" stroke-width="3.4" fill="none"/>`
+        + SCH.g(`<path d="M10 62V36q0-4 3-4t3 4v26zM10 50H7q-3 0-3-3v-7q0-3 2-3t2 3v5h2zM16 46h3v-8q0-3 2-3t2 3v7q0 4-4 4h-3z" fill="#5E8C48"/>`, 1.3)
+        + `<path d="M13 33v28" stroke="#2F5226" stroke-width=".8" opacity=".7"/>`
+        + `<ellipse cx="58" cy="66.4" rx="38" ry="1.8" fill="#B8925A" opacity=".5"/>`
+        + SCH.g(`<path d="M24 60v7M27 60v7M33 60v7M36 59v8" fill="none" stroke="#6A5A4A" stroke-width="1.8"/><path d="M21 56q-3 2-2 6" fill="none" stroke-width="1.2"/>
+          <path d="M37 55 41 48q2-2 4 0l3 4q1 2-1 2.6l-4-1-3 4z" fill="#9A8A78"/><ellipse cx="30" cy="57" rx="9" ry="4.4" fill="#9A8A78"/><path d="M41 48.4l-1.4-4M43.4 47.8l.6-4" fill="none" stroke-width="1.2"/><path d="M25 50h10v8H25z" fill="${SCK.ochre}"/>`, 1.1)
+        + walk(58, 66, 1, '#EFE6D0', '#6A5A4A', hat + stick)
+        + walk(70, 66, .95, SCK.burg, '#7A4E30', sack)
+        + walk(80, 66, .66, SCK.stone, '#6A5A4A') + walk(88, 66, .56, SCK.white, '#7A4E30');
     } },
 
   /* the oil of the coast: a steel lattice derrick with black oil gushing from its crown, the white storage tanks and the refinery stack behind, palms and the sea */
@@ -390,7 +395,7 @@ Object.assign(SCENE, {
       + `<path d="M42 56q4-7 13-8M45 52q2-2 5-3" stroke="${SCK.white}" stroke-width="1.6" fill="none" opacity=".6" stroke-linecap="round"/><path d="M66 52q6 6 4 14M52 66q6 2 12 0" stroke="${SCK.ink}" stroke-width="1" fill="none" opacity=".4"/>`
       + `<path d="M100 60v-8M106 60v-8M112 61v-8M98 56h16" stroke="${SCK.wood}" stroke-width="1.4"/><path d="M6 76l2-4M10 77l1-4M96 74l2-4M110 76l1-4" stroke="#3E5A30" stroke-width="1.2"/>` },
 
-  /* the World Cup in Sweden, 1958: a laced leather ball on the penalty spot, the goal and its net behind, a wooden stand with a tiny crowd and pines under a pale northern sky */
+  /* the World Cup of 1958: a pale stitched leather ball on the penalty spot, the goal and its net behind, a wooden stand with a tiny crowd under a pale cool sky; no trees, flags or ball pattern that would name a host or a year */
   copa_1958: {
     label: 'Uma bola de couro sobre o gramado de um estádio, sob céu nórdico',
     rx: /\b(futebol|bola|estadio|gramado)\b/,
@@ -399,10 +404,7 @@ Object.assign(SCENE, {
       let net = '';
       for (let x = 31; x <= 89; x += 4) net += `M${x} 36v21`;
       for (let y = 38; y <= 56; y += 4) net += `M29 ${y}h62`;
-      const R = v => Math.round(v * 10) / 10;
-      const pine = (x, h) => `<path d="M${x} ${22 - h}l-4 ${R(h * .4)}h2.4l-3.4 ${R(h * .34)}h2.6L${x - 6} 22h12l-3.6-${R(h * .26)}h2.6l-3.4-${R(h * .34)}h2.4z" fill="#3E5A40"/>`;
       return SCH.bg('#DDE7EC') + `<ellipse cx="60" cy="8" rx="30" ry="2.4" fill="${SCK.white}" opacity=".8"/>`
-        + SCH.g(pine(8, 18) + pine(18, 13) + pine(104, 16) + pine(114, 20), 1)
         + SCH.g(`<path d="M-2 22l8-5h108l8 5v14H-2z" fill="#7A5232"/><path d="M-2 22h124v14H-2z" fill="#8A6A4A"/>`, 1.4) + crowd
         + `<path d="M0 36h120v44H0z" fill="#5E8C48"/><path d="M0 36h120v3H0z" fill="#A9886A"/>`
         + `<path d="M0 44h120v8H0zM0 60h120v10H0z" fill="#6E9A54"/>`
@@ -410,10 +412,9 @@ Object.assign(SCENE, {
         + SCH.g(`<path d="M28 57V33h64v24h-3V36H31v21z" fill="${SCK.white}"/>`, 1.3)
         + `<path d="M2 57h116M16 57 8 80M104 57l8 23" stroke="${SCK.white}" stroke-width="1.4" opacity=".9"/>`
         + `<ellipse cx="62" cy="77" rx="15" ry="3" fill="#3E5A30" opacity=".6"/>`
-        + SCH.g(`<circle cx="58" cy="63" r="14" fill="#A8642E"/>`, 1.8)
+        + SCH.g(`<circle cx="58" cy="63" r="14" fill="#ECE2C8"/>`, 1.8)
         + `<path d="M46 57q12 4 24-4M45 67q14 2 26-6M52 50q-2 14 4 26M62 49q4 14-2 27" stroke="${SCK.ink}" stroke-width="1" fill="none" opacity=".6"/>`
-        + `<path d="M55 52l8 2M54.6 54.6l8 2" stroke="${SCK.ink}" stroke-width="1.6"/><path d="M56 51.6l-1 4.6M58.4 52.2l-1 4.6M60.8 52.8l-1 4.6" stroke="${SCK.white}" stroke-width="1"/>`
-        + `<path d="M48 59q2-6 8-8" stroke="#D99A5E" stroke-width="2" fill="none" stroke-linecap="round"/>`;
+        + `<path d="M48 59q2-6 8-8" stroke="#FBF6EA" stroke-width="2" fill="none" stroke-linecap="round"/>`;
     } },
 
   /* the revolt in the bay, 1910: a grey dreadnought with its twin turrets fore and aft, smoke pouring from both funnels, searchlights sweeping the night over the dark hills */

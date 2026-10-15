@@ -161,7 +161,7 @@ Object.assign(SCENE, {
       return SCH.bg('#C3CDD0')
         + `<path d="M0 44q40-6 70-2t50-2v40H0z" fill="${SCK.olive}"/><path d="M0 52q50-6 120 0v28H0z" fill="#7E6A48"/>`
         + `<path d="M30 58h20M70 60h24M96 66h18M51 67q3-2 6 0M59 73q3-2 6 0M67 79q3-2 6 0" stroke="#5A4A30" stroke-width="1.6" fill="none"/>`
-        + SCH.g(rider(100, 56, .6, SCK.burg, SCK.gold) + rider(88, 63, .7, SCK.teal, SCK.white)
+        + SCH.g(rider(100, 56, .6, SCK.burg, SCK.gold) + rider(88, 63, .7, SCK.teal, SCK.red)
           + `<path d="${v.map(([x, y]) => `M${x} ${y}l10 4.4-3.8.4m3.8-.4-2.2-2.8`).join('')}" fill="none" stroke-width="1.2"/>`
           + `<path d="M54 66l7-10M62 72l7-10M70 78l7-10" stroke-width="4.2"/><path d="M54 66l7-10M62 72l7-10M70 78l7-10" stroke="${SCK.wood}" stroke-width="2.2"/>`
           + archer(38, 60, .7, '#7C8A58') + archer(16, 78, 1, SCK.olive), 1.5);

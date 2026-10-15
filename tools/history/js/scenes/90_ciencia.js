@@ -178,19 +178,21 @@ Object.assign(SCENE, {
         + `<g transform="translate(46 30) rotate(126)"><path d="${cards}" fill="${SCK.paper}" stroke="${K}" stroke-width="1.1"/><path d="${holes}" stroke="${K}" stroke-width="1.7" stroke-linecap="round"/><path d="M1 0h49" stroke="${SCK.burg}" stroke-width=".8" stroke-dasharray="1.6 6.6" stroke-dashoffset="2.4"/></g>`;
     } },
 
-  /* an inventor's workshop in the 1880s at night: a glowing carbon-filament bulb on its stand, a cylinder phonograph with its brass horn, and behind them a tall coil throwing branching sparks; wires running to a little dynamo */
+  /* an inventor's workshop in the 1880s at night: a glowing carbon-filament bulb on its stand, a cylinder phonograph with its brass horn, and between them a Ruhmkorff induction coil lying on its wooden cradle, a small spark jumping the gap between the brass balls of its discharger; wires running to a little dynamo */
   eletricidade_1880: {
     label: 'Uma lâmpada incandescente acesa, um fonógrafo de corneta e uma bobina soltando faíscas',
     rx: /\b(lampada|lampadas|fonografo|bobina|faiscas|dinamo)\b/,
     draw: () => {
-      const K = SCK.ink, sp = 'M53 17l-6-4 2-3-7-4M71 17l7-5-1-3 7-3M62 14l-2-6 3-3 -1-4M50 22l-8 1-2 4M74 22l8 2 2-4';
+      const K = SCK.ink;
       const fc = SCH.uid('fc');
-      return SCH.bg('#232B42') + `<clipPath id="${fc}"><path d="M0 0h120v80H0z"/></clipPath><g clip-path="url(#${fc})">` + `<circle cx="62" cy="16" r="20" fill="#3A4766"/><circle cx="28" cy="38" r="22" fill="${SCK.goldHi}" opacity=".16"/><circle cx="28" cy="38" r="13" fill="${SCK.goldHi}" opacity=".2"/>`
+      return SCH.bg('#232B42') + `<clipPath id="${fc}"><path d="M0 0h120v80H0z"/></clipPath><g clip-path="url(#${fc})">` + `<circle cx="62" cy="29" r="11" fill="#3A4766"/><circle cx="28" cy="38" r="22" fill="${SCK.goldHi}" opacity=".16"/><circle cx="28" cy="38" r="13" fill="${SCK.goldHi}" opacity=".2"/>`
         + SCH.g(`<path d="M-2 58h124v24H-2z" fill="#5A3E2A"/>`, 1.6) + `<path d="M0 62h120" stroke="#3A2A1C" stroke-width="1.2"/>`
-        + SCH.g(`<path d="M52 58v-4h20v4z" fill="${SCK.wood}"/><path d="M56 54V22h12v32z" fill="#B06A3A"/>`, 1.4)
-        + `<path d="M62 23v30" stroke="#7A4424" stroke-width="12" stroke-dasharray=".7 1.1"/>`
-        + SCH.g(`<ellipse cx="62" cy="20" rx="10" ry="3.6" fill="#C9CFD4"/>`, 1.4)
-        + `<path d="${sp}" stroke="${SCK.goldHi}" stroke-width="2.4" fill="none" stroke-linejoin="round" opacity=".7"/><path d="${sp}" stroke="${SCK.white}" stroke-width=".9" fill="none" stroke-linejoin="round"/>`
+        + SCH.g(`<path d="M45 58v-4h34v4z" fill="${SCK.wood}"/><path d="M48 54V40h5v14zM71 54V40h5v14z" fill="${SCK.wood}"/><path d="M53 53V41h18v12z" fill="#B06A3A"/>`, 1.4)
+        + `<path d="M53.6 47h16.8" stroke="#7A4424" stroke-width="11" stroke-dasharray=".7 1.1"/>`
+        + SCH.g(`<path d="M50.5 40V27M73.5 40V27M50.5 29H58M73.5 29H66" fill="none" stroke-width="3.4"/>`, 1)
+        + `<path d="M50.5 40V27M73.5 40V27M50.5 29H58M73.5 29H66" fill="none" stroke="${SCK.gold}" stroke-width="1.6"/>`
+        + SCH.g(`<circle cx="59" cy="29" r="2" fill="${SCK.goldHi}"/><circle cx="65" cy="29" r="2" fill="${SCK.goldHi}"/><circle cx="50.5" cy="26" r="1.8" fill="${SCK.gold}"/><circle cx="73.5" cy="26" r="1.8" fill="${SCK.gold}"/>`, 1)
+        + `<path d="M61 29l1-2.4 .8 4 1.2-2.6" stroke="${SCK.goldHi}" stroke-width="2.4" fill="none" stroke-linejoin="round" opacity=".7"/><path d="M61 29l1-2.4 .8 4 1.2-2.6" stroke="${SCK.white}" stroke-width=".9" fill="none" stroke-linejoin="round"/>`
         + `<path d="M52 57q-6 6-14 2M72 57q5 5 0 10" stroke="${K}" stroke-width="1.2" fill="none"/>`
         + SCH.g(`<path d="M18 60v-3h20v3z" fill="${SCK.wood}"/><path d="M22 57v-3h12v3zM23 54v-3h10v3z" fill="${SCK.gold}"/><path d="M28 21c-8 0-12 6-12 12 0 6 4 9 6 13v5h12v-5c2-4 6-7 6-13 0-6-4-12-12-12z" fill="#FBEBB0"/>`, 1.4)
         + `<path d="M25.6 50V37q2.4-7 4.8 0v13" stroke="#E8862E" stroke-width="1.6" fill="none"/><path d="M25.6 44v-7q2.4-7 4.8 0v7" stroke="${SCK.white}" stroke-width=".7" fill="none"/><path d="M21 30q2-5 6-6" stroke="${SCK.white}" stroke-width="1.4" fill="none" stroke-linecap="round"/>`
