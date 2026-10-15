@@ -28,7 +28,7 @@ c.P('Qual imperador-filósofo escreveu as Meditações em grego?', ['marco_aurel
     src=('pt', 'Marco Aurélio', ['Meditações']))
 c.P('Qual imperador mandou erguer uma muralha na fronteira norte da Britânia?', ['adriano'], 3, stad='muralha_adriano',
     src=('pt', 'Adriano', ['Muralha']))
-c.P('Qual imperador legalizou o cristianismo com o Edito de Milão, em 313, e fundou Constantinopla?', ['constantino'], 2, scene='labaro_constantino', icon='crown',
+c.P('Qual imperador legalizou o cristianismo com o Edito de Milão, em 313, e fundou Constantinopla?', ['constantino'], 2, icon='crown',
     src=('pt', 'Constantino I', ['Edito de Milão']))
 c.P('Qual poeta romano escreveu a Eneida, epopeia da origem de Roma?', ['virgilio'], 3, scene='loba_capitolina', icon='book',
     src=('pt', 'Virgílio', ['Eneida']))
@@ -74,7 +74,7 @@ c.write()
 c = Cat('medieval', 'Idade Média', '🏰', 'Cavaleiros, mosteiros e cruzadas', '#5B4A7A', order=13)
 c.P('Qual rei franco foi coroado imperador pelo papa no Natal do ano 800?', ['carlos_magno'], 2, scene='coroacao_800', icon='crown',
     src=('pt', 'Carlos Magno', ['800']))
-c.P('Qual duque da Normandia conquistou a Inglaterra na Batalha de Hastings, em 1066?', ['guilherme_conquistador'], 2, scene='torre_branca', icon='sword',
+c.P('Qual duque da Normandia conquistou a Inglaterra na Batalha de Hastings, em 1066?', ['guilherme_conquistador'], 2, icon='sword',
     src=('pt', 'Guilherme I de Inglaterra', ['Hastings']))
 c.P('Qual rei inglês, conhecido como Coração de Leão, liderou a Terceira Cruzada?', ['ricardo'], 2, scene='ev_cruzadas', icon='sword',
     src=('pt', 'Ricardo I de Inglaterra', ['Cruzada']))
@@ -186,7 +186,7 @@ c.P('Qual médico persa escreveu o Cânone da Medicina, usado na Europa por séc
     src=('pt', 'Avicena', ['Cânone']))
 c.P('Qual califa abássida é associado ao auge de Bagdá e às histórias das Mil e Uma Noites?', ['harun'], 4, scene='casa_sabedoria', icon='crown',
     src=('pt', 'Harune Arraxide', ['Bagdá']))
-c.P('Qual imperador otomano, conhecido como “o Magnífico”, levou o império ao auge no século XVI?', ['solimao'], 2, scene='suleymaniye', icon='crown',
+c.P('Qual imperador otomano, conhecido como “o Magnífico”, levou o império ao auge no século XVI?', ['solimao'], 2, icon='crown',
     src=('pt', 'Solimão, o Magnífico', ['Otomano']))
 c.P('Qual sultão otomano conquistou Constantinopla aos 21 anos?', ['maome_ii'], 3, stad='santa_sofia',
     src=('en', 'Mehmed the Conqueror', ['Constantinople']))

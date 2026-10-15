@@ -206,7 +206,7 @@ c.T('Qual pintor flamengo concluiu em 1432, depois da morte do irmão Hubert, o 
     x='O retábulo foi levado de Gante várias vezes ao longo dos séculos; um de seus painéis, roubado em 1934, nunca foi encontrado.')
 
 # ── Personagens ──
-c.P('Qual ator e diretor ridicularizou Hitler no filme O Grande Ditador, de 1940?', 'chaplin', d=1, scene='chapeu_bengala', icon='masks',
+c.P('Qual ator e diretor ridicularizou Hitler no filme O Grande Ditador, de 1940?', 'chaplin', d=1, icon='masks',
     src=('pt', 'O Grande Ditador', ['1940']),
     x='Foi o primeiro filme totalmente falado de Chaplin, e termina com um longo discurso do protagonista em defesa da liberdade e da paz.')
 c.P('Qual pintor holandês retratou, em 1632, uma aula pública de dissecação em A Lição de Anatomia do Dr. Tulp?', 'rembrandt', d=3, crest='holanda',

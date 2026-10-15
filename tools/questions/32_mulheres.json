@@ -212,7 +212,7 @@
    ],
    "d": 2,
    "art": {
-    "scene": "dama_lampada"
+    "icon": "torch"
    },
    "src": [
     "pt",
@@ -392,7 +392,7 @@
    ],
    "d": 2,
    "art": {
-    "scene": "casa_azul"
+    "icon": "bust"
    },
    "src": [
     "pt",
@@ -428,7 +428,7 @@
    ],
    "d": 1,
    "art": {
-    "scene": "anexo_secreto"
+    "icon": "book"
    },
    "src": [
     "pt",

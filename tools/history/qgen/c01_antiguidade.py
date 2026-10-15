@@ -12,7 +12,7 @@ c.P('Qual faraó mandou construir os templos de Abu Simbel e reinou por mais de 
     src=('pt', 'Ramessés II', ['Abu Simbel']))
 c.P('Qual faraó teve a tumba descoberta quase intacta por Howard Carter, em 1922?', ['tutancamon'], 1, scene='tumba_aberta', icon='pyramid',
     src=('pt', 'Tutancâmon', ['Howard Carter']), x='O faraó-menino morreu por volta dos 18 anos; sua máscara de ouro virou símbolo do Egito Antigo.')
-c.P('Qual mulher governou o Egito como faraó por cerca de vinte anos, usando barba cerimonial?', ['hatexepsute'], 3, scene='deir_el_bahari', icon='crown',
+c.P('Qual mulher governou o Egito como faraó por cerca de vinte anos, usando barba cerimonial?', ['hatexepsute'], 3, icon='crown',
     src=('pt', 'Hatexepsute', ['faraó']))
 c.P('Qual faraó tentou impor o culto a um único deus, o disco solar Aton?', ['aquenaton'], 3, scene='disco_aton', icon='pyramid',
     src=('pt', 'Aquenáton', ['Aton']))

@@ -56,7 +56,7 @@ c.T('Qual cidade da Etiópia é famosa pelas igrejas medievais escavadas inteira
 c.P('Qual líder, futuro herói de outra independência, viveu mais de vinte anos na África do Sul, onde criou seus métodos de resistência não violenta?', 'gandhi', d=2, flag='ZAF',
     src=('en', 'Mahatma Gandhi', ['South Africa']),
     x='Em 1893, foi expulso de um vagão de primeira classe em Pietermaritzburg por ser indiano; o episódio mudou a sua vida.')
-c.P('Qual chanceler recebeu em sua capital, entre 1884 e 1885, a conferência que fixou as regras da partilha da África entre as potências europeias?', 'bismarck', d=3, scene='pickelhaube', icon='map',
+c.P('Qual chanceler recebeu em sua capital, entre 1884 e 1885, a conferência que fixou as regras da partilha da África entre as potências europeias?', 'bismarck', d=3, icon='map',
     src=('en', 'Berlin Conference', ['Bismarck']),
     x='Nenhum africano foi convidado: catorze países, quase todos europeus, decidiram as regras para ocupar o continente.')
 c.C('Qual império da África ocidental, com capital em Gao, dominou o comércio do Saara até ser derrotado por um exército marroquino armado de arcabuzes, em 1591?', 'songai', d=3, scene='caravana_mali', icon='cannon',

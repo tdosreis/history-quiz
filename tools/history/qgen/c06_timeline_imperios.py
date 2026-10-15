@@ -70,7 +70,7 @@ c.C('Qual civilização mesoamericana, de pirâmides e calendário, construiu Ch
 c.C('Qual república italiana de mercadores dominou o Mediterrâneo oriental, com a Basílica de São Marcos?', 'veneza', 3, stad='sao_marcos', src=('pt', 'República de Veneza', ['São Marcos']))
 c.C('Qual estado do Japão, de 1603 a 1868, foi governado por xoguns de uma mesma família?', 'tokugawa', 3, stad='himeji', src=('pt', 'Xogunato Tokugawa', ['xogun']))
 c.C('Qual império de língua e leis próprias reinou de 962 a 1806 na Europa Central?', 'sacro_imperio', 4, icon='crown', src=('pt', 'Sacro Império Romano-Germânico', ['1806']))
-c.C('Qual estado, no século XVII, foi a potência marítima da Europa, com a Companhia das Índias?', 'holanda', 3, scene='porto_amsterda', icon='ship', src=('pt', 'República das Sete Províncias Unidas', ['Companhia']))
+c.C('Qual estado, no século XVII, foi a potência marítima da Europa, com a Companhia das Índias?', 'holanda', 3, icon='ship', src=('pt', 'República das Sete Províncias Unidas', ['Companhia']))
 c.C('Qual império foi unificado por um primeiro imperador em 221 a.C. e ergueu uma grande muralha?', 'dinastia_qin', 3, stad='muralha_china', src=('pt', 'Dinastia Qin', ['221 a.C.']))
 c.C('Qual reino, no atual Etiópia, adotou o cristianismo no século IV?', 'axum', 4, scene='ouro_axumita', icon='column', src=('pt', 'Reino de Axum', ['cristianismo']))
 c.C('Qual império da Mesopotâmia, de Hamurabi, tinha os Jardins Suspensos?', 'babilonia', 2, stad='portao_ishtar', src=('pt', 'Babilônia', ['Hamurabi']))

@@ -84,7 +84,7 @@ c.P('Qual rainha inglesa, filha de Ana Bolena, governou por 44 anos, derrotando 
     src=('pt', 'Isabel I de Inglaterra', ['Armada']))
 c.P('Qual astrônomo polonês propôs que a Terra gira em torno do Sol?', ['copernico'], 1, scene='ev_revolucao_cientifica', icon='globe',
     src=('pt', 'Nicolau Copérnico', ['Sol']))
-c.P('Qual cientista italiano foi julgado pela Inquisição por defender o heliocentrismo?', ['galileu'], 1, scene='ev_revolucao_cientifica', icon='globe',
+c.P('Qual cientista italiano foi julgado pela Inquisição por defender o heliocentrismo?', ['galileu'], 1, icon='globe',
     src=('pt', 'Galileu Galilei', ['Inquisição']))
 c.P('Qual astrônomo alemão formulou as três leis do movimento dos planetas?', ['kepler'], 3, scene='ev_revolucao_cientifica', icon='globe',
     src=('pt', 'Johannes Kepler', ['planetas']))
@@ -140,9 +140,9 @@ c.P('Qual economista escocês escreveu A Riqueza das Nações, em 1776?', ['adam
     src=('pt', 'Adam Smith', ['Riqueza das Nações']))
 c.P('Qual cientista inglês formulou a lei da gravitação universal?', ['newton'], 1, scene='macieira_newton', icon='globe',
     src=('pt', 'Isaac Newton', ['gravitação']))
-c.P('Qual filósofo francês escreveu “Penso, logo existo”?', ['descartes'], 2, scene='mesa_matematica', icon='book',
+c.P('Qual filósofo francês escreveu “Penso, logo existo”?', ['descartes'], 2, icon='book',
     src=('pt', 'René Descartes', ['Penso, logo existo']))
-c.P('Qual compositor alemão do Barroco escreveu as Variações Goldberg e a Paixão segundo São Mateus?', ['bach'], 3, scene='orgao_bach', icon='book',
+c.P('Qual compositor alemão do Barroco escreveu as Variações Goldberg e a Paixão segundo São Mateus?', ['bach'], 3, icon='book',
     src=('pt', 'Johann Sebastian Bach', ['Paixão']))
 c.P('Qual compositor austríaco, menino-prodígio, escreveu A Flauta Mágica?', ['mozart'], 1, scene='palco_luar', icon='book',
     src=('pt', 'Wolfgang Amadeus Mozart', ['Flauta Mágica']))
@@ -238,9 +238,9 @@ c.P('Qual revolucionário italiano, o “Herói dos Dois Mundos”, liderou os M
     src=('pt', 'Giuseppe Garibaldi', ['Camisas Vermelhas']))
 c.P('Qual presidente americano abolicionista liderou a União na Guerra de Secessão?', ['lincoln'], 1, stad='capitolio',
     src=('pt', 'Abraham Lincoln', ['Guerra de Secessão']))
-c.P('Qual rainha britânica dá nome a uma era de 63 anos e a um império onde o sol nunca se punha?', ['victoria'], 1, scene='palacio_cristal', icon='crown',
+c.P('Qual rainha britânica dá nome a uma era de 63 anos e a um império onde o sol nunca se punha?', ['victoria'], 1, icon='crown',
     src=('pt', 'Vitória do Reino Unido', ['63 anos']))
-c.P('Qual naturalista inglês publicou A Origem das Espécies, em 1859?', ['darwin'], 1, scene='beagle_galapagos', icon='book',
+c.P('Qual naturalista inglês publicou A Origem das Espécies, em 1859?', ['darwin'], 1, icon='book',
     src=('pt', 'Charles Darwin', ['Origem das Espécies']))
 c.P('Qual monge austríaco descobriu as leis da hereditariedade com ervilhas?', ['mendel'], 3, scene='ervilhas_mendel', icon='book',
     src=('pt', 'Gregor Mendel', ['ervilha']))

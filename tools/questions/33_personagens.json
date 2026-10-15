@@ -266,7 +266,7 @@
    ],
    "d": 2,
    "art": {
-    "scene": "torre_branca"
+    "icon": "crown"
    },
    "src": [
     "pt",
@@ -374,7 +374,7 @@
    ],
    "d": 4,
    "art": {
-    "scene": "leao_de_juda"
+    "icon": "crown"
    },
    "src": [
     "pt",

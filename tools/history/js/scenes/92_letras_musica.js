@@ -269,7 +269,7 @@ Object.assign(SCENE, {
         + `<path d="M108 44v-4M108 44l2.6 1.4" stroke="${K}" stroke-width="1.2" stroke-linecap="round"/><path d="M107.4 64h1.2" stroke="${K}" stroke-width="2" stroke-linecap="round"/>`;
     } },
 
-  /* the farmyard: a pig standing upright on its hind legs before the red barn, a sheep, the big cart horse and two hens looking on */
+  /* the farmyard: a pig standing upright on its hind legs before a dark weatherboarded English barn, a sheep, the big cart horse and two hens looking on */
   fazenda_bichos: {
     label: 'Um porco de pé sobre duas patas diante de um celeiro, com outros animais',
     rx: /\b(porco|porcos|fazenda|celeiro)\b/,
@@ -278,9 +278,10 @@ Object.assign(SCENE, {
       const H = SCH.uid('hn'), hen = (x, c) => `<use href="#${H}" x="${x}" y="74" fill="${c}"/>`;
       return SCH.bg('#C6DCE0') + `<defs><g id="${H}">` + SCH.g(`<path d="M-4-1C-6-4-5-8-2-7-1-10 1-11 2.4-9.4L4.4-9 3-7.6C4-6 4-2 0-.6z"/><path d="M1-10.6l.6-1.6 1 .8z" fill="${SCK.red}" stroke-width=".6"/><path d="M-1-.6v1M1-.6v1" fill="none" stroke-width=".9"/>`, 1) + `</g></defs>` + `<ellipse cx="24" cy="12" rx="13" ry="2.6" fill="${SCK.white}" opacity=".8"/>`
         + `<path d="M0 46q30-8 60-4t60 0v20H0z" fill="#8FAE78"/>`
-        + SCH.g(`<path d="M62 60V30L87 11l25 19v30z" fill="${SCK.red}"/><path d="M58.6 32.6 87 10.6l28.4 22" fill="none" stroke-width="4"/><path d="M58.6 32.6 87 10.6l28.4 22" fill="none" stroke="${SCK.white}" stroke-width="1.6"/>
-          <path d="M75 60V39h24v21z" fill="#7E1414" stroke="${SCK.white}" stroke-width="1.8"/><path d="M83 21h8v8h-8z" fill="#5A1010" stroke="${SCK.white}" stroke-width="1.4"/>`, 1.6)
-        + `<path d="M75 39l12 21M87 39 75 60M87 39l12 21M99 39 87 60M87 39v21" stroke="${SCK.white}" stroke-width="1.4"/><path d="M66 34v26M108 34v26" stroke="#7E1414" stroke-width="1"/>`
+        + SCH.g(`<path d="M62 60V30L87 11l25 19v30z" fill="#4E3E32"/><path d="M58.6 32.6 87 10.6l28.4 22" fill="none" stroke-width="4"/><path d="M58.6 32.6 87 10.6l28.4 22" fill="none" stroke="${SCK.stoneLo}" stroke-width="1.6"/>
+          <path d="M75 60V39h24v21z" fill="${SCK.wood}" stroke-width="1.4"/><path d="M83 21h8v8h-8z" fill="#2E241C" stroke-width="1.2"/>`, 1.6)
+        + `<path d="M81 40v20M87 40v20M93 40v20" stroke="#5E3A1E" stroke-width="1"/><path d="M76 49.6h22" stroke="#5E3A1E" stroke-width="1.2"/>`
+        + `<path d="M72 24.4h10M92 24.4h10M65 31h44M63 35.6h11M100 35.6h11M63 39h11M100 39h11M63 44h11M100 44h11M63 49h11M100 49h11M63 54h11M100 54h11" stroke="#382C24" stroke-width="1"/>`
         + `<path d="M0 58h120v22H0z" fill="${SCK.green}"/><path d="M14 80q14-14 46-14t44 14z" fill="${SCK.ochre}"/>`
         + SCH.g(`<path d="M0 46h58M0 53h58" fill="none" stroke="${SCK.wood}" stroke-width="2.2"/><path d="M4 42v18M22 42v18M40 42v18M56 42v18" fill="none" stroke="${SCK.wood}" stroke-width="2.6"/>`, 1)
         + SCH.g(`<path d="M5 66q-3-3 0-6 0-4 4-4 2-3 6-1 4-1 5 3 3 2 1 6 1 3-3 4H8q-4-1-3-2z" fill="${SCK.white}"/><path d="M19 58q2-5 6-3 2 2 0 6l-3 2q-3-1-3-5z" fill="#3A3230"/><path d="M9 68v5M16 68v5" fill="none" stroke-width="1.6"/>`, 1.2)

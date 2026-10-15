@@ -68,7 +68,7 @@
    ],
    "d": 1,
    "art": {
-    "scene": "palacio_cristal"
+    "icon": "crown"
    },
    "src": [
     "pt",
@@ -86,7 +86,7 @@
    ],
    "d": 1,
    "art": {
-    "scene": "beagle_galapagos"
+    "icon": "book"
    },
    "src": [
     "pt",

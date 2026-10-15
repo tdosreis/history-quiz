@@ -102,7 +102,7 @@ c.P('Qual pastor americano liderou a luta pelos direitos civis e proferiu “Eu 
     src=('pt', 'Martin Luther King Jr.', ['sonho']))
 c.P('Qual costureira negra recusou ceder o lugar em um ônibus no Alabama, em 1955?', ['rosa_parks'], 1, scene='onibus_montgomery', icon='flag',
     src=('pt', 'Rosa Parks', ['1955']))
-c.P('Qual líder indiano conquistou a independência com a não violência, em 1947?', ['gandhi'], 1, scene='roca_gandhi', icon='flag',
+c.P('Qual líder indiano conquistou a independência com a não violência, em 1947?', ['gandhi'], 1, icon='flag',
     src=('pt', 'Mahatma Gandhi', ['não violência']))
 c.P('Qual religiosa nascida na Macedônia dedicou a vida aos pobres de Calcutá e ganhou o Nobel da Paz?', ['madre_teresa'], 2, scene='ponte_howrah', icon='flag',
     src=('pt', 'Madre Teresa de Calcutá', ['Nobel']))
@@ -258,7 +258,7 @@ c.P('Qual poeta mineiro escreveu “No meio do caminho tinha uma pedra”?', ['d
     src=('pt', 'Carlos Drummond de Andrade', ['pedra']))
 c.T('Qual plano econômico de 1994 estabilizou a moeda e criou o Real?', 'Plano Real', ['Plano Cruzado', 'Plano Collor', 'Plano Bresser', 'Plano Verão', 'Plano Marshall'], 2, icon='gear',
     src=('pt', 'Plano Real', ['1994']))
-c.T('Em que ano o Brasil foi campeão mundial de futebol pela primeira vez, em campo estrangeiro?', '1958', ['1950', '1962', '1970', '1994', '2002'], 3, scene='copa_1958', icon='trophy',
+c.T('Em que ano o Brasil foi campeão mundial de futebol pela primeira vez, em campo estrangeiro?', '1958', ['1950', '1962', '1970', '1994', '2002'], 3, icon='trophy',
     src=('pt', 'Copa do Mundo FIFA de 1958', ['Brasil']))
 c.T('Qual cidade brasileira sediou a Cúpula da Terra (Rio-92), conferência da ONU sobre meio ambiente?', 'Rio de Janeiro', ['Brasília', 'São Paulo', 'Manaus', 'Salvador', 'Belém'], 2, stad='cristo_redentor',
     src=('pt', 'Conferência das Nações Unidas sobre Meio Ambiente e Desenvolvimento', ['1992']))
