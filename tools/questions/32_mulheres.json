@@ -194,7 +194,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "gear"
+    "scene": "maquina_analitica"
    },
    "src": [
     "pt",
@@ -248,7 +248,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "book"
+    "scene": "cafe_flore"
    },
    "src": [
     "pt",
@@ -338,7 +338,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "book"
+    "scene": "noturno_piano"
    },
    "src": [
     "pt",
@@ -356,7 +356,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "book"
+    "scene": "maquina_escrever"
    },
    "src": [
     "pt",
@@ -392,7 +392,7 @@
    ],
    "d": 2,
    "art": {
-    "icon": "bust"
+    "scene": "casa_azul"
    },
    "src": [
     "pt",

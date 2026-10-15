@@ -76,7 +76,7 @@
    ],
    "d": 1,
    "art": {
-    "icon": "book"
+    "scene": "villa_diodati"
    },
    "src": [
     "en",
@@ -186,7 +186,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "palette"
+    "scene": "caverna_lascaux"
    },
    "src": [
     "en",
@@ -269,7 +269,7 @@
    ],
    "d": 4,
    "art": {
-    "icon": "column"
+    "scene": "groma_vitruvio"
    },
    "src": [
     "en",
@@ -296,7 +296,7 @@
    ],
    "d": 5,
    "art": {
-    "icon": "church"
+    "scene": "retabulo_gante"
    },
    "src": [
     "en",
@@ -316,7 +316,7 @@
    ],
    "d": 1,
    "art": {
-    "icon": "masks"
+    "scene": "chapeu_bengala"
    },
    "src": [
     "pt",

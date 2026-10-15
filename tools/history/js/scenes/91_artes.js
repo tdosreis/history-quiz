@@ -21,36 +21,40 @@ Object.assign(SCENE, {
         + `<circle cx="60" cy="12" r="1" fill="${K}"/><path d="M46 48h28M48 51h24" stroke="#5E3A1E" stroke-width=".8"/>`;
     } },
 
-  /* a papal chapel under its painted vault: coloured panels framed by painted cornices, robed figures floating in the bays, the far wall painted too, and a tall wooden scaffold with pigment pots rising to the ceiling */
+  /* a papal chapel under its painted barrel vault: painted cornices dividing the vault into bays, robed figures painted in the near bay, tall windows, the marble floor, and in the middle a tall wooden scaffold with its ladder and pigment pots, the blue painted end wall seen through it */
   afresco_vaticano: {
     label: 'Um andaime de madeira sob abóbadas cobertas de afrescos, num salão de palácio',
     rx: /\b(capela sistina|abobada|abobadas|andaime|andaimes|afresco|afrescos)\b/,
     draw: () => {
-      const K = SCK.ink, fc = SCH.uid('fv');
-      const pt = (r, a) => +(60 + r * Math.cos(a * Math.PI / 180)).toFixed(1) + ' ' + +(44 - r * Math.sin(a * Math.PI / 180)).toFixed(1);
-      const sec = (r1, r2, a1, a2) => `M${pt(r2, a1)}A${r2} ${r2} 0 0 0 ${pt(r2, a2)}L${pt(r1, a2)}A${r1} ${r1} 0 0 1 ${pt(r1, a1)}Z`;
-      const robe = (x, y, c, r) => `<g transform="translate(${x} ${y}) rotate(${r})"><path d="M-5 5.5q-1-6.6 2.4-8.8L0-4.4l2.6 1.1q3.4 2.2 2.4 8.8z" fill="${c}"/><circle cy="-5.5" r="2.4" fill="#E8C3A0"/></g>`;
-      const beam = (d, w) => `<path d="${d}" stroke="${K}" stroke-width="${w + 1.6}" fill="none"/><path d="${d}" stroke="${SCK.wood}" stroke-width="${w}" fill="none"/>`;
-      const pan = ['', ''];
-      let figs = '', med = '';
-      [[23.4, 32.6, 4], [35.4, 46.6, 5], [49.4, 80, 4]].forEach(([r1, r2, n], b) => {
-        for (let i = 0; i < n; i++) {
-          const a1 = 180 * i / n + 2.6, a2 = 180 * (i + 1) / n - 2.6, am = (a1 + a2) / 2, rm = b === 2 ? 56 : (r1 + r2) / 2;
-          pan[(i + b) % 2] += sec(r1, r2, a1, a2);
-          const [fx, fy] = pt(rm, am).split(' ').map(Number);
-          if (b === 1) figs += robe(fx, fy, [SCK.burg, SCK.teal, SCK.goldLo, SCK.sea, SCK.red][i], Math.round(90 - am));
-          if (b === 0) med += `<circle cx="${fx}" cy="${fy}" r="2.6"/>`;
+      const K = SCK.ink, W = SCK.wood, f = v => Math.round(v * 10) / 10, r = a => a * Math.PI / 180;
+      const P = (s, a) => f(60 + 60 * s * Math.cos(r(a))) + ' ' + f(46 - 2 * s - 50 * s * Math.sin(r(a)));
+      const arc = (s, a, w) => `A${f(60 * s)} ${f(50 * s)} 0 0 ${w} ${P(s, a)}`;
+      const cell = (s1, s2, a1, a2) => `M${P(s1, a1)}${arc(s1, a2, 0)}L${P(s2, a2)}${arc(s2, a1, 1)}Z`;
+      const S = [1, .58, .3], A = [0, 28, 66, 114, 152, 180], R = [SCK.burg, SCK.teal, SCK.red, SCK.sea, SCK.green, SCK.goldLo];
+      const beam = (d, w) => `<path d="${d}" stroke="${K}" stroke-width="${w + 1.8}" fill="none"/><path d="${d}" stroke="${W}" stroke-width="${w}" fill="none"/>`;
+      let lun = '', side = '', crown = ['', ''], figs = '', ribs = '', n = 0;
+      for (let i = 0; i < 2; i++) {
+        lun += cell(S[i], S[i + 1], 0, A[1]) + cell(S[i], S[i + 1], A[4], 180);
+        side += cell(S[i], S[i + 1], A[1], A[2]) + cell(S[i], S[i + 1], A[3], A[4]);
+        crown[i] += cell(S[i], S[i + 1], A[2], A[3]);
+        if (!i) for (const j of [1, 2, 3]) {
+          const s = S[i + 1] + (S[i] - S[i + 1]) * (j === 2 ? .35 : .62), a = (A[j] + A[j + 1]) / 2, [x, y] = P(s, a).split(' ');
+          figs += `<g transform="translate(${x} ${y}) scale(${f(s * 1.4)})${a === 90 ? '' : ` rotate(${f(a - 90)})`}"><path d="M-4 5q-1-6 1.6-8h4.8q2.6 2 1.6 8z" fill="${R[n++ % 6]}"/><circle cy="-5" r="2.4" fill="#E8C3A0"/></g>`;
         }
-      });
-      return SCH.bg('#D9C9A4') + `<clipPath id="${fc}"><path d="M0 0h120v80H0z"/></clipPath><g clip-path="url(#${fc})"><path d="${pan[0]}" fill="#E4C9A0"/><path d="${pan[1]}" fill="#9DB6C0"/>` + figs + `<g fill="${SCK.gold}" stroke="${K}" stroke-width=".9">${med}</g>`
-        + `<path d="M26 42.1A34 34 0 0 1 94 42.1M12 39.9A48 48 0 0 1 108 39.9" stroke="${K}" stroke-width="3.4" fill="none"/><path d="M26 42.1A34 34 0 0 1 94 42.1M12 39.9A48 48 0 0 1 108 39.9" stroke="${SCK.stone}" stroke-width="1.8" fill="none"/></g>`
-        + SCH.g(`<path d="M38 60V44A22 22 0 0 1 82 44V60z" fill="#6F8FA8"/><path d="M0 38 38 44V60L0 70zM120 38 82 44V60l38 10z" fill="#CDBF9F"/>
-          <path d="M0 70 38 60h44l38 10v10H0z" fill="#D8CCB0"/><path d="M8 50l6 1v10l-6 2zM112 50l-6 1v10l6 2z" fill="#5E5444" stroke-width="1"/>`, 1.4)
-        + `<circle cx="60" cy="36" r="5" fill="#E9D9A8" opacity=".8"/><path d="M44 42h8M42 47h12M66 42h8M66 47h12M48 53h24" stroke="${SCK.ochre}" stroke-width="1.6" stroke-dasharray="1.4 1.2"/>`
-        + `<path d="M30 63h60M18 67h84M8 74h104M60 60v20M40 60l-16 20M80 60l16 20" stroke="${SCK.stoneLo}" stroke-width=".9"/>`
-        + beam('M70 20V77M97 20V77', 2.6) + beam('M70 38h27M70 56h27M70 74h27M70 38l27 18M97 56 70 74', 1.4)
-        + SCH.g(`<path d="M63 18h41v3H63z" fill="${SCK.wood}"/><path d="M73 13h6l-1 5h-4z" fill="${SCK.red}"/><path d="M82 14h6l-1 4h-4z" fill="${SCK.sea}"/><path d="M91 13h6l-1 5h-4z" fill="${SCK.gold}"/>`, 1.2)
-        + `<path d="M75 13l-2-7M77 13l3-6" stroke="${K}" stroke-width="1.1"/><path d="M62 21v56M66 21v56M62 30h4M62 40h4M62 50h4M62 60h4M62 70h4" stroke="${SCK.wood}" stroke-width="1.2"/>`;
+      }
+      S.slice(1).forEach(s => ribs += `M${P(s, 0)}${arc(s, 180, 0)}`);
+      A.slice(1, 5).forEach(a => ribs += `M${P(1, a)}L${P(.3, a)}`);
+      return SCH.bg('#D9C9A4') + `<path d="${cell(1, .3, 0, 180)}" fill="${SCK.parch}"/><path d="${lun}" fill="#9DB08C"/><path d="${side}" fill="#E4CFA0"/>`
+        + `<path d="${crown[0]}" fill="#A9C4D0"/><path d="${crown[1]}" fill="${SCK.sand}"/>` + SCH.g(figs, .7)
+        + `<path d="${ribs}" stroke="${K}" stroke-width="3.2" fill="none"/><path d="${ribs}" stroke="${SCK.stone}" stroke-width="1.6" fill="none"/>`
+        + SCH.g(`<path d="M0 44 42 45.4V56.2L0 80zM120 44 78 45.4V56.2L120 80z" fill="#CDBF9F"/><path d="M42 56.2h36L120 80H0z" fill="#D8CCB0"/>
+          <path d="M42 45.4A18 15 0 0 1 78 45.4V56.2H42z" fill="#6F8FB0"/>
+          <path d="M117 61V47q-4.5-5-9 0v12zM3 61V47q4.5-5 9 0v12z" fill="#4E5A66"/>`, 1.4)
+        + `<path d="M120 64 78 51.4v2.4L120 72zM0 64l42-12.6v2.4L0 72z" fill="#B98A56"/><path d="M60 56.2V80M14 74h92" stroke="${SCK.stoneLo}" stroke-width=".9"/>`
+        + beam('M30 80V35M90 80V35', 2.8) + beam('M30 56h60M30 36 90 56M90 36 30 56', 1.5)
+        + `<path d="M97 80l-6-46M104 80l-6-46M96 72h7M95 63h7M94 54h7M93 45h7" stroke="${K}" stroke-width="1.5"/>`
+        + SCH.g(`<path d="M24 32h72v3.6H24z" fill="${W}"/><path d="M31 25h6l-1 7h-4z" fill="${SCK.red}"/><path d="M40 26h6l-1 6h-4z" fill="${SCK.sea}"/><path d="M79 25h6l-1 7h-4z" fill="${SCK.gold}"/>`, 1.2)
+        + `<path d="M33 25l-2-6M35 25l3-6M82 25l2-7" stroke="${K}" stroke-width="1.1"/>`;
     } },
 
   /* the great scallop shell sailing in to the shore on a pale green sea marked with little V waves, pink roses tumbling in the wind, the dark wooded coast at the right */
@@ -110,27 +114,26 @@ Object.assign(SCENE, {
     label: 'Uma gravura em preto e branco de um cavaleiro de armadura a cavalo, com um cão, numa garganta rochosa',
     rx: /\b(cavaleiro|cavaleiros|armadura|armaduras|gravura|gravuras)\b/,
     draw: () => {
-      const K = SCK.ink, h = SCH.uid('kh'), L = '#E4D8BC', M = '#A89A7C', D = '#6E6250';
-      const limb = (d, w) => `<g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="${d}" stroke="${K}" stroke-width="${w || 5.6}"/><path d="${d}" stroke="${L}" stroke-width="${((w || 5.6) - 2).toFixed(1)}"/></g>`;
-      return SCH.bg('#EFE6CF') + `<pattern id="${h}" width="2" height="2" patternUnits="userSpaceOnUse" patternTransform="rotate(-35)"><path d="M0 0v2" stroke="${K}" stroke-width=".55"/></pattern>`
-        + `<path d="M0 6h120M0 9h120M0 12h120M0 15h120" stroke="${K}" stroke-width=".35" opacity=".5"/>`
-        + SCH.g(`<path d="M0 30V16l5-3 4 2 5-4 6 6 6 8 4 5z" fill="${M}"/><path d="M5 13V7h3v-2h2v2h2v6M13 11V4h2V2h2v2h2v9" fill="${L}" stroke-width=".8"/>`, 1)
-        + SCH.g(`<path d="M86 80V40l6-12 6 2 4-14 8 4 10-8v68z" fill="${D}"/><path d="M0 80V70l10-4 12 4 20-2 40 1 38-3v14z" fill="${M}"/>`, 1.4)
-        + `<path d="M86 80V40l6-12 6 2 4-14 8 4 10-8v68z" fill="url(#${h})" opacity=".55"/><path d="M0 80V70l10-4 12 4 20-2 40 1 38-3v14z" fill="url(#${h})" opacity=".35"/>`
-        + `<path d="M96 36l8 6M104 24l6 10M92 52l10 4M108 48l8 8" stroke="${K}" stroke-width=".8"/>`
-        + `<path d="M46 42 94 -4" stroke="${K}" stroke-width="2.8"/><path d="M46 42 94 -4" stroke="${L}" stroke-width="1.2"/><path d="M90 0l6-6M92 2l7-4" stroke="${K}" stroke-width="1" fill="none"/>`
-        + limb('M74 53l1 9-3 8M50 54l-1 8 1 8')
-        + SCH.g(`<path d="M83 38q10 6 6 22-3-8-8-13z" fill="${D}"/>
-          <path d="M22 32q-3 4-1 7l3 2q6 1 9-4 4 7 7 13 1 5 6 6 14 2 28 0 6 0 8-4 6-8 2-16-6-4-16-2-10 2-18-2-8-10-17-14v-5l-3 4q-4 2-8 15z" fill="${L}"/>`, 1.4)
-        + limb('M42 52l-6 7 4 6M80 50l3 11-2 9M62 35l-6 9 1 8') + `<path d="M38 65.5h4M79 70.5h5M70 70.5h5M45 70.5h5" stroke="${K}" stroke-width="2.6"/>`
-        + `<path d="M50 57q14 2 28-1" stroke="${K}" stroke-width=".7" fill="none"/><path d="M33 19q8 2 16 13M34 22q7 3 12 10M31 22q7 4 10 11" stroke="${D}" stroke-width="1.6" fill="none"/><circle cx="27" cy="27" r="1.1" fill="${K}"/><path d="M22 34l9-3 2 6M28 24l3 7" stroke="${K}" stroke-width=".8" fill="none"/>`
-        + SCH.g(`<path d="M56 36l-1-12q1-5 6-5 5 1 5 6l1 11z" fill="${M}"/><path d="M55 19q0-9 6-9 6 1 6 8l-1 2H56z" fill="${D}"/>
-          <path d="M62 11q8-8 16-1-8-2-14 4z" fill="${L}"/><path d="M57 23l-8 8" fill="none" stroke-width="2.4"/>`, 1.3)
-        + `<path d="M48 31l-20 6" stroke="${K}" stroke-width=".8"/><path d="M56 17h9" stroke="${L}" stroke-width="1"/>`
-        + `<path d="M53 53h7" stroke="${K}" stroke-width="2"/>`
-        + limb('M17 64l-7 4M20 65l-5 6M33 64l6 3M31 65l3 6M37 61q5-2 6-7', 3.6)
-        + SCH.g(`<path d="M15 62q2-4 8-4h9q6 0 6 4-1 4-6 4H21q-5 0-6-4zM3 62l4-3q3-3 8-2l3 4-4 4-6-1z" fill="${L}"/><path d="M11 58q-1 4 1 7 3-1 3-5z" fill="${D}" stroke-width=".8"/>`, 1.2)
-        + `<circle cx="9" cy="60" r=".7" fill="${K}"/><circle cx="3.4" cy="62" r=".8" fill="${K}"/><path d="M22 62q6 2 12 0" stroke="${K}" stroke-width=".6" fill="none"/>`;
+      const K = SCK.ink, h = SCH.uid('kh'), L = '#ECE3CB', M = '#A89A7C', D = '#6E6250';
+      const limb = (d, w, c) => `<path d="${d}" stroke="${K}" stroke-width="${w}"/><path d="${d}" stroke="${c || L}" stroke-width="${(w - 2.2).toFixed(1)}"/>`;
+      return SCH.bg('#EFE6CF') + `<pattern id="${h}" width="2" height="2" patternUnits="userSpaceOnUse" patternTransform="rotate(-35)"><path d="M0 0v2" stroke="${K}" stroke-width=".6"/></pattern>`
+        + `<g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M0 5h120M0 8h120M0 11h120M0 14h120M0 17h120" stroke="${K}" stroke-width=".35" opacity=".5"/>`
+        + SCH.g(`<path d="M0 36V18l6-4 5 2 6-4 7 7 6 8 6 9z" fill="${M}"/><path d="M5 14V7h3V5h2v2h2v7M13 12V3h2V1h2v2h2v10" fill="#F4ECD8" stroke-width=".8"/>`, 1)
+        + SCH.g(`<path d="M96 80V42l5-12 4 2 4-14 6 4 5-6v64z" fill="${D}"/><path d="M0 80V71l12-3 14 3 24-2 40 1 30-2v12z" fill="${M}"/>`, 1.4)
+        + `<path d="M96 80V42l5-12 4 2 4-14 6 4 5-6v64zM0 80V71l12-3 14 3 24-2 40 1 30-2v12z" fill="url(#${h})" opacity=".5"/>`
+        + `<path d="M104 38l8 6M110 26l6 10M100 54l10 4M112 50l6 8" stroke="${K}" stroke-width=".8"/>`
+        + limb('M54 38 102-2', 3.3) + limb('M42 54l-4 10-2 9M78 56l-4 9-1 8', 5.6, M) + `<path d="M33 73h5M70 73.4h5" stroke="${K}" stroke-width="2.4"/>`
+        + SCH.g(`<path d="M92 40q10 8 6 28-4-8-9-15z" fill="${D}"/>
+          <path d="M13 34q0-4 3-7l6-8 1-6 3.6 4q9.4-1 15.4 8 4 6 10 8 14-2 30 0 11 2 11 13 0 8-7 11-18 4-36 0-9-2-13-7-4-9-12-18-3 3-7 5-4 1-5-3z" fill="${L}"/>`, 1.5)
+        + `<path d="M27 17.4q9 0 14 8 5 6 10 7.6M28 21q6 2 9 8" stroke="${D}" stroke-width="1.8"/><circle cx="20.4" cy="22.6" r="1.1" fill="${K}"/><path d="M15.4 29.4l5 3.6M20.4 33 24 26M15 31.6h.1M55 30 21 32" stroke="${K}" stroke-width=".9"/>`
+        + `<path d="M50 55q18 3 36 0M60 52q0-6 2-9M80 51q2-5 7-7" stroke="${K}" stroke-width=".7"/>`
+        + limb('M46 55l-6 8 2 7M84 55l6 9-2 9', 5.6) + `<path d="M40 70.6h5M86 73.4h5" stroke="${K}" stroke-width="2.4"/>`
+        + SCH.g(`<path d="M55 34q8-4 18 0l-2 6H58z" fill="${D}"/><path d="M59 35l-1-12q1-5 6-5t6 5l-1 12z" fill="${M}"/><path d="M59 15q0-8 5.4-8 6 0 6 7l-1 3h-10z" fill="${D}"/><path d="M60 13h9" stroke="${L}" stroke-width="1.2"/>
+          <path d="M65 7q6-7 14-2-6 0-11 4zM66 8q8-3 13 3-6-2-11 0z" fill="${L}" stroke-width="1"/>`, 1.3)
+        + `<path d="M60 27h9M60 31h9" stroke="${K}" stroke-width=".7"/>` + limb('M65 34l-9 8 1 10', 5.6, M) + `<path d="M54 52.6h6" stroke="${K}" stroke-width="2.2"/>` + limb('M62 23l-7 7', 4.6, M)
+        + `<g transform="translate(2 60) scale(1.2)">` + limb('M15 7 8 10l-5 1M17 8l-4 4-3 1.6M33 5l6 4h5M31 6l4 5 3 1.6M37.6 1q5-2 8-7', 3.4)
+        + SCH.g(`<path d="M0 0l7-3q3-2 6-1.6 3 .6 5 2.6 7-1 14-1 5 0 6 3 0 3-4 4-4-1-7 0-5 3-10 3-4-1-6-5L4 2.6Q0 2 0 0z" fill="${L}"/><path d="M12-4.4q4 1.4 3.6 5.4-2.6-1-3.6-5.4z" fill="${D}" stroke-width=".7"/>`, 1.1)
+        + `<circle cx="7.6" cy="-1.6" r=".7" fill="${K}"/></g></g>`;
     } },
   /* the militia company marching out of the dark under its arch: hats, ruffs and pikes against the shadow, the drummer at the right, the captain in black with his red sash and the lieutenant in pale gold lit at the front */
   ronda_noturna: {
@@ -175,8 +178,8 @@ Object.assign(SCENE, {
         + `<path d="M42 58h78M43 64h77M44 74h76" stroke="${SCK.gold}" stroke-width="1.6" stroke-dasharray="3 2"/><path d="M48 62l4 4 4-4 4 4 4-4 4 4 4-4 4 4 4-4 4 4 4-4 4 4 4-4 4 4 4-4 4 4 4-4 4 4" stroke="#2F4A6A" stroke-width="1.4" fill="none"/><path d="M44 52h76" stroke="${SCK.red}" stroke-width="2"/>`
         + SCH.g(`<path d="M90 52q-6-1-6-8 0-6 4-9l-1-5h12l-1 5q4 3 4 9 0 7-6 8z" fill="${SCK.white}"/><path d="M101 36q6 0 5 6-1 4-6 5" fill="none" stroke-width="1.6"/><path d="M87 30l-3-2" fill="none" stroke-width="1.4"/>`, 1.4)
         + `<path d="M86 42h16M87 46h14" stroke="${SCK.sea}" stroke-width="1.6"/><path d="M89 34v14" stroke="${SCK.white}" stroke-width="1.2" opacity=".7"/>`
-        + `<ellipse cx="66" cy="54" rx="5" ry="1.4" fill="#4E0F22"/><circle cx="66" cy="50.6" r="3.4" fill="#F4F1E8" stroke="${K}" stroke-width="1.2"/><circle cx="64.8" cy="49.4" r="1" fill="#FFFFFF"/><path d="M63.4 52q2.6 2 5.4-.6" stroke="#C9C4B8" stroke-width=".8" fill="none"/>`
-        + `<path d="M58 46l-3-3M74 46l3-3M66 44v-4" stroke="${SCK.goldHi}" stroke-width="1" stroke-linecap="round"/>`
+        + `<circle cx="66" cy="50" r="10" fill="${SCK.goldHi}" opacity=".35"/><ellipse cx="66" cy="55" rx="7" ry="1.6" fill="#4E0F22"/><path d="M66 45q5.8 2.6 5.8 7.8a5.8 5.8 0 0 1-11.6 0q0-5.2 5.8-7.8z" fill="#EEEBE2" stroke="${K}" stroke-width="1.2"/>`
+        + `<path d="M61.2 55a5.8 5.8 0 0 0 9.6 0q-4.8 2.2-9.6 0z" fill="#AEB6BC"/><circle cx="63.8" cy="50.4" r="1.7" fill="#FFFFFF"/><path d="M68.6 55.4h.1" stroke="#FFFFFF" stroke-width="1.2" stroke-linecap="round"/><path d="M66 45v-2.4a2.2 2.2 0 1 1 3.4-1.8" stroke="${SCK.goldLo}" stroke-width="1.4" fill="none"/>`
         + SCH.g(`<path d="M11 58h3v22h-3zM31 58h3v22h-3z" fill="${SCK.wood}"/><path d="M14 60h17v14H14z" fill="#2F4A6A"/><circle cx="12.5" cy="56" r="2.6" fill="${SCK.gold}"/><circle cx="32.5" cy="56" r="2.6" fill="${SCK.gold}"/>`, 1.3)
         + `<path d="M16 62h13M16 72h13" stroke="${SCK.goldHi}" stroke-width="1.2" stroke-dasharray=".1 2.4" stroke-linecap="round"/>`;
     } },
@@ -188,7 +191,7 @@ Object.assign(SCENE, {
       const K = SCK.ink;
       return SCH.bg('#2E261C') + `<path d="M30 0h90v62H30z" fill="#4A3E2E"/><path d="M108 0h12v72l-12-10z" fill="#5E503C"/>`
         + SCH.g(`<path d="M44 5h28v20H44zM80 5h24v20H80z" fill="${SCK.goldLo}"/><path d="M38 32h12v14H38z" fill="${SCK.goldLo}"/><path d="M110 10l7 2v14l-7-2z" fill="${SCK.goldLo}"/>`, 1.2)
-        + `<path d="M46.5 7.5h23v15h-23zM82.5 7.5h19v15h-19zM40 34h8v10h-8zM111.4 12.8l4.2 1.2v9.6l-4.2-1.2z" fill="#2A2018"/><path d="M49 20q5-9 9-3t9-4M85 20l5-8 4 5 5-4M42 42q2-5 4 0" stroke="#7A6446" stroke-width="1" fill="none"/>`
+        + `<path d="M46.5 7.5h23v15h-23zM82.5 7.5h19v15h-19zM40 34h8v10h-8zM111.4 12.8l4.2 1.2v9.6l-4.2-1.2z" fill="#2A2018"/><path d="M46.5 11h23M82.5 11h19" stroke="#5A4A34" stroke-width="3"/><path d="M46.5 19q6-6 12-3t11-1v7.5h-23zM82.5 18q5-5 10-2t9 1v5.5h-19zM40 41q4-4 8 0v3h-8z" fill="#5E4C34"/><path d="M63 16v-4" stroke="#5E4C34" stroke-width="1.2"/><circle cx="63" cy="11.4" r="2.6" fill="#5E4C34"/>`
         + SCH.g(`<path d="M60 34h10v13H60z" fill="#17110B"/><path d="M84 30h12v32H84z" fill="${SCK.goldHi}"/><path d="M84 30l-5 2v32l5-2z" fill="${SCK.wood}"/>`, 1.3)
         + `<path d="M62 36h6v9h-6z" fill="#6E6A5E"/><path d="M84 54h12M84 58h12M88 30v20" stroke="${SCK.goldLo}" stroke-width="1"/>`
         + `<path d="M0 62h120v18H0z" fill="#5A4632"/><path d="M84 62h12l20 18H74z" fill="${SCK.goldHi}" opacity=".22"/><path d="M0 68h120M0 75h120" stroke="#3E3024" stroke-width=".8"/>`
@@ -202,22 +205,25 @@ Object.assign(SCENE, {
         + `<path d="M8 17h24M8 21h24M8 25h24M8 29h24M8 45h24M8 49h24M8 53h24M8 57h24" stroke="#A88F64" stroke-width=".5"/><path d="M38 11l2 1v51l-2 0z" fill="${SCK.red}" stroke="${K}" stroke-width=".8"/><path d="M39 20v6M39 40v8" stroke="${SCK.gold}" stroke-width="1.4"/>`;
     } },
 
-  /* a night outside the city: a big square lantern on the ground throwing its light over the bare hillside, and the firing party seen from behind, a row of shakos, greatcoats, crossbelts and levelled muskets */
+  /* a night outside the city: a big square lantern on the ground throwing its light over the bare hillside, and the firing party seen from behind, a row of tall shakos with pompoms, greatcoats, white crossbelts, knapsacks and levelled muskets */
   goya_fuzilamentos: {
     label: 'Um grande lampião no chão ilumina uma colina de noite, com uma fila de soldados de costas',
     rx: /\b(fuzilamento|fuzilamentos|pelotao|pelotoes|lampiao|lampioes)\b/,
     draw: () => {
-      const K = SCK.ink;
-      const X = [72, 84, 96, 108, 120], all = f => X.map(f).join('');
-      const sol = x => `<g transform="translate(${x} 74)"><path d="M-2-18l-10 18h4.4l8-13 4 13h4.6l-3-18z" fill="#2E2A24"/><path d="M-9-35q6-3 13-1l3 3 3 19-4 2H-4l-5-2z" fill="#4A4438"/><path d="M-1-33h8v10h-8z" fill="#6E4A2E"/><circle cx="-8" cy="-37" r="3" fill="#7A6450"/><path d="M-12-46l8-1 1 8-9 1z" fill="#17110B"/></g>`;
-      return SCH.bg('#161D2B') + `<path d="M20 30V18h4v-4h3v4h6v-6l3-4 3 4v6h8v-4a5 5 0 0 1 10 0v4h6v12z" fill="#2C364A"/><path d="M70 30v-8h8v-4h6v4h10v8z" fill="#252E40"/>`
-        + `<path d="M0 26q24-4 40 10 10 10 14 24L50 80H0z" fill="#3A2E22"/><path d="M0 44q20-6 34 4l16 16-6 16H0z" fill="${SCK.ochre}"/><path d="M0 44q20-6 34 4l16 16" stroke="${SCK.goldHi}" stroke-width="1" fill="none" opacity=".6"/>`
-        + `<path d="M0 72h120v8H0z" fill="#241C14"/><circle cx="51" cy="64" r="22" fill="${SCK.goldHi}" opacity=".12"/><circle cx="51" cy="64" r="12" fill="${SCK.goldHi}" opacity=".18"/>`
-        + `<path d="M6 54q8-2 14 2M10 64q10-2 18 2M24 58q6 0 10 3" stroke="#8A6A3E" stroke-width="1" fill="none"/>`
-        + SCH.g(`<path d="M44 58h14v14H44z" fill="${SCK.goldHi}"/><path d="M42 58l4-5h10l4 5z" fill="#2E2A24"/><path d="M51 58v14M44 65h14" fill="none" stroke-width="1.2"/><path d="M48 53q3-6 6 0" fill="none" stroke-width="1.2"/>`, 1.5)
-        + SCH.g(all(sol), 1.1) + `<path d="${all(x => `M${x - 7} 40l11 16M${x + 4} 40l-10 16`)}" stroke="#A9A496" stroke-width=".8"/><path d="${all(x => `M${x + 3} 58l8 12`)}" stroke="${SCK.stone}" stroke-width="1.4"/>`
-        + `<path d="${all(x => `M${x + 3} 42 ${x - 34} 40`)}" stroke="${K}" stroke-width="2.4"/><path d="${all(x => `M${x + 3} 42 ${x - 28} 40.4`)}" stroke="${SCK.wood}" stroke-width="1"/>`
-        + `<path d="M63 40q-1 10 0 19M75 40q-1 10 0 19M87 40q-1 10 0 19M99 40q-1 10 0 19" stroke="${SCK.goldHi}" stroke-width=".9" fill="none" opacity=".55"/>`;
+      const K = SCK.ink, r = v => +v.toFixed(1), X = [[66, 0, '#524C3E'], [82, 1.4, '#74684E'], [98, -.6, '#524C3E'], [114, .8, '#74684E']], all = f => X.map(f).join('');
+      /* one soldier from behind, leaning into his aim at the left: the shako with its pompom tipped forward, greatcoat, white crossbelt, knapsack, wide stance */
+      const sol = ([x, d, c]) => `<g transform="translate(${x} ${r(76 + d)})"><path d="M2-22h6l8 22h-6zM-10-22h6l-5 11V0h-6v-12z" fill="#2A2620"/>
+        <path d="M-17-40q9-5 19-2l6 14 6 14h-24l-2-13z" fill="${c}"/><path d="M-13-38 6-17" stroke="#E9E1CC" stroke-width="2.4"/><path d="M-5-41h10l2 11H-3z" fill="#6E4A2C"/>
+        <path d="M-19-41q4-3 8-1l-1 3h-7z" fill="#3A2E24"/><g transform="translate(-15 -42) rotate(-18)"><path d="M-3.6 0h7.2l1-11.6h-9.2z" fill="#17110B"/><path d="M-4.6-11.6h9.2" stroke="#6E6658" stroke-width="1"/><circle cx="-2" cy="-13" r="1.8" fill="${SCK.white}"/></g></g>`;
+      return SCH.bg('#141B28') + `<path d="M14 36V26h5v-6h3v6h7v-3a6 6 0 0 1 12 0v3h5v-9l3-5 3 5v9h6v10zM64 36v-6h7v-5h5v5h12v6z" fill="#27324A"/>`
+        + `<path d="M0 22q22 2 34 16 10 10 18 20H0z" fill="#4A3A28"/><path d="M0 40q18 2 30 10l10 8H0z" fill="#8A6A3E"/><path d="M0 50h120v30H0z" fill="#3B2E20"/>`
+        + `<ellipse cx="42" cy="68" rx="46" ry="13" fill="${SCK.ochre}"/><ellipse cx="42" cy="68" rx="28" ry="8" fill="${SCK.sand}"/>`
+        + `<circle cx="42" cy="62" r="17" fill="${SCK.goldHi}" opacity=".2"/>`
+        + SCH.g(`<path d="M33 56h18v17H33z" fill="#FBEFB8"/><path d="M31 56l4-5h14l4 5z" fill="#2E2A24"/><path d="M42 56v17M33 64.6h18" fill="none" stroke-width="1.2"/><path d="M38 51q4-6 8 0" fill="none" stroke-width="1.3"/>`, 1.6)
+        + SCH.g(all(sol), 1.2)
+        + `<path d="${all(([x, d]) => `M${x - 14} ${r(37 + d)} ${x - 24} ${r(35.4 + d)}`)}" stroke="#5B5446" stroke-width="3.4" stroke-linecap="round"/>`
+        + `<path d="${all(([x, d]) => `M${x} ${r(36 + d)} ${x - 38} ${r(34 + d)}`)}" stroke="${K}" stroke-width="2.8"/><path d="${all(([x, d]) => `M${x} ${r(36 + d)} ${x - 32} ${r(34.3 + d)}`)}" stroke="${SCK.wood}" stroke-width="1.2"/>`
+        + `<path d="${all(([x, d]) => `M${x - 38} ${r(34 + d)} ${x - 46} ${r(33.6 + d)}`)}" stroke="${SCK.stone}" stroke-width="1"/>`;
     } },
   /* a harbour at dawn in blue-grey mist: the faint masts, cranes and chimneys, the small orange sun and its broken reflection on the water, a rowing boat dark in the foreground and two more fading behind */
   impressao_sol: {
@@ -273,24 +279,26 @@ Object.assign(SCENE, {
         + dial(51, 27, 1) + dial(14, 52, .8) + SCH.g(`<path d="M58 15l2-2.6 2 1.4-1.4 2.4z" fill="${SCK.gold}"/><ellipse cx="28" cy="51.4" rx="5" ry="2.2" fill="#C9602E"/>`, 1)
         + `<path d="M26 51h.1M28.6 50.6h.1M30 52h.1M27.4 52.2h.1" stroke="${K}" stroke-width="1" stroke-linecap="round"/>`;
     } },
-  /* Guernica's world in black, white and grey: angular planes like broken walls, the bull's white head with its black horns, the bare bulb blazing like an eye, a broken sword and one small flower */
+  /* Guernica's world in black, white and grey: angular planes like broken walls and an open door, the bull's white head full face with its horns and ears out and both eyes thrown to one side, the bare bulb blazing like an eye, a broken sword and one small flower */
   guernica_touro: {
     label: 'Um touro e uma lâmpada nua, em preto, branco e cinza',
     rx: /\b(touro|touros|lampada nua|guernica)\b/,
     draw: () => {
       const K = '#1E1A16', W = '#F2EFE6', G1 = '#8E8A82', G2 = '#5E5A54', G3 = '#C4C0B6';
       return SCH.bg(G2) + `<path d="M0 0h50l-14 80H0z" fill="#3E3A36"/><path d="M50 0h70v40L80 80H36z" fill="${G1}"/><path d="M120 40v40H80z" fill="${G3}"/><path d="M84 0h36v24L96 44z" fill="#3E3A36"/>`
-        + `<path d="M100 50h12v16h-12z" fill="${K}"/><path d="M0 70h120v10H0z" fill="${G3}"/><path d="M8 76h104M30 70l-4 10M56 70l-2 10M82 70v10" stroke="${G1}" stroke-width=".8"/>`
-        + `<path d="M98 0 72 70h8L120 6z" fill="${W}" opacity=".35"/>`
-        + SCH.g(`<path d="M0 22q10-6 20 0l6 18-4 22H0z" fill="${K}"/><path d="M2 44q-6 8 0 16" fill="none" stroke="${W}" stroke-width="1.4"/>`, 1.2)
-        + SCH.g(`<path d="M17 16l9-7 7 2 13 20-1 6h-9l-10-5-9-4z" fill="${W}"/><path d="M25 10q-9-3-9-9 4 5 11 6zM31 10q3-7 11-8-6 4-8 10z" fill="${K}"/><path d="M19 16l-9 2 8 3z" fill="${G3}"/>`, 1.4)
-        + `<path d="M26 15q3-2.4 6 0-3 2.4-6 0zM24 22q2.4-2 5 0-2.4 2-5 0z" fill="${K}"/><path d="M41 31h.1M38 35l5-.4M34 20q4 6 3 14" stroke="${K}" stroke-width="1.2" fill="none" stroke-linecap="round"/>`
-        + SCH.g(`<path d="M50 14l4-5 3 3 4-6 3 5 5-5 2 5 6-3-1 5 6 1-4 4 5 3-6 2 2 5-6-1-2 5-4-4-4 5-2-5-5 3 1-5-6-1 4-4-6-3z" fill="${W}"/>`, 1.2)
-        + `<path d="M58 17q8-6 16 0-8 6-16 0z" fill="${G3}" stroke="${K}" stroke-width="1"/><circle cx="66" cy="17" r="2.6" fill="${W}" stroke="${K}" stroke-width="1"/><path d="M66 11v-4" stroke="${K}" stroke-width="1"/>`
-        + SCH.g(`<path d="M30 66l26-6 1 3-26 6z" fill="${G3}"/><path d="M56 60l4-2 2 6-4 1zM58 56l2 12" fill="${W}"/><path d="M60 62l6 2" fill="none" stroke-width="2.6"/>`, 1.3)
-        + `<path d="M34 65.4l20-4.6" stroke="${G1}" stroke-width=".6"/><path d="M70 66q0-8 2-12" stroke="${K}" stroke-width="1.2" fill="none"/>`
-        + SCH.g(`<path d="M72 50l2-3 2 3-2 3zM72 50l-3-2 1 4zM76 50l3-2-1 4zM72 53l-2 2 4 0zM76 53l2 2-4 0z" fill="${W}"/><circle cx="74" cy="51" r="1.4" fill="${G2}"/>`, .9)
-        + `<path d="M70 62q-4-2-6 0 3 2 6 0z" fill="${G1}" stroke="${K}" stroke-width=".8"/>`;
+        + `<path d="M0 70h120v10H0z" fill="${G3}"/><path d="M8 76h104M30 70l-4 10M56 70l-2 10M82 70v10M104 70l2 10" stroke="${G1}" stroke-width=".8"/>`
+        + `<path d="M98 0 70 70h10L120 6z" fill="${W}" opacity=".3"/><path d="M104 46h10v22h-10z" fill="#3E3A36"/><path d="M104 46l-6 4v22l6-4z" fill="${G3}"/>`
+        + SCH.g(`<path d="M0 34q8-10 18-4l4 30-8 12H0z" fill="${K}"/>
+          <path d="M13 20Q-1 16 4 1q3 10 13 14zM39 20q14-4 9-19-3 10-13 14z" fill="${G3}"/><path d="M14 27 1 29l12 5zM38 27l13 2-12 5z" fill="${G1}"/>
+          <path d="M12 17h28l2 13-6 18q-10 6-20 0l-6-18z" fill="${W}"/><path d="M16 44q10-5 20 0l-1 7q-9 4-18 0z" fill="${G3}"/>`, 1.4)
+        + `<path d="M17 20q2.4-3 4.8 0t4.8 0 4.8 0 4.8 0" fill="none" stroke="${K}" stroke-width="1"/><path d="M15 27q4-3 8 0-4 3-8 0zM17 34q4-3 8 0-4 3-8 0z" fill="${K}"/><circle cx="19" cy="27" r="1" fill="${W}"/><circle cx="21" cy="34" r="1" fill="${W}"/>`
+        + `<path d="M21 47.4h.1M31 47.4h.1" stroke="${K}" stroke-width="2.6" stroke-linecap="round"/><path d="M30 24q4 8 2 16M26 52v4" stroke="${K}" stroke-width="1" fill="none"/>`
+        + SCH.g(`<path d="M54 16l4-6 3 4 4-7 3 6 5-5 2 6 6-3-1 6 6 1-4 4 5 4-6 2 2 5-6-1-2 5-4-4-4 5-2-5-5 3 1-5-6-1 4-4-6-3z" fill="${W}"/>`, 1.2)
+        + `<path d="M62 19q9-7 18 0-9 7-18 0z" fill="${G3}" stroke="${K}" stroke-width="1.1"/><circle cx="71" cy="19" r="3" fill="${W}" stroke="${K}" stroke-width="1.1"/><path d="M71 12V3" stroke="${K}" stroke-width="1.1"/>`
+        + SCH.g(`<path d="M42 66l28-7 1 3.4-28 7z" fill="${G3}"/><path d="M70 57l4-1.4 2.4 8-4 1.2z" fill="${W}"/><path d="M74 60l7 1.6" fill="none" stroke-width="3"/>`, 1.3)
+        + `<path d="M46 66.2l22-5.4" stroke="${G1}" stroke-width=".7"/><path d="M42 66l-3 1 4 2z" fill="${W}" stroke="${K}" stroke-width=".9"/><path d="M86 66q0-8 2-13" stroke="${K}" stroke-width="1.3" fill="none"/>`
+        + SCH.g(`<path d="M88 50l2-3.4 2 3.4-2 3.4zM88 50l-3.4-2 1 4.4zM92 50l3.4-2-1 4.4zM88 53.4l-2.4 2.4h4.4zM92 53.4l2.4 2.4h-4.4z" fill="${W}"/><circle cx="90" cy="51.4" r="1.6" fill="${G2}"/>`, .9)
+        + `<path d="M86 60q-4-3-7-1 3 3 7 1z" fill="${G1}" stroke="${K}" stroke-width=".8"/>`;
     } },
 
   /* the blue house in Coyoacán: cobalt walls trimmed in red, green shutters, tall organ-pipe cacti, clay pots, a little stepped pyramid in the garden and a spider monkey sitting on the wall */
@@ -330,7 +338,7 @@ Object.assign(SCENE, {
         + `<path d="M95 70q-4-4-1-9 1 3 2 2 1-4 0-6 5 4 3 13z" fill="${SCK.gold}" stroke="${K}" stroke-width=".9"/><path d="M95 69q-1.4-2 0-4 1.4 2 0 4z" fill="${SCK.white}"/>`;
     } },
 
-  /* the Roman builder's kit before a column going up drum by drum: the groma with its cross and four plumb bobs, a plan of a temple on a parchment sheet, the set square and the compasses */
+  /* the Roman builder's kit before a column going up drum by drum, the next drum hanging from a wooden lifting boom: the groma with its cross and four plumb bobs, a plan of a temple on a parchment sheet, the set square and the compasses */
   groma_vitruvio: {
     label: 'Instrumentos de um arquiteto romano: groma, prumo, esquadro e a planta de um templo',
     rx: /\b(groma|prumo|esquadro|compasso|tratado de arquitetura)\b/,
@@ -339,8 +347,9 @@ Object.assign(SCENE, {
       let cols = '';
       for (let i = 0; i < 8; i++) cols += `M${(64 + i * 3.2).toFixed(1)} ${(63.4 - i * .3).toFixed(1)}h.1M${(61.6 + i * 3.2).toFixed(1)} ${(73.4 - i * .3).toFixed(1)}h.1`;
       return SCH.bg('#CFDDE0') + `<ellipse cx="30" cy="10" rx="16" ry="3" fill="${SCK.white}" opacity=".7"/><path d="M0 52q30-6 60-2t60-4v34H0z" fill="#D9BC85"/><path d="M0 54h120" stroke="${SCK.ochre}" stroke-width="1"/>`
-        + SCH.g(`<path d="M92 56V26h16v30zM94 22h12v4H94z" fill="${SCK.stone}"/><path d="M90 56h20v4H90zM86 64l4-6h14l-2 6z" fill="${SCK.stoneLo}"/>`, 1.4)
-        + `<path d="M93 27h3v29h-3z" fill="${SCK.white}" opacity=".6"/><path d="M104 27h4v29h-4z" fill="${SCK.stoneLo}"/><path d="M96 28v26M100 28v26M104 28v26" stroke="${K}" stroke-width=".7" opacity=".45"/><path d="M92 36h16M92 46h16" stroke="${K}" stroke-width="1.1"/>`
+        + `<path d="M80 62 100 6" stroke="${K}" stroke-width="4.4" stroke-linecap="round"/><path d="M80 62 100 6" stroke="${W}" stroke-width="2.6" stroke-linecap="round"/><path d="M100 7v10M100 6 119 60M100 7 72 62" stroke="${K}" stroke-width=".9"/>`
+        + SCH.g(`<path d="M84 63h30v-5H84z" fill="${SCK.stoneLo}"/><path d="M91 56V34h16v22z" fill="${SCK.stone}"/><path d="M89 53h20v5H89z" fill="${SCK.stoneLo}"/><path d="M93 18h14v8H93z" fill="${SCK.stone}"/><circle cx="100" cy="6" r="2.4" fill="${SCK.gold}"/>`, 1.4)
+        + `<path d="M93 35h3v18h-3zM94 19h3v6h-3z" fill="${SCK.white}" opacity=".6"/><path d="M97 35v18M101 35v18M104 35v18M98 19v6M102 19v6M105 19v6" stroke="${K}" stroke-width=".7" opacity=".45"/><path d="M91 41.4h16M91 48.6h16" stroke="${K}" stroke-width="1.1"/><path d="M100 17l-6 1.4M100 17l6 1.4" stroke="${K}" stroke-width=".9"/>`
         + `<path d="M42 68V20h2v-6" stroke="${K}" stroke-width="4" fill="none" stroke-linejoin="round"/><path d="M42 68V20h2v-6" stroke="${W}" stroke-width="2.4" fill="none" stroke-linejoin="round"/>`
         + `<path d="M28.7 18.5 59.3 9.5M28.7 9.5l30.6 9" stroke="${K}" stroke-width="3.2" stroke-linecap="round"/><path d="M28.7 18.5 59.3 9.5M28.7 9.5l30.6 9" stroke="${W}" stroke-width="1.8" stroke-linecap="round"/>`
         + `<path d="M28.7 19v22M59.3 10v26M28.7 10v18M59.3 19v28" stroke="${K}" stroke-width=".7"/><circle cx="44" cy="14" r="1.8" fill="${SCK.gold}" stroke="${K}" stroke-width="1"/>`
@@ -379,9 +388,9 @@ Object.assign(SCENE, {
       const K = SCK.ink, H = '#1E1812';
       let holes = '';
       for (let i = 0; i < 9; i++) holes += `M${38 + i * 6} ${(74.6 - i * .2).toFixed(1)}h2.4`;
-      return SCH.bg('#6E5438') + `<path d="M0 62h120v18H0z" fill="#4E3A26"/><path d="M0 0h18L84 62H40z" fill="#E9D2A0" opacity=".35"/><ellipse cx="62" cy="68" rx="30" ry="7" fill="#E9D2A0" opacity=".45"/>`
-        + `<path d="M20 8l1 1M30 20l1 1M44 30l1 1M36 14l1 1M52 42l1 1M26 30l1 1" stroke="${SCK.goldHi}" stroke-width="1.2" stroke-linecap="round"/><path d="M96 0v80M106 10v40M8 40v30" stroke="#8A7050" stroke-width=".6" opacity=".6"/>`
-        + SCH.g(`<path d="M2 2h16v10H2z" fill="#3A2A1C"/><circle cx="6" cy="2" r="4" fill="#3A2A1C"/><circle cx="15" cy="2" r="3" fill="#3A2A1C"/><path d="M18 5l4-2v8l-4-2z" fill="${SCK.stone}"/>`, 1.2)
+      return SCH.bg('#6E5438') + `<path d="M0 62h120v18H0z" fill="#4E3A26"/><path d="M22 8 86 62H38L22 15z" fill="#E9D2A0" opacity=".35"/><ellipse cx="62" cy="68" rx="30" ry="7" fill="#E9D2A0" opacity=".45"/>`
+        + `<path d="M30 16l1 1M38 22l1 1M48 32l1 1M42 20l1 1M56 44l1 1M34 26l1 1" stroke="${SCK.goldHi}" stroke-width="1.2" stroke-linecap="round"/><path d="M96 0v80M106 10v40M8 40v30" stroke="#8A7050" stroke-width=".6" opacity=".6"/>`
+        + SCH.g(`<circle cx="7" cy="7" r="4.4" fill="#3A2A1C"/><circle cx="16" cy="7.6" r="3.4" fill="#3A2A1C"/><path d="M3 9h16v10H3z" fill="#3A2A1C"/><path d="M19 12l4-2.4v8.8l-4-2.4z" fill="${SCK.stone}"/>`, 1.2)
         + SCH.g(`<path d="M50 54l-4 20M74 54l4 20M51 62h22" fill="none" stroke="${SCK.wood}" stroke-width="2.6"/><path d="M44 50h36v5H44z" fill="${SCK.wood}"/>`, 1.4)
         + SCH.g(`<path d="M44 48q4 3 18 3t18-3q2 1-1 3-6 3-17 3t-17-3q-3-2-1-3z" fill="${H}"/><path d="M50 48q-1-14 12-15 13 1 12 15-5 1.6-12 1.6T50 48z" fill="${H}"/>`, 1.4)
         + `<path d="M50.6 45q11 2 22.8 0" stroke="#4A3A2C" stroke-width="2"/><path d="M55 38q3-3 7-3" stroke="#6E6050" stroke-width="1.2" fill="none"/>`

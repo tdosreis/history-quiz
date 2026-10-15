@@ -78,7 +78,7 @@
    ],
    "d": 1,
    "art": {
-    "icon": "flask"
+    "scene": "ovelha_clonada"
    },
    "src": [
     "en",
@@ -273,7 +273,7 @@
    ],
    "d": 4,
    "art": {
-    "icon": "gear"
+    "scene": "naufragio_anticitera"
    },
    "src": [
     "en",

@@ -115,7 +115,7 @@ c.P('Qual rainha mandou executar a prima Maria Stuart, rainha da Escócia, em 15
 c.P('Qual imperador abdicou entre 1555 e 1556, dividindo seus domínios entre o filho e o irmão, e se recolheu ao mosteiro de Yuste?', 'carlos_v', d=3, crest='sacro_imperio',
     src=('en', 'Charles V, Holy Roman Emperor', ['Yuste']),
     x='O filho, Filipe II, ficou com a Espanha, a Itália e as Américas; o irmão, Fernando, que já governava a Áustria, herdou o título imperial.')
-c.P('Qual artista alemão fez a famosa gravura de um rinoceronte, em 1515, sem nunca ter visto o animal?', 'durer', d=4, icon='palette',
+c.P('Qual artista alemão fez a famosa gravura de um rinoceronte, em 1515, sem nunca ter visto o animal?', 'durer', d=4, scene='gravura_rinoceronte', icon='palette',
     src=('en', "Dürer's Rhinoceros", ['1515']),
     x='Ele se baseou numa carta e num esboço de um rinoceronte indiano que chegara a Lisboa como presente para o rei D. Manuel I.')
 

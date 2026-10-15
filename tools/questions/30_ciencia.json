@@ -32,7 +32,7 @@
    ],
    "d": 1,
    "art": {
-    "icon": "globe"
+    "scene": "espaco_curvo"
    },
    "src": [
     "pt",
@@ -68,7 +68,7 @@
    ],
    "d": 2,
    "art": {
-    "icon": "book"
+    "scene": "bancada_microbiologia"
    },
    "src": [
     "pt",
@@ -104,7 +104,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "book"
+    "scene": "brigada_sanitaria"
    },
    "src": [
     "pt",
@@ -212,7 +212,7 @@
    ],
    "d": 2,
    "art": {
-    "icon": "globe"
+    "scene": "macieira_newton"
    },
    "src": [
     "pt",
@@ -248,7 +248,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "book"
+    "scene": "mesa_matematica"
    },
    "src": [
     "pt",
@@ -266,7 +266,7 @@
    ],
    "d": 4,
    "art": {
-    "icon": "gear"
+    "scene": "mesa_matematica"
    },
    "src": [
     "pt",
@@ -344,7 +344,7 @@
    ],
    "d": 2,
    "art": {
-    "icon": "book"
+    "scene": "vaca_jenner"
    },
    "src": [
     "pt",
@@ -448,7 +448,7 @@
    ],
    "d": 2,
    "art": {
-    "icon": "gear"
+    "scene": "telefone_bell"
    },
    "src": [
     "pt",
@@ -474,7 +474,7 @@
    ],
    "d": 2,
    "art": {
-    "icon": "gear"
+    "scene": "voo_wright"
    },
    "src": [
     "pt",
@@ -500,7 +500,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "gear"
+    "scene": "antena_marconi"
    },
    "src": [
     "pt",
@@ -578,7 +578,7 @@
    ],
    "d": 4,
    "art": {
-    "icon": "gear"
+    "scene": "joule_aparelho"
    },
    "src": [
     "pt",

@@ -213,7 +213,7 @@
    ],
    "d": 1,
    "art": {
-    "icon": "globe"
+    "scene": "macieira_newton"
    },
    "src": [
     "pt",
@@ -231,7 +231,7 @@
    ],
    "d": 2,
    "art": {
-    "icon": "book"
+    "scene": "mesa_matematica"
    },
    "src": [
     "pt",
@@ -249,7 +249,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "book"
+    "scene": "orgao_bach"
    },
    "src": [
     "pt",
@@ -267,7 +267,7 @@
    ],
    "d": 1,
    "art": {
-    "icon": "book"
+    "scene": "palco_luar"
    },
    "src": [
     "pt",
@@ -285,7 +285,7 @@
    ],
    "d": 1,
    "art": {
-    "icon": "book"
+    "scene": "sinfonia_coro"
    },
    "src": [
     "pt",

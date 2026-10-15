@@ -58,13 +58,13 @@ c.write()
 
 # ───────────────────────── Renascimento e Reforma ─────────────────────────
 c = Cat('renascimento', 'Renascimento e Reforma', '🎨', 'Gênios, tipografia e fé em disputa', '#7B1E3A', order=17)
-c.P('Qual gênio florentino pintou a Mona Lisa e A Última Ceia e projetou máquinas voadoras?', ['leonardo'], 1, icon='bust',
+c.P('Qual gênio florentino pintou a Mona Lisa e A Última Ceia e projetou máquinas voadoras?', ['leonardo'], 1, scene='maquina_voadora', icon='bust',
     src=('pt', 'Leonardo da Vinci', ['Mona Lisa']))
-c.P('Qual artista pintou o teto da Capela Sistina e esculpiu o Davi?', ['michelangelo'], 1, icon='bust',
+c.P('Qual artista pintou o teto da Capela Sistina e esculpiu o Davi?', ['michelangelo'], 1, scene='afresco_vaticano', icon='bust',
     src=('pt', 'Michelangelo', ['Capela Sistina']))
-c.P('Qual pintor renascentista criou a Escola de Atenas, no Vaticano?', ['rafael'], 3, icon='bust',
+c.P('Qual pintor renascentista criou a Escola de Atenas, no Vaticano?', ['rafael'], 3, scene='afresco_vaticano', icon='bust',
     src=('pt', 'Rafael Sanzio', ['Escola de Atenas']))
-c.P('Qual pintor florentino criou O Nascimento de Vênus?', ['botticelli'], 3, icon='bust',
+c.P('Qual pintor florentino criou O Nascimento de Vênus?', ['botticelli'], 3, scene='concha_venus', icon='bust',
     src=('pt', 'Sandro Botticelli', ['Nascimento de Vênus']))
 c.P('Qual banqueiro e governante de Florença foi o grande mecenas do Renascimento?', ['lorenzo'], 3, scene='ev_renascimento', icon='crown',
     src=('pt', 'Lourenço de Médici', ['Florença']))
@@ -72,7 +72,7 @@ c.P('Qual diplomata florentino escreveu O Príncipe, tratado sobre o poder?', ['
     src=('pt', 'Nicolau Maquiavel', ['O Príncipe']))
 c.P('Qual humanista de Roterdã escreveu Elogio da Loucura?', ['erasmo'], 4, scene='gorro_bobo', icon='book',
     src=('pt', 'Erasmo de Roterdão', ['Elogio da Loucura']))
-c.P('Qual artista alemão ficou famoso por gravuras como Cavaleiro, Morte e Diabo?', ['durer'], 4, icon='bust',
+c.P('Qual artista alemão ficou famoso por gravuras como Cavaleiro, Morte e Diabo?', ['durer'], 4, scene='cavaleiro_gravura', icon='bust',
     src=('pt', 'Albrecht Dürer', ['gravura']))
 c.P('Qual monge alemão afixou 95 teses contra a venda de indulgências, em 1517?', ['lutero'], 1, scene='ev_reforma', icon='scroll',
     src=('pt', 'Martinho Lutero', ['95 teses']))
@@ -88,9 +88,9 @@ c.P('Qual cientista italiano foi julgado pela Inquisição por defender o helioc
     src=('pt', 'Galileu Galilei', ['Inquisição']))
 c.P('Qual astrônomo alemão formulou as três leis do movimento dos planetas?', ['kepler'], 3, scene='ev_revolucao_cientifica', icon='globe',
     src=('pt', 'Johannes Kepler', ['planetas']))
-c.P('Qual dramaturgo inglês escreveu Hamlet e Romeu e Julieta?', ['shakespeare'], 1, icon='book',
+c.P('Qual dramaturgo inglês escreveu Hamlet e Romeu e Julieta?', ['shakespeare'], 1, scene='teatro_globe', icon='book',
     src=('pt', 'William Shakespeare', ['Hamlet']))
-c.P('Qual escritor espanhol criou Dom Quixote de la Mancha?', ['cervantes'], 1, icon='book',
+c.P('Qual escritor espanhol criou Dom Quixote de la Mancha?', ['cervantes'], 1, scene='moinhos_mancha', icon='book',
     src=('pt', 'Miguel de Cervantes', ['Dom Quixote']))
 c.T('Qual palavra, que significa “renascer”, dá nome ao movimento cultural que revalorizou a Antiguidade clássica?', 'Renascimento', ['Reforma', 'Barroco', 'Iluminismo', 'Humanismo apenas', 'Romantismo'], 1, icon='book',
     src=('pt', 'Renascimento', ['Antiguidade']))
@@ -106,11 +106,11 @@ c.T('Qual ordem religiosa, fundada por Inácio de Loyola em 1534, foi decisiva n
     src=('pt', 'Companhia de Jesus', ['Loyola']))
 c.T('Qual tribunal da Igreja perseguia hereges e foi reativado na Espanha em 1478?', 'Inquisição', ['Tribunal de Nuremberg', 'Santo Ofício de Avignon', 'Concílio de Trento', 'Cúria Romana', 'Conselho de Castela'], 2, icon='scroll',
     src=('pt', 'Inquisição espanhola', ['1478']))
-c.T('Qual o pintor holandês do século XVII que retratou a Ronda Noturna?', 'Rembrandt', ['Vermeer', 'Van Dyck', 'Hals', 'Rubens', 'Bosch'], 2, icon='bust',
+c.T('Qual o pintor holandês do século XVII que retratou a Ronda Noturna?', 'Rembrandt', ['Vermeer', 'Van Dyck', 'Hals', 'Rubens', 'Bosch'], 2, scene='ronda_noturna', icon='bust',
     src=('pt', 'A Ronda Noturna', ['Rembrandt']))
-c.P('Qual pintor holandês criou A Moça com Brinco de Pérola?', ['vermeer'], 3, icon='bust',
+c.P('Qual pintor holandês criou A Moça com Brinco de Pérola?', ['vermeer'], 3, scene='janela_delft', icon='bust',
     src=('pt', 'Johannes Vermeer', ['Brinco de Pérola']))
-c.P('Qual pintor da corte espanhola criou As Meninas, em 1656?', ['velazquez'], 3, icon='bust',
+c.P('Qual pintor da corte espanhola criou As Meninas, em 1656?', ['velazquez'], 3, scene='atelie_meninas', icon='bust',
     src=('pt', 'Diego Velázquez', ['As Meninas']))
 c.write()
 
@@ -138,15 +138,15 @@ c.P('Qual filósofo alemão escreveu a Crítica da Razão Pura?', ['kant'], 3, s
     src=('pt', 'Immanuel Kant', ['Crítica da Razão Pura']))
 c.P('Qual economista escocês escreveu A Riqueza das Nações, em 1776?', ['adam_smith'], 2, scene='fabrica_chamines', icon='book',
     src=('pt', 'Adam Smith', ['Riqueza das Nações']))
-c.P('Qual cientista inglês formulou a lei da gravitação universal?', ['newton'], 1, icon='globe',
+c.P('Qual cientista inglês formulou a lei da gravitação universal?', ['newton'], 1, scene='macieira_newton', icon='globe',
     src=('pt', 'Isaac Newton', ['gravitação']))
-c.P('Qual filósofo francês escreveu “Penso, logo existo”?', ['descartes'], 2, icon='book',
+c.P('Qual filósofo francês escreveu “Penso, logo existo”?', ['descartes'], 2, scene='mesa_matematica', icon='book',
     src=('pt', 'René Descartes', ['Penso, logo existo']))
-c.P('Qual compositor alemão do Barroco escreveu as Variações Goldberg e a Paixão segundo São Mateus?', ['bach'], 3, icon='book',
+c.P('Qual compositor alemão do Barroco escreveu as Variações Goldberg e a Paixão segundo São Mateus?', ['bach'], 3, scene='orgao_bach', icon='book',
     src=('pt', 'Johann Sebastian Bach', ['Paixão']))
-c.P('Qual compositor austríaco, menino-prodígio, escreveu A Flauta Mágica?', ['mozart'], 1, icon='book',
+c.P('Qual compositor austríaco, menino-prodígio, escreveu A Flauta Mágica?', ['mozart'], 1, scene='palco_luar', icon='book',
     src=('pt', 'Wolfgang Amadeus Mozart', ['Flauta Mágica']))
-c.P('Qual compositor surdo escreveu a Nona Sinfonia, com o Hino à Alegria?', ['beethoven'], 1, icon='book',
+c.P('Qual compositor surdo escreveu a Nona Sinfonia, com o Hino à Alegria?', ['beethoven'], 1, scene='sinfonia_coro', icon='book',
     src=('pt', 'Ludwig van Beethoven', ['Nona Sinfonia']))
 c.T('Qual rei francês teria dito “O Estado sou eu”, símbolo do absolutismo?', 'Luís XIV', ['Luís XVI', 'Henrique IV', 'Francisco I', 'Carlos Magno', 'Napoleão'], 2, stad='versalhes',
     src=('pt', 'Luís XIV de França', ['O Estado sou eu']))
@@ -240,15 +240,15 @@ c.P('Qual presidente americano abolicionista liderou a União na Guerra de Seces
     src=('pt', 'Abraham Lincoln', ['Guerra de Secessão']))
 c.P('Qual rainha britânica dá nome a uma era de 63 anos e a um império onde o sol nunca se punha?', ['victoria'], 1, scene='palacio_cristal', icon='crown',
     src=('pt', 'Vitória do Reino Unido', ['63 anos']))
-c.P('Qual naturalista inglês publicou A Origem das Espécies, em 1859?', ['darwin'], 1, icon='book',
+c.P('Qual naturalista inglês publicou A Origem das Espécies, em 1859?', ['darwin'], 1, scene='beagle_galapagos', icon='book',
     src=('pt', 'Charles Darwin', ['Origem das Espécies']))
-c.P('Qual monge austríaco descobriu as leis da hereditariedade com ervilhas?', ['mendel'], 3, icon='book',
+c.P('Qual monge austríaco descobriu as leis da hereditariedade com ervilhas?', ['mendel'], 3, scene='ervilhas_mendel', icon='book',
     src=('pt', 'Gregor Mendel', ['ervilha']))
-c.P('Qual cientista francês criou a vacina contra a raiva e a pasteurização?', ['pasteur'], 2, icon='book',
+c.P('Qual cientista francês criou a vacina contra a raiva e a pasteurização?', ['pasteur'], 2, scene='bancada_microbiologia', icon='book',
     src=('pt', 'Louis Pasteur', ['raiva']))
 c.P('Qual enfermeira inglesa, “a Dama da Lâmpada”, reformou os hospitais na Guerra da Crimeia?', ['nightingale'], 3, scene='dama_lampada', icon='torch',
     src=('pt', 'Florence Nightingale', ['Crimeia']))
-c.P('Qual matemática inglesa é considerada a primeira programadora da história?', ['ada_lovelace'], 3, icon='gear',
+c.P('Qual matemática inglesa é considerada a primeira programadora da história?', ['ada_lovelace'], 3, scene='maquina_analitica', icon='gear',
     src=('pt', 'Ada Lovelace', ['programa']))
 c.P('Qual filósofo alemão escreveu O Capital, com sua análise do capitalismo?', ['marx'], 2, scene='fabrica_chamines', icon='book',
     src=('pt', 'Karl Marx', ['O Capital']))
@@ -256,23 +256,23 @@ c.P('Qual filósofo alemão proclamou “Deus está morto”?', ['nietzsche'], 3
     src=('pt', 'Friedrich Nietzsche', ['Deus está morto']))
 c.P('Qual escritor russo é autor de Guerra e Paz e Anna Karênina?', ['tolstoi'], 2, scene='ev_guerras_napoleonicas', icon='book',
     src=('pt', 'Liev Tolstói', ['Guerra e Paz']))
-c.P('Qual escritor russo escreveu Crime e Castigo?', ['dostoievski'], 2, icon='book',
+c.P('Qual escritor russo escreveu Crime e Castigo?', ['dostoievski'], 2, scene='sao_petersburgo', icon='book',
     src=('pt', 'Fiódor Dostoiévski', ['Crime e Castigo']))
 c.P('Qual escritor francês escreveu Os Miseráveis e O Corcunda de Notre-Dame?', ['victor_hugo'], 2, stad='notre_dame',
     src=('pt', 'Victor Hugo', ['Os Miseráveis']))
-c.P('Qual escritor inglês criou Oliver Twist e Um Conto de Natal?', ['dickens'], 2, icon='book',
+c.P('Qual escritor inglês criou Oliver Twist e Um Conto de Natal?', ['dickens'], 2, scene='londres_nevoeiro', icon='book',
     src=('pt', 'Charles Dickens', ['Oliver Twist']))
-c.P('Qual pintor francês deu nome ao Impressionismo com Impressão, Nascer do Sol?', ['monet'], 2, icon='bust',
+c.P('Qual pintor francês deu nome ao Impressionismo com Impressão, Nascer do Sol?', ['monet'], 2, scene='impressao_sol', icon='bust',
     src=('pt', 'Claude Monet', ['Impressão']))
-c.P('Qual pintor holandês criou A Noite Estrelada?', ['van_gogh'], 1, icon='bust',
+c.P('Qual pintor holandês criou A Noite Estrelada?', ['van_gogh'], 1, scene='noite_estrelada', icon='bust',
     src=('pt', 'Vincent van Gogh', ['Noite Estrelada']))
-c.P('Qual inventor americano criou a lâmpada elétrica comercial e o fonógrafo?', ['edison'], 1, icon='gear',
+c.P('Qual inventor americano criou a lâmpada elétrica comercial e o fonógrafo?', ['edison'], 1, scene='eletricidade_1880', icon='gear',
     src=('pt', 'Thomas Edison', ['lâmpada']))
-c.P('Qual inventor sérvio-americano desenvolveu o sistema de corrente alternada?', ['tesla'], 2, icon='gear',
+c.P('Qual inventor sérvio-americano desenvolveu o sistema de corrente alternada?', ['tesla'], 2, scene='eletricidade_1880', icon='gear',
     src=('pt', 'Nikola Tesla', ['corrente alternada']))
 c.P('Qual explorador escocês atravessou a África e encontrou as Cataratas Vitória?', ['livingstone'], 3, scene='cataratas_vitoria', icon='map',
     src=('pt', 'David Livingstone', ['Vitória']))
-c.P('Qual médico vienense criou a psicanálise?', ['freud'], 1, icon='book',
+c.P('Qual médico vienense criou a psicanálise?', ['freud'], 1, scene='diva_freud', icon='book',
     src=('pt', 'Sigmund Freud', ['psicanálise']))
 c.T('Qual conferência de 1884–1885 dividiu a África entre as potências europeias?', 'Conferência de Berlim', ['Congresso de Viena', 'Conferência de Yalta', 'Conferência de Bandung', 'Tratado de Versalhes', 'Conferência de Potsdam'], 3, icon='map',
     src=('pt', 'Conferência de Berlim', ['1884']))

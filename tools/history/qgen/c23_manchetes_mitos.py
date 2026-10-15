@@ -225,7 +225,7 @@ c.MY('Durante a Lei Seca, nos Estados Unidos, era crime consumir bebidas alcoól
 c.MY('O Partenon ficou em ruínas por causa de uma explosão de pólvora no século XVII?', True, 4, stad='partenon',
      x='Em 1687, os otomanos usavam o templo como paiol; durante um cerco, um disparo da artilharia veneziana acertou a pólvora, e a explosão derrubou boa parte da estrutura.',
      src=('pt', 'Partenon', ['1687']))
-c.MY('O Hino Nacional Brasileiro foi tocado por décadas sem uma letra oficial?', True, 4, icon='lyre',
+c.MY('O Hino Nacional Brasileiro foi tocado por décadas sem uma letra oficial?', True, 4, scene='banda_coreto', icon='lyre',
      x='A melodia de Francisco Manuel da Silva já era tocada nos anos 1830; a letra de Osório Duque-Estrada, escrita em 1909, só foi oficializada em 1922.',
      src=('pt', 'Hino Nacional Brasileiro', ['1922']))
 c.MY('O Brasil declarou guerra à Alemanha e participou da Primeira Guerra Mundial?', True, 4, flag='BRA',

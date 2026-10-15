@@ -28,7 +28,7 @@ k.T('Como eram chamadas as comunidades formadas por pessoas escravizadas que fug
     src=('pt', 'Quilombo', ['Palmares']),
     x='Muitas comunidades quilombolas existem até hoje, e a Constituição de 1988 garante a elas o direito às terras que ocupam.')
 p.T('Qual produto da floresta amazônica enriqueceu Manaus e Belém na virada do século XIX para o XX e pagou o luxuoso Teatro Amazonas?', 'Borracha',
-    ['Cacau', 'Castanha-do-pará', 'Café', 'Açúcar', 'Algodão'], d=1, icon='coins',
+    ['Cacau', 'Castanha-do-pará', 'Café', 'Açúcar', 'Algodão'], d=1, scene='teatro_amazonas', icon='coins',
     src=('pt', 'Ciclo da borracha', ['Manaus']),
     x='O ciclo entrou em crise nos anos 1910, quando a borracha das plantações britânicas na Ásia, nascidas de sementes levadas da Amazônia, dominou o mercado.')
 k.T('Quem formava a principal mão de obra dos engenhos de açúcar do Nordeste colonial a partir do fim do século XVI?', 'Africanos escravizados',
@@ -53,7 +53,7 @@ p.T('No bipartidarismo imposto pelo regime militar, qual partido fazia a oposiç
     src=('pt', 'Aliança Renovadora Nacional', ['MDB']),
     x='O AI-2, de 1965, extinguiu os partidos existentes; a ARENA apoiava o governo e o MDB reunia a oposição tolerada pelo regime.')
 p.T('Qual marinheiro, apelidado de "Almirante Negro", liderou a Revolta da Chibata, em 1910?', 'João Cândido',
-    ['Marcílio Dias', 'André Rebouças', 'Francisco José do Nascimento', 'Joaquim Nabuco', 'Almirante Tamandaré'], d=2, icon='ship',
+    ['Marcílio Dias', 'André Rebouças', 'Francisco José do Nascimento', 'Joaquim Nabuco', 'Almirante Tamandaré'], d=2, scene='revolta_chibata', icon='ship',
     src=('pt', 'Revolta da Chibata', ['João Cândido', '1910']),
     x='Os marinheiros tomaram encouraçados na baía de Guanabara e exigiram o fim dos castigos com chibata, ainda aplicados mais de 20 anos depois da abolição.')
 k.T('Quem foi o primeiro governador-geral do Brasil, enviado à Bahia em 1549 para fundar Salvador?', 'Tomé de Sousa',
@@ -62,7 +62,7 @@ k.T('Quem foi o primeiro governador-geral do Brasil, enviado à Bahia em 1549 pa
     x='Com ele chegaram os primeiros jesuítas ao Brasil, liderados pelo padre Manuel da Nóbrega.')
 # d3
 p.T('Qual conflito, entre 1912 e 1916, opôs sertanejos às forças do governo numa região disputada pelo Paraná e por Santa Catarina?', 'Guerra do Contestado',
-    ['Guerra de Canudos', 'Revolução Federalista', 'Sedição de Juazeiro', 'Revolta dos Muckers', 'Revolta da Chibata'], d=3, icon='train',
+    ['Guerra de Canudos', 'Revolução Federalista', 'Sedição de Juazeiro', 'Revolta dos Muckers', 'Revolta da Chibata'], d=3, scene='araucarias', icon='train',
     src=('pt', 'Guerra do Contestado', ['1912', 'Santa Catarina']),
     x='A ferrovia entre São Paulo e o Rio Grande do Sul expulsou milhares de posseiros das terras à beira dos trilhos, e muitos seguiram líderes religiosos chamados de monges.')
 k.T('Qual revolta de 1824, nascida em Pernambuco contra a Constituição outorgada por D. Pedro I, terminou com a execução de Frei Caneca?', 'Confederação do Equador',
@@ -104,7 +104,7 @@ p.T('Qual unidade de conta, criada em 1994, serviu de ponte entre o cruzeiro rea
     x='Por quatro meses, preços e salários foram expressos em URV; em 1º de julho de 1994, cada URV virou um real, e 2.750 cruzeiros reais viraram um real.')
 # d5
 p.T('Que nome Antônio Conselheiro deu ao arraial que fundou às margens do rio Vaza-Barris e que ficou conhecido como Canudos?', 'Belo Monte',
-    ['Monte Santo', 'Bom Jesus', 'Nova Jerusalém', 'Santa Cruz', 'Juazeiro'], d=5, icon='church',
+    ['Monte Santo', 'Bom Jesus', 'Nova Jerusalém', 'Santa Cruz', 'Juazeiro'], d=5, scene='arraial_canudos', icon='church',
     src=('pt', 'Guerra de Canudos', ['Belo Monte']),
     x='Em poucos anos, o arraial reuniu milhares de moradores; o Exército só o destruiu na quarta expedição, em outubro de 1897.')
 k.T('Qual navegador espanhol chegou ao litoral do atual Brasil em janeiro de 1500, meses antes de Cabral?', 'Vicente Yáñez Pinzón',

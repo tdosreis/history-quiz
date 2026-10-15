@@ -74,7 +74,7 @@
    ],
    "d": 2,
    "art": {
-    "icon": "flag"
+    "scene": "arraial_canudos"
    },
    "src": [
     "pt",
@@ -118,7 +118,7 @@
    ],
    "d": 2,
    "art": {
-    "icon": "book"
+    "scene": "brigada_sanitaria"
    },
    "src": [
     "pt",
@@ -136,7 +136,7 @@
    ],
    "d": 1,
    "art": {
-    "icon": "gear"
+    "scene": "catorze_bis"
    },
    "src": [
     "pt",
@@ -154,7 +154,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "map"
+    "scene": "marco_fronteira"
    },
    "src": [
     "pt",
@@ -172,7 +172,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "map"
+    "scene": "linha_telegrafica"
    },
    "src": [
     "pt",
@@ -198,7 +198,7 @@
    ],
    "d": 2,
    "art": {
-    "icon": "bust"
+    "scene": "theatro_municipal"
    },
    "src": [
     "pt",
@@ -216,7 +216,7 @@
    ],
    "d": 2,
    "art": {
-    "icon": "bust"
+    "scene": "abaporu"
    },
    "src": [
     "pt",
@@ -234,7 +234,7 @@
    ],
    "d": 2,
    "art": {
-    "icon": "book"
+    "scene": "violoncelo_floresta"
    },
    "src": [
     "pt",
@@ -252,7 +252,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "bust"
+    "scene": "retirantes_cafe"
    },
    "src": [
     "pt",
@@ -296,7 +296,7 @@
    ],
    "d": 1,
    "art": {
-    "icon": "flag"
+    "scene": "torre_petroleo"
    },
    "src": [
     "pt",
@@ -436,7 +436,7 @@
    ],
    "d": 1,
    "art": {
-    "icon": "flag"
+    "scene": "tanques_1964"
    },
    "src": [
     "pt",
@@ -462,7 +462,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "scroll"
+    "scene": "tanques_1964"
    },
    "src": [
     "pt",
@@ -558,7 +558,7 @@
    ],
    "d": 2,
    "art": {
-    "icon": "flag"
+    "scene": "seringueiro"
    },
    "src": [
     "pt",
@@ -576,7 +576,7 @@
    ],
    "d": 2,
    "art": {
-    "icon": "book"
+    "scene": "alfabetizacao"
    },
    "src": [
     "pt",
@@ -594,7 +594,7 @@
    ],
    "d": 2,
    "art": {
-    "icon": "book"
+    "scene": "maquina_escrever"
    },
    "src": [
     "pt",
@@ -612,7 +612,7 @@
    ],
    "d": 2,
    "art": {
-    "icon": "book"
+    "scene": "pedra_caminho"
    },
    "src": [
     "pt",
@@ -664,7 +664,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "trophy"
+    "scene": "copa_1958"
    },
    "src": [
     "pt",

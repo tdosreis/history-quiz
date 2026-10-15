@@ -14,7 +14,7 @@
    ],
    "d": 1,
    "art": {
-    "icon": "bust"
+    "scene": "maquina_voadora"
    },
    "src": [
     "pt",
@@ -32,7 +32,7 @@
    ],
    "d": 1,
    "art": {
-    "icon": "bust"
+    "scene": "afresco_vaticano"
    },
    "src": [
     "pt",
@@ -50,7 +50,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "bust"
+    "scene": "afresco_vaticano"
    },
    "src": [
     "pt",
@@ -68,7 +68,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "bust"
+    "scene": "concha_venus"
    },
    "src": [
     "pt",
@@ -140,7 +140,7 @@
    ],
    "d": 4,
    "art": {
-    "icon": "bust"
+    "scene": "cavaleiro_gravura"
    },
    "src": [
     "pt",
@@ -284,7 +284,7 @@
    ],
    "d": 1,
    "art": {
-    "icon": "book"
+    "scene": "teatro_globe"
    },
    "src": [
     "pt",
@@ -302,7 +302,7 @@
    ],
    "d": 1,
    "art": {
-    "icon": "book"
+    "scene": "moinhos_mancha"
    },
    "src": [
     "pt",
@@ -510,7 +510,7 @@
    ],
    "d": 2,
    "art": {
-    "icon": "bust"
+    "scene": "ronda_noturna"
    },
    "src": [
     "pt",
@@ -528,7 +528,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "bust"
+    "scene": "janela_delft"
    },
    "src": [
     "pt",
@@ -546,7 +546,7 @@
    ],
    "d": 3,
    "art": {
-    "icon": "bust"
+    "scene": "atelie_meninas"
    },
    "src": [
     "pt",

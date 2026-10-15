@@ -112,7 +112,7 @@ c.T('Qual evento terrorista de 11 de setembro de 2001 atingiu as Torres Gêmeas?
     src=('pt', 'Ataques de 11 de setembro de 2001', ['2001']))
 c.T('Qual rede mundial de computadores se popularizou na década de 1990?', 'Internet', ['Telefone', 'Telégrafo', 'Radar', 'ARPANET apenas', 'Fax'], 1, icon='globe',
     src=('pt', 'Internet', ['1990']))
-c.P('Qual físico britânico escreveu Uma Breve História do Tempo e estudou os buracos negros?', ['hawking'], 1, icon='globe',
+c.P('Qual físico britânico escreveu Uma Breve História do Tempo e estudou os buracos negros?', ['hawking'], 1, scene='espaco_curvo', icon='globe',
     src=('pt', 'Stephen Hawking', ['Breve História do Tempo']))
 c.T('Qual país asiático foi dividido em dois após a Guerra da Coreia, em 1953?', 'Coreia', ['Vietnã', 'Índia', 'Japão', 'China', 'Tailândia'], 2, scene='zona_desmilitarizada', icon='map',
     src=('pt', 'Guerra da Coreia', ['1953']))
@@ -204,29 +204,29 @@ c.T('Qual foi o primeiro presidente civil do Brasil, eleito em 1894?', 'Prudente
     src=('pt', 'Prudente de Morais', ['1894']))
 c.T('Qual guerra no sertão baiano, de 1896 a 1897, foi narrada em Os Sertões, de Euclides da Cunha?', 'Guerra de Canudos', ['Guerra do Contestado', 'Revolta da Chibata', 'Guerra do Paraguai', 'Cabanagem', 'Guerra dos Farrapos'], 2, icon='cannon',
     src=('pt', 'Guerra de Canudos', ['Os Sertões']))
-c.T('Qual líder religioso reuniu milhares de seguidores em Canudos?', 'Antônio Conselheiro', ['Padre Cícero', 'Frei Caneca', 'Lampião', 'Zé Pelintra', 'Dom Hélder'], 2, icon='flag',
+c.T('Qual líder religioso reuniu milhares de seguidores em Canudos?', 'Antônio Conselheiro', ['Padre Cícero', 'Frei Caneca', 'Lampião', 'Zé Pelintra', 'Dom Hélder'], 2, scene='arraial_canudos', icon='flag',
     src=('pt', 'Antônio Conselheiro', ['Canudos']))
 c.T('Qual revolta de 1904 no Rio de Janeiro reagiu à vacinação obrigatória contra a varíola?', 'Revolta da Vacina', ['Revolta da Chibata', 'Revolta dos 18 do Forte', 'Guerra do Contestado', 'Sabinada', 'Cabanagem'], 2, icon='torch',
     src=('pt', 'Revolta da Vacina', ['1904']))
-c.P('Qual sanitarista liderou a campanha contra a febre amarela e a varíola no início do século XX?', ['oswaldo_cruz'], 2, icon='book',
+c.P('Qual sanitarista liderou a campanha contra a febre amarela e a varíola no início do século XX?', ['oswaldo_cruz'], 2, scene='brigada_sanitaria', icon='book',
     src=('pt', 'Oswaldo Cruz', ['febre amarela']))
-c.P('Qual inventor brasileiro voou com o 14-Bis em Paris, em 1906?', ['santos_dumont'], 1, icon='gear',
+c.P('Qual inventor brasileiro voou com o 14-Bis em Paris, em 1906?', ['santos_dumont'], 1, scene='catorze_bis', icon='gear',
     src=('pt', 'Alberto Santos-Dumont', ['14-Bis']))
-c.P('Qual diplomata, o “Barão”, resolveu pacificamente as fronteiras do Brasil?', ['rio_branco'], 3, icon='map',
+c.P('Qual diplomata, o “Barão”, resolveu pacificamente as fronteiras do Brasil?', ['rio_branco'], 3, scene='marco_fronteira', icon='map',
     src=('pt', 'Barão do Rio Branco', ['fronteira']))
-c.P('Qual marechal desbravou o sertão com linhas telegráficas e criou o órgão de proteção aos indígenas?', ['rondon'], 3, icon='map',
+c.P('Qual marechal desbravou o sertão com linhas telegráficas e criou o órgão de proteção aos indígenas?', ['rondon'], 3, scene='linha_telegrafica', icon='map',
     src=('pt', 'Cândido Rondon', ['telegráf']))
-c.T('Qual evento artístico de 1922, em São Paulo, inaugurou o Modernismo no Brasil?', 'Semana de Arte Moderna', ['Bienal de São Paulo', 'Salão de Belas Artes', 'Semana do Folclore', 'Festival de Cinema', 'Exposição Nacional'], 2, icon='bust',
+c.T('Qual evento artístico de 1922, em São Paulo, inaugurou o Modernismo no Brasil?', 'Semana de Arte Moderna', ['Bienal de São Paulo', 'Salão de Belas Artes', 'Semana do Folclore', 'Festival de Cinema', 'Exposição Nacional'], 2, scene='theatro_municipal', icon='bust',
     src=('pt', 'Semana de Arte Moderna', ['1922']))
-c.P('Qual pintora modernista criou o Abaporu, em 1928?', ['tarsila'], 2, icon='bust',
+c.P('Qual pintora modernista criou o Abaporu, em 1928?', ['tarsila'], 2, scene='abaporu', icon='bust',
     src=('pt', 'Tarsila do Amaral', ['Abaporu']))
-c.P('Qual compositor brasileiro criou as Bachianas Brasileiras?', ['villa_lobos'], 2, icon='book',
+c.P('Qual compositor brasileiro criou as Bachianas Brasileiras?', ['villa_lobos'], 2, scene='violoncelo_floresta', icon='book',
     src=('pt', 'Heitor Villa-Lobos', ['Bachianas']))
-c.P('Qual pintor paulista retratou Retirantes e Café, e fez os painéis Guerra e Paz da ONU?', ['portinari'], 3, icon='bust',
+c.P('Qual pintor paulista retratou Retirantes e Café, e fez os painéis Guerra e Paz da ONU?', ['portinari'], 3, scene='retirantes_cafe', icon='bust',
     src=('pt', 'Candido Portinari', ['Retirantes']))
 c.T('Qual movimento de 1930 levou Getúlio Vargas ao poder?', 'Revolução de 1930', ['Revolução Constitucionalista', 'Tenentismo', 'Intentona Comunista', 'Revolta dos 18 do Forte', 'Coluna Prestes'], 2, icon='flag',
     src=('pt', 'Revolução de 1930', ['Vargas']))
-c.P('Qual presidente, o “Pai dos Pobres”, criou a CLT e a Petrobras no seu segundo governo?', ['getulio'], 1, icon='flag',
+c.P('Qual presidente, o “Pai dos Pobres”, criou a CLT e a Petrobras no seu segundo governo?', ['getulio'], 1, scene='torre_petroleo', icon='flag',
     src=('pt', 'Getúlio Vargas', ['CLT']))
 c.T('Qual regime, de 1937 a 1945, concentrou poder em Getúlio Vargas?', 'Estado Novo', ['República Velha', 'Ditadura Militar', 'Segundo Reinado', 'Era Regencial', 'Nova República'], 2, icon='flag',
     src=('pt', 'Estado Novo (Brasil)', ['1937']))
@@ -238,9 +238,9 @@ c.P('Qual arquiteto projetou os principais edifícios de Brasília?', ['niemeyer
     src=('pt', 'Oscar Niemeyer', ['Brasília']))
 c.T('Em que data foi inaugurada Brasília?', '21 de abril de 1960', ['7 de setembro de 1960', '15 de novembro de 1956', '1º de maio de 1960', '21 de abril de 1792', '31 de março de 1964'], 3, stad='catedral_brasilia',
     src=('pt', 'Brasília', ['21 de abril de 1960']))
-c.T('Em que ano ocorreu o golpe militar que iniciou a ditadura no Brasil?', '1964', ['1930', '1945', '1954', '1968', '1985'], 1, icon='flag',
+c.T('Em que ano ocorreu o golpe militar que iniciou a ditadura no Brasil?', '1964', ['1930', '1945', '1954', '1968', '1985'], 1, scene='tanques_1964', icon='flag',
     src=('pt', 'Golpe de Estado no Brasil em 1964', ['1964']))
-c.T('Qual ato institucional, de 1968, endureceu a ditadura militar, suspendendo garantias?', 'AI-5', ['AI-1', 'AI-3', 'Lei de Anistia', 'Pacote de Abril', 'Lei Falcão'], 3, icon='scroll',
+c.T('Qual ato institucional, de 1968, endureceu a ditadura militar, suspendendo garantias?', 'AI-5', ['AI-1', 'AI-3', 'Lei de Anistia', 'Pacote de Abril', 'Lei Falcão'], 3, scene='tanques_1964', icon='scroll',
     src=('pt', 'Ato Institucional Número Cinco', ['1968']))
 c.T('Qual o movimento popular de 1984 que pediu eleições diretas para presidente?', 'Diretas Já', ['Caras-Pintadas', 'Marcha da Família', 'Cansei', 'Vem pra Rua', 'Fora Collor'], 2, icon='flag',
     src=('pt', 'Diretas Já', ['1984']))
@@ -248,17 +248,17 @@ c.T('Qual a lei de 1979 que permitiu a volta de exilados políticos ao Brasil?',
     src=('pt', 'Lei da Anistia (Brasil)', ['1979']))
 c.T('Em que ano foi promulgada a Constituição brasileira conhecida como “Cidadã”?', '1988', ['1824', '1891', '1946', '1967', '1998'], 1, crest='brasil_republica',
     src=('pt', 'Constituição brasileira de 1988', ['1988']))
-c.P('Qual seringueiro e ambientalista acreano foi assassinado em 1988 por defender a floresta?', ['chico_mendes'], 2, icon='flag',
+c.P('Qual seringueiro e ambientalista acreano foi assassinado em 1988 por defender a floresta?', ['chico_mendes'], 2, scene='seringueiro', icon='flag',
     src=('pt', 'Chico Mendes', ['1988']))
-c.P('Qual educador pernambucano criou um método de alfabetização de adultos e é patrono da educação brasileira?', ['paulo_freire'], 2, icon='book',
+c.P('Qual educador pernambucano criou um método de alfabetização de adultos e é patrono da educação brasileira?', ['paulo_freire'], 2, scene='alfabetizacao', icon='book',
     src=('pt', 'Paulo Freire', ['alfabetização']))
-c.P('Qual escritora, nascida na Ucrânia e naturalizada brasileira, escreveu A Hora da Estrela?', ['clarice'], 2, icon='book',
+c.P('Qual escritora, nascida na Ucrânia e naturalizada brasileira, escreveu A Hora da Estrela?', ['clarice'], 2, scene='maquina_escrever', icon='book',
     src=('pt', 'Clarice Lispector', ['A Hora da Estrela']))
-c.P('Qual poeta mineiro escreveu “No meio do caminho tinha uma pedra”?', ['drummond'], 2, icon='book',
+c.P('Qual poeta mineiro escreveu “No meio do caminho tinha uma pedra”?', ['drummond'], 2, scene='pedra_caminho', icon='book',
     src=('pt', 'Carlos Drummond de Andrade', ['pedra']))
 c.T('Qual plano econômico de 1994 estabilizou a moeda e criou o Real?', 'Plano Real', ['Plano Cruzado', 'Plano Collor', 'Plano Bresser', 'Plano Verão', 'Plano Marshall'], 2, icon='gear',
     src=('pt', 'Plano Real', ['1994']))
-c.T('Em que ano o Brasil foi campeão mundial de futebol pela primeira vez, em campo estrangeiro?', '1958', ['1950', '1962', '1970', '1994', '2002'], 3, icon='trophy',
+c.T('Em que ano o Brasil foi campeão mundial de futebol pela primeira vez, em campo estrangeiro?', '1958', ['1950', '1962', '1970', '1994', '2002'], 3, scene='copa_1958', icon='trophy',
     src=('pt', 'Copa do Mundo FIFA de 1958', ['Brasil']))
 c.T('Qual cidade brasileira sediou a Cúpula da Terra (Rio-92), conferência da ONU sobre meio ambiente?', 'Rio de Janeiro', ['Brasília', 'São Paulo', 'Manaus', 'Salvador', 'Belém'], 2, stad='cristo_redentor',
     src=('pt', 'Conferência das Nações Unidas sobre Meio Ambiente e Desenvolvimento', ['1992']))

@@ -15,7 +15,7 @@ c.T('Qual instrumento, inventado pelo médico francês René Laennec em 1816, se
     src=('en', 'Stethoscope', ['Laennec', '1816']),
     x='Laennec improvisou o primeiro com uma folha de papel enrolada, para não ter de encostar o ouvido no peito de uma jovem paciente; depois o fez de madeira.')
 c.T('Qual era o nome da ovelha que, em 1996, se tornou o primeiro mamífero clonado a partir de uma célula adulta?', 'Dolly',
-    ['Lucy', 'Bella', 'Daisy', 'Shaun', 'Flora'], d=1, icon='flask',
+    ['Lucy', 'Bella', 'Daisy', 'Shaun', 'Flora'], d=1, scene='ovelha_clonada', icon='flask',
     src=('en', 'Dolly (sheep)', ['1996', 'Roslin']),
     x='Ela nasceu no Instituto Roslin, na Escócia, e ganhou o nome em homenagem à cantora Dolly Parton, porque foi clonada de uma célula de glândula mamária.')
 c.T('Qual médico brasileiro descreveu, em 1909, a doença transmitida pelo inseto barbeiro que hoje leva o seu nome?', 'Carlos Chagas',
@@ -43,7 +43,7 @@ c.T('Qual médico mineiro foi o primeiro diretor do Instituto Butantan e criou s
     src=('pt', 'Vital Brazil', ['Butantan']),
     x='Ele descobriu que cada tipo de veneno exige um soro específico: o soro contra a jararaca não serve para a picada de cascavel.')
 c.T('Qual engenho grego de engrenagens, retirado de um naufrágio em 1901, calculava a posição do Sol e da Lua e previa eclipses?', 'Mecanismo de Anticítera',
-    ['Eolípila de Heron', 'Clepsidra de Ctesíbio', 'Astrolábio de Hiparco', 'Dioptra de Heron', 'Odômetro de Vitrúvio'], d=4, icon='gear',
+    ['Eolípila de Heron', 'Clepsidra de Ctesíbio', 'Astrolábio de Hiparco', 'Dioptra de Heron', 'Odômetro de Vitrúvio'], d=4, scene='naufragio_anticitera', icon='gear',
     src=('en', 'Antikythera mechanism', ['1901', 'eclipses']),
     x='Feito há mais de 2 mil anos, é chamado de primeiro computador analógico: nada tão complexo voltou a ser construído por mais de mil anos.')
 c.T('Qual sábio grego calculou a circunferência da Terra, no século III a.C., comparando as sombras do Sol em Siena (atual Assuã) e em Alexandria?', 'Eratóstenes',
@@ -169,7 +169,7 @@ c.T('Como se chama o fiel escudeiro que acompanha Dom Quixote em suas aventuras?
     src=('pt', 'Dom Quixote', ['Sancho Pança']),
     x='O romance saiu em duas partes, em 1605 e 1615, e muitos o consideram o primeiro romance moderno.')
 c.T('Qual romance de 1818, que Mary Shelley começou a escrever aos 18 anos, conta a história de um cientista que dá vida a uma criatura?', 'Frankenstein',
-    ['Drácula', 'O Médico e o Monstro', 'O Retrato de Dorian Gray', 'O Homem Invisível', 'A Ilha do Dr. Moreau'], d=1, icon='book',
+    ['Drácula', 'O Médico e o Monstro', 'O Retrato de Dorian Gray', 'O Homem Invisível', 'A Ilha do Dr. Moreau'], d=1, scene='villa_diodati', icon='book',
     src=('en', 'Frankenstein', ['1818', 'Villa Diodati']),
     x='A ideia surgiu em 1816, numa casa perto de Genebra, quando Lord Byron desafiou os amigos a escrever histórias de fantasmas.')
 c.T('Qual arquiteto catalão projetou a Sagrada Família, em Barcelona, e trabalhou nela por mais de 40 anos?', 'Antoni Gaudí',
@@ -185,7 +185,7 @@ c.T('Qual foi o primeiro longa-metragem de animação dos estúdios Disney, lan�
     src=('en', 'Snow White and the Seven Dwarfs (1937 film)', ['1937']),
     x='Em Hollywood, muitos chamavam o projeto de "a loucura de Disney", certos de que ninguém aguentaria um desenho tão longo.')
 c.T('Em qual país fica a caverna de Lascaux, com pinturas pré-históricas de cavalos e touros, descoberta por adolescentes em 1940?', 'França',
-    ['Espanha', 'Portugal', 'Itália', 'Alemanha', 'Inglaterra'], d=3, icon='palette',
+    ['Espanha', 'Portugal', 'Itália', 'Alemanha', 'Inglaterra'], d=3, scene='caverna_lascaux', icon='palette',
     src=('en', 'Lascaux', ['1940', '1963']),
     x='As pinturas têm cerca de 17 mil anos. A caverna foi fechada ao público em 1963, porque o fôlego dos visitantes estava danificando as imagens.')
 c.T('Qual ópera de Carlos Gomes, baseada num romance de José de Alencar, estreou com sucesso no Teatro alla Scala de Milão, em 1870?', 'Il Guarany',
@@ -197,16 +197,16 @@ c.T('Qual pintor francês chegou ao Brasil com a Missão Artística de 1816 e re
     src=('pt', 'Jean-Baptiste Debret', ['Viagem Pitoresca']),
     x='Debret também desenhou a bandeira do Império do Brasil, com o losango amarelo sobre o fundo verde.')
 c.T('Qual arquiteto romano escreveu o único tratado de arquitetura da Antiguidade que sobreviveu até hoje?', 'Vitrúvio',
-    ['Apolodoro de Damasco', 'Ictino', 'Fídias', 'Hipódamo de Mileto', 'Calícrates'], d=4, icon='column',
+    ['Apolodoro de Damasco', 'Ictino', 'Fídias', 'Hipódamo de Mileto', 'Calícrates'], d=4, scene='groma_vitruvio', icon='column',
     src=('en', 'Vitruvius', ['De architectura']),
     x='Dele vem a ideia das proporções ideais do corpo humano, desenhadas por Leonardo da Vinci no Homem Vitruviano.')
 c.T('Qual pintor flamengo concluiu em 1432, depois da morte do irmão Hubert, o Retábulo de Gante?', 'Jan van Eyck',
-    ['Hieronymus Bosch', 'Pieter Bruegel', 'Rogier van der Weyden', 'Hans Memling', 'Peter Paul Rubens'], d=5, icon='church',
+    ['Hieronymus Bosch', 'Pieter Bruegel', 'Rogier van der Weyden', 'Hans Memling', 'Peter Paul Rubens'], d=5, scene='retabulo_gante', icon='church',
     src=('en', 'Ghent Altarpiece', ['1432', 'Hubert']),
     x='O retábulo foi levado de Gante várias vezes ao longo dos séculos; um de seus painéis, roubado em 1934, nunca foi encontrado.')
 
 # ── Personagens ──
-c.P('Qual ator e diretor ridicularizou Hitler no filme O Grande Ditador, de 1940?', 'chaplin', d=1, icon='masks',
+c.P('Qual ator e diretor ridicularizou Hitler no filme O Grande Ditador, de 1940?', 'chaplin', d=1, scene='chapeu_bengala', icon='masks',
     src=('pt', 'O Grande Ditador', ['1940']),
     x='Foi o primeiro filme totalmente falado de Chaplin, e termina com um longo discurso do protagonista em defesa da liberdade e da paz.')
 c.P('Qual pintor holandês retratou, em 1632, uma aula pública de dissecação em A Lição de Anatomia do Dr. Tulp?', 'rembrandt', d=3, crest='holanda',

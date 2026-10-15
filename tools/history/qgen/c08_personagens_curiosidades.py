@@ -15,7 +15,7 @@ c.P('Qual conquistador turco-mongol fundou um império com capital em Samarcanda
 c.P('Qual imperador do Sacro Império e rei da Espanha enfrentou Lutero na Dieta de Worms?', ['carlos_v'], 3, icon='crown', src=('pt', 'Carlos V do Sacro Império Romano-Germânico', ['Worms']))
 c.P('Qual rei da Espanha enviou a Invencível Armada contra a Inglaterra, em 1588?', ['felipe_ii'], 2, stad='escorial', src=('pt', 'Filipe II de Espanha', ['Armada']))
 c.P('Qual capitão britânico explorou o Pacífico e foi morto no Havaí, em 1779?', ['cook'], 3, scene='endeavour_havai', icon='ship', src=('pt', 'James Cook', ['Havaí']))
-c.P('Qual pintor espanhol retratou os fuzilamentos de 3 de maio de 1808?', ['goya'], 3, icon='bust', src=('pt', 'Francisco de Goya', ['3 de Maio']))
+c.P('Qual pintor espanhol retratou os fuzilamentos de 3 de maio de 1808?', ['goya'], 3, scene='goya_fuzilamentos', icon='bust', src=('pt', 'Francisco de Goya', ['3 de Maio']))
 c.P('Qual cientista holandês de origem portuguesa foi excomungado e escreveu a Ética?', ['spinoza'], 4, icon='book', src=('pt', 'Baruch de Espinoza', ['Ética']))
 c.P('Qual conquistador viking-normando se tornou rei da Inglaterra em 1066?', ['guilherme_conquistador'], 2, scene='torre_branca', icon='crown', src=('pt', 'Guilherme I de Inglaterra', ['1066']))
 c.P('Qual imperador mongol fundou a dinastia Yuan e recebeu Marco Polo?', ['kublai'], 3, icon='crown', src=('pt', 'Kublai Khan', ['Marco Polo']))
