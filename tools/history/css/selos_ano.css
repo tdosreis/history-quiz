@@ -44,7 +44,8 @@
 .selo-won b { color: var(--brass-ink, var(--brass)); }
 
 /* the home screen: the album and the stamps side by side */
-.cv-cols { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr); gap: 8px; }
+.cv-cols { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 8px; }
+.cv-selo .cv-h { letter-spacing: .12em; }
 .cv-cols .cv-album { min-width: 0; }
 .cv-selo { gap: 10px; }
 .cv-stk { position: relative; flex: none; width: 58px; height: 50px; }
@@ -60,6 +61,8 @@
   .cv-cols .cv-fan { width: 58px; }
   .cv-cols .cv-fan i { width: 27px; height: 38px; left: calc(var(--i) * 15px); }
   .cv-cols .cv-at b { font-size: 20px; }
+  .cv-selo .cv-at b { font-size: 19px; white-space: nowrap; }
+  .cv-selo .cv-at b small { font-size: 10.5px; }
   .cv-stk { width: 50px; height: 44px; }
   .cv-stk i { width: 34px; height: 27px; left: calc(var(--i) * 8px); }
 }
@@ -77,7 +80,8 @@
 .ano-scene svg { padding: 5px 5px 6px; background: #EFE6CF; box-shadow: 0 2px 8px rgba(0, 0, 0, .3); }
 .ano-face img { height: min(240px, 34vh); max-height: 100%; aspect-ratio: 3 / 4; object-fit: cover; object-position: 50% 20%;
   padding: 5px 5px 6px; background: #EFE6CF; box-shadow: 0 2px 8px rgba(0, 0, 0, .3); filter: sepia(.08); }
-.ano-crest .crest-disc { width: min(150px, 100%); height: auto; aspect-ratio: 1; }
+.ano-pic.ano-crest { height: min(150px, 24vh); }
+.ano-crest .crest-disc { position: static; transform: none; width: auto; height: 100%; aspect-ratio: 1; flex: none; box-shadow: 0 2px 8px rgba(0, 0, 0, .3), inset 0 0 0 1px rgba(32, 36, 30, .16); }
 .ano-flag svg { width: auto; height: 100%; max-height: 120px; aspect-ratio: 3 / 2; box-shadow: 0 2px 8px rgba(0, 0, 0, .3); }
 .ano-t { margin: 0; text-align: center; font: 600 clamp(19px, 5.4vw, 23px)/1.22 var(--font-d); letter-spacing: -.012em; max-width: 26ch; }
 .ano-dial { display: flex; flex-direction: column; align-items: stretch; gap: 6px; flex: none; }

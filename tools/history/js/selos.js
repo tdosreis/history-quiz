@@ -128,7 +128,7 @@ function selosHtml() {
   return `
   <div class="pg selo-pg">
     <div class="alb-top">
-      ${topbar('Álbum de selos')}
+      ${topbar('Selos')}
       <div class="alb-head">
         <button id="bselalb" class="alb-vit" type="button">${ICON.book('currentColor', 12)} Figurinhas</button>
         <span class="small muted">${pct}% colado</span>

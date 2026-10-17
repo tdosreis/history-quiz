@@ -1,1 +1,2531 @@
-[{"id": "tmp0", "t": "Bartolomeu Dias dobra o cabo da Boa Esperança", "y": 1488, "c": false, "pic": {"crest": "portugal"}}, {"id": "tmp1", "t": "Colombo chega à América", "y": 1492, "c": false, "pic": {"face": "colombo"}}, {"id": "tmp2", "t": "Vasco da Gama chega à Índia", "y": 1498, "c": false, "pic": {"face": "vasco_gama"}}, {"id": "tmp3", "t": "Cabral chega ao Brasil", "y": 1500, "c": false, "pic": {"face": "cabral"}}, {"id": "tmp4", "t": "Fim da primeira volta ao mundo", "y": 1522, "c": false, "pic": {"face": "magalhaes"}}, {"id": "tmp5", "t": "Lutero divulga as 95 teses", "y": 1517, "c": false, "pic": {"face": "lutero"}}, {"id": "tmp6", "t": "Henrique VIII vira chefe da Igreja inglesa", "y": 1534, "c": false, "pic": {"face": "henrique_viii"}}, {"id": "tmp7", "t": "Calvino publica as Institutas", "y": 1536, "c": false, "pic": {"face": "calvino"}}, {"id": "tmp8", "t": "Abertura do Concílio de Trento", "y": 1545, "c": false, "pic": {"crest": "sacro_imperio"}}, {"id": "tmp9", "t": "Massacre da Noite de São Bartolomeu", "y": 1572, "c": false, "pic": {"crest": "francia"}}, {"id": "tmp10", "t": "Das Revoluções das Esferas Celestes", "y": 1543, "c": false, "pic": {"face": "copernico"}}, {"id": "tmp11", "t": "O Mensageiro das Estrelas", "y": 1610, "c": false, "pic": {"face": "galileu"}}, {"id": "tmp12", "t": "Discurso do Método", "y": 1637, "c": false, "pic": {"face": "descartes"}}, {"id": "tmp13", "t": "Principia", "y": 1687, "c": false, "pic": {"face": "newton"}}, {"id": "tmp14", "t": "Paz de Vestfália", "y": 1648, "c": false, "pic": {"crest": "sacro_imperio"}}, {"id": "tmp15", "t": "Execução do rei Carlos I", "y": 1649, "c": false, "pic": {"crest": "inglaterra"}}, {"id": "tmp16", "t": "Revogação do Édito de Nantes", "y": 1685, "c": false, "pic": {"face": "luis_xiv"}}, {"id": "tmp17", "t": "Revolução Gloriosa", "y": 1688, "c": false, "pic": {"flag": "NED"}}, {"id": "tmp18", "t": "Invasão da Polônia", "y": 1939, "c": false, "pic": {"flag": "POL"}}, {"id": "tmp19", "t": "Ataque a Pearl Harbor", "y": 1941, "c": false, "pic": {"flag": "USA"}}, {"id": "tmp20", "t": "Rendição em Stalingrado", "y": 1943, "c": false, "pic": {"crest": "urss"}}, {"id": "tmp21", "t": "Dia D", "y": 1944, "c": false, "pic": {"flag": "FRA"}}, {"id": "tmp22", "t": "Bomba de Hiroshima", "y": 1945, "c": false, "pic": {"flag": "JPN"}}, {"id": "tmp23", "t": "Atentado de Sarajevo", "y": 1914, "c": false, "pic": {"crest": "austria_hungria"}}, {"id": "tmp24", "t": "Revolução de Outubro", "y": 1917, "c": false, "pic": {"face": "lenin"}}, {"id": "tmp25", "t": "Tratado de Versalhes", "y": 1919, "c": false, "pic": {"face": "wilson"}}, {"id": "tmp26", "t": "Marcha sobre Roma", "y": 1922, "c": false, "pic": {"crest": "italia_fascista"}}, {"id": "tmp27", "t": "Quebra da Bolsa de Nova York", "y": 1929, "c": false, "pic": {"flag": "USA"}}, {"id": "tmp28", "t": "Sputnik 1", "y": 1957, "c": false, "pic": {"crest": "urss"}}, {"id": "tmp29", "t": "Voo de Gagarin", "y": 1961, "c": false, "pic": {"face": "gagarin"}}, {"id": "tmp30", "t": "Primeira caminhada espacial", "y": 1965, "c": false, "pic": {"crest": "urss"}}, {"id": "tmp31", "t": "Apollo 11", "y": 1969, "c": false, "pic": {"face": "armstrong"}}, {"id": "tmp32", "t": "Estação Mir", "y": 1986, "c": false, "pic": {"crest": "urss"}}, {"id": "tmp33", "t": "Lênin", "y": 1917, "c": false, "pic": {"face": "lenin"}}, {"id": "tmp34", "t": "Atatürk", "y": 1923, "c": false, "pic": {"face": "ataturk"}}, {"id": "tmp35", "t": "Franklin D. Roosevelt", "y": 1933, "c": false, "pic": {"face": "fdr"}}, {"id": "tmp36", "t": "Winston Churchill", "y": 1940, "c": false, "pic": {"face": "churchill"}}, {"id": "tmp37", "t": "Charles de Gaulle", "y": 1959, "c": false, "pic": {"face": "de_gaulle"}}, {"id": "tmp38", "t": "95 teses de Lutero", "y": 1517, "c": false, "pic": {"face": "lutero"}}, {"id": "tmp39", "t": "Queda da Bastilha", "y": 1789, "c": false, "pic": {"crest": "franca_revolucionaria"}}, {"id": "tmp40", "t": "Início da Primeira Guerra", "y": 1914, "c": false, "pic": {"crest": "austria_hungria"}}, {"id": "tmp41", "t": "Independência do Brasil", "y": 1822, "c": false, "pic": {"face": "dom_pedro_i"}}, {"id": "tmp42", "t": "Lei Áurea", "y": 1888, "c": false, "pic": {"face": "princesa_isabel"}}, {"id": "tmp43", "t": "Inauguração de Brasília", "y": 1960, "c": false, "pic": {"face": "jk"}}, {"id": "tmp44", "t": "Pirâmide de Quéops", "y": -2560, "c": false, "pic": {"crest": "egito_antigo"}}, {"id": "tmp45", "t": "Partenon", "y": -432, "c": false, "pic": {"crest": "atenas"}}, {"id": "tmp46", "t": "Coliseu", "y": 80, "c": false, "pic": {"crest": "imperio_romano"}}, {"id": "tmp47", "t": "Santa Sofia", "y": 537, "c": false, "pic": {"crest": "bizancio"}}, {"id": "tmp48", "t": "Magna Carta", "y": 1215, "c": false, "pic": {"crest": "inglaterra"}}, {"id": "tmp49", "t": "Queda de Constantinopla", "y": 1453, "c": false, "pic": {"face": "maome_ii"}}, {"id": "tmp50", "t": "Tratado de Tordesilhas", "y": 1494, "c": false, "pic": {"crest": "espanha"}}, {"id": "tmp51", "t": "Independência dos EUA", "y": 1776, "c": false, "pic": {"face": "jefferson"}}, {"id": "tmp52", "t": "Independência do Haiti", "y": 1804, "c": false, "pic": {"face": "toussaint"}}, {"id": "tmp53", "t": "Independência da Índia", "y": 1947, "c": false, "pic": {"face": "gandhi"}}, {"id": "tmp54", "t": "Voo do 14-Bis", "y": 1906, "c": false, "pic": {"face": "santos_dumont"}}, {"id": "tmp55", "t": "Revolução Russa", "y": 1917, "c": false, "pic": {"face": "lenin"}}, {"id": "tmp56", "t": "Fim da Segunda Guerra", "y": 1945, "c": false, "pic": {"face": "churchill"}}, {"id": "tmp57", "t": "Homem na Lua", "y": 1969, "c": false, "pic": {"face": "armstrong"}}, {"id": "tmp58", "t": "Batalha de Maratona", "y": -490, "c": false, "pic": {"crest": "atenas"}}, {"id": "tmp59", "t": "Aníbal atravessa os Alpes", "y": -218, "c": false, "pic": {"face": "anibal"}}, {"id": "tmp60", "t": "César cruza o Rubicão", "y": -49, "c": false, "pic": {"face": "cesar"}}, {"id": "tmp61", "t": "Queda de Roma do Ocidente", "y": 476, "c": false, "pic": {"crest": "imperio_romano"}}, {"id": "tmp62", "t": "Primeira Cruzada", "y": 1096, "c": false, "pic": {"face": "saladino"}}, {"id": "tmp63", "t": "Guerra dos Cem Anos", "y": 1337, "c": false, "pic": {"face": "joana_darc"}}, {"id": "tmp64", "t": "Peste Negra chega à Europa", "y": 1347, "c": false, "pic": {"crest": "veneza"}}, {"id": "tmp65", "t": "Primeira Guerra Mundial", "y": 1914, "c": false, "pic": {"crest": "imperio_alemao"}}, {"id": "tmp66", "t": "Construção do Muro de Berlim", "y": 1961, "c": false, "pic": {"crest": "urss"}}, {"id": "tmp67", "t": "Queda do Muro de Berlim", "y": 1989, "c": false, "pic": {"crest": "urss"}}, {"id": "tmp68", "t": "Mandela é libertado", "y": 1990, "c": false, "pic": {"face": "mandela"}}, {"id": "tmp69", "t": "Atentados de 11 de setembro", "y": 2001, "c": false, "pic": {"crest": "estados_unidos"}}, {"id": "tmp70", "t": "Pirâmides de Gizé", "y": -2560, "c": false, "pic": {"crest": "egito_antigo"}}, {"id": "tmp71", "t": "Morte de Cleópatra", "y": -30, "c": false, "pic": {"face": "cleopatra"}}, {"id": "tmp72", "t": "Descoberta da tumba de Tutancâmon", "y": 1922, "c": false, "pic": {"face": "tutancamon"}}, {"id": "tmp73", "t": "Primeira escrita cuneiforme", "y": -3200, "c": false, "pic": {"flag": "IRQ"}}, {"id": "tmp74", "t": "Código de Hamurabi", "y": -1754, "c": false, "pic": {"face": "hamurabi"}}, {"id": "tmp75", "t": "Batalha de Kadesh", "y": -1274, "c": false, "pic": {"face": "ramses_ii"}}, {"id": "tmp76", "t": "Fundação de Cartago", "y": -814, "c": false, "pic": {"crest": "cartago"}}, {"id": "tmp77", "t": "Ciro toma a Babilônia", "y": -539, "c": false, "pic": {"face": "ciro"}}, {"id": "tmp78", "t": "Unificação do Alto e do Baixo Egito", "y": -3100, "c": false, "pic": {"crest": "egito_antigo"}}, {"id": "tmp79", "t": "Pirâmide de degraus de Djoser", "y": -2670, "c": false, "pic": {"crest": "egito_antigo"}}, {"id": "tmp80", "t": "Reinado de Hatexepsute", "y": -1479, "c": false, "pic": {"face": "hatexepsute"}}, {"id": "tmp81", "t": "Aquenáton funda Amarna", "y": -1346, "c": false, "pic": {"face": "aquenaton"}}, {"id": "tmp82", "t": "Conquista persa do Egito", "y": -525, "c": false, "pic": {"crest": "persia"}}, {"id": "tmp83", "t": "Início da Guerra do Peloponeso", "y": -431, "c": false, "pic": {"crest": "esparta"}}, {"id": "tmp84", "t": "Morte de Sócrates", "y": -399, "c": false, "pic": {"face": "socrates"}}, {"id": "tmp85", "t": "Morte de Alexandre", "y": -323, "c": false, "pic": {"face": "alexandre"}}, {"id": "tmp86", "t": "Fundação de Roma", "y": -753, "c": false, "pic": {"flag": "ITA"}}, {"id": "tmp87", "t": "Início da República", "y": -509, "c": false, "pic": {"crest": "republica_romana"}}, {"id": "tmp88", "t": "Augusto, primeiro imperador", "y": -27, "c": false, "pic": {"face": "augusto"}}, {"id": "tmp89", "t": "Queda do Império do Ocidente", "y": 476, "c": false, "pic": {"crest": "imperio_romano"}}, {"id": "tmp90", "t": "Expulsão do último rei", "y": -509, "c": false, "pic": {"crest": "republica_romana"}}, {"id": "tmp91", "t": "Começa a Primeira Guerra Púnica", "y": -264, "c": false, "pic": {"crest": "cartago"}}, {"id": "tmp92", "t": "Destruição de Cartago", "y": -146, "c": false, "pic": {"crest": "cartago"}}, {"id": "tmp93", "t": "Revolta de Espártaco", "y": -73, "c": false, "pic": {"face": "espartaco"}}, {"id": "tmp94", "t": "Assassinato de Júlio César", "y": -44, "c": false, "pic": {"face": "cesar"}}, {"id": "tmp95", "t": "Queda de Roma", "y": 476, "c": false, "pic": {"crest": "imperio_romano"}}, {"id": "tmp96", "t": "Carlos Magno é coroado", "y": 800, "c": false, "pic": {"face": "carlos_magno"}}, {"id": "tmp97", "t": "Batalha de Hastings", "y": 1066, "c": false, "pic": {"face": "guilherme_conquistador"}}, {"id": "tmp98", "t": "Conquista da Península Ibérica", "y": 711, "c": false, "pic": {"crest": "califado_omiada"}}, {"id": "tmp99", "t": "Fundação de Bagdá", "y": 762, "c": false, "pic": {"crest": "califado_abassida"}}, {"id": "tmp100", "t": "Saladino retoma Jerusalém", "y": 1187, "c": false, "pic": {"face": "saladino"}}, {"id": "tmp101", "t": "Mongóis saqueiam Bagdá", "y": 1258, "c": false, "pic": {"crest": "imperio_mongol"}}, {"id": "tmp102", "t": "Justiniano I", "y": 482, "c": false, "pic": {"face": "justiniano"}}, {"id": "tmp103", "t": "Harune Arraxide", "y": 763, "c": false, "pic": {"face": "harun"}}, {"id": "tmp104", "t": "Saladino", "y": 1137, "c": false, "pic": {"face": "saladino"}}, {"id": "tmp105", "t": "Dante Alighieri", "y": 1265, "c": false, "pic": {"face": "dante"}}, {"id": "tmp106", "t": "Joana d'Arc", "y": 1412, "c": false, "pic": {"face": "joana_darc"}}, {"id": "tmp107", "t": "Urbano II prega a cruzada", "y": 1095, "c": false, "pic": {"crest": "francia"}}, {"id": "tmp108", "t": "Saladino vence em Hattin", "y": 1187, "c": false, "pic": {"face": "saladino"}}, {"id": "tmp109", "t": "Ricardo Coração de Leão toma Acre", "y": 1191, "c": false, "pic": {"face": "ricardo"}}, {"id": "tmp110", "t": "Cruzados saqueiam Constantinopla", "y": 1204, "c": false, "pic": {"crest": "bizancio"}}, {"id": "tmp111", "t": "China unificada pela primeira vez", "y": -221, "c": false, "pic": {"face": "qin_shi_huang"}}, {"id": "tmp112", "t": "Fundação do Império Mongol", "y": 1206, "c": false, "pic": {"face": "gengis"}}, {"id": "tmp113", "t": "Invasões mongóis", "y": 1274, "c": false, "pic": {"crest": "imperio_mongol"}}, {"id": "tmp114", "t": "Batalha de Sekigahara", "y": 1600, "c": false, "pic": {"face": "tokugawa_ieyasu"}}, {"id": "tmp115", "t": "Restauração Meiji", "y": 1868, "c": false, "pic": {"face": "meiji"}}, {"id": "tmp116", "t": "Bomba atômica em Hiroshima", "y": 1945, "c": false, "pic": {"flag": "JPN"}}, {"id": "tmp117", "t": "Ashoka governa o Império Máuria", "y": -268, "c": false, "pic": {"face": "ashoka"}}, {"id": "tmp118", "t": "Vasco da Gama chega a Calicute", "y": 1498, "c": false, "pic": {"face": "vasco_gama"}}, {"id": "tmp119", "t": "Fundação do Império Mogol", "y": 1526, "c": false, "pic": {"crest": "mogol"}}]
+[
+ {
+  "id": "piramide_queops",
+  "t": "Termina a construção da Grande Pirâmide de Gizé",
+  "y": -2560,
+  "c": true,
+  "pic": {
+   "scene": "piramides_gize"
+  },
+  "x": "Foi a construção mais alta feita pelo homem por quase quatro milênios."
+ },
+ {
+  "id": "codigo_hamurabi",
+  "t": "Hamurabi promulga seu código de leis",
+  "y": -1754,
+  "c": true,
+  "pic": {
+   "face": "hamurabi"
+  },
+  "x": "O código foi gravado numa estela de basalto com mais de dois metros de altura."
+ },
+ {
+  "id": "batalha_kadesh",
+  "t": "Batalha de Kadesh entre egípcios e hititas",
+  "y": -1274,
+  "c": true,
+  "pic": {
+   "face": "ramses_ii"
+  },
+  "x": "Ramsés II mandou gravar sua versão da batalha nas paredes de vários templos."
+ },
+ {
+  "id": "fundacao_cartago",
+  "t": "Colonos fenícios de Tiro fundam Cartago",
+  "y": -814,
+  "c": true,
+  "pic": {
+   "scene": "navio_fenicio"
+  },
+  "x": "Segundo a lenda, a cidade foi fundada pela princesa Dido, fugida de Tiro."
+ },
+ {
+  "id": "fundacao_roma",
+  "t": "Fundação de Roma",
+  "y": -753,
+  "c": true,
+  "pic": {
+   "scene": "loba_capitolina"
+  },
+  "x": "Pela lenda, os gêmeos Rômulo e Remo foram amamentados por uma loba."
+ },
+ {
+  "id": "queda_ninive",
+  "t": "Queda de Nínive, capital da Assíria",
+  "y": -612,
+  "c": false,
+  "pic": {
+   "crest": "assiria"
+  },
+  "x": "A cidade foi tomada por uma aliança de babilônios e medos."
+ },
+ {
+  "id": "nabucodonosor_trono",
+  "t": "Nabucodonosor II sobe ao trono da Babilônia",
+  "y": -605,
+  "c": false,
+  "pic": {
+   "face": "nabucodonosor"
+  },
+  "x": "A tradição atribui a ele os Jardins Suspensos da Babilônia."
+ },
+ {
+  "id": "ciro_babilonia",
+  "t": "Ciro, o Grande, conquista a Babilônia",
+  "y": -539,
+  "c": false,
+  "pic": {
+   "face": "ciro"
+  },
+  "x": "O Cilindro de Ciro, de argila, narra a conquista em escrita cuneiforme."
+ },
+ {
+  "id": "persas_egito",
+  "t": "Os persas de Cambises conquistam o Egito",
+  "y": -525,
+  "c": false,
+  "pic": {
+   "crest": "persia"
+  }
+ },
+ {
+  "id": "dario_trono",
+  "t": "Dario I sobe ao trono da Pérsia",
+  "y": -522,
+  "c": false,
+  "pic": {
+   "face": "dario"
+  },
+  "x": "Dario mandou abrir a Estrada Real, com mais de dois mil quilômetros."
+ },
+ {
+  "id": "maratona",
+  "t": "Batalha de Maratona",
+  "y": -490,
+  "c": false,
+  "pic": {
+   "scene": "mensageiro_maratona"
+  },
+  "x": "Segundo a lenda, um mensageiro correu até Atenas para anunciar a vitória e morreu ao chegar."
+ },
+ {
+  "id": "termopilas",
+  "t": "Leônidas enfrenta os persas nas Termópilas",
+  "y": -480,
+  "c": false,
+  "pic": {
+   "scene": "ev_guerras_persas"
+  },
+  "x": "Os gregos resistiram três dias, até um traidor revelar uma trilha pelas montanhas."
+ },
+ {
+  "id": "morte_confucio",
+  "t": "Morte de Confúcio",
+  "y": -479,
+  "c": false,
+  "pic": {
+   "face": "confucio"
+  },
+  "x": "Seus ensinamentos foram reunidos pelos discípulos nos Analectos."
+ },
+ {
+  "id": "partenon",
+  "t": "Começa a construção do Partenon",
+  "y": -447,
+  "c": false,
+  "pic": {
+   "crest": "atenas"
+  },
+  "x": "O templo foi erguido em honra de Atena, a deusa protetora da cidade."
+ },
+ {
+  "id": "peloponeso",
+  "t": "Começa a Guerra do Peloponeso",
+  "y": -431,
+  "c": false,
+  "pic": {
+   "scene": "ev_peloponeso"
+  },
+  "x": "O ateniense Tucídides lutou na guerra e depois escreveu a sua história."
+ },
+ {
+  "id": "morte_pericles",
+  "t": "Morte de Péricles",
+  "y": -429,
+  "c": false,
+  "pic": {
+   "face": "pericles"
+  },
+  "x": "Péricles morreu durante a peste que atingiu Atenas, cercada pelos espartanos."
+ },
+ {
+  "id": "morte_socrates",
+  "t": "Morte de Sócrates",
+  "y": -399,
+  "c": false,
+  "pic": {
+   "scene": "cicuta"
+  },
+  "x": "Condenado por impiedade, Sócrates recusou a fuga e bebeu a cicuta."
+ },
+ {
+  "id": "gauleses_roma",
+  "t": "Os gauleses saqueiam Roma",
+  "y": -390,
+  "c": true,
+  "pic": {
+   "scene": "capitolio_noite"
+  },
+  "x": "Diz a lenda que os gansos sagrados do Capitólio deram o alarme do ataque noturno."
+ },
+ {
+  "id": "nasc_alexandre",
+  "t": "Nascimento de Alexandre, o Grande",
+  "y": -356,
+  "c": false,
+  "pic": {
+   "face": "alexandre"
+  },
+  "x": "Teve Aristóteles como professor na adolescência."
+ },
+ {
+  "id": "gaugamela",
+  "t": "Batalha de Gaugamela",
+  "y": -331,
+  "c": false,
+  "pic": {
+   "scene": "ev_conquistas_alexandre"
+  },
+  "x": "Alexandre derrotou o exército, muito maior, de Dario III."
+ },
+ {
+  "id": "morte_alexandre",
+  "t": "Morte de Alexandre, o Grande",
+  "y": -323,
+  "c": false,
+  "pic": {
+   "face": "alexandre"
+  },
+  "x": "Morreu na Babilônia, com apenas 32 anos, sem deixar herdeiro adulto."
+ },
+ {
+  "id": "morte_aristoteles",
+  "t": "Morte de Aristóteles",
+  "y": -322,
+  "c": false,
+  "pic": {
+   "face": "aristoteles"
+  },
+  "x": "Aristóteles morreu na ilha de Eubeia, para onde fugira de Atenas."
+ },
+ {
+  "id": "primeira_punica",
+  "t": "Começa a Primeira Guerra Púnica",
+  "y": -264,
+  "c": false,
+  "pic": {
+   "scene": "corvo_romano"
+  },
+  "x": "Sem tradição naval, Roma venceu no mar com uma ponte de abordagem chamada corvo."
+ },
+ {
+  "id": "qin_unifica",
+  "t": "Qin Shi Huang unifica a China",
+  "y": -221,
+  "c": false,
+  "pic": {
+   "face": "qin_shi_huang"
+  },
+  "x": "Ele padronizou a escrita, as moedas, os pesos e até a largura dos eixos das carroças."
+ },
+ {
+  "id": "anibal_alpes",
+  "t": "Aníbal atravessa os Alpes",
+  "y": -218,
+  "c": false,
+  "pic": {
+   "scene": "ev_guerras_punicas"
+  },
+  "x": "Aníbal partiu da Hispânia, onde Cartago mantinha sua principal base."
+ },
+ {
+  "id": "canas",
+  "t": "Batalha de Canas",
+  "y": -216,
+  "c": false,
+  "pic": {
+   "face": "anibal"
+  },
+  "x": "Aníbal cercou e destruiu um exército romano bem maior que o seu."
+ },
+ {
+  "id": "morte_arquimedes",
+  "t": "Morte de Arquimedes",
+  "y": -212,
+  "c": false,
+  "pic": {
+   "scene": "banheira_eureka"
+  },
+  "x": "Foi morto por um soldado romano durante o saque de Siracusa."
+ },
+ {
+  "id": "zama",
+  "t": "Batalha de Zama",
+  "y": -202,
+  "c": false,
+  "pic": {
+   "face": "cipiao"
+  },
+  "x": "A vitória deu a Cipião o apelido de Africano."
+ },
+ {
+  "id": "destruicao_cartago",
+  "t": "Os romanos destroem Cartago",
+  "y": -146,
+  "c": false,
+  "pic": {
+   "crest": "cartago"
+  },
+  "x": "No mesmo ano, os romanos também arrasaram Corinto, na Grécia."
+ },
+ {
+  "id": "espartaco",
+  "t": "Começa a revolta de Espártaco",
+  "y": -73,
+  "c": false,
+  "pic": {
+   "face": "espartaco"
+  },
+  "x": "Espártaco havia sido treinado como gladiador em Cápua."
+ },
+ {
+  "id": "rubicao",
+  "t": "César atravessa o Rubicão",
+  "y": -49,
+  "c": false,
+  "pic": {
+   "scene": "ev_fim_republica"
+  },
+  "x": "A frase 'a sorte está lançada' é atribuída a César nesse momento."
+ },
+ {
+  "id": "morte_cesar",
+  "t": "Assassinato de Júlio César",
+  "y": -44,
+  "c": false,
+  "pic": {
+   "face": "cesar"
+  },
+  "x": "Foi morto com 23 punhaladas numa sessão do Senado."
+ },
+ {
+  "id": "acio",
+  "t": "Batalha de Ácio",
+  "y": -31,
+  "c": false,
+  "pic": {
+   "crest": "republica_romana"
+  },
+  "x": "Otaviano venceu a frota de Marco Antônio e Cleópatra na costa grega."
+ },
+ {
+  "id": "morte_cleopatra",
+  "t": "Morte de Cleópatra",
+  "y": -30,
+  "c": false,
+  "pic": {
+   "face": "cleopatra"
+  },
+  "x": "Segundo Plutarco, foi a primeira de sua dinastia a aprender a língua egípcia."
+ },
+ {
+  "id": "augusto_titulo",
+  "t": "Otaviano recebe o título de Augusto",
+  "y": -27,
+  "c": false,
+  "pic": {
+   "face": "augusto"
+  }
+ },
+ {
+  "id": "morte_augusto",
+  "t": "Morte do imperador Augusto",
+  "y": 14,
+  "c": false,
+  "pic": {
+   "face": "augusto"
+  },
+  "x": "O mês de agosto recebeu esse nome em sua homenagem."
+ },
+ {
+  "id": "incendio_roma",
+  "t": "Grande incêndio de Roma sob Nero",
+  "y": 64,
+  "c": false,
+  "pic": {
+   "scene": "incendio_roma"
+  },
+  "x": "A história de que Nero tocou lira enquanto Roma ardia não tem base confiável."
+ },
+ {
+  "id": "vesuvio",
+  "t": "O Vesúvio soterra Pompeia",
+  "y": 79,
+  "c": false,
+  "pic": {
+   "crest": "imperio_romano"
+  },
+  "x": "Plínio, o Velho, morreu ao tentar socorrer moradores do outro lado da baía."
+ },
+ {
+  "id": "coliseu",
+  "t": "Inauguração do Coliseu",
+  "y": 80,
+  "c": false,
+  "pic": {
+   "scene": "arena_gladiadores"
+  },
+  "x": "Os jogos de inauguração duraram cem dias."
+ },
+ {
+  "id": "muralha_adriano",
+  "t": "Começa a construção da Muralha de Adriano",
+  "y": 122,
+  "c": false,
+  "pic": {
+   "face": "adriano"
+  },
+  "x": "A muralha cruzava a Britânia de costa a costa, por mais de cem quilômetros."
+ },
+ {
+  "id": "morte_marco_aurelio",
+  "t": "Morte de Marco Aurélio",
+  "y": 180,
+  "c": false,
+  "pic": {
+   "scene": "tenda_meditacoes"
+  },
+  "x": "Escreveu as Meditações em grego, durante campanhas militares."
+ },
+ {
+  "id": "ponte_milvia",
+  "t": "Batalha da Ponte Mílvia",
+  "y": 312,
+  "c": false,
+  "pic": {
+   "scene": "labaro_constantino"
+  },
+  "x": "Constantino teria visto um sinal no céu na véspera da batalha."
+ },
+ {
+  "id": "constantinopla_capital",
+  "t": "Constantinopla é inaugurada como nova capital",
+  "y": 330,
+  "c": false,
+  "pic": {
+   "crest": "bizancio"
+  },
+  "x": "A cidade foi erguida sobre a antiga colônia grega de Bizâncio."
+ },
+ {
+  "id": "saque_visigodo",
+  "t": "Os visigodos de Alarico saqueiam Roma",
+  "y": 410,
+  "c": false,
+  "pic": {
+   "crest": "imperio_romano"
+  },
+  "x": "Era a primeira vez em cerca de oito séculos que Roma caía em mãos inimigas."
+ },
+ {
+  "id": "campos_catalaunicos",
+  "t": "Batalha dos Campos Cataláunicos contra Átila",
+  "y": 451,
+  "c": false,
+  "pic": {
+   "scene": "hunos_cavaleiros"
+  }
+ },
+ {
+  "id": "queda_roma",
+  "t": "Deposto o último imperador romano do Ocidente",
+  "y": 476,
+  "c": false,
+  "pic": {
+   "crest": "imperio_romano"
+  },
+  "x": "O último imperador, Rômulo Augusto, era apenas um adolescente."
+ },
+ {
+  "id": "santa_sofia",
+  "t": "Inauguração da nova Santa Sofia",
+  "y": 537,
+  "c": false,
+  "pic": {
+   "scene": "hagia_sofia"
+  },
+  "x": "Foi a maior catedral do mundo por quase mil anos."
+ },
+ {
+  "id": "hegira",
+  "t": "Maomé deixa Meca rumo a Medina",
+  "y": 622,
+  "c": false,
+  "pic": {
+   "scene": "mihrab"
+  },
+  "x": "A migração, chamada Hégira, marca o início do calendário islâmico."
+ },
+ {
+  "id": "conquista_iberica",
+  "t": "Tropas muçulmanas cruzam o estreito de Gibraltar",
+  "y": 711,
+  "c": false,
+  "pic": {
+   "scene": "mouros_batalha"
+  },
+  "x": "O nome Gibraltar vem de Jabal Tariq, a montanha de Tariq, chefe da invasão."
+ },
+ {
+  "id": "poitiers",
+  "t": "Carlos Martel vence os muçulmanos em Poitiers",
+  "y": 732,
+  "c": false,
+  "pic": {
+   "crest": "francos"
+  }
+ },
+ {
+  "id": "fundacao_bagda",
+  "t": "Fundação de Bagdá",
+  "y": 762,
+  "c": false,
+  "pic": {
+   "crest": "califado_abassida"
+  },
+  "x": "Bagdá foi planejada como uma cidade redonda, com muralhas circulares."
+ },
+ {
+  "id": "harun_califa",
+  "t": "Harune Arraxide torna-se califa",
+  "y": 786,
+  "c": false,
+  "pic": {
+   "face": "harun"
+  },
+  "x": "Sua corte inspirou várias histórias das Mil e Uma Noites."
+ },
+ {
+  "id": "lindisfarne",
+  "t": "Vikings atacam o mosteiro de Lindisfarne",
+  "y": 793,
+  "c": false,
+  "pic": {
+   "scene": "drakkar"
+  },
+  "x": "O ataque costuma ser visto como o início da Era Viking."
+ },
+ {
+  "id": "coroacao_carlos_magno",
+  "t": "Carlos Magno é coroado imperador",
+  "y": 800,
+  "c": false,
+  "pic": {
+   "scene": "coroacao_800"
+  },
+  "x": "A coroação foi feita pelo papa Leão III no dia de Natal, em Roma."
+ },
+ {
+  "id": "leif_america",
+  "t": "Leif Erikson chega à América",
+  "y": 1000,
+  "c": true,
+  "pic": {
+   "face": "leif"
+  },
+  "x": "Os vikings chamaram a nova terra de Vinlândia."
+ },
+ {
+  "id": "hastings",
+  "t": "Batalha de Hastings",
+  "y": 1066,
+  "c": false,
+  "pic": {
+   "face": "guilherme_conquistador"
+  },
+  "x": "A batalha está bordada na Tapeçaria de Bayeux, com cerca de 70 metros."
+ },
+ {
+  "id": "cruzados_jerusalem",
+  "t": "Os cruzados conquistam Jerusalém",
+  "y": 1099,
+  "c": false,
+  "pic": {
+   "scene": "ev_cruzadas"
+  }
+ },
+ {
+  "id": "portugal_reino",
+  "t": "Leão reconhece Portugal como reino em Zamora",
+  "y": 1143,
+  "c": false,
+  "pic": {
+   "crest": "portugal"
+  },
+  "x": "O papa só reconheceu o novo reino mais de três décadas depois."
+ },
+ {
+  "id": "saladino_jerusalem",
+  "t": "Saladino retoma Jerusalém",
+  "y": 1187,
+  "c": false,
+  "pic": {
+   "scene": "cupula_da_rocha"
+  },
+  "x": "Saladino permitiu que muitos cristãos deixassem a cidade mediante resgate."
+ },
+ {
+  "id": "acre",
+  "t": "Ricardo Coração de Leão toma Acre",
+  "y": 1191,
+  "c": false,
+  "pic": {
+   "face": "ricardo"
+  },
+  "x": "Ricardo passou só cerca de seis meses de seu reinado na Inglaterra."
+ },
+ {
+  "id": "saque_constantinopla",
+  "t": "Cruzados saqueiam Constantinopla",
+  "y": 1204,
+  "c": false,
+  "pic": {
+   "crest": "bizancio"
+  },
+  "x": "Os cavalos de bronze da Basílica de São Marcos, em Veneza, vieram desse saque."
+ },
+ {
+  "id": "gengis_khan",
+  "t": "Temujin é proclamado Gengis Khan",
+  "y": 1206,
+  "c": false,
+  "pic": {
+   "scene": "mongois_estepe"
+  }
+ },
+ {
+  "id": "magna_carta",
+  "t": "O rei João sela a Magna Carta",
+  "y": 1215,
+  "c": false,
+  "pic": {
+   "scene": "runnymede"
+  },
+  "x": "O acordo foi fechado no prado de Runnymede, à beira do Tâmisa."
+ },
+ {
+  "id": "marco_polo",
+  "t": "Marco Polo chega à corte de Kublai Khan",
+  "y": 1275,
+  "c": false,
+  "pic": {
+   "face": "marco_polo"
+  },
+  "x": "Ditou suas memórias a um companheiro de prisão em Gênova."
+ },
+ {
+  "id": "tufao_mongol",
+  "t": "Tufão destrói a frota mongol que invadia o Japão",
+  "y": 1281,
+  "c": false,
+  "pic": {
+   "scene": "frota_tufao"
+  },
+  "x": "Os japoneses chamaram a tempestade de kamikaze, o 'vento divino'."
+ },
+ {
+  "id": "imperio_otomano",
+  "t": "Osmã I funda o Império Otomano",
+  "y": 1299,
+  "c": true,
+  "pic": {
+   "crest": "imperio_otomano"
+  }
+ },
+ {
+  "id": "morte_dante",
+  "t": "Morte de Dante Alighieri",
+  "y": 1321,
+  "c": false,
+  "pic": {
+   "scene": "selva_dante"
+  },
+  "x": "Dante morreu exilado em Ravena, longe de sua Florença natal."
+ },
+ {
+  "id": "mansa_musa",
+  "t": "Mansa Mussa passa pelo Cairo a caminho de Meca",
+  "y": 1324,
+  "c": false,
+  "pic": {
+   "scene": "caravana_mali"
+  },
+  "x": "Distribuiu tanto ouro no Cairo que o metal perdeu valor por lá."
+ },
+ {
+  "id": "tenochtitlan",
+  "t": "Os mexicas fundam Tenochtitlán",
+  "y": 1325,
+  "c": true,
+  "pic": {
+   "scene": "tenochtitlan"
+  },
+  "x": "A cidade foi erguida numa ilha do lago Texcoco."
+ },
+ {
+  "id": "cem_anos",
+  "t": "Começa a Guerra dos Cem Anos",
+  "y": 1337,
+  "c": false,
+  "pic": {
+   "scene": "ev_guerra_cem_anos"
+  },
+  "x": "Apesar do nome, a guerra durou mais de cem anos, com longas tréguas."
+ },
+ {
+  "id": "peste_negra",
+  "t": "A Peste Negra chega à Europa",
+  "y": 1347,
+  "c": false,
+  "pic": {
+   "scene": "peste_negra"
+  },
+  "x": "A peste chegou em navios genoveses vindos do mar Negro."
+ },
+ {
+  "id": "dinastia_ming",
+  "t": "Fundação da dinastia Ming",
+  "y": 1368,
+  "c": false,
+  "pic": {
+   "crest": "ming"
+  },
+  "x": "Seu fundador, Zhu Yuanzhang, nasceu camponês pobre."
+ },
+ {
+  "id": "aljubarrota",
+  "t": "Batalha de Aljubarrota",
+  "y": 1385,
+  "c": false,
+  "pic": {
+   "crest": "portugal"
+  },
+  "x": "A vitória sobre Castela garantiu a independência de Portugal."
+ },
+ {
+  "id": "tamerlao_delhi",
+  "t": "Tamerlão saqueia Délhi",
+  "y": 1398,
+  "c": false,
+  "pic": {
+   "scene": "qutb_minar"
+  }
+ },
+ {
+  "id": "zheng_he",
+  "t": "Zheng He parte em sua primeira expedição",
+  "y": 1405,
+  "c": false,
+  "pic": {
+   "scene": "navio_tesouro"
+  },
+  "x": "Numa das viagens seguintes, a frota levou uma girafa para a corte chinesa."
+ },
+ {
+  "id": "ceuta",
+  "t": "Portugueses tomam Ceuta",
+  "y": 1415,
+  "c": false,
+  "pic": {
+   "crest": "imperio_portugues"
+  },
+  "x": "A conquista no norte da África marca o início da expansão ultramarina portuguesa."
+ },
+ {
+  "id": "azincourt",
+  "t": "Batalha de Azincourt",
+  "y": 1415,
+  "c": false,
+  "pic": {
+   "scene": "ev_guerra_cem_anos"
+  },
+  "x": "Os arqueiros ingleses derrotaram uma cavalaria francesa muito mais numerosa."
+ },
+ {
+  "id": "morte_joana",
+  "t": "Morte de Joana d'Arc",
+  "y": 1431,
+  "c": false,
+  "pic": {
+   "face": "joana_darc"
+  },
+  "x": "Joana foi queimada em Ruão com cerca de 19 anos."
+ },
+ {
+  "id": "retabulo_gante",
+  "t": "Os van Eyck concluem o Retábulo de Gante",
+  "y": 1432,
+  "c": false,
+  "pic": {
+   "scene": "retabulo_gante"
+  },
+  "x": "É uma das obras de arte mais roubadas da história."
+ },
+ {
+  "id": "cupula_florenca",
+  "t": "Concluída a cúpula da catedral de Florença",
+  "y": 1436,
+  "c": false,
+  "pic": {
+   "scene": "ev_renascimento"
+  },
+  "x": "Brunelleschi ergueu a cúpula sem cimbre, a armação de madeira usual."
+ },
+ {
+  "id": "nasc_leonardo",
+  "t": "Nascimento de Leonardo da Vinci",
+  "y": 1452,
+  "c": false,
+  "pic": {
+   "face": "leonardo"
+  },
+  "x": "Nasceu perto da aldeia de Vinci, de onde vem seu nome."
+ },
+ {
+  "id": "queda_constantinopla",
+  "t": "Os otomanos tomam Constantinopla",
+  "y": 1453,
+  "c": false,
+  "pic": {
+   "face": "maome_ii"
+  },
+  "x": "Maomé II tinha 21 anos quando conquistou a cidade."
+ },
+ {
+  "id": "biblia_gutenberg",
+  "t": "Gutenberg imprime sua Bíblia",
+  "y": 1455,
+  "c": true,
+  "pic": {
+   "scene": "prensa_tipos"
+  },
+  "x": "A maior parte das páginas tem 42 linhas por coluna."
+ },
+ {
+  "id": "dias_cabo",
+  "t": "Bartolomeu Dias dobra o cabo da Boa Esperança",
+  "y": 1488,
+  "c": false,
+  "pic": {
+   "scene": "adamastor"
+  },
+  "x": "Dias o teria chamado de cabo das Tormentas; o rei trocou o nome."
+ },
+ {
+  "id": "queda_granada",
+  "t": "Queda de Granada, o último reino mouro",
+  "y": 1492,
+  "c": false,
+  "pic": {
+   "face": "isabel_castela"
+  }
+ },
+ {
+  "id": "colombo_america",
+  "t": "Colombo chega à América",
+  "y": 1492,
+  "c": false,
+  "pic": {
+   "face": "colombo"
+  },
+  "x": "Colombo morreu acreditando ter chegado à Ásia."
+ },
+ {
+  "id": "tordesilhas",
+  "t": "Assinatura do Tratado de Tordesilhas",
+  "y": 1494,
+  "c": false,
+  "pic": {
+   "scene": "tordesilhas"
+  },
+  "x": "A linha passava 370 léguas a oeste das ilhas de Cabo Verde."
+ },
+ {
+  "id": "vasco_gama_india",
+  "t": "Vasco da Gama chega à Índia",
+  "y": 1498,
+  "c": false,
+  "pic": {
+   "scene": "ev_grandes_navegacoes"
+  },
+  "x": "A viagem de ida e volta durou cerca de dois anos."
+ },
+ {
+  "id": "cabral_brasil",
+  "t": "Cabral chega ao Brasil",
+  "y": 1500,
+  "c": false,
+  "pic": {
+   "scene": "chegada_cabral"
+  },
+  "x": "A primeira terra avistada foi um monte alto e redondo, batizado de Monte Pascoal."
+ },
+ {
+  "id": "capela_sistina",
+  "t": "Michelangelo conclui o teto da Capela Sistina",
+  "y": 1512,
+  "c": false,
+  "pic": {
+   "scene": "afresco_vaticano"
+  },
+  "x": "Michelangelo pintou a abóbada em pé, não deitado, como diz a lenda."
+ },
+ {
+  "id": "principe",
+  "t": "Maquiavel escreve O Príncipe",
+  "y": 1513,
+  "c": false,
+  "pic": {
+   "scene": "leao_raposa"
+  },
+  "x": "O livro só foi publicado depois da morte do autor."
+ },
+ {
+  "id": "rinoceronte_durer",
+  "t": "Dürer grava o seu famoso rinoceronte",
+  "y": 1515,
+  "c": false,
+  "pic": {
+   "scene": "gravura_rinoceronte"
+  },
+  "x": "Dürer nunca viu o animal: desenhou a partir de uma carta e de um esboço."
+ },
+ {
+  "id": "teses_lutero",
+  "t": "Lutero divulga as 95 teses",
+  "y": 1517,
+  "c": false,
+  "pic": {
+   "scene": "ev_reforma"
+  },
+  "x": "As teses foram escritas em latim, mas logo traduzidas e impressas em alemão."
+ },
+ {
+  "id": "cortes_mexico",
+  "t": "Cortés desembarca no México",
+  "y": 1519,
+  "c": false,
+  "pic": {
+   "face": "cortes"
+  },
+  "x": "Cortés mandou afundar os próprios navios para impedir deserções."
+ },
+ {
+  "id": "magalhaes_parte",
+  "t": "Magalhães parte para dar a volta ao mundo",
+  "y": 1519,
+  "c": false,
+  "pic": {
+   "face": "magalhaes"
+  },
+  "x": "Das cinco naus que partiram, só uma completou a viagem."
+ },
+ {
+  "id": "atahualpa",
+  "t": "Pizarro captura o imperador inca Atahualpa",
+  "y": 1532,
+  "c": false,
+  "pic": {
+   "face": "atahualpa"
+  },
+  "x": "O resgate exigido foi uma sala cheia de ouro."
+ },
+ {
+  "id": "ato_supremacia",
+  "t": "Henrique VIII torna-se chefe da Igreja inglesa",
+  "y": 1534,
+  "c": false,
+  "pic": {
+   "face": "henrique_viii"
+  },
+  "x": "A ruptura com Roma começou com o pedido de anulação de seu casamento."
+ },
+ {
+  "id": "copernico",
+  "t": "Copérnico publica que a Terra gira em torno do Sol",
+  "y": 1543,
+  "c": false,
+  "pic": {
+   "face": "copernico"
+  },
+  "x": "Copérnico teria recebido um exemplar impresso no leito de morte."
+ },
+ {
+  "id": "potosi",
+  "t": "Descoberta da prata de Potosí",
+  "y": 1545,
+  "c": false,
+  "pic": {
+   "scene": "potosi"
+  },
+  "x": "Potosí chegou a ser uma das cidades mais populosas do mundo."
+ },
+ {
+  "id": "fundacao_salvador",
+  "t": "Fundação de Salvador",
+  "y": 1549,
+  "c": false,
+  "pic": {
+   "scene": "salvador_colonial"
+  },
+  "x": "Salvador foi a primeira capital do Brasil."
+ },
+ {
+  "id": "fundacao_sao_paulo",
+  "t": "Jesuítas fundam o colégio que deu origem a São Paulo",
+  "y": 1554,
+  "c": false,
+  "pic": {
+   "scene": "patio_do_colegio"
+  },
+  "x": "Entre os fundadores estavam os padres Manuel da Nóbrega e José de Anchieta."
+ },
+ {
+  "id": "fundacao_rio",
+  "t": "Estácio de Sá funda o Rio de Janeiro",
+  "y": 1565,
+  "c": false,
+  "pic": {
+   "crest": "brasil_colonia"
+  },
+  "x": "A cidade nasceu entre o Pão de Açúcar e o morro Cara de Cão."
+ },
+ {
+  "id": "lepanto",
+  "t": "Batalha de Lepanto",
+  "y": 1571,
+  "c": false,
+  "pic": {
+   "crest": "veneza"
+  },
+  "x": "Miguel de Cervantes lutou na batalha e perdeu o movimento da mão esquerda."
+ },
+ {
+  "id": "lusiadas",
+  "t": "Camões publica Os Lusíadas",
+  "y": 1572,
+  "c": false,
+  "pic": {
+   "face": "camoes"
+  },
+  "x": "Diz a lenda que Camões salvou o manuscrito a nado, num naufrágio."
+ },
+ {
+  "id": "uniao_iberica",
+  "t": "Filipe II torna-se também rei de Portugal",
+  "y": 1580,
+  "c": false,
+  "pic": {
+   "face": "felipe_ii"
+  },
+  "x": "Portugal e Espanha tiveram os mesmos reis por sessenta anos."
+ },
+ {
+  "id": "invencivel_armada",
+  "t": "Derrota da Invencível Armada",
+  "y": 1588,
+  "c": false,
+  "pic": {
+   "scene": "invencivel_armada"
+  },
+  "x": "Mais navios espanhóis se perderam em tempestades do que em combate."
+ },
+ {
+  "id": "teatro_globe",
+  "t": "A companhia de Shakespeare inaugura o teatro Globe",
+  "y": 1599,
+  "c": false,
+  "pic": {
+   "scene": "teatro_globe"
+  },
+  "x": "O Globe foi montado com as vigas de um teatro mais antigo, desmontado às pressas."
+ },
+ {
+  "id": "sekigahara",
+  "t": "Batalha de Sekigahara",
+  "y": 1600,
+  "c": false,
+  "pic": {
+   "face": "tokugawa_ieyasu"
+  },
+  "x": "A vitória abriu caminho para mais de dois séculos e meio de xogunato Tokugawa."
+ },
+ {
+  "id": "dom_quixote",
+  "t": "Publicação da primeira parte de Dom Quixote",
+  "y": 1605,
+  "c": false,
+  "pic": {
+   "scene": "moinhos_mancha"
+  },
+  "x": "Cervantes disse ter concebido a obra numa prisão."
+ },
+ {
+  "id": "luas_jupiter",
+  "t": "Galileu descobre as luas de Júpiter",
+  "y": 1610,
+  "c": false,
+  "pic": {
+   "face": "galileu"
+  },
+  "x": "Galileu batizou as luas de Astros Mediceus, em homenagem aos Médici."
+ },
+ {
+  "id": "morte_shakespeare",
+  "t": "Morte de William Shakespeare",
+  "y": 1616,
+  "c": false,
+  "pic": {
+   "face": "shakespeare"
+  },
+  "x": "Morreu no mesmo ano que Miguel de Cervantes."
+ },
+ {
+  "id": "holandeses_pernambuco",
+  "t": "Os holandeses invadem Pernambuco",
+  "y": 1630,
+  "c": false,
+  "pic": {
+   "scene": "olinda"
+  },
+  "x": "No ano seguinte, os holandeses incendiaram Olinda e se instalaram no Recife."
+ },
+ {
+  "id": "taj_mahal",
+  "t": "Começa a construção do Taj Mahal",
+  "y": 1632,
+  "c": false,
+  "pic": {
+   "crest": "mogol"
+  },
+  "x": "O mausoléu foi erguido para Mumtaz Mahal, esposa do imperador Shah Jahan."
+ },
+ {
+  "id": "discurso_metodo",
+  "t": "Descartes publica o Discurso do Método",
+  "y": 1637,
+  "c": false,
+  "pic": {
+   "face": "descartes"
+  },
+  "x": "A obra saiu em francês, e não em latim, para alcançar mais leitores."
+ },
+ {
+  "id": "ronda_noturna",
+  "t": "Rembrandt conclui A Ronda Noturna",
+  "y": 1642,
+  "c": false,
+  "pic": {
+   "scene": "ronda_noturna"
+  },
+  "x": "O nome popular surgiu porque o verniz escurecido fez a cena parecer noturna."
+ },
+ {
+  "id": "vestfalia",
+  "t": "Paz de Vestfália encerra a Guerra dos Trinta Anos",
+  "y": 1648,
+  "c": false,
+  "pic": {
+   "crest": "sacro_imperio"
+  }
+ },
+ {
+  "id": "luanda_retomada",
+  "t": "Salvador de Sá retoma Luanda dos holandeses",
+  "y": 1648,
+  "c": false,
+  "pic": {
+   "scene": "fortaleza_luanda"
+  },
+  "x": "A expedição que retomou Luanda partiu do Rio de Janeiro."
+ },
+ {
+  "id": "holandeses_saem",
+  "t": "Os holandeses se rendem e deixam o Recife",
+  "y": 1654,
+  "c": false,
+  "pic": {
+   "crest": "portugal"
+  },
+  "x": "A rendição foi assinada na Campina do Taborda, nos arredores do Recife."
+ },
+ {
+  "id": "meninas",
+  "t": "Velázquez pinta As Meninas",
+  "y": 1656,
+  "c": false,
+  "pic": {
+   "scene": "atelie_meninas"
+  },
+  "x": "O próprio Velázquez aparece no quadro, diante de uma tela enorme."
+ },
+ {
+  "id": "incendio_londres",
+  "t": "Grande Incêndio de Londres",
+  "y": 1666,
+  "c": false,
+  "pic": {
+   "flag": "ENG"
+  },
+  "x": "O fogo começou numa padaria e destruiu a antiga catedral de São Paulo."
+ },
+ {
+  "id": "corte_versalhes",
+  "t": "Luís XIV instala a corte em Versalhes",
+  "y": 1682,
+  "c": false,
+  "pic": {
+   "face": "luis_xiv"
+  },
+  "x": "Versalhes chegou a abrigar milhares de cortesãos e criados."
+ },
+ {
+  "id": "nasc_bach",
+  "t": "Nascimento de Johann Sebastian Bach",
+  "y": 1685,
+  "c": false,
+  "pic": {
+   "scene": "orgao_bach"
+  },
+  "x": "Jovem, Bach caminhou cerca de 400 quilômetros para ouvir o organista Buxtehude."
+ },
+ {
+  "id": "principia",
+  "t": "Newton publica os Principia",
+  "y": 1687,
+  "c": false,
+  "pic": {
+   "scene": "macieira_newton"
+  },
+  "x": "A publicação foi paga por Edmond Halley, o do cometa."
+ },
+ {
+  "id": "morte_zumbi",
+  "t": "Morte de Zumbi dos Palmares",
+  "y": 1695,
+  "c": false,
+  "pic": {
+   "face": "zumbi"
+  },
+  "x": "O dia de sua morte, 20 de novembro, é hoje o Dia da Consciência Negra."
+ },
+ {
+  "id": "sao_petersburgo",
+  "t": "Pedro, o Grande, funda São Petersburgo",
+  "y": 1703,
+  "c": false,
+  "pic": {
+   "face": "pedro_grande"
+  },
+  "x": "A cidade foi erguida sobre pântanos à beira do golfo da Finlândia."
+ },
+ {
+  "id": "enciclopedia",
+  "t": "Sai o primeiro volume da Enciclopédia de Diderot",
+  "y": 1751,
+  "c": false,
+  "pic": {
+   "scene": "ev_iluminismo"
+  },
+  "x": "A obra chegou a ser proibida pelo governo francês."
+ },
+ {
+  "id": "terremoto_lisboa",
+  "t": "Grande terremoto destrói Lisboa",
+  "y": 1755,
+  "c": false,
+  "pic": {
+   "crest": "portugal"
+  },
+  "x": "O tremor aconteceu no Dia de Todos os Santos, com as igrejas lotadas."
+ },
+ {
+  "id": "nasc_mozart",
+  "t": "Nascimento de Wolfgang Amadeus Mozart",
+  "y": 1756,
+  "c": false,
+  "pic": {
+   "face": "mozart"
+  },
+  "x": "Aos cinco anos, Mozart já compunha pequenas peças."
+ },
+ {
+  "id": "expulsao_jesuitas",
+  "t": "Pombal expulsa os jesuítas do Brasil",
+  "y": 1759,
+  "c": false,
+  "pic": {
+   "crest": "imperio_portugues"
+  }
+ },
+ {
+  "id": "capital_rio",
+  "t": "A capital do Brasil passa de Salvador para o Rio",
+  "y": 1763,
+  "c": false,
+  "pic": {
+   "crest": "imperio_portugues"
+  },
+  "x": "A mudança aproximou o governo do porto por onde saía o ouro de Minas."
+ },
+ {
+  "id": "watt_vapor",
+  "t": "James Watt obtém sua primeira patente da máquina a vapor",
+  "y": 1769,
+  "c": false,
+  "pic": {
+   "flag": "SCO"
+  },
+  "x": "A grande novidade de Watt foi o condensador separado, que poupava carvão."
+ },
+ {
+  "id": "nasc_napoleao",
+  "t": "Nascimento de Napoleão Bonaparte",
+  "y": 1769,
+  "c": false,
+  "pic": {
+   "face": "napoleao"
+  },
+  "x": "Napoleão nasceu na Córsega, um ano depois de a ilha passar à França."
+ },
+ {
+  "id": "cook_australia",
+  "t": "James Cook chega à costa leste da Austrália",
+  "y": 1770,
+  "c": false,
+  "pic": {
+   "face": "cook"
+  }
+ },
+ {
+  "id": "independencia_eua",
+  "t": "Declaração de Independência dos Estados Unidos",
+  "y": 1776,
+  "c": false,
+  "pic": {
+   "scene": "ev_independencia_eua"
+  },
+  "x": "O principal redator do texto foi Thomas Jefferson."
+ },
+ {
+  "id": "queda_bastilha",
+  "t": "A queda da Bastilha",
+  "y": 1789,
+  "c": false,
+  "pic": {
+   "scene": "ev_revolucao_francesa"
+  },
+  "x": "A fortaleza-prisão de Paris guardava só sete presos naquele dia."
+ },
+ {
+  "id": "sao_domingos",
+  "t": "Começa a revolta dos escravizados em São Domingos",
+  "y": 1791,
+  "c": false,
+  "pic": {
+   "crest": "haiti"
+  }
+ },
+ {
+  "id": "flauta_magica",
+  "t": "Estreia de A Flauta Mágica, de Mozart",
+  "y": 1791,
+  "c": false,
+  "pic": {
+   "scene": "palco_luar"
+  },
+  "x": "Mozart morreu pouco mais de dois meses depois da estreia."
+ },
+ {
+  "id": "execucao_tiradentes",
+  "t": "Execução de Tiradentes",
+  "y": 1792,
+  "c": false,
+  "pic": {
+   "face": "tiradentes"
+  },
+  "x": "Tiradentes era alferes e também trabalhava como dentista."
+ },
+ {
+  "id": "execucao_luis_xvi",
+  "t": "Execução de Luís XVI",
+  "y": 1793,
+  "c": false,
+  "pic": {
+   "scene": "guilhotina"
+  }
+ },
+ {
+  "id": "vacina_jenner",
+  "t": "Jenner testa a primeira vacina, contra a varíola",
+  "y": 1796,
+  "c": false,
+  "pic": {
+   "scene": "vaca_jenner"
+  },
+  "x": "A palavra vacina vem de vacca, vaca em latim."
+ },
+ {
+  "id": "coroacao_napoleao",
+  "t": "Napoleão é coroado imperador",
+  "y": 1804,
+  "c": false,
+  "pic": {
+   "face": "napoleao"
+  },
+  "x": "Napoleão pôs a coroa na própria cabeça; o papa apenas a abençoou."
+ },
+ {
+  "id": "independencia_haiti",
+  "t": "Proclamada a independência do Haiti",
+  "y": 1804,
+  "c": false,
+  "pic": {
+   "crest": "haiti"
+  },
+  "x": "O Haiti nasceu da única revolta de escravizados que fundou um país."
+ },
+ {
+  "id": "austerlitz",
+  "t": "Batalha de Austerlitz",
+  "y": 1805,
+  "c": false,
+  "pic": {
+   "scene": "ev_guerras_napoleonicas"
+  },
+  "x": "É chamada de Batalha dos Três Imperadores."
+ },
+ {
+  "id": "trafalgar",
+  "t": "Batalha de Trafalgar",
+  "y": 1805,
+  "c": false,
+  "pic": {
+   "scene": "trafalgar"
+  },
+  "x": "O almirante Nelson venceu, mas morreu atingido por um atirador francês."
+ },
+ {
+  "id": "corte_portuguesa",
+  "t": "A corte portuguesa chega ao Rio de Janeiro",
+  "y": 1808,
+  "c": false,
+  "pic": {
+   "scene": "corte_1808"
+  },
+  "x": "Antes do Rio, a frota real fez uma escala em Salvador."
+ },
+ {
+  "id": "invasao_russia",
+  "t": "Napoleão invade a Rússia",
+  "y": 1812,
+  "c": false,
+  "pic": {
+   "crest": "imperio_frances"
+  },
+  "x": "Da Grande Armée, de mais de 600 mil homens, só uma pequena parte voltou."
+ },
+ {
+  "id": "waterloo",
+  "t": "Batalha de Waterloo",
+  "y": 1815,
+  "c": false,
+  "pic": {
+   "face": "wellington"
+  },
+  "x": "Wellington contou com a chegada decisiva dos prussianos de Blücher."
+ },
+ {
+  "id": "andes_san_martin",
+  "t": "San Martín atravessa os Andes",
+  "y": 1817,
+  "c": false,
+  "pic": {
+   "scene": "ev_independencias_latam"
+  },
+  "x": "O Exército dos Andes cruzou passos a mais de três mil metros de altitude."
+ },
+ {
+  "id": "frankenstein",
+  "t": "Mary Shelley publica Frankenstein",
+  "y": 1818,
+  "c": false,
+  "pic": {
+   "scene": "villa_diodati"
+  },
+  "x": "A história nasceu de um desafio para escrever contos de terror, numa noite de tempestade."
+ },
+ {
+  "id": "independencia_brasil",
+  "t": "Independência do Brasil",
+  "y": 1822,
+  "c": false,
+  "pic": {
+   "face": "dom_pedro_i"
+  },
+  "x": "Dom Pedro tinha 23 anos quando proclamou a independência."
+ },
+ {
+  "id": "champollion",
+  "t": "Champollion decifra os hieróglifos",
+  "y": 1822,
+  "c": false,
+  "pic": {
+   "scene": "decifracao"
+  },
+  "x": "A chave foi a Pedra de Roseta, com o mesmo texto em três escritas."
+ },
+ {
+  "id": "nona_sinfonia",
+  "t": "Estreia da Nona Sinfonia de Beethoven",
+  "y": 1824,
+  "c": false,
+  "pic": {
+   "scene": "sinfonia_coro"
+  },
+  "x": "Já surdo, Beethoven precisou ser virado para ver os aplausos."
+ },
+ {
+  "id": "confederacao_equador",
+  "t": "Revolta da Confederação do Equador",
+  "y": 1824,
+  "c": false,
+  "pic": {
+   "crest": "imperio_brasil"
+  },
+  "x": "Frei Caneca, um dos líderes, foi fuzilado porque nenhum carrasco aceitou enforcá-lo."
+ },
+ {
+  "id": "ferrovia_publica",
+  "t": "Inaugurada a primeira ferrovia pública a vapor",
+  "y": 1825,
+  "c": false,
+  "pic": {
+   "scene": "locomotiva_vapor"
+  },
+  "x": "A linha ligava Stockton a Darlington, no norte da Inglaterra."
+ },
+ {
+  "id": "abdicacao_pedro_i",
+  "t": "Dom Pedro I abdica do trono do Brasil",
+  "y": 1831,
+  "c": false,
+  "pic": {
+   "face": "dom_pedro_i"
+  },
+  "x": "Dom Pedro deixou no Brasil o filho de apenas cinco anos."
+ },
+ {
+  "id": "farroupilha",
+  "t": "Começa a Revolução Farroupilha",
+  "y": 1835,
+  "c": false,
+  "pic": {
+   "scene": "farrapos_pampa"
+  },
+  "x": "A guerra durou quase dez anos, a mais longa revolta do Império."
+ },
+ {
+  "id": "darwin_galapagos",
+  "t": "Darwin chega às ilhas Galápagos",
+  "y": 1835,
+  "c": false,
+  "pic": {
+   "scene": "beagle_galapagos"
+  },
+  "x": "Darwin passou só cerca de cinco semanas no arquipélago."
+ },
+ {
+  "id": "golpe_maioridade",
+  "t": "Golpe da Maioridade: Pedro II assume o trono",
+  "y": 1840,
+  "c": false,
+  "pic": {
+   "face": "dom_pedro_ii"
+  },
+  "x": "Dom Pedro II tinha apenas 14 anos."
+ },
+ {
+  "id": "ada_lovelace",
+  "t": "Ada Lovelace publica um algoritmo para uma máquina",
+  "y": 1843,
+  "c": false,
+  "pic": {
+   "scene": "maquina_analitica"
+  },
+  "x": "Ada era filha do poeta Lord Byron."
+ },
+ {
+  "id": "manifesto_comunista",
+  "t": "Marx e Engels publicam o Manifesto Comunista",
+  "y": 1848,
+  "c": false,
+  "pic": {
+   "face": "marx"
+  }
+ },
+ {
+  "id": "lei_eusebio",
+  "t": "Lei Eusébio de Queirós proíbe o tráfico de africanos",
+  "y": 1850,
+  "c": false,
+  "pic": {
+   "crest": "imperio_brasil"
+  }
+ },
+ {
+  "id": "palacio_cristal",
+  "t": "Grande Exposição no Palácio de Cristal, em Londres",
+  "y": 1851,
+  "c": false,
+  "pic": {
+   "scene": "palacio_cristal"
+  },
+  "x": "O palácio de ferro e vidro foi montado em poucos meses no Hyde Park."
+ },
+ {
+  "id": "ferrovia_maua",
+  "t": "Mauá inaugura a primeira ferrovia do Brasil",
+  "y": 1854,
+  "c": false,
+  "pic": {
+   "face": "maua"
+  },
+  "x": "O primeiro trecho tinha pouco mais de 14 quilômetros."
+ },
+ {
+  "id": "nightingale",
+  "t": "Florence Nightingale chega aos feridos da Guerra da Crimeia",
+  "y": 1854,
+  "c": false,
+  "pic": {
+   "scene": "dama_lampada"
+  },
+  "x": "Ficou conhecida como a Dama da Lâmpada pelas rondas noturnas."
+ },
+ {
+  "id": "cataratas_vitoria",
+  "t": "Livingstone avista as cataratas Vitória",
+  "y": 1855,
+  "c": false,
+  "pic": {
+   "scene": "cataratas_vitoria"
+  },
+  "x": "O nome local das quedas significa 'a fumaça que troveja'."
+ },
+ {
+  "id": "o_guarani",
+  "t": "José de Alencar publica O Guarani",
+  "y": 1857,
+  "c": false,
+  "pic": {
+   "crest": "imperio_brasil"
+  },
+  "x": "O romance inspirou a ópera de Carlos Gomes, estreada em Milão."
+ },
+ {
+  "id": "origem_especies",
+  "t": "Darwin publica A Origem das Espécies",
+  "y": 1859,
+  "c": false,
+  "pic": {
+   "face": "darwin"
+  },
+  "x": "A primeira tiragem esgotou-se entre os livreiros no dia do lançamento."
+ },
+ {
+  "id": "expedicao_mil",
+  "t": "Garibaldi desembarca na Sicília com os Mil",
+  "y": 1860,
+  "c": false,
+  "pic": {
+   "scene": "ev_unificacao_italia"
+  },
+  "x": "Anita Garibaldi, companheira dele, era brasileira, de Santa Catarina."
+ },
+ {
+  "id": "guerra_secessao",
+  "t": "Começa a Guerra de Secessão",
+  "y": 1861,
+  "c": false,
+  "pic": {
+   "scene": "ev_guerra_secessao"
+  }
+ },
+ {
+  "id": "miseraveis",
+  "t": "Victor Hugo publica Os Miseráveis",
+  "y": 1862,
+  "c": false,
+  "pic": {
+   "face": "victor_hugo"
+  },
+  "x": "Hugo escreveu boa parte do livro no exílio, na ilha de Guernsey."
+ },
+ {
+  "id": "guerra_paraguai",
+  "t": "Começa a Guerra do Paraguai",
+  "y": 1864,
+  "c": false,
+  "pic": {
+   "flag": "PAR"
+  },
+  "x": "É o maior conflito armado da história da América do Sul."
+ },
+ {
+  "id": "morte_lincoln",
+  "t": "Assassinato de Abraham Lincoln",
+  "y": 1865,
+  "c": false,
+  "pic": {
+   "face": "lincoln"
+  },
+  "x": "Lincoln foi baleado num teatro, por um ator."
+ },
+ {
+  "id": "leis_mendel",
+  "t": "Mendel publica suas leis da hereditariedade",
+  "y": 1866,
+  "c": false,
+  "pic": {
+   "scene": "ervilhas_mendel"
+  },
+  "x": "O trabalho de Mendel ficou esquecido por décadas."
+ },
+ {
+  "id": "humaita",
+  "t": "A esquadra brasileira força a passagem de Humaitá",
+  "y": 1868,
+  "c": false,
+  "pic": {
+   "scene": "humaita"
+  }
+ },
+ {
+  "id": "restauracao_meiji",
+  "t": "Restauração Meiji no Japão",
+  "y": 1868,
+  "c": false,
+  "pic": {
+   "face": "meiji"
+  }
+ },
+ {
+  "id": "canal_suez",
+  "t": "Inauguração do Canal de Suez",
+  "y": 1869,
+  "c": false,
+  "pic": {
+   "flag": "EGY"
+  },
+  "x": "O canal liga o Mediterrâneo ao mar Vermelho sem nenhuma eclusa."
+ },
+ {
+  "id": "imperio_alemao",
+  "t": "Proclamação do Império Alemão em Versalhes",
+  "y": 1871,
+  "c": false,
+  "pic": {
+   "scene": "versalhes_espelhos"
+  },
+  "x": "A cerimônia ocorreu na Galeria dos Espelhos."
+ },
+ {
+  "id": "ventre_livre",
+  "t": "Lei do Ventre Livre",
+  "y": 1871,
+  "c": false,
+  "pic": {
+   "face": "princesa_isabel"
+  },
+  "x": "A lei foi assinada pela princesa Isabel como regente."
+ },
+ {
+  "id": "impressao_sol",
+  "t": "Monet pinta Impressão, Nascer do Sol",
+  "y": 1872,
+  "c": false,
+  "pic": {
+   "scene": "impressao_sol"
+  },
+  "x": "O quadro deu nome, pela zombaria de um crítico, ao Impressionismo."
+ },
+ {
+  "id": "telefone",
+  "t": "Bell patenteia o telefone",
+  "y": 1876,
+  "c": false,
+  "pic": {
+   "scene": "telefone_bell"
+  },
+  "x": "Dom Pedro II testou o aparelho numa exposição nos Estados Unidos."
+ },
+ {
+  "id": "lampada_edison",
+  "t": "Edison faz funcionar sua lâmpada incandescente",
+  "y": 1879,
+  "c": false,
+  "pic": {
+   "scene": "eletricidade_1880"
+  }
+ },
+ {
+  "id": "nasc_einstein",
+  "t": "Nascimento de Albert Einstein",
+  "y": 1879,
+  "c": false,
+  "pic": {
+   "face": "einstein"
+  },
+  "x": "Einstein nasceu em Ulm, no sul da Alemanha."
+ },
+ {
+  "id": "bras_cubas",
+  "t": "Memórias Póstumas de Brás Cubas sai em livro",
+  "y": 1881,
+  "c": false,
+  "pic": {
+   "face": "machado"
+  },
+  "x": "Antes do livro, o romance saiu em capítulos na Revista Brasileira."
+ },
+ {
+  "id": "vacina_raiva",
+  "t": "Pasteur aplica a vacina contra a raiva num menino",
+  "y": 1885,
+  "c": false,
+  "pic": {
+   "scene": "bancada_microbiologia"
+  },
+  "x": "O menino Joseph Meister sobreviveu e depois trabalhou no Instituto Pasteur."
+ },
+ {
+  "id": "lei_aurea",
+  "t": "Lei Áurea abole a escravidão no Brasil",
+  "y": 1888,
+  "c": false,
+  "pic": {
+   "scene": "ev_abolicao_br"
+  },
+  "x": "O Brasil foi o último país das Américas a abolir a escravidão."
+ },
+ {
+  "id": "proclamacao_republica",
+  "t": "Proclamação da República no Brasil",
+  "y": 1889,
+  "c": false,
+  "pic": {
+   "scene": "republica_1889"
+  },
+  "x": "Deodoro da Fonseca era monarquista e amigo do imperador."
+ },
+ {
+  "id": "torre_eiffel",
+  "t": "Inauguração da Torre Eiffel",
+  "y": 1889,
+  "c": false,
+  "pic": {
+   "flag": "FRA"
+  },
+  "x": "A torre deveria ser desmontada depois de vinte anos."
+ },
+ {
+  "id": "noite_estrelada",
+  "t": "Van Gogh pinta A Noite Estrelada",
+  "y": 1889,
+  "c": false,
+  "pic": {
+   "scene": "noite_estrelada"
+  },
+  "x": "Van Gogh pintou a vista da janela do asilo de Saint-Rémy."
+ },
+ {
+  "id": "cinema_lumiere",
+  "t": "Primeira sessão pública de cinema dos Lumière",
+  "y": 1895,
+  "c": false,
+  "pic": {
+   "flag": "FRA"
+  },
+  "x": "A sessão foi no subsolo de um café em Paris."
+ },
+ {
+  "id": "adwa",
+  "t": "Batalha de Adwa: a Etiópia derrota a Itália",
+  "y": 1896,
+  "c": false,
+  "pic": {
+   "scene": "leao_de_juda"
+  }
+ },
+ {
+  "id": "teatro_amazonas",
+  "t": "Inauguração do Teatro Amazonas",
+  "y": 1896,
+  "c": false,
+  "pic": {
+   "scene": "teatro_amazonas"
+  },
+  "x": "Foi pago com a riqueza da borracha."
+ },
+ {
+  "id": "canudos",
+  "t": "Destruição do arraial de Canudos",
+  "y": 1897,
+  "c": false,
+  "pic": {
+   "scene": "arraial_canudos"
+  },
+  "x": "Foram necessárias quatro expedições militares para vencer o arraial."
+ },
+ {
+  "id": "os_sertoes",
+  "t": "Euclides da Cunha publica Os Sertões",
+  "y": 1902,
+  "c": false,
+  "pic": {
+   "flag": "BRA"
+  },
+  "x": "Euclides acompanhou a guerra de Canudos como repórter de jornal."
+ },
+ {
+  "id": "voo_wright",
+  "t": "Primeiro voo motorizado dos irmãos Wright",
+  "y": 1903,
+  "c": false,
+  "pic": {
+   "scene": "voo_wright"
+  },
+  "x": "O primeiro voo durou apenas 12 segundos."
+ },
+ {
+  "id": "tratado_petropolis",
+  "t": "Tratado de Petrópolis: o Acre passa ao Brasil",
+  "y": 1903,
+  "c": false,
+  "pic": {
+   "scene": "marco_fronteira"
+  },
+  "x": "O Brasil pagou à Bolívia e se comprometeu a construir uma ferrovia."
+ },
+ {
+  "id": "nobel_curie",
+  "t": "Marie Curie ganha seu primeiro Prêmio Nobel",
+  "y": 1903,
+  "c": false,
+  "pic": {
+   "face": "marie_curie"
+  },
+  "x": "Ela é a única pessoa premiada com o Nobel em duas ciências diferentes."
+ },
+ {
+  "id": "revolta_vacina",
+  "t": "Revolta da Vacina no Rio de Janeiro",
+  "y": 1904,
+  "c": false,
+  "pic": {
+   "scene": "brigada_sanitaria"
+  },
+  "x": "O estopim foi a lei que tornou obrigatória a vacinação contra a varíola."
+ },
+ {
+  "id": "voo_14bis",
+  "t": "Santos Dumont voa com o 14-Bis em Paris",
+  "y": 1906,
+  "c": false,
+  "pic": {
+   "scene": "catorze_bis"
+  },
+  "x": "Foi o primeiro voo de avião homologado por uma entidade aeronáutica."
+ },
+ {
+  "id": "revolta_chibata",
+  "t": "Revolta da Chibata na baía de Guanabara",
+  "y": 1910,
+  "c": false,
+  "pic": {
+   "scene": "revolta_chibata"
+  },
+  "x": "O líder dos marinheiros, João Cândido, ficou conhecido como Almirante Negro."
+ },
+ {
+  "id": "polo_sul",
+  "t": "Amundsen chega ao Polo Sul",
+  "y": 1911,
+  "c": false,
+  "pic": {
+   "scene": "polo_sul"
+  },
+  "x": "Amundsen chegou cerca de cinco semanas antes da equipe de Scott."
+ },
+ {
+  "id": "titanic",
+  "t": "Naufrágio do Titanic",
+  "y": 1912,
+  "c": false,
+  "pic": {
+   "scene": "titanic"
+  },
+  "x": "Os botes salva-vidas só tinham lugar para cerca de metade das pessoas a bordo."
+ },
+ {
+  "id": "linha_ford",
+  "t": "Ford inaugura a linha de montagem móvel",
+  "y": 1913,
+  "c": false,
+  "pic": {
+   "scene": "linha_montagem"
+  },
+  "x": "O tempo para montar um Modelo T caiu de mais de doze horas para cerca de hora e meia."
+ },
+ {
+  "id": "sarajevo",
+  "t": "Atentado de Sarajevo",
+  "y": 1914,
+  "c": false,
+  "pic": {
+   "crest": "austria_hungria"
+  },
+  "x": "O motorista do arquiduque errou o caminho e parou bem diante do atirador."
+ },
+ {
+  "id": "relatividade_geral",
+  "t": "Einstein apresenta a relatividade geral",
+  "y": 1915,
+  "c": false,
+  "pic": {
+   "scene": "espaco_curvo"
+  }
+ },
+ {
+  "id": "somme",
+  "t": "Começa a Batalha do Somme",
+  "y": 1916,
+  "c": false,
+  "pic": {
+   "scene": "ev_primeira_guerra"
+  },
+  "x": "Só no primeiro dia, os britânicos tiveram cerca de 57 mil baixas."
+ },
+ {
+  "id": "revolucao_outubro",
+  "t": "Os bolcheviques tomam o poder na Rússia",
+  "y": 1917,
+  "c": false,
+  "pic": {
+   "scene": "ev_revolucao_russa"
+  },
+  "x": "Pelo calendário russo da época a revolução foi em outubro; pelo nosso, em novembro."
+ },
+ {
+  "id": "tratado_versalhes",
+  "t": "Alemanha e Aliados assinam o Tratado de Versalhes",
+  "y": 1919,
+  "c": false,
+  "pic": {
+   "scene": "versalhes_espelhos"
+  },
+  "x": "Foi assinado na mesma Galeria dos Espelhos onde nascera o Império Alemão."
+ },
+ {
+  "id": "semana_arte_moderna",
+  "t": "Semana de Arte Moderna em São Paulo",
+  "y": 1922,
+  "c": false,
+  "pic": {
+   "scene": "theatro_municipal"
+  },
+  "x": "O evento ocupou o Theatro Municipal em três noites de festival."
+ },
+ {
+  "id": "tumba_tutancamon",
+  "t": "Descoberta da tumba de Tutancâmon",
+  "y": 1922,
+  "c": false,
+  "pic": {
+   "scene": "tumba_aberta"
+  },
+  "x": "Ao espiar o interior, Howard Carter disse ver 'coisas maravilhosas'."
+ },
+ {
+  "id": "republica_turquia",
+  "t": "Atatürk proclama a República da Turquia",
+  "y": 1923,
+  "c": false,
+  "pic": {
+   "face": "ataturk"
+  },
+  "x": "Atatürk trocou o alfabeto árabe pelo latino na escrita do turco."
+ },
+ {
+  "id": "abaporu",
+  "t": "Tarsila do Amaral pinta o Abaporu",
+  "y": 1928,
+  "c": false,
+  "pic": {
+   "scene": "abaporu"
+  },
+  "x": "Abaporu significa 'homem que come gente' em tupi."
+ },
+ {
+  "id": "penicilina",
+  "t": "Fleming descobre a penicilina",
+  "y": 1928,
+  "c": false,
+  "pic": {
+   "scene": "bancada_microbiologia"
+  },
+  "x": "Fleming notou o bolor numa placa contaminada ao voltar de férias."
+ },
+ {
+  "id": "crash_bolsa",
+  "t": "Quebra da Bolsa de Nova York abre a Grande Depressão",
+  "y": 1929,
+  "c": false,
+  "pic": {
+   "flag": "USA"
+  }
+ },
+ {
+  "id": "vargas_poder",
+  "t": "Getúlio Vargas assume o poder pela primeira vez",
+  "y": 1930,
+  "c": false,
+  "pic": {
+   "face": "getulio"
+  },
+  "x": "Somando seus dois períodos, Getúlio governou o país por cerca de dezoito anos."
+ },
+ {
+  "id": "cristo_redentor",
+  "t": "Inauguração do Cristo Redentor",
+  "y": 1931,
+  "c": false,
+  "pic": {
+   "flag": "BRA"
+  },
+  "x": "A estátua tem 30 metros de altura, sem contar o pedestal."
+ },
+ {
+  "id": "persistencia_memoria",
+  "t": "Dalí pinta A Persistência da Memória",
+  "y": 1931,
+  "c": false,
+  "pic": {
+   "scene": "relogios_derretidos"
+  },
+  "x": "Dalí disse ter se inspirado num queijo camembert derretendo."
+ },
+ {
+  "id": "hitler_chanceler",
+  "t": "Hitler é nomeado chanceler da Alemanha",
+  "y": 1933,
+  "c": false,
+  "pic": {
+   "crest": "alemanha_nazista"
+  }
+ },
+ {
+  "id": "guernica",
+  "t": "Bombardeio de Guernica",
+  "y": 1937,
+  "c": false,
+  "pic": {
+   "scene": "guernica_touro"
+  },
+  "x": "Picasso pintou o painel Guernica em pouco mais de um mês."
+ },
+ {
+  "id": "estado_novo",
+  "t": "Getúlio Vargas implanta o Estado Novo",
+  "y": 1937,
+  "c": false,
+  "pic": {
+   "flag": "BRA"
+  }
+ },
+ {
+  "id": "invasao_polonia",
+  "t": "A Alemanha invade a Polônia",
+  "y": 1939,
+  "c": false,
+  "pic": {
+   "flag": "POL"
+  }
+ },
+ {
+  "id": "churchill_premie",
+  "t": "Churchill torna-se primeiro-ministro pela primeira vez",
+  "y": 1940,
+  "c": false,
+  "pic": {
+   "scene": "downing_street"
+  }
+ },
+ {
+  "id": "pearl_harbor",
+  "t": "Ataque a Pearl Harbor",
+  "y": 1941,
+  "c": false,
+  "pic": {
+   "scene": "porta_avioes"
+  },
+  "x": "Os porta-aviões americanos estavam fora do porto e escaparam do ataque."
+ },
+ {
+  "id": "anexo_secreto",
+  "t": "A família de Anne Frank se esconde no Anexo Secreto",
+  "y": 1942,
+  "c": false,
+  "pic": {
+   "scene": "anexo_secreto"
+  },
+  "x": "O esconderijo ficava atrás de uma estante giratória."
+ },
+ {
+  "id": "dia_d",
+  "t": "Dia D: desembarque aliado na Normandia",
+  "y": 1944,
+  "c": false,
+  "pic": {
+   "scene": "ev_segunda_guerra"
+  }
+ },
+ {
+  "id": "monte_castelo",
+  "t": "A FEB conquista Monte Castelo, na Itália",
+  "y": 1945,
+  "c": false,
+  "pic": {
+   "scene": "caca_p47"
+  },
+  "x": "Foram necessários vários ataques, ao longo de três meses, para tomar o morro."
+ },
+ {
+  "id": "hiroshima",
+  "t": "Bomba atômica sobre Hiroshima",
+  "y": 1945,
+  "c": false,
+  "pic": {
+   "flag": "JPN"
+  }
+ },
+ {
+  "id": "revolucao_bichos",
+  "t": "Orwell publica A Revolução dos Bichos",
+  "y": 1945,
+  "c": false,
+  "pic": {
+   "scene": "fazenda_bichos"
+  },
+  "x": "Várias editoras recusaram o livro antes da publicação."
+ },
+ {
+  "id": "independencia_india",
+  "t": "Independência da Índia",
+  "y": 1947,
+  "c": false,
+  "pic": {
+   "crest": "india"
+  }
+ },
+ {
+  "id": "morte_gandhi",
+  "t": "Assassinato de Mahatma Gandhi",
+  "y": 1948,
+  "c": false,
+  "pic": {
+   "scene": "roca_gandhi"
+  }
+ },
+ {
+  "id": "china_popular",
+  "t": "Mao proclama a República Popular da China",
+  "y": 1949,
+  "c": false,
+  "pic": {
+   "crest": "china_popular"
+  }
+ },
+ {
+  "id": "petrobras",
+  "t": "Criação da Petrobras",
+  "y": 1953,
+  "c": false,
+  "pic": {
+   "scene": "torre_petroleo"
+  },
+  "x": "A campanha pela criação tinha o lema 'O petróleo é nosso'."
+ },
+ {
+  "id": "morte_getulio",
+  "t": "Morte de Getúlio Vargas",
+  "y": 1954,
+  "c": false,
+  "pic": {
+   "face": "getulio"
+  },
+  "x": "Getúlio deixou uma carta-testamento: 'Saio da vida para entrar na história'."
+ },
+ {
+  "id": "rosa_parks",
+  "t": "Rosa Parks se recusa a ceder o lugar no ônibus",
+  "y": 1955,
+  "c": false,
+  "pic": {
+   "face": "rosa_parks"
+  }
+ },
+ {
+  "id": "sputnik",
+  "t": "Lançamento do Sputnik 1",
+  "y": 1957,
+  "c": false,
+  "pic": {
+   "scene": "ev_corrida_espacial"
+  },
+  "x": "O satélite tinha o tamanho de uma bola de praia e só emitia bipes."
+ },
+ {
+  "id": "revolucao_cubana",
+  "t": "Triunfo da Revolução Cubana",
+  "y": 1959,
+  "c": false,
+  "pic": {
+   "scene": "sierra_maestra"
+  }
+ },
+ {
+  "id": "brasilia",
+  "t": "Inauguração de Brasília",
+  "y": 1960,
+  "c": false,
+  "pic": {
+   "face": "jk"
+  },
+  "x": "A nova capital foi construída em menos de quatro anos."
+ },
+ {
+  "id": "gagarin",
+  "t": "Gagarin torna-se o primeiro homem no espaço",
+  "y": 1961,
+  "c": false,
+  "pic": {
+   "face": "gagarin"
+  },
+  "x": "O voo de Gagarin durou 108 minutos."
+ },
+ {
+  "id": "muro_berlim",
+  "t": "Construção do Muro de Berlim",
+  "y": 1961,
+  "c": false,
+  "pic": {
+   "scene": "ev_guerra_fria"
+  }
+ },
+ {
+  "id": "crise_misseis",
+  "t": "Crise dos mísseis de Cuba",
+  "y": 1962,
+  "c": false,
+  "pic": {
+   "scene": "crise_misseis"
+  }
+ },
+ {
+  "id": "eu_tenho_um_sonho",
+  "t": "Martin Luther King discursa: 'Eu tenho um sonho'",
+  "y": 1963,
+  "c": false,
+  "pic": {
+   "scene": "ev_direitos_civis"
+  }
+ },
+ {
+  "id": "kennedy_dallas",
+  "t": "Assassinato de John F. Kennedy",
+  "y": 1963,
+  "c": false,
+  "pic": {
+   "face": "kennedy"
+  }
+ },
+ {
+  "id": "angicos",
+  "t": "Paulo Freire alfabetiza trabalhadores em Angicos",
+  "y": 1963,
+  "c": false,
+  "pic": {
+   "scene": "alfabetizacao"
+  },
+  "x": "Cerca de 300 adultos aprenderam a ler e escrever em cerca de 40 horas de aula."
+ },
+ {
+  "id": "golpe_64",
+  "t": "Golpe militar derruba João Goulart",
+  "y": 1964,
+  "c": false,
+  "pic": {
+   "scene": "tanques_1964"
+  }
+ },
+ {
+  "id": "cem_anos_solidao",
+  "t": "García Márquez publica Cem Anos de Solidão",
+  "y": 1967,
+  "c": false,
+  "pic": {
+   "scene": "borboletas_macondo"
+  }
+ },
+ {
+  "id": "ai5",
+  "t": "A ditadura militar decreta o AI-5",
+  "y": 1968,
+  "c": false,
+  "pic": {
+   "flag": "BRA"
+  }
+ },
+ {
+  "id": "homem_lua",
+  "t": "O homem pisa na Lua",
+  "y": 1969,
+  "c": false,
+  "pic": {
+   "scene": "pouso_lua"
+  },
+  "x": "Sem vento na Lua, as pegadas dos astronautas podem durar milhões de anos."
+ },
+ {
+  "id": "exercito_terracota",
+  "t": "Camponeses descobrem o exército de terracota",
+  "y": 1974,
+  "c": false,
+  "pic": {
+   "scene": "exercito_terracota"
+  },
+  "x": "Os camponeses cavavam um poço quando acharam os primeiros fragmentos."
+ },
+ {
+  "id": "hora_estrela",
+  "t": "Clarice Lispector publica A Hora da Estrela",
+  "y": 1977,
+  "c": false,
+  "pic": {
+   "face": "clarice"
+  }
+ },
+ {
+  "id": "chernobyl",
+  "t": "Acidente nuclear de Chernobyl",
+  "y": 1986,
+  "c": false,
+  "pic": {
+   "crest": "urss"
+  }
+ },
+ {
+  "id": "constituicao_cidada",
+  "t": "Promulgada a Constituição Cidadã",
+  "y": 1988,
+  "c": false,
+  "pic": {
+   "flag": "BRA"
+  }
+ },
+ {
+  "id": "chico_mendes",
+  "t": "Assassinato de Chico Mendes",
+  "y": 1988,
+  "c": false,
+  "pic": {
+   "face": "chico_mendes"
+  }
+ },
+ {
+  "id": "queda_muro",
+  "t": "Queda do Muro de Berlim",
+  "y": 1989,
+  "c": false,
+  "pic": {
+   "scene": "ev_guerra_fria"
+  }
+ },
+ {
+  "id": "www",
+  "t": "Tim Berners-Lee propõe a World Wide Web",
+  "y": 1989,
+  "c": false,
+  "pic": {
+   "flag": "CHE"
+  }
+ },
+ {
+  "id": "mandela_livre",
+  "t": "Nelson Mandela é libertado",
+  "y": 1990,
+  "c": false,
+  "pic": {
+   "face": "mandela"
+  },
+  "x": "Mandela passou 27 anos preso, 18 deles na ilha Robben."
+ },
+ {
+  "id": "fim_urss",
+  "t": "Dissolução da União Soviética",
+  "y": 1991,
+  "c": false,
+  "pic": {
+   "crest": "urss"
+  }
+ },
+ {
+  "id": "plano_real",
+  "t": "Lançamento do Plano Real",
+  "y": 1994,
+  "c": false,
+  "pic": {
+   "flag": "BRA"
+  }
+ },
+ {
+  "id": "ovelha_dolly",
+  "t": "Nasce a ovelha Dolly, clonada de uma célula adulta",
+  "y": 1996,
+  "c": false,
+  "pic": {
+   "scene": "ovelha_clonada"
+  }
+ },
+ {
+  "id": "torres_gemeas",
+  "t": "Aviões sequestrados derrubam as Torres Gêmeas",
+  "y": 2001,
+  "c": false,
+  "pic": {
+   "crest": "estados_unidos"
+  }
+ }
+]
