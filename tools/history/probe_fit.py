@@ -133,6 +133,32 @@ DRIVE = r"""
   startMilhao(); banked=0; rung=1; cashed=false; sc='end'; go(); fit('end/milhao-zero');
   diffKey='moderado'; startGame(); nCorrect=14; sc='end'; go(); fit('end/treino');
   startSurvival(); nCorrect=9; sc='end'; go(); fit('end/mata-mata');
+
+  /* the stamp album: every page of every theme, some stamps won */
+  seloAll().forEach(function(id, i){ if (i % 3 === 0) awardSelo(id); });
+  SELO_THEMES.forEach(function(t){
+    var n = Math.ceil(seloBy()[t[0]].length / SELO_PER);
+    for (var pg=0; pg<n; pg++){ seloTheme=t[0]; seloPage=pg; sc='selos'; go(); fit('selos/'+t[0]+'/'+pg); }
+  });
+  /* a right answer that wins a stamp prints it under the verdict */
+  var withSelo = CATS.flatMap(function(c){ return c.qs.map(function(q){ return Object.assign({}, q, {_cat:c}); }); })
+    .filter(function(q){ return seloOfQ(q) && !q.order; });
+  for (var i=0;i<6;i++){
+    var q4 = withSelo[(i*37) % withSelo.length]; delete selos[seloOfQ(q4)];
+    diffKey='dificil'; startGame(); cat.qs[0]=q4; qi=0; disp=getDisp(q4); sel=new Set(q4.a); tLeft=8; doReveal();
+    fit('reveal/selo'+(document.querySelector('.story')?'+story':''));
+  }
+  sc='end'; go(); fit('end/treino+selos');
+
+  /* Que ano?: each event guessed and revealed, and the result */
+  for (var g=0; g<3; g++){
+    startAno();
+    for (var k=0; k<ano.qs.length; k++){
+      ano.i=k; ano.phase='guess'; go(); fit('ano/guess');
+      ano.guess=ano.qs[k].e.y+3; anoCommit(); fit('ano/reveal'+(ano.qs[k].e.x?'+story':'')+(ano.log[ano.log.length-1].selo?'+selo':''));
+    }
+    ano.phase='end'; go(); fit('ano/end');
+  }
 """
 
 def run(label, w, h, inset):

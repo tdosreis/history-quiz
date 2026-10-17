@@ -119,6 +119,35 @@ JS = r"""
   });
   try { albumPages(PL.map((p, i) => ({ p, n: i + 1 }))); } catch (e) { F('albumPages ' + e.message); }
   try { MEDALS.forEach(m => { m.t({ games: 0, correct: 0 }); }); } catch (e) { F('medals ' + e.message); }
+  /* ── the stamp album: every stamp a scene with a page, printed won and unwon ── */
+  try {
+    const ids = seloAll(); note.selos = ids.length;
+    if (ids.length < 150) F('only ' + ids.length + ' stamps');
+    if (new Set(ids).size !== ids.length) F('a stamp is on two pages');
+    ids.forEach(id => {
+      if (!SCENE[id]) F('stamp without a scene ' + id);
+      if (!SELO_THEMES.some(t => t[0] === SCENE_T[id])) F('stamp without a theme ' + id);
+      if (!/<svg/.test(seloSvg(id, { got: true })) || !/<svg/.test(seloSvg(id, { got: false }))) F('stamp does not print ' + id);
+    });
+  } catch (e) { F('selos EXC ' + e.message); }
+  /* ── Que ano?: every event a clear line, a real year and a picture that exists ── */
+  try {
+    note.ano = ANO_EVENTS.length;
+    if (ANO_EVENTS.length < 100) F('only ' + ANO_EVENTS.length + ' year events');
+    const aid = new Set();
+    ANO_EVENTS.forEach(e => {
+      const w = 'ano ' + e.id + ': ';
+      if (aid.has(e.id)) F(w + 'duplicate id'); aid.add(e.id);
+      if (!e.t || /\d{3,4}|s[eé]culo/i.test(e.t)) F(w + 'the line names its date');
+      if (!Number.isInteger(e.y) || e.y === 0 || e.y > new Date().getFullYear()) F(w + 'bad year ' + e.y);
+      const p = e.pic || {};
+      if (!(p.scene ? SCENE[p.scene] : p.face ? PL.some(x => x.id === p.face) : p.crest ? CL.some(c => c.id === p.crest) : p.flag ? FLAGS[p.flag] : false)) F(w + 'no picture');
+      for (let r = 0; r <= 1; r += .25) { const [lo, hi] = anoWindow(e, r); if (!(lo <= e.y && e.y <= hi)) F(w + 'the ruler misses the year'); }
+      if (anoPts(e, e.y) !== 100) F(w + 'the exact year is not 100');
+    });
+    for (let i = 0; i < 6; i++) { const g = buildAno(); if (g.qs.length !== ANO_N) F('a Que ano? game has ' + g.qs.length + ' events');
+      if (new Set(g.qs.map(q => q.e.id)).size !== g.qs.length) F('a Que ano? game repeats an event'); }
+  } catch (e) { F('ano EXC ' + e.message); }
   note.ms = Date.now() - T0;
   return { fails, note };
 })()

@@ -317,10 +317,20 @@ def main():
     done = set(io.open(ready, encoding="utf-8").read().split()) if os.path.exists(ready) else None
     scenes = ["scenes/_core.js"] + ["scenes/" + f for f in sorted(os.listdir(os.path.join(H, "js", "scenes")))
                                     if f.endswith(".js") and f != "_core.js" and (done is None or f in done)]
-    s = put(s, "art", "\n".join(io.open(os.path.join(H, "js", f), encoding="utf-8").read()
-                                 for f in ["art_head.js"] + bras + scenes + ["art_tail.js"]))
-    s = put(s, "formats", "\n".join(io.open(os.path.join(H, "js", f), encoding="utf-8").read() for f in ("formats.js", "almanac.js")))
-    s = put(s, "formats_css", io.open(os.path.join(H, "css", "formats.css"), encoding="utf-8").read())
+    # each scene file is followed by a line that files its scenes under its theme (the stamp album's pages)
+    def src(f):
+        t = io.open(os.path.join(H, "js", f), encoding="utf-8").read()
+        if f.startswith("scenes/"):
+            t += "\n;_sceneTheme(%s);\n" % js(os.path.basename(f)[:-3])
+        return t
+    s = put(s, "art", "\n".join(src(f) for f in ["art_head.js"] + bras + scenes + ["art_tail.js"]))
+    # "Que ano?": the dated events it is played with (tools/history/ano_events.json)
+    ap = os.path.join(H, "ano_events.json")
+    ano = json.load(io.open(ap, encoding="utf-8")) if os.path.exists(ap) else []
+    ano_js = "const ANO_EVENTS = [\n" + "".join("  %s,\n" % json.dumps(e, ensure_ascii=False, separators=(",", ":")) for e in ano) + "];\n"
+    s = put(s, "formats", "\n".join(io.open(os.path.join(H, "js", f), encoding="utf-8").read() for f in ("formats.js", "almanac.js"))
+            + "\n" + ano_js + "\n".join(io.open(os.path.join(H, "js", f), encoding="utf-8").read() for f in ("selos.js", "ano.js")))
+    s = put(s, "formats_css", "\n".join(io.open(os.path.join(H, "css", f), encoding="utf-8").read() for f in ("formats.css", "selos_ano.css")))
     io.open(PAGE, "w", encoding="utf-8").write(s)
     print("index.html updated: %d bytes" % len(s.encode("utf-8")))
 

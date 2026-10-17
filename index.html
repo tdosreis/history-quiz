@@ -3200,6 +3200,138 @@
       .qcard-strip ~ .board-2-tight .opt-crest, .qcard-strip ~ .board-2-tight .opt-face { width: 26px; height: 26px; }
     }
 
+
+/* ═══ O ÁLBUM DE SELOS ═══ */
+.selo-pg { gap: 8px; }
+.selo-pg .alb-head { gap: 8px; }
+.selo-sheet { display: flex; flex-direction: column; gap: 8px; padding: 10px 10px 8px;
+  background: var(--at-card-img) center / 100% 100% no-repeat; color: var(--ink); }
+.selo-band { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; padding: 2px 4px 6px;
+  border-bottom: 1px solid var(--rule); }
+.selo-band b { font: 600 19px/1 var(--font-d); letter-spacing: -.01em; }
+.selo-band span { font-size: 11px; color: var(--ink-3); text-align: right; }
+.selo-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px 9px; }
+.selo { display: block; border: 0; padding: 0; background: none; cursor: pointer; color: var(--ink-3);
+  aspect-ratio: 132 / 104; animation: selo-in .32s ease-out both; }
+.selo .selo-svg { width: 100%; height: 100%; display: block; }
+.selo.is-got .selo-svg { filter: drop-shadow(0 1px 2px rgba(0, 0, 0, .28)); }
+.selo.is-got:nth-child(3n+1) { transform: rotate(-1.2deg); }
+.selo.is-got:nth-child(3n+2) { transform: rotate(.8deg); }
+.selo.is-got:nth-child(3n) { transform: rotate(-.4deg); }
+.selo.is-new .selo-svg { animation: selo-stamp .7s cubic-bezier(.2, 1.4, .4, 1) both; }
+.selo-void { cursor: default; animation: none; }
+.selo:focus-visible { outline: 2px solid var(--brass); outline-offset: 2px; }
+.selo-pager { display: flex; align-items: center; justify-content: space-between; gap: 6px; }
+.selo-pager .small { text-align: center; font-size: 11px; }
+.selo-hint { margin: 0; text-align: center; font-size: 11px; line-height: 1.3; }
+@keyframes selo-in { from { opacity: 0; transform: translateY(6px); } }
+@keyframes selo-stamp { 0% { transform: scale(1.35) rotate(-6deg); opacity: 0; } 60% { opacity: 1; } 100% { transform: none; } }
+
+.selo-zoom { position: fixed; inset: 0; z-index: 90; display: flex; align-items: center; justify-content: center;
+  background: rgba(10, 8, 6, .62); padding: 16px; animation: selo-in .2s ease-out both; }
+.selo-zoom-card { width: min(380px, 100%); display: flex; flex-direction: column; align-items: center; gap: 8px; text-align: center;
+  padding: 18px 16px 14px; background: var(--at-card-img) center / 100% 100% no-repeat; color: var(--ink); }
+.selo-zoom-st { width: 100%; }
+.selo-zoom-st .selo-svg { width: 100%; height: auto; display: block; filter: drop-shadow(0 3px 6px rgba(0, 0, 0, .35));
+  animation: selo-stamp .6s cubic-bezier(.2, 1.4, .4, 1) both; }
+.selo-zoom-t { margin: 4px 0 0; font: 600 16px/1.3 var(--font-d); }
+
+.selo-mini { display: inline-block; width: 58px; flex: none; }
+.selo-mini .selo-svg { width: 100%; height: auto; display: block; filter: drop-shadow(0 1px 2px rgba(0, 0, 0, .3)); }
+.selo-strip { display: flex; flex-direction: column; align-items: center; gap: 6px; border: 0; background: none; cursor: pointer; padding: 4px; color: inherit; }
+.selo-strip-row { display: flex; gap: 8px; justify-content: center; }
+.selo-strip .selo-mini { animation: selo-stamp .6s cubic-bezier(.2, 1.4, .4, 1) both; }
+.selo-won { display: flex; align-items: center; gap: 9px; justify-content: center; margin-top: 6px; font-size: 12.5px; text-align: left; }
+.selo-won .selo-mini { width: 50px; animation: selo-stamp .6s cubic-bezier(.2, 1.4, .4, 1) both; }
+.selo-won b { color: var(--brass-ink, var(--brass)); }
+
+/* the home screen: the album and the stamps side by side */
+.cv-cols { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr); gap: 8px; }
+.cv-cols .cv-album { min-width: 0; }
+.cv-selo { gap: 10px; }
+.cv-stk { position: relative; flex: none; width: 58px; height: 50px; }
+.cv-stk i { position: absolute; top: calc(var(--i) * 3px); left: calc(var(--i) * 9px); width: 40px; height: 32px;
+  transform: rotate(calc(var(--i) * 6deg - 6deg)); color: var(--ink-3); }
+.cv-stk .selo-svg { width: 100%; height: 100%; display: block; filter: drop-shadow(0 1px 2px rgba(0, 0, 0, .3)); }
+.cv-selo .cv-at b { font-size: 22px; }
+@media (max-width: 699px) {
+  .cv-toc.cv-toc-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px; }
+  .cv-toc-4 .cv-rt b { font-size: 15px; }
+  .cv-toc-4 .cv-rt small { font-size: 9.5px; }
+  .cv-cols .cv-album { padding: 9px 10px 9px 8px; gap: 8px; }
+  .cv-cols .cv-fan { width: 58px; }
+  .cv-cols .cv-fan i { width: 27px; height: 38px; left: calc(var(--i) * 15px); }
+  .cv-cols .cv-at b { font-size: 20px; }
+  .cv-stk { width: 50px; height: 44px; }
+  .cv-stk i { width: 34px; height: 27px; left: calc(var(--i) * 8px); }
+}
+
+/* ═══ QUE ANO? ═══ */
+.ano-pg { gap: 9px; }
+.ano-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.ano-head .runlog { justify-content: flex-start; }
+.ano-dot-on { background: var(--brass) !important; }
+.ano-score { font-size: 12px; color: var(--ink-3); white-space: nowrap; }
+.ano-score b { font: 600 20px/1 var(--font-d); color: var(--ink); }
+.ano-card { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; flex: 1 1 auto; min-height: 0; }
+.ano-pic { flex: 0 1 auto; min-height: 84px; max-height: min(240px, 34vh); width: 100%; display: flex; align-items: center; justify-content: center; }
+.ano-pic svg { height: min(240px, 34vh); width: auto; max-width: 100%; max-height: 100%; display: block; }
+.ano-scene svg { padding: 5px 5px 6px; background: #EFE6CF; box-shadow: 0 2px 8px rgba(0, 0, 0, .3); }
+.ano-face img { height: min(240px, 34vh); max-height: 100%; aspect-ratio: 3 / 4; object-fit: cover; object-position: 50% 20%;
+  padding: 5px 5px 6px; background: #EFE6CF; box-shadow: 0 2px 8px rgba(0, 0, 0, .3); filter: sepia(.08); }
+.ano-crest .crest-disc { width: min(150px, 100%); height: auto; aspect-ratio: 1; }
+.ano-flag svg { width: auto; height: 100%; max-height: 120px; aspect-ratio: 3 / 2; box-shadow: 0 2px 8px rgba(0, 0, 0, .3); }
+.ano-t { margin: 0; text-align: center; font: 600 clamp(19px, 5.4vw, 23px)/1.22 var(--font-d); letter-spacing: -.012em; max-width: 26ch; }
+.ano-dial { display: flex; flex-direction: column; align-items: stretch; gap: 6px; flex: none; }
+.ano-year { text-align: center; font: 600 44px/1 var(--font-d); letter-spacing: -.02em; color: var(--brass-ink, var(--brass)); }
+.ano-year.is-set { font-size: 30px; color: var(--ink-3); text-decoration: line-through; text-decoration-thickness: 2px; }
+.ano-truth { text-align: center; font-size: 13px; color: var(--ink-2); }
+.ano-truth span { font-weight: 700; color: var(--ink); }
+.ano-truth b { font: 600 24px/1 var(--font-d); color: var(--good); margin: 0 2px; }
+.ano-rule { position: relative; padding: 4px 4px 0; }
+.ano-rule input[type=range] { -webkit-appearance: none; appearance: none; width: 100%; height: 34px; margin: 0; background: transparent; cursor: pointer; }
+.ano-rule input[type=range]::-webkit-slider-runnable-track { height: 8px; border-radius: 4px;
+  background: repeating-linear-gradient(90deg, var(--ink-3) 0 1px, transparent 1px 10%), var(--rule); }
+.ano-rule input[type=range]::-moz-range-track { height: 8px; border-radius: 4px; background: var(--rule); }
+.ano-rule input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 30px; height: 30px; margin-top: -11px; border-radius: 50%;
+  background: var(--brass); border: 3px solid var(--paper, #F4EEDC); box-shadow: 0 2px 6px rgba(0, 0, 0, .35); }
+.ano-rule input[type=range]::-moz-range-thumb { width: 26px; height: 26px; border-radius: 50%; background: var(--brass);
+  border: 3px solid var(--paper, #F4EEDC); box-shadow: 0 2px 6px rgba(0, 0, 0, .35); }
+.ano-rule input[type=range]:disabled { opacity: .45; cursor: default; }
+.ano-ends { display: flex; justify-content: space-between; font-size: 11px; color: var(--ink-3); padding: 0 2px; }
+.ano-mark { position: absolute; top: 4px; width: 0; height: 34px; pointer-events: none; }
+.ano-mark::before { content: ''; position: absolute; left: -2px; top: 2px; width: 4px; height: 30px; border-radius: 2px; }
+.ano-mark-g::before { background: var(--ink-3); }
+.ano-mark-y::before { background: var(--good); animation: ano-drop .5s cubic-bezier(.2, 1.4, .4, 1) both; }
+@keyframes ano-drop { from { transform: translateY(-14px); opacity: 0; } }
+.ano-nudge { display: flex; justify-content: center; gap: 6px; }
+.ano-nudge .btn { min-width: 52px; }
+#ano-go { align-self: center; }
+.ano-after { display: flex; flex-direction: column; align-items: center; gap: 4px; text-align: center; }
+.ano-after .story { margin-top: 2px; }
+.ano-after .btn { margin-top: 6px; }
+.ano-list { width: 100%; max-width: 420px; display: flex; flex-direction: column; gap: 3px; text-align: left; }
+.ano-li { display: grid; grid-template-columns: 32px minmax(0, 1fr) auto; align-items: center; gap: 8px; padding: 3px 4px;
+  border-bottom: 1px solid var(--rule); font-size: 12px; }
+.ano-li-p { font: 700 14px/1 var(--font-d); text-align: right; }
+.ano-li-t { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ano-li-y { display: flex; flex-direction: column; align-items: flex-end; line-height: 1.1; }
+.ano-li-y small { font-size: 9.5px; color: var(--ink-3); }
+@media (max-width: 699px) {
+  .ano-pg { padding-top: 10px; padding-bottom: 12px; gap: 7px; }
+  .ano-year { font-size: 40px; }
+}
+@media (max-width: 699px) and (max-height: 700px) {
+  .ano-pg { gap: 5px; }
+  .ano-pic { max-height: 130px; }
+  .ano-pic svg, .ano-face img { max-height: 130px; }
+  .ano-t { font-size: 18px; }
+  .ano-year { font-size: 34px; }
+  .ano-li { padding: 2px 4px; font-size: 11px; }
+}
+.mode-ano { --md: #2F5D62; --md-soft: rgba(47, 93, 98, .14); }
+:root[data-theme="dark"] .mode-ano, :root:not([data-theme="light"]) .mode-ano { --md: #5FA3A9; }
+
 /*@@/formats_css@@*/
   </style>
 </head>
@@ -5687,7 +5819,7 @@ const CATS = [
       {"t": "Os médicos já usavam a famosa máscara em forma de bico durante a Peste Negra, no século XIV?", "a": ["Mito"], "type": "txt", "choices": ["Fato", "Mito"], "duel": true, "myth": true, "d": 5, "x": "Na Peste Negra, de 1347 a 1351, ela não existia: a máscara de bico, recheada de ervas aromáticas, surgiu no século XVII e é atribuída ao médico francês Charles de Lorme.", "scene": "peste_negra"},
     ]
   },
-  /* NEW-QS:END */
+        /* NEW-QS:END */
 ];
 /*@@/data_cl_cats@@*/
 /*@@data_pl_lib@@*/
@@ -8304,7 +8436,7 @@ function startDaily() {
   cat.qs = cat.qs.slice(0, 10);
   cat.name = 'Desafio Diário';
   qi = 0; sel.clear(); pts = 0; prevPts = 0; streak = 0;
-  nCorrect = 0; nPartial = 0; bestStreak = 0; lastGain = 0; runLog = []; runNew = 0; runNewIds = []; runPulls = []; runPackOpened = false; gameN++;
+  nCorrect = 0; nPartial = 0; bestStreak = 0; lastGain = 0; runLog = []; runNew = 0; runNewIds = []; runPulls = []; runSelos = []; runPackOpened = false; gameN++;
   resetLifes();
   sc = 'quiz'; tMax = qTime(); tLeft = tMax; lastMsg = '';
   disp = dealDisp(0);
@@ -8850,6 +8982,17 @@ const MEDALS = [
     t: st => (st.milBest || 0) >= 100000 },
   { id:'million',ic:'crown', n:'Milionário',     d:'Chegue a R$ 1.000.000',
     t: st => (st.million || 0) >= 1 },
+  /* ── the stamps and the years ── */
+  { id:'selo10', ic:'stamp', n:'Filatelista',     d:'Ganhe 10 selos',
+    t: () => seloCount() >= 10, p: () => [seloCount(), 10] },
+  { id:'selo50', ic:'stamp', n:'Colecionador de selos', d:'Ganhe 50 selos',
+    t: () => seloCount() >= 50, p: () => [seloCount(), 50] },
+  { id:'seloPg', ic:'book',  n:'Página completa', d:'Complete um tema do álbum de selos',
+    t: () => SELO_THEMES.some(t => { const g = seloBy()[t[0]]; return g.length && g.every(seloHas); }) },
+  { id:'anoExato', ic:'target', n:'Na mosca',     d:'Crave o ano exato de um evento no Que ano?',
+    t: st => (st.anoExact || 0) >= 1 },
+  { id:'ano700', ic:'hourglass', n:'Senhor do tempo', d:'Faça 700 pontos no Que ano?',
+    t: () => LS.get('anoBest', 0) >= 700, p: () => [LS.get('anoBest', 0), 700] },
 ];
 
 function earnedMedals() { return MEDALS.filter(m => { try { return m.t(stats); } catch (e) { return false; } }); }
@@ -8886,6 +9029,8 @@ const MEDAL_SETS = [
     ids:['safe1','safe2','quit','million'] },
   { id:'arquivo', n:'O arquivo',     tag:'Arquivo', shape:'hex',
     ids:['fQuote','fBattle','fLine','fNews','fDuel','fMyth','fOrder','fAll'] },
+  { id:'selos',  n:'Selos e anos',   tag:'Selos',  shape:'seal',
+    ids:['selo10','selo50','seloPg','anoExato','ano700'] },
 ];
 /* How hard each one is to get, not how many people hold it — there is no
    server to count that, and a made-up percentage would be a lie. */
@@ -8900,6 +9045,7 @@ const MEDAL_TIER = {
   hard:3, c500:3, alb3q:3, albEsc:3, albSel:3, albMsc:3, surv10:3, quit:3,
   albAll:4, albBook:4, million:4,
   fQuote:2, fBattle:2, fLine:2, fNews:2, fOrder:2, fDuel:2, fMyth:2, fAll:3,
+  selo10:1, anoExato:2, selo50:2, ano700:3, seloPg:3,
 };
 const TIER_NAME = ['', 'Comum', 'Rara', 'Épica', 'Lendária'];
 const medalSet = m => MEDAL_SETS.find(s => s.ids.includes(m.id)) || MEDAL_SETS[0];
@@ -9109,7 +9255,7 @@ function startSurvival() {
   const extra = buildGame('dificil');
   cat.qs = cat.qs.concat(extra.qs);
   qi = 0; sel.clear(); pts = 0; prevPts = 0; streak = 0;
-  nCorrect = 0; nPartial = 0; bestStreak = 0; lastGain = 0; runLog = []; runNew = 0; runNewIds = []; runPulls = []; runPackOpened = false; gameN++;
+  nCorrect = 0; nPartial = 0; bestStreak = 0; lastGain = 0; runLog = []; runNew = 0; runNewIds = []; runPulls = []; runSelos = []; runPackOpened = false; gameN++;
   resetLifes();
   sc = 'quiz'; tMax = qTime(); tLeft = tMax; lastMsg = '';
   disp = getDisp(cat.qs[0]);
@@ -9274,7 +9420,7 @@ function startMilhao() {
   cat = buildMilhao();
   rung = 0; banked = 0; cashed = false;
   qi = 0; sel.clear(); pts = 0; prevPts = 0; streak = 0;
-  nCorrect = 0; nPartial = 0; bestStreak = 0; lastGain = 0; runLog = []; runNew = 0; runNewIds = []; runPulls = []; runPackOpened = false; gameN++;
+  nCorrect = 0; nPartial = 0; bestStreak = 0; lastGain = 0; runLog = []; runNew = 0; runNewIds = []; runPulls = []; runSelos = []; runPackOpened = false; gameN++;
   resetLifes();
   sc = 'quiz'; tMax = qTime(); tLeft = tMax; lastMsg = '';
   disp = getDisp(cat.qs[0]);
@@ -12949,6 +13095,10 @@ const BEAST = (() => {
      ev     the EVENTS id this scene stands for ("viveu durante…")
 ═══════════════════════════════════════════════════ */
 const SCENE = {};
+/* the theme file each scene was drawn in (the build files them as it reads
+   each one): the stamp album's pages */
+const SCENE_T = {};
+function _sceneTheme(t) { for (const k in SCENE) if (!SCENE_T[k]) SCENE_T[k] = t; }
 /* the album's inks */
 const SCK = {
   ink: '#2A1D10', paper: '#F1E7CF', parch: '#E9DDBF', sand: '#E9C98B', ochre: '#C9A66B',
@@ -13197,6 +13347,8 @@ function _queue(first) {
     + SCH.caps(8, 75, 'ANTES', 5, SCK.ink, 'text-anchor="start" opacity=".7"') + SCH.caps(112, 75, 'DEPOIS', 5, SCK.ink, 'text-anchor="end" opacity=".7"')
     + xs.map(person).join('') + hand;
 }
+
+;_sceneTheme("_core");
 
 /* Antiguidade — the scenes of Egypt, Mesopotamia, Israel, Phoenicia and Rome (conventions in _core.js) */
 Object.assign(SCENE, {
@@ -13667,6 +13819,8 @@ Object.assign(SCENE, {
     } },
 });
 
+;_sceneTheme("10_antiguidade");
+
 /* Grécia antiga — the scenes of the Greek world, from Cnossos to Alexandria (conventions in _core.js) */
 Object.assign(SCENE, {
   /* a plain clay kylix on the stone bench of a bare cell, in the light of the barred window */
@@ -14065,6 +14219,8 @@ Object.assign(SCENE, {
         + `<path d="M-24.4-6.6q3-1.6 6 0M-10.4-6.6q3-1.6 6 0M3.6-6.6q3-1.6 6 0M17.6-6.6q3-1.6 6 0" stroke="${SCK.ink}" stroke-width="1.8" fill="none"/></g>`;
     } },
 });
+
+;_sceneTheme("11_grecia");
 
 /* Idade Média — the scenes of Christendom, Byzantium, Islam and the North (conventions in _core.js) */
 Object.assign(SCENE, {
@@ -14547,6 +14703,8 @@ Object.assign(SCENE, {
     } },
 });
 
+;_sceneTheme("20_medieval");
+
 /* Ásia — the scenes of the steppe, China, India, Japan, Korea, Persia and the Ottomans (conventions in _core.js) */
 Object.assign(SCENE, {
   /* the open steppe: three white felt gers, a black horsetail standard and a small herd under a huge sky */
@@ -15006,6 +15164,8 @@ Object.assign(SCENE, {
     } },
 });
 
+;_sceneTheme("30_asia");
+
 /* África e Américas — the scenes of the Saharan and African kingdoms, the Aztecs, Maya, Incas and Olmecs, the plains and the Andes (conventions in _core.js) */
 Object.assign(SCENE, {
   /* a salt caravan crossing the dunes: a veiled rider on his dromedary, slabs of salt slung on its flank, the line of camels heading for a low mud town */
@@ -15410,6 +15570,8 @@ Object.assign(SCENE, {
     } },
 });
 
+;_sceneTheme("40_africa_americas");
+
 /* Idade Moderna — the scenes of the Discoveries, the Renaissance, the Reformation and the age of kings (conventions in _core.js) */
 Object.assign(SCENE, {
   /* a Portuguese nau under square sails with the red cross of the Order of Christ rounds a brown headland crowned by a stone padrão; gulls */
@@ -15782,6 +15944,8 @@ Object.assign(SCENE, {
         + SCH.g(`<path d="M-12.6 -48.4l-5-4.6 4.4-1.4 3 3.6z" fill="${SCK.gold}"/>`, 1) + `<path d="M33 -3a2.4 2.4 0 1 1 4 -1a2 2 0 1 1 1 3z" fill="${SCK.stone}" opacity=".9"/></g>`;
     } },
 });
+
+;_sceneTheme("50_moderna");
 
 /* Revoluções — the scenes of the age of revolutions: the Bastille and the Terror, Napoleon's wars and Trafalgar, the American independence, steam and the mills, the Enlightenment, the 19th century's nations, wonders and voyages (conventions in _core.js) */
 Object.assign(SCENE, {
@@ -16202,6 +16366,8 @@ Object.assign(SCENE, {
     } },
 });
 
+;_sceneTheme("60_revolucoes");
+
 /* Século XX — the scenes of the twentieth century: the two world wars, the liners and the poles, the Russian revolution, the laboratory and the factory (conventions in _core.js) */
 Object.assign(SCENE, {
   /* the Western Front: a sandbag parapet with a British and a French helmet on it, a ladder, the duckboards; beyond, barbed wire and shattered trees under a grey sky */
@@ -16567,6 +16733,8 @@ Object.assign(SCENE, {
         + `<use href="#${M}" x="39" y="66"/><use href="#${M}" x="77" y="66"/><use href="#${M}" x="115" y="66"/>`;
     } },
 });
+
+;_sceneTheme("70_seculo20");
 
 /* Guerra Fria — the scenes of the Cold War and its age: the Wall, the race to space and the Moon, Cuba, Dallas, Vietnam, the end of empires, the civil rights, India and Mandela's island (conventions in _core.js) */
 Object.assign(SCENE, {
@@ -16952,6 +17120,8 @@ Object.assign(SCENE, {
     } },
 });
 
+;_sceneTheme("71_guerra_fria");
+
 /* Brasil — the scenes of colonial and imperial Brazil, from the landfall of 1500 to the Republic (conventions in _core.js) */
 Object.assign(SCENE, {
   /* the landfall of 1500: a long forested coast with its beach, the great round hill inland, naus with plain sails anchored in the bay and a boat rowing in */
@@ -17302,6 +17472,8 @@ Object.assign(SCENE, {
         + `<path d="${cg}" fill="${SCK.goldHi}" opacity=".25"/>` + SCH.g(`<path d="${cs}" fill="${SCK.gold}"/><path d="${cw}" fill="${SCK.white}"/>`, 1) + `<path d="${cl}" fill="#F7C14A" stroke="#C0601E" stroke-width=".6"/>`;
     } },
 });
+
+;_sceneTheme("80_brasil");
 
 /* Brasil República — the scenes of the Republic, from Canudos and the sanitary brigades to the Modernists, the coup of 1964 and the rubber forest (conventions in _core.js) */
 Object.assign(SCENE, {
@@ -17843,6 +18015,8 @@ Object.assign(SCENE, {
     } },
 });
 
+;_sceneTheme("81_brasil_republica");
+
 /* Ciência — the scenes of the scientists and inventors: their gardens, desks, benches and workshops, from the apple tree to the cloned sheep (conventions in _core.js) */
 Object.assign(SCENE, {
   /* Woolsthorpe in late summer: the old apple tree heavy with red fruit, one apple dropping towards an open book in the grass, the grey stone manor behind */
@@ -18287,6 +18461,8 @@ Object.assign(SCENE, {
     } },
 });
 
+;_sceneTheme("90_ciencia");
+
 /* Artes — the scenes of the painters, engravers and builders: their workshops, canvases, walls and stages, from the cave of Lascaux to the silent screen (conventions in _core.js) */
 Object.assign(SCENE, {
   /* Leonardo's ornithopter on its trestle in the workshop: two great bat wings of canvas stretched on wooden ribs, the mast with its pulley and ropes, the cradle and the pedal crank, on sketch paper */
@@ -18696,6 +18872,8 @@ Object.assign(SCENE, {
         + `<path d="${holes}" stroke="${SCK.stone}" stroke-width="1.2"/><circle cx="20" cy="58" r="3.4" fill="#4E3A26"/><circle cx="27" cy="68.6" r="3.4" fill="#4E3A26"/><circle cx="13" cy="68.6" r="3.4" fill="#4E3A26"/><circle cx="20" cy="66" r="1.2" fill="${SCK.stone}"/>`;
     } },
 });
+
+;_sceneTheme("91_artes");
 
 /* Letras e música — the scenes of the writers and composers: their playhouses, organs, stages and pianos, the streets and shores of their books (conventions in _core.js) */
 Object.assign(SCENE, {
@@ -19140,6 +19318,8 @@ Object.assign(SCENE, {
         + `<path d="M59.6 71.2l5-1.6M61 72.4l4.6-1.6M65.6 70.8l4.6 1.4M65 72.2l4 1.2M65 68.6v5.8" stroke="${K}" stroke-width=".6" opacity=".7"/><path d="M69 67.4l6 4.2" stroke="${SCK.burg}" stroke-width="1.4" stroke-linecap="round"/>`;
     } },
 });
+
+;_sceneTheme("92_letras_musica");
 
 
 /* The icon a question can be drawn with, by name — what merge_questions.py
@@ -21451,6 +21631,10 @@ function wireVitrine() {
 }
 function html() {
 
+  /* ── the stamp album and the year game (js/selos.js, js/ano.js) ── */
+  if (sc === 'selos') return selosHtml();
+  if (sc === 'ano')   return anoHtml();
+
   /* ── Home: the cover ────────────────────────────────────────── */
   if (sc === 'home') {
     const best = milBest();
@@ -21518,7 +21702,7 @@ function html() {
       })()}
         ${(() => { try { return almanacHtml(); } catch (e) { return ''; } })()}
 
-        <nav class="cv-toc" aria-label="Modos">
+        <nav class="cv-toc cv-toc-4" aria-label="Modos">
           <h2 class="cv-h">Outros jogos</h2>
           ${row('daily-btn', 'I', 'Diário',
             done ? 'Feito hoje' + (dres ? ' · ' + dres.nCorrect + '/' + dres.total : '')
@@ -21527,8 +21711,10 @@ function html() {
           ${row('surv-btn', 'II', 'Mata-mata',
             (stats.survBest || 0) > 0 ? 'Até errar · recorde ' + stats.survBest : 'Até errar a primeira', 'surv', ICON.shield('currentColor', 15))}
           ${row('cta-btn', 'III', 'Treino', 'Sem apostar, sem pressa', 'train', ICON.ladder('currentColor', 15))}
+          ${row('ano-btn', 'IV', 'Que ano?', LS.get('anoBest', 0) > 0 ? 'Recorde ' + LS.get('anoBest', 0) + ' pts' : 'Acerte o ano do evento', 'ano', ICON.hourglass('currentColor', 15))}
         </nav>
 
+        <div class="cv-cols">
         <button id="balb" class="cv-album" type="button">
           <span class="cv-fan" aria-hidden="true">${fan.map((p, i) => `<i class="${album.has(p.id) ? 'on' : ''}" style="--i:${i}"><img src="${p.img}" alt="" aria-hidden="true" loading="lazy"></i>`).join('')}</span>
           <span class="cv-at">
@@ -21537,6 +21723,8 @@ function html() {
             <span class="cv-bar"><i style="width:${Math.max(2, pct)}%"></i></span>
           </span>
         </button>
+        ${seloHomeTile()}
+        </div>
 
       ${(() => {
         /* The insígnias, small, on the cover — and printed even at zero. An
@@ -21678,6 +21866,7 @@ function html() {
         ${topbar('Meu álbum')}
         <div class="alb-head">
           <button id="balbvit" class="alb-vit" type="button">${ICON.star('currentColor', 12)} Vitrine</button>
+          <button id="balbselo" class="alb-vit" type="button">${ICON.stamp('currentColor', 12)} Selos</button>
           <span class="small muted">${albumPct()}% colado</span>
           <span class="display" style="font-size:20px;">${album.size}<span class="muted" style="font-size:13px;"> / ${total}</span></span>
         </div>
@@ -21983,6 +22172,7 @@ function html() {
       </div>
 
       ${packStrip()}
+      ${selosStrip()}
       ${medalChips()}
 
       <div class="foot-row" style="margin-top:12px;">
@@ -22016,6 +22206,7 @@ function html() {
       ${isRecord ? `<span class="chip chip-brass">${ICON.star('currentColor', 11)} Novo recorde</span>` : ''}
       ${medalChips()}
       ${packStrip()}
+      ${selosStrip()}
       <div style="margin-top:6px;">${runlogEl()}</div>
       <div class="foot-row" style="margin-top:12px;">
         <button id="bshare" class="btn btn-ghost btn-sm">Compartilhar</button>
@@ -22398,6 +22589,12 @@ function go() {
   on('bvit',        () => { snd.swipe();  sc = 'vitrine'; go(); });
   on('bvit2',       () => { snd.swipe();  sc = 'vitrine'; go(); });
   on('balbvit',     () => { snd.swipe();  sc = 'vitrine'; go(); });
+  on('bselo',       () => { snd.swipe();  seloTheme = null; sc = 'selos'; go(); });
+  on('balbselo',    () => { snd.swipe();  seloTheme = null; sc = 'selos'; go(); });
+  on('bselos-end',  () => { snd.swipe();  seloTheme = null; sc = 'selos'; go(); });
+  on('ano-btn',     () => { snd.select(); startAno(); });
+  if (sc === 'selos') wireSelos();
+  if (sc === 'ano')   wireAno();
   on('bwelc',       () => { snd.tap(); openWelcomePack(); });
   on('bpack',       () => { snd.tap(); openRunPack(); });
   if (sc === 'vitrine') wireVitrine();
@@ -22840,7 +23037,7 @@ function startGame() {
   seedFrom(runSeed);
   cat = buildGame(diffKey);
   qi = 0; sel.clear(); pts = 0; prevPts = 0; streak = 0;
-  nCorrect = 0; nPartial = 0; bestStreak = 0; lastGain = 0; runLog = []; runNew = 0; runNewIds = []; runPulls = []; runPackOpened = false; gameN++;
+  nCorrect = 0; nPartial = 0; bestStreak = 0; lastGain = 0; runLog = []; runNew = 0; runNewIds = []; runPulls = []; runSelos = []; runPackOpened = false; gameN++;
   resetLifes();
   sc = 'quiz'; tMax = qTime(); tLeft = tMax; lastMsg = '';
   disp = dealDisp(0);
@@ -23398,6 +23595,567 @@ function almanacHtml() {
     <span class="alm-t"><small>${when}</small><span><b class="num">${yearTxt(y)}</b> — ${txt}</span></span></div>`;
 }
 
+const ANO_EVENTS = [
+  {"id":"tmp0","t":"Bartolomeu Dias dobra o cabo da Boa Esperança","y":1488,"c":false,"pic":{"crest":"portugal"}},
+  {"id":"tmp1","t":"Colombo chega à América","y":1492,"c":false,"pic":{"face":"colombo"}},
+  {"id":"tmp2","t":"Vasco da Gama chega à Índia","y":1498,"c":false,"pic":{"face":"vasco_gama"}},
+  {"id":"tmp3","t":"Cabral chega ao Brasil","y":1500,"c":false,"pic":{"face":"cabral"}},
+  {"id":"tmp4","t":"Fim da primeira volta ao mundo","y":1522,"c":false,"pic":{"face":"magalhaes"}},
+  {"id":"tmp5","t":"Lutero divulga as 95 teses","y":1517,"c":false,"pic":{"face":"lutero"}},
+  {"id":"tmp6","t":"Henrique VIII vira chefe da Igreja inglesa","y":1534,"c":false,"pic":{"face":"henrique_viii"}},
+  {"id":"tmp7","t":"Calvino publica as Institutas","y":1536,"c":false,"pic":{"face":"calvino"}},
+  {"id":"tmp8","t":"Abertura do Concílio de Trento","y":1545,"c":false,"pic":{"crest":"sacro_imperio"}},
+  {"id":"tmp9","t":"Massacre da Noite de São Bartolomeu","y":1572,"c":false,"pic":{"crest":"francia"}},
+  {"id":"tmp10","t":"Das Revoluções das Esferas Celestes","y":1543,"c":false,"pic":{"face":"copernico"}},
+  {"id":"tmp11","t":"O Mensageiro das Estrelas","y":1610,"c":false,"pic":{"face":"galileu"}},
+  {"id":"tmp12","t":"Discurso do Método","y":1637,"c":false,"pic":{"face":"descartes"}},
+  {"id":"tmp13","t":"Principia","y":1687,"c":false,"pic":{"face":"newton"}},
+  {"id":"tmp14","t":"Paz de Vestfália","y":1648,"c":false,"pic":{"crest":"sacro_imperio"}},
+  {"id":"tmp15","t":"Execução do rei Carlos I","y":1649,"c":false,"pic":{"crest":"inglaterra"}},
+  {"id":"tmp16","t":"Revogação do Édito de Nantes","y":1685,"c":false,"pic":{"face":"luis_xiv"}},
+  {"id":"tmp17","t":"Revolução Gloriosa","y":1688,"c":false,"pic":{"flag":"NED"}},
+  {"id":"tmp18","t":"Invasão da Polônia","y":1939,"c":false,"pic":{"flag":"POL"}},
+  {"id":"tmp19","t":"Ataque a Pearl Harbor","y":1941,"c":false,"pic":{"flag":"USA"}},
+  {"id":"tmp20","t":"Rendição em Stalingrado","y":1943,"c":false,"pic":{"crest":"urss"}},
+  {"id":"tmp21","t":"Dia D","y":1944,"c":false,"pic":{"flag":"FRA"}},
+  {"id":"tmp22","t":"Bomba de Hiroshima","y":1945,"c":false,"pic":{"flag":"JPN"}},
+  {"id":"tmp23","t":"Atentado de Sarajevo","y":1914,"c":false,"pic":{"crest":"austria_hungria"}},
+  {"id":"tmp24","t":"Revolução de Outubro","y":1917,"c":false,"pic":{"face":"lenin"}},
+  {"id":"tmp25","t":"Tratado de Versalhes","y":1919,"c":false,"pic":{"face":"wilson"}},
+  {"id":"tmp26","t":"Marcha sobre Roma","y":1922,"c":false,"pic":{"crest":"italia_fascista"}},
+  {"id":"tmp27","t":"Quebra da Bolsa de Nova York","y":1929,"c":false,"pic":{"flag":"USA"}},
+  {"id":"tmp28","t":"Sputnik 1","y":1957,"c":false,"pic":{"crest":"urss"}},
+  {"id":"tmp29","t":"Voo de Gagarin","y":1961,"c":false,"pic":{"face":"gagarin"}},
+  {"id":"tmp30","t":"Primeira caminhada espacial","y":1965,"c":false,"pic":{"crest":"urss"}},
+  {"id":"tmp31","t":"Apollo 11","y":1969,"c":false,"pic":{"face":"armstrong"}},
+  {"id":"tmp32","t":"Estação Mir","y":1986,"c":false,"pic":{"crest":"urss"}},
+  {"id":"tmp33","t":"Lênin","y":1917,"c":false,"pic":{"face":"lenin"}},
+  {"id":"tmp34","t":"Atatürk","y":1923,"c":false,"pic":{"face":"ataturk"}},
+  {"id":"tmp35","t":"Franklin D. Roosevelt","y":1933,"c":false,"pic":{"face":"fdr"}},
+  {"id":"tmp36","t":"Winston Churchill","y":1940,"c":false,"pic":{"face":"churchill"}},
+  {"id":"tmp37","t":"Charles de Gaulle","y":1959,"c":false,"pic":{"face":"de_gaulle"}},
+  {"id":"tmp38","t":"95 teses de Lutero","y":1517,"c":false,"pic":{"face":"lutero"}},
+  {"id":"tmp39","t":"Queda da Bastilha","y":1789,"c":false,"pic":{"crest":"franca_revolucionaria"}},
+  {"id":"tmp40","t":"Início da Primeira Guerra","y":1914,"c":false,"pic":{"crest":"austria_hungria"}},
+  {"id":"tmp41","t":"Independência do Brasil","y":1822,"c":false,"pic":{"face":"dom_pedro_i"}},
+  {"id":"tmp42","t":"Lei Áurea","y":1888,"c":false,"pic":{"face":"princesa_isabel"}},
+  {"id":"tmp43","t":"Inauguração de Brasília","y":1960,"c":false,"pic":{"face":"jk"}},
+  {"id":"tmp44","t":"Pirâmide de Quéops","y":-2560,"c":false,"pic":{"crest":"egito_antigo"}},
+  {"id":"tmp45","t":"Partenon","y":-432,"c":false,"pic":{"crest":"atenas"}},
+  {"id":"tmp46","t":"Coliseu","y":80,"c":false,"pic":{"crest":"imperio_romano"}},
+  {"id":"tmp47","t":"Santa Sofia","y":537,"c":false,"pic":{"crest":"bizancio"}},
+  {"id":"tmp48","t":"Magna Carta","y":1215,"c":false,"pic":{"crest":"inglaterra"}},
+  {"id":"tmp49","t":"Queda de Constantinopla","y":1453,"c":false,"pic":{"face":"maome_ii"}},
+  {"id":"tmp50","t":"Tratado de Tordesilhas","y":1494,"c":false,"pic":{"crest":"espanha"}},
+  {"id":"tmp51","t":"Independência dos EUA","y":1776,"c":false,"pic":{"face":"jefferson"}},
+  {"id":"tmp52","t":"Independência do Haiti","y":1804,"c":false,"pic":{"face":"toussaint"}},
+  {"id":"tmp53","t":"Independência da Índia","y":1947,"c":false,"pic":{"face":"gandhi"}},
+  {"id":"tmp54","t":"Voo do 14-Bis","y":1906,"c":false,"pic":{"face":"santos_dumont"}},
+  {"id":"tmp55","t":"Revolução Russa","y":1917,"c":false,"pic":{"face":"lenin"}},
+  {"id":"tmp56","t":"Fim da Segunda Guerra","y":1945,"c":false,"pic":{"face":"churchill"}},
+  {"id":"tmp57","t":"Homem na Lua","y":1969,"c":false,"pic":{"face":"armstrong"}},
+  {"id":"tmp58","t":"Batalha de Maratona","y":-490,"c":false,"pic":{"crest":"atenas"}},
+  {"id":"tmp59","t":"Aníbal atravessa os Alpes","y":-218,"c":false,"pic":{"face":"anibal"}},
+  {"id":"tmp60","t":"César cruza o Rubicão","y":-49,"c":false,"pic":{"face":"cesar"}},
+  {"id":"tmp61","t":"Queda de Roma do Ocidente","y":476,"c":false,"pic":{"crest":"imperio_romano"}},
+  {"id":"tmp62","t":"Primeira Cruzada","y":1096,"c":false,"pic":{"face":"saladino"}},
+  {"id":"tmp63","t":"Guerra dos Cem Anos","y":1337,"c":false,"pic":{"face":"joana_darc"}},
+  {"id":"tmp64","t":"Peste Negra chega à Europa","y":1347,"c":false,"pic":{"crest":"veneza"}},
+  {"id":"tmp65","t":"Primeira Guerra Mundial","y":1914,"c":false,"pic":{"crest":"imperio_alemao"}},
+  {"id":"tmp66","t":"Construção do Muro de Berlim","y":1961,"c":false,"pic":{"crest":"urss"}},
+  {"id":"tmp67","t":"Queda do Muro de Berlim","y":1989,"c":false,"pic":{"crest":"urss"}},
+  {"id":"tmp68","t":"Mandela é libertado","y":1990,"c":false,"pic":{"face":"mandela"}},
+  {"id":"tmp69","t":"Atentados de 11 de setembro","y":2001,"c":false,"pic":{"crest":"estados_unidos"}},
+  {"id":"tmp70","t":"Pirâmides de Gizé","y":-2560,"c":false,"pic":{"crest":"egito_antigo"}},
+  {"id":"tmp71","t":"Morte de Cleópatra","y":-30,"c":false,"pic":{"face":"cleopatra"}},
+  {"id":"tmp72","t":"Descoberta da tumba de Tutancâmon","y":1922,"c":false,"pic":{"face":"tutancamon"}},
+  {"id":"tmp73","t":"Primeira escrita cuneiforme","y":-3200,"c":false,"pic":{"flag":"IRQ"}},
+  {"id":"tmp74","t":"Código de Hamurabi","y":-1754,"c":false,"pic":{"face":"hamurabi"}},
+  {"id":"tmp75","t":"Batalha de Kadesh","y":-1274,"c":false,"pic":{"face":"ramses_ii"}},
+  {"id":"tmp76","t":"Fundação de Cartago","y":-814,"c":false,"pic":{"crest":"cartago"}},
+  {"id":"tmp77","t":"Ciro toma a Babilônia","y":-539,"c":false,"pic":{"face":"ciro"}},
+  {"id":"tmp78","t":"Unificação do Alto e do Baixo Egito","y":-3100,"c":false,"pic":{"crest":"egito_antigo"}},
+  {"id":"tmp79","t":"Pirâmide de degraus de Djoser","y":-2670,"c":false,"pic":{"crest":"egito_antigo"}},
+  {"id":"tmp80","t":"Reinado de Hatexepsute","y":-1479,"c":false,"pic":{"face":"hatexepsute"}},
+  {"id":"tmp81","t":"Aquenáton funda Amarna","y":-1346,"c":false,"pic":{"face":"aquenaton"}},
+  {"id":"tmp82","t":"Conquista persa do Egito","y":-525,"c":false,"pic":{"crest":"persia"}},
+  {"id":"tmp83","t":"Início da Guerra do Peloponeso","y":-431,"c":false,"pic":{"crest":"esparta"}},
+  {"id":"tmp84","t":"Morte de Sócrates","y":-399,"c":false,"pic":{"face":"socrates"}},
+  {"id":"tmp85","t":"Morte de Alexandre","y":-323,"c":false,"pic":{"face":"alexandre"}},
+  {"id":"tmp86","t":"Fundação de Roma","y":-753,"c":false,"pic":{"flag":"ITA"}},
+  {"id":"tmp87","t":"Início da República","y":-509,"c":false,"pic":{"crest":"republica_romana"}},
+  {"id":"tmp88","t":"Augusto, primeiro imperador","y":-27,"c":false,"pic":{"face":"augusto"}},
+  {"id":"tmp89","t":"Queda do Império do Ocidente","y":476,"c":false,"pic":{"crest":"imperio_romano"}},
+  {"id":"tmp90","t":"Expulsão do último rei","y":-509,"c":false,"pic":{"crest":"republica_romana"}},
+  {"id":"tmp91","t":"Começa a Primeira Guerra Púnica","y":-264,"c":false,"pic":{"crest":"cartago"}},
+  {"id":"tmp92","t":"Destruição de Cartago","y":-146,"c":false,"pic":{"crest":"cartago"}},
+  {"id":"tmp93","t":"Revolta de Espártaco","y":-73,"c":false,"pic":{"face":"espartaco"}},
+  {"id":"tmp94","t":"Assassinato de Júlio César","y":-44,"c":false,"pic":{"face":"cesar"}},
+  {"id":"tmp95","t":"Queda de Roma","y":476,"c":false,"pic":{"crest":"imperio_romano"}},
+  {"id":"tmp96","t":"Carlos Magno é coroado","y":800,"c":false,"pic":{"face":"carlos_magno"}},
+  {"id":"tmp97","t":"Batalha de Hastings","y":1066,"c":false,"pic":{"face":"guilherme_conquistador"}},
+  {"id":"tmp98","t":"Conquista da Península Ibérica","y":711,"c":false,"pic":{"crest":"califado_omiada"}},
+  {"id":"tmp99","t":"Fundação de Bagdá","y":762,"c":false,"pic":{"crest":"califado_abassida"}},
+  {"id":"tmp100","t":"Saladino retoma Jerusalém","y":1187,"c":false,"pic":{"face":"saladino"}},
+  {"id":"tmp101","t":"Mongóis saqueiam Bagdá","y":1258,"c":false,"pic":{"crest":"imperio_mongol"}},
+  {"id":"tmp102","t":"Justiniano I","y":482,"c":false,"pic":{"face":"justiniano"}},
+  {"id":"tmp103","t":"Harune Arraxide","y":763,"c":false,"pic":{"face":"harun"}},
+  {"id":"tmp104","t":"Saladino","y":1137,"c":false,"pic":{"face":"saladino"}},
+  {"id":"tmp105","t":"Dante Alighieri","y":1265,"c":false,"pic":{"face":"dante"}},
+  {"id":"tmp106","t":"Joana d'Arc","y":1412,"c":false,"pic":{"face":"joana_darc"}},
+  {"id":"tmp107","t":"Urbano II prega a cruzada","y":1095,"c":false,"pic":{"crest":"francia"}},
+  {"id":"tmp108","t":"Saladino vence em Hattin","y":1187,"c":false,"pic":{"face":"saladino"}},
+  {"id":"tmp109","t":"Ricardo Coração de Leão toma Acre","y":1191,"c":false,"pic":{"face":"ricardo"}},
+  {"id":"tmp110","t":"Cruzados saqueiam Constantinopla","y":1204,"c":false,"pic":{"crest":"bizancio"}},
+  {"id":"tmp111","t":"China unificada pela primeira vez","y":-221,"c":false,"pic":{"face":"qin_shi_huang"}},
+  {"id":"tmp112","t":"Fundação do Império Mongol","y":1206,"c":false,"pic":{"face":"gengis"}},
+  {"id":"tmp113","t":"Invasões mongóis","y":1274,"c":false,"pic":{"crest":"imperio_mongol"}},
+  {"id":"tmp114","t":"Batalha de Sekigahara","y":1600,"c":false,"pic":{"face":"tokugawa_ieyasu"}},
+  {"id":"tmp115","t":"Restauração Meiji","y":1868,"c":false,"pic":{"face":"meiji"}},
+  {"id":"tmp116","t":"Bomba atômica em Hiroshima","y":1945,"c":false,"pic":{"flag":"JPN"}},
+  {"id":"tmp117","t":"Ashoka governa o Império Máuria","y":-268,"c":false,"pic":{"face":"ashoka"}},
+  {"id":"tmp118","t":"Vasco da Gama chega a Calicute","y":1498,"c":false,"pic":{"face":"vasco_gama"}},
+  {"id":"tmp119","t":"Fundação do Império Mogol","y":1526,"c":false,"pic":{"crest":"mogol"}},
+];
+
+/* ═══════════════════════════════════════════════════
+   O ÁLBUM DE SELOS — every scene a postage stamp
+   The drawn scenes (js/scenes/) are the stamps: answer a question that
+   wears one and it is cancelled with the day's postmark and stuck in the
+   stamp album for good; place an event's year close enough in "Que ano?"
+   and its scene is yours too. The stamps are grouped by the theme file the
+   scene was drawn in, nine to a page.
+═══════════════════════════════════════════════════ */
+const SELO_THEMES = [
+  ['10_antiguidade',      'Antiguidade',      'Egito, Mesopotâmia e Roma', 'ANT', 'scroll'],
+  ['11_grecia',           'Grécia',           'Das pólis a Alexandre',     'GRÉ', 'column'],
+  ['20_medieval',         'Idade Média',      'Cruzados, vikings e califas', 'MED', 'shield'],
+  ['30_asia',             'Ásia',             'Da China ao Japão',         'ÁSI', 'globe'],
+  ['40_africa_americas',  'África e Américas', 'Reinos, impérios e Andes',  'AFR', 'coins'],
+  ['50_moderna',          'Idade Moderna',    'Navegações e Renascimento', 'MOD', 'book'],
+  ['60_revolucoes',       'Revoluções',       'Bastilha, vapor e Napoleão', 'REV', 'torch'],
+  ['70_seculo20',         'Século XX',        'As grandes guerras',        'XX',  'news'],
+  ['71_guerra_fria',      'Guerra Fria',      'Muros, foguetes e direitos', 'GF',  'rocket'],
+  ['80_brasil',           'Brasil Colônia',   'Da costa ao Império',       'BR1', 'crown'],
+  ['81_brasil_republica', 'Brasil República', 'De Canudos à Copa',         'BR2', 'flag'],
+  ['90_ciencia',          'Ciência',          'Inventos e descobertas',    'CIÊ', 'bolt'],
+  ['91_artes',            'Artes',            'Pintura, palco e pedra',    'ART', 'star'],
+  ['92_letras_musica',    'Letras e Música',  'Livros, poemas e notas',    'LET', 'quill'],
+];
+const SELO_PER = 9;                     // stamps to a page: three rows of three
+let selos = LS.get('selos', {});        // scene id → 'YYYY-MM-DD' it was won
+let runSelos = [];                      // stamps won in this run
+let seloTheme = null, seloPage = 0;
+
+/* The stamps there are: every theme scene that something in the game can
+   win — a written question that wears it, an event of the generated
+   questions, or an event of "Que ano?". In the order they were drawn. */
+let _seloBy = null, _seloNum = null;
+function seloBy() {
+  if (_seloBy) return _seloBy;
+  const won = new Set();
+  CATS.forEach(c => c.qs.forEach(q => { const s = sceneOf(q); if (s) won.add(s.id); }));
+  Object.keys(SCENE).forEach(k => { if (SCENE[k].ev) won.add(k); });
+  if (typeof ANO_EVENTS !== 'undefined') ANO_EVENTS.forEach(e => { if (e.pic && e.pic.scene) won.add(e.pic.scene); });
+  const by = {};
+  SELO_THEMES.forEach(([t]) => { by[t] = []; });
+  Object.keys(SCENE).forEach(k => { const t = SCENE_T[k]; if (by[t] && won.has(k)) by[t].push(k); });
+  _seloNum = {};
+  let n = 0;
+  SELO_THEMES.forEach(([t]) => by[t].forEach(k => { _seloNum[k] = ++n; }));
+  return (_seloBy = by);
+}
+const seloAll = () => SELO_THEMES.flatMap(([t]) => seloBy()[t]);
+const seloNum = id => (seloBy(), _seloNum[id] || 0);
+const seloHas = id => !!selos[id];
+const seloCount = () => seloAll().filter(seloHas).length;
+
+function _todayISO() {
+  const d = new Date();
+  return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
+}
+/* Stick a stamp in, if it is one and is new. True when it was. */
+function awardSelo(id) {
+  if (!id || selos[id] || !seloNum(id)) return false;
+  selos[id] = _todayISO();
+  LS.set('selos', selos);
+  runSelos.push(id);
+  return true;
+}
+/* the stamp a question wears, if answering it can win one */
+function seloOfQ(q) {
+  const s = sceneOf(q);
+  return s && seloNum(s.id) ? s.id : null;
+}
+
+/* ── the stamp itself ──
+   A white paper with perforated edges, the scene printed inside a thin
+   frame, the stamp's number in the margin — and, once won, the round
+   postmark of the day it was won, its wavy cancellation running off the
+   right edge. `big` prints the postmark's words large enough to read. */
+const _MES = ['JAN', 'FEV', 'MAR', 'ABR', 'MAI', 'JUN', 'JUL', 'AGO', 'SET', 'OUT', 'NOV', 'DEZ'];
+let _seloN = 0;
+function seloSvg(id, opts) {
+  opts = opts || {};
+  const u = 'sl' + (++_seloN).toString(36);
+  const W = 132, H = 104, R = 2.6, STEP = 8;
+  let holes = '';
+  for (let x = STEP / 2; x < W; x += STEP) holes += `<circle cx="${x}" cy="0" r="${R}"/><circle cx="${x}" cy="${H}" r="${R}"/>`;
+  for (let y = STEP / 2; y < H; y += STEP) holes += `<circle cx="0" cy="${y}" r="${R}"/><circle cx="${W}" cy="${y}" r="${R}"/>`;
+  const got = opts.got !== undefined ? opts.got : seloHas(id);
+  const num = String(seloNum(id)).padStart(3, '0');
+  if (!got) return `<svg class="selo-svg" viewBox="0 0 ${W} ${H}" aria-hidden="true">
+    <rect x="3" y="3" width="${W - 6}" height="${H - 6}" rx="2" fill="none" stroke="currentColor" stroke-width="1.4" stroke-dasharray="4 3" opacity=".55"/>
+    <text x="${W / 2}" y="${H / 2 + 6}" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-weight="700" font-size="17" fill="currentColor" opacity=".5">Nº ${num}</text></svg>`;
+  const d = String(selos[id] || _todayISO()).split('-');
+  const date = `${+d[2]} ${_MES[(+d[1] || 1) - 1]} ${d[0]}`;
+  const scene = SCENE[id] ? SCENE[id].draw() : '';
+  return `<svg class="selo-svg" viewBox="0 0 ${W} ${H}" role="img" aria-label="${_esc(typeof SCENE[id].label === 'function' ? SCENE[id].label() : SCENE[id].label)}">
+    <defs><mask id="${u}m"><rect width="${W}" height="${H}" fill="#fff"/><g fill="#000">${holes}</g></mask>
+      <clipPath id="${u}c"><rect x="0" y="0" width="120" height="80"/></clipPath></defs>
+    <g mask="url(#${u}m)"><rect width="${W}" height="${H}" fill="#FBF7EC"/></g>
+    <rect x="5.4" y="5.4" width="121.2" height="81.2" fill="none" stroke="#2A1D10" stroke-width=".8" opacity=".5"/>
+    <g transform="translate(6 6)" clip-path="url(#${u}c)">${scene}</g>
+    <text x="7" y="98" font-family="'Archivo Narrow', Archivo, sans-serif" font-weight="700" font-size="7.4" fill="#5E1616" letter-spacing=".6">CORREIO DA HISTÓRIA</text>
+    <text x="${W - 7}" y="98.4" text-anchor="end" font-family="Fraunces, Georgia, serif" font-weight="700" font-size="9" fill="#5E1616">${num}</text>
+    ${opts.noMark ? '' : `<g class="selo-mark" transform="translate(96 26) rotate(-12)" fill="none" stroke="#1F2A44" stroke-width="1.3" opacity=".72">
+      <circle r="17"/><circle r="12.6" stroke-width=".7"/>
+      <path d="M17 -6q6 -4 12 0t12 0t12 0M17 0q6 -4 12 0t12 0t12 0M17 6q6 -4 12 0t12 0t12 0" stroke-width="1.1"/>
+      <text y="-4.2" text-anchor="middle" stroke="none" fill="#1F2A44" font-family="'Archivo Narrow', Archivo, sans-serif" font-weight="700" font-size="${opts.big ? 4.6 : 4.2}" letter-spacing=".3">HISTORY QUIZ</text>
+      <text y="3.4" text-anchor="middle" stroke="none" fill="#1F2A44" font-family="'Archivo Narrow', Archivo, sans-serif" font-weight="700" font-size="${opts.big ? 5.4 : 5}">${date}</text>
+      <path d="M-9 7h18" stroke-width=".6"/></g>`}
+  </svg>`;
+}
+const _seloLabel = id => { const l = SCENE[id] && SCENE[id].label; return typeof l === 'function' ? l() : (l || ''); };
+
+/* ── the stamp album screen ── */
+function selosHtml() {
+  const by = seloBy();
+  if (!seloTheme || !by[seloTheme]) {
+    /* open on the theme of the stamp just won, else the first with stamps to find */
+    const fresh = runSelos[runSelos.length - 1];
+    seloTheme = (fresh && SCENE_T[fresh]) || SELO_THEMES[0][0];
+    seloPage = fresh ? Math.floor(by[seloTheme].indexOf(fresh) / SELO_PER) : 0;
+  }
+  const th = SELO_THEMES.find(t => t[0] === seloTheme);
+  const ids = by[seloTheme];
+  const pages = Math.max(1, Math.ceil(ids.length / SELO_PER));
+  seloPage = Math.max(0, Math.min(seloPage, pages - 1));
+  const show = ids.slice(seloPage * SELO_PER, (seloPage + 1) * SELO_PER);
+  const all = seloAll(), got = all.filter(seloHas).length;
+  const pct = Math.round(got / Math.max(1, all.length) * 100);
+  return `
+  <div class="pg selo-pg">
+    <div class="alb-top">
+      ${topbar('Álbum de selos')}
+      <div class="alb-head">
+        <button id="bselalb" class="alb-vit" type="button">${ICON.book('currentColor', 12)} Figurinhas</button>
+        <span class="small muted">${pct}% colado</span>
+        <span class="display" style="font-size:20px;">${got}<span class="muted" style="font-size:13px;"> / ${all.length}</span></span>
+      </div>
+    </div>
+    <div class="alb-bar"><i style="width:${Math.max(1, pct)}%"></i></div>
+    <div class="alb-tabs" id="selo-tabs">
+      ${SELO_THEMES.map(([t, n, , ab, ic]) => {
+        const g = by[t], k = g.filter(seloHas).length;
+        return `<button class="alb-tab${t === seloTheme ? ' is-on' : ''}${k === g.length && g.length ? ' is-done' : ''}" data-th="${t}" title="${n}">
+          <span class="alb-tab-fl">${(ICON[ic] || ICON.stamp)('currentColor', 13)}</span>
+          <span class="alb-tab-c">${ab}</span><span class="alb-tab-n">${k}/${g.length}</span></button>`;
+      }).join('')}
+    </div>
+    <div class="selo-sheet">
+      <div class="selo-band"><b>${th[1]}</b><span>${th[2]}</span></div>
+      <div class="selo-grid">
+        ${show.map((id, i) => `<button class="selo${seloHas(id) ? ' is-got' : ''}${runSelos.includes(id) ? ' is-new' : ''}" data-selo="${id}"
+            style="animation-delay:${i * 40}ms" aria-label="${seloHas(id) ? _esc(_seloLabel(id)) : 'Selo nº ' + seloNum(id) + ', ainda por ganhar'}">${seloSvg(id)}</button>`).join('')}
+        ${Array.from({ length: SELO_PER - show.length }, () => '<span class="selo selo-void" aria-hidden="true"></span>').join('')}
+      </div>
+      <div class="selo-pager">
+        <button id="selo-prev" class="btn btn-ghost btn-icon" aria-label="Página anterior"${seloPage === 0 ? ' disabled' : ''}>${ICON.back('currentColor', 12)}</button>
+        <span class="small muted">página ${seloPage + 1} de ${pages} · ${ids.filter(seloHas).length} de ${ids.length} selos</span>
+        <button id="selo-next" class="btn btn-ghost btn-icon" aria-label="Próxima página"${seloPage >= pages - 1 ? ' disabled' : ''}>${ICON.back('currentColor', 12).replace('<svg', '<svg style="transform:scaleX(-1)"')}</button>
+      </div>
+      <p class="selo-hint small muted">Acerte uma pergunta com esta ilustração — ou crave o ano no <b>Que ano?</b> — e o selo é seu.</p>
+    </div>
+  </div>`;
+}
+
+/* a stamp up close, with what it shows and the day it was won */
+function seloZoom(id) {
+  const old = document.getElementById('selo-zoom');
+  if (old) old.remove();
+  const got = seloHas(id);
+  const d = got ? String(selos[id]).split('-') : null;
+  const z = document.createElement('div');
+  z.id = 'selo-zoom';
+  z.className = 'selo-zoom';
+  z.setAttribute('role', 'dialog');
+  z.setAttribute('aria-label', 'Selo');
+  z.innerHTML = `<div class="selo-zoom-card">
+      <div class="selo-zoom-st">${seloSvg(id, { big: true })}</div>
+      <p class="selo-zoom-t">${got ? _esc(_seloLabel(id)) : 'Ainda por ganhar'}</p>
+      <p class="small muted">Selo nº ${seloNum(id)} · ${(SELO_THEMES.find(t => t[0] === SCENE_T[id]) || [])[1] || ''}${
+        got ? ` · carimbado em ${+d[2]}/${+d[1]}/${d[0]}` : ''}</p>
+      <button class="btn btn-ghost btn-sm" id="selo-zoom-x">Fechar</button></div>`;
+  document.body.appendChild(z);
+  const close = () => { z.remove(); };
+  z.addEventListener('click', e => { if (e.target === z || e.target.id === 'selo-zoom-x') close(); });
+  document.addEventListener('keydown', function esc(e) { if (e.key === 'Escape') { close(); document.removeEventListener('keydown', esc); } });
+}
+
+function wireSelos() {
+  const on = (id, fn) => document.getElementById(id)?.addEventListener('click', fn);
+  on('bselalb', () => { snd.swipe(); sc = 'album'; go(); });
+  on('selo-prev', () => { snd.page(); seloPage--; go(); });
+  on('selo-next', () => { snd.page(); seloPage++; go(); });
+  const tabs = document.getElementById('selo-tabs');
+  if (tabs) {
+    tabs.addEventListener('click', e => {
+      const b = e.target.closest && e.target.closest('.alb-tab');
+      if (!b || b.dataset.th === seloTheme) return;
+      seloTheme = b.dataset.th; seloPage = 0; snd.swipe(); go();
+    });
+    const on_ = tabs.querySelector('.is-on');
+    if (on_) try { on_.scrollIntoView({ inline: 'center', block: 'nearest' }); } catch (e) {}
+  }
+  const grid = document.querySelector('.selo-grid');
+  if (grid) grid.addEventListener('click', e => {
+    const b = e.target.closest && e.target.closest('.selo[data-selo]');
+    if (b) { snd.tap(); seloZoom(b.dataset.selo); }
+  });
+  /* a swipe turns the page, as in the album */
+  const sh = document.querySelector('.selo-sheet');
+  if (sh) {
+    let x0 = null;
+    sh.addEventListener('touchstart', e => { x0 = e.touches[0].clientX; }, { passive: true });
+    sh.addEventListener('touchend', e => {
+      if (x0 === null) return;
+      const dx = e.changedTouches[0].clientX - x0; x0 = null;
+      if (Math.abs(dx) < 50) return;
+      const b = document.getElementById(dx < 0 ? 'selo-next' : 'selo-prev');
+      if (b && !b.disabled) b.click();
+    }, { passive: true });
+  }
+}
+
+/* the stamps a run won, on its end screen */
+function selosStrip() {
+  if (!runSelos.length) return '';
+  const show = runSelos.slice(-4);
+  return `<button id="bselos-end" class="selo-strip" type="button">
+    <span class="eyebrow" style="color:var(--brass);">${runSelos.length} ${runSelos.length === 1 ? 'selo novo' : 'selos novos'} · ver no álbum</span>
+    <span class="selo-strip-row">${show.map((id, i) => `<span class="selo-mini" style="animation-delay:${i * 80}ms">${seloSvg(id)}</span>`).join('')}</span>
+  </button>`;
+}
+/* one line under a reveal when the answer won a stamp */
+function seloWonLine(id) {
+  return `<div class="selo-won"><span class="selo-mini">${seloSvg(id)}</span>
+    <span><b>Selo novo!</b> nº ${seloNum(id)} · ${_esc((SELO_THEMES.find(t => t[0] === SCENE_T[id]) || [])[1] || '')}</span></div>`;
+}
+/* the home screen's stamp tile: the last three stamps won, or blank ones */
+function seloHomeTile() {
+  const all = seloAll(), mine = all.filter(seloHas).sort((a, b) => String(selos[a]).localeCompare(String(selos[b])));
+  const three = mine.slice(-3);
+  while (three.length < 3) three.unshift(null);
+  return `<button id="bselo" class="cv-album cv-selo" type="button">
+    <span class="cv-stk" aria-hidden="true">${three.map((id, i) => `<i style="--i:${i}">${id ? seloSvg(id, { noMark: i < 2 }) : `<svg class="selo-svg" viewBox="0 0 132 104"><rect x="3" y="3" width="126" height="98" rx="2" fill="none" stroke="currentColor" stroke-width="3" stroke-dasharray="7 5" opacity=".45"/></svg>`}</i>`).join('')}</span>
+    <span class="cv-at"><span class="cv-h">Selos</span>
+      <b>${mine.length}<small> de ${all.length}</small></b>
+      <span class="cv-bar"><i style="width:${Math.max(2, Math.round(mine.length / Math.max(1, all.length) * 100))}%"></i></span></span>
+  </button>`;
+}
+
+
+/* ═══════════════════════════════════════════════════
+   QUE ANO? — drag the slider to the year
+   Ten events, each with its picture and one line. The player slides a
+   ruler of years to where they think it happened and nails it in; the
+   closer, the more points, out of 100 an event. A guess is judged by the
+   age it is set in: ten years off is close for the pyramids and far for
+   the Moon landing. ANO_EVENTS (built from tools/history/ano_events.json)
+   is above this line.
+═══════════════════════════════════════════════════ */
+const ANO_N = 10;
+const ANO_NOW = new Date().getFullYear();
+let ano = null;            // the game being played: { qs, i, guess, log, pts, phase }
+
+const anoYear = y => y < 0 ? `${-y} a.C.` : String(y);
+/* how many years count as "close" for an event of this age */
+const anoTol = e => (e.y < -1000 ? 80 : e.y < 0 ? 50 : e.y < 1000 ? 35 : e.y < 1500 ? 22 : e.y < 1800 ? 12 : e.y < 1900 ? 8 : 5) * (e.c ? 2 : 1);
+/* the years between two dates, with no year zero between 1 a.C. and 1 d.C. */
+const anoGap = (a, b) => Math.abs(a - b) - (a < 0 !== b < 0 ? 1 : 0);
+const anoPts = (e, g) => { const d = anoGap(e.y, g); return d === 0 ? 100 : Math.max(0, Math.round(100 * (1 - d / (anoTol(e) * 5)))); };
+const anoVerdict = p => p === 100 ? 'Na mosca!' : p >= 80 ? 'Muito perto!' : p >= 50 ? 'Perto' : p > 0 ? 'Longe' : 'Passou longe';
+
+/* The ruler each event is guessed on: wide for the ancient world, narrow
+   for the last century, and never centred on the answer. */
+function anoWindow(e, r) {
+  const W = e.y < -1000 ? 2000 : e.y < 0 ? 1000 : e.y < 1000 ? 700 : e.y < 1500 ? 450 : e.y < 1800 ? 320 : e.y < 1900 ? 220 : 140;
+  let lo = Math.round((e.y - W * (0.18 + r * 0.64)) / 10) * 10;
+  let hi = lo + W;
+  if (hi > ANO_NOW) { lo -= hi - ANO_NOW; hi = ANO_NOW; }
+  return [lo, hi];
+}
+
+/* ten events, two from each age, in no order */
+function buildAno() {
+  const bands = [[-1e9, 0], [0, 1500], [1500, 1800], [1800, 1900], [1900, 1e9]];
+  const pickd = [];
+  bands.forEach(([a, b]) => pickd.push(...shuf(ANO_EVENTS.filter(e => e.y >= a && e.y < b)).slice(0, 2)));
+  const qs = shuf(pickd).slice(0, ANO_N).map(e => {
+    const [lo, hi] = anoWindow(e, rnd());
+    const mid = Math.round((lo + hi) / 2 / 5) * 5;
+    return { e, lo, hi, start: mid === 0 ? 1 : mid };
+  });
+  return { qs, i: 0, guess: qs[0].start, log: [], pts: 0, phase: 'guess' };
+}
+function startAno() {
+  isDaily = false; isSurv = false; isMil = false;
+  runSelos = [];
+  ano = buildAno();
+  sc = 'ano';
+  go();
+}
+
+/* the picture of an event: its scene, or a face, a brasão, a flag */
+function anoPic(e) {
+  const p = e.pic || {};
+  if (p.scene && SCENE[p.scene]) return `<div class="ano-pic ano-scene">${sceneSvg({ id: p.scene }, 240)}</div>`;
+  if (p.face) { const f = PL.find(x => x.id === p.face); if (f && f.img) return `<div class="ano-pic ano-face"><img src="${f.img}" alt="" aria-hidden="true"></div>`; }
+  if (p.crest && CL.some(c => c.id === p.crest)) return `<div class="ano-pic ano-crest">${clubArt(p.crest, '', false)}</div>`;
+  if (p.flag && FLAGS[p.flag]) return `<div class="ano-pic ano-flag"><svg viewBox="0 0 9 6" preserveAspectRatio="none" aria-hidden="true">${FLAGS[p.flag]}</svg></div>`;
+  return `<div class="ano-pic ano-scene">${ART.hourglass(240)}</div>`;
+}
+
+function anoHtml() {
+  if (!ano) ano = buildAno();
+  if (ano.phase === 'end') return anoEndHtml();
+  const q = ano.qs[ano.i], e = q.e, rev = ano.phase === 'reveal';
+  const last = ano.log[ano.log.length - 1];
+  const dots = ano.qs.map((x, i) => {
+    const l = ano.log[i];
+    return `<i class="${l ? (l.p >= 80 ? 'rl-3' : l.p >= 50 ? 'rl-1' : 'rl-0') : i === ano.i ? 'ano-dot-on' : ''}"></i>`;
+  }).join('');
+  const pos = y => ((y - q.lo) / (q.hi - q.lo) * 100).toFixed(2);
+  return `
+  <div class="pg ano-pg${rev ? ' is-rev' : ''}">
+    ${topbar('Que ano?')}
+    <div class="ano-head"><div class="runlog" aria-hidden="true">${dots}</div>
+      <span class="ano-score"><b class="num">${ano.pts}</b> pts</span></div>
+    <div class="ano-card">
+      ${anoPic(e)}
+      <p class="ano-t">${_esc(e.t)}</p>
+    </div>
+    <div class="ano-dial">
+      <div class="ano-year num${rev ? ' is-set' : ''}" id="ano-year" aria-live="polite">${e.c && rev ? 'c. ' : ''}${anoYear(rev ? last.g : ano.guess)}</div>
+      ${rev ? `<div class="ano-truth"><span>${anoVerdict(last.p)}</span> <b>${e.c ? 'c. ' : ''}${anoYear(e.y)}</b>
+          · ${last.d === 0 ? 'o ano exato' : `${last.d} ${last.d === 1 ? 'ano' : 'anos'} de diferença`}</div>` : ''}
+      <div class="ano-rule">
+        <input type="range" id="ano-range" min="${q.lo}" max="${q.hi}" step="1" value="${rev ? last.g : ano.guess}"
+          aria-label="Ano" ${rev ? 'disabled' : ''}>
+        ${rev ? `<span class="ano-mark ano-mark-g" style="left:${pos(last.g)}%"></span>
+                 <span class="ano-mark ano-mark-y" style="left:${pos(e.y)}%"></span>` : ''}
+        <div class="ano-ends"><span>${anoYear(q.lo)}</span><span>${anoYear(q.hi)}</span></div>
+      </div>
+      ${rev ? '' : `<div class="ano-nudge">
+        <button class="btn btn-ghost btn-sm" data-nudge="-10">−10</button><button class="btn btn-ghost btn-sm" data-nudge="-1">−1</button>
+        <button class="btn btn-ghost btn-sm" data-nudge="1">+1</button><button class="btn btn-ghost btn-sm" data-nudge="10">+10</button></div>`}
+    </div>
+    ${rev ? `<div class="ano-after">
+        <span class="display ${last.p >= 80 ? 'good' : last.p >= 50 ? 'brass' : 'bad'}" style="font-size:17px;">+${last.p}</span>
+        ${last.selo ? seloWonLine(last.selo) : ''}
+        ${e.x ? `<div class="story"><span class="story-k">${ICON.book('currentColor', 11)} Você sabia?</span><p>${_esc(e.x)}</p></div>` : ''}
+        <button id="ano-next" class="btn btn-brass">${ano.i >= ano.qs.length - 1 ? 'Ver resultado' : 'Próximo'}</button></div>`
+      : `<button id="ano-go" class="btn btn-brass btn-lg">${ICON.check('currentColor', 14)} Cravar o ano</button>`}
+  </div>`;
+}
+
+function anoEndHtml() {
+  const best = LS.get('anoBest', 0);
+  const isBest = ano.pts > 0 && ano.pts >= best;
+  const msg = ano.pts >= 800 ? 'Uma máquina do tempo!' : ano.pts >= 600 ? 'Ótimo senso de tempo!' : ano.pts >= 400 ? 'Nada mau!' : 'O tempo é traiçoeiro…';
+  return `
+  <div class="pg pg-center ano-end" style="padding:22px 18px;gap:9px;">
+    <div class="eyebrow">Que ano? · ${ANO_N} eventos</div>
+    <div class="display" style="font-size:28px;"><em>${msg}</em></div>
+    <div class="display prize-pop brass" style="font-size:50px;letter-spacing:-.03em;">${ano.pts}<span class="muted" style="font-size:18px;"> / ${ANO_N * 100}</span></div>
+    <p class="small muted">${isBest ? 'Seu novo recorde!' : `Recorde: ${best} pts`}</p>
+    <div class="ano-list">
+      ${ano.log.map(l => `<div class="ano-li"><span class="ano-li-p ${l.p >= 80 ? 'good' : l.p >= 50 ? 'brass' : 'bad'}">${l.p}</span>
+        <span class="ano-li-t">${_esc(l.e.t)}</span><span class="ano-li-y"><b>${anoYear(l.e.y)}</b><small>${l.d === 0 ? 'exato' : 'você: ' + anoYear(l.g)}</small></span></div>`).join('')}
+    </div>
+    ${selosStrip()}
+    ${medalChips()}
+    <div class="foot-row" style="margin-top:8px;">
+      <button id="ano-share" class="btn btn-ghost btn-sm">Compartilhar</button>
+      <button id="ano-again" class="btn btn-brass">De novo</button>
+      <button id="bhome" class="btn btn-ghost btn-sm">Início</button>
+    </div>
+  </div>`;
+}
+
+function anoShareText() {
+  const grid = ano.log.map(l => l.p === 100 ? '🎯' : l.p >= 80 ? '🟩' : l.p >= 50 ? '🟨' : '⬛').join('');
+  return `Que ano? 📜 History Quiz\n${grid}\n${ano.pts}/${ANO_N * 100} pts\nhttps://tdosreis.github.io/history-quiz/`;
+}
+
+function anoCommit() {
+  const q = ano.qs[ano.i], e = q.e, g = ano.guess;
+  const p = anoPts(e, g), d = anoGap(e.y, g);
+  const selo = p >= 80 && e.pic && e.pic.scene && awardSelo(e.pic.scene) ? e.pic.scene : null;
+  ano.log.push({ e, g, p, d, selo });
+  if (d === 0) { stats.anoExact = (stats.anoExact || 0) + 1; LS.set('stats', stats); }
+  ano.pts += p;
+  ano.phase = 'reveal';
+  if (p === 100) snd.fanfare(); else if (p >= 80) snd.correct(0); else if (p >= 50) snd.almost(); else snd.wrong();
+  go();
+  if (p >= 80) try { burst(p === 100 ? 28 : 14); } catch (err) {}
+}
+function anoNext() {
+  if (ano.i >= ano.qs.length - 1) {
+    ano.phase = 'end';
+    stats.anoGames = (stats.anoGames || 0) + 1;
+    LS.set('stats', stats);
+    if (ano.pts > LS.get('anoBest', 0)) LS.set('anoBest', ano.pts);
+    window._newMedals = newMedals();
+    setTimeout(() => snd.final(ano.pts >= 500), 200);
+  } else {
+    ano.i++;
+    ano.guess = ano.qs[ano.i].start;
+    ano.phase = 'guess';
+  }
+  go();
+}
+
+function wireAno() {
+  const on = (id, fn) => document.getElementById(id)?.addEventListener('click', fn);
+  const r = document.getElementById('ano-range'), yEl = document.getElementById('ano-year');
+  const set = v => {
+    const q = ano.qs[ano.i];
+    v = Math.max(q.lo, Math.min(q.hi, Math.round(v)));
+    if (v === 0) v = ano.guess < 0 ? 1 : -1;   // there is no year zero
+    ano.guess = v;
+    if (r) r.value = v;
+    if (yEl) yEl.textContent = anoYear(v);
+  };
+  if (r && ano.phase === 'guess') {
+    r.addEventListener('input', () => set(+r.value));
+    let last = 0;
+    r.addEventListener('input', () => { const t = Date.now(); if (t - last > 70) { last = t; try { snd.tick && snd.tick(); } catch (e) {} } });
+  }
+  document.querySelectorAll('[data-nudge]').forEach(b => b.addEventListener('click', () => { snd.tap(); set(ano.guess + +b.dataset.nudge); }));
+  on('ano-go', () => anoCommit());
+  on('ano-next', () => { snd.swipe(); anoNext(); });
+  on('ano-again', () => { snd.select(); startAno(); });
+  on('ano-share', () => {
+    const txt = anoShareText();
+    if (navigator.share) navigator.share({ text: txt }).catch(() => {});
+    else if (navigator.clipboard) navigator.clipboard.writeText(txt).then(() => {
+      const b = document.getElementById('ano-share'); if (b) { b.textContent = 'Copiado!'; setTimeout(() => { b.textContent = 'Compartilhar'; }, 1600); } }).catch(() => {});
+  });
+  on('bselos-end', () => { snd.swipe(); seloTheme = null; sc = 'selos'; go(); });
+}
+
 /*@@/formats@@*/
 /*@@/noscore@@*/
 /* ═══════════════════════════════════════════════════
@@ -23526,6 +24284,9 @@ function doReveal() {
   /* and each of them comes out of the packet as a printed copy */
   if (earnedNow.length) try { runPulls.push(...pullCopies(earnedNow, gotNew, pullBoost())); } catch (e) {}
 
+  /* and its drawn scene, if it wears one, is cancelled into the stamp album */
+  const seloNow = p === 3 && awardSelo(seloOfQ(q)) ? seloOfQ(q) : null;
+
   /* An ordering answer is scored by how many cards sit in the right place. */
   if (q.order) {
     const given = [...sel], hits = given.filter((id, i) => q.a[i] === id).length;
@@ -23600,6 +24361,7 @@ function doReveal() {
          <div class="small muted" style="margin-top:3px;">Resposta: <b class="good">${rightNames}</b></div>`) + backs;
   }
 
+  if (seloNow) lastMsg += seloWonLine(seloNow);
   const story = storyFor(q);
   const wait  = story ? Math.min(9500, Math.max(5200, 2400 + story.length * 40)) : (isMil ? 2600 : 2200);
   if (story) lastMsg += `<div class="story" role="button" tabindex="0" aria-label="Segurar a explicação na tela">

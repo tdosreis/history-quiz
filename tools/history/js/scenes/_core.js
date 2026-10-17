@@ -19,6 +19,10 @@
      ev     the EVENTS id this scene stands for ("viveu durante…")
 ═══════════════════════════════════════════════════ */
 const SCENE = {};
+/* the theme file each scene was drawn in (the build files them as it reads
+   each one): the stamp album's pages */
+const SCENE_T = {};
+function _sceneTheme(t) { for (const k in SCENE) if (!SCENE_T[k]) SCENE_T[k] = t; }
 /* the album's inks */
 const SCK = {
   ink: '#2A1D10', paper: '#F1E7CF', parch: '#E9DDBF', sand: '#E9C98B', ochre: '#C9A66B',
