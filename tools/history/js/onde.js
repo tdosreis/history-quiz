@@ -52,9 +52,12 @@ function buildOnde() {
   return { qs: shuf(qs).slice(0, ONDE_N).map(e => ({ e, at: ONDE_AT[e.id] })), i: 0, pin: null, log: [], pts: 0, phase: 'guess', v: { cx: 180, cy: 67, z: 1 } };
 }
 function startOnde() {
-  isDaily = false; isSurv = false; isMil = false;
+  isDaily = false; isSurv = false; isMil = false; isRev = false;
   runSelos = [];
-  onde = buildOnde();
+  /* dealt from a seed, so the game can be sent to a friend as a challenge (js/desafio.js) */
+  const seed = chalSeed('o');
+  seedFrom(seed); onde = buildOnde(); _seed = null;
+  onde.seed = seed;
   sc = 'onde';
   go();
 }
@@ -132,7 +135,7 @@ function ondeEndHtml() {
     <div class="eyebrow">Onde foi? · ${ONDE_N} eventos</div>
     <div class="display" style="font-size:28px;"><em>${msg}</em></div>
     <div class="display prize-pop brass" style="font-size:50px;letter-spacing:-.03em;">${onde.pts}<span class="muted" style="font-size:18px;"> / ${ONDE_N * 100}</span></div>
-    <p class="small muted">${onde.isBest ? 'Seu novo recorde!' : `Recorde: ${best} pts`}</p>
+    ${chalBanner() || `<p class="small muted">${onde.isBest ? 'Seu novo recorde!' : `Recorde: ${best} pts`}</p>`}
     <div class="ano-list">
       ${onde.log.map(l => `<div class="ano-li"><span class="ano-li-p ${l.p >= 80 ? 'good' : l.p >= 50 ? 'brass' : 'bad'}">${l.p}</span>
         <span class="ano-li-t">${_esc(l.e.t)}</span><span class="ano-li-y"><b>${_esc(l.at[2].split(', ').pop())}</b><small>${l.p === 100 ? 'na mosca' : ondeKmTxt(l.d)}</small></span></div>`).join('')}
@@ -140,7 +143,7 @@ function ondeEndHtml() {
     ${selosStrip()}
     ${medalChips()}
     <div class="foot-row" style="margin-top:8px;">
-      <button id="onde-share" class="btn btn-ghost btn-sm">Compartilhar</button>
+      <button id="onde-share" class="btn btn-ghost btn-sm">${chalMine() ? 'Desafiar' : 'Compartilhar'}</button>
       <button id="onde-again" class="btn btn-brass">De novo</button>
       <button id="bhome" class="btn btn-ghost btn-sm">Início</button>
     </div>
@@ -149,7 +152,7 @@ function ondeEndHtml() {
 
 function ondeShareText() {
   const grid = onde.log.map(l => l.p === 100 ? '🎯' : l.p >= 80 ? '🟩' : l.p >= 50 ? '🟨' : '⬛').join('');
-  return `Onde foi? 🌍 History Quiz\n${grid}\n${onde.pts}/${ONDE_N * 100} pts\nhttps://tdosreis.github.io/history-quiz/`;
+  return `Onde foi? 🌍 History Quiz\n${grid}\n${onde.pts}/${ONDE_N * 100} pts\n${chalShareTail(chalMine())}`;
 }
 
 /* ── the map's camera: a centre (in map units), a zoom, and how tall a degree is drawn ── */
@@ -319,7 +322,7 @@ function wireOnde() {
     const txt = ondeShareText();
     if (navigator.share) navigator.share({ text: txt }).catch(() => {});
     else if (navigator.clipboard) navigator.clipboard.writeText(txt).then(() => {
-      const b = document.getElementById('onde-share'); if (b) { b.textContent = 'Copiado!'; setTimeout(() => { b.textContent = 'Compartilhar'; }, 1600); } }).catch(() => {});
+      const b = document.getElementById('onde-share'); if (b) { const was = b.textContent; b.textContent = 'Copiado!'; setTimeout(() => { b.textContent = was; }, 1600); } }).catch(() => {});
   });
   const m = document.getElementById('onde-map');
   if (!m) return;

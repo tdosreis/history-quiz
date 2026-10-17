@@ -181,6 +181,30 @@ DRIVE = r"""
   startOnde();
   for (var k5=0; k5<onde.qs.length; k5++){ onde.i=k5; onde.phase='guess'; ondeSetPin(ondeXY(onde.qs[k5].at[0], onde.qs[k5].at[1])); ondeCommit(); }
   onde.i=onde.qs.length-1; ondeNext(); window._newMedals = MEDALS.slice(0, 3); go(); fit('onde/end-cheio');
+  /* O desafio: the screen a link opens on, for every game, and who won, on each game's results */
+  ['tf','tm','td','m','a','o'].forEach(function(g){
+    chal = { g: g, seed: 12345, score: g==='m' ? 1000000 : g[0]==='t' ? 23456 : 1000, more: g==='m' ? 16 : g[0]==='t' ? 20 : null, code: 'x' };
+    sc='desafio'; go(); fit('desafio/'+g);
+  });
+  chal = { g:'o', seed: 4242, score: 815, more: null, accepted: true };
+  startOnde(); for (var k6=0; k6<onde.qs.length; k6++){ onde.i=k6; onde.phase='guess'; ondeSetPin(ondeXY(onde.qs[k6].at[0], onde.qs[k6].at[1])); ondeCommit(); }
+  onde.i=onde.qs.length-1; ondeNext(); window._newMedals = MEDALS.slice(0, 3); go(); fit('desafio/onde-end');
+  chal = { g:'a', seed: 4243, score: 815, more: null, accepted: true };
+  startAno(); for (var k7=0; k7<ano.qs.length; k7++){ ano.i=k7; ano.phase='guess'; ano.guess=ano.qs[k7].e.y; anoCommit(); }
+  ano.i=ano.qs.length-1; anoNext(); window._newMedals = MEDALS.slice(0, 3); go(); fit('desafio/ano-end');
+  chal = { g:'tm', seed: 4244, score: 815, more: 9, accepted: true };
+  diffKey='moderado'; startGame(); clearInterval(tmr); pts=900; nCorrect=11; finishRun(); window._newMedals = MEDALS.slice(0, 3); sc='end'; go(); fit('desafio/treino-end');
+  chal = { g:'m', seed: 4245, score: 5000, more: 7, accepted: true };
+  startMilhao(); clearInterval(tmr); rung=9; banked=50000; finishRun(); window._newMedals = MEDALS.slice(0, 3); sc='end'; go(); fit('desafio/milhao-end');
+  chal = null; isMil = false;
+  /* Revisar: ten misses filed, the round, and its end with more left to review */
+  var rq = CATS.flatMap(function(c){ return c.qs; }).slice(0, 14), rf = {};
+  rq.forEach(function(q){ rf[q.t] = [0, dayIndex()]; }); LS.set('rev', rf);
+  sc='home'; go(); fit('home/revisar');
+  startRev(); clearInterval(tmr); fit('revisar/quiz');
+  for (var k8=0; k8<cat.qs.length; k8++){ qi=k8; disp=getDisp(cat.qs[k8]); sel=new Set(k8 % 2 ? cat.qs[k8].a : ['x']); tLeft=30; doReveal(); }
+  finishRun(); window._newMedals = MEDALS.slice(0, 3); sc='end'; go(); fit('revisar/end');
+  isRev = false; LS.set('rev', {});
   /* and a training round won outright: the pack opened, stamps and badges */
   selos = {}; diffKey='moderado'; startGame();
   cat.qs = withSelo.slice(0, 10); disp = getDisp(cat.qs[0]);

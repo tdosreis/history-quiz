@@ -193,6 +193,33 @@ JS = r"""
         if (ondeKm(g.qs[a].at, g.qs[b].at) < 150) F(w + 'has two events in one spot: ' + g.qs[a].e.id + ' / ' + g.qs[b].e.id);
     }
   } catch (e) { F('onde EXC ' + e.message); }
+  /* ── O desafio: a code travels intact, a bad one is turned away, and a seed always deals the same game ── */
+  try {
+    const c = { g: 'm', seed: 2147483647, score: 1000000, more: 16 }, back = chalParse(chalCode(c));
+    if (!back || back.seed !== c.seed || back.score !== c.score || back.more !== 16) F('a challenge code does not round-trip');
+    ['zz.1.2', 'o.', 'o.1', 'm.1.2', 'o.zzzzzzz.1', 'a.1.zzz', 'tm.1.2.zz', '<script>', ''].forEach(x => { if (chalParse(x)) F('a bad challenge code is accepted: ' + x); });
+    const deal = { a: () => buildAno().qs.map(q => q.e.id + q.lo), o: () => buildOnde().qs.map(q => q.e.id),
+      m: () => buildMilhao().qs.map(q => q.t), t: () => buildGame('dificil').qs.map(q => q.t) };
+    Object.keys(deal).forEach(k => { seedFrom(31337); const x = JSON.stringify(deal[k]()); rnd(); rnd(); seedFrom(31337);
+      if (JSON.stringify(deal[k]()) !== x) F('the same seed deals a different ' + k); });
+    _seed = null;
+  } catch (e) { F('desafio EXC ' + e.message); }
+  /* ── Revisar: a miss is filed, comes back when due, moves on when right, and is learned after the last box ── */
+  try {
+    const keep = LS.get('rev', {}), keepSt = stats.revLearned;
+    LS.set('rev', {});
+    const q = CATS[0].qs[0], now = dayIndex();
+    revNote(q, 0); if (!revDue().includes(q.t)) F('a missed question is not due for review');
+    revNote(q, 3); if (revFile()[q.t][0] !== 1 || revFile()[q.t][1] !== now + REV_GAPS[1]) F('a reviewed question does not move to the next box');
+    revNote(q, 3); if (revFile()[q.t][0] !== 1) F('a question answered before it is due moves anyway');
+    const R = revFile(); R[q.t] = [REV_GAPS.length - 1, now]; LS.set('rev', R);
+    const was = stats.revLearned || 0; revNote(q, 3);
+    if (revFile()[q.t] || (stats.revLearned || 0) !== was + 1) F('a question past the last box is not learned');
+    revNote({ t: 'not a written question' }, 0); if (Object.keys(revFile()).length) F('an unknown question is filed');
+    for (let i = 0; i < REV_MAX + 20; i++) revNote(CATS.flatMap(c => c.qs)[i], 0);
+    if (Object.keys(revFile()).length > REV_MAX) F('the review file grows past ' + REV_MAX);
+    LS.set('rev', keep); stats.revLearned = keepSt;
+  } catch (e) { F('revisar EXC ' + e.message); }
   note.ms = Date.now() - T0;
   return { fails, note };
 })()

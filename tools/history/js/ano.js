@@ -46,9 +46,12 @@ function buildAno() {
   return { qs, i: 0, guess: qs[0].start, log: [], pts: 0, phase: 'guess' };
 }
 function startAno() {
-  isDaily = false; isSurv = false; isMil = false;
+  isDaily = false; isSurv = false; isMil = false; isRev = false;
   runSelos = [];
-  ano = buildAno();
+  /* dealt from a seed, so the game can be sent to a friend as a challenge (js/desafio.js) */
+  const seed = chalSeed('a');
+  seedFrom(seed); ano = buildAno(); _seed = null;
+  ano.seed = seed;
   sc = 'ano';
   go();
 }
@@ -116,7 +119,7 @@ function anoEndHtml() {
     <div class="eyebrow">Que ano? · ${ANO_N} eventos</div>
     <div class="display" style="font-size:28px;"><em>${msg}</em></div>
     <div class="display prize-pop brass" style="font-size:50px;letter-spacing:-.03em;">${ano.pts}<span class="muted" style="font-size:18px;"> / ${ANO_N * 100}</span></div>
-    <p class="small muted">${isBest ? 'Seu novo recorde!' : `Recorde: ${best} pts`}</p>
+    ${chalBanner() || `<p class="small muted">${isBest ? 'Seu novo recorde!' : `Recorde: ${best} pts`}</p>`}
     <div class="ano-list">
       ${ano.log.map(l => `<div class="ano-li"><span class="ano-li-p ${l.p >= 80 ? 'good' : l.p >= 50 ? 'brass' : 'bad'}">${l.p}</span>
         <span class="ano-li-t">${_esc(l.e.t)}</span><span class="ano-li-y"><b>${l.e.c ? 'c. ' : ''}${anoYear(l.e.y)}</b><small>${l.d === 0 ? 'exato' : 'você: ' + anoYear(l.g)}</small></span></div>`).join('')}
@@ -124,7 +127,7 @@ function anoEndHtml() {
     ${selosStrip()}
     ${medalChips()}
     <div class="foot-row" style="margin-top:8px;">
-      <button id="ano-share" class="btn btn-ghost btn-sm">Compartilhar</button>
+      <button id="ano-share" class="btn btn-ghost btn-sm">${chalMine() ? 'Desafiar' : 'Compartilhar'}</button>
       <button id="ano-again" class="btn btn-brass">De novo</button>
       <button id="bhome" class="btn btn-ghost btn-sm">Início</button>
     </div>
@@ -133,7 +136,7 @@ function anoEndHtml() {
 
 function anoShareText() {
   const grid = ano.log.map(l => l.p === 100 ? '🎯' : l.p >= 80 ? '🟩' : l.p >= 50 ? '🟨' : '⬛').join('');
-  return `Que ano? 📜 History Quiz\n${grid}\n${ano.pts}/${ANO_N * 100} pts\nhttps://tdosreis.github.io/history-quiz/`;
+  return `Que ano? 📜 History Quiz\n${grid}\n${ano.pts}/${ANO_N * 100} pts\n${chalShareTail(chalMine())}`;
 }
 
 function anoCommit() {
@@ -198,6 +201,6 @@ function wireAno() {
     const txt = anoShareText();
     if (navigator.share) navigator.share({ text: txt }).catch(() => {});
     else if (navigator.clipboard) navigator.clipboard.writeText(txt).then(() => {
-      const b = document.getElementById('ano-share'); if (b) { b.textContent = 'Copiado!'; setTimeout(() => { b.textContent = 'Compartilhar'; }, 1600); } }).catch(() => {});
+      const b = document.getElementById('ano-share'); if (b) { const was = b.textContent; b.textContent = 'Copiado!'; setTimeout(() => { b.textContent = was; }, 1600); } }).catch(() => {});
   });
 }

@@ -13,8 +13,10 @@
    v2: the atelier textures (paper, brush strokes, answer slips, washes) the page
    always named but the first release never shipped — buttons, lifeline seals and
    backgrounds were invisible without them.
-   v3: History's own question formats and ~330 new questions. */
-const VERSION = 'v3';
+   v3: History's own question formats and ~330 new questions.
+   v4: a friend's challenge arrives as ?d=… on the page's address; the page is
+   kept once, under its plain address, however many challenges are opened. */
+const VERSION = 'v4';
 const CACHE   = 'history-quiz-' + VERSION;
 /* Photos, crests and flags never change under the same name (each file is
    named by its content), so they live in a cache of their own that survives
@@ -69,16 +71,17 @@ self.addEventListener('fetch', e => {
     // network-first: always try to pick up a new build. Pages sends
     // max-age=600, so without no-cache the browser's own HTTP cache hands
     // back the previous build for ten minutes after a deploy.
+    const key = url.search ? url.origin + url.pathname : req;
     e.respondWith(
       fetch(req, { cache: 'no-cache' })
         .then(res => {
           if (res && res.status === 200) {
             const clone = res.clone();
-            caches.open(CACHE).then(c => c.put(req, clone));
+            caches.open(CACHE).then(c => c.put(key, clone));
           }
           return res;
         })
-        .catch(() => caches.match(req).then(r => r || caches.match('/history-quiz/index.html')))
+        .catch(() => caches.match(key).then(r => r || caches.match('/history-quiz/index.html')))
     );
     return;
   }

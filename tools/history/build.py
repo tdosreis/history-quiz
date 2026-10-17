@@ -339,8 +339,12 @@ def main():
             + "\nconst ALB_MAP = " + io.open(os.path.join(H, "album_map.json"), encoding="utf-8").read().strip() + ";\n"
             + io.open(os.path.join(H, "js", "mapa.js"), encoding="utf-8").read()
             # "Onde foi?": where each of those events happened (tools/history/onde_events.json)
-            + "\n" + onde_js + io.open(os.path.join(H, "js", "onde.js"), encoding="utf-8").read())
-    s = put(s, "formats_css", "\n".join(io.open(os.path.join(H, "css", f), encoding="utf-8").read() for f in ("formats.css", "selos_ano.css", "mapa.css", "onde.css")))
+            + "\n" + onde_js + io.open(os.path.join(H, "js", "onde.js"), encoding="utf-8").read()
+            # a game sent to a friend as a link
+            + io.open(os.path.join(H, "js", "desafio.js"), encoding="utf-8").read()
+            # the questions once got wrong, to review
+            + io.open(os.path.join(H, "js", "revisar.js"), encoding="utf-8").read())
+    s = put(s, "formats_css", "\n".join(io.open(os.path.join(H, "css", f), encoding="utf-8").read() for f in ("formats.css", "selos_ano.css", "mapa.css", "onde.css", "desafio.css")))
     io.open(PAGE, "w", encoding="utf-8").write(s)
     print("index.html updated: %d bytes" % len(s.encode("utf-8")))
 

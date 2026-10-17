@@ -1,0 +1,40 @@
+
+/* ═══ O DESAFIO — a friend's challenge, and who won it ═══ */
+.chal-pg { padding: 26px 22px; gap: 10px; }
+.chal-ic { width: 64px; height: 64px; display: flex; align-items: center; justify-content: center; margin: 2px 0;
+  background: var(--md); color: #fff; }
+.chal-g { margin: -4px 0 0; font: 700 12px/1 var(--font-s); letter-spacing: .16em; text-transform: uppercase; color: var(--ink-3); }
+.chal-card { display: flex; flex-direction: column; align-items: center; gap: 5px; padding: 14px 30px 15px; margin: 4px 0;
+  background: var(--at-card-img) center / 100% 100% no-repeat; }
+.chal-card small { font: 700 10px/1 var(--font-s); letter-spacing: .2em; text-transform: uppercase; color: var(--ink-3); }
+.chal-card b { font: 600 34px/1 var(--font-d); color: var(--brass-ink); letter-spacing: -.02em; }
+.chal-card span { font-size: 12px; color: var(--ink-3); }
+.chal-pg .btn-lg { margin-top: 6px; }
+.chal-res { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: center; gap: 2px 9px; padding: 6px 12px; max-width: 340px;
+  border: 1.5px solid var(--rule); border-radius: 4px; background: var(--pocket-2, rgba(128, 128, 128, .08)); }
+.chal-res-k { display: flex; align-items: center; gap: 4px; align-self: center; font: 700 9.5px/1 var(--font-s); letter-spacing: .18em; text-transform: uppercase; color: var(--ink-3); }
+.chal-res-v { font: 600 14px/1.2 var(--font-s); color: var(--ink-2); white-space: nowrap; }
+.chal-res-v b { color: var(--ink); }
+.chal-res-v small { font-size: 10.5px; color: var(--ink-3); }
+.chal-res-v i { font-style: normal; color: var(--ink-3); margin: 0 2px; }
+.chal-res em { font: italic 600 16px/1.1 var(--font-d); white-space: nowrap; }
+.chal-res.is-win { border-color: var(--brass); }
+.chal-res.is-win em { color: var(--brass-ink); }
+.chal-res.is-lose em { color: var(--ink-2); }
+@media (max-height: 700px) {
+  .chal-pg { gap: 7px; padding: 16px 20px; }
+  .chal-ic { width: 52px; height: 52px; }
+  .chal-card { padding: 10px 26px 11px; }
+  .chal-card b { font-size: 29px; }
+  .chal-res { padding: 5px 10px; }
+  .chal-res em { font-size: 15px; }
+}
+
+/* ═══ REVISAR — the tile, and what is left ═══ */
+.mode-rev { --md: #6B4E8A; --md-soft: rgba(107, 78, 138, .14); }
+:root[data-theme="dark"] .mode-rev, :root:not([data-theme="light"]) .mode-rev { --md: #A68BC6; }
+.cv-row.is-off { opacity: .62; }
+.cv-row.is-off .cv-ic { filter: grayscale(.7); }
+.cv-row.is-nudge { animation: rev-nudge .4s ease; }
+@keyframes rev-nudge { 25% { transform: translateX(-4px); } 50% { transform: translateX(4px); } 75% { transform: translateX(-2px); } }
+.rev-left { display: flex; align-items: center; gap: 5px; color: var(--ink-2); font-weight: 600; }

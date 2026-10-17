@@ -3505,6 +3505,47 @@
   .cv-toc-4 .cv-rt small { display: none; }
 }
 
+
+/* ═══ O DESAFIO — a friend's challenge, and who won it ═══ */
+.chal-pg { padding: 26px 22px; gap: 10px; }
+.chal-ic { width: 64px; height: 64px; display: flex; align-items: center; justify-content: center; margin: 2px 0;
+  background: var(--md); color: #fff; }
+.chal-g { margin: -4px 0 0; font: 700 12px/1 var(--font-s); letter-spacing: .16em; text-transform: uppercase; color: var(--ink-3); }
+.chal-card { display: flex; flex-direction: column; align-items: center; gap: 5px; padding: 14px 30px 15px; margin: 4px 0;
+  background: var(--at-card-img) center / 100% 100% no-repeat; }
+.chal-card small { font: 700 10px/1 var(--font-s); letter-spacing: .2em; text-transform: uppercase; color: var(--ink-3); }
+.chal-card b { font: 600 34px/1 var(--font-d); color: var(--brass-ink); letter-spacing: -.02em; }
+.chal-card span { font-size: 12px; color: var(--ink-3); }
+.chal-pg .btn-lg { margin-top: 6px; }
+.chal-res { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: center; gap: 2px 9px; padding: 6px 12px; max-width: 340px;
+  border: 1.5px solid var(--rule); border-radius: 4px; background: var(--pocket-2, rgba(128, 128, 128, .08)); }
+.chal-res-k { display: flex; align-items: center; gap: 4px; align-self: center; font: 700 9.5px/1 var(--font-s); letter-spacing: .18em; text-transform: uppercase; color: var(--ink-3); }
+.chal-res-v { font: 600 14px/1.2 var(--font-s); color: var(--ink-2); white-space: nowrap; }
+.chal-res-v b { color: var(--ink); }
+.chal-res-v small { font-size: 10.5px; color: var(--ink-3); }
+.chal-res-v i { font-style: normal; color: var(--ink-3); margin: 0 2px; }
+.chal-res em { font: italic 600 16px/1.1 var(--font-d); white-space: nowrap; }
+.chal-res.is-win { border-color: var(--brass); }
+.chal-res.is-win em { color: var(--brass-ink); }
+.chal-res.is-lose em { color: var(--ink-2); }
+@media (max-height: 700px) {
+  .chal-pg { gap: 7px; padding: 16px 20px; }
+  .chal-ic { width: 52px; height: 52px; }
+  .chal-card { padding: 10px 26px 11px; }
+  .chal-card b { font-size: 29px; }
+  .chal-res { padding: 5px 10px; }
+  .chal-res em { font-size: 15px; }
+}
+
+/* ═══ REVISAR — the tile, and what is left ═══ */
+.mode-rev { --md: #6B4E8A; --md-soft: rgba(107, 78, 138, .14); }
+:root[data-theme="dark"] .mode-rev, :root:not([data-theme="light"]) .mode-rev { --md: #A68BC6; }
+.cv-row.is-off { opacity: .62; }
+.cv-row.is-off .cv-ic { filter: grayscale(.7); }
+.cv-row.is-nudge { animation: rev-nudge .4s ease; }
+@keyframes rev-nudge { 25% { transform: translateX(-4px); } 50% { transform: translateX(4px); } 75% { transform: translateX(-2px); } }
+.rev-left { display: flex; align-items: center; gap: 5px; color: var(--ink-2); font-weight: 600; }
+
 /*@@/formats_css@@*/
   </style>
 </head>
@@ -5992,7 +6033,7 @@ const CATS = [
       {"t": "Os médicos já usavam a famosa máscara em forma de bico durante a Peste Negra, no século XIV?", "a": ["Mito"], "type": "txt", "choices": ["Fato", "Mito"], "duel": true, "myth": true, "d": 5, "x": "Na Peste Negra, de 1347 a 1351, ela não existia: a máscara de bico, recheada de ervas aromáticas, surgiu no século XVII e é atribuída ao médico francês Charles de Lorme.", "scene": "peste_negra"},
     ]
   },
-                                                  /* NEW-QS:END */
+                                                          /* NEW-QS:END */
 ];
 /*@@/data_cl_cats@@*/
 /*@@data_pl_lib@@*/
@@ -8536,6 +8577,7 @@ function scoreAnswer(base) {
    plus a Wordle-style card that is easy to paste in WhatsApp.
 ═══════════════════════════════════════════════════ */
 let isDaily = false;
+let isRev = false;                       // a round of the questions once got wrong (js/revisar.js)
 
 function dailyDone() { return LS.get('dailyDay', -1) === dayIndex(); }
 function dailyInfo() { return LS.get('dailyRes', null); }
@@ -8570,11 +8612,12 @@ function shareText() {
       ? `\n📔 ${runNew} ${runNew === 1 ? 'figurinha nova' : 'figurinhas novas'} · ${album.size}/${ALL_STICKERS.length} no álbum`
       : '';
     return `Rumo ao Milhão 📜 History Quiz\n${climb}\n`
-         + `${verdict} ${money(banked)} · degrau ${rung}/${LADDER.length}${albM}\n${link}`;
+         + `${verdict} ${money(banked)} · degrau ${rung}/${LADDER.length}${albM}\n${chalShareTail(chalMine())}`;
   }
 
   const grid = runLog.map(p => p === 3 ? '🟩' : p === 1 ? '🟨' : p === -1 ? '⬜' : '⬛').join('');
   const head = isDaily ? `History Quiz 📜 Desafio #${dayIndex()}`
+             : isRev   ? 'History Quiz 📜 Revisão'
                        : `History Quiz 📜 ${DCFG().label}`;
   const strk = bestStreak >= 3 ? `  🔥${bestStreak}` : '';
   /* The album is the thing that makes this app not just another quiz, and the
@@ -8585,7 +8628,7 @@ function shareText() {
   const alb = runNew
     ? `\n📔 ${runNew} ${runNew === 1 ? 'figurinha nova' : 'figurinhas novas'} · ${album.size}/${ALL_STICKERS.length} no álbum`
     : '';
-  return `${head}\n${grid}\n${nCorrect}/${cat.qs.length} acertos · ${pts} pts${strk}${alb}\n${link}`;
+  return `${head}\n${grid}\n${nCorrect}/${cat.qs.length} acertos · ${pts} pts${strk}${alb}\n${isDaily ? link : chalShareTail(chalMine())}`;
 }
 
 function doShare() {
@@ -8595,13 +8638,13 @@ function doShare() {
   } else if (navigator.clipboard) {
     navigator.clipboard.writeText(txt).then(() => {
       const b = document.getElementById('bshare');
-      if (b) { b.textContent = 'COPIADO!'; setTimeout(() => { b.textContent = 'COMPARTILHAR'; }, 1600); }
+      if (b) { const was = b.textContent; b.textContent = 'Copiado!'; setTimeout(() => { b.textContent = was; }, 1600); }
     }).catch(() => {});
   }
 }
 
 function startDaily() {
-  isDaily = true; isSurv = false; isMil = false;
+  isDaily = true; isSurv = false; isMil = false; isRev = false;
   diffKey = 'moderado';
   runSeed = dayIndex();
   seedFrom(runSeed);
@@ -9170,6 +9213,8 @@ const MEDALS = [
     t: st => (st.ondeExact || 0) >= 1 },
   { id:'onde700', ic:'globe', n:'Atlas ambulante',  d:'Faça 700 pontos no Onde foi?',
     t: () => LS.get('ondeBest', 0) >= 700, p: () => [LS.get('ondeBest', 0), 700] },
+  { id:'revLearn', ic:'book', n:'Aprendeu com os erros', d:'Fixe 10 perguntas que você tinha errado, revisando',
+    t: st => (st.revLearned || 0) >= 10, p: () => [stats.revLearned || 0, 10] },
 ];
 
 function earnedMedals() { return MEDALS.filter(m => { try { return m.t(stats); } catch (e) { return false; } }); }
@@ -9201,7 +9246,7 @@ const MEDAL_SETS = [
   { id:'album',  n:'O álbum',        tag:'Álbum',  shape:'shield',
     ids:['alb25','alb60','albHalf','alb3q','albAll','albEsc','albSel','albMsc','albBook'] },
   { id:'rotina', n:'Rotina',         tag:'Rotina', shape:'hex',
-    ids:['daily3','daily7','surv10'] },
+    ids:['daily3','daily7','surv10','revLearn'] },
   { id:'milhao', n:'Rumo ao Milhão', tag:'Milhão', shape:'coin',
     ids:['safe1','safe2','quit','million'] },
   { id:'arquivo', n:'O arquivo',     tag:'Arquivo', shape:'hex',
@@ -9222,7 +9267,7 @@ const MEDAL_TIER = {
   hard:3, c500:3, alb3q:3, albEsc:3, albSel:3, albMsc:3, surv10:3, quit:3,
   albAll:4, albBook:4, million:4,
   fQuote:2, fBattle:2, fLine:2, fNews:2, fOrder:2, fDuel:2, fMyth:2, fAll:3,
-  selo10:1, anoExato:2, selo50:2, ano700:3, seloPg:3, ondeMosca:2, onde700:3,
+  selo10:1, anoExato:2, selo50:2, ano700:3, seloPg:3, ondeMosca:2, onde700:3, revLearn:2,
 };
 const TIER_NAME = ['', 'Comum', 'Rara', 'Épica', 'Lendária'];
 const medalSet = m => MEDAL_SETS.find(s => s.ids.includes(m.id)) || MEDAL_SETS[0];
@@ -9424,7 +9469,7 @@ function medalCard(m, on) {
 let isSurv = false;
 
 function startSurvival() {
-  isSurv = true; isDaily = false; isMil = false; _seed = null; runSeed = null;
+  isSurv = true; isDaily = false; isMil = false; isRev = false; _seed = null; runSeed = null;
   diffKey = 'moderado';
   cat = buildGame('moderado');
   cat.name = 'Mata-mata';
@@ -9499,6 +9544,7 @@ function safetyNet() {
    its tier would normally apply. R$ 600.000 is a hard enough thing to ask
    without twenty seconds to sort four decades in. */
 function qTime() {
+  if (isRev) return 40;                  // a review is for remembering, not for racing
   if (!isMil) return DCFG().time;
   const q = cat && cat.qs && cat.qs[qi];
   if (q && q._special) return Math.max(RUNG().time, q.order ? 50 : 45);
@@ -9592,15 +9638,18 @@ function buildMilhao() {
 }
 
 function startMilhao() {
-  isMil = true; isDaily = false; isSurv = false; _seed = null; runSeed = null;
+  isMil = true; isDaily = false; isSurv = false; isRev = false;
   diffKey = 'moderado';                  // only used for the score multiplier
+  /* seeded, so the climb can be sent to a friend as a challenge (js/desafio.js) */
+  runSeed = chalSeed('m');
+  seedFrom(runSeed);
   cat = buildMilhao();
   rung = 0; banked = 0; cashed = false;
   qi = 0; sel.clear(); pts = 0; prevPts = 0; streak = 0;
   nCorrect = 0; nPartial = 0; bestStreak = 0; lastGain = 0; runLog = []; runNew = 0; runNewIds = []; runPulls = []; runSelos = []; runPackOpened = false; gameN++;
   resetLifes();
   sc = 'quiz'; tMax = qTime(); tLeft = tMax; lastMsg = '';
-  disp = getDisp(cat.qs[0]);
+  disp = dealDisp(0);
   startTmr();
   go();
 }
@@ -21812,6 +21861,7 @@ function html() {
   if (sc === 'selos') return selosHtml();
   if (sc === 'ano')   return anoHtml();
   if (sc === 'onde')  return ondeHtml();
+  if (sc === 'desafio') return chalHtml();
 
   /* ── Home: the cover ────────────────────────────────────────── */
   if (sc === 'home') {
@@ -21869,6 +21919,7 @@ function html() {
         /* one line of news, when there is some: the welcome packet first,
            then a birthday edition waiting to be won today */
         const v = V();
+        if (chal && !chal.accepted) return chalNews();
         if (v.welcome && v.welcome.length) return `<button id="bwelc" class="home-news is-gift" type="button">
           <span class="hn-ic">${ICON.star('currentColor', 13)}</span>
           <span><b>Pacote de boas-vindas</b> · suas figurinhas foram certificadas</span></button>`;
@@ -21891,6 +21942,7 @@ function html() {
           ${row('cta-btn', 'III', 'Treino', 'Sem pressa', 'train', ICON.ladder('currentColor', 15))}
           ${row('ano-btn', 'IV', 'Que ano?', LS.get('anoBest', 0) > 0 ? 'Recorde ' + LS.get('anoBest', 0) + ' pts' : 'Acerte o ano', 'ano', ICON.hourglass('currentColor', 15))}
           ${row('onde-btn', 'V', 'Onde foi?', LS.get('ondeBest', 0) > 0 ? 'Recorde ' + LS.get('ondeBest', 0) + ' pts' : 'Ache no mapa', 'onde', ICON.globe('currentColor', 15))}
+          ${row('rev-btn', 'VI', 'Revisar', revTail(), revDue().length ? 'rev' : 'rev is-off', ICON.book('currentColor', 15))}
         </nav>
 
         <div class="cv-cols">
@@ -22118,6 +22170,7 @@ function html() {
         data-to="${banked}"
         style="font-size:${banked >= 100000 ? 44 : 52}px;letter-spacing:-.03em;">${money(banked)}</div>
       <p class="small muted" style="max-width:290px;font-size:12px;">${sub}</p>
+      ${chalBanner()}
 
       <div class="rail" style="width:100%;max-width:300px;margin:6px 0;">
         ${LADDER.map((step, i) => `<span class="notch${i < rung ? ' notch-done' : ''}${step.safe ? ' notch-safe' : ''}"></span>`).join('')}
@@ -22134,7 +22187,7 @@ function html() {
       ${medalChips()}
 
       <div class="foot-row" style="margin-top:12px;">
-        <button id="bshare"  class="btn btn-ghost btn-sm">Compartilhar</button>
+        <button id="bshare"  class="btn btn-ghost btn-sm">${chalMine() ? 'Desafiar' : 'Compartilhar'}</button>
         <button id="bmilrep" class="btn btn-brass">De novo</button>
         <button id="bhome"   class="btn btn-ghost btn-sm">Início</button>
       </div>
@@ -22146,18 +22199,21 @@ function html() {
     const total = cat.qs.length;
     const pct = Math.round(nCorrect / total * 100);
     const msg = pct >= 80 ? 'Mestre da História!' : pct >= 50 ? 'Muito bem!' : 'Hora de estudar!';
-    const isRecord = scores[diffKey] !== undefined && pts === scores[diffKey] && pts > 0;
+    const isRecord = !isRev && scores[diffKey] !== undefined && pts === scores[diffKey] && pts > 0;
     const curDiff  = DIFFS.find(d => d.key === diffKey);
     return `
     <div class="pg pg-center" style="padding:28px 24px;gap:10px;">
       <span class="chip chip-soft" style="color:${curDiff.col};">
         ${isSurv ? `${ICON.shield('currentColor', 11)} Mata-mata · ${nCorrect} ${nCorrect === 1 ? 'acerto' : 'acertos'} seguidos`
+                 : isRev ? `${ICON.book('currentColor', 11)} Revisão · ${total} ${total === 1 ? 'pergunta' : 'perguntas'}`
                  : `${(ICON[curDiff.ic] || ICON.star)('currentColor', 11)} ${curDiff.label} · ${total} perguntas`}</span>
       ${pct >= 80 ? `<div class="end-trophy">${ART.trophy(52)}</div>` : ''}
       <div class="display" style="font-size:34px;margin-top:6px;"><em>${msg}</em></div>
       <div id="endpts" class="display num" style="font-size:64px;line-height:1;font-weight:600;"
         data-to="${pts}">${pts}</div>
       <div class="small muted">pontos · ${nCorrect}/${total} acertos (${pct}%)</div>
+      ${isRev ? `<div class="small rev-left">${ICON.book('currentColor', 11)} ${revDue().length ? `Ainda ${revDue().length === 1 ? 'falta 1' : `faltam ${revDue().length}`} para revisar hoje` : 'Nada mais para revisar hoje'}</div>` : ''}
+      ${chalBanner()}
       ${bestStreak >= 3 ? `<div class="small" style="display:flex;gap:4px;align-items:center;color:var(--brass);font-weight:700;">
         ${ICON.flame('currentColor', 12)} melhor sequência: ${bestStreak}</div>` : ''}
       <div class="bar"><i style="width:${pct}%;"></i></div>
@@ -22167,9 +22223,10 @@ function html() {
       ${selosStrip()}
       <div style="margin-top:6px;">${runlogEl()}</div>
       <div class="foot-row" style="margin-top:12px;">
-        <button id="bshare" class="btn btn-ghost btn-sm">Compartilhar</button>
-        <button id="brep"   class="btn btn-primary">Jogar de novo</button>
-        <button id="bdiff"  class="btn btn-ghost btn-sm">Mudar dificuldade</button>
+        <button id="bshare" class="btn btn-ghost btn-sm">${chalMine() ? 'Desafiar' : 'Compartilhar'}</button>
+        ${isRev ? (revDue().length ? `<button id="brev2" class="btn btn-primary">Revisar mais</button>` : `<button id="bhome" class="btn btn-primary">Início</button>`)
+                : `<button id="brep"   class="btn btn-primary">Jogar de novo</button>
+        <button id="bdiff"  class="btn btn-ghost btn-sm">Mudar dificuldade</button>`}
       </div>
     </div>`;
   }
@@ -22552,10 +22609,13 @@ function go() {
   on('bselos-end',  () => { snd.swipe();  seloTheme = null; sc = 'selos'; go(); });
   on('ano-btn',     () => { snd.select(); startAno(); });
   on('onde-btn',    () => { snd.select(); startOnde(); });
+  on('rev-btn',     () => { if (startRev()) snd.select(); else { snd.tap(); const b = document.getElementById('rev-btn'); if (b) { b.classList.remove('is-nudge'); void b.offsetWidth; b.classList.add('is-nudge'); } } });
+  on('bchal',       () => { snd.tap(); sc = 'desafio'; go(); });
   if (sc === 'selos') wireSelos();
   if (sc === 'album') wireAlbMap();
   if (sc === 'ano')   wireAno();
   if (sc === 'onde')  wireOnde();
+  if (sc === 'desafio') wireChal();
   on('bwelc',       () => { snd.tap(); openWelcomePack(); });
   on('bpack',       () => { snd.tap(); openRunPack(); });
   if (sc === 'vitrine') wireVitrine();
@@ -22743,6 +22803,7 @@ function go() {
   on('bfinal',  lockIn);
   on('bunlock', unlockAnswer);
   on('brep',    () => { snd.swipe(); startGame(); });
+  on('brev2',   () => { snd.swipe(); startRev(); });
   on('bmilrep', () => { snd.rung();  startMilhao(); });
   if (sc === 'end' && _fxEnd) { const k = _fxEnd; _fxEnd = 0; setTimeout(() => fx.rain(k === 2 ? 90 : 34), 350); }
   on('bdiff',   () => { snd.swipe(); sc = 'difficulty'; go(); });
@@ -22991,10 +23052,10 @@ window.addEventListener('resize', () => { try { fitScreen(); } catch (e) {} });
    GAME LOGIC
 ═══════════════════════════════════════════════════ */
 function startGame() {
-  isDaily = false; isSurv = false; isMil = false;
+  isDaily = false; isSurv = false; isMil = false; isRev = false;
   /* Seeded even though nothing hands a seed in: it is what keeps the tiles of
      a question stable across a lifeline, and it costs nothing. */
-  runSeed = (Math.random() * 2147483647) | 0;
+  runSeed = chalSeed('t' + String(diffKey)[0]);   // a friend's challenge deals their game
   seedFrom(runSeed);
   cat = buildGame(diffKey);
   qi = 0; sel.clear(); pts = 0; prevPts = 0; streak = 0;
@@ -24117,9 +24178,12 @@ function buildAno() {
   return { qs, i: 0, guess: qs[0].start, log: [], pts: 0, phase: 'guess' };
 }
 function startAno() {
-  isDaily = false; isSurv = false; isMil = false;
+  isDaily = false; isSurv = false; isMil = false; isRev = false;
   runSelos = [];
-  ano = buildAno();
+  /* dealt from a seed, so the game can be sent to a friend as a challenge (js/desafio.js) */
+  const seed = chalSeed('a');
+  seedFrom(seed); ano = buildAno(); _seed = null;
+  ano.seed = seed;
   sc = 'ano';
   go();
 }
@@ -24187,7 +24251,7 @@ function anoEndHtml() {
     <div class="eyebrow">Que ano? · ${ANO_N} eventos</div>
     <div class="display" style="font-size:28px;"><em>${msg}</em></div>
     <div class="display prize-pop brass" style="font-size:50px;letter-spacing:-.03em;">${ano.pts}<span class="muted" style="font-size:18px;"> / ${ANO_N * 100}</span></div>
-    <p class="small muted">${isBest ? 'Seu novo recorde!' : `Recorde: ${best} pts`}</p>
+    ${chalBanner() || `<p class="small muted">${isBest ? 'Seu novo recorde!' : `Recorde: ${best} pts`}</p>`}
     <div class="ano-list">
       ${ano.log.map(l => `<div class="ano-li"><span class="ano-li-p ${l.p >= 80 ? 'good' : l.p >= 50 ? 'brass' : 'bad'}">${l.p}</span>
         <span class="ano-li-t">${_esc(l.e.t)}</span><span class="ano-li-y"><b>${l.e.c ? 'c. ' : ''}${anoYear(l.e.y)}</b><small>${l.d === 0 ? 'exato' : 'você: ' + anoYear(l.g)}</small></span></div>`).join('')}
@@ -24195,7 +24259,7 @@ function anoEndHtml() {
     ${selosStrip()}
     ${medalChips()}
     <div class="foot-row" style="margin-top:8px;">
-      <button id="ano-share" class="btn btn-ghost btn-sm">Compartilhar</button>
+      <button id="ano-share" class="btn btn-ghost btn-sm">${chalMine() ? 'Desafiar' : 'Compartilhar'}</button>
       <button id="ano-again" class="btn btn-brass">De novo</button>
       <button id="bhome" class="btn btn-ghost btn-sm">Início</button>
     </div>
@@ -24204,7 +24268,7 @@ function anoEndHtml() {
 
 function anoShareText() {
   const grid = ano.log.map(l => l.p === 100 ? '🎯' : l.p >= 80 ? '🟩' : l.p >= 50 ? '🟨' : '⬛').join('');
-  return `Que ano? 📜 History Quiz\n${grid}\n${ano.pts}/${ANO_N * 100} pts\nhttps://tdosreis.github.io/history-quiz/`;
+  return `Que ano? 📜 History Quiz\n${grid}\n${ano.pts}/${ANO_N * 100} pts\n${chalShareTail(chalMine())}`;
 }
 
 function anoCommit() {
@@ -24269,7 +24333,7 @@ function wireAno() {
     const txt = anoShareText();
     if (navigator.share) navigator.share({ text: txt }).catch(() => {});
     else if (navigator.clipboard) navigator.clipboard.writeText(txt).then(() => {
-      const b = document.getElementById('ano-share'); if (b) { b.textContent = 'Copiado!'; setTimeout(() => { b.textContent = 'Compartilhar'; }, 1600); } }).catch(() => {});
+      const b = document.getElementById('ano-share'); if (b) { const was = b.textContent; b.textContent = 'Copiado!'; setTimeout(() => { b.textContent = was; }, 1600); } }).catch(() => {});
   });
 }
 
@@ -24949,9 +25013,12 @@ function buildOnde() {
   return { qs: shuf(qs).slice(0, ONDE_N).map(e => ({ e, at: ONDE_AT[e.id] })), i: 0, pin: null, log: [], pts: 0, phase: 'guess', v: { cx: 180, cy: 67, z: 1 } };
 }
 function startOnde() {
-  isDaily = false; isSurv = false; isMil = false;
+  isDaily = false; isSurv = false; isMil = false; isRev = false;
   runSelos = [];
-  onde = buildOnde();
+  /* dealt from a seed, so the game can be sent to a friend as a challenge (js/desafio.js) */
+  const seed = chalSeed('o');
+  seedFrom(seed); onde = buildOnde(); _seed = null;
+  onde.seed = seed;
   sc = 'onde';
   go();
 }
@@ -25029,7 +25096,7 @@ function ondeEndHtml() {
     <div class="eyebrow">Onde foi? · ${ONDE_N} eventos</div>
     <div class="display" style="font-size:28px;"><em>${msg}</em></div>
     <div class="display prize-pop brass" style="font-size:50px;letter-spacing:-.03em;">${onde.pts}<span class="muted" style="font-size:18px;"> / ${ONDE_N * 100}</span></div>
-    <p class="small muted">${onde.isBest ? 'Seu novo recorde!' : `Recorde: ${best} pts`}</p>
+    ${chalBanner() || `<p class="small muted">${onde.isBest ? 'Seu novo recorde!' : `Recorde: ${best} pts`}</p>`}
     <div class="ano-list">
       ${onde.log.map(l => `<div class="ano-li"><span class="ano-li-p ${l.p >= 80 ? 'good' : l.p >= 50 ? 'brass' : 'bad'}">${l.p}</span>
         <span class="ano-li-t">${_esc(l.e.t)}</span><span class="ano-li-y"><b>${_esc(l.at[2].split(', ').pop())}</b><small>${l.p === 100 ? 'na mosca' : ondeKmTxt(l.d)}</small></span></div>`).join('')}
@@ -25037,7 +25104,7 @@ function ondeEndHtml() {
     ${selosStrip()}
     ${medalChips()}
     <div class="foot-row" style="margin-top:8px;">
-      <button id="onde-share" class="btn btn-ghost btn-sm">Compartilhar</button>
+      <button id="onde-share" class="btn btn-ghost btn-sm">${chalMine() ? 'Desafiar' : 'Compartilhar'}</button>
       <button id="onde-again" class="btn btn-brass">De novo</button>
       <button id="bhome" class="btn btn-ghost btn-sm">Início</button>
     </div>
@@ -25046,7 +25113,7 @@ function ondeEndHtml() {
 
 function ondeShareText() {
   const grid = onde.log.map(l => l.p === 100 ? '🎯' : l.p >= 80 ? '🟩' : l.p >= 50 ? '🟨' : '⬛').join('');
-  return `Onde foi? 🌍 History Quiz\n${grid}\n${onde.pts}/${ONDE_N * 100} pts\nhttps://tdosreis.github.io/history-quiz/`;
+  return `Onde foi? 🌍 History Quiz\n${grid}\n${onde.pts}/${ONDE_N * 100} pts\n${chalShareTail(chalMine())}`;
 }
 
 /* ── the map's camera: a centre (in map units), a zoom, and how tall a degree is drawn ── */
@@ -25216,7 +25283,7 @@ function wireOnde() {
     const txt = ondeShareText();
     if (navigator.share) navigator.share({ text: txt }).catch(() => {});
     else if (navigator.clipboard) navigator.clipboard.writeText(txt).then(() => {
-      const b = document.getElementById('onde-share'); if (b) { b.textContent = 'Copiado!'; setTimeout(() => { b.textContent = 'Compartilhar'; }, 1600); } }).catch(() => {});
+      const b = document.getElementById('onde-share'); if (b) { const was = b.textContent; b.textContent = 'Copiado!'; setTimeout(() => { b.textContent = was; }, 1600); } }).catch(() => {});
   });
   const m = document.getElementById('onde-map');
   if (!m) return;
@@ -25313,6 +25380,222 @@ function wireOnde() {
       if (onde.pin && k === 'Enter') ondeCommit(); else ondeSetPin([onde.v.cx, onde.v.cy]);
     }
   });
+}
+
+/* ═══════════════════════════════════════════════════
+   O DESAFIO — a link that deals a friend the very same game
+   Every run is dealt from a seed (O BARALHO DA RODADA): the same seed deals
+   the same questions, in the same order, with the same tiles, on any phone.
+   So a result can travel as a link, ?d=<game>.<seed>.<score>[.<more>] in
+   base 36. Whoever opens it is shown what they are up against, plays that
+   game, and is told at the end who won; their own share sends it back.
+═══════════════════════════════════════════════════ */
+const CHAL_URL = 'https://tdosreis.github.io/history-quiz/';
+const CHAL_GAMES = {
+  tf: { n: 'Treino · Fácil', diff: 'facil', ic: 'check' },
+  tm: { n: 'Treino · Moderado', diff: 'moderado', ic: 'bolt' },
+  td: { n: 'Treino · Difícil', diff: 'dificil', ic: 'flame' },
+  m:  { n: 'Rumo ao Milhão', ic: 'crown' },
+  a:  { n: 'Que ano?', ic: 'hourglass' },
+  o:  { n: 'Onde foi?', ic: 'globe' },
+};
+const CHAL_SEED_MAX = 2147483647;
+let chal = null;           // a challenge received: { g, seed, score, more, code, used }
+
+function chalCode(c) {
+  return [c.g, c.seed.toString(36), Math.max(0, Math.round(c.score)).toString(36)]
+    .concat(c.more != null ? [Math.max(0, Math.round(c.more)).toString(36)] : []).join('.');
+}
+const chalLink = c => CHAL_URL + '?d=' + chalCode(c);
+function chalParse(s) {
+  const m = /^(tf|tm|td|m|a|o)\.([0-9a-z]{1,6})\.([0-9a-z]{1,6})(?:\.([0-9a-z]{1,3}))?$/.exec(String(s || '').trim().toLowerCase());
+  if (!m) return null;
+  const seed = parseInt(m[2], 36), score = parseInt(m[3], 36), more = m[4] != null ? parseInt(m[4], 36) : null;
+  if (!(seed >= 0 && seed <= CHAL_SEED_MAX)) return null;
+  const cap = m[1] === 'm' ? 1000000 : m[1][0] === 't' ? 99999 : 1000;
+  if (!(score <= cap)) return null;
+  if (m[1] === 'm' && !(more != null && more <= LADDER.length)) return null;
+  if (m[1][0] === 't' && more != null && more > 50) return null;
+  return { g: m[1], seed, score, more, code: m[0] };
+}
+
+/* the seed a new game is dealt from: the challenge's, the first time that game is started after accepting it */
+function chalSeed(g) {
+  if (chal && chal.accepted && !chal.used && chal.g === g) { chal.used = true; return chal.seed; }
+  return (Math.random() * CHAL_SEED_MAX) | 0;
+}
+
+/* the game that just ended, as a challenge to send */
+function chalMine() {
+  if (sc === 'ano' && ano && ano.phase === 'end' && ano.seed != null) return { g: 'a', seed: ano.seed, score: ano.pts };
+  if (sc === 'onde' && onde && onde.phase === 'end' && onde.seed != null) return { g: 'o', seed: onde.seed, score: onde.pts };
+  if (sc !== 'end' || runSeed == null || isDaily || isSurv || (typeof isRev !== 'undefined' && isRev)) return null;
+  if (isMil) return { g: 'm', seed: runSeed, score: banked, more: rung };
+  const g = 't' + String(diffKey)[0];
+  return CHAL_GAMES[g] ? { g, seed: runSeed, score: pts, more: nCorrect } : null;
+}
+/* is this the very game the friend was challenged with? */
+const chalIsThis = mine => !!(mine && chal && chal.used && chal.g === mine.g && chal.seed === mine.seed);
+/* better, worse or the same: the money first on the ladder, then how far up */
+const chalCmp = (a, b) => a.g === 'm' ? (a.score - b.score) || ((a.more || 0) - (b.more || 0)) : a.score - b.score;
+function chalScoreTxt(c) {
+  if (c.g === 'm') return `${money(c.score)} · degrau ${c.more || 0}`;
+  return `${c.score} pts`;
+}
+
+/* the line the share card ends on */
+function chalShareTail(mine) {
+  if (!mine) return CHAL_URL;
+  let head = '';
+  if (chalIsThis(mine)) {
+    const r = chalCmp(mine, chal);
+    head = `Desafio: ${chalScoreTxt(mine)} × ${chalScoreTxt(chal)} — ${r > 0 ? 'venci! 🏆' : r < 0 ? 'perdi, desta vez' : 'empate'}\n`;
+  }
+  return `${head}${mine.g === 'm' ? 'Encara as mesmas 16 perguntas?' : mine.g === 'a' || mine.g === 'o' ? 'Encara os mesmos 10 eventos?' : 'Encara as mesmas perguntas?'} ${chalLink(mine)}`;
+}
+
+/* on the results: who won */
+function chalBanner() {
+  const mine = chalMine();
+  if (!chalIsThis(mine)) return '';
+  const r = chalCmp(mine, chal);
+  const n = c => c.g === 'm' ? money(c.score) : c.score + (c.g[0] === 't' ? ' pts' : '');
+  return `<div class="chal-res ${r > 0 ? 'is-win' : r < 0 ? 'is-lose' : 'is-tie'}" role="status"
+      aria-label="Desafio: você ${chalScoreTxt(mine)}, seu amigo ${chalScoreTxt(chal)}. ${r > 0 ? 'Você venceu!' : r < 0 ? 'Não foi dessa vez.' : 'Empate!'}">
+    <span class="chal-res-k" aria-hidden="true">${ICON.sword('currentColor', 11)} Desafio</span>
+    <span class="chal-res-v" aria-hidden="true"><small>você</small> <b>${n(mine)}</b> <i>×</i> <b>${n(chal)}</b> <small>amigo</small></span>
+    <em aria-hidden="true">${r > 0 ? 'Você venceu!' : r < 0 ? 'Não foi dessa vez' : 'Empate!'}</em></div>`;
+}
+
+/* ── the screen a challenge link opens on ── */
+function chalHtml() {
+  const c = chal, G = c && CHAL_GAMES[c.g];
+  if (!G) { sc = 'home'; return html(); }
+  const what = c.g === 'm' ? 'As mesmas 16 perguntas da escada até o milhão, com as mesmas alternativas.'
+             : c.g === 'a' ? 'Os mesmos 10 eventos, na mesma régua de anos.'
+             : c.g === 'o' ? 'Os mesmos 10 eventos, para achar no mapa.'
+             : `As mesmas ${(DIFFS.find(d => d.key === G.diff) || DIFFS[0]).n} perguntas, na mesma ordem, com as mesmas alternativas.`;
+  const more = c.g[0] === 't' && c.more != null ? `${c.more} ${c.more === 1 ? 'acerto' : 'acertos'}` : '';
+  return `
+  <div class="pg pg-center chal-pg">
+    <div class="eyebrow">Desafio recebido</div>
+    <span class="chal-ic mode-disc mode-${c.g === 'm' ? 'album' : c.g === 'a' ? 'ano' : c.g === 'o' ? 'onde' : 'train'}">${(ICON[G.ic] || ICON.sword)('currentColor', 26)}</span>
+    <div class="display" style="font-size:31px;"><em>Um amigo te desafiou!</em></div>
+    <p class="chal-g">${G.n}</p>
+    <div class="chal-card"><small>Placar a bater</small><b class="num">${chalScoreTxt(c)}</b>${more ? `<span>${more}</span>` : ''}</div>
+    <p class="small muted" style="max-width:30ch;">${what}</p>
+    <button id="chal-go" class="btn btn-brass btn-lg">${ICON.sword('currentColor', 15)} Aceitar o desafio</button>
+    <button id="chal-no" class="btn btn-ghost btn-sm">Agora não</button>
+  </div>`;
+}
+function chalAccept() {
+  if (!chal) return;
+  chal.accepted = true;
+  LS.set('chal', null);
+  const G = CHAL_GAMES[chal.g];
+  if (chal.g[0] === 't') { diffKey = G.diff; startGame(); }
+  else if (chal.g === 'm') startMilhao();
+  else if (chal.g === 'a') startAno();
+  else if (chal.g === 'o') startOnde();
+}
+function wireChal() {
+  document.getElementById('chal-go')?.addEventListener('click', () => { snd.select(); chalAccept(); });
+  document.getElementById('chal-no')?.addEventListener('click', () => { snd.swipe(); sc = 'home'; go(); });
+}
+/* the cover's line for a challenge put off for later */
+function chalNews() {
+  if (!chal || chal.accepted) return '';
+  const G = CHAL_GAMES[chal.g];
+  return `<button id="bchal" class="home-news" type="button">
+    <span class="hn-ic">${ICON.sword('currentColor', 13)}</span>
+    <span>Desafio de um amigo · <b>${G.n}</b> · ${chalScoreTxt(chal)}</span></button>`;
+}
+
+/* At start: a link with a challenge opens on it (and leaves the address
+   clean, so a reload is not a second challenge); one put off waits on the cover. */
+function chalBoot() {
+  let code = null;
+  try {
+    const q = new URLSearchParams(location.search).get('d');
+    if (q !== null) {
+      code = q;
+      const u = new URL(location.href); u.searchParams.delete('d');
+      history.replaceState(history.state, '', u.pathname + (u.search || '') + u.hash);
+    }
+  } catch (e) {}
+  const fresh = code !== null ? chalParse(code) : null;
+  if (fresh) { chal = fresh; LS.set('chal', fresh.code); sc = 'desafio'; return; }
+  const kept = chalParse(LS.get('chal', null));
+  if (kept) chal = kept;
+}
+
+/* ═══════════════════════════════════════════════════
+   REVISAR — the questions you got wrong, again, spaced out
+   A written question missed in any game goes into a box to come back to.
+   The boxes are a Leitner file: right on review, a question comes back a
+   day later, then three, then seven, and after that it is learned and
+   leaves; missed again, it starts over. Knowing it before it is due proves
+   little, so that does not move it. The game is a round of up to ten of
+   those that are due, with a slower clock than training.
+═══════════════════════════════════════════════════ */
+const REV_N = 10;
+const REV_GAPS = [0, 1, 3, 7];      // days until a question comes back, by box
+const REV_MAX = 300;                // the file keeps the most recent misses
+let _revPool = null;
+/* the written questions, by their line — the only ones that stay the same from one game to the next */
+function revPool() {
+  if (_revPool) return _revPool;
+  _revPool = new Map();
+  CATS.forEach(c => c.qs.forEach(q => { if (q.t && !_revPool.has(q.t)) _revPool.set(q.t, { q, c }); }));
+  return _revPool;
+}
+function revFile() { const r = LS.get('rev', {}); return r && typeof r === 'object' && !Array.isArray(r) ? r : {}; }
+/* an answer, from any game: a miss is filed, a right answer to a due one moves it on */
+function revNote(q, p) {
+  if (!q || !q.t || !revPool().has(q.t)) return;
+  const R = revFile(), now = dayIndex(), e = R[q.t];
+  if (p !== 3) { delete R[q.t]; R[q.t] = [0, now]; }
+  else if (e && e[1] <= now) {
+    const box = e[0] + 1;
+    if (box >= REV_GAPS.length) { delete R[q.t]; stats.revLearned = (stats.revLearned || 0) + 1; LS.set('stats', stats); }
+    else R[q.t] = [box, now + REV_GAPS[box]];
+  } else return;
+  const ks = Object.keys(R);
+  ks.slice(0, Math.max(0, ks.length - REV_MAX)).forEach(k => delete R[k]);
+  LS.set('rev', R);
+}
+const revDue = () => { const R = revFile(), now = dayIndex(); return Object.keys(R).filter(t => R[t][1] <= now && revPool().has(t)); };
+/* how many days until the next one is due (or null, with none filed) */
+function revWait() {
+  const R = revFile(), now = dayIndex(), ds = Object.keys(R).filter(t => revPool().has(t)).map(t => R[t][1] - now);
+  return ds.length ? Math.max(0, Math.min(...ds)) : null;
+}
+function revTail() {
+  const n = revDue().length;
+  if (n) return `${n} ${n === 1 ? 'pendente' : 'pendentes'}`;
+  const w = revWait();
+  return w === null ? 'Seus erros voltam aqui' : `Próxima em ${w} ${w === 1 ? 'dia' : 'dias'}`;
+}
+
+function startRev() {
+  const due = revDue();
+  if (!due.length) return false;
+  isDaily = false; isSurv = false; isMil = false; isRev = true;
+  diffKey = 'moderado';
+  _seed = null; runSeed = null;
+  /* the longest waiting first, then the rest in no order */
+  const R = revFile();
+  const pick = due.sort((a, b) => R[a][1] - R[b][1]).slice(0, REV_N);
+  const qs = shuf(pick).map(t => { const { q, c } = revPool().get(t); return { ...q, _cat: c }; });
+  cat = { id: 'revisar', name: 'Revisar erros', emoji: '📖', tag: 'Os que você errou', col: '#2F5D62', diff: 'Revisão', qs };
+  qi = 0; sel.clear(); pts = 0; prevPts = 0; streak = 0;
+  nCorrect = 0; nPartial = 0; bestStreak = 0; lastGain = 0; runLog = []; runNew = 0; runNewIds = []; runPulls = []; runSelos = []; runPackOpened = false; gameN++;
+  resetLifes();
+  sc = 'quiz'; tMax = qTime(); tLeft = tMax; lastMsg = '';
+  disp = getDisp(cat.qs[0]);
+  startTmr();
+  go();
+  return true;
 }
 
 /*@@/formats@@*/
@@ -25464,6 +25747,8 @@ function doReveal() {
   lastGain = gain;
   if (p === 3) nCorrect++; else if (p === 1) nPartial++;
   runLog.push(p);
+  /* a miss is filed for review; a right answer to one that is due moves it on (js/revisar.js) */
+  try { revNote(q, p); } catch (e) {}
 
   if (isMil) {
     if      (p === 3 && isFinal()) snd.fanfare();
@@ -25594,7 +25879,7 @@ function advanceAfterReveal(p) {
 function finishRun() {
   clearInterval(tmr);
   sc = 'end';
-  if (scores[diffKey] === undefined || pts > scores[diffKey]) {
+  if (!isRev && (scores[diffKey] === undefined || pts > scores[diffKey])) {
     scores[diffKey] = pts;
     LS.set('scores', scores);
   }
@@ -25614,7 +25899,7 @@ function finishRun() {
     if (banked > milBest()) LS.set('milBest', banked);
   } else if (isSurv) {
     stats.survBest = Math.max(stats.survBest || 0, nCorrect);
-  } else {
+  } else if (!isRev) {             /* a review round is not a perfect round */
     if (acc === 1) stats.perfect = (stats.perfect || 0) + 1;
     if (diffKey === 'dificil' && acc >= 0.8) stats.hard80 = (stats.hard80 || 0) + 1;
   }
@@ -25716,6 +26001,8 @@ const BOTH_ALBUMS = new Set(['leonidas', 'socrates', 'adriano', 's:GER', 's:ARG'
   try { muted = ls.getItem('hq_muted') === 'true'; } catch (e) {}
 })();
 
+/* a link with a friend's challenge opens on it (js/desafio.js) */
+try { chalBoot(); } catch (e) {}
 go();
 
 /* ── Service Worker registration ── */
