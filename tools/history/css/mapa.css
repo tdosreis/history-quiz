@@ -1,0 +1,61 @@
+
+/* ═══ O MAPA-MÚNDI — the album as an atlas page ═══ */
+.amap-pg { gap: 8px; flex: 1 1 auto; min-height: 0; }
+.amap-tabs { display: flex; gap: 4px; overflow-x: auto; padding: 1px 1px 3px; scrollbar-width: none; flex: none; }
+.amap-tabs::-webkit-scrollbar { display: none; }
+.amap-tab { flex: 1 0 auto; display: flex; flex-direction: column; align-items: center; gap: 1px; padding: 6px 8px 5px;
+  border: 0; cursor: pointer; color: var(--ink-2); font: 700 12px/1 var(--font-s); letter-spacing: .02em;
+  background: var(--at-card-img) center / 100% 100% no-repeat; }
+.amap-tab small { font: 600 9.5px/1 var(--font-s); color: var(--ink-3); }
+.amap-tab.is-on { color: var(--ink); box-shadow: inset 0 -3px 0 var(--brass); }
+.amap-wrap { flex: 1 1 0; min-height: 120px; display: flex; flex-direction: column; justify-content: center; gap: 10px; }
+.amap { position: relative; width: 100%; max-width: calc(100% - 10px); align-self: center; flex: none;
+  border: 1.5px solid #6E5836; box-shadow: 0 0 0 4px #EFE6CF, 0 0 0 5px #6E5836, 0 4px 14px rgba(0, 0, 0, .35); background: #D7C79C; }
+.amap-svg { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.amap-c { stroke: #6E5836; stroke-width: .25; transition: fill .4s; }
+.amap-c.is-fresh { animation: amap-glow 1.6s ease-in-out 3; }
+@keyframes amap-glow { 50% { fill: #E9C46A; } }
+.amap-rose { position: absolute; right: 2.5%; bottom: 6%; width: 9%; aspect-ratio: 1; opacity: .85; pointer-events: none; }
+/* a pin: the place's flag in a disc, ringed by how much of it is collected */
+.amap-pin { position: absolute; transform: translate(-50%, -50%); width: 27px; height: 27px; padding: 3px; border-radius: 50%; border: 0;
+  cursor: pointer; z-index: 1; background: conic-gradient(#B07A2E var(--f), #F7F1E2 0); box-shadow: 0 0 0 1px #6E5836, 0 1px 3px rgba(0, 0, 0, .4); }
+.amap-pin:hover, .amap-pin:focus-visible { z-index: 3; transform: translate(-50%, -50%) scale(1.18); outline: none;
+  box-shadow: 0 0 0 2px var(--brass), 0 2px 6px rgba(0, 0, 0, .45); }
+.amap-flag { display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; border-radius: 50%; overflow: hidden;
+  background: #F7F1E2; }
+.amap-flag svg { height: 100%; width: auto; display: block; }
+.amap-crest { display: block; position: relative; flex: none; width: 100% !important; height: 100% !important; }
+.amap-crest .crest-disc { position: static; transform: none; width: 100%; height: 100%; }
+.amap-pin.is-empty .amap-flag { filter: grayscale(.85) opacity(.75); }
+.amap-pin.is-done { background: #8E2F2F; box-shadow: 0 0 0 1.5px #E0B968, 0 1px 3px rgba(0, 0, 0, .4); }
+.amap-pin.is-done::after { content: '✓'; position: absolute; right: -5px; top: -5px; width: 13px; height: 13px; border-radius: 50%;
+  background: #E0B968; color: #3A1208; font: 800 9px/13px var(--font-s); text-align: center; box-shadow: 0 0 0 1px #6E5836; }
+.amap-pin.is-fresh { animation: amap-pin-in 1.2s ease-out 2; z-index: 2; }
+@keyframes amap-pin-in { 40% { box-shadow: 0 0 0 6px rgba(233, 196, 106, .85); } }
+.amap-conts { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; flex: none; }
+.amap-cont { display: grid; grid-template-columns: 1fr auto; grid-template-rows: auto auto; gap: 4px 8px; align-items: center; text-align: left;
+  border: 0; cursor: pointer; padding: 9px 11px; color: var(--ink); background: var(--at-card-img) center / 100% 100% no-repeat; }
+.amap-cont b { font: 600 16px/1.05 var(--font-d); }
+@media (max-width: 400px) { .amap-cont b { font-size: 14.5px; } }
+.amap-cont small { grid-column: 2; grid-row: 1; font-size: 11px; color: var(--ink-3); }
+.amap-cbar { grid-column: 1 / -1; height: 5px; border-radius: 3px; background: var(--rule-2); overflow: hidden; }
+.amap-cbar i { display: block; height: 100%; background: var(--brass); }
+/* "falta pouco": the pages nearest to finished */
+.amap-near { display: flex; flex-wrap: wrap; gap: 4px 6px; flex: none; min-width: 0; margin-top: 2px; }
+.amap-near-h { flex: 1 0 100%; font: 700 9.5px/1 var(--font-s); letter-spacing: .12em; text-transform: uppercase; color: var(--ink-3); }
+.amap-nr { flex: 1 1 0; min-width: 0; display: flex; align-items: center; gap: 6px; padding: 6px 7px; border: 0; cursor: pointer; text-align: left;
+  color: var(--ink); background: var(--at-card-img) center / 100% 100% no-repeat; }
+.amap-nr .amap-flag { flex: none; width: 24px; height: 24px; box-shadow: 0 0 0 1px #6E5836; }
+.amap-nr > span:last-child { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.amap-nr b { font: 700 12px/1.1 var(--font-s); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.amap-nr small { font-size: 10.5px; color: var(--ink-3); }
+.amap-hint { margin: 0; text-align: center; font-size: 11px; flex: none; }
+.alb-pg .alb-head .alb-vit + .alb-vit { margin-left: -2px; }
+@media (max-height: 700px) {
+  .amap-pg { gap: 6px; }
+  .amap-wrap { gap: 7px; }
+  .amap-nr { padding: 4px 6px; }
+  .amap-nr .amap-flag { width: 20px; height: 20px; }
+  .amap-cont { padding: 7px 10px; }
+  .amap-tab { padding: 5px 6px 4px; }
+}

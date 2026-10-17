@@ -21,7 +21,7 @@ STATES = {
  "shot-01-home": SEED + " heroSticker=function(){var h=PL.find(function(p){return p.id==='napoleao'});return {p:h,num:PL.indexOf(h)+1}}; sc='home'; go();",
  "shot-02-pessoas": Q("renascimento", "q.type==='player' && q.t.indexOf('Mona Lisa')>0"),
  "shot-03-monumento": Q("monumentos", "q.stad==='machu_picchu' && q.type==='txt'"),
- "shot-04-album": SEED + " albCtry='BRA'; albPage=0; sc='album'; go();",
+ "shot-04-album": SEED + " albView='map'; amapView='EU'; sc='album'; go();",
  "shot-05-linha": ("diffKey='dificil'; cat=buildGame('dificil'); var q=CATS.find(function(c){return c.id==='linha_do_tempo'}).qs[3]; cat.qs=[q]; qi=0; sel.clear(); pts=72; streak=5; runLog=[3,3,3,3,3]; sc='quiz'; tMax=50; tLeft=36; disp=getDisp(q); go();"),
  "shot-07-batalha": Q("batalhas", "q.battle && q.battle.lbl.indexOf('Waterloo')===0"),
  "shot-08-citacao": Q("citacoes", "q.quote && q.quote.q.indexOf('Vim, vi')===0"),

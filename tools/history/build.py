@@ -329,8 +329,11 @@ def main():
     ano = json.load(io.open(ap, encoding="utf-8")) if os.path.exists(ap) else []
     ano_js = "const ANO_EVENTS = [\n" + "".join("  %s,\n" % json.dumps(e, ensure_ascii=False, separators=(",", ":")) for e in ano) + "];\n"
     s = put(s, "formats", "\n".join(io.open(os.path.join(H, "js", f), encoding="utf-8").read() for f in ("formats.js", "almanac.js"))
-            + "\n" + ano_js + "\n".join(io.open(os.path.join(H, "js", f), encoding="utf-8").read() for f in ("selos.js", "ano.js")))
-    s = put(s, "formats_css", "\n".join(io.open(os.path.join(H, "css", f), encoding="utf-8").read() for f in ("formats.css", "selos_ano.css")))
+            + "\n" + ano_js + "\n".join(io.open(os.path.join(H, "js", f), encoding="utf-8").read() for f in ("selos.js", "ano.js"))
+            # the album's world map (tools/history/album_map.json, from albmapgen.mjs)
+            + "\nconst ALB_MAP = " + io.open(os.path.join(H, "album_map.json"), encoding="utf-8").read().strip() + ";\n"
+            + io.open(os.path.join(H, "js", "mapa.js"), encoding="utf-8").read())
+    s = put(s, "formats_css", "\n".join(io.open(os.path.join(H, "css", f), encoding="utf-8").read() for f in ("formats.css", "selos_ano.css", "mapa.css")))
     io.open(PAGE, "w", encoding="utf-8").write(s)
     print("index.html updated: %d bytes" % len(s.encode("utf-8")))
 

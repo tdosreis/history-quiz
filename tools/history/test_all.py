@@ -119,6 +119,23 @@ JS = r"""
   });
   try { albumPages(PL.map((p, i) => ({ p, n: i + 1 }))); } catch (e) { F('albumPages ' + e.message); }
   try { MEDALS.forEach(m => { m.t({ games: 0, correct: 0 }); }); } catch (e) { F('medals ' + e.message); }
+  /* ── the album's world map: every sticker on a page, every page on the map ── */
+  try {
+    const P = albPlaces();
+    if (P.lost.length) F('stickers with no place on the map: ' + P.lost.map(g => g.sid || g.p.id).slice(0, 5).join(', '));
+    const n = P.order.reduce((a, c) => a + P.items[c].length, 0);
+    if (n !== ALL_STICKERS.length) F('the map holds ' + n + ' of ' + ALL_STICKERS.length + ' stickers');
+    P.order.forEach(c => {
+      if (!ALB_MAP.pins[c]) F('a place with no pin ' + c);
+      if (!AMAP_PLACE_CONT[c]) F('a place in no part of the world ' + c);
+      if (!placeBadge(c, 12)) F('a place with no badge ' + c);
+      const [vx, vy, vw, vh] = ALB_MAP.views[AMAP_PLACE_CONT[c]], [x, y] = ALB_MAP.pins[c];
+      if (x < vx || x > vx + vw || y < vy || y > vy + vh) F('pin outside its map ' + c);
+    });
+    note.places = P.order.length;
+    ['WORLD', 'EU', 'AS', 'AF', 'AM'].forEach(v => { amapView = v; if (!/amap-svg/.test(albMapHtml())) F('map does not draw ' + v); });
+    amapView = 'WORLD';
+  } catch (e) { F('mapa EXC ' + e.message); }
   /* ── the stamp album: every stamp a scene with a page, printed won and unwon ── */
   try {
     const ids = seloAll(); note.selos = ids.length;

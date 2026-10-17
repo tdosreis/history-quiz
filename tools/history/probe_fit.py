@@ -75,9 +75,13 @@ PROBE = r"""
 DRIVE = r"""
   /* the still screens */
   ['home','album','medals','credits','difficulty','vitrine'].forEach(function(s){ sc=s; go(); fit(s); });
-  sc='album'; albCtry='__selecoes'; go(); fit('album/nacoes');
-  sc='album'; albCtry='__escudos'; go(); fit('album/escudos');
-  sc='album'; albCtry='__mascotes'; go(); fit('album/mascotes');
+  /* the album: the world and its four parts, then every page of every place */
+  ['WORLD','EU','AS','AF','AM'].forEach(function(v){ albView='map'; amapView=v; sc='album'; go(); fit('album/mapa-'+v); });
+  albPlaces().order.forEach(function(c){
+    var n = placePages(c).length;
+    for (var pg=0; pg<n; pg++){ albView='place'; albCtry=c; albPage=pg; sc='album'; go(); fit('album/'+c+'/'+pg); }
+  });
+  albView='map';
 
   /* boards: several deals per level, because tile count varies by question */
   ['facil','moderado','dificil'].forEach(function(k){
