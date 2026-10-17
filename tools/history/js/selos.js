@@ -87,7 +87,7 @@ function seloSvg(id, opts) {
   const num = String(seloNum(id)).padStart(3, '0');
   if (!got) return `<svg class="selo-svg" viewBox="0 0 ${W} ${H}" aria-hidden="true">
     <rect x="3" y="3" width="${W - 6}" height="${H - 6}" rx="2" fill="none" stroke="currentColor" stroke-width="1.4" stroke-dasharray="4 3" opacity=".55"/>
-    <text x="${W / 2}" y="${H / 2 + 6}" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-weight="700" font-size="17" fill="currentColor" opacity=".5">Nº ${num}</text></svg>`;
+    <text x="${W / 2}" y="${H / 2 + 6}" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-weight="700" font-size="17" fill="currentColor" opacity=".85">Nº ${num}</text></svg>`;
   const d = String(selos[id] || _todayISO()).split('-');
   const date = `${+d[2]} ${_MES[(+d[1] || 1) - 1]} ${d[0]}`;
   const scene = SCENE[id] ? SCENE[id].draw() : '';
@@ -156,7 +156,7 @@ function selosHtml() {
         <span class="small muted">página ${seloPage + 1} de ${pages} · ${ids.filter(seloHas).length} de ${ids.length} selos</span>
         <button id="selo-next" class="btn btn-ghost btn-icon" aria-label="Próxima página"${seloPage >= pages - 1 ? ' disabled' : ''}>${ICON.back('currentColor', 12).replace('<svg', '<svg style="transform:scaleX(-1)"')}</button>
       </div>
-      <p class="selo-hint small muted">Acerte uma pergunta com esta ilustração — ou crave o ano no <b>Que ano?</b> — e o selo é seu.</p>
+      <p class="selo-hint small muted">Acerte uma pergunta com esta ilustração — ou chegue perto do ano no <b>Que ano?</b> — e o selo é seu.</p>
     </div>
   </div>`;
 }
@@ -167,10 +167,12 @@ function seloZoom(id) {
   if (old) old.remove();
   const got = seloHas(id);
   const d = got ? String(selos[id]).split('-') : null;
+  const back = document.activeElement;
   const z = document.createElement('div');
   z.id = 'selo-zoom';
   z.className = 'selo-zoom';
   z.setAttribute('role', 'dialog');
+  z.setAttribute('aria-modal', 'true');
   z.setAttribute('aria-label', 'Selo');
   z.innerHTML = `<div class="selo-zoom-card">
       <div class="selo-zoom-st">${seloSvg(id, { big: true })}</div>
@@ -179,9 +181,11 @@ function seloZoom(id) {
         got ? ` · carimbado em ${+d[2]}/${+d[1]}/${d[0]}` : ''}</p>
       <button class="btn btn-ghost btn-sm" id="selo-zoom-x">Fechar</button></div>`;
   document.body.appendChild(z);
-  const close = () => { z.remove(); };
+  const onKey = e => { if (e.key === 'Escape') close(); else if (e.key === 'Tab') { e.preventDefault(); z.querySelector('#selo-zoom-x').focus(); } };
+  const close = () => { document.removeEventListener('keydown', onKey); z.remove(); try { back && back.focus && back.focus(); } catch (e) {} };
   z.addEventListener('click', e => { if (e.target === z || e.target.id === 'selo-zoom-x') close(); });
-  document.addEventListener('keydown', function esc(e) { if (e.key === 'Escape') { close(); document.removeEventListener('keydown', esc); } });
+  document.addEventListener('keydown', onKey);
+  z.querySelector('#selo-zoom-x').focus();
 }
 
 function wireSelos() {
@@ -235,7 +239,8 @@ function seloWonLine(id) {
 }
 /* the home screen's stamp tile: the last three stamps won, or blank ones */
 function seloHomeTile() {
-  const all = seloAll(), mine = all.filter(seloHas).sort((a, b) => String(selos[a]).localeCompare(String(selos[b])));
+  /* in the order they were won (the store keeps it) */
+  const all = seloAll(), mine = Object.keys(selos).filter(id => seloNum(id));
   const three = mine.slice(-3);
   while (three.length < 3) three.unshift(null);
   return `<button id="bselo" class="cv-album cv-selo" type="button">

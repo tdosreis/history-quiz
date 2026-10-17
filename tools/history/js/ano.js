@@ -17,7 +17,8 @@ const anoYear = y => y < 0 ? `${-y} a.C.` : String(y);
 const anoTol = e => (e.y < -1000 ? 80 : e.y < 0 ? 50 : e.y < 1000 ? 35 : e.y < 1500 ? 22 : e.y < 1800 ? 12 : e.y < 1900 ? 8 : 5) * (e.c ? 2 : 1);
 /* the years between two dates, with no year zero between 1 a.C. and 1 d.C. */
 const anoGap = (a, b) => Math.abs(a - b) - (a < 0 !== b < 0 ? 1 : 0);
-const anoPts = (e, g) => { const d = anoGap(e.y, g); return d === 0 ? 100 : Math.max(0, Math.round(100 * (1 - d / (anoTol(e) * 5)))); };
+/* only the exact year is worth 100: a near miss, however near, tops out at 99 */
+const anoPts = (e, g) => { const d = anoGap(e.y, g); return d === 0 ? 100 : Math.min(99, Math.max(0, Math.round(100 * (1 - d / (anoTol(e) * 5))))); };
 const anoVerdict = p => p === 100 ? 'Na mosca!' : p >= 80 ? 'Muito perto!' : p >= 50 ? 'Perto' : p > 0 ? 'Longe' : 'Passou longe';
 
 /* The ruler each event is guessed on: wide for the ancient world, narrow
@@ -27,6 +28,8 @@ function anoWindow(e, r) {
   let lo = Math.round((e.y - W * (0.18 + r * 0.64)) / 10) * 10;
   let hi = lo + W;
   if (hi > ANO_NOW) { lo -= hi - ANO_NOW; hi = ANO_NOW; }
+  /* a ruler never ends on year 0, which did not exist */
+  if (hi === 0) { lo -= 10; hi -= 10; } else if (lo === 0) { lo += 10; hi += 10; }
   return [lo, hi];
 }
 
@@ -69,7 +72,8 @@ function anoHtml() {
     const l = ano.log[i];
     return `<i class="${l ? (l.p >= 80 ? 'rl-3' : l.p >= 50 ? 'rl-1' : 'rl-0') : i === ano.i ? 'ano-dot-on' : ''}"></i>`;
   }).join('');
-  const pos = y => ((y - q.lo) / (q.hi - q.lo) * 100).toFixed(2);
+  /* a mark sits where the thumb would: the thumb travels inside the track, half its width in from each end */
+  const pos = y => `calc(var(--ano-th0) + (100% - 2 * var(--ano-th0)) * ${((y - q.lo) / (q.hi - q.lo)).toFixed(4)})`;
   return `
   <div class="pg ano-pg${rev ? ' is-rev' : ''}">
     ${topbar('Que ano?')}
@@ -80,19 +84,19 @@ function anoHtml() {
       <p class="ano-t">${_esc(e.t)}</p>
     </div>
     <div class="ano-dial">
-      <div class="ano-year num${rev ? ' is-set' : ''}" id="ano-year" aria-live="polite">${e.c && rev ? 'c. ' : ''}${anoYear(rev ? last.g : ano.guess)}</div>
+      <div class="ano-year num${rev ? ' is-set' : ''}${rev && last.d === 0 ? ' is-hit' : ''}" id="ano-year"${rev ? ' aria-live="polite"' : ''}>${anoYear(rev ? last.g : ano.guess)}</div>
       ${rev ? `<div class="ano-truth"><span>${anoVerdict(last.p)}</span> <b>${e.c ? 'c. ' : ''}${anoYear(e.y)}</b>
           · ${last.d === 0 ? 'o ano exato' : `${last.d} ${last.d === 1 ? 'ano' : 'anos'} de diferença`}</div>` : ''}
       <div class="ano-rule">
         <input type="range" id="ano-range" min="${q.lo}" max="${q.hi}" step="1" value="${rev ? last.g : ano.guess}"
-          aria-label="Ano" ${rev ? 'disabled' : ''}>
-        ${rev ? `<span class="ano-mark ano-mark-g" style="left:${pos(last.g)}%"></span>
-                 <span class="ano-mark ano-mark-y" style="left:${pos(e.y)}%"></span>` : ''}
+          aria-label="Ano" aria-valuetext="${anoYear(rev ? last.g : ano.guess)}" ${rev ? 'disabled' : ''}>
+        ${rev ? `<span class="ano-mark ano-mark-g" style="left:${pos(last.g)}"></span>
+                 <span class="ano-mark ano-mark-y" style="left:${pos(e.y)}"></span>` : ''}
         <div class="ano-ends"><span>${anoYear(q.lo)}</span><span>${anoYear(q.hi)}</span></div>
       </div>
       ${rev ? '' : `<div class="ano-nudge">
-        <button class="btn btn-ghost btn-sm" data-nudge="-10">−10</button><button class="btn btn-ghost btn-sm" data-nudge="-1">−1</button>
-        <button class="btn btn-ghost btn-sm" data-nudge="1">+1</button><button class="btn btn-ghost btn-sm" data-nudge="10">+10</button></div>`}
+        <button class="btn btn-ghost btn-sm" data-nudge="-10" aria-label="Menos 10 anos">−10</button><button class="btn btn-ghost btn-sm" data-nudge="-1" aria-label="Menos 1 ano">−1</button>
+        <button class="btn btn-ghost btn-sm" data-nudge="1" aria-label="Mais 1 ano">+1</button><button class="btn btn-ghost btn-sm" data-nudge="10" aria-label="Mais 10 anos">+10</button></div>`}
     </div>
     ${rev ? `<div class="ano-after">
         <span class="display ${last.p >= 80 ? 'good' : last.p >= 50 ? 'brass' : 'bad'}" style="font-size:17px;">+${last.p}</span>
@@ -105,7 +109,7 @@ function anoHtml() {
 
 function anoEndHtml() {
   const best = LS.get('anoBest', 0);
-  const isBest = ano.pts > 0 && ano.pts >= best;
+  const isBest = !!ano.isBest;
   const msg = ano.pts >= 800 ? 'Uma máquina do tempo!' : ano.pts >= 600 ? 'Ótimo senso de tempo!' : ano.pts >= 400 ? 'Nada mau!' : 'O tempo é traiçoeiro…';
   return `
   <div class="pg pg-center ano-end" style="padding:22px 18px;gap:9px;">
@@ -115,7 +119,7 @@ function anoEndHtml() {
     <p class="small muted">${isBest ? 'Seu novo recorde!' : `Recorde: ${best} pts`}</p>
     <div class="ano-list">
       ${ano.log.map(l => `<div class="ano-li"><span class="ano-li-p ${l.p >= 80 ? 'good' : l.p >= 50 ? 'brass' : 'bad'}">${l.p}</span>
-        <span class="ano-li-t">${_esc(l.e.t)}</span><span class="ano-li-y"><b>${anoYear(l.e.y)}</b><small>${l.d === 0 ? 'exato' : 'você: ' + anoYear(l.g)}</small></span></div>`).join('')}
+        <span class="ano-li-t">${_esc(l.e.t)}</span><span class="ano-li-y"><b>${l.e.c ? 'c. ' : ''}${anoYear(l.e.y)}</b><small>${l.d === 0 ? 'exato' : 'você: ' + anoYear(l.g)}</small></span></div>`).join('')}
     </div>
     ${selosStrip()}
     ${medalChips()}
@@ -138,6 +142,8 @@ function anoCommit() {
   const selo = p >= 80 && e.pic && e.pic.scene && awardSelo(e.pic.scene) ? e.pic.scene : null;
   ano.log.push({ e, g, p, d, selo });
   if (d === 0) { stats.anoExact = (stats.anoExact || 0) + 1; LS.set('stats', stats); }
+  /* a medal is won the moment it is earned, and announced on this game's results */
+  try { ano.medals = (ano.medals || []).concat(newMedals()); } catch (err) {}
   ano.pts += p;
   ano.phase = 'reveal';
   if (p === 100) snd.fanfare(); else if (p >= 80) snd.correct(0); else if (p >= 50) snd.almost(); else snd.wrong();
@@ -149,8 +155,9 @@ function anoNext() {
     ano.phase = 'end';
     stats.anoGames = (stats.anoGames || 0) + 1;
     LS.set('stats', stats);
-    if (ano.pts > LS.get('anoBest', 0)) LS.set('anoBest', ano.pts);
-    window._newMedals = newMedals();
+    ano.isBest = ano.pts > LS.get('anoBest', 0);
+    if (ano.isBest) LS.set('anoBest', ano.pts);
+    window._newMedals = (ano.medals || []).concat(newMedals());
     setTimeout(() => snd.final(ano.pts >= 500), 200);
   } else {
     ano.i++;
@@ -168,7 +175,7 @@ function wireAno() {
     v = Math.max(q.lo, Math.min(q.hi, Math.round(v)));
     if (v === 0) v = ano.guess < 0 ? 1 : -1;   // there is no year zero
     ano.guess = v;
-    if (r) r.value = v;
+    if (r) { r.value = v; r.setAttribute('aria-valuetext', anoYear(v)); }
     if (yEl) yEl.textContent = anoYear(v);
   };
   if (r && ano.phase === 'guess') {
@@ -176,7 +183,14 @@ function wireAno() {
     let last = 0;
     r.addEventListener('input', () => { const t = Date.now(); if (t - last > 70) { last = t; try { snd.tick && snd.tick(); } catch (e) {} } });
   }
-  document.querySelectorAll('[data-nudge]').forEach(b => b.addEventListener('click', () => { snd.tap(); set(ano.guess + +b.dataset.nudge); }));
+  /* ten years after 2 a.C. is 9 d.C.: there is no year zero to count */
+  document.querySelectorAll('[data-nudge]').forEach(b => b.addEventListener('click', () => {
+    snd.tap();
+    const g = ano.guess, d = +b.dataset.nudge;
+    let v = g + d;
+    if (g < 0 && v >= 0) v += 1; else if (g > 0 && v <= 0) v -= 1;
+    set(v);
+  }));
   on('ano-go', () => anoCommit());
   on('ano-next', () => { snd.swipe(); anoNext(); });
   on('ano-again', () => { snd.select(); startAno(); });
@@ -186,5 +200,4 @@ function wireAno() {
     else if (navigator.clipboard) navigator.clipboard.writeText(txt).then(() => {
       const b = document.getElementById('ano-share'); if (b) { b.textContent = 'Copiado!'; setTimeout(() => { b.textContent = 'Compartilhar'; }, 1600); } }).catch(() => {});
   });
-  on('bselos-end', () => { snd.swipe(); seloTheme = null; sc = 'selos'; go(); });
 }

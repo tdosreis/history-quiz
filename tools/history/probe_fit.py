@@ -159,6 +159,15 @@ DRIVE = r"""
     }
     ano.phase='end'; go(); fit('ano/end');
   }
+  /* the fullest results: every year nailed (stamps and badges all at once) */
+  startAno();
+  for (var k2=0; k2<ano.qs.length; k2++){ ano.i=k2; ano.phase='guess'; ano.guess=ano.qs[k2].e.y; anoCommit(); }
+  ano.i=ano.qs.length-1; anoNext(); window._newMedals = MEDALS.slice(0, 3); go(); fit('ano/end-cheio');
+  /* and a training round won outright: the pack opened, stamps and badges */
+  selos = {}; diffKey='moderado'; startGame();
+  cat.qs = withSelo.slice(0, 10); disp = getDisp(cat.qs[0]);
+  for (var k3=0; k3<cat.qs.length; k3++){ qi=k3; disp=getDisp(cat.qs[k3]); sel=new Set(cat.qs[k3].a); tLeft=8; doReveal(); }
+  finishRun(); runPackOpened=true; window._newMedals = MEDALS.slice(0, 3); sc='end'; go(); fit('end/treino-cheio');
 """
 
 def run(label, w, h, inset):

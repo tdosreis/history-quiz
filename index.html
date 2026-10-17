@@ -3223,6 +3223,7 @@
 .selo:focus-visible { outline: 2px solid var(--brass); outline-offset: 2px; }
 .selo-pager { display: flex; align-items: center; justify-content: space-between; gap: 6px; }
 .selo-pager .small { text-align: center; font-size: 11px; }
+.selo-pager .btn:disabled { opacity: .3; pointer-events: none; }
 .selo-hint { margin: 0; text-align: center; font-size: 11px; line-height: 1.3; }
 @keyframes selo-in { from { opacity: 0; transform: translateY(6px); } }
 @keyframes selo-stamp { 0% { transform: scale(1.35) rotate(-6deg); opacity: 0; } 60% { opacity: 1; } 100% { transform: none; } }
@@ -3277,10 +3278,10 @@
 .ano-score { font-size: 12px; color: var(--ink-3); white-space: nowrap; }
 .ano-score b { font: 600 20px/1 var(--font-d); color: var(--ink); }
 .ano-card { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; flex: 1 1 auto; min-height: 0; }
-.ano-pic { flex: 0 1 auto; min-height: 84px; max-height: min(240px, 34vh); width: 100%; display: flex; align-items: center; justify-content: center; }
-.ano-pic svg { height: min(240px, 34vh); width: auto; max-width: 100%; max-height: 100%; display: block; }
+.ano-pic { flex: 0 1 auto; min-height: 84px; max-height: min(330px, 36vh); width: 100%; display: flex; align-items: center; justify-content: center; }
+.ano-pic svg { height: min(330px, 36vh); width: auto; max-width: 100%; max-height: 100%; display: block; }
 .ano-scene svg { padding: 5px 5px 6px; background: #EFE6CF; box-shadow: 0 2px 8px rgba(0, 0, 0, .3); }
-.ano-face img { height: min(240px, 34vh); max-height: 100%; aspect-ratio: 3 / 4; object-fit: cover; object-position: 50% 20%;
+.ano-face img { height: min(330px, 36vh); max-height: 100%; aspect-ratio: 3 / 4; object-fit: cover; object-position: 50% 20%;
   padding: 5px 5px 6px; background: #EFE6CF; box-shadow: 0 2px 8px rgba(0, 0, 0, .3); filter: sepia(.08); }
 .ano-pic.ano-crest { height: min(150px, 24vh); }
 .ano-crest .crest-disc { position: static; transform: none; width: auto; height: 100%; aspect-ratio: 1; flex: none; box-shadow: 0 2px 8px rgba(0, 0, 0, .3), inset 0 0 0 1px rgba(32, 36, 30, .16); }
@@ -3292,18 +3293,19 @@
 .ano-truth { text-align: center; font-size: 13px; color: var(--ink-2); }
 .ano-truth span { font-weight: 700; color: var(--ink); }
 .ano-truth b { font: 600 24px/1 var(--font-d); color: var(--good); margin: 0 2px; }
-.ano-rule { position: relative; padding: 4px 4px 0; }
+.ano-rule { position: relative; padding: 4px 4px 0; --ano-th0: 19px; }  /* 4px padding + half the 30px thumb */
 .ano-rule input[type=range] { -webkit-appearance: none; appearance: none; width: 100%; height: 34px; margin: 0; background: transparent; cursor: pointer; }
 .ano-rule input[type=range]::-webkit-slider-runnable-track { height: 8px; border-radius: 4px;
   background: repeating-linear-gradient(90deg, var(--ink-3) 0 1px, transparent 1px 10%), var(--rule); }
 .ano-rule input[type=range]::-moz-range-track { height: 8px; border-radius: 4px; background: var(--rule); }
 .ano-rule input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 30px; height: 30px; margin-top: -11px; border-radius: 50%;
   background: var(--brass); border: 3px solid var(--paper, #F4EEDC); box-shadow: 0 2px 6px rgba(0, 0, 0, .35); }
-.ano-rule input[type=range]::-moz-range-thumb { width: 26px; height: 26px; border-radius: 50%; background: var(--brass);
+.ano-rule input[type=range]::-moz-range-thumb { width: 24px; height: 24px; border-radius: 50%; background: var(--brass);
   border: 3px solid var(--paper, #F4EEDC); box-shadow: 0 2px 6px rgba(0, 0, 0, .35); }
 .ano-rule input[type=range]:disabled { opacity: .45; cursor: default; }
 .ano-ends { display: flex; justify-content: space-between; font-size: 11px; color: var(--ink-3); padding: 0 2px; }
 .ano-mark { position: absolute; top: 4px; width: 0; height: 34px; pointer-events: none; }
+.ano-year.is-set.is-hit { text-decoration: none; color: var(--good); }
 .ano-mark::before { content: ''; position: absolute; left: -2px; top: 2px; width: 4px; height: 30px; border-radius: 2px; }
 .ano-mark-g::before { background: var(--ink-3); }
 .ano-mark-y::before { background: var(--good); animation: ano-drop .5s cubic-bezier(.2, 1.4, .4, 1) both; }
@@ -3335,6 +3337,26 @@
 }
 .mode-ano { --md: #2F5D62; --md-soft: rgba(47, 93, 98, .14); }
 :root[data-theme="dark"] .mode-ano, :root:not([data-theme="light"]) .mode-ano { --md: #5FA3A9; }
+
+/* an unwon stamp's number reads in the dark too */
+:root[data-theme="dark"] .selo:not(.is-got) { color: var(--ink-2); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .selo:not(.is-got) { color: var(--ink-2); } }
+/* centred end screens: nothing cut off out of reach, and a short phone keeps the stamps to one line */
+#ct > .pg.pg-center { justify-content: safe center; }
+@media (max-height: 700px) {
+  .selo-strip-row { display: none; }
+  .newfigs-row .newfig { zoom: .74; }
+  .pg:has(.newfigs):has(.selo-strip) .end-trophy { display: none; }
+  .medal-chips .chip { padding-top: 3px; padding-bottom: 3px; }
+  .ano-end .eyebrow { display: none; }
+  .ano-li { padding-top: 2px; padding-bottom: 2px; }
+}
+/* the album head, with Vitrine and Selos both in it */
+@media (max-width: 460px) {
+  .alb-pg .alb-head > .small { display: none; }
+  .alb-pg .alb-vit { padding: 6px 10px; }
+}
+@media (max-width: 380px) { .cv-toc-4 .cv-rt b { font-size: 13.5px; white-space: nowrap; } }
 
 /*@@/formats_css@@*/
   </style>
@@ -5823,7 +5845,7 @@ const CATS = [
       {"t": "Os médicos já usavam a famosa máscara em forma de bico durante a Peste Negra, no século XIV?", "a": ["Mito"], "type": "txt", "choices": ["Fato", "Mito"], "duel": true, "myth": true, "d": 5, "x": "Na Peste Negra, de 1347 a 1351, ela não existia: a máscara de bico, recheada de ervas aromáticas, surgiu no século XVII e é atribuída ao médico francês Charles de Lorme.", "scene": "peste_negra"},
     ]
   },
-              /* NEW-QS:END */
+                      /* NEW-QS:END */
 ];
 /*@@/data_cl_cats@@*/
 /*@@data_pl_lib@@*/
@@ -8991,9 +9013,9 @@ const MEDALS = [
     t: () => seloCount() >= 10, p: () => [seloCount(), 10] },
   { id:'selo50', ic:'stamp', n:'Colecionador de selos', d:'Ganhe 50 selos',
     t: () => seloCount() >= 50, p: () => [seloCount(), 50] },
-  { id:'seloPg', ic:'book',  n:'Página completa', d:'Complete um tema do álbum de selos',
+  { id:'seloPg', ic:'book',  n:'Página completa', d:'Complete um tema de selos',
     t: () => SELO_THEMES.some(t => { const g = seloBy()[t[0]]; return g.length && g.every(seloHas); }) },
-  { id:'anoExato', ic:'target', n:'Na mosca',     d:'Crave o ano exato de um evento no Que ano?',
+  { id:'anoExato', ic:'target', n:'Na mosca',     d:'Crave o ano exato no Que ano?',
     t: st => (st.anoExact || 0) >= 1 },
   { id:'ano700', ic:'hourglass', n:'Senhor do tempo', d:'Faça 700 pontos no Que ano?',
     t: () => LS.get('anoBest', 0) >= 700, p: () => [LS.get('anoBest', 0), 700] },
@@ -20150,9 +20172,9 @@ const newStickerStrip = () => {
 };
 
 const medalChips = () => (window._newMedals || []).length ? `
-  <div style="display:flex;flex-direction:column;gap:5px;align-items:center;margin-top:4px;">
+  <div class="medal-chips" style="display:flex;flex-wrap:wrap;justify-content:center;gap:4px 6px;align-items:center;margin-top:4px;">
     ${window._newMedals.map(m => `<span class="chip chip-brass" style="text-transform:none;letter-spacing:.02em;font-size:11px;">
-      ${(ICON[m.ic] || ICON.medal)('currentColor', 12)} Nova figurinha: ${m.n}</span>`).join('')}
+      ${(ICON[m.ic] || ICON.medal)('currentColor', 12)} Nova insígnia: ${m.n}</span>`).join('')}
   </div>` : '';
 
 /* ── Which printing a player belongs to ─────────────────────
@@ -23948,7 +23970,7 @@ function seloSvg(id, opts) {
   const num = String(seloNum(id)).padStart(3, '0');
   if (!got) return `<svg class="selo-svg" viewBox="0 0 ${W} ${H}" aria-hidden="true">
     <rect x="3" y="3" width="${W - 6}" height="${H - 6}" rx="2" fill="none" stroke="currentColor" stroke-width="1.4" stroke-dasharray="4 3" opacity=".55"/>
-    <text x="${W / 2}" y="${H / 2 + 6}" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-weight="700" font-size="17" fill="currentColor" opacity=".5">Nº ${num}</text></svg>`;
+    <text x="${W / 2}" y="${H / 2 + 6}" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-weight="700" font-size="17" fill="currentColor" opacity=".85">Nº ${num}</text></svg>`;
   const d = String(selos[id] || _todayISO()).split('-');
   const date = `${+d[2]} ${_MES[(+d[1] || 1) - 1]} ${d[0]}`;
   const scene = SCENE[id] ? SCENE[id].draw() : '';
@@ -24017,7 +24039,7 @@ function selosHtml() {
         <span class="small muted">página ${seloPage + 1} de ${pages} · ${ids.filter(seloHas).length} de ${ids.length} selos</span>
         <button id="selo-next" class="btn btn-ghost btn-icon" aria-label="Próxima página"${seloPage >= pages - 1 ? ' disabled' : ''}>${ICON.back('currentColor', 12).replace('<svg', '<svg style="transform:scaleX(-1)"')}</button>
       </div>
-      <p class="selo-hint small muted">Acerte uma pergunta com esta ilustração — ou crave o ano no <b>Que ano?</b> — e o selo é seu.</p>
+      <p class="selo-hint small muted">Acerte uma pergunta com esta ilustração — ou chegue perto do ano no <b>Que ano?</b> — e o selo é seu.</p>
     </div>
   </div>`;
 }
@@ -24028,10 +24050,12 @@ function seloZoom(id) {
   if (old) old.remove();
   const got = seloHas(id);
   const d = got ? String(selos[id]).split('-') : null;
+  const back = document.activeElement;
   const z = document.createElement('div');
   z.id = 'selo-zoom';
   z.className = 'selo-zoom';
   z.setAttribute('role', 'dialog');
+  z.setAttribute('aria-modal', 'true');
   z.setAttribute('aria-label', 'Selo');
   z.innerHTML = `<div class="selo-zoom-card">
       <div class="selo-zoom-st">${seloSvg(id, { big: true })}</div>
@@ -24040,9 +24064,11 @@ function seloZoom(id) {
         got ? ` · carimbado em ${+d[2]}/${+d[1]}/${d[0]}` : ''}</p>
       <button class="btn btn-ghost btn-sm" id="selo-zoom-x">Fechar</button></div>`;
   document.body.appendChild(z);
-  const close = () => { z.remove(); };
+  const onKey = e => { if (e.key === 'Escape') close(); else if (e.key === 'Tab') { e.preventDefault(); z.querySelector('#selo-zoom-x').focus(); } };
+  const close = () => { document.removeEventListener('keydown', onKey); z.remove(); try { back && back.focus && back.focus(); } catch (e) {} };
   z.addEventListener('click', e => { if (e.target === z || e.target.id === 'selo-zoom-x') close(); });
-  document.addEventListener('keydown', function esc(e) { if (e.key === 'Escape') { close(); document.removeEventListener('keydown', esc); } });
+  document.addEventListener('keydown', onKey);
+  z.querySelector('#selo-zoom-x').focus();
 }
 
 function wireSelos() {
@@ -24096,7 +24122,8 @@ function seloWonLine(id) {
 }
 /* the home screen's stamp tile: the last three stamps won, or blank ones */
 function seloHomeTile() {
-  const all = seloAll(), mine = all.filter(seloHas).sort((a, b) => String(selos[a]).localeCompare(String(selos[b])));
+  /* in the order they were won (the store keeps it) */
+  const all = seloAll(), mine = Object.keys(selos).filter(id => seloNum(id));
   const three = mine.slice(-3);
   while (three.length < 3) three.unshift(null);
   return `<button id="bselo" class="cv-album cv-selo" type="button">
@@ -24126,7 +24153,8 @@ const anoYear = y => y < 0 ? `${-y} a.C.` : String(y);
 const anoTol = e => (e.y < -1000 ? 80 : e.y < 0 ? 50 : e.y < 1000 ? 35 : e.y < 1500 ? 22 : e.y < 1800 ? 12 : e.y < 1900 ? 8 : 5) * (e.c ? 2 : 1);
 /* the years between two dates, with no year zero between 1 a.C. and 1 d.C. */
 const anoGap = (a, b) => Math.abs(a - b) - (a < 0 !== b < 0 ? 1 : 0);
-const anoPts = (e, g) => { const d = anoGap(e.y, g); return d === 0 ? 100 : Math.max(0, Math.round(100 * (1 - d / (anoTol(e) * 5)))); };
+/* only the exact year is worth 100: a near miss, however near, tops out at 99 */
+const anoPts = (e, g) => { const d = anoGap(e.y, g); return d === 0 ? 100 : Math.min(99, Math.max(0, Math.round(100 * (1 - d / (anoTol(e) * 5))))); };
 const anoVerdict = p => p === 100 ? 'Na mosca!' : p >= 80 ? 'Muito perto!' : p >= 50 ? 'Perto' : p > 0 ? 'Longe' : 'Passou longe';
 
 /* The ruler each event is guessed on: wide for the ancient world, narrow
@@ -24136,6 +24164,8 @@ function anoWindow(e, r) {
   let lo = Math.round((e.y - W * (0.18 + r * 0.64)) / 10) * 10;
   let hi = lo + W;
   if (hi > ANO_NOW) { lo -= hi - ANO_NOW; hi = ANO_NOW; }
+  /* a ruler never ends on year 0, which did not exist */
+  if (hi === 0) { lo -= 10; hi -= 10; } else if (lo === 0) { lo += 10; hi += 10; }
   return [lo, hi];
 }
 
@@ -24178,7 +24208,8 @@ function anoHtml() {
     const l = ano.log[i];
     return `<i class="${l ? (l.p >= 80 ? 'rl-3' : l.p >= 50 ? 'rl-1' : 'rl-0') : i === ano.i ? 'ano-dot-on' : ''}"></i>`;
   }).join('');
-  const pos = y => ((y - q.lo) / (q.hi - q.lo) * 100).toFixed(2);
+  /* a mark sits where the thumb would: the thumb travels inside the track, half its width in from each end */
+  const pos = y => `calc(var(--ano-th0) + (100% - 2 * var(--ano-th0)) * ${((y - q.lo) / (q.hi - q.lo)).toFixed(4)})`;
   return `
   <div class="pg ano-pg${rev ? ' is-rev' : ''}">
     ${topbar('Que ano?')}
@@ -24189,19 +24220,19 @@ function anoHtml() {
       <p class="ano-t">${_esc(e.t)}</p>
     </div>
     <div class="ano-dial">
-      <div class="ano-year num${rev ? ' is-set' : ''}" id="ano-year" aria-live="polite">${e.c && rev ? 'c. ' : ''}${anoYear(rev ? last.g : ano.guess)}</div>
+      <div class="ano-year num${rev ? ' is-set' : ''}${rev && last.d === 0 ? ' is-hit' : ''}" id="ano-year"${rev ? ' aria-live="polite"' : ''}>${anoYear(rev ? last.g : ano.guess)}</div>
       ${rev ? `<div class="ano-truth"><span>${anoVerdict(last.p)}</span> <b>${e.c ? 'c. ' : ''}${anoYear(e.y)}</b>
           · ${last.d === 0 ? 'o ano exato' : `${last.d} ${last.d === 1 ? 'ano' : 'anos'} de diferença`}</div>` : ''}
       <div class="ano-rule">
         <input type="range" id="ano-range" min="${q.lo}" max="${q.hi}" step="1" value="${rev ? last.g : ano.guess}"
-          aria-label="Ano" ${rev ? 'disabled' : ''}>
-        ${rev ? `<span class="ano-mark ano-mark-g" style="left:${pos(last.g)}%"></span>
-                 <span class="ano-mark ano-mark-y" style="left:${pos(e.y)}%"></span>` : ''}
+          aria-label="Ano" aria-valuetext="${anoYear(rev ? last.g : ano.guess)}" ${rev ? 'disabled' : ''}>
+        ${rev ? `<span class="ano-mark ano-mark-g" style="left:${pos(last.g)}"></span>
+                 <span class="ano-mark ano-mark-y" style="left:${pos(e.y)}"></span>` : ''}
         <div class="ano-ends"><span>${anoYear(q.lo)}</span><span>${anoYear(q.hi)}</span></div>
       </div>
       ${rev ? '' : `<div class="ano-nudge">
-        <button class="btn btn-ghost btn-sm" data-nudge="-10">−10</button><button class="btn btn-ghost btn-sm" data-nudge="-1">−1</button>
-        <button class="btn btn-ghost btn-sm" data-nudge="1">+1</button><button class="btn btn-ghost btn-sm" data-nudge="10">+10</button></div>`}
+        <button class="btn btn-ghost btn-sm" data-nudge="-10" aria-label="Menos 10 anos">−10</button><button class="btn btn-ghost btn-sm" data-nudge="-1" aria-label="Menos 1 ano">−1</button>
+        <button class="btn btn-ghost btn-sm" data-nudge="1" aria-label="Mais 1 ano">+1</button><button class="btn btn-ghost btn-sm" data-nudge="10" aria-label="Mais 10 anos">+10</button></div>`}
     </div>
     ${rev ? `<div class="ano-after">
         <span class="display ${last.p >= 80 ? 'good' : last.p >= 50 ? 'brass' : 'bad'}" style="font-size:17px;">+${last.p}</span>
@@ -24214,7 +24245,7 @@ function anoHtml() {
 
 function anoEndHtml() {
   const best = LS.get('anoBest', 0);
-  const isBest = ano.pts > 0 && ano.pts >= best;
+  const isBest = !!ano.isBest;
   const msg = ano.pts >= 800 ? 'Uma máquina do tempo!' : ano.pts >= 600 ? 'Ótimo senso de tempo!' : ano.pts >= 400 ? 'Nada mau!' : 'O tempo é traiçoeiro…';
   return `
   <div class="pg pg-center ano-end" style="padding:22px 18px;gap:9px;">
@@ -24224,7 +24255,7 @@ function anoEndHtml() {
     <p class="small muted">${isBest ? 'Seu novo recorde!' : `Recorde: ${best} pts`}</p>
     <div class="ano-list">
       ${ano.log.map(l => `<div class="ano-li"><span class="ano-li-p ${l.p >= 80 ? 'good' : l.p >= 50 ? 'brass' : 'bad'}">${l.p}</span>
-        <span class="ano-li-t">${_esc(l.e.t)}</span><span class="ano-li-y"><b>${anoYear(l.e.y)}</b><small>${l.d === 0 ? 'exato' : 'você: ' + anoYear(l.g)}</small></span></div>`).join('')}
+        <span class="ano-li-t">${_esc(l.e.t)}</span><span class="ano-li-y"><b>${l.e.c ? 'c. ' : ''}${anoYear(l.e.y)}</b><small>${l.d === 0 ? 'exato' : 'você: ' + anoYear(l.g)}</small></span></div>`).join('')}
     </div>
     ${selosStrip()}
     ${medalChips()}
@@ -24247,6 +24278,8 @@ function anoCommit() {
   const selo = p >= 80 && e.pic && e.pic.scene && awardSelo(e.pic.scene) ? e.pic.scene : null;
   ano.log.push({ e, g, p, d, selo });
   if (d === 0) { stats.anoExact = (stats.anoExact || 0) + 1; LS.set('stats', stats); }
+  /* a medal is won the moment it is earned, and announced on this game's results */
+  try { ano.medals = (ano.medals || []).concat(newMedals()); } catch (err) {}
   ano.pts += p;
   ano.phase = 'reveal';
   if (p === 100) snd.fanfare(); else if (p >= 80) snd.correct(0); else if (p >= 50) snd.almost(); else snd.wrong();
@@ -24258,8 +24291,9 @@ function anoNext() {
     ano.phase = 'end';
     stats.anoGames = (stats.anoGames || 0) + 1;
     LS.set('stats', stats);
-    if (ano.pts > LS.get('anoBest', 0)) LS.set('anoBest', ano.pts);
-    window._newMedals = newMedals();
+    ano.isBest = ano.pts > LS.get('anoBest', 0);
+    if (ano.isBest) LS.set('anoBest', ano.pts);
+    window._newMedals = (ano.medals || []).concat(newMedals());
     setTimeout(() => snd.final(ano.pts >= 500), 200);
   } else {
     ano.i++;
@@ -24277,7 +24311,7 @@ function wireAno() {
     v = Math.max(q.lo, Math.min(q.hi, Math.round(v)));
     if (v === 0) v = ano.guess < 0 ? 1 : -1;   // there is no year zero
     ano.guess = v;
-    if (r) r.value = v;
+    if (r) { r.value = v; r.setAttribute('aria-valuetext', anoYear(v)); }
     if (yEl) yEl.textContent = anoYear(v);
   };
   if (r && ano.phase === 'guess') {
@@ -24285,7 +24319,14 @@ function wireAno() {
     let last = 0;
     r.addEventListener('input', () => { const t = Date.now(); if (t - last > 70) { last = t; try { snd.tick && snd.tick(); } catch (e) {} } });
   }
-  document.querySelectorAll('[data-nudge]').forEach(b => b.addEventListener('click', () => { snd.tap(); set(ano.guess + +b.dataset.nudge); }));
+  /* ten years after 2 a.C. is 9 d.C.: there is no year zero to count */
+  document.querySelectorAll('[data-nudge]').forEach(b => b.addEventListener('click', () => {
+    snd.tap();
+    const g = ano.guess, d = +b.dataset.nudge;
+    let v = g + d;
+    if (g < 0 && v >= 0) v += 1; else if (g > 0 && v <= 0) v -= 1;
+    set(v);
+  }));
   on('ano-go', () => anoCommit());
   on('ano-next', () => { snd.swipe(); anoNext(); });
   on('ano-again', () => { snd.select(); startAno(); });
@@ -24295,7 +24336,6 @@ function wireAno() {
     else if (navigator.clipboard) navigator.clipboard.writeText(txt).then(() => {
       const b = document.getElementById('ano-share'); if (b) { b.textContent = 'Copiado!'; setTimeout(() => { b.textContent = 'Compartilhar'; }, 1600); } }).catch(() => {});
   });
-  on('bselos-end', () => { snd.swipe(); seloTheme = null; sc = 'selos'; go(); });
 }
 
 /*@@/formats@@*/
@@ -24505,7 +24545,8 @@ function doReveal() {
 
   if (seloNow) lastMsg += seloWonLine(seloNow);
   const story = storyFor(q);
-  const wait  = story ? Math.min(9500, Math.max(5200, 2400 + story.length * 40)) : (isMil ? 2600 : 2200);
+  /* a new stamp holds the verdict a little longer, so it is seen */
+  const wait  = (story ? Math.min(9500, Math.max(5200, 2400 + story.length * 40)) : (isMil ? 2600 : 2200)) + (seloNow ? 1200 : 0);
   if (story) lastMsg += `<div class="story" role="button" tabindex="0" aria-label="Segurar a explicação na tela">
       <span class="story-k">${ICON.book('currentColor', 11)} Você sabia?</span><p>${story}</p></div>`;
   const last = isMil ? (p !== 3 || isFinal()) : (isSurv ? p !== 3 : qi >= cat.qs.length - 1);

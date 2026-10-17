@@ -21,6 +21,7 @@
 .selo:focus-visible { outline: 2px solid var(--brass); outline-offset: 2px; }
 .selo-pager { display: flex; align-items: center; justify-content: space-between; gap: 6px; }
 .selo-pager .small { text-align: center; font-size: 11px; }
+.selo-pager .btn:disabled { opacity: .3; pointer-events: none; }
 .selo-hint { margin: 0; text-align: center; font-size: 11px; line-height: 1.3; }
 @keyframes selo-in { from { opacity: 0; transform: translateY(6px); } }
 @keyframes selo-stamp { 0% { transform: scale(1.35) rotate(-6deg); opacity: 0; } 60% { opacity: 1; } 100% { transform: none; } }
@@ -75,10 +76,10 @@
 .ano-score { font-size: 12px; color: var(--ink-3); white-space: nowrap; }
 .ano-score b { font: 600 20px/1 var(--font-d); color: var(--ink); }
 .ano-card { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; flex: 1 1 auto; min-height: 0; }
-.ano-pic { flex: 0 1 auto; min-height: 84px; max-height: min(240px, 34vh); width: 100%; display: flex; align-items: center; justify-content: center; }
-.ano-pic svg { height: min(240px, 34vh); width: auto; max-width: 100%; max-height: 100%; display: block; }
+.ano-pic { flex: 0 1 auto; min-height: 84px; max-height: min(330px, 36vh); width: 100%; display: flex; align-items: center; justify-content: center; }
+.ano-pic svg { height: min(330px, 36vh); width: auto; max-width: 100%; max-height: 100%; display: block; }
 .ano-scene svg { padding: 5px 5px 6px; background: #EFE6CF; box-shadow: 0 2px 8px rgba(0, 0, 0, .3); }
-.ano-face img { height: min(240px, 34vh); max-height: 100%; aspect-ratio: 3 / 4; object-fit: cover; object-position: 50% 20%;
+.ano-face img { height: min(330px, 36vh); max-height: 100%; aspect-ratio: 3 / 4; object-fit: cover; object-position: 50% 20%;
   padding: 5px 5px 6px; background: #EFE6CF; box-shadow: 0 2px 8px rgba(0, 0, 0, .3); filter: sepia(.08); }
 .ano-pic.ano-crest { height: min(150px, 24vh); }
 .ano-crest .crest-disc { position: static; transform: none; width: auto; height: 100%; aspect-ratio: 1; flex: none; box-shadow: 0 2px 8px rgba(0, 0, 0, .3), inset 0 0 0 1px rgba(32, 36, 30, .16); }
@@ -90,18 +91,19 @@
 .ano-truth { text-align: center; font-size: 13px; color: var(--ink-2); }
 .ano-truth span { font-weight: 700; color: var(--ink); }
 .ano-truth b { font: 600 24px/1 var(--font-d); color: var(--good); margin: 0 2px; }
-.ano-rule { position: relative; padding: 4px 4px 0; }
+.ano-rule { position: relative; padding: 4px 4px 0; --ano-th0: 19px; }  /* 4px padding + half the 30px thumb */
 .ano-rule input[type=range] { -webkit-appearance: none; appearance: none; width: 100%; height: 34px; margin: 0; background: transparent; cursor: pointer; }
 .ano-rule input[type=range]::-webkit-slider-runnable-track { height: 8px; border-radius: 4px;
   background: repeating-linear-gradient(90deg, var(--ink-3) 0 1px, transparent 1px 10%), var(--rule); }
 .ano-rule input[type=range]::-moz-range-track { height: 8px; border-radius: 4px; background: var(--rule); }
 .ano-rule input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 30px; height: 30px; margin-top: -11px; border-radius: 50%;
   background: var(--brass); border: 3px solid var(--paper, #F4EEDC); box-shadow: 0 2px 6px rgba(0, 0, 0, .35); }
-.ano-rule input[type=range]::-moz-range-thumb { width: 26px; height: 26px; border-radius: 50%; background: var(--brass);
+.ano-rule input[type=range]::-moz-range-thumb { width: 24px; height: 24px; border-radius: 50%; background: var(--brass);
   border: 3px solid var(--paper, #F4EEDC); box-shadow: 0 2px 6px rgba(0, 0, 0, .35); }
 .ano-rule input[type=range]:disabled { opacity: .45; cursor: default; }
 .ano-ends { display: flex; justify-content: space-between; font-size: 11px; color: var(--ink-3); padding: 0 2px; }
 .ano-mark { position: absolute; top: 4px; width: 0; height: 34px; pointer-events: none; }
+.ano-year.is-set.is-hit { text-decoration: none; color: var(--good); }
 .ano-mark::before { content: ''; position: absolute; left: -2px; top: 2px; width: 4px; height: 30px; border-radius: 2px; }
 .ano-mark-g::before { background: var(--ink-3); }
 .ano-mark-y::before { background: var(--good); animation: ano-drop .5s cubic-bezier(.2, 1.4, .4, 1) both; }
@@ -133,3 +135,23 @@
 }
 .mode-ano { --md: #2F5D62; --md-soft: rgba(47, 93, 98, .14); }
 :root[data-theme="dark"] .mode-ano, :root:not([data-theme="light"]) .mode-ano { --md: #5FA3A9; }
+
+/* an unwon stamp's number reads in the dark too */
+:root[data-theme="dark"] .selo:not(.is-got) { color: var(--ink-2); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .selo:not(.is-got) { color: var(--ink-2); } }
+/* centred end screens: nothing cut off out of reach, and a short phone keeps the stamps to one line */
+#ct > .pg.pg-center { justify-content: safe center; }
+@media (max-height: 700px) {
+  .selo-strip-row { display: none; }
+  .newfigs-row .newfig { zoom: .74; }
+  .pg:has(.newfigs):has(.selo-strip) .end-trophy { display: none; }
+  .medal-chips .chip { padding-top: 3px; padding-bottom: 3px; }
+  .ano-end .eyebrow { display: none; }
+  .ano-li { padding-top: 2px; padding-bottom: 2px; }
+}
+/* the album head, with Vitrine and Selos both in it */
+@media (max-width: 460px) {
+  .alb-pg .alb-head > .small { display: none; }
+  .alb-pg .alb-vit { padding: 6px 10px; }
+}
+@media (max-width: 380px) { .cv-toc-4 .cv-rt b { font-size: 13.5px; white-space: nowrap; } }
