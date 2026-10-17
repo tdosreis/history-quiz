@@ -3420,6 +3420,91 @@
   .amap-tab { padding: 5px 6px 4px; }
 }
 
+
+/* ═══ ONDE FOI? — the pin on the atlas ═══ */
+.onde-pg { gap: 8px; }
+.onde-card { display: flex; align-items: center; gap: 11px; flex: none; padding: 8px 12px 8px 8px; background: var(--at-card-img) center / 100% 100% no-repeat; }
+.onde-pic { flex: none; width: 84px; height: 56px; overflow: hidden; display: flex; align-items: center; justify-content: center;
+  background: #EFE6CF; box-shadow: 0 0 0 1px #6E5836; border-radius: 2px; }
+.onde-pic svg { width: 100% !important; height: 100% !important; max-width: none !important; display: block; }
+.onde-scene svg { object-fit: cover; }
+.onde-face img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 22%; display: block; }
+.onde-crest { padding: 3px; }
+.onde-crest > * { width: 50px !important; height: 50px !important; position: relative; }
+.onde-flag svg { width: 100%; height: 100%; }
+.onde-tt { min-width: 0; display: flex; flex-direction: column; gap: 4px; }
+.onde-t { margin: 0; font: 600 16px/1.2 var(--font-d); letter-spacing: -.01em; color: var(--ink); }
+.onde-y { font: 700 11px/1 var(--font-s); letter-spacing: .08em; color: var(--ink-3); }
+.onde-map { position: relative; flex: 1 1 0; min-height: 150px; margin: 4px; overflow: hidden; touch-action: none; user-select: none;
+  -webkit-user-select: none; cursor: crosshair; background: #C9B88C; outline: none;
+  border: 1.5px solid #6E5836; box-shadow: 0 0 0 3px #EFE6CF, 0 0 0 4px #6E5836, 0 4px 14px rgba(0, 0, 0, .3); }
+.onde-map:focus-visible { box-shadow: 0 0 0 3px #EFE6CF, 0 0 0 4px #6E5836, 0 0 0 7px var(--brass); }
+.is-rev .onde-map { cursor: grab; }
+.onde-svg, .onde-ov { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.onde-ov { pointer-events: none; overflow: visible; }
+.onde-deco { position: absolute; left: 0; right: 0; display: flex; align-items: center; justify-content: center; pointer-events: none;
+  opacity: 0; transition: opacity .25s; z-index: 1; overflow: hidden; }
+.onde-deco-t { top: 0; height: var(--ob-t, 0px); align-items: flex-end; padding-bottom: 12px; }
+.onde-deco-b { bottom: 0; height: var(--ob-b, 0px); }
+.has-top .onde-deco-t, .has-bot .onde-deco-b { opacity: 1; }
+.onde-cart { display: flex; align-items: center; gap: 10px; font: italic 600 21px/1 var(--font-d); color: #5A4526; letter-spacing: .02em; }
+.onde-cart::before, .onde-cart::after { content: ''; width: 34px; height: 6px; border-top: 1px solid #6E5836; border-bottom: 1px solid #6E5836; opacity: .7; }
+.onde-deco-b svg { width: 46px; height: 46px; opacity: .85; }
+#onde-line { stroke: #2A1D10; stroke-width: 2; stroke-dasharray: 5 4; stroke-linecap: round; }
+.onde-mk { position: absolute; left: 0; top: 0; pointer-events: none; will-change: transform; z-index: 2; }
+.onde-mk.is-off { opacity: 0; }
+.onde-mk-g svg { position: absolute; width: 26px; height: 34px; left: -13px; top: -33px; filter: drop-shadow(0 2px 2px rgba(0, 0, 0, .4)); }
+.onde-mk-g.is-drop svg { animation: onde-drop .38s cubic-bezier(.3, 1.6, .6, 1); transform-origin: 50% 100%; }
+@keyframes onde-drop { from { transform: translateY(-16px) scale(.6); opacity: .3; } }
+.onde-mk-t { z-index: 3; }
+.onde-mk-t i { position: absolute; left: -9px; top: -9px; width: 18px; height: 18px; border-radius: 50%; background: #E0B968;
+  box-shadow: 0 0 0 2px #3A1208, 0 0 0 6px rgba(224, 185, 104, .5); animation: onde-ring 1.6s ease-out infinite; }
+@keyframes onde-ring { 60% { box-shadow: 0 0 0 2px #3A1208, 0 0 0 13px rgba(224, 185, 104, 0); } }
+.onde-mk-t b { position: absolute; left: 15px; top: -11px; white-space: nowrap; max-width: 240px; overflow: hidden; text-overflow: ellipsis;
+  font: 700 11.5px/1 var(--font-s); color: #2A1D10; background: #F7F1E2; padding: 5px 7px; border-radius: 3px;
+  box-shadow: 0 0 0 1px #6E5836, 0 1px 3px rgba(0, 0, 0, .3); }
+.onde-mk-t.is-left b { left: auto; right: 15px; }
+.onde-zoom { position: absolute; right: 8px; bottom: 8px; display: flex; flex-direction: column; gap: 6px; z-index: 4; }
+.onde-zb { width: 36px; height: 36px; border-radius: 50%; border: 0; padding: 0; cursor: pointer; display: flex; align-items: center; justify-content: center;
+  background: #F7F1E2; color: #2A1D10; font: 700 20px/1 var(--font-s); box-shadow: 0 0 0 1px #6E5836, 0 1px 3px rgba(0, 0, 0, .35); }
+.onde-zb:disabled { opacity: .4; cursor: default; }
+.onde-zb:focus-visible { outline: 2px solid var(--brass); outline-offset: 2px; }
+.onde-tip { position: absolute; left: 50%; top: 10px; transform: translateX(-50%); z-index: 4; pointer-events: none; white-space: nowrap;
+  background: rgba(42, 29, 16, .85); color: #F7F1E2; font: 600 12px/1 var(--font-s); padding: 8px 12px; border-radius: 14px; }
+#onde-go { flex: none; align-self: stretch; justify-content: center; }
+#onde-go:disabled { opacity: .5; cursor: default; filter: grayscale(.4); }
+.onde-after { display: flex; flex-direction: column; gap: 7px; flex: none; }
+.onde-res { display: flex; align-items: baseline; justify-content: center; gap: 10px; font-size: 14px; color: var(--ink-2); }
+.onde-res b { color: var(--ink); }
+.onde-after .story p { font-size: 12.5px; }
+@media (max-height: 700px) {
+  .onde-pg { gap: 6px; }
+  .onde-pic { width: 66px; height: 44px; }
+  .onde-crest > * { width: 40px !important; height: 40px !important; }
+  .onde-t { font-size: 14.5px; }
+  .onde-card { padding: 6px 10px 6px 6px; }
+  .onde-zb { width: 32px; height: 32px; font-size: 18px; }
+  .onde-after { gap: 5px; }
+  .onde-after .story p { font-size: 12px; line-height: 1.3; }
+}
+.mode-onde { --md: #56702F; --md-soft: rgba(86, 112, 47, .14); }
+:root[data-theme="dark"] .mode-onde, :root:not([data-theme="light"]) .mode-onde { --md: #8DAE57; }
+/* the other games, on a phone: three to a row */
+@media (max-width: 699px) {
+  .cv-toc.cv-toc-4 { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; }
+  .cv-toc-4 .cv-row { padding: 7px 4px 7px; gap: 3px; }
+  .cv-toc-4 .cv-ic { width: 26px; height: 26px; }
+  .cv-toc-4 .cv-rt b { font-size: 15.5px; white-space: nowrap; }
+  .cv-toc-4 .cv-rt { min-width: 0; max-width: 100%; }
+  .cv-toc-4 .cv-rt small { font-size: 9.5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .cv-toc-4 > .cv-row:nth-child(6):last-child { grid-column: span 2; }
+}
+/* a short phone keeps the portrait: the tiles say only their names */
+@media (max-width: 699px) and (max-height: 700px) {
+  .cv-toc-4 .cv-row { padding: 6px 4px 7px; }
+  .cv-toc-4 .cv-rt small { display: none; }
+}
+
 /*@@/formats_css@@*/
   </style>
 </head>
@@ -5907,7 +5992,7 @@ const CATS = [
       {"t": "Os médicos já usavam a famosa máscara em forma de bico durante a Peste Negra, no século XIV?", "a": ["Mito"], "type": "txt", "choices": ["Fato", "Mito"], "duel": true, "myth": true, "d": 5, "x": "Na Peste Negra, de 1347 a 1351, ela não existia: a máscara de bico, recheada de ervas aromáticas, surgiu no século XVII e é atribuída ao médico francês Charles de Lorme.", "scene": "peste_negra"},
     ]
   },
-                                      /* NEW-QS:END */
+                                                  /* NEW-QS:END */
 ];
 /*@@/data_cl_cats@@*/
 /*@@data_pl_lib@@*/
@@ -9081,6 +9166,10 @@ const MEDALS = [
     t: st => (st.anoExact || 0) >= 1 },
   { id:'ano700', ic:'hourglass', n:'Senhor do tempo', d:'Faça 700 pontos no Que ano?',
     t: () => LS.get('anoBest', 0) >= 700, p: () => [LS.get('anoBest', 0), 700] },
+  { id:'ondeMosca', ic:'flag', n:'Bem aqui',        d:'Crave o lugar a menos de 50 km no Onde foi?',
+    t: st => (st.ondeExact || 0) >= 1 },
+  { id:'onde700', ic:'globe', n:'Atlas ambulante',  d:'Faça 700 pontos no Onde foi?',
+    t: () => LS.get('ondeBest', 0) >= 700, p: () => [LS.get('ondeBest', 0), 700] },
 ];
 
 function earnedMedals() { return MEDALS.filter(m => { try { return m.t(stats); } catch (e) { return false; } }); }
@@ -9117,8 +9206,8 @@ const MEDAL_SETS = [
     ids:['safe1','safe2','quit','million'] },
   { id:'arquivo', n:'O arquivo',     tag:'Arquivo', shape:'hex',
     ids:['fQuote','fBattle','fLine','fNews','fDuel','fMyth','fOrder','fAll'] },
-  { id:'selos',  n:'Selos e anos',   tag:'Selos',  shape:'seal',
-    ids:['selo10','selo50','seloPg','anoExato','ano700'] },
+  { id:'selos',  n:'Selos, anos e lugares', tag:'Selos', shape:'seal',
+    ids:['selo10','selo50','seloPg','anoExato','ano700','ondeMosca','onde700'] },
 ];
 /* How hard each one is to get, not how many people hold it — there is no
    server to count that, and a made-up percentage would be a lie. */
@@ -9133,7 +9222,7 @@ const MEDAL_TIER = {
   hard:3, c500:3, alb3q:3, albEsc:3, albSel:3, albMsc:3, surv10:3, quit:3,
   albAll:4, albBook:4, million:4,
   fQuote:2, fBattle:2, fLine:2, fNews:2, fOrder:2, fDuel:2, fMyth:2, fAll:3,
-  selo10:1, anoExato:2, selo50:2, ano700:3, seloPg:3,
+  selo10:1, anoExato:2, selo50:2, ano700:3, seloPg:3, ondeMosca:2, onde700:3,
 };
 const TIER_NAME = ['', 'Comum', 'Rara', 'Épica', 'Lendária'];
 const medalSet = m => MEDAL_SETS.find(s => s.ids.includes(m.id)) || MEDAL_SETS[0];
@@ -21722,6 +21811,7 @@ function html() {
   /* ── the stamp album and the year game (js/selos.js, js/ano.js) ── */
   if (sc === 'selos') return selosHtml();
   if (sc === 'ano')   return anoHtml();
+  if (sc === 'onde')  return ondeHtml();
 
   /* ── Home: the cover ────────────────────────────────────────── */
   if (sc === 'home') {
@@ -21797,9 +21887,10 @@ function html() {
                  : 'Desafio nº ' + dayIndex() + (dst > 0 ? ' · ' + dst + ' dias seguidos' : ''),
             done ? 'done' : 'daily', ICON.calendar('currentColor', 15))}
           ${row('surv-btn', 'II', 'Mata-mata',
-            (stats.survBest || 0) > 0 ? 'Até errar · recorde ' + stats.survBest : 'Até errar a primeira', 'surv', ICON.shield('currentColor', 15))}
-          ${row('cta-btn', 'III', 'Treino', 'Sem apostar, sem pressa', 'train', ICON.ladder('currentColor', 15))}
-          ${row('ano-btn', 'IV', 'Que ano?', LS.get('anoBest', 0) > 0 ? 'Recorde ' + LS.get('anoBest', 0) + ' pts' : 'Acerte o ano do evento', 'ano', ICON.hourglass('currentColor', 15))}
+            (stats.survBest || 0) > 0 ? 'Recorde ' + stats.survBest : 'Até errar uma', 'surv', ICON.shield('currentColor', 15))}
+          ${row('cta-btn', 'III', 'Treino', 'Sem pressa', 'train', ICON.ladder('currentColor', 15))}
+          ${row('ano-btn', 'IV', 'Que ano?', LS.get('anoBest', 0) > 0 ? 'Recorde ' + LS.get('anoBest', 0) + ' pts' : 'Acerte o ano', 'ano', ICON.hourglass('currentColor', 15))}
+          ${row('onde-btn', 'V', 'Onde foi?', LS.get('ondeBest', 0) > 0 ? 'Recorde ' + LS.get('ondeBest', 0) + ' pts' : 'Ache no mapa', 'onde', ICON.globe('currentColor', 15))}
         </nav>
 
         <div class="cv-cols">
@@ -22460,9 +22551,11 @@ function go() {
   on('balbselo',    () => { snd.swipe();  seloTheme = null; sc = 'selos'; go(); });
   on('bselos-end',  () => { snd.swipe();  seloTheme = null; sc = 'selos'; go(); });
   on('ano-btn',     () => { snd.select(); startAno(); });
+  on('onde-btn',    () => { snd.select(); startOnde(); });
   if (sc === 'selos') wireSelos();
   if (sc === 'album') wireAlbMap();
   if (sc === 'ano')   wireAno();
+  if (sc === 'onde')  wireOnde();
   on('bwelc',       () => { snd.tap(); openWelcomePack(); });
   on('bpack',       () => { snd.tap(); openRunPack(); });
   if (sc === 'vitrine') wireVitrine();
@@ -24549,6 +24642,676 @@ function wireAlbMap() {
     const lon = x - 170, lat = 78 - y;
     const id = lon < -25 ? 'AM' : lat > 35.5 && lon < 45 ? 'EU' : lon < 63 && lat < 41 ? 'AF' : 'AS';
     snd.page(); amapView = id; go();
+  });
+}
+
+const ONDE_AT = {
+  "piramide_queops": [29.979,31.134,"Gizé, Egito"],
+  "codigo_hamurabi": [32.536,44.421,"Babilônia, Iraque"],
+  "batalha_kadesh": [34.557,36.519,"Kadesh (Tell Nebi Mend), Síria"],
+  "fundacao_cartago": [36.853,10.323,"Cartago, Tunísia"],
+  "fundacao_roma": [41.889,12.487,"Roma, Itália"],
+  "queda_ninive": [36.359,43.153,"Nínive (Mossul), Iraque"],
+  "nabucodonosor_trono": [32.536,44.421,"Babilônia, Iraque"],
+  "ciro_babilonia": [32.536,44.421,"Babilônia, Iraque"],
+  "persas_egito": [31.042,32.546,"Pelúsio, Egito"],
+  "maratona": [38.118,23.978,"Maratona, Grécia"],
+  "termopilas": [38.796,22.536,"Termópilas, Grécia"],
+  "morte_confucio": [35.597,116.991,"Qufu, China"],
+  "partenon": [37.972,23.727,"Acrópole de Atenas, Grécia"],
+  "peloponeso": [38.219,23.274,"Plateias, Grécia"],
+  "morte_pericles": [37.976,23.728,"Atenas, Grécia"],
+  "morte_socrates": [37.975,23.722,"Atenas, Grécia"],
+  "gauleses_roma": [41.893,12.483,"Roma, Itália"],
+  "nasc_alexandre": [40.759,22.524,"Pela, Grécia"],
+  "gaugamela": [36.567,43.433,"Gaugamela, perto de Erbil, Iraque"],
+  "morte_alexandre": [32.536,44.421,"Babilônia, Iraque"],
+  "morte_aristoteles": [38.463,23.595,"Cálcis, Eubeia, Grécia"],
+  "primeira_punica": [38.193,15.554,"Messina, Itália"],
+  "qin_unifica": [34.33,108.71,"Xianyang, China"],
+  "anibal_alpes": [45.1,6.9,"Alpes ocidentais, França/Itália"],
+  "canas": [41.306,16.132,"Canas (Canne della Battaglia), Itália"],
+  "morte_arquimedes": [37.075,15.287,"Siracusa, Itália"],
+  "zama": [36.07,9.3,"Zama, Tunísia"],
+  "destruicao_cartago": [36.853,10.323,"Cartago, Tunísia"],
+  "espartaco": [41.083,14.25,"Cápua, Itália"],
+  "rubicao": [44.093,12.398,"Rio Rubicão, Itália"],
+  "morte_cesar": [41.895,12.477,"Roma, Itália"],
+  "acio": [38.958,20.738,"Ácio (Preveza), Grécia"],
+  "morte_cleopatra": [31.2,29.918,"Alexandria, Egito"],
+  "augusto_titulo": [41.892,12.485,"Roma, Itália"],
+  "morte_augusto": [40.926,14.527,"Nola, Itália"],
+  "incendio_roma": [41.886,12.485,"Roma, Itália"],
+  "vesuvio": [40.749,14.485,"Pompeia, Itália"],
+  "coliseu": [41.89,12.492,"Roma, Itália"],
+  "muralha_adriano": [55.013,-2.331,"Muralha de Adriano, Inglaterra"],
+  "ponte_milvia": [41.936,12.467,"Ponte Mílvia, Roma, Itália"],
+  "constantinopla_capital": [41.008,28.978,"Constantinopla (Istambul), Turquia"],
+  "saque_visigodo": [41.893,12.483,"Roma, Itália"],
+  "campos_catalaunicos": [48.96,4.36,"Campos Cataláunicos (Châlons), França"],
+  "queda_roma": [44.418,12.204,"Ravena, Itália"],
+  "santa_sofia": [41.009,28.98,"Constantinopla (Istambul), Turquia"],
+  "hegira": [21.423,39.826,"Meca, Arábia Saudita"],
+  "conquista_iberica": [36.14,-5.35,"Gibraltar"],
+  "poitiers": [46.7,0.45,"Poitiers, França"],
+  "fundacao_bagda": [33.315,44.366,"Bagdá, Iraque"],
+  "harun_califa": [33.315,44.366,"Bagdá, Iraque"],
+  "lindisfarne": [55.669,-1.801,"Lindisfarne, Inglaterra"],
+  "coroacao_carlos_magno": [41.902,12.454,"Roma (São Pedro), Vaticano"],
+  "leif_america": [51.596,-55.533,"L'Anse aux Meadows, Terra Nova, Canadá"],
+  "hastings": [50.912,0.487,"Battle (Hastings), Inglaterra"],
+  "cruzados_jerusalem": [31.778,35.235,"Jerusalém"],
+  "portugal_reino": [41.503,-5.745,"Zamora, Espanha"],
+  "saladino_jerusalem": [31.778,35.235,"Jerusalém"],
+  "acre": [32.927,35.074,"Acre (Akko), Israel"],
+  "saque_constantinopla": [41.008,28.978,"Constantinopla (Istambul), Turquia"],
+  "gengis_khan": [48.8,108.9,"Nascente do rio Onon, Mongólia"],
+  "magna_carta": [51.444,-0.565,"Runnymede, Inglaterra"],
+  "marco_polo": [42.36,116.18,"Xanadu (Shangdu), China"],
+  "tufao_mongol": [33.43,129.75,"Takashima, baía de Imari, Japão"],
+  "imperio_otomano": [40.017,30.183,"Söğüt, Turquia"],
+  "morte_dante": [44.418,12.199,"Ravena, Itália"],
+  "mansa_musa": [30.044,31.236,"Cairo, Egito"],
+  "tenochtitlan": [19.434,-99.133,"Tenochtitlán (Cidade do México), México"],
+  "peste_negra": [38.193,15.554,"Messina, Itália"],
+  "dinastia_ming": [32.06,118.797,"Nanquim, China"],
+  "aljubarrota": [39.623,-8.826,"Campo de São Jorge (Aljubarrota), Portugal"],
+  "tamerlao_delhi": [28.65,77.23,"Délhi, Índia"],
+  "zheng_he": [32.06,118.797,"Nanquim, China"],
+  "ceuta": [35.889,-5.32,"Ceuta, Espanha"],
+  "azincourt": [50.463,2.14,"Azincourt, França"],
+  "morte_joana": [49.443,1.088,"Ruão, França"],
+  "retabulo_gante": [51.053,3.727,"Gante, Bélgica"],
+  "cupula_florenca": [43.773,11.256,"Florença, Itália"],
+  "nasc_leonardo": [43.787,10.926,"Vinci, Itália"],
+  "queda_constantinopla": [41.008,28.978,"Constantinopla (Istambul), Turquia"],
+  "biblia_gutenberg": [49.999,8.271,"Mainz, Alemanha"],
+  "dias_cabo": [-34.357,18.474,"Cabo da Boa Esperança, África do Sul"],
+  "queda_granada": [37.176,-3.588,"Granada, Espanha"],
+  "colombo_america": [24.05,-74.5,"San Salvador (Guanahani), Bahamas"],
+  "tordesilhas": [41.502,-5.0,"Tordesilhas, Espanha"],
+  "vasco_gama_india": [11.258,75.78,"Calicute, Índia"],
+  "cabral_brasil": [-16.36,-39.02,"Porto Seguro (Santa Cruz Cabrália), Brasil"],
+  "capela_sistina": [41.903,12.454,"Capela Sistina, Vaticano"],
+  "principe": [43.67,11.2,"San Casciano (Sant'Andrea in Percussina), Itália"],
+  "rinoceronte_durer": [49.454,11.077,"Nuremberg, Alemanha"],
+  "teses_lutero": [51.866,12.646,"Wittenberg, Alemanha"],
+  "cortes_mexico": [19.2,-96.13,"Veracruz, México"],
+  "magalhaes_parte": [36.778,-6.352,"Sanlúcar de Barrameda, Espanha"],
+  "atahualpa": [-7.164,-78.51,"Cajamarca, Peru"],
+  "ato_supremacia": [51.499,-0.125,"Londres, Inglaterra"],
+  "copernico": [49.454,11.077,"Nuremberg, Alemanha"],
+  "potosi": [-19.589,-65.753,"Potosí, Bolívia"],
+  "fundacao_salvador": [-12.974,-38.512,"Salvador, Brasil"],
+  "fundacao_sao_paulo": [-23.548,-46.632,"São Paulo (Pátio do Colégio), Brasil"],
+  "fundacao_rio": [-22.955,-43.165,"Rio de Janeiro (Urca), Brasil"],
+  "lepanto": [38.33,21.17,"Golfo de Patras (Lepanto), Grécia"],
+  "lusiadas": [38.71,-9.14,"Lisboa, Portugal"],
+  "uniao_iberica": [38.71,-9.14,"Lisboa, Portugal"],
+  "invencivel_armada": [50.99,2.13,"Gravelines, França"],
+  "teatro_globe": [51.508,-0.097,"Londres (Southwark), Inglaterra"],
+  "sekigahara": [35.367,136.467,"Sekigahara, Japão"],
+  "dom_quixote": [40.416,-3.703,"Madri, Espanha"],
+  "luas_jupiter": [45.407,11.876,"Pádua, Itália"],
+  "morte_shakespeare": [52.192,-1.707,"Stratford-upon-Avon, Inglaterra"],
+  "holandeses_pernambuco": [-8.008,-34.855,"Olinda, Pernambuco, Brasil"],
+  "taj_mahal": [27.175,78.042,"Agra, Índia"],
+  "discurso_metodo": [52.16,4.49,"Leiden, Países Baixos"],
+  "ronda_noturna": [52.37,4.895,"Amsterdã, Países Baixos"],
+  "vestfalia": [51.962,7.626,"Münster, Alemanha"],
+  "luanda_retomada": [-8.839,13.289,"Luanda, Angola"],
+  "holandeses_saem": [-8.063,-34.871,"Recife, Brasil"],
+  "meninas": [40.418,-3.714,"Madri, Espanha"],
+  "incendio_londres": [51.51,-0.086,"Londres, Inglaterra"],
+  "corte_versalhes": [48.805,2.12,"Versalhes, França"],
+  "nasc_bach": [50.975,10.32,"Eisenach, Alemanha"],
+  "principia": [51.507,-0.128,"Londres, Inglaterra"],
+  "morte_zumbi": [-9.17,-36.0,"Serra da Barriga, Alagoas, Brasil"],
+  "sao_petersburgo": [59.95,30.317,"São Petersburgo, Rússia"],
+  "enciclopedia": [48.857,2.352,"Paris, França"],
+  "terremoto_lisboa": [38.711,-9.139,"Lisboa, Portugal"],
+  "nasc_mozart": [47.8,13.043,"Salzburgo, Áustria"],
+  "capital_rio": [-22.906,-43.173,"Rio de Janeiro, Brasil"],
+  "watt_vapor": [55.86,-4.25,"Glasgow, Escócia"],
+  "nasc_napoleao": [41.919,8.738,"Ajaccio, Córsega, França"],
+  "cook_australia": [-34.004,151.218,"Baía de Botany, Austrália"],
+  "independencia_eua": [39.949,-75.15,"Filadélfia, Estados Unidos"],
+  "queda_bastilha": [48.853,2.369,"Paris, França"],
+  "sao_domingos": [19.7,-72.2,"Bois Caïman, Haiti"],
+  "flauta_magica": [48.198,16.367,"Viena, Áustria"],
+  "execucao_tiradentes": [-22.907,-43.183,"Rio de Janeiro, Brasil"],
+  "execucao_luis_xvi": [48.865,2.321,"Paris (Praça da Concórdia), França"],
+  "vacina_jenner": [51.691,-2.458,"Berkeley, Inglaterra"],
+  "coroacao_napoleao": [48.853,2.35,"Paris (Notre-Dame), França"],
+  "independencia_haiti": [19.45,-72.683,"Gonaïves, Haiti"],
+  "austerlitz": [49.128,16.762,"Austerlitz (Slavkov u Brna), República Tcheca"],
+  "trafalgar": [36.17,-6.2,"Cabo Trafalgar, Espanha"],
+  "corte_portuguesa": [-22.903,-43.174,"Rio de Janeiro, Brasil"],
+  "invasao_russia": [54.898,23.886,"Rio Niemen (Kaunas), Lituânia"],
+  "waterloo": [50.68,4.412,"Waterloo, Bélgica"],
+  "andes_san_martin": [-32.82,-70.08,"Cordilheira dos Andes, Argentina/Chile"],
+  "frankenstein": [51.507,-0.128,"Londres, Inglaterra"],
+  "independencia_brasil": [-23.586,-46.609,"São Paulo (Ipiranga), Brasil"],
+  "champollion": [48.855,2.338,"Paris, França"],
+  "nona_sinfonia": [48.203,16.37,"Viena, Áustria"],
+  "confederacao_equador": [-8.06,-34.88,"Recife, Brasil"],
+  "ferrovia_publica": [54.523,-1.553,"Darlington, Inglaterra"],
+  "abdicacao_pedro_i": [-22.906,-43.224,"Rio de Janeiro, Brasil"],
+  "farroupilha": [-30.033,-51.23,"Porto Alegre, Brasil"],
+  "darwin_galapagos": [-0.9,-89.6,"Ilhas Galápagos, Equador"],
+  "golpe_maioridade": [-22.903,-43.175,"Rio de Janeiro, Brasil"],
+  "ada_lovelace": [51.507,-0.128,"Londres, Inglaterra"],
+  "manifesto_comunista": [51.515,-0.13,"Londres, Inglaterra"],
+  "lei_eusebio": [-22.903,-43.175,"Rio de Janeiro, Brasil"],
+  "palacio_cristal": [51.503,-0.165,"Londres (Hyde Park), Inglaterra"],
+  "ferrovia_maua": [-22.7,-43.13,"Magé, Rio de Janeiro, Brasil"],
+  "nightingale": [41.006,29.016,"Scutari (Üsküdar, Istambul), Turquia"],
+  "cataratas_vitoria": [-17.925,25.857,"Cataratas Vitória, Zâmbia/Zimbábue"],
+  "o_guarani": [-22.903,-43.175,"Rio de Janeiro, Brasil"],
+  "origem_especies": [51.507,-0.128,"Londres, Inglaterra"],
+  "expedicao_mil": [37.799,12.436,"Marsala, Sicília, Itália"],
+  "guerra_secessao": [32.752,-79.875,"Forte Sumter (Charleston), Estados Unidos"],
+  "morte_lincoln": [38.897,-77.026,"Washington, Estados Unidos"],
+  "leis_mendel": [49.191,16.594,"Brno, República Tcheca"],
+  "humaita": [-27.07,-58.52,"Humaitá, Paraguai"],
+  "restauracao_meiji": [35.025,135.762,"Kyoto, Japão"],
+  "canal_suez": [31.265,32.302,"Porto Said, Egito"],
+  "imperio_alemao": [48.805,2.12,"Versalhes, França"],
+  "ventre_livre": [-22.903,-43.175,"Rio de Janeiro, Brasil"],
+  "impressao_sol": [49.494,0.108,"Le Havre, França"],
+  "telefone": [42.36,-71.06,"Boston, Estados Unidos"],
+  "lampada_edison": [40.565,-74.334,"Menlo Park, Nova Jersey, Estados Unidos"],
+  "nasc_einstein": [48.398,9.992,"Ulm, Alemanha"],
+  "bras_cubas": [-22.903,-43.175,"Rio de Janeiro, Brasil"],
+  "vacina_raiva": [48.842,2.344,"Paris, França"],
+  "lei_aurea": [-22.903,-43.174,"Rio de Janeiro, Brasil"],
+  "proclamacao_republica": [-22.905,-43.19,"Rio de Janeiro, Brasil"],
+  "torre_eiffel": [48.858,2.294,"Paris, França"],
+  "noite_estrelada": [43.79,4.832,"Saint-Rémy-de-Provence, França"],
+  "cinema_lumiere": [48.871,2.331,"Paris, França"],
+  "adwa": [14.165,38.896,"Adwa, Etiópia"],
+  "teatro_amazonas": [-3.13,-60.023,"Manaus, Brasil"],
+  "canudos": [-9.95,-39.13,"Canudos, Bahia, Brasil"],
+  "os_sertoes": [-22.903,-43.175,"Rio de Janeiro, Brasil"],
+  "voo_wright": [36.014,-75.668,"Kitty Hawk, Carolina do Norte, Estados Unidos"],
+  "tratado_petropolis": [-22.505,-43.178,"Petrópolis, Brasil"],
+  "nobel_curie": [59.329,18.069,"Estocolmo, Suécia"],
+  "revolta_vacina": [-22.903,-43.175,"Rio de Janeiro, Brasil"],
+  "voo_14bis": [48.871,2.248,"Paris (Bagatelle), França"],
+  "revolta_chibata": [-22.85,-43.15,"Baía de Guanabara, Rio de Janeiro, Brasil"],
+  "titanic": [41.726,-49.948,"Local do naufrágio, Atlântico Norte"],
+  "linha_ford": [42.406,-83.096,"Highland Park, Michigan, Estados Unidos"],
+  "sarajevo": [43.858,18.428,"Sarajevo, Bósnia e Herzegovina"],
+  "relatividade_geral": [52.517,13.389,"Berlim, Alemanha"],
+  "somme": [50.05,2.685,"Rio Somme (Thiepval), França"],
+  "revolucao_outubro": [59.94,30.314,"Petrogrado (São Petersburgo), Rússia"],
+  "tratado_versalhes": [48.805,2.12,"Versalhes, França"],
+  "semana_arte_moderna": [-23.545,-46.638,"São Paulo, Brasil"],
+  "tumba_tutancamon": [25.74,32.601,"Vale dos Reis (Luxor), Egito"],
+  "republica_turquia": [39.933,32.86,"Ancara, Turquia"],
+  "abaporu": [-23.55,-46.63,"São Paulo, Brasil"],
+  "penicilina": [51.517,-0.174,"Londres, Inglaterra"],
+  "crash_bolsa": [40.707,-74.011,"Nova York, Estados Unidos"],
+  "vargas_poder": [-22.926,-43.177,"Rio de Janeiro, Brasil"],
+  "cristo_redentor": [-22.952,-43.211,"Corcovado, Rio de Janeiro, Brasil"],
+  "hitler_chanceler": [52.512,13.383,"Berlim, Alemanha"],
+  "guernica": [43.317,-2.678,"Guernica, Espanha"],
+  "estado_novo": [-22.926,-43.177,"Rio de Janeiro, Brasil"],
+  "invasao_polonia": [54.407,18.671,"Westerplatte (Gdańsk), Polônia"],
+  "churchill_premie": [51.503,-0.128,"Londres, Inglaterra"],
+  "pearl_harbor": [21.365,-157.95,"Pearl Harbor, Havaí, Estados Unidos"],
+  "anexo_secreto": [52.375,4.884,"Amsterdã, Países Baixos"],
+  "dia_d": [49.37,-0.88,"Normandia, França"],
+  "monte_castelo": [44.18,10.96,"Monte Castello, Itália"],
+  "hiroshima": [34.395,132.454,"Hiroshima, Japão"],
+  "revolucao_bichos": [51.507,-0.128,"Londres, Inglaterra"],
+  "independencia_india": [28.613,77.209,"Nova Délhi, Índia"],
+  "morte_gandhi": [28.601,77.214,"Nova Délhi, Índia"],
+  "china_popular": [39.905,116.391,"Pequim, China"],
+  "petrobras": [-22.926,-43.177,"Rio de Janeiro, Brasil"],
+  "morte_getulio": [-22.926,-43.177,"Rio de Janeiro (Palácio do Catete), Brasil"],
+  "rosa_parks": [32.377,-86.31,"Montgomery, Alabama, Estados Unidos"],
+  "sputnik": [45.92,63.342,"Baikonur, Cazaquistão"],
+  "revolucao_cubana": [23.136,-82.359,"Havana, Cuba"],
+  "brasilia": [-15.799,-47.864,"Brasília, Brasil"],
+  "gagarin": [45.92,63.342,"Baikonur, Cazaquistão"],
+  "muro_berlim": [52.535,13.39,"Berlim, Alemanha"],
+  "crise_misseis": [22.71,-83.05,"San Cristóbal, Cuba"],
+  "eu_tenho_um_sonho": [38.889,-77.05,"Washington, Estados Unidos"],
+  "kennedy_dallas": [32.779,-96.809,"Dallas, Estados Unidos"],
+  "angicos": [-5.666,-36.6,"Angicos, Rio Grande do Norte, Brasil"],
+  "cem_anos_solidao": [-34.603,-58.381,"Buenos Aires, Argentina"],
+  "ai5": [-22.936,-43.187,"Rio de Janeiro, Brasil"],
+  "exercito_terracota": [34.385,109.273,"Xi'an (Lintong), China"],
+  "hora_estrela": [-22.903,-43.175,"Rio de Janeiro, Brasil"],
+  "chernobyl": [51.389,30.099,"Chernobil, Ucrânia"],
+  "constituicao_cidada": [-15.8,-47.864,"Brasília, Brasil"],
+  "chico_mendes": [-10.652,-68.504,"Xapuri, Acre, Brasil"],
+  "queda_muro": [52.516,13.378,"Berlim, Alemanha"],
+  "www": [46.234,6.053,"CERN, Genebra, Suíça"],
+  "mandela_livre": [-33.84,18.96,"Paarl, África do Sul"],
+  "fim_urss": [55.752,37.617,"Moscou, Rússia"],
+  "plano_real": [-15.8,-47.864,"Brasília, Brasil"],
+  "ovelha_dolly": [55.857,-3.163,"Roslin, Escócia"],
+  "torres_gemeas": [40.712,-74.013,"Nova York, Estados Unidos"],
+};
+
+/* ═══════════════════════════════════════════════════
+   ONDE FOI? — put the pin where it happened
+   Ten events, each with its picture, its line and its year. The player
+   drops a pin on the album's old atlas (ALB_MAP): a tap marks the spot and
+   zooms in, another tap moves the pin, a drag looks around, a pinch or the
+   +/− buttons zoom. Then they nail it in. The nearer, the more points, out
+   of 100 an event; within 50 km is a bull's-eye. ONDE_AT (where each of
+   the Que ano? events happened: [lat, lon, place], from
+   tools/history/onde_events.json) is above this line.
+═══════════════════════════════════════════════════ */
+const ONDE_N = 10;
+const ONDE_ZMAX = 12;
+let onde = null;           // the game being played: { qs, i, pin, log, pts, phase, v }
+
+/* the atlas is equirectangular, a unit a degree, 78°N at the top, centred on 10°E */
+const ondeXY = (lat, lon) => [(((lon + 170) % 360) + 360) % 360, 78 - lat];
+const ondeLL = ([x, y]) => [78 - y, x - 170];
+/* the distance on the globe, in km, between two [lat, lon] */
+function ondeKm(a, b) {
+  const r = Math.PI / 180, dLat = (b[0] - a[0]) * r, dLon = (b[1] - a[1]) * r;
+  const h = Math.sin(dLat / 2) ** 2 + Math.cos(a[0] * r) * Math.cos(b[0] * r) * Math.sin(dLon / 2) ** 2;
+  return 2 * 6371 * Math.asin(Math.min(1, Math.sqrt(h)));
+}
+/* within 50 km is 100; a near miss tops out at 99 and fades over a few thousand km */
+const ondePts = d => d <= 50 ? 100 : Math.max(0, Math.min(99, Math.round(99 * Math.exp(-(d - 50) / 900))));
+const ondeKmTxt = d => d < 10 ? 'menos de 10 km' : `${Math.round(d).toLocaleString('pt-BR')} km`;
+/* the four corners of the world a game is dealt from */
+const ondeReg = ([lat, lon]) => lon < -25 ? 'AM' : lat > 35 && lon < 45 ? 'EU' : lon < 63 && lat < 42 ? 'AF' : 'AS';
+const ondeBR = e => /Brasil$/.test(ONDE_AT[e.id][2]);
+
+/* ten events: three from Europe, three from the Americas (no more than two
+   of them in Brazil), two from Africa and the Middle East, two from Asia —
+   never two in the same spot */
+function buildOnde() {
+  const by = { EU: [], AM: [], AF: [], AS: [] };
+  shuf(ANO_EVENTS.filter(e => ONDE_AT[e.id])).forEach(e => by[ondeReg(ONDE_AT[e.id])].push(e));
+  const qs = [];
+  const take = (list, n, ok) => {
+    for (const e of list) {
+      if (n <= 0) break;
+      const a = ONDE_AT[e.id];
+      if (qs.includes(e) || (ok && !ok(e)) || qs.some(o => ondeKm(ONDE_AT[o.id], a) < 150)) continue;
+      qs.push(e); n--;
+    }
+  };
+  const br = rnd() < 0.5 ? 2 : 1;
+  take(by.EU, 3);
+  take(by.AM, br, ondeBR); take(by.AM, 3 - br, e => !ondeBR(e));
+  take(by.AF, 2); take(by.AS, 2);
+  take(shuf([].concat(by.EU, by.AM, by.AF, by.AS)), ONDE_N - qs.length);
+  return { qs: shuf(qs).slice(0, ONDE_N).map(e => ({ e, at: ONDE_AT[e.id] })), i: 0, pin: null, log: [], pts: 0, phase: 'guess', v: { cx: 180, cy: 67, z: 1 } };
+}
+function startOnde() {
+  isDaily = false; isSurv = false; isMil = false;
+  runSelos = [];
+  onde = buildOnde();
+  sc = 'onde';
+  go();
+}
+
+/* the picture of an event, small: its scene, or a face, a brasão, a flag */
+function ondePic(e) {
+  const p = e.pic || {};
+  if (p.scene && SCENE[p.scene]) return `<span class="onde-pic onde-scene">${sceneSvg({ id: p.scene }, 120)}</span>`;
+  if (p.face) { const f = PL.find(x => x.id === p.face); if (f && f.img) return `<span class="onde-pic onde-face"><img src="${f.img}" alt="" aria-hidden="true"></span>`; }
+  if (p.crest && CL.some(c => c.id === p.crest)) return `<span class="onde-pic onde-crest">${clubArt(p.crest, '', false)}</span>`;
+  if (p.flag && FLAGS[p.flag]) return `<span class="onde-pic onde-flag"><svg viewBox="0 0 9 6" preserveAspectRatio="none" aria-hidden="true">${FLAGS[p.flag]}</svg></span>`;
+  return `<span class="onde-pic onde-scene">${ART.hourglass(120)}</span>`;
+}
+
+function ondeHtml() {
+  if (!onde) onde = buildOnde();
+  if (onde.phase === 'end') return ondeEndHtml();
+  const q = onde.qs[onde.i], e = q.e, rev = onde.phase === 'reveal';
+  const last = onde.log[onde.log.length - 1];
+  const dots = onde.qs.map((x, i) => {
+    const l = onde.log[i];
+    return `<i class="${l ? (l.p >= 80 ? 'rl-3' : l.p >= 50 ? 'rl-1' : 'rl-0') : i === onde.i ? 'ano-dot-on' : ''}"></i>`;
+  }).join('');
+  let grat = '';
+  for (let x = 0; x <= 360; x += 15) grat += `M${x} 0V134`;
+  for (let y = 3; y <= 134; y += 15) grat += `M0 ${y}H360`;
+  return `
+  <div class="pg onde-pg${rev ? ' is-rev' : ''}">
+    ${topbar('Onde foi?')}
+    <div class="ano-head"><div class="runlog" aria-hidden="true">${dots}</div>
+      <span class="ano-score"><b class="num">${onde.pts}</b> pts</span></div>
+    <div class="onde-card">
+      ${ondePic(e)}
+      <div class="onde-tt"><p class="onde-t">${_esc(e.t)}</p><span class="onde-y">${e.c ? 'c. ' : ''}${anoYear(e.y)}</span></div>
+    </div>
+    <div class="onde-map" id="onde-map" tabindex="0" role="application"
+      aria-label="${rev ? 'Mapa com a resposta' : 'Mapa: toque onde aconteceu. No teclado, as setas movem, mais e menos aproximam, espaço marca o centro e Enter crava.'}">
+      <svg class="onde-svg" id="onde-svg" preserveAspectRatio="none" aria-hidden="true">
+        <rect x="-400" y="-300" width="1160" height="734" fill="#C9B88C"/>
+        <rect x="0" y="0" width="360" height="134" fill="#D7C79C"/>
+        <path d="${grat}" stroke="#7d6a45" stroke-opacity=".28" stroke-width=".6" fill="none" vector-effect="non-scaling-stroke"/>
+        <path d="${ALB_MAP.land}" fill="#F2E8CD" stroke="#76603C" stroke-width="1" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+        <path d="${ALB_MAP.borders}" fill="none" stroke="#6E5836" stroke-opacity=".55" stroke-width=".7" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+        <rect x="0" y="0" width="360" height="134" fill="none" stroke="#6E5836" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+      </svg>
+      <span class="onde-deco onde-deco-t" aria-hidden="true"><span class="onde-cart">Mapa-múndi</span></span>
+      <span class="onde-deco onde-deco-b" aria-hidden="true"><svg viewBox="-12 -12 24 24"><circle r="9" fill="none" stroke="#6E5836" stroke-width=".6"/>
+        <path d="M0-11 2 0 0 2-2 0Z" fill="#8E2F2F"/><path d="M0 11 2 0 0-2-2 0Z" fill="#2A1D10"/><path d="M-11 0 0 2 2 0 0-2ZM11 0 0-2-2 0 0 2Z" fill="#B07A2E"/></svg></span>
+      <svg class="onde-ov" id="onde-ov" aria-hidden="true"><line id="onde-line" x1="0" y1="0" x2="0" y2="0"/></svg>
+      <span class="onde-mk onde-mk-g" id="onde-pin" hidden aria-hidden="true">${ondePinSvg()}</span>
+      ${rev ? `<span class="onde-mk onde-mk-t" id="onde-truth" aria-hidden="true"><i></i><b>${_esc(q.at[2])}</b></span>` : ''}
+      <div class="onde-zoom">
+        <button class="onde-zb" data-zoom="in" type="button" aria-label="Aproximar">+</button>
+        <button class="onde-zb" data-zoom="out" type="button" aria-label="Afastar">−</button>
+        <button class="onde-zb" data-zoom="world" type="button" aria-label="O mundo todo">${ICON.globe('currentColor', 13)}</button>
+      </div>
+      ${rev || onde.pin ? '' : `<span class="onde-tip" id="onde-tip">Toque no mapa onde aconteceu</span>`}
+    </div>
+    ${rev ? `<div class="onde-after" aria-live="polite">
+        <div class="onde-res"><span class="display ${last.p >= 80 ? 'good' : last.p >= 50 ? 'brass' : 'bad'}" style="font-size:17px;">+${last.p}</span>
+          <span><b>${anoVerdict(last.p)}</b> · ${last.p === 100 ? 'no lugar certo' : `a ${ondeKmTxt(last.d)}`}</span></div>
+        ${last.selo ? seloWonLine(last.selo) : ''}
+        ${e.x ? `<div class="story"><span class="story-k">${ICON.book('currentColor', 11)} Você sabia?</span><p>${_esc(e.x)}</p></div>` : ''}
+        <button id="onde-next" class="btn btn-brass">${onde.i >= onde.qs.length - 1 ? 'Ver resultado' : 'Próximo'}</button></div>`
+      : `<button id="onde-go" class="btn btn-brass btn-lg"${onde.pin ? '' : ' disabled'}>${ICON.check('currentColor', 14)} Cravar aqui</button>`}
+  </div>`;
+}
+const ondePinSvg = () => `<svg viewBox="0 0 24 32"><path d="M12 31C12 31 2 18.6 2 11.5A10 10 0 0 1 22 11.5C22 18.6 12 31 12 31Z" fill="#8E2F2F" stroke="#3A1208" stroke-width="1.4"/><circle cx="12" cy="11.5" r="4" fill="#F7F1E2"/></svg>`;
+
+function ondeEndHtml() {
+  const best = LS.get('ondeBest', 0);
+  const msg = onde.pts >= 800 ? 'Um atlas ambulante!' : onde.pts >= 600 ? 'Ótimo senso de direção!' : onde.pts >= 400 ? 'Nada mau!' : 'O mundo é grande…';
+  return `
+  <div class="pg pg-center ano-end" style="padding:22px 18px;gap:9px;">
+    <div class="eyebrow">Onde foi? · ${ONDE_N} eventos</div>
+    <div class="display" style="font-size:28px;"><em>${msg}</em></div>
+    <div class="display prize-pop brass" style="font-size:50px;letter-spacing:-.03em;">${onde.pts}<span class="muted" style="font-size:18px;"> / ${ONDE_N * 100}</span></div>
+    <p class="small muted">${onde.isBest ? 'Seu novo recorde!' : `Recorde: ${best} pts`}</p>
+    <div class="ano-list">
+      ${onde.log.map(l => `<div class="ano-li"><span class="ano-li-p ${l.p >= 80 ? 'good' : l.p >= 50 ? 'brass' : 'bad'}">${l.p}</span>
+        <span class="ano-li-t">${_esc(l.e.t)}</span><span class="ano-li-y"><b>${_esc(l.at[2].split(', ').pop())}</b><small>${l.p === 100 ? 'na mosca' : ondeKmTxt(l.d)}</small></span></div>`).join('')}
+    </div>
+    ${selosStrip()}
+    ${medalChips()}
+    <div class="foot-row" style="margin-top:8px;">
+      <button id="onde-share" class="btn btn-ghost btn-sm">Compartilhar</button>
+      <button id="onde-again" class="btn btn-brass">De novo</button>
+      <button id="bhome" class="btn btn-ghost btn-sm">Início</button>
+    </div>
+  </div>`;
+}
+
+function ondeShareText() {
+  const grid = onde.log.map(l => l.p === 100 ? '🎯' : l.p >= 80 ? '🟩' : l.p >= 50 ? '🟨' : '⬛').join('');
+  return `Onde foi? 🌍 History Quiz\n${grid}\n${onde.pts}/${ONDE_N * 100} pts\nhttps://tdosreis.github.io/history-quiz/`;
+}
+
+/* ── the map's camera: a centre (in map units), a zoom, and how tall a degree is drawn ── */
+function ondeBox() {
+  const m = document.getElementById('onde-map');
+  return m ? { W: m.clientWidth, H: m.clientHeight } : { W: 340, H: 300 };
+}
+/* an equirectangular map squashes the north: zoomed in, a degree is drawn
+   as tall as an atlas would print it there; the whole world keeps one stretch */
+function ondeSt(v) {
+  const lat = Math.max(-60, Math.min(70, 78 - v.cy));
+  const here = Math.min(1.6, Math.max(1, 1 / Math.cos(lat * Math.PI / 180)));
+  return 1.2 + (here - 1.2) * Math.min(1, Math.max(0, (v.z - 1) / 2));
+}
+function ondeCam(v, box) {
+  box = box || ondeBox();
+  const st = ondeSt(v), sx = box.W / 360 * v.z, sy = sx * st;
+  const vw = box.W / sx, vh = box.H / sy;
+  return { sx, sy, vw, vh, vx: v.cx - vw / 2, vy: v.cy - vh / 2 };
+}
+/* the camera never looks past the edges of the map */
+function ondeClamp(v, box) {
+  v.z = Math.max(1, Math.min(ONDE_ZMAX, v.z));
+  const c = ondeCam(v, box);
+  v.cx = c.vw >= 360 ? 180 : Math.max(c.vw / 2, Math.min(360 - c.vw / 2, v.cx));
+  v.cy = c.vh >= 134 ? 67 : Math.max(c.vh / 2, Math.min(134 - c.vh / 2, v.cy));
+  return v;
+}
+const ondeToPx = (c, [x, y]) => [(x - c.vx) * c.sx, (y - c.vy) * c.sy];
+
+function ondeApply() {
+  const svg = document.getElementById('onde-svg');
+  if (!svg || !onde) return;
+  const box = ondeBox();
+  if (box.W < 1 || box.H < 1) return;
+  const v = ondeClamp(onde.v, box), c = ondeCam(v, box);
+  svg.setAttribute('viewBox', `${c.vx.toFixed(3)} ${c.vy.toFixed(3)} ${c.vw.toFixed(3)} ${c.vh.toFixed(3)}`);
+  /* the whole world leaves the page above and below it: an atlas's title and its compass rose */
+  const m = document.getElementById('onde-map');
+  const top = Math.max(0, -c.vy * c.sy), bot = Math.max(0, box.H - (134 - c.vy) * c.sy);
+  m.style.setProperty('--ob-t', top.toFixed(0) + 'px'); m.style.setProperty('--ob-b', bot.toFixed(0) + 'px');
+  m.classList.toggle('has-top', top >= 100); m.classList.toggle('has-bot', bot >= 56);
+  const ov = document.getElementById('onde-ov');
+  if (ov) ov.setAttribute('viewBox', `0 0 ${box.W} ${box.H}`);
+  const place = (el, p) => {
+    if (!el) return;
+    if (!p) { el.hidden = true; return; }
+    const [x, y] = ondeToPx(c, p);
+    el.hidden = false;
+    el.style.transform = `translate(${x.toFixed(1)}px, ${y.toFixed(1)}px)`;
+    el.classList.toggle('is-off', x < -4 || y < -4 || x > box.W + 4 || y > box.H + 4);
+  };
+  place(document.getElementById('onde-pin'), onde.pin);
+  const rev = onde.phase === 'reveal', q = onde.qs[onde.i];
+  const truth = rev ? ondeXY(q.at[0], q.at[1]) : null;
+  const t = document.getElementById('onde-truth');
+  place(t, truth);
+  /* the place's name stands on whichever side of it has the room */
+  if (t && truth) {
+    const tx = ondeToPx(c, truth)[0], left = tx > box.W * 0.58, lb = t.querySelector('b');
+    t.classList.toggle('is-left', left);
+    if (lb) lb.style.maxWidth = Math.max(90, (left ? tx : box.W - tx) - 24).toFixed(0) + 'px';
+  }
+  const ln = document.getElementById('onde-line');
+  if (ln) {
+    if (rev && onde.pin) {
+      const [x1, y1] = ondeToPx(c, onde.pin), [x2, y2] = ondeToPx(c, truth);
+      ln.setAttribute('x1', x1.toFixed(1)); ln.setAttribute('y1', y1.toFixed(1)); ln.setAttribute('x2', x2.toFixed(1)); ln.setAttribute('y2', y2.toFixed(1));
+      ln.style.display = '';
+    } else ln.style.display = 'none';
+  }
+  const zi = document.querySelector('[data-zoom="in"]'), zo = document.querySelector('[data-zoom="out"]'), zw = document.querySelector('[data-zoom="world"]');
+  if (zi) zi.disabled = v.z >= ONDE_ZMAX - 0.01;
+  if (zo) zo.disabled = v.z <= 1.01;
+  if (zw) zw.disabled = v.z <= 1.01;
+}
+
+/* the camera glides to a new view */
+let _ondeAnim = 0;
+function ondeFly(to, ms) {
+  const from = Object.assign({}, onde.v), id = ++_ondeAnim, t0 = performance.now();
+  ms = ms == null ? 380 : ms;
+  if (ms <= 0 || matchMedia('(prefers-reduced-motion: reduce)').matches) { Object.assign(onde.v, to); ondeApply(); return; }
+  const step = now => {
+    if (id !== _ondeAnim || !onde) return;
+    const k = Math.min(1, (now - t0) / ms), e = 1 - Math.pow(1 - k, 3);
+    onde.v.z = from.z * Math.pow(to.z / from.z, e);
+    onde.v.cx = from.cx + (to.cx - from.cx) * e;
+    onde.v.cy = from.cy + (to.cy - from.cy) * e;
+    ondeApply();
+    if (k < 1) requestAnimationFrame(step);
+  };
+  requestAnimationFrame(step);
+}
+/* zoom by a factor, keeping the map point under (px, py) where it is */
+function ondeZoomAt(f, px, py, fly) {
+  const box = ondeBox(), v = onde.v, c = ondeCam(v, box);
+  if (px == null) { px = box.W / 2; py = box.H / 2; }
+  const mx = c.vx + px / c.sx, my = c.vy + py / c.sy;
+  const n = { z: Math.max(1, Math.min(ONDE_ZMAX, v.z * f)), cx: v.cx, cy: v.cy };
+  const c2 = ondeCam(n, box);
+  n.cx = mx - (px / c2.sx) + c2.vw / 2;
+  n.cy = my - (py / c2.sy) + c2.vh / 2;
+  ondeClamp(n, box);
+  if (fly) ondeFly(n); else { _ondeAnim++; Object.assign(v, n); ondeApply(); }
+}
+/* after the guess: both the pin and the right place in view */
+function ondeFitBoth() {
+  const q = onde.qs[onde.i], a = onde.pin, b = ondeXY(q.at[0], q.at[1]), box = ondeBox();
+  const bw = Math.abs(a[0] - b[0]) + 8, bh = Math.abs(a[1] - b[1]) + 6;
+  let z = 360 / (bw * 1.5);
+  const st = ondeSt({ cy: (a[1] + b[1]) / 2, z: Math.min(z, 3) });
+  z = Math.min(z, box.H * 360 / (box.W * st * bh * 1.6), 6);
+  ondeFly(ondeClamp({ z: Math.max(1, z), cx: (a[0] + b[0]) / 2, cy: (a[1] + b[1]) / 2 }, box), 650);
+}
+
+function ondeSetPin(p) {
+  onde.pin = [Math.max(0, Math.min(360, p[0])), Math.max(0, Math.min(134, p[1]))];
+  const b = document.getElementById('onde-go');
+  if (b) b.disabled = false;
+  const tip = document.getElementById('onde-tip');
+  if (tip) tip.remove();
+  const el = document.getElementById('onde-pin');
+  if (el) { el.classList.remove('is-drop'); void el.offsetWidth; el.classList.add('is-drop'); }
+  ondeApply();
+}
+
+function ondeCommit() {
+  if (!onde.pin || onde.phase !== 'guess') return;
+  const q = onde.qs[onde.i], e = q.e;
+  const d = ondeKm(ondeLL(onde.pin), [q.at[0], q.at[1]]), p = ondePts(d);
+  const selo = p >= 80 && e.pic && e.pic.scene && awardSelo(e.pic.scene) ? e.pic.scene : null;
+  onde.log.push({ e, at: q.at, pin: onde.pin, d, p, selo });
+  if (p === 100) { stats.ondeExact = (stats.ondeExact || 0) + 1; LS.set('stats', stats); }
+  try { onde.medals = (onde.medals || []).concat(newMedals()); } catch (err) {}
+  onde.pts += p;
+  onde.phase = 'reveal';
+  if (p === 100) snd.fanfare(); else if (p >= 80) snd.correct(0); else if (p >= 50) snd.almost(); else snd.wrong();
+  go();
+  requestAnimationFrame(() => ondeFitBoth());
+  if (p >= 80) try { burst(p === 100 ? 28 : 14); } catch (err) {}
+}
+function ondeNext() {
+  if (onde.i >= onde.qs.length - 1) {
+    onde.phase = 'end';
+    stats.ondeGames = (stats.ondeGames || 0) + 1;
+    LS.set('stats', stats);
+    onde.isBest = onde.pts > LS.get('ondeBest', 0);
+    if (onde.isBest) LS.set('ondeBest', onde.pts);
+    window._newMedals = (onde.medals || []).concat(newMedals());
+    setTimeout(() => snd.final(onde.pts >= 500), 200);
+  } else {
+    onde.i++;
+    onde.pin = null;
+    onde.phase = 'guess';
+    onde.v = { cx: 180, cy: 67, z: 1 };
+  }
+  go();
+}
+
+function wireOnde() {
+  const on = (id, fn) => document.getElementById(id)?.addEventListener('click', fn);
+  on('onde-go', () => ondeCommit());
+  on('onde-next', () => { snd.swipe(); ondeNext(); });
+  on('onde-again', () => { snd.select(); startOnde(); });
+  on('onde-share', () => {
+    const txt = ondeShareText();
+    if (navigator.share) navigator.share({ text: txt }).catch(() => {});
+    else if (navigator.clipboard) navigator.clipboard.writeText(txt).then(() => {
+      const b = document.getElementById('onde-share'); if (b) { b.textContent = 'Copiado!'; setTimeout(() => { b.textContent = 'Compartilhar'; }, 1600); } }).catch(() => {});
+  });
+  const m = document.getElementById('onde-map');
+  if (!m) return;
+  ondeApply();
+  if (window.ResizeObserver) { const ro = new ResizeObserver(() => { if (document.body.contains(m)) ondeApply(); else ro.disconnect(); }); ro.observe(m); }
+  const guessing = () => onde.phase === 'guess';
+  document.querySelectorAll('[data-zoom]').forEach(b => b.addEventListener('click', ev => {
+    ev.stopPropagation(); snd.tap();
+    const k = b.dataset.zoom;
+    if (k === 'world') ondeFly({ cx: 180, cy: 67, z: 1 });
+    else if (onde.pin && k === 'in') { const c = ondeCam(onde.v), [x, y] = ondeToPx(c, onde.pin), box = ondeBox();
+      ondeZoomAt(2, Math.max(0, Math.min(box.W, x)), Math.max(0, Math.min(box.H, y)), true); }
+    else ondeZoomAt(k === 'in' ? 2 : 0.5, null, null, true);
+  }));
+  /* touch and mouse: a tap marks, a drag looks around, two fingers zoom */
+  const pts = new Map();
+  let g = null;
+  const rel = ev => { const r = m.getBoundingClientRect(); return [ev.clientX - r.left, ev.clientY - r.top]; };
+  m.addEventListener('pointerdown', ev => {
+    if (ev.target.closest('.onde-zoom')) return;
+    try { m.setPointerCapture(ev.pointerId); } catch (e) {}
+    pts.set(ev.pointerId, rel(ev));
+    _ondeAnim++;
+    if (pts.size === 1) g = { p0: rel(ev), v0: Object.assign({}, onde.v), moved: false, pinch: false };
+    else if (pts.size === 2 && g) {
+      const [a, b] = [...pts.values()];
+      g.pinch = true; g.moved = true;
+      g.d0 = Math.hypot(a[0] - b[0], a[1] - b[1]) || 1; g.z0 = onde.v.z;
+      const mid = [(a[0] + b[0]) / 2, (a[1] + b[1]) / 2], c = ondeCam(onde.v);
+      g.anchor = [c.vx + mid[0] / c.sx, c.vy + mid[1] / c.sy];
+    }
+  });
+  m.addEventListener('pointermove', ev => {
+    if (!g || !pts.has(ev.pointerId)) return;
+    pts.set(ev.pointerId, rel(ev));
+    const box = ondeBox();
+    if (g.pinch && pts.size >= 2) {
+      const [a, b] = [...pts.values()];
+      const d = Math.hypot(a[0] - b[0], a[1] - b[1]) || 1, mid = [(a[0] + b[0]) / 2, (a[1] + b[1]) / 2];
+      const n = { z: Math.max(1, Math.min(ONDE_ZMAX, g.z0 * d / g.d0)), cx: onde.v.cx, cy: onde.v.cy };
+      const c = ondeCam(n, box);
+      n.cx = g.anchor[0] - mid[0] / c.sx + c.vw / 2; n.cy = g.anchor[1] - mid[1] / c.sy + c.vh / 2;
+      Object.assign(onde.v, ondeClamp(n, box)); ondeApply();
+      return;
+    }
+    const p = rel(ev), dx = p[0] - g.p0[0], dy = p[1] - g.p0[1];
+    if (!g.moved && Math.hypot(dx, dy) < 7) return;
+    g.moved = true;
+    const c = ondeCam(g.v0, box);
+    Object.assign(onde.v, ondeClamp({ z: g.v0.z, cx: g.v0.cx - dx / c.sx, cy: g.v0.cy - dy / c.sy }, box));
+    ondeApply();
+  });
+  const up = ev => {
+    if (!pts.has(ev.pointerId)) return;
+    const p = rel(ev);
+    pts.delete(ev.pointerId);
+    if (!g) return;
+    if (pts.size === 0) {
+      const tap = !g.moved && ev.type === 'pointerup';
+      g = null;
+      if (!tap || !guessing()) return;
+      const c = ondeCam(onde.v), x = c.vx + p[0] / c.sx, y = c.vy + p[1] / c.sy;
+      if (x < 0 || x > 360 || y < 0 || y > 134) return;
+      snd.tap();
+      ondeSetPin([x, y]);
+      /* the first tap on the whole world zooms in there, to place it finer */
+      if (onde.v.z < 2.5) ondeFly(ondeClamp({ z: 4, cx: x, cy: y }, ondeBox()));
+    } else if (pts.size === 1 && g.pinch) {
+      /* one finger left after a pinch: carry on as a drag from here */
+      g = { p0: [...pts.values()][0], v0: Object.assign({}, onde.v), moved: true, pinch: false };
+    }
+  };
+  m.addEventListener('pointerup', up);
+  m.addEventListener('pointercancel', up);
+  m.addEventListener('wheel', ev => {
+    ev.preventDefault();
+    const p = rel(ev);
+    ondeZoomAt(Math.pow(1.2, -Math.sign(ev.deltaY)), p[0], p[1], false);
+  }, { passive: false });
+  /* the keyboard: arrows move the pin (or the map, before there is one), + and − zoom, Enter marks the centre */
+  m.addEventListener('keydown', ev => {
+    const k = ev.key, c = ondeCam(onde.v), box = ondeBox();
+    const mv = { ArrowLeft: [-1, 0], ArrowRight: [1, 0], ArrowUp: [0, -1], ArrowDown: [0, 1] }[k];
+    if (mv) {
+      ev.preventDefault();
+      const step = (ev.shiftKey ? 60 : 16);
+      if (onde.pin && guessing()) ondeSetPin([onde.pin[0] + mv[0] * step / c.sx, onde.pin[1] + mv[1] * step / c.sy]);
+      else { Object.assign(onde.v, ondeClamp({ z: onde.v.z, cx: onde.v.cx + mv[0] * step * 2 / c.sx, cy: onde.v.cy + mv[1] * step * 2 / c.sy }, box)); ondeApply(); }
+    } else if (k === '+' || k === '=') { ev.preventDefault(); ondeZoomAt(2, null, null, true); }
+    else if (k === '-' || k === '_') { ev.preventDefault(); ondeZoomAt(0.5, null, null, true); }
+    /* Space marks the centre of the view; Enter marks it too, or nails in a pin already there */
+    else if ((k === 'Enter' || k === ' ') && guessing()) {
+      ev.preventDefault();
+      if (onde.pin && k === 'Enter') ondeCommit(); else ondeSetPin([onde.v.cx, onde.v.cy]);
+    }
   });
 }
 

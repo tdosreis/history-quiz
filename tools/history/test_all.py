@@ -165,6 +165,34 @@ JS = r"""
     for (let i = 0; i < 6; i++) { const g = buildAno(); if (g.qs.length !== ANO_N) F('a Que ano? game has ' + g.qs.length + ' events');
       if (new Set(g.qs.map(q => q.e.id)).size !== g.qs.length) F('a Que ano? game repeats an event'); }
   } catch (e) { F('ano EXC ' + e.message); }
+  /* ── Onde foi?: every place a real spot on the map, every game ten events spread over the world ── */
+  try {
+    const ids = Object.keys(ONDE_AT);
+    note.onde = ids.length;
+    if (ids.length < 200) F('only ' + ids.length + ' events with a place');
+    const aid = new Set(ANO_EVENTS.map(e => e.id));
+    ids.forEach(id => {
+      const [la, lo, pl] = ONDE_AT[id], w = 'onde ' + id + ': ';
+      if (!aid.has(id)) F(w + 'no such event');
+      if (!(la > -56 && la < 78 && lo >= -180 && lo <= 180)) F(w + 'off the map ' + la + ',' + lo);
+      if (!pl || pl.length > 60 || /^,|,$|\s{2}/.test(pl)) F(w + 'odd place name ' + pl);
+      const [x, y] = ondeXY(la, lo), [la2, lo2] = ondeLL([x, y]);
+      if (ondeKm([la, lo], [la2, lo2]) > 1) F(w + 'the projection does not round-trip');
+    });
+    if (Math.abs(ondeKm([0, 0], [0, 1]) - 111.2) > 0.5) F('ondeKm is off');
+    if (ondeKm([0, 179], [0, -179]) > 230) F('ondeKm does not wrap at the date line');
+    if (ondePts(0) !== 100 || ondePts(50) !== 100 || ondePts(51) > 99 || ondePts(20000) !== 0) F('ondePts scale is off');
+    for (let i = 0; i < 40; i++) {
+      const g = buildOnde(), w = 'an Onde foi? game ';
+      if (g.qs.length !== ONDE_N) F(w + 'has ' + g.qs.length + ' events');
+      if (new Set(g.qs.map(q => q.e.id)).size !== g.qs.length) F(w + 'repeats an event');
+      const reg = {}; g.qs.forEach(q => { const r = ondeReg(q.at); reg[r] = (reg[r] || 0) + 1; });
+      if ((reg.EU || 0) < 2 || (reg.AM || 0) < 2 || (reg.AF || 0) < 1 || (reg.AS || 0) < 1) F(w + 'is lopsided ' + JSON.stringify(reg));
+      if (g.qs.filter(q => ondeBR(q.e)).length > 3) F(w + 'has too much of Brazil');
+      for (let a = 0; a < g.qs.length; a++) for (let b = a + 1; b < g.qs.length; b++)
+        if (ondeKm(g.qs[a].at, g.qs[b].at) < 150) F(w + 'has two events in one spot: ' + g.qs[a].e.id + ' / ' + g.qs[b].e.id);
+    }
+  } catch (e) { F('onde EXC ' + e.message); }
   note.ms = Date.now() - T0;
   return { fails, note };
 })()

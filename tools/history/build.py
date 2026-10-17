@@ -328,12 +328,19 @@ def main():
     ap = os.path.join(H, "ano_events.json")
     ano = json.load(io.open(ap, encoding="utf-8")) if os.path.exists(ap) else []
     ano_js = "const ANO_EVENTS = [\n" + "".join("  %s,\n" % json.dumps(e, ensure_ascii=False, separators=(",", ":")) for e in ano) + "];\n"
+    op = os.path.join(H, "onde_events.json")
+    onde = json.load(io.open(op, encoding="utf-8")) if os.path.exists(op) else {}
+    ano_ids = set(e["id"] for e in ano)
+    onde_js = "const ONDE_AT = {\n" + "".join("  %s: %s,\n" % (json.dumps(k), json.dumps([v["lat"], v["lon"], v["place"]], ensure_ascii=False, separators=(",", ":")))
+                                         for k, v in onde.items() if v.get("ok") and k in ano_ids) + "};\n"
     s = put(s, "formats", "\n".join(io.open(os.path.join(H, "js", f), encoding="utf-8").read() for f in ("formats.js", "almanac.js"))
             + "\n" + ano_js + "\n".join(io.open(os.path.join(H, "js", f), encoding="utf-8").read() for f in ("selos.js", "ano.js"))
             # the album's world map (tools/history/album_map.json, from albmapgen.mjs)
             + "\nconst ALB_MAP = " + io.open(os.path.join(H, "album_map.json"), encoding="utf-8").read().strip() + ";\n"
-            + io.open(os.path.join(H, "js", "mapa.js"), encoding="utf-8").read())
-    s = put(s, "formats_css", "\n".join(io.open(os.path.join(H, "css", f), encoding="utf-8").read() for f in ("formats.css", "selos_ano.css", "mapa.css")))
+            + io.open(os.path.join(H, "js", "mapa.js"), encoding="utf-8").read()
+            # "Onde foi?": where each of those events happened (tools/history/onde_events.json)
+            + "\n" + onde_js + io.open(os.path.join(H, "js", "onde.js"), encoding="utf-8").read())
+    s = put(s, "formats_css", "\n".join(io.open(os.path.join(H, "css", f), encoding="utf-8").read() for f in ("formats.css", "selos_ano.css", "mapa.css", "onde.css")))
     io.open(PAGE, "w", encoding="utf-8").write(s)
     print("index.html updated: %d bytes" % len(s.encode("utf-8")))
 

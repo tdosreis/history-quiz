@@ -1,0 +1,1530 @@
+{
+ "piramide_queops": {
+  "place": "Gizé, Egito",
+  "lat": 29.979,
+  "lon": 31.134,
+  "ok": true
+ },
+ "codigo_hamurabi": {
+  "place": "Babilônia, Iraque",
+  "lat": 32.536,
+  "lon": 44.421,
+  "ok": true
+ },
+ "batalha_kadesh": {
+  "place": "Kadesh (Tell Nebi Mend), Síria",
+  "lat": 34.557,
+  "lon": 36.519,
+  "ok": true
+ },
+ "fundacao_cartago": {
+  "place": "Cartago, Tunísia",
+  "lat": 36.853,
+  "lon": 10.323,
+  "ok": true
+ },
+ "fundacao_roma": {
+  "place": "Roma, Itália",
+  "lat": 41.889,
+  "lon": 12.487,
+  "ok": true
+ },
+ "queda_ninive": {
+  "place": "Nínive (Mossul), Iraque",
+  "lat": 36.359,
+  "lon": 43.153,
+  "ok": true
+ },
+ "nabucodonosor_trono": {
+  "place": "Babilônia, Iraque",
+  "lat": 32.536,
+  "lon": 44.421,
+  "ok": true
+ },
+ "ciro_babilonia": {
+  "place": "Babilônia, Iraque",
+  "lat": 32.536,
+  "lon": 44.421,
+  "ok": true
+ },
+ "persas_egito": {
+  "place": "Pelúsio, Egito",
+  "lat": 31.042,
+  "lon": 32.546,
+  "ok": true
+ },
+ "dario_trono": {
+  "ok": false,
+  "why": "Dario chegou ao trono após depor Gaumata na Média; não há um local canônico"
+ },
+ "maratona": {
+  "place": "Maratona, Grécia",
+  "lat": 38.118,
+  "lon": 23.978,
+  "ok": true
+ },
+ "termopilas": {
+  "place": "Termópilas, Grécia",
+  "lat": 38.796,
+  "lon": 22.536,
+  "ok": true
+ },
+ "morte_confucio": {
+  "place": "Qufu, China",
+  "lat": 35.597,
+  "lon": 116.991,
+  "ok": true
+ },
+ "partenon": {
+  "place": "Acrópole de Atenas, Grécia",
+  "lat": 37.972,
+  "lon": 23.727,
+  "ok": true
+ },
+ "peloponeso": {
+  "place": "Plateias, Grécia",
+  "lat": 38.219,
+  "lon": 23.274,
+  "ok": true
+ },
+ "morte_pericles": {
+  "place": "Atenas, Grécia",
+  "lat": 37.976,
+  "lon": 23.728,
+  "ok": true
+ },
+ "morte_socrates": {
+  "place": "Atenas, Grécia",
+  "lat": 37.975,
+  "lon": 23.722,
+  "ok": true
+ },
+ "gauleses_roma": {
+  "place": "Roma, Itália",
+  "lat": 41.893,
+  "lon": 12.483,
+  "ok": true
+ },
+ "nasc_alexandre": {
+  "place": "Pela, Grécia",
+  "lat": 40.759,
+  "lon": 22.524,
+  "ok": true
+ },
+ "gaugamela": {
+  "place": "Gaugamela, perto de Erbil, Iraque",
+  "lat": 36.567,
+  "lon": 43.433,
+  "ok": true
+ },
+ "morte_alexandre": {
+  "place": "Babilônia, Iraque",
+  "lat": 32.536,
+  "lon": 44.421,
+  "ok": true
+ },
+ "morte_aristoteles": {
+  "place": "Cálcis, Eubeia, Grécia",
+  "lat": 38.463,
+  "lon": 23.595,
+  "ok": true
+ },
+ "primeira_punica": {
+  "place": "Messina, Itália",
+  "lat": 38.193,
+  "lon": 15.554,
+  "ok": true
+ },
+ "qin_unifica": {
+  "place": "Xianyang, China",
+  "lat": 34.33,
+  "lon": 108.71,
+  "ok": true
+ },
+ "anibal_alpes": {
+  "place": "Alpes ocidentais, França/Itália",
+  "lat": 45.1,
+  "lon": 6.9,
+  "ok": true
+ },
+ "canas": {
+  "place": "Canas (Canne della Battaglia), Itália",
+  "lat": 41.306,
+  "lon": 16.132,
+  "ok": true
+ },
+ "morte_arquimedes": {
+  "place": "Siracusa, Itália",
+  "lat": 37.075,
+  "lon": 15.287,
+  "ok": true
+ },
+ "zama": {
+  "place": "Zama, Tunísia",
+  "lat": 36.07,
+  "lon": 9.3,
+  "ok": true
+ },
+ "destruicao_cartago": {
+  "place": "Cartago, Tunísia",
+  "lat": 36.853,
+  "lon": 10.323,
+  "ok": true
+ },
+ "espartaco": {
+  "place": "Cápua, Itália",
+  "lat": 41.083,
+  "lon": 14.25,
+  "ok": true
+ },
+ "rubicao": {
+  "place": "Rio Rubicão, Itália",
+  "lat": 44.093,
+  "lon": 12.398,
+  "ok": true
+ },
+ "morte_cesar": {
+  "place": "Roma, Itália",
+  "lat": 41.895,
+  "lon": 12.477,
+  "ok": true
+ },
+ "acio": {
+  "place": "Ácio (Preveza), Grécia",
+  "lat": 38.958,
+  "lon": 20.738,
+  "ok": true
+ },
+ "morte_cleopatra": {
+  "place": "Alexandria, Egito",
+  "lat": 31.2,
+  "lon": 29.918,
+  "ok": true
+ },
+ "augusto_titulo": {
+  "place": "Roma, Itália",
+  "lat": 41.892,
+  "lon": 12.485,
+  "ok": true
+ },
+ "morte_augusto": {
+  "place": "Nola, Itália",
+  "lat": 40.926,
+  "lon": 14.527,
+  "ok": true
+ },
+ "incendio_roma": {
+  "place": "Roma, Itália",
+  "lat": 41.886,
+  "lon": 12.485,
+  "ok": true
+ },
+ "vesuvio": {
+  "place": "Pompeia, Itália",
+  "lat": 40.749,
+  "lon": 14.485,
+  "ok": true
+ },
+ "coliseu": {
+  "place": "Roma, Itália",
+  "lat": 41.89,
+  "lon": 12.492,
+  "ok": true
+ },
+ "muralha_adriano": {
+  "place": "Muralha de Adriano, Inglaterra",
+  "lat": 55.013,
+  "lon": -2.331,
+  "ok": true
+ },
+ "morte_marco_aurelio": {
+  "ok": false,
+  "why": "Local da morte disputado: Vindobona (Viena) segundo Aurélio Vítor, Sírmio (Sérvia) segundo Tertuliano"
+ },
+ "ponte_milvia": {
+  "place": "Ponte Mílvia, Roma, Itália",
+  "lat": 41.936,
+  "lon": 12.467,
+  "ok": true
+ },
+ "constantinopla_capital": {
+  "place": "Constantinopla (Istambul), Turquia",
+  "lat": 41.008,
+  "lon": 28.978,
+  "ok": true
+ },
+ "saque_visigodo": {
+  "place": "Roma, Itália",
+  "lat": 41.893,
+  "lon": 12.483,
+  "ok": true
+ },
+ "campos_catalaunicos": {
+  "place": "Campos Cataláunicos (Châlons), França",
+  "lat": 48.96,
+  "lon": 4.36,
+  "ok": true
+ },
+ "queda_roma": {
+  "place": "Ravena, Itália",
+  "lat": 44.418,
+  "lon": 12.204,
+  "ok": true
+ },
+ "santa_sofia": {
+  "place": "Constantinopla (Istambul), Turquia",
+  "lat": 41.009,
+  "lon": 28.98,
+  "ok": true
+ },
+ "hegira": {
+  "place": "Meca, Arábia Saudita",
+  "lat": 21.423,
+  "lon": 39.826,
+  "ok": true
+ },
+ "conquista_iberica": {
+  "place": "Gibraltar",
+  "lat": 36.14,
+  "lon": -5.35,
+  "ok": true
+ },
+ "poitiers": {
+  "place": "Poitiers, França",
+  "lat": 46.7,
+  "lon": 0.45,
+  "ok": true
+ },
+ "fundacao_bagda": {
+  "place": "Bagdá, Iraque",
+  "lat": 33.315,
+  "lon": 44.366,
+  "ok": true
+ },
+ "harun_califa": {
+  "place": "Bagdá, Iraque",
+  "lat": 33.315,
+  "lon": 44.366,
+  "ok": true
+ },
+ "lindisfarne": {
+  "place": "Lindisfarne, Inglaterra",
+  "lat": 55.669,
+  "lon": -1.801,
+  "ok": true
+ },
+ "coroacao_carlos_magno": {
+  "place": "Roma (São Pedro), Vaticano",
+  "lat": 41.902,
+  "lon": 12.454,
+  "ok": true
+ },
+ "leif_america": {
+  "place": "L'Anse aux Meadows, Terra Nova, Canadá",
+  "lat": 51.596,
+  "lon": -55.533,
+  "ok": true
+ },
+ "hastings": {
+  "place": "Battle (Hastings), Inglaterra",
+  "lat": 50.912,
+  "lon": 0.487,
+  "ok": true
+ },
+ "cruzados_jerusalem": {
+  "place": "Jerusalém",
+  "lat": 31.778,
+  "lon": 35.235,
+  "ok": true
+ },
+ "portugal_reino": {
+  "place": "Zamora, Espanha",
+  "lat": 41.503,
+  "lon": -5.745,
+  "ok": true
+ },
+ "saladino_jerusalem": {
+  "place": "Jerusalém",
+  "lat": 31.778,
+  "lon": 35.235,
+  "ok": true
+ },
+ "acre": {
+  "place": "Acre (Akko), Israel",
+  "lat": 32.927,
+  "lon": 35.074,
+  "ok": true
+ },
+ "saque_constantinopla": {
+  "place": "Constantinopla (Istambul), Turquia",
+  "lat": 41.008,
+  "lon": 28.978,
+  "ok": true
+ },
+ "gengis_khan": {
+  "place": "Nascente do rio Onon, Mongólia",
+  "lat": 48.8,
+  "lon": 108.9,
+  "ok": true
+ },
+ "magna_carta": {
+  "place": "Runnymede, Inglaterra",
+  "lat": 51.444,
+  "lon": -0.565,
+  "ok": true
+ },
+ "marco_polo": {
+  "place": "Xanadu (Shangdu), China",
+  "lat": 42.36,
+  "lon": 116.18,
+  "ok": true
+ },
+ "tufao_mongol": {
+  "place": "Takashima, baía de Imari, Japão",
+  "lat": 33.43,
+  "lon": 129.75,
+  "ok": true
+ },
+ "imperio_otomano": {
+  "place": "Söğüt, Turquia",
+  "lat": 40.017,
+  "lon": 30.183,
+  "ok": true
+ },
+ "morte_dante": {
+  "place": "Ravena, Itália",
+  "lat": 44.418,
+  "lon": 12.199,
+  "ok": true
+ },
+ "mansa_musa": {
+  "place": "Cairo, Egito",
+  "lat": 30.044,
+  "lon": 31.236,
+  "ok": true
+ },
+ "tenochtitlan": {
+  "place": "Tenochtitlán (Cidade do México), México",
+  "lat": 19.434,
+  "lon": -99.133,
+  "ok": true
+ },
+ "cem_anos": {
+  "ok": false,
+  "why": "Declaração de guerra sem local único; o conflito se espalhou pela França"
+ },
+ "peste_negra": {
+  "place": "Messina, Itália",
+  "lat": 38.193,
+  "lon": 15.554,
+  "ok": true
+ },
+ "dinastia_ming": {
+  "place": "Nanquim, China",
+  "lat": 32.06,
+  "lon": 118.797,
+  "ok": true
+ },
+ "aljubarrota": {
+  "place": "Campo de São Jorge (Aljubarrota), Portugal",
+  "lat": 39.623,
+  "lon": -8.826,
+  "ok": true
+ },
+ "tamerlao_delhi": {
+  "place": "Délhi, Índia",
+  "lat": 28.65,
+  "lon": 77.23,
+  "ok": true
+ },
+ "zheng_he": {
+  "place": "Nanquim, China",
+  "lat": 32.06,
+  "lon": 118.797,
+  "ok": true
+ },
+ "ceuta": {
+  "place": "Ceuta, Espanha",
+  "lat": 35.889,
+  "lon": -5.32,
+  "ok": true
+ },
+ "azincourt": {
+  "place": "Azincourt, França",
+  "lat": 50.463,
+  "lon": 2.14,
+  "ok": true
+ },
+ "morte_joana": {
+  "place": "Ruão, França",
+  "lat": 49.443,
+  "lon": 1.088,
+  "ok": true
+ },
+ "retabulo_gante": {
+  "place": "Gante, Bélgica",
+  "lat": 51.053,
+  "lon": 3.727,
+  "ok": true
+ },
+ "cupula_florenca": {
+  "place": "Florença, Itália",
+  "lat": 43.773,
+  "lon": 11.256,
+  "ok": true
+ },
+ "nasc_leonardo": {
+  "place": "Vinci, Itália",
+  "lat": 43.787,
+  "lon": 10.926,
+  "ok": true
+ },
+ "queda_constantinopla": {
+  "place": "Constantinopla (Istambul), Turquia",
+  "lat": 41.008,
+  "lon": 28.978,
+  "ok": true
+ },
+ "biblia_gutenberg": {
+  "place": "Mainz, Alemanha",
+  "lat": 49.999,
+  "lon": 8.271,
+  "ok": true
+ },
+ "dias_cabo": {
+  "place": "Cabo da Boa Esperança, África do Sul",
+  "lat": -34.357,
+  "lon": 18.474,
+  "ok": true
+ },
+ "queda_granada": {
+  "place": "Granada, Espanha",
+  "lat": 37.176,
+  "lon": -3.588,
+  "ok": true
+ },
+ "colombo_america": {
+  "place": "San Salvador (Guanahani), Bahamas",
+  "lat": 24.05,
+  "lon": -74.5,
+  "ok": true
+ },
+ "tordesilhas": {
+  "place": "Tordesilhas, Espanha",
+  "lat": 41.502,
+  "lon": -5.0,
+  "ok": true
+ },
+ "vasco_gama_india": {
+  "place": "Calicute, Índia",
+  "lat": 11.258,
+  "lon": 75.78,
+  "ok": true
+ },
+ "cabral_brasil": {
+  "place": "Porto Seguro (Santa Cruz Cabrália), Brasil",
+  "lat": -16.36,
+  "lon": -39.02,
+  "ok": true
+ },
+ "capela_sistina": {
+  "place": "Capela Sistina, Vaticano",
+  "lat": 41.903,
+  "lon": 12.454,
+  "ok": true
+ },
+ "principe": {
+  "place": "San Casciano (Sant'Andrea in Percussina), Itália",
+  "lat": 43.67,
+  "lon": 11.2,
+  "ok": true
+ },
+ "rinoceronte_durer": {
+  "place": "Nuremberg, Alemanha",
+  "lat": 49.454,
+  "lon": 11.077,
+  "ok": true
+ },
+ "teses_lutero": {
+  "place": "Wittenberg, Alemanha",
+  "lat": 51.866,
+  "lon": 12.646,
+  "ok": true
+ },
+ "cortes_mexico": {
+  "place": "Veracruz, México",
+  "lat": 19.2,
+  "lon": -96.13,
+  "ok": true
+ },
+ "magalhaes_parte": {
+  "place": "Sanlúcar de Barrameda, Espanha",
+  "lat": 36.778,
+  "lon": -6.352,
+  "ok": true
+ },
+ "atahualpa": {
+  "place": "Cajamarca, Peru",
+  "lat": -7.164,
+  "lon": -78.51,
+  "ok": true
+ },
+ "ato_supremacia": {
+  "place": "Londres, Inglaterra",
+  "lat": 51.499,
+  "lon": -0.125,
+  "ok": true
+ },
+ "copernico": {
+  "place": "Nuremberg, Alemanha",
+  "lat": 49.454,
+  "lon": 11.077,
+  "ok": true
+ },
+ "potosi": {
+  "place": "Potosí, Bolívia",
+  "lat": -19.589,
+  "lon": -65.753,
+  "ok": true
+ },
+ "fundacao_salvador": {
+  "place": "Salvador, Brasil",
+  "lat": -12.974,
+  "lon": -38.512,
+  "ok": true
+ },
+ "fundacao_sao_paulo": {
+  "place": "São Paulo (Pátio do Colégio), Brasil",
+  "lat": -23.548,
+  "lon": -46.632,
+  "ok": true
+ },
+ "fundacao_rio": {
+  "place": "Rio de Janeiro (Urca), Brasil",
+  "lat": -22.955,
+  "lon": -43.165,
+  "ok": true
+ },
+ "lepanto": {
+  "place": "Golfo de Patras (Lepanto), Grécia",
+  "lat": 38.33,
+  "lon": 21.17,
+  "ok": true
+ },
+ "lusiadas": {
+  "place": "Lisboa, Portugal",
+  "lat": 38.71,
+  "lon": -9.14,
+  "ok": true
+ },
+ "uniao_iberica": {
+  "place": "Lisboa, Portugal",
+  "lat": 38.71,
+  "lon": -9.14,
+  "ok": true
+ },
+ "invencivel_armada": {
+  "place": "Gravelines, França",
+  "lat": 50.99,
+  "lon": 2.13,
+  "ok": true
+ },
+ "teatro_globe": {
+  "place": "Londres (Southwark), Inglaterra",
+  "lat": 51.508,
+  "lon": -0.097,
+  "ok": true
+ },
+ "sekigahara": {
+  "place": "Sekigahara, Japão",
+  "lat": 35.367,
+  "lon": 136.467,
+  "ok": true
+ },
+ "dom_quixote": {
+  "place": "Madri, Espanha",
+  "lat": 40.416,
+  "lon": -3.703,
+  "ok": true
+ },
+ "luas_jupiter": {
+  "place": "Pádua, Itália",
+  "lat": 45.407,
+  "lon": 11.876,
+  "ok": true
+ },
+ "morte_shakespeare": {
+  "place": "Stratford-upon-Avon, Inglaterra",
+  "lat": 52.192,
+  "lon": -1.707,
+  "ok": true
+ },
+ "holandeses_pernambuco": {
+  "place": "Olinda, Pernambuco, Brasil",
+  "lat": -8.008,
+  "lon": -34.855,
+  "ok": true
+ },
+ "taj_mahal": {
+  "place": "Agra, Índia",
+  "lat": 27.175,
+  "lon": 78.042,
+  "ok": true
+ },
+ "discurso_metodo": {
+  "place": "Leiden, Países Baixos",
+  "lat": 52.16,
+  "lon": 4.49,
+  "ok": true
+ },
+ "ronda_noturna": {
+  "place": "Amsterdã, Países Baixos",
+  "lat": 52.37,
+  "lon": 4.895,
+  "ok": true
+ },
+ "vestfalia": {
+  "place": "Münster, Alemanha",
+  "lat": 51.962,
+  "lon": 7.626,
+  "ok": true
+ },
+ "luanda_retomada": {
+  "place": "Luanda, Angola",
+  "lat": -8.839,
+  "lon": 13.289,
+  "ok": true
+ },
+ "holandeses_saem": {
+  "place": "Recife, Brasil",
+  "lat": -8.063,
+  "lon": -34.871,
+  "ok": true
+ },
+ "meninas": {
+  "place": "Madri, Espanha",
+  "lat": 40.418,
+  "lon": -3.714,
+  "ok": true
+ },
+ "incendio_londres": {
+  "place": "Londres, Inglaterra",
+  "lat": 51.51,
+  "lon": -0.086,
+  "ok": true
+ },
+ "corte_versalhes": {
+  "place": "Versalhes, França",
+  "lat": 48.805,
+  "lon": 2.12,
+  "ok": true
+ },
+ "nasc_bach": {
+  "place": "Eisenach, Alemanha",
+  "lat": 50.975,
+  "lon": 10.32,
+  "ok": true
+ },
+ "principia": {
+  "place": "Londres, Inglaterra",
+  "lat": 51.507,
+  "lon": -0.128,
+  "ok": true
+ },
+ "morte_zumbi": {
+  "place": "Serra da Barriga, Alagoas, Brasil",
+  "lat": -9.17,
+  "lon": -36.0,
+  "ok": true
+ },
+ "sao_petersburgo": {
+  "place": "São Petersburgo, Rússia",
+  "lat": 59.95,
+  "lon": 30.317,
+  "ok": true
+ },
+ "enciclopedia": {
+  "place": "Paris, França",
+  "lat": 48.857,
+  "lon": 2.352,
+  "ok": true
+ },
+ "terremoto_lisboa": {
+  "place": "Lisboa, Portugal",
+  "lat": 38.711,
+  "lon": -9.139,
+  "ok": true
+ },
+ "nasc_mozart": {
+  "place": "Salzburgo, Áustria",
+  "lat": 47.8,
+  "lon": 13.043,
+  "ok": true
+ },
+ "expulsao_jesuitas": {
+  "ok": false,
+  "why": "Ordem válida para todo o Brasil, sem um local específico"
+ },
+ "capital_rio": {
+  "place": "Rio de Janeiro, Brasil",
+  "lat": -22.906,
+  "lon": -43.173,
+  "ok": true
+ },
+ "watt_vapor": {
+  "place": "Glasgow, Escócia",
+  "lat": 55.86,
+  "lon": -4.25,
+  "ok": true
+ },
+ "nasc_napoleao": {
+  "place": "Ajaccio, Córsega, França",
+  "lat": 41.919,
+  "lon": 8.738,
+  "ok": true
+ },
+ "cook_australia": {
+  "place": "Baía de Botany, Austrália",
+  "lat": -34.004,
+  "lon": 151.218,
+  "ok": true
+ },
+ "independencia_eua": {
+  "place": "Filadélfia, Estados Unidos",
+  "lat": 39.949,
+  "lon": -75.15,
+  "ok": true
+ },
+ "queda_bastilha": {
+  "place": "Paris, França",
+  "lat": 48.853,
+  "lon": 2.369,
+  "ok": true
+ },
+ "sao_domingos": {
+  "place": "Bois Caïman, Haiti",
+  "lat": 19.7,
+  "lon": -72.2,
+  "ok": true
+ },
+ "flauta_magica": {
+  "place": "Viena, Áustria",
+  "lat": 48.198,
+  "lon": 16.367,
+  "ok": true
+ },
+ "execucao_tiradentes": {
+  "place": "Rio de Janeiro, Brasil",
+  "lat": -22.907,
+  "lon": -43.183,
+  "ok": true
+ },
+ "execucao_luis_xvi": {
+  "place": "Paris (Praça da Concórdia), França",
+  "lat": 48.865,
+  "lon": 2.321,
+  "ok": true
+ },
+ "vacina_jenner": {
+  "place": "Berkeley, Inglaterra",
+  "lat": 51.691,
+  "lon": -2.458,
+  "ok": true
+ },
+ "coroacao_napoleao": {
+  "place": "Paris (Notre-Dame), França",
+  "lat": 48.853,
+  "lon": 2.35,
+  "ok": true
+ },
+ "independencia_haiti": {
+  "place": "Gonaïves, Haiti",
+  "lat": 19.45,
+  "lon": -72.683,
+  "ok": true
+ },
+ "austerlitz": {
+  "place": "Austerlitz (Slavkov u Brna), República Tcheca",
+  "lat": 49.128,
+  "lon": 16.762,
+  "ok": true
+ },
+ "trafalgar": {
+  "place": "Cabo Trafalgar, Espanha",
+  "lat": 36.17,
+  "lon": -6.2,
+  "ok": true
+ },
+ "corte_portuguesa": {
+  "place": "Rio de Janeiro, Brasil",
+  "lat": -22.903,
+  "lon": -43.174,
+  "ok": true
+ },
+ "invasao_russia": {
+  "place": "Rio Niemen (Kaunas), Lituânia",
+  "lat": 54.898,
+  "lon": 23.886,
+  "ok": true
+ },
+ "waterloo": {
+  "place": "Waterloo, Bélgica",
+  "lat": 50.68,
+  "lon": 4.412,
+  "ok": true
+ },
+ "andes_san_martin": {
+  "place": "Cordilheira dos Andes, Argentina/Chile",
+  "lat": -32.82,
+  "lon": -70.08,
+  "ok": true
+ },
+ "frankenstein": {
+  "place": "Londres, Inglaterra",
+  "lat": 51.507,
+  "lon": -0.128,
+  "ok": true
+ },
+ "independencia_brasil": {
+  "place": "São Paulo (Ipiranga), Brasil",
+  "lat": -23.586,
+  "lon": -46.609,
+  "ok": true
+ },
+ "champollion": {
+  "place": "Paris, França",
+  "lat": 48.855,
+  "lon": 2.338,
+  "ok": true
+ },
+ "nona_sinfonia": {
+  "place": "Viena, Áustria",
+  "lat": 48.203,
+  "lon": 16.37,
+  "ok": true
+ },
+ "confederacao_equador": {
+  "place": "Recife, Brasil",
+  "lat": -8.06,
+  "lon": -34.88,
+  "ok": true
+ },
+ "ferrovia_publica": {
+  "place": "Darlington, Inglaterra",
+  "lat": 54.523,
+  "lon": -1.553,
+  "ok": true
+ },
+ "abdicacao_pedro_i": {
+  "place": "Rio de Janeiro, Brasil",
+  "lat": -22.906,
+  "lon": -43.224,
+  "ok": true
+ },
+ "farroupilha": {
+  "place": "Porto Alegre, Brasil",
+  "lat": -30.033,
+  "lon": -51.23,
+  "ok": true
+ },
+ "darwin_galapagos": {
+  "place": "Ilhas Galápagos, Equador",
+  "lat": -0.9,
+  "lon": -89.6,
+  "ok": true
+ },
+ "golpe_maioridade": {
+  "place": "Rio de Janeiro, Brasil",
+  "lat": -22.903,
+  "lon": -43.175,
+  "ok": true
+ },
+ "ada_lovelace": {
+  "place": "Londres, Inglaterra",
+  "lat": 51.507,
+  "lon": -0.128,
+  "ok": true
+ },
+ "manifesto_comunista": {
+  "place": "Londres, Inglaterra",
+  "lat": 51.515,
+  "lon": -0.13,
+  "ok": true
+ },
+ "lei_eusebio": {
+  "place": "Rio de Janeiro, Brasil",
+  "lat": -22.903,
+  "lon": -43.175,
+  "ok": true
+ },
+ "palacio_cristal": {
+  "place": "Londres (Hyde Park), Inglaterra",
+  "lat": 51.503,
+  "lon": -0.165,
+  "ok": true
+ },
+ "ferrovia_maua": {
+  "place": "Magé, Rio de Janeiro, Brasil",
+  "lat": -22.7,
+  "lon": -43.13,
+  "ok": true
+ },
+ "nightingale": {
+  "place": "Scutari (Üsküdar, Istambul), Turquia",
+  "lat": 41.006,
+  "lon": 29.016,
+  "ok": true
+ },
+ "cataratas_vitoria": {
+  "place": "Cataratas Vitória, Zâmbia/Zimbábue",
+  "lat": -17.925,
+  "lon": 25.857,
+  "ok": true
+ },
+ "o_guarani": {
+  "place": "Rio de Janeiro, Brasil",
+  "lat": -22.903,
+  "lon": -43.175,
+  "ok": true
+ },
+ "origem_especies": {
+  "place": "Londres, Inglaterra",
+  "lat": 51.507,
+  "lon": -0.128,
+  "ok": true
+ },
+ "expedicao_mil": {
+  "place": "Marsala, Sicília, Itália",
+  "lat": 37.799,
+  "lon": 12.436,
+  "ok": true
+ },
+ "guerra_secessao": {
+  "place": "Forte Sumter (Charleston), Estados Unidos",
+  "lat": 32.752,
+  "lon": -79.875,
+  "ok": true
+ },
+ "miseraveis": {
+  "ok": false,
+  "why": "Publicado ao mesmo tempo em Bruxelas e Paris, escrito em Guernsey"
+ },
+ "guerra_paraguai": {
+  "ok": false,
+  "why": "Começou com vários incidentes (Assunção, Mato Grosso); não há local único"
+ },
+ "morte_lincoln": {
+  "place": "Washington, Estados Unidos",
+  "lat": 38.897,
+  "lon": -77.026,
+  "ok": true
+ },
+ "leis_mendel": {
+  "place": "Brno, República Tcheca",
+  "lat": 49.191,
+  "lon": 16.594,
+  "ok": true
+ },
+ "humaita": {
+  "place": "Humaitá, Paraguai",
+  "lat": -27.07,
+  "lon": -58.52,
+  "ok": true
+ },
+ "restauracao_meiji": {
+  "place": "Kyoto, Japão",
+  "lat": 35.025,
+  "lon": 135.762,
+  "ok": true
+ },
+ "canal_suez": {
+  "place": "Porto Said, Egito",
+  "lat": 31.265,
+  "lon": 32.302,
+  "ok": true
+ },
+ "imperio_alemao": {
+  "place": "Versalhes, França",
+  "lat": 48.805,
+  "lon": 2.12,
+  "ok": true
+ },
+ "ventre_livre": {
+  "place": "Rio de Janeiro, Brasil",
+  "lat": -22.903,
+  "lon": -43.175,
+  "ok": true
+ },
+ "impressao_sol": {
+  "place": "Le Havre, França",
+  "lat": 49.494,
+  "lon": 0.108,
+  "ok": true
+ },
+ "telefone": {
+  "place": "Boston, Estados Unidos",
+  "lat": 42.36,
+  "lon": -71.06,
+  "ok": true
+ },
+ "lampada_edison": {
+  "place": "Menlo Park, Nova Jersey, Estados Unidos",
+  "lat": 40.565,
+  "lon": -74.334,
+  "ok": true
+ },
+ "nasc_einstein": {
+  "place": "Ulm, Alemanha",
+  "lat": 48.398,
+  "lon": 9.992,
+  "ok": true
+ },
+ "bras_cubas": {
+  "place": "Rio de Janeiro, Brasil",
+  "lat": -22.903,
+  "lon": -43.175,
+  "ok": true
+ },
+ "vacina_raiva": {
+  "place": "Paris, França",
+  "lat": 48.842,
+  "lon": 2.344,
+  "ok": true
+ },
+ "lei_aurea": {
+  "place": "Rio de Janeiro, Brasil",
+  "lat": -22.903,
+  "lon": -43.174,
+  "ok": true
+ },
+ "proclamacao_republica": {
+  "place": "Rio de Janeiro, Brasil",
+  "lat": -22.905,
+  "lon": -43.19,
+  "ok": true
+ },
+ "torre_eiffel": {
+  "place": "Paris, França",
+  "lat": 48.858,
+  "lon": 2.294,
+  "ok": true
+ },
+ "noite_estrelada": {
+  "place": "Saint-Rémy-de-Provence, França",
+  "lat": 43.79,
+  "lon": 4.832,
+  "ok": true
+ },
+ "cinema_lumiere": {
+  "place": "Paris, França",
+  "lat": 48.871,
+  "lon": 2.331,
+  "ok": true
+ },
+ "adwa": {
+  "place": "Adwa, Etiópia",
+  "lat": 14.165,
+  "lon": 38.896,
+  "ok": true
+ },
+ "teatro_amazonas": {
+  "place": "Manaus, Brasil",
+  "lat": -3.13,
+  "lon": -60.023,
+  "ok": true
+ },
+ "canudos": {
+  "place": "Canudos, Bahia, Brasil",
+  "lat": -9.95,
+  "lon": -39.13,
+  "ok": true
+ },
+ "os_sertoes": {
+  "place": "Rio de Janeiro, Brasil",
+  "lat": -22.903,
+  "lon": -43.175,
+  "ok": true
+ },
+ "voo_wright": {
+  "place": "Kitty Hawk, Carolina do Norte, Estados Unidos",
+  "lat": 36.014,
+  "lon": -75.668,
+  "ok": true
+ },
+ "tratado_petropolis": {
+  "place": "Petrópolis, Brasil",
+  "lat": -22.505,
+  "lon": -43.178,
+  "ok": true
+ },
+ "nobel_curie": {
+  "place": "Estocolmo, Suécia",
+  "lat": 59.329,
+  "lon": 18.069,
+  "ok": true
+ },
+ "revolta_vacina": {
+  "place": "Rio de Janeiro, Brasil",
+  "lat": -22.903,
+  "lon": -43.175,
+  "ok": true
+ },
+ "voo_14bis": {
+  "place": "Paris (Bagatelle), França",
+  "lat": 48.871,
+  "lon": 2.248,
+  "ok": true
+ },
+ "revolta_chibata": {
+  "place": "Baía de Guanabara, Rio de Janeiro, Brasil",
+  "lat": -22.85,
+  "lon": -43.15,
+  "ok": true
+ },
+ "polo_sul": {
+  "ok": false,
+  "why": "O Polo Sul fica fora da área do mapa (latitude -90)"
+ },
+ "titanic": {
+  "place": "Local do naufrágio, Atlântico Norte",
+  "lat": 41.726,
+  "lon": -49.948,
+  "ok": true
+ },
+ "linha_ford": {
+  "place": "Highland Park, Michigan, Estados Unidos",
+  "lat": 42.406,
+  "lon": -83.096,
+  "ok": true
+ },
+ "sarajevo": {
+  "place": "Sarajevo, Bósnia e Herzegovina",
+  "lat": 43.858,
+  "lon": 18.428,
+  "ok": true
+ },
+ "relatividade_geral": {
+  "place": "Berlim, Alemanha",
+  "lat": 52.517,
+  "lon": 13.389,
+  "ok": true
+ },
+ "somme": {
+  "place": "Rio Somme (Thiepval), França",
+  "lat": 50.05,
+  "lon": 2.685,
+  "ok": true
+ },
+ "revolucao_outubro": {
+  "place": "Petrogrado (São Petersburgo), Rússia",
+  "lat": 59.94,
+  "lon": 30.314,
+  "ok": true
+ },
+ "tratado_versalhes": {
+  "place": "Versalhes, França",
+  "lat": 48.805,
+  "lon": 2.12,
+  "ok": true
+ },
+ "semana_arte_moderna": {
+  "place": "São Paulo, Brasil",
+  "lat": -23.545,
+  "lon": -46.638,
+  "ok": true
+ },
+ "tumba_tutancamon": {
+  "place": "Vale dos Reis (Luxor), Egito",
+  "lat": 25.74,
+  "lon": 32.601,
+  "ok": true
+ },
+ "republica_turquia": {
+  "place": "Ancara, Turquia",
+  "lat": 39.933,
+  "lon": 32.86,
+  "ok": true
+ },
+ "abaporu": {
+  "place": "São Paulo, Brasil",
+  "lat": -23.55,
+  "lon": -46.63,
+  "ok": true
+ },
+ "penicilina": {
+  "place": "Londres, Inglaterra",
+  "lat": 51.517,
+  "lon": -0.174,
+  "ok": true
+ },
+ "crash_bolsa": {
+  "place": "Nova York, Estados Unidos",
+  "lat": 40.707,
+  "lon": -74.011,
+  "ok": true
+ },
+ "vargas_poder": {
+  "place": "Rio de Janeiro, Brasil",
+  "lat": -22.926,
+  "lon": -43.177,
+  "ok": true
+ },
+ "cristo_redentor": {
+  "place": "Corcovado, Rio de Janeiro, Brasil",
+  "lat": -22.952,
+  "lon": -43.211,
+  "ok": true
+ },
+ "persistencia_memoria": {
+  "ok": false,
+  "why": "Local onde o quadro foi pintado é incerto"
+ },
+ "hitler_chanceler": {
+  "place": "Berlim, Alemanha",
+  "lat": 52.512,
+  "lon": 13.383,
+  "ok": true
+ },
+ "guernica": {
+  "place": "Guernica, Espanha",
+  "lat": 43.317,
+  "lon": -2.678,
+  "ok": true
+ },
+ "estado_novo": {
+  "place": "Rio de Janeiro, Brasil",
+  "lat": -22.926,
+  "lon": -43.177,
+  "ok": true
+ },
+ "invasao_polonia": {
+  "place": "Westerplatte (Gdańsk), Polônia",
+  "lat": 54.407,
+  "lon": 18.671,
+  "ok": true
+ },
+ "churchill_premie": {
+  "place": "Londres, Inglaterra",
+  "lat": 51.503,
+  "lon": -0.128,
+  "ok": true
+ },
+ "pearl_harbor": {
+  "place": "Pearl Harbor, Havaí, Estados Unidos",
+  "lat": 21.365,
+  "lon": -157.95,
+  "ok": true
+ },
+ "anexo_secreto": {
+  "place": "Amsterdã, Países Baixos",
+  "lat": 52.375,
+  "lon": 4.884,
+  "ok": true
+ },
+ "dia_d": {
+  "place": "Normandia, França",
+  "lat": 49.37,
+  "lon": -0.88,
+  "ok": true
+ },
+ "monte_castelo": {
+  "place": "Monte Castello, Itália",
+  "lat": 44.18,
+  "lon": 10.96,
+  "ok": true
+ },
+ "hiroshima": {
+  "place": "Hiroshima, Japão",
+  "lat": 34.395,
+  "lon": 132.454,
+  "ok": true
+ },
+ "revolucao_bichos": {
+  "place": "Londres, Inglaterra",
+  "lat": 51.507,
+  "lon": -0.128,
+  "ok": true
+ },
+ "independencia_india": {
+  "place": "Nova Délhi, Índia",
+  "lat": 28.613,
+  "lon": 77.209,
+  "ok": true
+ },
+ "morte_gandhi": {
+  "place": "Nova Délhi, Índia",
+  "lat": 28.601,
+  "lon": 77.214,
+  "ok": true
+ },
+ "china_popular": {
+  "place": "Pequim, China",
+  "lat": 39.905,
+  "lon": 116.391,
+  "ok": true
+ },
+ "petrobras": {
+  "place": "Rio de Janeiro, Brasil",
+  "lat": -22.926,
+  "lon": -43.177,
+  "ok": true
+ },
+ "morte_getulio": {
+  "place": "Rio de Janeiro (Palácio do Catete), Brasil",
+  "lat": -22.926,
+  "lon": -43.177,
+  "ok": true
+ },
+ "rosa_parks": {
+  "place": "Montgomery, Alabama, Estados Unidos",
+  "lat": 32.377,
+  "lon": -86.31,
+  "ok": true
+ },
+ "sputnik": {
+  "place": "Baikonur, Cazaquistão",
+  "lat": 45.92,
+  "lon": 63.342,
+  "ok": true
+ },
+ "revolucao_cubana": {
+  "place": "Havana, Cuba",
+  "lat": 23.136,
+  "lon": -82.359,
+  "ok": true
+ },
+ "brasilia": {
+  "place": "Brasília, Brasil",
+  "lat": -15.799,
+  "lon": -47.864,
+  "ok": true
+ },
+ "gagarin": {
+  "place": "Baikonur, Cazaquistão",
+  "lat": 45.92,
+  "lon": 63.342,
+  "ok": true
+ },
+ "muro_berlim": {
+  "place": "Berlim, Alemanha",
+  "lat": 52.535,
+  "lon": 13.39,
+  "ok": true
+ },
+ "crise_misseis": {
+  "place": "San Cristóbal, Cuba",
+  "lat": 22.71,
+  "lon": -83.05,
+  "ok": true
+ },
+ "eu_tenho_um_sonho": {
+  "place": "Washington, Estados Unidos",
+  "lat": 38.889,
+  "lon": -77.05,
+  "ok": true
+ },
+ "kennedy_dallas": {
+  "place": "Dallas, Estados Unidos",
+  "lat": 32.779,
+  "lon": -96.809,
+  "ok": true
+ },
+ "angicos": {
+  "place": "Angicos, Rio Grande do Norte, Brasil",
+  "lat": -5.666,
+  "lon": -36.6,
+  "ok": true
+ },
+ "golpe_64": {
+  "ok": false,
+  "why": "Golpe espalhado por vários locais (Juiz de Fora, Rio, Brasília)"
+ },
+ "cem_anos_solidao": {
+  "place": "Buenos Aires, Argentina",
+  "lat": -34.603,
+  "lon": -58.381,
+  "ok": true
+ },
+ "ai5": {
+  "place": "Rio de Janeiro, Brasil",
+  "lat": -22.936,
+  "lon": -43.187,
+  "ok": true
+ },
+ "homem_lua": {
+  "ok": false,
+  "why": "Aconteceu na Lua, fora da Terra"
+ },
+ "exercito_terracota": {
+  "place": "Xi'an (Lintong), China",
+  "lat": 34.385,
+  "lon": 109.273,
+  "ok": true
+ },
+ "hora_estrela": {
+  "place": "Rio de Janeiro, Brasil",
+  "lat": -22.903,
+  "lon": -43.175,
+  "ok": true
+ },
+ "chernobyl": {
+  "place": "Chernobil, Ucrânia",
+  "lat": 51.389,
+  "lon": 30.099,
+  "ok": true
+ },
+ "constituicao_cidada": {
+  "place": "Brasília, Brasil",
+  "lat": -15.8,
+  "lon": -47.864,
+  "ok": true
+ },
+ "chico_mendes": {
+  "place": "Xapuri, Acre, Brasil",
+  "lat": -10.652,
+  "lon": -68.504,
+  "ok": true
+ },
+ "queda_muro": {
+  "place": "Berlim, Alemanha",
+  "lat": 52.516,
+  "lon": 13.378,
+  "ok": true
+ },
+ "www": {
+  "place": "CERN, Genebra, Suíça",
+  "lat": 46.234,
+  "lon": 6.053,
+  "ok": true
+ },
+ "mandela_livre": {
+  "place": "Paarl, África do Sul",
+  "lat": -33.84,
+  "lon": 18.96,
+  "ok": true
+ },
+ "fim_urss": {
+  "place": "Moscou, Rússia",
+  "lat": 55.752,
+  "lon": 37.617,
+  "ok": true
+ },
+ "plano_real": {
+  "place": "Brasília, Brasil",
+  "lat": -15.8,
+  "lon": -47.864,
+  "ok": true
+ },
+ "ovelha_dolly": {
+  "place": "Roslin, Escócia",
+  "lat": 55.857,
+  "lon": -3.163,
+  "ok": true
+ },
+ "torres_gemeas": {
+  "place": "Nova York, Estados Unidos",
+  "lat": 40.712,
+  "lon": -74.013,
+  "ok": true
+ }
+}

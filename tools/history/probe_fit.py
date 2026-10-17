@@ -167,6 +167,20 @@ DRIVE = r"""
   startAno();
   for (var k2=0; k2<ano.qs.length; k2++){ ano.i=k2; ano.phase='guess'; ano.guess=ano.qs[k2].e.y; anoCommit(); }
   ano.i=ano.qs.length-1; anoNext(); window._newMedals = MEDALS.slice(0, 3); go(); fit('ano/end-cheio');
+  /* Onde foi?: each event on the whole world, with a pin zoomed in, revealed near and far, and the result */
+  for (var g2=0; g2<3; g2++){
+    startOnde();
+    for (var k4=0; k4<onde.qs.length; k4++){
+      onde.i=k4; onde.phase='guess'; onde.pin=null; onde.v={cx:180,cy:67,z:1}; go(); fit('onde/guess');
+      var at=onde.qs[k4].at, xy=ondeXY(at[0]+(k4%2?9:0.2), at[1]+(k4%3?14:0.3));
+      onde.v={cx:xy[0],cy:xy[1],z:4}; go(); ondeSetPin(xy); fit('onde/pin');
+      ondeCommit(); fit('onde/reveal'+(onde.qs[k4].e.x?'+story':'')+(onde.log[onde.log.length-1].selo?'+selo':''));
+    }
+    onde.phase='end'; go(); fit('onde/end');
+  }
+  startOnde();
+  for (var k5=0; k5<onde.qs.length; k5++){ onde.i=k5; onde.phase='guess'; ondeSetPin(ondeXY(onde.qs[k5].at[0], onde.qs[k5].at[1])); ondeCommit(); }
+  onde.i=onde.qs.length-1; ondeNext(); window._newMedals = MEDALS.slice(0, 3); go(); fit('onde/end-cheio');
   /* and a training round won outright: the pack opened, stamps and badges */
   selos = {}; diffKey='moderado'; startGame();
   cat.qs = withSelo.slice(0, 10); disp = getDisp(cat.qs[0]);
