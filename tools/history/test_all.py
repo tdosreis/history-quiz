@@ -133,7 +133,22 @@ JS = r"""
       if (x < vx || x > vx + vw || y < vy || y > vy + vh) F('pin outside its map ' + c);
     });
     note.places = P.order.length;
-    ['WORLD', 'EU', 'AS', 'AF', 'AM'].forEach(v => { amapView = v; if (!/amap-svg/.test(albMapHtml())) F('map does not draw ' + v); });
+    /* the old atlas draws every part of the world, at a phone's shape and a tablet's, and every page's little chart */
+    [[340, 420], [340, 240], [620, 420]].forEach(([w, h]) => {
+      const wd = atlasWorld(w, h, new Set());
+      if (!/<svg/.test(wd.svg) || !(wd.R > 40)) F('the world does not draw at ' + w + 'x' + h);
+      ['EU', 'AS', 'AF', 'AM'].forEach(v => {
+        const ch = atlasChart(v, w, h, new Set());
+        if (!/<svg/.test(ch.svg)) F('the chart does not draw ' + v);
+        const mine = P.order.filter(c => AMAP_PLACE_CONT[c] === v);
+        if (ch.pins.length !== mine.length) F('chart ' + v + ' has ' + ch.pins.length + ' pins for ' + mine.length + ' places');
+        ch.pins.forEach(p => { if (!(p.x > 0 && p.x < w && p.y > 0 && p.y < h)) F('pin off the chart ' + v + ' ' + p.c + ' at ' + w + 'x' + h); });
+      });
+    });
+    P.order.forEach(c => { const d = atlasInset(c, 300, 120); if (!/<svg/.test(d.svg) || !d.pin) F('no little chart for ' + c);
+      else if (!(d.pin[0] > 0 && d.pin[0] < 100 && d.pin[1] > 0 && d.pin[1] < 100)) F('the little chart misses ' + c); });
+    Object.keys(ATLAS_ART).forEach(n => { const a = ATLAS_ART[n]; if (!a.vb || !/^</.test(a.svg.trim()) || /<text|<image|<script|filter=|<style|href="http/.test(a.svg)) F('engraving breaks the rules: ' + n); });
+    ['rosa', 'caravela', 'serpente', 'baleia', 'cartela', 'esfera'].forEach(n => { if (!ATLAS_ART[n]) F('engraving missing: ' + n); });
     amapView = 'WORLD';
   } catch (e) { F('mapa EXC ' + e.message); }
   /* ── the stamp album: every stamp a scene with a page, printed won and unwon ── */

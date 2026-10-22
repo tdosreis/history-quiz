@@ -96,11 +96,18 @@ function ondeHtml() {
     <div class="onde-map" id="onde-map" tabindex="0" role="application"
       aria-label="${rev ? 'Mapa com a resposta' : 'Mapa: toque onde aconteceu. No teclado, as setas movem, mais e menos aproximam, espaço marca o centro e Enter crava.'}">
       <svg class="onde-svg" id="onde-svg" preserveAspectRatio="none" aria-hidden="true">
-        <rect x="-400" y="-300" width="1160" height="734" fill="#C9B88C"/>
-        <rect x="0" y="0" width="360" height="134" fill="#D7C79C"/>
-        <path d="${grat}" stroke="#7d6a45" stroke-opacity=".28" stroke-width=".6" fill="none" vector-effect="non-scaling-stroke"/>
-        <path d="${ALB_MAP.land}" fill="#F2E8CD" stroke="#76603C" stroke-width="1" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
-        <path d="${ALB_MAP.borders}" fill="none" stroke="#6E5836" stroke-opacity=".55" stroke-width=".7" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+        ${(() => {
+          /* the album's old atlas (js/atlas.js): the paper shows through, the coasts water-lined, the coast a firm line in ink */
+          const X = { u: 'og', ve: true, rings: 'chart' }, box = [-400, -300, 1160, 734];
+          return `<defs>${_atlShapes(X, ALB_MAP.land, {}, [])}${_atlCoast(X, box)}</defs>
+            <rect x="-400" y="-300" width="1160" height="734" fill="#7A6236" fill-opacity=".22"/>
+            <rect x="0" y="0" width="360" height="134" fill="#8FA89A" fill-opacity=".26"/>
+            <rect x="0" y="0" width="360" height="134" fill="${ATL_INK}" fill-opacity=".8" mask="url(#og-coast)"/>`;
+        })()}
+        <path d="${grat}" stroke="#5B4A33" stroke-opacity=".3" stroke-width=".5" fill="none" vector-effect="non-scaling-stroke"/>
+        <use href="#og-land" fill="#FBF3DC" fill-opacity=".62"/>
+        <path d="${ALB_MAP.borders}" fill="none" stroke="#2E2116" stroke-opacity=".5" stroke-width=".6" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+        <use href="#og-land" fill="none" stroke="#2E2116" stroke-width="1" stroke-linejoin="round" stroke-opacity=".9"/>
         <rect x="0" y="0" width="360" height="134" fill="none" stroke="#6E5836" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
       </svg>
       <span class="onde-deco onde-deco-t" aria-hidden="true"><span class="onde-cart">Mapa-múndi</span></span>
@@ -183,9 +190,17 @@ function ondeClamp(v, box) {
 }
 const ondeToPx = (c, [x, y]) => [(x - c.vx) * c.sx, (y - c.vy) * c.sy];
 
+/* The water-lining is a mask, and the browser keeps a mask drawn at the scale it first had: once the
+   camera settles, a fresh copy of it is drawn at the new scale, so the rings stay fine lines */
+let _ondeMaskT = 0;
+function _ondeRemask() {
+  clearTimeout(_ondeMaskT);
+  _ondeMaskT = setTimeout(() => { const m = document.getElementById('og-coast'); if (m) m.replaceWith(m.cloneNode(true)); }, 160);
+}
 function ondeApply() {
   const svg = document.getElementById('onde-svg');
   if (!svg || !onde) return;
+  _ondeRemask();
   const box = ondeBox();
   if (box.W < 1 || box.H < 1) return;
   const v = ondeClamp(onde.v, box), c = ondeCam(v, box);

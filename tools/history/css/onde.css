@@ -14,7 +14,8 @@
 .onde-t { margin: 0; font: 600 16px/1.2 var(--font-d); letter-spacing: -.01em; color: var(--ink); }
 .onde-y { font: 700 11px/1 var(--font-s); letter-spacing: .08em; color: var(--ink-3); }
 .onde-map { position: relative; flex: 1 1 0; min-height: 150px; margin: 4px; overflow: hidden; touch-action: none; user-select: none;
-  -webkit-user-select: none; cursor: crosshair; background: #C9B88C; outline: none;
+  -webkit-user-select: none; cursor: crosshair; outline: none;
+  background: #E8D6AA url(img/atelier/map-paper.webp) 0 0 / 256px 256px;
   border: 1.5px solid #6E5836; box-shadow: 0 0 0 3px #EFE6CF, 0 0 0 4px #6E5836, 0 4px 14px rgba(0, 0, 0, .3); }
 .onde-map:focus-visible { box-shadow: 0 0 0 3px #EFE6CF, 0 0 0 4px #6E5836, 0 0 0 7px var(--brass); }
 .is-rev .onde-map { cursor: grab; }

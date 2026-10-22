@@ -337,6 +337,10 @@ def main():
             + "\n" + ano_js + "\n".join(io.open(os.path.join(H, "js", f), encoding="utf-8").read() for f in ("selos.js", "ano.js"))
             # the album's world map (tools/history/album_map.json, from albmapgen.mjs)
             + "\nconst ALB_MAP = " + io.open(os.path.join(H, "album_map.json"), encoding="utf-8").read().strip() + ";\n"
+            # the engraved pieces of the old mapa-múndi (js/atlas_art/*.js), and the engraver's shop that draws it
+            + "const ATLAS_ART = {};\n" + "".join(io.open(os.path.join(H, "js", "atlas_art", f), encoding="utf-8").read().strip() + "\n"
+                                               for f in sorted(os.listdir(os.path.join(H, "js", "atlas_art"))) if f.endswith(".js") and not f.startswith("_"))
+            + io.open(os.path.join(H, "js", "atlas.js"), encoding="utf-8").read()
             + io.open(os.path.join(H, "js", "mapa.js"), encoding="utf-8").read()
             # "Onde foi?": where each of those events happened (tools/history/onde_events.json)
             + "\n" + onde_js + io.open(os.path.join(H, "js", "onde.js"), encoding="utf-8").read()
