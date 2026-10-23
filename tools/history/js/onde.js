@@ -99,9 +99,12 @@ function ondeHtml() {
         ${(() => {
           /* the album's old atlas (js/atlas.js): the paper shows through, the coasts water-lined, the coast a firm line in ink */
           const X = { u: 'og', ve: true, rings: 'chart' }, box = [-400, -300, 1160, 734];
-          return `<defs>${_atlShapes(X, ALB_MAP.land, {}, [])}${_atlCoast(X, box)}</defs>
+          return `<defs>${_atlShapes(X, ALB_MAP.land, {}, [])}${_atlCoast(X, box)}
+            <pattern id="og-wave" width="30" height="17" patternUnits="userSpaceOnUse">
+              <path d="M2 5q2.2-2 4.4 0t4.4 0M17 13.5q2.2-2 4.4 0t4.4 0" fill="none" stroke="#5B4A33" stroke-width=".5" stroke-linecap="round" opacity=".5"/></pattern></defs>
             <rect x="-400" y="-300" width="1160" height="734" fill="#7A6236" fill-opacity=".22"/>
-            <rect x="0" y="0" width="360" height="134" fill="#8FA89A" fill-opacity=".26"/>
+            <rect x="0" y="0" width="360" height="134" fill="#8FA89A" fill-opacity=".18"/>
+            <rect x="0" y="0" width="360" height="134" fill="url(#og-wave)"/>
             <rect x="0" y="0" width="360" height="134" fill="${ATL_INK}" fill-opacity=".8" mask="url(#og-coast)"/>`;
         })()}
         <path d="${grat}" stroke="#5B4A33" stroke-opacity=".3" stroke-width=".5" fill="none" vector-effect="non-scaling-stroke"/>
@@ -110,9 +113,9 @@ function ondeHtml() {
         <use href="#og-land" fill="none" stroke="#2E2116" stroke-width="1" stroke-linejoin="round" stroke-opacity=".9"/>
         <rect x="0" y="0" width="360" height="134" fill="none" stroke="#6E5836" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
       </svg>
-      <span class="onde-deco onde-deco-t" aria-hidden="true"><span class="onde-cart">Mapa-múndi</span></span>
-      <span class="onde-deco onde-deco-b" aria-hidden="true"><svg viewBox="-12 -12 24 24"><circle r="9" fill="none" stroke="#6E5836" stroke-width=".6"/>
-        <path d="M0-11 2 0 0 2-2 0Z" fill="#8E2F2F"/><path d="M0 11 2 0 0-2-2 0Z" fill="#2A1D10"/><path d="M-11 0 0 2 2 0 0-2ZM11 0 0-2-2 0 0 2Z" fill="#B07A2E"/></svg></span>
+      <span class="onde-deco onde-deco-t" aria-hidden="true"><svg class="onde-cart" viewBox="0 0 240 110">${_atlCartouche(120, 55, 240, 'Mapa-Múndi', 'onde foi?')}</svg></span>
+      <span class="onde-deco onde-deco-b" aria-hidden="true">${ATLAS_ART.rosa ? `<svg class="onde-rose" viewBox="${ATLAS_ART.rosa.vb}">${ATLAS_ART.rosa.svg}</svg>` : ''}${
+        ATLAS_ART.caravela ? `<svg class="onde-ship" viewBox="${ATLAS_ART.caravela.vb}">${ATLAS_ART.caravela.svg}</svg>` : ''}</span>
       <svg class="onde-ov" id="onde-ov" aria-hidden="true"><line id="onde-line" x1="0" y1="0" x2="0" y2="0"/></svg>
       <span class="onde-mk onde-mk-g" id="onde-pin" hidden aria-hidden="true">${ondePinSvg()}</span>
       ${rev ? `<span class="onde-mk onde-mk-t" id="onde-truth" aria-hidden="true"><i></i><b>${_esc(q.at[2])}</b></span>` : ''}
@@ -205,6 +208,9 @@ function ondeApply() {
   if (box.W < 1 || box.H < 1) return;
   const v = ondeClamp(onde.v, box), c = ondeCam(v, box);
   svg.setAttribute('viewBox', `${c.vx.toFixed(3)} ${c.vy.toFixed(3)} ${c.vw.toFixed(3)} ${c.vh.toFixed(3)}`);
+  /* the little waves are drawn a pixel size, however far in the camera is */
+  const wv = document.getElementById('og-wave');
+  if (wv) wv.setAttribute('patternTransform', `scale(${(1 / c.sx).toFixed(4)} ${(1 / c.sy).toFixed(4)})`);
   /* the whole world leaves the page above and below it: an atlas's title and its compass rose */
   const m = document.getElementById('onde-map');
   const top = Math.max(0, -c.vy * c.sy), bot = Math.max(0, box.H - (134 - c.vy) * c.sy);
@@ -225,9 +231,11 @@ function ondeApply() {
   const truth = rev ? ondeXY(q.at[0], q.at[1]) : null;
   const t = document.getElementById('onde-truth');
   place(t, truth);
-  /* the place's name stands on whichever side of it has the room */
+  /* the place's name stands away from the player's pin (so the pin and the line between stay in sight), or where there is room */
   if (t && truth) {
-    const tx = ondeToPx(c, truth)[0], left = tx > box.W * 0.58, lb = t.querySelector('b');
+    const tx = ondeToPx(c, truth)[0], gx = onde.pin ? ondeToPx(c, onde.pin)[0] : null, lb = t.querySelector('b');
+    let left = gx != null && Math.abs(gx - tx) > 6 ? gx > tx : tx > box.W * 0.58;
+    if (left && tx < 110) left = false; else if (!left && box.W - tx < 110) left = true;
     t.classList.toggle('is-left', left);
     if (lb) lb.style.maxWidth = Math.max(90, (left ? tx : box.W - tx) - 24).toFixed(0) + 'px';
   }
@@ -337,7 +345,7 @@ function wireOnde() {
     const txt = ondeShareText();
     if (navigator.share) navigator.share({ text: txt }).catch(() => {});
     else if (navigator.clipboard) navigator.clipboard.writeText(txt).then(() => {
-      const b = document.getElementById('onde-share'); if (b) { const was = b.textContent; b.textContent = 'Copiado!'; setTimeout(() => { b.textContent = was; }, 1600); } }).catch(() => {});
+      const b = document.getElementById('onde-share'); if (b) { b.dataset.l = b.dataset.l || b.textContent; b.textContent = 'Copiado!'; setTimeout(() => { b.textContent = b.dataset.l; }, 1600); } }).catch(() => {});
   });
   const m = document.getElementById('onde-map');
   if (!m) return;

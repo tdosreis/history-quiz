@@ -23,7 +23,9 @@
     linear-gradient(90deg, rgba(0, 0, 0, 0) 49.2%, rgba(110, 75, 35, .16) 49.9%, rgba(255, 248, 230, .5) 50.3%, rgba(0, 0, 0, 0) 51%); }
 .atl-svg { position: absolute; left: 0; top: 0; display: block; }
 .atl-svg * { pointer-events: none; }
-.atl-svg .atl-c use { pointer-events: visiblePainted; cursor: pointer; }
+/* a <use> draws a copy of its <defs> original and takes that original's style: let those inherit from the copy */
+.atl-svg defs * { pointer-events: inherit; }
+.atl-svg use.atl-c, .atl-svg .atl-c use { pointer-events: visiblePainted; cursor: pointer; }
 .atl-t { font-family: 'IM Fell English', 'Fraunces', Georgia, serif; fill: #3A2A1A; text-anchor: middle; dominant-baseline: central;
   paint-order: stroke; stroke: #F1E4C0; stroke-opacity: .72; stroke-linejoin: round; }
 .atl-t-sea { font-style: italic; fill: #4A3926; }
@@ -44,7 +46,8 @@
 .amap-flag svg { height: 100%; width: auto; display: block; }
 .amap-crest { display: block; position: relative; flex: none; width: 100% !important; height: 100% !important; }
 .amap-crest .crest-disc { position: static; transform: none; width: 100%; height: 100%; }
-.amap-pin.is-empty .amap-flag { filter: grayscale(.85) sepia(.3) opacity(.8); }
+.amap-pin.is-empty { background: repeating-conic-gradient(#8A6B3E 0 12deg, #F7F1E2 12deg 24deg); }
+.amap-pin.is-empty .amap-flag { filter: sepia(.45) saturate(.6); }
 .amap-pin.is-done { background: #8E2F2F; box-shadow: 0 0 0 1.5px #E0B968, 0 2px 4px rgba(0, 0, 0, .45); }
 /* the finished page's seal sits inside the ring, where it cannot cover a neighbour */
 .amap-pin.is-done::after { content: '✓'; position: absolute; right: -2px; bottom: -2px; width: 12px; height: 12px; border-radius: 50%;
@@ -83,7 +86,7 @@
 .alb-inset::after { content: ''; position: absolute; inset: 0; pointer-events: none; mix-blend-mode: multiply;
   background: radial-gradient(ellipse 80% 75% at 50% 50%, rgba(255, 255, 255, 0) 55%, rgba(120, 78, 30, .3) 100%); }
 .alb-inset-rose { position: absolute; right: 5px; top: 5px; width: 34px; height: 34px; opacity: .92; }
-.alb-inset-pin { position: absolute; transform: translate(-50%, -50%); width: 24px; height: 24px; padding: 2.5px; border-radius: 50%;
+.alb-inset-pin { position: absolute; transform: translate(-50%, -50%); width: 19px; height: 19px; padding: 2px; z-index: 1; border-radius: 50%;
   display: flex; align-items: center; justify-content: center; overflow: hidden;
   background: #B07A2E; box-shadow: 0 0 0 1px #4A3520, 0 2px 4px rgba(0, 0, 0, .45); }
 .alb-inset-pin > * { border-radius: 50%; overflow: hidden; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: #F7F1E2; }
@@ -91,12 +94,11 @@
 .alb-colo-map .alb-colo-txt, .alb-colo-map.is-tall .alb-colo-txt { position: relative; top: auto; left: auto; transform: none; z-index: 1;
   padding: 4px 12px 5px; border-radius: 2px; background: #F4EBD2; box-shadow: 0 0 0 1px #4A3520, 0 0 0 3px #F4EBD2, 0 0 0 3.6px #4A3520; }
 .alb-colo-map.plate-left { align-items: flex-start; padding-left: 12px; }
-.alb-colo-map.plate-right { align-items: flex-end; padding-right: 12px; }
-.alb-colo-map.plate-top { justify-content: flex-start; padding-top: 12px; }
+.alb-colo-map.plate-none .alb-colo-txt { display: none; }
 .alb-inset-sea, .alb-inset-nm { position: absolute; transform: translate(-50%, -50%); white-space: nowrap; pointer-events: none; z-index: 1;
   font-family: 'IM Fell English', var(--font-d); color: #4A3926; text-shadow: 0 0 3px #F1E4C0, 0 0 2px #F1E4C0; }
 .alb-inset-sea { font-style: italic; font-size: 11px; }
-.alb-inset-nm { font-size: 9.5px; letter-spacing: .16em; text-transform: uppercase; transform: translate(-50%, 60%); }
+.alb-inset-nm { font-size: 9.5px; letter-spacing: .16em; text-transform: uppercase; }
 .alb-colo-map .alb-colo-t { font-family: 'IM Fell English', var(--font-d); font-weight: 400; letter-spacing: .2em; color: #2E2116; }
 .alb-colo-map .alb-colo-s { font-family: 'IM Fell English', var(--font-d); color: #5B4A33; }
 
@@ -106,4 +108,9 @@
   .amap-nr { padding: 4px 6px; }
   .amap-nr .amap-flag { width: 20px; height: 20px; }
   .amap-first, .amap-done { padding: 5px 10px; }
+}
+
+/* on a tablet or a computer the sheet is as tall as the screen allows, so the maps get the room */
+@media (min-width: 700px) {
+  #qz:has(.amap-pg), #qz:has(.alb-pg), #qz:has(.onde-pg) { height: min(calc(100dvh - 48px), 980px); }
 }

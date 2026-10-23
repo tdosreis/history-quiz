@@ -26,9 +26,10 @@
 .onde-deco-t { top: 0; height: var(--ob-t, 0px); align-items: flex-end; padding-bottom: 12px; }
 .onde-deco-b { bottom: 0; height: var(--ob-b, 0px); }
 .has-top .onde-deco-t, .has-bot .onde-deco-b { opacity: 1; }
-.onde-cart { display: flex; align-items: center; gap: 10px; font: italic 600 21px/1 var(--font-d); color: #5A4526; letter-spacing: .02em; }
-.onde-cart::before, .onde-cart::after { content: ''; width: 34px; height: 6px; border-top: 1px solid #6E5836; border-bottom: 1px solid #6E5836; opacity: .7; }
-.onde-deco-b svg { width: 46px; height: 46px; opacity: .85; }
+.onde-cart { width: min(76%, 230px); height: auto; max-height: 100%; }
+.onde-deco-b { gap: 18px; }
+.onde-rose { width: 56px; height: 56px; }
+.onde-ship { width: 66px; height: 60px; }
 #onde-line { stroke: #2A1D10; stroke-width: 2; stroke-dasharray: 5 4; stroke-linecap: round; }
 .onde-mk { position: absolute; left: 0; top: 0; pointer-events: none; will-change: transform; z-index: 2; }
 .onde-mk.is-off { opacity: 0; }

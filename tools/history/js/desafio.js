@@ -19,21 +19,33 @@ const CHAL_GAMES = {
 const CHAL_SEED_MAX = 2147483647;
 let chal = null;           // a challenge received: { g, seed, score, more, code, used }
 
+/* The game a seed deals depends on the questions and events the app has: a link made with one version of them
+   and opened with another would deal a different game. So a link carries two characters that fingerprint them,
+   and a link from another version is still played, but no winner is called. */
+let _chalVer = null;
+function chalVer() {
+  if (_chalVer) return _chalVer;
+  let h = 5381;
+  const add = s => { for (let i = 0; i < s.length; i++) h = (h * 33 + s.charCodeAt(i)) | 0; };
+  CATS.forEach(c => { add(c.id); c.qs.forEach(q => add(q.t)); });
+  ANO_EVENTS.forEach(e => add(e.id)); Object.keys(ONDE_AT).forEach(add); PL.forEach(p => add(p.id)); add(String(LADDER.length));
+  return (_chalVer = ((h >>> 0) % 1296).toString(36).padStart(2, '0'));
+}
 function chalCode(c) {
-  return [c.g, c.seed.toString(36), Math.max(0, Math.round(c.score)).toString(36)]
-    .concat(c.more != null ? [Math.max(0, Math.round(c.more)).toString(36)] : []).join('.');
+  return [c.g, c.seed.toString(36), Math.max(0, Math.round(c.score)).toString(36),
+    c.more != null ? Math.max(0, Math.round(c.more)).toString(36) : '', c.ver || chalVer()].join('.');
 }
 const chalLink = c => CHAL_URL + '?d=' + chalCode(c);
 function chalParse(s) {
-  const m = /^(tf|tm|td|m|a|o)\.([0-9a-z]{1,6})\.([0-9a-z]{1,6})(?:\.([0-9a-z]{1,3}))?$/.exec(String(s || '').trim().toLowerCase());
+  const m = /^(tf|tm|td|m|a|o)\.([0-9a-z]{1,6})\.([0-9a-z]{1,6})\.([0-9a-z]{0,3})\.([0-9a-z]{2})$/.exec(String(s || '').trim().toLowerCase());
   if (!m) return null;
-  const seed = parseInt(m[2], 36), score = parseInt(m[3], 36), more = m[4] != null ? parseInt(m[4], 36) : null;
+  const seed = parseInt(m[2], 36), score = parseInt(m[3], 36), more = m[4] ? parseInt(m[4], 36) : null;
   if (!(seed >= 0 && seed <= CHAL_SEED_MAX)) return null;
   const cap = m[1] === 'm' ? 1000000 : m[1][0] === 't' ? 99999 : 1000;
   if (!(score <= cap)) return null;
   if (m[1] === 'm' && !(more != null && more <= LADDER.length)) return null;
   if (m[1][0] === 't' && more != null && more > 50) return null;
-  return { g: m[1], seed, score, more, code: m[0] };
+  return { g: m[1], seed, score, more, code: m[0], ver: m[5], old: m[5] !== chalVer() };
 }
 
 /* the seed a new game is dealt from: the challenge's, the first time that game is started after accepting it */
@@ -64,7 +76,7 @@ function chalScoreTxt(c) {
 function chalShareTail(mine) {
   if (!mine) return CHAL_URL;
   let head = '';
-  if (chalIsThis(mine)) {
+  if (chalIsThis(mine) && !chal.old) {
     const r = chalCmp(mine, chal);
     head = `Desafio: ${chalScoreTxt(mine)} × ${chalScoreTxt(chal)} — ${r > 0 ? 'venci! 🏆' : r < 0 ? 'perdi, desta vez' : 'empate'}\n`;
   }
@@ -75,13 +87,16 @@ function chalShareTail(mine) {
 function chalBanner() {
   const mine = chalMine();
   if (!chalIsThis(mine)) return '';
-  const r = chalCmp(mine, chal);
-  const n = c => c.g === 'm' ? money(c.score) : c.score + (c.g[0] === 't' ? ' pts' : '');
+  /* a link from another version of the game dealt a different game: no winner is called */
+  const r = chal.old ? 0 : chalCmp(mine, chal), say = chal.old ? 'outra versão do jogo' : r > 0 ? 'Você venceu!' : r < 0 ? 'Não foi dessa vez' : 'Empate!';
+  /* on the ladder the money decides, and the rung when the money is the same — then the rung is said too */
+  const tie = mine.g === 'm' && mine.score === chal.score;
+  const n = c => c.g === 'm' ? money(c.score) + (tie ? ` · degrau ${c.more || 0}` : '') : c.score + (c.g[0] === 't' ? ' pts' : '');
   return `<div class="chal-res ${r > 0 ? 'is-win' : r < 0 ? 'is-lose' : 'is-tie'}" role="status"
-      aria-label="Desafio: você ${chalScoreTxt(mine)}, seu amigo ${chalScoreTxt(chal)}. ${r > 0 ? 'Você venceu!' : r < 0 ? 'Não foi dessa vez.' : 'Empate!'}">
+      aria-label="Desafio: você ${chalScoreTxt(mine)}, seu amigo ${chalScoreTxt(chal)}. ${say}.">
     <span class="chal-res-k" aria-hidden="true">${ICON.sword('currentColor', 11)} Desafio</span>
     <span class="chal-res-v" aria-hidden="true"><small>você</small> <b>${n(mine)}</b> <i>×</i> <b>${n(chal)}</b> <small>amigo</small></span>
-    <em aria-hidden="true">${r > 0 ? 'Você venceu!' : r < 0 ? 'Não foi dessa vez' : 'Empate!'}</em></div>`;
+    <em aria-hidden="true">${say}</em></div>`;
 }
 
 /* ── the screen a challenge link opens on ── */
@@ -100,7 +115,7 @@ function chalHtml() {
     <div class="display" style="font-size:31px;"><em>Um amigo te desafiou!</em></div>
     <p class="chal-g">${G.n}</p>
     <div class="chal-card"><small>Placar a bater</small><b class="num">${chalScoreTxt(c)}</b>${more ? `<span>${more}</span>` : ''}</div>
-    <p class="small muted" style="max-width:30ch;">${what}</p>
+    <p class="small muted" style="max-width:30ch;">${c.old ? 'Este desafio veio de outra versão do jogo: as perguntas podem não ser as mesmas.' : what}</p>
     <button id="chal-go" class="btn btn-brass btn-lg">${ICON.sword('currentColor', 15)} Aceitar o desafio</button>
     <button id="chal-no" class="btn btn-ghost btn-sm">Agora não</button>
   </div>`;

@@ -9,7 +9,8 @@
    is above this line.
 ═══════════════════════════════════════════════════ */
 const ANO_N = 10;
-const ANO_NOW = new Date().getFullYear();
+/* the rulers' last year: fixed, so a game sent to a friend as a challenge is the same game next year */
+const ANO_NOW = 2026;
 let ano = null;            // the game being played: { qs, i, guess, log, pts, phase }
 
 const anoYear = y => y < 0 ? `${-y} a.C.` : String(y);
@@ -201,6 +202,6 @@ function wireAno() {
     const txt = anoShareText();
     if (navigator.share) navigator.share({ text: txt }).catch(() => {});
     else if (navigator.clipboard) navigator.clipboard.writeText(txt).then(() => {
-      const b = document.getElementById('ano-share'); if (b) { const was = b.textContent; b.textContent = 'Copiado!'; setTimeout(() => { b.textContent = was; }, 1600); } }).catch(() => {});
+      const b = document.getElementById('ano-share'); if (b) { b.dataset.l = b.dataset.l || b.textContent; b.textContent = 'Copiado!'; setTimeout(() => { b.textContent = b.dataset.l; }, 1600); } }).catch(() => {});
   });
 }

@@ -97,6 +97,14 @@ function placeOf(sid) {
   return P.order.find(c => P.items[c].some(g => _sidOf(g) === sid)) || null;
 }
 
+/* what a page of stickers that are not people holds, said as it is: 'Nação e brasões', 'Monumento', … */
+function _kindsLabel(its) {
+  const n = k => its.filter(g => g.sid && g.sid.startsWith(k)).length;
+  const parts = [[n('s:'), 'Nação', 'Nações'], [n('e:'), 'Brasão', 'Brasões'], [n('m:'), 'Monumento', 'Monumentos']]
+    .filter(([c]) => c).map(([c, one, many], i) => (c === 1 ? one : many).toLowerCase());
+  const t = parts.length > 1 ? parts.slice(0, -1).join(', ') + ' e ' + parts[parts.length - 1] : parts[0] || '';
+  return t.charAt(0).toUpperCase() + t.slice(1);
+}
 /* a place's pages: its people by age, then its nation, its states, its monuments */
 function placePages(c) {
   const its = albPlaces().items[c] || [];
@@ -111,7 +119,7 @@ function placePages(c) {
     const extra = pgIts.length - ds.length;
     pages.push(ds.length && extra * 2 <= pgIts.length
       ? { from: ds[0], to: ds[ds.length - 1], main: ds[Math.floor(ds.length / 2)], items: pgIts }
-      : { from: 1800, to: 1800, main: 1800, items: pgIts, label: pgIts.some(g => g.sid && g.sid.startsWith('m:')) ? 'Brasões e monumentos' : 'Nação e brasões' });
+      : { from: 1800, to: 1800, main: 1800, items: pgIts, label: _kindsLabel(pgIts) });
   }
   return pages.length ? pages : [{ from: 1800, to: 1800, main: 1800, items: [], label: '' }];
 }
@@ -140,7 +148,7 @@ function _amapSpread(pins, W, H, min) {
     pins.forEach(p => {
       const dx = p.x - p.x0, dy = p.y - p.y0, d = Math.hypot(dx, dy);
       if (d > 46) { p.x = p.x0 + dx / d * 46; p.y = p.y0 + dy / d * 46; }
-      p.x = Math.max(16, Math.min(W - 16, p.x)); p.y = Math.max(16, Math.min(H - 16, p.y));
+      p.x = Math.max(24, Math.min(W - 24, p.x)); p.y = Math.max(24, Math.min(H - 24, p.y));
     });
     if (!moved) break;
   }
@@ -163,7 +171,8 @@ function albMapHtml() {
     ? `<div class="amap-first"><span>Cada acerto cola uma figurinha e pinta o país dela no mapa.</span>
         <button id="amap-play" class="btn btn-brass btn-sm" type="button">${ICON.play('currentColor', 12)} Jogar</button></div>`
     : sg >= st
-    ? `<div class="amap-done" role="status">${ICON.star('currentColor', 13)} ${amapView === 'WORLD' ? `Álbum completo! ${total} figurinhas em ${P.order.length} lugares` : `${AMAP_CONT.find(c => c[0] === amapView)[1]}: completa!`}</div>`
+    ? `<div class="amap-done" role="status">${ICON.star('currentColor', 13)} ${({ WORLD: `Álbum completo! ${total} figurinhas em ${P.order.length} lugares`,
+        EU: 'Europa completa!', AS: 'Ásia completa!', AF: 'África e Oriente Médio completos!', AM: 'Américas completas!' })[amapView]}</div>`
     : near.length ? `<div class="amap-near" role="group" aria-label="Falta pouco">
       <span class="amap-near-h" aria-hidden="true">Falta pouco</span>
       ${near.map(([c, g, t]) => `<button class="amap-nr" data-place="${c}" type="button" aria-label="${_esc(placeName(c))}: falta${t - g > 1 ? 'm' : ''} ${t - g}">
@@ -172,7 +181,7 @@ function albMapHtml() {
   return `
   <div class="pg alb-pg amap-pg">
     <div class="alb-top">
-      ${topbar('Meu álbum')}
+      ${topbar('Álbum')}
       <div class="alb-head">
         <button id="balbvit" class="alb-vit" type="button">${ICON.star('currentColor', 12)} Vitrine</button>
         <button id="balbselo" class="alb-vit" type="button">${ICON.stamp('currentColor', 12)} Selos</button>
@@ -186,11 +195,11 @@ function albMapHtml() {
         return `<button class="amap-tab${amapView === id ? ' is-on' : ''}" data-view="${id}" type="button" aria-pressed="${amapView === id}" aria-label="${n}, ${g} de ${t}">${AMAP_TAB[id]}<small>${g}/${t}</small></button>`; }).join('')}
     </div>
     <div class="amap-wrap" id="amap-wrap">
-      <div class="amap" id="amap" role="group" aria-label="${amapView === 'WORLD' ? 'O mapa-múndi: toque num país para ver a carta da sua parte do mundo'
+      <div class="amap" id="amap" role="group" aria-label="${amapView === 'WORLD' ? 'O mapa-múndi: toque num continente para abrir o mapa dele'
         : `Carta: ${AMAP_CONT.find(c => c[0] === amapView)[1]}`}"></div>
     </div>
     ${strip}
-    <p class="amap-hint small muted">${amapView === 'WORLD' ? 'Cada figurinha pinta o seu país. Toque num país para ver a carta.'
+    <p class="amap-hint small muted">${amapView === 'WORLD' ? (album.size ? 'Cada figurinha pinta o seu país. Toque num continente para abrir o mapa.' : 'Toque num continente para abrir o mapa.')
       : `${shown.length} lugares · toque num país para abrir a página`}</p>
   </div>`;
 }
@@ -208,7 +217,7 @@ function albPlaceHtml() {
   return `
   <div class="pg alb-pg">
     <div class="alb-top">
-      ${topbar('Meu álbum', 'amap-back')}
+      ${topbar('Álbum', 'amap-back')}
       <div class="alb-head">
         <button id="amap-back2" class="alb-vit" type="button">${ICON.globe('currentColor', 12)} Mapa</button>
         <span class="display" style="font-size:20px;">${got}<span class="muted" style="font-size:13px;"> / ${all}</span></span>
@@ -257,7 +266,7 @@ function albPlaceHtml() {
               /* the rest of the page: the country's own chart, cut from the old mapa-múndi */
               + (rows > 0 ? `<div class="alb-colo alb-colo-map${rows <= 2 ? '' : ' is-tall'}" style="grid-row:${used + 1} / span ${rows}" aria-hidden="true">
                   <span class="alb-inset" data-inset="${albCtry}"></span>
-                  <span class="alb-colo-txt"><span class="alb-colo-t">${_esc(nm)}</span><span class="alb-colo-s">fim da página</span></span>
+                  <span class="alb-colo-txt"><span class="alb-colo-t">${_esc(nm)}</span><span class="alb-colo-s"></span></span>
                 </div>` : '');
           })()}
         </div>
@@ -304,8 +313,11 @@ function _amapFresh() {
 function fitAlbMap() {
   const w = document.getElementById('amap-wrap'), m = document.getElementById('amap');
   if (!w || !m) return;
-  const W = Math.floor(w.clientWidth), H = Math.floor(w.clientHeight);
+  let W = Math.floor(w.clientWidth), H = Math.floor(w.clientHeight);
   if (W < 60 || H < 60) return;
+  /* a chart is drawn for rooms from a little taller than wide to twice as wide as tall; beyond that it is centred */
+  if (amapView !== 'WORLD') { if (W > H * 2) W = Math.floor(H * 2); if (H > W / .62) H = Math.floor(W / .62); }
+  m.style.left = Math.floor((w.clientWidth - W) / 2) + 'px'; m.style.top = Math.floor((w.clientHeight - H) / 2) + 'px';
   const key = `${W}x${H}:${amapView}:${album.size}`;
   if (m.dataset.drawn === key) return;
   const fresh = m.dataset.drawn ? new Set() : _amapFresh();
@@ -318,7 +330,7 @@ function fitAlbMap() {
     return;
   }
   const ch = atlasChart(amapView, W, H, fresh);
-  const pins = _amapSpread(ch.pins, W, H, 31);
+  const pins = ch.pins;                    // already spread apart, in pixels, by the chart
   const lead = pins.filter(p => Math.hypot(p.x - p.x0, p.y - p.y0) > 13);
   m.innerHTML = ch.svg
     + (lead.length ? `<svg class="amap-lead" viewBox="0 0 ${W} ${H}" aria-hidden="true">${lead.map(p =>
@@ -337,16 +349,22 @@ function fitAlbInsets() {
     const W = Math.floor(el.clientWidth), H = Math.floor(el.clientHeight);
     if (W < 40 || H < 30 || el.dataset.drawn === W + 'x' + H) return;
     el.dataset.drawn = W + 'x' + H;
-    const c = el.dataset.inset, d = atlasInset(c, W, H);
+    const txt = el.closest('.alb-colo') && el.closest('.alb-colo').querySelector('.alb-colo-txt');
+    const c = el.dataset.inset, d = atlasInset(c, W, H, txt ? txt.offsetWidth : 150);
     const at = (x, y) => `left:${x.toFixed(1)}%;top:${y.toFixed(1)}%`;
     el.innerHTML = d.svg
       + d.seas.map(([t, x, y]) => `<span class="alb-inset-sea" style="${at(x, y)}">${_esc(t)}</span>`).join('')
       + d.names.map(([t, x, y]) => `<span class="alb-inset-nm" style="${at(x, y)}">${_esc(t)}</span>`).join('')
       + (ATLAS_ART.rosa ? `<svg class="alb-inset-rose" viewBox="${ATLAS_ART.rosa.vb}" aria-hidden="true">${ATLAS_ART.rosa.svg}</svg>` : '')
       + (d.pin ? `<span class="alb-inset-pin" style="${at(d.pin[0], d.pin[1])}">${placeBadge(c, 12)}</span>` : '');
-    /* the name plate stands where the little chart left room for it */
+    /* the name plate stands where the little chart left room for it, with where the country lies */
     const box = el.closest('.alb-colo');
-    if (box) ['left', 'right', 'top'].forEach(k => box.classList.toggle('plate-' + k, d.plate === k));
+    if (box) {
+      box.classList.toggle('plate-left', d.plate === 'left');
+      box.classList.toggle('plate-none', d.plate === 'none');
+      const sub = box.querySelector('.alb-colo-s');
+      if (sub) sub.textContent = d.coord;
+    }
   });
 }
 function _amapOpen(c) {
@@ -360,7 +378,7 @@ function _amapOpen(c) {
 }
 function wireAlbMap() {
   const refit = () => { if (sc !== 'album') return; if (albView === 'map') fitAlbMap(); else fitAlbInsets(); };
-  refit();
+  if (albView === 'map') refit();          // a page's inset waits for the page's own layout, a frame later
   requestAnimationFrame(refit);
   if (!window._amapRs) { window._amapRs = true; window.addEventListener('resize', refit); }
   const on = (id, fn) => document.getElementById(id)?.addEventListener('click', fn);

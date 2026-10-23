@@ -149,6 +149,22 @@ JS = r"""
       else if (!(d.pin[0] > 0 && d.pin[0] < 100 && d.pin[1] > 0 && d.pin[1] < 100)) F('the little chart misses ' + c); });
     Object.keys(ATLAS_ART).forEach(n => { const a = ATLAS_ART[n]; if (!a.vb || !/^</.test(a.svg.trim()) || /<text|<image|<script|filter=|<style|href="http/.test(a.svg)) F('engraving breaks the rules: ' + n); });
     ['rosa', 'caravela', 'serpente', 'baleia', 'cartela', 'esfera'].forEach(n => { if (!ATLAS_ART[n]) F('engraving missing: ' + n); });
+    /* a country can be tapped: the point at its pin on the world map is its own shape, washed or not */
+    const keepAlb = album;
+    album = new Set(ALL_STICKERS.slice(0, 60)); runNewIds = [];
+    sc = 'album'; albView = 'map'; amapView = 'WORLD'; go();
+    const am = document.getElementById('amap'), wd = am && am._world;
+    if (wd) {
+      const r = am.getBoundingClientRect();
+      ['TUN', 'UZB', 'ESP', 'BRA', 'RUS', 'MAR', 'CHN'].forEach(c => {
+        const h = ALB_MAP.hemi.W.pins[c] ? 'W' : 'E', q = ALB_MAP.hemi[h].pins[c];
+        const x = r.left + wd.C[h][0] + q[0] * wd.sc, y = r.top + wd.C[h][1] + q[1] * wd.sc;
+        if (x < 0 || y < 0 || x > innerWidth || y > innerHeight) return;
+        const e = document.elementFromPoint(x, y), t = e && e.closest('[data-place]');
+        if (!t || t.dataset.place !== c) F('a tap on ' + c + ' on the world map does not reach it (' + (e ? e.tagName + '.' + e.getAttribute('class') : 'nothing') + ')');
+      });
+    } else F('the world map was not drawn for the tap test');
+    album = keepAlb; sc = 'home'; go();
     amapView = 'WORLD';
   } catch (e) { F('mapa EXC ' + e.message); }
   /* ── the stamp album: every stamp a scene with a page, printed won and unwon ── */
@@ -211,8 +227,11 @@ JS = r"""
   /* ── O desafio: a code travels intact, a bad one is turned away, and a seed always deals the same game ── */
   try {
     const c = { g: 'm', seed: 2147483647, score: 1000000, more: 16 }, back = chalParse(chalCode(c));
-    if (!back || back.seed !== c.seed || back.score !== c.score || back.more !== 16) F('a challenge code does not round-trip');
-    ['zz.1.2', 'o.', 'o.1', 'm.1.2', 'o.zzzzzzz.1', 'a.1.zzz', 'tm.1.2.zz', '<script>', ''].forEach(x => { if (chalParse(x)) F('a bad challenge code is accepted: ' + x); });
+    if (!back || back.seed !== c.seed || back.score !== c.score || back.more !== 16 || back.old) F('a challenge code does not round-trip');
+    const o2 = chalParse(chalCode({ g: 'o', seed: 5, score: 815 }));
+    if (!o2 || o2.more !== null || o2.score !== 815) F('a challenge code without a rung does not round-trip');
+    if (!chalParse('o.5.mn..zz') || !chalParse('o.5.mn..zz').old) F('a challenge from another version is not told apart');
+    ['zz.1.2..aa', 'o.', 'o.1', 'm.1.2..aa', 'o.zzzzzzz.1..aa', 'a.1.zzz..aa', 'tm.1.2.zzzz.aa', 'o.1.2', '<script>', ''].forEach(x => { if (chalParse(x)) F('a bad challenge code is accepted: ' + x); });
     const deal = { a: () => buildAno().qs.map(q => q.e.id + q.lo), o: () => buildOnde().qs.map(q => q.e.id),
       m: () => buildMilhao().qs.map(q => q.t), t: () => buildGame('dificil').qs.map(q => q.t) };
     Object.keys(deal).forEach(k => { seedFrom(31337); const x = JSON.stringify(deal[k]()); rnd(); rnd(); seedFrom(31337);
@@ -223,13 +242,17 @@ JS = r"""
   try {
     const keep = LS.get('rev', {}), keepSt = stats.revLearned;
     LS.set('rev', {});
-    const q = CATS[0].qs[0], now = dayIndex();
-    revNote(q, 0); if (!revDue().includes(q.t)) F('a missed question is not due for review');
-    revNote(q, 3); if (revFile()[q.t][0] !== 1 || revFile()[q.t][1] !== now + REV_GAPS[1]) F('a reviewed question does not move to the next box');
-    revNote(q, 3); if (revFile()[q.t][0] !== 1) F('a question answered before it is due moves anyway');
-    const R = revFile(); R[q.t] = [REV_GAPS.length - 1, now]; LS.set('rev', R);
+    const q = CATS[0].qs[0], now = dayIndex(), K = revKey(q);
+    revNote({ ...q, _cat: CATS[0] }, 0); if (!revDue().includes(K)) F('a missed question is not due for review');
+    revNote(q, 3); if (revFile()[K][0] !== 1 || revFile()[K][1] !== now + REV_GAPS[1]) F('a reviewed question does not move to the next box');
+    revNote(q, 3); if (revFile()[K][0] !== 1) F('a question answered before it is due moves anyway');
+    const R = revFile(); R[K] = [REV_GAPS.length - 1, now]; LS.set('rev', R);
     const was = stats.revLearned || 0; revNote(q, 3);
-    if (revFile()[q.t] || (stats.revLearned || 0) !== was + 1) F('a question past the last box is not learned');
+    if (revFile()[K] || (stats.revLearned || 0) !== was + 1) F('a question past the last box is not learned');
+    /* questions that share a line are still told apart */
+    const byLine = {}; CATS.forEach(c => c.qs.forEach(x => { (byLine[x.t] = byLine[x.t] || new Set()).add(JSON.stringify(x, (k, v) => (k && k[0] === '_' ? undefined : v))); }));
+    const kinds = Object.values(byLine).reduce((a, st) => a + st.size, 0);
+    if (revPool().size !== kinds) F('review keys collide: ' + revPool().size + ' keys for ' + kinds + ' different questions');
     revNote({ t: 'not a written question' }, 0); if (Object.keys(revFile()).length) F('an unknown question is filed');
     for (let i = 0; i < REV_MAX + 20; i++) revNote(CATS.flatMap(c => c.qs)[i], 0);
     if (Object.keys(revFile()).length > REV_MAX) F('the review file grows past ' + REV_MAX);
