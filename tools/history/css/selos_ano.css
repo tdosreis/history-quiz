@@ -151,7 +151,8 @@
   .newfigs-row .newfig { zoom: .74; }
   .pg:has(.newfigs):has(.selo-strip) .end-trophy { display: none; }
   .medal-chips .chip { padding-top: 3px; padding-bottom: 3px; }
-  .ano-end .eyebrow { display: none; }
+  /* the screen's own eyebrow gives way, not the one naming the stamps just won; Hoje keeps its date */
+  .ano-end > .eyebrow:not(.eb-keep) { display: none; }
   .ano-li { padding-top: 2px; padding-bottom: 2px; }
 }
 /* the album head, with Vitrine and Selos both in it */

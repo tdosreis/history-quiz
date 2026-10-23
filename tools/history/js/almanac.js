@@ -108,6 +108,6 @@ function almanacHtml() {
   /* a tap on it plays the day's dates (Hoje na História, js/ano.js) */
   return `<button id="balm" class="almanac${a.days === 0 ? ' is-today' : ''}" type="button" aria-label="${when}: ${yearTxt(y)}, ${txt}. Jogar Hoje na História">
     ${almanacPic(pic)}
-    <span class="alm-t"><small>${when}</small><span><b class="num">${yearTxt(y)}</b> — ${txt}</span></span>
+    <span class="alm-t"><small>${when}</small><span><b class="num">${yearTxt(y)}</b> — ${txt.replace(/\S+-\S+/g, w => `<span class="ano-nw">${w}</span>`)}</span></span>
     <span class="alm-go" aria-hidden="true">${ICON.play('currentColor', 11)}</span></button>`;
 }

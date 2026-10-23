@@ -5,8 +5,12 @@
 .cron-lives i { display: flex; color: var(--ink-3); opacity: .28; transition: opacity .3s, transform .3s; }
 .cron-lives i.on { color: var(--bad); opacity: 1; }
 .cron-card { margin: 0; }
-.cron-line { flex: 1 1 0; min-height: 110px; position: relative; display: flex; flex-direction: column; padding: 2px 2px 4px;
-  overflow-x: hidden; overscroll-behavior: contain; }
+.cron-line { flex: 1 1 0; min-height: 110px; position: relative; display: flex; flex-direction: column; padding: 14px 2px;
+  overflow-x: hidden; overscroll-behavior: contain;
+  /* the line fades at its ends, so a line longer than its window shows there is more of it above and below */
+  -webkit-mask-image: linear-gradient(transparent, #000 14px, #000 calc(100% - 14px), transparent);
+  mask-image: linear-gradient(transparent, #000 14px, #000 calc(100% - 14px), transparent); }
+.cron-line:focus-visible { outline: 2px solid var(--brass); outline-offset: 2px; }
 /* the spine of the line, behind the slips and the gaps: a rule down the year column */
 .cron-row, .cron-slot { --sp: 34px; background-image: linear-gradient(var(--brass), var(--brass)); background-repeat: no-repeat;
   background-size: 2px 100%; background-position: var(--sp) 0; }
@@ -21,10 +25,13 @@
 .cron-row.is-good .cron-y { color: #fff; background: var(--good); box-shadow: 0 0 0 1.5px var(--good); }
 .cron-row.is-bad .cron-y { color: #fff; background: var(--bad); box-shadow: 0 0 0 1.5px var(--bad); }
 .cron-row.is-good .cron-t, .cron-row.is-bad .cron-t { font-weight: 600; }
+/* the night's green and red are light: the year on them is printed dark */
+:root[data-theme="dark"] .cron-row.is-good .cron-y, :root[data-theme="dark"] .cron-row.is-bad .cron-y,
+:root:not([data-theme="light"]) .cron-row.is-good .cron-y, :root:not([data-theme="light"]) .cron-row.is-bad .cron-y { color: #10140F; }
 .cron-row#cron-fresh.is-good, .cron-row#cron-fresh.is-bad { animation: cron-in .45s cubic-bezier(.2, 1.3, .4, 1) both; }
 @keyframes cron-in { from { transform: translateX(-14px) scale(.97); opacity: 0; } }
 /* a gap to tap: a dashed slot on the line, saying where */
-.cron-slot { flex: none; display: flex; align-items: center; width: 100%; min-height: 30px; padding: 0 10px 0 80px; border: 0; cursor: pointer;
+.cron-slot { flex: none; display: flex; align-items: center; width: 100%; min-height: 36px; padding: 0 10px 0 80px; border: 0; cursor: pointer;
   background-color: transparent; color: var(--ink-3); font: 700 10px/1 var(--font-s); letter-spacing: .14em; text-transform: uppercase; }
 .cron-slot span { flex: 1; display: flex; align-items: center; justify-content: center; height: 22px; border-radius: 11px;
   border: 1.5px dashed color-mix(in srgb, var(--ink-3) 55%, transparent); transition: background .15s, color .15s, border-color .15s; }
@@ -35,7 +42,7 @@
   background: var(--at-card-img) center / 100% 100% no-repeat; }
 .cron-res-h { margin: 0; font: 600 16px/1.2 var(--font-d); color: var(--ink-2); }
 .cron-res-h b { font-weight: 700; }
-.cron-res.good .cron-res-h b { color: var(--good); }
+.cron-res.good .cron-res-h b { color: var(--good-ink); }
 .cron-res.bad .cron-res-h b { color: var(--bad); }
 .cron-res-h .num { color: var(--ink); }
 .cron-res-h small { font: 600 12px/1 var(--font-s); color: var(--ink-3); }
@@ -56,7 +63,7 @@
   .cron-pg { gap: 6px; }
   .cron-row { min-height: 34px; }
   .cron-t { padding: 5px 9px; font-size: 12.5px; }
-  .cron-slot { min-height: 28px; }
+  .cron-slot { min-height: 32px; }
   .cron-res { padding: 6px 10px; }
   .cron-res-h { font-size: 15px; }
   .cron-res-x { font-size: 12px; -webkit-line-clamp: 2; }

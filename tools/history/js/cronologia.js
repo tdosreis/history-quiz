@@ -32,7 +32,7 @@ function cronFits(line, e, i) {
   return (i === 0 || line[i - 1].y <= e.y) && (i === line.length || e.y <= line[i].y);
 }
 const cronYear = e => (e.c ? 'c. ' : '') + anoYear(e.y);
-const cronRow = (e, cls, id) => `<div class="cron-row${cls || ''}"${id ? ` id="${id}"` : ''} role="listitem">
+const cronRow = (e, cls, id, li) => `<div class="cron-row${cls || ''}"${id ? ` id="${id}"` : ''}${li ? ' role="listitem"' : ''}>
       <b class="cron-y num${cronYear(e).length > 8 ? ' is-long' : ''}">${cronYear(e)}</b><span class="cron-t">${_esc(e.t)}</span></div>`;
 
 function cronHtml() {
@@ -44,7 +44,7 @@ function cronHtml() {
   cron.line.forEach((e, i) => {
     if (!rev) rows.push(`<button class="cron-slot" data-slot="${i}" type="button" aria-label="${i ? `Entre ${cronYear(cron.line[i - 1])} e ${cronYear(e)}` : `Antes de ${cronYear(e)}`}"><span>${i ? 'aqui' : 'antes'}</span></button>`);
     const fresh = L && L.e === e;
-    rows.push(cronRow(e, fresh && rev ? (L.ok ? ' is-good' : ' is-bad') : '', fresh ? 'cron-fresh' : ''));
+    rows.push(cronRow(e, fresh && rev ? (L.ok ? ' is-good' : ' is-bad') : '', fresh ? 'cron-fresh' : '', rev));
   });
   if (!rev) rows.push(`<button class="cron-slot" data-slot="${cron.line.length}" type="button" aria-label="Depois de ${cronYear(cron.line[cron.line.length - 1])}"><span>depois</span></button>`);
   /* the first turn says the rules once, in the room the line has not yet taken */
@@ -54,16 +54,16 @@ function cronHtml() {
     ${topbar('Cronologia')}
     <div class="ano-head"><span class="cron-lives" role="img" aria-label="${cron.lives} de ${CRON_LIVES} vidas">${lives}</span>
       <span class="ano-score"><b class="num">${cron.score}</b> na linha</span></div>
-    ${rev ? `<div class="cron-res ${L.ok ? 'good' : 'bad'}" aria-live="polite">
+    ${rev ? `<div class="cron-res ${L.ok ? 'good' : 'bad'}" id="cron-res" aria-live="polite">
         <p class="cron-res-h"><b>${L.ok ? 'Isso!' : 'Não era aí'}</b> <span class="num">${cronYear(L.e)}</span>${L.ok ? '' : ` <small>· ${cron.lives} ${cron.lives === 1 ? 'vida' : 'vidas'}</small>`}</p>
-        ${L.selo ? seloWonLine(L.selo) : L.e.x ? `<p class="cron-res-x">${_esc(L.e.x)}</p>` : ''}
+        ${L.selo ? seloWonLine(L.selo) : ''}${L.e.x ? `<p class="cron-res-x">${_esc(L.e.x)}</p>` : ''}
       </div>`
       : `<div class="onde-card cron-card">
       ${ondePic(cron.cur)}
       <div class="onde-tt"><p class="onde-t">${_esc(cron.cur.t)}</p><span class="onde-y">Toque onde entra na linha</span></div>
     </div>`}
-    <div class="cron-line scroll-y" id="cron-line" role="list" aria-label="A linha do tempo, do mais antigo ao mais recente">${rows.join('')}</div>
-    ${rev ? `<button id="cron-next" class="btn btn-brass">${cron.lives <= 0 || !cron.deck.length ? 'Ver resultado' : 'Próximo'}</button>` : ''}
+    <div class="cron-line scroll-y" id="cron-line" ${rev ? 'role="list" tabindex="0"' : 'role="group"'} aria-label="A linha do tempo, do mais antigo ao mais recente">${rows.join('')}</div>
+    ${rev ? `<button id="cron-next" class="btn btn-brass" aria-describedby="cron-res">${cron.lives <= 0 || !cron.deck.length ? 'Ver resultado' : 'Próximo'}</button>` : ''}
   </div>`;
 }
 
@@ -77,7 +77,7 @@ function cronEndHtml() {
     <div class="display" style="font-size:28px;"><em>${msg}</em></div>
     <div class="display prize-pop brass" style="font-size:50px;letter-spacing:-.03em;">${cron.score}<span class="muted" style="font-size:18px;letter-spacing:0;"> na linha</span></div>
     ${chalBanner() || `<p class="small muted">${cron.isBest ? 'Seu novo recorde!' : `Recorde: ${best}`}</p>`}
-    <div class="cron-line cron-line-end scroll-y" role="list" aria-label="A linha do tempo">${cron.line.map(e => cronRow(e, wrong.has(e) ? ' is-bad' : '')).join('')}</div>
+    <div class="cron-line cron-line-end scroll-y" role="list" tabindex="0" aria-label="A linha do tempo">${cron.line.map(e => cronRow(e, wrong.has(e) ? ' is-bad' : '', '', true)).join('')}</div>
     ${selosStrip()}
     ${medalChips()}
     <div class="foot-row" style="margin-top:8px;">
@@ -111,6 +111,7 @@ function cronPlace(i) {
   } else { cron.lives--; snd.wrong(); }
   try { cron.medals = (cron.medals || []).concat(newMedals()); } catch (err) {}
   cron.phase = 'reveal';
+  cron.fx = 'next';
   go();
   if (ok && cron.score % 5 === 0) try { burst(16); } catch (err) {}
 }
@@ -128,6 +129,7 @@ function cronNext() {
   } else {
     cron.cur = cron.deck.pop();
     cron.phase = 'place';
+    cron.fx = 'slot';
   }
   go();
 }
@@ -151,4 +153,9 @@ function wireCron() {
       const b = document.getElementById('cron-share'); if (b) { b.dataset.l = b.dataset.l || b.textContent; b.textContent = 'Copiado!'; setTimeout(() => { b.textContent = b.dataset.l; }, 1600); } }).catch(() => {});
   });
   if (cron && cron.phase !== 'end') cronScroll();
+  /* the keyboard follows the game: to Próximo, which reads the verdict out, and back to the gaps beside the newest event */
+  const fx = cron && cron.fx; if (cron) cron.fx = null;
+  const to = fx === 'next' ? document.getElementById('cron-next')
+    : fx === 'slot' && cron.last ? document.querySelector(`.cron-slot[data-slot="${cron.line.indexOf(cron.last.e) + 1}"]`) : null;
+  if (to) try { to.focus({ preventScroll: true }); } catch (e) {}
 }

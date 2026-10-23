@@ -76,9 +76,12 @@
   .cv-toc-4 .cv-ic { width: 26px; height: 26px; }
   .cv-toc-4 .cv-rt b { font-size: 14px; letter-spacing: -.02em; white-space: nowrap; }
   .cv-toc-4 .cv-rt { min-width: 0; max-width: 100%; }
-  .cv-toc-4 .cv-rt small { font-size: 9px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .cv-toc-4 .cv-rt small { font-size: 10px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .cv-toc-4 .cv-tl { display: none; }
 }
-@media (max-width: 380px) { .cv-toc-4 .cv-rt b { font-size: 12.5px; } .cv-toc-4 .cv-rt small { font-size: 8.5px; } }
+.cv-ts { display: none; }
+@media (max-width: 699px) { .cv-toc-4 .cv-ts { display: inline; } }
+@media (max-width: 380px) { .cv-toc-4 .cv-rt b { font-size: 12.5px; } .cv-toc-4 .cv-rt small { font-size: 9.5px; } }
 /* on a wider screen the games are a list, numbered to VIII: the numeral gets the room not to break */
 @media (min-width: 700px) {
   .cv-toc-4 .cv-row { grid-template-columns: 46px 1fr 38px; }
