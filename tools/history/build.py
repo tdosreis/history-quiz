@@ -289,7 +289,7 @@ def main():
     kept = None
     if B in s and E_ in s:
         a = s.index(B); a = s.index("\n", a) + 1
-        kept = s[a:s.index(E_)]
+        kept = s[a:s.index(E_)].rstrip(" ")   # the marker's own indent is written back below
     blocks = build_blocks()
     if kept is not None:
         blocks["data_cl_cats"] = blocks["data_cl_cats"].replace("  " + E_, kept + "  " + E_)

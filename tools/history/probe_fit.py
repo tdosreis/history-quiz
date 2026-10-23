@@ -200,7 +200,7 @@ DRIVE = r"""
   startMilhao(); clearInterval(tmr); rung=9; banked=50000; finishRun(); window._newMedals = MEDALS.slice(0, 3); sc='end'; go(); fit('desafio/milhao-end');
   chal = { g:'c', seed: 4246, score: 12, more: null, accepted: true };
   startCron(); for (var k10=0; k10<14; k10++){ var e10=cron.cur, r10=cron.line.findIndex(function(x){return x.y>e10.y;}); cronPlace(r10<0 ? cron.line.length : r10); cron.cur=cron.deck.pop(); cron.phase='place'; }
-  cron.lives=0; cronNext(); window._newMedals = MEDALS.slice(0, 3); go(); fit('desafio/cron-end');
+  cron.lives=0; cron.phase='reveal'; cronNext(); window._newMedals = MEDALS.slice(0, 3); go(); fit('desafio/cron-end');
   chal = null; isMil = false;
   /* Cronologia: the first turn, a line growing long, each turn placed and revealed, right and wrong, and the result */
   for (var g3=0; g3<2; g3++){
@@ -224,7 +224,7 @@ DRIVE = r"""
     }
     ano.i=ano.qs.length-1; anoNext(); window._newMedals = g4 ? [] : MEDALS.slice(0, 3); go(); fit('hoje/end');
   }
-  sc='home'; go(); fit('home/hoje-feito');
+  LS.set('hojeRes', { day: dayIndex(), pts: 420 }); sc='home'; go(); fit('home/hoje-feito');
   LS.set('hojeRes', null);
   /* Revisar: ten misses filed, the round, and its end with more left to review */
   var rq = CATS.flatMap(function(c){ return c.qs; }).slice(0, 14), rf = {};

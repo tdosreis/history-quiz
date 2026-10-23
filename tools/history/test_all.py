@@ -294,7 +294,8 @@ JS = r"""
     pool.forEach(e => { if (!e.pic || !(e.pic.face || e.pic.crest || e.pic.flag || e.pic.scene)) F('hoje: no picture for ' + e.t);
       if (!(e.y < ANO_NOW) || !e.md || !(e.md[0] >= 1 && e.md[0] <= 12 && e.md[1] >= 1 && e.md[1] <= 31)) F('hoje: bad date for ' + e.t); });
     if (hojeOff([1, 2], new Date(2026, 11, 30)) !== 3 || hojeOff([12, 30], new Date(2026, 0, 2)) !== -3 || hojeOff([3, 1], new Date(2026, 2, 1)) !== 0) F('hojeOff does not wrap the year');
-    let far = 0;
+    if (hojeOff([3, 1], new Date(2026, 1, 28)) !== 1 || hojeOff([2, 24], new Date(2026, 2, 1)) !== -5 || hojeOff([3, 1], new Date(2028, 1, 28)) !== 2) F('hojeOff counts a 29 de fevereiro that is not there');
+    let far = 0, same = 0, prev = '';
     for (let k = 0; k < 365; k++) {
       const day = new Date(2026, 0, 1 + k), g = buildHoje(day), w = 'hoje ' + (day.getMonth() + 1) + '/' + day.getDate() + ': ';
       if (g.qs.length !== HOJE_N) F(w + g.qs.length + ' dates');
@@ -302,9 +303,22 @@ JS = r"""
       g.qs.forEach((q, i) => { if (i && g.qs[i - 1].k > q.k) F(w + 'not in calendar order');
         if (!(q.lo <= q.e.y && q.e.y <= q.hi)) F(w + 'the ruler misses ' + q.e.t); far = Math.max(far, Math.abs(q.k)); });
       if (JSON.stringify(buildHoje(new Date(2026, 0, 1 + k, 23, 30)).qs.map(q => q.e.id + q.lo)) !== JSON.stringify(g.qs.map(q => q.e.id + q.lo))) F(w + 'changes in the course of the day');
+      const ids = g.qs.map(q => q.e.id).sort().join(); if (ids === prev) same++; prev = ids;
     }
-    note.hojeFar = far;
+    note.hojeFar = far; note.hojeSame = same;
     if (far > 30) F('a Hoje na História date is ' + far + ' days away');
+    if (same > 5) F(same + ' days of Hoje na História are the day before again');
+    /* a replay of a day already played, finished after midnight, leaves that day's first result alone */
+    const keepR = LS.get('hojeRes', null), keepB = stats.hojeBest, keepX = stats.anoExact;
+    ano = buildHoje(new Date(2026, 4, 10)); LS.set('hojeRes', { day: ano.hoje.day, pts: 100 });
+    ano.qs.forEach(q => { ano.guess = q.e.y; anoCommit(); anoCommit(); anoNext(); anoNext(); });
+    if (ano.log.length !== HOJE_N) F('a second tap on Cravar or Próximo is taken: ' + ano.log.length + ' answers');
+    if (ano.phase !== 'end' || (LS.get('hojeRes', {}) || {}).pts !== 100) F('a replay of a day already played replaces its first result');
+    LS.set('hojeRes', keepR); stats.hojeBest = keepB; stats.anoExact = keepX; LS.set('stats', stats);
+    /* the first tap on a screen just drawn is the second of a double tap, and is not taken */
+    startCron(); document.querySelector('.cron-slot').click();
+    if (cron.phase !== 'place') F('a tap the moment a Cronologia screen is drawn is taken');
+    cron = null; sc = 'home'; go();
     ano = null;
   } catch (e) { F('hoje EXC ' + e.stack); }
   note.ms = Date.now() - T0;

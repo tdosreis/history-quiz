@@ -63,12 +63,16 @@ function startAno() {
    day and the month are shown, the year is the question. The same five for
    everyone on the same day, in the order of the calendar. */
 const HOJE_N = 5;
-const _doy = (m, d) => Math.round((Date.UTC(2024, m - 1, d) - Date.UTC(2024, 0, 1)) / 864e5);
-/* the days from today to a day of the year, the short way round: negative for one just past */
+/* the days from today to a day of the year, the short way round, on the real calendar (a 29 de fevereiro
+   is there only in a leap year): negative for one just past */
 function hojeOff(md, now) {
   now = now || new Date();
-  let k = _doy(md[0], md[1]) - _doy(now.getMonth() + 1, now.getDate());
-  if (k > 183) k -= 366; else if (k < -183) k += 366;
+  const t = Date.UTC(now.getFullYear(), now.getMonth(), now.getDate());
+  let k = null;
+  for (let yy = now.getFullYear() - 1; yy <= now.getFullYear() + 1; yy++) {
+    const x = Math.round((Date.UTC(yy, md[0] - 1, md[1]) - t) / 864e5);
+    if (k === null || Math.abs(x) < Math.abs(k)) k = x;
+  }
   return k;
 }
 function hojePool() {
@@ -87,9 +91,12 @@ function buildHoje(now) {
   now = now || new Date();
   const day = dayIndex(now);
   seedFrom(day * 7919 + 17);
-  /* nearest first; the ones as near as each other, in the day's own shuffled order */
+  /* the dates of the days around this one (the ten nearest, or any within ten days), and from them the
+     day's five: today's own always, the rest drawn, so that tomorrow is not today again */
   const near = shuf(hojePool()).map(e => ({ e, k: hojeOff(e.md, now) })).sort((a, b) => Math.abs(a.k) - Math.abs(b.k));
-  const qs = near.slice(0, HOJE_N).sort((a, b) => a.k - b.k).map(({ e, k }) => {
+  const cand = near.filter((x, i) => i < 10 || Math.abs(x.k) <= 10);
+  const five = cand.filter(x => x.k === 0).concat(shuf(cand.filter(x => x.k !== 0))).slice(0, HOJE_N);
+  const qs = five.sort((a, b) => a.k - b.k).map(({ e, k }) => {
     const [lo, hi] = anoWindow(e, rnd());
     const mid = Math.round((lo + hi) / 2 / 5) * 5;
     return { e, k, lo, hi, start: mid === 0 ? 1 : mid };
@@ -101,6 +108,8 @@ function startHoje() {
   isDaily = false; isSurv = false; isMil = false; isRev = false;
   runSelos = [];
   ano = buildHoje();
+  /* a replay of the day's game is played with the answers known: it counts for nothing */
+  ano.replay = !!hojeRes();
   sc = 'ano';
   go();
 }
@@ -199,11 +208,12 @@ function anoShareText() {
 }
 
 function anoCommit() {
+  if (!ano || ano.phase !== 'guess') return;
   const q = ano.qs[ano.i], e = q.e, g = ano.guess;
   const p = anoPts(e, g), d = anoGap(e.y, g);
-  const selo = p >= 80 && e.pic && e.pic.scene && awardSelo(e.pic.scene) ? e.pic.scene : null;
+  const selo = p >= 80 && !ano.replay && e.pic && e.pic.scene && awardSelo(e.pic.scene) ? e.pic.scene : null;
   ano.log.push({ e, g, p, d, selo });
-  if (d === 0) { stats.anoExact = (stats.anoExact || 0) + 1; LS.set('stats', stats); }
+  if (d === 0 && !ano.replay) { stats.anoExact = (stats.anoExact || 0) + 1; LS.set('stats', stats); }
   /* a medal is won the moment it is earned, and announced on this game's results */
   try { ano.medals = (ano.medals || []).concat(newMedals()); } catch (err) {}
   ano.pts += p;
@@ -213,12 +223,15 @@ function anoCommit() {
   if (p >= 80) try { burst(p === 100 ? 28 : 14); } catch (err) {}
 }
 function anoNext() {
+  if (!ano || ano.phase !== 'reveal') return;
   if (ano.i >= ano.qs.length - 1) {
     ano.phase = 'end';
     if (ano.hoje) {
       /* the day's game is the same all day: only its first result is kept, and no record is set on a replay */
       stats.hojeGames = (stats.hojeGames || 0) + 1;
-      if (!hojeRes()) { ano.hojeFirst = true; stats.hojeBest = Math.max(stats.hojeBest || 0, ano.pts); LS.set('hojeRes', { day: ano.hoje.day, pts: ano.pts }); }
+      /* the game's own day, not the clock's: a replay begun before midnight and finished after is still a replay */
+      const prev = LS.get('hojeRes', null);
+      if (!ano.replay && !(prev && prev.day === ano.hoje.day)) { ano.hojeFirst = true; stats.hojeBest = Math.max(stats.hojeBest || 0, ano.pts); LS.set('hojeRes', { day: ano.hoje.day, pts: ano.pts }); }
     } else {
       stats.anoGames = (stats.anoGames || 0) + 1;
       ano.isBest = ano.pts > LS.get('anoBest', 0);
@@ -226,7 +239,7 @@ function anoNext() {
     }
     LS.set('stats', stats);
     window._newMedals = (ano.medals || []).concat(newMedals());
-    setTimeout(() => snd.final(ano.pts >= 500), 200);
+    setTimeout(() => snd.final(ano.pts >= ano.qs.length * 50), 200);
   } else {
     ano.i++;
     ano.guess = ano.qs[ano.i].start;
@@ -235,8 +248,16 @@ function anoNext() {
   go();
 }
 
+/* A screen's buttons wait a moment before they listen: the second tap of a double tap lands on whatever
+   the first one drew under the finger, and would answer a question nobody has read. */
+function tapArmed(ms) {
+  const t0 = performance.now();
+  return () => performance.now() - t0 >= (ms || 350);
+}
+
 function wireAno() {
   const on = (id, fn) => document.getElementById(id)?.addEventListener('click', fn);
+  const ready = tapArmed();
   const r = document.getElementById('ano-range'), yEl = document.getElementById('ano-year');
   const set = v => {
     const q = ano.qs[ano.i];
@@ -253,14 +274,15 @@ function wireAno() {
   }
   /* ten years after 2 a.C. is 9 d.C.: there is no year zero to count */
   document.querySelectorAll('[data-nudge]').forEach(b => b.addEventListener('click', () => {
+    if (!ready()) return;
     snd.tap();
     const g = ano.guess, d = +b.dataset.nudge;
     let v = g + d;
     if (g < 0 && v >= 0) v += 1; else if (g > 0 && v <= 0) v -= 1;
     set(v);
   }));
-  on('ano-go', () => anoCommit());
-  on('ano-next', () => { snd.swipe(); anoNext(); });
+  on('ano-go', () => { if (ready()) anoCommit(); });
+  on('ano-next', () => { if (ready()) { snd.swipe(); anoNext(); } });
   on('ano-again', () => { snd.select(); startAno(); });
   on('ano-share', () => {
     const txt = anoShareText();

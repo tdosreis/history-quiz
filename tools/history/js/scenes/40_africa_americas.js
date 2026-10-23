@@ -5,7 +5,7 @@ Object.assign(SCENE, {
     label: 'Uma caravana de dromedários com barras de sal atravessando as dunas do Saara',
     rx: /\b(caravana|caravanas|camelo|camelos|dromedario|dromedarios|barras de sal|tuaregue|tuaregues|azalai)\b/,
     draw: () => {
-      const body = 'M-13-17C-10-22-6-26-1-26 3-26 5-22 7-19 10-17 12-14 15-14 17-14 18-17 19-21L20-23 22-24C25-24 27-22 28-20L27.4-18.6H22C19-17 17-12 14-9.6 12-8 10-8 8-9Q-2-6.6-11-9-14-10-15-13-13-17Z';
+      const body = 'M-13-17C-10-22-6-26-1-26 3-26 5-22 7-19 10-17 12-14 15-14 17-14 18-17 19-21L20-23 22-24C25-24 27-22 28-20L27.4-18.6H22C19-17 17-12 14-9.6 12-8 10-8 8-9Q-2-6.6-11-9C-14-10-15-13-13-17Z';
       const legs = 'M7-9 7.6-4.6 8.6 0M3.6-9 2.6-4.6 1 0M-10-9.4-11.6-4.6-10.6 0M-7-9.4-6.4-4.6-4.6 0', id = SCH.uid('cv');
       return SCH.bg('#CFDDD8') + SCH.sun(98, 16, 9, '#F7EED6')
         + `<path d="M84 42h36v8H84z" fill="#D9BC8C"/>`

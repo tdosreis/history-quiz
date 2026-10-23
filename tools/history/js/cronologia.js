@@ -89,7 +89,8 @@ function cronEndHtml() {
 }
 
 function cronShareText() {
-  const grid = cron.log.map(l => l.ok ? '🟩' : '⬛').join('');
+  /* a long line is shared by its first thirty */
+  const grid = cron.log.slice(0, 30).map(l => l.ok ? '🟩' : '⬛').join('') + (cron.log.length > 30 ? '…' : '');
   return `Cronologia 📜 History Quiz\n${grid}\n${cron.score} ${cron.score === 1 ? 'evento' : 'eventos'} na linha\n${chalShareTail(chalMine())}`;
 }
 
@@ -114,6 +115,7 @@ function cronPlace(i) {
   if (ok && cron.score % 5 === 0) try { burst(16); } catch (err) {}
 }
 function cronNext() {
+  if (!cron || cron.phase !== 'reveal') return;
   if (cron.lives <= 0 || !cron.deck.length) {
     cron.phase = 'end';
     stats.cronGames = (stats.cronGames || 0) + 1;
@@ -138,8 +140,9 @@ function cronScroll() {
 
 function wireCron() {
   const on = (id, fn) => document.getElementById(id)?.addEventListener('click', fn);
-  document.querySelectorAll('.cron-slot').forEach(b => b.addEventListener('click', () => cronPlace(+b.dataset.slot)));
-  on('cron-next', () => { snd.swipe(); cronNext(); });
+  const ready = tapArmed();
+  document.querySelectorAll('.cron-slot').forEach(b => b.addEventListener('click', () => { if (ready()) cronPlace(+b.dataset.slot); }));
+  on('cron-next', () => { if (ready()) { snd.swipe(); cronNext(); } });
   on('cron-again', () => { snd.select(); startCron(); });
   on('cron-share', () => {
     const txt = cronShareText();

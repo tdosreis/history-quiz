@@ -319,6 +319,7 @@ function ondeCommit() {
   if (p >= 80) try { burst(p === 100 ? 28 : 14); } catch (err) {}
 }
 function ondeNext() {
+  if (!onde || onde.phase !== 'reveal') return;
   if (onde.i >= onde.qs.length - 1) {
     onde.phase = 'end';
     stats.ondeGames = (stats.ondeGames || 0) + 1;
@@ -338,8 +339,9 @@ function ondeNext() {
 
 function wireOnde() {
   const on = (id, fn) => document.getElementById(id)?.addEventListener('click', fn);
-  on('onde-go', () => ondeCommit());
-  on('onde-next', () => { snd.swipe(); ondeNext(); });
+  const ready = tapArmed();   // js/ano.js: a double tap's second half is not an answer
+  on('onde-go', () => { if (ready()) ondeCommit(); });
+  on('onde-next', () => { if (ready()) { snd.swipe(); ondeNext(); } });
   on('onde-again', () => { snd.select(); startOnde(); });
   on('onde-share', () => {
     const txt = ondeShareText();
