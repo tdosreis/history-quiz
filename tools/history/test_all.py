@@ -258,6 +258,55 @@ JS = r"""
     if (Object.keys(revFile()).length > REV_MAX) F('the review file grows past ' + REV_MAX);
     LS.set('rev', keep); stats.revLearned = keepSt;
   } catch (e) { F('revisar EXC ' + e.message); }
+  /* ── Cronologia: the line stays in order whatever is tapped, a miss costs a life, and a seed deals the same line ── */
+  try {
+    for (let g = 0; g < 30; g++) {
+      seedFrom(1000 + g); cron = buildCron(); _seed = null; cron.phase = 'place';
+      const w = 'a Cronologia game ';
+      let lives = CRON_LIVES, score = 0, turns = 0;
+      while (cron.lives > 0 && turns < 60) {
+        const n = cron.line.length, slot = Math.floor(Math.random() * (n + 1)), ok = cronFits(cron.line, cron.cur, slot);
+        cron.phase = 'place'; const e = cron.cur;
+        const right = cron.line.findIndex(x => x.y > e.y), at = right < 0 ? n : right;
+        if (ok !== (slot === at || cronFits(cron.line, e, slot))) F(w + 'judges a slot oddly');
+        cronPlace(slot); turns++;
+        if (ok) score++; else lives--;
+        if (cron.line.length !== n + 1 || !cron.line.includes(e)) F(w + 'loses the event');
+        for (let i = 1; i < cron.line.length; i++) if (cron.line[i - 1].y > cron.line[i].y) { F(w + 'is out of order after a ' + (ok ? 'right' : 'wrong') + ' tap'); break; }
+        if (cron.lives !== lives || cron.score !== score) F(w + 'counts lives or the score wrong');
+        if (cron.lives > 0) { cron.cur = cron.deck.pop(); cron.phase = 'place'; }
+      }
+      if (new Set(cron.line.map(e => e.id)).size !== cron.line.length) F(w + 'repeats an event');
+    }
+    if (!cronFits([{ y: 1500 }, { y: 1600 }], { y: 1500 }, 0) || !cronFits([{ y: 1500 }, { y: 1600 }], { y: 1500 }, 1)) F('an event of the same year does not fit beside it');
+    if (cronFits([{ y: 1500 }, { y: 1600 }], { y: 1700 }, 1)) F('a later event fits before an earlier one');
+    seedFrom(4242); const d1 = buildCron().deck.map(e => e.id).join(); seedFrom(4242); const d2 = buildCron().deck.map(e => e.id).join(); _seed = null;
+    if (d1 !== d2) F('the same seed deals a different Cronologia');
+    const cc = chalParse(chalCode({ g: 'c', seed: 77, score: 23 }));
+    if (!cc || cc.g !== 'c' || cc.score !== 23) F('a Cronologia challenge does not round-trip');
+    if (chalParse('c.1.' + (ANO_EVENTS.length + 1).toString(36) + '..' + chalVer())) F('a Cronologia score above the deck is accepted');
+    cron = null; sc = 'home';
+  } catch (e) { F('cronologia EXC ' + e.stack); }
+  /* ── Hoje na História: every day of the year has five dates near it, the same five all day, each with its picture ── */
+  try {
+    const pool = hojePool();
+    note.hoje = pool.length;
+    pool.forEach(e => { if (!e.pic || !(e.pic.face || e.pic.crest || e.pic.flag || e.pic.scene)) F('hoje: no picture for ' + e.t);
+      if (!(e.y < ANO_NOW) || !e.md || !(e.md[0] >= 1 && e.md[0] <= 12 && e.md[1] >= 1 && e.md[1] <= 31)) F('hoje: bad date for ' + e.t); });
+    if (hojeOff([1, 2], new Date(2026, 11, 30)) !== 3 || hojeOff([12, 30], new Date(2026, 0, 2)) !== -3 || hojeOff([3, 1], new Date(2026, 2, 1)) !== 0) F('hojeOff does not wrap the year');
+    let far = 0;
+    for (let k = 0; k < 365; k++) {
+      const day = new Date(2026, 0, 1 + k), g = buildHoje(day), w = 'hoje ' + (day.getMonth() + 1) + '/' + day.getDate() + ': ';
+      if (g.qs.length !== HOJE_N) F(w + g.qs.length + ' dates');
+      if (new Set(g.qs.map(q => q.e.id)).size !== g.qs.length) F(w + 'repeats a date');
+      g.qs.forEach((q, i) => { if (i && g.qs[i - 1].k > q.k) F(w + 'not in calendar order');
+        if (!(q.lo <= q.e.y && q.e.y <= q.hi)) F(w + 'the ruler misses ' + q.e.t); far = Math.max(far, Math.abs(q.k)); });
+      if (JSON.stringify(buildHoje(new Date(2026, 0, 1 + k, 23, 30)).qs.map(q => q.e.id + q.lo)) !== JSON.stringify(g.qs.map(q => q.e.id + q.lo))) F(w + 'changes in the course of the day');
+    }
+    note.hojeFar = far;
+    if (far > 30) F('a Hoje na História date is ' + far + ' days away');
+    ano = null;
+  } catch (e) { F('hoje EXC ' + e.stack); }
   note.ms = Date.now() - T0;
   return { fails, note };
 })()

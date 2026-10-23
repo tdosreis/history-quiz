@@ -3136,6 +3136,15 @@
     .almanac { display: flex; align-items: center; gap: 10px; margin: 2px 0 6px; padding: 9px 12px 9px 9px; text-align: left;
       background: url(img/atelier/slip-ivory.webp) center / 100% 100% no-repeat; color: #2A1D10; }
     .almanac.is-today { animation: alm-in .6s ease-out .3s both; }
+    button.almanac { width: 100%; border: 0; cursor: pointer; font: inherit; }
+    button.almanac:active { transform: translateY(1px); }
+    button.almanac:focus-visible { outline: 2px solid var(--brass); outline-offset: 2px; }
+    @media (max-width: 380px) {
+      .alm-t small { letter-spacing: .12em; line-height: 1.35; margin: -2px 0 -1px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+      .alm-go { width: 20px !important; height: 20px !important; }
+    }
+    .alm-go { flex: none; margin-left: auto; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      color: #F7F1E2; background: #B85A16; box-shadow: 0 1px 2px rgba(0, 0, 0, .3); }
     .alm-pic { flex: none; width: 40px; height: 40px; border-radius: 50%; overflow: hidden; display: flex; align-items: center; justify-content: center;
       background: #E9DDC1; color: #7B1E3A; box-shadow: 0 0 0 2px #C9A04E; }
     .alm-pic img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 22%; }
@@ -3286,6 +3295,11 @@
 .ano-pic.ano-crest { height: min(150px, 24vh); }
 .ano-crest .crest-disc { position: static; transform: none; width: auto; height: 100%; aspect-ratio: 1; flex: none; box-shadow: 0 2px 8px rgba(0, 0, 0, .3), inset 0 0 0 1px rgba(32, 36, 30, .16); }
 .ano-flag svg { width: auto; height: 100%; max-height: 120px; aspect-ratio: 3 / 2; box-shadow: 0 2px 8px rgba(0, 0, 0, .3); }
+/* a hyphenated word (14-Bis, Mata-mata) never breaks at its hyphen */
+.ano-nw { white-space: nowrap; }
+/* Hoje na História: the day and the month of the event, given; the year is the question */
+.ano-date { display: inline-flex; align-items: center; gap: 5px; flex: none; padding: 5px 11px 4px; border-radius: 12px;
+  font: 700 10.5px/1 var(--font-s); letter-spacing: .1em; text-transform: uppercase; color: var(--brass-ink); background: var(--brass-soft); }
 .ano-t { margin: 0; text-align: center; font: 600 clamp(19px, 5.4vw, 23px)/1.22 var(--font-d); letter-spacing: -.012em; max-width: 26ch; }
 .ano-dial { display: flex; flex-direction: column; align-items: stretch; gap: 6px; flex: none; }
 .ano-year { text-align: center; font: 600 44px/1 var(--font-d); letter-spacing: -.02em; color: var(--brass-ink, var(--brass)); }
@@ -3546,15 +3560,21 @@
 }
 .mode-onde { --md: #56702F; --md-soft: rgba(86, 112, 47, .14); }
 :root[data-theme="dark"] .mode-onde, :root:not([data-theme="light"]) .mode-onde { --md: #8DAE57; }
-/* the other games, on a phone: three to a row */
+/* the other games, on a phone: four to a row, two rows */
 @media (max-width: 699px) {
-  .cv-toc.cv-toc-4 { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; }
-  .cv-toc-4 .cv-row { padding: 7px 4px 7px; gap: 3px; }
+  .cv-toc.cv-toc-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 5px; }
+  .cv-toc-4 .cv-row { padding: 7px 2px 7px; gap: 3px; }
   .cv-toc-4 .cv-ic { width: 26px; height: 26px; }
-  .cv-toc-4 .cv-rt b { font-size: 15.5px; white-space: nowrap; }
+  .cv-toc-4 .cv-rt b { font-size: 14px; letter-spacing: -.02em; white-space: nowrap; }
   .cv-toc-4 .cv-rt { min-width: 0; max-width: 100%; }
-  .cv-toc-4 .cv-rt small { font-size: 9.5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-  .cv-toc-4 > .cv-row:nth-child(6):last-child { grid-column: span 2; }
+  .cv-toc-4 .cv-rt small { font-size: 9px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+}
+@media (max-width: 380px) { .cv-toc-4 .cv-rt b { font-size: 12.5px; } .cv-toc-4 .cv-rt small { font-size: 8.5px; } }
+/* on a wider screen the games are a list, numbered to VIII: the numeral gets the room not to break */
+@media (min-width: 700px) {
+  .cv-toc-4 .cv-row { grid-template-columns: 46px 1fr 38px; }
+  .cv-toc-4 .cv-row + .cv-row::before { left: 46px; }
+  .cv-toc-4 .cv-n { white-space: nowrap; }
 }
 /* a short phone keeps the portrait: the tiles say only their names */
 @media (max-width: 699px) and (max-height: 700px) {
@@ -3602,6 +3622,75 @@
 .cv-row.is-nudge { animation: rev-nudge .4s ease; }
 @keyframes rev-nudge { 25% { transform: translateX(-4px); } 50% { transform: translateX(4px); } 75% { transform: translateX(-2px); } }
 .rev-left { display: flex; align-items: center; gap: 5px; color: var(--ink-2); font-weight: 600; }
+
+
+/* ═══ CRONOLOGIA — the line of time, its events on slips, the gaps between them to tap ═══ */
+.cron-pg { gap: 8px; }
+.cron-lives { display: flex; gap: 2px; }
+.cron-lives i { display: flex; color: var(--ink-3); opacity: .28; transition: opacity .3s, transform .3s; }
+.cron-lives i.on { color: var(--bad); opacity: 1; }
+.cron-card { margin: 0; }
+.cron-line { flex: 1 1 0; min-height: 110px; position: relative; display: flex; flex-direction: column; padding: 2px 2px 4px;
+  overflow-x: hidden; overscroll-behavior: contain; }
+/* the spine of the line, behind the slips and the gaps: a rule down the year column */
+.cron-row, .cron-slot { --sp: 34px; background-image: linear-gradient(var(--brass), var(--brass)); background-repeat: no-repeat;
+  background-size: 2px 100%; background-position: var(--sp) 0; }
+.cron-row { flex: none; position: relative; display: grid; grid-template-columns: 72px minmax(0, 1fr); align-items: center; gap: 8px;
+  min-height: 38px; padding: 0 10px 0 0; }
+.cron-y { justify-self: center; z-index: 1; padding: 4px 6px; min-width: 56px; text-align: center; border-radius: 3px;
+  font: 600 13.5px/1 var(--font-d); letter-spacing: -.01em; color: var(--brass-ink); background: var(--pocket);
+  box-shadow: 0 0 0 1.5px var(--brass); white-space: nowrap; }
+.cron-y.is-long { min-width: 0; padding: 4px 3px; font-size: 11.5px; letter-spacing: -.03em; }
+.cron-t { padding: 7px 10px; font: 500 13px/1.25 var(--font-d); color: var(--ink);
+  background: var(--at-card-img) center / 100% 100% no-repeat; }
+.cron-row.is-good .cron-y { color: #fff; background: var(--good); box-shadow: 0 0 0 1.5px var(--good); }
+.cron-row.is-bad .cron-y { color: #fff; background: var(--bad); box-shadow: 0 0 0 1.5px var(--bad); }
+.cron-row.is-good .cron-t, .cron-row.is-bad .cron-t { font-weight: 600; }
+.cron-row#cron-fresh.is-good, .cron-row#cron-fresh.is-bad { animation: cron-in .45s cubic-bezier(.2, 1.3, .4, 1) both; }
+@keyframes cron-in { from { transform: translateX(-14px) scale(.97); opacity: 0; } }
+/* a gap to tap: a dashed slot on the line, saying where */
+.cron-slot { flex: none; display: flex; align-items: center; width: 100%; min-height: 30px; padding: 0 10px 0 80px; border: 0; cursor: pointer;
+  background-color: transparent; color: var(--ink-3); font: 700 10px/1 var(--font-s); letter-spacing: .14em; text-transform: uppercase; }
+.cron-slot span { flex: 1; display: flex; align-items: center; justify-content: center; height: 22px; border-radius: 11px;
+  border: 1.5px dashed color-mix(in srgb, var(--ink-3) 55%, transparent); transition: background .15s, color .15s, border-color .15s; }
+.cron-slot:hover span, .cron-slot:focus-visible span { color: var(--on-brass, #1A1204); background: var(--brass); border-color: var(--brass); border-style: solid; }
+.cron-slot:focus-visible { outline: none; }
+.cron-slot:active span { transform: scale(.98); }
+.cron-res { flex: none; display: flex; flex-direction: column; gap: 4px; padding: 9px 12px; text-align: center;
+  background: var(--at-card-img) center / 100% 100% no-repeat; }
+.cron-res-h { margin: 0; font: 600 16px/1.2 var(--font-d); color: var(--ink-2); }
+.cron-res-h b { font-weight: 700; }
+.cron-res.good .cron-res-h b { color: var(--good); }
+.cron-res.bad .cron-res-h b { color: var(--bad); }
+.cron-res-h .num { color: var(--ink); }
+.cron-res-h small { font: 600 12px/1 var(--font-s); color: var(--ink-3); }
+.cron-res-x { margin: 0; font-size: 12.5px; line-height: 1.32; color: var(--ink-2);
+  display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.cron-res .selo-won { justify-content: center; }
+.cron-hint { margin: 14px 10px 0 80px; font-size: 12.5px; line-height: 1.35; color: var(--ink-3); }
+#cron-next { flex: none; align-self: stretch; justify-content: center; }
+/* the results: the whole line as it was laid, the wrong ones in red */
+.cron-line-end { flex: 0 1 auto; width: 100%; max-width: 440px; max-height: 38vh; min-height: 80px; text-align: left; }
+.cron-line-end .cron-row { min-height: 0; padding-top: 2px; padding-bottom: 2px; }
+.cron-line-end .cron-t { padding: 5px 9px; font-size: 12px; }
+.mode-cron { --md: #3B5488; --md-soft: rgba(59, 84, 136, .14); }
+:root[data-theme="dark"] .mode-cron, :root:not([data-theme="light"]) .mode-cron { --md: #8AA3D6; }
+.mode-hoje { --md: #B85A16; --md-soft: rgba(184, 90, 22, .14); }
+:root[data-theme="dark"] .mode-hoje, :root:not([data-theme="light"]) .mode-hoje { --md: #E8904A; }
+@media (max-height: 700px) {
+  .cron-pg { gap: 6px; }
+  .cron-row { min-height: 34px; }
+  .cron-t { padding: 5px 9px; font-size: 12.5px; }
+  .cron-slot { min-height: 28px; }
+  .cron-res { padding: 6px 10px; }
+  .cron-res-h { font-size: 15px; }
+  .cron-res-x { font-size: 12px; -webkit-line-clamp: 2; }
+  .cron-line-end { max-height: 30vh; }
+}
+/* on a tablet or a computer the sheet is as tall as the screen allows, so the line gets the room */
+@media (min-width: 700px) {
+  #qz:has(.cron-pg) { height: min(calc(100dvh - 48px), 980px); }
+}
 
 /*@@/formats_css@@*/
   </style>
@@ -6090,7 +6179,7 @@ const CATS = [
       {"t": "Os médicos já usavam a famosa máscara em forma de bico durante a Peste Negra, no século XIV?", "a": ["Mito"], "type": "txt", "choices": ["Fato", "Mito"], "duel": true, "myth": true, "d": 5, "x": "Na Peste Negra, de 1347 a 1351, ela não existia: a máscara de bico, recheada de ervas aromáticas, surgiu no século XVII e é atribuída ao médico francês Charles de Lorme.", "scene": "peste_negra"},
     ]
   },
-                                                                                                /* NEW-QS:END */
+                                                                                                          /* NEW-QS:END */
 ];
 /*@@/data_cl_cats@@*/
 /*@@data_pl_lib@@*/
@@ -6623,6 +6712,8 @@ const ICON = {
   stamp:  _ico('M9 3h6v6l3 4H6l3-4zM4 16h16v3H4zM6 21h12'),
   chain:  _ico('M9 15l6-6M10 6.5l1.5-1.5a3.5 3.5 0 0 1 5 5L15 11.5M14 17.5l-1.5 1.5a3.5 3.5 0 0 1-5-5L9 12.5'),
   hourglass: _ico('M6 3h12M6 21h12M7 3c0 6 10 6 10 9s-10 3-10 9M17 3c0 6-10 6-10 9s10 3 10 9'),
+  timeline: _ico('M3 12h18M6 8.5v7M12 6v12M18 9.5v5'),
+  sun:    _ico('M12 8a4 4 0 1 0 0 8a4 4 0 1 0 0-8M12 2.5v2.5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8'),
 };
 
 /*@@data_meta@@*/
@@ -9274,6 +9365,12 @@ const MEDALS = [
     t: () => LS.get('ondeBest', 0) >= 700, p: () => [LS.get('ondeBest', 0), 700] },
   { id:'revLearn', ic:'book', n:'Aprendeu com os erros', d:'Fixe 10 perguntas que você tinha errado, revisando',
     t: st => (st.revLearned || 0) >= 10, p: () => [stats.revLearned || 0, 10] },
+  { id:'cron10', ic:'timeline', n:'Cronista',        d:'Ponha 10 eventos na linha da Cronologia',
+    t: st => (st.cronBest || 0) >= 10, p: () => [stats.cronBest || 0, 10] },
+  { id:'cron25', ic:'scroll', n:'Guardião do tempo', d:'Ponha 25 eventos na linha da Cronologia',
+    t: st => (st.cronBest || 0) >= 25, p: () => [stats.cronBest || 0, 25] },
+  { id:'hoje400', ic:'sun', n:'Almanaque vivo',      d:'Faça 400 pontos no Hoje na História',
+    t: st => (st.hojeBest || 0) >= 400, p: () => [stats.hojeBest || 0, 400] },
 ];
 
 function earnedMedals() { return MEDALS.filter(m => { try { return m.t(stats); } catch (e) { return false; } }); }
@@ -9305,13 +9402,13 @@ const MEDAL_SETS = [
   { id:'album',  n:'O álbum',        tag:'Álbum',  shape:'shield',
     ids:['alb25','alb60','albHalf','alb3q','albAll','albEsc','albSel','albMsc','albBook'] },
   { id:'rotina', n:'Rotina',         tag:'Rotina', shape:'hex',
-    ids:['daily3','daily7','surv10','revLearn'] },
+    ids:['daily3','daily7','surv10','revLearn','hoje400'] },
   { id:'milhao', n:'Rumo ao Milhão', tag:'Milhão', shape:'coin',
     ids:['safe1','safe2','quit','million'] },
   { id:'arquivo', n:'O arquivo',     tag:'Arquivo', shape:'hex',
     ids:['fQuote','fBattle','fLine','fNews','fDuel','fMyth','fOrder','fAll'] },
   { id:'selos',  n:'Selos, anos e lugares', tag:'Selos', shape:'seal',
-    ids:['selo10','selo50','seloPg','anoExato','ano700','ondeMosca','onde700'] },
+    ids:['selo10','selo50','seloPg','anoExato','ano700','ondeMosca','onde700','cron10','cron25'] },
 ];
 /* How hard each one is to get, not how many people hold it — there is no
    server to count that, and a made-up percentage would be a lie. */
@@ -9327,6 +9424,7 @@ const MEDAL_TIER = {
   albAll:4, albBook:4, million:4,
   fQuote:2, fBattle:2, fLine:2, fNews:2, fOrder:2, fDuel:2, fMyth:2, fAll:3,
   selo10:1, anoExato:2, selo50:2, ano700:3, seloPg:3, ondeMosca:2, onde700:3, revLearn:2,
+  cron10:2, cron25:3, hoje400:2,
 };
 const TIER_NAME = ['', 'Comum', 'Rara', 'Épica', 'Lendária'];
 const medalSet = m => MEDAL_SETS.find(s => s.ids.includes(m.id)) || MEDAL_SETS[0];
@@ -21924,6 +22022,7 @@ function html() {
   if (sc === 'selos') return selosHtml();
   if (sc === 'ano')   return anoHtml();
   if (sc === 'onde')  return ondeHtml();
+  if (sc === 'cron')  return cronHtml();
   if (sc === 'desafio') return chalHtml();
 
   /* ── Home: the cover ────────────────────────────────────────── */
@@ -22000,12 +22099,15 @@ function html() {
             done ? 'Feito hoje' + (dres ? ' · ' + dres.nCorrect + '/' + dres.total : '')
                  : 'Desafio nº ' + dayIndex() + (dst > 0 ? ' · ' + dst + ' dias seguidos' : ''),
             done ? 'done' : 'daily', ICON.calendar('currentColor', 15))}
-          ${row('surv-btn', 'II', 'Mata-mata',
+          ${(() => { const r = hojeRes(), d = new Date();
+            return row('hoje-btn', 'II', 'Hoje', r ? 'Feito · ' + r.pts + ' pts' : d.getDate() + ' de ' + MES[d.getMonth()], r ? 'done' : 'hoje', ICON.sun('currentColor', 15)); })()}
+          ${row('surv-btn', 'III', 'Mata-mata',
             (stats.survBest || 0) > 0 ? 'Recorde ' + stats.survBest : 'Até errar uma', 'surv', ICON.shield('currentColor', 15))}
-          ${row('cta-btn', 'III', 'Treino', 'Sem pressa', 'train', ICON.ladder('currentColor', 15))}
-          ${row('ano-btn', 'IV', 'Que ano?', LS.get('anoBest', 0) > 0 ? 'Recorde ' + LS.get('anoBest', 0) + ' pts' : 'Acerte o ano', 'ano', ICON.hourglass('currentColor', 15))}
-          ${row('onde-btn', 'V', 'Onde foi?', LS.get('ondeBest', 0) > 0 ? 'Recorde ' + LS.get('ondeBest', 0) + ' pts' : 'Ache no mapa', 'onde', ICON.globe('currentColor', 15))}
-          ${row('rev-btn', 'VI', 'Revisar', revTail(), revDue().length ? 'rev' : 'rev is-off', ICON.book('currentColor', 15))}
+          ${row('cta-btn', 'IV', 'Treino', 'Sem pressa', 'train', ICON.ladder('currentColor', 15))}
+          ${row('ano-btn', 'V', 'Que ano?', LS.get('anoBest', 0) > 0 ? 'Recorde ' + LS.get('anoBest', 0) + ' pts' : 'Acerte o ano', 'ano', ICON.hourglass('currentColor', 15))}
+          ${row('onde-btn', 'VI', 'Onde foi?', LS.get('ondeBest', 0) > 0 ? 'Recorde ' + LS.get('ondeBest', 0) + ' pts' : 'Ache no mapa', 'onde', ICON.globe('currentColor', 15))}
+          ${row('cron-btn', 'VII', 'Cronologia', LS.get('cronBest', 0) > 0 ? 'Recorde ' + LS.get('cronBest', 0) : 'Linha do tempo', 'cron', ICON.timeline('currentColor', 15))}
+          ${row('rev-btn', 'VIII', 'Revisar', revTail(), revDue().length ? 'rev' : 'rev is-off', ICON.book('currentColor', 15))}
         </nav>
 
         <div class="cv-cols">
@@ -22672,12 +22774,16 @@ function go() {
   on('bselos-end',  () => { snd.swipe();  seloTheme = null; sc = 'selos'; go(); });
   on('ano-btn',     () => { snd.select(); startAno(); });
   on('onde-btn',    () => { snd.select(); startOnde(); });
+  on('cron-btn',    () => { snd.select(); startCron(); });
+  on('hoje-btn',    () => { snd.select(); startHoje(); });
+  on('balm',        () => { snd.select(); startHoje(); });
   on('rev-btn',     () => { if (startRev()) snd.select(); else { snd.tap(); const b = document.getElementById('rev-btn'); if (b) { b.classList.remove('is-nudge'); void b.offsetWidth; b.classList.add('is-nudge'); } } });
   on('bchal',       () => { snd.tap(); sc = 'desafio'; go(); });
   if (sc === 'selos') wireSelos();
   if (sc === 'album') wireAlbMap();
   if (sc === 'ano')   wireAno();
   if (sc === 'onde')  wireOnde();
+  if (sc === 'cron')  wireCron();
   if (sc === 'desafio') wireChal();
   on('bwelc',       () => { snd.tap(); openWelcomePack(); });
   on('bpack',       () => { snd.tap(); openRunPack(); });
@@ -23675,9 +23781,11 @@ function almanacHtml() {
   const when = a.days === 0 ? `Hoje na História · ${day} de ${MES_LONGO[m - 1]}`
              : a.days === 1 ? `Amanhã na História · ${day} de ${MES_LONGO[m - 1]}`
              : `Daqui a ${a.days} dias · ${day} de ${MES_LONGO[m - 1]}`;
-  return `<div class="almanac${a.days === 0 ? ' is-today' : ''}" role="note">
+  /* a tap on it plays the day's dates (Hoje na História, js/ano.js) */
+  return `<button id="balm" class="almanac${a.days === 0 ? ' is-today' : ''}" type="button" aria-label="${when}: ${yearTxt(y)}, ${txt}. Jogar Hoje na História">
     ${almanacPic(pic)}
-    <span class="alm-t"><small>${when}</small><span><b class="num">${yearTxt(y)}</b> — ${txt}</span></span></div>`;
+    <span class="alm-t"><small>${when}</small><span><b class="num">${yearTxt(y)}</b> — ${txt}</span></span>
+    <span class="alm-go" aria-hidden="true">${ICON.play('currentColor', 11)}</span></button>`;
 }
 
 const ANO_EVENTS = [
@@ -24252,6 +24360,61 @@ function startAno() {
   go();
 }
 
+/* ── HOJE NA HISTÓRIA ──
+   The almanac (js/almanac.js) as a game: the dates on it nearest to today,
+   with the birthdays of the figures, each to be dated on the same ruler. The
+   day and the month are shown, the year is the question. The same five for
+   everyone on the same day, in the order of the calendar. */
+const HOJE_N = 5;
+const _doy = (m, d) => Math.round((Date.UTC(2024, m - 1, d) - Date.UTC(2024, 0, 1)) / 864e5);
+/* the days from today to a day of the year, the short way round: negative for one just past */
+function hojeOff(md, now) {
+  now = now || new Date();
+  let k = _doy(md[0], md[1]) - _doy(now.getMonth() + 1, now.getDate());
+  if (k > 183) k -= 366; else if (k < -183) k += 366;
+  return k;
+}
+function hojePool() {
+  const picOf = id => PL.some(p => p.id === id) ? { face: id } : CL.some(c => c.id === id) ? { crest: id } : FLAGS[id] ? { flag: id } : {};
+  const out = ALMANAC.map(([m, d, y, t, pic], i) => ({ id: 'alm' + i, t, y, c: false, md: [m, d], pic: picOf(pic) }));
+  Object.keys(BDAYS).forEach(id => {
+    const p = PL.find(x => x.id === id);
+    if (!p || !PL_META[id]) return;
+    /* a birth already among the Que ano? events keeps its line and its "Você sabia?" */
+    const known = ANO_EVENTS.find(e => e.id === 'nasc_' + id && e.y === p.era[0]);
+    out.push(Object.assign({}, known || { id: 'nasc_' + id, t: 'Nasce ' + p.n, y: p.era[0], c: false, pic: { face: id } }, { md: BDAYS[id] }));
+  });
+  return out;
+}
+function buildHoje(now) {
+  now = now || new Date();
+  const day = dayIndex(now);
+  seedFrom(day * 7919 + 17);
+  /* nearest first; the ones as near as each other, in the day's own shuffled order */
+  const near = shuf(hojePool()).map(e => ({ e, k: hojeOff(e.md, now) })).sort((a, b) => Math.abs(a.k) - Math.abs(b.k));
+  const qs = near.slice(0, HOJE_N).sort((a, b) => a.k - b.k).map(({ e, k }) => {
+    const [lo, hi] = anoWindow(e, rnd());
+    const mid = Math.round((lo + hi) / 2 / 5) * 5;
+    return { e, k, lo, hi, start: mid === 0 ? 1 : mid };
+  });
+  _seed = null;
+  return { qs, i: 0, guess: qs[0].start, log: [], pts: 0, phase: 'guess', hoje: { day, d: now.getDate(), m: now.getMonth() + 1 } };
+}
+function startHoje() {
+  isDaily = false; isSurv = false; isMil = false; isRev = false;
+  runSelos = [];
+  ano = buildHoje();
+  sc = 'ano';
+  go();
+}
+/* today's first result, kept for the cover */
+const hojeRes = () => { const r = LS.get('hojeRes', null); return r && r.day === dayIndex() ? r : null; };
+const hojeDate = h => `${h.d} de ${MES_LONGO[h.m - 1]}`;
+function hojeWhen(q) {
+  const k = q.k, [m, d] = q.e.md;
+  return `${d} de ${MES_LONGO[m - 1]} · ${k === 0 ? 'hoje' : k === -1 ? 'ontem' : k === 1 ? 'amanhã' : k < 0 ? `há ${-k} dias` : `daqui a ${k} dias`}`;
+}
+
 /* the picture of an event: its scene, or a face, a brasão, a flag */
 function anoPic(e) {
   const p = e.pic || {};
@@ -24275,12 +24438,13 @@ function anoHtml() {
   const pos = y => `calc(var(--ano-th0) + (100% - 2 * var(--ano-th0)) * ${((y - q.lo) / (q.hi - q.lo)).toFixed(4)})`;
   return `
   <div class="pg ano-pg${rev ? ' is-rev' : ''}">
-    ${topbar('Que ano?')}
+    ${topbar(ano.hoje ? 'Hoje na História' : 'Que ano?')}
     <div class="ano-head"><div class="runlog" aria-hidden="true">${dots}</div>
       <span class="ano-score"><b class="num">${ano.pts}</b> pts</span></div>
     <div class="ano-card">
       ${anoPic(e)}
-      <p class="ano-t">${_esc(e.t)}</p>
+      ${ano.hoje ? `<span class="ano-date">${ICON.calendar('currentColor', 12)} ${hojeWhen(q)}</span>` : ''}
+      <p class="ano-t">${_esc(e.t).replace(/\S+-\S+/g, w => `<span class="ano-nw">${w}</span>`)}</p>
     </div>
     <div class="ano-dial">
       <div class="ano-year num${rev ? ' is-set' : ''}${rev && last.d === 0 ? ' is-hit' : ''}" id="ano-year"${rev ? ' aria-live="polite"' : ''}>${anoYear(rev ? last.g : ano.guess)}</div>
@@ -24308,14 +24472,15 @@ function anoHtml() {
 
 function anoEndHtml() {
   const best = LS.get('anoBest', 0);
-  const isBest = !!ano.isBest;
-  const msg = ano.pts >= 800 ? 'Uma máquina do tempo!' : ano.pts >= 600 ? 'Ótimo senso de tempo!' : ano.pts >= 400 ? 'Nada mau!' : 'O tempo é traiçoeiro…';
+  const isBest = !!ano.isBest, n = ano.qs.length, f = ano.pts / (n * 100), h = ano.hoje, r = h && hojeRes();
+  const msg = f >= .8 ? 'Uma máquina do tempo!' : f >= .6 ? 'Ótimo senso de tempo!' : f >= .4 ? 'Nada mau!' : 'O tempo é traiçoeiro…';
   return `
   <div class="pg pg-center ano-end" style="padding:22px 18px;gap:9px;">
-    <div class="eyebrow">Que ano? · ${ANO_N} eventos</div>
+    <div class="eyebrow">${h ? 'Hoje na História · ' + hojeDate(h) : `Que ano? · ${n} eventos`}</div>
     <div class="display" style="font-size:28px;"><em>${msg}</em></div>
-    <div class="display prize-pop brass" style="font-size:50px;letter-spacing:-.03em;">${ano.pts}<span class="muted" style="font-size:18px;"> / ${ANO_N * 100}</span></div>
-    ${chalBanner() || `<p class="small muted">${isBest ? 'Seu novo recorde!' : `Recorde: ${best} pts`}</p>`}
+    <div class="display prize-pop brass" style="font-size:50px;letter-spacing:-.03em;">${ano.pts}<span class="muted" style="font-size:18px;"> / ${n * 100}</span></div>
+    ${h ? `<p class="small muted">${!ano.hojeFirst && r ? `Vale o primeiro de hoje: <b>${r.pts} pts</b> · ` : ''}Amanhã, outras datas</p>`
+      : chalBanner() || `<p class="small muted">${isBest ? 'Seu novo recorde!' : `Recorde: ${best} pts`}</p>`}
     <div class="ano-list">
       ${ano.log.map(l => `<div class="ano-li"><span class="ano-li-p ${l.p >= 80 ? 'good' : l.p >= 50 ? 'brass' : 'bad'}">${l.p}</span>
         <span class="ano-li-t">${_esc(l.e.t)}</span><span class="ano-li-y"><b>${l.e.c ? 'c. ' : ''}${anoYear(l.e.y)}</b><small>${l.d === 0 ? 'exato' : 'você: ' + anoYear(l.g)}</small></span></div>`).join('')}
@@ -24324,7 +24489,7 @@ function anoEndHtml() {
     ${medalChips()}
     <div class="foot-row" style="margin-top:8px;">
       <button id="ano-share" class="btn btn-ghost btn-sm">${chalMine() ? 'Desafiar' : 'Compartilhar'}</button>
-      <button id="ano-again" class="btn btn-brass">De novo</button>
+      <button id="ano-again" class="btn btn-brass">${h ? 'Que ano?' : 'De novo'}</button>
       <button id="bhome" class="btn btn-ghost btn-sm">Início</button>
     </div>
   </div>`;
@@ -24332,7 +24497,8 @@ function anoEndHtml() {
 
 function anoShareText() {
   const grid = ano.log.map(l => l.p === 100 ? '🎯' : l.p >= 80 ? '🟩' : l.p >= 50 ? '🟨' : '⬛').join('');
-  return `Que ano? 📜 History Quiz\n${grid}\n${ano.pts}/${ANO_N * 100} pts\n${chalShareTail(chalMine())}`;
+  if (ano.hoje) return `Hoje na História 📅 ${hojeDate(ano.hoje)}\n${grid}\n${ano.pts}/${ano.qs.length * 100} pts\n${CHAL_URL}`;
+  return `Que ano? 📜 History Quiz\n${grid}\n${ano.pts}/${ano.qs.length * 100} pts\n${chalShareTail(chalMine())}`;
 }
 
 function anoCommit() {
@@ -24352,10 +24518,16 @@ function anoCommit() {
 function anoNext() {
   if (ano.i >= ano.qs.length - 1) {
     ano.phase = 'end';
-    stats.anoGames = (stats.anoGames || 0) + 1;
+    if (ano.hoje) {
+      /* the day's game is the same all day: only its first result is kept, and no record is set on a replay */
+      stats.hojeGames = (stats.hojeGames || 0) + 1;
+      if (!hojeRes()) { ano.hojeFirst = true; stats.hojeBest = Math.max(stats.hojeBest || 0, ano.pts); LS.set('hojeRes', { day: ano.hoje.day, pts: ano.pts }); }
+    } else {
+      stats.anoGames = (stats.anoGames || 0) + 1;
+      ano.isBest = ano.pts > LS.get('anoBest', 0);
+      if (ano.isBest) LS.set('anoBest', ano.pts);
+    }
     LS.set('stats', stats);
-    ano.isBest = ano.pts > LS.get('anoBest', 0);
-    if (ano.isBest) LS.set('anoBest', ano.pts);
     window._newMedals = (ano.medals || []).concat(newMedals());
     setTimeout(() => snd.final(ano.pts >= 500), 200);
   } else {
@@ -25911,6 +26083,7 @@ const CHAL_GAMES = {
   m:  { n: 'Rumo ao Milhão', ic: 'crown' },
   a:  { n: 'Que ano?', ic: 'hourglass' },
   o:  { n: 'Onde foi?', ic: 'globe' },
+  c:  { n: 'Cronologia', ic: 'timeline' },
 };
 const CHAL_SEED_MAX = 2147483647;
 let chal = null;           // a challenge received: { g, seed, score, more, code, used }
@@ -25933,11 +26106,11 @@ function chalCode(c) {
 }
 const chalLink = c => CHAL_URL + '?d=' + chalCode(c);
 function chalParse(s) {
-  const m = /^(tf|tm|td|m|a|o)\.([0-9a-z]{1,6})\.([0-9a-z]{1,6})\.([0-9a-z]{0,3})\.([0-9a-z]{2})$/.exec(String(s || '').trim().toLowerCase());
+  const m = /^(tf|tm|td|m|a|o|c)\.([0-9a-z]{1,6})\.([0-9a-z]{1,6})\.([0-9a-z]{0,3})\.([0-9a-z]{2})$/.exec(String(s || '').trim().toLowerCase());
   if (!m) return null;
   const seed = parseInt(m[2], 36), score = parseInt(m[3], 36), more = m[4] ? parseInt(m[4], 36) : null;
   if (!(seed >= 0 && seed <= CHAL_SEED_MAX)) return null;
-  const cap = m[1] === 'm' ? 1000000 : m[1][0] === 't' ? 99999 : 1000;
+  const cap = m[1] === 'm' ? 1000000 : m[1][0] === 't' ? 99999 : m[1] === 'c' ? ANO_EVENTS.length : 1000;
   if (!(score <= cap)) return null;
   if (m[1] === 'm' && !(more != null && more <= LADDER.length)) return null;
   if (m[1][0] === 't' && more != null && more > 50) return null;
@@ -25954,6 +26127,7 @@ function chalSeed(g) {
 function chalMine() {
   if (sc === 'ano' && ano && ano.phase === 'end' && ano.seed != null) return { g: 'a', seed: ano.seed, score: ano.pts };
   if (sc === 'onde' && onde && onde.phase === 'end' && onde.seed != null) return { g: 'o', seed: onde.seed, score: onde.pts };
+  if (sc === 'cron' && cron && cron.phase === 'end' && cron.seed != null) return { g: 'c', seed: cron.seed, score: cron.score };
   if (sc !== 'end' || runSeed == null || isDaily || isSurv || (typeof isRev !== 'undefined' && isRev)) return null;
   if (isMil) return { g: 'm', seed: runSeed, score: banked, more: rung };
   const g = 't' + String(diffKey)[0];
@@ -25965,6 +26139,7 @@ const chalIsThis = mine => !!(mine && chal && chal.used && chal.g === mine.g && 
 const chalCmp = (a, b) => a.g === 'm' ? (a.score - b.score) || ((a.more || 0) - (b.more || 0)) : a.score - b.score;
 function chalScoreTxt(c) {
   if (c.g === 'm') return `${money(c.score)} · degrau ${c.more || 0}`;
+  if (c.g === 'c') return `${c.score} na linha`;
   return `${c.score} pts`;
 }
 
@@ -25976,7 +26151,7 @@ function chalShareTail(mine) {
     const r = chalCmp(mine, chal);
     head = `Desafio: ${chalScoreTxt(mine)} × ${chalScoreTxt(chal)} — ${r > 0 ? 'venci! 🏆' : r < 0 ? 'perdi, desta vez' : 'empate'}\n`;
   }
-  return `${head}${mine.g === 'm' ? 'Encara as mesmas 16 perguntas?' : mine.g === 'a' || mine.g === 'o' ? 'Encara os mesmos 10 eventos?' : 'Encara as mesmas perguntas?'} ${chalLink(mine)}`;
+  return `${head}${mine.g === 'm' ? 'Encara as mesmas 16 perguntas?' : mine.g === 'a' || mine.g === 'o' ? 'Encara os mesmos 10 eventos?' : mine.g === 'c' ? 'Encara a mesma linha do tempo?' : 'Encara as mesmas perguntas?'} ${chalLink(mine)}`;
 }
 
 /* on the results: who won */
@@ -26002,12 +26177,13 @@ function chalHtml() {
   const what = c.g === 'm' ? 'As mesmas 16 perguntas da escada até o milhão, com as mesmas alternativas.'
              : c.g === 'a' ? 'Os mesmos 10 eventos, na mesma régua de anos.'
              : c.g === 'o' ? 'Os mesmos 10 eventos, para achar no mapa.'
+             : c.g === 'c' ? 'Os mesmos eventos, na mesma ordem, para pôr na linha do tempo. Três vidas.'
              : `As mesmas ${(DIFFS.find(d => d.key === G.diff) || DIFFS[0]).n} perguntas, na mesma ordem, com as mesmas alternativas.`;
   const more = c.g[0] === 't' && c.more != null ? `${c.more} ${c.more === 1 ? 'acerto' : 'acertos'}` : '';
   return `
   <div class="pg pg-center chal-pg">
     <div class="eyebrow">Desafio recebido</div>
-    <span class="chal-ic mode-disc mode-${c.g === 'm' ? 'album' : c.g === 'a' ? 'ano' : c.g === 'o' ? 'onde' : 'train'}">${(ICON[G.ic] || ICON.sword)('currentColor', 26)}</span>
+    <span class="chal-ic mode-disc mode-${c.g === 'm' ? 'album' : c.g === 'a' ? 'ano' : c.g === 'o' ? 'onde' : c.g === 'c' ? 'cron' : 'train'}">${(ICON[G.ic] || ICON.sword)('currentColor', 26)}</span>
     <div class="display" style="font-size:31px;"><em>Um amigo te desafiou!</em></div>
     <p class="chal-g">${G.n}</p>
     <div class="chal-card"><small>Placar a bater</small><b class="num">${chalScoreTxt(c)}</b>${more ? `<span>${more}</span>` : ''}</div>
@@ -26025,6 +26201,7 @@ function chalAccept() {
   else if (chal.g === 'm') startMilhao();
   else if (chal.g === 'a') startAno();
   else if (chal.g === 'o') startOnde();
+  else if (chal.g === 'c') startCron();
 }
 function wireChal() {
   document.getElementById('chal-go')?.addEventListener('click', () => { snd.select(); chalAccept(); });
@@ -26138,6 +26315,157 @@ function startRev() {
   startTmr();
   go();
   return true;
+}
+
+/* ═══════════════════════════════════════════════════
+   CRONOLOGIA — put each event in its place on the line of time
+   The line starts with one event, its year shown. Each turn brings a new
+   one, year hidden: the player taps the gap where it goes, before, between
+   or after the ones already there. Right, and it takes its place with its
+   year; wrong, and it still goes where it belongs, but a life goes with
+   it. Three lives. The longer the line, the closer the years and the
+   harder the gaps. Dealt from a seed, so a line can be sent to a friend.
+   ANO_EVENTS (the Que ano? events) are above this line.
+═══════════════════════════════════════════════════ */
+const CRON_LIVES = 3;
+let cron = null;           // { deck, line, cur, lives, score, phase: 'place'|'reveal'|'end', last, log, seed }
+
+function buildCron() {
+  const deck = shuf(ANO_EVENTS.slice());
+  const first = deck.pop();
+  return { deck, line: [first], cur: deck.pop(), lives: CRON_LIVES, score: 0, phase: 'place', last: null, log: [] };
+}
+function startCron() {
+  isDaily = false; isSurv = false; isMil = false; isRev = false;
+  runSelos = [];
+  /* dealt from a seed, so the game can be sent to a friend as a challenge (js/desafio.js) */
+  const seed = chalSeed('c');
+  seedFrom(seed); cron = buildCron(); _seed = null;
+  cron.seed = seed;
+  sc = 'cron';
+  go();
+}
+/* the gaps an event may go in: equal years fit either side of one another */
+function cronFits(line, e, i) {
+  return (i === 0 || line[i - 1].y <= e.y) && (i === line.length || e.y <= line[i].y);
+}
+const cronYear = e => (e.c ? 'c. ' : '') + anoYear(e.y);
+const cronRow = (e, cls, id) => `<div class="cron-row${cls || ''}"${id ? ` id="${id}"` : ''} role="listitem">
+      <b class="cron-y num${cronYear(e).length > 8 ? ' is-long' : ''}">${cronYear(e)}</b><span class="cron-t">${_esc(e.t)}</span></div>`;
+
+function cronHtml() {
+  if (!cron) cron = buildCron();
+  if (cron.phase === 'end') return cronEndHtml();
+  const rev = cron.phase === 'reveal', L = cron.last;
+  const lives = Array.from({ length: CRON_LIVES }, (_, i) => `<i class="${i < cron.lives ? 'on' : ''}">${ICON.hourglass('currentColor', 15)}</i>`).join('');
+  const rows = [];
+  cron.line.forEach((e, i) => {
+    if (!rev) rows.push(`<button class="cron-slot" data-slot="${i}" type="button" aria-label="${i ? `Entre ${cronYear(cron.line[i - 1])} e ${cronYear(e)}` : `Antes de ${cronYear(e)}`}"><span>${i ? 'aqui' : 'antes'}</span></button>`);
+    const fresh = L && L.e === e;
+    rows.push(cronRow(e, fresh && rev ? (L.ok ? ' is-good' : ' is-bad') : '', fresh ? 'cron-fresh' : ''));
+  });
+  if (!rev) rows.push(`<button class="cron-slot" data-slot="${cron.line.length}" type="button" aria-label="Depois de ${cronYear(cron.line[cron.line.length - 1])}"><span>depois</span></button>`);
+  /* the first turn says the rules once, in the room the line has not yet taken */
+  if (!rev && cron.line.length === 1) rows.push(`<p class="cron-hint">O ano de cada evento aparece quando ele entra na linha. Errou o lugar, perde uma das ${CRON_LIVES === 3 ? 'três' : CRON_LIVES} ampulhetas.</p>`);
+  return `
+  <div class="pg cron-pg${rev ? ' is-rev' : ''}">
+    ${topbar('Cronologia')}
+    <div class="ano-head"><span class="cron-lives" role="img" aria-label="${cron.lives} de ${CRON_LIVES} vidas">${lives}</span>
+      <span class="ano-score"><b class="num">${cron.score}</b> na linha</span></div>
+    ${rev ? `<div class="cron-res ${L.ok ? 'good' : 'bad'}" aria-live="polite">
+        <p class="cron-res-h"><b>${L.ok ? 'Isso!' : 'Não era aí'}</b> <span class="num">${cronYear(L.e)}</span>${L.ok ? '' : ` <small>· ${cron.lives} ${cron.lives === 1 ? 'vida' : 'vidas'}</small>`}</p>
+        ${L.selo ? seloWonLine(L.selo) : L.e.x ? `<p class="cron-res-x">${_esc(L.e.x)}</p>` : ''}
+      </div>`
+      : `<div class="onde-card cron-card">
+      ${ondePic(cron.cur)}
+      <div class="onde-tt"><p class="onde-t">${_esc(cron.cur.t)}</p><span class="onde-y">Toque onde entra na linha</span></div>
+    </div>`}
+    <div class="cron-line scroll-y" id="cron-line" role="list" aria-label="A linha do tempo, do mais antigo ao mais recente">${rows.join('')}</div>
+    ${rev ? `<button id="cron-next" class="btn btn-brass">${cron.lives <= 0 || !cron.deck.length ? 'Ver resultado' : 'Próximo'}</button>` : ''}
+  </div>`;
+}
+
+function cronEndHtml() {
+  const best = LS.get('cronBest', 0);
+  const msg = cron.score >= 20 ? 'Um cronista de verdade!' : cron.score >= 12 ? 'Ótima memória do tempo!' : cron.score >= 6 ? 'Nada mau!' : 'O tempo é traiçoeiro…';
+  const wrong = new Set(cron.log.filter(l => !l.ok).map(l => l.e));
+  return `
+  <div class="pg pg-center ano-end cron-end" style="padding:22px 18px;gap:9px;">
+    <div class="eyebrow">Cronologia · ${cron.line.length} eventos</div>
+    <div class="display" style="font-size:28px;"><em>${msg}</em></div>
+    <div class="display prize-pop brass" style="font-size:50px;letter-spacing:-.03em;">${cron.score}<span class="muted" style="font-size:18px;letter-spacing:0;"> na linha</span></div>
+    ${chalBanner() || `<p class="small muted">${cron.isBest ? 'Seu novo recorde!' : `Recorde: ${best}`}</p>`}
+    <div class="cron-line cron-line-end scroll-y" role="list" aria-label="A linha do tempo">${cron.line.map(e => cronRow(e, wrong.has(e) ? ' is-bad' : '')).join('')}</div>
+    ${selosStrip()}
+    ${medalChips()}
+    <div class="foot-row" style="margin-top:8px;">
+      <button id="cron-share" class="btn btn-ghost btn-sm">${chalMine() ? 'Desafiar' : 'Compartilhar'}</button>
+      <button id="cron-again" class="btn btn-brass">De novo</button>
+      <button id="bhome" class="btn btn-ghost btn-sm">Início</button>
+    </div>
+  </div>`;
+}
+
+function cronShareText() {
+  const grid = cron.log.map(l => l.ok ? '🟩' : '⬛').join('');
+  return `Cronologia 📜 History Quiz\n${grid}\n${cron.score} ${cron.score === 1 ? 'evento' : 'eventos'} na linha\n${chalShareTail(chalMine())}`;
+}
+
+function cronPlace(i) {
+  if (!cron || cron.phase !== 'place') return;
+  const e = cron.cur, ok = cronFits(cron.line, e, i);
+  /* right or wrong, it goes where it belongs */
+  let at = i;
+  if (!ok) { at = cron.line.findIndex(x => x.y > e.y); if (at < 0) at = cron.line.length; }
+  cron.line.splice(at, 0, e);
+  cron.log.push({ e, ok });
+  cron.last = { e, ok };
+  if (ok) {
+    cron.score++;
+    /* a long line is hard to place in: from the sixth on, an event with a scene is cancelled into the stamp album */
+    if (cron.line.length >= 6 && e.pic && e.pic.scene && awardSelo(e.pic.scene)) cron.last.selo = e.pic.scene;
+    snd.correct(Math.min(cron.score, 8));
+  } else { cron.lives--; snd.wrong(); }
+  try { cron.medals = (cron.medals || []).concat(newMedals()); } catch (err) {}
+  cron.phase = 'reveal';
+  go();
+  if (ok && cron.score % 5 === 0) try { burst(16); } catch (err) {}
+}
+function cronNext() {
+  if (cron.lives <= 0 || !cron.deck.length) {
+    cron.phase = 'end';
+    stats.cronGames = (stats.cronGames || 0) + 1;
+    stats.cronBest = Math.max(stats.cronBest || 0, cron.score);
+    LS.set('stats', stats);
+    cron.isBest = cron.score > LS.get('cronBest', 0);
+    if (cron.isBest) LS.set('cronBest', cron.score);
+    window._newMedals = (cron.medals || []).concat(newMedals());
+    setTimeout(() => snd.final(cron.score >= 8), 200);
+  } else {
+    cron.cur = cron.deck.pop();
+    cron.phase = 'place';
+  }
+  go();
+}
+
+/* the line keeps the newest event in the middle of its window, so the gaps around it are in reach */
+function cronScroll() {
+  const line = document.getElementById('cron-line'), el = document.getElementById('cron-fresh');
+  if (line && el) line.scrollTop = Math.max(0, el.offsetTop - (line.clientHeight - el.offsetHeight) / 2);
+}
+
+function wireCron() {
+  const on = (id, fn) => document.getElementById(id)?.addEventListener('click', fn);
+  document.querySelectorAll('.cron-slot').forEach(b => b.addEventListener('click', () => cronPlace(+b.dataset.slot)));
+  on('cron-next', () => { snd.swipe(); cronNext(); });
+  on('cron-again', () => { snd.select(); startCron(); });
+  on('cron-share', () => {
+    const txt = cronShareText();
+    if (navigator.share) navigator.share({ text: txt }).catch(() => {});
+    else if (navigator.clipboard) navigator.clipboard.writeText(txt).then(() => {
+      const b = document.getElementById('cron-share'); if (b) { b.dataset.l = b.dataset.l || b.textContent; b.textContent = 'Copiado!'; setTimeout(() => { b.textContent = b.dataset.l; }, 1600); } }).catch(() => {});
+  });
+  if (cron && cron.phase !== 'end') cronScroll();
 }
 
 /*@@/formats@@*/

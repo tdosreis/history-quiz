@@ -57,6 +57,61 @@ function startAno() {
   go();
 }
 
+/* ── HOJE NA HISTÓRIA ──
+   The almanac (js/almanac.js) as a game: the dates on it nearest to today,
+   with the birthdays of the figures, each to be dated on the same ruler. The
+   day and the month are shown, the year is the question. The same five for
+   everyone on the same day, in the order of the calendar. */
+const HOJE_N = 5;
+const _doy = (m, d) => Math.round((Date.UTC(2024, m - 1, d) - Date.UTC(2024, 0, 1)) / 864e5);
+/* the days from today to a day of the year, the short way round: negative for one just past */
+function hojeOff(md, now) {
+  now = now || new Date();
+  let k = _doy(md[0], md[1]) - _doy(now.getMonth() + 1, now.getDate());
+  if (k > 183) k -= 366; else if (k < -183) k += 366;
+  return k;
+}
+function hojePool() {
+  const picOf = id => PL.some(p => p.id === id) ? { face: id } : CL.some(c => c.id === id) ? { crest: id } : FLAGS[id] ? { flag: id } : {};
+  const out = ALMANAC.map(([m, d, y, t, pic], i) => ({ id: 'alm' + i, t, y, c: false, md: [m, d], pic: picOf(pic) }));
+  Object.keys(BDAYS).forEach(id => {
+    const p = PL.find(x => x.id === id);
+    if (!p || !PL_META[id]) return;
+    /* a birth already among the Que ano? events keeps its line and its "Você sabia?" */
+    const known = ANO_EVENTS.find(e => e.id === 'nasc_' + id && e.y === p.era[0]);
+    out.push(Object.assign({}, known || { id: 'nasc_' + id, t: 'Nasce ' + p.n, y: p.era[0], c: false, pic: { face: id } }, { md: BDAYS[id] }));
+  });
+  return out;
+}
+function buildHoje(now) {
+  now = now || new Date();
+  const day = dayIndex(now);
+  seedFrom(day * 7919 + 17);
+  /* nearest first; the ones as near as each other, in the day's own shuffled order */
+  const near = shuf(hojePool()).map(e => ({ e, k: hojeOff(e.md, now) })).sort((a, b) => Math.abs(a.k) - Math.abs(b.k));
+  const qs = near.slice(0, HOJE_N).sort((a, b) => a.k - b.k).map(({ e, k }) => {
+    const [lo, hi] = anoWindow(e, rnd());
+    const mid = Math.round((lo + hi) / 2 / 5) * 5;
+    return { e, k, lo, hi, start: mid === 0 ? 1 : mid };
+  });
+  _seed = null;
+  return { qs, i: 0, guess: qs[0].start, log: [], pts: 0, phase: 'guess', hoje: { day, d: now.getDate(), m: now.getMonth() + 1 } };
+}
+function startHoje() {
+  isDaily = false; isSurv = false; isMil = false; isRev = false;
+  runSelos = [];
+  ano = buildHoje();
+  sc = 'ano';
+  go();
+}
+/* today's first result, kept for the cover */
+const hojeRes = () => { const r = LS.get('hojeRes', null); return r && r.day === dayIndex() ? r : null; };
+const hojeDate = h => `${h.d} de ${MES_LONGO[h.m - 1]}`;
+function hojeWhen(q) {
+  const k = q.k, [m, d] = q.e.md;
+  return `${d} de ${MES_LONGO[m - 1]} · ${k === 0 ? 'hoje' : k === -1 ? 'ontem' : k === 1 ? 'amanhã' : k < 0 ? `há ${-k} dias` : `daqui a ${k} dias`}`;
+}
+
 /* the picture of an event: its scene, or a face, a brasão, a flag */
 function anoPic(e) {
   const p = e.pic || {};
@@ -80,12 +135,13 @@ function anoHtml() {
   const pos = y => `calc(var(--ano-th0) + (100% - 2 * var(--ano-th0)) * ${((y - q.lo) / (q.hi - q.lo)).toFixed(4)})`;
   return `
   <div class="pg ano-pg${rev ? ' is-rev' : ''}">
-    ${topbar('Que ano?')}
+    ${topbar(ano.hoje ? 'Hoje na História' : 'Que ano?')}
     <div class="ano-head"><div class="runlog" aria-hidden="true">${dots}</div>
       <span class="ano-score"><b class="num">${ano.pts}</b> pts</span></div>
     <div class="ano-card">
       ${anoPic(e)}
-      <p class="ano-t">${_esc(e.t)}</p>
+      ${ano.hoje ? `<span class="ano-date">${ICON.calendar('currentColor', 12)} ${hojeWhen(q)}</span>` : ''}
+      <p class="ano-t">${_esc(e.t).replace(/\S+-\S+/g, w => `<span class="ano-nw">${w}</span>`)}</p>
     </div>
     <div class="ano-dial">
       <div class="ano-year num${rev ? ' is-set' : ''}${rev && last.d === 0 ? ' is-hit' : ''}" id="ano-year"${rev ? ' aria-live="polite"' : ''}>${anoYear(rev ? last.g : ano.guess)}</div>
@@ -113,14 +169,15 @@ function anoHtml() {
 
 function anoEndHtml() {
   const best = LS.get('anoBest', 0);
-  const isBest = !!ano.isBest;
-  const msg = ano.pts >= 800 ? 'Uma máquina do tempo!' : ano.pts >= 600 ? 'Ótimo senso de tempo!' : ano.pts >= 400 ? 'Nada mau!' : 'O tempo é traiçoeiro…';
+  const isBest = !!ano.isBest, n = ano.qs.length, f = ano.pts / (n * 100), h = ano.hoje, r = h && hojeRes();
+  const msg = f >= .8 ? 'Uma máquina do tempo!' : f >= .6 ? 'Ótimo senso de tempo!' : f >= .4 ? 'Nada mau!' : 'O tempo é traiçoeiro…';
   return `
   <div class="pg pg-center ano-end" style="padding:22px 18px;gap:9px;">
-    <div class="eyebrow">Que ano? · ${ANO_N} eventos</div>
+    <div class="eyebrow">${h ? 'Hoje na História · ' + hojeDate(h) : `Que ano? · ${n} eventos`}</div>
     <div class="display" style="font-size:28px;"><em>${msg}</em></div>
-    <div class="display prize-pop brass" style="font-size:50px;letter-spacing:-.03em;">${ano.pts}<span class="muted" style="font-size:18px;"> / ${ANO_N * 100}</span></div>
-    ${chalBanner() || `<p class="small muted">${isBest ? 'Seu novo recorde!' : `Recorde: ${best} pts`}</p>`}
+    <div class="display prize-pop brass" style="font-size:50px;letter-spacing:-.03em;">${ano.pts}<span class="muted" style="font-size:18px;"> / ${n * 100}</span></div>
+    ${h ? `<p class="small muted">${!ano.hojeFirst && r ? `Vale o primeiro de hoje: <b>${r.pts} pts</b> · ` : ''}Amanhã, outras datas</p>`
+      : chalBanner() || `<p class="small muted">${isBest ? 'Seu novo recorde!' : `Recorde: ${best} pts`}</p>`}
     <div class="ano-list">
       ${ano.log.map(l => `<div class="ano-li"><span class="ano-li-p ${l.p >= 80 ? 'good' : l.p >= 50 ? 'brass' : 'bad'}">${l.p}</span>
         <span class="ano-li-t">${_esc(l.e.t)}</span><span class="ano-li-y"><b>${l.e.c ? 'c. ' : ''}${anoYear(l.e.y)}</b><small>${l.d === 0 ? 'exato' : 'você: ' + anoYear(l.g)}</small></span></div>`).join('')}
@@ -129,7 +186,7 @@ function anoEndHtml() {
     ${medalChips()}
     <div class="foot-row" style="margin-top:8px;">
       <button id="ano-share" class="btn btn-ghost btn-sm">${chalMine() ? 'Desafiar' : 'Compartilhar'}</button>
-      <button id="ano-again" class="btn btn-brass">De novo</button>
+      <button id="ano-again" class="btn btn-brass">${h ? 'Que ano?' : 'De novo'}</button>
       <button id="bhome" class="btn btn-ghost btn-sm">Início</button>
     </div>
   </div>`;
@@ -137,7 +194,8 @@ function anoEndHtml() {
 
 function anoShareText() {
   const grid = ano.log.map(l => l.p === 100 ? '🎯' : l.p >= 80 ? '🟩' : l.p >= 50 ? '🟨' : '⬛').join('');
-  return `Que ano? 📜 History Quiz\n${grid}\n${ano.pts}/${ANO_N * 100} pts\n${chalShareTail(chalMine())}`;
+  if (ano.hoje) return `Hoje na História 📅 ${hojeDate(ano.hoje)}\n${grid}\n${ano.pts}/${ano.qs.length * 100} pts\n${CHAL_URL}`;
+  return `Que ano? 📜 History Quiz\n${grid}\n${ano.pts}/${ano.qs.length * 100} pts\n${chalShareTail(chalMine())}`;
 }
 
 function anoCommit() {
@@ -157,10 +215,16 @@ function anoCommit() {
 function anoNext() {
   if (ano.i >= ano.qs.length - 1) {
     ano.phase = 'end';
-    stats.anoGames = (stats.anoGames || 0) + 1;
+    if (ano.hoje) {
+      /* the day's game is the same all day: only its first result is kept, and no record is set on a replay */
+      stats.hojeGames = (stats.hojeGames || 0) + 1;
+      if (!hojeRes()) { ano.hojeFirst = true; stats.hojeBest = Math.max(stats.hojeBest || 0, ano.pts); LS.set('hojeRes', { day: ano.hoje.day, pts: ano.pts }); }
+    } else {
+      stats.anoGames = (stats.anoGames || 0) + 1;
+      ano.isBest = ano.pts > LS.get('anoBest', 0);
+      if (ano.isBest) LS.set('anoBest', ano.pts);
+    }
     LS.set('stats', stats);
-    ano.isBest = ano.pts > LS.get('anoBest', 0);
-    if (ano.isBest) LS.set('anoBest', ano.pts);
     window._newMedals = (ano.medals || []).concat(newMedals());
     setTimeout(() => snd.final(ano.pts >= 500), 200);
   } else {

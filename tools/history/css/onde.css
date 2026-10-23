@@ -69,15 +69,21 @@
 }
 .mode-onde { --md: #56702F; --md-soft: rgba(86, 112, 47, .14); }
 :root[data-theme="dark"] .mode-onde, :root:not([data-theme="light"]) .mode-onde { --md: #8DAE57; }
-/* the other games, on a phone: three to a row */
+/* the other games, on a phone: four to a row, two rows */
 @media (max-width: 699px) {
-  .cv-toc.cv-toc-4 { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; }
-  .cv-toc-4 .cv-row { padding: 7px 4px 7px; gap: 3px; }
+  .cv-toc.cv-toc-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 5px; }
+  .cv-toc-4 .cv-row { padding: 7px 2px 7px; gap: 3px; }
   .cv-toc-4 .cv-ic { width: 26px; height: 26px; }
-  .cv-toc-4 .cv-rt b { font-size: 15.5px; white-space: nowrap; }
+  .cv-toc-4 .cv-rt b { font-size: 14px; letter-spacing: -.02em; white-space: nowrap; }
   .cv-toc-4 .cv-rt { min-width: 0; max-width: 100%; }
-  .cv-toc-4 .cv-rt small { font-size: 9.5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-  .cv-toc-4 > .cv-row:nth-child(6):last-child { grid-column: span 2; }
+  .cv-toc-4 .cv-rt small { font-size: 9px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+}
+@media (max-width: 380px) { .cv-toc-4 .cv-rt b { font-size: 12.5px; } .cv-toc-4 .cv-rt small { font-size: 8.5px; } }
+/* on a wider screen the games are a list, numbered to VIII: the numeral gets the room not to break */
+@media (min-width: 700px) {
+  .cv-toc-4 .cv-row { grid-template-columns: 46px 1fr 38px; }
+  .cv-toc-4 .cv-row + .cv-row::before { left: 46px; }
+  .cv-toc-4 .cv-n { white-space: nowrap; }
 }
 /* a short phone keeps the portrait: the tiles say only their names */
 @media (max-width: 699px) and (max-height: 700px) {

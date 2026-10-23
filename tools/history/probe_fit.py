@@ -50,7 +50,9 @@ PROBE = r"""
        a legal list would be worse to read. Its FRAME still has to fit, which
        the page check above enforces — only its contents may run long. */
     var boxes = [];
-    if (label !== 'credits' && label !== 'vitrine') document.querySelectorAll('.scroll-y').forEach(function(el){
+    /* the Cronologia's line of time grows by an event a turn and is a scrolling list by design: its frame
+       is held to the screen like any other block, the events inside it may run on */
+    if (label !== 'credits' && label !== 'vitrine') document.querySelectorAll('.scroll-y:not(.cron-line)').forEach(function(el){
       var d = el.scrollHeight - el.clientHeight;
       if (d > 1) boxes.push({cls: (el.className||'').slice(0,40), over: Math.round(d)});
     });
@@ -182,8 +184,8 @@ DRIVE = r"""
   for (var k5=0; k5<onde.qs.length; k5++){ onde.i=k5; onde.phase='guess'; ondeSetPin(ondeXY(onde.qs[k5].at[0], onde.qs[k5].at[1])); ondeCommit(); }
   onde.i=onde.qs.length-1; ondeNext(); window._newMedals = MEDALS.slice(0, 3); go(); fit('onde/end-cheio');
   /* O desafio: the screen a link opens on, for every game, and who won, on each game's results */
-  ['tf','tm','td','m','a','o'].forEach(function(g){
-    chal = { g: g, seed: 12345, score: g==='m' ? 1000000 : g[0]==='t' ? 23456 : 1000, more: g==='m' ? 16 : g[0]==='t' ? 20 : null, code: 'x' };
+  ['tf','tm','td','m','a','o','c'].forEach(function(g){
+    chal = { g: g, seed: 12345, score: g==='m' ? 1000000 : g[0]==='t' ? 23456 : g==='c' ? 258 : 1000, more: g==='m' ? 16 : g[0]==='t' ? 20 : null, code: 'x' };
     sc='desafio'; go(); fit('desafio/'+g);
   });
   chal = { g:'o', seed: 4242, score: 815, more: null, accepted: true };
@@ -196,7 +198,34 @@ DRIVE = r"""
   diffKey='moderado'; startGame(); clearInterval(tmr); pts=900; nCorrect=11; finishRun(); window._newMedals = MEDALS.slice(0, 3); sc='end'; go(); fit('desafio/treino-end');
   chal = { g:'m', seed: 4245, score: 5000, more: 7, accepted: true };
   startMilhao(); clearInterval(tmr); rung=9; banked=50000; finishRun(); window._newMedals = MEDALS.slice(0, 3); sc='end'; go(); fit('desafio/milhao-end');
+  chal = { g:'c', seed: 4246, score: 12, more: null, accepted: true };
+  startCron(); for (var k10=0; k10<14; k10++){ var e10=cron.cur, r10=cron.line.findIndex(function(x){return x.y>e10.y;}); cronPlace(r10<0 ? cron.line.length : r10); cron.cur=cron.deck.pop(); cron.phase='place'; }
+  cron.lives=0; cronNext(); window._newMedals = MEDALS.slice(0, 3); go(); fit('desafio/cron-end');
   chal = null; isMil = false;
+  /* Cronologia: the first turn, a line growing long, each turn placed and revealed, right and wrong, and the result */
+  for (var g3=0; g3<2; g3++){
+    startCron(); fit('cron/first');
+    for (var k9=0; k9<26; k9++){
+      cron.phase='place'; go(); fit('cron/place');
+      var n9=cron.line.length, e9=cron.cur, r9=cron.line.findIndex(function(x){return x.y>e9.y;}); if (r9<0) r9=n9;
+      cronPlace(k9%4===3 ? (r9===0 ? n9 : 0) : r9);
+      fit('cron/reveal'+(cron.last.ok?'':'-errou')+(cron.last.e.x?'+story':'')+(cron.last.selo?'+selo':''));
+      cron.lives=CRON_LIVES; cron.cur=cron.deck.pop();
+    }
+    cron.lives=0; cron.phase='reveal'; go(); fit('cron/reveal-fim');
+    cronNext(); window._newMedals = MEDALS.slice(0, 3); go(); fit('cron/end');
+  }
+  /* Hoje na História: days through the year, each date guessed and revealed, the result, and the cover once it is done */
+  for (var g4=0; g4<4; g4++){
+    ano = buildHoje(new Date(2026, g4*3, 3+g4*7)); sc='ano';
+    for (var k11=0; k11<ano.qs.length; k11++){
+      ano.i=k11; ano.phase='guess'; go(); fit('hoje/guess');
+      ano.guess=ano.qs[k11].e.y+2; anoCommit(); fit('hoje/reveal'+(ano.qs[k11].e.x?'+story':''));
+    }
+    ano.i=ano.qs.length-1; anoNext(); window._newMedals = g4 ? [] : MEDALS.slice(0, 3); go(); fit('hoje/end');
+  }
+  sc='home'; go(); fit('home/hoje-feito');
+  LS.set('hojeRes', null);
   /* Revisar: ten misses filed, the round, and its end with more left to review */
   var rq = CATS.flatMap(function(c){ return c.qs; }).slice(0, 14), rf = {};
   rq.forEach(function(q){ rf[q.t] = [0, dayIndex()]; }); LS.set('rev', rf);

@@ -1,0 +1,68 @@
+
+/* ═══ CRONOLOGIA — the line of time, its events on slips, the gaps between them to tap ═══ */
+.cron-pg { gap: 8px; }
+.cron-lives { display: flex; gap: 2px; }
+.cron-lives i { display: flex; color: var(--ink-3); opacity: .28; transition: opacity .3s, transform .3s; }
+.cron-lives i.on { color: var(--bad); opacity: 1; }
+.cron-card { margin: 0; }
+.cron-line { flex: 1 1 0; min-height: 110px; position: relative; display: flex; flex-direction: column; padding: 2px 2px 4px;
+  overflow-x: hidden; overscroll-behavior: contain; }
+/* the spine of the line, behind the slips and the gaps: a rule down the year column */
+.cron-row, .cron-slot { --sp: 34px; background-image: linear-gradient(var(--brass), var(--brass)); background-repeat: no-repeat;
+  background-size: 2px 100%; background-position: var(--sp) 0; }
+.cron-row { flex: none; position: relative; display: grid; grid-template-columns: 72px minmax(0, 1fr); align-items: center; gap: 8px;
+  min-height: 38px; padding: 0 10px 0 0; }
+.cron-y { justify-self: center; z-index: 1; padding: 4px 6px; min-width: 56px; text-align: center; border-radius: 3px;
+  font: 600 13.5px/1 var(--font-d); letter-spacing: -.01em; color: var(--brass-ink); background: var(--pocket);
+  box-shadow: 0 0 0 1.5px var(--brass); white-space: nowrap; }
+.cron-y.is-long { min-width: 0; padding: 4px 3px; font-size: 11.5px; letter-spacing: -.03em; }
+.cron-t { padding: 7px 10px; font: 500 13px/1.25 var(--font-d); color: var(--ink);
+  background: var(--at-card-img) center / 100% 100% no-repeat; }
+.cron-row.is-good .cron-y { color: #fff; background: var(--good); box-shadow: 0 0 0 1.5px var(--good); }
+.cron-row.is-bad .cron-y { color: #fff; background: var(--bad); box-shadow: 0 0 0 1.5px var(--bad); }
+.cron-row.is-good .cron-t, .cron-row.is-bad .cron-t { font-weight: 600; }
+.cron-row#cron-fresh.is-good, .cron-row#cron-fresh.is-bad { animation: cron-in .45s cubic-bezier(.2, 1.3, .4, 1) both; }
+@keyframes cron-in { from { transform: translateX(-14px) scale(.97); opacity: 0; } }
+/* a gap to tap: a dashed slot on the line, saying where */
+.cron-slot { flex: none; display: flex; align-items: center; width: 100%; min-height: 30px; padding: 0 10px 0 80px; border: 0; cursor: pointer;
+  background-color: transparent; color: var(--ink-3); font: 700 10px/1 var(--font-s); letter-spacing: .14em; text-transform: uppercase; }
+.cron-slot span { flex: 1; display: flex; align-items: center; justify-content: center; height: 22px; border-radius: 11px;
+  border: 1.5px dashed color-mix(in srgb, var(--ink-3) 55%, transparent); transition: background .15s, color .15s, border-color .15s; }
+.cron-slot:hover span, .cron-slot:focus-visible span { color: var(--on-brass, #1A1204); background: var(--brass); border-color: var(--brass); border-style: solid; }
+.cron-slot:focus-visible { outline: none; }
+.cron-slot:active span { transform: scale(.98); }
+.cron-res { flex: none; display: flex; flex-direction: column; gap: 4px; padding: 9px 12px; text-align: center;
+  background: var(--at-card-img) center / 100% 100% no-repeat; }
+.cron-res-h { margin: 0; font: 600 16px/1.2 var(--font-d); color: var(--ink-2); }
+.cron-res-h b { font-weight: 700; }
+.cron-res.good .cron-res-h b { color: var(--good); }
+.cron-res.bad .cron-res-h b { color: var(--bad); }
+.cron-res-h .num { color: var(--ink); }
+.cron-res-h small { font: 600 12px/1 var(--font-s); color: var(--ink-3); }
+.cron-res-x { margin: 0; font-size: 12.5px; line-height: 1.32; color: var(--ink-2);
+  display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.cron-res .selo-won { justify-content: center; }
+.cron-hint { margin: 14px 10px 0 80px; font-size: 12.5px; line-height: 1.35; color: var(--ink-3); }
+#cron-next { flex: none; align-self: stretch; justify-content: center; }
+/* the results: the whole line as it was laid, the wrong ones in red */
+.cron-line-end { flex: 0 1 auto; width: 100%; max-width: 440px; max-height: 38vh; min-height: 80px; text-align: left; }
+.cron-line-end .cron-row { min-height: 0; padding-top: 2px; padding-bottom: 2px; }
+.cron-line-end .cron-t { padding: 5px 9px; font-size: 12px; }
+.mode-cron { --md: #3B5488; --md-soft: rgba(59, 84, 136, .14); }
+:root[data-theme="dark"] .mode-cron, :root:not([data-theme="light"]) .mode-cron { --md: #8AA3D6; }
+.mode-hoje { --md: #B85A16; --md-soft: rgba(184, 90, 22, .14); }
+:root[data-theme="dark"] .mode-hoje, :root:not([data-theme="light"]) .mode-hoje { --md: #E8904A; }
+@media (max-height: 700px) {
+  .cron-pg { gap: 6px; }
+  .cron-row { min-height: 34px; }
+  .cron-t { padding: 5px 9px; font-size: 12.5px; }
+  .cron-slot { min-height: 28px; }
+  .cron-res { padding: 6px 10px; }
+  .cron-res-h { font-size: 15px; }
+  .cron-res-x { font-size: 12px; -webkit-line-clamp: 2; }
+  .cron-line-end { max-height: 30vh; }
+}
+/* on a tablet or a computer the sheet is as tall as the screen allows, so the line gets the room */
+@media (min-width: 700px) {
+  #qz:has(.cron-pg) { height: min(calc(100dvh - 48px), 980px); }
+}

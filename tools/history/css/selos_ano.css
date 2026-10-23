@@ -84,6 +84,11 @@
 .ano-pic.ano-crest { height: min(150px, 24vh); }
 .ano-crest .crest-disc { position: static; transform: none; width: auto; height: 100%; aspect-ratio: 1; flex: none; box-shadow: 0 2px 8px rgba(0, 0, 0, .3), inset 0 0 0 1px rgba(32, 36, 30, .16); }
 .ano-flag svg { width: auto; height: 100%; max-height: 120px; aspect-ratio: 3 / 2; box-shadow: 0 2px 8px rgba(0, 0, 0, .3); }
+/* a hyphenated word (14-Bis, Mata-mata) never breaks at its hyphen */
+.ano-nw { white-space: nowrap; }
+/* Hoje na História: the day and the month of the event, given; the year is the question */
+.ano-date { display: inline-flex; align-items: center; gap: 5px; flex: none; padding: 5px 11px 4px; border-radius: 12px;
+  font: 700 10.5px/1 var(--font-s); letter-spacing: .1em; text-transform: uppercase; color: var(--brass-ink); background: var(--brass-soft); }
 .ano-t { margin: 0; text-align: center; font: 600 clamp(19px, 5.4vw, 23px)/1.22 var(--font-d); letter-spacing: -.012em; max-width: 26ch; }
 .ano-dial { display: flex; flex-direction: column; align-items: stretch; gap: 6px; flex: none; }
 .ano-year { text-align: center; font: 600 44px/1 var(--font-d); letter-spacing: -.02em; color: var(--brass-ink, var(--brass)); }
