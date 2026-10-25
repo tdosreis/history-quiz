@@ -306,8 +306,8 @@ JS = r"""
       const ids = g.qs.map(q => q.e.id).sort().join(); if (ids === prev) same++; prev = ids;
     }
     note.hojeFar = far; note.hojeSame = same;
-    if (far > 30) F('a Hoje na História date is ' + far + ' days away');
-    if (same > 5) F(same + ' days of Hoje na História are the day before again');
+    if (far > 14) F('a Hoje na História date is ' + far + ' days away');
+    if (same > 2) F(same + ' days of Hoje na História are the day before again');
     /* a replay of a day already played, finished after midnight, leaves that day's first result alone */
     const keepR = LS.get('hojeRes', null), keepB = stats.hojeBest, keepX = stats.anoExact;
     ano = buildHoje(new Date(2026, 4, 10)); LS.set('hojeRes', { day: ano.hoje.day, pts: 100 });
@@ -327,6 +327,12 @@ JS = r"""
     if (!hojeRes() || LS.get('hojeRun', null)) F('finishing a Hoje that went on does not keep its result');
     startHoje(); if (!ano.replay || ano.log.length) F('a Hoje already finished is resumed instead of replayed');
     LS.set('hojeRun', keepRun); LS.set('hojeRes', keepR2); Object.assign(stats, JSON.parse(keepSt)); LS.set('stats', stats); ano = null;
+    /* the cover's almanac line is one button whose label survives any quote in the text */
+    const keepAF = almanacFor;
+    ALMANAC.forEach(e => { almanacFor = () => ({ e, days: 0 }); const t = document.createElement('template'); t.innerHTML = almanacHtml().trim();
+      const b = t.content.querySelector('#balm');
+      if (t.content.children.length !== 1 || !b || !b.getAttribute('aria-label').includes(e[3]) || !b.textContent.includes(e[3])) F('the almanac line breaks on: ' + e[3]); });
+    almanacFor = keepAF;
     /* the almanac's own lines never print their year */
     ALMANAC.forEach(([m, d, y, t]) => { if (new RegExp('\\b' + Math.abs(y) + '\\b').test(t)) F('the almanac line gives its year away: ' + t); });
     /* the first tap on a screen just drawn is the second of a double tap, and is not taken */

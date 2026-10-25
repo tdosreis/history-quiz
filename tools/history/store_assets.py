@@ -27,7 +27,8 @@ STATES = {
                   " var xy=ondeXY(q.at[0]+1, q.at[1]-1.5); onde.v={cx:xy[0],cy:xy[1],z:3.2}; go();"),
  "shot-05-cronologia": ("chal={g:'c',seed:90210,score:0,accepted:true}; startCron(); chal=null;"
                         " for (var k=0;k<9;k++){ var e=cron.cur, r=cron.line.findIndex(function(x){return x.y>e.y}); cronPlace(r<0?cron.line.length:r); cronNext(); }"),
- "shot-06-hoje": "startHoje();",
+ "shot-06-hoje": ("ano=buildHoje(new Date(2026,9,23)); runSelos=[]; sc='ano'; var t=ano.qs.findIndex(function(q){return q.k===0});"
+                  " for (var j=0;j<t;j++){ ano.guess=ano.qs[j].e.y+(j%2?2:-5); anoCommit(); anoNext(); } go();"),
  "shot-07-pessoas": Q("renascimento", "q.type==='player' && q.t.indexOf('Mona Lisa')>0"),
  "shot-08-batalha": Q("batalhas", "q.battle && q.battle.lbl.indexOf('Waterloo')===0"),
 }
