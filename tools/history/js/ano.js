@@ -110,8 +110,29 @@ function startHoje() {
   ano = buildHoje();
   /* a replay of the day's game is played with the answers known: it counts for nothing */
   ano.replay = !!hojeRes();
+  /* a game left halfway goes on where it was: the answers given stand, and the dates already seen are not dealt again */
+  const run = !ano.replay && hojeOpen();
+  if (run) {
+    run.log.forEach(([id, g], i) => {
+      const q = ano.qs[i];
+      if (!q || q.e.id !== id || ano.log.length !== i) return;
+      const p = anoPts(q.e, g);
+      ano.log.push({ e: q.e, g, p, d: anoGap(q.e.y, g), selo: null });
+      ano.pts += p;
+    });
+    if (ano.log.length) {
+      const n = ano.log.length;
+      if (n < ano.qs.length) { ano.i = n; ano.guess = ano.qs[n].start; }
+      else { ano.i = n - 1; ano.phase = 'reveal'; ano.guess = ano.log[n - 1].g; }
+    }
+  }
   sc = 'ano';
   go();
+}
+/* the day's game begun and not finished: its answers so far, as [event id, year guessed] */
+function hojeOpen() {
+  const r = LS.get('hojeRun', null);
+  return r && r.day === dayIndex() && Array.isArray(r.log) && r.log.length && !hojeRes() ? r : null;
 }
 /* today's first result, kept for the cover */
 const hojeRes = () => { const r = LS.get('hojeRes', null); return r && r.day === dayIndex() ? r : null; };
@@ -213,6 +234,7 @@ function anoCommit() {
   const p = anoPts(e, g), d = anoGap(e.y, g);
   const selo = p >= 80 && !ano.replay && e.pic && e.pic.scene && awardSelo(e.pic.scene) ? e.pic.scene : null;
   ano.log.push({ e, g, p, d, selo });
+  if (ano.hoje && !ano.replay) LS.set('hojeRun', { day: ano.hoje.day, log: ano.log.map(l => [l.e.id, l.g]) });
   if (d === 0 && !ano.replay) { stats.anoExact = (stats.anoExact || 0) + 1; LS.set('stats', stats); }
   /* a medal is won the moment it is earned, and announced on this game's results */
   try { ano.medals = (ano.medals || []).concat(newMedals()); } catch (err) {}
@@ -231,7 +253,7 @@ function anoNext() {
       stats.hojeGames = (stats.hojeGames || 0) + 1;
       /* the game's own day, not the clock's: a replay begun before midnight and finished after is still a replay */
       const prev = LS.get('hojeRes', null);
-      if (!ano.replay && !(prev && prev.day === ano.hoje.day)) { ano.hojeFirst = true; stats.hojeBest = Math.max(stats.hojeBest || 0, ano.pts); LS.set('hojeRes', { day: ano.hoje.day, pts: ano.pts }); }
+      if (!ano.replay && !(prev && prev.day === ano.hoje.day)) { ano.hojeFirst = true; stats.hojeBest = Math.max(stats.hojeBest || 0, ano.pts); LS.set('hojeRes', { day: ano.hoje.day, pts: ano.pts }); LS.set('hojeRun', null); }
     } else {
       stats.anoGames = (stats.anoGames || 0) + 1;
       ano.isBest = ano.pts > LS.get('anoBest', 0);

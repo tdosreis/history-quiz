@@ -315,6 +315,20 @@ JS = r"""
     if (ano.log.length !== HOJE_N) F('a second tap on Cravar or Próximo is taken: ' + ano.log.length + ' answers');
     if (ano.phase !== 'end' || (LS.get('hojeRes', {}) || {}).pts !== 100) F('a replay of a day already played replaces its first result');
     LS.set('hojeRes', keepR); stats.hojeBest = keepB; stats.anoExact = keepX; LS.set('stats', stats);
+    /* a game of the day left halfway goes on where it was, and only its finish keeps a result */
+    const keepRun = LS.get('hojeRun', null), keepR2 = LS.get('hojeRes', null), keepSt = JSON.stringify(stats);
+    LS.set('hojeRes', null); LS.set('hojeRun', null);
+    startHoje(); const deal = ano.qs.map(q => q.e.id).join();
+    ano.guess = ano.qs[0].e.y; anoCommit(); anoNext(); ano.guess = ano.qs[1].e.y + 3; anoCommit();
+    const pts2 = ano.pts; sc = 'home'; go(); ano = null;
+    startHoje();
+    if (ano.qs.map(q => q.e.id).join() !== deal || ano.log.length !== 2 || ano.i !== 2 || ano.phase !== 'guess' || ano.pts !== pts2) F('a Hoje left halfway does not go on where it was (' + ano.log.length + ' answers, at ' + ano.i + ')');
+    while (ano.phase !== 'end') { if (ano.phase === 'guess') { ano.guess = ano.qs[ano.i].start; anoCommit(); } else anoNext(); }
+    if (!hojeRes() || LS.get('hojeRun', null)) F('finishing a Hoje that went on does not keep its result');
+    startHoje(); if (!ano.replay || ano.log.length) F('a Hoje already finished is resumed instead of replayed');
+    LS.set('hojeRun', keepRun); LS.set('hojeRes', keepR2); Object.assign(stats, JSON.parse(keepSt)); LS.set('stats', stats); ano = null;
+    /* the almanac's own lines never print their year */
+    ALMANAC.forEach(([m, d, y, t]) => { if (new RegExp('\\b' + Math.abs(y) + '\\b').test(t)) F('the almanac line gives its year away: ' + t); });
     /* the first tap on a screen just drawn is the second of a double tap, and is not taken */
     startCron(); document.querySelector('.cron-slot').click();
     if (cron.phase !== 'place') F('a tap the moment a Cronologia screen is drawn is taken');
