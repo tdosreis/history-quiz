@@ -10,10 +10,8 @@ and the deals are repeated, because one deal is not a sample — a ten-tile
 board with a long "Você sabia?" is the case that overflows, and it only turns
 up on some questions.
 
-Headless Chrome here may not reach Google Fonts, and then every screen is
-measured in Georgia and the system sans, which are wider or narrower than
-Fraunces and Archivo. PROBE_FONT_CSS=<file.css> puts that stylesheet (the
-@font-face rules, with local url()s) in place of the Google Fonts link.
+The fonts are the app's own (img/fonts), so every screen is measured in
+Fraunces and Archivo, as players see it, with or without a network.
 
 The Android nav bar is simulated the way the album work found it had to be:
 headless reports env(safe-area-inset-bottom) as 0, so the inset is string-
@@ -250,11 +248,6 @@ def run(label, w, h, inset):
     src = io.open(os.path.join(ROOT, "index.html"), encoding="utf-8").read()
     if inset:
         src = re.sub(r"env\(safe-area-inset-bottom,\s*0px\)", "%dpx" % inset, src)
-    fonts = os.environ.get("PROBE_FONT_CSS")
-    if fonts:
-        css = io.open(fonts, encoding="utf-8").read()
-        src, n = re.subn(r'<link href="https://fonts\.googleapis\.com/[^"]*" rel="stylesheet" />', lambda m: "<style>" + css + "</style>", src)
-        assert n == 1, "the Google Fonts link is not where the probe expects it"
     # Measure the settled layout, not the entrance. Every screen slides in by
     # 6px and the reveal panel by 16px, and a measurement taken mid-flight
     # reads those as overflow -- which is exactly the constant +6 and +22 this

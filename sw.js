@@ -15,8 +15,9 @@
    backgrounds were invisible without them.
    v3: History's own question formats and ~330 new questions.
    v4: a friend's challenge arrives as ?d=… on the page's address; the page is
-   kept once, under its plain address, however many challenges are opened. */
-const VERSION = 'v4';
+   kept once, under its plain address, however many challenges are opened.
+   v5: the fonts are the app's own (img/fonts), not Google's: an installed copy has them offline. */
+const VERSION = 'v5';
 const CACHE   = 'history-quiz-' + VERSION;
 /* Photos, crests and flags never change under the same name (each file is
    named by its content), so they live in a cache of their own that survives
@@ -58,9 +59,7 @@ self.addEventListener('fetch', e => {
 
   const url = new URL(req.url);
   const sameOrigin = url.origin === self.location.origin;
-  const isFonts = url.hostname === 'fonts.googleapis.com'
-               || url.hostname === 'fonts.gstatic.com';
-  if (!sameOrigin && !isFonts) return;
+  if (!sameOrigin) return;   // the fonts are the app's own now (img/fonts), kept with the pictures
 
   const isDoc = req.mode === 'navigate'
              || req.destination === 'document'

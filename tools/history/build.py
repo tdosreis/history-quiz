@@ -350,7 +350,7 @@ def main():
             + io.open(os.path.join(H, "js", "revisar.js"), encoding="utf-8").read()
             # Cronologia: the events again, each put in its place on a line of time
             + io.open(os.path.join(H, "js", "cronologia.js"), encoding="utf-8").read())
-    s = put(s, "formats_css", "\n".join(io.open(os.path.join(H, "css", f), encoding="utf-8").read() for f in ("formats.css", "selos_ano.css", "mapa.css", "onde.css", "desafio.css", "cronologia.css")))
+    s = put(s, "formats_css", "\n".join(io.open(os.path.join(H, "css", f), encoding="utf-8").read() for f in ("fonts.css", "formats.css", "selos_ano.css", "mapa.css", "onde.css", "desafio.css", "cronologia.css")))
     io.open(PAGE, "w", encoding="utf-8").write(s)
     print("index.html updated: %d bytes" % len(s.encode("utf-8")))
 

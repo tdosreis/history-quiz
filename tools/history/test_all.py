@@ -335,7 +335,7 @@ src = io.open(os.path.join(ROOT, "index.html"), encoding="utf-8").read()
 missing = []
 for name in ("index.html", "sw.js", "manifest.json"):
     text = io.open(os.path.join(ROOT, name), encoding="utf-8").read()
-    for ref in sorted(set(re.findall(r"(?:img|icons)/[A-Za-z0-9_./-]+\.(?:webp|png|jpg|jpeg|svg|gif)", text))):
+    for ref in sorted(set(re.findall(r"(?:img|icons)/[A-Za-z0-9_./-]+\.(?:webp|png|jpg|jpeg|svg|gif|woff2)", text))):
         if not os.path.isfile(os.path.join(ROOT, ref)):
             missing.append("%s names %s" % (name, ref))
 tail = ("<script>window.addEventListener('load',function(){setTimeout(function(){var v;try{v=JSON.stringify((%s))}catch(x){v=JSON.stringify({fails:['TEST CRASH '+x+' '+(x.stack||'').slice(0,300)],note:{}})}"
