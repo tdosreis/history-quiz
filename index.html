@@ -4,6 +4,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>History Quiz</title>
+  <meta name="description" content="O álbum de figurinhas que faz perguntas de História: a escada de 16 degraus rumo ao milhão, o mapa-múndi das figurinhas e oito jogos — Que ano?, Onde foi?, Cronologia, Hoje na História." />
+  <!-- the card a shared link (a challenge, a result) shows in a chat -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="History Quiz" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:title" content="History Quiz — rumo ao milhão" />
+  <meta property="og:description" content="16 degraus até o milhão, do Egito Antigo à Guerra Fria. Um álbum de figurinhas, um mapa-múndi e oito jogos de História." />
+  <meta property="og:url" content="https://tdosreis.github.io/history-quiz/" />
+  <meta property="og:image" content="https://tdosreis.github.io/history-quiz/img/og-card.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="History Quiz: retratos de Cleópatra, Napoleão, Marie Curie e D. Pedro II como figurinhas" />
+  <meta name="twitter:card" content="summary_large_image" />
   <!-- Thirty dark-only rules are written ":root:not([data-theme=light]) X"
        outside the dark media query, so with no attribute they applied on a
        light phone too: the album's pages stayed night-dark and the empty
@@ -3735,6 +3748,24 @@
 @media (min-width: 700px) {
   #qz:has(.cron-pg) { height: min(calc(100dvh - 48px), 980px); }
 }
+/* the Cronologia's door: the day's line, or a free one */
+.cron-menu-in { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: safe center; gap: 12px; text-align: center; padding: 6px 4px 18px; }
+.cron-menu-in .chal-ic { margin-bottom: 2px; }
+.cron-menu-p { max-width: 32ch; margin: 0 0 6px; line-height: 1.4; }
+.cron-opt { width: 100%; max-width: 380px; display: flex; align-items: center; gap: 13px; padding: 14px 16px; border: 0; cursor: pointer; text-align: left;
+  color: var(--ink); background: var(--at-card-img) center / 100% 100% no-repeat; transition: transform .12s; }
+.cron-opt .mode-disc { width: 42px; height: 42px; flex: none; }
+.cron-opt b { display: block; font: 600 19px/1.15 var(--font-d); letter-spacing: -.01em; }
+.cron-opt small { display: block; margin-top: 3px; font: 600 12px/1.3 var(--font-s); color: var(--ink-3); }
+.cron-opt.is-day:not(.is-done) { box-shadow: inset 0 -3px 0 var(--brass); }
+.cron-opt:hover .mode-disc, .cron-opt:focus-visible .mode-disc { transform: scale(1.08); }
+.cron-opt:active { transform: translateY(1px); }
+.cron-opt:focus-visible { outline: 2px solid var(--brass); outline-offset: 2px; }
+@media (max-height: 700px) {
+  .cron-menu-in { gap: 9px; }
+  .cron-menu-in .chal-ic { width: 52px; height: 52px; }
+  .cron-opt { padding: 11px 14px; }
+}
 
 /*@@/formats_css@@*/
   </style>
@@ -3744,6 +3775,6 @@
   <div id="ct"></div>
 </div>
 
-<script src="app.js?v=3859ff7fc4"></script>
+<script src="app.js?v=eeb405e736"></script>
 </body>
 </html>

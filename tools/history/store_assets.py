@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""Render the Play Store phone screenshots (1000x1800) and the feature graphic (1024x500).
+"""Render the Play Store phone screenshots (1080x1920), the feature graphic (1024x500) and the
+card a shared link shows (img/og-card.jpg, 1200x630).
 
   python3 tools/history/store_assets.py [name ...]
 """
@@ -92,8 +93,46 @@ def feature():
     Image.open(out).crop((0, 0, 1024, 500)).save(out)
     print("wrote", out)
 
+def og():
+    """The card a shared link shows in WhatsApp, Telegram and the like (1200x630, img/og-card.jpg)."""
+    ids = ["cleopatra", "napoleao", "marie_curie", "dom_pedro_ii"]
+    import json
+    d = json.loads(io.open(os.path.join(ROOT, "data", "history_images.json"), encoding="utf-8").read())
+    cards = "".join('<div class="c" style="--r:%sdeg"><img src="file://%s"/></div>' % (r, os.path.join(ROOT, d[i]["img"]))
+                    for i, r in zip(ids, (-8, -3, 3, 8)))
+    html = """<!doctype html><meta charset=utf-8><style>
+    @font-face{font-family:Fraunces;font-weight:500 700;src:url(file://@@ROOT@@/img/fonts/fraunces-latin.woff2)}
+    @font-face{font-family:Fraunces;font-style:italic;font-weight:500 700;src:url(file://@@ROOT@@/img/fonts/fraunces-italic-latin.woff2)}
+    @font-face{font-family:Archivo;font-weight:400 800;src:url(file://@@ROOT@@/img/fonts/archivo-latin.woff2)}
+    body{margin:0;width:1200px;height:630px;position:relative;overflow:hidden;font-family:Archivo,sans-serif}
+    .bg{position:absolute;inset:0;background:radial-gradient(circle at 76% 42%,#9A2B4D,#7B1E3A 58%,#4A1224)}
+    h1{position:absolute;left:70px;top:130px;margin:0;color:#F3EAD3;font:600 118px/0.93 Fraunces,Georgia,serif}
+    h1 em{color:#E0B968}
+    p{position:absolute;left:74px;top:398px;margin:0;color:#F3EAD3;font:700 30px/1.32 Archivo,sans-serif;letter-spacing:.03em;width:520px}
+    p small{display:block;margin-top:14px;font:600 22px Archivo,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#E0B968}
+    .row{position:absolute;right:34px;top:118px;display:flex}
+    .c{width:168px;height:242px;margin-left:-16px;background:#EFE4CA;padding:9px 9px 26px;box-shadow:0 10px 28px #0006;transform:rotate(var(--r));margin-top:calc(var(--r)*3.4)}
+    .c img{width:150px;height:207px;object-fit:cover;display:block}
+    </style><div class=bg></div><h1>History<br><em>Quiz</em></h1>
+    <p>16 degraus até o milhão.<br>Do Egito Antigo à Guerra Fria.<small>Álbum · mapa-múndi · 8 jogos</small></p><div class=row>@@CARDS@@</div>""".replace("@@CARDS@@", cards).replace("@@ROOT@@", ROOT)
+    tmp = os.path.join(ROOT, "_og.html")
+    io.open(tmp, "w", encoding="utf-8").write(html)
+    png = os.path.join(OUT, "_og.png")
+    try:
+        subprocess.run([CHROME] + EXTRA + ["--headless", "--disable-gpu", "--hide-scrollbars", "--allow-file-access-from-files",
+                        "--window-size=1200,%d" % (630 + CHROME_H), "--virtual-time-budget=6000", "--screenshot=" + png, "file://" + tmp],
+                       capture_output=True, timeout=120)
+    finally:
+        os.remove(tmp)
+    from PIL import Image
+    out = os.path.join(ROOT, "img", "og-card.jpg")
+    Image.open(png).convert("RGB").crop((0, 0, 1200, 630)).save(out, quality=86, optimize=True, progressive=True)
+    os.remove(png)
+    print("wrote", out)
+
 if __name__ == "__main__":
-    want = sys.argv[1:] or list(STATES) + ["feature"]
+    want = sys.argv[1:] or list(STATES) + ["feature", "og"]
     for n in want:
         if n == "feature": feature()
+        elif n == "og": og()
         else: shot(n, STATES[n], w=540, h=960)

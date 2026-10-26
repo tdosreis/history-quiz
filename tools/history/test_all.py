@@ -286,6 +286,27 @@ JS = r"""
     if (!cc || cc.g !== 'c' || cc.score !== 23) F('a Cronologia challenge does not round-trip');
     if (chalParse('c.1.' + (ANO_EVENTS.length + 1).toString(36) + '..' + chalVer())) F('a Cronologia score above the deck is accepted');
     cron = null; sc = 'home';
+    /* the Linha do dia: one line for the day, kept tap by tap, counted once */
+    const keepCD = LS.get('cronDia', null), keepCS = JSON.stringify(stats), keepCB = LS.get('cronBest', 0);
+    LS.set('cronDia', null);
+    seedFrom(cronDiaSeed(500)); const dA = buildCron().deck.map(e => e.id).join(); seedFrom(cronDiaSeed(501)); const dB = buildCron().deck.map(e => e.id).join(); _seed = null;
+    if (dA === dB) F('two days deal the same Linha do dia');
+    const right = () => { const e = cron.cur, r = cron.line.findIndex(x => x.y > e.y); return r < 0 ? cron.line.length : r; };
+    startCronDia(); const first = cron.cur.id + cron.line[0].id;
+    for (let k = 0; k < 5; k++) { cronPlace(k === 2 ? (right() === 0 ? cron.line.length : 0) : right()); cronNext(); }
+    const mid = { n: cron.line.length, s: cron.score, l: cron.lives, cur: cron.cur.id };
+    cron = null; sc = 'home'; go();
+    startCronDia();
+    if (cron.line[0].id + '' === '' || cron.line.length !== mid.n || cron.score !== mid.s || cron.lives !== mid.l || cron.cur.id !== mid.cur || cron.phase !== 'place') F('a Linha do dia left halfway does not go on where it was');
+    const games = stats.cronDiaGames || 0;
+    while (cron.phase !== 'end') { if (cron.phase === 'place') cronPlace(right() === 0 ? cron.line.length : 0); else cronNext(); }
+    if ((stats.cronDiaGames || 0) !== games + 1 || !(cronDiaKept() || {}).done) F('finishing the Linha do dia does not keep it');
+    const laid = cron.line.map(e => e.id).join();
+    startCronDia();
+    if (cron.phase !== 'end' || !cron.replay || cron.line.map(e => e.id).join() !== laid || (stats.cronDiaGames || 0) !== games + 1) F('the Linha do dia, once laid, is not shown as it was');
+    seedFrom(cronDiaSeed(dayIndex())); const again = buildCron(); _seed = null;
+    if (again.cur.id + again.line[0].id !== first) F('the Linha do dia is not the same line all day');
+    LS.set('cronDia', keepCD); Object.assign(stats, JSON.parse(keepCS)); LS.set('stats', stats); LS.set('cronBest', keepCB); cron = null; sc = 'home';
   } catch (e) { F('cronologia EXC ' + e.stack); }
   /* ── Hoje na História: every day of the year has five dates near it, the same five all day, each with its picture ── */
   try {

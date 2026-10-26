@@ -218,6 +218,15 @@ DRIVE = r"""
     cron.lives=0; cron.phase='reveal'; go(); fit('cron/reveal-fim');
     cronNext(); window._newMedals = MEDALS.slice(0, 3); go(); fit('cron/end');
   }
+  /* the Cronologia's door, fresh, with the day's line begun and with it laid; the day's line and its end */
+  LS.set('cronDia', null); sc='cronMenu'; go(); fit('cron/menu');
+  startCronDia(); fit('cron/dia-first');
+  for (var k12=0; k12<6; k12++){ var e12=cron.cur, r12=cron.line.findIndex(function(x){return x.y>e12.y;}); cronPlace(r12<0?cron.line.length:r12); cronNext(); }
+  sc='cronMenu'; go(); fit('cron/menu-continuar'); sc='home'; go(); fit('home/cron-continuar');
+  startCronDia(); while (cron.phase !== 'end') { if (cron.phase === 'place') cronPlace(0 === cron.line.findIndex(function(x){return x.y>cron.cur.y;}) ? cron.line.length : 0); else cronNext(); }
+  window._newMedals = MEDALS.slice(0, 3); go(); fit('cron/dia-end');
+  sc='cronMenu'; go(); fit('cron/menu-feita'); startCronDia(); fit('cron/dia-rever');
+  LS.set('cronDia', null);
   /* Hoje na História: days through the year, each date guessed and revealed, the result, and the cover once it is done */
   for (var g4=0; g4<4; g4++){
     ano = buildHoje(new Date(2026, g4*3, 3+g4*7)); sc='ano';

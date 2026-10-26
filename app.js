@@ -5667,6 +5667,8 @@ const MEDALS = [
     t: st => (st.cronBest || 0) >= 10, p: () => [stats.cronBest || 0, 10] },
   { id:'cron25', ic:'scroll', n:'Guardião do tempo', d:'Ponha 25 eventos na linha da Cronologia',
     t: st => (st.cronBest || 0) >= 25, p: () => [stats.cronBest || 0, 25] },
+  { id:'cronDia7', ic:'calendar', n:'Cronista diário', d:'Faça a Linha do dia da Cronologia em 7 dias',
+    t: st => (st.cronDiaGames || 0) >= 7, p: () => [stats.cronDiaGames || 0, 7] },
   { id:'hoje400', ic:'sun', n:'Almanaque vivo',      d:'Faça 400 pontos no Hoje na História',
     t: st => (st.hojeBest || 0) >= 400, p: () => [stats.hojeBest || 0, 400] },
 ];
@@ -5700,7 +5702,7 @@ const MEDAL_SETS = [
   { id:'album',  n:'O álbum',        tag:'Álbum',  shape:'shield',
     ids:['alb25','alb60','albHalf','alb3q','albAll','albEsc','albSel','albMsc','albBook'] },
   { id:'rotina', n:'Rotina',         tag:'Rotina', shape:'hex',
-    ids:['daily3','daily7','surv10','revLearn','hoje400'] },
+    ids:['daily3','daily7','surv10','revLearn','hoje400','cronDia7'] },
   { id:'milhao', n:'Rumo ao Milhão', tag:'Milhão', shape:'coin',
     ids:['safe1','safe2','quit','million'] },
   { id:'arquivo', n:'O arquivo',     tag:'Arquivo', shape:'hex',
@@ -5722,7 +5724,7 @@ const MEDAL_TIER = {
   albAll:4, albBook:4, million:4,
   fQuote:2, fBattle:2, fLine:2, fNews:2, fOrder:2, fDuel:2, fMyth:2, fAll:3,
   selo10:1, anoExato:2, selo50:2, ano700:3, seloPg:3, ondeMosca:2, onde700:3, revLearn:2,
-  cron10:2, cron25:3, hoje400:2,
+  cron10:2, cron25:3, hoje400:2, cronDia7:2,
 };
 const TIER_NAME = ['', 'Comum', 'Rara', 'Épica', 'Lendária'];
 const medalSet = m => MEDAL_SETS.find(s => s.ids.includes(m.id)) || MEDAL_SETS[0];
@@ -18321,6 +18323,7 @@ function html() {
   if (sc === 'ano')   return anoHtml();
   if (sc === 'onde')  return ondeHtml();
   if (sc === 'cron')  return cronHtml();
+  if (sc === 'cronMenu') return cronMenuHtml();
   if (sc === 'desafio') return chalHtml();
 
   /* ── Home: the cover ────────────────────────────────────────── */
@@ -18409,7 +18412,10 @@ function html() {
             LS.get('anoBest', 0) > 0 ? 'Recorde ' + LS.get('anoBest', 0) : '')}
           ${row('onde-btn', 'VI', 'Onde foi?', LS.get('ondeBest', 0) > 0 ? 'Recorde ' + LS.get('ondeBest', 0) + ' pts' : 'Ache no mapa', 'onde', ICON.globe('currentColor', 15),
             LS.get('ondeBest', 0) > 0 ? 'Recorde ' + LS.get('ondeBest', 0) : '')}
-          ${row('cron-btn', 'VII', 'Cronologia', LS.get('cronBest', 0) > 0 ? 'Recorde ' + LS.get('cronBest', 0) : 'Linha do tempo', 'cron', ICON.timeline('currentColor', 15))}
+          ${(() => { const k = cronDiaKept(), b = LS.get('cronBest', 0);
+            /* until today's line is laid, the tile says it is waiting */
+            return row('cron-btn', 'VII', 'Cronologia', !k || !k.done ? (k ? 'Linha do dia · continuar' : 'Linha do dia nº ' + dayIndex()) : b > 0 ? 'Recorde ' + b : 'Linha do tempo',
+              'cron', ICON.timeline('currentColor', 15), !k || !k.done ? 'Linha do dia' : ''); })()}
           ${row('rev-btn', 'VIII', 'Revisar', revTail(), revDue().length ? 'rev' : 'rev is-off', ICON.book('currentColor', 15))}
         </nav>
 
@@ -19077,7 +19083,7 @@ function go() {
   on('bselos-end',  () => { snd.swipe();  seloTheme = null; sc = 'selos'; go(); });
   on('ano-btn',     () => { snd.select(); startAno(); });
   on('onde-btn',    () => { snd.select(); startOnde(); });
-  on('cron-btn',    () => { snd.select(); startCron(); });
+  on('cron-btn',    () => { snd.select(); sc = 'cronMenu'; go(); });
   on('hoje-btn',    () => { snd.select(); startHoje(); });
   on('balm',        () => { snd.select(); startHoje(); });
   on('rev-btn',     () => { if (startRev()) snd.select(); else { snd.tap(); const b = document.getElementById('rev-btn'); if (b) { b.classList.remove('is-nudge'); void b.offsetWidth; b.classList.add('is-nudge'); } } });
@@ -19087,6 +19093,7 @@ function go() {
   if (sc === 'ano')   wireAno();
   if (sc === 'onde')  wireOnde();
   if (sc === 'cron')  wireCron();
+  if (sc === 'cronMenu') wireCronMenu();
   if (sc === 'desafio') wireChal();
   on('bwelc',       () => { snd.tap(); openWelcomePack(); });
   on('bpack',       () => { snd.tap(); openRunPack(); });
@@ -22800,15 +22807,17 @@ function startRev() {
    year; wrong, and it still goes where it belongs, but a life goes with
    it. Three lives. The longer the line, the closer the years and the
    harder the gaps. Dealt from a seed, so a line can be sent to a friend.
+   The Linha do dia is dealt from the day: the same line for everyone,
+   scored once, kept tap by tap so it goes on where it was left.
    ANO_EVENTS (the Que ano? events) are above this line.
 ═══════════════════════════════════════════════════ */
 const CRON_LIVES = 3;
-let cron = null;           // { deck, line, cur, lives, score, phase: 'place'|'reveal'|'end', last, log, seed }
+let cron = null;           // { deck, line, cur, lives, score, phase: 'place'|'reveal'|'end', last, log, seed, daily?, replay? }
 
 function buildCron() {
   const deck = shuf(ANO_EVENTS.slice());
   const first = deck.pop();
-  return { deck, line: [first], cur: deck.pop(), lives: CRON_LIVES, score: 0, phase: 'place', last: null, log: [] };
+  return { deck, line: [first], cur: deck.pop(), lives: CRON_LIVES, score: 0, phase: 'place', last: null, log: [], picks: [] };
 }
 function startCron() {
   isDaily = false; isSurv = false; isMil = false; isRev = false;
@@ -22820,6 +22829,34 @@ function startCron() {
   sc = 'cron';
   go();
 }
+/* ── A LINHA DO DIA ── the day's line, numbered like the Diário */
+const cronDiaSeed = day => day * 104729 + 11;
+/* today's line as kept: { day, picks: [[gap, event id], …], done, score } */
+const cronDiaKept = () => { const r = LS.get('cronDia', null); return r && r.day === dayIndex() && Array.isArray(r.picks) ? r : null; };
+function startCronDia() {
+  isDaily = false; isSurv = false; isMil = false; isRev = false;
+  runSelos = [];
+  const day = dayIndex();
+  seedFrom(cronDiaSeed(day)); cron = buildCron(); _seed = null;
+  cron.daily = { day };
+  const kept = cronDiaKept();
+  if (kept) {
+    /* the taps already made are made again, quietly: no sound, no stamp, nothing counted twice */
+    for (const [gap, id] of kept.picks) {
+      if (!cron.cur || cron.cur.id !== id || cron.phase !== 'place') break;
+      cronApply(gap);
+      cron.picks.push([gap, id]);
+      if (cron.lives > 0 && cron.deck.length) { cron.cur = cron.deck.pop(); cron.phase = 'place'; }
+      else cron.phase = 'reveal';
+    }
+    /* a line already finished is shown as it was laid, and counts for nothing */
+    if (kept.done) { cron.replay = true; cron.phase = 'end'; }
+  }
+  window._newMedals = [];
+  sc = 'cron';
+  go();
+}
+
 /* the gaps an event may go in: equal years fit either side of one another */
 function cronFits(line, e, i) {
   return (i === 0 || line[i - 1].y <= e.y) && (i === line.length || e.y <= line[i].y);
@@ -22844,7 +22881,7 @@ function cronHtml() {
   if (!rev && cron.line.length === 1) rows.push(`<p class="cron-hint">O ano de cada evento aparece quando ele entra na linha. Errou o lugar, perde uma das ${CRON_LIVES === 3 ? 'três' : CRON_LIVES} ampulhetas.</p>`);
   return `
   <div class="pg cron-pg${rev ? ' is-rev' : ''}">
-    ${topbar('Cronologia')}
+    ${topbar(cron.daily ? 'Linha do dia · nº ' + cron.daily.day : 'Cronologia')}
     <div class="ano-head"><span class="cron-lives" role="img" aria-label="${cron.lives} de ${CRON_LIVES} vidas">${lives}</span>
       <span class="ano-score"><b class="num">${cron.score}</b> na linha</span></div>
     ${rev ? `<div class="cron-res ${L.ok ? 'good' : 'bad'}" id="cron-res" aria-live="polite">
@@ -22863,19 +22900,20 @@ function cronHtml() {
 function cronEndHtml() {
   const best = LS.get('cronBest', 0);
   const msg = cron.score >= 20 ? 'Um cronista de verdade!' : cron.score >= 12 ? 'Ótima memória do tempo!' : cron.score >= 6 ? 'Nada mau!' : 'O tempo é traiçoeiro…';
-  const wrong = new Set(cron.log.filter(l => !l.ok).map(l => l.e));
+  const wrong = new Set(cron.log.filter(l => !l.ok).map(l => l.e)), D = cron.daily;
   return `
   <div class="pg pg-center ano-end cron-end" style="padding:22px 18px;gap:9px;">
-    <div class="eyebrow">Cronologia · ${cron.line.length} eventos</div>
+    <div class="eyebrow${D ? ' eb-keep' : ''}">${D ? 'Linha do dia · nº ' + D.day : 'Cronologia · ' + cron.line.length + ' eventos'}</div>
     <div class="display" style="font-size:28px;"><em>${msg}</em></div>
     <div class="display prize-pop brass" style="font-size:50px;letter-spacing:-.03em;">${cron.score}<span class="muted" style="font-size:18px;letter-spacing:0;"> na linha</span></div>
-    ${chalBanner() || `<p class="small muted">${cron.isBest ? 'Seu novo recorde!' : `Recorde: ${best}`}</p>`}
+    ${D ? `<p class="small muted">${cron.replay ? 'A sua linha de hoje' : cron.isBest ? 'Seu novo recorde!' : 'A mesma linha para todo mundo'} · <b>amanhã, outra</b></p>`
+      : chalBanner() || `<p class="small muted">${cron.isBest ? 'Seu novo recorde!' : `Recorde: ${best}`}</p>`}
     <div class="cron-line cron-line-end scroll-y" role="list" tabindex="0" aria-label="A linha do tempo">${cron.line.map(e => cronRow(e, wrong.has(e) ? ' is-bad' : '', '', true)).join('')}</div>
     ${selosStrip()}
     ${medalChips()}
     <div class="foot-row" style="margin-top:8px;">
       <button id="cron-share" class="btn btn-ghost btn-sm">${chalMine() ? 'Desafiar' : 'Compartilhar'}</button>
-      <button id="cron-again" class="btn btn-brass">De novo</button>
+      <button id="cron-again" class="btn btn-brass">${D ? 'Partida livre' : 'De novo'}</button>
       <button id="bhome" class="btn btn-ghost btn-sm">Início</button>
     </div>
   </div>`;
@@ -22884,11 +22922,13 @@ function cronEndHtml() {
 function cronShareText() {
   /* a long line is shared by its first thirty */
   const grid = cron.log.slice(0, 30).map(l => l.ok ? '🟩' : '⬛').join('') + (cron.log.length > 30 ? '…' : '');
-  return `Cronologia 📜 History Quiz\n${grid}\n${cron.score} ${cron.score === 1 ? 'evento' : 'eventos'} na linha\n${chalShareTail(chalMine())}`;
+  const n = `${cron.score} ${cron.score === 1 ? 'evento' : 'eventos'} na linha`;
+  if (cron.daily) return `Linha do dia nº ${cron.daily.day} 📜 History Quiz\n${grid}\n${n}\n${CHAL_URL}`;
+  return `Cronologia 📜 History Quiz\n${grid}\n${n}\n${chalShareTail(chalMine())}`;
 }
 
-function cronPlace(i) {
-  if (!cron || cron.phase !== 'place') return;
+/* the move itself, and nothing else: the event into the line, the score or a life */
+function cronApply(i) {
   const e = cron.cur, ok = cronFits(cron.line, e, i);
   /* right or wrong, it goes where it belongs */
   let at = i;
@@ -22896,12 +22936,19 @@ function cronPlace(i) {
   cron.line.splice(at, 0, e);
   cron.log.push({ e, ok });
   cron.last = { e, ok };
+  if (ok) cron.score++; else cron.lives--;
+  return ok;
+}
+function cronPlace(i) {
+  if (!cron || cron.phase !== 'place') return;
+  const e = cron.cur, ok = cronApply(i);
+  cron.picks.push([i, e.id]);
+  if (cron.daily && !cron.replay) LS.set('cronDia', { day: cron.daily.day, picks: cron.picks, done: false });
   if (ok) {
-    cron.score++;
     /* a long line is hard to place in: from the sixth on, an event with a scene is cancelled into the stamp album */
     if (cron.line.length >= 6 && e.pic && e.pic.scene && awardSelo(e.pic.scene)) cron.last.selo = e.pic.scene;
     snd.correct(Math.min(cron.score, 8));
-  } else { cron.lives--; snd.wrong(); }
+  } else snd.wrong();
   try { cron.medals = (cron.medals || []).concat(newMedals()); } catch (err) {}
   cron.phase = 'reveal';
   cron.fx = 'next';
@@ -22912,8 +22959,13 @@ function cronNext() {
   if (!cron || cron.phase !== 'reveal') return;
   if (cron.lives <= 0 || !cron.deck.length) {
     cron.phase = 'end';
+    if (cron.replay) { go(); return; }
     stats.cronGames = (stats.cronGames || 0) + 1;
     stats.cronBest = Math.max(stats.cronBest || 0, cron.score);
+    if (cron.daily) {
+      stats.cronDiaGames = (stats.cronDiaGames || 0) + 1;
+      LS.set('cronDia', { day: cron.daily.day, picks: cron.picks, done: true, score: cron.score });
+    }
     LS.set('stats', stats);
     cron.isBest = cron.score > LS.get('cronBest', 0);
     if (cron.isBest) LS.set('cronBest', cron.score);
@@ -22925,6 +22977,34 @@ function cronNext() {
     cron.fx = 'slot';
   }
   go();
+}
+
+/* ── the Cronologia's door: the day's line, or a free one ── */
+function cronMenuHtml() {
+  const k = cronDiaKept(), best = LS.get('cronBest', 0);
+  const dia = !k ? ['Linha do dia · nº ' + dayIndex(), 'A mesma linha para todo mundo, hoje']
+    : k.done ? ['Linha do dia · feita', `${k.score} na linha · ver a sua linha`]
+    : ['Linha do dia · continuar', `${k.picks.length} ${k.picks.length === 1 ? 'evento posto' : 'eventos postos'}, de onde parou`];
+  return `
+  <div class="pg cron-menu">
+    ${topbar('Cronologia')}
+    <div class="cron-menu-in">
+      <span class="chal-ic mode-disc mode-cron" aria-hidden="true">${ICON.timeline('currentColor', 28)}</span>
+      <div class="display" style="font-size:30px;"><em>Ponha a História em ordem</em></div>
+      <p class="small muted cron-menu-p">Cada evento chega sem o ano: toque onde ele entra na linha do tempo. Errou o lugar, perde uma das três ampulhetas.</p>
+      <button id="cron-dia" class="cron-opt is-day${k && k.done ? ' is-done' : ''}" type="button">
+        <span class="mode-disc mode-${k && k.done ? 'done' : 'daily'}">${ICON.calendar('currentColor', 18)}</span>
+        <span><b>${dia[0]}</b><small>${dia[1]}</small></span></button>
+      <button id="cron-free" class="cron-opt" type="button">
+        <span class="mode-disc mode-cron">${ICON.timeline('currentColor', 18)}</span>
+        <span><b>Partida livre</b><small>${best > 0 ? 'Recorde: ' + best + ' na linha' : 'Uma linha nova a cada partida'}</small></span></button>
+    </div>
+  </div>`;
+}
+function wireCronMenu() {
+  const ready = tapArmed();
+  document.getElementById('cron-dia')?.addEventListener('click', () => { if (ready()) { snd.select(); startCronDia(); } });
+  document.getElementById('cron-free')?.addEventListener('click', () => { if (ready()) { snd.select(); startCron(); } });
 }
 
 /* the line keeps the newest event in the middle of its window, so the gaps around it are in reach */
