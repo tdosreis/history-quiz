@@ -37,6 +37,7 @@ STRIPS = ("quote", "battle", "line", "news")   # history's own formats (tools/hi
 BEGIN = "  /* NEW-QS:BEGIN — written by tools/merge_questions.py from tools/questions/*.json */"
 END = "  /* NEW-QS:END */"
 sys.path.insert(0, os.path.join(ROOT, "tools", "history"))
+import page                          # index.html + app.js, read and written as one text
 try:
     import qlint                     # history's own give-away checks (tools/history/qlint.py)
 except ImportError:
@@ -77,7 +78,7 @@ def inventory(src):
 
 def main():
     check_only = "--check" in sys.argv
-    src = io.open(P, encoding="utf-8").read()
+    src = page.read()
     inv = inventory(src)
     pl = dict(inv["pl"]); cl = dict(inv["cl"])
     logos, flags, stad, icons = set(inv["logos"]), set(inv["flags"]), set(inv["stad"]), set(inv["icons"])
@@ -255,8 +256,8 @@ def main():
         out.append("    ]\n  },")
     a, b = src.index(BEGIN), src.index(END)
     src = src[:a] + "\n".join(out) + "\n" + src[b:]
-    io.open(P, "w", encoding="utf-8").write(src)
-    print("written into index.html")
+    page.write(src)
+    print("written into the page (app.js)")
 
 
 main()

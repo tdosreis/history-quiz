@@ -353,7 +353,7 @@ src = io.open(os.path.join(ROOT, "index.html"), encoding="utf-8").read()
 # atelier textures (paper, brush strokes, slips) were once left behind in a
 # port, and the page still booted: it just lost its buttons and backgrounds.
 missing = []
-for name in ("index.html", "sw.js", "manifest.json"):
+for name in ("index.html", "app.js", "sw.js", "manifest.json"):
     text = io.open(os.path.join(ROOT, name), encoding="utf-8").read()
     for ref in sorted(set(re.findall(r"(?:img|icons)/[A-Za-z0-9_./-]+\.(?:webp|png|jpg|jpeg|svg|gif|woff2)", text))):
         if not os.path.isfile(os.path.join(ROOT, ref)):

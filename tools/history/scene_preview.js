@@ -16,7 +16,7 @@ const read = f => fs.readFileSync(path.join(DIR, f), 'utf8');
 const files = fs.readdirSync(DIR).filter(f => f.endsWith('.js') && f !== '_core.js').sort();
 const core = read('_core.js');
 /* what the scenes lean on from the rest of the page */
-const page = fs.readFileSync(path.join(H, '..', '..', 'index.html'), 'utf8');
+const page = fs.readFileSync(path.join(H, '..', '..', fs.existsSync(path.join(H, '..', '..', 'app.js')) ? 'app.js' : 'index.html'), 'utf8');
 const grab = name => { const m = page.match(new RegExp('\\n(const ' + name + ' = [^\\n]*(\\n  [^\\n]*)*)')); return m ? m[1] : ''; };
 const shim = [
   `const _esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;');`,

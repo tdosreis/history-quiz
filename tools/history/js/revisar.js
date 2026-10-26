@@ -28,6 +28,7 @@ function revPool() {
 function revFile() {
   const r = LS.get('rev', {});
   if (!r || typeof r !== 'object' || Array.isArray(r)) return {};
+  if (!Object.keys(r).length) return r;   // nothing filed: the questions need not be counted (it costs the cover's first draw)
   const pool = revPool(), gone = Object.keys(r).filter(k => !pool.has(k));
   if (gone.length) { gone.forEach(k => delete r[k]); LS.set('rev', r); }
   return r;

@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
-"""Build the history data layer and splice it into index.html.
+"""Build the history data layer and splice it into the page.
 
 Sources (tools/history/*.tsv, data/history_*.json) -> JavaScript blocks, written
-between sentinels in index.html:
+between sentinels in the page (index.html + app.js, read and written as one text
+by tools/history/page.py):
 
     /*@@name@@*/ ... /*@@/name@@*/
 
@@ -14,6 +15,8 @@ The first run (migrate) swaps out the football blocks and plants the sentinels;
 later runs just refill them.
 """
 import io, os, re, sys, json
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import page
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 H = os.path.join(ROOT, "tools", "history")
@@ -281,7 +284,7 @@ def put(s, name, body):
 
 
 def main():
-    s = io.open(PAGE, encoding="utf-8").read()
+    s = page.read()
     if "/*@@data_cl_cats@@*/" not in s:
         s = migrate(s)
     # the merged questions live inside the CATS block; keep them across a rebuild
@@ -351,8 +354,8 @@ def main():
             # Cronologia: the events again, each put in its place on a line of time
             + io.open(os.path.join(H, "js", "cronologia.js"), encoding="utf-8").read())
     s = put(s, "formats_css", "\n".join(io.open(os.path.join(H, "css", f), encoding="utf-8").read() for f in ("fonts.css", "formats.css", "selos_ano.css", "mapa.css", "onde.css", "desafio.css", "cronologia.css")))
-    io.open(PAGE, "w", encoding="utf-8").write(s)
-    print("index.html updated: %d bytes" % len(s.encode("utf-8")))
+    v = page.write(s)
+    print("index.html + app.js?v=%s updated: %d bytes" % (v, len(s.encode("utf-8"))))
 
 
 def banner_start(s, title, after=0):

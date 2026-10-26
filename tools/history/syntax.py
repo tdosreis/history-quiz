@@ -2,8 +2,10 @@
 """Syntax-check the page's main script with JavaScriptCore (no browser needed)."""
 import io, os, re, subprocess, sys
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import page                          # index.html + app.js, as one text
 JSC = "/System/Library/Frameworks/JavaScriptCore.framework/Versions/A/Helpers/jsc"
-s = io.open(os.path.join(ROOT, "index.html"), encoding="utf-8").read()
+s = page.read()
 a = s.index("\n<script>\n", s.index("</style>")) + len("\n<script>\n")
 b = s.index("\n</script>", a)
 first_line = s[:a].count("\n") + 1
