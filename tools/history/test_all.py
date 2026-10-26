@@ -304,6 +304,11 @@ JS = r"""
     const laid = cron.line.map(e => e.id).join();
     startCronDia();
     if (cron.phase !== 'end' || !cron.replay || cron.line.map(e => e.id).join() !== laid || (stats.cronDiaGames || 0) !== games + 1) F('the Linha do dia, once laid, is not shown as it was');
+    /* an app updated during the day (a new event) still deals the day's line as it was, half-played or laid */
+    ANO_EVENTS.unshift(Object.assign({}, ANO_EVENTS[0], { id: 'zz_test_event', y: 1500 }));
+    startCronDia();
+    if (cron.line.map(e => e.id).join() !== laid || cron.phase !== 'end') F('a new event in the app breaks the day\'s laid line');
+    ANO_EVENTS.shift();
     seedFrom(cronDiaSeed(dayIndex())); const again = buildCron(); _seed = null;
     if (again.cur.id + again.line[0].id !== first) F('the Linha do dia is not the same line all day');
     LS.set('cronDia', keepCD); Object.assign(stats, JSON.parse(keepCS)); LS.set('stats', stats); LS.set('cronBest', keepCB); cron = null; sc = 'home';
@@ -383,7 +388,26 @@ JS = r"""
     metasList().forEach(g => { s2.base[g.m.id] = g.m.v() - g.n; }); LS.set('metas', s2); metasCheck();
     if ((stats.metasWeeks || 0) !== before + 1 || !metasState().full) F('the three goals met do not count as a full week');
     metasCheck(); if ((stats.metasWeeks || 0) !== before + 1) F('a full week counts twice');
-    document.querySelectorAll('.meta-toast').forEach(e => e.remove());
+    /* a new week starts from the counts as last seen: a game played before its first screen counts in it */
+    const sp = metasState(); sp.wk -= 1; sp.snap = metasVals(); Object.keys(sp.snap).forEach(k => { sp.snap[k] -= 1; }); LS.set('metas', sp);
+    if (metasList().some(g => g.got !== 1)) F('the first game of a new week does not count: ' + JSON.stringify(metasList().map(g => g.got)));
+    /* a clock gone back across a Monday keeps the week there is */
+    const sf = metasState(); sf.wk += 1; LS.set('metas', sf);
+    if (metasState().wk !== sf.wk) F('a clock gone back redraws the week');
+    /* everyone draws the same: a goal a player cannot play is left out after the draw, not before */
+    LS.set('metas', null); const normal = metasState().picks;
+    const fm = METAS.find(m => m.id === 'figs'), okF = fm.ok; fm.ok = () => false;
+    LS.set('metas', null); const nofig = metasState().picks; fm.ok = okF;
+    const kept3 = normal.filter(p => p[0] !== 'figs');
+    if (kept3.some(p => { const q = nofig.find(x => x[0] === p[0]); return !q || (q[1] !== p[1] && !METAS.find(m => m.id === p[0]).days); })) F('a nearly full album changes the other goals: ' + JSON.stringify([normal, nofig]));
+    /* Que ano? pays its goal on the answer that meets it; Hoje's points are not Que ano?'s */
+    LS.set('metas', null); const sa = metasState(); sa.picks = [['anos', 100], sa.picks[1], sa.picks[2]].filter(Boolean).slice(0, 3); sa.base.anos = stats.anoPts || 0; sa.done = {}; LS.set('metas', sa);
+    startAno(); ano.guess = ano.qs[0].e.y; anoCommit();
+    if (!metasState().done.anos) F('the Que ano? goal is not paid by the answer that meets it');
+    const ap = stats.anoPts || 0; ano = buildHoje(new Date(2026, 4, 10)); ano.guess = ano.qs[0].e.y; anoCommit();
+    if ((stats.anoPts || 0) !== ap) F('Hoje na História points count as Que ano? points');
+    ano = null; sc = 'home';
+    document.querySelectorAll('.meta-toast').forEach(e => e.remove()); _metaQ.length = 0;
     LS.set('metas', keepM); selos = JSON.parse(keepSel); LS.set('selos', selos); Object.assign(stats, JSON.parse(keepSt)); LS.set('stats', stats);
     runSelos = [];
   } catch (e) { F('metas EXC ' + e.stack); }

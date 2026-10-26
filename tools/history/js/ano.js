@@ -236,10 +236,11 @@ function anoCommit() {
   ano.log.push({ e, g, p, d, selo });
   if (ano.hoje && !ano.replay) LS.set('hojeRun', { day: ano.hoje.day, log: ano.log.map(l => [l.e.id, l.g]) });
   if (d === 0 && !ano.replay) { stats.anoExact = (stats.anoExact || 0) + 1; LS.set('stats', stats); }
-  /* a medal is won the moment it is earned, and announced on this game's results */
-  try { ano.medals = (ano.medals || []).concat(newMedals()); } catch (err) {}
   ano.pts += p;
-  if (!ano.replay) { stats.anoPts = (stats.anoPts || 0) + p; LS.set('stats', stats); }
+  /* Que ano?'s own points (Hoje na História's are its own) */
+  if (!ano.replay && !ano.hoje) { stats.anoPts = (stats.anoPts || 0) + p; LS.set('stats', stats); }
+  /* a medal (or a goal of the week) is won the moment it is earned, and announced on this game's results */
+  try { ano.medals = (ano.medals || []).concat(newMedals()); } catch (err) {}
   ano.phase = 'reveal';
   if (p === 100) snd.fanfare(); else if (p >= 80) snd.correct(0); else if (p >= 50) snd.almost(); else snd.wrong();
   go();

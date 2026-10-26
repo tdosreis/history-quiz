@@ -31,7 +31,7 @@ function startCron() {
 }
 /* ── A LINHA DO DIA ── the day's line, numbered like the Diário */
 const cronDiaSeed = day => day * 104729 + 11;
-/* today's line as kept: { day, picks: [[gap, event id], …], done, score } */
+/* today's line as kept: { day, ids: the events in the order dealt, picks: [[gap, event id], …], score, lives, done } */
 const cronDiaKept = () => { const r = LS.get('cronDia', null); return r && r.day === dayIndex() && Array.isArray(r.picks) ? r : null; };
 function startCronDia() {
   isDaily = false; isSurv = false; isMil = false; isRev = false;
@@ -40,6 +40,12 @@ function startCronDia() {
   seedFrom(cronDiaSeed(day)); cron = buildCron(); _seed = null;
   cron.daily = { day };
   const kept = cronDiaKept();
+  /* dealt again from the events kept with it: an app updated during the day still has the same line */
+  if (kept && Array.isArray(kept.ids)) {
+    const by = new Map(ANO_EVENTS.map(e => [e.id, e])), evs = kept.ids.map(id => by.get(id)).filter(Boolean);
+    if (evs.length >= 2) { cron.line = [evs[0]]; cron.cur = evs[1]; cron.deck = evs.slice(2).reverse(); }
+  }
+  cron.ids = [cron.line[0].id, cron.cur.id].concat(cron.deck.slice().reverse().map(e => e.id));
   if (kept) {
     /* the taps already made are made again, quietly: no sound, no stamp, nothing counted twice */
     for (const [gap, id] of kept.picks) {
@@ -48,6 +54,13 @@ function startCronDia() {
       cron.picks.push([gap, id]);
       if (cron.lives > 0 && cron.deck.length) { cron.cur = cron.deck.pop(); cron.phase = 'place'; }
       else cron.phase = 'reveal';
+    }
+    /* what could not be laid again (an event gone from the app) keeps its count: no life comes back */
+    if (cron.picks.length < kept.picks.length) {
+      cron.picks = kept.picks.slice();
+      if (kept.score != null) cron.score = kept.score;
+      if (kept.lives != null) cron.lives = kept.lives;
+      if (!kept.done && cron.lives <= 0) cron.phase = 'reveal';
     }
     /* a line already finished is shown as it was laid, and counts for nothing */
     if (kept.done) { cron.replay = true; cron.phase = 'end'; }
@@ -143,7 +156,7 @@ function cronPlace(i) {
   if (!cron || cron.phase !== 'place') return;
   const e = cron.cur, ok = cronApply(i);
   cron.picks.push([i, e.id]);
-  if (cron.daily && !cron.replay) LS.set('cronDia', { day: cron.daily.day, picks: cron.picks, done: false });
+  if (cron.daily && !cron.replay) LS.set('cronDia', { day: cron.daily.day, ids: cron.ids, picks: cron.picks, score: cron.score, lives: cron.lives, done: false });
   if (ok && !cron.replay) { stats.cronPlaced = (stats.cronPlaced || 0) + 1; LS.set('stats', stats); }
   if (ok) {
     /* a long line is hard to place in: from the sixth on, an event with a scene is cancelled into the stamp album */
@@ -165,7 +178,7 @@ function cronNext() {
     stats.cronBest = Math.max(stats.cronBest || 0, cron.score);
     if (cron.daily) {
       stats.cronDiaGames = (stats.cronDiaGames || 0) + 1;
-      LS.set('cronDia', { day: cron.daily.day, picks: cron.picks, done: true, score: cron.score });
+      LS.set('cronDia', { day: cron.daily.day, ids: cron.ids, picks: cron.picks, score: cron.score, lives: cron.lives, done: true });
     }
     LS.set('stats', stats);
     cron.isBest = cron.score > LS.get('cronBest', 0);
@@ -219,7 +232,7 @@ function wireCron() {
   const ready = tapArmed();
   document.querySelectorAll('.cron-slot').forEach(b => b.addEventListener('click', () => { if (ready()) cronPlace(+b.dataset.slot); }));
   on('cron-next', () => { if (ready()) { snd.swipe(); cronNext(); } });
-  on('cron-again', () => { snd.select(); startCron(); });
+  on('cron-again', () => { if (ready()) { snd.select(); startCron(); } });
   on('cron-share', () => {
     const txt = cronShareText();
     if (navigator.share) navigator.share({ text: txt }).catch(() => {});
