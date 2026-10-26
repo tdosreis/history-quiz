@@ -5040,6 +5040,7 @@ function saveDaily() {
   const today = dayIndex(), last = LS.get('dailyDay', -1);
   let st = LS.get('dailyStreak', 0);
   st = (last === today - 1) ? st + 1 : (last === today ? st : 1);
+  if (last !== today) { stats.dailyDays = (stats.dailyDays || 0) + 1; LS.set('stats', stats); }
   LS.set('dailyDay', today);
   LS.set('dailyStreak', st);
   LS.set('dailyRes', { pts, nCorrect, total: cat.qs.length, log: runLog, streak: st });
@@ -5669,6 +5670,10 @@ const MEDALS = [
     t: st => (st.cronBest || 0) >= 25, p: () => [stats.cronBest || 0, 25] },
   { id:'cronDia7', ic:'calendar', n:'Cronista diário', d:'Faça a Linha do dia da Cronologia em 7 dias',
     t: st => (st.cronDiaGames || 0) >= 7, p: () => [stats.cronDiaGames || 0, 7] },
+  { id:'semana1', ic:'flag', n:'Semana cheia', d:'Cumpra as três metas de uma semana',
+    t: st => (st.metasWeeks || 0) >= 1 },
+  { id:'semana4', ic:'crown', n:'Mês de metas', d:'Cumpra as três metas da semana em 4 semanas',
+    t: st => (st.metasWeeks || 0) >= 4, p: () => [stats.metasWeeks || 0, 4] },
   { id:'hoje400', ic:'sun', n:'Almanaque vivo',      d:'Faça 400 pontos no Hoje na História',
     t: st => (st.hojeBest || 0) >= 400, p: () => [stats.hojeBest || 0, 400] },
 ];
@@ -5677,6 +5682,7 @@ function earnedMedals() { return MEDALS.filter(m => { try { return m.t(stats); }
 
 /* returns medals unlocked by the run that just finished */
 function newMedals() {
+  try { metasCheck(); } catch (e) {}   // a goal of the week met pays its stamp, and may make a medal
   const had = new Set(LS.get('medals', []));
   const now = earnedMedals().map(m => m.id);
   LS.set('medals', now);
@@ -5702,7 +5708,7 @@ const MEDAL_SETS = [
   { id:'album',  n:'O álbum',        tag:'Álbum',  shape:'shield',
     ids:['alb25','alb60','albHalf','alb3q','albAll','albEsc','albSel','albMsc','albBook'] },
   { id:'rotina', n:'Rotina',         tag:'Rotina', shape:'hex',
-    ids:['daily3','daily7','surv10','revLearn','hoje400','cronDia7'] },
+    ids:['daily3','daily7','surv10','revLearn','hoje400','cronDia7','semana1','semana4'] },
   { id:'milhao', n:'Rumo ao Milhão', tag:'Milhão', shape:'coin',
     ids:['safe1','safe2','quit','million'] },
   { id:'arquivo', n:'O arquivo',     tag:'Arquivo', shape:'hex',
@@ -5724,7 +5730,7 @@ const MEDAL_TIER = {
   albAll:4, albBook:4, million:4,
   fQuote:2, fBattle:2, fLine:2, fNews:2, fOrder:2, fDuel:2, fMyth:2, fAll:3,
   selo10:1, anoExato:2, selo50:2, ano700:3, seloPg:3, ondeMosca:2, onde700:3, revLearn:2,
-  cron10:2, cron25:3, hoje400:2, cronDia7:2,
+  cron10:2, cron25:3, hoje400:2, cronDia7:2, semana1:2, semana4:3,
 };
 const TIER_NAME = ['', 'Comum', 'Rara', 'Épica', 'Lendária'];
 const medalSet = m => MEDAL_SETS.find(s => s.ids.includes(m.id)) || MEDAL_SETS[0];
@@ -18324,6 +18330,7 @@ function html() {
   if (sc === 'onde')  return ondeHtml();
   if (sc === 'cron')  return cronHtml();
   if (sc === 'cronMenu') return cronMenuHtml();
+  if (sc === 'metas') return metasHtml();
   if (sc === 'desafio') return chalHtml();
 
   /* ── Home: the cover ────────────────────────────────────────── */
@@ -18453,6 +18460,7 @@ function html() {
         <div class="home-foot">
           <button id="bmute" class="btn btn-ghost btn-icon" title="Som" aria-label="Som">${
             muted ? ICON.mute('currentColor', 14) : ICON.sound('currentColor', 14)}</button>
+          <button id="bmetas" class="link">Metas <span class="num">${(() => { try { return metasTail(); } catch (e) { return ''; } })()}</span></button>
           <button id="bmed"  class="link">Insígnias</button>
           <button id="bvit2" class="link">Vitrine</button>
           <button id="bcred" class="link">Créditos</button>
@@ -19084,6 +19092,7 @@ function go() {
   on('ano-btn',     () => { snd.select(); startAno(); });
   on('onde-btn',    () => { snd.select(); startOnde(); });
   on('cron-btn',    () => { snd.select(); sc = 'cronMenu'; go(); });
+  on('bmetas',      () => { snd.swipe(); sc = 'metas'; go(); });
   on('hoje-btn',    () => { snd.select(); startHoje(); });
   on('balm',        () => { snd.select(); startHoje(); });
   on('rev-btn',     () => { if (startRev()) snd.select(); else { snd.tap(); const b = document.getElementById('rev-btn'); if (b) { b.classList.remove('is-nudge'); void b.offsetWidth; b.classList.add('is-nudge'); } } });
@@ -20977,6 +20986,7 @@ function anoCommit() {
   /* a medal is won the moment it is earned, and announced on this game's results */
   try { ano.medals = (ano.medals || []).concat(newMedals()); } catch (err) {}
   ano.pts += p;
+  if (!ano.replay) { stats.anoPts = (stats.anoPts || 0) + p; LS.set('stats', stats); }
   ano.phase = 'reveal';
   if (p === 100) snd.fanfare(); else if (p >= 80) snd.correct(0); else if (p >= 50) snd.almost(); else snd.wrong();
   go();
@@ -20991,7 +21001,7 @@ function anoNext() {
       stats.hojeGames = (stats.hojeGames || 0) + 1;
       /* the game's own day, not the clock's: a replay begun before midnight and finished after is still a replay */
       const prev = LS.get('hojeRes', null);
-      if (!ano.replay && !(prev && prev.day === ano.hoje.day)) { ano.hojeFirst = true; stats.hojeBest = Math.max(stats.hojeBest || 0, ano.pts); LS.set('hojeRes', { day: ano.hoje.day, pts: ano.pts }); LS.set('hojeRun', null); }
+      if (!ano.replay && !(prev && prev.day === ano.hoje.day)) { ano.hojeFirst = true; stats.hojeDays = (stats.hojeDays || 0) + 1; stats.hojeBest = Math.max(stats.hojeBest || 0, ano.pts); LS.set('hojeRes', { day: ano.hoje.day, pts: ano.pts }); LS.set('hojeRun', null); }
     } else {
       stats.anoGames = (stats.anoGames || 0) + 1;
       ano.isBest = ano.pts > LS.get('anoBest', 0);
@@ -22944,6 +22954,7 @@ function cronPlace(i) {
   const e = cron.cur, ok = cronApply(i);
   cron.picks.push([i, e.id]);
   if (cron.daily && !cron.replay) LS.set('cronDia', { day: cron.daily.day, picks: cron.picks, done: false });
+  if (ok && !cron.replay) { stats.cronPlaced = (stats.cronPlaced || 0) + 1; LS.set('stats', stats); }
   if (ok) {
     /* a long line is hard to place in: from the sixth on, an event with a scene is cancelled into the stamp album */
     if (cron.line.length >= 6 && e.pic && e.pic.scene && awardSelo(e.pic.scene)) cron.last.selo = e.pic.scene;
@@ -23031,6 +23042,104 @@ function wireCron() {
   const to = fx === 'next' ? document.getElementById('cron-next')
     : fx === 'slot' && cron.last ? document.querySelector(`.cron-slot[data-slot="${cron.line.indexOf(cron.last.e) + 1}"]`) : null;
   if (to) try { to.focus({ preventScroll: true }); } catch (e) {}
+}
+
+/* ═══════════════════════════════════════════════════
+   METAS DA SEMANA — three goals, new every Monday
+   Drawn from the week's number, so a friend has the same three. Each is
+   a count that has to grow by so much this week (right answers, events
+   on the line, days of Hoje…): what it was when the week began is kept,
+   and the goal is what it has grown by since. A goal met pays a stamp the
+   player does not have; the three met, a medal. A banner says so the
+   moment it happens, wherever the player is.
+═══════════════════════════════════════════════════ */
+const METAS = [
+  { id: 'acertos', ic: 'check', kind: 'train', n: [30, 45, 60], t: n => `Acerte ${n} perguntas`, v: () => stats.correct || 0 },
+  { id: 'rodadas', ic: 'play', kind: 'surv', n: [4, 6, 8], t: n => `Jogue ${n} rodadas de perguntas`, v: () => stats.games || 0 },
+  { id: 'diario', ic: 'calendar', kind: 'daily', n: [3, 4, 5], t: n => `Faça o Diário em ${n} dias`, v: () => stats.dailyDays || 0 },
+  { id: 'linha', ic: 'timeline', kind: 'cron', n: [15, 25, 35], t: n => `Ponha ${n} eventos na linha da Cronologia`, v: () => stats.cronPlaced || 0 },
+  { id: 'anos', ic: 'hourglass', kind: 'ano', n: [1500, 2500, 3500], t: n => `Some ${n.toLocaleString('pt-BR')} pontos no Que\u00a0ano?`, v: () => stats.anoPts || 0 },
+  { id: 'onde', ic: 'globe', kind: 'onde', n: [2, 3, 4], t: n => `Jogue ${n} partidas de Onde\u00a0foi?`, v: () => stats.ondeGames || 0 },
+  { id: 'hoje', ic: 'sun', kind: 'hoje', n: [3, 4, 5], t: n => `Jogue o Hoje na\u00a0História em ${n} dias`, v: () => stats.hojeDays || 0 },
+  { id: 'figs', ic: 'star', kind: 'album', n: [5, 8, 12], t: n => `Cole ${n} figurinhas novas no álbum`, v: () => album.size,
+    ok: () => ALL_STICKERS.length - album.size >= 12 },
+];
+const metasWeek = d => Math.floor(dayIndex(d) / 7);          // dayIndex counts from a Monday
+const metasLeft = () => 7 - (dayIndex() % 7);                  // days left, today included
+
+/* the week's three, and what each count was when the week began */
+function metasState() {
+  const wk = metasWeek();
+  let s = LS.get('metas', null);
+  if (s && s.wk === wk && Array.isArray(s.picks)) return s;
+  /* drawn on the week's own seed, and the game's seed (a challenge being dealt) put back as it was */
+  const keep = _seed;
+  seedFrom(wk * 7907 + 3);
+  const pool = shuf(METAS.filter(m => !m.ok || m.ok()));
+  const picks = pool.slice(0, 3).map(m => [m.id, m.n[Math.floor(rnd() * m.n.length)]]);
+  _seed = keep;
+  s = { wk, picks, base: {}, done: {} };
+  picks.forEach(([id]) => { s.base[id] = METAS.find(m => m.id === id).v(); });
+  LS.set('metas', s);
+  return s;
+}
+const metasList = () => { const s = metasState();
+  return s.picks.map(([id, n]) => { const m = METAS.find(x => x.id === id);
+    return m && { m, n, got: Math.max(0, Math.min(n, m.v() - (s.base[id] || 0))), done: s.done[id] }; }).filter(Boolean); };
+
+/* called whenever the medals are counted: a goal just met is paid and announced */
+function metasCheck() {
+  const s = metasState(), fresh = [];
+  for (const g of metasList()) {
+    if (g.done || g.got < g.n) continue;
+    /* the prize: a stamp not yet in the album, the same one for anyone meeting this goal this week */
+    const free = seloAll().filter(id => !selos[id]);
+    let prize = true;
+    if (free.length) { const keep = _seed; seedFrom(s.wk * 31 + g.m.id.length * 977); prize = free[Math.floor(rnd() * free.length)]; _seed = keep; awardSelo(prize); }
+    s.done[g.m.id] = prize;
+    fresh.push({ g, prize });
+  }
+  if (fresh.length) {
+    if (!s.full && s.picks.every(([id]) => s.done[id])) { s.full = true; stats.metasWeeks = (stats.metasWeeks || 0) + 1; LS.set('stats', stats); }
+    LS.set('metas', s);
+    fresh.forEach((f, i) => setTimeout(() => metaToast(f), 400 + i * 3800));
+  }
+  return fresh;
+}
+function metaToast({ g, prize }) {
+  const el = document.createElement('div');
+  el.className = 'meta-toast';
+  el.setAttribute('role', 'status');
+  el.innerHTML = `<span class="mode-disc mode-${g.m.kind}">${ICON[g.m.ic]('currentColor', 15)}</span>
+    <span><small>Meta da semana cumprida</small><b>${g.m.t(g.n)}</b>${typeof prize === 'string' ? `<i>Selo de presente: nº ${seloNum(prize)}</i>` : ''}</span>
+    ${typeof prize === 'string' ? `<span class="selo-mini">${seloSvg(prize)}</span>` : ''}`;
+  document.body.appendChild(el);
+  try { snd.fanfare(); } catch (e) {}
+  setTimeout(() => el.classList.add('is-out'), 3300);
+  setTimeout(() => el.remove(), 3800);
+}
+
+/* the cover's footer link */
+const metasTail = () => { const l = metasList(); return `${l.filter(g => g.done).length}/${l.length}`; };
+
+function metasHtml() {
+  const l = metasList(), left = metasLeft(), all = l.every(g => g.done);
+  return `
+  <div class="pg metas-pg">
+    ${topbar('Metas da semana')}
+    <p class="metas-when">${all ? 'As três cumpridas!' : `${l.filter(g => g.done).length} de ${l.length} cumpridas`} · <b>${left === 1 ? 'último dia' : `faltam ${left} dias`}</b></p>
+    <div class="metas-list">
+      ${l.map(g => `<div class="meta${g.done ? ' is-done' : ''}">
+        <span class="mode-disc mode-${g.done ? 'done' : g.m.kind}">${(g.done ? ICON.check : ICON[g.m.ic])('currentColor', 18)}</span>
+        <span class="meta-tx"><b>${g.m.t(g.n)}</b>
+          <span class="meta-bar" role="progressbar" aria-valuemin="0" aria-valuemax="${g.n}" aria-valuenow="${g.got}" aria-label="${g.got} de ${g.n}"><i style="width:${Math.round(100 * g.got / g.n)}%"></i></span>
+          <small>${g.got.toLocaleString('pt-BR')} de ${g.n.toLocaleString('pt-BR')}${g.done ? ' · cumprida' : ''}</small></span>
+        <span class="meta-prize" title="${typeof g.done === 'string' ? 'Selo nº ' + seloNum(g.done) : 'Um selo de presente'}">${typeof g.done === 'string'
+          ? `<span class="selo-mini">${seloSvg(g.done)}</span>` : `<span class="meta-gift">${ICON.stamp('currentColor', 18)}</span>`}</span>
+      </div>`).join('')}
+    </div>
+    <p class="small muted metas-foot">Cada meta cumprida dá um selo que falta no seu álbum; as três, uma insígnia. Toda segunda-feira, três metas novas.</p>
+  </div>`;
 }
 
 /*@@/formats@@*/

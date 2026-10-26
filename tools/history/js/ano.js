@@ -239,6 +239,7 @@ function anoCommit() {
   /* a medal is won the moment it is earned, and announced on this game's results */
   try { ano.medals = (ano.medals || []).concat(newMedals()); } catch (err) {}
   ano.pts += p;
+  if (!ano.replay) { stats.anoPts = (stats.anoPts || 0) + p; LS.set('stats', stats); }
   ano.phase = 'reveal';
   if (p === 100) snd.fanfare(); else if (p >= 80) snd.correct(0); else if (p >= 50) snd.almost(); else snd.wrong();
   go();
@@ -253,7 +254,7 @@ function anoNext() {
       stats.hojeGames = (stats.hojeGames || 0) + 1;
       /* the game's own day, not the clock's: a replay begun before midnight and finished after is still a replay */
       const prev = LS.get('hojeRes', null);
-      if (!ano.replay && !(prev && prev.day === ano.hoje.day)) { ano.hojeFirst = true; stats.hojeBest = Math.max(stats.hojeBest || 0, ano.pts); LS.set('hojeRes', { day: ano.hoje.day, pts: ano.pts }); LS.set('hojeRun', null); }
+      if (!ano.replay && !(prev && prev.day === ano.hoje.day)) { ano.hojeFirst = true; stats.hojeDays = (stats.hojeDays || 0) + 1; stats.hojeBest = Math.max(stats.hojeBest || 0, ano.pts); LS.set('hojeRes', { day: ano.hoje.day, pts: ano.pts }); LS.set('hojeRun', null); }
     } else {
       stats.anoGames = (stats.anoGames || 0) + 1;
       ano.isBest = ano.pts > LS.get('anoBest', 0);

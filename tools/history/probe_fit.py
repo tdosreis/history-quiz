@@ -227,6 +227,11 @@ DRIVE = r"""
   window._newMedals = MEDALS.slice(0, 3); go(); fit('cron/dia-end');
   sc='cronMenu'; go(); fit('cron/menu-feita'); startCronDia(); fit('cron/dia-rever');
   LS.set('cronDia', null);
+  /* Metas da semana: fresh, one met with its stamp, all three met */
+  LS.set('metas', null); sc='metas'; go(); fit('metas/nova');
+  var sm=metasState(), lm=metasList(); sm.base[lm[0].m.id]=lm[0].m.v()-lm[0].n; sm.base[lm[1].m.id]=lm[1].m.v()-Math.floor(lm[1].n/2); LS.set('metas', sm); metasCheck(); go(); fit('metas/uma');
+  metasList().forEach(function(g){ sm.base[g.m.id]=g.m.v()-g.n; }); LS.set('metas', sm); metasCheck(); go(); fit('metas/todas');
+  document.querySelectorAll('.meta-toast').forEach(function(e){ e.remove(); }); LS.set('metas', null);
   /* Hoje na História: days through the year, each date guessed and revealed, the result, and the cover once it is done */
   for (var g4=0; g4<4; g4++){
     ano = buildHoje(new Date(2026, g4*3, 3+g4*7)); sc='ano';

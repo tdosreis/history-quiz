@@ -144,6 +144,7 @@ function cronPlace(i) {
   const e = cron.cur, ok = cronApply(i);
   cron.picks.push([i, e.id]);
   if (cron.daily && !cron.replay) LS.set('cronDia', { day: cron.daily.day, picks: cron.picks, done: false });
+  if (ok && !cron.replay) { stats.cronPlaced = (stats.cronPlaced || 0) + 1; LS.set('stats', stats); }
   if (ok) {
     /* a long line is hard to place in: from the sixth on, an event with a scene is cancelled into the stamp album */
     if (cron.line.length >= 6 && e.pic && e.pic.scene && awardSelo(e.pic.scene)) cron.last.selo = e.pic.scene;

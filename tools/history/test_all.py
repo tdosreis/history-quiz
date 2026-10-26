@@ -362,6 +362,31 @@ JS = r"""
     cron = null; sc = 'home'; go();
     ano = null;
   } catch (e) { F('hoje EXC ' + e.stack); }
+  /* ── Metas da semana: three goals a week, the same all week; one met pays a stamp, the three a medal ── */
+  try {
+    const keepM = LS.get('metas', null), keepSel = JSON.stringify(selos), keepSt = JSON.stringify(stats);
+    LS.set('metas', null);
+    _seed = 424242; const s1 = metasState();
+    if (_seed !== 424242) F('drawing the week\'s goals changes the game\'s seed');
+    _seed = null;
+    if (s1.picks.length !== 3 || new Set(s1.picks.map(p => p[0])).size !== 3) F('the week does not have three different goals');
+    if (JSON.stringify(metasState().picks) !== JSON.stringify(s1.picks)) F('the week\'s goals change during the week');
+    LS.set('metas', null);
+    if (metasList().some(g => g.got !== 0 || g.done)) F('a new week starts with progress');
+    /* meet the first goal: its count grows by what it asks */
+    const g0 = metasList()[0], s0 = metasState(); s0.base[g0.m.id] = g0.m.v() - g0.n; LS.set('metas', s0);
+    const owned = Object.keys(selos).length, fresh = metasCheck();
+    if (fresh.length !== 1 || !metasState().done[g0.m.id]) F('a goal met is not marked');
+    if (typeof fresh[0].prize === 'string' && (!selos[fresh[0].prize] || Object.keys(selos).length !== owned + 1)) F('a goal met does not pay its stamp');
+    if (metasCheck().length) F('a goal met pays twice');
+    const before = stats.metasWeeks || 0, s2 = metasState();
+    metasList().forEach(g => { s2.base[g.m.id] = g.m.v() - g.n; }); LS.set('metas', s2); metasCheck();
+    if ((stats.metasWeeks || 0) !== before + 1 || !metasState().full) F('the three goals met do not count as a full week');
+    metasCheck(); if ((stats.metasWeeks || 0) !== before + 1) F('a full week counts twice');
+    document.querySelectorAll('.meta-toast').forEach(e => e.remove());
+    LS.set('metas', keepM); selos = JSON.parse(keepSel); LS.set('selos', selos); Object.assign(stats, JSON.parse(keepSt)); LS.set('stats', stats);
+    runSelos = [];
+  } catch (e) { F('metas EXC ' + e.stack); }
   note.ms = Date.now() - T0;
   return { fails, note };
 })()

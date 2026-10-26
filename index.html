@@ -3767,6 +3767,46 @@
   .cron-opt { padding: 11px 14px; }
 }
 
+
+/* ═══ METAS DA SEMANA ═══ */
+.metas-pg { gap: 10px; }
+.metas-when { margin: 0; text-align: center; font: 600 13px/1.3 var(--font-s); color: var(--ink-3); }
+.metas-when b { color: var(--ink); }
+.metas-list { display: flex; flex-direction: column; gap: 10px; flex: 1 1 auto; justify-content: safe center; }
+.meta { display: flex; align-items: center; gap: 12px; padding: 14px 14px 14px 12px; background: var(--at-card-img) center / 100% 100% no-repeat; }
+.meta .mode-disc { width: 40px; height: 40px; flex: none; }
+.meta-tx { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 6px; }
+.meta-tx b { font: 600 16px/1.2 var(--font-d); color: var(--ink); }
+.meta-tx small { font: 600 11.5px/1 var(--font-s); color: var(--ink-3); }
+.meta-bar { display: block; height: 7px; border-radius: 4px; background: var(--rule); overflow: hidden; }
+.meta-bar i { display: block; height: 100%; border-radius: 4px; background: var(--brass); transition: width .5s; }
+.meta.is-done .meta-bar i { background: var(--good); }
+.meta-prize { flex: none; width: 46px; display: flex; justify-content: center; }
+.meta-prize .selo-mini { width: 46px; }
+.meta-prize .selo-mini svg { width: 100%; height: auto; display: block; filter: drop-shadow(0 1px 2px rgba(0, 0, 0, .3)); }
+.meta-gift { width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--ink-3);
+  border: 1.5px dashed color-mix(in srgb, var(--ink-3) 60%, transparent); }
+.metas-foot { margin: 0; text-align: center; line-height: 1.4; }
+/* the banner a goal met raises, over whatever is on the screen */
+.meta-toast { position: fixed; left: 50%; top: max(10px, env(safe-area-inset-top)); z-index: 60; transform: translateX(-50%);
+  width: min(92vw, 400px); display: flex; align-items: center; gap: 10px; padding: 10px 12px; border-radius: 6px;
+  background: #F7F1E2; color: #20241E; box-shadow: 0 0 0 1px #6E5836, 0 6px 22px rgba(0, 0, 0, .35); animation: meta-in .45s cubic-bezier(.2, 1.3, .4, 1); }
+.meta-toast.is-out { opacity: 0; transform: translate(-50%, -14px); transition: opacity .4s, transform .4s; }
+.meta-toast .mode-disc { width: 34px; height: 34px; flex: none; }
+.meta-toast > span:nth-child(2) { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.meta-toast small { font: 700 9.5px/1 var(--font-s); letter-spacing: .14em; text-transform: uppercase; color: #735728; }
+.meta-toast b { font: 600 14px/1.2 var(--font-d); }
+.meta-toast i { font: 600 11px/1.2 var(--font-s); font-style: normal; color: #4B4F45; }
+.meta-toast .selo-mini { width: 40px; flex: none; }
+.meta-toast .selo-mini svg { width: 100%; height: auto; display: block; }
+@keyframes meta-in { from { opacity: 0; transform: translate(-50%, -18px); } }
+@media (prefers-reduced-motion: reduce) { .meta-toast { animation: none; } }
+@media (max-height: 700px) {
+  .meta { padding: 10px 12px 10px 10px; }
+  .meta .mode-disc { width: 34px; height: 34px; }
+  .meta-tx b { font-size: 15px; }
+}
+
 /*@@/formats_css@@*/
   </style>
 </head>
@@ -3775,6 +3815,6 @@
   <div id="ct"></div>
 </div>
 
-<script src="app.js?v=eeb405e736"></script>
+<script src="app.js?v=e106d3112f"></script>
 </body>
 </html>

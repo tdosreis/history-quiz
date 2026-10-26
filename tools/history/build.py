@@ -352,8 +352,10 @@ def main():
             # the questions once got wrong, to review
             + io.open(os.path.join(H, "js", "revisar.js"), encoding="utf-8").read()
             # Cronologia: the events again, each put in its place on a line of time
-            + io.open(os.path.join(H, "js", "cronologia.js"), encoding="utf-8").read())
-    s = put(s, "formats_css", "\n".join(io.open(os.path.join(H, "css", f), encoding="utf-8").read() for f in ("fonts.css", "formats.css", "selos_ano.css", "mapa.css", "onde.css", "desafio.css", "cronologia.css")))
+            + io.open(os.path.join(H, "js", "cronologia.js"), encoding="utf-8").read()
+            # three goals a week, a stamp for each one met
+            + io.open(os.path.join(H, "js", "metas.js"), encoding="utf-8").read())
+    s = put(s, "formats_css", "\n".join(io.open(os.path.join(H, "css", f), encoding="utf-8").read() for f in ("fonts.css", "formats.css", "selos_ano.css", "mapa.css", "onde.css", "desafio.css", "cronologia.css", "metas.css")))
     v = page.write(s)
     print("index.html + app.js?v=%s updated: %d bytes" % (v, len(s.encode("utf-8"))))
 
