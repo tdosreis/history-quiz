@@ -16,6 +16,7 @@ const METAS = [
   { id: 'anos', ic: 'hourglass', kind: 'ano', n: [1500, 2500, 3500], t: n => `Some ${n.toLocaleString('pt-BR')} pontos no Que\u00a0ano?`, v: () => stats.anoPts || 0 },
   { id: 'onde', ic: 'globe', kind: 'onde', n: [2, 3, 4], t: n => `Jogue ${n} partidas de Onde\u00a0foi?`, v: () => stats.ondeGames || 0 },
   { id: 'hoje', ic: 'sun', kind: 'hoje', n: [3, 4, 5], days: true, t: n => `Jogue o Hoje na\u00a0História em ${n} dias`, v: () => stats.hojeDays || 0 },
+  { id: 'aod', ic: 'hourglass', kind: 'aod', n: [15, 25, 40], t: n => `Acerte ${n} no Antes ou\u00a0depois?`, v: () => stats.aodRight || 0 },
   { id: 'figs', ic: 'star', kind: 'album', n: [5, 8, 12], t: n => `Cole ${n} figurinhas novas no álbum`, v: () => album.size,
     ok: () => ALL_STICKERS.length - album.size >= 12 },
 ];

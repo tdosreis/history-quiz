@@ -2639,6 +2639,39 @@ const CATS = [
       {"t": "Qual é o intruso?", "a": ["O Guarani"], "type": "txt", "choices": ["Dom Casmurro", "Memórias Póstumas de Brás Cubas", "Quincas Borba", "O Guarani"], "odd": {"k": "são romances de Machado de Assis"}, "d": 2, "x": "O Guarani é de José de Alencar, publicado em 1857."},
     ]
   },
+  {
+    id:"complete_frase", name:"Complete a frase", emoji:"✍️",
+    tag:"Frases célebres com uma palavra faltando", col:"#7B1E3A", diff:"Variado",
+    qs:[
+      {"t": "Que palavra completa a frase?", "a": ["venci"], "type": "txt", "choices": ["venci", "lutei", "parti", "reinei", "voltei", "cheguei"], "quote": {"q": "Vim, vi, ___.", "ctx": "Júlio César, 47 a.C."}, "d": 1, "x": "Júlio César escreveu ao Senado “Veni, vidi, vici” depois de uma vitória relâmpago na Batalha de Zela, em 47 a.C."},
+      {"t": "Que palavra completa a frase?", "a": ["existo"], "type": "txt", "choices": ["existo", "sou", "vivo", "aprendo", "duvido", "falo"], "quote": {"q": "Penso, logo ___.", "ctx": "René Descartes, 1637"}, "d": 1, "x": "A frase está no Discurso do Método, de 1637: se duvido de tudo, ao menos sei que estou pensando."},
+      {"t": "Que palavra completa a frase?", "a": ["Morte"], "type": "txt", "choices": ["Morte", "Glória", "Guerra", "Liberdade", "Exílio", "Revolução"], "quote": {"q": "Independência ou ___!", "ctx": "Dom Pedro, às margens do Ipiranga, 1822"}, "d": 1, "x": "O brado de 7 de setembro de 1822 virou o lema da independência do Brasil."},
+      {"t": "Que palavra completa a frase?", "a": ["sonho"], "type": "txt", "choices": ["sonho", "plano", "desejo", "direito", "caminho", "destino"], "quote": {"q": "Eu tenho um ___.", "ctx": "Martin Luther King Jr., Washington, 1963"}, "d": 1, "x": "O discurso foi feito na Marcha sobre Washington, em agosto de 1963, diante do Memorial a Lincoln."},
+      {"t": "Que palavra completa a frase?", "a": ["gigante"], "type": "txt", "choices": ["gigante", "enorme", "imenso", "histórico", "novo", "infinito"], "quote": {"q": "É um pequeno passo para o homem, um salto ___ para a humanidade.", "ctx": "Neil Armstrong, na Lua, 1969"}, "d": 1, "x": "Armstrong disse a frase ao pisar na Lua, em 20 de julho de 1969 (já 21 em Greenwich)."},
+      {"t": "Que palavra completa a frase?", "a": ["fraternidade"], "type": "txt", "choices": ["fraternidade", "justiça", "verdade", "solidariedade", "prosperidade", "unidade"], "quote": {"q": "Liberdade, igualdade, ___.", "ctx": "Lema da Revolução Francesa"}, "d": 1, "x": "O lema nasceu na Revolução Francesa e hoje é o lema oficial da República Francesa."},
+      {"t": "Que palavra completa a frase?", "a": ["questão"], "type": "txt", "choices": ["questão", "dúvida", "resposta", "verdade", "escolha", "sentença"], "quote": {"q": "Ser ou não ser, eis a ___.", "ctx": "Hamlet, de William Shakespeare"}, "d": 1, "x": "O monólogo está no terceiro ato de Hamlet, escrita por volta de 1600."},
+      {"t": "Que palavra completa a frase?", "a": ["pedra"], "type": "txt", "choices": ["pedra", "árvore", "ponte", "casa", "flor", "porta"], "quote": {"q": "No meio do caminho tinha uma ___.", "ctx": "Carlos Drummond de Andrade, 1928"}, "d": 1, "x": "O poema saiu na Revista de Antropofagia, em 1928, e escandalizou muita gente pela repetição."},
+      {"t": "Que palavra completa a frase?", "a": ["palmeiras"], "type": "txt", "choices": ["palmeiras", "coqueiros", "laranjeiras", "montanhas", "florestas", "cachoeiras"], "quote": {"q": "Minha terra tem ___, onde canta o sabiá.", "ctx": "Gonçalves Dias, Canção do Exílio, 1843"}, "d": 1, "x": "Gonçalves Dias escreveu a Canção do Exílio em Coimbra, em 1843, com saudade do Brasil."},
+      {"t": "Que palavra completa a frase?", "a": ["fico"], "type": "txt", "choices": ["fico", "parto", "volto", "reino", "venci", "luto"], "quote": {"q": "Diga ao povo que ___!", "ctx": "Dom Pedro, Rio de Janeiro, 9 de janeiro de 1822"}, "d": 1, "x": "No Dia do Fico, Dom Pedro desobedeceu às cortes de Lisboa, que exigiam sua volta a Portugal."},
+      {"t": "Que palavra completa a frase?", "a": ["lançada"], "type": "txt", "choices": ["lançada", "decidida", "escrita", "feita", "selada", "contra nós"], "quote": {"q": "A sorte está ___.", "ctx": "Júlio César, ao cruzar o Rubicão, 49 a.C."}, "d": 2, "x": "Ao atravessar o rio Rubicão com suas tropas, César desafiou o Senado e começou uma guerra civil."},
+      {"t": "Que palavra completa a frase?", "a": ["sei"], "type": "txt", "choices": ["sei", "tenho", "vejo", "digo", "quero", "entendo"], "quote": {"q": "Só sei que nada ___.", "ctx": "Atribuída a Sócrates"}, "d": 2, "x": "A frase resume o que Platão conta na Apologia: Sócrates se achava sábio só por saber que não sabia."},
+      {"t": "Que palavra completa a frase?", "a": ["Brutus"], "type": "txt", "choices": ["Brutus", "Marco Antônio", "Cássio", "Pompeu", "Otaviano", "Cícero"], "quote": {"q": "Até tu, ___?", "ctx": "Júlio César, na peça de Shakespeare"}, "d": 2, "x": "As últimas palavras de César são uma criação de Shakespeare; os autores antigos não as registram assim."},
+      {"t": "Que palavra completa a frase?", "a": ["viver"], "type": "txt", "choices": ["viver", "morrer", "lutar", "sonhar", "voltar", "chegar"], "quote": {"q": "Navegar é preciso; ___ não é preciso.", "ctx": "General romano Pompeu, segundo Plutarco"}, "d": 2, "x": "Fernando Pessoa e Caetano Veloso tornaram a frase famosa em português; ela vem do general Pompeu, contado por Plutarco."},
+      {"t": "Que palavra completa a frase?", "a": ["eu"], "type": "txt", "choices": ["eu", "nós", "o povo", "Deus", "a França", "o rei"], "quote": {"q": "O Estado sou ___.", "ctx": "Atribuída a Luís XIV"}, "d": 2, "x": "Não há prova de que Luís XIV tenha dito a frase, mas ela resume o absolutismo do seu reinado."},
+      {"t": "Que palavra completa a frase?", "a": ["uni"], "type": "txt", "choices": ["uni", "levantai", "armai", "libertai", "erguei", "organizai"], "quote": {"q": "Proletários de todos os países, ___-vos!", "ctx": "Marx e Engels, Manifesto Comunista, 1848"}, "d": 2, "x": "É a frase final do Manifesto Comunista, publicado em Londres em fevereiro de 1848."},
+      {"t": "Que palavra completa a frase?", "a": ["mesmo"], "type": "txt", "choices": ["mesmo", "próprio", "inteiro", "primeiro", "sempre", "agora"], "quote": {"q": "Conhece-te a ti ___.", "ctx": "Inscrição no templo de Apolo, em Delfos"}, "d": 2, "x": "A frase estava gravada no templo de Apolo em Delfos, e Sócrates fez dela um lema."},
+      {"t": "Que palavra completa a frase?", "a": ["ópio"], "type": "txt", "choices": ["ópio", "pão", "consolo", "espelho", "grito", "coração"], "quote": {"q": "A religião é o ___ do povo.", "ctx": "Karl Marx, 1844"}, "d": 2, "x": "Marx escreveu a frase em 1844; ela vem logo depois de chamar a religião de “suspiro da criatura oprimida”."},
+      {"t": "Que palavra completa a frase?", "a": ["torna"], "type": "txt", "choices": ["torna", "faz", "aprende", "descobre", "vive", "escolhe"], "quote": {"q": "Ninguém nasce mulher: ___-se mulher.", "ctx": "Simone de Beauvoir, O Segundo Sexo, 1949"}, "d": 2, "x": "A frase abre o segundo volume de O Segundo Sexo, livro de 1949 que marcou o feminismo."},
+      {"t": "Que palavra completa a frase?", "a": ["circo"], "type": "txt", "choices": ["circo", "vinho", "água", "festa", "trabalho", "ouro"], "quote": {"q": "Pão e ___.", "ctx": "O poeta romano Juvenal, sobre o povo de Roma"}, "d": 2, "x": "Juvenal reclamava que o povo de Roma só queria duas coisas: comida de graça e espetáculos."},
+      {"t": "Que palavra completa a frase?", "a": ["pequena"], "type": "txt", "choices": ["pequena", "vazia", "fraca", "triste", "pobre", "covarde"], "quote": {"q": "Tudo vale a pena se a alma não é ___.", "ctx": "Fernando Pessoa, Mensagem, 1934"}, "d": 2, "x": "O verso é do poema Mar Português, sobre os navegadores, do livro Mensagem, de 1934."},
+      {"t": "Que palavra completa a frase?", "a": ["História"], "type": "txt", "choices": ["História", "glória", "memória", "lenda", "paz", "morte"], "quote": {"q": "Saio da vida para entrar na ___.", "ctx": "Getúlio Vargas, carta-testamento, 1954"}, "d": 2, "x": "É a última frase da carta deixada por Getúlio Vargas antes de se matar, no Palácio do Catete, em 24 de agosto de 1954."},
+      {"t": "Que palavra completa a frase?", "a": ["iguais"], "type": "txt", "choices": ["iguais", "unidos", "fortes", "irmãos", "felizes", "senhores"], "quote": {"q": "Os homens nascem e permanecem livres e ___ em direitos.", "ctx": "Declaração dos Direitos do Homem e do Cidadão, 1789"}, "d": 2, "x": "É o primeiro artigo da Declaração aprovada na França em agosto de 1789, semanas depois da Queda da Bastilha."},
+      {"t": "Que palavra completa a frase?", "a": ["move"], "type": "txt", "choices": ["move", "cala", "esconde", "perde", "rende", "apaga"], "quote": {"q": "E, no entanto, ela se ___.", "ctx": "Atribuída a Galileu, depois do julgamento, 1633"}, "d": 3, "x": "Segundo a lenda, Galileu murmurou a frase sobre a Terra depois de ser obrigado a negar que ela se move; não há registro de que tenha dito."},
+      {"t": "Que palavra completa a frase?", "a": ["morrer"], "type": "txt", "choices": ["morrer", "lutar", "viver", "cantar", "sofrer", "sangrar"], "quote": {"q": "Ou ficar a pátria livre, ou ___ pelo Brasil.", "ctx": "Hino da Independência, letra de Evaristo da Veiga"}, "d": 3, "x": "A música do Hino da Independência foi composta pelo próprio Dom Pedro I."},
+      {"t": "Que palavra completa a frase?", "a": ["fúlgidos"], "type": "txt", "choices": ["fúlgidos", "dourados", "brilhantes", "ardentes", "radiantes", "gloriosos"], "quote": {"q": "E o sol da liberdade, em raios ___, brilhou no céu da pátria nesse instante.", "ctx": "Hino Nacional Brasileiro, letra de Osório Duque-Estrada"}, "d": 3, "x": "“Fúlgidos” quer dizer brilhantes, cintilantes. A letra do hino foi oficializada em 1922."},
+      {"t": "Que palavra completa a frase?", "a": ["circunstância"], "type": "txt", "choices": ["circunstância", "história", "consciência", "liberdade", "verdade", "sombra"], "quote": {"q": "Eu sou eu e a minha ___.", "ctx": "José Ortega y Gasset, 1914"}, "d": 3, "x": "O filósofo espanhol escreveu a frase em 1914: ninguém se entende fora do seu tempo e do seu lugar."},
+    ]
+  },
   /* NEW-QS:END */
 ];
 /*@@/data_cl_cats@@*/
@@ -16257,7 +16290,7 @@ const CAT_ART = {
   ciencia: 'gear', artes: 'bust', mulheres: 'crown', personagens: 'bust', monumentos: 'column', curiosidades: 'scroll',
   quem_sou_eu: 'bust', linha_do_tempo: 'hourglass', imperios: 'crown', citacoes: 'quill', batalhas: 'sword',
   linhagens: 'crown', manchetes: 'scroll', duelos: 'hourglass', fato_mito: 'scales',
-  charadas: 'masks', detalhes: 'telescope', intrusos: 'scales',
+  charadas: 'masks', detalhes: 'telescope', intrusos: 'scales', complete_frase: 'quill',
 };
 const FALLBACK_PHOTO = {};
 const NONFREE_CRESTS = new Set([]);
@@ -19057,6 +19090,7 @@ function html() {
           : q.odd ? 'Ache o intruso: o que não combina com os outros três'
           : q.detail ? 'Quem está por trás da lupa?'
           : q.rebus ? 'Decifre a charada'
+          : q.quote && /_{3,}/.test(q.quote.q || '') ? 'Que palavra completa a frase?'
           : q.type === 'txt'
           ? (q.a.length > 1 ? `Marque as ${q.a.length} respostas certas` : 'Marque a resposta certa')
           : q.type === 'player'
@@ -20205,12 +20239,15 @@ const WAX = `<svg viewBox="0 0 40 40" aria-hidden="true"><path d="M20 3c4 0 5 3 
 function quoteStrip(st, q) {
   const kind = quoteKind(st, q);
   const words = String(st.q || '').split(/\s+/);
-  const ink = words.map((w, i) => `<i style="animation-delay:${(i * 0.055 + 0.15).toFixed(3)}s">${w}</i>`).join(' ');
+  /* Complete a frase: a word left out of the line, written in at the reveal (and then the sheet is not signed with it) */
+  const blank = /_{3,}/.test(st.q || ''), fill = blank ? revealedSlot(q) : null;
+  const ink = words.map((w, i) => `<i style="animation-delay:${(i * 0.055 + 0.15).toFixed(3)}s">${blank ? w.replace(/_{3,}/,
+    fill ? `<span class="hs-blank is-filled">${fill}</span>` : '<span class="hs-blank"></span>') : w}</i>`).join(' ');
   const ctx = maskAnswer(st.ctx || '', q);
   /* at the reveal the sheet is signed */
-  const sign = revealedSlot(q);
+  const sign = blank ? null : revealedSlot(q);
   const mark = kind === 'diario' ? COMPASS : kind === 'carta' ? WAX : kind === 'pedra' ? '' : QUILL;
-  return `<div class="qstrip hs-quote${kind ? ' hs-quote-' + kind : ''}" role="img" aria-label="Citação: ${String(st.q || '').replace(/"/g, '&quot;')}">
+  return `<div class="qstrip hs-quote${kind ? ' hs-quote-' + kind : ''}" role="img" aria-label="Citação: ${String(st.q || '').replace(/_{3,}/g, fill || 'lacuna').replace(/"/g, '&quot;')}">
     ${kind === 'pedra' ? '' : `<span class="hs-quill">${mark}</span>`}
     <blockquote class="hs-q-text">${ink}</blockquote>
     ${ctx ? `<span class="hs-ctx">— ${ctx}</span>` : ''}
@@ -23147,6 +23184,7 @@ const CHAL_GAMES = {
   a:  { n: 'Que ano?', ic: 'hourglass' },
   o:  { n: 'Onde foi?', ic: 'globe' },
   c:  { n: 'Cronologia', ic: 'timeline' },
+  d:  { n: 'Antes ou depois?', ic: 'hourglass' },
 };
 const CHAL_SEED_MAX = 2147483647;
 let chal = null;           // a challenge received: { g, seed, score, more, code, used }
@@ -23169,11 +23207,11 @@ function chalCode(c) {
 }
 const chalLink = c => CHAL_URL + '?d=' + chalCode(c);
 function chalParse(s) {
-  const m = /^(tf|tm|td|m|a|o|c)\.([0-9a-z]{1,6})\.([0-9a-z]{1,6})\.([0-9a-z]{0,3})\.([0-9a-z]{2})$/.exec(String(s || '').trim().toLowerCase());
+  const m = /^(tf|tm|td|m|a|o|c|d)\.([0-9a-z]{1,6})\.([0-9a-z]{1,6})\.([0-9a-z]{0,3})\.([0-9a-z]{2})$/.exec(String(s || '').trim().toLowerCase());
   if (!m) return null;
   const seed = parseInt(m[2], 36), score = parseInt(m[3], 36), more = m[4] ? parseInt(m[4], 36) : null;
   if (!(seed >= 0 && seed <= CHAL_SEED_MAX)) return null;
-  const cap = m[1] === 'm' ? 1000000 : m[1][0] === 't' ? 99999 : m[1] === 'c' ? ANO_EVENTS.length : 1000;
+  const cap = m[1] === 'm' ? 1000000 : m[1][0] === 't' ? 99999 : m[1] === 'c' || m[1] === 'd' ? ANO_EVENTS.length : 1000;
   if (!(score <= cap)) return null;
   if (m[1] === 'm' && !(more != null && more <= LADDER.length)) return null;
   if (m[1][0] === 't' && more != null && more > 50) return null;
@@ -23191,6 +23229,7 @@ function chalMine() {
   if (sc === 'ano' && ano && ano.phase === 'end' && ano.seed != null) return { g: 'a', seed: ano.seed, score: ano.pts };
   if (sc === 'onde' && onde && onde.phase === 'end' && onde.seed != null) return { g: 'o', seed: onde.seed, score: onde.pts };
   if (sc === 'cron' && cron && cron.phase === 'end' && cron.seed != null) return { g: 'c', seed: cron.seed, score: cron.score };
+  if (sc === 'aod' && aod && aod.phase === 'end' && aod.seed != null) return { g: 'd', seed: aod.seed, score: aod.score };
   if (sc !== 'end' || runSeed == null || isDaily || isSurv || (typeof isRev !== 'undefined' && isRev)) return null;
   if (isMil) return { g: 'm', seed: runSeed, score: banked, more: rung };
   const g = 't' + String(diffKey)[0];
@@ -23203,6 +23242,7 @@ const chalCmp = (a, b) => a.g === 'm' ? (a.score - b.score) || ((a.more || 0) - 
 function chalScoreTxt(c) {
   if (c.g === 'm') return `${money(c.score)} · degrau ${c.more || 0}`;
   if (c.g === 'c') return `${c.score} na linha`;
+  if (c.g === 'd') return `${c.score} ${c.score === 1 ? 'acerto seguido' : 'acertos seguidos'}`;
   return `${c.score} pts`;
 }
 
@@ -23214,7 +23254,7 @@ function chalShareTail(mine) {
     const r = chalCmp(mine, chal);
     head = `Desafio: ${chalScoreTxt(mine)} × ${chalScoreTxt(chal)} — ${r > 0 ? 'venci! 🏆' : r < 0 ? 'perdi, desta vez' : 'empate'}\n`;
   }
-  return `${head}${mine.g === 'm' ? 'Encara as mesmas 16 perguntas?' : mine.g === 'a' || mine.g === 'o' ? 'Encara os mesmos 10 eventos?' : mine.g === 'c' ? 'Encara a mesma linha do tempo?' : 'Encara as mesmas perguntas?'} ${chalLink(mine)}`;
+  return `${head}${mine.g === 'm' ? 'Encara as mesmas 16 perguntas?' : mine.g === 'a' || mine.g === 'o' ? 'Encara os mesmos 10 eventos?' : mine.g === 'c' ? 'Encara a mesma linha do tempo?' : mine.g === 'd' ? 'Encara a mesma sequência de eventos?' : 'Encara as mesmas perguntas?'} ${chalLink(mine)}`;
 }
 
 /* on the results: who won */
@@ -23241,12 +23281,13 @@ function chalHtml() {
              : c.g === 'a' ? 'Os mesmos 10 eventos, na mesma régua de anos.'
              : c.g === 'o' ? 'Os mesmos 10 eventos, para achar no mapa.'
              : c.g === 'c' ? 'Os mesmos eventos, na mesma ordem, para pôr na linha do tempo. Três vidas.'
+             : c.g === 'd' ? 'Os mesmos eventos, na mesma ordem: o próximo veio antes ou depois? Até errar um.'
              : `As mesmas ${(DIFFS.find(d => d.key === G.diff) || DIFFS[0]).n} perguntas, na mesma ordem, com as mesmas alternativas.`;
   const more = c.g[0] === 't' && c.more != null ? `${c.more} ${c.more === 1 ? 'acerto' : 'acertos'}` : '';
   return `
   <div class="pg pg-center chal-pg">
     <div class="eyebrow">Desafio recebido</div>
-    <span class="chal-ic mode-disc mode-${c.g === 'm' ? 'album' : c.g === 'a' ? 'ano' : c.g === 'o' ? 'onde' : c.g === 'c' ? 'cron' : 'train'}">${(ICON[G.ic] || ICON.sword)('currentColor', 26)}</span>
+    <span class="chal-ic mode-disc mode-${c.g === 'm' ? 'album' : c.g === 'a' ? 'ano' : c.g === 'o' ? 'onde' : c.g === 'c' ? 'cron' : c.g === 'd' ? 'aod' : 'train'}">${(ICON[G.ic] || ICON.sword)('currentColor', 26)}</span>
     <div class="display" style="font-size:31px;"><em>Um amigo te desafiou!</em></div>
     <p class="chal-g">${G.n}</p>
     <div class="chal-card"><small>Placar a bater</small><b class="num">${chalScoreTxt(c)}</b>${more ? `<span>${more}</span>` : ''}</div>
@@ -23265,6 +23306,7 @@ function chalAccept() {
   else if (chal.g === 'a') startAno();
   else if (chal.g === 'o') startOnde();
   else if (chal.g === 'c') startCron();
+  else if (chal.g === 'd') startAod();
 }
 function wireChal() {
   document.getElementById('chal-go')?.addEventListener('click', () => { snd.select(); chalAccept(); });
@@ -23656,22 +23698,31 @@ function aodPick(a) {
   let pool = free.filter(e => fair(e) && anoGap(a.y, e.y) <= hi);
   if (!pool.length) pool = free.filter(fair);
   if (!pool.length) pool = free;
-  return pool.length ? pool[Math.floor(rnd() * pool.length)] : null;
+  return pool.length ? pool[Math.floor(aodRnd() * pool.length)] : null;
 }
 
+/* The run is dealt from its own seed, on its own generator (nothing else drawing numbers in between can
+   change it), so a friend sent the link gets the same events in the same order for as long as they keep
+   answering right (js/desafio.js). */
+function aodRnd() {
+  let t = (aod.rs = (aod.rs + 0x6D2B79F5) | 0);
+  t = Math.imul(t ^ (t >>> 15), t | 1); t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
+  return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+}
 /* a new run: the first event is one with a sure year */
-function aodNew() {
+function aodNew(seed) {
   clearTimeout(aod && aod.adv);
+  if (seed == null) seed = (Math.random() * CHAL_SEED_MAX) | 0;
+  aod = { seed, rs: seed, a: null, b: null, score: 0, used: new Set(), phase: 'guess', pick: null, ok: null, log: [], tok: 0, best0: LS.get('aodBest', 0) };
   const deck = ANO_EVENTS.filter(e => !e.c);
-  const a = deck[Math.floor(rnd() * deck.length)];
-  aod = { a, b: null, score: 0, used: new Set([a.id]), phase: 'guess', pick: null, ok: null, log: [], tok: 0, best0: LS.get('aodBest', 0) };
-  aod.b = aodPick(a); aod.used.add(aod.b.id);
+  aod.a = deck[Math.floor(aodRnd() * deck.length)]; aod.used.add(aod.a.id);
+  aod.b = aodPick(aod.a); aod.used.add(aod.b.id);
   aodArm();
 }
 function startAod() {
   isDaily = false; isSurv = false; isMil = false; isRev = false;
   runSelos = [];
-  aodNew();
+  aodNew(chalSeed('d'));
   sc = 'aod';
   go();
 }
@@ -23782,7 +23833,7 @@ function aodEndHtml() {
     <div class="display" style="font-size:28px;"><em>${msg}</em></div>
     ${wreathed(n >= 8, `<div class="display prize-pop brass aod-end-n">${n}</div>`)}
     <div class="aod-end-k">${n === 1 ? 'acerto seguido' : 'acertos seguidos'}</div>
-    <p class="small muted">${aod.isBest ? 'Seu novo recorde!' : `Recorde: ${aod.best0}`}</p>
+    ${chalBanner() || `<p class="small muted">${aod.isBest ? 'Seu novo recorde!' : `Recorde: ${aod.best0}`}</p>`}
     ${miss ? `<div class="aod-miss">
         <span class="aod-miss-k">${miss.dir ? 'Onde a corrente quebrou' : 'O tempo acabou em'}</span>
         <span class="aod-miss-row"><b class="num">${aodYear(miss.b)}</b><span>${_esc(miss.b.t)}</span></span>
@@ -23792,14 +23843,14 @@ function aodEndHtml() {
     ${selosStrip()}
     ${medalChips()}
     <div class="foot-row" style="margin-top:8px;">
-      <button id="aod-share" class="btn btn-ghost btn-sm">Compartilhar</button>
+      <button id="aod-share" class="btn btn-ghost btn-sm">${chalMine() ? 'Desafiar' : 'Compartilhar'}</button>
       <button id="aod-again" class="btn btn-brass">De novo</button>
       <button id="bhome" class="btn btn-ghost btn-sm">Início</button>
     </div>
   </div>`;
 }
 
-const aodShareText = () => `Antes ou depois? ⏳ History Quiz\n${'🟩'.repeat(Math.min(aod.score, 20))}${aod.score > 20 ? '…' : ''}${aod.all ? '' : '🟥'}\n${aod.score} ${aod.score === 1 ? 'acerto' : 'acertos'} seguidos${aod.isBest ? ' · recorde!' : ''}\n${CHAL_URL}`;
+const aodShareText = () => `Antes ou depois? ⏳ History Quiz\n${'🟩'.repeat(Math.min(aod.score, 20))}${aod.score > 20 ? '…' : ''}${aod.all ? '' : '🟥'}\n${aod.score} ${aod.score === 1 ? 'acerto' : 'acertos'} seguidos${aod.isBest ? ' · recorde!' : ''}\n${chalShareTail(chalMine())}`;
 
 /* the clock: a bar that empties; at zero the guess is a miss */
 let _aodTmr = null;
@@ -23896,6 +23947,7 @@ const METAS = [
   { id: 'anos', ic: 'hourglass', kind: 'ano', n: [1500, 2500, 3500], t: n => `Some ${n.toLocaleString('pt-BR')} pontos no Que\u00a0ano?`, v: () => stats.anoPts || 0 },
   { id: 'onde', ic: 'globe', kind: 'onde', n: [2, 3, 4], t: n => `Jogue ${n} partidas de Onde\u00a0foi?`, v: () => stats.ondeGames || 0 },
   { id: 'hoje', ic: 'sun', kind: 'hoje', n: [3, 4, 5], days: true, t: n => `Jogue o Hoje na\u00a0História em ${n} dias`, v: () => stats.hojeDays || 0 },
+  { id: 'aod', ic: 'hourglass', kind: 'aod', n: [15, 25, 40], t: n => `Acerte ${n} no Antes ou\u00a0depois?`, v: () => stats.aodRight || 0 },
   { id: 'figs', ic: 'star', kind: 'album', n: [5, 8, 12], t: n => `Cole ${n} figurinhas novas no álbum`, v: () => album.size,
     ok: () => ALL_STICKERS.length - album.size >= 12 },
 ];

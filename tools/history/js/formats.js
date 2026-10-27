@@ -107,12 +107,15 @@ const WAX = `<svg viewBox="0 0 40 40" aria-hidden="true"><path d="M20 3c4 0 5 3 
 function quoteStrip(st, q) {
   const kind = quoteKind(st, q);
   const words = String(st.q || '').split(/\s+/);
-  const ink = words.map((w, i) => `<i style="animation-delay:${(i * 0.055 + 0.15).toFixed(3)}s">${w}</i>`).join(' ');
+  /* Complete a frase: a word left out of the line, written in at the reveal (and then the sheet is not signed with it) */
+  const blank = /_{3,}/.test(st.q || ''), fill = blank ? revealedSlot(q) : null;
+  const ink = words.map((w, i) => `<i style="animation-delay:${(i * 0.055 + 0.15).toFixed(3)}s">${blank ? w.replace(/_{3,}/,
+    fill ? `<span class="hs-blank is-filled">${fill}</span>` : '<span class="hs-blank"></span>') : w}</i>`).join(' ');
   const ctx = maskAnswer(st.ctx || '', q);
   /* at the reveal the sheet is signed */
-  const sign = revealedSlot(q);
+  const sign = blank ? null : revealedSlot(q);
   const mark = kind === 'diario' ? COMPASS : kind === 'carta' ? WAX : kind === 'pedra' ? '' : QUILL;
-  return `<div class="qstrip hs-quote${kind ? ' hs-quote-' + kind : ''}" role="img" aria-label="Citação: ${String(st.q || '').replace(/"/g, '&quot;')}">
+  return `<div class="qstrip hs-quote${kind ? ' hs-quote-' + kind : ''}" role="img" aria-label="Citação: ${String(st.q || '').replace(/_{3,}/g, fill || 'lacuna').replace(/"/g, '&quot;')}">
     ${kind === 'pedra' ? '' : `<span class="hs-quill">${mark}</span>`}
     <blockquote class="hs-q-text">${ink}</blockquote>
     ${ctx ? `<span class="hs-ctx">— ${ctx}</span>` : ''}

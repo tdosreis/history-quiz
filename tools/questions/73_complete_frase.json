@@ -1,0 +1,766 @@
+{
+ "id": "complete_frase",
+ "name": "Complete a frase",
+ "tag": "Frases célebres com uma palavra faltando",
+ "col": "#7B1E3A",
+ "diff": "Variado",
+ "emoji": "✍️",
+ "qs": [
+  {
+   "t": "Que palavra completa a frase?",
+   "type": "txt",
+   "choices": [
+    "venci",
+    "lutei",
+    "parti",
+    "reinei",
+    "voltei",
+    "cheguei"
+   ],
+   "quote": {
+    "q": "Vim, vi, ___.",
+    "ctx": "Júlio César, 47 a.C."
+   },
+   "a": [
+    "venci"
+   ],
+   "d": 1,
+   "src": [
+    "pt",
+    "Veni, vidi, vici",
+    [
+     "César"
+    ]
+   ],
+   "x": "Júlio César escreveu ao Senado “Veni, vidi, vici” depois de uma vitória relâmpago na Batalha de Zela, em 47 a.C."
+  },
+  {
+   "t": "Que palavra completa a frase?",
+   "type": "txt",
+   "choices": [
+    "existo",
+    "sou",
+    "vivo",
+    "aprendo",
+    "duvido",
+    "falo"
+   ],
+   "quote": {
+    "q": "Penso, logo ___.",
+    "ctx": "René Descartes, 1637"
+   },
+   "a": [
+    "existo"
+   ],
+   "d": 1,
+   "src": [
+    "pt",
+    "Cogito, ergo sum",
+    [
+     "Descartes"
+    ]
+   ],
+   "x": "A frase está no Discurso do Método, de 1637: se duvido de tudo, ao menos sei que estou pensando."
+  },
+  {
+   "t": "Que palavra completa a frase?",
+   "type": "txt",
+   "choices": [
+    "Morte",
+    "Glória",
+    "Guerra",
+    "Liberdade",
+    "Exílio",
+    "Revolução"
+   ],
+   "quote": {
+    "q": "Independência ou ___!",
+    "ctx": "Dom Pedro, às margens do Ipiranga, 1822"
+   },
+   "a": [
+    "Morte"
+   ],
+   "d": 1,
+   "src": [
+    "pt",
+    "Independência do Brasil",
+    [
+     "Ipiranga"
+    ]
+   ],
+   "x": "O brado de 7 de setembro de 1822 virou o lema da independência do Brasil."
+  },
+  {
+   "t": "Que palavra completa a frase?",
+   "type": "txt",
+   "choices": [
+    "sonho",
+    "plano",
+    "desejo",
+    "direito",
+    "caminho",
+    "destino"
+   ],
+   "quote": {
+    "q": "Eu tenho um ___.",
+    "ctx": "Martin Luther King Jr., Washington, 1963"
+   },
+   "a": [
+    "sonho"
+   ],
+   "d": 1,
+   "src": [
+    "pt",
+    "I Have a Dream",
+    [
+     "1963"
+    ]
+   ],
+   "x": "O discurso foi feito na Marcha sobre Washington, em agosto de 1963, diante do Memorial a Lincoln."
+  },
+  {
+   "t": "Que palavra completa a frase?",
+   "type": "txt",
+   "choices": [
+    "gigante",
+    "enorme",
+    "imenso",
+    "histórico",
+    "novo",
+    "infinito"
+   ],
+   "quote": {
+    "q": "É um pequeno passo para o homem, um salto ___ para a humanidade.",
+    "ctx": "Neil Armstrong, na Lua, 1969"
+   },
+   "a": [
+    "gigante"
+   ],
+   "d": 1,
+   "src": [
+    "pt",
+    "Apollo 11",
+    [
+     "Armstrong"
+    ]
+   ],
+   "x": "Armstrong disse a frase ao pisar na Lua, em 20 de julho de 1969 (já 21 em Greenwich)."
+  },
+  {
+   "t": "Que palavra completa a frase?",
+   "type": "txt",
+   "choices": [
+    "fraternidade",
+    "justiça",
+    "verdade",
+    "solidariedade",
+    "prosperidade",
+    "unidade"
+   ],
+   "quote": {
+    "q": "Liberdade, igualdade, ___.",
+    "ctx": "Lema da Revolução Francesa"
+   },
+   "a": [
+    "fraternidade"
+   ],
+   "d": 1,
+   "src": [
+    "pt",
+    "Liberdade, igualdade, fraternidade",
+    [
+     "Revolução Francesa"
+    ]
+   ],
+   "x": "O lema nasceu na Revolução Francesa e hoje é o lema oficial da República Francesa."
+  },
+  {
+   "t": "Que palavra completa a frase?",
+   "type": "txt",
+   "choices": [
+    "questão",
+    "dúvida",
+    "resposta",
+    "verdade",
+    "escolha",
+    "sentença"
+   ],
+   "quote": {
+    "q": "Ser ou não ser, eis a ___.",
+    "ctx": "Hamlet, de William Shakespeare"
+   },
+   "a": [
+    "questão"
+   ],
+   "d": 1,
+   "src": [
+    "pt",
+    "Ser ou não ser",
+    [
+     "Hamlet"
+    ]
+   ],
+   "x": "O monólogo está no terceiro ato de Hamlet, escrita por volta de 1600."
+  },
+  {
+   "t": "Que palavra completa a frase?",
+   "type": "txt",
+   "choices": [
+    "pedra",
+    "árvore",
+    "ponte",
+    "casa",
+    "flor",
+    "porta"
+   ],
+   "quote": {
+    "q": "No meio do caminho tinha uma ___.",
+    "ctx": "Carlos Drummond de Andrade, 1928"
+   },
+   "a": [
+    "pedra"
+   ],
+   "d": 1,
+   "src": [
+    "pt",
+    "No Meio do Caminho",
+    [
+     "Drummond"
+    ]
+   ],
+   "x": "O poema saiu na Revista de Antropofagia, em 1928, e escandalizou muita gente pela repetição."
+  },
+  {
+   "t": "Que palavra completa a frase?",
+   "type": "txt",
+   "choices": [
+    "palmeiras",
+    "coqueiros",
+    "laranjeiras",
+    "montanhas",
+    "florestas",
+    "cachoeiras"
+   ],
+   "quote": {
+    "q": "Minha terra tem ___, onde canta o sabiá.",
+    "ctx": "Gonçalves Dias, Canção do Exílio, 1843"
+   },
+   "a": [
+    "palmeiras"
+   ],
+   "d": 1,
+   "src": [
+    "pt",
+    "Canção do Exílio",
+    [
+     "sabiá"
+    ]
+   ],
+   "x": "Gonçalves Dias escreveu a Canção do Exílio em Coimbra, em 1843, com saudade do Brasil."
+  },
+  {
+   "t": "Que palavra completa a frase?",
+   "type": "txt",
+   "choices": [
+    "fico",
+    "parto",
+    "volto",
+    "reino",
+    "venci",
+    "luto"
+   ],
+   "quote": {
+    "q": "Diga ao povo que ___!",
+    "ctx": "Dom Pedro, Rio de Janeiro, 9 de janeiro de 1822"
+   },
+   "a": [
+    "fico"
+   ],
+   "d": 1,
+   "src": [
+    "pt",
+    "Dia do Fico",
+    [
+     "1822"
+    ]
+   ],
+   "x": "No Dia do Fico, Dom Pedro desobedeceu às cortes de Lisboa, que exigiam sua volta a Portugal."
+  },
+  {
+   "t": "Que palavra completa a frase?",
+   "type": "txt",
+   "choices": [
+    "lançada",
+    "decidida",
+    "escrita",
+    "feita",
+    "selada",
+    "contra nós"
+   ],
+   "quote": {
+    "q": "A sorte está ___.",
+    "ctx": "Júlio César, ao cruzar o Rubicão, 49 a.C."
+   },
+   "a": [
+    "lançada"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Alea jacta est",
+    [
+     "Rubicão"
+    ]
+   ],
+   "x": "Ao atravessar o rio Rubicão com suas tropas, César desafiou o Senado e começou uma guerra civil."
+  },
+  {
+   "t": "Que palavra completa a frase?",
+   "type": "txt",
+   "choices": [
+    "sei",
+    "tenho",
+    "vejo",
+    "digo",
+    "quero",
+    "entendo"
+   ],
+   "quote": {
+    "q": "Só sei que nada ___.",
+    "ctx": "Atribuída a Sócrates"
+   },
+   "a": [
+    "sei"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Só sei que nada sei",
+    [
+     "Sócrates"
+    ]
+   ],
+   "x": "A frase resume o que Platão conta na Apologia: Sócrates se achava sábio só por saber que não sabia."
+  },
+  {
+   "t": "Que palavra completa a frase?",
+   "type": "txt",
+   "choices": [
+    "Brutus",
+    "Marco Antônio",
+    "Cássio",
+    "Pompeu",
+    "Otaviano",
+    "Cícero"
+   ],
+   "quote": {
+    "q": "Até tu, ___?",
+    "ctx": "Júlio César, na peça de Shakespeare"
+   },
+   "a": [
+    "Brutus"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Et tu, Brute?",
+    [
+     "Shakespeare"
+    ]
+   ],
+   "x": "As últimas palavras de César são uma criação de Shakespeare; os autores antigos não as registram assim."
+  },
+  {
+   "t": "Que palavra completa a frase?",
+   "type": "txt",
+   "choices": [
+    "viver",
+    "morrer",
+    "lutar",
+    "sonhar",
+    "voltar",
+    "chegar"
+   ],
+   "quote": {
+    "q": "Navegar é preciso; ___ não é preciso.",
+    "ctx": "General romano Pompeu, segundo Plutarco"
+   },
+   "a": [
+    "viver"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Navegar é preciso",
+    [
+     "Pompeu"
+    ]
+   ],
+   "x": "Fernando Pessoa e Caetano Veloso tornaram a frase famosa em português; ela vem do general Pompeu, contado por Plutarco."
+  },
+  {
+   "t": "Que palavra completa a frase?",
+   "type": "txt",
+   "choices": [
+    "eu",
+    "nós",
+    "o povo",
+    "Deus",
+    "a França",
+    "o rei"
+   ],
+   "quote": {
+    "q": "O Estado sou ___.",
+    "ctx": "Atribuída a Luís XIV"
+   },
+   "a": [
+    "eu"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Luís XIV de França",
+    [
+     "Estado"
+    ]
+   ],
+   "x": "Não há prova de que Luís XIV tenha dito a frase, mas ela resume o absolutismo do seu reinado."
+  },
+  {
+   "t": "Que palavra completa a frase?",
+   "type": "txt",
+   "choices": [
+    "uni",
+    "levantai",
+    "armai",
+    "libertai",
+    "erguei",
+    "organizai"
+   ],
+   "quote": {
+    "q": "Proletários de todos os países, ___-vos!",
+    "ctx": "Marx e Engels, Manifesto Comunista, 1848"
+   },
+   "a": [
+    "uni"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Manifesto Comunista",
+    [
+     "1848"
+    ]
+   ],
+   "x": "É a frase final do Manifesto Comunista, publicado em Londres em fevereiro de 1848."
+  },
+  {
+   "t": "Que palavra completa a frase?",
+   "type": "txt",
+   "choices": [
+    "mesmo",
+    "próprio",
+    "inteiro",
+    "primeiro",
+    "sempre",
+    "agora"
+   ],
+   "quote": {
+    "q": "Conhece-te a ti ___.",
+    "ctx": "Inscrição no templo de Apolo, em Delfos"
+   },
+   "a": [
+    "mesmo"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Conhece-te a ti mesmo",
+    [
+     "Delfos"
+    ]
+   ],
+   "x": "A frase estava gravada no templo de Apolo em Delfos, e Sócrates fez dela um lema."
+  },
+  {
+   "t": "Que palavra completa a frase?",
+   "type": "txt",
+   "choices": [
+    "ópio",
+    "pão",
+    "consolo",
+    "espelho",
+    "grito",
+    "coração"
+   ],
+   "quote": {
+    "q": "A religião é o ___ do povo.",
+    "ctx": "Karl Marx, 1844"
+   },
+   "a": [
+    "ópio"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "A religião é o ópio do povo",
+    [
+     "Marx"
+    ]
+   ],
+   "x": "Marx escreveu a frase em 1844; ela vem logo depois de chamar a religião de “suspiro da criatura oprimida”."
+  },
+  {
+   "t": "Que palavra completa a frase?",
+   "type": "txt",
+   "choices": [
+    "torna",
+    "faz",
+    "aprende",
+    "descobre",
+    "vive",
+    "escolhe"
+   ],
+   "quote": {
+    "q": "Ninguém nasce mulher: ___-se mulher.",
+    "ctx": "Simone de Beauvoir, O Segundo Sexo, 1949"
+   },
+   "a": [
+    "torna"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "O Segundo Sexo",
+    [
+     "Beauvoir"
+    ]
+   ],
+   "x": "A frase abre o segundo volume de O Segundo Sexo, livro de 1949 que marcou o feminismo."
+  },
+  {
+   "t": "Que palavra completa a frase?",
+   "type": "txt",
+   "choices": [
+    "circo",
+    "vinho",
+    "água",
+    "festa",
+    "trabalho",
+    "ouro"
+   ],
+   "quote": {
+    "q": "Pão e ___.",
+    "ctx": "O poeta romano Juvenal, sobre o povo de Roma"
+   },
+   "a": [
+    "circo"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Pão e circo",
+    [
+     "Juvenal"
+    ]
+   ],
+   "x": "Juvenal reclamava que o povo de Roma só queria duas coisas: comida de graça e espetáculos."
+  },
+  {
+   "t": "Que palavra completa a frase?",
+   "type": "txt",
+   "choices": [
+    "pequena",
+    "vazia",
+    "fraca",
+    "triste",
+    "pobre",
+    "covarde"
+   ],
+   "quote": {
+    "q": "Tudo vale a pena se a alma não é ___.",
+    "ctx": "Fernando Pessoa, Mensagem, 1934"
+   },
+   "a": [
+    "pequena"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Mar Português",
+    [
+     "Pessoa"
+    ]
+   ],
+   "x": "O verso é do poema Mar Português, sobre os navegadores, do livro Mensagem, de 1934."
+  },
+  {
+   "t": "Que palavra completa a frase?",
+   "type": "txt",
+   "choices": [
+    "História",
+    "glória",
+    "memória",
+    "lenda",
+    "paz",
+    "morte"
+   ],
+   "quote": {
+    "q": "Saio da vida para entrar na ___.",
+    "ctx": "Getúlio Vargas, carta-testamento, 1954"
+   },
+   "a": [
+    "História"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Carta-testamento",
+    [
+     "Getúlio"
+    ]
+   ],
+   "x": "É a última frase da carta deixada por Getúlio Vargas antes de se matar, no Palácio do Catete, em 24 de agosto de 1954."
+  },
+  {
+   "t": "Que palavra completa a frase?",
+   "type": "txt",
+   "choices": [
+    "iguais",
+    "unidos",
+    "fortes",
+    "irmãos",
+    "felizes",
+    "senhores"
+   ],
+   "quote": {
+    "q": "Os homens nascem e permanecem livres e ___ em direitos.",
+    "ctx": "Declaração dos Direitos do Homem e do Cidadão, 1789"
+   },
+   "a": [
+    "iguais"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Declaração dos Direitos do Homem e do Cidadão",
+    [
+     "1789"
+    ]
+   ],
+   "x": "É o primeiro artigo da Declaração aprovada na França em agosto de 1789, semanas depois da Queda da Bastilha."
+  },
+  {
+   "t": "Que palavra completa a frase?",
+   "type": "txt",
+   "choices": [
+    "move",
+    "cala",
+    "esconde",
+    "perde",
+    "rende",
+    "apaga"
+   ],
+   "quote": {
+    "q": "E, no entanto, ela se ___.",
+    "ctx": "Atribuída a Galileu, depois do julgamento, 1633"
+   },
+   "a": [
+    "move"
+   ],
+   "d": 3,
+   "src": [
+    "pt",
+    "Eppur si muove",
+    [
+     "Galileu"
+    ]
+   ],
+   "x": "Segundo a lenda, Galileu murmurou a frase sobre a Terra depois de ser obrigado a negar que ela se move; não há registro de que tenha dito."
+  },
+  {
+   "t": "Que palavra completa a frase?",
+   "type": "txt",
+   "choices": [
+    "morrer",
+    "lutar",
+    "viver",
+    "cantar",
+    "sofrer",
+    "sangrar"
+   ],
+   "quote": {
+    "q": "Ou ficar a pátria livre, ou ___ pelo Brasil.",
+    "ctx": "Hino da Independência, letra de Evaristo da Veiga"
+   },
+   "a": [
+    "morrer"
+   ],
+   "d": 3,
+   "src": [
+    "pt",
+    "Hino da Independência do Brasil",
+    [
+     "Evaristo da Veiga"
+    ]
+   ],
+   "x": "A música do Hino da Independência foi composta pelo próprio Dom Pedro I."
+  },
+  {
+   "t": "Que palavra completa a frase?",
+   "type": "txt",
+   "choices": [
+    "fúlgidos",
+    "dourados",
+    "brilhantes",
+    "ardentes",
+    "radiantes",
+    "gloriosos"
+   ],
+   "quote": {
+    "q": "E o sol da liberdade, em raios ___, brilhou no céu da pátria nesse instante.",
+    "ctx": "Hino Nacional Brasileiro, letra de Osório Duque-Estrada"
+   },
+   "a": [
+    "fúlgidos"
+   ],
+   "d": 3,
+   "src": [
+    "pt",
+    "Hino Nacional Brasileiro",
+    [
+     "fúlgidos"
+    ]
+   ],
+   "x": "“Fúlgidos” quer dizer brilhantes, cintilantes. A letra do hino foi oficializada em 1922."
+  },
+  {
+   "t": "Que palavra completa a frase?",
+   "type": "txt",
+   "choices": [
+    "circunstância",
+    "história",
+    "consciência",
+    "liberdade",
+    "verdade",
+    "sombra"
+   ],
+   "quote": {
+    "q": "Eu sou eu e a minha ___.",
+    "ctx": "José Ortega y Gasset, 1914"
+   },
+   "a": [
+    "circunstância"
+   ],
+   "d": 3,
+   "src": [
+    "pt",
+    "José Ortega y Gasset",
+    [
+     "circunstância"
+    ]
+   ],
+   "x": "O filósofo espanhol escreveu a frase em 1914: ninguém se entende fora do seu tempo e do seu lugar."
+  }
+ ]
+}

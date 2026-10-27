@@ -22,22 +22,31 @@ function aodPick(a) {
   let pool = free.filter(e => fair(e) && anoGap(a.y, e.y) <= hi);
   if (!pool.length) pool = free.filter(fair);
   if (!pool.length) pool = free;
-  return pool.length ? pool[Math.floor(rnd() * pool.length)] : null;
+  return pool.length ? pool[Math.floor(aodRnd() * pool.length)] : null;
 }
 
+/* The run is dealt from its own seed, on its own generator (nothing else drawing numbers in between can
+   change it), so a friend sent the link gets the same events in the same order for as long as they keep
+   answering right (js/desafio.js). */
+function aodRnd() {
+  let t = (aod.rs = (aod.rs + 0x6D2B79F5) | 0);
+  t = Math.imul(t ^ (t >>> 15), t | 1); t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
+  return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+}
 /* a new run: the first event is one with a sure year */
-function aodNew() {
+function aodNew(seed) {
   clearTimeout(aod && aod.adv);
+  if (seed == null) seed = (Math.random() * CHAL_SEED_MAX) | 0;
+  aod = { seed, rs: seed, a: null, b: null, score: 0, used: new Set(), phase: 'guess', pick: null, ok: null, log: [], tok: 0, best0: LS.get('aodBest', 0) };
   const deck = ANO_EVENTS.filter(e => !e.c);
-  const a = deck[Math.floor(rnd() * deck.length)];
-  aod = { a, b: null, score: 0, used: new Set([a.id]), phase: 'guess', pick: null, ok: null, log: [], tok: 0, best0: LS.get('aodBest', 0) };
-  aod.b = aodPick(a); aod.used.add(aod.b.id);
+  aod.a = deck[Math.floor(aodRnd() * deck.length)]; aod.used.add(aod.a.id);
+  aod.b = aodPick(aod.a); aod.used.add(aod.b.id);
   aodArm();
 }
 function startAod() {
   isDaily = false; isSurv = false; isMil = false; isRev = false;
   runSelos = [];
-  aodNew();
+  aodNew(chalSeed('d'));
   sc = 'aod';
   go();
 }
@@ -148,7 +157,7 @@ function aodEndHtml() {
     <div class="display" style="font-size:28px;"><em>${msg}</em></div>
     ${wreathed(n >= 8, `<div class="display prize-pop brass aod-end-n">${n}</div>`)}
     <div class="aod-end-k">${n === 1 ? 'acerto seguido' : 'acertos seguidos'}</div>
-    <p class="small muted">${aod.isBest ? 'Seu novo recorde!' : `Recorde: ${aod.best0}`}</p>
+    ${chalBanner() || `<p class="small muted">${aod.isBest ? 'Seu novo recorde!' : `Recorde: ${aod.best0}`}</p>`}
     ${miss ? `<div class="aod-miss">
         <span class="aod-miss-k">${miss.dir ? 'Onde a corrente quebrou' : 'O tempo acabou em'}</span>
         <span class="aod-miss-row"><b class="num">${aodYear(miss.b)}</b><span>${_esc(miss.b.t)}</span></span>
@@ -158,14 +167,14 @@ function aodEndHtml() {
     ${selosStrip()}
     ${medalChips()}
     <div class="foot-row" style="margin-top:8px;">
-      <button id="aod-share" class="btn btn-ghost btn-sm">Compartilhar</button>
+      <button id="aod-share" class="btn btn-ghost btn-sm">${chalMine() ? 'Desafiar' : 'Compartilhar'}</button>
       <button id="aod-again" class="btn btn-brass">De novo</button>
       <button id="bhome" class="btn btn-ghost btn-sm">Início</button>
     </div>
   </div>`;
 }
 
-const aodShareText = () => `Antes ou depois? ⏳ History Quiz\n${'🟩'.repeat(Math.min(aod.score, 20))}${aod.score > 20 ? '…' : ''}${aod.all ? '' : '🟥'}\n${aod.score} ${aod.score === 1 ? 'acerto' : 'acertos'} seguidos${aod.isBest ? ' · recorde!' : ''}\n${CHAL_URL}`;
+const aodShareText = () => `Antes ou depois? ⏳ History Quiz\n${'🟩'.repeat(Math.min(aod.score, 20))}${aod.score > 20 ? '…' : ''}${aod.all ? '' : '🟥'}\n${aod.score} ${aod.score === 1 ? 'acerto' : 'acertos'} seguidos${aod.isBest ? ' · recorde!' : ''}\n${chalShareTail(chalMine())}`;
 
 /* the clock: a bar that empties; at zero the guess is a miss */
 let _aodTmr = null;

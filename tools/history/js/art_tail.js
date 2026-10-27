@@ -50,7 +50,7 @@ const CAT_ART = {
   ciencia: 'gear', artes: 'bust', mulheres: 'crown', personagens: 'bust', monumentos: 'column', curiosidades: 'scroll',
   quem_sou_eu: 'bust', linha_do_tempo: 'hourglass', imperios: 'crown', citacoes: 'quill', batalhas: 'sword',
   linhagens: 'crown', manchetes: 'scroll', duelos: 'hourglass', fato_mito: 'scales',
-  charadas: 'masks', detalhes: 'telescope', intrusos: 'scales',
+  charadas: 'masks', detalhes: 'telescope', intrusos: 'scales', complete_frase: 'quill',
 };
 const FALLBACK_PHOTO = {};
 const NONFREE_CRESTS = new Set([]);

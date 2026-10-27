@@ -338,6 +338,14 @@ JS = r"""
     /* and a wrong one, and one too slow, end it */
     aodNew(); aodAnswer(aod.b.y < aod.a.y ? 'depois' : 'antes'); if (aod.ok) F('aod: a wrong answer judged right'); aodNext(); if (aod.phase !== 'end') F('aod: a miss does not end the run');
     aodNew(); aodAnswer(null); if (aod.ok) F('aod: no answer judged right');
+    /* the same seed, answered right, deals the same run: what a challenge link sends */
+    const deal = seed => { aodNew(seed); const ids = [aod.a.id]; for (let i = 0; i < 30 && aod.phase !== 'end'; i++) { ids.push(aod.b.id);
+      try { fx.banner = () => {}; } catch (e) {} aodAnswer(aod.b.y < aod.a.y ? 'antes' : 'depois'); rnd(); rnd(); aodNext(); } return ids.join(); };
+    if (deal(4242) !== deal(4242)) F('aod: one seed deals two runs');
+    if (deal(4242) === deal(4243)) F('aod: two seeds deal one run');
+    const cd = chalParse(chalCode({ g: 'd', seed: 4242, score: 17 }));
+    if (!cd || cd.g !== 'd' || cd.seed !== 4242 || cd.score !== 17) F('an Antes ou depois? challenge does not round-trip');
+    if (chalParse('d.1.' + (ANO_EVENTS.length + 1).toString(36) + '..' + chalVer())) F('an Antes ou depois? score above the deck is accepted');
     Object.assign(stats, JSON.parse(keepAS)); LS.set('stats', stats); LS.set('aodBest', keepAB); aod = null; sc = 'home';
   } catch (e) { F('aod EXC ' + e.stack); }
   /* ── the cover's round of the newest kinds: fifteen, five of each, every answer on its board, no record kept ── */
