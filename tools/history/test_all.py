@@ -361,6 +361,35 @@ JS = r"""
     if (JSON.stringify(scores) !== keepSc) F('novas: a record was kept');
     stats.novasGames = keepNG; stats.novasV = keepNV; LS.set('stats', stats); sc = 'home';
   } catch (e) { F('novas EXC ' + e.stack); }
+  /* ── Jornada: every stop deals a full round of distinct answers, easy to hard, each on its board; stars, unlocking, the end ── */
+  try {
+    const keepJ = LS.get('jornada', null), keepJS = JSON.stringify(stats), keepSc2 = JSON.stringify(scores);
+    if (JOR_STOPS.length !== 19) F('jornada: ' + JOR_STOPS.length + ' stops');
+    JOR_STOPS.forEach((s, i) => {
+      if (!SCENE[s.scene]) F('jornada: no scene ' + s.scene + ' for ' + s.id);
+      const pool = jorPool(s); if (pool.length < 24) F('jornada: a small pool for ' + s.id + ' (' + pool.length + ')');
+      for (let k = 0; k < 3; k++) {
+        const qs = jorDeal(s), n = s.size || JOR_N;
+        if (qs.length !== n) F('jornada: ' + s.id + ' dealt ' + qs.length);
+        if (new Set(qs.map(q => ansKey(q))).size !== qs.length) F('jornada: ' + s.id + ' repeats an answer');
+        qs.forEach((q, j) => { if (j && qs[j - 1].d > q.d) F('jornada: ' + s.id + ' not easy to hard');
+          const d = getDisp(q); if (!q.a.every(a => d.map(x => x.id).includes(a))) F('jornada: answer missing ' + q.t); });
+      }
+    });
+    if (jorStarsFor(3, 8) !== 0 || jorStarsFor(4, 8) !== 1 || jorStarsFor(6, 8) !== 2 || jorStarsFor(7, 8) !== 3 || jorStarsFor(9, 10) !== 3) F('jornada: stars wrong');
+    LS.set('jornada', null);
+    if (!jorOpen(0) || jorOpen(1) || jorNextIdx() !== 0) F('jornada: a fresh road does not start at the first stop');
+    /* play the whole road: every stop with its pass mark, then the last with all right */
+    JOR_STOPS.forEach((s, i) => { startJor(i); clearInterval(tmr); if (!isJorRun()) F('jornada: stop ' + i + ' did not start');
+      nCorrect = i === JOR_STOPS.length - 1 ? cat.qs.length : jorNeed(cat.qs.length)[0]; pts = 100; finishRun(); clearInterval(tmr);
+      if (!(jorStars(s.id) >= 1)) F('jornada: stop ' + i + ' not passed');
+      if (i < JOR_STOPS.length - 1 && !jorOpen(i + 1)) F('jornada: stop ' + (i + 1) + ' not opened'); go(); });
+    if (jorNextIdx() !== -1 || stats.jorDone !== JOR_STOPS.length || stats.jorEras !== JOR_ERAS.length) F('jornada: the road is not done at its end');
+    if (!window._jorRes || !window._jorRes.end || window._jorRes.st !== 3) F('jornada: the last stop does not end the road');
+    if (JSON.stringify(scores) !== keepSc2) F('jornada: a difficulty record was kept');
+    for (let k = 0; k < JOR_ERAS.length; k++) { jorPage = k; sc = 'jornada'; go(); if (document.querySelectorAll('.jor-stop').length !== JOR_ERAS[k].stops.length) F('jornada: page ' + k + ' stops'); }
+    LS.set('jornada', keepJ); Object.assign(stats, JSON.parse(keepJS)); LS.set('stats', stats); jorPage = null; sc = 'home';
+  } catch (e) { F('jornada EXC ' + e.stack); }
   /* ── Hoje na História: every day of the year has five dates near it, the same five all day, each with its picture ── */
   try {
     const pool = hojePool();

@@ -129,6 +129,32 @@ function startHoje() {
   sc = 'ano';
   go();
 }
+/* the Que ano? door: the day's Hoje na História, or a free game of ten events */
+function anoMenuHtml() {
+  const r = hojeRes(), o = !r && hojeOpen(), d = new Date(), best = LS.get('anoBest', 0);
+  return `
+  <div class="pg cron-menu">
+    ${topbar('Que ano?')}
+    <div class="cron-menu-in">
+      <span class="chal-ic mode-disc mode-ano" aria-hidden="true">${ICON.hourglass('currentColor', 28)}</span>
+      <div class="display" style="font-size:30px;"><em>Em que ano foi?</em></div>
+      <p class="small muted cron-menu-p">Deslize a régua até o ano em que você acha que aconteceu. Quanto mais perto, mais pontos.</p>
+      <button id="ano-hoje" class="cron-opt is-day${r ? ' is-done' : ''}" type="button">
+        <span class="mode-disc mode-${r ? 'done' : 'hoje'}">${ICON.sun('currentColor', 18)}</span>
+        <span><b>Hoje na História · ${d.getDate()} de ${MES_LONGO[d.getMonth()]}</b><small>${r ? `Feito: ${r.pts} pts · jogar de novo não vale`
+          : o ? `Continuar de onde parou · ${o.log.length} de ${HOJE_N}` : 'Cinco datas destes dias, as mesmas para todo mundo'}</small></span></button>
+      <button id="ano-free" class="cron-opt" type="button">
+        <span class="mode-disc mode-ano">${ICON.hourglass('currentColor', 18)}</span>
+        <span><b>Partida livre</b><small>${best > 0 ? 'Recorde: ' + best + ' pts' : 'Dez eventos, de todas as épocas'}</small></span></button>
+    </div>
+  </div>`;
+}
+function wireAnoMenu() {
+  const ready = tapArmed();
+  document.getElementById('ano-hoje')?.addEventListener('click', () => { if (ready()) { snd.select(); startHoje(); } });
+  document.getElementById('ano-free')?.addEventListener('click', () => { if (ready()) { snd.select(); startAno(); } });
+}
+
 /* the day's game begun and not finished: its answers so far, as [event id, year guessed] */
 function hojeOpen() {
   const r = LS.get('hojeRun', null);

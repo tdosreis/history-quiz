@@ -152,7 +152,7 @@ async function certImage() {
   const text = (t, font, col, y, ls) => { g.font = font; g.fillStyle = col; g.textAlign = 'center'; g.textBaseline = 'alphabetic';
     try { g.letterSpacing = ls || '0px'; } catch (e) {} g.fillText(t, W / 2, y); };
   text('HISTORY QUIZ', '800 34px Archivo', '#8C6A2A', 172, '10px');
-  text((isDaily ? `Desafio Diário nº ${dayIndex()}` : isSurv ? 'Mata-mata' : `${isNovasRun() ? 'Novidades' : d.label} · ${total} perguntas`).toUpperCase(), '700 26px Archivo', '#6B5B45', 222, '5px');
+  text((isDaily ? `Desafio Diário nº ${dayIndex()}` : isSurv ? 'Mata-mata' : `${isThemed() ? cat.themed.label : d.label} · ${total} perguntas`).toUpperCase(), '700 26px Archivo', '#6B5B45', 222, '5px');
   text(msg, 'italic 700 96px Fraunces', '#2B2118', 352);
   g.drawImage(laurel, (W - 760) / 2, 392, 760, 403);
   text(String(pts), '600 230px Fraunces', '#2B2118', 668, '-4px');

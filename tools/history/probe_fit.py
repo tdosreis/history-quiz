@@ -267,6 +267,19 @@ DRIVE = r"""
     aodNext(); window._newMedals = g13%2 ? MEDALS.slice(0, 3) : []; go(); fit('aod/end');
   }
   sc='cronMenu'; go(); fit('cron/menu-aod');
+  /* Jornada: every page fresh, part-way and done, a stop's sheet, a stop's results, and the Que ano? door */
+  var keepJ = LS.get('jornada', null);
+  [null, { st: { nilo: 3, atenas: 2, roma: 1, castelos: 1 }, pts: {} }].forEach(function(pr){
+    LS.set('jornada', pr);
+    for (var k14=0; k14<JOR_ERAS.length; k14++){ jorPage=k14; jorSel=null; sc='jornada'; go(); fit('jornada/pg'+k14+(pr?'-meio':'-nova'));
+      jorSel=JOR_STOPS.indexOf(JOR_ERAS[k14].stops[0]); go(); fit('jornada/sheet'+k14+(pr?'-meio':'-nova')); }
+  });
+  var all3 = {}; JOR_STOPS.forEach(function(s){ all3[s.id]=3; }); LS.set('jornada', { st: all3, pts: {} });
+  for (var k15=0; k15<JOR_ERAS.length; k15++){ jorPage=k15; jorSel=null; sc='jornada'; go(); fit('jornada/pg'+k15+'-feita'); }
+  LS.set('jornada', { st: { nilo: 1 }, pts: {} });
+  [1, 6].forEach(function(i16){ startJor(i16); nCorrect = i16 === 1 ? 7 : 3; pts = 400; window._newMedals = MEDALS.slice(0, 2); finishRun(); go(); fit('jornada/fim-' + i16); });
+  LS.set('jornada', keepJ); jorPage=null; jorSel=null;
+  sc='anoMenu'; go(); fit('ano/menu');
   /* Metas da semana: fresh, one met with its stamp, all three met */
   LS.set('metas', null); sc='metas'; go(); fit('metas/nova');
   var sm=metasState(), lm=metasList(); sm.base[lm[0].m.id]=lm[0].m.v()-lm[0].n; sm.base[lm[1].m.id]=lm[1].m.v()-Math.floor(lm[1].n/2); LS.set('metas', sm); metasCheck(); go(); fit('metas/uma');

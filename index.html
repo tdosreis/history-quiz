@@ -4047,6 +4047,135 @@
   .aod-a.is-shifted, .aod-pg .aod-b, .aod-b .aod-y { animation: none !important; }
 }
 
+
+/* ═══ JORNADA PELA HISTÓRIA — an old map, an era a page, its stops as medallions on a dotted road ═══ */
+.jor-pg { gap: 8px; }
+.jor-head { flex: none; display: grid; grid-template-columns: 40px minmax(0, 1fr) 40px; align-items: center; gap: 6px; }
+.jor-arrow { width: 40px; height: 40px; border-radius: 50%; border: 0; display: grid; place-items: center; cursor: pointer;
+  color: var(--ink-2); background: var(--at-card-img) center / 100% 100% no-repeat; transition: transform .12s, opacity .2s; }
+.jor-arrow:active { transform: scale(.94); }
+.jor-arrow[disabled] { opacity: .28; cursor: default; }
+.jor-arrow:focus-visible { outline: 2px solid var(--brass); outline-offset: 2px; }
+/* the era's name in a cartouche: two brass rules, the numeral above */
+.jor-cart { display: flex; flex-direction: column; align-items: center; gap: 3px; padding: 6px 8px 7px; text-align: center;
+  border-top: 1.5px solid color-mix(in srgb, var(--brass) 70%, transparent); border-bottom: 1.5px solid color-mix(in srgb, var(--brass) 70%, transparent);
+  box-shadow: 0 3px 0 -1.5px color-mix(in srgb, var(--brass) 35%, transparent), 0 -3px 0 -1.5px color-mix(in srgb, var(--brass) 35%, transparent); }
+.jor-cart small { font: 700 9.5px/1 var(--font-s); letter-spacing: .24em; text-transform: uppercase; color: var(--brass-ink, var(--brass)); }
+.jor-cart b { font: italic 700 21px/1.1 var(--font-d); letter-spacing: -.01em; color: var(--ink); }
+.jor-sum { flex: none; display: flex; justify-content: space-between; align-items: center; gap: 8px; font: 600 12px/1 var(--font-s); color: var(--ink-3); }
+.jor-sum > span:first-child { display: inline-flex; align-items: center; gap: 4px; }
+.jor-sum b { font: 700 15px/1 var(--font-d); color: var(--ink); }
+.jor-dots { display: inline-flex; gap: 5px; align-items: center; }
+.jor-dots i { width: 7px; height: 7px; border-radius: 50%; background: color-mix(in srgb, var(--ink-3) 40%, transparent); transition: transform .2s; }
+.jor-dots i.ok { background: var(--good); }
+.jor-dots i.on { transform: scale(1.45); box-shadow: 0 0 0 1.5px var(--brass); }
+/* the map: aged paper, a faint graticule, a wash of the era's colour in one corner */
+.jor-map { position: relative; flex: 1 1 0; min-height: 280px; overflow: hidden; border-radius: 4px; color: #3B2A16; isolation: isolate;
+  background: radial-gradient(ellipse at 48% 38%, #F8EFD6 0%, #EFE1BC 55%, #DCC48F 100%);
+  box-shadow: inset 0 0 0 1.5px rgba(107, 74, 34, .55), inset 0 0 0 5px rgba(247, 237, 211, .5), inset 0 0 0 6.5px rgba(107, 74, 34, .35),
+    inset 0 0 46px rgba(110, 70, 20, .28), 0 3px 12px rgba(0, 0, 0, .22); }
+.jor-map::before { content: ''; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background-image: repeating-linear-gradient(0deg, rgba(107, 74, 34, .075) 0 1px, transparent 1px 46px),
+    repeating-linear-gradient(90deg, rgba(107, 74, 34, .075) 0 1px, transparent 1px 46px); }
+.jor-map::after { content: ''; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background: radial-gradient(circle at 84% 14%, color-mix(in srgb, var(--era) 22%, transparent), transparent 55%),
+    radial-gradient(circle at 10% 92%, color-mix(in srgb, var(--era) 14%, transparent), transparent 45%); }
+.jor-mark { position: absolute; left: 50%; top: 54%; width: 62%; max-width: 280px; transform: translate(-50%, -50%) rotate(-6deg);
+  opacity: .08; pointer-events: none; filter: sepia(1); }
+.jor-mark svg { display: block; width: 100%; height: auto; }
+.jor-road { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+.jor-rose { position: absolute; right: 12px; bottom: 12px; width: 64px; opacity: .85; pointer-events: none; transform: rotate(8deg); }
+/* a stop: its scene in a brass medallion, its number and name on a label, its stars */
+.jor-stop { position: absolute; z-index: 2; transform: translate(-50%, -36%); display: flex; flex-direction: column; align-items: center; gap: 4px;
+  padding: 0; border: 0; background: none; cursor: pointer; color: inherit; -webkit-tap-highlight-color: transparent; }
+.jor-medal { position: relative; display: block; width: clamp(76px, 13vh, 116px); aspect-ratio: 1; border-radius: 50%; overflow: hidden; background: #EFE6CF;
+  box-shadow: 0 0 0 3px #B8862F, 0 0 0 5.5px rgba(80, 50, 15, .22), 0 7px 14px rgba(60, 30, 5, .35); transition: transform .15s; }
+.jor-medal > svg { display: block; width: 100%; height: 100%; }
+.jor-stop:hover .jor-medal { transform: scale(1.04); }
+.jor-stop:active .jor-medal { transform: scale(.97); }
+.jor-stop:focus-visible { outline: none; }
+.jor-stop:focus-visible .jor-medal { box-shadow: 0 0 0 3px #B8862F, 0 0 0 7px var(--ink), 0 7px 14px rgba(60, 30, 5, .35); }
+.jor-name { max-width: 158px; padding: 3px 8px 4px; border-radius: 3px; text-align: center; font: 600 13px/1.15 var(--font-d); letter-spacing: -.005em;
+  color: #2B1E10; background: rgba(250, 242, 222, .94); box-shadow: 0 1px 3px rgba(60, 30, 5, .2); text-wrap: balance; }
+.jor-name i { display: inline-grid; place-items: center; width: 17px; height: 17px; margin-right: 5px; vertical-align: 1px; border-radius: 50%;
+  font: 800 9.5px/1 var(--font-s); font-style: normal; color: #F7EDD3; background: #6B4A22; }
+.jor-stars { display: inline-flex; gap: 1px; color: rgba(70, 45, 15, .5); }
+.jor-stars svg { display: block; }
+.jor-stop.is-locked .jor-medal > svg { filter: grayscale(1) sepia(.35); opacity: .42; }
+.jor-stop.is-locked .jor-name { opacity: .6; }
+.jor-lock { position: absolute; inset: 0; display: grid; place-items: center; }
+.jor-lock svg { width: 30%; height: auto; }
+.jor-stop.is-done .jor-name i { background: var(--good); }
+.jor-stop.is-gold .jor-medal { box-shadow: 0 0 0 3px #E8BC52, 0 0 0 7px rgba(232, 188, 82, .35), 0 7px 16px rgba(120, 80, 10, .4); }
+.jor-stop.is-gold .jor-name i { background: #B8862F; }
+/* the next stop: its ring breathes, and the pin stands over it */
+.jor-stop.is-here .jor-medal { animation: jor-pulse 1.9s ease-in-out infinite; }
+@keyframes jor-pulse { 50% { box-shadow: 0 0 0 3px #B8862F, 0 0 0 10px color-mix(in srgb, var(--era) 30%, transparent), 0 7px 14px rgba(60, 30, 5, .35); } }
+.jor-pin { position: absolute; z-index: 3; top: -30px; width: 24px; height: 32px; filter: drop-shadow(0 3px 2px rgba(0, 0, 0, .3));
+  animation: jor-bob 1.6s ease-in-out infinite; }
+.jor-pin svg { display: block; width: 100%; height: 100%; }
+@keyframes jor-bob { 50% { transform: translateY(-5px); } }
+/* an era with all its stops passed: a red seal pressed on the corner of its page */
+.jor-sealed { position: absolute; z-index: 3; right: 14px; top: 14px; width: 78px; height: 78px; display: flex; flex-direction: column; align-items: center; justify-content: center;
+  border-radius: 50%; border: 3px double #9B2226; color: #9B2226; background: rgba(250, 242, 222, .55); transform: rotate(14deg);
+  font: 700 24px/1 var(--font-d); opacity: .88; pointer-events: none; }
+.jor-sealed small { font: 800 7.5px/1.3 var(--font-s); letter-spacing: .16em; text-transform: uppercase; }
+/* an era not reached yet: the map is there, but faded, terra incognita */
+.jor-map.is-fog .jor-road, .jor-map.is-fog .jor-rose { opacity: .35; }
+.jor-fog-t { position: absolute; z-index: 1; left: 62%; top: 29%; transform: translate(-50%, -50%) rotate(-9deg); white-space: nowrap; pointer-events: none;
+  font: italic 700 28px/1 var(--font-d); letter-spacing: .03em; color: rgba(70, 45, 15, .3); }
+.jor-map.is-fin .jor-fog-t { left: 50%; top: 16%; }
+.jor-map.is-fin { background: radial-gradient(ellipse at 50% 42%, #F4E6C4 0%, #E2CB98 60%, #C9AA6E 100%); }
+.jor-foot { flex: none; display: flex; justify-content: center; }
+#jor-go { max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.jor-endline { margin: 0; display: flex; align-items: center; gap: 6px; font: 600 13px/1.3 var(--font-d); color: var(--ink-2); text-align: center; }
+/* a stop, close up: a sheet from the bottom with its scene mounted like a print */
+.jor-veil { position: absolute; inset: 0; z-index: 20; background: rgba(20, 12, 4, .45); animation: jor-fade .2s ease-out; }
+@keyframes jor-fade { from { opacity: 0; } }
+.jor-sheet { position: absolute; left: 0; right: 0; bottom: 0; z-index: 21; display: flex; flex-direction: column; align-items: center; gap: 6px;
+  padding: 0 18px calc(16px + env(safe-area-inset-bottom, 0px)); text-align: center; background: var(--stock); border-top: 1px solid var(--rule);
+  border-radius: 15px 15px 0 0; box-shadow: 0 -16px 34px -14px var(--shadow-2); animation: rvlUp .26s cubic-bezier(.2, .9, .3, 1); }
+.jor-sheet-pic { width: min(230px, 62%); aspect-ratio: 3 / 2; margin-top: -40px; overflow: hidden; border-radius: 3px; transform: rotate(-1.4deg);
+  background: #EFE6CF; box-shadow: 0 0 0 5px #F4ECD8, 0 0 0 6px rgba(107, 74, 34, .3), 0 8px 18px rgba(0, 0, 0, .35); }
+.jor-sheet-pic > svg { display: block; width: 100%; height: 100%; }
+.jor-sheet-k { margin-top: 8px; font: 700 9.5px/1 var(--font-s); letter-spacing: .2em; text-transform: uppercase; color: var(--brass-ink, var(--brass)); }
+.jor-sheet-n { font: italic 700 24px/1.12 var(--font-d); letter-spacing: -.01em; color: var(--ink); }
+.jor-sheet-sub { font-size: 13px; color: var(--ink-2); }
+.jor-sheet-need { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 4px 10px; font: 600 11.5px/1.3 var(--font-s); color: var(--ink-3); }
+.jor-sheet-need > span { display: inline-flex; align-items: center; gap: 1px; color: var(--ink-2); }
+.jor-sheet-st { margin: 2px 0 4px; }
+.jor-sheet-lock { display: inline-flex; align-items: center; gap: 8px; margin: 6px 0; font: 600 13px/1.3 var(--font-s); color: var(--ink-2); }
+/* on the round's results: the stars, popping in one by one */
+.jor-end { display: flex; flex-direction: column; align-items: center; gap: 4px; margin: 2px 0 0; }
+.jor-end-k { font: 700 9.5px/1 var(--font-s); letter-spacing: .2em; text-transform: uppercase; color: var(--brass-ink, var(--brass)); }
+.jor-end small { font: 600 12px/1.3 var(--font-s); color: var(--ink-2); }
+.jor-end-st { gap: 4px; }
+.pg:has(.end-seal:not(.is-still)) .jor-end-st svg { animation: jor-star .5s cubic-bezier(.3, 1.7, .4, 1) both; }
+.pg:has(.end-seal:not(.is-still)) .jor-end-st svg:nth-child(1) { animation-delay: .6s; }
+.pg:has(.end-seal:not(.is-still)) .jor-end-st svg:nth-child(2) { animation-delay: .78s; }
+.pg:has(.end-seal:not(.is-still)) .jor-end-st svg:nth-child(3) { animation-delay: .96s; }
+@keyframes jor-star { from { opacity: 0; transform: scale(2.2) rotate(-30deg); } }
+.jor-era-chip, .jor-open-chip { margin-top: 2px; text-transform: none; letter-spacing: .02em; font-size: 11px; }
+.mode-jor { --md: #8A6416; --md-soft: rgba(138, 100, 22, .14); }
+:root[data-theme="dark"] .mode-jor, :root:not([data-theme="light"]) .mode-jor { --md: #E0B968; }
+@media (max-height: 700px) {
+  .jor-pg { gap: 6px; }
+  .jor-arrow { width: 34px; height: 34px; }
+  .jor-head { grid-template-columns: 34px minmax(0, 1fr) 34px; }
+  .jor-cart { padding: 4px 6px 5px; }
+  .jor-cart b { font-size: 18px; }
+  .jor-medal { width: 66px; }
+  .jor-name { font-size: 11.5px; max-width: 136px; padding: 2px 6px 3px; }
+  .jor-rose { width: 46px; }
+  .jor-sealed { width: 64px; height: 64px; font-size: 19px; }
+  .jor-sealed small { font-size: 6px; letter-spacing: .08em; }
+  .jor-sheet-pic { width: min(180px, 52%); margin-top: -30px; }
+  .jor-sheet-n { font-size: 20px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .jor-stop.is-here .jor-medal, .jor-pin, .jor-sheet, .jor-veil, .jor-end-st svg { animation: none !important; }
+}
+
 /*@@/formats_css@@*/
   </style>
 </head>
@@ -4055,6 +4184,6 @@
   <div id="ct"></div>
 </div>
 
-<script src="app.js?v=f9815a56d4"></script>
+<script src="app.js?v=c45f4f3cfd"></script>
 </body>
 </html>

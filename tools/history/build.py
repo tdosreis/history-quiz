@@ -355,9 +355,11 @@ def main():
             + io.open(os.path.join(H, "js", "cronologia.js"), encoding="utf-8").read()
             # Antes ou depois?: the same events, two at a time
             + io.open(os.path.join(H, "js", "aod.js"), encoding="utf-8").read()
+            # Jornada pela História: the eras as a road of stops, each a round of its own
+            + io.open(os.path.join(H, "js", "jornada.js"), encoding="utf-8").read()
             # three goals a week, a stamp for each one met
             + io.open(os.path.join(H, "js", "metas.js"), encoding="utf-8").read())
-    s = put(s, "formats_css", "\n".join(io.open(os.path.join(H, "css", f), encoding="utf-8").read() for f in ("fonts.css", "formats.css", "selos_ano.css", "mapa.css", "onde.css", "desafio.css", "cronologia.css", "metas.css", "festa.css", "aod.css")))
+    s = put(s, "formats_css", "\n".join(io.open(os.path.join(H, "css", f), encoding="utf-8").read() for f in ("fonts.css", "formats.css", "selos_ano.css", "mapa.css", "onde.css", "desafio.css", "cronologia.css", "metas.css", "festa.css", "aod.css", "jornada.css")))
     v = page.write(s)
     print("index.html + app.js?v=%s updated: %d bytes" % (v, len(s.encode("utf-8"))))
 
