@@ -257,6 +257,16 @@ DRIVE = r"""
   window._newMedals = MEDALS.slice(0, 3); go(); fit('cron/dia-end');
   sc='cronMenu'; go(); fit('cron/menu-feita'); startCronDia(); fit('cron/dia-rever');
   LS.set('cronDia', null);
+  /* Antes ou depois?: guesses, right ones (some with a story), misses, a miss on time, the results */
+  for (var g13=0; g13<8; g13++){
+    startAod(); fit('aod/guess');
+    for (var k13=0; k13<g13; k13++){ aodAnswer(aod.b.y<aod.a.y?'antes':'depois'); aodNext(); }
+    fit('aod/guess-'+aod.score);
+    aodAnswer(aod.b.y<aod.a.y?'antes':'depois'); fit('aod/certo'+(aod.b.x?'+story':'')+(aod.selo?'+selo':'')); aodNext();
+    aodAnswer(g13%3===2 ? null : aod.b.y<aod.a.y?'depois':'antes'); fit('aod/errou'+(aod.b.x?'+story':''));
+    aodNext(); window._newMedals = g13%2 ? MEDALS.slice(0, 3) : []; go(); fit('aod/end');
+  }
+  sc='cronMenu'; go(); fit('cron/menu-aod');
   /* Metas da semana: fresh, one met with its stamp, all three met */
   LS.set('metas', null); sc='metas'; go(); fit('metas/nova');
   var sm=metasState(), lm=metasList(); sm.base[lm[0].m.id]=lm[0].m.v()-lm[0].n; sm.base[lm[1].m.id]=lm[1].m.v()-Math.floor(lm[1].n/2); LS.set('metas', sm); metasCheck(); go(); fit('metas/uma');

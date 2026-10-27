@@ -3956,6 +3956,86 @@
   .pg .chip-record, .pg .chip-record::after, .pg .medal-chips .chip { animation: none !important; }
 }
 
+
+/* ═══ ANTES OU DEPOIS? — two slips, one year hidden, two big buttons ═══ */
+.aod-pg { gap: 9px; }
+.aod-head { display: flex; justify-content: space-between; align-items: center; font: 600 12.5px/1 var(--font-s); color: var(--ink-3); }
+.aod-run { display: inline-flex; align-items: center; gap: 5px; color: var(--brass-ink, var(--brass)); }
+.aod-run b { font: 700 17px/1 var(--font-d); color: var(--ink); }
+.aod-best b { color: var(--ink-2); }
+.aod-timer > i { transition: width .12s linear, background .3s; }
+/* on a tall phone the two slips sit in the middle of the room, the buttons at the bottom under the thumb */
+.aod-pg > .aod-a { margin-top: auto; }
+.aod-pg.is-rev .aod-timer { opacity: .35; }
+/* the slips: the picture to the left, the line and its year to the right */
+.aod-card { display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: center; gap: 12px; padding: 11px 14px 11px 11px;
+  color: var(--ink); background: var(--at-card-img) center / 100% 100% no-repeat; transition: box-shadow .3s; }
+.aod-pic { width: clamp(70px, 16.5vh, 156px); aspect-ratio: 1; overflow: hidden; display: grid; place-items: center; border-radius: 3px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, .22); background: #EFE6CF; }
+.aod-pic .ano-pic { min-height: 0; max-height: none; width: 100%; height: 100%; }
+.aod-pic .ano-pic svg, .aod-pic .ano-face img { width: 100%; height: 100%; max-height: none; max-width: none; padding: 0; box-shadow: none; object-fit: cover; aspect-ratio: auto; }
+.aod-pic .ano-crest { padding: 8px; }
+.aod-tx { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.aod-t { font: 600 clamp(14.5px, 2.35vh, 20px)/1.25 var(--font-d); letter-spacing: -.008em; text-wrap: pretty;
+  display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; }
+.aod-y { align-self: flex-start; padding: 4px 8px 3px; border-radius: 3px; font: 600 clamp(16px, 2.3vh, 20px)/1 var(--font-d); letter-spacing: -.01em;
+  color: var(--brass-ink); background: var(--pocket); box-shadow: 0 0 0 1.5px var(--brass); }
+.aod-y.is-hid { color: var(--ink-3); letter-spacing: .12em; box-shadow: 0 0 0 1.5px color-mix(in srgb, var(--ink-3) 50%, transparent); background: none; }
+.aod-b.is-good { box-shadow: inset 0 0 0 2.5px var(--good); }
+.aod-b.is-bad { box-shadow: inset 0 0 0 2.5px var(--bad); }
+.aod-b.is-good .aod-y { color: #fff; background: var(--good); box-shadow: 0 0 0 1.5px var(--good); animation: aod-stamp .45s cubic-bezier(.3, 1.6, .4, 1); }
+.aod-b.is-bad .aod-y { color: #fff; background: var(--bad); box-shadow: 0 0 0 1.5px var(--bad); animation: aod-stamp .45s cubic-bezier(.3, 1.6, .4, 1); }
+:root[data-theme="dark"] .aod-b.is-good .aod-y, :root[data-theme="dark"] .aod-b.is-bad .aod-y,
+:root:not([data-theme="light"]) .aod-b.is-good .aod-y, :root:not([data-theme="light"]) .aod-b.is-bad .aod-y { color: #10140F; }
+@keyframes aod-stamp { from { transform: scale(1.5) rotate(-4deg); } }
+/* the one just answered moves up to be the one to beat; the next comes in from the side */
+.aod-a.is-shifted { animation: aod-up .42s cubic-bezier(.2, .9, .3, 1) both; }
+.aod-pg:not(.is-rev) .aod-a.is-shifted ~ .aod-b { animation: aod-in .42s cubic-bezier(.2, .9, .3, 1) .08s both; }
+@keyframes aod-up { from { transform: translateY(70%); opacity: .4; } }
+@keyframes aod-in { from { transform: translateX(28px); opacity: 0; } }
+.aod-q { display: flex; align-items: center; gap: 10px; color: var(--ink-3); font: 700 10.5px/1 var(--font-s); letter-spacing: .2em; text-transform: uppercase; }
+.aod-q::before, .aod-q::after { content: ''; flex: 1; height: 1.5px; background: color-mix(in srgb, var(--brass) 55%, transparent); }
+.aod-pg.is-rev .aod-q span { color: var(--ink-2); }
+.aod-btns { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: auto; }
+.aod-btn { display: flex; flex-direction: column; align-items: center; gap: 3px; padding: 14px 8px 12px; border: 0; cursor: pointer;
+  color: var(--on-brass, #1A1204); background: var(--at-card-on, var(--brass)) center / 100% 100% no-repeat; background-color: var(--brass);
+  border-radius: 4px; transition: transform .12s, filter .15s; }
+.aod-btn b { font: 700 21px/1 var(--font-d); letter-spacing: -.01em; }
+.aod-btn small { font: 700 11px/1 var(--font-s); letter-spacing: .06em; opacity: .78; }
+.aod-btn:hover { filter: brightness(1.06); }
+.aod-btn:active { transform: translateY(1px) scale(.985); }
+.aod-btn:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+.aod-res { display: flex; flex-direction: column; align-items: center; gap: 7px; margin-top: auto; text-align: center; }
+.aod-verdict { margin: 0; font: 600 18px/1.1 var(--font-d); }
+.aod-verdict.good { color: var(--good-ink, var(--good)); }
+.aod-verdict.bad { color: var(--bad); }
+.aod-res .story { width: 100%; text-align: left; }
+.aod-res .story p { display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; }
+/* the results */
+.aod-end-n { font-size: 56px; letter-spacing: -.03em; line-height: 1; }
+.aod-end-n span { font-size: 16px; letter-spacing: 0; }
+.aod-miss { width: 100%; max-width: 380px; display: flex; flex-direction: column; gap: 5px; padding: 12px 14px; text-align: left;
+  background: var(--at-card-img) center / 100% 100% no-repeat; }
+.aod-miss-k { font: 700 9.5px/1 var(--font-s); letter-spacing: .2em; text-transform: uppercase; color: var(--bad); }
+.aod-miss-row { display: grid; grid-template-columns: 68px minmax(0, 1fr); gap: 8px; align-items: baseline; font-size: 12.5px; line-height: 1.3; color: var(--ink); }
+.aod-miss-row b { font: 600 14px/1 var(--font-d); color: var(--brass-ink); }
+.aod-miss-vs { padding-left: 76px; font: italic 600 11px/1 var(--font-d); color: var(--ink-3); }
+.mode-aod { --md: #8A4B22; --md-soft: rgba(138, 75, 34, .14); }
+:root[data-theme="dark"] .mode-aod, :root:not([data-theme="light"]) .mode-aod { --md: #E09A62; }
+@media (max-height: 700px) {
+  .aod-pg { gap: 6px; }
+  .aod-card { padding: 8px 12px 8px 9px; gap: 10px; }
+  .aod-pic { width: 62px; }
+  .aod-t { font-size: 14px; -webkit-line-clamp: 3; }
+  .aod-y { font-size: 14.5px; }
+  .aod-btn { padding: 11px 8px 10px; }
+  .aod-btn b { font-size: 19px; }
+  .aod-res .story p { -webkit-line-clamp: 3; font-size: 13px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .aod-a.is-shifted, .aod-pg .aod-b, .aod-b .aod-y { animation: none !important; }
+}
+
 /*@@/formats_css@@*/
   </style>
 </head>
@@ -3964,6 +4044,6 @@
   <div id="ct"></div>
 </div>
 
-<script src="app.js?v=1cbf4da58b"></script>
+<script src="app.js?v=a101128b32"></script>
 </body>
 </html>

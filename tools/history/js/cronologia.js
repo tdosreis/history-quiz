@@ -212,6 +212,9 @@ function cronMenuHtml() {
       <button id="cron-free" class="cron-opt" type="button">
         <span class="mode-disc mode-cron">${ICON.timeline('currentColor', 18)}</span>
         <span><b>Partida livre</b><small>${best > 0 ? 'Recorde: ' + best + ' na linha' : 'Uma linha nova a cada partida'}</small></span></button>
+      <button id="cron-aod" class="cron-opt" type="button">
+        <span class="mode-disc mode-aod">${ICON.hourglass('currentColor', 18)}</span>
+        <span><b>Antes ou depois?</b><small>${LS.get('aodBest', 0) > 0 ? 'Recorde: ' + LS.get('aodBest', 0) + ' seguidos' : 'Dois eventos: qual veio primeiro? Até errar um'}</small></span></button>
     </div>
   </div>`;
 }
@@ -219,6 +222,7 @@ function wireCronMenu() {
   const ready = tapArmed();
   document.getElementById('cron-dia')?.addEventListener('click', () => { if (ready()) { snd.select(); startCronDia(); } });
   document.getElementById('cron-free')?.addEventListener('click', () => { if (ready()) { snd.select(); startCron(); } });
+  document.getElementById('cron-aod')?.addEventListener('click', () => { if (ready()) { snd.select(); startAod(); } });
 }
 
 /* the line keeps the newest event in the middle of its window, so the gaps around it are in reach */

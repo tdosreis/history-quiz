@@ -80,7 +80,7 @@ const _metaQ = [];
 let _metaBusy = false;
 const META_HOLD = ['quiz', 'ask', 'lock', 'reveal', 'card'];
 function metaFlush() {
-  if (_metaBusy || !_metaQ.length || META_HOLD.includes(sc) || !document.body) return;
+  if (_metaBusy || !_metaQ.length || META_HOLD.includes(sc) || (sc === 'aod' && aod && aod.phase !== 'end') || !document.body) return;
   const met = _metaQ.shift(), one = met.length === 1, prizes = met.map(f => f.prize).filter(p => typeof p === 'string');
   _metaBusy = true;
   const el = document.createElement('div');

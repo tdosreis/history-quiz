@@ -320,6 +320,26 @@ JS = r"""
     if (again.cur.id + again.line[0].id !== first) F('the Linha do dia is not the same line all day');
     LS.set('cronDia', keepCD); Object.assign(stats, JSON.parse(keepCS)); LS.set('stats', stats); LS.set('cronBest', keepCB); cron = null; sc = 'home';
   } catch (e) { F('cronologia EXC ' + e.stack); }
+  /* ── Antes ou depois?: a run answered right to the end never deals an event twice nor two of one year,
+       always judges the right answer right, and ends only when the deck is spent ── */
+  try {
+    const keepAS = JSON.stringify(stats), keepAB = LS.get('aodBest', 0);
+    aodNew(); sc = 'aod';
+    const seen = new Set([aod.a.id, aod.b.id]); let n = 0;
+    while (aod.phase !== 'end' && n < 400) {
+      if (aod.b.y === aod.a.y) F('aod: two of one year ' + aod.a.id + ' ' + aod.b.id);
+      aodAnswer(aod.b.y < aod.a.y ? 'antes' : 'depois');
+      if (!aod.ok) F('aod: a right answer judged wrong ' + aod.a.id + ' ' + aod.b.id);
+      aodNext(); n++;
+      if (aod.phase === 'guess') { if (seen.has(aod.b.id)) F('aod: dealt twice ' + aod.b.id); seen.add(aod.b.id); }
+    }
+    note.aod = n;
+    if (n < ANO_EVENTS.length - 12) F('aod: a run ended at ' + n + ' with events left');
+    /* and a wrong one, and one too slow, end it */
+    aodNew(); aodAnswer(aod.b.y < aod.a.y ? 'depois' : 'antes'); if (aod.ok) F('aod: a wrong answer judged right'); aodNext(); if (aod.phase !== 'end') F('aod: a miss does not end the run');
+    aodNew(); aodAnswer(null); if (aod.ok) F('aod: no answer judged right');
+    Object.assign(stats, JSON.parse(keepAS)); LS.set('stats', stats); LS.set('aodBest', keepAB); aod = null; sc = 'home';
+  } catch (e) { F('aod EXC ' + e.stack); }
   /* ── Hoje na História: every day of the year has five dates near it, the same five all day, each with its picture ── */
   try {
     const pool = hojePool();
