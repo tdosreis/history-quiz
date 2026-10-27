@@ -20633,6 +20633,8 @@ const END_TITLES = [
 /* by the share of right answers; a Mata-mata, which has no total, by how many in a row */
 const endTitle = (pct, run) => END_TITLES.find(e => run != null ? run >= e.surv : pct >= e.min);
 let _endSealed = false;
+/* the other games' results: a good one gets its score inside the same laurel */
+const wreathed = (good, html) => good ? `<div class="end-wreath end-wreath-mode">${laurelSvg()}${html}</div>` : html;
 
 /* the laurel: two branches of leaves round the score, open at the top, tied at the bottom */
 let _laurel = '';
@@ -21521,7 +21523,7 @@ function anoEndHtml() {
   <div class="pg pg-center ano-end" style="padding:22px 18px;gap:9px;">
     <div class="eyebrow${h ? ' eb-keep' : ''}">${h ? 'Hoje na História · ' + hojeDate(h) : `Que ano? · ${n} eventos`}</div>
     <div class="display" style="font-size:28px;"><em>${msg}</em></div>
-    <div class="display prize-pop brass" style="font-size:50px;letter-spacing:-.03em;">${ano.pts}<span class="muted" style="font-size:18px;"> / ${n * 100}</span></div>
+    ${wreathed(f >= .6, `<div class="display prize-pop brass" style="font-size:50px;letter-spacing:-.03em;">${ano.pts}<span class="muted" style="font-size:18px;"> / ${n * 100}</span></div>`)}
     ${h ? `<p class="small muted">${!ano.hojeFirst && r ? `Vale o primeiro de hoje: <b>${r.pts} pts</b> · ` : ''}Amanhã, outras datas</p>`
       : chalBanner() || `<p class="small muted">${isBest ? 'Seu novo recorde!' : `Recorde: ${best} pts`}</p>`}
     <div class="ano-list">
@@ -22826,7 +22828,7 @@ function ondeEndHtml() {
   <div class="pg pg-center ano-end" style="padding:22px 18px;gap:9px;">
     <div class="eyebrow">Onde foi? · ${ONDE_N} eventos</div>
     <div class="display" style="font-size:28px;"><em>${msg}</em></div>
-    <div class="display prize-pop brass" style="font-size:50px;letter-spacing:-.03em;">${onde.pts}<span class="muted" style="font-size:18px;"> / ${ONDE_N * 100}</span></div>
+    ${wreathed(onde.pts >= ONDE_N * 60, `<div class="display prize-pop brass" style="font-size:50px;letter-spacing:-.03em;">${onde.pts}<span class="muted" style="font-size:18px;"> / ${ONDE_N * 100}</span></div>`)}
     ${chalBanner() || `<p class="small muted">${onde.isBest ? 'Seu novo recorde!' : `Recorde: ${best} pts`}</p>`}
     <div class="ano-list">
       ${onde.log.map(l => `<div class="ano-li"><span class="ano-li-p ${l.p >= 80 ? 'good' : l.p >= 50 ? 'brass' : 'bad'}">${l.p}</span>
@@ -23498,7 +23500,7 @@ function cronEndHtml() {
   <div class="pg pg-center ano-end cron-end" style="padding:22px 18px;gap:9px;">
     <div class="eyebrow${D ? ' eb-keep' : ''}">${D ? 'Linha do dia · nº ' + D.day : 'Cronologia · ' + cron.line.length + ' eventos'}</div>
     <div class="display" style="font-size:28px;"><em>${msg}</em></div>
-    <div class="display prize-pop brass" style="font-size:50px;letter-spacing:-.03em;">${cron.score}<span class="muted" style="font-size:18px;letter-spacing:0;"> na linha</span></div>
+    ${wreathed(cron.score >= 10, `<div class="display prize-pop brass" style="font-size:50px;letter-spacing:-.03em;">${cron.score}<span class="muted" style="font-size:18px;letter-spacing:0;"> na linha</span></div>`)}
     ${D ? `<p class="small muted">${cron.replay ? 'A sua linha de hoje' : cron.isBest ? 'Seu novo recorde!' : 'A mesma linha para todo mundo'} · <b>amanhã, outra</b></p>`
       : chalBanner() || `<p class="small muted">${cron.isBest ? 'Seu novo recorde!' : `Recorde: ${best}`}</p>`}
     <div class="cron-line cron-line-end scroll-y" role="list" tabindex="0" aria-label="A linha do tempo">${cron.line.map(e => cronRow(e, wrong.has(e) ? ' is-bad' : '', '', true)).join('')}</div>
@@ -23730,7 +23732,7 @@ function aodCard(e, which, rev) {
   return `<div class="aod-card aod-${which}${which === 'b' && rev ? (aod.ok ? ' is-good' : ' is-bad') : ''}${which === 'a' && aod.shift ? ' is-shifted' : ''}">
     <span class="aod-pic">${anoPic(e)}</span>
     <span class="aod-tx"><span class="aod-t">${_esc(e.t)}</span>
-      <b class="aod-y num${hid ? ' is-hid' : ''}" ${which === 'b' ? 'id="aod-yb"' : ''}>${hid ? '????' : aodYear(e)}</b></span>
+      <b class="aod-y num${hid ? ' is-hid' : ''}" ${which === 'b' ? 'id="aod-yb"' : ''}${hid ? ' aria-label="ano escondido"' : ''}>${hid ? '????' : aodYear(e)}</b></span>
   </div>`;
 }
 
@@ -23754,7 +23756,7 @@ function aodHtml() {
     ${aodCard(a, 'a', rev)}
     <div class="aod-q"><span>${rev ? (aod.ok ? 'Isso!' : aod.pick ? 'Não…' : 'O tempo acabou') : 'E este aconteceu…'}</span></div>
     ${aodCard(b, 'b', rev)}
-    ${rev ? `<div class="aod-res">
+    ${rev ? `<div class="aod-res" role="status">
         <p class="aod-verdict ${aod.ok ? 'good' : 'bad'}">${gap === 0 ? 'No mesmo ano' : `${gap} ${gap === 1 ? 'ano' : 'anos'} ${when}`}</p>
         ${aod.selo ? seloWonLine(aod.selo) : ''}
         ${b.x ? `<div class="story"><span class="story-k">${ICON.book('currentColor', 11)} Você sabia?</span><p>${_esc(b.x)}</p></div>` : ''}
@@ -23778,7 +23780,8 @@ function aodEndHtml() {
   <div class="pg pg-center aod-end" style="padding:22px 18px;gap:9px;">
     <div class="eyebrow">Antes ou depois?</div>
     <div class="display" style="font-size:28px;"><em>${msg}</em></div>
-    <div class="display prize-pop brass aod-end-n">${n}<span class="muted"> ${n === 1 ? 'acerto' : 'acertos'} seguidos</span></div>
+    ${wreathed(n >= 8, `<div class="display prize-pop brass aod-end-n">${n}</div>`)}
+    <div class="aod-end-k">${n === 1 ? 'acerto seguido' : 'acertos seguidos'}</div>
     <p class="small muted">${aod.isBest ? 'Seu novo recorde!' : `Recorde: ${aod.best0}`}</p>
     ${miss ? `<div class="aod-miss">
         <span class="aod-miss-k">${miss.dir ? 'Onde a corrente quebrou' : 'O tempo acabou em'}</span>

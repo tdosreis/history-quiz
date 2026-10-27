@@ -54,8 +54,8 @@
 .aod-res .story { width: 100%; text-align: left; }
 .aod-res .story p { display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; }
 /* the results */
-.aod-end-n { font-size: 56px; letter-spacing: -.03em; line-height: 1; }
-.aod-end-n span { font-size: 16px; letter-spacing: 0; }
+.aod-end-n { font-size: 60px; letter-spacing: -.03em; line-height: 1; }
+.aod-end-k { margin-top: -6px; font: 600 15px/1.2 var(--font-d); color: var(--ink-2); }
 .aod-miss { width: 100%; max-width: 380px; display: flex; flex-direction: column; gap: 5px; padding: 12px 14px; text-align: left;
   background: var(--at-card-img) center / 100% 100% no-repeat; }
 .aod-miss-k { font: 700 9.5px/1 var(--font-s); letter-spacing: .2em; text-transform: uppercase; color: var(--bad); }

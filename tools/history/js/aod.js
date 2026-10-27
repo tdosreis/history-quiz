@@ -98,7 +98,7 @@ function aodCard(e, which, rev) {
   return `<div class="aod-card aod-${which}${which === 'b' && rev ? (aod.ok ? ' is-good' : ' is-bad') : ''}${which === 'a' && aod.shift ? ' is-shifted' : ''}">
     <span class="aod-pic">${anoPic(e)}</span>
     <span class="aod-tx"><span class="aod-t">${_esc(e.t)}</span>
-      <b class="aod-y num${hid ? ' is-hid' : ''}" ${which === 'b' ? 'id="aod-yb"' : ''}>${hid ? '????' : aodYear(e)}</b></span>
+      <b class="aod-y num${hid ? ' is-hid' : ''}" ${which === 'b' ? 'id="aod-yb"' : ''}${hid ? ' aria-label="ano escondido"' : ''}>${hid ? '????' : aodYear(e)}</b></span>
   </div>`;
 }
 
@@ -122,7 +122,7 @@ function aodHtml() {
     ${aodCard(a, 'a', rev)}
     <div class="aod-q"><span>${rev ? (aod.ok ? 'Isso!' : aod.pick ? 'Não…' : 'O tempo acabou') : 'E este aconteceu…'}</span></div>
     ${aodCard(b, 'b', rev)}
-    ${rev ? `<div class="aod-res">
+    ${rev ? `<div class="aod-res" role="status">
         <p class="aod-verdict ${aod.ok ? 'good' : 'bad'}">${gap === 0 ? 'No mesmo ano' : `${gap} ${gap === 1 ? 'ano' : 'anos'} ${when}`}</p>
         ${aod.selo ? seloWonLine(aod.selo) : ''}
         ${b.x ? `<div class="story"><span class="story-k">${ICON.book('currentColor', 11)} Você sabia?</span><p>${_esc(b.x)}</p></div>` : ''}
@@ -146,7 +146,8 @@ function aodEndHtml() {
   <div class="pg pg-center aod-end" style="padding:22px 18px;gap:9px;">
     <div class="eyebrow">Antes ou depois?</div>
     <div class="display" style="font-size:28px;"><em>${msg}</em></div>
-    <div class="display prize-pop brass aod-end-n">${n}<span class="muted"> ${n === 1 ? 'acerto' : 'acertos'} seguidos</span></div>
+    ${wreathed(n >= 8, `<div class="display prize-pop brass aod-end-n">${n}</div>`)}
+    <div class="aod-end-k">${n === 1 ? 'acerto seguido' : 'acertos seguidos'}</div>
     <p class="small muted">${aod.isBest ? 'Seu novo recorde!' : `Recorde: ${aod.best0}`}</p>
     ${miss ? `<div class="aod-miss">
         <span class="aod-miss-k">${miss.dir ? 'Onde a corrente quebrou' : 'O tempo acabou em'}</span>

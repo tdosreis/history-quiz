@@ -3889,6 +3889,8 @@
 .end-wreath .end-laurel { position: absolute; inset: 0; width: 100%; height: 100%; color: var(--brass);
   animation: end-laurel .9s cubic-bezier(.2, .8, .3, 1) both; }
 .end-wreath #endpts { position: relative; margin-top: -6px; }
+.end-wreath-mode { width: 250px; height: 112px; margin: -4px 0 -6px; }
+.end-wreath-mode > .display { position: relative; margin-top: -8px; }
 @keyframes end-laurel { from { opacity: 0; transform: scale(.82) rotate(-4deg); } }
 /* the title, on a ribbon: its two tails folded behind */
 .end-title { position: relative; display: flex; flex-direction: column; align-items: center; gap: 2px; margin: 4px 0 2px;
@@ -3914,6 +3916,8 @@
   .end-title { margin: 2px 0 0; padding: 5px 24px 6px; }
 }
 @media (max-height: 700px) {
+  .end-wreath-mode { width: 204px; height: 90px; }
+  .end-wreath-mode > .display { font-size: 40px !important; }
   .end-cert { padding: 14px 14px 13px; gap: 5px; }
   .end-cert .display:not(.num) { font-size: 27px !important; }
   .end-wreath { width: 184px; height: 86px; margin: 0 0 -4px; }
@@ -4012,8 +4016,8 @@
 .aod-res .story { width: 100%; text-align: left; }
 .aod-res .story p { display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; }
 /* the results */
-.aod-end-n { font-size: 56px; letter-spacing: -.03em; line-height: 1; }
-.aod-end-n span { font-size: 16px; letter-spacing: 0; }
+.aod-end-n { font-size: 60px; letter-spacing: -.03em; line-height: 1; }
+.aod-end-k { margin-top: -6px; font: 600 15px/1.2 var(--font-d); color: var(--ink-2); }
 .aod-miss { width: 100%; max-width: 380px; display: flex; flex-direction: column; gap: 5px; padding: 12px 14px; text-align: left;
   background: var(--at-card-img) center / 100% 100% no-repeat; }
 .aod-miss-k { font: 700 9.5px/1 var(--font-s); letter-spacing: .2em; text-transform: uppercase; color: var(--bad); }
@@ -4044,6 +4048,6 @@
   <div id="ct"></div>
 </div>
 
-<script src="app.js?v=9f4b27ec87"></script>
+<script src="app.js?v=a8138f8e5d"></script>
 </body>
 </html>

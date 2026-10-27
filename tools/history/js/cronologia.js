@@ -118,7 +118,7 @@ function cronEndHtml() {
   <div class="pg pg-center ano-end cron-end" style="padding:22px 18px;gap:9px;">
     <div class="eyebrow${D ? ' eb-keep' : ''}">${D ? 'Linha do dia · nº ' + D.day : 'Cronologia · ' + cron.line.length + ' eventos'}</div>
     <div class="display" style="font-size:28px;"><em>${msg}</em></div>
-    <div class="display prize-pop brass" style="font-size:50px;letter-spacing:-.03em;">${cron.score}<span class="muted" style="font-size:18px;letter-spacing:0;"> na linha</span></div>
+    ${wreathed(cron.score >= 10, `<div class="display prize-pop brass" style="font-size:50px;letter-spacing:-.03em;">${cron.score}<span class="muted" style="font-size:18px;letter-spacing:0;"> na linha</span></div>`)}
     ${D ? `<p class="small muted">${cron.replay ? 'A sua linha de hoje' : cron.isBest ? 'Seu novo recorde!' : 'A mesma linha para todo mundo'} · <b>amanhã, outra</b></p>`
       : chalBanner() || `<p class="small muted">${cron.isBest ? 'Seu novo recorde!' : `Recorde: ${best}`}</p>`}
     <div class="cron-line cron-line-end scroll-y" role="list" tabindex="0" aria-label="A linha do tempo">${cron.line.map(e => cronRow(e, wrong.has(e) ? ' is-bad' : '', '', true)).join('')}</div>

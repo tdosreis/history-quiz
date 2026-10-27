@@ -16,6 +16,8 @@ const END_TITLES = [
 /* by the share of right answers; a Mata-mata, which has no total, by how many in a row */
 const endTitle = (pct, run) => END_TITLES.find(e => run != null ? run >= e.surv : pct >= e.min);
 let _endSealed = false;
+/* the other games' results: a good one gets its score inside the same laurel */
+const wreathed = (good, html) => good ? `<div class="end-wreath end-wreath-mode">${laurelSvg()}${html}</div>` : html;
 
 /* the laurel: two branches of leaves round the score, open at the top, tied at the bottom */
 let _laurel = '';

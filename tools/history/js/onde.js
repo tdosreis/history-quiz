@@ -144,7 +144,7 @@ function ondeEndHtml() {
   <div class="pg pg-center ano-end" style="padding:22px 18px;gap:9px;">
     <div class="eyebrow">Onde foi? · ${ONDE_N} eventos</div>
     <div class="display" style="font-size:28px;"><em>${msg}</em></div>
-    <div class="display prize-pop brass" style="font-size:50px;letter-spacing:-.03em;">${onde.pts}<span class="muted" style="font-size:18px;"> / ${ONDE_N * 100}</span></div>
+    ${wreathed(onde.pts >= ONDE_N * 60, `<div class="display prize-pop brass" style="font-size:50px;letter-spacing:-.03em;">${onde.pts}<span class="muted" style="font-size:18px;"> / ${ONDE_N * 100}</span></div>`)}
     ${chalBanner() || `<p class="small muted">${onde.isBest ? 'Seu novo recorde!' : `Recorde: ${best} pts`}</p>`}
     <div class="ano-list">
       ${onde.log.map(l => `<div class="ano-li"><span class="ano-li-p ${l.p >= 80 ? 'good' : l.p >= 50 ? 'brass' : 'bad'}">${l.p}</span>

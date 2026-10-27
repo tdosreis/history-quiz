@@ -205,7 +205,7 @@ function anoEndHtml() {
   <div class="pg pg-center ano-end" style="padding:22px 18px;gap:9px;">
     <div class="eyebrow${h ? ' eb-keep' : ''}">${h ? 'Hoje na História · ' + hojeDate(h) : `Que ano? · ${n} eventos`}</div>
     <div class="display" style="font-size:28px;"><em>${msg}</em></div>
-    <div class="display prize-pop brass" style="font-size:50px;letter-spacing:-.03em;">${ano.pts}<span class="muted" style="font-size:18px;"> / ${n * 100}</span></div>
+    ${wreathed(f >= .6, `<div class="display prize-pop brass" style="font-size:50px;letter-spacing:-.03em;">${ano.pts}<span class="muted" style="font-size:18px;"> / ${n * 100}</span></div>`)}
     ${h ? `<p class="small muted">${!ano.hojeFirst && r ? `Vale o primeiro de hoje: <b>${r.pts} pts</b> · ` : ''}Amanhã, outras datas</p>`
       : chalBanner() || `<p class="small muted">${isBest ? 'Seu novo recorde!' : `Recorde: ${best} pts`}</p>`}
     <div class="ano-list">
