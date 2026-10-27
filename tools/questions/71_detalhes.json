@@ -817,6 +817,667 @@
     ]
    ],
    "x": "Michelangelo passou quatro anos, de 1508 a 1512, pintando o teto da Capela Sistina."
+  },
+  {
+   "t": "De quem é este bigode?",
+   "type": "txt",
+   "choices": [
+    "Friedrich Nietzsche",
+    "Karl Marx",
+    "Sigmund Freud",
+    "Otto von Bismarck",
+    "Charles Darwin",
+    "Liev Tolstói"
+   ],
+   "detail": {
+    "who": "nietzsche",
+    "x": 50,
+    "y": 55,
+    "z": 3
+   },
+   "a": [
+    "Friedrich Nietzsche"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Friedrich Nietzsche",
+    [
+     "Basileia"
+    ]
+   ],
+   "x": "Nietzsche virou professor de filologia na Universidade da Basileia com apenas 24 anos."
+  },
+  {
+   "t": "De quem é este olhar?",
+   "type": "txt",
+   "choices": [
+    "Nelson Mandela",
+    "Martin Luther King Jr.",
+    "Hailé Selassié",
+    "Mahatma Gandhi",
+    "Toussaint Louverture",
+    "Ho Chi Minh"
+   ],
+   "detail": {
+    "who": "mandela",
+    "x": 50,
+    "y": 55,
+    "z": 3
+   },
+   "a": [
+    "Nelson Mandela"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Nelson Mandela",
+    [
+     "1994"
+    ]
+   ],
+   "x": "Mandela passou 27 anos preso e, em 1994, foi eleito o primeiro presidente negro da África do Sul."
+  },
+  {
+   "t": "De quem é este sorriso?",
+   "type": "txt",
+   "choices": [
+    "John F. Kennedy",
+    "Franklin D. Roosevelt",
+    "Woodrow Wilson",
+    "Juscelino Kubitschek",
+    "Charles de Gaulle",
+    "Winston Churchill"
+   ],
+   "detail": {
+    "who": "kennedy",
+    "x": 50,
+    "y": 55,
+    "z": 3
+   },
+   "a": [
+    "John F. Kennedy"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "John F. Kennedy",
+    [
+     "1917"
+    ]
+   ],
+   "x": "Kennedy foi o primeiro presidente americano nascido no século XX e, aos 43 anos, o mais jovem eleito."
+  },
+  {
+   "t": "De quem é esta barba?",
+   "type": "txt",
+   "choices": [
+    "Liev Tolstói",
+    "Fiódor Dostoiévski",
+    "Karl Marx",
+    "Charles Darwin",
+    "Dom Pedro II",
+    "Victor Hugo"
+   ],
+   "detail": {
+    "who": "tolstoi",
+    "x": 50,
+    "y": 25,
+    "z": 3
+   },
+   "a": [
+    "Liev Tolstói"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Guerra e Paz",
+    [
+     "Tolstói"
+    ]
+   ],
+   "x": "Guerra e Paz, de Tolstói, tem centenas de personagens e passa pela invasão da Rússia por Napoleão, em 1812."
+  },
+  {
+   "t": "De quem é esta barba?",
+   "type": "txt",
+   "choices": [
+    "Fidel Castro",
+    "Che Guevara",
+    "Karl Marx",
+    "Ho Chi Minh",
+    "Vladimir Lênin",
+    "Simón Bolívar"
+   ],
+   "detail": {
+    "who": "fidel",
+    "x": 50,
+    "y": 55,
+    "z": 3
+   },
+   "a": [
+    "Fidel Castro"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Fidel Castro",
+    [
+     "1959"
+    ]
+   ],
+   "x": "Fidel Castro governou Cuba por quase cinquenta anos, de 1959 a 2008."
+  },
+  {
+   "t": "De quem é este olhar?",
+   "type": "txt",
+   "choices": [
+    "Marie Curie",
+    "Florence Nightingale",
+    "Ada Lovelace",
+    "Rainha Vitória",
+    "Emmeline Pankhurst",
+    "Simone de Beauvoir"
+   ],
+   "detail": {
+    "who": "marie_curie",
+    "x": 50,
+    "y": 55,
+    "z": 3
+   },
+   "a": [
+    "Marie Curie"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Marie Curie",
+    [
+     "radioativ"
+    ]
+   ],
+   "x": "Os cadernos de laboratório de Marie Curie ainda são radioativos e ficam guardados em caixas forradas de chumbo."
+  },
+  {
+   "t": "De quem é este olhar?",
+   "type": "txt",
+   "choices": [
+    "Anne Frank",
+    "Frida Kahlo",
+    "Clarice Lispector",
+    "Simone de Beauvoir",
+    "Rosa Parks",
+    "Madre Teresa de Calcutá"
+   ],
+   "detail": {
+    "who": "anne_frank",
+    "x": 50,
+    "y": 40,
+    "z": 3
+   },
+   "a": [
+    "Anne Frank"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Anne Frank",
+    [
+     "diário"
+    ]
+   ],
+   "x": "Anne Frank ganhou o diário no aniversário de 13 anos, em 1942, pouco antes de a família se esconder em Amsterdã."
+  },
+  {
+   "t": "De quem é este olhar?",
+   "type": "txt",
+   "choices": [
+    "George Washington",
+    "Thomas Jefferson",
+    "Benjamin Franklin",
+    "Abraham Lincoln",
+    "James Cook",
+    "Duque de Wellington"
+   ],
+   "detail": {
+    "who": "washington",
+    "x": 50,
+    "y": 40,
+    "z": 3
+   },
+   "a": [
+    "George Washington"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "George Washington",
+    [
+     "1797"
+    ]
+   ],
+   "x": "Washington foi o primeiro presidente dos Estados Unidos e deixou o cargo por vontade própria, depois de dois mandatos, em 1797."
+  },
+  {
+   "t": "De quem é este rosto?",
+   "type": "txt",
+   "choices": [
+    "Charles de Gaulle",
+    "Winston Churchill",
+    "Franklin D. Roosevelt",
+    "Getúlio Vargas",
+    "Mustafa Kemal Atatürk",
+    "Juscelino Kubitschek"
+   ],
+   "detail": {
+    "who": "de_gaulle",
+    "x": 50,
+    "y": 25,
+    "z": 3
+   },
+   "a": [
+    "Charles de Gaulle"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Apelo de 18 de Junho",
+    [
+     "BBC"
+    ]
+   ],
+   "x": "Em 18 de junho de 1940, De Gaulle falou pela rádio BBC, de Londres, chamando os franceses a resistir à ocupação alemã."
+  },
+  {
+   "t": "De quem é este olhar?",
+   "type": "txt",
+   "choices": [
+    "Galileu Galilei",
+    "Johannes Kepler",
+    "Nicolau Copérnico",
+    "Leonardo da Vinci",
+    "Isaac Newton",
+    "Michelangelo"
+   ],
+   "detail": {
+    "who": "galileu",
+    "x": 50,
+    "y": 55,
+    "z": 3
+   },
+   "a": [
+    "Galileu Galilei"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Luas galileanas",
+    [
+     "1610"
+    ]
+   ],
+   "x": "Galileu descobriu as quatro maiores luas de Júpiter em 1610; hoje elas são chamadas de luas galileanas."
+  },
+  {
+   "t": "De quem são estes óculos?",
+   "type": "txt",
+   "choices": [
+    "Machado de Assis",
+    "Carlos Drummond de Andrade",
+    "Oswaldo Cruz",
+    "Luís Gama",
+    "Dom Pedro II",
+    "José do Patrocínio"
+   ],
+   "detail": {
+    "who": "machado",
+    "x": 50,
+    "y": 25,
+    "z": 3
+   },
+   "a": [
+    "Machado de Assis"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Academia Brasileira de Letras",
+    [
+     "1897"
+    ]
+   ],
+   "x": "Machado de Assis fundou a Academia Brasileira de Letras, em 1897, e foi seu primeiro presidente."
+  },
+  {
+   "t": "De quem é este olhar?",
+   "type": "txt",
+   "choices": [
+    "Vladimir Lênin",
+    "Karl Marx",
+    "Ho Chi Minh",
+    "Mikhail Gorbachev",
+    "Fidel Castro",
+    "Liev Tolstói"
+   ],
+   "detail": {
+    "who": "lenin",
+    "x": 50,
+    "y": 40,
+    "z": 3
+   },
+   "a": [
+    "Vladimir Lênin"
+   ],
+   "d": 3,
+   "src": [
+    "pt",
+    "Mausoléu de Lenin",
+    [
+     "Praça Vermelha"
+    ]
+   ],
+   "x": "Vladimir Ilitch Ulianov adotou o pseudônimo Lênin; seu corpo embalsamado fica exposto num mausoléu na Praça Vermelha, em Moscou."
+  },
+  {
+   "t": "De quem é este olhar?",
+   "type": "txt",
+   "choices": [
+    "Martin Luther King Jr.",
+    "Nelson Mandela",
+    "John F. Kennedy",
+    "Hailé Selassié",
+    "Abraham Lincoln",
+    "Mahatma Gandhi"
+   ],
+   "detail": {
+    "who": "mlk",
+    "x": 50,
+    "y": 40,
+    "z": 3
+   },
+   "a": [
+    "Martin Luther King Jr."
+   ],
+   "d": 3,
+   "src": [
+    "pt",
+    "Martin Luther King Jr.",
+    [
+     "Nobel"
+    ]
+   ],
+   "x": "Martin Luther King Jr. recebeu o Nobel da Paz em 1964, aos 35 anos."
+  },
+  {
+   "t": "De quem é esta barba?",
+   "type": "txt",
+   "choices": [
+    "Charles Dickens",
+    "Victor Hugo",
+    "Mark Twain",
+    "Liev Tolstói",
+    "Charles Darwin",
+    "Fiódor Dostoiévski"
+   ],
+   "detail": {
+    "who": "dickens",
+    "x": 50,
+    "y": 40,
+    "z": 3
+   },
+   "a": [
+    "Charles Dickens"
+   ],
+   "d": 3,
+   "src": [
+    "pt",
+    "Charles Dickens",
+    [
+     "Oliver Twist"
+    ]
+   ],
+   "x": "Muitos romances de Dickens, como Oliver Twist, saíram primeiro em capítulos, em revistas, e os leitores esperavam ansiosos pelo próximo."
+  },
+  {
+   "t": "De quem é este rosto?",
+   "type": "txt",
+   "choices": [
+    "Louis Pasteur",
+    "Charles Darwin",
+    "Gregor Mendel",
+    "Alexander Fleming",
+    "Karl Marx",
+    "Sigmund Freud"
+   ],
+   "detail": {
+    "who": "pasteur",
+    "x": 50,
+    "y": 40,
+    "z": 3
+   },
+   "a": [
+    "Louis Pasteur"
+   ],
+   "d": 3,
+   "src": [
+    "pt",
+    "Louis Pasteur",
+    [
+     "raiva"
+    ]
+   ],
+   "x": "Em 1885, Pasteur aplicou pela primeira vez a vacina contra a raiva, num menino mordido por um cão, Joseph Meister."
+  },
+  {
+   "t": "De quem é este bigode?",
+   "type": "txt",
+   "choices": [
+    "Ernest Hemingway",
+    "George Orwell",
+    "Mark Twain",
+    "Franz Kafka",
+    "Charlie Chaplin",
+    "Gabriel García Márquez"
+   ],
+   "detail": {
+    "who": "hemingway",
+    "x": 50,
+    "y": 25,
+    "z": 3
+   },
+   "a": [
+    "Ernest Hemingway"
+   ],
+   "d": 3,
+   "src": [
+    "pt",
+    "Ernest Hemingway",
+    [
+     "1954"
+    ]
+   ],
+   "x": "Hemingway dirigiu ambulâncias na Primeira Guerra e ganhou o Nobel de Literatura em 1954."
+  },
+  {
+   "t": "De quem é este olhar?",
+   "type": "txt",
+   "choices": [
+    "Rainha Vitória",
+    "Elizabeth I",
+    "Maria Antonieta",
+    "Catarina, a Grande",
+    "Maria Teresa",
+    "Dona Leopoldina"
+   ],
+   "detail": {
+    "who": "victoria",
+    "x": 50,
+    "y": 40,
+    "z": 3
+   },
+   "a": [
+    "Rainha Vitória"
+   ],
+   "d": 3,
+   "src": [
+    "pt",
+    "Vitória do Reino Unido",
+    [
+     "1837",
+     "1901"
+    ]
+   ],
+   "x": "A Rainha Vitória reinou 63 anos, de 1837 a 1901, e deu nome a toda uma época: a era vitoriana."
+  },
+  {
+   "t": "De quem é este rosto?",
+   "type": "txt",
+   "choices": [
+    "Catarina, a Grande",
+    "Maria Antonieta",
+    "Maria Teresa",
+    "Elizabeth I",
+    "Rainha Vitória",
+    "Isabel I de Castela"
+   ],
+   "detail": {
+    "who": "catarina_grande",
+    "x": 50,
+    "y": 40,
+    "z": 3
+   },
+   "a": [
+    "Catarina, a Grande"
+   ],
+   "d": 3,
+   "src": [
+    "pt",
+    "Catarina II da Rússia",
+    [
+     "Pedro III"
+    ]
+   ],
+   "x": "Catarina, a Grande, nasceu princesa alemã e subiu ao trono da Rússia em 1762, num golpe contra o próprio marido, Pedro III."
+  },
+  {
+   "t": "De quem é este olhar?",
+   "type": "txt",
+   "choices": [
+    "Yuri Gagarin",
+    "Neil Armstrong",
+    "Mikhail Gorbachev",
+    "Alan Turing",
+    "John F. Kennedy",
+    "Charles de Gaulle"
+   ],
+   "detail": {
+    "who": "gagarin",
+    "x": 50,
+    "y": 40,
+    "z": 3
+   },
+   "a": [
+    "Yuri Gagarin"
+   ],
+   "d": 3,
+   "src": [
+    "pt",
+    "Yuri Gagarin",
+    [
+     "1961"
+    ]
+   ],
+   "x": "Yuri Gagarin tinha 27 anos quando se tornou o primeiro ser humano a ir ao espaço, em 1961."
+  },
+  {
+   "t": "De quem é este olhar?",
+   "type": "txt",
+   "choices": [
+    "Getúlio Vargas",
+    "Juscelino Kubitschek",
+    "Marechal Deodoro",
+    "Barão do Rio Branco",
+    "Santos Dumont",
+    "Oswaldo Cruz"
+   ],
+   "detail": {
+    "who": "getulio",
+    "x": 50,
+    "y": 25,
+    "z": 3
+   },
+   "a": [
+    "Getúlio Vargas"
+   ],
+   "d": 3,
+   "src": [
+    "pt",
+    "Consolidação das Leis do Trabalho",
+    [
+     "1943"
+    ]
+   ],
+   "x": "Getúlio Vargas criou a CLT, a Consolidação das Leis do Trabalho, em 1943."
+  },
+  {
+   "t": "De quem é este rosto?",
+   "type": "txt",
+   "choices": [
+    "Oscar Niemeyer",
+    "Juscelino Kubitschek",
+    "Carlos Drummond de Andrade",
+    "Candido Portinari",
+    "Heitor Villa-Lobos",
+    "Paulo Freire"
+   ],
+   "detail": {
+    "who": "niemeyer",
+    "x": 50,
+    "y": 25,
+    "z": 3
+   },
+   "a": [
+    "Oscar Niemeyer"
+   ],
+   "d": 3,
+   "src": [
+    "pt",
+    "Oscar Niemeyer",
+    [
+     "105"
+    ]
+   ],
+   "x": "Niemeyer viveu até quase 105 anos e continuou projetando até o fim da vida."
+  },
+  {
+   "t": "De quem é este rosto?",
+   "type": "txt",
+   "choices": [
+    "Simón Bolívar",
+    "José de San Martín",
+    "Toussaint Louverture",
+    "Napoleão Bonaparte",
+    "Duque de Caxias",
+    "Marechal Deodoro"
+   ],
+   "detail": {
+    "who": "bolivar",
+    "x": 50,
+    "y": 25,
+    "z": 3
+   },
+   "a": [
+    "Simón Bolívar"
+   ],
+   "d": 4,
+   "src": [
+    "pt",
+    "Simón Bolívar",
+    [
+     "Bolívia"
+    ]
+   ],
+   "x": "A Bolívia ganhou o nome em homenagem a Simón Bolívar, o Libertador."
   }
  ]
 }

@@ -204,6 +204,52 @@ D('dom_pedro_ii', 'Dom Pedro II', ['Karl Marx', 'Charles Darwin', 'Abraham Linco
   50, 55, 4, ('pt', 'Pedro II do Brasil', ['Maioridade']), 'Dom Pedro II assumiu o trono aos 14 anos, em 1840, com o Golpe da Maioridade.', t=BEARD)
 D('michelangelo', 'Michelangelo', ['Leonardo da Vinci', 'Rafael Sanzio', 'Sandro Botticelli', 'Albrecht Dürer', 'Galileu Galilei'],
   50, 55, 4, ('pt', 'Teto da Capela Sistina', ['1508', '1512']), 'Michelangelo passou quatro anos, de 1508 a 1512, pintando o teto da Capela Sistina.', t=BEARD)
+
+# a second sitting: more faces, more of them from the last two centuries
+D('nietzsche', 'Friedrich Nietzsche', ['Karl Marx', 'Sigmund Freud', 'Otto von Bismarck', 'Charles Darwin', 'Liev Tolstói'],
+  50, 55, 2, ('pt', 'Friedrich Nietzsche', ['Basileia']), 'Nietzsche virou professor de filologia na Universidade da Basileia com apenas 24 anos.', t='De quem é este bigode?')
+D('mandela', 'Nelson Mandela', ['Martin Luther King Jr.', 'Hailé Selassié', 'Mahatma Gandhi', 'Toussaint Louverture', 'Ho Chi Minh'],
+  50, 55, 2, ('pt', 'Nelson Mandela', ['1994']), 'Mandela passou 27 anos preso e, em 1994, foi eleito o primeiro presidente negro da África do Sul.', t=EYES)
+D('kennedy', 'John F. Kennedy', ['Franklin D. Roosevelt', 'Woodrow Wilson', 'Juscelino Kubitschek', 'Charles de Gaulle', 'Winston Churchill'],
+  50, 55, 2, ('pt', 'John F. Kennedy', ['1917']), 'Kennedy foi o primeiro presidente americano nascido no século XX e, aos 43 anos, o mais jovem eleito.', t='De quem é este sorriso?')
+D('tolstoi', 'Liev Tolstói', ['Fiódor Dostoiévski', 'Karl Marx', 'Charles Darwin', 'Dom Pedro II', 'Victor Hugo'],
+  50, 25, 2, ('pt', 'Guerra e Paz', ['Tolstói']), 'Guerra e Paz, de Tolstói, tem centenas de personagens e passa pela invasão da Rússia por Napoleão, em 1812.', t=BEARD)
+D('fidel', 'Fidel Castro', ['Che Guevara', 'Karl Marx', 'Ho Chi Minh', 'Vladimir Lênin', 'Simón Bolívar'],
+  50, 55, 2, ('pt', 'Fidel Castro', ['1959']), 'Fidel Castro governou Cuba por quase cinquenta anos, de 1959 a 2008.', t=BEARD)
+D('marie_curie', 'Marie Curie', ['Florence Nightingale', 'Ada Lovelace', 'Rainha Vitória', 'Emmeline Pankhurst', 'Simone de Beauvoir'],
+  50, 55, 2, ('pt', 'Marie Curie', ['radioativ']), 'Os cadernos de laboratório de Marie Curie ainda são radioativos e ficam guardados em caixas forradas de chumbo.', t=EYES)
+D('anne_frank', 'Anne Frank', ['Frida Kahlo', 'Clarice Lispector', 'Simone de Beauvoir', 'Rosa Parks', 'Madre Teresa de Calcutá'],
+  50, 40, 2, ('pt', 'Anne Frank', ['diário']), 'Anne Frank ganhou o diário no aniversário de 13 anos, em 1942, pouco antes de a família se esconder em Amsterdã.', t=EYES)
+D('washington', 'George Washington', ['Thomas Jefferson', 'Benjamin Franklin', 'Abraham Lincoln', 'James Cook', 'Duque de Wellington'],
+  50, 40, 2, ('pt', 'George Washington', ['1797']), 'Washington foi o primeiro presidente dos Estados Unidos e deixou o cargo por vontade própria, depois de dois mandatos, em 1797.', t=EYES)
+D('de_gaulle', 'Charles de Gaulle', ['Winston Churchill', 'Franklin D. Roosevelt', 'Getúlio Vargas', 'Mustafa Kemal Atatürk', 'Juscelino Kubitschek'],
+  50, 25, 2, ('pt', 'Apelo de 18 de Junho', ['BBC']), 'Em 18 de junho de 1940, De Gaulle falou pela rádio BBC, de Londres, chamando os franceses a resistir à ocupação alemã.')
+D('galileu', 'Galileu Galilei', ['Johannes Kepler', 'Nicolau Copérnico', 'Leonardo da Vinci', 'Isaac Newton', 'Michelangelo'],
+  50, 55, 2, ('pt', 'Luas galileanas', ['1610']), 'Galileu descobriu as quatro maiores luas de Júpiter em 1610; hoje elas são chamadas de luas galileanas.', t=EYES)
+D('machado', 'Machado de Assis', ['Carlos Drummond de Andrade', 'Oswaldo Cruz', 'Luís Gama', 'Dom Pedro II', 'José do Patrocínio'],
+  50, 25, 2, ('pt', 'Academia Brasileira de Letras', ['1897']), 'Machado de Assis fundou a Academia Brasileira de Letras, em 1897, e foi seu primeiro presidente.', t='De quem são estes óculos?')
+D('lenin', 'Vladimir Lênin', ['Karl Marx', 'Ho Chi Minh', 'Mikhail Gorbachev', 'Fidel Castro', 'Liev Tolstói'],
+  50, 40, 3, ('pt', 'Mausoléu de Lenin', ['Praça Vermelha']), 'Vladimir Ilitch Ulianov adotou o pseudônimo Lênin; seu corpo embalsamado fica exposto num mausoléu na Praça Vermelha, em Moscou.', t=EYES)
+D('mlk', 'Martin Luther King Jr.', ['Nelson Mandela', 'John F. Kennedy', 'Hailé Selassié', 'Abraham Lincoln', 'Mahatma Gandhi'],
+  50, 40, 3, ('pt', 'Martin Luther King Jr.', ['Nobel']), 'Martin Luther King Jr. recebeu o Nobel da Paz em 1964, aos 35 anos.', t=EYES)
+D('dickens', 'Charles Dickens', ['Victor Hugo', 'Mark Twain', 'Liev Tolstói', 'Charles Darwin', 'Fiódor Dostoiévski'],
+  50, 40, 3, ('pt', 'Charles Dickens', ['Oliver Twist']), 'Muitos romances de Dickens, como Oliver Twist, saíram primeiro em capítulos, em revistas, e os leitores esperavam ansiosos pelo próximo.', t=BEARD)
+D('pasteur', 'Louis Pasteur', ['Charles Darwin', 'Gregor Mendel', 'Alexander Fleming', 'Karl Marx', 'Sigmund Freud'],
+  50, 40, 3, ('pt', 'Louis Pasteur', ['raiva']), 'Em 1885, Pasteur aplicou pela primeira vez a vacina contra a raiva, num menino mordido por um cão, Joseph Meister.')
+D('hemingway', 'Ernest Hemingway', ['George Orwell', 'Mark Twain', 'Franz Kafka', 'Charlie Chaplin', 'Gabriel García Márquez'],
+  50, 25, 3, ('pt', 'Ernest Hemingway', ['1954']), 'Hemingway dirigiu ambulâncias na Primeira Guerra e ganhou o Nobel de Literatura em 1954.', t='De quem é este bigode?')
+D('victoria', 'Rainha Vitória', ['Elizabeth I', 'Maria Antonieta', 'Catarina, a Grande', 'Maria Teresa', 'Dona Leopoldina'],
+  50, 40, 3, ('pt', 'Vitória do Reino Unido', ['1837', '1901']), 'A Rainha Vitória reinou 63 anos, de 1837 a 1901, e deu nome a toda uma época: a era vitoriana.', t=EYES)
+D('catarina_grande', 'Catarina, a Grande', ['Maria Antonieta', 'Maria Teresa', 'Elizabeth I', 'Rainha Vitória', 'Isabel I de Castela'],
+  50, 40, 3, ('pt', 'Catarina II da Rússia', ['Pedro III']), 'Catarina, a Grande, nasceu princesa alemã e subiu ao trono da Rússia em 1762, num golpe contra o próprio marido, Pedro III.')
+D('gagarin', 'Yuri Gagarin', ['Neil Armstrong', 'Mikhail Gorbachev', 'Alan Turing', 'John F. Kennedy', 'Charles de Gaulle'],
+  50, 40, 3, ('pt', 'Yuri Gagarin', ['1961']), 'Yuri Gagarin tinha 27 anos quando se tornou o primeiro ser humano a ir ao espaço, em 1961.', t=EYES)
+D('getulio', 'Getúlio Vargas', ['Juscelino Kubitschek', 'Marechal Deodoro', 'Barão do Rio Branco', 'Santos Dumont', 'Oswaldo Cruz'],
+  50, 25, 3, ('pt', 'Consolidação das Leis do Trabalho', ['1943']), 'Getúlio Vargas criou a CLT, a Consolidação das Leis do Trabalho, em 1943.', t=EYES)
+D('niemeyer', 'Oscar Niemeyer', ['Juscelino Kubitschek', 'Carlos Drummond de Andrade', 'Candido Portinari', 'Heitor Villa-Lobos', 'Paulo Freire'],
+  50, 25, 3, ('pt', 'Oscar Niemeyer', ['105']), 'Niemeyer viveu até quase 105 anos e continuou projetando até o fim da vida.')
+D('bolivar', 'Simón Bolívar', ['José de San Martín', 'Toussaint Louverture', 'Napoleão Bonaparte', 'Duque de Caxias', 'Marechal Deodoro'],
+  50, 25, 4, ('pt', 'Simón Bolívar', ['Bolívia']), 'A Bolívia ganhou o nome em homenagem a Simón Bolívar, o Libertador.')
 c.write()
 
 # ───────────────────────── O intruso ─────────────────────────
