@@ -460,6 +460,13 @@ function optArtFor(q) {
     _optMemo.set(q, out);
     return out;
   }
+  /* Complete a frase: the slips are words for the gap, each on a scrap of manuscript */
+  if (q.quote && /_{3,}/.test(q.quote.q || '')) {
+    const out = { _kind: 'glyph' };
+    q.choices.forEach(c => { out[c] = { k: 'glyph', n: c, topic: 'script', era: '' }; });
+    _optMemo.set(q, out);
+    return out;
+  }
   /* Detalhe: the face under the glass is the question; a photo on a tile would be matched by eye */
   if (q.detail) {
     const era = optEra(q), out = { _kind: 'glyph' };
