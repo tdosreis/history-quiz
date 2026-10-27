@@ -30,8 +30,9 @@ STATES = {
                         " for (var k=0;k<9;k++){ var e=cron.cur, r=cron.line.findIndex(function(x){return x.y>e.y}); cronPlace(r<0?cron.line.length:r); cronNext(); }"),
  "shot-06-hoje": ("ano=buildHoje(new Date(2026,9,23)); runSelos=[]; sc='ano'; var t=ano.qs.findIndex(function(q){return q.k===0});"
                   " for (var j=0;j<t;j++){ ano.guess=ano.qs[j].e.y+(j%2?2:-5); anoCommit(); anoNext(); } go();"),
- "shot-07-pessoas": Q("renascimento", "q.type==='player' && q.t.indexOf('Mona Lisa')>0"),
- "shot-08-batalha": Q("batalhas", "q.battle && q.battle.lbl.indexOf('Waterloo')===0"),
+ "shot-07-detalhe": Q("detalhes", "q.detail && q.detail.who==='einstein'"),
+ "shot-08-antes-depois": ("aodNew(31337); runSelos=[]; sc='aod';"
+                          " for (var k=0;k<6;k++){ aodAnswer(aod.b.y<aod.a.y?'antes':'depois'); aodNext(); } aod.best0=14; go();"),
 }
 
 def shot(name, js, w=500, h=900, scale=2, light=True):
