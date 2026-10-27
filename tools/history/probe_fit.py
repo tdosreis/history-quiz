@@ -297,6 +297,20 @@ DRIVE = r"""
   startGazeta(); fit('gazeta/escolha');
   for (var m19=1; m19<=12; m19++) [1, 9, 14, 20, 28].forEach(function(d19){ gz.m=m19; gz.d=d19; gz.phase='paper'; go(); fit('gazeta/'+d19+'-'+m19); });
   LS.set('gazetaDia', keepGz); gz=null;
+  /* Duelo a dois: the setup, the passes (with the last one's stakes), the board under the score bar, a reveal, the end */
+  var keepDuo = LS.get('duo', null);
+  [['Ana', 'Bruno'], ['Maximiliano', 'Cleópatra VII']].forEach(function(nm, j20){
+    duo = duoNew(); duo.names = nm; duo.n = 5; sc = 'duo'; go(); fit('duo/setup'+j20);
+    startDuo(); fit('duo/pass1-'+j20);
+    for (var k20=0; k20<10; k20++){
+      duoGo(); if (k20 < 2 || k20 === 9) fit('duo/quiz'+k20+'-'+j20);
+      var q20 = cat.qs[qi]; sel = new Set(k20 % 3 ? q20.a : []); tLeft = 8; doReveal(); if (k20 < 2) fit('duo/rev'+k20+'-'+j20+(document.querySelector('.story')?'+story':''));
+      fireAdvance(); if (k20 >= 7 && k20 < 9) fit('duo/pass'+(k20+2)+'-'+j20);
+    }
+    window._newMedals = j20 ? MEDALS.slice(0, 2) : []; go(); fit('duo/fim'+j20);
+  });
+  duo.p[1].pts = duo.p[0].pts; go(); fit('duo/empate');
+  LS.set('duo', keepDuo); duo = null;
   /* Metas da semana: fresh, one met with its stamp, all three met */
   LS.set('metas', null); sc='metas'; go(); fit('metas/nova');
   var sm=metasState(), lm=metasList(); sm.base[lm[0].m.id]=lm[0].m.v()-lm[0].n; sm.base[lm[1].m.id]=lm[1].m.v()-Math.floor(lm[1].n/2); LS.set('metas', sm); metasCheck(); go(); fit('metas/uma');

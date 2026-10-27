@@ -421,6 +421,45 @@ JS = r"""
     gz.m = 7; gz.d = 14; gzPrint(); if (sc !== 'gazeta' || !document.getElementById('gz-paper')) F('gazeta: the press does not print');
     LS.set('gazetaDia', keepG); Object.assign(stats, JSON.parse(keepGS)); LS.set('stats', stats); gz = null; sc = 'home';
   } catch (e) { F('gazeta EXC ' + e.stack); }
+  /* ── Duelo a dois: 2n questions, no answer twice, the turns alternate, each keeps their own score and lifelines, the end crowns ── */
+  try {
+    const keepD = LS.get('duo', null), keepDS = JSON.stringify(stats); let duels = 0;
+    [['facil', 5], ['moderado', 8], ['dificil', 10]].forEach(([d, n]) => { for (let r = 0; r < 4; r++) {
+      duo = duoNew(); duo.names = ['Ana', 'Bruno']; duo.n = n; duo.diff = d; startDuo(); duels++;
+      const w = 'duo ' + d + ' ' + n + ': ';
+      if (cat.qs.length !== 2 * n) F(w + 'deals ' + cat.qs.length);
+      if (new Set(cat.qs.map(ansKey)).size !== cat.qs.length) F(w + 'an answer comes up twice');
+      if (sc !== 'duo' || duo.phase !== 'pass' || !document.getElementById('duo-go')) F(w + 'does not start on the pass');
+      const had = [0, 0];
+      for (let k = 0; k < 2 * n; k++) {
+        duoGo(); const t = duoTurn();
+        if (t !== k % 2) F(w + 'question ' + k + ' goes to player ' + t);
+        if (pts !== had[t]) F(w + 'player ' + t + ' plays with ' + pts + ' points, not their ' + had[t]);
+        if (!document.querySelector('.duo-bar .duo-who.is-on')) F(w + 'no score bar over the board');
+        if (k === 0) lifes.half = 0;                       // the first player spends a lifeline: it stays spent for them only
+        if (k === 1 && lifes.half !== 1) F(w + 'the second player lost the first player\'s lifeline');
+        if (k === 2 && lifes.half !== 0) F(w + 'the first player got a spent lifeline back');
+        const q = cat.qs[qi]; sel = new Set(t ? [] : q.a); tLeft = 8; doReveal(); had[t] = pts;
+        fireAdvance();
+        if (k < 2 * n - 1 && (sc !== 'duo' || duo.phase !== 'pass')) F(w + 'the phone is not passed after question ' + k);
+      }
+      if (duo.phase !== 'end' || sc !== 'duo') F(w + 'does not end');
+      if (duo.p[0].nc !== n || duo.p[1].nc !== 0 || duo.p[1].pts !== 0 || !(duo.p[0].pts > 0)) F(w + 'the scores are mixed up ' + JSON.stringify(duo.p.map(x => [x.pts, x.nc])));
+      if (duo.p.some(x => x.hist.length !== n || x.log.length !== n)) F(w + 'a player did not play ' + n);
+      const h = duoHtml(); if (!/Ana venceu/.test(h) || !/duo-crown/.test(h) || !/duo-verdict">[^<]+</.test(h)) F(w + 'the end does not crown the winner');
+    } });
+    note.duo = duels;
+    /* the line under the result, read from the rounds */
+    const said = (h0, h1) => { duo.p[0].hist = h0; duo.p[1].hist = h1; duo.p[0].pts = h0[h0.length - 1]; duo.p[1].pts = h1[h1.length - 1]; duo.p[0].nc = duo.p[1].nc = 1; duo.n = h0.length; return duoVerdict(); };
+    if (!/última rodada/.test(said([5, 10, 20], [8, 12, 18]))) F('duo: a last-round comeback not told');
+    if (!/Virada!/.test(said([0, 10, 20, 30], [5, 12, 14, 16]))) F('duo: a comeback not told');
+    if (!/fio/.test(said([5, 10, 21], [4, 9, 20]))) F('duo: a narrow win not told');
+    if (!/arrasadora/.test(said([10, 20, 40], [0, 5, 8]))) F('duo: a rout not told');
+    if (!/ninguém cedeu/.test(said([5, 10], [5, 10]))) F('duo: a draw not told');
+    duo.phase = 'pass'; duo.p[0].pts = 30; duo.p[1].pts = 22; qi = 2 * duo.n - 1;
+    if (!/Precisa de 9 pontos/.test(duoHtml())) F('duo: the last pass does not say what it takes');
+    LS.set('duo', keepD); Object.assign(stats, JSON.parse(keepDS)); LS.set('stats', stats); duo = null; cat = null; sc = 'home';
+  } catch (e) { F('duo EXC ' + e.stack); }
   /* ── Hoje na História: every day of the year has five dates near it, the same five all day, each with its picture ── */
   try {
     const pool = hojePool();
