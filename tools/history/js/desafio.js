@@ -17,6 +17,7 @@ const CHAL_GAMES = {
   o:  { n: 'Onde foi?', ic: 'globe' },
   c:  { n: 'Cronologia', ic: 'timeline' },
   d:  { n: 'Antes ou depois?', ic: 'hourglass' },
+  f:  { n: 'Mito ou fato?', ic: 'stamp' },
 };
 const CHAL_SEED_MAX = 2147483647;
 let chal = null;           // a challenge received: { g, seed, score, more, code, used }
@@ -30,7 +31,7 @@ function chalVer() {
   let h = 5381;
   const add = s => { for (let i = 0; i < s.length; i++) h = (h * 33 + s.charCodeAt(i)) | 0; };
   CATS.forEach(c => { add(c.id); c.qs.forEach(q => add(q.t)); });
-  ANO_EVENTS.forEach(e => add(e.id)); Object.keys(ONDE_AT).forEach(add); PL.forEach(p => add(p.id)); add(String(LADDER.length));
+  ANO_EVENTS.forEach(e => add(e.id)); MF.forEach(c => add(c.id + c.v)); Object.keys(ONDE_AT).forEach(add); PL.forEach(p => add(p.id)); add(String(LADDER.length));
   return (_chalVer = ((h >>> 0) % 1296).toString(36).padStart(2, '0'));
 }
 function chalCode(c) {
@@ -39,11 +40,11 @@ function chalCode(c) {
 }
 const chalLink = c => CHAL_URL + '?d=' + chalCode(c);
 function chalParse(s) {
-  const m = /^(tf|tm|td|m|a|o|c|d)\.([0-9a-z]{1,6})\.([0-9a-z]{1,6})\.([0-9a-z]{0,3})\.([0-9a-z]{2})$/.exec(String(s || '').trim().toLowerCase());
+  const m = /^(tf|tm|td|m|a|o|c|d|f)\.([0-9a-z]{1,6})\.([0-9a-z]{1,6})\.([0-9a-z]{0,3})\.([0-9a-z]{2})$/.exec(String(s || '').trim().toLowerCase());
   if (!m) return null;
   const seed = parseInt(m[2], 36), score = parseInt(m[3], 36), more = m[4] ? parseInt(m[4], 36) : null;
   if (!(seed >= 0 && seed <= CHAL_SEED_MAX)) return null;
-  const cap = m[1] === 'm' ? 1000000 : m[1][0] === 't' ? 99999 : m[1] === 'c' || m[1] === 'd' ? ANO_EVENTS.length : 1000;
+  const cap = m[1] === 'm' ? 1000000 : m[1][0] === 't' ? 99999 : m[1] === 'c' || m[1] === 'd' ? ANO_EVENTS.length : m[1] === 'f' ? MF.length : 1000;
   if (!(score <= cap)) return null;
   if (m[1] === 'm' && !(more != null && more <= LADDER.length)) return null;
   if (m[1][0] === 't' && more != null && more > 50) return null;
@@ -62,6 +63,7 @@ function chalMine() {
   if (sc === 'onde' && onde && onde.phase === 'end' && onde.seed != null) return { g: 'o', seed: onde.seed, score: onde.pts };
   if (sc === 'cron' && cron && cron.phase === 'end' && cron.seed != null) return { g: 'c', seed: cron.seed, score: cron.score };
   if (sc === 'aod' && aod && aod.phase === 'end' && aod.seed != null) return { g: 'd', seed: aod.seed, score: aod.score };
+  if (sc === 'mito' && mf && mf.phase === 'end' && mf.seed != null) return { g: 'f', seed: mf.seed, score: mf.score };
   if (sc !== 'end' || runSeed == null || isDaily || isSurv || (typeof isRev !== 'undefined' && isRev)) return null;
   if (isMil) return { g: 'm', seed: runSeed, score: banked, more: rung };
   const g = 't' + String(diffKey)[0];
@@ -75,6 +77,7 @@ function chalScoreTxt(c) {
   if (c.g === 'm') return `${money(c.score)} · degrau ${c.more || 0}`;
   if (c.g === 'c') return `${c.score} na linha`;
   if (c.g === 'd') return `${c.score} ${c.score === 1 ? 'acerto seguido' : 'acertos seguidos'}`;
+  if (c.g === 'f') return `${c.score} ${c.score === 1 ? 'acerto' : 'acertos'}`;
   return `${c.score} pts`;
 }
 
@@ -114,12 +117,13 @@ function chalHtml() {
              : c.g === 'o' ? 'Os mesmos 10 eventos, para achar no mapa.'
              : c.g === 'c' ? 'Os mesmos eventos, na mesma ordem, para pôr na linha do tempo. Três vidas.'
              : c.g === 'd' ? 'Os mesmos eventos, na mesma ordem: o próximo veio antes ou depois? Até errar um.'
+             : c.g === 'f' ? 'As mesmas cartas, na mesma ordem: mito ou fato? Três vidas.'
              : `As mesmas ${(DIFFS.find(d => d.key === G.diff) || DIFFS[0]).n} perguntas, na mesma ordem, com as mesmas alternativas.`;
   const more = c.g[0] === 't' && c.more != null ? `${c.more} ${c.more === 1 ? 'acerto' : 'acertos'}` : '';
   return `
   <div class="pg pg-center chal-pg">
     <div class="eyebrow">Desafio recebido</div>
-    <span class="chal-ic mode-disc mode-${c.g === 'm' ? 'album' : c.g === 'a' ? 'ano' : c.g === 'o' ? 'onde' : c.g === 'c' ? 'cron' : c.g === 'd' ? 'aod' : 'train'}">${(ICON[G.ic] || ICON.sword)('currentColor', 26)}</span>
+    <span class="chal-ic mode-disc mode-${c.g === 'm' ? 'album' : c.g === 'a' ? 'ano' : c.g === 'o' ? 'onde' : c.g === 'c' ? 'cron' : c.g === 'd' ? 'aod' : c.g === 'f' ? 'mito' : 'train'}">${(ICON[G.ic] || ICON.sword)('currentColor', 26)}</span>
     <div class="display" style="font-size:31px;"><em>Um amigo te desafiou!</em></div>
     <p class="chal-g">${G.n}</p>
     <div class="chal-card"><small>Placar a bater</small><b class="num">${chalScoreTxt(c)}</b>${more ? `<span>${more}</span>` : ''}</div>
@@ -139,6 +143,7 @@ function chalAccept() {
   else if (chal.g === 'o') startOnde();
   else if (chal.g === 'c') startCron();
   else if (chal.g === 'd') startAod();
+  else if (chal.g === 'f') startMito();
 }
 function wireChal() {
   document.getElementById('chal-go')?.addEventListener('click', () => { snd.select(); chalAccept(); });

@@ -264,7 +264,7 @@ function wireGazeta() {
   on('gz-today', () => { const t = new Date(); gz.m = t.getMonth() + 1; gz.d = t.getDate(); snd.tap(); go(); });
   on('gz-print', () => { if (ready()) gzPrint(); });
   on('gz-other', () => { if (!ready()) return; gz.phase = 'pick'; snd.swipe(); go(); });
-  on('gz-back', () => { snd.swipe(); if (gz && gz.phase === 'paper') { gz.phase = 'pick'; go(); } else { sc = 'anoMenu'; go(); } });
+  on('gz-back', () => { snd.swipe(); if (gz && gz.phase === 'paper') { gz.phase = 'pick'; go(); } else { sc = fromGab ? 'gabinete' : 'anoMenu'; go(); } });
   on('gz-share', () => {
     const txt = gzShareText();
     if (_gzCard && navigator.canShare) {

@@ -311,6 +311,20 @@ DRIVE = r"""
   });
   duo.p[1].pts = duo.p[0].pts; go(); fit('duo/empate');
   LS.set('duo', keepDuo); duo = null;
+  /* Mito ou fato?: the cabinet; every card's face and its back, right and wrong; the end, after a miss or with the deck seen */
+  var keepMf = [LS.get('mfBest', 0), LS.get('mfSeen', []), JSON.stringify(selos)];
+  sc='gabinete'; go(); fit('gabinete');
+  fromGab = true; sc='gabinete'; go(); fit('gabinete/de-volta'); fromGab = false;
+  MF.forEach(function(c21, j21){
+    mfNew(j21); mf.deck[0]=c21.id; mf.anim=null; mf.lives = 1 + j21 % 3; mf.score = j21 % 30; go(); fit('mito/'+c21.id);
+    mfAnswer(j21 % 2 ? c21.v : (c21.v === 'f' ? 'm' : 'f')); if (j21 % 7 === 0) { mf.selo = 'drakkar'; go(); }
+    fit('mito/'+c21.id+'-verso'+(mf.selo?'+selo':''));
+  });
+  startMito(); for (var k21=0; k21<30 && mf.phase!=='end'; k21++){ if (mf.phase==='card') mfAnswer(k21 % 5 === 4 ? (mfCard().v==='f'?'m':'f') : mfCard().v); else mfNext(); }
+  while (mf.phase!=='end') { if (mf.phase==='card') mfAnswer(mfCard().v==='f'?'m':'f'); else mfNext(); }
+  window._newMedals = MEDALS.slice(0, 2); go(); fit('mito/fim');
+  mf.log = mf.log.slice(-1); go(); fit('mito/fim-1');
+  LS.set('mfBest', keepMf[0]); LS.set('mfSeen', keepMf[1]); selos = JSON.parse(keepMf[2]); LS.set('selos', selos); mf = null;
   /* Metas da semana: fresh, one met with its stamp, all three met */
   LS.set('metas', null); sc='metas'; go(); fit('metas/nova');
   var sm=metasState(), lm=metasList(); sm.base[lm[0].m.id]=lm[0].m.v()-lm[0].n; sm.base[lm[1].m.id]=lm[1].m.v()-Math.floor(lm[1].n/2); LS.set('metas', sm); metasCheck(); go(); fit('metas/uma');

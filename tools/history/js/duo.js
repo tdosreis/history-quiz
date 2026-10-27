@@ -191,8 +191,8 @@ function wireDuo() {
   on('duo-go', () => { if (ready()) { snd.select(); duoGo(); } });
   on('duo-again', () => { if (ready()) { snd.rung(); startDuo(); } });
   on('duo-setup', () => { snd.swipe(); duo.phase = 'setup'; go(); });
-  on('duo-back', () => { snd.swipe(); sc = 'difficulty'; go(); });
-  on('duo-quit', () => { snd.swipe(); clearInterval(tmr); duo.phase = 'setup'; sc = 'difficulty'; go(); });
+  on('duo-back', () => { snd.swipe(); sc = fromGab ? 'gabinete' : 'difficulty'; go(); });
+  on('duo-quit', () => { snd.swipe(); clearInterval(tmr); duo.phase = 'setup'; sc = fromGab ? 'gabinete' : 'difficulty'; go(); });
   on('duo-share', () => {
     const [a, b] = duo.p, sq = s => s.log.map(r => r === 3 ? '🟩' : r === 1 ? '🟨' : '🟥').join('');
     const txt = `⚔️ Duelo a dois · History Quiz\n${duoName(0)} ${a.pts} × ${b.pts} ${duoName(1)}\n${sq(a)} ${duoName(0)}\n${sq(b)} ${duoName(1)}\n${a.pts === b.pts ? 'Empate!' : (a.pts > b.pts ? duoName(0) : duoName(1)) + ' venceu!'} ${duoVerdict()}\n${CHAL_URL}`;

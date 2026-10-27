@@ -129,7 +129,7 @@ function retratoHtml() {
   if (!ret) ret = { i: 0, picks: [], phase: 'intro' };
   if (ret.phase === 'intro') return `
   <div class="pg ret-pg">
-    ${topbar('Retrato de época')}
+    ${topbar('Retrato de época', fromGab ? 'bgab' : '')}
     <div class="ret-intro">
       <div class="ret-frame" aria-hidden="true"><span class="ret-frame-in">${(QICON.bust || QICON.scroll)(150)}</span></div>
       <div class="display" style="font-size:30px;"><em>Quem você seria na História?</em></div>
@@ -142,7 +142,7 @@ function retratoHtml() {
   const q = RET_QS[ret.i];
   return `
   <div class="pg ret-pg">
-    ${topbar('Retrato de época')}
+    ${topbar('Retrato de época', fromGab ? 'bgab' : '')}
     <div class="ret-prog" aria-hidden="true">${RET_QS.map((x, k) => `<i class="${k < ret.i ? 'ok' : k === ret.i ? 'on' : ''}"></i>`).join('')}</div>
     <span class="ret-k">Pergunta ${ret.i + 1} de ${RET_QS.length}</span>
     <div class="display ret-q"><em>${q.t}</em></div>

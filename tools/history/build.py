@@ -363,9 +363,13 @@ def main():
             + io.open(os.path.join(H, "js", "gazeta.js"), encoding="utf-8").read()
             # Duelo a dois: two players, one phone
             + io.open(os.path.join(H, "js", "duo.js"), encoding="utf-8").read()
+            # Mito ou fato?: drag the card to the legend or to the truth
+            + io.open(os.path.join(H, "js", "mito.js"), encoding="utf-8").read()
+            # the Gabinete de curiosidades: the games that are not rounds of questions
+            + io.open(os.path.join(H, "js", "gabinete.js"), encoding="utf-8").read()
             # three goals a week, a stamp for each one met
             + io.open(os.path.join(H, "js", "metas.js"), encoding="utf-8").read())
-    s = put(s, "formats_css", "\n".join(io.open(os.path.join(H, "css", f), encoding="utf-8").read() for f in ("fonts.css", "formats.css", "selos_ano.css", "mapa.css", "onde.css", "desafio.css", "cronologia.css", "metas.css", "festa.css", "aod.css", "jornada.css", "retrato.css", "gazeta.css", "duo.css")))
+    s = put(s, "formats_css", "\n".join(io.open(os.path.join(H, "css", f), encoding="utf-8").read() for f in ("fonts.css", "formats.css", "selos_ano.css", "mapa.css", "onde.css", "desafio.css", "cronologia.css", "metas.css", "festa.css", "aod.css", "jornada.css", "retrato.css", "gazeta.css", "duo.css", "mito.css")))
     v = page.write(s)
     print("index.html + app.js?v=%s updated: %d bytes" % (v, len(s.encode("utf-8"))))
 

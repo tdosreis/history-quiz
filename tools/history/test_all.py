@@ -460,6 +460,44 @@ JS = r"""
     if (!/Precisa de 9 pontos/.test(duoHtml())) F('duo: the last pass does not say what it takes');
     LS.set('duo', keepD); Object.assign(stats, JSON.parse(keepDS)); LS.set('stats', stats); duo = null; cat = null; sc = 'home';
   } catch (e) { F('duo EXC ' + e.stack); }
+  /* ── Mito ou fato?: every card with its picture and a verdict; the deal from a seed; a run to the end; the cabinet ── */
+  try {
+    const keepS = JSON.stringify(stats), keepB = LS.get('mfBest', 0), keepSeen = LS.get('mfSeen', []), keepSelos = JSON.stringify(selos);
+    if (new Set(MF.map(c => c.id)).size !== MF.length) F('mito: two cards with one id');
+    MF.forEach(c => {
+      const [k, id] = [c.pic.slice(0, 1), c.pic.slice(2)];
+      if (!(k === 'f' ? (PL.find(p => p.id === id) || {}).img : k === 's' ? SCENE[id] : k === 'b' ? FLAGS[id] : null)) F('mito: no picture for ' + c.id + ' (' + c.pic + ')');
+      if (c.v !== 'm' && c.v !== 'f') F('mito: no verdict on ' + c.id);
+      if (!c.c || !c.x || !c.t || c.x.length > 260 || c.c.length > 110) F('mito: a card too long or missing a part: ' + c.id);
+    });
+    const nm = MF.filter(c => c.v === 'm').length;
+    note.mito = { cards: MF.length, mitos: nm };
+    if (nm < MF.length * .35 || nm > MF.length * .65) F('mito: the deck leans to one side ' + nm + '/' + MF.length);
+    const dealt = seed => { mfNew(seed); return mf.deck.join(); };
+    if (dealt(77) !== dealt(77)) F('mito: one seed deals two decks');
+    if (dealt(77) === dealt(78)) F('mito: two seeds deal one deck');
+    if (new Set(dealt(5).split(',')).size !== MF.length) F('mito: the deck misses or repeats a card');
+    /* all right: the whole deck, three lives left */
+    startMito(); let n = 0;
+    while (mf.phase !== 'end' && n < 400) { if (mf.phase === 'card') mfAnswer(mfCard().v); else mfNext(); n++; }
+    if (mf.score !== MF.length || mf.lives !== MF_LIVES || !mf.all) F('mito: a perfect run did not see the whole deck ' + mf.score);
+    if (!/mf-rank/.test(mitoHtml())) F('mito: no end card');
+    /* three misses and it is over */
+    startMito(); n = 0;
+    while (mf.phase !== 'end' && n < 40) { if (mf.phase === 'card') mfAnswer(mfCard().v === 'f' ? 'm' : 'f'); else mfNext(); n++; }
+    if (mf.phase !== 'end' || mf.log.length !== MF_LIVES || mf.lives !== 0) F('mito: three misses do not end it');
+    if (!/mf-miss-row/.test(mitoHtml())) F('mito: the end does not say what got you');
+    /* a challenge link goes and comes back */
+    const back = chalParse(chalCode({ g: 'f', seed: 123456, score: 17 }));
+    if (!back || back.g !== 'f' || back.seed !== 123456 || back.score !== 17 || back.old) F('mito: the challenge link does not come back');
+    /* the cabinet opens every one of its games */
+    ['gab-mf:mito', 'gab-duo:duo', 'gab-ret:retrato', 'gab-gz:gazeta'].forEach(w => { const [id, to] = w.split(':');
+      sc = 'gabinete'; go(); if (!document.getElementById(id)) F('gabinete: no ' + id);
+      const g = GAB.find(x => x.id === id); fromGab = true; g.go(); if (sc !== to) F('gabinete: ' + id + ' opens ' + sc);
+      if (!document.getElementById('bgab') && !document.getElementById('duo-back') && !document.getElementById('gz-back')) F('gabinete: ' + id + ' has no way back'); });
+    Object.assign(stats, JSON.parse(keepS)); LS.set('stats', stats); LS.set('mfBest', keepB); LS.set('mfSeen', keepSeen);
+    selos = JSON.parse(keepSelos); LS.set('selos', selos); mf = null; fromGab = false; sc = 'home';
+  } catch (e) { F('mito EXC ' + e.stack); }
   /* ── Hoje na História: every day of the year has five dates near it, the same five all day, each with its picture ── */
   try {
     const pool = hojePool();
