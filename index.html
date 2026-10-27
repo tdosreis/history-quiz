@@ -3330,6 +3330,40 @@
       .qz-screen.intro .hs-rb-e, .qz-screen.intro .hs-detail .hs-lens, .hs-detail.is-shown .hs-lens img, .hs-odd.is-shown, .qz-screen.intro .hs-odd-ic, .b-odd { animation: none !important; }
     }
 
+    /* ── um anacronismo: the scene mounted like a print, four numbered pins on it, the intruder stamped at the reveal ── */
+    .hs-anachro { padding: 0; background: none; box-shadow: none; }
+    .hs-an-scene { position: relative; display: block; width: 100%; height: clamp(124px, 25vh, 232px); overflow: hidden; border-radius: 3px; background: #EFE6CF;
+      box-shadow: 0 0 0 4px #F4ECD8, 0 0 0 5px rgba(107, 74, 34, .35), 0 5px 12px rgba(0, 0, 0, .25); }
+    .hs-an-scene > svg { display: block; width: 100%; height: 100%; filter: sepia(.12); }
+    .hs-an-place { position: absolute; left: 50%; top: 8px; transform: translateX(-50%); display: inline-flex; align-items: center; gap: 4px; white-space: nowrap;
+      padding: 3px 9px 3px; border-radius: 2px; font: 700 10.5px/1.2 var(--font-s); letter-spacing: .05em; color: #3B2A16;
+      background: rgba(250, 242, 222, .94); box-shadow: 0 1px 3px rgba(0, 0, 0, .2); }
+    .hs-an-st { position: absolute; z-index: 1; width: 46px; height: 46px; margin: -23px 0 0 -23px; display: grid; place-items: center; border-radius: 50%;
+      background: radial-gradient(circle at 50% 40%, #FFFDF5, #EFE3C6 72%); box-shadow: 0 0 0 2px #6B4A22, 0 3px 7px rgba(0, 0, 0, .35);
+      transition: transform .3s, box-shadow .3s, opacity .3s; }
+    .hs-an-st b { font: 26px/1 'Noto Color Emoji', 'Apple Color Emoji', 'Segoe UI Emoji', sans-serif; }
+    .hs-an-st i { position: absolute; top: -5px; left: -5px; width: 18px; height: 18px; display: grid; place-items: center; border-radius: 50%;
+      font: 800 10px/1 var(--font-s); font-style: normal; color: #FBF6EA; background: #6B4A22; box-shadow: 0 0 0 1.5px #FBF6EA; }
+    .qz-screen.intro .hs-an-st { animation: hs-pin .5s cubic-bezier(.3, 1.6, .4, 1) both; }
+    @keyframes hs-pin { from { opacity: 0; transform: translateY(-18px) scale(1.4); } }
+    .hs-an-st.is-bad { z-index: 2; transform: scale(1.16); box-shadow: 0 0 0 3px #B3402F, 0 0 0 8px rgba(179, 64, 47, .32), 0 4px 10px rgba(0, 0, 0, .4); }
+    .hs-an-st.is-bad i { background: #B3402F; }
+    .hs-an-st.is-ok { opacity: .82; }
+    .hs-an-st.is-ok::after { content: '✓'; position: absolute; right: -5px; bottom: -4px; width: 17px; height: 17px; display: grid; place-items: center; border-radius: 50%;
+      font: 800 11px/1 var(--font-s); color: #fff; background: #3A9C6E; box-shadow: 0 0 0 1.5px #FBF6EA; }
+    .hs-an-stamp { position: absolute; z-index: 3; left: 50%; top: 56%; transform: translate(-50%, -50%) rotate(-10deg); white-space: nowrap; pointer-events: none;
+      padding: 5px 12px 4px; border: 3px solid #9B2226; border-radius: 5px; color: #9B2226; background: rgba(250, 244, 230, .86);
+      font: 800 17px/1 var(--font-s); letter-spacing: .14em; text-transform: uppercase; box-shadow: inset 0 0 0 1px rgba(155, 34, 38, .35);
+      animation: hs-odd-stamp .42s cubic-bezier(.2, 1.6, .4, 1) .25s both; }
+    .opt-emoji { width: 40px; height: 40px; font: 28px/1 'Noto Color Emoji', 'Apple Color Emoji', 'Segoe UI Emoji', sans-serif; border-radius: 50%;
+      background: radial-gradient(circle at 50% 40%, #FFFDF5, #EFE3C6 72%); box-shadow: 0 0 0 1.5px rgba(107, 74, 34, .5); }
+    @media (max-height: 700px) {
+      .hs-an-st { width: 38px; height: 38px; margin: -19px 0 0 -19px; }
+      .hs-an-st b { font-size: 21px; }
+      .opt-emoji { width: 32px; height: 32px; font-size: 22px; }
+    }
+    @media (prefers-reduced-motion: reduce) { .qz-screen.intro .hs-an-st, .hs-an-stamp { animation: none !important; } }
+
 
 /* ═══ O ÁLBUM DE SELOS ═══ */
 .selo-pg { gap: 8px; }
@@ -4176,6 +4210,65 @@
   .jor-stop.is-here .jor-medal, .jor-pin, .jor-sheet, .jor-veil, .jor-end-st svg { animation: none !important; }
 }
 
+
+/* ═══ RETRATO DE ÉPOCA — eight questions on slips, then a portrait in a gilt frame ═══ */
+.ret-pg { gap: 10px; }
+.ret-intro { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: safe center; gap: 14px; text-align: center; padding-bottom: 20px; }
+.ret-frame { width: 170px; aspect-ratio: 4 / 5; padding: 10px; transform: rotate(-2deg);
+  background: linear-gradient(135deg, #E8CF8A, #B8862F 45%, #7A5420); box-shadow: 0 8px 18px rgba(60, 30, 5, .35), inset 0 0 0 3px rgba(255, 240, 200, .35); }
+.ret-frame-in { display: grid; place-items: center; width: 100%; height: 100%; background: radial-gradient(circle at 50% 40%, #F8EFD6, #DCC48F); box-shadow: inset 0 0 18px rgba(80, 50, 15, .35); }
+.ret-frame-in svg { width: 82%; height: auto; opacity: .85; }
+.ret-p { max-width: 32ch; margin: 0; line-height: 1.45; }
+.ret-prog { flex: none; display: flex; gap: 5px; justify-content: center; }
+.ret-prog i { width: 26px; height: 4px; border-radius: 2px; background: color-mix(in srgb, var(--ink-3) 30%, transparent); transition: background .3s; }
+.ret-prog i.ok { background: var(--brass); }
+.ret-prog i.on { background: var(--ink-2); }
+.ret-k { flex: none; text-align: center; font: 700 9.5px/1 var(--font-s); letter-spacing: .2em; text-transform: uppercase; color: var(--brass-ink, var(--brass)); }
+.ret-q { flex: none; text-align: center; font-size: clamp(23px, 3.4vh, 30px); line-height: 1.15; margin: 2px 6px 4px; text-wrap: balance; }
+.ret-opts { flex: 1 1 auto; display: flex; flex-direction: column; justify-content: center; gap: 10px; }
+.ret-opt { display: flex; align-items: center; gap: 14px; padding: 13px 16px; border: 0; cursor: pointer; text-align: left; color: var(--ink);
+  background: var(--at-card-img) center / 100% 100% no-repeat; transition: transform .14s; animation: ret-in .4s cubic-bezier(.2, 1.2, .4, 1) both; }
+@keyframes ret-in { from { opacity: 0; transform: translateX(22px); } }
+.ret-opt:active { transform: scale(.98); }
+.ret-opt:focus-visible { outline: 2px solid var(--brass); outline-offset: 2px; }
+.ret-opt.is-picked { transform: scale(.97); filter: brightness(1.06); box-shadow: inset 0 0 0 2.5px var(--brass); }
+.ret-e { flex: none; width: 46px; height: 46px; display: grid; place-items: center; border-radius: 50%;
+  font: 26px/1 'Noto Color Emoji', 'Apple Color Emoji', 'Segoe UI Emoji', sans-serif;
+  background: radial-gradient(circle at 50% 40%, #FFFDF5, #EFE3C6 72%); box-shadow: 0 0 0 1.5px rgba(107, 74, 34, .45); }
+.ret-t { font: 600 clamp(14.5px, 2.1vh, 17px)/1.25 var(--font-d); letter-spacing: -.005em; }
+.ret-back { flex: none; align-self: center; }
+/* the result: the portrait big and a little askew, the kind on a ribbon of its colour, the six kinds as bars */
+.ret-res { gap: 7px; padding: 18px 18px 14px !important; }
+.ret-res-k { font: 700 9.5px/1 var(--font-s); letter-spacing: .22em; text-transform: uppercase; color: var(--brass-ink, var(--brass)); }
+.ret-portrait { width: clamp(132px, 23vh, 196px); transform: rotate(-2.5deg); animation: ret-unveil .9s cubic-bezier(.2, .9, .3, 1) both; }
+.ret-portrait .fig { width: 100%; box-shadow: 0 10px 22px rgba(60, 30, 5, .38); }
+@keyframes ret-unveil { from { opacity: 0; transform: rotate(-12deg) scale(.6); filter: blur(4px) sepia(1); } 60% { filter: none; } }
+.ret-who { display: flex; flex-direction: column; align-items: center; font-size: clamp(26px, 3.8vh, 33px); line-height: 1.05; }
+.ret-who small { font: italic 600 14px/1 var(--font-d); color: var(--ink-3); margin-bottom: 3px; }
+.ret-kind { display: inline-flex; align-items: center; gap: 6px; padding: 5px 14px 6px; font: 700 13px/1.2 var(--font-s); letter-spacing: .03em;
+  color: #F6EBD8; background: var(--kc); clip-path: polygon(0 0, 100% 0, calc(100% - 9px) 50%, 100% 100%, 0 100%, 9px 50%);
+  animation: end-ribbon .5s cubic-bezier(.2, 1.2, .4, 1) .5s both; }
+.ret-kind span { font-weight: 600; opacity: .85; }
+.ret-why { margin: 0; max-width: 34ch; font: 600 14px/1.35 var(--font-d); color: var(--ink); }
+.ret-d { margin: 0; max-width: 36ch; font-size: 12.5px; line-height: 1.4; color: var(--ink-2); }
+.ret-bars { width: 100%; max-width: 360px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px 12px; margin-top: 2px; }
+.ret-bar { display: flex; flex-direction: column; gap: 3px; text-align: left; }
+.ret-bar small { font: 700 9.5px/1 var(--font-s); letter-spacing: .06em; text-transform: uppercase; color: var(--ink-3); }
+.ret-bar.is-top small { color: var(--ink); }
+.ret-bar i { display: block; height: 6px; border-radius: 3px; overflow: hidden; background: color-mix(in srgb, var(--ink-3) 22%, transparent); }
+.ret-bar b { display: block; height: 100%; border-radius: 3px; animation: ret-grow .8s cubic-bezier(.2, .8, .3, 1) .6s both; transform-origin: left; }
+@keyframes ret-grow { from { transform: scaleX(0); } }
+@media (max-height: 700px) {
+  .ret-opt { padding: 9px 12px; gap: 10px; }
+  .ret-e { width: 38px; height: 38px; font-size: 21px; }
+  .ret-res { gap: 5px; padding: 12px 14px 10px !important; }
+  .ret-d { display: none; }
+  .ret-frame { width: 130px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ret-opt, .ret-portrait, .ret-kind, .ret-bar b { animation: none !important; }
+}
+
 /*@@/formats_css@@*/
   </style>
 </head>
@@ -4184,6 +4277,6 @@
   <div id="ct"></div>
 </div>
 
-<script src="app.js?v=c45f4f3cfd"></script>
+<script src="app.js?v=bfc34bf887"></script>
 </body>
 </html>

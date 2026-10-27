@@ -33,7 +33,7 @@ import glob, io, json, os, re, subprocess, sys, unicodedata
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 P = os.path.join(ROOT, "index.html")
 CHROME = os.environ.get("CHROME", "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome")
-STRIPS = ("quote", "battle", "line", "news", "rebus", "detail", "odd")   # history's own formats (tools/history/js/formats.js)
+STRIPS = ("quote", "battle", "line", "news", "rebus", "detail", "odd", "anachro")   # history's own formats (tools/history/js/formats.js)
 BEGIN = "  /* NEW-QS:BEGIN — written by tools/merge_questions.py from tools/questions/*.json */"
 END = "  /* NEW-QS:END */"
 sys.path.insert(0, os.path.join(ROOT, "tools", "history"))
@@ -151,6 +151,17 @@ def main():
                 elif typ != "txt" or len(a) != 1 or fold(a[0]) != fold(pl[dt_["who"]]): bad("detail: a txt question whose answer is the pictured figure's name")
                 elif not (0 <= dt_.get("x", 50) <= 100 and 0 <= dt_.get("y", 30) <= 100 and 1.5 <= dt_.get("z", 3) <= 8): bad("detail: x, y in 0-100 and z in 1.5-8")
                 if fold(pl.get((dt_ or {}).get("who"), "")) in fold(t): bad("detail: the question names the face")
+            an_ = q.get("anachro")
+            if an_ is not None:
+                it_ = an_.get("items") if isinstance(an_, dict) else None
+                if not (isinstance(it_, list) and len(it_) == 4 and all(isinstance(x, dict) and isinstance(x.get("e"), str) and 0 < len(x["e"]) <= 16
+                        and isinstance(x.get("n"), str) and x["n"] for x in it_)):
+                    bad("anachro needs four items, each an emoji e and a name n")
+                elif typ != "txt" or [x["n"] for x in it_] != (q.get("choices") or []) or len(a) != 1:
+                    bad("anachro: a txt question whose four choices are its items' names, one of them the answer")
+                if not (isinstance(an_, dict) and isinstance(an_.get("scene"), str) and isinstance(an_.get("place"), str) and 0 < len(an_["place"]) <= 40):
+                    bad("anachro needs a scene and a place (40 characters at most)")
+                if not q.get("x"): bad("anachro: say when the thing really appeared (x)")
             if od_ is not None:
                 if not (isinstance(od_, dict) and isinstance(od_.get("k"), str) and 8 <= len(od_["k"]) <= 120): bad("odd needs k: what the other three share (8-120 characters)")
                 elif names_answer(od_["k"]): bad("odd: k names the odd one out")
@@ -176,7 +187,7 @@ def main():
                     if not (e.get("face") in pl or e.get("crest") in logos or e.get("flag")): bad(f"order: card '{e.get('id')}' has no picture")
             elif typ == "txt":
                 ch = q.get("choices") or []
-                need = 2 if q.get("duel") else 4 if q.get("odd") else 6
+                need = 2 if q.get("duel") else 4 if q.get("odd") or q.get("anachro") else 6
                 if len(ch) != need or len({fold(c) for c in ch}) != need: bad(f"txt needs {need} different choices")
                 if any(x not in ch for x in a): bad("an answer is not among the choices")
             elif typ == "player":

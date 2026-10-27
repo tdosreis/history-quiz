@@ -197,6 +197,21 @@ class Cat:
         if kw.get("x"): r["x"] = kw["x"]
         self.qs.append(r)
 
+    def AN(self, place, scene, items, a, d=2, t="Qual destes objetos não poderia estar nesta cena?", **kw):
+        """Anacronismo: a scene of a time and place, four things pinned on it (emoji, name); a is the
+        name of the one that could not have been there. Always give x: when it really appeared."""
+        items = [{"e": e, "n": n} for e, n in items]
+        names = [it["n"] for it in items]
+        if len(items) != 4 or a not in names or len(set(names)) != 4:
+            raise SystemExit("anachro: four different things, the answer among them: %s" % names)
+        r = {"t": t, "type": "txt", "choices": names, "anachro": {"scene": scene, "place": place, "items": items}, "a": [a], "d": d}
+        s = kw.get("src")
+        if not s: raise SystemExit("no src for anachro: " + a)
+        r["src"] = list(s[:2]) + [list(s[2])]
+        if not kw.get("x"): raise SystemExit("an anachronism needs its explanation (x): " + a)
+        r["x"] = kw["x"]
+        self.qs.append(r)
+
     def write(self):
         os.makedirs(OUT, exist_ok=True)
         d = dict(self.meta); d["qs"] = self.qs

@@ -1,0 +1,1462 @@
+{
+ "id": "anacronismos",
+ "name": "Anacronismo",
+ "tag": "Um objeto fora do seu tempo",
+ "col": "#8C3B2A",
+ "diff": "Variado",
+ "emoji": "⏰",
+ "qs": [
+  {
+   "t": "Qual destes objetos não poderia estar nesta cena?",
+   "type": "txt",
+   "choices": [
+    "Papiro",
+    "Jarro de cerâmica",
+    "Trigo",
+    "Relógio de pulso"
+   ],
+   "anachro": {
+    "scene": "piramides_gize",
+    "place": "Gizé, c. 2560 a.C.",
+    "items": [
+     {
+      "e": "📜",
+      "n": "Papiro"
+     },
+     {
+      "e": "🏺",
+      "n": "Jarro de cerâmica"
+     },
+     {
+      "e": "🌾",
+      "n": "Trigo"
+     },
+     {
+      "e": "⌚",
+      "n": "Relógio de pulso"
+     }
+    ]
+   },
+   "a": [
+    "Relógio de pulso"
+   ],
+   "d": 1,
+   "src": [
+    "pt",
+    "Relógio de pulso",
+    [
+     "século XX"
+    ]
+   ],
+   "x": "O relógio de pulso só se popularizou no início do século XX; os egípcios mediam o tempo pelo Sol e pelas estrelas."
+  },
+  {
+   "t": "Qual destes objetos não poderia estar nesta cena?",
+   "type": "txt",
+   "choices": [
+    "Âncora",
+    "Cruz",
+    "Papagaio",
+    "Bicicleta"
+   ],
+   "anachro": {
+    "scene": "chegada_cabral",
+    "place": "Porto Seguro, 1500",
+    "items": [
+     {
+      "e": "⚓",
+      "n": "Âncora"
+     },
+     {
+      "e": "✝️",
+      "n": "Cruz"
+     },
+     {
+      "e": "🦜",
+      "n": "Papagaio"
+     },
+     {
+      "e": "🚲",
+      "n": "Bicicleta"
+     }
+    ]
+   },
+   "a": [
+    "Bicicleta"
+   ],
+   "d": 1,
+   "src": [
+    "pt",
+    "Bicicleta",
+    [
+     "século XIX"
+    ]
+   ],
+   "x": "A bicicleta só foi inventada no século XIX; Cabral chegou com uma frota de naus e caravelas."
+  },
+  {
+   "t": "Qual destes objetos não poderia estar nesta cena?",
+   "type": "txt",
+   "choices": [
+    "Camelo",
+    "Sal",
+    "Manuscritos",
+    "Trem"
+   ],
+   "anachro": {
+    "scene": "caravana_mali",
+    "place": "Tombuctu, 1324",
+    "items": [
+     {
+      "e": "🐪",
+      "n": "Camelo"
+     },
+     {
+      "e": "🧂",
+      "n": "Sal"
+     },
+     {
+      "e": "📚",
+      "n": "Manuscritos"
+     },
+     {
+      "e": "🚂",
+      "n": "Trem"
+     }
+    ]
+   },
+   "a": [
+    "Trem"
+   ],
+   "d": 1,
+   "src": [
+    "pt",
+    "Locomotiva",
+    [
+     "1825"
+    ]
+   ],
+   "x": "A primeira ferrovia pública com locomotiva a vapor abriu em 1825, na Inglaterra; as caravanas do Saara andavam de camelo, carregadas de sal e ouro."
+  },
+  {
+   "t": "Qual destes objetos não poderia estar nesta cena?",
+   "type": "txt",
+   "choices": [
+    "Foguete",
+    "Câmera fotográfica",
+    "Bandeira",
+    "Smartphone"
+   ],
+   "anachro": {
+    "scene": "pouso_lua",
+    "place": "Na Lua, 1969",
+    "items": [
+     {
+      "e": "🚀",
+      "n": "Foguete"
+     },
+     {
+      "e": "📷",
+      "n": "Câmera fotográfica"
+     },
+     {
+      "e": "🚩",
+      "n": "Bandeira"
+     },
+     {
+      "e": "📱",
+      "n": "Smartphone"
+     }
+    ]
+   },
+   "a": [
+    "Smartphone"
+   ],
+   "d": 1,
+   "src": [
+    "pt",
+    "Smartphone",
+    [
+     "2007"
+    ]
+   ],
+   "x": "Os smartphones de tela sensível ao toque se popularizaram a partir de 2007; os astronautas da Apollo 11 fotografaram a Lua com câmeras Hasselblad."
+  },
+  {
+   "t": "Qual destes objetos não poderia estar nesta cena?",
+   "type": "txt",
+   "choices": [
+    "Violino",
+    "Gelo",
+    "Xícara de chá",
+    "Computador portátil"
+   ],
+   "anachro": {
+    "scene": "titanic",
+    "place": "No Titanic, 1912",
+    "items": [
+     {
+      "e": "🎻",
+      "n": "Violino"
+     },
+     {
+      "e": "🧊",
+      "n": "Gelo"
+     },
+     {
+      "e": "☕",
+      "n": "Xícara de chá"
+     },
+     {
+      "e": "💻",
+      "n": "Computador portátil"
+     }
+    ]
+   },
+   "a": [
+    "Computador portátil"
+   ],
+   "d": 1,
+   "src": [
+    "pt",
+    "Computador portátil",
+    [
+     "1981"
+    ]
+   ],
+   "x": "O primeiro computador portátil de sucesso, o Osborne 1, é de 1981; o Titanic pediu socorro por telegrafia sem fio, com o sistema de Marconi."
+  },
+  {
+   "t": "Qual destes objetos não poderia estar nesta cena?",
+   "type": "txt",
+   "choices": [
+    "Tambor",
+    "Arco e flecha",
+    "Milho",
+    "Guitarra elétrica"
+   ],
+   "anachro": {
+    "scene": "quilombo_palmares",
+    "place": "Serra da Barriga, 1680",
+    "items": [
+     {
+      "e": "🥁",
+      "n": "Tambor"
+     },
+     {
+      "e": "🏹",
+      "n": "Arco e flecha"
+     },
+     {
+      "e": "🌽",
+      "n": "Milho"
+     },
+     {
+      "e": "🎸",
+      "n": "Guitarra elétrica"
+     }
+    ]
+   },
+   "a": [
+    "Guitarra elétrica"
+   ],
+   "d": 1,
+   "src": [
+    "pt",
+    "Guitarra elétrica",
+    [
+     "1930"
+    ]
+   ],
+   "x": "A guitarra elétrica só surgiu nos anos 1930; nos quilombos, tocavam-se tambores e atabaques de origem africana."
+  },
+  {
+   "t": "Qual destes objetos não poderia estar nesta cena?",
+   "type": "txt",
+   "choices": [
+    "Vinho",
+    "Ânfora",
+    "Punhal",
+    "Tomate"
+   ],
+   "anachro": {
+    "scene": "forum_romano",
+    "place": "Roma, 44 a.C.",
+    "items": [
+     {
+      "e": "🍷",
+      "n": "Vinho"
+     },
+     {
+      "e": "🏺",
+      "n": "Ânfora"
+     },
+     {
+      "e": "🗡️",
+      "n": "Punhal"
+     },
+     {
+      "e": "🍅",
+      "n": "Tomate"
+     }
+    ]
+   },
+   "a": [
+    "Tomate"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Tomate",
+    [
+     "América"
+    ]
+   ],
+   "x": "O tomate é americano: só chegou à Europa no século XVI, depois das viagens à América. Os romanos nunca o provaram."
+  },
+  {
+   "t": "Qual destes objetos não poderia estar nesta cena?",
+   "type": "txt",
+   "choices": [
+    "Máscara de teatro",
+    "Mel",
+    "Rolo de papiro",
+    "Óculos"
+   ],
+   "anachro": {
+    "scene": "teatro_grego",
+    "place": "Atenas, século V a.C.",
+    "items": [
+     {
+      "e": "🎭",
+      "n": "Máscara de teatro"
+     },
+     {
+      "e": "🍯",
+      "n": "Mel"
+     },
+     {
+      "e": "📜",
+      "n": "Rolo de papiro"
+     },
+     {
+      "e": "👓",
+      "n": "Óculos"
+     }
+    ]
+   },
+   "a": [
+    "Óculos"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Óculos",
+    [
+     "século XIII"
+    ]
+   ],
+   "x": "Os óculos foram inventados na Itália, no fim do século XIII; os gregos liam rolos de papiro sem eles."
+  },
+  {
+   "t": "Qual destes objetos não poderia estar nesta cena?",
+   "type": "txt",
+   "choices": [
+    "Escudo",
+    "Espada",
+    "Peixe seco",
+    "Bússola"
+   ],
+   "anachro": {
+    "scene": "drakkar",
+    "place": "Viagem viking, ano 900",
+    "items": [
+     {
+      "e": "🛡️",
+      "n": "Escudo"
+     },
+     {
+      "e": "⚔️",
+      "n": "Espada"
+     },
+     {
+      "e": "🐟",
+      "n": "Peixe seco"
+     },
+     {
+      "e": "🧭",
+      "n": "Bússola"
+     }
+    ]
+   },
+   "a": [
+    "Bússola"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Bússola",
+    [
+     "século XII"
+    ]
+   ],
+   "x": "A bússola magnética só chegou à Europa por volta do século XII; os vikings se guiavam pelo Sol, pelas estrelas e pelas aves."
+  },
+  {
+   "t": "Qual destes objetos não poderia estar nesta cena?",
+   "type": "txt",
+   "choices": [
+    "Arco e flecha",
+    "Cavalo",
+    "Vela",
+    "Batata"
+   ],
+   "anachro": {
+    "scene": "torre_branca",
+    "place": "Londres, ano 1100",
+    "items": [
+     {
+      "e": "🏹",
+      "n": "Arco e flecha"
+     },
+     {
+      "e": "🐎",
+      "n": "Cavalo"
+     },
+     {
+      "e": "🕯️",
+      "n": "Vela"
+     },
+     {
+      "e": "🥔",
+      "n": "Batata"
+     }
+    ]
+   },
+   "a": [
+    "Batata"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Batata",
+    [
+     "Andes"
+    ]
+   ],
+   "x": "A batata veio dos Andes e só chegou à Europa na segunda metade do século XVI."
+  },
+  {
+   "t": "Qual destes objetos não poderia estar nesta cena?",
+   "type": "txt",
+   "choices": [
+    "Vaca",
+    "Trigo",
+    "Cerveja",
+    "Milho"
+   ],
+   "anachro": {
+    "scene": "campo_feudal",
+    "place": "Um feudo, ano 1200",
+    "items": [
+     {
+      "e": "🐄",
+      "n": "Vaca"
+     },
+     {
+      "e": "🌾",
+      "n": "Trigo"
+     },
+     {
+      "e": "🍺",
+      "n": "Cerveja"
+     },
+     {
+      "e": "🌽",
+      "n": "Milho"
+     }
+    ]
+   },
+   "a": [
+    "Milho"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Milho",
+    [
+     "México"
+    ]
+   ],
+   "x": "O milho foi domesticado no México há milhares de anos e só chegou à Europa depois de 1492."
+  },
+  {
+   "t": "Qual destes objetos não poderia estar nesta cena?",
+   "type": "txt",
+   "choices": [
+    "Leão",
+    "Escudo",
+    "Tridente",
+    "Chocolate"
+   ],
+   "anachro": {
+    "scene": "arena_gladiadores",
+    "place": "Coliseu, ano 80",
+    "items": [
+     {
+      "e": "🦁",
+      "n": "Leão"
+     },
+     {
+      "e": "🛡️",
+      "n": "Escudo"
+     },
+     {
+      "e": "🔱",
+      "n": "Tridente"
+     },
+     {
+      "e": "🍫",
+      "n": "Chocolate"
+     }
+    ]
+   },
+   "a": [
+    "Chocolate"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Chocolate",
+    [
+     "cacau"
+    ]
+   ],
+   "x": "O cacau é americano: os europeus só conheceram o chocolate no século XVI, depois da conquista do México pelos espanhóis."
+  },
+  {
+   "t": "Qual destes objetos não poderia estar nesta cena?",
+   "type": "txt",
+   "choices": [
+    "Vela",
+    "Cruz",
+    "Ícone",
+    "Café"
+   ],
+   "anachro": {
+    "scene": "hagia_sofia",
+    "place": "Constantinopla, ano 537",
+    "items": [
+     {
+      "e": "🕯️",
+      "n": "Vela"
+     },
+     {
+      "e": "✝️",
+      "n": "Cruz"
+     },
+     {
+      "e": "🖼️",
+      "n": "Ícone"
+     },
+     {
+      "e": "☕",
+      "n": "Café"
+     }
+    ]
+   },
+   "a": [
+    "Café"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Café",
+    [
+     "Iêmen"
+    ]
+   ],
+   "x": "O café como bebida só aparece no século XV, no Iêmen; chegou a Constantinopla no século XVI."
+  },
+  {
+   "t": "Qual destes objetos não poderia estar nesta cena?",
+   "type": "txt",
+   "choices": [
+    "Rolo de papiro",
+    "Gato",
+    "Ânfora",
+    "Telescópio"
+   ],
+   "anachro": {
+    "scene": "biblioteca_alexandria",
+    "place": "Alexandria, 250 a.C.",
+    "items": [
+     {
+      "e": "📜",
+      "n": "Rolo de papiro"
+     },
+     {
+      "e": "🐈",
+      "n": "Gato"
+     },
+     {
+      "e": "🏺",
+      "n": "Ânfora"
+     },
+     {
+      "e": "🔭",
+      "n": "Telescópio"
+     }
+    ]
+   },
+   "a": [
+    "Telescópio"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Telescópio",
+    [
+     "1608"
+    ]
+   ],
+   "x": "O telescópio foi inventado na Holanda, em 1608; os astrônomos de Alexandria observavam o céu a olho nu."
+  },
+  {
+   "t": "Qual destes objetos não poderia estar nesta cena?",
+   "type": "txt",
+   "choices": [
+    "Tintas",
+    "Vela",
+    "Pão",
+    "Lâmpada elétrica"
+   ],
+   "anachro": {
+    "scene": "afresco_vaticano",
+    "place": "Capela Sistina, 1510",
+    "items": [
+     {
+      "e": "🎨",
+      "n": "Tintas"
+     },
+     {
+      "e": "🕯️",
+      "n": "Vela"
+     },
+     {
+      "e": "🍞",
+      "n": "Pão"
+     },
+     {
+      "e": "💡",
+      "n": "Lâmpada elétrica"
+     }
+    ]
+   },
+   "a": [
+    "Lâmpada elétrica"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Lâmpada incandescente",
+    [
+     "1879"
+    ]
+   ],
+   "x": "A lâmpada elétrica de Edison é de 1879; Michelangelo pintava o teto à luz do dia e de velas."
+  },
+  {
+   "t": "Qual destes objetos não poderia estar nesta cena?",
+   "type": "txt",
+   "choices": [
+    "Velas",
+    "Violino",
+    "Coroa",
+    "Câmera fotográfica"
+   ],
+   "anachro": {
+    "scene": "versalhes_espelhos",
+    "place": "Versalhes, 1685",
+    "items": [
+     {
+      "e": "🕯️",
+      "n": "Velas"
+     },
+     {
+      "e": "🎻",
+      "n": "Violino"
+     },
+     {
+      "e": "👑",
+      "n": "Coroa"
+     },
+     {
+      "e": "📷",
+      "n": "Câmera fotográfica"
+     }
+    ]
+   },
+   "a": [
+    "Câmera fotográfica"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Fotografia",
+    [
+     "Niépce"
+    ]
+   ],
+   "x": "A fotografia só nasceu no século XIX: a mais antiga que se conhece foi feita por Niépce, por volta de 1826."
+  },
+  {
+   "t": "Qual destes objetos não poderia estar nesta cena?",
+   "type": "txt",
+   "choices": [
+    "Pão",
+    "Jornal",
+    "Vela",
+    "Telefone"
+   ],
+   "anachro": {
+    "scene": "guilhotina",
+    "place": "Paris, 1793",
+    "items": [
+     {
+      "e": "🍞",
+      "n": "Pão"
+     },
+     {
+      "e": "📰",
+      "n": "Jornal"
+     },
+     {
+      "e": "🕯️",
+      "n": "Vela"
+     },
+     {
+      "e": "☎️",
+      "n": "Telefone"
+     }
+    ]
+   },
+   "a": [
+    "Telefone"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Telefone",
+    [
+     "1876"
+    ]
+   ],
+   "x": "O telefone foi patenteado por Graham Bell em 1876, quase um século depois da Revolução Francesa."
+  },
+  {
+   "t": "Qual destes objetos não poderia estar nesta cena?",
+   "type": "txt",
+   "choices": [
+    "Cartola",
+    "Guarda-chuva",
+    "Relógio",
+    "Avião"
+   ],
+   "anachro": {
+    "scene": "locomotiva_vapor",
+    "place": "Inglaterra, 1830",
+    "items": [
+     {
+      "e": "🎩",
+      "n": "Cartola"
+     },
+     {
+      "e": "☂️",
+      "n": "Guarda-chuva"
+     },
+     {
+      "e": "🕰️",
+      "n": "Relógio"
+     },
+     {
+      "e": "✈️",
+      "n": "Avião"
+     }
+    ]
+   },
+   "a": [
+    "Avião"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Avião",
+    [
+     "1903"
+    ]
+   ],
+   "x": "O avião só levantou voo no século XX: os irmãos Wright voaram em 1903, e Santos Dumont, com o 14-Bis, em 1906. Em 1830, a grande novidade era a locomotiva a vapor."
+  },
+  {
+   "t": "Qual destes objetos não poderia estar nesta cena?",
+   "type": "txt",
+   "choices": [
+    "Navio a vela",
+    "Coroa",
+    "Banana",
+    "Rádio"
+   ],
+   "anachro": {
+    "scene": "corte_1808",
+    "place": "Rio de Janeiro, 1808",
+    "items": [
+     {
+      "e": "⛵",
+      "n": "Navio a vela"
+     },
+     {
+      "e": "👑",
+      "n": "Coroa"
+     },
+     {
+      "e": "🍌",
+      "n": "Banana"
+     },
+     {
+      "e": "📻",
+      "n": "Rádio"
+     }
+    ]
+   },
+   "a": [
+    "Rádio"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Rádio",
+    [
+     "Marconi"
+    ]
+   ],
+   "x": "As primeiras transmissões de rádio são do fim do século XIX; a corte portuguesa chegou ao Brasil de navio, depois de cerca de dois meses de viagem."
+  },
+  {
+   "t": "Qual destes objetos não poderia estar nesta cena?",
+   "type": "txt",
+   "choices": [
+    "Jornal",
+    "Bicicleta",
+    "Guarda-chuva",
+    "Televisão"
+   ],
+   "anachro": {
+    "scene": "sufragistas",
+    "place": "Londres, 1910",
+    "items": [
+     {
+      "e": "📰",
+      "n": "Jornal"
+     },
+     {
+      "e": "🚲",
+      "n": "Bicicleta"
+     },
+     {
+      "e": "☂️",
+      "n": "Guarda-chuva"
+     },
+     {
+      "e": "📺",
+      "n": "Televisão"
+     }
+    ]
+   },
+   "a": [
+    "Televisão"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Televisão",
+    [
+     "1926"
+    ]
+   ],
+   "x": "A primeira demonstração pública de televisão foi feita por John Logie Baird em 1926, em Londres; as sufragistas espalhavam suas ideias em jornais e cartazes."
+  },
+  {
+   "t": "Qual destes objetos não poderia estar nesta cena?",
+   "type": "txt",
+   "choices": [
+    "Diário",
+    "Rádio",
+    "Bicicleta",
+    "CD"
+   ],
+   "anachro": {
+    "scene": "anexo_secreto",
+    "place": "Amsterdã, 1943",
+    "items": [
+     {
+      "e": "📓",
+      "n": "Diário"
+     },
+     {
+      "e": "📻",
+      "n": "Rádio"
+     },
+     {
+      "e": "🚲",
+      "n": "Bicicleta"
+     },
+     {
+      "e": "💿",
+      "n": "CD"
+     }
+    ]
+   },
+   "a": [
+    "CD"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Disco compacto",
+    [
+     "1982"
+    ]
+   ],
+   "x": "O CD chegou às lojas em 1982; no Anexo Secreto, a família de Anne Frank ouvia as notícias da guerra pelo rádio."
+  },
+  {
+   "t": "Qual destes objetos não poderia estar nesta cena?",
+   "type": "txt",
+   "choices": [
+    "Rádio",
+    "Lápis",
+    "Chá",
+    "Mouse de computador"
+   ],
+   "anachro": {
+    "scene": "maquina_enigma",
+    "place": "Bletchley Park, 1941",
+    "items": [
+     {
+      "e": "📻",
+      "n": "Rádio"
+     },
+     {
+      "e": "✏️",
+      "n": "Lápis"
+     },
+     {
+      "e": "☕",
+      "n": "Chá"
+     },
+     {
+      "e": "🖱️",
+      "n": "Mouse de computador"
+     }
+    ]
+   },
+   "a": [
+    "Mouse de computador"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Mouse",
+    [
+     "Engelbart"
+    ]
+   ],
+   "x": "O mouse foi inventado nos anos 1960, por Douglas Engelbart; em Bletchley, as mensagens eram decifradas com papel, lápis e as máquinas Bombe."
+  },
+  {
+   "t": "Qual destes objetos não poderia estar nesta cena?",
+   "type": "txt",
+   "choices": [
+    "Foguete",
+    "Televisão",
+    "Telefone",
+    "Internet"
+   ],
+   "anachro": {
+    "scene": "ev_corrida_espacial",
+    "place": "Cabo Canaveral, 1962",
+    "items": [
+     {
+      "e": "🚀",
+      "n": "Foguete"
+     },
+     {
+      "e": "📺",
+      "n": "Televisão"
+     },
+     {
+      "e": "☎️",
+      "n": "Telefone"
+     },
+     {
+      "e": "🌐",
+      "n": "Internet"
+     }
+    ]
+   },
+   "a": [
+    "Internet"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Internet",
+    [
+     "World Wide Web"
+    ]
+   ],
+   "x": "A ARPANET, avó da internet, só entrou no ar em 1969; a internet se espalhou pelo mundo nos anos 1980 e 1990, e a web é de 1991."
+  },
+  {
+   "t": "Qual destes objetos não poderia estar nesta cena?",
+   "type": "txt",
+   "choices": [
+    "Rato",
+    "Vela",
+    "Sino",
+    "Seringa hipodérmica"
+   ],
+   "anachro": {
+    "scene": "peste_negra",
+    "place": "Europa, 1348",
+    "items": [
+     {
+      "e": "🐀",
+      "n": "Rato"
+     },
+     {
+      "e": "🕯️",
+      "n": "Vela"
+     },
+     {
+      "e": "🔔",
+      "n": "Sino"
+     },
+     {
+      "e": "💉",
+      "n": "Seringa hipodérmica"
+     }
+    ]
+   },
+   "a": [
+    "Seringa hipodérmica"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Seringa",
+    [
+     "1853"
+    ]
+   ],
+   "x": "A seringa hipodérmica só foi inventada em 1853; na Peste Negra, ninguém sabia que a doença vinha de uma bactéria."
+  },
+  {
+   "t": "Qual destes objetos não poderia estar nesta cena?",
+   "type": "txt",
+   "choices": [
+    "Escudo",
+    "Uvas",
+    "Ânfora",
+    "Medalha de ouro"
+   ],
+   "anachro": {
+    "scene": "mensageiro_maratona",
+    "place": "Maratona, 490 a.C.",
+    "items": [
+     {
+      "e": "🛡️",
+      "n": "Escudo"
+     },
+     {
+      "e": "🍇",
+      "n": "Uvas"
+     },
+     {
+      "e": "🏺",
+      "n": "Ânfora"
+     },
+     {
+      "e": "🥇",
+      "n": "Medalha de ouro"
+     }
+    ]
+   },
+   "a": [
+    "Medalha de ouro"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Medalha olímpica",
+    [
+     "1896"
+    ]
+   ],
+   "x": "Nos jogos da Grécia antiga, o vencedor ganhava só uma coroa de ramos de oliveira. As medalhas vieram com os Jogos modernos: em 1896, o campeão levava uma medalha de prata, e a de ouro só apareceu em 1904."
+  },
+  {
+   "t": "Qual destes objetos não poderia estar nesta cena?",
+   "type": "txt",
+   "choices": [
+    "Milho",
+    "Pimenta",
+    "Peru",
+    "Cavalo"
+   ],
+   "anachro": {
+    "scene": "tenochtitlan",
+    "place": "Tenochtitlán, 1500",
+    "items": [
+     {
+      "e": "🌽",
+      "n": "Milho"
+     },
+     {
+      "e": "🌶️",
+      "n": "Pimenta"
+     },
+     {
+      "e": "🦃",
+      "n": "Peru"
+     },
+     {
+      "e": "🐴",
+      "n": "Cavalo"
+     }
+    ]
+   },
+   "a": [
+    "Cavalo"
+   ],
+   "d": 3,
+   "src": [
+    "pt",
+    "Cavalo",
+    [
+     "Américas"
+    ]
+   ],
+   "x": "Não havia cavalos nas Américas quando os europeus chegaram: eles vieram com os espanhóis, e Cortés os levou ao México em 1519."
+  },
+  {
+   "t": "Qual destes objetos não poderia estar nesta cena?",
+   "type": "txt",
+   "choices": [
+    "Lhama",
+    "Batata",
+    "Milho",
+    "Vaca"
+   ],
+   "anachro": {
+    "scene": "muralha_inca",
+    "place": "Cusco, 1450",
+    "items": [
+     {
+      "e": "🦙",
+      "n": "Lhama"
+     },
+     {
+      "e": "🥔",
+      "n": "Batata"
+     },
+     {
+      "e": "🌽",
+      "n": "Milho"
+     },
+     {
+      "e": "🐄",
+      "n": "Vaca"
+     }
+    ]
+   },
+   "a": [
+    "Vaca"
+   ],
+   "d": 3,
+   "src": [
+    "pt",
+    "Gado",
+    [
+     "Américas"
+    ]
+   ],
+   "x": "Não havia bois nem vacas nas Américas: o gado chegou com os europeus e só alcançou os Andes depois da conquista espanhola, nos anos 1530. Os incas criavam lhamas e alpacas."
+  },
+  {
+   "t": "Qual destes objetos não poderia estar nesta cena?",
+   "type": "txt",
+   "choices": [
+    "Cavalo",
+    "Espada de bronze",
+    "Pauzinhos",
+    "Pólvora"
+   ],
+   "anachro": {
+    "scene": "exercito_terracota",
+    "place": "China, 210 a.C.",
+    "items": [
+     {
+      "e": "🐎",
+      "n": "Cavalo"
+     },
+     {
+      "e": "⚔️",
+      "n": "Espada de bronze"
+     },
+     {
+      "e": "🥢",
+      "n": "Pauzinhos"
+     },
+     {
+      "e": "🧨",
+      "n": "Pólvora"
+     }
+    ]
+   },
+   "a": [
+    "Pólvora"
+   ],
+   "d": 3,
+   "src": [
+    "pt",
+    "Pólvora",
+    [
+     "século IX"
+    ]
+   ],
+   "x": "A pólvora foi inventada por alquimistas chineses por volta do século IX, mais de mil anos depois de Qin Shi Huang."
+  },
+  {
+   "t": "Qual destes objetos não poderia estar nesta cena?",
+   "type": "txt",
+   "choices": [
+    "Pergaminho",
+    "Cavalo",
+    "Castelo",
+    "Chá"
+   ],
+   "anachro": {
+    "scene": "runnymede",
+    "place": "Runnymede, 1215",
+    "items": [
+     {
+      "e": "📜",
+      "n": "Pergaminho"
+     },
+     {
+      "e": "🐎",
+      "n": "Cavalo"
+     },
+     {
+      "e": "🏰",
+      "n": "Castelo"
+     },
+     {
+      "e": "🍵",
+      "n": "Chá"
+     }
+    ]
+   },
+   "a": [
+    "Chá"
+   ],
+   "d": 3,
+   "src": [
+    "pt",
+    "Chá",
+    [
+     "Inglaterra"
+    ]
+   ],
+   "x": "O chá só chegou à Inglaterra por volta de 1650; virou moda na corte com a rainha Catarina de Bragança, a partir de 1662, e costume nacional no século XVIII. A Magna Carta foi selada sem ele."
+  },
+  {
+   "t": "Qual destes objetos não poderia estar nesta cena?",
+   "type": "txt",
+   "choices": [
+    "Vela",
+    "Pergaminho",
+    "Sino",
+    "Caneta esferográfica"
+   ],
+   "anachro": {
+    "scene": "ev_independencia_eua",
+    "place": "Filadélfia, 1776",
+    "items": [
+     {
+      "e": "🕯️",
+      "n": "Vela"
+     },
+     {
+      "e": "📜",
+      "n": "Pergaminho"
+     },
+     {
+      "e": "🔔",
+      "n": "Sino"
+     },
+     {
+      "e": "🖊️",
+      "n": "Caneta esferográfica"
+     }
+    ]
+   },
+   "a": [
+    "Caneta esferográfica"
+   ],
+   "d": 3,
+   "src": [
+    "pt",
+    "Caneta esferográfica",
+    [
+     "Bíró"
+    ]
+   ],
+   "x": "A caneta esferográfica moderna foi patenteada pelo húngaro László Bíró em 1938; a Declaração de Independência foi escrita com pena e tinta."
+  },
+  {
+   "t": "Qual destes objetos não poderia estar nesta cena?",
+   "type": "txt",
+   "choices": [
+    "Bússola",
+    "Âncora",
+    "Carta de marear",
+    "Luneta"
+   ],
+   "anachro": {
+    "scene": "ev_grandes_navegacoes",
+    "place": "Lisboa, 1497",
+    "items": [
+     {
+      "e": "🧭",
+      "n": "Bússola"
+     },
+     {
+      "e": "⚓",
+      "n": "Âncora"
+     },
+     {
+      "e": "📜",
+      "n": "Carta de marear"
+     },
+     {
+      "e": "🔭",
+      "n": "Luneta"
+     }
+    ]
+   },
+   "a": [
+    "Luneta"
+   ],
+   "d": 3,
+   "src": [
+    "pt",
+    "Luneta",
+    [
+     "1608"
+    ]
+   ],
+   "x": "A luneta só apareceu em 1608, na Holanda; Vasco da Gama navegava com bússola, astrolábio e cartas de marear."
+  },
+  {
+   "t": "Qual destes objetos não poderia estar nesta cena?",
+   "type": "txt",
+   "choices": [
+    "Pergaminho",
+    "Vela",
+    "Sino",
+    "Livros impressos"
+   ],
+   "anachro": {
+    "scene": "monte_cassino",
+    "place": "Monte Cassino, ano 800",
+    "items": [
+     {
+      "e": "📜",
+      "n": "Pergaminho"
+     },
+     {
+      "e": "🕯️",
+      "n": "Vela"
+     },
+     {
+      "e": "🔔",
+      "n": "Sino"
+     },
+     {
+      "e": "📚",
+      "n": "Livros impressos"
+     }
+    ]
+   },
+   "a": [
+    "Livros impressos"
+   ],
+   "d": 3,
+   "src": [
+    "pt",
+    "Prensa móvel",
+    [
+     "Gutenberg"
+    ]
+   ],
+   "x": "Na Europa, os livros só passaram a ser impressos com a prensa de tipos móveis de Gutenberg, por volta de 1450; antes, os monges copiavam tudo à mão, em pergaminho."
+  },
+  {
+   "t": "Qual destes objetos não poderia estar nesta cena?",
+   "type": "txt",
+   "choices": [
+    "Cerveja",
+    "Cevada",
+    "Gado",
+    "Moedas cunhadas"
+   ],
+   "anachro": {
+    "scene": "zigurate_ur",
+    "place": "Ur, c. 2100 a.C.",
+    "items": [
+     {
+      "e": "🍺",
+      "n": "Cerveja"
+     },
+     {
+      "e": "🌾",
+      "n": "Cevada"
+     },
+     {
+      "e": "🐄",
+      "n": "Gado"
+     },
+     {
+      "e": "🪙",
+      "n": "Moedas cunhadas"
+     }
+    ]
+   },
+   "a": [
+    "Moedas cunhadas"
+   ],
+   "d": 3,
+   "src": [
+    "pt",
+    "Moeda",
+    [
+     "Lídia"
+    ]
+   ],
+   "x": "As primeiras moedas cunhadas surgiram na Lídia, na atual Turquia, por volta de 600 a.C.; em Ur, pagava-se com cevada ou com prata pesada na balança."
+  }
+ ]
+}

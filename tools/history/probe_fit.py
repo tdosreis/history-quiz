@@ -280,6 +280,18 @@ DRIVE = r"""
   [1, 6].forEach(function(i16){ startJor(i16); nCorrect = i16 === 1 ? 7 : 3; pts = 400; window._newMedals = MEDALS.slice(0, 2); finishRun(); go(); fit('jornada/fim-' + i16); });
   LS.set('jornada', keepJ); jorPage=null; jorSel=null;
   sc='anoMenu'; go(); fit('ano/menu');
+  /* Retrato de época: the door, every question, a portrait for each kind on top */
+  var keepRet = LS.get('retrato', null);
+  startRetrato(); fit('retrato/intro');
+  for (var k17=0; k17<RET_QS.length; k17++){ ret.phase='q'; ret.i=k17; go(); fit('retrato/q'+(k17+1)); }
+  for (var k18=0; k18<4; k18++){ ret.phase='q'; ret.i=RET_QS.length-1; ret.picks=RET_QS.map(function(){ return k18; }); retPick(k18); fit('retrato/res-'+k18); }
+  [[2,2,3,1,2,0,1,2],[0,3,1,2,0,2,0,0]].forEach(function(pk, j){ ret.phase='q'; ret.i=RET_QS.length-1; ret.picks=pk.slice(0, -1); retPick(pk[pk.length-1]); window._newMedals = MEDALS.slice(0, 2); go(); fit('retrato/res+medalhas'+j); });
+  LS.set('retrato', keepRet); ret=null;
+  /* Anacronismo: each one asked and revealed */
+  CATS.flatMap(function(c){ return c.qs; }).filter(function(q){ return q.anachro; }).slice(0, 12).forEach(function(q, j){
+    diffKey='moderado'; startGame(); cat.qs[0]=q; qi=0; disp=getDisp(q); sc='quiz'; go(); fit('anacronismo/'+j);
+    sel=new Set(q.a); tLeft=8; doReveal(); fit('anacronismo/'+j+'-rev'+(document.querySelector('.story')?'+story':''));
+  });
   /* Metas da semana: fresh, one met with its stamp, all three met */
   LS.set('metas', null); sc='metas'; go(); fit('metas/nova');
   var sm=metasState(), lm=metasList(); sm.base[lm[0].m.id]=lm[0].m.v()-lm[0].n; sm.base[lm[1].m.id]=lm[1].m.v()-Math.floor(lm[1].n/2); LS.set('metas', sm); metasCheck(); go(); fit('metas/uma');

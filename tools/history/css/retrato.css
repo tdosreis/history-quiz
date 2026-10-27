@@ -1,0 +1,58 @@
+
+/* ═══ RETRATO DE ÉPOCA — eight questions on slips, then a portrait in a gilt frame ═══ */
+.ret-pg { gap: 10px; }
+.ret-intro { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: safe center; gap: 14px; text-align: center; padding-bottom: 20px; }
+.ret-frame { width: 170px; aspect-ratio: 4 / 5; padding: 10px; transform: rotate(-2deg);
+  background: linear-gradient(135deg, #E8CF8A, #B8862F 45%, #7A5420); box-shadow: 0 8px 18px rgba(60, 30, 5, .35), inset 0 0 0 3px rgba(255, 240, 200, .35); }
+.ret-frame-in { display: grid; place-items: center; width: 100%; height: 100%; background: radial-gradient(circle at 50% 40%, #F8EFD6, #DCC48F); box-shadow: inset 0 0 18px rgba(80, 50, 15, .35); }
+.ret-frame-in svg { width: 82%; height: auto; opacity: .85; }
+.ret-p { max-width: 32ch; margin: 0; line-height: 1.45; }
+.ret-prog { flex: none; display: flex; gap: 5px; justify-content: center; }
+.ret-prog i { width: 26px; height: 4px; border-radius: 2px; background: color-mix(in srgb, var(--ink-3) 30%, transparent); transition: background .3s; }
+.ret-prog i.ok { background: var(--brass); }
+.ret-prog i.on { background: var(--ink-2); }
+.ret-k { flex: none; text-align: center; font: 700 9.5px/1 var(--font-s); letter-spacing: .2em; text-transform: uppercase; color: var(--brass-ink, var(--brass)); }
+.ret-q { flex: none; text-align: center; font-size: clamp(23px, 3.4vh, 30px); line-height: 1.15; margin: 2px 6px 4px; text-wrap: balance; }
+.ret-opts { flex: 1 1 auto; display: flex; flex-direction: column; justify-content: center; gap: 10px; }
+.ret-opt { display: flex; align-items: center; gap: 14px; padding: 13px 16px; border: 0; cursor: pointer; text-align: left; color: var(--ink);
+  background: var(--at-card-img) center / 100% 100% no-repeat; transition: transform .14s; animation: ret-in .4s cubic-bezier(.2, 1.2, .4, 1) both; }
+@keyframes ret-in { from { opacity: 0; transform: translateX(22px); } }
+.ret-opt:active { transform: scale(.98); }
+.ret-opt:focus-visible { outline: 2px solid var(--brass); outline-offset: 2px; }
+.ret-opt.is-picked { transform: scale(.97); filter: brightness(1.06); box-shadow: inset 0 0 0 2.5px var(--brass); }
+.ret-e { flex: none; width: 46px; height: 46px; display: grid; place-items: center; border-radius: 50%;
+  font: 26px/1 'Noto Color Emoji', 'Apple Color Emoji', 'Segoe UI Emoji', sans-serif;
+  background: radial-gradient(circle at 50% 40%, #FFFDF5, #EFE3C6 72%); box-shadow: 0 0 0 1.5px rgba(107, 74, 34, .45); }
+.ret-t { font: 600 clamp(14.5px, 2.1vh, 17px)/1.25 var(--font-d); letter-spacing: -.005em; }
+.ret-back { flex: none; align-self: center; }
+/* the result: the portrait big and a little askew, the kind on a ribbon of its colour, the six kinds as bars */
+.ret-res { gap: 7px; padding: 18px 18px 14px !important; }
+.ret-res-k { font: 700 9.5px/1 var(--font-s); letter-spacing: .22em; text-transform: uppercase; color: var(--brass-ink, var(--brass)); }
+.ret-portrait { width: clamp(132px, 23vh, 196px); transform: rotate(-2.5deg); animation: ret-unveil .9s cubic-bezier(.2, .9, .3, 1) both; }
+.ret-portrait .fig { width: 100%; box-shadow: 0 10px 22px rgba(60, 30, 5, .38); }
+@keyframes ret-unveil { from { opacity: 0; transform: rotate(-12deg) scale(.6); filter: blur(4px) sepia(1); } 60% { filter: none; } }
+.ret-who { display: flex; flex-direction: column; align-items: center; font-size: clamp(26px, 3.8vh, 33px); line-height: 1.05; }
+.ret-who small { font: italic 600 14px/1 var(--font-d); color: var(--ink-3); margin-bottom: 3px; }
+.ret-kind { display: inline-flex; align-items: center; gap: 6px; padding: 5px 14px 6px; font: 700 13px/1.2 var(--font-s); letter-spacing: .03em;
+  color: #F6EBD8; background: var(--kc); clip-path: polygon(0 0, 100% 0, calc(100% - 9px) 50%, 100% 100%, 0 100%, 9px 50%);
+  animation: end-ribbon .5s cubic-bezier(.2, 1.2, .4, 1) .5s both; }
+.ret-kind span { font-weight: 600; opacity: .85; }
+.ret-why { margin: 0; max-width: 34ch; font: 600 14px/1.35 var(--font-d); color: var(--ink); }
+.ret-d { margin: 0; max-width: 36ch; font-size: 12.5px; line-height: 1.4; color: var(--ink-2); }
+.ret-bars { width: 100%; max-width: 360px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px 12px; margin-top: 2px; }
+.ret-bar { display: flex; flex-direction: column; gap: 3px; text-align: left; }
+.ret-bar small { font: 700 9.5px/1 var(--font-s); letter-spacing: .06em; text-transform: uppercase; color: var(--ink-3); }
+.ret-bar.is-top small { color: var(--ink); }
+.ret-bar i { display: block; height: 6px; border-radius: 3px; overflow: hidden; background: color-mix(in srgb, var(--ink-3) 22%, transparent); }
+.ret-bar b { display: block; height: 100%; border-radius: 3px; animation: ret-grow .8s cubic-bezier(.2, .8, .3, 1) .6s both; transform-origin: left; }
+@keyframes ret-grow { from { transform: scaleX(0); } }
+@media (max-height: 700px) {
+  .ret-opt { padding: 9px 12px; gap: 10px; }
+  .ret-e { width: 38px; height: 38px; font-size: 21px; }
+  .ret-res { gap: 5px; padding: 12px 14px 10px !important; }
+  .ret-d { display: none; }
+  .ret-frame { width: 130px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ret-opt, .ret-portrait, .ret-kind, .ret-bar b { animation: none !important; }
+}

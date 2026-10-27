@@ -23,7 +23,7 @@
 ═══════════════════════════════════════════════════ */
 
 /* the strip a question carries, if any: it is the question's picture */
-const hasStrip = q => !!(q && (q.quote || q.battle || q.line || q.news || q.rebus || q.detail || q.odd));
+const hasStrip = q => !!(q && (q.quote || q.battle || q.line || q.news || q.rebus || q.detail || q.odd || q.anachro));
 function qStrip(q) {
   if (!q) return '';
   if (q.quote)  return quoteStrip(q.quote, q);
@@ -33,6 +33,7 @@ function qStrip(q) {
   if (q.rebus)  return rebusStrip(q.rebus, q);
   if (q.detail) return detailStrip(q.detail, q);
   if (q.odd)    return oddStrip(q.odd, q);
+  if (q.anachro) return anachroStrip(q.anachro, q);
   return '';
 }
 
@@ -226,6 +227,26 @@ function stampSVG(kind) {
     <text x="32" y="26.4" text-anchor="middle" font-family="Archivo, system-ui" font-weight="800" font-size="15" letter-spacing="2" fill="${ink}">${fato ? 'FATO' : 'MITO'}</text></g></svg>`;
 }
 
+/* ── um anacronismo ── a scene of its time and place, four things pinned on it by number (the numbers of
+   the slips below); one of them could not have been there. At the reveal it is ringed in red and stamped,
+   the others ticked. The pins follow the board's own order, so pin 3 is always slip 03. */
+const AN_AT = [[15, 31], [85, 31], [15, 75], [85, 75]];
+function anachroStrip(st, q) {
+  const items = st.items || [], rev = sc === 'reveal', a = (q.a || [])[0];
+  const names = items.map(it => it.n);
+  const order = (typeof disp !== 'undefined' && disp && disp.length === items.length && disp.every(d => names.includes(d.id)))
+    ? disp.map(d => items.find(it => it.n === d.id)) : items;
+  const pic = (sceneSvg({ id: st.scene }, 360) || '')
+    .replace('<svg ', '<svg preserveAspectRatio="xMidYMid slice" ').replace('style="display:block;max-width:100%;height:auto;"', 'style="display:block;width:100%;height:100%"');
+  return `<div class="qstrip hs-anachro" role="img" aria-label="Cena: ${_esc(st.place || '')}. Objetos: ${order.map((it, k) => (k + 1) + ', ' + _esc(it.n)).join('; ')}">
+    <span class="hs-an-scene">${pic}
+      <span class="hs-an-place">${ICON.calendar('currentColor', 11)} ${st.place || ''}</span>
+      ${order.map((it, k) => `<span class="hs-an-st${rev ? (it.n === a ? ' is-bad' : ' is-ok') : ''}" style="left:${AN_AT[k][0]}%;top:${AN_AT[k][1]}%;animation-delay:${(k * .16 + .2).toFixed(2)}s">
+        <b>${it.e}</b><i>${k + 1}</i></span>`).join('')}
+      ${rev ? '<span class="hs-an-stamp">Anacronismo!</span>' : ''}
+    </span></div>`;
+}
+
 /* ── the moment each format arrives with ── */
 function stripFx(q) {
   if (!q || sc !== 'quiz') return;
@@ -237,15 +258,23 @@ function stripFx(q) {
   else if (q.rebus) snd.pops((q.rebus.e || []).length);
   else if (q.detail) snd.lens();
   else if (q.odd) snd.oddOne();
+  else if (q.anachro) snd.warp();
 }
 /* the stamp coming down on the right slip, at the reveal; the glass pulling back */
 function revealFx(q) {
   if (q && (q.myth || q.odd)) setTimeout(() => snd.stamp(), q.odd ? 260 : 120);
   if (q && q.detail) snd.unzoom();
+  if (q && q.anachro) setTimeout(() => { snd.stamp(); snd.warp(true); }, 280);
 }
 
 /* ── their sounds ── */
 Object.assign(snd, {
+  /* a slip in time: a falling whistle over a crackle, and back up again at the reveal */
+  warp(back) {
+    tone(back ? 260 : 980, .55, { type: 'sine', vol: .028, to: back ? 900 : 250 });
+    tone(back ? 390 : 1470, .5, { type: 'triangle', vol: .012, to: back ? 1350 : 370, delay: .04 });
+    crackle(.4, { grains: 12, vol: .012, delay: .05 });
+  },
   /* a nib on laid paper: three quick scratches */
   quill() { [0, .16, .34].forEach((d, i) => { crackle(.12, { grains: 10, vol: .02, delay: d });
             noise(.09, { type: 'bandpass', freq: 3200 + i * 300, q: 2.2, vol: .02, attack: .01, delay: d }); }); },

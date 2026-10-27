@@ -282,3 +282,37 @@
     @media (prefers-reduced-motion: reduce) {
       .qz-screen.intro .hs-rb-e, .qz-screen.intro .hs-detail .hs-lens, .hs-detail.is-shown .hs-lens img, .hs-odd.is-shown, .qz-screen.intro .hs-odd-ic, .b-odd { animation: none !important; }
     }
+
+    /* ── um anacronismo: the scene mounted like a print, four numbered pins on it, the intruder stamped at the reveal ── */
+    .hs-anachro { padding: 0; background: none; box-shadow: none; }
+    .hs-an-scene { position: relative; display: block; width: 100%; height: clamp(124px, 25vh, 232px); overflow: hidden; border-radius: 3px; background: #EFE6CF;
+      box-shadow: 0 0 0 4px #F4ECD8, 0 0 0 5px rgba(107, 74, 34, .35), 0 5px 12px rgba(0, 0, 0, .25); }
+    .hs-an-scene > svg { display: block; width: 100%; height: 100%; filter: sepia(.12); }
+    .hs-an-place { position: absolute; left: 50%; top: 8px; transform: translateX(-50%); display: inline-flex; align-items: center; gap: 4px; white-space: nowrap;
+      padding: 3px 9px 3px; border-radius: 2px; font: 700 10.5px/1.2 var(--font-s); letter-spacing: .05em; color: #3B2A16;
+      background: rgba(250, 242, 222, .94); box-shadow: 0 1px 3px rgba(0, 0, 0, .2); }
+    .hs-an-st { position: absolute; z-index: 1; width: 46px; height: 46px; margin: -23px 0 0 -23px; display: grid; place-items: center; border-radius: 50%;
+      background: radial-gradient(circle at 50% 40%, #FFFDF5, #EFE3C6 72%); box-shadow: 0 0 0 2px #6B4A22, 0 3px 7px rgba(0, 0, 0, .35);
+      transition: transform .3s, box-shadow .3s, opacity .3s; }
+    .hs-an-st b { font: 26px/1 'Noto Color Emoji', 'Apple Color Emoji', 'Segoe UI Emoji', sans-serif; }
+    .hs-an-st i { position: absolute; top: -5px; left: -5px; width: 18px; height: 18px; display: grid; place-items: center; border-radius: 50%;
+      font: 800 10px/1 var(--font-s); font-style: normal; color: #FBF6EA; background: #6B4A22; box-shadow: 0 0 0 1.5px #FBF6EA; }
+    .qz-screen.intro .hs-an-st { animation: hs-pin .5s cubic-bezier(.3, 1.6, .4, 1) both; }
+    @keyframes hs-pin { from { opacity: 0; transform: translateY(-18px) scale(1.4); } }
+    .hs-an-st.is-bad { z-index: 2; transform: scale(1.16); box-shadow: 0 0 0 3px #B3402F, 0 0 0 8px rgba(179, 64, 47, .32), 0 4px 10px rgba(0, 0, 0, .4); }
+    .hs-an-st.is-bad i { background: #B3402F; }
+    .hs-an-st.is-ok { opacity: .82; }
+    .hs-an-st.is-ok::after { content: '✓'; position: absolute; right: -5px; bottom: -4px; width: 17px; height: 17px; display: grid; place-items: center; border-radius: 50%;
+      font: 800 11px/1 var(--font-s); color: #fff; background: #3A9C6E; box-shadow: 0 0 0 1.5px #FBF6EA; }
+    .hs-an-stamp { position: absolute; z-index: 3; left: 50%; top: 56%; transform: translate(-50%, -50%) rotate(-10deg); white-space: nowrap; pointer-events: none;
+      padding: 5px 12px 4px; border: 3px solid #9B2226; border-radius: 5px; color: #9B2226; background: rgba(250, 244, 230, .86);
+      font: 800 17px/1 var(--font-s); letter-spacing: .14em; text-transform: uppercase; box-shadow: inset 0 0 0 1px rgba(155, 34, 38, .35);
+      animation: hs-odd-stamp .42s cubic-bezier(.2, 1.6, .4, 1) .25s both; }
+    .opt-emoji { width: 40px; height: 40px; font: 28px/1 'Noto Color Emoji', 'Apple Color Emoji', 'Segoe UI Emoji', sans-serif; border-radius: 50%;
+      background: radial-gradient(circle at 50% 40%, #FFFDF5, #EFE3C6 72%); box-shadow: 0 0 0 1.5px rgba(107, 74, 34, .5); }
+    @media (max-height: 700px) {
+      .hs-an-st { width: 38px; height: 38px; margin: -19px 0 0 -19px; }
+      .hs-an-st b { font-size: 21px; }
+      .opt-emoji { width: 32px; height: 32px; font-size: 22px; }
+    }
+    @media (prefers-reduced-motion: reduce) { .qz-screen.intro .hs-an-st, .hs-an-stamp { animation: none !important; } }

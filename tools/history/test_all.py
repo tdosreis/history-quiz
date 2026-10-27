@@ -46,13 +46,13 @@ JS = r"""
     if (!q.t.endsWith('?')) F('no ? ' + w);
     /* a question is told apart by its words, its picture, its clue, its strip and its duel */
     const key = q.t + JSON.stringify(q.stad || q.who || q.crest || q.flag || q.icon || '') + (q.clues ? q.clues[0] : '')
-              + JSON.stringify(q.quote || q.battle || q.line || q.news || q.rebus || q.detail || q.odd || '')
+              + JSON.stringify(q.quote || q.battle || q.line || q.news || q.rebus || q.detail || q.odd || q.anachro || '')
               + (q.duel || q.odd ? JSON.stringify(q.fixed || q.choices) : '');
     if (texts.has(key)) F('duplicate ' + w);
     texts.add(key);
     if (!q.a || !q.a.length) F('no answer ' + w);
     if (q.type === 'txt') {
-      const need = q.duel ? 2 : q.odd ? 4 : 6;
+      const need = q.duel ? 2 : q.odd || q.anachro ? 4 : 6;
       if (q.choices.length !== need || new Set(q.choices).size !== need) F('choices ' + w);
       if (q.myth && q.choices.slice().sort().join() !== 'Fato,Mito') F('a myth is stamped Fato or Mito ' + w);
       q.a.forEach(a => { if (!q.choices.includes(a)) F('answer not among choices ' + w); });
@@ -76,8 +76,10 @@ JS = r"""
         const dd = d.map(x => x.id);
         if (new Set(dd).size !== dd.length) F(k + ' duplicate tile :: ' + q.t.slice(0, 60));
         if (!q.a.every(a => dd.includes(a))) F(k + ' answer missing :: ' + q.t.slice(0, 60));
-        if (!q.order && !q.fixed && !q.duel && !q.odd && dd.length < Math.min(6, 10)) F(k + ' few tiles(' + dd.length + ') :: ' + q.t.slice(0, 60));
+        if (!q.order && !q.fixed && !q.duel && !q.odd && !q.anachro && dd.length < Math.min(6, 10)) F(k + ' few tiles(' + dd.length + ') :: ' + q.t.slice(0, 60));
         if (q.odd && dd.length !== 4) F(k + ' an odd one out is four tiles :: ' + q.t.slice(0, 60));
+        if (q.anachro) { if (dd.length !== 4) F(k + ' an anachronism is four tiles :: ' + q.anachro.place);
+          if (!SCENE[q.anachro.scene]) F('anachro: no scene ' + q.anachro.scene); }
         /* Detalhe: the face is behind the glass, so no tile may show a face to match it by eye */
         if (q.detail) { const oa = optArtFor(q);
           if (!(PL.find(p => p.id === q.detail.who) || {}).img) F('detail without a portrait :: ' + q.detail.who);
@@ -390,6 +392,20 @@ JS = r"""
     for (let k = 0; k < JOR_ERAS.length; k++) { jorPage = k; sc = 'jornada'; go(); if (document.querySelectorAll('.jor-stop').length !== JOR_ERAS[k].stops.length) F('jornada: page ' + k + ' stops'); }
     LS.set('jornada', keepJ); Object.assign(stats, JSON.parse(keepJS)); LS.set('stats', stats); jorPage = null; sc = 'home';
   } catch (e) { F('jornada EXC ' + e.stack); }
+  /* ── Retrato de época: every answer set lands on a figure with a portrait; every kind leads somewhere; the flow ends ── */
+  try {
+    Object.values(RET_WHO).forEach(m => Object.values(m).forEach(([id]) => { const f = PL.find(x => x.id === id); if (!f || !f.img) F('retrato: no portrait for ' + id); }));
+    if (RET_QS.some(q => q.o.length !== 4 || q.o.some(o => !RET_KINDS[o[2]] || !RET_KINDS[o[3]] || o[2] === o[3]))) F('retrato: a question is not four answers of two kinds');
+    const tops = new Set(), ids = new Set();
+    for (let n = 0; n < 65536; n++) { const picks = RET_QS.map((q, i) => (n >> (2 * i)) & 3), r = retTally(picks); tops.add(r.top); ids.add(r.id); }
+    note.retrato = ids.size;
+    if (tops.size !== 6) F('retrato: only ' + tops.size + ' kinds can come out on top');
+    if (ids.size < 30) F('retrato: only ' + ids.size + ' figures can come out');
+    const keepR = JSON.stringify(stats), keepRL = LS.get('retrato', null);
+    startRetrato(); ret.phase = 'q'; for (let i = 0; i < RET_QS.length; i++) retPick(i % 4);
+    if (ret.phase !== 'res' || !LS.get('retrato', null)) F('retrato: the questions do not end on a portrait');
+    Object.assign(stats, JSON.parse(keepR)); LS.set('stats', stats); LS.set('retrato', keepRL); ret = null; sc = 'home';
+  } catch (e) { F('retrato EXC ' + e.stack); }
   /* ── Hoje na História: every day of the year has five dates near it, the same five all day, each with its picture ── */
   try {
     const pool = hojePool();

@@ -2672,6 +2672,45 @@ const CATS = [
       {"t": "Que palavra completa a frase?", "a": ["circunstância"], "type": "txt", "choices": ["circunstância", "história", "consciência", "liberdade", "verdade", "sombra"], "quote": {"q": "Eu sou eu e a minha ___.", "ctx": "José Ortega y Gasset, 1914"}, "d": 3, "x": "O filósofo espanhol escreveu a frase em 1914: ninguém se entende fora do seu tempo e do seu lugar."},
     ]
   },
+  {
+    id:"anacronismos", name:"Anacronismo", emoji:"⏰",
+    tag:"Um objeto fora do seu tempo", col:"#8C3B2A", diff:"Variado",
+    qs:[
+      {"t": "Qual destes objetos não poderia estar nesta cena?", "a": ["Relógio de pulso"], "type": "txt", "choices": ["Papiro", "Jarro de cerâmica", "Trigo", "Relógio de pulso"], "anachro": {"scene": "piramides_gize", "place": "Gizé, c. 2560 a.C.", "items": [{"e": "📜", "n": "Papiro"}, {"e": "🏺", "n": "Jarro de cerâmica"}, {"e": "🌾", "n": "Trigo"}, {"e": "⌚", "n": "Relógio de pulso"}]}, "d": 1, "x": "O relógio de pulso só se popularizou no início do século XX; os egípcios mediam o tempo pelo Sol e pelas estrelas."},
+      {"t": "Qual destes objetos não poderia estar nesta cena?", "a": ["Bicicleta"], "type": "txt", "choices": ["Âncora", "Cruz", "Papagaio", "Bicicleta"], "anachro": {"scene": "chegada_cabral", "place": "Porto Seguro, 1500", "items": [{"e": "⚓", "n": "Âncora"}, {"e": "✝️", "n": "Cruz"}, {"e": "🦜", "n": "Papagaio"}, {"e": "🚲", "n": "Bicicleta"}]}, "d": 1, "x": "A bicicleta só foi inventada no século XIX; Cabral chegou com uma frota de naus e caravelas."},
+      {"t": "Qual destes objetos não poderia estar nesta cena?", "a": ["Trem"], "type": "txt", "choices": ["Camelo", "Sal", "Manuscritos", "Trem"], "anachro": {"scene": "caravana_mali", "place": "Tombuctu, 1324", "items": [{"e": "🐪", "n": "Camelo"}, {"e": "🧂", "n": "Sal"}, {"e": "📚", "n": "Manuscritos"}, {"e": "🚂", "n": "Trem"}]}, "d": 1, "x": "A primeira ferrovia pública com locomotiva a vapor abriu em 1825, na Inglaterra; as caravanas do Saara andavam de camelo, carregadas de sal e ouro."},
+      {"t": "Qual destes objetos não poderia estar nesta cena?", "a": ["Smartphone"], "type": "txt", "choices": ["Foguete", "Câmera fotográfica", "Bandeira", "Smartphone"], "anachro": {"scene": "pouso_lua", "place": "Na Lua, 1969", "items": [{"e": "🚀", "n": "Foguete"}, {"e": "📷", "n": "Câmera fotográfica"}, {"e": "🚩", "n": "Bandeira"}, {"e": "📱", "n": "Smartphone"}]}, "d": 1, "x": "Os smartphones de tela sensível ao toque se popularizaram a partir de 2007; os astronautas da Apollo 11 fotografaram a Lua com câmeras Hasselblad."},
+      {"t": "Qual destes objetos não poderia estar nesta cena?", "a": ["Computador portátil"], "type": "txt", "choices": ["Violino", "Gelo", "Xícara de chá", "Computador portátil"], "anachro": {"scene": "titanic", "place": "No Titanic, 1912", "items": [{"e": "🎻", "n": "Violino"}, {"e": "🧊", "n": "Gelo"}, {"e": "☕", "n": "Xícara de chá"}, {"e": "💻", "n": "Computador portátil"}]}, "d": 1, "x": "O primeiro computador portátil de sucesso, o Osborne 1, é de 1981; o Titanic pediu socorro por telegrafia sem fio, com o sistema de Marconi."},
+      {"t": "Qual destes objetos não poderia estar nesta cena?", "a": ["Guitarra elétrica"], "type": "txt", "choices": ["Tambor", "Arco e flecha", "Milho", "Guitarra elétrica"], "anachro": {"scene": "quilombo_palmares", "place": "Serra da Barriga, 1680", "items": [{"e": "🥁", "n": "Tambor"}, {"e": "🏹", "n": "Arco e flecha"}, {"e": "🌽", "n": "Milho"}, {"e": "🎸", "n": "Guitarra elétrica"}]}, "d": 1, "x": "A guitarra elétrica só surgiu nos anos 1930; nos quilombos, tocavam-se tambores e atabaques de origem africana."},
+      {"t": "Qual destes objetos não poderia estar nesta cena?", "a": ["Tomate"], "type": "txt", "choices": ["Vinho", "Ânfora", "Punhal", "Tomate"], "anachro": {"scene": "forum_romano", "place": "Roma, 44 a.C.", "items": [{"e": "🍷", "n": "Vinho"}, {"e": "🏺", "n": "Ânfora"}, {"e": "🗡️", "n": "Punhal"}, {"e": "🍅", "n": "Tomate"}]}, "d": 2, "x": "O tomate é americano: só chegou à Europa no século XVI, depois das viagens à América. Os romanos nunca o provaram."},
+      {"t": "Qual destes objetos não poderia estar nesta cena?", "a": ["Óculos"], "type": "txt", "choices": ["Máscara de teatro", "Mel", "Rolo de papiro", "Óculos"], "anachro": {"scene": "teatro_grego", "place": "Atenas, século V a.C.", "items": [{"e": "🎭", "n": "Máscara de teatro"}, {"e": "🍯", "n": "Mel"}, {"e": "📜", "n": "Rolo de papiro"}, {"e": "👓", "n": "Óculos"}]}, "d": 2, "x": "Os óculos foram inventados na Itália, no fim do século XIII; os gregos liam rolos de papiro sem eles."},
+      {"t": "Qual destes objetos não poderia estar nesta cena?", "a": ["Bússola"], "type": "txt", "choices": ["Escudo", "Espada", "Peixe seco", "Bússola"], "anachro": {"scene": "drakkar", "place": "Viagem viking, ano 900", "items": [{"e": "🛡️", "n": "Escudo"}, {"e": "⚔️", "n": "Espada"}, {"e": "🐟", "n": "Peixe seco"}, {"e": "🧭", "n": "Bússola"}]}, "d": 2, "x": "A bússola magnética só chegou à Europa por volta do século XII; os vikings se guiavam pelo Sol, pelas estrelas e pelas aves."},
+      {"t": "Qual destes objetos não poderia estar nesta cena?", "a": ["Batata"], "type": "txt", "choices": ["Arco e flecha", "Cavalo", "Vela", "Batata"], "anachro": {"scene": "torre_branca", "place": "Londres, ano 1100", "items": [{"e": "🏹", "n": "Arco e flecha"}, {"e": "🐎", "n": "Cavalo"}, {"e": "🕯️", "n": "Vela"}, {"e": "🥔", "n": "Batata"}]}, "d": 2, "x": "A batata veio dos Andes e só chegou à Europa na segunda metade do século XVI."},
+      {"t": "Qual destes objetos não poderia estar nesta cena?", "a": ["Milho"], "type": "txt", "choices": ["Vaca", "Trigo", "Cerveja", "Milho"], "anachro": {"scene": "campo_feudal", "place": "Um feudo, ano 1200", "items": [{"e": "🐄", "n": "Vaca"}, {"e": "🌾", "n": "Trigo"}, {"e": "🍺", "n": "Cerveja"}, {"e": "🌽", "n": "Milho"}]}, "d": 2, "x": "O milho foi domesticado no México há milhares de anos e só chegou à Europa depois de 1492."},
+      {"t": "Qual destes objetos não poderia estar nesta cena?", "a": ["Chocolate"], "type": "txt", "choices": ["Leão", "Escudo", "Tridente", "Chocolate"], "anachro": {"scene": "arena_gladiadores", "place": "Coliseu, ano 80", "items": [{"e": "🦁", "n": "Leão"}, {"e": "🛡️", "n": "Escudo"}, {"e": "🔱", "n": "Tridente"}, {"e": "🍫", "n": "Chocolate"}]}, "d": 2, "x": "O cacau é americano: os europeus só conheceram o chocolate no século XVI, depois da conquista do México pelos espanhóis."},
+      {"t": "Qual destes objetos não poderia estar nesta cena?", "a": ["Café"], "type": "txt", "choices": ["Vela", "Cruz", "Ícone", "Café"], "anachro": {"scene": "hagia_sofia", "place": "Constantinopla, ano 537", "items": [{"e": "🕯️", "n": "Vela"}, {"e": "✝️", "n": "Cruz"}, {"e": "🖼️", "n": "Ícone"}, {"e": "☕", "n": "Café"}]}, "d": 2, "x": "O café como bebida só aparece no século XV, no Iêmen; chegou a Constantinopla no século XVI."},
+      {"t": "Qual destes objetos não poderia estar nesta cena?", "a": ["Telescópio"], "type": "txt", "choices": ["Rolo de papiro", "Gato", "Ânfora", "Telescópio"], "anachro": {"scene": "biblioteca_alexandria", "place": "Alexandria, 250 a.C.", "items": [{"e": "📜", "n": "Rolo de papiro"}, {"e": "🐈", "n": "Gato"}, {"e": "🏺", "n": "Ânfora"}, {"e": "🔭", "n": "Telescópio"}]}, "d": 2, "x": "O telescópio foi inventado na Holanda, em 1608; os astrônomos de Alexandria observavam o céu a olho nu."},
+      {"t": "Qual destes objetos não poderia estar nesta cena?", "a": ["Lâmpada elétrica"], "type": "txt", "choices": ["Tintas", "Vela", "Pão", "Lâmpada elétrica"], "anachro": {"scene": "afresco_vaticano", "place": "Capela Sistina, 1510", "items": [{"e": "🎨", "n": "Tintas"}, {"e": "🕯️", "n": "Vela"}, {"e": "🍞", "n": "Pão"}, {"e": "💡", "n": "Lâmpada elétrica"}]}, "d": 2, "x": "A lâmpada elétrica de Edison é de 1879; Michelangelo pintava o teto à luz do dia e de velas."},
+      {"t": "Qual destes objetos não poderia estar nesta cena?", "a": ["Câmera fotográfica"], "type": "txt", "choices": ["Velas", "Violino", "Coroa", "Câmera fotográfica"], "anachro": {"scene": "versalhes_espelhos", "place": "Versalhes, 1685", "items": [{"e": "🕯️", "n": "Velas"}, {"e": "🎻", "n": "Violino"}, {"e": "👑", "n": "Coroa"}, {"e": "📷", "n": "Câmera fotográfica"}]}, "d": 2, "x": "A fotografia só nasceu no século XIX: a mais antiga que se conhece foi feita por Niépce, por volta de 1826."},
+      {"t": "Qual destes objetos não poderia estar nesta cena?", "a": ["Telefone"], "type": "txt", "choices": ["Pão", "Jornal", "Vela", "Telefone"], "anachro": {"scene": "guilhotina", "place": "Paris, 1793", "items": [{"e": "🍞", "n": "Pão"}, {"e": "📰", "n": "Jornal"}, {"e": "🕯️", "n": "Vela"}, {"e": "☎️", "n": "Telefone"}]}, "d": 2, "x": "O telefone foi patenteado por Graham Bell em 1876, quase um século depois da Revolução Francesa."},
+      {"t": "Qual destes objetos não poderia estar nesta cena?", "a": ["Avião"], "type": "txt", "choices": ["Cartola", "Guarda-chuva", "Relógio", "Avião"], "anachro": {"scene": "locomotiva_vapor", "place": "Inglaterra, 1830", "items": [{"e": "🎩", "n": "Cartola"}, {"e": "☂️", "n": "Guarda-chuva"}, {"e": "🕰️", "n": "Relógio"}, {"e": "✈️", "n": "Avião"}]}, "d": 2, "x": "O avião só levantou voo no século XX: os irmãos Wright voaram em 1903, e Santos Dumont, com o 14-Bis, em 1906. Em 1830, a grande novidade era a locomotiva a vapor."},
+      {"t": "Qual destes objetos não poderia estar nesta cena?", "a": ["Rádio"], "type": "txt", "choices": ["Navio a vela", "Coroa", "Banana", "Rádio"], "anachro": {"scene": "corte_1808", "place": "Rio de Janeiro, 1808", "items": [{"e": "⛵", "n": "Navio a vela"}, {"e": "👑", "n": "Coroa"}, {"e": "🍌", "n": "Banana"}, {"e": "📻", "n": "Rádio"}]}, "d": 2, "x": "As primeiras transmissões de rádio são do fim do século XIX; a corte portuguesa chegou ao Brasil de navio, depois de cerca de dois meses de viagem."},
+      {"t": "Qual destes objetos não poderia estar nesta cena?", "a": ["Televisão"], "type": "txt", "choices": ["Jornal", "Bicicleta", "Guarda-chuva", "Televisão"], "anachro": {"scene": "sufragistas", "place": "Londres, 1910", "items": [{"e": "📰", "n": "Jornal"}, {"e": "🚲", "n": "Bicicleta"}, {"e": "☂️", "n": "Guarda-chuva"}, {"e": "📺", "n": "Televisão"}]}, "d": 2, "x": "A primeira demonstração pública de televisão foi feita por John Logie Baird em 1926, em Londres; as sufragistas espalhavam suas ideias em jornais e cartazes."},
+      {"t": "Qual destes objetos não poderia estar nesta cena?", "a": ["CD"], "type": "txt", "choices": ["Diário", "Rádio", "Bicicleta", "CD"], "anachro": {"scene": "anexo_secreto", "place": "Amsterdã, 1943", "items": [{"e": "📓", "n": "Diário"}, {"e": "📻", "n": "Rádio"}, {"e": "🚲", "n": "Bicicleta"}, {"e": "💿", "n": "CD"}]}, "d": 2, "x": "O CD chegou às lojas em 1982; no Anexo Secreto, a família de Anne Frank ouvia as notícias da guerra pelo rádio."},
+      {"t": "Qual destes objetos não poderia estar nesta cena?", "a": ["Mouse de computador"], "type": "txt", "choices": ["Rádio", "Lápis", "Chá", "Mouse de computador"], "anachro": {"scene": "maquina_enigma", "place": "Bletchley Park, 1941", "items": [{"e": "📻", "n": "Rádio"}, {"e": "✏️", "n": "Lápis"}, {"e": "☕", "n": "Chá"}, {"e": "🖱️", "n": "Mouse de computador"}]}, "d": 2, "x": "O mouse foi inventado nos anos 1960, por Douglas Engelbart; em Bletchley, as mensagens eram decifradas com papel, lápis e as máquinas Bombe."},
+      {"t": "Qual destes objetos não poderia estar nesta cena?", "a": ["Internet"], "type": "txt", "choices": ["Foguete", "Televisão", "Telefone", "Internet"], "anachro": {"scene": "ev_corrida_espacial", "place": "Cabo Canaveral, 1962", "items": [{"e": "🚀", "n": "Foguete"}, {"e": "📺", "n": "Televisão"}, {"e": "☎️", "n": "Telefone"}, {"e": "🌐", "n": "Internet"}]}, "d": 2, "x": "A ARPANET, avó da internet, só entrou no ar em 1969; a internet se espalhou pelo mundo nos anos 1980 e 1990, e a web é de 1991."},
+      {"t": "Qual destes objetos não poderia estar nesta cena?", "a": ["Seringa hipodérmica"], "type": "txt", "choices": ["Rato", "Vela", "Sino", "Seringa hipodérmica"], "anachro": {"scene": "peste_negra", "place": "Europa, 1348", "items": [{"e": "🐀", "n": "Rato"}, {"e": "🕯️", "n": "Vela"}, {"e": "🔔", "n": "Sino"}, {"e": "💉", "n": "Seringa hipodérmica"}]}, "d": 2, "x": "A seringa hipodérmica só foi inventada em 1853; na Peste Negra, ninguém sabia que a doença vinha de uma bactéria."},
+      {"t": "Qual destes objetos não poderia estar nesta cena?", "a": ["Medalha de ouro"], "type": "txt", "choices": ["Escudo", "Uvas", "Ânfora", "Medalha de ouro"], "anachro": {"scene": "mensageiro_maratona", "place": "Maratona, 490 a.C.", "items": [{"e": "🛡️", "n": "Escudo"}, {"e": "🍇", "n": "Uvas"}, {"e": "🏺", "n": "Ânfora"}, {"e": "🥇", "n": "Medalha de ouro"}]}, "d": 2, "x": "Nos jogos da Grécia antiga, o vencedor ganhava só uma coroa de ramos de oliveira. As medalhas vieram com os Jogos modernos: em 1896, o campeão levava uma medalha de prata, e a de ouro só apareceu em 1904."},
+      {"t": "Qual destes objetos não poderia estar nesta cena?", "a": ["Cavalo"], "type": "txt", "choices": ["Milho", "Pimenta", "Peru", "Cavalo"], "anachro": {"scene": "tenochtitlan", "place": "Tenochtitlán, 1500", "items": [{"e": "🌽", "n": "Milho"}, {"e": "🌶️", "n": "Pimenta"}, {"e": "🦃", "n": "Peru"}, {"e": "🐴", "n": "Cavalo"}]}, "d": 3, "x": "Não havia cavalos nas Américas quando os europeus chegaram: eles vieram com os espanhóis, e Cortés os levou ao México em 1519."},
+      {"t": "Qual destes objetos não poderia estar nesta cena?", "a": ["Vaca"], "type": "txt", "choices": ["Lhama", "Batata", "Milho", "Vaca"], "anachro": {"scene": "muralha_inca", "place": "Cusco, 1450", "items": [{"e": "🦙", "n": "Lhama"}, {"e": "🥔", "n": "Batata"}, {"e": "🌽", "n": "Milho"}, {"e": "🐄", "n": "Vaca"}]}, "d": 3, "x": "Não havia bois nem vacas nas Américas: o gado chegou com os europeus e só alcançou os Andes depois da conquista espanhola, nos anos 1530. Os incas criavam lhamas e alpacas."},
+      {"t": "Qual destes objetos não poderia estar nesta cena?", "a": ["Pólvora"], "type": "txt", "choices": ["Cavalo", "Espada de bronze", "Pauzinhos", "Pólvora"], "anachro": {"scene": "exercito_terracota", "place": "China, 210 a.C.", "items": [{"e": "🐎", "n": "Cavalo"}, {"e": "⚔️", "n": "Espada de bronze"}, {"e": "🥢", "n": "Pauzinhos"}, {"e": "🧨", "n": "Pólvora"}]}, "d": 3, "x": "A pólvora foi inventada por alquimistas chineses por volta do século IX, mais de mil anos depois de Qin Shi Huang."},
+      {"t": "Qual destes objetos não poderia estar nesta cena?", "a": ["Chá"], "type": "txt", "choices": ["Pergaminho", "Cavalo", "Castelo", "Chá"], "anachro": {"scene": "runnymede", "place": "Runnymede, 1215", "items": [{"e": "📜", "n": "Pergaminho"}, {"e": "🐎", "n": "Cavalo"}, {"e": "🏰", "n": "Castelo"}, {"e": "🍵", "n": "Chá"}]}, "d": 3, "x": "O chá só chegou à Inglaterra por volta de 1650; virou moda na corte com a rainha Catarina de Bragança, a partir de 1662, e costume nacional no século XVIII. A Magna Carta foi selada sem ele."},
+      {"t": "Qual destes objetos não poderia estar nesta cena?", "a": ["Caneta esferográfica"], "type": "txt", "choices": ["Vela", "Pergaminho", "Sino", "Caneta esferográfica"], "anachro": {"scene": "ev_independencia_eua", "place": "Filadélfia, 1776", "items": [{"e": "🕯️", "n": "Vela"}, {"e": "📜", "n": "Pergaminho"}, {"e": "🔔", "n": "Sino"}, {"e": "🖊️", "n": "Caneta esferográfica"}]}, "d": 3, "x": "A caneta esferográfica moderna foi patenteada pelo húngaro László Bíró em 1938; a Declaração de Independência foi escrita com pena e tinta."},
+      {"t": "Qual destes objetos não poderia estar nesta cena?", "a": ["Luneta"], "type": "txt", "choices": ["Bússola", "Âncora", "Carta de marear", "Luneta"], "anachro": {"scene": "ev_grandes_navegacoes", "place": "Lisboa, 1497", "items": [{"e": "🧭", "n": "Bússola"}, {"e": "⚓", "n": "Âncora"}, {"e": "📜", "n": "Carta de marear"}, {"e": "🔭", "n": "Luneta"}]}, "d": 3, "x": "A luneta só apareceu em 1608, na Holanda; Vasco da Gama navegava com bússola, astrolábio e cartas de marear."},
+      {"t": "Qual destes objetos não poderia estar nesta cena?", "a": ["Livros impressos"], "type": "txt", "choices": ["Pergaminho", "Vela", "Sino", "Livros impressos"], "anachro": {"scene": "monte_cassino", "place": "Monte Cassino, ano 800", "items": [{"e": "📜", "n": "Pergaminho"}, {"e": "🕯️", "n": "Vela"}, {"e": "🔔", "n": "Sino"}, {"e": "📚", "n": "Livros impressos"}]}, "d": 3, "x": "Na Europa, os livros só passaram a ser impressos com a prensa de tipos móveis de Gutenberg, por volta de 1450; antes, os monges copiavam tudo à mão, em pergaminho."},
+      {"t": "Qual destes objetos não poderia estar nesta cena?", "a": ["Moedas cunhadas"], "type": "txt", "choices": ["Cerveja", "Cevada", "Gado", "Moedas cunhadas"], "anachro": {"scene": "zigurate_ur", "place": "Ur, c. 2100 a.C.", "items": [{"e": "🍺", "n": "Cerveja"}, {"e": "🌾", "n": "Cevada"}, {"e": "🐄", "n": "Gado"}, {"e": "🪙", "n": "Moedas cunhadas"}]}, "d": 3, "x": "As primeiras moedas cunhadas surgiram na Lídia, na atual Turquia, por volta de 600 a.C.; em Ur, pagava-se com cevada ou com prata pesada na balança."},
+    ]
+  },
   /* NEW-QS:END */
 ];
 /*@@/data_cl_cats@@*/
@@ -5291,7 +5330,7 @@ function doShare() {
 /* A round of the newest kinds only (Charadas, Detalhes, O intruso, Complete a frase), four of each in turns,
    from the cover's news line. Not a challenge (no seed to send) and no record: it is a taste, not a level.
    NOVAS_V goes up when a kind is added, and the news line comes back once for it. */
-const NOVAS = ['charadas', 'detalhes', 'intrusos', 'complete_frase'], NOVAS_V = 2, NOVAS_EACH = 4;
+const NOVAS = ['charadas', 'detalhes', 'intrusos', 'complete_frase', 'anacronismos'], NOVAS_V = 3, NOVAS_EACH = 3;
 const isNovasRun = () => !!(cat && cat.id === 'novas');
 const isThemed = () => !!(cat && cat.themed);
 function startNovas() {
@@ -5902,6 +5941,8 @@ const MEDALS = [
     t: st => (st.jorStars || 0) >= 40, p: () => [stats.jorStars || 0, 40] },
   { id:'jorAll', ic:'crown', n:'Viajante do tempo', d:'Chegue ao fim da Jornada: o Arquivo Secreto',
     t: st => (st.jorDone || 0) >= 19, p: () => [stats.jorDone || 0, 19] },
+  { id:'retrato1', ic:'star', n:'Espelho do tempo', d:'Descubra quem você seria na História',
+    t: st => (st.retratos || 0) >= 1 },
 ];
 
 function earnedMedals() { return MEDALS.filter(m => { try { return m.t(stats); } catch (e) { return false; } }); }
@@ -16292,7 +16333,7 @@ const CAT_ART = {
   ciencia: 'gear', artes: 'bust', mulheres: 'crown', personagens: 'bust', monumentos: 'column', curiosidades: 'scroll',
   quem_sou_eu: 'bust', linha_do_tempo: 'hourglass', imperios: 'crown', citacoes: 'quill', batalhas: 'sword',
   linhagens: 'crown', manchetes: 'scroll', duelos: 'hourglass', fato_mito: 'scales',
-  charadas: 'masks', detalhes: 'telescope', intrusos: 'scales', complete_frase: 'quill',
+  charadas: 'masks', detalhes: 'telescope', intrusos: 'scales', complete_frase: 'quill', anacronismos: 'hourglass',
 };
 const FALLBACK_PHOTO = {};
 const NONFREE_CRESTS = new Set([]);
@@ -16702,6 +16743,13 @@ function optArtFor(q) {
     _optMemo.set(q, out);
     return out;
   }
+  /* Anacronismo: each slip carries the thing it names, as it is pinned on the scene */
+  if (q.anachro) {
+    const out = { _kind: 'emoji' };
+    (q.anachro.items || []).forEach(it => { out[it.n] = { k: 'emoji', e: it.e }; });
+    _optMemo.set(q, out);
+    return out;
+  }
   /* Complete a frase: the slips are words for the gap, each on a scrap of manuscript */
   if (q.quote && /_{3,}/.test(q.quote.q || '')) {
     const out = { _kind: 'glyph' };
@@ -16755,6 +16803,7 @@ function optArtFor(q) {
 }
 function optArtHtml(r) {
   if (!r) return '';
+  if (r.k === 'emoji') return `<span class="opt-art opt-emoji" aria-hidden="true">${r.e}</span>`;
   if (r.k === 'stamp') return `<span class="opt-art opt-stamp">${stampSVG(r.kind)}</span>`;
   if (r.k === 'club') return r.blank
     ? `<span class="opt-art opt-crest opt-ink">${shieldGlyph(r.n)}</span>`
@@ -18575,6 +18624,7 @@ function html() {
   if (sc === 'cronMenu') return cronMenuHtml();
   if (sc === 'aod')   return aodHtml();
   if (sc === 'jornada') return jorHtml();
+  if (sc === 'retrato') return retratoHtml();
   if (sc === 'anoMenu') return anoMenuHtml();
   if (sc === 'metas') return metasHtml();
   if (sc === 'desafio') return chalHtml();
@@ -18643,7 +18693,10 @@ function html() {
         /* the newest kinds of question, once, until a round of them has been played */
         if ((stats.novasV || (stats.novasGames > 0 ? 1 : 0)) < NOVAS_V) return `<button id="bnovas" class="home-news is-new" type="button">
           <span class="hn-ic">${ICON.star('currentColor', 13)}</span>
-          <span><b>Novidade</b> · charadas em emoji, rostos na lupa, o intruso e frases para completar: jogue uma rodada</span></button>`;
+          <span><b>Novidade</b> · charadas, rostos na lupa, o intruso, frases para completar e anacronismos: jogue uma rodada</span></button>`;
+        if (!(stats.retratos > 0)) return `<button id="bretn" class="home-news is-new" type="button">
+          <span class="hn-ic">${ICON.star('currentColor', 13)}</span>
+          <span><b>Quem você seria na História?</b> · oito perguntas, um retrato de época</span></button>`;
         const t = todaysBdays().filter(id => !v.lim[`${id}:${new Date().getFullYear()}`]);
         if (t.length) return `<button id="bvit" class="home-news" type="button">
           <span class="hn-ic">${ICON.star('currentColor', 13)}</span>
@@ -18714,6 +18767,7 @@ function html() {
           <button id="bmute" class="btn btn-ghost btn-icon" title="Som" aria-label="Som">${
             muted ? ICON.mute('currentColor', 14) : ICON.sound('currentColor', 14)}</button>
           <button id="bmetas" class="link">Metas <span class="num">${(() => { try { return metasTail(); } catch (e) { return ''; } })()}</span></button>
+          <button id="bret"  class="link">Retrato</button>
           <button id="bmed"  class="link">Insígnias</button>
           <button id="bvit2" class="link">Vitrine</button>
           <button id="bcred" class="link">Créditos</button>
@@ -19105,6 +19159,7 @@ function html() {
           : q.odd ? 'Ache o intruso: o que não combina com os outros três'
           : q.detail ? 'Quem está por trás da lupa?'
           : q.rebus ? 'Decifre a charada'
+          : q.anachro ? 'Ache o objeto fora do seu tempo'
           : q.quote && /_{3,}/.test(q.quote.q || '') ? 'Que palavra completa a frase?'
           : q.type === 'txt'
           ? (q.a.length > 1 ? `Marque as ${q.a.length} respostas certas` : 'Marque a resposta certa')
@@ -19349,6 +19404,8 @@ function go() {
   on('daily-btn',   () => { snd.select(); startDaily(); });
   on('surv-btn',    () => { snd.select(); startSurvival(); });
   on('bcred',       () => { snd.swipe();  sc = 'credits'; go(); });
+  on('bret',        () => { snd.select(); startRetrato(); });
+  on('bretn',       () => { snd.select(); startRetrato(); });
   on('bmed',        () => { snd.swipe();  sc = 'medals';  go(); });
   on('ins-prev',    () => { snd.page(); insPage = Math.max(0, insPage - 1); go(); });
   on('ins-next',    () => { snd.page(); insPage = Math.min(MEDAL_SETS.length - 1, insPage + 1); go(); });
@@ -19377,6 +19434,7 @@ function go() {
   if (sc === 'cronMenu') wireCronMenu();
   if (sc === 'aod')   wireAod();
   if (sc === 'jornada') wireJor();
+  if (sc === 'retrato') wireRetrato();
   if (sc === 'anoMenu') wireAnoMenu();
   if (sc === 'desafio') wireChal();
   on('bwelc',       () => { snd.tap(); openWelcomePack(); });
@@ -20182,7 +20240,7 @@ function dealSpecials(qs) {
 ═══════════════════════════════════════════════════ */
 
 /* the strip a question carries, if any: it is the question's picture */
-const hasStrip = q => !!(q && (q.quote || q.battle || q.line || q.news || q.rebus || q.detail || q.odd));
+const hasStrip = q => !!(q && (q.quote || q.battle || q.line || q.news || q.rebus || q.detail || q.odd || q.anachro));
 function qStrip(q) {
   if (!q) return '';
   if (q.quote)  return quoteStrip(q.quote, q);
@@ -20192,6 +20250,7 @@ function qStrip(q) {
   if (q.rebus)  return rebusStrip(q.rebus, q);
   if (q.detail) return detailStrip(q.detail, q);
   if (q.odd)    return oddStrip(q.odd, q);
+  if (q.anachro) return anachroStrip(q.anachro, q);
   return '';
 }
 
@@ -20385,6 +20444,26 @@ function stampSVG(kind) {
     <text x="32" y="26.4" text-anchor="middle" font-family="Archivo, system-ui" font-weight="800" font-size="15" letter-spacing="2" fill="${ink}">${fato ? 'FATO' : 'MITO'}</text></g></svg>`;
 }
 
+/* ── um anacronismo ── a scene of its time and place, four things pinned on it by number (the numbers of
+   the slips below); one of them could not have been there. At the reveal it is ringed in red and stamped,
+   the others ticked. The pins follow the board's own order, so pin 3 is always slip 03. */
+const AN_AT = [[15, 31], [85, 31], [15, 75], [85, 75]];
+function anachroStrip(st, q) {
+  const items = st.items || [], rev = sc === 'reveal', a = (q.a || [])[0];
+  const names = items.map(it => it.n);
+  const order = (typeof disp !== 'undefined' && disp && disp.length === items.length && disp.every(d => names.includes(d.id)))
+    ? disp.map(d => items.find(it => it.n === d.id)) : items;
+  const pic = (sceneSvg({ id: st.scene }, 360) || '')
+    .replace('<svg ', '<svg preserveAspectRatio="xMidYMid slice" ').replace('style="display:block;max-width:100%;height:auto;"', 'style="display:block;width:100%;height:100%"');
+  return `<div class="qstrip hs-anachro" role="img" aria-label="Cena: ${_esc(st.place || '')}. Objetos: ${order.map((it, k) => (k + 1) + ', ' + _esc(it.n)).join('; ')}">
+    <span class="hs-an-scene">${pic}
+      <span class="hs-an-place">${ICON.calendar('currentColor', 11)} ${st.place || ''}</span>
+      ${order.map((it, k) => `<span class="hs-an-st${rev ? (it.n === a ? ' is-bad' : ' is-ok') : ''}" style="left:${AN_AT[k][0]}%;top:${AN_AT[k][1]}%;animation-delay:${(k * .16 + .2).toFixed(2)}s">
+        <b>${it.e}</b><i>${k + 1}</i></span>`).join('')}
+      ${rev ? '<span class="hs-an-stamp">Anacronismo!</span>' : ''}
+    </span></div>`;
+}
+
 /* ── the moment each format arrives with ── */
 function stripFx(q) {
   if (!q || sc !== 'quiz') return;
@@ -20396,15 +20475,23 @@ function stripFx(q) {
   else if (q.rebus) snd.pops((q.rebus.e || []).length);
   else if (q.detail) snd.lens();
   else if (q.odd) snd.oddOne();
+  else if (q.anachro) snd.warp();
 }
 /* the stamp coming down on the right slip, at the reveal; the glass pulling back */
 function revealFx(q) {
   if (q && (q.myth || q.odd)) setTimeout(() => snd.stamp(), q.odd ? 260 : 120);
   if (q && q.detail) snd.unzoom();
+  if (q && q.anachro) setTimeout(() => { snd.stamp(); snd.warp(true); }, 280);
 }
 
 /* ── their sounds ── */
 Object.assign(snd, {
+  /* a slip in time: a falling whistle over a crackle, and back up again at the reveal */
+  warp(back) {
+    tone(back ? 260 : 980, .55, { type: 'sine', vol: .028, to: back ? 900 : 250 });
+    tone(back ? 390 : 1470, .5, { type: 'triangle', vol: .012, to: back ? 1350 : 370, delay: .04 });
+    crackle(.4, { grains: 12, vol: .012, delay: .05 });
+  },
   /* a nib on laid paper: three quick scratches */
   quill() { [0, .16, .34].forEach((d, i) => { crackle(.12, { grains: 10, vol: .02, delay: d });
             noise(.09, { type: 'bandpass', freq: 3200 + i * 300, q: 2.2, vol: .02, attack: .01, delay: d }); }); },
@@ -24236,6 +24323,268 @@ function jorEndHtml() {
     ${r.eraNew ? `<span class="chip chip-brass jor-era-chip">${ICON.flag('currentColor', 11)} ${r.eraNew.fin ? 'A Jornada inteira, vencida!' : 'Era ' + r.eraNew.roman + ' concluída: ' + r.eraNew.n}</span>`
       : r.opened ? `<span class="chip chip-soft jor-open-chip">${ICON.play('currentColor', 10)} Parada ${r.next + 1} aberta: ${JOR_STOPS[r.next].n}</span>` : ''}
   </div>`;
+}
+
+/* ═══════════════════════════════════════════════════
+   RETRATO DE ÉPOCA — "Quem você seria na História?"
+   Not a quiz: eight questions with no wrong answer. Each answer leans
+   towards two of six kinds of people the past is full of (the figures'
+   own kinds: governantes, generais, artistas, pensadores, exploradores,
+   revolucionários). The strongest is who you are; the second picks which
+   of them: a Soberano who loves the arts is Luís XIV, one who loves books
+   is Dom Pedro II. The result is a portrait, its kinds as bars, and a card
+   to share.
+═══════════════════════════════════════════════════ */
+const RET_KINDS = {
+  GOV: { t: 'O Soberano', ic: 'crown', col: '#8A6416',
+         d: 'Você gosta de ver as coisas funcionando e não tem medo de decidir. Onde há caos, você organiza; onde há gente, você lidera.' },
+  GEN: { t: 'O Estrategista', ic: 'shield', col: '#7B2D26',
+         d: 'Você enxerga o tabuleiro inteiro antes de mexer uma peça. Coragem, sim, mas sempre com um plano.' },
+  ART: { t: 'O Artista', ic: 'star', col: '#6A4C93',
+         d: 'Você vê beleza onde os outros veem rotina e precisa criar para se sentir vivo.' },
+  PEN: { t: 'O Pensador', ic: 'book', col: '#2E5E7E',
+         d: 'Você quer entender como tudo funciona. Uma boa pergunta vale mais do que mil respostas prontas.' },
+  EXP: { t: 'O Explorador', ic: 'globe', col: '#2E6B3F',
+         d: 'O mapa nunca é grande o bastante para você. O desconhecido não assusta: chama.' },
+  REV: { t: 'O Revolucionário', ic: 'flame', col: '#B3402F',
+         d: 'Você não aceita o mundo como está. Quando algo é injusto, você muda as regras.' },
+};
+const RET_ORDER = ['GOV', 'GEN', 'ART', 'PEN', 'EXP', 'REV'];
+/* who you would be: by your strongest kind, then your second ('' when the second is a tie) */
+const RET_WHO = {
+  GOV: { ART: ['luis_xiv', 'O Rei Sol fez de Versalhes um palco das artes: balé, ópera, jardins e espelhos.'],
+         PEN: ['dom_pedro_ii', 'O imperador que falava várias línguas, se correspondia com cientistas e adorava astronomia.'],
+         GEN: ['augusto', 'Venceu a guerra civil e governou Roma por mais de 40 anos, com mão firme.'],
+         EXP: ['mansa_musa', 'Atravessou o Saara até Meca com uma caravana tão rica que o mundo nunca esqueceu.'],
+         REV: ['dom_pedro_i', 'Rompeu com Portugal e proclamou a independência do Brasil às margens do Ipiranga.'],
+         '':  ['elizabeth_i', 'Governou a Inglaterra por mais de 40 anos e deu nome a uma era de ouro.'] },
+  GEN: { GOV: ['napoleao', 'De general a imperador: venceu batalhas e reescreveu as leis da França.'],
+         PEN: ['sun_tzu', 'Para ele, a melhor vitória era vencer sem lutar. A ele se atribui A Arte da Guerra.'],
+         EXP: ['alexandre', 'Levou seu exército da Grécia até a Índia antes de completar 33 anos.'],
+         REV: ['joana_darc', 'Uma camponesa que, aos 17 anos, comandou tropas e mudou o rumo de uma guerra.'],
+         ART: ['cesar', 'General brilhante e também escritor: contou as próprias guerras na Gália.'],
+         '':  ['anibal', 'Atravessou os Alpes com elefantes para surpreender Roma.'] },
+  ART: { PEN: ['leonardo', 'Pintor da Mona Lisa e inventor de máquinas que só existiriam séculos depois.'],
+         REV: ['frida', 'Transformou a própria dor em arte e pintou o México como ninguém.'],
+         EXP: ['camoes', 'Soldado, viajante e poeta: perdeu um olho em combate e cantou as navegações em Os Lusíadas.'],
+         GOV: ['michelangelo', 'Comandou obras gigantes, do teto da Capela Sistina à cúpula de São Pedro.'],
+         GEN: ['cervantes', 'Lutou na Batalha de Lepanto, foi prisioneiro em Argel e escreveu Dom Quixote.'],
+         '':  ['van_gogh', 'Pintou mais de 800 quadros em cerca de dez anos de carreira.'] },
+  PEN: { EXP: ['darwin', 'Deu a volta ao mundo no Beagle e voltou com a ideia que mudou a biologia.'],
+         ART: ['ada_lovelace', 'Filha do poeta Byron, escreveu o que muitos consideram o primeiro programa de computador.'],
+         REV: ['galileu', 'Apontou o telescópio para o céu e defendeu, contra tudo, que a Terra se move.'],
+         GOV: ['aristoteles', 'Foi professor de Alexandre, o Grande, e escreveu sobre quase tudo, da política à biologia.'],
+         GEN: ['arquimedes', 'Suas máquinas defenderam Siracusa do cerco romano.'],
+         '':  ['einstein', 'Mudou para sempre o que sabemos sobre o espaço, o tempo e a luz.'] },
+  EXP: { PEN: ['cook', 'Mapeou o Pacífico em três viagens, com cientistas a bordo.'],
+         GEN: ['magalhaes', 'Comandou a expedição que fez a primeira volta ao mundo.'],
+         GOV: ['henrique_navegador', 'O príncipe que organizou as viagens portuguesas pela costa da África.'],
+         REV: ['gagarin', 'O primeiro ser humano a ir ao espaço, em 1961.'],
+         ART: ['marco_polo', 'Foi até a China de Kublai Khan e voltou com histórias que encantaram a Europa.'],
+         '':  ['amundsen', 'O primeiro a chegar ao Polo Sul, em 1911.'] },
+  REV: { GOV: ['mandela', 'Passou 27 anos preso e saiu para presidir uma África do Sul sem apartheid.'],
+         PEN: ['mlk', 'Lutou pelos direitos civis com palavras e sem violência.'],
+         GEN: ['zumbi', 'Liderou o Quilombo dos Palmares na resistência contra a escravidão.'],
+         ART: ['chiquinha', 'Compositora pioneira e abolicionista: vendeu partituras para comprar a liberdade de um músico escravizado.'],
+         EXP: ['che', 'Atravessou a América do Sul de motocicleta antes de virar guerrilheiro.'],
+         '':  ['gandhi', 'Libertou a Índia com marchas, jejuns e desobediência, sem pegar em armas.'] },
+};
+/* the questions: each answer gives two points to one kind and one to another */
+const RET_QS = [
+  { t: 'Um sábado inteiro livre. O que você faz?', o: [
+    ['🗺️', 'Pego a estrada para um lugar que nunca vi', 'EXP', 'REV'],
+    ['🔬', 'Leio, investigo, desmonto alguma coisa para ver como funciona', 'PEN', 'ART'],
+    ['🎨', 'Desenho, toco, escrevo: crio alguma coisa', 'ART', 'PEN'],
+    ['🎉', 'Organizo um encontro com a turma toda', 'GOV', 'GEN']] },
+  { t: 'Num trabalho em grupo, você é…', o: [
+    ['👑', 'Quem decide e distribui as tarefas', 'GOV', 'GEN'],
+    ['♟️', 'Quem planeja cada passo', 'GEN', 'PEN'],
+    ['💡', 'Quem tem as ideias mais malucas', 'ART', 'EXP'],
+    ['📢', 'Quem questiona se o trabalho faz sentido', 'REV', 'PEN']] },
+  { t: 'Você vai viajar no tempo e só pode levar um objeto:', o: [
+    ['🧭', 'Uma bússola', 'EXP', 'GEN'],
+    ['🔭', 'Uma luneta', 'PEN', 'EXP'],
+    ['✒️', 'Pena e tinteiro', 'ART', 'REV'],
+    ['🛡️', 'Um escudo', 'GEN', 'GOV']] },
+  { t: 'O que mais tira você do sério?', o: [
+    ['⚖️', 'Injustiça', 'REV', 'GOV'],
+    ['😴', 'Tédio e rotina', 'EXP', 'ART'],
+    ['🙄', 'Gente que fala sem pensar', 'PEN', 'GEN'],
+    ['🌀', 'Bagunça e falta de comando', 'GOV', 'GEN']] },
+  { t: 'Seu lugar ideal:', o: [
+    ['🏰', 'Um palácio com vista para o reino', 'GOV', 'ART'],
+    ['⛵', 'O convés de um navio em alto-mar', 'EXP', 'GEN'],
+    ['📚', 'Uma biblioteca antiga, só para mim', 'PEN', 'ART'],
+    ['🎭', 'Os bastidores de um teatro em noite de estreia', 'ART', 'REV']] },
+  { t: 'Diante de um grande problema, você…', o: [
+    ['⚔️', 'Encara de frente, na hora', 'GEN', 'REV'],
+    ['🧠', 'Estuda tudo antes de agir', 'PEN', 'GOV'],
+    ['✊', 'Junta gente para mudar tudo', 'REV', 'GOV'],
+    ['🎲', 'Arrisca um caminho que ninguém tentou', 'EXP', 'ART']] },
+  { t: 'Como você gostaria de ser lembrado?', o: [
+    ['🏆', 'Como quem venceu as batalhas mais difíceis', 'GEN', 'GOV'],
+    ['🕊️', 'Como quem libertou o seu povo', 'REV', 'GOV'],
+    ['🖼️', 'Pela obra que deixou', 'ART', 'PEN'],
+    ['🌍', 'Por ter ido aonde ninguém tinha ido', 'EXP', 'PEN']] },
+  { t: 'Escolha uma palavra:', o: [
+    ['🌟', 'Glória', 'GOV', 'GEN'],
+    ['❓', 'Curiosidade', 'PEN', 'EXP'],
+    ['🔥', 'Liberdade', 'REV', 'EXP'],
+    ['✨', 'Beleza', 'ART', 'GOV']] },
+];
+let ret = null;    // { i, picks: [option index per question], phase: 'intro'|'q'|'res' }
+
+function startRetrato() {
+  ret = { i: 0, picks: [], phase: 'intro' };
+  sc = 'retrato';
+  go();
+}
+/* the tally: each kind's points, the strongest, the second (none when two tie for it), the figure */
+function retTally(picks) {
+  const pts = {}; RET_ORDER.forEach(k => { pts[k] = 0; });
+  picks.forEach((o, i) => { const a = RET_QS[i] && RET_QS[i].o[o]; if (a) { pts[a[2]] += 2; pts[a[3]] += 1; } });
+  /* ties go to the kind chosen first as a main answer, then to the order of the kinds */
+  const first = {}; picks.forEach((o, i) => { const a = RET_QS[i] && RET_QS[i].o[o]; if (a && first[a[2]] == null) first[a[2]] = i; });
+  const rank = RET_ORDER.slice().sort((a, b) => (pts[b] - pts[a]) || ((first[a] ?? 99) - (first[b] ?? 99)) || (RET_ORDER.indexOf(a) - RET_ORDER.indexOf(b)));
+  const top = rank[0], sec = pts[rank[1]] > 0 && pts[rank[1]] !== pts[rank[2]] ? rank[1] : '';
+  const [id, why] = RET_WHO[top][sec] || RET_WHO[top][''];
+  return { pts, top, sec, id, why, total: picks.length * 3 };
+}
+
+function retratoHtml() {
+  if (!ret) ret = { i: 0, picks: [], phase: 'intro' };
+  if (ret.phase === 'intro') return `
+  <div class="pg ret-pg">
+    ${topbar('Retrato de época')}
+    <div class="ret-intro">
+      <div class="ret-frame" aria-hidden="true"><span class="ret-frame-in">${(QICON.bust || QICON.scroll)(150)}</span></div>
+      <div class="display" style="font-size:30px;"><em>Quem você seria na História?</em></div>
+      <p class="small muted ret-p">Oito perguntas, nenhuma resposta errada. No fim, o personagem que mais combina com o seu jeito.</p>
+      <button id="ret-go" class="btn btn-brass btn-lg" type="button">${ICON.play('currentColor', 13)} Pintar o meu retrato</button>
+      ${LS.get('retrato', null) ? `<p class="small muted">Da última vez: <b>${(PL.find(p => p.id === LS.get('retrato', {}).id) || {}).n || ''}</b></p>` : ''}
+    </div>
+  </div>`;
+  if (ret.phase === 'res') return retResHtml();
+  const q = RET_QS[ret.i];
+  return `
+  <div class="pg ret-pg">
+    ${topbar('Retrato de época')}
+    <div class="ret-prog" aria-hidden="true">${RET_QS.map((x, k) => `<i class="${k < ret.i ? 'ok' : k === ret.i ? 'on' : ''}"></i>`).join('')}</div>
+    <span class="ret-k">Pergunta ${ret.i + 1} de ${RET_QS.length}</span>
+    <div class="display ret-q"><em>${q.t}</em></div>
+    <div class="ret-opts">
+      ${q.o.map((o, k) => `<button class="ret-opt" data-o="${k}" type="button" style="animation-delay:${(k * .07 + .05).toFixed(2)}s">
+        <span class="ret-e" aria-hidden="true">${o[0]}</span><span class="ret-t">${o[1]}</span></button>`).join('')}
+    </div>
+    ${ret.i > 0 ? '<button id="ret-back" class="btn btn-ghost btn-sm ret-back" type="button">Voltar uma pergunta</button>' : ''}
+  </div>`;
+}
+
+function retResHtml() {
+  const r = retTally(ret.picks), k = RET_KINDS[r.top], p = PL.find(x => x.id === r.id);
+  const max = Math.max(...RET_ORDER.map(x => r.pts[x]), 1);
+  return `
+  <div class="pg pg-center ret-pg ret-res" style="--kc:${k.col}">
+    <span class="ret-res-k">Seu retrato de época</span>
+    <div class="ret-portrait">${p ? figurinha(p, 'lg', { decorative: true }) : ''}</div>
+    <div class="display ret-who"><small>Você seria</small><em>${p ? p.n : ''}</em></div>
+    <div class="ret-kind">${(ICON[k.ic] || ICON.star)('currentColor', 13)} ${k.t}${r.sec ? ` <span>com alma de ${RET_KINDS[r.sec].t.replace(/^O /, '').toLowerCase()}</span>` : ''}</div>
+    <p class="ret-why">${r.why}</p>
+    <p class="ret-d">${k.d}</p>
+    <div class="ret-bars" aria-label="${RET_ORDER.map(x => RET_KINDS[x].t + ': ' + r.pts[x]).join(', ')}">
+      ${RET_ORDER.map(x => `<span class="ret-bar${x === r.top ? ' is-top' : ''}"><small>${RET_KINDS[x].t.replace(/^O /, '')}</small>
+        <i><b style="width:${Math.round(100 * r.pts[x] / max)}%;background:${RET_KINDS[x].col}"></b></i></span>`).join('')}
+    </div>
+    ${medalChips()}
+    <div class="foot-row" style="margin-top:6px;">
+      <button id="ret-share" class="btn btn-ghost btn-sm" type="button">Compartilhar</button>
+      <button id="ret-again" class="btn btn-brass" type="button">De novo</button>
+      <button id="bhome" class="btn btn-ghost btn-sm" type="button">Início</button>
+    </div>
+  </div>`;
+}
+
+function retPick(o) {
+  if (!ret || ret.phase !== 'q') return;
+  ret.picks[ret.i] = o;
+  ret.picks.length = ret.i + 1;
+  if (ret.i < RET_QS.length - 1) { ret.i++; snd.select(); go(); return; }
+  ret.phase = 'res';
+  const r = retTally(ret.picks);
+  LS.set('retrato', { id: r.id, top: r.top, sec: r.sec });
+  stats.retratos = (stats.retratos || 0) + 1; LS.set('stats', stats);
+  window._newMedals = newMedals();
+  _retCard = null;
+  go();
+  /* the portrait comes up: a bell, a little paint */
+  try { snd.record(); haptic([14, 40, 14]); } catch (e) {}
+  setTimeout(() => { try { fx.rain(30, [RET_KINDS[r.top].col, '#E0B968', '#F3EEDE']); } catch (e) {} }, 500);
+  setTimeout(() => { retCard().then(b => { _retCard = b; }).catch(() => {}); }, 900);
+}
+
+/* ── the card to share: the portrait, the name, the kind, the bars ── */
+let _retCard = null;
+async function retCard() {
+  const r = retTally(ret.picks), k = RET_KINDS[r.top], p = PL.find(x => x.id === r.id);
+  try { await Promise.all(['italic 700 80px Fraunces', '600 40px Fraunces', '800 30px Archivo'].map(f => document.fonts.load(f))); } catch (e) {}
+  const img = await new Promise((ok, no) => { const i = new Image(); i.onload = () => ok(i); i.onerror = no; i.src = p.img; });
+  const W = 1080, H = 1350, c = document.createElement('canvas'); c.width = W; c.height = H;
+  const g = c.getContext('2d');
+  let pg = g.createRadialGradient(W / 2, H * .4, 80, W / 2, H / 2, H * .8);
+  pg.addColorStop(0, '#FBF5E6'); pg.addColorStop(.6, '#F0E3C4'); pg.addColorStop(1, '#D9C397');
+  g.fillStyle = pg; g.fillRect(0, 0, W, H);
+  for (let i = 0; i < 2400; i++) { g.fillStyle = `rgba(90,60,20,${(.02 + Math.random() * .05).toFixed(3)})`; g.fillRect(Math.random() * W, Math.random() * H, 1.6, 1.6); }
+  const text = (t, font, col, y, ls) => { g.font = font; g.fillStyle = col; g.textAlign = 'center'; try { g.letterSpacing = ls || '0px'; } catch (e) {} g.fillText(t, W / 2, y); };
+  text('MEU RETRATO DE ÉPOCA', '800 30px Archivo', '#8C6A2A', 120, '9px');
+  /* the portrait in a gilt frame */
+  const fw = 520, fh = 640, fx0 = (W - fw) / 2, fy0 = 165;
+  g.fillStyle = '#7A5420'; g.fillRect(fx0 - 26, fy0 - 26, fw + 52, fh + 52);
+  g.fillStyle = '#C9A04E'; g.fillRect(fx0 - 18, fy0 - 18, fw + 36, fh + 36);
+  g.fillStyle = '#E8CF8A'; g.fillRect(fx0 - 8, fy0 - 8, fw + 16, fh + 16);
+  g.save(); g.beginPath(); g.rect(fx0, fy0, fw, fh); g.clip();
+  const s = Math.max(fw / img.width, fh / img.height), iw = img.width * s, ih = img.height * s;
+  g.drawImage(img, fx0 + (fw - iw) / 2, fy0 + Math.min(0, (fh - ih) * .25), iw, ih);
+  g.restore();
+  text('Eu seria', 'italic 600 40px Fraunces', '#6B5B45', 905);
+  text(p.n, 'italic 700 80px Fraunces', '#2B2118', 990);
+  /* the kind on a ribbon of its colour */
+  const kt = k.t + (r.sec ? ' · ' + RET_KINDS[r.sec].t.replace(/^O /, '') : '');
+  g.font = '800 30px Archivo'; try { g.letterSpacing = '5px'; } catch (e) {}
+  const rw = Math.min(900, g.measureText(kt.toUpperCase()).width + 110);
+  g.fillStyle = k.col; g.fillRect((W - rw) / 2, 1030, rw, 70);
+  text(kt.toUpperCase(), '800 30px Archivo', '#F6EBD8', 1076, '5px');
+  /* the six kinds as six short bars */
+  const max = Math.max(...RET_ORDER.map(x => r.pts[x]), 1), bw = 120, gap = 24, x0 = (W - (bw * 6 + gap * 5)) / 2;
+  RET_ORDER.forEach((x, i) => { const xx = x0 + i * (bw + gap), h = 8 + 70 * r.pts[x] / max;
+    g.fillStyle = 'rgba(107,74,34,.15)'; g.fillRect(xx, 1130, bw, 78);
+    g.fillStyle = RET_KINDS[x].col; g.fillRect(xx, 1208 - h, bw, h);
+    g.font = '700 19px Archivo'; g.fillStyle = '#5A4A36'; g.textAlign = 'center'; try { g.letterSpacing = '0px'; } catch (e) {}
+    g.fillText(RET_KINDS[x].t.replace(/^O /, ''), xx + bw / 2, 1238); });
+  text('Quem você seria? · tdosreis.github.io/history-quiz', '700 24px Archivo', '#8C7A60', 1300, '1px');
+  return new Promise(ok => c.toBlob(ok, 'image/png'));
+}
+function retShareText() {
+  const r = retTally(ret.picks), p = PL.find(x => x.id === r.id);
+  return `Meu retrato de época 🖼️ History Quiz\nEu seria ${p ? p.n : ''}: ${RET_KINDS[r.top].t}${r.sec ? ' com alma de ' + RET_KINDS[r.sec].t.replace(/^O /, '').toLowerCase() : ''}.\nE você, quem seria? ${CHAL_URL}`;
+}
+
+function wireRetrato() {
+  const on = (id, fn) => document.getElementById(id)?.addEventListener('click', fn);
+  const ready = tapArmed(260);
+  on('ret-go', () => { if (!ready()) return; ret.phase = 'q'; ret.i = 0; ret.picks = []; snd.page(); go(); });
+  document.querySelectorAll('.ret-opt').forEach(b => b.addEventListener('click', () => { if (ready()) { b.classList.add('is-picked'); setTimeout(() => retPick(+b.dataset.o), 160); } }));
+  on('ret-back', () => { if (!ready() || !ret || ret.i === 0) return; ret.i--; snd.swipe(); go(); });
+  on('ret-again', () => { snd.select(); ret = { i: 0, picks: [], phase: 'q' }; go(); });
+  on('ret-share', () => {
+    const txt = retShareText();
+    if (_retCard && navigator.canShare) {
+      const file = new File([_retCard], 'meu-retrato.png', { type: 'image/png' });
+      if (navigator.canShare({ files: [file] })) { navigator.share({ files: [file], text: txt }).catch(() => {}); return; }
+    }
+    if (navigator.share) navigator.share({ text: txt }).catch(() => {});
+    else if (navigator.clipboard) navigator.clipboard.writeText(txt).then(() => {
+      const b = document.getElementById('ret-share'); if (b) { b.dataset.l = b.dataset.l || b.textContent; b.textContent = 'Copiado!'; setTimeout(() => { b.textContent = b.dataset.l; }, 1600); } }).catch(() => {});
+  });
 }
 
 /* ═══════════════════════════════════════════════════

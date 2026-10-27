@@ -50,7 +50,7 @@ const CAT_ART = {
   ciencia: 'gear', artes: 'bust', mulheres: 'crown', personagens: 'bust', monumentos: 'column', curiosidades: 'scroll',
   quem_sou_eu: 'bust', linha_do_tempo: 'hourglass', imperios: 'crown', citacoes: 'quill', batalhas: 'sword',
   linhagens: 'crown', manchetes: 'scroll', duelos: 'hourglass', fato_mito: 'scales',
-  charadas: 'masks', detalhes: 'telescope', intrusos: 'scales', complete_frase: 'quill',
+  charadas: 'masks', detalhes: 'telescope', intrusos: 'scales', complete_frase: 'quill', anacronismos: 'hourglass',
 };
 const FALLBACK_PHOTO = {};
 const NONFREE_CRESTS = new Set([]);
@@ -460,6 +460,13 @@ function optArtFor(q) {
     _optMemo.set(q, out);
     return out;
   }
+  /* Anacronismo: each slip carries the thing it names, as it is pinned on the scene */
+  if (q.anachro) {
+    const out = { _kind: 'emoji' };
+    (q.anachro.items || []).forEach(it => { out[it.n] = { k: 'emoji', e: it.e }; });
+    _optMemo.set(q, out);
+    return out;
+  }
   /* Complete a frase: the slips are words for the gap, each on a scrap of manuscript */
   if (q.quote && /_{3,}/.test(q.quote.q || '')) {
     const out = { _kind: 'glyph' };
@@ -513,6 +520,7 @@ function optArtFor(q) {
 }
 function optArtHtml(r) {
   if (!r) return '';
+  if (r.k === 'emoji') return `<span class="opt-art opt-emoji" aria-hidden="true">${r.e}</span>`;
   if (r.k === 'stamp') return `<span class="opt-art opt-stamp">${stampSVG(r.kind)}</span>`;
   if (r.k === 'club') return r.blank
     ? `<span class="opt-art opt-crest opt-ink">${shieldGlyph(r.n)}</span>`
