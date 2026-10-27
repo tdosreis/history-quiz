@@ -179,6 +179,8 @@ function mfEnd() {
   if (mf.isBest) LS.set('mfBest', mf.score);
   LS.set('stats', stats);
   window._newMedals = newMedals();
+  _mfImg = null;
+  setTimeout(() => { mfImage().then(b => { _mfImg = b; }).catch(() => {}); }, 900);
   setTimeout(() => { try { snd.final(mf.score >= 6); } catch (e) {} }, 200);
   go();
   if (mf.isBest && mf.score >= 6) setTimeout(() => { try { fx.rain(mf.score >= 15 ? 80 : 36, ['#B3402F', '#3A9C6E', '#E0B968']); } catch (e) {} }, 350);
@@ -268,6 +270,60 @@ const mfShareText = () => {
   return `Mito ou fato? 🔍 History Quiz\n${row}\n${mf.score} ${mf.score === 1 ? 'acerto' : 'acertos'} · ${rank}${mf.isBest ? ' · recorde!' : ''}\n${chalShareTail(chalMine())}`;
 };
 
+/* the result as a picture to share: the membership card of the Sociedade dos Céticos — the score,
+   the rank, a square for each card answered, the claim that got you, and the society's round stamp */
+let _mfImg = null;
+async function mfImage() {
+  const n = mf.score, [, rank] = MF_RANKS.filter(r => n >= r[0]).pop();
+  const miss = mf.log.filter(l => !l.ok).map(l => MF.find(c => c.id === l.id)).pop();
+  try { await Promise.all(['italic 700 84px Fraunces', '700 250px Fraunces', 'italic 500 40px Fraunces', '800 30px Archivo'].map(f => document.fonts.load(f))); } catch (e) {}
+  const W = 1080, H = 1350, c = document.createElement('canvas'); c.width = W; c.height = H;
+  const g = c.getContext('2d');
+  const bg = g.createRadialGradient(W / 2, H * .45, 60, W / 2, H / 2, H * .85);
+  bg.addColorStop(0, '#5A3620'); bg.addColorStop(1, '#25150B');
+  g.fillStyle = bg; g.fillRect(0, 0, W, H);
+  for (let i = 0; i < 1800; i++) { g.fillStyle = `rgba(0,0,0,${(.04 + Math.random() * .08).toFixed(3)})`; g.fillRect(Math.random() * W, Math.random() * H, 2, 2); }
+  /* the index card, a little askew, ruled like a library's */
+  const cw = 900, ch = 1150;
+  g.save(); g.translate(W / 2, H / 2); g.rotate(-.018);
+  g.shadowColor = 'rgba(0,0,0,.55)'; g.shadowBlur = 40; g.shadowOffsetY = 18;
+  g.fillStyle = '#F6EFDC'; g.fillRect(-cw / 2, -ch / 2, cw, ch);
+  g.shadowColor = 'transparent';
+  g.fillStyle = 'rgba(70,110,160,.2)'; for (let y = -ch / 2 + 150; y < ch / 2 - 20; y += 52) g.fillRect(-cw / 2, y, cw, 2.5);
+  g.fillStyle = 'rgba(190,60,50,.4)'; g.fillRect(-cw / 2 + 70, -ch / 2, 3, ch);
+  const text = (t, font, col, y, ls, x) => { g.font = font; g.fillStyle = col; g.textAlign = 'center'; try { g.letterSpacing = ls || '0px'; } catch (e) {} g.fillText(t, x || 0, y); };
+  text('SOCIEDADE DOS CÉTICOS', '800 34px Archivo', '#7B5A22', -ch / 2 + 92, '9px');
+  text('carteira de sócio · Mito ou fato?', 'italic 500 34px Fraunces', '#6B5B45', -ch / 2 + 140);
+  text(String(n), '700 250px Fraunces', '#2A241C', -ch / 2 + 410);
+  text(n === 1 ? 'ACERTO' : 'ACERTOS', '800 28px Archivo', '#8C7A60', -ch / 2 + 462, '7px');
+  text(rank, 'italic 700 84px Fraunces', '#2A241C', -ch / 2 + 580);
+  /* a square for every card answered, in rows */
+  const sq = 34, gap = 10, per = 18, rows = mf.log.slice(0, per * 2), x0 = -((Math.min(rows.length, per)) * (sq + gap) - gap) / 2;
+  rows.forEach((l, i) => { g.fillStyle = l.ok ? '#2E7D4F' : '#B3402F'; g.fillRect(x0 + (i % per) * (sq + gap), -ch / 2 + 630 + Math.floor(i / per) * (sq + gap), sq, sq); });
+  /* the claim that got you, word-wrapped */
+  if (miss) {
+    text('O QUE ME PEGOU', '800 26px Archivo', '#8C7A60', -ch / 2 + 760, '6px');
+    g.font = 'italic 500 40px Fraunces'; try { g.letterSpacing = '0px'; } catch (e) {}
+    const words = ('“' + miss.c + '”').split(' '), lines = []; let line = '';
+    words.forEach(w => { const t = line ? line + ' ' + w : w; if (g.measureText(t).width > 660 && line) { lines.push(line); line = w; } else line = t; });
+    lines.push(line);
+    lines.slice(0, 3).forEach((l, i) => text(l, 'italic 500 40px Fraunces', '#2A241C', -ch / 2 + 815 + i * 52));
+    text('era ' + mfWord(miss.v).toUpperCase(), '800 30px Archivo', miss.v === 'f' ? '#2E7D4F' : '#B3402F', -ch / 2 + 815 + Math.min(3, lines.length) * 52 + 14, '6px');
+  } else text('Nenhuma lenda me enganou.', 'italic 500 42px Fraunces', '#2A241C', -ch / 2 + 815);
+  /* the society's stamp, round, in red ink */
+  g.save(); g.translate(cw / 2 - 125, ch / 2 - 115); g.rotate(-.3); g.globalAlpha = .8;
+  g.strokeStyle = '#B3402F'; g.lineWidth = 7; g.beginPath(); g.arc(0, 0, 108, 0, Math.PI * 2); g.stroke();
+  g.lineWidth = 3; g.beginPath(); g.arc(0, 0, 74, 0, Math.PI * 2); g.stroke();
+  const ring = 'HISTORY QUIZ · MITO OU FATO · ';
+  g.font = '800 21px Archivo'; g.fillStyle = '#B3402F'; g.textAlign = 'center'; try { g.letterSpacing = '0px'; } catch (e) {}
+  [...ring].forEach((ch2, i) => { g.save(); g.rotate(i / ring.length * Math.PI * 2); g.fillText(ch2, 0, -84); g.restore(); });
+  g.font = '800 34px Archivo'; g.fillText('SÓCIO', 0, 4); g.font = '700 22px Archivo'; g.fillText('Nº ' + (mf.seed % 9000 + 1000), 0, 34);
+  g.restore();
+  g.restore();
+  text('tdosreis.github.io/history-quiz', '700 26px Archivo', 'rgba(241,228,196,.75)', H - 34, '2px', W / 2);
+  return new Promise(ok => c.toBlob(ok, 'image/png'));
+}
+
 /* the card follows the finger: to the left it reads Mito, to the right Fato; let go far enough and that is the answer.
    A turned card is thrown away the same way, and the next one comes up from the pile. */
 function mfThrow(dir) {
@@ -289,6 +345,10 @@ function wireMito() {
   on('mf-again', () => { snd.select(); startMito(); });
   on('mf-share', () => {
     const txt = mfShareText();
+    if (_mfImg && navigator.canShare) {
+      const file = new File([_mfImg], 'mito-ou-fato.png', { type: 'image/png' });
+      if (navigator.canShare({ files: [file] })) { navigator.share({ files: [file], text: txt }).catch(() => {}); return; }
+    }
     if (navigator.share) navigator.share({ text: txt }).catch(() => {});
     else if (navigator.clipboard) navigator.clipboard.writeText(txt).then(() => {
       const b = document.getElementById('mf-share'); if (b) { b.dataset.l = b.dataset.l || b.textContent; b.textContent = 'Copiado!'; setTimeout(() => { b.textContent = b.dataset.l; }, 1600); } }).catch(() => {});
