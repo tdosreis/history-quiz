@@ -340,6 +340,19 @@ JS = r"""
     aodNew(); aodAnswer(null); if (aod.ok) F('aod: no answer judged right');
     Object.assign(stats, JSON.parse(keepAS)); LS.set('stats', stats); LS.set('aodBest', keepAB); aod = null; sc = 'home';
   } catch (e) { F('aod EXC ' + e.stack); }
+  /* ── the cover's round of the newest kinds: fifteen, five of each, every answer on its board, no record kept ── */
+  try {
+    const keepSc = JSON.stringify(scores), keepNG = stats.novasGames;
+    for (let i = 0; i < 4; i++) {
+      startNovas(); clearInterval(tmr);
+      if (cat.qs.length !== 15) F('novas: a round of ' + cat.qs.length);
+      NOVAS.forEach(id => { if (cat.qs.filter(q => q._cat.id === id).length !== 5) F('novas: not five of ' + id); });
+      cat.qs.forEach(q => { const d = getDisp(q); if (!q.a.every(a => d.map(x => x.id).includes(a))) F('novas: answer missing ' + q.t); });
+    }
+    pts = 99999; nCorrect = 15; finishRun(); clearInterval(tmr);
+    if (JSON.stringify(scores) !== keepSc) F('novas: a record was kept');
+    stats.novasGames = keepNG; LS.set('stats', stats); sc = 'home';
+  } catch (e) { F('novas EXC ' + e.stack); }
   /* ── Hoje na História: every day of the year has five dates near it, the same five all day, each with its picture ── */
   try {
     const pool = hojePool();

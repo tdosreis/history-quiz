@@ -109,3 +109,77 @@ function streakMark(k) {
   try { snd.streak(k); } catch (e) {}
   haptic([14, 40, 14]);
 }
+
+/* ═══════════════════════════════════════════════════
+   THE CERTIFICATE AS A PICTURE — to share
+   The same sheet drawn on a canvas (1080×1350, a phone's share size) in the
+   app's own fonts: the frame, the score in its laurel, the title on its
+   ribbon, the answers as a row of dots, the wax seal. Drawn in the
+   background once the round's sheet is up, so a tap on Compartilhar can hand
+   it straight to the phone's share sheet (which wants to be asked right away).
+═══════════════════════════════════════════════════ */
+let _certBlob = null;
+const _svgImg = svg => new Promise((ok, no) => { const i = new Image(); i.onload = () => ok(i); i.onerror = no;
+  i.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg); });
+async function certImage() {
+  const total = cat.qs.length, pct = Math.round(nCorrect / total * 100);
+  const ti = endTitle(pct, isSurv ? nCorrect : null), d = DCFG();
+  const msg = pct === 100 ? 'Perfeito!' : pct >= 80 ? 'Excelente!' : pct >= 50 ? 'Muito bem!' : 'Hora de estudar!';
+  try { await Promise.all(['italic 700 96px Fraunces', '600 230px Fraunces', '800 34px Archivo', '700 30px Archivo'].map(f => document.fonts.load(f))); } catch (e) {}
+  waxSeal(ti);    // the rim's path, made once
+  const [laurel, seal] = await Promise.all([
+    _svgImg(laurelSvg().replace('<svg class="end-laurel"', '<svg xmlns="http://www.w3.org/2000/svg"').replace(/currentColor/g, '#A67C2E')),
+    _svgImg(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80"><defs><radialGradient id="h" cx="36%" cy="30%" r="70%">
+      <stop offset="0" stop-color="#fff" stop-opacity=".34"/><stop offset=".55" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".3"/></radialGradient></defs>
+      <path d="${_waxRim}" fill="${ti.wax}"/><path d="${_waxRim}" fill="url(#h)"/>
+      <circle cx="40" cy="40" r="24.5" fill="none" stroke="rgba(0,0,0,.28)" stroke-width="2.4"/>
+      ${(ICON[ti.ic] || ICON.star)('#F3DDB0', 30).replace('<svg', '<svg x="25" y="25"')}</svg>`)]);
+  const W = 1080, H = 1350, c = document.createElement('canvas');
+  c.width = W; c.height = H;
+  const g = c.getContext('2d');
+  /* the paper: warm in the middle, browner to the edges, a little grain */
+  let p = g.createRadialGradient(W / 2, H * .42, 80, W / 2, H / 2, H * .78);
+  p.addColorStop(0, '#FBF5E6'); p.addColorStop(.6, '#F1E5C8'); p.addColorStop(1, '#DCC79B');
+  g.fillStyle = p; g.fillRect(0, 0, W, H);
+  for (let i = 0; i < 2600; i++) { g.fillStyle = `rgba(90,60,20,${(.02 + Math.random() * .05).toFixed(3)})`; g.fillRect(Math.random() * W, Math.random() * H, 1.6, 1.6); }
+  /* the frame: a brass rule, a fainter one inside it, diamonds at the corners */
+  g.strokeStyle = '#B08A3E'; g.lineWidth = 6; g.strokeRect(54, 54, W - 108, H - 108);
+  g.strokeStyle = 'rgba(176,138,62,.5)'; g.lineWidth = 2; g.strokeRect(74, 74, W - 148, H - 148);
+  g.fillStyle = '#B08A3E';
+  [[74, 74], [W - 74, 74], [74, H - 74], [W - 74, H - 74]].forEach(([x, y]) => { g.beginPath(); g.moveTo(x, y - 14); g.lineTo(x + 14, y); g.lineTo(x, y + 14); g.lineTo(x - 14, y); g.closePath(); g.fill(); });
+  const text = (t, font, col, y, ls) => { g.font = font; g.fillStyle = col; g.textAlign = 'center'; g.textBaseline = 'alphabetic';
+    try { g.letterSpacing = ls || '0px'; } catch (e) {} g.fillText(t, W / 2, y); };
+  text('HISTORY QUIZ', '800 34px Archivo', '#8C6A2A', 172, '10px');
+  text((isDaily ? `Desafio Diário nº ${dayIndex()}` : isSurv ? 'Mata-mata' : `${isNovasRun() ? 'Novidades' : d.label} · ${total} perguntas`).toUpperCase(), '700 26px Archivo', '#6B5B45', 222, '5px');
+  text(msg, 'italic 700 96px Fraunces', '#2B2118', 352);
+  g.drawImage(laurel, (W - 760) / 2, 392, 760, 403);
+  text(String(pts), '600 230px Fraunces', '#2B2118', 668, '-4px');
+  text(`pontos · ${nCorrect}/${total} acertos (${pct}%)`, '700 32px Archivo', '#7A6A55', 852);
+  /* the ribbon, its tails folded behind */
+  const rw = 640, rx = (W - rw) / 2, ry = 896, rh = 128;
+  g.fillStyle = '#6E2419'; [[rx - 34, 1], [rx + rw + 34, -1]].forEach(([x, s]) => { g.beginPath(); g.moveTo(x + s * 60, ry + 22); g.lineTo(x, ry + 22); g.lineTo(x + s * 22, ry + 22 + rh / 2); g.lineTo(x, ry + rh + 22); g.lineTo(x + s * 60, ry + rh + 22); g.fill(); });
+  g.fillStyle = '#8E2A20'; g.beginPath(); g.rect(rx, ry, rw, rh); g.fill();
+  text('SEU TÍTULO NESTA RODADA', '800 22px Archivo', 'rgba(246,235,216,.8)', ry + 44, '6px');
+  text(ti.t, '600 58px Fraunces', '#F6EBD8', ry + 104);
+  /* the answers, one dot each */
+  const log = runLog.slice(0, 20), step = log.length > 15 ? 30 : 36, x0 = W / 2 - (log.length - 1) * step / 2;
+  log.forEach((r, i) => { g.fillStyle = r === 3 ? '#3A9C6E' : r === 1 ? '#C79A4E' : r === -1 ? '#BDB3A0' : '#B3402F';
+    g.beginPath(); g.arc(x0 + i * step, 1098, 13, 0, Math.PI * 2); g.fill(); });
+  if (bestStreak >= 3) text(`melhor sequência: ${bestStreak}`, '700 28px Archivo', '#9A6B1F', 1166);
+  text('tdosreis.github.io/history-quiz', '700 26px Archivo', '#8C7A60', 1256, '2px');
+  /* the seal, pressed on the corner */
+  g.save(); g.translate(W - 172, H - 196); g.rotate(-14 * Math.PI / 180);
+  g.shadowColor = 'rgba(40,14,8,.35)'; g.shadowBlur = 14; g.shadowOffsetY = 6;
+  g.drawImage(seal, -100, -100, 200, 200); g.restore();
+  return new Promise(ok => c.toBlob(ok, 'image/png'));
+}
+/* drawn once the sheet is up; kept until the next round ends */
+function certPrep() { _certBlob = null; certImage().then(b => { _certBlob = b; }).catch(() => {}); }
+/* the round's share: the picture with the text, where the phone can share files; the text alone elsewhere */
+function certShare(txt) {
+  if (!_certBlob || !navigator.share || !navigator.canShare) return false;
+  const file = new File([_certBlob], 'history-quiz.png', { type: 'image/png' });
+  if (!navigator.canShare({ files: [file] })) return false;
+  navigator.share({ files: [file], text: txt }).catch(() => {});
+  return true;
+}
