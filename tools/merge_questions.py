@@ -33,7 +33,7 @@ import glob, io, json, os, re, subprocess, sys, unicodedata
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 P = os.path.join(ROOT, "index.html")
 CHROME = os.environ.get("CHROME", "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome")
-STRIPS = ("quote", "battle", "line", "news")   # history's own formats (tools/history/js/formats.js)
+STRIPS = ("quote", "battle", "line", "news", "rebus", "detail", "odd")   # history's own formats (tools/history/js/formats.js)
 BEGIN = "  /* NEW-QS:BEGIN — written by tools/merge_questions.py from tools/questions/*.json */"
 END = "  /* NEW-QS:END */"
 sys.path.insert(0, os.path.join(ROOT, "tools", "history"))
@@ -139,6 +139,25 @@ def main():
             if q.get("myth"):
                 if typ != "txt" or not q.get("duel") or sorted(q.get("choices") or []) != ["Fato", "Mito"]:
                     bad("myth: a txt duel whose choices are Fato and Mito")
+            rb_, dt_, od_ = q.get("rebus"), q.get("detail"), q.get("odd")
+            if rb_ is not None:
+                e_ = rb_.get("e") if isinstance(rb_, dict) else None
+                if not (isinstance(e_, list) and 2 <= len(e_) <= 6 and all(isinstance(x, str) and 0 < len(x) <= 16 for x in e_)):
+                    bad("rebus needs e: 2-6 pictures (emoji)")
+                elif rb_.get("k") is not None and (not isinstance(rb_["k"], str) or len(rb_["k"]) > 40 or names_answer(rb_["k"])):
+                    bad("rebus: the label k is too long or names the answer")
+            if dt_ is not None:
+                if not isinstance(dt_, dict) or dt_.get("who") not in pl: bad("detail needs who: a figure with a portrait")
+                elif typ != "txt" or len(a) != 1 or fold(a[0]) != fold(pl[dt_["who"]]): bad("detail: a txt question whose answer is the pictured figure's name")
+                elif not (0 <= dt_.get("x", 50) <= 100 and 0 <= dt_.get("y", 30) <= 100 and 1.5 <= dt_.get("z", 3) <= 8): bad("detail: x, y in 0-100 and z in 1.5-8")
+                if fold(pl.get((dt_ or {}).get("who"), "")) in fold(t): bad("detail: the question names the face")
+            if od_ is not None:
+                if not (isinstance(od_, dict) and isinstance(od_.get("k"), str) and 8 <= len(od_["k"]) <= 120): bad("odd needs k: what the other three share (8-120 characters)")
+                elif names_answer(od_["k"]): bad("odd: k names the odd one out")
+                if typ == "txt":
+                    if len(q.get("choices") or []) != 4: bad("odd: four choices")
+                elif len(q.get("fixed") or []) != 4: bad("odd: exactly four fixed tiles")
+                if len(a) != 1: bad("odd: one odd one out")
             if q.get("duel") and typ in ("player", None) and len(q.get("fixed") or []) != 2:
                 bad("duel: exactly two fixed tiles")
             sc_, xi_ = q.get("score"), q.get("xi")
@@ -157,7 +176,7 @@ def main():
                     if not (e.get("face") in pl or e.get("crest") in logos or e.get("flag")): bad(f"order: card '{e.get('id')}' has no picture")
             elif typ == "txt":
                 ch = q.get("choices") or []
-                need = 2 if q.get("duel") else 6
+                need = 2 if q.get("duel") else 4 if q.get("odd") else 6
                 if len(ch) != need or len({fold(c) for c in ch}) != need: bad(f"txt needs {need} different choices")
                 if any(x not in ch for x in a): bad("an answer is not among the choices")
             elif typ == "player":
@@ -215,6 +234,9 @@ def main():
             if typ == "txt": row["choices"] = q["choices"]
             for k_ in ("fixed", "clues", "score", "xi", "order", "duel", "myth") + STRIPS:
                 if q.get(k_) is not None: row[k_] = q[k_]
+            if q.get("odd") and typ != "txt":
+                # the four cards' bands would say what three of them share
+                row.update({"_noFlag": True, "_hideCtry": True, "_hideEra": True})
             if q.get("clues"):
                 # a clue card hides what the tiles would otherwise give away
                 row.update({"_shown": 1, "opts": 6, "strict": 1, "_noFlag": True, "_hideCtry": True, "_hideEra": True})

@@ -71,6 +71,17 @@ PROBE = r"""
       tall.sort(function(a,b){ return b.h - a.h; });
       tall = tall.slice(0, 4);
     }
+    /* the verdict sheet comes up over the board: the right card must stay clear of it
+       (measured from the layout, so the sheet's rising animation does not count) */
+    var rv = document.getElementById('rvl');
+    if (sc === 'reveal' && rv && qz) {
+      var m = (rv.style.transform || '').match(/scale\(([\d.]+)\)/), sk = m ? +m[1] : 1;
+      var top = qz.getBoundingClientRect().bottom - rv.offsetHeight * sk;
+      document.querySelectorAll('.board .b-correct').forEach(function(g){
+        var d = g.getBoundingClientRect().bottom - top;
+        if (d > 6) boxes.push({cls: 'right card under the sheet', over: Math.round(d)});
+      });
+    }
     if (over > 1 || boxes.length) all.push({label: label, over: Math.round(over), vh: vh,
                                             boxes: boxes.slice(0,3), tall: tall});
     seen++;
@@ -135,6 +146,25 @@ DRIVE = r"""
     sel=new Set(bad?[bad.id]:[]); tLeft=5; doReveal();
     fit('reveal/errou');
   }
+
+  /* the strips with a tall board under them, the right card dealt last (the bottom row, under the sheet) */
+  [['charada-txt', function(q){ return q.rebus && q.type==='txt'; }],
+   ['charada-fig', function(q){ return q.rebus && q.type==='player'; }],
+   ['detalhe', function(q){ return q.detail; }],
+   ['intruso-fig', function(q){ return q.odd && q.type==='player'; }],
+   ['intruso-txt', function(q){ return q.odd && q.type==='txt'; }],
+   ['citacao-fig', function(q){ return q.quote && q.type==='player'; }]].forEach(function(f){
+    var qs5 = CATS.flatMap(function(c){ return c.qs; }).filter(f[1]);
+    for (var i=0;i<3 && qs5.length;i++){
+      var q5 = qs5[(i*11) % qs5.length];
+      diffKey='moderado'; startGame(); cat.qs[0]=q5; qi=0; disp=getDisp(q5);
+      var ai = disp.findIndex(function(o){ return q5.a.includes(o.id); });
+      if (ai >= 0) disp.push(disp.splice(ai, 1)[0]);
+      sc='quiz'; go(); fit('quiz/'+f[0]);
+      sel=new Set(q5.a); tLeft=8; doReveal();
+      fit('reveal/'+f[0]+(document.querySelector('.story')?'+story':''));
+    }
+  });
 
   /* the endings */
   startMilhao(); banked=1000000; rung=LADDER.length; cashed=true; sc='end'; go(); fit('end/milhao-win');

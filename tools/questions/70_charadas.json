@@ -1,0 +1,1217 @@
+{
+ "id": "charadas",
+ "name": "Charadas",
+ "tag": "Histórias contadas em figuras",
+ "col": "#6A4C93",
+ "diff": "Variado",
+ "emoji": "🧩",
+ "qs": [
+  {
+   "t": "Que episódio a charada conta?",
+   "type": "txt",
+   "choices": [
+    "Guerra de Troia",
+    "Guerra do Peloponeso",
+    "Guerras Médicas",
+    "Guerras Púnicas",
+    "Guerra dos Cem Anos",
+    "Guerra das Rosas"
+   ],
+   "rebus": {
+    "e": [
+     "🐴",
+     "🎁",
+     "🏰"
+    ],
+    "k": "Um conflito lendário"
+   },
+   "a": [
+    "Guerra de Troia"
+   ],
+   "d": 1,
+   "src": [
+    "pt",
+    "Cavalo de Troia",
+    [
+     "Troia"
+    ]
+   ],
+   "x": "Segundo a lenda, contada na Odisseia e na Eneida, os gregos se esconderam dentro de um cavalo de madeira deixado de presente às portas de Troia."
+  },
+  {
+   "t": "Que tragédia a charada conta?",
+   "type": "txt",
+   "choices": [
+    "Naufrágio do Titanic",
+    "Naufrágio do Lusitania",
+    "Explosão do Hindenburg",
+    "Terremoto de Lisboa",
+    "Erupção do Vesúvio",
+    "Grande Incêndio de Roma"
+   ],
+   "rebus": {
+    "e": [
+     "🚢",
+     "🧊",
+     "💔"
+    ]
+   },
+   "a": [
+    "Naufrágio do Titanic"
+   ],
+   "d": 1,
+   "src": [
+    "pt",
+    "RMS Titanic",
+    [
+     "iceberg"
+    ]
+   ],
+   "x": "O Titanic bateu num iceberg em sua viagem inaugural e afundou na madrugada de 15 de abril de 1912."
+  },
+  {
+   "t": "Que desastre a charada conta?",
+   "type": "txt",
+   "choices": [
+    "Destruição de Pompeia",
+    "Terremoto de Lisboa",
+    "Grande Incêndio de Roma",
+    "Queda de Constantinopla",
+    "Saque de Roma",
+    "Peste Negra"
+   ],
+   "rebus": {
+    "e": [
+     "🌋",
+     "🏛️",
+     "💀"
+    ]
+   },
+   "a": [
+    "Destruição de Pompeia"
+   ],
+   "d": 1,
+   "src": [
+    "pt",
+    "Pompeia",
+    [
+     "Vesúvio"
+    ]
+   ],
+   "x": "A erupção do Vesúvio, em 79 d.C., soterrou Pompeia e Herculano sob as cinzas."
+  },
+  {
+   "t": "Que acontecimento a charada conta?",
+   "type": "txt",
+   "choices": [
+    "Queda do Muro de Berlim",
+    "Construção do Muro de Berlim",
+    "Revolução de Veludo",
+    "Queda da Bastilha",
+    "Fim do apartheid",
+    "Crise dos Mísseis de Cuba"
+   ],
+   "rebus": {
+    "e": [
+     "🧱",
+     "🔨",
+     "🎉"
+    ]
+   },
+   "a": [
+    "Queda do Muro de Berlim"
+   ],
+   "d": 1,
+   "src": [
+    "pt",
+    "Queda do Muro de Berlim",
+    [
+     "1989"
+    ]
+   ],
+   "x": "Na noite de 9 de novembro de 1989, multidões atravessaram o muro e começaram a quebrá-lo a marteladas."
+  },
+  {
+   "t": "Que guerra a charada conta?",
+   "type": "txt",
+   "choices": [
+    "Guerra dos Cem Anos",
+    "Guerra dos Trinta Anos",
+    "Guerra dos Sete Anos",
+    "Guerra das Rosas",
+    "Guerra de Secessão",
+    "Guerras Napoleônicas"
+   ],
+   "rebus": {
+    "e": [
+     "💯",
+     "📅",
+     "⚔️"
+    ]
+   },
+   "a": [
+    "Guerra dos Cem Anos"
+   ],
+   "d": 1,
+   "src": [
+    "pt",
+    "Guerra dos Cem Anos",
+    [
+     "1337",
+     "1453"
+    ]
+   ],
+   "x": "Apesar do nome, a guerra entre a Inglaterra e a França durou 116 anos, de 1337 a 1453."
+  },
+  {
+   "t": "Que lenda a charada conta?",
+   "type": "txt",
+   "choices": [
+    "Fundação de Roma",
+    "Fundação de Atenas",
+    "Fundação de Cartago",
+    "Fundação de Constantinopla",
+    "Fundação de Alexandria",
+    "Fundação de Esparta"
+   ],
+   "rebus": {
+    "e": [
+     "🐺",
+     "👶",
+     "👶"
+    ]
+   },
+   "a": [
+    "Fundação de Roma"
+   ],
+   "d": 1,
+   "src": [
+    "pt",
+    "Rómulo e Remo",
+    [
+     "loba"
+    ]
+   ],
+   "x": "Pela lenda, os gêmeos Rômulo e Remo foram amamentados por uma loba; Rômulo teria fundado Roma em 753 a.C."
+  },
+  {
+   "t": "Quem a charada esconde?",
+   "type": "player",
+   "rebus": {
+    "e": [
+     "🍎",
+     "⬇️",
+     "🤔"
+    ]
+   },
+   "a": [
+    "newton"
+   ],
+   "d": 1,
+   "src": [
+    "pt",
+    "Isaac Newton",
+    [
+     "maçã"
+    ]
+   ],
+   "x": "A história da maçã foi contada pelo próprio Newton, já velho, a um amigo; mas, no relato, a fruta só cai da árvore: a pancada na cabeça é um enfeite posterior."
+  },
+  {
+   "t": "Quem a charada esconde?",
+   "type": "player",
+   "rebus": {
+    "e": [
+     "🏛️",
+     "🗡️",
+     "🗡️",
+     "🗡️"
+    ],
+    "k": "Idos de Março"
+   },
+   "a": [
+    "cesar"
+   ],
+   "d": 1,
+   "src": [
+    "pt",
+    "Assassinato de Júlio César",
+    [
+     "Idos de Março"
+    ]
+   ],
+   "x": "Júlio César foi morto a punhaladas numa reunião do Senado, nos Idos de Março (15 de março) de 44 a.C."
+  },
+  {
+   "t": "Quem a charada esconde?",
+   "type": "player",
+   "rebus": {
+    "e": [
+     "🌕",
+     "👣",
+     "🚩"
+    ]
+   },
+   "a": [
+    "armstrong"
+   ],
+   "d": 1,
+   "src": [
+    "pt",
+    "Neil Armstrong",
+    [
+     "Apollo 11"
+    ]
+   ],
+   "x": "Armstrong deixou a primeira pegada humana na Lua em julho de 1969, na missão Apollo 11."
+  },
+  {
+   "t": "Quem a charada esconde?",
+   "type": "player",
+   "rebus": {
+    "e": [
+     "👑",
+     "💍",
+     "6️⃣"
+    ]
+   },
+   "a": [
+    "henrique_viii"
+   ],
+   "d": 1,
+   "src": [
+    "pt",
+    "Henrique VIII de Inglaterra",
+    [
+     "seis"
+    ]
+   ],
+   "x": "Das seis esposas de Henrique VIII, duas foram decapitadas: Ana Bolena e Catarina Howard."
+  },
+  {
+   "t": "Quem a charada esconde?",
+   "type": "player",
+   "rebus": {
+    "e": [
+     "🌻",
+     "👂",
+     "✂️"
+    ]
+   },
+   "a": [
+    "van_gogh"
+   ],
+   "d": 1,
+   "src": [
+    "pt",
+    "Vincent van Gogh",
+    [
+     "orelha"
+    ]
+   ],
+   "x": "Em dezembro de 1888, em Arles, depois de uma briga com o pintor Paul Gauguin, Van Gogh cortou a própria orelha esquerda."
+  },
+  {
+   "t": "Quem a charada esconde?",
+   "type": "player",
+   "rebus": {
+    "e": [
+     "🎹",
+     "🙉",
+     "🎵"
+    ]
+   },
+   "a": [
+    "beethoven"
+   ],
+   "d": 1,
+   "src": [
+    "pt",
+    "Ludwig van Beethoven",
+    [
+     "surdez"
+    ]
+   ],
+   "x": "Beethoven começou a perder a audição antes dos 30 anos e continuou compondo mesmo surdo."
+  },
+  {
+   "t": "Quem a charada esconde?",
+   "type": "player",
+   "rebus": {
+    "e": [
+     "⛵",
+     "⛵",
+     "⛵",
+     "🌎"
+    ]
+   },
+   "a": [
+    "colombo"
+   ],
+   "d": 1,
+   "src": [
+    "pt",
+    "Cristóvão Colombo",
+    [
+     "Pinta",
+     "Niña"
+    ]
+   ],
+   "x": "Colombo partiu em 1492 com três navios, a Santa María, a Pinta e a Niña, e chegou às Américas pensando estar na Ásia."
+  },
+  {
+   "t": "Quem a charada esconde?",
+   "type": "player",
+   "rebus": {
+    "e": [
+     "🐍",
+     "👑"
+    ]
+   },
+   "a": [
+    "cleopatra"
+   ],
+   "d": 1,
+   "src": [
+    "pt",
+    "Cleópatra",
+    [
+     "áspide"
+    ]
+   ],
+   "x": "Segundo a tradição, Cleópatra se matou com a picada de uma áspide, em 30 a.C., depois da derrota para Otaviano."
+  },
+  {
+   "t": "Quem a charada esconde?",
+   "type": "player",
+   "rebus": {
+    "e": [
+     "🦷",
+     "⛰️",
+     "⚖️"
+    ]
+   },
+   "a": [
+    "tiradentes"
+   ],
+   "d": 1,
+   "src": [
+    "pt",
+    "Tiradentes",
+    [
+     "dentista"
+    ]
+   ],
+   "x": "Joaquim José da Silva Xavier ganhou o apelido porque também trabalhava como dentista; foi enforcado em 1792."
+  },
+  {
+   "t": "Quem a charada esconde?",
+   "type": "player",
+   "rebus": {
+    "e": [
+     "💀",
+     "🤔",
+     "🎭"
+    ]
+   },
+   "a": [
+    "shakespeare"
+   ],
+   "d": 1,
+   "src": [
+    "pt",
+    "Hamlet",
+    [
+     "Yorick"
+    ]
+   ],
+   "x": "A cena em que Hamlet segura a caveira do bobo Yorick é uma das mais famosas do teatro."
+  },
+  {
+   "t": "Quem a charada esconde?",
+   "type": "player",
+   "rebus": {
+    "e": [
+     "👧",
+     "⚔️",
+     "🔥"
+    ]
+   },
+   "a": [
+    "joana_darc"
+   ],
+   "d": 1,
+   "src": [
+    "pt",
+    "Joana d'Arc",
+    [
+     "Rouen"
+    ]
+   ],
+   "x": "Joana d'Arc liderou tropas francesas aos 17 anos e foi queimada pelos ingleses em Rouen, em 1431, aos 19."
+  },
+  {
+   "t": "Quem a charada esconde?",
+   "type": "player",
+   "rebus": {
+    "e": [
+     "🚀",
+     "🌍",
+     "🥇"
+    ]
+   },
+   "a": [
+    "gagarin"
+   ],
+   "d": 1,
+   "src": [
+    "pt",
+    "Yuri Gagarin",
+    [
+     "Vostok 1"
+    ]
+   ],
+   "x": "Em 12 de abril de 1961, Gagarin deu uma volta completa ao redor da Terra a bordo da Vostok 1."
+  },
+  {
+   "t": "Quem a charada esconde?",
+   "type": "player",
+   "rebus": {
+    "e": [
+     "🗡️",
+     "📣",
+     "🏞️"
+    ],
+    "k": "Às margens de um riacho"
+   },
+   "a": [
+    "dom_pedro_i"
+   ],
+   "d": 1,
+   "src": [
+    "pt",
+    "Independência do Brasil",
+    [
+     "Ipiranga"
+    ]
+   ],
+   "x": "Em 7 de setembro de 1822, às margens do riacho Ipiranga, Dom Pedro proclamou a independência. Testemunhas contaram que ele montava uma mula, e não o cavalo do quadro de Pedro Américo."
+  },
+  {
+   "t": "Que protesto a charada conta?",
+   "type": "txt",
+   "choices": [
+    "Festa do Chá de Boston",
+    "Massacre de Boston",
+    "Guerra do Ópio",
+    "Lei do Selo",
+    "Revolta da Cachaça",
+    "Conjuração Mineira"
+   ],
+   "rebus": {
+    "e": [
+     "🍵",
+     "📦",
+     "🌊"
+    ]
+   },
+   "a": [
+    "Festa do Chá de Boston"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Festa do Chá de Boston",
+    [
+     "1773"
+    ]
+   ],
+   "x": "Em 1773, colonos disfarçados jogaram no porto de Boston 342 caixas de chá da Companhia das Índias Orientais, em protesto contra os impostos britânicos."
+  },
+  {
+   "t": "Que revolta a charada conta?",
+   "type": "txt",
+   "choices": [
+    "Revolta da Vacina",
+    "Revolta da Chibata",
+    "Guerra de Canudos",
+    "Revolta dos Malês",
+    "Cabanagem",
+    "Revolta da Armada"
+   ],
+   "rebus": {
+    "e": [
+     "💉",
+     "😠",
+     "🏙️"
+    ],
+    "k": "Rio de Janeiro, 1904"
+   },
+   "a": [
+    "Revolta da Vacina"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Revolta da Vacina",
+    [
+     "1904"
+    ]
+   ],
+   "x": "Em 1904, a vacinação obrigatória contra a varíola, defendida por Oswaldo Cruz, levou o Rio a uma semana de motins."
+  },
+  {
+   "t": "Que guerra a charada conta?",
+   "type": "txt",
+   "choices": [
+    "Guerra das Rosas",
+    "Guerra dos Cem Anos",
+    "Guerra dos Trinta Anos",
+    "Guerra Civil Inglesa",
+    "Guerra dos Farrapos",
+    "Guerra de Secessão"
+   ],
+   "rebus": {
+    "e": [
+     "🌹",
+     "⚔️",
+     "🌹"
+    ],
+    "k": "Um conflito inglês"
+   },
+   "a": [
+    "Guerra das Rosas"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Guerra das Rosas",
+    [
+     "Lancaster",
+     "York"
+    ]
+   ],
+   "x": "A Guerra das Rosas (1455–1487) opôs duas casas inglesas: Lancaster, da rosa vermelha, e York, da rosa branca."
+  },
+  {
+   "t": "Que herói a charada esconde?",
+   "type": "txt",
+   "choices": [
+    "Guilherme Tell",
+    "Robin Hood",
+    "Rei Artur",
+    "El Cid",
+    "Siegfried",
+    "Ulisses"
+   ],
+   "rebus": {
+    "e": [
+     "🍎",
+     "🧒",
+     "🏹"
+    ],
+    "k": "Uma lenda suíça"
+   },
+   "a": [
+    "Guilherme Tell"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Guilherme Tell",
+    [
+     "maçã"
+    ]
+   ],
+   "x": "Conta a lenda que Guilherme Tell foi obrigado a acertar com uma flecha uma maçã posta sobre a cabeça do próprio filho."
+  },
+  {
+   "t": "Quem a charada esconde?",
+   "type": "player",
+   "rebus": {
+    "e": [
+     "🛁",
+     "💧",
+     "👑"
+    ]
+   },
+   "a": [
+    "arquimedes"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Arquimedes",
+    [
+     "Eureka"
+    ]
+   ],
+   "x": "Diz a tradição que Arquimedes, ao entrar na banheira, entendeu como saber se a coroa do rei era de ouro puro e saiu gritando 'Eureka!'."
+  },
+  {
+   "t": "Quem a charada esconde?",
+   "type": "player",
+   "rebus": {
+    "e": [
+     "⛵",
+     "🌍",
+     "🔄"
+    ]
+   },
+   "a": [
+    "magalhaes"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Fernão de Magalhães",
+    [
+     "Elcano"
+    ]
+   ],
+   "x": "Magalhães morreu nas Filipinas, em 1521; a primeira volta ao mundo foi completada por Juan Sebastián Elcano, em 1522."
+  },
+  {
+   "t": "Quem a charada esconde?",
+   "type": "player",
+   "rebus": {
+    "e": [
+     "🐘",
+     "⛰️",
+     "❄️",
+     "⚔️"
+    ]
+   },
+   "a": [
+    "anibal"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Aníbal",
+    [
+     "Alpes"
+    ]
+   ],
+   "x": "Em 218 a.C., Aníbal atravessou os Alpes com seu exército e dezenas de elefantes para atacar Roma."
+  },
+  {
+   "t": "Quem a charada esconde?",
+   "type": "player",
+   "rebus": {
+    "e": [
+     "🎈",
+     "🗼",
+     "⌚"
+    ]
+   },
+   "a": [
+    "santos_dumont"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Santos Dumont",
+    [
+     "Torre Eiffel"
+    ]
+   ],
+   "x": "Em 1901, Santos Dumont contornou a Torre Eiffel com o dirigível nº 6 e ganhou o Prêmio Deutsch. Também ajudou a popularizar o relógio de pulso."
+  },
+  {
+   "t": "Quem a charada esconde?",
+   "type": "player",
+   "rebus": {
+    "e": [
+     "🚢",
+     "🏝️",
+     "🐢",
+     "🐦"
+    ]
+   },
+   "a": [
+    "darwin"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Charles Darwin",
+    [
+     "Galápagos"
+    ]
+   ],
+   "x": "Nas ilhas Galápagos, em 1835, Darwin observou tartarugas e tentilhões que o ajudaram a pensar a evolução das espécies."
+  },
+  {
+   "t": "Quem a charada esconde?",
+   "type": "player",
+   "rebus": {
+    "e": [
+     "🔭",
+     "🌕",
+     "⚖️"
+    ]
+   },
+   "a": [
+    "galileu"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Galileu Galilei",
+    [
+     "Inquisição"
+    ]
+   ],
+   "x": "Galileu apontou um telescópio para o céu em 1609 e, em 1633, foi julgado pela Inquisição por defender que a Terra gira em torno do Sol."
+  },
+  {
+   "t": "Quem a charada esconde?",
+   "type": "player",
+   "rebus": {
+    "e": [
+     "📜",
+     "🔨",
+     "🚪",
+     "⛪"
+    ]
+   },
+   "a": [
+    "lutero"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Noventa e Cinco Teses",
+    [
+     "Wittenberg"
+    ]
+   ],
+   "x": "Em 1517, Lutero divulgou suas 95 teses, segundo a tradição pregando-as na porta da igreja do castelo de Wittenberg."
+  },
+  {
+   "t": "Quem a charada esconde?",
+   "type": "player",
+   "rebus": {
+    "e": [
+     "🍰",
+     "👑"
+    ],
+    "k": "Uma frase que lhe atribuem"
+   },
+   "a": [
+    "maria_antonieta"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Qu'ils mangent de la brioche",
+    [
+     "Rousseau"
+    ]
+   ],
+   "x": "Não há prova de que Maria Antonieta tenha dito 'que comam brioches': a frase já aparece nas Confissões de Rousseau, escritas quando ela era criança."
+  },
+  {
+   "t": "Quem a charada esconde?",
+   "type": "player",
+   "rebus": {
+    "e": [
+     "🔥",
+     "🎻",
+     "🏛️"
+    ],
+    "k": "O que dizem, mas não é verdade"
+   },
+   "a": [
+    "nero"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Grande Incêndio de Roma",
+    [
+     "Âncio"
+    ]
+   ],
+   "x": "Nero não tocou violino no incêndio de Roma, em 64 d.C.: o instrumento só surgiria no século XVI, e ele estava em Âncio quando o fogo começou."
+  },
+  {
+   "t": "Quem a charada esconde?",
+   "type": "player",
+   "rebus": {
+    "e": [
+     "🖼️",
+     "🙂",
+     "🚁"
+    ]
+   },
+   "a": [
+    "leonardo"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Leonardo da Vinci",
+    [
+     "Mona Lisa"
+    ]
+   ],
+   "x": "Leonardo pintou a Mona Lisa e desenhou máquinas voadoras, como o famoso parafuso aéreo, quatro séculos antes do primeiro helicóptero."
+  },
+  {
+   "t": "Quem a charada esconde?",
+   "type": "player",
+   "rebus": {
+    "e": [
+     "🧂",
+     "🚶",
+     "🌊"
+    ]
+   },
+   "a": [
+    "gandhi"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Marcha do Sal",
+    [
+     "1930"
+    ]
+   ],
+   "x": "Em 1930, Gandhi marchou quase 400 km até o mar para fazer sal, desafiando o monopólio britânico."
+  },
+  {
+   "t": "Quem a charada esconde?",
+   "type": "player",
+   "rebus": {
+    "e": [
+     "🚌",
+     "💺",
+     "✊"
+    ]
+   },
+   "a": [
+    "rosa_parks"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Rosa Parks",
+    [
+     "Montgomery"
+    ]
+   ],
+   "x": "Em 1955, em Montgomery, Rosa Parks se recusou a ceder seu lugar no ônibus a um passageiro branco e foi presa; o boicote que se seguiu durou mais de um ano."
+  },
+  {
+   "t": "Quem a charada esconde?",
+   "type": "player",
+   "rebus": {
+    "e": [
+     "👦",
+     "👑",
+     "⚱️"
+    ]
+   },
+   "a": [
+    "tutancamon"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Tutancâmon",
+    [
+     "Howard Carter"
+    ]
+   ],
+   "x": "Tutancâmon virou faraó por volta dos 9 anos; sua tumba, quase intacta, foi encontrada por Howard Carter em 1922."
+  },
+  {
+   "t": "Quem a charada esconde?",
+   "type": "player",
+   "rebus": {
+    "e": [
+     "☢️",
+     "🧪",
+     "🏅",
+     "🏅"
+    ]
+   },
+   "a": [
+    "marie_curie"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Marie Curie",
+    [
+     "Nobel"
+    ]
+   ],
+   "x": "Marie Curie foi a primeira pessoa a ganhar dois prêmios Nobel: o de Física, em 1903, e o de Química, em 1911."
+  },
+  {
+   "t": "Quem a charada esconde?",
+   "type": "player",
+   "rebus": {
+    "e": [
+     "🥛",
+     "🔥",
+     "🦠"
+    ]
+   },
+   "a": [
+    "pasteur"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Pasteurização",
+    [
+     "Pasteur"
+    ]
+   ],
+   "x": "A pasteurização, que aquece o alimento para matar micróbios, leva o nome de Louis Pasteur."
+  },
+  {
+   "t": "Quem a charada esconde?",
+   "type": "player",
+   "rebus": {
+    "e": [
+     "🧫",
+     "🍄",
+     "💊"
+    ]
+   },
+   "a": [
+    "fleming"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Penicilina",
+    [
+     "Fleming"
+    ]
+   ],
+   "x": "Em 1928, Fleming notou que um mofo tinha matado as bactérias ao seu redor numa placa esquecida no laboratório; a substância que o mofo produzia ganhou o nome de penicilina."
+  },
+  {
+   "t": "Quem a charada esconde?",
+   "type": "player",
+   "rebus": {
+    "e": [
+     "🐫",
+     "🏯",
+     "📖"
+    ],
+    "k": "De Veneza à China"
+   },
+   "a": [
+    "marco_polo"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Marco Polo",
+    [
+     "Kublai"
+    ]
+   ],
+   "x": "As viagens de Marco Polo à China de Kublai Khan foram contadas no livro que ele ditou na prisão, em Gênova."
+  },
+  {
+   "t": "Quem a charada esconde?",
+   "type": "player",
+   "rebus": {
+    "e": [
+     "🎩",
+     "🧔",
+     "📜",
+     "⛓️"
+    ]
+   },
+   "a": [
+    "lincoln"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Proclamação de Emancipação",
+    [
+     "1863"
+    ]
+   ],
+   "x": "Em 1863, Lincoln assinou a Proclamação de Emancipação, que declarava livres os escravizados dos estados rebeldes."
+  },
+  {
+   "t": "Quem a charada esconde?",
+   "type": "player",
+   "rebus": {
+    "e": [
+     "⛰️",
+     "✊",
+     "⛓️"
+    ],
+    "k": "Um quilombo na serra"
+   },
+   "a": [
+    "zumbi"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Zumbi dos Palmares",
+    [
+     "Palmares"
+    ]
+   ],
+   "x": "Zumbi liderou o Quilombo dos Palmares, na serra da Barriga, em Alagoas; morreu em 20 de novembro de 1695, data do Dia da Consciência Negra."
+  },
+  {
+   "t": "Quem a charada esconde?",
+   "type": "player",
+   "rebus": {
+    "e": [
+     "🎤",
+     "💭",
+     "🕊️"
+    ]
+   },
+   "a": [
+    "mlk"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "I Have a Dream",
+    [
+     "1963"
+    ]
+   ],
+   "x": "O discurso 'Eu tenho um sonho' foi feito em 1963, diante de cerca de 250 mil pessoas, em Washington."
+  },
+  {
+   "t": "Quem a charada esconde?",
+   "type": "player",
+   "rebus": {
+    "e": [
+     "🐎",
+     "🏹",
+     "⛺"
+    ],
+    "k": "Mongólia, 1206"
+   },
+   "a": [
+    "gengis"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Gengis Khan",
+    [
+     "1206"
+    ]
+   ],
+   "x": "Gengis Khan uniu as tribos mongóis e fundou, em 1206, o império que se tornaria o maior território contínuo da história."
+  },
+  {
+   "t": "Quem a charada esconde?",
+   "type": "player",
+   "rebus": {
+    "e": [
+     "✍️",
+     "⛓️",
+     "🕊️"
+    ],
+    "k": "13 de maio de 1888"
+   },
+   "a": [
+    "princesa_isabel"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Lei Áurea",
+    [
+     "1888"
+    ]
+   ],
+   "x": "Em 13 de maio de 1888, a princesa Isabel assinou a Lei Áurea, que aboliu a escravidão no Brasil."
+  },
+  {
+   "t": "Quem a charada esconde?",
+   "type": "player",
+   "rebus": {
+    "e": [
+     "🛷",
+     "🐕",
+     "❄️",
+     "🏁"
+    ]
+   },
+   "a": [
+    "amundsen"
+   ],
+   "d": 3,
+   "src": [
+    "pt",
+    "Roald Amundsen",
+    [
+     "Polo Sul"
+    ]
+   ],
+   "x": "Amundsen chegou ao Polo Sul em dezembro de 1911, com trenós puxados por cães, um mês antes do britânico Robert Scott."
+  },
+  {
+   "t": "Quem a charada esconde?",
+   "type": "player",
+   "rebus": {
+    "e": [
+     "🚢",
+     "💥",
+     "🏊",
+     "📜"
+    ]
+   },
+   "a": [
+    "camoes"
+   ],
+   "d": 3,
+   "src": [
+    "pt",
+    "Luís de Camões",
+    [
+     "Mekong"
+    ]
+   ],
+   "x": "Conta-se que Camões sobreviveu a um naufrágio na foz do rio Mekong nadando com o manuscrito de Os Lusíadas."
+  },
+  {
+   "t": "Quem a charada esconde?",
+   "type": "player",
+   "rebus": {
+    "e": [
+     "👑",
+     "🐪",
+     "💰",
+     "🕋"
+    ]
+   },
+   "a": [
+    "mansa_musa"
+   ],
+   "d": 3,
+   "src": [
+    "pt",
+    "Mansa Musa",
+    [
+     "Meca"
+    ]
+   ],
+   "x": "Na peregrinação a Meca, em 1324, Mansa Mussa gastou tanto ouro no Cairo que o preço do metal caiu por anos."
+  }
+ ]
+}

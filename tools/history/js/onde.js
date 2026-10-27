@@ -411,7 +411,7 @@ function wireOnde() {
       if (!tap || !guessing()) return;
       const c = ondeCam(onde.v), x = c.vx + p[0] / c.sx, y = c.vy + p[1] / c.sy;
       if (x < 0 || x > 360 || y < 0 || y > 134) return;
-      snd.tap();
+      try { snd.pin(); } catch (e) { snd.tap(); }
       ondeSetPin([x, y]);
       /* the first tap on the whole world zooms in there, to place it finer */
       if (onde.v.z < 2.5) ondeFly(ondeClamp({ z: 4, cx: x, cy: y }, ondeBox()));

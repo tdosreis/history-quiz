@@ -336,7 +336,7 @@ def main():
     ano_ids = set(e["id"] for e in ano)
     onde_js = "const ONDE_AT = {\n" + "".join("  %s: %s,\n" % (json.dumps(k), json.dumps([v["lat"], v["lon"], v["place"]], ensure_ascii=False, separators=(",", ":")))
                                          for k, v in onde.items() if v.get("ok") and k in ano_ids) + "};\n"
-    s = put(s, "formats", "\n".join(io.open(os.path.join(H, "js", f), encoding="utf-8").read() for f in ("formats.js", "almanac.js"))
+    s = put(s, "formats", "\n".join(io.open(os.path.join(H, "js", f), encoding="utf-8").read() for f in ("formats.js", "almanac.js", "festa.js"))
             + "\n" + ano_js + "\n".join(io.open(os.path.join(H, "js", f), encoding="utf-8").read() for f in ("selos.js", "ano.js"))
             # the album's world map (tools/history/album_map.json, from albmapgen.mjs)
             + "\nconst ALB_MAP = " + io.open(os.path.join(H, "album_map.json"), encoding="utf-8").read().strip() + ";\n"
@@ -355,7 +355,7 @@ def main():
             + io.open(os.path.join(H, "js", "cronologia.js"), encoding="utf-8").read()
             # three goals a week, a stamp for each one met
             + io.open(os.path.join(H, "js", "metas.js"), encoding="utf-8").read())
-    s = put(s, "formats_css", "\n".join(io.open(os.path.join(H, "css", f), encoding="utf-8").read() for f in ("fonts.css", "formats.css", "selos_ano.css", "mapa.css", "onde.css", "desafio.css", "cronologia.css", "metas.css")))
+    s = put(s, "formats_css", "\n".join(io.open(os.path.join(H, "css", f), encoding="utf-8").read() for f in ("fonts.css", "formats.css", "selos_ano.css", "mapa.css", "onde.css", "desafio.css", "cronologia.css", "metas.css", "festa.css")))
     v = page.write(s)
     print("index.html + app.js?v=%s updated: %d bytes" % (v, len(s.encode("utf-8"))))
 

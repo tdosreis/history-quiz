@@ -1,0 +1,1179 @@
+{
+ "id": "intrusos",
+ "name": "O intruso",
+ "tag": "Três têm algo em comum",
+ "col": "#2E6B5E",
+ "diff": "Variado",
+ "emoji": "🧐",
+ "qs": [
+  {
+   "t": "Qual é o intruso?",
+   "type": "player",
+   "fixed": [
+    "cesar",
+    "augusto",
+    "nero",
+    "pericles"
+   ],
+   "odd": {
+    "k": "governaram Roma"
+   },
+   "a": [
+    "pericles"
+   ],
+   "d": 1,
+   "src": [
+    "pt",
+    "Péricles",
+    [
+     "Atenas"
+    ]
+   ],
+   "x": "Péricles governou Atenas, no século V a.C.; os outros três mandaram em Roma."
+  },
+  {
+   "t": "Qual é o intruso?",
+   "type": "player",
+   "fixed": [
+    "newton",
+    "einstein",
+    "darwin",
+    "picasso"
+   ],
+   "odd": {
+    "k": "foram cientistas"
+   },
+   "a": [
+    "picasso"
+   ],
+   "d": 1,
+   "src": [
+    "pt",
+    "Pablo Picasso",
+    [
+     "pintor"
+    ]
+   ]
+  },
+  {
+   "t": "Qual é o intruso?",
+   "type": "player",
+   "fixed": [
+    "mozart",
+    "beethoven",
+    "bach",
+    "rembrandt"
+   ],
+   "odd": {
+    "k": "foram compositores"
+   },
+   "a": [
+    "rembrandt"
+   ],
+   "d": 1,
+   "src": [
+    "pt",
+    "Rembrandt",
+    [
+     "pintor"
+    ]
+   ]
+  },
+  {
+   "t": "Qual é o intruso?",
+   "type": "player",
+   "fixed": [
+    "vasco_gama",
+    "cabral",
+    "magalhaes",
+    "gutenberg"
+   ],
+   "odd": {
+    "k": "foram navegadores portugueses"
+   },
+   "a": [
+    "gutenberg"
+   ],
+   "d": 1,
+   "src": [
+    "pt",
+    "Johannes Gutenberg",
+    [
+     "imprensa"
+    ]
+   ],
+   "x": "Gutenberg, alemão, criou na Europa a prensa de tipos móveis; Magalhães, português, navegou a serviço da Espanha."
+  },
+  {
+   "t": "Qual é o intruso?",
+   "type": "player",
+   "fixed": [
+    "dom_pedro_i",
+    "dom_pedro_ii",
+    "dom_joao_vi",
+    "getulio"
+   ],
+   "odd": {
+    "k": "usaram coroa: foram reis ou imperadores"
+   },
+   "a": [
+    "getulio"
+   ],
+   "d": 1,
+   "src": [
+    "pt",
+    "Getúlio Vargas",
+    [
+     "presidente"
+    ]
+   ]
+  },
+  {
+   "t": "Qual é o intruso?",
+   "type": "player",
+   "fixed": [
+    "cleopatra",
+    "elizabeth_i",
+    "catarina_grande",
+    "marie_curie"
+   ],
+   "odd": {
+    "k": "foram rainhas ou imperatrizes"
+   },
+   "a": [
+    "marie_curie"
+   ],
+   "d": 1,
+   "src": [
+    "pt",
+    "Marie Curie",
+    [
+     "Nobel"
+    ]
+   ]
+  },
+  {
+   "t": "Qual é o intruso?",
+   "type": "player",
+   "fixed": [
+    "van_gogh",
+    "monet",
+    "picasso",
+    "chopin"
+   ],
+   "odd": {
+    "k": "foram pintores"
+   },
+   "a": [
+    "chopin"
+   ],
+   "d": 1,
+   "src": [
+    "pt",
+    "Frédéric Chopin",
+    [
+     "compositor"
+    ]
+   ]
+  },
+  {
+   "t": "Qual é o intruso?",
+   "type": "player",
+   "fixed": [
+    "socrates",
+    "platao",
+    "aristoteles",
+    "confucio"
+   ],
+   "odd": {
+    "k": "foram filósofos da Grécia antiga"
+   },
+   "a": [
+    "confucio"
+   ],
+   "d": 1,
+   "src": [
+    "pt",
+    "Confúcio",
+    [
+     "China"
+    ]
+   ]
+  },
+  {
+   "t": "Qual é o intruso?",
+   "type": "player",
+   "fixed": [
+    "ramses_ii",
+    "tutancamon",
+    "aquenaton",
+    "hamurabi"
+   ],
+   "odd": {
+    "k": "foram faraós do Egito"
+   },
+   "a": [
+    "hamurabi"
+   ],
+   "d": 1,
+   "src": [
+    "pt",
+    "Hamurabi",
+    [
+     "Babilônia"
+    ]
+   ],
+   "x": "Hamurabi foi rei da Babilônia, na Mesopotâmia, e é lembrado por seu código de leis."
+  },
+  {
+   "t": "Qual é o intruso?",
+   "type": "player",
+   "fixed": [
+    "machado",
+    "clarice",
+    "drummond",
+    "tarsila"
+   ],
+   "odd": {
+    "k": "foram escritores brasileiros"
+   },
+   "a": [
+    "tarsila"
+   ],
+   "d": 1,
+   "src": [
+    "pt",
+    "Tarsila do Amaral",
+    [
+     "pintora"
+    ]
+   ]
+  },
+  {
+   "t": "Qual é o intruso?",
+   "type": "player",
+   "fixed": [
+    "henrique_viii",
+    "elizabeth_i",
+    "victoria",
+    "luis_xiv"
+   ],
+   "odd": {
+    "k": "reinaram na Inglaterra"
+   },
+   "a": [
+    "luis_xiv"
+   ],
+   "d": 1,
+   "src": [
+    "pt",
+    "Luís XIV de França",
+    [
+     "França"
+    ]
+   ]
+  },
+  {
+   "t": "Qual é o intruso?",
+   "type": "player",
+   "fixed": [
+    "shakespeare",
+    "cervantes",
+    "camoes",
+    "velazquez"
+   ],
+   "odd": {
+    "k": "foram escritores"
+   },
+   "a": [
+    "velazquez"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Diego Velázquez",
+    [
+     "pintor"
+    ]
+   ]
+  },
+  {
+   "t": "Qual é o intruso?",
+   "type": "player",
+   "fixed": [
+    "kennedy",
+    "mlk",
+    "gandhi",
+    "churchill"
+   ],
+   "odd": {
+    "k": "foram assassinados"
+   },
+   "a": [
+    "churchill"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Winston Churchill",
+    [
+     "1965"
+    ]
+   ],
+   "x": "Churchill morreu de causas naturais, em 1965, aos 90 anos."
+  },
+  {
+   "t": "Qual é o intruso?",
+   "type": "player",
+   "fixed": [
+    "bolivar",
+    "san_martin",
+    "toussaint",
+    "cortes"
+   ],
+   "odd": {
+    "k": "lideraram lutas de libertação na América Latina"
+   },
+   "a": [
+    "cortes"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Hernán Cortés",
+    [
+     "astecas"
+    ]
+   ],
+   "x": "Hernán Cortés fez o caminho oposto: conquistou o Império Asteca para a Espanha, no século XVI."
+  },
+  {
+   "t": "Qual é o intruso?",
+   "type": "player",
+   "fixed": [
+    "edison",
+    "tesla",
+    "santos_dumont",
+    "darwin"
+   ],
+   "odd": {
+    "k": "foram inventores"
+   },
+   "a": [
+    "darwin"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Charles Darwin",
+    [
+     "naturalista"
+    ]
+   ],
+   "x": "Darwin foi naturalista: não inventou máquinas, mas explicou a evolução das espécies pela seleção natural."
+  },
+  {
+   "t": "Qual é o intruso?",
+   "type": "player",
+   "fixed": [
+    "ciro",
+    "dario",
+    "xerxes",
+    "leonidas"
+   ],
+   "odd": {
+    "k": "foram reis da Pérsia"
+   },
+   "a": [
+    "leonidas"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Leónidas I",
+    [
+     "Termópilas"
+    ]
+   ],
+   "x": "Leônidas foi rei de Esparta e morreu nas Termópilas, em 480 a.C., lutando contra o exército persa de Xerxes."
+  },
+  {
+   "t": "Qual é o intruso?",
+   "type": "player",
+   "fixed": [
+    "voltaire",
+    "rousseau",
+    "montesquieu",
+    "lutero"
+   ],
+   "odd": {
+    "k": "foram pensadores do Iluminismo, no século XVIII"
+   },
+   "a": [
+    "lutero"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Martinho Lutero",
+    [
+     "Reforma"
+    ]
+   ],
+   "x": "Lutero viveu dois séculos antes: foi o líder da Reforma Protestante, no século XVI."
+  },
+  {
+   "t": "Qual é o intruso?",
+   "type": "player",
+   "fixed": [
+    "luis_gama",
+    "patrocinio",
+    "zumbi",
+    "duque_caxias"
+   ],
+   "odd": {
+    "k": "lutaram contra a escravidão no Brasil"
+   },
+   "a": [
+    "duque_caxias"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Luís Alves de Lima e Silva",
+    [
+     "Exército"
+    ]
+   ],
+   "x": "O Duque de Caxias foi militar do Império e é o patrono do Exército Brasileiro."
+  },
+  {
+   "t": "Qual é o intruso?",
+   "type": "player",
+   "fixed": [
+    "leonardo",
+    "michelangelo",
+    "botticelli",
+    "goya"
+   ],
+   "odd": {
+    "k": "foram artistas do Renascimento italiano"
+   },
+   "a": [
+    "goya"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Francisco de Goya",
+    [
+     "espanhol"
+    ]
+   ],
+   "x": "Goya foi um pintor espanhol que viveu entre os séculos XVIII e XIX, bem depois do Renascimento."
+  },
+  {
+   "t": "Qual é o intruso?",
+   "type": "player",
+   "fixed": [
+    "washington",
+    "lincoln",
+    "kennedy",
+    "franklin"
+   ],
+   "odd": {
+    "k": "foram presidentes dos Estados Unidos"
+   },
+   "a": [
+    "franklin"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Benjamin Franklin",
+    [
+     "Independência"
+    ]
+   ],
+   "x": "Benjamin Franklin assinou a Declaração de Independência, mas nunca foi presidente."
+  },
+  {
+   "t": "Qual é o intruso?",
+   "type": "player",
+   "fixed": [
+    "mandela",
+    "haile_selassie",
+    "shaka",
+    "toussaint"
+   ],
+   "odd": {
+    "k": "nasceram na África"
+   },
+   "a": [
+    "toussaint"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Toussaint Louverture",
+    [
+     "Haiti"
+    ]
+   ],
+   "x": "Toussaint Louverture nasceu em São Domingos, a colônia francesa que viria a ser o Haiti."
+  },
+  {
+   "t": "Qual é o intruso?",
+   "type": "player",
+   "fixed": [
+    "marx",
+    "lenin",
+    "fidel",
+    "gandhi"
+   ],
+   "odd": {
+    "k": "defenderam o comunismo"
+   },
+   "a": [
+    "gandhi"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Mahatma Gandhi",
+    [
+     "não violência"
+    ]
+   ]
+  },
+  {
+   "t": "Qual é o intruso?",
+   "type": "player",
+   "fixed": [
+    "marie_curie",
+    "ada_lovelace",
+    "hipacia",
+    "frida"
+   ],
+   "odd": {
+    "k": "dedicaram a vida à ciência ou à matemática"
+   },
+   "a": [
+    "frida"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Frida Kahlo",
+    [
+     "pintora"
+    ]
+   ]
+  },
+  {
+   "t": "Qual é o intruso?",
+   "type": "player",
+   "fixed": [
+    "gengis",
+    "kublai",
+    "tamerlao",
+    "carlos_magno"
+   ],
+   "odd": {
+    "k": "comandaram impérios nascidos nas estepes da Ásia"
+   },
+   "a": [
+    "carlos_magno"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Carlos Magno",
+    [
+     "francos"
+    ]
+   ],
+   "x": "Carlos Magno foi rei dos francos e, no ano 800, coroado imperador do Ocidente."
+  },
+  {
+   "t": "Qual é o intruso?",
+   "type": "player",
+   "fixed": [
+    "pedro_grande",
+    "catarina_grande",
+    "gorbachev",
+    "thatcher"
+   ],
+   "odd": {
+    "k": "governaram a Rússia ou a União Soviética"
+   },
+   "a": [
+    "thatcher"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Margaret Thatcher",
+    [
+     "Reino Unido"
+    ]
+   ],
+   "x": "Margaret Thatcher governou o Reino Unido como primeira-ministra, de 1979 a 1990."
+  },
+  {
+   "t": "Qual é o intruso?",
+   "type": "player",
+   "fixed": [
+    "getulio",
+    "jk",
+    "deodoro",
+    "rio_branco"
+   ],
+   "odd": {
+    "k": "foram presidentes do Brasil"
+   },
+   "a": [
+    "rio_branco"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "José Paranhos, Barão do Rio Branco",
+    [
+     "chanceler"
+    ]
+   ],
+   "x": "O Barão do Rio Branco foi diplomata e ministro das Relações Exteriores; resolveu por negociação e arbitragem várias disputas de fronteira do Brasil, como a do Acre."
+  },
+  {
+   "t": "Qual é o intruso?",
+   "type": "player",
+   "fixed": [
+    "santos_dumont",
+    "machado",
+    "niemeyer",
+    "dom_pedro_i"
+   ],
+   "odd": {
+    "k": "nasceram no Brasil"
+   },
+   "a": [
+    "dom_pedro_i"
+   ],
+   "d": 3,
+   "src": [
+    "pt",
+    "Pedro I do Brasil",
+    [
+     "Queluz"
+    ]
+   ],
+   "x": "Dom Pedro I nasceu em Portugal, no Palácio de Queluz, perto de Lisboa, e veio para o Brasil aos 9 anos, com a corte."
+  },
+  {
+   "t": "Qual é o intruso?",
+   "type": "player",
+   "fixed": [
+    "einstein",
+    "niels_bohr",
+    "fleming",
+    "freud"
+   ],
+   "odd": {
+    "k": "ganharam o Prêmio Nobel"
+   },
+   "a": [
+    "freud"
+   ],
+   "d": 3,
+   "src": [
+    "pt",
+    "Sigmund Freud",
+    [
+     "Nobel"
+    ]
+   ],
+   "x": "Freud foi indicado ao Nobel muitas vezes, mas nunca ganhou."
+  },
+  {
+   "t": "Qual é o intruso?",
+   "type": "txt",
+   "choices": [
+    "Pirâmide de Gizé",
+    "Farol de Alexandria",
+    "Colosso de Rodes",
+    "Coliseu"
+   ],
+   "odd": {
+    "k": "estão entre as Sete Maravilhas do Mundo Antigo"
+   },
+   "a": [
+    "Coliseu"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Sete maravilhas do mundo antigo",
+    [
+     "Colosso de Rodes"
+    ]
+   ],
+   "x": "O Coliseu, de Roma, entrou em outra lista: a das Sete Maravilhas do Mundo Moderno, eleitas em 2007."
+  },
+  {
+   "t": "Qual é o intruso?",
+   "type": "txt",
+   "choices": [
+    "Austerlitz",
+    "Waterloo",
+    "Iena",
+    "Gettysburg"
+   ],
+   "odd": {
+    "k": "foram batalhas de Napoleão"
+   },
+   "a": [
+    "Gettysburg"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Batalha de Gettysburg",
+    [
+     "1863"
+    ]
+   ],
+   "x": "Gettysburg foi uma batalha da Guerra de Secessão dos Estados Unidos, em 1863."
+  },
+  {
+   "t": "Qual é o intruso?",
+   "type": "txt",
+   "choices": [
+    "Salvador",
+    "Rio de Janeiro",
+    "Brasília",
+    "São Paulo"
+   ],
+   "odd": {
+    "k": "são ou já foram capitais do Brasil"
+   },
+   "a": [
+    "São Paulo"
+   ],
+   "d": 1,
+   "src": [
+    "pt",
+    "Capitais do Brasil",
+    [
+     "Salvador"
+    ]
+   ],
+   "x": "Salvador foi a capital de 1549 a 1763; o Rio, até 1960; desde então, Brasília."
+  },
+  {
+   "t": "Qual é o intruso?",
+   "type": "txt",
+   "choices": [
+    "Machu Picchu",
+    "Cusco",
+    "Sacsayhuamán",
+    "Tenochtitlán"
+   ],
+   "odd": {
+    "k": "ficam no Peru, no coração do antigo Império Inca"
+   },
+   "a": [
+    "Tenochtitlán"
+   ],
+   "d": 3,
+   "src": [
+    "pt",
+    "Tenochtitlán",
+    [
+     "astecas"
+    ]
+   ],
+   "x": "Tenochtitlán era a capital dos astecas; sobre ela foi construída a Cidade do México."
+  },
+  {
+   "t": "Qual é o intruso?",
+   "type": "txt",
+   "choices": [
+    "Crise dos Mísseis de Cuba",
+    "Queda do Muro de Berlim",
+    "Corrida espacial",
+    "Batalha de Stalingrado"
+   ],
+   "odd": {
+    "k": "aconteceram durante a Guerra Fria"
+   },
+   "a": [
+    "Batalha de Stalingrado"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Batalha de Stalingrado",
+    [
+     "1942"
+    ]
+   ],
+   "x": "Stalingrado (1942–1943) foi uma batalha da Segunda Guerra Mundial, antes da Guerra Fria."
+  },
+  {
+   "t": "Qual é o intruso?",
+   "type": "txt",
+   "choices": [
+    "Cabanagem",
+    "Sabinada",
+    "Balaiada",
+    "Inconfidência Mineira"
+   ],
+   "odd": {
+    "k": "foram revoltas do Período Regencial"
+   },
+   "a": [
+    "Inconfidência Mineira"
+   ],
+   "d": 3,
+   "src": [
+    "pt",
+    "Período regencial",
+    [
+     "Cabanagem",
+     "Sabinada",
+     "Balaiada"
+    ]
+   ],
+   "x": "A Inconfidência Mineira foi descoberta em 1789, ainda no Brasil colônia, antes mesmo de a revolta começar."
+  },
+  {
+   "t": "Qual é o intruso?",
+   "type": "txt",
+   "choices": [
+    "Papel",
+    "Pólvora",
+    "Bússola",
+    "Telescópio"
+   ],
+   "odd": {
+    "k": "são invenções da China antiga"
+   },
+   "a": [
+    "Telescópio"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Quatro Grandes Invenções",
+    [
+     "bússola",
+     "pólvora"
+    ]
+   ],
+   "x": "O telescópio surgiu na Holanda, em 1608; papel, pólvora, bússola e imprensa são as Quatro Grandes Invenções da China."
+  },
+  {
+   "t": "Qual é o intruso?",
+   "type": "txt",
+   "choices": [
+    "Astecas",
+    "Incas",
+    "Maias",
+    "Mogóis"
+   ],
+   "odd": {
+    "k": "foram povos das Américas antes de Colombo"
+   },
+   "a": [
+    "Mogóis"
+   ],
+   "d": 1,
+   "src": [
+    "pt",
+    "Império Mogol",
+    [
+     "Índia"
+    ]
+   ],
+   "x": "Os mogóis governaram a Índia a partir do século XVI; foram eles que construíram o Taj Mahal."
+  },
+  {
+   "t": "Qual é o intruso?",
+   "type": "txt",
+   "choices": [
+    "Zeus",
+    "Poseidon",
+    "Hermes",
+    "Júpiter"
+   ],
+   "odd": {
+    "k": "são deuses gregos"
+   },
+   "a": [
+    "Júpiter"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Júpiter (mitologia)",
+    [
+     "Zeus"
+    ]
+   ],
+   "x": "Júpiter é o nome romano do deus que os gregos chamavam de Zeus."
+  },
+  {
+   "t": "Qual é o intruso?",
+   "type": "txt",
+   "choices": [
+    "Hieróglifos",
+    "Papiro",
+    "Múmias",
+    "Escrita cuneiforme"
+   ],
+   "odd": {
+    "k": "são marcas do Egito antigo"
+   },
+   "a": [
+    "Escrita cuneiforme"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Escrita cuneiforme",
+    [
+     "Mesopotâmia"
+    ]
+   ],
+   "x": "A escrita cuneiforme nasceu na Mesopotâmia, gravada com estilete em tábuas de argila."
+  },
+  {
+   "t": "Qual é o intruso?",
+   "type": "txt",
+   "choices": [
+    "Santa María",
+    "Pinta",
+    "Niña",
+    "Mayflower"
+   ],
+   "odd": {
+    "k": "foram navios da primeira viagem de Colombo"
+   },
+   "a": [
+    "Mayflower"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Mayflower",
+    [
+     "1620"
+    ]
+   ],
+   "x": "O Mayflower levou os peregrinos ingleses à América do Norte, em 1620."
+  },
+  {
+   "t": "Qual é o intruso?",
+   "type": "txt",
+   "choices": [
+    "Alemanha",
+    "Itália",
+    "Japão",
+    "Estados Unidos"
+   ],
+   "odd": {
+    "k": "formaram o Eixo na Segunda Guerra Mundial"
+   },
+   "a": [
+    "Estados Unidos"
+   ],
+   "d": 1,
+   "src": [
+    "pt",
+    "Potências do Eixo",
+    [
+     "Alemanha",
+     "Itália",
+     "Japão"
+    ]
+   ],
+   "x": "Os Estados Unidos lutaram do lado dos Aliados a partir de dezembro de 1941, depois do ataque japonês a Pearl Harbor."
+  },
+  {
+   "t": "Qual é o intruso?",
+   "type": "txt",
+   "choices": [
+    "Ana Bolena",
+    "Catarina de Aragão",
+    "Jane Seymour",
+    "Maria Stuart"
+   ],
+   "odd": {
+    "k": "foram esposas de Henrique VIII"
+   },
+   "a": [
+    "Maria Stuart"
+   ],
+   "d": 3,
+   "src": [
+    "pt",
+    "Maria I da Escócia",
+    [
+     "Elizabeth"
+    ]
+   ],
+   "x": "Maria Stuart foi rainha da Escócia e acabou executada em 1587, por ordem de Elizabeth I, filha de Henrique VIII."
+  },
+  {
+   "t": "Qual é o intruso?",
+   "type": "txt",
+   "choices": [
+    "Vim, vi, venci",
+    "A sorte está lançada",
+    "Até tu, Brutus?",
+    "Penso, logo existo"
+   ],
+   "odd": {
+    "k": "são frases atribuídas a Júlio César"
+   },
+   "a": [
+    "Penso, logo existo"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Cogito, ergo sum",
+    [
+     "Descartes"
+    ]
+   ],
+   "x": "'Penso, logo existo' é de René Descartes, filósofo francês do século XVII."
+  },
+  {
+   "t": "Qual é o intruso?",
+   "type": "txt",
+   "choices": [
+    "Lei do Ventre Livre",
+    "Lei dos Sexagenários",
+    "Lei Áurea",
+    "Lei Seca"
+   ],
+   "odd": {
+    "k": "foram leis contra a escravidão no Brasil"
+   },
+   "a": [
+    "Lei Seca"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Lei Áurea",
+    [
+     "1888"
+    ]
+   ],
+   "x": "A Lei Seca proibiu as bebidas alcoólicas nos Estados Unidos, de 1920 a 1933. A Lei do Ventre Livre (1871) e a dos Sexagenários (1885) prepararam o caminho da Lei Áurea (1888)."
+  },
+  {
+   "t": "Qual é o intruso?",
+   "type": "txt",
+   "choices": [
+    "Mona Lisa",
+    "A Última Ceia",
+    "A Dama com Arminho",
+    "O Nascimento de Vênus"
+   ],
+   "odd": {
+    "k": "são obras de Leonardo da Vinci"
+   },
+   "a": [
+    "O Nascimento de Vênus"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "O Nascimento de Vénus",
+    [
+     "Botticelli"
+    ]
+   ],
+   "x": "O Nascimento de Vênus é de Sandro Botticelli, pintado por volta de 1485."
+  },
+  {
+   "t": "Qual é o intruso?",
+   "type": "txt",
+   "choices": [
+    "Os Girassóis",
+    "A Noite Estrelada",
+    "Os Comedores de Batata",
+    "A Ronda Noturna"
+   ],
+   "odd": {
+    "k": "foram pintados por Van Gogh"
+   },
+   "a": [
+    "A Ronda Noturna"
+   ],
+   "d": 3,
+   "src": [
+    "pt",
+    "A Ronda Noturna",
+    [
+     "Rembrandt"
+    ]
+   ],
+   "x": "A Ronda Noturna é de Rembrandt, de 1642, mais de dois séculos antes de Van Gogh."
+  },
+  {
+   "t": "Qual é o intruso?",
+   "type": "txt",
+   "choices": [
+    "Hamlet",
+    "Romeu e Julieta",
+    "Macbeth",
+    "Dom Quixote"
+   ],
+   "odd": {
+    "k": "são peças de Shakespeare"
+   },
+   "a": [
+    "Dom Quixote"
+   ],
+   "d": 1,
+   "src": [
+    "pt",
+    "Dom Quixote",
+    [
+     "Cervantes"
+    ]
+   ],
+   "x": "Dom Quixote é o romance de Miguel de Cervantes; ele e Shakespeare morreram em 1616, com dias de diferença."
+  },
+  {
+   "t": "Qual é o intruso?",
+   "type": "txt",
+   "choices": [
+    "Dom Casmurro",
+    "Memórias Póstumas de Brás Cubas",
+    "Quincas Borba",
+    "O Guarani"
+   ],
+   "odd": {
+    "k": "são romances de Machado de Assis"
+   },
+   "a": [
+    "O Guarani"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "O Guarani",
+    [
+     "José de Alencar"
+    ]
+   ],
+   "x": "O Guarani é de José de Alencar, publicado em 1857."
+  }
+ ]
+}

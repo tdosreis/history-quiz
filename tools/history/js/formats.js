@@ -11,6 +11,11 @@
      · a manchete — the front page of the day it happened
      · o duelo    — only two cards on the board: which came first?
      · fato ou mito — something everybody repeats, stamped true or false
+     · a charada  — a story told in pictures, one after another
+     · o detalhe  — a portrait seen through a magnifying glass; the reveal
+                    pulls back to the whole face
+     · o intruso  — four on the board and three of them alike; the reveal
+                    says what the three share and stamps the odd one
 
    Every one of them arrives with its own little moment (the ink writing the
    sentence, the swords crossing, the paper spinning in, the stamp coming
@@ -18,13 +23,16 @@
 ═══════════════════════════════════════════════════ */
 
 /* the strip a question carries, if any: it is the question's picture */
-const hasStrip = q => !!(q && (q.quote || q.battle || q.line || q.news));
+const hasStrip = q => !!(q && (q.quote || q.battle || q.line || q.news || q.rebus || q.detail || q.odd));
 function qStrip(q) {
   if (!q) return '';
   if (q.quote)  return quoteStrip(q.quote, q);
   if (q.battle) return battleStrip(q.battle, q);
   if (q.line)   return lineStrip(q.line, q);
   if (q.news)   return newsStrip(q.news, q);
+  if (q.rebus)  return rebusStrip(q.rebus, q);
+  if (q.detail) return detailStrip(q.detail, q);
+  if (q.odd)    return oddStrip(q.odd, q);
   return '';
 }
 
@@ -171,6 +179,40 @@ function newsStrip(st, q) {
     <div class="hs-cols" aria-hidden="true"><i></i><i></i><i></i></div></div>`;
 }
 
+/* ── a charada ── the pictures come up one by one on a puzzle page, the way
+   a rebus is read; the label above may give the kind of thing to guess */
+function rebusStrip(st, q) {
+  const e = st.e || [];
+  const pics = e.map((x, i) => `${i ? '<span class="hs-rb-plus" aria-hidden="true">+</span>' : ''}<span class="hs-rb-e" style="animation-delay:${(i * .24 + .12).toFixed(2)}s">${x}</span>`).join('');
+  return `<div class="qstrip hs-rebus" role="img" aria-label="Charada em figuras: ${e.join(' ')}">
+    <span class="hs-lbl">${st.k ? maskAnswer(st.k, q) : 'Charada em figuras'}</span>
+    <div class="hs-rb-row">${pics}</div></div>`;
+}
+
+/* ── o detalhe ── a famous face, close up, under a brass magnifying glass.
+   x, y: where the glass is held (per cent of the picture as framed); z: how
+   close. At the reveal the glass pulls back and the whole face is there. */
+function detailStrip(st, q) {
+  const p = PL.find(x => x.id === st.who);
+  if (!p || !p.img) return '';
+  const shown = sc === 'reveal';
+  const z = st.z || 3, x = st.x == null ? 50 : st.x, y = st.y == null ? 30 : st.y;
+  return `<div class="qstrip hs-detail${shown ? ' is-shown' : ''}" role="img" aria-label="${shown ? 'O retrato inteiro: ' + p.n : 'Um detalhe de retrato, visto de perto'}">
+    <span class="hs-lbl">${shown ? p.n : 'Um detalhe, de perto'}</span>
+    <span class="hs-lens" style="--z:${z};--x:${x}%;--y:${y}%"><img src="${p.img}" alt="" aria-hidden="true" onerror="this.style.visibility='hidden'" /><i aria-hidden="true"></i></span></div>`;
+}
+
+/* ── o intruso ── what the three share is said only at the reveal */
+const ODD_GLASS = `<svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="16.5" cy="16.5" r="10.5" fill="#F4ECD8" stroke="#2A1D10" stroke-width="2.2"/>
+  <path d="M24.4 24.4 35 35" stroke="#2A1D10" stroke-width="4.4" stroke-linecap="round"/><path d="M24.4 24.4 35 35" stroke="#C9A04E" stroke-width="2" stroke-linecap="round"/>
+  <text x="16.5" y="21.6" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-weight="700" font-size="14" fill="#7B1E3A">?</text></svg>`;
+function oddStrip(st, q) {
+  const shown = sc === 'reveal';
+  return `<div class="qstrip hs-odd${shown ? ' is-shown' : ''}" role="note">
+    <span class="hs-odd-ic">${ODD_GLASS}</span>
+    <span class="hs-odd-t">${shown ? `<b>Os outros três</b> ${st.k}.` : '<b>Três destes têm algo em comum.</b> Um não tem: qual?'}</span></div>`;
+}
+
 /* ── fato ou mito ── the two slips are rubber stamps */
 function stampSVG(kind) {
   const fato = kind === 'fato';
@@ -189,10 +231,14 @@ function stripFx(q) {
   else if (q.news) snd.extra();
   else if (q.line) snd.chain();
   else if (q.duel || q.myth) snd.duel();
+  else if (q.rebus) snd.pops((q.rebus.e || []).length);
+  else if (q.detail) snd.lens();
+  else if (q.odd) snd.oddOne();
 }
-/* the stamp coming down on the right slip, at the reveal */
+/* the stamp coming down on the right slip, at the reveal; the glass pulling back */
 function revealFx(q) {
-  if (q && q.myth) setTimeout(() => snd.stamp(), 120);
+  if (q && (q.myth || q.odd)) setTimeout(() => snd.stamp(), q.odd ? 260 : 120);
+  if (q && q.detail) snd.unzoom();
 }
 
 /* ── their sounds ── */
@@ -214,6 +260,19 @@ Object.assign(snd, {
   /* the two corners of the ring: a drum and a low horn */
   duel() { tone(98, .5, { type: 'sine', vol: .11, to: 62 }); noise(.12, { type: 'lowpass', freq: 300, q: .8, vol: .06 });
            tone(146.83, .7, { type: 'sawtooth', vol: .012, delay: .18 }); tone(220, .6, { type: 'triangle', vol: .02, delay: .2 }); },
+  /* the charada: each picture comes up with a soft pop, in time with it */
+  pops(n) { for (let i = 0; i < Math.min(n || 3, 6); i++) { const d = i * .24 + .14;
+            tone(520 + i * 70, .09, { type: 'sine', vol: .05, to: 860 + i * 90, delay: d });
+            noise(.02, { type: 'bandpass', freq: 2400, q: 2, vol: .025, attack: .001, delay: d }); } },
+  /* the magnifying glass: a glint on the lens and the air of it being raised */
+  lens() { noise(.45, { type: 'bandpass', freq: 700, to: 2200, q: .7, vol: .03, attack: .12 });
+           [2093, 2637, 3136].forEach((f, i) => tone(f, .7 - i * .12, { type: 'sine', vol: .016 / (i + 1), delay: .22 + i * .05 })); },
+  /* …and pulled back, as the whole face comes into view */
+  unzoom() { noise(.5, { type: 'bandpass', freq: 2200, to: 500, q: .7, vol: .03, attack: .05 });
+             kalimba(659.25, { vol: .05, delay: .35 }); kalimba(987.77, { vol: .045, delay: .45, dur: 1.1 }); },
+  /* o intruso: three taps alike, and one that is not */
+  oddOne() { [0, .17, .34].forEach(d => { noise(.03, { type: 'lowpass', freq: 1100, q: .8, vol: .05, attack: .002, delay: d }); tone(440, .08, { type: 'sine', vol: .03, delay: d }); });
+             tone(932.33, .2, { type: 'triangle', vol: .04, delay: .58 }); noise(.03, { type: 'bandpass', freq: 3200, q: 2, vol: .03, attack: .001, delay: .58 }); },
   /* the rubber stamp coming down on the desk */
   stamp() { tone(92, .22, { type: 'sine', vol: .14, to: 48 }); noise(.08, { type: 'lowpass', freq: 600, q: .8, vol: .09, attack: .002 });
             crackle(.08, { grains: 6, vol: .015, delay: .03 }); },

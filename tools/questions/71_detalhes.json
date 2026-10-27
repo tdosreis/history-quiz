@@ -1,0 +1,822 @@
+{
+ "id": "detalhes",
+ "name": "Detalhes",
+ "tag": "Rostos famosos de perto",
+ "col": "#8A5A2B",
+ "diff": "Variado",
+ "emoji": "🔍",
+ "qs": [
+  {
+   "t": "De quem é este olhar?",
+   "type": "txt",
+   "choices": [
+    "Frida Kahlo",
+    "Tarsila do Amaral",
+    "Clarice Lispector",
+    "Simone de Beauvoir",
+    "Rosa Parks",
+    "Madre Teresa de Calcutá"
+   ],
+   "detail": {
+    "who": "frida",
+    "x": 50,
+    "y": 25,
+    "z": 3
+   },
+   "a": [
+    "Frida Kahlo"
+   ],
+   "d": 1,
+   "src": [
+    "pt",
+    "Frida Kahlo",
+    [
+     "autorretratos"
+    ]
+   ],
+   "x": "Frida Kahlo pintou dezenas de autorretratos; as sobrancelhas unidas eram uma marca que ela nunca quis disfarçar."
+  },
+  {
+   "t": "De quem é este olhar?",
+   "type": "txt",
+   "choices": [
+    "Albert Einstein",
+    "Sigmund Freud",
+    "Nikola Tesla",
+    "Niels Bohr",
+    "Thomas Edison",
+    "Charles Darwin"
+   ],
+   "detail": {
+    "who": "einstein",
+    "x": 50,
+    "y": 25,
+    "z": 3
+   },
+   "a": [
+    "Albert Einstein"
+   ],
+   "d": 1,
+   "src": [
+    "pt",
+    "Albert Einstein",
+    [
+     "1921"
+    ]
+   ],
+   "x": "Einstein ganhou o Nobel de Física de 1921 pela explicação do efeito fotoelétrico, não pela relatividade."
+  },
+  {
+   "t": "De quem é este rosto?",
+   "type": "txt",
+   "choices": [
+    "Mahatma Gandhi",
+    "Ho Chi Minh",
+    "Nelson Mandela",
+    "Hailé Selassié",
+    "Mustafa Kemal Atatürk",
+    "Martin Luther King Jr."
+   ],
+   "detail": {
+    "who": "gandhi",
+    "x": 50,
+    "y": 25,
+    "z": 3
+   },
+   "a": [
+    "Mahatma Gandhi"
+   ],
+   "d": 1,
+   "src": [
+    "pt",
+    "Mahatma Gandhi",
+    [
+     "África do Sul"
+    ]
+   ],
+   "x": "Gandhi estudou Direito em Londres e viveu mais de 20 anos na África do Sul antes de liderar a luta pela independência da Índia."
+  },
+  {
+   "t": "De quem é este rosto?",
+   "type": "txt",
+   "choices": [
+    "Winston Churchill",
+    "Franklin D. Roosevelt",
+    "Charles de Gaulle",
+    "Otto von Bismarck",
+    "Woodrow Wilson",
+    "Getúlio Vargas"
+   ],
+   "detail": {
+    "who": "churchill",
+    "x": 50,
+    "y": 25,
+    "z": 3
+   },
+   "a": [
+    "Winston Churchill"
+   ],
+   "d": 1,
+   "src": [
+    "pt",
+    "Winston Churchill",
+    [
+     "Nobel de Literatura"
+    ]
+   ],
+   "x": "Churchill também ganhou um Nobel: o de Literatura, em 1953."
+  },
+  {
+   "t": "De quem é este olhar?",
+   "type": "txt",
+   "choices": [
+    "Vincent van Gogh",
+    "Claude Monet",
+    "Rembrandt",
+    "Francisco de Goya",
+    "Piotr Tchaikovsky",
+    "Friedrich Nietzsche"
+   ],
+   "detail": {
+    "who": "van_gogh",
+    "x": 40,
+    "y": 30,
+    "z": 3
+   },
+   "a": [
+    "Vincent van Gogh"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Vincent van Gogh",
+    [
+     "autorretratos"
+    ]
+   ],
+   "x": "Van Gogh pintou mais de 35 autorretratos, em boa parte porque não tinha dinheiro para pagar modelos."
+  },
+  {
+   "t": "De quem é esta barba?",
+   "type": "txt",
+   "choices": [
+    "Abraham Lincoln",
+    "Dom Pedro II",
+    "Karl Marx",
+    "Charles Darwin",
+    "Thomas Jefferson",
+    "Liev Tolstói"
+   ],
+   "detail": {
+    "who": "lincoln",
+    "x": 50,
+    "y": 55,
+    "z": 3
+   },
+   "a": [
+    "Abraham Lincoln"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Abraham Lincoln",
+    [
+     "Grace Bedell"
+    ]
+   ],
+   "x": "Lincoln deixou a barba crescer depois de eleito, em 1860, a conselho de uma menina de 11 anos, Grace Bedell, que lhe escreveu uma carta."
+  },
+  {
+   "t": "De quem é este bigode?",
+   "type": "txt",
+   "choices": [
+    "Salvador Dalí",
+    "Pablo Picasso",
+    "Charlie Chaplin",
+    "Santos Dumont",
+    "Albert Einstein",
+    "Friedrich Nietzsche"
+   ],
+   "detail": {
+    "who": "dali",
+    "x": 50,
+    "y": 55,
+    "z": 3
+   },
+   "a": [
+    "Salvador Dalí"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "A Persistência da Memória",
+    [
+     "1931"
+    ]
+   ],
+   "x": "Dalí pintou A Persistência da Memória, a dos relógios moles, em 1931."
+  },
+  {
+   "t": "De quem é este olhar?",
+   "type": "txt",
+   "choices": [
+    "Che Guevara",
+    "Fidel Castro",
+    "Simón Bolívar",
+    "José de San Martín",
+    "Ho Chi Minh",
+    "Vladimir Lênin"
+   ],
+   "detail": {
+    "who": "che",
+    "x": 50,
+    "y": 25,
+    "z": 3
+   },
+   "a": [
+    "Che Guevara"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Guerrillero Heroico",
+    [
+     "Korda"
+    ]
+   ],
+   "x": "A foto mais famosa de Che, o Guerrillero Heroico, foi tirada por Alberto Korda em Havana, em 1960."
+  },
+  {
+   "t": "De quem é este rosto?",
+   "type": "txt",
+   "choices": [
+    "Elizabeth I",
+    "Maria Antonieta",
+    "Rainha Vitória",
+    "Isabel I de Castela",
+    "Catarina, a Grande",
+    "Maria Teresa"
+   ],
+   "detail": {
+    "who": "elizabeth_i",
+    "x": 50,
+    "y": 40,
+    "z": 3
+   },
+   "a": [
+    "Elizabeth I"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Isabel I de Inglaterra",
+    [
+     "Virgínia"
+    ]
+   ],
+   "x": "Elizabeth I nunca se casou e foi chamada de Rainha Virgem; a colônia da Virgínia ganhou o nome em sua homenagem."
+  },
+  {
+   "t": "De quem é este rosto?",
+   "type": "txt",
+   "choices": [
+    "Luís XIV",
+    "Napoleão Bonaparte",
+    "Henrique VIII",
+    "Pedro, o Grande",
+    "Frederico, o Grande",
+    "Filipe II"
+   ],
+   "detail": {
+    "who": "luis_xiv",
+    "x": 50,
+    "y": 25,
+    "z": 3
+   },
+   "a": [
+    "Luís XIV"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Luís XIV de França",
+    [
+     "1643",
+     "1715"
+    ]
+   ],
+   "x": "Luís XIV reinou 72 anos, de 1643 a 1715: o reinado mais longo da história da França e um dos mais longos do mundo."
+  },
+  {
+   "t": "De quem é este rosto?",
+   "type": "txt",
+   "choices": [
+    "Wolfgang Amadeus Mozart",
+    "Ludwig van Beethoven",
+    "Johann Sebastian Bach",
+    "Frédéric Chopin",
+    "Piotr Tchaikovsky",
+    "Heitor Villa-Lobos"
+   ],
+   "detail": {
+    "who": "mozart",
+    "x": 50,
+    "y": 25,
+    "z": 3
+   },
+   "a": [
+    "Wolfgang Amadeus Mozart"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Wolfgang Amadeus Mozart",
+    [
+     "600"
+    ]
+   ],
+   "x": "Mozart compôs suas primeiras peças aos 5 anos e deixou mais de 600 obras em 35 anos de vida."
+  },
+  {
+   "t": "De quem é este olhar?",
+   "type": "txt",
+   "choices": [
+    "Ludwig van Beethoven",
+    "Wolfgang Amadeus Mozart",
+    "Johann Sebastian Bach",
+    "Frédéric Chopin",
+    "Piotr Tchaikovsky",
+    "Victor Hugo"
+   ],
+   "detail": {
+    "who": "beethoven",
+    "x": 50,
+    "y": 25,
+    "z": 3
+   },
+   "a": [
+    "Ludwig van Beethoven"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Sinfonia n.º 9 (Beethoven)",
+    [
+     "surdo"
+    ]
+   ],
+   "x": "Quando a Nona Sinfonia estreou, em 1824, Beethoven já estava praticamente surdo."
+  },
+  {
+   "t": "De quem é este rosto?",
+   "type": "txt",
+   "choices": [
+    "Maria Antonieta",
+    "Elizabeth I",
+    "Rainha Vitória",
+    "Maria Teresa",
+    "Catarina, a Grande",
+    "Dona Leopoldina"
+   ],
+   "detail": {
+    "who": "maria_antonieta",
+    "x": 50,
+    "y": 25,
+    "z": 3
+   },
+   "a": [
+    "Maria Antonieta"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Maria Antonieta",
+    [
+     "Viena"
+    ]
+   ],
+   "x": "Maria Antonieta nasceu em Viena: era filha da imperatriz Maria Teresa da Áustria."
+  },
+  {
+   "t": "De quem é este rosto?",
+   "type": "txt",
+   "choices": [
+    "Santos Dumont",
+    "Oswaldo Cruz",
+    "Barão do Rio Branco",
+    "Getúlio Vargas",
+    "Machado de Assis",
+    "Marechal Rondon"
+   ],
+   "detail": {
+    "who": "santos_dumont",
+    "x": 50,
+    "y": 25,
+    "z": 3
+   },
+   "a": [
+    "Santos Dumont"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Santos Dumont",
+    [
+     "Cartier"
+    ]
+   ],
+   "x": "Santos Dumont pediu ao amigo Louis Cartier um relógio que pudesse ver sem tirar as mãos dos controles: assim ajudou a popularizar o relógio de pulso."
+  },
+  {
+   "t": "De quem é este olhar?",
+   "type": "txt",
+   "choices": [
+    "Sigmund Freud",
+    "Karl Marx",
+    "Charles Darwin",
+    "Albert Einstein",
+    "Friedrich Nietzsche",
+    "Louis Pasteur"
+   ],
+   "detail": {
+    "who": "freud",
+    "x": 50,
+    "y": 25,
+    "z": 3
+   },
+   "a": [
+    "Sigmund Freud"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Sigmund Freud",
+    [
+     "Londres"
+    ]
+   ],
+   "x": "Freud fugiu de Viena para Londres em 1938, depois da anexação da Áustria pela Alemanha nazista."
+  },
+  {
+   "t": "De quem é este rosto?",
+   "type": "txt",
+   "choices": [
+    "Karl Marx",
+    "Charles Darwin",
+    "Friedrich Nietzsche",
+    "Vladimir Lênin",
+    "Liev Tolstói",
+    "Dom Pedro II"
+   ],
+   "detail": {
+    "who": "marx",
+    "x": 50,
+    "y": 35,
+    "z": 3.5
+   },
+   "a": [
+    "Karl Marx"
+   ],
+   "d": 2,
+   "src": [
+    "pt",
+    "Karl Marx",
+    [
+     "Londres"
+    ]
+   ],
+   "x": "Marx viveu em Londres de 1849 até morrer, em 1883; lá escreveu O Capital e lá está enterrado."
+  },
+  {
+   "t": "De quem é este rosto?",
+   "type": "txt",
+   "choices": [
+    "Napoleão Bonaparte",
+    "Luís XIV",
+    "Duque de Wellington",
+    "Maximilien Robespierre",
+    "Horatio Nelson",
+    "Frederico, o Grande"
+   ],
+   "detail": {
+    "who": "napoleao",
+    "x": 50,
+    "y": 40,
+    "z": 3
+   },
+   "a": [
+    "Napoleão Bonaparte"
+   ],
+   "d": 3,
+   "src": [
+    "pt",
+    "Napoleão Bonaparte",
+    [
+     "altura"
+    ]
+   ],
+   "x": "Napoleão não era baixinho: media cerca de 1,69 m, um pouco acima da média dos franceses da época; a fama vem da confusão entre polegadas francesas e inglesas e das caricaturas britânicas."
+  },
+  {
+   "t": "De quem é este rosto?",
+   "type": "txt",
+   "choices": [
+    "William Shakespeare",
+    "Miguel de Cervantes",
+    "Luís de Camões",
+    "Galileu Galilei",
+    "Johannes Kepler",
+    "René Descartes"
+   ],
+   "detail": {
+    "who": "shakespeare",
+    "x": 60,
+    "y": 30,
+    "z": 3
+   },
+   "a": [
+    "William Shakespeare"
+   ],
+   "d": 3,
+   "src": [
+    "pt",
+    "Retrato Chandos",
+    [
+     "Shakespeare"
+    ]
+   ],
+   "x": "O brinco de ouro aparece no Retrato Chandos, que talvez seja o único pintado com Shakespeare ainda vivo."
+  },
+  {
+   "t": "De quem é este rosto?",
+   "type": "txt",
+   "choices": [
+    "Henrique VIII",
+    "Luís XIV",
+    "Filipe II",
+    "Carlos V",
+    "Ricardo Coração de Leão",
+    "Guilherme, o Conquistador"
+   ],
+   "detail": {
+    "who": "henrique_viii",
+    "x": 40,
+    "y": 30,
+    "z": 3
+   },
+   "a": [
+    "Henrique VIII"
+   ],
+   "d": 3,
+   "src": [
+    "pt",
+    "Henrique VIII de Inglaterra",
+    [
+     "Ana Bolena"
+    ]
+   ],
+   "x": "Henrique VIII se casou seis vezes e rompeu com o papa para poder anular o primeiro casamento."
+  },
+  {
+   "t": "De quem é este olhar?",
+   "type": "txt",
+   "choices": [
+    "Isaac Newton",
+    "Gottfried Leibniz",
+    "René Descartes",
+    "Johannes Kepler",
+    "Galileu Galilei",
+    "Blaise Pascal"
+   ],
+   "detail": {
+    "who": "newton",
+    "x": 50,
+    "y": 25,
+    "z": 3
+   },
+   "a": [
+    "Isaac Newton"
+   ],
+   "d": 3,
+   "src": [
+    "pt",
+    "Isaac Newton",
+    [
+     "Casa da Moeda"
+    ]
+   ],
+   "x": "Newton também dirigiu a Casa da Moeda inglesa, onde caçou falsificadores, e presidiu a Royal Society."
+  },
+  {
+   "t": "De quem é este rosto?",
+   "type": "txt",
+   "choices": [
+    "Pablo Picasso",
+    "Salvador Dalí",
+    "Candido Portinari",
+    "Claude Monet",
+    "Franz Kafka",
+    "Ernest Hemingway"
+   ],
+   "detail": {
+    "who": "picasso",
+    "x": 50,
+    "y": 40,
+    "z": 3
+   },
+   "a": [
+    "Pablo Picasso"
+   ],
+   "d": 3,
+   "src": [
+    "pt",
+    "Guernica (pintura)",
+    [
+     "1937"
+    ]
+   ],
+   "x": "Picasso pintou Guernica em 1937, depois do bombardeio da cidade basca na Guerra Civil Espanhola."
+  },
+  {
+   "t": "De quem é este rosto?",
+   "type": "txt",
+   "choices": [
+    "Nikola Tesla",
+    "Thomas Edison",
+    "Albert Einstein",
+    "Sigmund Freud",
+    "Henry Ford",
+    "Alexander Fleming"
+   ],
+   "detail": {
+    "who": "tesla",
+    "x": 50,
+    "y": 40,
+    "z": 3
+   },
+   "a": [
+    "Nikola Tesla"
+   ],
+   "d": 3,
+   "src": [
+    "pt",
+    "Tesla (unidade)",
+    [
+     "Nikola Tesla"
+    ]
+   ],
+   "x": "O tesla, unidade de densidade de fluxo magnético do Sistema Internacional, leva o seu nome."
+  },
+  {
+   "t": "De quem é este olhar?",
+   "type": "txt",
+   "choices": [
+    "Victor Hugo",
+    "Charles Dickens",
+    "Liev Tolstói",
+    "Fiódor Dostoiévski",
+    "Mark Twain",
+    "Machado de Assis"
+   ],
+   "detail": {
+    "who": "victor_hugo",
+    "x": 50,
+    "y": 25,
+    "z": 3
+   },
+   "a": [
+    "Victor Hugo"
+   ],
+   "d": 3,
+   "src": [
+    "pt",
+    "Victor Hugo",
+    [
+     "Os Miseráveis"
+    ]
+   ],
+   "x": "Victor Hugo escreveu Os Miseráveis e O Corcunda de Notre-Dame; cerca de 2 milhões de pessoas acompanharam seu funeral, em Paris, em 1885."
+  },
+  {
+   "t": "De quem é este olhar?",
+   "type": "txt",
+   "choices": [
+    "Rembrandt",
+    "Johannes Vermeer",
+    "Diego Velázquez",
+    "Albrecht Dürer",
+    "Francisco de Goya",
+    "Rafael Sanzio"
+   ],
+   "detail": {
+    "who": "rembrandt",
+    "x": 50,
+    "y": 25,
+    "z": 3
+   },
+   "a": [
+    "Rembrandt"
+   ],
+   "d": 3,
+   "src": [
+    "pt",
+    "Rembrandt",
+    [
+     "autorretratos"
+    ]
+   ],
+   "x": "Rembrandt pintou cerca de 40 autorretratos a óleo, da juventude à velhice."
+  },
+  {
+   "t": "De quem é este rosto?",
+   "type": "txt",
+   "choices": [
+    "Charles Darwin",
+    "Karl Marx",
+    "Liev Tolstói",
+    "Gregor Mendel",
+    "Louis Pasteur",
+    "Charles Dickens"
+   ],
+   "detail": {
+    "who": "darwin",
+    "x": 50,
+    "y": 40,
+    "z": 3
+   },
+   "a": [
+    "Charles Darwin"
+   ],
+   "d": 3,
+   "src": [
+    "pt",
+    "Charles Darwin",
+    [
+     "Beagle"
+    ]
+   ],
+   "x": "A barba famosa veio tarde: Darwin só a deixou crescer depois dos 50 anos, por volta de 1862. Nos retratos de quando voltou da viagem do Beagle, aparece sem barba."
+  },
+  {
+   "t": "De quem é esta barba?",
+   "type": "txt",
+   "choices": [
+    "Dom Pedro II",
+    "Karl Marx",
+    "Charles Darwin",
+    "Abraham Lincoln",
+    "Liev Tolstói",
+    "Dom Pedro I"
+   ],
+   "detail": {
+    "who": "dom_pedro_ii",
+    "x": 50,
+    "y": 55,
+    "z": 3
+   },
+   "a": [
+    "Dom Pedro II"
+   ],
+   "d": 4,
+   "src": [
+    "pt",
+    "Pedro II do Brasil",
+    [
+     "Maioridade"
+    ]
+   ],
+   "x": "Dom Pedro II assumiu o trono aos 14 anos, em 1840, com o Golpe da Maioridade."
+  },
+  {
+   "t": "De quem é esta barba?",
+   "type": "txt",
+   "choices": [
+    "Michelangelo",
+    "Leonardo da Vinci",
+    "Rafael Sanzio",
+    "Sandro Botticelli",
+    "Albrecht Dürer",
+    "Galileu Galilei"
+   ],
+   "detail": {
+    "who": "michelangelo",
+    "x": 50,
+    "y": 55,
+    "z": 3
+   },
+   "a": [
+    "Michelangelo"
+   ],
+   "d": 4,
+   "src": [
+    "pt",
+    "Teto da Capela Sistina",
+    [
+     "1508",
+     "1512"
+    ]
+   ],
+   "x": "Michelangelo passou quatro anos, de 1508 a 1512, pintando o teto da Capela Sistina."
+  }
+ ]
+}

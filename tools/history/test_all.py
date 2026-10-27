@@ -46,12 +46,13 @@ JS = r"""
     if (!q.t.endsWith('?')) F('no ? ' + w);
     /* a question is told apart by its words, its picture, its clue, its strip and its duel */
     const key = q.t + JSON.stringify(q.stad || q.who || q.crest || q.flag || q.icon || '') + (q.clues ? q.clues[0] : '')
-              + JSON.stringify(q.quote || q.battle || q.line || q.news || '') + (q.duel ? JSON.stringify(q.fixed || q.choices) : '');
+              + JSON.stringify(q.quote || q.battle || q.line || q.news || q.rebus || q.detail || q.odd || '')
+              + (q.duel || q.odd ? JSON.stringify(q.fixed || q.choices) : '');
     if (texts.has(key)) F('duplicate ' + w);
     texts.add(key);
     if (!q.a || !q.a.length) F('no answer ' + w);
     if (q.type === 'txt') {
-      const need = q.duel ? 2 : 6;
+      const need = q.duel ? 2 : q.odd ? 4 : 6;
       if (q.choices.length !== need || new Set(q.choices).size !== need) F('choices ' + w);
       if (q.myth && q.choices.slice().sort().join() !== 'Fato,Mito') F('a myth is stamped Fato or Mito ' + w);
       q.a.forEach(a => { if (!q.choices.includes(a)) F('answer not among choices ' + w); });
@@ -75,7 +76,13 @@ JS = r"""
         const dd = d.map(x => x.id);
         if (new Set(dd).size !== dd.length) F(k + ' duplicate tile :: ' + q.t.slice(0, 60));
         if (!q.a.every(a => dd.includes(a))) F(k + ' answer missing :: ' + q.t.slice(0, 60));
-        if (!q.order && !q.fixed && !q.duel && dd.length < Math.min(6, 10)) F(k + ' few tiles(' + dd.length + ') :: ' + q.t.slice(0, 60));
+        if (!q.order && !q.fixed && !q.duel && !q.odd && dd.length < Math.min(6, 10)) F(k + ' few tiles(' + dd.length + ') :: ' + q.t.slice(0, 60));
+        if (q.odd && dd.length !== 4) F(k + ' an odd one out is four tiles :: ' + q.t.slice(0, 60));
+        /* Detalhe: the face is behind the glass, so no tile may show a face to match it by eye */
+        if (q.detail) { const oa = optArtFor(q);
+          if (!(PL.find(p => p.id === q.detail.who) || {}).img) F('detail without a portrait :: ' + q.detail.who);
+          if (q.choices.some(c => !oa || !oa[c] || oa[c].k !== 'glyph')) F('a detail tile shows a face :: ' + q.detail.who); }
+        if (q.rebus && !(q.rebus.e.length >= 2 && q.rebus.e.length <= 6)) F('a charada is 2-6 pictures :: ' + q.t.slice(0, 60));
         if (q.duel && dd.length !== 2) F(k + ' a duel needs exactly two tiles :: ' + q.t.slice(0, 60));
         if (hasStrip(q) && !/class="qstrip/.test(qStrip(q))) F('strip did not draw :: ' + q.t.slice(0, 60));
         const art = questionArt(q); if (typeof art !== 'string' || (!q.order && !hasStrip(q) && !/<(img|svg)\b/.test(art))) F('question without a picture :: ' + q.t.slice(0, 60));

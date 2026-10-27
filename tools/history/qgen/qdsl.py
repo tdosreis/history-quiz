@@ -157,6 +157,46 @@ class Cat:
         r["x"] = kw["x"]
         self.qs.append(r)
 
+    def RB(self, t, a, pics, d=2, k=None, typ="txt", wrong=None, **kw):
+        """Charada: a story told in 2-6 pictures (emoji), read in order. k: an optional
+        label above them (the kind of thing to guess), which must not name the answer."""
+        v = {"e": list(pics)}
+        if k: v["k"] = k
+        self._strip(t, a, d, typ, wrong, "rebus", v, kw)
+
+    def DT(self, who, name, wrong, x=50, y=30, z=3, d=2, t="De quem é este rosto?", **kw):
+        """Detalhe: a figure's portrait under the magnifying glass at (x, y) per cent,
+        z times closer; the answer is the figure's name as the app prints it (name),
+        among five other names (wrong). The tiles show no faces."""
+        ch = [name] + list(wrong)
+        if len(ch) != 6 or len({c.lower() for c in ch}) != 6:
+            raise SystemExit("need 6 distinct names (%d): %s" % (len(ch), ch))
+        r = {"t": t, "type": "txt", "choices": ch, "detail": {"who": who, "x": x, "y": y, "z": z}, "a": [name], "d": d}
+        s = kw.get("src")
+        if not s: raise SystemExit("no src for: " + t + " " + who)
+        r["src"] = list(s[:2]) + [list(s[2])]
+        if kw.get("x_"): r["x"] = kw["x_"]
+        self.qs.append(r)
+
+    def OD(self, a, tiles, k, d=2, t="Qual é o intruso?", typ="player", **kw):
+        """O intruso: four tiles (ids, or texts with typ='txt'), three alike; a is the odd
+        one out, k what the other three share (shown at the reveal: "Os outros três …")."""
+        tiles = list(tiles)
+        if len(tiles) != 4 or a not in tiles or len(set(tiles)) != 4:
+            raise SystemExit("odd: four different tiles, the answer among them: %s" % tiles)
+        r = {"t": t}
+        if typ: r["type"] = typ
+        if typ == "txt": r["choices"] = tiles
+        else: r["fixed"] = tiles
+        r["odd"] = {"k": k}
+        r["a"] = [a]
+        r["d"] = d
+        s = kw.get("src")
+        if not s: raise SystemExit("no src for odd: " + a)
+        r["src"] = list(s[:2]) + [list(s[2])]
+        if kw.get("x"): r["x"] = kw["x"]
+        self.qs.append(r)
+
     def write(self):
         os.makedirs(OUT, exist_ok=True)
         d = dict(self.meta); d["qs"] = self.qs

@@ -2477,6 +2477,146 @@ const CATS = [
       {"t": "Os médicos já usavam a famosa máscara em forma de bico durante a Peste Negra, no século XIV?", "a": ["Mito"], "type": "txt", "choices": ["Fato", "Mito"], "duel": true, "myth": true, "d": 5, "x": "Na Peste Negra, de 1347 a 1351, ela não existia: a máscara de bico, recheada de ervas aromáticas, surgiu no século XVII e é atribuída ao médico francês Charles de Lorme.", "scene": "peste_negra"},
     ]
   },
+  {
+    id:"charadas", name:"Charadas", emoji:"🧩",
+    tag:"Histórias contadas em figuras", col:"#6A4C93", diff:"Variado",
+    qs:[
+      {"t": "Que episódio a charada conta?", "a": ["Guerra de Troia"], "type": "txt", "choices": ["Guerra de Troia", "Guerra do Peloponeso", "Guerras Médicas", "Guerras Púnicas", "Guerra dos Cem Anos", "Guerra das Rosas"], "rebus": {"e": ["🐴", "🎁", "🏰"], "k": "Um conflito lendário"}, "d": 1, "x": "Segundo a lenda, contada na Odisseia e na Eneida, os gregos se esconderam dentro de um cavalo de madeira deixado de presente às portas de Troia."},
+      {"t": "Que tragédia a charada conta?", "a": ["Naufrágio do Titanic"], "type": "txt", "choices": ["Naufrágio do Titanic", "Naufrágio do Lusitania", "Explosão do Hindenburg", "Terremoto de Lisboa", "Erupção do Vesúvio", "Grande Incêndio de Roma"], "rebus": {"e": ["🚢", "🧊", "💔"]}, "d": 1, "x": "O Titanic bateu num iceberg em sua viagem inaugural e afundou na madrugada de 15 de abril de 1912."},
+      {"t": "Que desastre a charada conta?", "a": ["Destruição de Pompeia"], "type": "txt", "choices": ["Destruição de Pompeia", "Terremoto de Lisboa", "Grande Incêndio de Roma", "Queda de Constantinopla", "Saque de Roma", "Peste Negra"], "rebus": {"e": ["🌋", "🏛️", "💀"]}, "d": 1, "x": "A erupção do Vesúvio, em 79 d.C., soterrou Pompeia e Herculano sob as cinzas."},
+      {"t": "Que acontecimento a charada conta?", "a": ["Queda do Muro de Berlim"], "type": "txt", "choices": ["Queda do Muro de Berlim", "Construção do Muro de Berlim", "Revolução de Veludo", "Queda da Bastilha", "Fim do apartheid", "Crise dos Mísseis de Cuba"], "rebus": {"e": ["🧱", "🔨", "🎉"]}, "d": 1, "x": "Na noite de 9 de novembro de 1989, multidões atravessaram o muro e começaram a quebrá-lo a marteladas."},
+      {"t": "Que guerra a charada conta?", "a": ["Guerra dos Cem Anos"], "type": "txt", "choices": ["Guerra dos Cem Anos", "Guerra dos Trinta Anos", "Guerra dos Sete Anos", "Guerra das Rosas", "Guerra de Secessão", "Guerras Napoleônicas"], "rebus": {"e": ["💯", "📅", "⚔️"]}, "d": 1, "x": "Apesar do nome, a guerra entre a Inglaterra e a França durou 116 anos, de 1337 a 1453."},
+      {"t": "Que lenda a charada conta?", "a": ["Fundação de Roma"], "type": "txt", "choices": ["Fundação de Roma", "Fundação de Atenas", "Fundação de Cartago", "Fundação de Constantinopla", "Fundação de Alexandria", "Fundação de Esparta"], "rebus": {"e": ["🐺", "👶", "👶"]}, "d": 1, "x": "Pela lenda, os gêmeos Rômulo e Remo foram amamentados por uma loba; Rômulo teria fundado Roma em 753 a.C."},
+      {"t": "Quem a charada esconde?", "a": ["newton"], "type": "player", "rebus": {"e": ["🍎", "⬇️", "🤔"]}, "d": 1, "x": "A história da maçã foi contada pelo próprio Newton, já velho, a um amigo; mas, no relato, a fruta só cai da árvore: a pancada na cabeça é um enfeite posterior."},
+      {"t": "Quem a charada esconde?", "a": ["cesar"], "type": "player", "rebus": {"e": ["🏛️", "🗡️", "🗡️", "🗡️"], "k": "Idos de Março"}, "d": 1, "x": "Júlio César foi morto a punhaladas numa reunião do Senado, nos Idos de Março (15 de março) de 44 a.C."},
+      {"t": "Quem a charada esconde?", "a": ["armstrong"], "type": "player", "rebus": {"e": ["🌕", "👣", "🚩"]}, "d": 1, "x": "Armstrong deixou a primeira pegada humana na Lua em julho de 1969, na missão Apollo 11."},
+      {"t": "Quem a charada esconde?", "a": ["henrique_viii"], "type": "player", "rebus": {"e": ["👑", "💍", "6️⃣"]}, "d": 1, "x": "Das seis esposas de Henrique VIII, duas foram decapitadas: Ana Bolena e Catarina Howard."},
+      {"t": "Quem a charada esconde?", "a": ["van_gogh"], "type": "player", "rebus": {"e": ["🌻", "👂", "✂️"]}, "d": 1, "x": "Em dezembro de 1888, em Arles, depois de uma briga com o pintor Paul Gauguin, Van Gogh cortou a própria orelha esquerda."},
+      {"t": "Quem a charada esconde?", "a": ["beethoven"], "type": "player", "rebus": {"e": ["🎹", "🙉", "🎵"]}, "d": 1, "x": "Beethoven começou a perder a audição antes dos 30 anos e continuou compondo mesmo surdo."},
+      {"t": "Quem a charada esconde?", "a": ["colombo"], "type": "player", "rebus": {"e": ["⛵", "⛵", "⛵", "🌎"]}, "d": 1, "x": "Colombo partiu em 1492 com três navios, a Santa María, a Pinta e a Niña, e chegou às Américas pensando estar na Ásia."},
+      {"t": "Quem a charada esconde?", "a": ["cleopatra"], "type": "player", "rebus": {"e": ["🐍", "👑"]}, "d": 1, "x": "Segundo a tradição, Cleópatra se matou com a picada de uma áspide, em 30 a.C., depois da derrota para Otaviano."},
+      {"t": "Quem a charada esconde?", "a": ["tiradentes"], "type": "player", "rebus": {"e": ["🦷", "⛰️", "⚖️"]}, "d": 1, "x": "Joaquim José da Silva Xavier ganhou o apelido porque também trabalhava como dentista; foi enforcado em 1792."},
+      {"t": "Quem a charada esconde?", "a": ["shakespeare"], "type": "player", "rebus": {"e": ["💀", "🤔", "🎭"]}, "d": 1, "x": "A cena em que Hamlet segura a caveira do bobo Yorick é uma das mais famosas do teatro."},
+      {"t": "Quem a charada esconde?", "a": ["joana_darc"], "type": "player", "rebus": {"e": ["👧", "⚔️", "🔥"]}, "d": 1, "x": "Joana d'Arc liderou tropas francesas aos 17 anos e foi queimada pelos ingleses em Rouen, em 1431, aos 19."},
+      {"t": "Quem a charada esconde?", "a": ["gagarin"], "type": "player", "rebus": {"e": ["🚀", "🌍", "🥇"]}, "d": 1, "x": "Em 12 de abril de 1961, Gagarin deu uma volta completa ao redor da Terra a bordo da Vostok 1."},
+      {"t": "Quem a charada esconde?", "a": ["dom_pedro_i"], "type": "player", "rebus": {"e": ["🗡️", "📣", "🏞️"], "k": "Às margens de um riacho"}, "d": 1, "x": "Em 7 de setembro de 1822, às margens do riacho Ipiranga, Dom Pedro proclamou a independência. Testemunhas contaram que ele montava uma mula, e não o cavalo do quadro de Pedro Américo."},
+      {"t": "Que protesto a charada conta?", "a": ["Festa do Chá de Boston"], "type": "txt", "choices": ["Festa do Chá de Boston", "Massacre de Boston", "Guerra do Ópio", "Lei do Selo", "Revolta da Cachaça", "Conjuração Mineira"], "rebus": {"e": ["🍵", "📦", "🌊"]}, "d": 2, "x": "Em 1773, colonos disfarçados jogaram no porto de Boston 342 caixas de chá da Companhia das Índias Orientais, em protesto contra os impostos britânicos."},
+      {"t": "Que revolta a charada conta?", "a": ["Revolta da Vacina"], "type": "txt", "choices": ["Revolta da Vacina", "Revolta da Chibata", "Guerra de Canudos", "Revolta dos Malês", "Cabanagem", "Revolta da Armada"], "rebus": {"e": ["💉", "😠", "🏙️"], "k": "Rio de Janeiro, 1904"}, "d": 2, "x": "Em 1904, a vacinação obrigatória contra a varíola, defendida por Oswaldo Cruz, levou o Rio a uma semana de motins."},
+      {"t": "Que guerra a charada conta?", "a": ["Guerra das Rosas"], "type": "txt", "choices": ["Guerra das Rosas", "Guerra dos Cem Anos", "Guerra dos Trinta Anos", "Guerra Civil Inglesa", "Guerra dos Farrapos", "Guerra de Secessão"], "rebus": {"e": ["🌹", "⚔️", "🌹"], "k": "Um conflito inglês"}, "d": 2, "x": "A Guerra das Rosas (1455–1487) opôs duas casas inglesas: Lancaster, da rosa vermelha, e York, da rosa branca."},
+      {"t": "Que herói a charada esconde?", "a": ["Guilherme Tell"], "type": "txt", "choices": ["Guilherme Tell", "Robin Hood", "Rei Artur", "El Cid", "Siegfried", "Ulisses"], "rebus": {"e": ["🍎", "🧒", "🏹"], "k": "Uma lenda suíça"}, "d": 2, "x": "Conta a lenda que Guilherme Tell foi obrigado a acertar com uma flecha uma maçã posta sobre a cabeça do próprio filho."},
+      {"t": "Quem a charada esconde?", "a": ["arquimedes"], "type": "player", "rebus": {"e": ["🛁", "💧", "👑"]}, "d": 2, "x": "Diz a tradição que Arquimedes, ao entrar na banheira, entendeu como saber se a coroa do rei era de ouro puro e saiu gritando 'Eureka!'."},
+      {"t": "Quem a charada esconde?", "a": ["magalhaes"], "type": "player", "rebus": {"e": ["⛵", "🌍", "🔄"]}, "d": 2, "x": "Magalhães morreu nas Filipinas, em 1521; a primeira volta ao mundo foi completada por Juan Sebastián Elcano, em 1522."},
+      {"t": "Quem a charada esconde?", "a": ["anibal"], "type": "player", "rebus": {"e": ["🐘", "⛰️", "❄️", "⚔️"]}, "d": 2, "x": "Em 218 a.C., Aníbal atravessou os Alpes com seu exército e dezenas de elefantes para atacar Roma."},
+      {"t": "Quem a charada esconde?", "a": ["santos_dumont"], "type": "player", "rebus": {"e": ["🎈", "🗼", "⌚"]}, "d": 2, "x": "Em 1901, Santos Dumont contornou a Torre Eiffel com o dirigível nº 6 e ganhou o Prêmio Deutsch. Também ajudou a popularizar o relógio de pulso."},
+      {"t": "Quem a charada esconde?", "a": ["darwin"], "type": "player", "rebus": {"e": ["🚢", "🏝️", "🐢", "🐦"]}, "d": 2, "x": "Nas ilhas Galápagos, em 1835, Darwin observou tartarugas e tentilhões que o ajudaram a pensar a evolução das espécies."},
+      {"t": "Quem a charada esconde?", "a": ["galileu"], "type": "player", "rebus": {"e": ["🔭", "🌕", "⚖️"]}, "d": 2, "x": "Galileu apontou um telescópio para o céu em 1609 e, em 1633, foi julgado pela Inquisição por defender que a Terra gira em torno do Sol."},
+      {"t": "Quem a charada esconde?", "a": ["lutero"], "type": "player", "rebus": {"e": ["📜", "🔨", "🚪", "⛪"]}, "d": 2, "x": "Em 1517, Lutero divulgou suas 95 teses, segundo a tradição pregando-as na porta da igreja do castelo de Wittenberg."},
+      {"t": "Quem a charada esconde?", "a": ["maria_antonieta"], "type": "player", "rebus": {"e": ["🍰", "👑"], "k": "Uma frase que lhe atribuem"}, "d": 2, "x": "Não há prova de que Maria Antonieta tenha dito 'que comam brioches': a frase já aparece nas Confissões de Rousseau, escritas quando ela era criança."},
+      {"t": "Quem a charada esconde?", "a": ["nero"], "type": "player", "rebus": {"e": ["🔥", "🎻", "🏛️"], "k": "O que dizem, mas não é verdade"}, "d": 2, "x": "Nero não tocou violino no incêndio de Roma, em 64 d.C.: o instrumento só surgiria no século XVI, e ele estava em Âncio quando o fogo começou."},
+      {"t": "Quem a charada esconde?", "a": ["leonardo"], "type": "player", "rebus": {"e": ["🖼️", "🙂", "🚁"]}, "d": 2, "x": "Leonardo pintou a Mona Lisa e desenhou máquinas voadoras, como o famoso parafuso aéreo, quatro séculos antes do primeiro helicóptero."},
+      {"t": "Quem a charada esconde?", "a": ["gandhi"], "type": "player", "rebus": {"e": ["🧂", "🚶", "🌊"]}, "d": 2, "x": "Em 1930, Gandhi marchou quase 400 km até o mar para fazer sal, desafiando o monopólio britânico."},
+      {"t": "Quem a charada esconde?", "a": ["rosa_parks"], "type": "player", "rebus": {"e": ["🚌", "💺", "✊"]}, "d": 2, "x": "Em 1955, em Montgomery, Rosa Parks se recusou a ceder seu lugar no ônibus a um passageiro branco e foi presa; o boicote que se seguiu durou mais de um ano."},
+      {"t": "Quem a charada esconde?", "a": ["tutancamon"], "type": "player", "rebus": {"e": ["👦", "👑", "⚱️"]}, "d": 2, "x": "Tutancâmon virou faraó por volta dos 9 anos; sua tumba, quase intacta, foi encontrada por Howard Carter em 1922."},
+      {"t": "Quem a charada esconde?", "a": ["marie_curie"], "type": "player", "rebus": {"e": ["☢️", "🧪", "🏅", "🏅"]}, "d": 2, "x": "Marie Curie foi a primeira pessoa a ganhar dois prêmios Nobel: o de Física, em 1903, e o de Química, em 1911."},
+      {"t": "Quem a charada esconde?", "a": ["pasteur"], "type": "player", "rebus": {"e": ["🥛", "🔥", "🦠"]}, "d": 2, "x": "A pasteurização, que aquece o alimento para matar micróbios, leva o nome de Louis Pasteur."},
+      {"t": "Quem a charada esconde?", "a": ["fleming"], "type": "player", "rebus": {"e": ["🧫", "🍄", "💊"]}, "d": 2, "x": "Em 1928, Fleming notou que um mofo tinha matado as bactérias ao seu redor numa placa esquecida no laboratório; a substância que o mofo produzia ganhou o nome de penicilina."},
+      {"t": "Quem a charada esconde?", "a": ["marco_polo"], "type": "player", "rebus": {"e": ["🐫", "🏯", "📖"], "k": "De Veneza à China"}, "d": 2, "x": "As viagens de Marco Polo à China de Kublai Khan foram contadas no livro que ele ditou na prisão, em Gênova."},
+      {"t": "Quem a charada esconde?", "a": ["lincoln"], "type": "player", "rebus": {"e": ["🎩", "🧔", "📜", "⛓️"]}, "d": 2, "x": "Em 1863, Lincoln assinou a Proclamação de Emancipação, que declarava livres os escravizados dos estados rebeldes."},
+      {"t": "Quem a charada esconde?", "a": ["zumbi"], "type": "player", "rebus": {"e": ["⛰️", "✊", "⛓️"], "k": "Um quilombo na serra"}, "d": 2, "x": "Zumbi liderou o Quilombo dos Palmares, na serra da Barriga, em Alagoas; morreu em 20 de novembro de 1695, data do Dia da Consciência Negra."},
+      {"t": "Quem a charada esconde?", "a": ["mlk"], "type": "player", "rebus": {"e": ["🎤", "💭", "🕊️"]}, "d": 2, "x": "O discurso 'Eu tenho um sonho' foi feito em 1963, diante de cerca de 250 mil pessoas, em Washington."},
+      {"t": "Quem a charada esconde?", "a": ["gengis"], "type": "player", "rebus": {"e": ["🐎", "🏹", "⛺"], "k": "Mongólia, 1206"}, "d": 2, "x": "Gengis Khan uniu as tribos mongóis e fundou, em 1206, o império que se tornaria o maior território contínuo da história."},
+      {"t": "Quem a charada esconde?", "a": ["princesa_isabel"], "type": "player", "rebus": {"e": ["✍️", "⛓️", "🕊️"], "k": "13 de maio de 1888"}, "d": 2, "x": "Em 13 de maio de 1888, a princesa Isabel assinou a Lei Áurea, que aboliu a escravidão no Brasil."},
+      {"t": "Quem a charada esconde?", "a": ["amundsen"], "type": "player", "rebus": {"e": ["🛷", "🐕", "❄️", "🏁"]}, "d": 3, "x": "Amundsen chegou ao Polo Sul em dezembro de 1911, com trenós puxados por cães, um mês antes do britânico Robert Scott."},
+      {"t": "Quem a charada esconde?", "a": ["camoes"], "type": "player", "rebus": {"e": ["🚢", "💥", "🏊", "📜"]}, "d": 3, "x": "Conta-se que Camões sobreviveu a um naufrágio na foz do rio Mekong nadando com o manuscrito de Os Lusíadas."},
+      {"t": "Quem a charada esconde?", "a": ["mansa_musa"], "type": "player", "rebus": {"e": ["👑", "🐪", "💰", "🕋"]}, "d": 3, "x": "Na peregrinação a Meca, em 1324, Mansa Mussa gastou tanto ouro no Cairo que o preço do metal caiu por anos."},
+    ]
+  },
+  {
+    id:"detalhes", name:"Detalhes", emoji:"🔍",
+    tag:"Rostos famosos de perto", col:"#8A5A2B", diff:"Variado",
+    qs:[
+      {"t": "De quem é este olhar?", "a": ["Frida Kahlo"], "type": "txt", "choices": ["Frida Kahlo", "Tarsila do Amaral", "Clarice Lispector", "Simone de Beauvoir", "Rosa Parks", "Madre Teresa de Calcutá"], "detail": {"who": "frida", "x": 50, "y": 25, "z": 3}, "d": 1, "x": "Frida Kahlo pintou dezenas de autorretratos; as sobrancelhas unidas eram uma marca que ela nunca quis disfarçar."},
+      {"t": "De quem é este olhar?", "a": ["Albert Einstein"], "type": "txt", "choices": ["Albert Einstein", "Sigmund Freud", "Nikola Tesla", "Niels Bohr", "Thomas Edison", "Charles Darwin"], "detail": {"who": "einstein", "x": 50, "y": 25, "z": 3}, "d": 1, "x": "Einstein ganhou o Nobel de Física de 1921 pela explicação do efeito fotoelétrico, não pela relatividade."},
+      {"t": "De quem é este rosto?", "a": ["Mahatma Gandhi"], "type": "txt", "choices": ["Mahatma Gandhi", "Ho Chi Minh", "Nelson Mandela", "Hailé Selassié", "Mustafa Kemal Atatürk", "Martin Luther King Jr."], "detail": {"who": "gandhi", "x": 50, "y": 25, "z": 3}, "d": 1, "x": "Gandhi estudou Direito em Londres e viveu mais de 20 anos na África do Sul antes de liderar a luta pela independência da Índia."},
+      {"t": "De quem é este rosto?", "a": ["Winston Churchill"], "type": "txt", "choices": ["Winston Churchill", "Franklin D. Roosevelt", "Charles de Gaulle", "Otto von Bismarck", "Woodrow Wilson", "Getúlio Vargas"], "detail": {"who": "churchill", "x": 50, "y": 25, "z": 3}, "d": 1, "x": "Churchill também ganhou um Nobel: o de Literatura, em 1953."},
+      {"t": "De quem é este olhar?", "a": ["Vincent van Gogh"], "type": "txt", "choices": ["Vincent van Gogh", "Claude Monet", "Rembrandt", "Francisco de Goya", "Piotr Tchaikovsky", "Friedrich Nietzsche"], "detail": {"who": "van_gogh", "x": 40, "y": 30, "z": 3}, "d": 2, "x": "Van Gogh pintou mais de 35 autorretratos, em boa parte porque não tinha dinheiro para pagar modelos."},
+      {"t": "De quem é esta barba?", "a": ["Abraham Lincoln"], "type": "txt", "choices": ["Abraham Lincoln", "Dom Pedro II", "Karl Marx", "Charles Darwin", "Thomas Jefferson", "Liev Tolstói"], "detail": {"who": "lincoln", "x": 50, "y": 55, "z": 3}, "d": 2, "x": "Lincoln deixou a barba crescer depois de eleito, em 1860, a conselho de uma menina de 11 anos, Grace Bedell, que lhe escreveu uma carta."},
+      {"t": "De quem é este bigode?", "a": ["Salvador Dalí"], "type": "txt", "choices": ["Salvador Dalí", "Pablo Picasso", "Charlie Chaplin", "Santos Dumont", "Albert Einstein", "Friedrich Nietzsche"], "detail": {"who": "dali", "x": 50, "y": 55, "z": 3}, "d": 2, "x": "Dalí pintou A Persistência da Memória, a dos relógios moles, em 1931."},
+      {"t": "De quem é este olhar?", "a": ["Che Guevara"], "type": "txt", "choices": ["Che Guevara", "Fidel Castro", "Simón Bolívar", "José de San Martín", "Ho Chi Minh", "Vladimir Lênin"], "detail": {"who": "che", "x": 50, "y": 25, "z": 3}, "d": 2, "x": "A foto mais famosa de Che, o Guerrillero Heroico, foi tirada por Alberto Korda em Havana, em 1960."},
+      {"t": "De quem é este rosto?", "a": ["Elizabeth I"], "type": "txt", "choices": ["Elizabeth I", "Maria Antonieta", "Rainha Vitória", "Isabel I de Castela", "Catarina, a Grande", "Maria Teresa"], "detail": {"who": "elizabeth_i", "x": 50, "y": 40, "z": 3}, "d": 2, "x": "Elizabeth I nunca se casou e foi chamada de Rainha Virgem; a colônia da Virgínia ganhou o nome em sua homenagem."},
+      {"t": "De quem é este rosto?", "a": ["Luís XIV"], "type": "txt", "choices": ["Luís XIV", "Napoleão Bonaparte", "Henrique VIII", "Pedro, o Grande", "Frederico, o Grande", "Filipe II"], "detail": {"who": "luis_xiv", "x": 50, "y": 25, "z": 3}, "d": 2, "x": "Luís XIV reinou 72 anos, de 1643 a 1715: o reinado mais longo da história da França e um dos mais longos do mundo."},
+      {"t": "De quem é este rosto?", "a": ["Wolfgang Amadeus Mozart"], "type": "txt", "choices": ["Wolfgang Amadeus Mozart", "Ludwig van Beethoven", "Johann Sebastian Bach", "Frédéric Chopin", "Piotr Tchaikovsky", "Heitor Villa-Lobos"], "detail": {"who": "mozart", "x": 50, "y": 25, "z": 3}, "d": 2, "x": "Mozart compôs suas primeiras peças aos 5 anos e deixou mais de 600 obras em 35 anos de vida."},
+      {"t": "De quem é este olhar?", "a": ["Ludwig van Beethoven"], "type": "txt", "choices": ["Ludwig van Beethoven", "Wolfgang Amadeus Mozart", "Johann Sebastian Bach", "Frédéric Chopin", "Piotr Tchaikovsky", "Victor Hugo"], "detail": {"who": "beethoven", "x": 50, "y": 25, "z": 3}, "d": 2, "x": "Quando a Nona Sinfonia estreou, em 1824, Beethoven já estava praticamente surdo."},
+      {"t": "De quem é este rosto?", "a": ["Maria Antonieta"], "type": "txt", "choices": ["Maria Antonieta", "Elizabeth I", "Rainha Vitória", "Maria Teresa", "Catarina, a Grande", "Dona Leopoldina"], "detail": {"who": "maria_antonieta", "x": 50, "y": 25, "z": 3}, "d": 2, "x": "Maria Antonieta nasceu em Viena: era filha da imperatriz Maria Teresa da Áustria."},
+      {"t": "De quem é este rosto?", "a": ["Santos Dumont"], "type": "txt", "choices": ["Santos Dumont", "Oswaldo Cruz", "Barão do Rio Branco", "Getúlio Vargas", "Machado de Assis", "Marechal Rondon"], "detail": {"who": "santos_dumont", "x": 50, "y": 25, "z": 3}, "d": 2, "x": "Santos Dumont pediu ao amigo Louis Cartier um relógio que pudesse ver sem tirar as mãos dos controles: assim ajudou a popularizar o relógio de pulso."},
+      {"t": "De quem é este olhar?", "a": ["Sigmund Freud"], "type": "txt", "choices": ["Sigmund Freud", "Karl Marx", "Charles Darwin", "Albert Einstein", "Friedrich Nietzsche", "Louis Pasteur"], "detail": {"who": "freud", "x": 50, "y": 25, "z": 3}, "d": 2, "x": "Freud fugiu de Viena para Londres em 1938, depois da anexação da Áustria pela Alemanha nazista."},
+      {"t": "De quem é este rosto?", "a": ["Karl Marx"], "type": "txt", "choices": ["Karl Marx", "Charles Darwin", "Friedrich Nietzsche", "Vladimir Lênin", "Liev Tolstói", "Dom Pedro II"], "detail": {"who": "marx", "x": 50, "y": 35, "z": 3.5}, "d": 2, "x": "Marx viveu em Londres de 1849 até morrer, em 1883; lá escreveu O Capital e lá está enterrado."},
+      {"t": "De quem é este rosto?", "a": ["Napoleão Bonaparte"], "type": "txt", "choices": ["Napoleão Bonaparte", "Luís XIV", "Duque de Wellington", "Maximilien Robespierre", "Horatio Nelson", "Frederico, o Grande"], "detail": {"who": "napoleao", "x": 50, "y": 40, "z": 3}, "d": 3, "x": "Napoleão não era baixinho: media cerca de 1,69 m, um pouco acima da média dos franceses da época; a fama vem da confusão entre polegadas francesas e inglesas e das caricaturas britânicas."},
+      {"t": "De quem é este rosto?", "a": ["William Shakespeare"], "type": "txt", "choices": ["William Shakespeare", "Miguel de Cervantes", "Luís de Camões", "Galileu Galilei", "Johannes Kepler", "René Descartes"], "detail": {"who": "shakespeare", "x": 60, "y": 30, "z": 3}, "d": 3, "x": "O brinco de ouro aparece no Retrato Chandos, que talvez seja o único pintado com Shakespeare ainda vivo."},
+      {"t": "De quem é este rosto?", "a": ["Henrique VIII"], "type": "txt", "choices": ["Henrique VIII", "Luís XIV", "Filipe II", "Carlos V", "Ricardo Coração de Leão", "Guilherme, o Conquistador"], "detail": {"who": "henrique_viii", "x": 40, "y": 30, "z": 3}, "d": 3, "x": "Henrique VIII se casou seis vezes e rompeu com o papa para poder anular o primeiro casamento."},
+      {"t": "De quem é este olhar?", "a": ["Isaac Newton"], "type": "txt", "choices": ["Isaac Newton", "Gottfried Leibniz", "René Descartes", "Johannes Kepler", "Galileu Galilei", "Blaise Pascal"], "detail": {"who": "newton", "x": 50, "y": 25, "z": 3}, "d": 3, "x": "Newton também dirigiu a Casa da Moeda inglesa, onde caçou falsificadores, e presidiu a Royal Society."},
+      {"t": "De quem é este rosto?", "a": ["Pablo Picasso"], "type": "txt", "choices": ["Pablo Picasso", "Salvador Dalí", "Candido Portinari", "Claude Monet", "Franz Kafka", "Ernest Hemingway"], "detail": {"who": "picasso", "x": 50, "y": 40, "z": 3}, "d": 3, "x": "Picasso pintou Guernica em 1937, depois do bombardeio da cidade basca na Guerra Civil Espanhola."},
+      {"t": "De quem é este rosto?", "a": ["Nikola Tesla"], "type": "txt", "choices": ["Nikola Tesla", "Thomas Edison", "Albert Einstein", "Sigmund Freud", "Henry Ford", "Alexander Fleming"], "detail": {"who": "tesla", "x": 50, "y": 40, "z": 3}, "d": 3, "x": "O tesla, unidade de densidade de fluxo magnético do Sistema Internacional, leva o seu nome."},
+      {"t": "De quem é este olhar?", "a": ["Victor Hugo"], "type": "txt", "choices": ["Victor Hugo", "Charles Dickens", "Liev Tolstói", "Fiódor Dostoiévski", "Mark Twain", "Machado de Assis"], "detail": {"who": "victor_hugo", "x": 50, "y": 25, "z": 3}, "d": 3, "x": "Victor Hugo escreveu Os Miseráveis e O Corcunda de Notre-Dame; cerca de 2 milhões de pessoas acompanharam seu funeral, em Paris, em 1885."},
+      {"t": "De quem é este olhar?", "a": ["Rembrandt"], "type": "txt", "choices": ["Rembrandt", "Johannes Vermeer", "Diego Velázquez", "Albrecht Dürer", "Francisco de Goya", "Rafael Sanzio"], "detail": {"who": "rembrandt", "x": 50, "y": 25, "z": 3}, "d": 3, "x": "Rembrandt pintou cerca de 40 autorretratos a óleo, da juventude à velhice."},
+      {"t": "De quem é este rosto?", "a": ["Charles Darwin"], "type": "txt", "choices": ["Charles Darwin", "Karl Marx", "Liev Tolstói", "Gregor Mendel", "Louis Pasteur", "Charles Dickens"], "detail": {"who": "darwin", "x": 50, "y": 40, "z": 3}, "d": 3, "x": "A barba famosa veio tarde: Darwin só a deixou crescer depois dos 50 anos, por volta de 1862. Nos retratos de quando voltou da viagem do Beagle, aparece sem barba."},
+      {"t": "De quem é esta barba?", "a": ["Dom Pedro II"], "type": "txt", "choices": ["Dom Pedro II", "Karl Marx", "Charles Darwin", "Abraham Lincoln", "Liev Tolstói", "Dom Pedro I"], "detail": {"who": "dom_pedro_ii", "x": 50, "y": 55, "z": 3}, "d": 4, "x": "Dom Pedro II assumiu o trono aos 14 anos, em 1840, com o Golpe da Maioridade."},
+      {"t": "De quem é esta barba?", "a": ["Michelangelo"], "type": "txt", "choices": ["Michelangelo", "Leonardo da Vinci", "Rafael Sanzio", "Sandro Botticelli", "Albrecht Dürer", "Galileu Galilei"], "detail": {"who": "michelangelo", "x": 50, "y": 55, "z": 3}, "d": 4, "x": "Michelangelo passou quatro anos, de 1508 a 1512, pintando o teto da Capela Sistina."},
+    ]
+  },
+  {
+    id:"intrusos", name:"O intruso", emoji:"🧐",
+    tag:"Três têm algo em comum", col:"#2E6B5E", diff:"Variado",
+    qs:[
+      {"t": "Qual é o intruso?", "a": ["pericles"], "type": "player", "fixed": ["cesar", "augusto", "nero", "pericles"], "odd": {"k": "governaram Roma"}, "_noFlag": true, "_hideCtry": true, "_hideEra": true, "d": 1, "x": "Péricles governou Atenas, no século V a.C.; os outros três mandaram em Roma."},
+      {"t": "Qual é o intruso?", "a": ["picasso"], "type": "player", "fixed": ["newton", "einstein", "darwin", "picasso"], "odd": {"k": "foram cientistas"}, "_noFlag": true, "_hideCtry": true, "_hideEra": true, "d": 1},
+      {"t": "Qual é o intruso?", "a": ["rembrandt"], "type": "player", "fixed": ["mozart", "beethoven", "bach", "rembrandt"], "odd": {"k": "foram compositores"}, "_noFlag": true, "_hideCtry": true, "_hideEra": true, "d": 1},
+      {"t": "Qual é o intruso?", "a": ["gutenberg"], "type": "player", "fixed": ["vasco_gama", "cabral", "magalhaes", "gutenberg"], "odd": {"k": "foram navegadores portugueses"}, "_noFlag": true, "_hideCtry": true, "_hideEra": true, "d": 1, "x": "Gutenberg, alemão, criou na Europa a prensa de tipos móveis; Magalhães, português, navegou a serviço da Espanha."},
+      {"t": "Qual é o intruso?", "a": ["getulio"], "type": "player", "fixed": ["dom_pedro_i", "dom_pedro_ii", "dom_joao_vi", "getulio"], "odd": {"k": "usaram coroa: foram reis ou imperadores"}, "_noFlag": true, "_hideCtry": true, "_hideEra": true, "d": 1},
+      {"t": "Qual é o intruso?", "a": ["marie_curie"], "type": "player", "fixed": ["cleopatra", "elizabeth_i", "catarina_grande", "marie_curie"], "odd": {"k": "foram rainhas ou imperatrizes"}, "_noFlag": true, "_hideCtry": true, "_hideEra": true, "d": 1},
+      {"t": "Qual é o intruso?", "a": ["chopin"], "type": "player", "fixed": ["van_gogh", "monet", "picasso", "chopin"], "odd": {"k": "foram pintores"}, "_noFlag": true, "_hideCtry": true, "_hideEra": true, "d": 1},
+      {"t": "Qual é o intruso?", "a": ["confucio"], "type": "player", "fixed": ["socrates", "platao", "aristoteles", "confucio"], "odd": {"k": "foram filósofos da Grécia antiga"}, "_noFlag": true, "_hideCtry": true, "_hideEra": true, "d": 1},
+      {"t": "Qual é o intruso?", "a": ["hamurabi"], "type": "player", "fixed": ["ramses_ii", "tutancamon", "aquenaton", "hamurabi"], "odd": {"k": "foram faraós do Egito"}, "_noFlag": true, "_hideCtry": true, "_hideEra": true, "d": 1, "x": "Hamurabi foi rei da Babilônia, na Mesopotâmia, e é lembrado por seu código de leis."},
+      {"t": "Qual é o intruso?", "a": ["tarsila"], "type": "player", "fixed": ["machado", "clarice", "drummond", "tarsila"], "odd": {"k": "foram escritores brasileiros"}, "_noFlag": true, "_hideCtry": true, "_hideEra": true, "d": 1},
+      {"t": "Qual é o intruso?", "a": ["luis_xiv"], "type": "player", "fixed": ["henrique_viii", "elizabeth_i", "victoria", "luis_xiv"], "odd": {"k": "reinaram na Inglaterra"}, "_noFlag": true, "_hideCtry": true, "_hideEra": true, "d": 1},
+      {"t": "Qual é o intruso?", "a": ["velazquez"], "type": "player", "fixed": ["shakespeare", "cervantes", "camoes", "velazquez"], "odd": {"k": "foram escritores"}, "_noFlag": true, "_hideCtry": true, "_hideEra": true, "d": 2},
+      {"t": "Qual é o intruso?", "a": ["churchill"], "type": "player", "fixed": ["kennedy", "mlk", "gandhi", "churchill"], "odd": {"k": "foram assassinados"}, "_noFlag": true, "_hideCtry": true, "_hideEra": true, "d": 2, "x": "Churchill morreu de causas naturais, em 1965, aos 90 anos."},
+      {"t": "Qual é o intruso?", "a": ["cortes"], "type": "player", "fixed": ["bolivar", "san_martin", "toussaint", "cortes"], "odd": {"k": "lideraram lutas de libertação na América Latina"}, "_noFlag": true, "_hideCtry": true, "_hideEra": true, "d": 2, "x": "Hernán Cortés fez o caminho oposto: conquistou o Império Asteca para a Espanha, no século XVI."},
+      {"t": "Qual é o intruso?", "a": ["darwin"], "type": "player", "fixed": ["edison", "tesla", "santos_dumont", "darwin"], "odd": {"k": "foram inventores"}, "_noFlag": true, "_hideCtry": true, "_hideEra": true, "d": 2, "x": "Darwin foi naturalista: não inventou máquinas, mas explicou a evolução das espécies pela seleção natural."},
+      {"t": "Qual é o intruso?", "a": ["leonidas"], "type": "player", "fixed": ["ciro", "dario", "xerxes", "leonidas"], "odd": {"k": "foram reis da Pérsia"}, "_noFlag": true, "_hideCtry": true, "_hideEra": true, "d": 2, "x": "Leônidas foi rei de Esparta e morreu nas Termópilas, em 480 a.C., lutando contra o exército persa de Xerxes."},
+      {"t": "Qual é o intruso?", "a": ["lutero"], "type": "player", "fixed": ["voltaire", "rousseau", "montesquieu", "lutero"], "odd": {"k": "foram pensadores do Iluminismo, no século XVIII"}, "_noFlag": true, "_hideCtry": true, "_hideEra": true, "d": 2, "x": "Lutero viveu dois séculos antes: foi o líder da Reforma Protestante, no século XVI."},
+      {"t": "Qual é o intruso?", "a": ["duque_caxias"], "type": "player", "fixed": ["luis_gama", "patrocinio", "zumbi", "duque_caxias"], "odd": {"k": "lutaram contra a escravidão no Brasil"}, "_noFlag": true, "_hideCtry": true, "_hideEra": true, "d": 2, "x": "O Duque de Caxias foi militar do Império e é o patrono do Exército Brasileiro."},
+      {"t": "Qual é o intruso?", "a": ["goya"], "type": "player", "fixed": ["leonardo", "michelangelo", "botticelli", "goya"], "odd": {"k": "foram artistas do Renascimento italiano"}, "_noFlag": true, "_hideCtry": true, "_hideEra": true, "d": 2, "x": "Goya foi um pintor espanhol que viveu entre os séculos XVIII e XIX, bem depois do Renascimento."},
+      {"t": "Qual é o intruso?", "a": ["franklin"], "type": "player", "fixed": ["washington", "lincoln", "kennedy", "franklin"], "odd": {"k": "foram presidentes dos Estados Unidos"}, "_noFlag": true, "_hideCtry": true, "_hideEra": true, "d": 2, "x": "Benjamin Franklin assinou a Declaração de Independência, mas nunca foi presidente."},
+      {"t": "Qual é o intruso?", "a": ["toussaint"], "type": "player", "fixed": ["mandela", "haile_selassie", "shaka", "toussaint"], "odd": {"k": "nasceram na África"}, "_noFlag": true, "_hideCtry": true, "_hideEra": true, "d": 2, "x": "Toussaint Louverture nasceu em São Domingos, a colônia francesa que viria a ser o Haiti."},
+      {"t": "Qual é o intruso?", "a": ["gandhi"], "type": "player", "fixed": ["marx", "lenin", "fidel", "gandhi"], "odd": {"k": "defenderam o comunismo"}, "_noFlag": true, "_hideCtry": true, "_hideEra": true, "d": 2},
+      {"t": "Qual é o intruso?", "a": ["frida"], "type": "player", "fixed": ["marie_curie", "ada_lovelace", "hipacia", "frida"], "odd": {"k": "dedicaram a vida à ciência ou à matemática"}, "_noFlag": true, "_hideCtry": true, "_hideEra": true, "d": 2},
+      {"t": "Qual é o intruso?", "a": ["carlos_magno"], "type": "player", "fixed": ["gengis", "kublai", "tamerlao", "carlos_magno"], "odd": {"k": "comandaram impérios nascidos nas estepes da Ásia"}, "_noFlag": true, "_hideCtry": true, "_hideEra": true, "d": 2, "x": "Carlos Magno foi rei dos francos e, no ano 800, coroado imperador do Ocidente."},
+      {"t": "Qual é o intruso?", "a": ["thatcher"], "type": "player", "fixed": ["pedro_grande", "catarina_grande", "gorbachev", "thatcher"], "odd": {"k": "governaram a Rússia ou a União Soviética"}, "_noFlag": true, "_hideCtry": true, "_hideEra": true, "d": 2, "x": "Margaret Thatcher governou o Reino Unido como primeira-ministra, de 1979 a 1990."},
+      {"t": "Qual é o intruso?", "a": ["rio_branco"], "type": "player", "fixed": ["getulio", "jk", "deodoro", "rio_branco"], "odd": {"k": "foram presidentes do Brasil"}, "_noFlag": true, "_hideCtry": true, "_hideEra": true, "d": 2, "x": "O Barão do Rio Branco foi diplomata e ministro das Relações Exteriores; resolveu por negociação e arbitragem várias disputas de fronteira do Brasil, como a do Acre."},
+      {"t": "Qual é o intruso?", "a": ["dom_pedro_i"], "type": "player", "fixed": ["santos_dumont", "machado", "niemeyer", "dom_pedro_i"], "odd": {"k": "nasceram no Brasil"}, "_noFlag": true, "_hideCtry": true, "_hideEra": true, "d": 3, "x": "Dom Pedro I nasceu em Portugal, no Palácio de Queluz, perto de Lisboa, e veio para o Brasil aos 9 anos, com a corte."},
+      {"t": "Qual é o intruso?", "a": ["freud"], "type": "player", "fixed": ["einstein", "niels_bohr", "fleming", "freud"], "odd": {"k": "ganharam o Prêmio Nobel"}, "_noFlag": true, "_hideCtry": true, "_hideEra": true, "d": 3, "x": "Freud foi indicado ao Nobel muitas vezes, mas nunca ganhou."},
+      {"t": "Qual é o intruso?", "a": ["Coliseu"], "type": "txt", "choices": ["Pirâmide de Gizé", "Farol de Alexandria", "Colosso de Rodes", "Coliseu"], "odd": {"k": "estão entre as Sete Maravilhas do Mundo Antigo"}, "d": 2, "x": "O Coliseu, de Roma, entrou em outra lista: a das Sete Maravilhas do Mundo Moderno, eleitas em 2007."},
+      {"t": "Qual é o intruso?", "a": ["Gettysburg"], "type": "txt", "choices": ["Austerlitz", "Waterloo", "Iena", "Gettysburg"], "odd": {"k": "foram batalhas de Napoleão"}, "d": 2, "x": "Gettysburg foi uma batalha da Guerra de Secessão dos Estados Unidos, em 1863."},
+      {"t": "Qual é o intruso?", "a": ["São Paulo"], "type": "txt", "choices": ["Salvador", "Rio de Janeiro", "Brasília", "São Paulo"], "odd": {"k": "são ou já foram capitais do Brasil"}, "d": 1, "x": "Salvador foi a capital de 1549 a 1763; o Rio, até 1960; desde então, Brasília."},
+      {"t": "Qual é o intruso?", "a": ["Tenochtitlán"], "type": "txt", "choices": ["Machu Picchu", "Cusco", "Sacsayhuamán", "Tenochtitlán"], "odd": {"k": "ficam no Peru, no coração do antigo Império Inca"}, "d": 3, "x": "Tenochtitlán era a capital dos astecas; sobre ela foi construída a Cidade do México."},
+      {"t": "Qual é o intruso?", "a": ["Batalha de Stalingrado"], "type": "txt", "choices": ["Crise dos Mísseis de Cuba", "Queda do Muro de Berlim", "Corrida espacial", "Batalha de Stalingrado"], "odd": {"k": "aconteceram durante a Guerra Fria"}, "d": 2, "x": "Stalingrado (1942–1943) foi uma batalha da Segunda Guerra Mundial, antes da Guerra Fria."},
+      {"t": "Qual é o intruso?", "a": ["Inconfidência Mineira"], "type": "txt", "choices": ["Cabanagem", "Sabinada", "Balaiada", "Inconfidência Mineira"], "odd": {"k": "foram revoltas do Período Regencial"}, "d": 3, "x": "A Inconfidência Mineira foi descoberta em 1789, ainda no Brasil colônia, antes mesmo de a revolta começar."},
+      {"t": "Qual é o intruso?", "a": ["Telescópio"], "type": "txt", "choices": ["Papel", "Pólvora", "Bússola", "Telescópio"], "odd": {"k": "são invenções da China antiga"}, "d": 2, "x": "O telescópio surgiu na Holanda, em 1608; papel, pólvora, bússola e imprensa são as Quatro Grandes Invenções da China."},
+      {"t": "Qual é o intruso?", "a": ["Mogóis"], "type": "txt", "choices": ["Astecas", "Incas", "Maias", "Mogóis"], "odd": {"k": "foram povos das Américas antes de Colombo"}, "d": 1, "x": "Os mogóis governaram a Índia a partir do século XVI; foram eles que construíram o Taj Mahal."},
+      {"t": "Qual é o intruso?", "a": ["Júpiter"], "type": "txt", "choices": ["Zeus", "Poseidon", "Hermes", "Júpiter"], "odd": {"k": "são deuses gregos"}, "d": 2, "x": "Júpiter é o nome romano do deus que os gregos chamavam de Zeus."},
+      {"t": "Qual é o intruso?", "a": ["Escrita cuneiforme"], "type": "txt", "choices": ["Hieróglifos", "Papiro", "Múmias", "Escrita cuneiforme"], "odd": {"k": "são marcas do Egito antigo"}, "d": 2, "x": "A escrita cuneiforme nasceu na Mesopotâmia, gravada com estilete em tábuas de argila."},
+      {"t": "Qual é o intruso?", "a": ["Mayflower"], "type": "txt", "choices": ["Santa María", "Pinta", "Niña", "Mayflower"], "odd": {"k": "foram navios da primeira viagem de Colombo"}, "d": 2, "x": "O Mayflower levou os peregrinos ingleses à América do Norte, em 1620."},
+      {"t": "Qual é o intruso?", "a": ["Estados Unidos"], "type": "txt", "choices": ["Alemanha", "Itália", "Japão", "Estados Unidos"], "odd": {"k": "formaram o Eixo na Segunda Guerra Mundial"}, "d": 1, "x": "Os Estados Unidos lutaram do lado dos Aliados a partir de dezembro de 1941, depois do ataque japonês a Pearl Harbor."},
+      {"t": "Qual é o intruso?", "a": ["Maria Stuart"], "type": "txt", "choices": ["Ana Bolena", "Catarina de Aragão", "Jane Seymour", "Maria Stuart"], "odd": {"k": "foram esposas de Henrique VIII"}, "d": 3, "x": "Maria Stuart foi rainha da Escócia e acabou executada em 1587, por ordem de Elizabeth I, filha de Henrique VIII."},
+      {"t": "Qual é o intruso?", "a": ["Penso, logo existo"], "type": "txt", "choices": ["Vim, vi, venci", "A sorte está lançada", "Até tu, Brutus?", "Penso, logo existo"], "odd": {"k": "são frases atribuídas a Júlio César"}, "d": 2, "x": "'Penso, logo existo' é de René Descartes, filósofo francês do século XVII."},
+      {"t": "Qual é o intruso?", "a": ["Lei Seca"], "type": "txt", "choices": ["Lei do Ventre Livre", "Lei dos Sexagenários", "Lei Áurea", "Lei Seca"], "odd": {"k": "foram leis contra a escravidão no Brasil"}, "d": 2, "x": "A Lei Seca proibiu as bebidas alcoólicas nos Estados Unidos, de 1920 a 1933. A Lei do Ventre Livre (1871) e a dos Sexagenários (1885) prepararam o caminho da Lei Áurea (1888)."},
+      {"t": "Qual é o intruso?", "a": ["O Nascimento de Vênus"], "type": "txt", "choices": ["Mona Lisa", "A Última Ceia", "A Dama com Arminho", "O Nascimento de Vênus"], "odd": {"k": "são obras de Leonardo da Vinci"}, "d": 2, "x": "O Nascimento de Vênus é de Sandro Botticelli, pintado por volta de 1485."},
+      {"t": "Qual é o intruso?", "a": ["A Ronda Noturna"], "type": "txt", "choices": ["Os Girassóis", "A Noite Estrelada", "Os Comedores de Batata", "A Ronda Noturna"], "odd": {"k": "foram pintados por Van Gogh"}, "d": 3, "x": "A Ronda Noturna é de Rembrandt, de 1642, mais de dois séculos antes de Van Gogh."},
+      {"t": "Qual é o intruso?", "a": ["Dom Quixote"], "type": "txt", "choices": ["Hamlet", "Romeu e Julieta", "Macbeth", "Dom Quixote"], "odd": {"k": "são peças de Shakespeare"}, "d": 1, "x": "Dom Quixote é o romance de Miguel de Cervantes; ele e Shakespeare morreram em 1616, com dias de diferença."},
+      {"t": "Qual é o intruso?", "a": ["O Guarani"], "type": "txt", "choices": ["Dom Casmurro", "Memórias Póstumas de Brás Cubas", "Quincas Borba", "O Guarani"], "odd": {"k": "são romances de Machado de Assis"}, "d": 2, "x": "O Guarani é de José de Alencar, publicado em 1857."},
+    ]
+  },
   /* NEW-QS:END */
 ];
 /*@@/data_cl_cats@@*/
@@ -16067,6 +16207,7 @@ const CAT_ART = {
   ciencia: 'gear', artes: 'bust', mulheres: 'crown', personagens: 'bust', monumentos: 'column', curiosidades: 'scroll',
   quem_sou_eu: 'bust', linha_do_tempo: 'hourglass', imperios: 'crown', citacoes: 'quill', batalhas: 'sword',
   linhagens: 'crown', manchetes: 'scroll', duelos: 'hourglass', fato_mito: 'scales',
+  charadas: 'masks', detalhes: 'telescope', intrusos: 'scales',
 };
 const FALLBACK_PHOTO = {};
 const NONFREE_CRESTS = new Set([]);
@@ -16476,6 +16617,13 @@ function optArtFor(q) {
     _optMemo.set(q, out);
     return out;
   }
+  /* Detalhe: the face under the glass is the question; a photo on a tile would be matched by eye */
+  if (q.detail) {
+    const era = optEra(q), out = { _kind: 'glyph' };
+    q.choices.forEach(c => { out[c] = { k: 'glyph', n: c, topic: 'person', era }; });
+    _optMemo.set(q, out);
+    return out;
+  }
   const res = q.choices.map(optResolve);
   const t = _fold(q.t || '');
   const looks = OPT_LOOKS.test(t);
@@ -16596,18 +16744,20 @@ function badge(item, idx) {
     `<span class="vote-pct">${votePct}%</span>
      <span class="vote"><i style="width:${votePct}%;animation-delay:${(idx || 0) * 45}ms;"></i></span>`;
   const longCls = item.n.length > 15 ? ' tile-name-long' : '';
+  /* O intruso: at the reveal, the odd one out gets its rubber stamp */
+  const oddEl = curQ.odd && isAns ? '<span class="b-odd" aria-hidden="true">Intruso</span>' : '';
 
   if (isTextQ(curQ)) {
     const oa = optArtFor(curQ), art = oa ? optArtHtml(oa[item.id]) : '';
     return `<div class="${cls} b-text${art ? ' b-art' : ''}${curQ.myth ? ' b-myth' : ''}" data-id="${item.id}" style="${delay}">
-      ${tab}${voteEl}${art}<span class="tile-name${longCls}">${item.n}</span></div>`;
+      ${tab}${voteEl}${art}<span class="tile-name${longCls}">${item.n}</span>${oddEl}</div>`;
   }
 
   if (isPlayer) {
     return `<div class="${cls} b-fig" data-id="${item.id}" style="${delay}">
       ${tab}${voteEl}
       ${figurinha(item, 'sm', { decorative: true, sub: '', noFlag: curQ._noFlag,
-                                hideCtry: curQ._hideCtry, hideEra: curQ._hideEra })}
+                                hideCtry: curQ._hideCtry, hideEra: curQ._hideEra })}${oddEl}
     </div>`;
   }
 
@@ -16615,7 +16765,7 @@ function badge(item, idx) {
   return `<div class="${cls} b-crest" data-id="${item.id}" style="${delay}">
     ${tab}${voteEl}
     <div class="crest-box">${clubArt(item.id, '', false)}</div>
-    <span class="tile-name tile-club${longCls}">${item.n}</span>
+    <span class="tile-name tile-club${longCls}">${item.n}</span>${oddEl}
   </div>`;
 }
 
@@ -18681,26 +18831,30 @@ function html() {
   if (sc === 'end') {
     const total = cat.qs.length;
     const pct = Math.round(nCorrect / total * 100);
-    const msg = pct >= 80 ? 'Mestre da História!' : pct >= 50 ? 'Muito bem!' : 'Hora de estudar!';
+    const msg = pct === 100 ? 'Perfeito!' : pct >= 80 ? 'Excelente!' : pct >= 50 ? 'Muito bem!' : 'Hora de estudar!';
+    const ti = isRev ? null : endTitle(pct, isSurv ? nCorrect : null);
     const isRecord = !isRev && scores[diffKey] !== undefined && pts === scores[diffKey] && pts > 0;
     const curDiff  = DIFFS.find(d => d.key === diffKey);
     return `
     <div class="pg pg-center" style="padding:28px 24px;gap:10px;">
+      <div class="end-cert">
       <span class="chip chip-soft" style="color:${curDiff.col};">
         ${isSurv ? `${ICON.shield('currentColor', 11)} Mata-mata · ${nCorrect} ${nCorrect === 1 ? 'acerto' : 'acertos'} seguidos`
                  : isRev ? `${ICON.book('currentColor', 11)} Revisão · ${total} ${total === 1 ? 'pergunta' : 'perguntas'}`
                  : `${(ICON[curDiff.ic] || ICON.star)('currentColor', 11)} ${curDiff.label} · ${total} perguntas`}</span>
-      ${pct >= 80 ? `<div class="end-trophy">${ART.trophy(52)}</div>` : ''}
-      <div class="display" style="font-size:34px;margin-top:6px;"><em>${msg}</em></div>
-      <div id="endpts" class="display num" style="font-size:64px;line-height:1;font-weight:600;"
-        data-to="${pts}">${pts}</div>
+      <div class="display" style="font-size:32px;margin-top:4px;"><em>${msg}</em></div>
+      <div class="end-wreath">${laurelSvg()}<div id="endpts" class="display num" style="font-size:60px;line-height:1;font-weight:600;"
+        data-to="${pts}">${pts}</div></div>
       <div class="small muted">pontos · ${nCorrect}/${total} acertos (${pct}%)</div>
+      ${ti ? `<div class="end-title"><small>Seu título nesta rodada</small><b>${ti.t}</b></div>` : ''}
       ${isRev ? `<div class="small rev-left">${ICON.book('currentColor', 11)} ${revDue().length ? `Ainda ${revDue().length === 1 ? 'falta 1' : `faltam ${revDue().length}`} para revisar hoje` : 'Nada mais para revisar hoje'}</div>` : ''}
       ${chalBanner()}
       ${bestStreak >= 3 ? `<div class="small" style="display:flex;gap:4px;align-items:center;color:var(--brass);font-weight:700;">
         ${ICON.flame('currentColor', 12)} melhor sequência: ${bestStreak}</div>` : ''}
       <div class="bar"><i style="width:${pct}%;"></i></div>
-      ${isRecord ? `<span class="chip chip-brass">${ICON.star('currentColor', 11)} Novo recorde</span>` : ''}
+      ${ti ? waxSeal(ti, _endSealed) : ''}
+      </div>
+      ${isRecord ? `<span class="chip chip-brass chip-record">${ICON.star('currentColor', 11)} Novo recorde</span>` : ''}
       ${medalChips()}
       ${packStrip()}
       ${selosStrip()}
@@ -18843,6 +18997,9 @@ function html() {
         ${q.order ? 'Toque na ordem: do mais antigo para o mais recente'
           : q.myth ? 'Fato ou mito? Carimbe a sua resposta'
           : q.duel ? 'Só dois na disputa: escolha um'
+          : q.odd ? 'Ache o intruso: o que não combina com os outros três'
+          : q.detail ? 'Quem está por trás da lupa?'
+          : q.rebus ? 'Decifre a charada'
           : q.type === 'txt'
           ? (q.a.length > 1 ? `Marque as ${q.a.length} respostas certas` : 'Marque a resposta certa')
           : q.type === 'player'
@@ -18980,7 +19137,11 @@ function fxReveal(p, gain, k, big) {
   requestAnimationFrame(() => {
     const ok = [...document.querySelectorAll('#ct .b-correct')];
     const bad = [...document.querySelectorAll('#ct .b-wrong')];
+    try { haptic(p === 3 ? 12 : p === 1 ? 10 : [28, 45, 28]); } catch (e) {}
+    /* a stamp won is pressed onto the verdict as it slides up */
+    if (document.querySelector('#rvl .selo-won')) setTimeout(() => { try { snd.stamp(); } catch (e) {} }, 420);
     if (p === 3) {
+      try { streakMark(k); } catch (e) {}
       ok.forEach(el => { fx.splash(el, '#3A9C6E', 10 + Math.min(k, 6) * 2); el.classList.add('fx-stamp'); });
       if (ok[0] && gain) fx.float(ok[0], '+' + gain);
       if (k >= 3) { fx.edge('#E0B968', k >= 5); ok.forEach(el => fx.splash(el, '#E0B968', 6)); }
@@ -19269,6 +19430,15 @@ function go() {
     if (isMil && banked >= LADDER[LADDER.length - 1].v) { window._celebrated = true; burst(48); }
   }
   if (sc !== 'end') window._celebrated = false;
+  /* the seal lands a second in, with a thud, once per round however often the sheet is drawn */
+  if (sc === 'end' && !isMil && !_endSealed) {
+    _endSealed = true;
+    const later = (f, ms) => setTimeout(() => { if (sc === 'end') try { f(); } catch (e) {} }, ms);
+    if (!isRev) later(() => snd.stamp(), 1080);
+    if (document.querySelector('#ct .chip-record')) later(() => snd.record(), 1450);
+    if (document.querySelector('#ct .medal-chips')) later(() => snd.medal(), 1950);
+  }
+  if (sc !== 'end') _endSealed = false;
 
   /* ── run controls ── */
   on('bshare',  () => { snd.tap(); doShare(); });
@@ -19523,17 +19693,86 @@ function fitScreen() {
      counts is the screen's content against the frame it is drawn into. */
   const de = document.documentElement;
   const qz = document.getElementById('qz');
-  let over = Math.max(de.scrollHeight, document.body.scrollHeight) - de.clientHeight;
-  if (qz) over = Math.max(over, pg.scrollHeight - qz.clientHeight,
-                                qz.scrollHeight - qz.clientHeight);
-  if (over <= 1 || !board) return;
-
+  const measure = () => {
+    let o = Math.max(de.scrollHeight, document.body.scrollHeight) - de.clientHeight;
+    if (qz) o = Math.max(o, pg.scrollHeight - qz.clientHeight, qz.scrollHeight - qz.clientHeight);
+    return o;
+  };
+  const over = measure();
+  if (!board) return;
   const h = board.getBoundingClientRect().height;
-  if (h < 80) return;
-  const k = Math.max(FIT_FLOOR, (h - over) / h);
+  let k = 1;
+  if (over > 1 && h >= 80) {
+    k = Math.max(FIT_FLOOR, (h - over) / h);
+    board.style.transformOrigin = 'top center';
+    board.style.transform = 'scale(' + k.toFixed(4) + ')';
+    board.style.marginBottom = (-Math.round(h * (1 - k))) + 'px';
+  }
+  if (k === 1) try { fitGrow(pg, board, measure); } catch (e) {}
+  try { fitReveal(board, k === 1 ? board.getBoundingClientRect().height : h, k); } catch (e) {}
+}
+
+/* The other way round: a board with room to spare under it. Measured on the question
+   itself and kept for its verdict (the reveal has no footer, so it would measure more
+   room and the board would jump between the two). */
+let _grow = { key: '', px: 0, roomy: false, low: false };
+function fitGrow(pg, board, measure) {
+  const q = cat && cat.qs && cat.qs[qi];
+  if (!q || !pg.classList.contains('qz-screen') || q.order) return;
+  const tiles = [...board.children].filter(t => /(^|\s)b(-gone)?(\s|$)/.test(t.className));
+  tiles.forEach(t => { if (t.dataset.mh0 === undefined) t.dataset.mh0 = t.style.minHeight || ''; t.style.minHeight = t.dataset.mh0; });
+  board.classList.remove('board-roomy');
+  const foot = pg.querySelector(':scope > .foot');
+  if (foot) foot.classList.remove('foot-low');
+  const key = qi + '|' + q.t + '|' + (isMil ? 'm' : '');
+  const text = board.classList.contains('board-2');
+  if (sc === 'quiz') {
+    const last = pg.lastElementChild && [...pg.children].filter(e => e.offsetHeight && getComputedStyle(e).position !== 'absolute').pop();
+    if (!last) return;
+    const spare = pg.getBoundingClientRect().bottom - parseFloat(getComputedStyle(pg).paddingBottom) - last.getBoundingClientRect().bottom;
+    const rows = Math.ceil(tiles.length / (text ? 2 : board.classList.contains('board-big') ? 2 : 4));
+    let px = 0, roomy = false;
+    if (text && spare > 40) { px = Math.min(30, Math.floor(spare * 0.55 / Math.max(1, rows))); roomy = px >= 14; }
+    /* a portrait 1/1.18 instead of 1/1.02 is about a sixth taller: room for that, every row */
+    else if (!text && !board.classList.contains('board-big') && spare > rows * 26 + 30) roomy = true;
+    _grow = { key, px, roomy, low: spare > 40 };
+  } else if (_grow.key !== key) return;
+  if (_grow.px) tiles.forEach(t => { t.style.minHeight = (t.offsetHeight + _grow.px) + 'px'; });
+  if (_grow.roomy) board.classList.add('board-roomy');
+  if (_grow.low && foot) foot.classList.add('foot-low');
+  /* a name a size up can take one more line than the room was measured for: give back what does not fit,
+     the bigger type first, then the taller slips (the board fitted before any of this) */
+  if (measure && measure() > 0.5) {
+    board.classList.remove('board-roomy');
+    if (measure() > 0.5) tiles.forEach(t => { t.style.minHeight = t.dataset.mh0; });
+    if (measure() > 0.5 && foot) foot.classList.remove('foot-low');
+  }
+}
+
+/* The verdict comes up over the board, and on a tall board (four big cards,
+   a strip above ten figurinhas) it used to land on the very card it was
+   about: the right answer, under the sheet. The board shrinks, from the top,
+   until every right card is clear of it. Measured from the layout, so the
+   sheet's rising animation does not count. */
+function fitReveal(board, h, k) {
+  const rv = document.getElementById('rvl'), qz = document.getElementById('qz');
+  if (sc !== 'reveal' || !rv || !qz || h < 80) return;
+  const good = [...board.querySelectorAll('.b-correct')];
+  if (!good.length) return;
+  const m = (rv.style.transform || '').match(/scale\(([\d.]+)\)/), s = m ? +m[1] : 1;
+  const top = qz.getBoundingClientRect().bottom - rv.offsetHeight * s - 6;
+  const bt = board.getBoundingClientRect().top;
+  /* the cards' own boxes, as laid out: the board's scale applied, the cards' animations left out.
+     A card's offsetTop is from the board when the board is positioned, else from an ancestor of both. */
+  const off = (el, stop) => { let y = 0; for (; el && el !== stop; el = el.offsetParent) y += el.offsetTop; return [y, el]; };
+  const rel = g => { const [y, at] = off(g, board); return at === board ? y : y - off(board, at)[0]; };
+  const low = Math.max(...good.map(g => bt + (rel(g) + g.offsetHeight) * k));
+  if (low <= top) return;
+  /* the verdict is being read now, not the board: it may go well under the floor a question's board keeps */
+  const k2 = Math.max(0.34, Math.min(k, k * (top - bt) / (low - bt)));
   board.style.transformOrigin = 'top center';
-  board.style.transform = 'scale(' + k.toFixed(4) + ')';
-  board.style.marginBottom = (-Math.round(h * (1 - k))) + 'px';
+  board.style.transform = 'scale(' + k2.toFixed(4) + ')';
+  board.style.marginBottom = (-Math.round(h * (1 - k2))) + 'px';
 }
 
 /* A phone that turns, or a keyboard that opens, changes the room available. */
@@ -19788,6 +20027,11 @@ function dealSpecials(qs) {
      · a manchete — the front page of the day it happened
      · o duelo    — only two cards on the board: which came first?
      · fato ou mito — something everybody repeats, stamped true or false
+     · a charada  — a story told in pictures, one after another
+     · o detalhe  — a portrait seen through a magnifying glass; the reveal
+                    pulls back to the whole face
+     · o intruso  — four on the board and three of them alike; the reveal
+                    says what the three share and stamps the odd one
 
    Every one of them arrives with its own little moment (the ink writing the
    sentence, the swords crossing, the paper spinning in, the stamp coming
@@ -19795,13 +20039,16 @@ function dealSpecials(qs) {
 ═══════════════════════════════════════════════════ */
 
 /* the strip a question carries, if any: it is the question's picture */
-const hasStrip = q => !!(q && (q.quote || q.battle || q.line || q.news));
+const hasStrip = q => !!(q && (q.quote || q.battle || q.line || q.news || q.rebus || q.detail || q.odd));
 function qStrip(q) {
   if (!q) return '';
   if (q.quote)  return quoteStrip(q.quote, q);
   if (q.battle) return battleStrip(q.battle, q);
   if (q.line)   return lineStrip(q.line, q);
   if (q.news)   return newsStrip(q.news, q);
+  if (q.rebus)  return rebusStrip(q.rebus, q);
+  if (q.detail) return detailStrip(q.detail, q);
+  if (q.odd)    return oddStrip(q.odd, q);
   return '';
 }
 
@@ -19948,6 +20195,40 @@ function newsStrip(st, q) {
     <div class="hs-cols" aria-hidden="true"><i></i><i></i><i></i></div></div>`;
 }
 
+/* ── a charada ── the pictures come up one by one on a puzzle page, the way
+   a rebus is read; the label above may give the kind of thing to guess */
+function rebusStrip(st, q) {
+  const e = st.e || [];
+  const pics = e.map((x, i) => `${i ? '<span class="hs-rb-plus" aria-hidden="true">+</span>' : ''}<span class="hs-rb-e" style="animation-delay:${(i * .24 + .12).toFixed(2)}s">${x}</span>`).join('');
+  return `<div class="qstrip hs-rebus" role="img" aria-label="Charada em figuras: ${e.join(' ')}">
+    <span class="hs-lbl">${st.k ? maskAnswer(st.k, q) : 'Charada em figuras'}</span>
+    <div class="hs-rb-row">${pics}</div></div>`;
+}
+
+/* ── o detalhe ── a famous face, close up, under a brass magnifying glass.
+   x, y: where the glass is held (per cent of the picture as framed); z: how
+   close. At the reveal the glass pulls back and the whole face is there. */
+function detailStrip(st, q) {
+  const p = PL.find(x => x.id === st.who);
+  if (!p || !p.img) return '';
+  const shown = sc === 'reveal';
+  const z = st.z || 3, x = st.x == null ? 50 : st.x, y = st.y == null ? 30 : st.y;
+  return `<div class="qstrip hs-detail${shown ? ' is-shown' : ''}" role="img" aria-label="${shown ? 'O retrato inteiro: ' + p.n : 'Um detalhe de retrato, visto de perto'}">
+    <span class="hs-lbl">${shown ? p.n : 'Um detalhe, de perto'}</span>
+    <span class="hs-lens" style="--z:${z};--x:${x}%;--y:${y}%"><img src="${p.img}" alt="" aria-hidden="true" onerror="this.style.visibility='hidden'" /><i aria-hidden="true"></i></span></div>`;
+}
+
+/* ── o intruso ── what the three share is said only at the reveal */
+const ODD_GLASS = `<svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="16.5" cy="16.5" r="10.5" fill="#F4ECD8" stroke="#2A1D10" stroke-width="2.2"/>
+  <path d="M24.4 24.4 35 35" stroke="#2A1D10" stroke-width="4.4" stroke-linecap="round"/><path d="M24.4 24.4 35 35" stroke="#C9A04E" stroke-width="2" stroke-linecap="round"/>
+  <text x="16.5" y="21.6" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-weight="700" font-size="14" fill="#7B1E3A">?</text></svg>`;
+function oddStrip(st, q) {
+  const shown = sc === 'reveal';
+  return `<div class="qstrip hs-odd${shown ? ' is-shown' : ''}" role="note">
+    <span class="hs-odd-ic">${ODD_GLASS}</span>
+    <span class="hs-odd-t">${shown ? `<b>Os outros três</b> ${st.k}.` : '<b>Três destes têm algo em comum.</b> Um não tem: qual?'}</span></div>`;
+}
+
 /* ── fato ou mito ── the two slips are rubber stamps */
 function stampSVG(kind) {
   const fato = kind === 'fato';
@@ -19966,10 +20247,14 @@ function stripFx(q) {
   else if (q.news) snd.extra();
   else if (q.line) snd.chain();
   else if (q.duel || q.myth) snd.duel();
+  else if (q.rebus) snd.pops((q.rebus.e || []).length);
+  else if (q.detail) snd.lens();
+  else if (q.odd) snd.oddOne();
 }
-/* the stamp coming down on the right slip, at the reveal */
+/* the stamp coming down on the right slip, at the reveal; the glass pulling back */
 function revealFx(q) {
-  if (q && q.myth) setTimeout(() => snd.stamp(), 120);
+  if (q && (q.myth || q.odd)) setTimeout(() => snd.stamp(), q.odd ? 260 : 120);
+  if (q && q.detail) snd.unzoom();
 }
 
 /* ── their sounds ── */
@@ -19991,6 +20276,19 @@ Object.assign(snd, {
   /* the two corners of the ring: a drum and a low horn */
   duel() { tone(98, .5, { type: 'sine', vol: .11, to: 62 }); noise(.12, { type: 'lowpass', freq: 300, q: .8, vol: .06 });
            tone(146.83, .7, { type: 'sawtooth', vol: .012, delay: .18 }); tone(220, .6, { type: 'triangle', vol: .02, delay: .2 }); },
+  /* the charada: each picture comes up with a soft pop, in time with it */
+  pops(n) { for (let i = 0; i < Math.min(n || 3, 6); i++) { const d = i * .24 + .14;
+            tone(520 + i * 70, .09, { type: 'sine', vol: .05, to: 860 + i * 90, delay: d });
+            noise(.02, { type: 'bandpass', freq: 2400, q: 2, vol: .025, attack: .001, delay: d }); } },
+  /* the magnifying glass: a glint on the lens and the air of it being raised */
+  lens() { noise(.45, { type: 'bandpass', freq: 700, to: 2200, q: .7, vol: .03, attack: .12 });
+           [2093, 2637, 3136].forEach((f, i) => tone(f, .7 - i * .12, { type: 'sine', vol: .016 / (i + 1), delay: .22 + i * .05 })); },
+  /* …and pulled back, as the whole face comes into view */
+  unzoom() { noise(.5, { type: 'bandpass', freq: 2200, to: 500, q: .7, vol: .03, attack: .05 });
+             kalimba(659.25, { vol: .05, delay: .35 }); kalimba(987.77, { vol: .045, delay: .45, dur: 1.1 }); },
+  /* o intruso: three taps alike, and one that is not */
+  oddOne() { [0, .17, .34].forEach(d => { noise(.03, { type: 'lowpass', freq: 1100, q: .8, vol: .05, attack: .002, delay: d }); tone(440, .08, { type: 'sine', vol: .03, delay: d }); });
+             tone(932.33, .2, { type: 'triangle', vol: .04, delay: .58 }); noise(.03, { type: 'bandpass', freq: 3200, q: 2, vol: .03, attack: .001, delay: .58 }); },
   /* the rubber stamp coming down on the desk */
   stamp() { tone(92, .22, { type: 'sine', vol: .14, to: 48 }); noise(.08, { type: 'lowpass', freq: 600, q: .8, vol: .09, attack: .002 });
             crackle(.08, { grains: 6, vol: .015, delay: .03 }); },
@@ -20233,6 +20531,118 @@ function almanacHtml() {
     ${almanacPic(pic)}
     <span class="alm-t"><small>${when}</small><span><b class="num">${yearTxt(y)}</b> — ${_esc(txt).replace(/\S+-\S+/g, w => `<span class="ano-nw">${w}</span>`)}</span></span>
     <span class="alm-go" aria-hidden="true">${ICON.play('currentColor', 11)}</span></button>`;
+}
+
+
+/* ═══════════════════════════════════════════════════
+   THE ROUND'S CERTIFICATE
+   A round ends on a sheet: the score inside a laurel, a title earned
+   (Aprendiz up to Mestre da História) and a wax seal pressed on its corner
+   with a thud. The seal's wax and its emblem rise with the title. A review
+   round is practice, not an exam: it gets the sheet without the title.
+═══════════════════════════════════════════════════ */
+const END_TITLES = [
+  { min: 90, surv: 20, t: 'Mestre da História', ic: 'crown', wax: '#7A1F2B' },
+  { min: 70, surv: 12, t: 'Historiador', ic: 'book', wax: '#8A4A16' },
+  { min: 50, surv: 7, t: 'Cronista', ic: 'quill', wax: '#3E5B2F' },
+  { min: 30, surv: 3, t: 'Escriba', ic: 'scroll', wax: '#3F4A6B' },
+  { min: 0, surv: 0, t: 'Aprendiz', ic: 'hourglass', wax: '#5F574F' },
+];
+/* by the share of right answers; a Mata-mata, which has no total, by how many in a row */
+const endTitle = (pct, run) => END_TITLES.find(e => run != null ? run >= e.surv : pct >= e.min);
+let _endSealed = false;
+
+/* the laurel: two branches of leaves round the score, open at the top, tied at the bottom */
+let _laurel = '';
+function laurelSvg() {
+  if (_laurel) return _laurel;
+  const cx = 100, cy = 54, rx = 86, ry = 44, P = (a, r) => [cx + rx * r * Math.cos(a), cy + ry * r * Math.sin(a)];
+  const rad = d => d * Math.PI / 180, f = n => n.toFixed(1);
+  let g = '';
+  const a0 = 104, a1 = 232;
+  const [sx, sy] = P(rad(a0), 1), [ex, ey] = P(rad(a1), 1);
+  g += `<path d="M${f(sx)} ${f(sy)}A${rx} ${ry} 0 0 1 ${f(ex)} ${f(ey)}" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>`;
+  for (let i = 0, a = a0 + 6; a <= a1 - 2; a += 13, i++) {
+    const t = rad(a), [x, y] = P(t, 1);
+    /* along the branch, towards its tip, then turned out or in */
+    const along = Math.atan2(ry * Math.cos(t), -rx * Math.sin(t)) * 180 / Math.PI;
+    const turn = i % 2 ? 34 : -30, sz = 1 - (a - a0) / (a1 - a0) * .28;
+    g += `<path transform="translate(${f(x)} ${f(y)}) rotate(${f(along + turn)}) scale(${sz.toFixed(2)})" d="M0 0Q6-4.2 14 0Q6 4.2 0 0Z" fill="currentColor"/>`;
+  }
+  /* the tip: one last leaf along the branch */
+  const at = Math.atan2(ry * Math.cos(rad(a1)), -rx * Math.sin(rad(a1))) * 180 / Math.PI;
+  g += `<path transform="translate(${f(ex)} ${f(ey)}) rotate(${f(at)}) scale(.7)" d="M0 0Q6-4 14 0Q6 4 0 0Z" fill="currentColor"/>`;
+  _laurel = `<svg class="end-laurel" viewBox="0 0 200 106" aria-hidden="true">
+    <g>${g}</g><g transform="translate(200 0) scale(-1 1)">${g}</g>
+    <path d="M100 99l-9 7M100 99l9 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+    <circle cx="100" cy="98" r="3.2" fill="currentColor"/></svg>`;
+  return _laurel;
+}
+
+/* the wax: a blob with a scalloped rim, a ring pressed into it, the emblem in the middle */
+let _waxRim = '';
+function waxSeal(ti, still) {
+  if (!_waxRim) {
+    const n = 18, r1 = 33, r2 = 37.5, pt = (a, r) => [40 + r * Math.cos(a), 40 + r * Math.sin(a)].map(v => v.toFixed(2)).join(' ');
+    let d = 'M' + pt(0, r1);
+    for (let i = 0; i < n; i++) { const a = i / n * Math.PI * 2, b = (i + 1) / n * Math.PI * 2; d += 'Q' + pt((a + b) / 2, r2) + ' ' + pt(b, r1); }
+    _waxRim = d + 'Z';
+  }
+  return `<span class="end-seal${still ? ' is-still' : ''}" style="--wax:${ti.wax}" aria-hidden="true">
+    <svg viewBox="0 0 80 80"><defs><radialGradient id="wax-hl" cx="36%" cy="30%" r="70%">
+      <stop offset="0" stop-color="#fff" stop-opacity=".34"/><stop offset=".55" stop-color="#fff" stop-opacity="0"/>
+      <stop offset="1" stop-color="#000" stop-opacity=".3"/></radialGradient></defs>
+      <path d="${_waxRim}" fill="var(--wax)"/><path d="${_waxRim}" fill="url(#wax-hl)"/>
+      <circle cx="40" cy="40" r="24.5" fill="none" stroke="rgba(0,0,0,.28)" stroke-width="2.4"/>
+      <circle cx="40" cy="40" r="24.5" fill="none" stroke="rgba(255,240,215,.22)" stroke-width="1" transform="translate(-.8 -.8)"/></svg>
+    <span class="end-seal-ic">${(ICON[ti.ic] || ICON.star)('#F3DDB0', 22)}</span></span>`;
+}
+
+/* ═══════════════════════════════════════════════════
+   SMALL CELEBRATIONS — a streak called out, a record rung in, a badge chimed
+   Paint on the fx layer (skipped when the phone asks for less motion), sounds
+   from the same voices as the rest (silent when muted), and a short buzz in
+   the hand on a phone that has one (only with the sound on: one switch for
+   both, which is what players expect of it).
+═══════════════════════════════════════════════════ */
+Object.assign(snd, {
+  /* a run of right answers: the pentatonic climbs past the answer's own chord, a bell on top */
+  streak(k) {
+    const n = k >= 10 ? 6 : k >= 5 ? 5 : 4, up = k >= 10 ? 2 : 1;
+    for (let i = 0; i < n; i++) kalimba(pStep(i + 3) * up, { vol: .048, delay: .36 + i * .055, dur: .7 });
+    bell(k >= 10 ? 1046.5 : 783.99, { vol: .026, delay: .38 + n * .055, dur: 1.8 });
+  },
+  /* a record: three bells rising, the stands pleased */
+  record() {
+    [523.25, 659.25, 783.99, 1046.5].forEach((f, i) => bell(f, { vol: .034, delay: i * .13, dur: 1.5 }));
+    crowd(1.8, { shape: 'cheer', vol: .03, delay: .2 });
+  },
+  /* a badge: a little shimmer, high and short */
+  medal() { [1318.51, 1567.98, 2093].forEach((f, i) => kalimba(f, { vol: .032, delay: i * .05, dur: .55 })); },
+  /* a pin pushed into the map's cork: a tick, then a soft tok */
+  pin() { noise(.018, { freq: 3200, q: 2.5, vol: .05, attack: .001 });
+          tone(330, .09, { type: 'sine', vol: .07, to: 170, delay: .012 });
+          noise(.05, { type: 'lowpass', freq: 700, q: .7, vol: .05, attack: .002, delay: .014 }); },
+});
+const haptic = pat => { if (!muted) buzz(pat); };
+
+Object.assign(fx, {
+  /* lettering across the middle of the screen: big, gold, gone in under two seconds */
+  banner(txt, sub, col) {
+    if (FX_STILL) return;
+    const e = this.add('fx-banner', `--c:${col || '#E0B968'}`, 2000);
+    e.innerHTML = `<b>${txt}</b>${sub ? `<small>${sub}</small>` : ''}`;
+  },
+});
+
+/* the streaks worth calling out, and what each is called */
+const STREAK_MARKS = { 3: 'Esquentando', 5: 'Em chamas', 8: 'Que memória', 10: 'Lendário', 15: 'Enciclopédia viva', 20: 'Fora de série' };
+function streakMark(k) {
+  const w = STREAK_MARKS[k];
+  if (!w) return;
+  fx.banner(`${k} seguidas!`, w);
+  try { snd.streak(k); } catch (e) {}
+  haptic([14, 40, 14]);
 }
 
 const ANO_EVENTS = [
@@ -22527,7 +22937,7 @@ function wireOnde() {
       if (!tap || !guessing()) return;
       const c = ondeCam(onde.v), x = c.vx + p[0] / c.sx, y = c.vy + p[1] / c.sy;
       if (x < 0 || x > 360 || y < 0 || y > 134) return;
-      snd.tap();
+      try { snd.pin(); } catch (e) { snd.tap(); }
       ondeSetPin([x, y]);
       /* the first tap on the whole world zooms in there, to place it finer */
       if (onde.v.z < 2.5) ondeFly(ondeClamp({ z: 4, cx: x, cy: y }, ondeBox()));

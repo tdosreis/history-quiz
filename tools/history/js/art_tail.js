@@ -50,6 +50,7 @@ const CAT_ART = {
   ciencia: 'gear', artes: 'bust', mulheres: 'crown', personagens: 'bust', monumentos: 'column', curiosidades: 'scroll',
   quem_sou_eu: 'bust', linha_do_tempo: 'hourglass', imperios: 'crown', citacoes: 'quill', batalhas: 'sword',
   linhagens: 'crown', manchetes: 'scroll', duelos: 'hourglass', fato_mito: 'scales',
+  charadas: 'masks', detalhes: 'telescope', intrusos: 'scales',
 };
 const FALLBACK_PHOTO = {};
 const NONFREE_CRESTS = new Set([]);
@@ -459,6 +460,13 @@ function optArtFor(q) {
     _optMemo.set(q, out);
     return out;
   }
+  /* Detalhe: the face under the glass is the question; a photo on a tile would be matched by eye */
+  if (q.detail) {
+    const era = optEra(q), out = { _kind: 'glyph' };
+    q.choices.forEach(c => { out[c] = { k: 'glyph', n: c, topic: 'person', era }; });
+    _optMemo.set(q, out);
+    return out;
+  }
   const res = q.choices.map(optResolve);
   const t = _fold(q.t || '');
   const looks = OPT_LOOKS.test(t);
@@ -579,18 +587,20 @@ function badge(item, idx) {
     `<span class="vote-pct">${votePct}%</span>
      <span class="vote"><i style="width:${votePct}%;animation-delay:${(idx || 0) * 45}ms;"></i></span>`;
   const longCls = item.n.length > 15 ? ' tile-name-long' : '';
+  /* O intruso: at the reveal, the odd one out gets its rubber stamp */
+  const oddEl = curQ.odd && isAns ? '<span class="b-odd" aria-hidden="true">Intruso</span>' : '';
 
   if (isTextQ(curQ)) {
     const oa = optArtFor(curQ), art = oa ? optArtHtml(oa[item.id]) : '';
     return `<div class="${cls} b-text${art ? ' b-art' : ''}${curQ.myth ? ' b-myth' : ''}" data-id="${item.id}" style="${delay}">
-      ${tab}${voteEl}${art}<span class="tile-name${longCls}">${item.n}</span></div>`;
+      ${tab}${voteEl}${art}<span class="tile-name${longCls}">${item.n}</span>${oddEl}</div>`;
   }
 
   if (isPlayer) {
     return `<div class="${cls} b-fig" data-id="${item.id}" style="${delay}">
       ${tab}${voteEl}
       ${figurinha(item, 'sm', { decorative: true, sub: '', noFlag: curQ._noFlag,
-                                hideCtry: curQ._hideCtry, hideEra: curQ._hideEra })}
+                                hideCtry: curQ._hideCtry, hideEra: curQ._hideEra })}${oddEl}
     </div>`;
   }
 
@@ -598,7 +608,7 @@ function badge(item, idx) {
   return `<div class="${cls} b-crest" data-id="${item.id}" style="${delay}">
     ${tab}${voteEl}
     <div class="crest-box">${clubArt(item.id, '', false)}</div>
-    <span class="tile-name tile-club${longCls}">${item.n}</span>
+    <span class="tile-name tile-club${longCls}">${item.n}</span>${oddEl}
   </div>`;
 }
 
