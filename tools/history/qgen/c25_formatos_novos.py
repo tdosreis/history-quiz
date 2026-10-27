@@ -227,7 +227,7 @@ D('de_gaulle', 'Charles de Gaulle', ['Winston Churchill', 'Franklin D. Roosevelt
 D('galileu', 'Galileu Galilei', ['Johannes Kepler', 'Nicolau Copérnico', 'Leonardo da Vinci', 'Isaac Newton', 'Michelangelo'],
   50, 55, 2, ('pt', 'Luas galileanas', ['1610']), 'Galileu descobriu as quatro maiores luas de Júpiter em 1610; hoje elas são chamadas de luas galileanas.', t=EYES)
 D('machado', 'Machado de Assis', ['Carlos Drummond de Andrade', 'Oswaldo Cruz', 'Luís Gama', 'Dom Pedro II', 'José do Patrocínio'],
-  50, 25, 2, ('pt', 'Academia Brasileira de Letras', ['1897']), 'Machado de Assis fundou a Academia Brasileira de Letras, em 1897, e foi seu primeiro presidente.', t='De quem são estes óculos?')
+  50, 25, 2, ('pt', 'Academia Brasileira de Letras', ['1897']), 'Machado de Assis foi um dos fundadores da Academia Brasileira de Letras, em 1897, e seu primeiro presidente.', t='De quem são estes óculos?')
 D('lenin', 'Vladimir Lênin', ['Karl Marx', 'Ho Chi Minh', 'Mikhail Gorbachev', 'Fidel Castro', 'Liev Tolstói'],
   50, 40, 3, ('pt', 'Mausoléu de Lenin', ['Praça Vermelha']), 'Vladimir Ilitch Ulianov adotou o pseudônimo Lênin; seu corpo embalsamado fica exposto num mausoléu na Praça Vermelha, em Moscou.', t=EYES)
 D('mlk', 'Martin Luther King Jr.', ['Nelson Mandela', 'John F. Kennedy', 'Hailé Selassié', 'Abraham Lincoln', 'Mahatma Gandhi'],
@@ -235,7 +235,7 @@ D('mlk', 'Martin Luther King Jr.', ['Nelson Mandela', 'John F. Kennedy', 'Hailé
 D('dickens', 'Charles Dickens', ['Victor Hugo', 'Mark Twain', 'Liev Tolstói', 'Charles Darwin', 'Fiódor Dostoiévski'],
   50, 40, 3, ('pt', 'Charles Dickens', ['Oliver Twist']), 'Muitos romances de Dickens, como Oliver Twist, saíram primeiro em capítulos, em revistas, e os leitores esperavam ansiosos pelo próximo.', t=BEARD)
 D('pasteur', 'Louis Pasteur', ['Charles Darwin', 'Gregor Mendel', 'Alexander Fleming', 'Karl Marx', 'Sigmund Freud'],
-  50, 40, 3, ('pt', 'Louis Pasteur', ['raiva']), 'Em 1885, Pasteur aplicou pela primeira vez a vacina contra a raiva, num menino mordido por um cão, Joseph Meister.')
+  50, 40, 3, ('pt', 'Louis Pasteur', ['raiva']), 'Em julho de 1885, Pasteur tratou com sua vacina contra a raiva Joseph Meister, um menino de 9 anos mordido por um cão raivoso; o menino sobreviveu, e o caso tornou a vacina famosa.')
 D('hemingway', 'Ernest Hemingway', ['George Orwell', 'Mark Twain', 'Franz Kafka', 'Charlie Chaplin', 'Gabriel García Márquez'],
   50, 25, 3, ('pt', 'Ernest Hemingway', ['1954']), 'Hemingway dirigiu ambulâncias na Primeira Guerra e ganhou o Nobel de Literatura em 1954.', t='De quem é este bigode?')
 D('victoria', 'Rainha Vitória', ['Elizabeth I', 'Maria Antonieta', 'Catarina, a Grande', 'Maria Teresa', 'Dona Leopoldina'],

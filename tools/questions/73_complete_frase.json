@@ -32,14 +32,14 @@
      "César"
     ]
    ],
-   "x": "Júlio César escreveu ao Senado “Veni, vidi, vici” depois de uma vitória relâmpago na Batalha de Zela, em 47 a.C."
+   "x": "Júlio César resumiu assim sua vitória relâmpago na Batalha de Zela, em 47 a.C.; segundo Apiano, numa carta ao Senado; segundo Plutarco, numa carta a um amigo em Roma."
   },
   {
    "t": "Que palavra completa a frase?",
    "type": "txt",
    "choices": [
     "existo",
-    "sou",
+    "creio",
     "vivo",
     "aprendo",
     "duvido",
@@ -116,18 +116,18 @@
      "1963"
     ]
    ],
-   "x": "O discurso foi feito na Marcha sobre Washington, em agosto de 1963, diante do Memorial a Lincoln."
+   "x": "O discurso foi feito na Marcha sobre Washington, em agosto de 1963, diante do Memorial de Lincoln."
   },
   {
    "t": "Que palavra completa a frase?",
    "type": "txt",
    "choices": [
     "gigante",
-    "enorme",
-    "imenso",
+    "único",
     "histórico",
     "novo",
-    "infinito"
+    "infinito",
+    "eterno"
    ],
    "quote": {
     "q": "É um pequeno passo para o homem, um salto ___ para a humanidade.",
@@ -200,7 +200,7 @@
      "Hamlet"
     ]
    ],
-   "x": "O monólogo está no terceiro ato de Hamlet, escrita por volta de 1600."
+   "x": "O monólogo está no terceiro ato da peça Hamlet, escrita por volta de 1600."
   },
   {
    "t": "Que palavra completa a frase?",
@@ -284,7 +284,7 @@
      "1822"
     ]
    ],
-   "x": "No Dia do Fico, Dom Pedro desobedeceu às cortes de Lisboa, que exigiam sua volta a Portugal."
+   "x": "No Dia do Fico, Dom Pedro desobedeceu às Cortes de Lisboa, que exigiam sua volta a Portugal."
   },
   {
    "t": "Que palavra completa a frase?",
@@ -295,7 +295,7 @@
     "escrita",
     "feita",
     "selada",
-    "contra nós"
+    "perdida"
    ],
    "quote": {
     "q": "A sorte está ___.",
@@ -368,7 +368,7 @@
      "Shakespeare"
     ]
    ],
-   "x": "As últimas palavras de César são uma criação de Shakespeare; os autores antigos não as registram assim."
+   "x": "Shakespeare tornou a frase famosa na peça Júlio César (1599), mas não a inventou: ela já aparecia em peças inglesas anteriores. Os autores antigos não a registram; Suetônio conta que, segundo alguns, César disse em grego “Até tu, filho?”."
   },
   {
    "t": "Que palavra completa a frase?",
@@ -396,25 +396,25 @@
      "Pompeu"
     ]
    ],
-   "x": "Fernando Pessoa e Caetano Veloso tornaram a frase famosa em português; ela vem do general Pompeu, contado por Plutarco."
+   "x": "Fernando Pessoa e Caetano Veloso tornaram a frase famosa em português; segundo Plutarco, quem a disse foi o general romano Pompeu."
   },
   {
    "t": "Que palavra completa a frase?",
    "type": "txt",
    "choices": [
-    "eu",
-    "nós",
-    "o povo",
-    "Deus",
-    "a França",
-    "o rei"
+    "Estado",
+    "rei",
+    "poder",
+    "trono",
+    "reino",
+    "governo"
    ],
    "quote": {
-    "q": "O Estado sou ___.",
+    "q": "O ___ sou eu.",
     "ctx": "Atribuída a Luís XIV"
    },
    "a": [
-    "eu"
+    "Estado"
    ],
    "d": 2,
    "src": [
@@ -459,7 +459,7 @@
    "type": "txt",
    "choices": [
     "mesmo",
-    "próprio",
+    "apenas",
     "inteiro",
     "primeiro",
     "sempre",
@@ -508,7 +508,7 @@
      "Marx"
     ]
    ],
-   "x": "Marx escreveu a frase em 1844; ela vem logo depois de chamar a religião de “suspiro da criatura oprimida”."
+   "x": "Marx publicou a frase em 1844, num texto de crítica à filosofia de Hegel; ela vem logo depois de chamar a religião de “suspiro da criatura oprimida”."
   },
   {
    "t": "Que palavra completa a frase?",
@@ -599,11 +599,11 @@
    "type": "txt",
    "choices": [
     "História",
-    "glória",
-    "memória",
-    "lenda",
-    "paz",
-    "morte"
+    "Glória",
+    "Memória",
+    "Lenda",
+    "Paz",
+    "Morte"
    ],
    "quote": {
     "q": "Saio da vida para entrar na ___.",
@@ -718,7 +718,7 @@
     "gloriosos"
    ],
    "quote": {
-    "q": "E o sol da liberdade, em raios ___, brilhou no céu da pátria nesse instante.",
+    "q": "E o sol da Liberdade, em raios ___, brilhou no céu da Pátria nesse instante.",
     "ctx": "Hino Nacional Brasileiro, letra de Osório Duque-Estrada"
    },
    "a": [
