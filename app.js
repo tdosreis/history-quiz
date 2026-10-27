@@ -19721,22 +19721,33 @@ function fitGrow(pg, board, measure) {
   if (!q || !pg.classList.contains('qz-screen') || q.order) return;
   const tiles = [...board.children].filter(t => /(^|\s)b(-gone)?(\s|$)/.test(t.className));
   tiles.forEach(t => { if (t.dataset.mh0 === undefined) t.dataset.mh0 = t.style.minHeight || ''; t.style.minHeight = t.dataset.mh0; });
-  board.classList.remove('board-roomy');
+  board.classList.remove('board-roomy', 'board-four');
   const foot = pg.querySelector(':scope > .foot');
   if (foot) foot.classList.remove('foot-low');
   const key = qi + '|' + q.t + '|' + (isMil ? 'm' : '');
   const text = board.classList.contains('board-2');
   if (sc === 'quiz') {
-    const last = pg.lastElementChild && [...pg.children].filter(e => e.offsetHeight && getComputedStyle(e).position !== 'absolute').pop();
-    if (!last) return;
-    const spare = pg.getBoundingClientRect().bottom - parseFloat(getComputedStyle(pg).paddingBottom) - last.getBoundingClientRect().bottom;
+    const room = () => {
+      const last = [...pg.children].filter(e => e.offsetHeight && getComputedStyle(e).position !== 'absolute').pop();
+      return last ? pg.getBoundingClientRect().bottom - parseFloat(getComputedStyle(pg).paddingBottom) - last.getBoundingClientRect().bottom : 0;
+    };
+    /* portraits under a strip go five to a row to save height; with height to spare, four */
+    let four = false;
+    if (!text && measure && board.classList.contains('board-5') && pg.querySelector('.qcard-strip')) {
+      board.classList.add('board-four');
+      four = measure() <= 0.5 && room() > 24;
+      if (!four) board.classList.remove('board-four');
+    }
+    const spare = room();
+    if (spare <= 0 && !four) return;
     const rows = Math.ceil(tiles.length / (text ? 2 : board.classList.contains('board-big') ? 2 : 4));
     let px = 0, roomy = false;
     if (text && spare > 40) { px = Math.min(30, Math.floor(spare * 0.55 / Math.max(1, rows))); roomy = px >= 14; }
     /* a portrait 1/1.18 instead of 1/1.02 is about a sixth taller: room for that, every row */
     else if (!text && !board.classList.contains('board-big') && spare > rows * 26 + 30) roomy = true;
-    _grow = { key, px, roomy, low: spare > 40 };
+    _grow = { key, px, roomy, four, low: spare > 40 };
   } else if (_grow.key !== key) return;
+  if (_grow.four) board.classList.add('board-four');
   if (_grow.px) tiles.forEach(t => { t.style.minHeight = (t.offsetHeight + _grow.px) + 'px'; });
   if (_grow.roomy) board.classList.add('board-roomy');
   if (_grow.low && foot) foot.classList.add('foot-low');
@@ -19746,6 +19757,7 @@ function fitGrow(pg, board, measure) {
     board.classList.remove('board-roomy');
     if (measure() > 0.5) tiles.forEach(t => { t.style.minHeight = t.dataset.mh0; });
     if (measure() > 0.5 && foot) foot.classList.remove('foot-low');
+    if (measure() > 0.5) board.classList.remove('board-four');
   }
 }
 
