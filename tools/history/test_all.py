@@ -406,6 +406,21 @@ JS = r"""
     if (ret.phase !== 'res' || !LS.get('retrato', null)) F('retrato: the questions do not end on a portrait');
     Object.assign(stats, JSON.parse(keepR)); LS.set('stats', stats); LS.set('retrato', keepRL); ret = null; sc = 'home';
   } catch (e) { F('retrato EXC ' + e.stack); }
+  /* ── A Gazeta do seu dia: every day of the year prints a front page with a headline, and draws ── */
+  try {
+    const keepG = LS.get('gazetaDia', null), keepGS = JSON.stringify(stats); let quiet = 0, riddles = 0;
+    startGazeta();
+    for (let m = 1; m <= 12; m++) for (let d = 1; d <= [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31][m - 1]; d++) {
+      const n = gzNews(m, d); if (!n.lead) quiet++;
+      gz.m = m; gz.d = d; gz.phase = 'paper'; const h = gazetaHtml();
+      if (!/gz-paper/.test(h)) F('gazeta: no page for ' + d + '/' + m);
+      if (/gz-riddle/.test(h)) riddles++;
+    }
+    note.gazeta = { quiet, riddles };
+    if (quiet > 5) F('gazeta: ' + quiet + ' days print no headline');
+    gz.m = 7; gz.d = 14; gzPrint(); if (sc !== 'gazeta' || !document.getElementById('gz-paper')) F('gazeta: the press does not print');
+    LS.set('gazetaDia', keepG); Object.assign(stats, JSON.parse(keepGS)); LS.set('stats', stats); gz = null; sc = 'home';
+  } catch (e) { F('gazeta EXC ' + e.stack); }
   /* ── Hoje na História: every day of the year has five dates near it, the same five all day, each with its picture ── */
   try {
     const pool = hojePool();

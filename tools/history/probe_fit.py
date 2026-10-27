@@ -292,6 +292,11 @@ DRIVE = r"""
     diffKey='moderado'; startGame(); cat.qs[0]=q; qi=0; disp=getDisp(q); sc='quiz'; go(); fit('anacronismo/'+j);
     sel=new Set(q.a); tLeft=8; doReveal(); fit('anacronismo/'+j+'-rev'+(document.querySelector('.story')?'+story':''));
   });
+  /* A Gazeta do seu dia: its door, and the front pages of many days, busy and thin */
+  var keepGz = LS.get('gazetaDia', null);
+  startGazeta(); fit('gazeta/escolha');
+  for (var m19=1; m19<=12; m19++) [1, 9, 14, 20, 28].forEach(function(d19){ gz.m=m19; gz.d=d19; gz.phase='paper'; go(); fit('gazeta/'+d19+'-'+m19); });
+  LS.set('gazetaDia', keepGz); gz=null;
   /* Metas da semana: fresh, one met with its stamp, all three met */
   LS.set('metas', null); sc='metas'; go(); fit('metas/nova');
   var sm=metasState(), lm=metasList(); sm.base[lm[0].m.id]=lm[0].m.v()-lm[0].n; sm.base[lm[1].m.id]=lm[1].m.v()-Math.floor(lm[1].n/2); LS.set('metas', sm); metasCheck(); go(); fit('metas/uma');

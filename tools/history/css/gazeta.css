@@ -1,0 +1,71 @@
+
+/* ═══ A GAZETA DO SEU DIA — a front page of the past: masthead between rules, a headline with its picture, two columns, the small ads ═══ */
+.gz-fold { width: 64px; height: 64px; display: grid; place-items: center; border-radius: 50%; color: #F3EAD3; background: #2A2420; transform: rotate(-8deg);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, .3); }
+.gz-sel { display: flex; gap: 10px; justify-content: center; }
+.gz-sel label { display: flex; flex-direction: column; gap: 4px; text-align: left; font: 700 9.5px/1 var(--font-s); letter-spacing: .18em; text-transform: uppercase; color: var(--ink-3); }
+.gz-sel select { appearance: none; -webkit-appearance: none; padding: 11px 34px 11px 14px; border-radius: 4px; border: 0; cursor: pointer;
+  font: 600 18px/1 var(--font-d); color: var(--ink); background: var(--at-card-img) center / 100% 100% no-repeat;
+  background-image: linear-gradient(45deg, transparent 50%, currentColor 50%), linear-gradient(135deg, currentColor 50%, transparent 50%), var(--at-card-img);
+  background-position: calc(100% - 17px) 52%, calc(100% - 12px) 52%, center; background-size: 5px 5px, 5px 5px, 100% 100%; background-repeat: no-repeat; }
+.gz-sel select:focus-visible { outline: 2px solid var(--brass); outline-offset: 2px; }
+.gz-on { gap: 8px; }
+.gz-paper { flex: 1 1 auto; min-height: 0; overflow: hidden; display: flex; flex-direction: column; gap: 7px; padding: 12px 14px 12px; color: #1E1A16;
+  background: radial-gradient(ellipse at 50% 30%, #F8F0DA, #EDE1C2 70%, #E0CFA6); box-shadow: 0 6px 18px rgba(0, 0, 0, .28), inset 0 0 30px rgba(120, 90, 40, .18);
+  transform: rotate(-.6deg); }
+.gz-paper.is-new { animation: gz-spin .95s cubic-bezier(.2, .8, .3, 1) both; }
+@keyframes gz-spin { from { transform: rotate(-740deg) scale(.06); opacity: 0; } 55% { opacity: 1; } to { transform: rotate(-.6deg) scale(1); } }
+.gz-ears { flex: none; display: flex; justify-content: space-between; gap: 6px; margin-bottom: -4px;
+  font: 700 7.5px/1.2 var(--font-s); letter-spacing: .14em; text-transform: uppercase; color: #5A4A36; }
+.gz-mast { flex: none; text-align: center; padding-bottom: 5px; border-bottom: 3px double #1E1A16; }
+.gz-mast h1 { margin: 0; text-align: center; white-space: nowrap; font: italic 700 clamp(21px, 6.4vw, 30px)/1 var(--font-d); letter-spacing: -.01em; }
+.gz-mast h1 span { font-style: normal; font-size: .62em; vertical-align: .18em; color: #7B1E1E; }
+.gz-dateline { flex: none; display: flex; justify-content: space-between; align-items: baseline; gap: 8px; padding: 1px 0 5px; border-bottom: 1px solid #1E1A16;
+  font: 700 9px/1.25 var(--font-s); letter-spacing: .1em; text-transform: uppercase; color: #5A4A36; }
+.gz-dateline b { flex: none; font-size: 11px; color: #1E1A16; }
+.gz-dateline span { text-align: right; }
+.gz-lead { flex: none; display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 11px; align-items: start; padding-bottom: 7px; border-bottom: 1px solid #1E1A16; }
+.gz-lead.gz-quiet { grid-template-columns: 1fr; }
+.gz-pic { display: block; width: clamp(82px, 14vh, 128px); aspect-ratio: 4 / 5; overflow: hidden; box-shadow: 0 0 0 1.5px #1E1A16; background: #E6DABB; }
+.gz-face img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 22%; filter: grayscale(1) contrast(1.1) sepia(.28); mix-blend-mode: multiply; }
+.gz-crest, .gz-orn { display: grid; place-items: center; padding: 8px; }
+.gz-crest svg, .gz-orn svg { width: 100%; height: auto; filter: grayscale(1) sepia(.3); }
+.gz-flag svg { width: 100%; height: 100%; filter: sepia(.45) saturate(.75); }
+.gz-lead-t small { display: block; margin-bottom: 4px; font: 800 10px/1 var(--font-s); letter-spacing: .14em; text-transform: uppercase; color: #7B1E1E; }
+.gz-lead-t h2, .gz-quiet h2 { margin: 0; font: 700 clamp(17px, 2.6vh, 23px)/1.14 var(--font-d); letter-spacing: -.012em; text-wrap: balance;
+  display: -webkit-box; -webkit-line-clamp: 6; -webkit-box-orient: vertical; overflow: hidden; }
+.gz-cols { flex: 1 1 auto; min-height: 0; overflow: hidden; display: grid; grid-template-columns: 1fr 1fr; gap: 0 12px; }
+.gz-col { min-width: 0; overflow: hidden; }
+.gz-col + .gz-col { padding-left: 12px; border-left: 1px solid rgba(30, 26, 22, .55); }
+.gz-col h3 { margin: 0 0 5px; padding-bottom: 3px; border-bottom: 1px solid rgba(30, 26, 22, .55); font: 800 9px/1.2 var(--font-s); letter-spacing: .16em; text-transform: uppercase; }
+.gz-col p { margin: 0 0 6px; font: 500 12px/1.28 var(--font-d); color: #2B241C; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; }
+.gz-col p b { font: 800 10px/1 var(--font-s); color: #7B1E1E; margin-right: 2px; }
+.gz-col .gz-none { font-style: italic; color: #6B5B45; }
+.gz-born { display: flex !important; align-items: center; gap: 8px; }
+.gz-born-pic { flex: none; width: 34px; height: 40px; overflow: hidden; box-shadow: 0 0 0 1px #1E1A16; }
+.gz-born-pic img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 22%; filter: grayscale(1) sepia(.28); }
+.gz-born b { display: block; font: 700 12.5px/1.15 var(--font-d) !important; color: #1E1A16 !important; margin: 0 !important; }
+.gz-born small { font: 700 9.5px/1 var(--font-s); color: #5A4A36; }
+/* the riddle of a thin day: its pictures, and its answer printed upside down */
+.gz-riddle { display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 4px 0; text-align: center; }
+.gz-rb { display: flex; flex-wrap: wrap; justify-content: center; gap: 5px; }
+.gz-rb i { font: 24px/1 'Noto Color Emoji', 'Apple Color Emoji', 'Segoe UI Emoji', sans-serif; font-style: normal; filter: sepia(.35) saturate(.8); }
+.gz-riddle small { font: 800 8.5px/1.2 var(--font-s); letter-spacing: .14em; text-transform: uppercase; color: #5A4A36; }
+.gz-upside { display: inline-block; margin-top: 4px; transform: rotate(180deg); font: italic 600 11.5px/1.2 var(--font-d); color: #5A4A36; }
+.gz-foot { flex: none; display: grid; grid-template-columns: 1.4fr 1fr; gap: 10px; padding-top: 6px; border-top: 3px double #1E1A16; }
+.gz-foot div { min-width: 0; }
+.gz-foot div + div { padding-left: 10px; border-left: 1px solid rgba(30, 26, 22, .55); }
+.gz-foot h4 { margin: 0 0 2px; font: 800 8.5px/1 var(--font-s); letter-spacing: .16em; text-transform: uppercase; }
+.gz-foot p { margin: 0; font: italic 500 11.5px/1.25 var(--font-d); color: #3B2A16; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.gz-actions { flex: none; margin: 0; }
+@media (max-height: 700px) {
+  .gz-paper { padding: 9px 11px; gap: 5px; }
+  .gz-pic { width: 74px; }
+  .gz-lead-t h2 { font-size: 16px; -webkit-line-clamp: 5; }
+  .gz-col p { font-size: 11px; -webkit-line-clamp: 3; margin-bottom: 4px; }
+  .gz-born-pic { width: 28px; height: 33px; }
+  .gz-foot p { -webkit-line-clamp: 2; font-size: 10.5px; }
+}
+@media (prefers-reduced-motion: reduce) { .gz-paper.is-new { animation: none; } }
+.mode-gz { --md: #2A2420; --md-soft: rgba(42, 36, 32, .14); }
+:root[data-theme="dark"] .mode-gz, :root:not([data-theme="light"]) .mode-gz { --md: #D8CBB0; }

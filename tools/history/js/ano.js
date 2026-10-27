@@ -146,6 +146,9 @@ function anoMenuHtml() {
       <button id="ano-free" class="cron-opt" type="button">
         <span class="mode-disc mode-ano">${ICON.hourglass('currentColor', 18)}</span>
         <span><b>Partida livre</b><small>${best > 0 ? 'Recorde: ' + best + ' pts' : 'Dez eventos, de todas as épocas'}</small></span></button>
+      <button id="ano-gz" class="cron-opt" type="button">
+        <span class="mode-disc mode-gz">${ICON.news('currentColor', 18)}</span>
+        <span><b>A Gazeta do seu dia</b><small>${LS.get('gazetaDia', null) ? 'Sua última edição: ' + LS.get('gazetaDia')[1] + ' de ' + MES_LONGO[LS.get('gazetaDia')[0] - 1] : 'A primeira página do dia que você escolher'}</small></span></button>
     </div>
   </div>`;
 }
@@ -153,6 +156,7 @@ function wireAnoMenu() {
   const ready = tapArmed();
   document.getElementById('ano-hoje')?.addEventListener('click', () => { if (ready()) { snd.select(); startHoje(); } });
   document.getElementById('ano-free')?.addEventListener('click', () => { if (ready()) { snd.select(); startAno(); } });
+  document.getElementById('ano-gz')?.addEventListener('click', () => { if (ready()) { snd.select(); startGazeta(); } });
 }
 
 /* the day's game begun and not finished: its answers so far, as [event id, year guessed] */
