@@ -948,6 +948,32 @@
 
     /* ── The ladder sheet ── */
     .sheet { position: absolute; inset: 0; z-index: 20; background: var(--stock); display: flex; flex-direction: column; padding: 14px; gap: 8px; animation: screenIn .18s ease-out; }
+    /* the ladder of the million: two rails, sixteen planks from bronze to gold */
+    .ld-head { display: flex; align-items: center; justify-content: space-between; }
+    .ld-title { text-align: center; font-size: 26px; margin: -4px 0 2px; }
+    .ld { position: relative; flex: 1; min-height: 0; display: flex; flex-direction: column-reverse; gap: 3px; padding: 2px 0; }
+    .ld::before, .ld::after { content: ''; position: absolute; top: -4px; bottom: -4px; width: 7px; border-radius: 4px; z-index: 0;
+      background: linear-gradient(90deg, #5E3F1C, #A97A3E 45%, #6B4A22); box-shadow: 0 2px 4px rgba(0, 0, 0, .3); }
+    .ld::before { left: 40px; } .ld::after { right: 40px; }
+    .ld-r { position: relative; z-index: 1; flex: 1 1 0; min-height: 22px; max-height: 46px; display: grid; grid-template-columns: 30px 1fr 30px;
+      align-items: center; gap: 4px; }
+    .ld-n { justify-self: center; display: grid; place-items: center; width: 24px; height: 24px; border-radius: 50%;
+      font: 800 10px/1 var(--font-s); color: var(--ink-3); background: var(--pocket); box-shadow: inset 0 0 0 1px var(--rule); }
+    .ld-r.is-safe .ld-n { color: #F6EBD8; background: radial-gradient(circle at 35% 30%, #C9A04E, #8A6436); box-shadow: 0 1px 3px rgba(0, 0, 0, .3); }
+    .ld-plank { height: 100%; max-height: 34px; display: flex; align-items: center; justify-content: center; gap: 6px; padding: 0 10px; margin: 0 6px;
+      color: var(--c); background: var(--at-card-img) center / 100% 100% no-repeat; box-shadow: 0 2px 3px -1px rgba(0, 0, 0, .25); }
+    .ld-plank b { font: 700 15px/1 var(--font-d); letter-spacing: -.01em; }
+    :root[data-theme="dark"] .ld-r:not(.is-now) .ld-plank, :root:not([data-theme="light"]) .ld-r:not(.is-now) .ld-plank { color: color-mix(in srgb, var(--c) 55%, #F3E6C4); }
+    .ld-plank small { font: 700 8.5px/1 var(--font-s); letter-spacing: .12em; text-transform: uppercase; color: var(--pitch); }
+    .ld-r.is-top .ld-plank b { font-size: 19px; }
+    .ld-r.is-done .ld-plank { opacity: .75; }
+    .ld-ok { justify-self: center; display: flex; color: var(--good); }
+    .ld-r.is-now .ld-plank { background: var(--pitch); color: var(--on-pitch, #F3F1E8); box-shadow: 0 0 0 2px var(--pitch), 0 4px 12px rgba(123, 30, 58, .45);
+      transform: scale(1.04); animation: ld-now 1.8s ease-in-out infinite; }
+    .ld-r.is-now .ld-plank small { color: inherit; opacity: .85; }
+    @keyframes ld-now { 50% { box-shadow: 0 0 0 4px color-mix(in srgb, var(--pitch) 45%, transparent), 0 4px 12px rgba(123, 30, 58, .45); } }
+    @media (max-height: 700px) { .ld-title { font-size: 21px; } .ld-plank b { font-size: 13px; } .ld-r.is-top .ld-plank b { font-size: 16px; } .ld-n { width: 20px; height: 20px; } }
+    @media (prefers-reduced-motion: reduce) { .ld-r.is-now .ld-plank { animation: none; } }
     .rung { display: flex; align-items: center; gap: 8px; padding: 4px 10px; border-radius: 7px; font-size: 11.5px; font-weight: 700; color: var(--ink-3); font-variant-numeric: tabular-nums; transition: background .25s, color .25s; }
     .rung-safe { color: var(--ink-2); background: var(--pocket); }
     .rung-done { color: var(--good); }
@@ -3448,7 +3474,10 @@
 .ano-dot-on { background: var(--brass) !important; }
 .ano-score { font-size: 12px; color: var(--ink-3); white-space: nowrap; }
 .ano-score b { font: 600 20px/1 var(--font-d); color: var(--ink); }
-.ano-card { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; flex: 1 1 auto; min-height: 0; }
+.ano-card { display: flex; flex-direction: column; align-items: center; justify-content: center; flex: 1 1 auto; min-height: 0; }
+/* the event on a slip of paper, as a museum labels what it shows */
+.ano-slip { display: flex; flex-direction: column; align-items: center; gap: 10px; min-height: 0; max-height: 100%; width: 100%; max-width: 420px;
+  padding: 16px 16px 18px; background: var(--at-card-img) center / 100% 100% no-repeat; }
 .ano-pic { flex: 0 1 auto; min-height: 84px; max-height: min(330px, 36vh); width: 100%; display: flex; align-items: center; justify-content: center; }
 .ano-pic svg { height: min(330px, 36vh); width: auto; max-width: 100%; max-height: 100%; display: block; }
 .ano-scene svg { padding: 5px 5px 6px; background: #EFE6CF; box-shadow: 0 2px 8px rgba(0, 0, 0, .3); }
@@ -3479,7 +3508,16 @@
 .ano-rule input[type=range]::-moz-range-thumb { width: 24px; height: 24px; border-radius: 50%; background: var(--brass);
   border: 3px solid var(--paper, #F4EEDC); box-shadow: 0 2px 6px rgba(0, 0, 0, .35); }
 .ano-rule input[type=range]:disabled { opacity: .45; cursor: default; }
-.ano-ends { display: flex; justify-content: space-between; font-size: 11px; color: var(--ink-3); padding: 0 2px; }
+.ano-ends { position: relative; display: flex; justify-content: space-between; font-size: 11px; color: var(--ink-3); padding: 0 2px; min-height: 13px; }
+.ano-tk { position: absolute; top: 0; transform: translateX(-50%); font: 600 10.5px/1.2 var(--font-s); color: var(--ink-3); }
+.ano-tk::before { content: ''; position: absolute; left: 50%; top: -9px; width: 1px; height: 6px; background: var(--ink-3); opacity: .7; }
+/* the ages of history the ruler spans, coloured bands lettered over the track */
+.ano-eras { position: relative; height: 16px; margin: 0 0 -2px; }
+.ano-era { position: absolute; top: 0; height: 14px; display: flex; align-items: center; justify-content: center; overflow: hidden; white-space: nowrap;
+  font: 700 8.5px/1 var(--font-s); letter-spacing: .12em; text-transform: uppercase; color: #fff; border-radius: 2px;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .12); }
+.ano-era + .ano-era { border-left: 2px solid var(--stock); }
+.ano-era-0 { background: #8C6A3A; } .ano-era-1 { background: #6B4E7A; } .ano-era-2 { background: #3E6B5A; } .ano-era-3 { background: #9B3B2E; }
 .ano-mark { position: absolute; top: 4px; width: 0; height: 34px; pointer-events: none; }
 .ano-year.is-set.is-hit { text-decoration: none; color: var(--good); }
 .ano-mark::before { content: ''; position: absolute; left: -2px; top: 2px; width: 4px; height: 30px; border-radius: 2px; }
@@ -3505,6 +3543,7 @@
 }
 @media (max-width: 699px) and (max-height: 700px) {
   .ano-pg { gap: 5px; }
+  .ano-slip { padding: 10px 12px 12px; gap: 6px; }
   .ano-pic { max-height: 130px; }
   .ano-pic svg, .ano-face img { max-height: 130px; }
   .ano-t { font-size: 18px; }
@@ -3723,6 +3762,10 @@
 .good > .onde-li-n { background: #3A9C6E; } .brass > .onde-li-n { background: #D9A441; }
 .onde-list .ano-li-p { white-space: nowrap; }
 @media (max-height: 700px) { .onde-res-map { display: none; } .onde-li-n { display: none; } }
+.onde-coord { position: absolute; left: 8px; bottom: 8px; z-index: 4; pointer-events: none; padding: 5px 8px 4px; border-radius: 3px;
+  font: italic 600 12px/1 'IM Fell English', 'Fraunces', Georgia, serif; letter-spacing: .04em; color: #2A1D10; background: rgba(247, 241, 226, .9);
+  box-shadow: 0 0 0 1px #6E5836, 0 1px 3px rgba(0, 0, 0, .25); }
+.onde-coord[hidden] { display: none; }
 .onde-dist { position: absolute; left: 0; top: 0; z-index: 3; pointer-events: none; white-space: nowrap; will-change: transform;
   font: 700 11px/1 var(--font-s); color: #F7F1E2; background: rgba(42, 29, 16, .86); padding: 4px 7px; border-radius: 10px; }
 #onde-line { stroke: #2A1D10; stroke-width: 2; stroke-dasharray: 5 4; stroke-linecap: round; }
@@ -3843,6 +3886,9 @@
   -webkit-mask-image: linear-gradient(transparent, #000 14px, #000 calc(100% - 14px), transparent);
   mask-image: linear-gradient(transparent, #000 14px, #000 calc(100% - 14px), transparent); }
 .cron-line:focus-visible { outline: 2px solid var(--brass); outline-offset: 2px; }
+/* below the events placed so far, the spine runs on, dotted and fading: the line still to be laid */
+.cron-line:not(.cron-line-end) { background: repeating-linear-gradient(to bottom, color-mix(in srgb, var(--brass) 55%, transparent) 0 5px, transparent 5px 11px)
+  36px 0 / 2px 100% no-repeat local; }
 /* the spine of the line, behind the slips and the gaps: a rule down the year column */
 .cron-row, .cron-slot { --sp: 34px; background-image: linear-gradient(var(--brass), var(--brass)); background-repeat: no-repeat;
   background-size: 2px 100%; background-position: var(--sp) 0; }
@@ -4114,6 +4160,10 @@
   color: var(--on-brass, #1A1204); background: var(--at-card-on, var(--brass)) center / 100% 100% no-repeat; background-color: var(--brass);
   border-radius: 4px; transition: transform .12s, filter .15s; }
 .aod-btn b { font: 700 21px/1 var(--font-d); letter-spacing: -.01em; }
+/* on the night page the slip is dark, so its lettering is the paper's; the arrow and the year in brass */
+:root[data-theme="dark"] .aod-btn, :root:not([data-theme="light"]) .aod-btn { color: var(--ink); }
+:root[data-theme="dark"] .aod-btn small, :root:not([data-theme="light"]) .aod-btn small,
+:root[data-theme="dark"] .aod-btn svg, :root:not([data-theme="light"]) .aod-btn svg { color: var(--brass-2, #E0B968); }
 .aod-btn small { font: 700 11px/1 var(--font-s); letter-spacing: .06em; opacity: .78; }
 .aod-btn:hover { filter: brightness(1.06); }
 .aod-btn:active { transform: translateY(1px) scale(.985); }
@@ -4336,6 +4386,14 @@
 @media (prefers-reduced-motion: reduce) {
   .ret-opt, .ret-portrait, .ret-kind, .ret-bar b { animation: none !important; }
 }
+
+/* the easel: the portrait painted a stroke at a time, between the question and its answers */
+.ret-easel { flex: 1 1 0; min-height: 0; max-height: 200px; display: flex; justify-content: center; margin: 2px 0; }
+.ret-easel svg { height: 100%; width: auto; filter: drop-shadow(0 4px 8px rgba(0, 0, 0, .28)); transform: rotate(-1.5deg); }
+.ret-st { stroke-dasharray: 1; stroke-dashoffset: 0; }
+.ret-st.is-new { animation: ret-brush .8s cubic-bezier(.4, 0, .2, 1) both; }
+@keyframes ret-brush { from { stroke-dashoffset: 1; } }
+@media (prefers-reduced-motion: reduce) { .ret-st.is-new { animation: none; } }
 
 
 /* ═══ A GAZETA DO SEU DIA — a front page of the past: masthead between rules, a headline with its picture, two columns, the small ads ═══ */
@@ -4623,6 +4681,6 @@
   <div id="ct"></div>
 </div>
 
-<script src="app.js?v=08a792999d"></script>
+<script src="app.js?v=83f32fc225"></script>
 </body>
 </html>

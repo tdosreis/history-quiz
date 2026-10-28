@@ -19228,25 +19228,27 @@ function html() {
    Opening it stops the clock: checking where you stand is not
    something the player should have to pay for in seconds. */
 function ladderOverlay() {
+  /* a ladder that climbs from bronze to gold: the rungs climbed ticked, the one you stand on lit, the safe ones
+     with their shield, the million crowned at the top */
+  const n = LADDER.length, mix = (a, b, k) => '#' + [0, 2, 4].map(o => Math.round(parseInt(a.substr(o, 2), 16) * (1 - k) + parseInt(b.substr(o, 2), 16) * k).toString(16).padStart(2, '0')).join('');
   return `
-  <div class="sheet">
-    <div style="display:flex;align-items:center;justify-content:space-between;">
-      <span class="eyebrow" style="color:var(--brass);">A escada do milhão</span>
+  <div class="sheet ld-sheet">
+    <div class="ld-head">
+      <span class="eyebrow" style="color:var(--brass);">Rumo ao Milhão · degrau ${Math.min(rung + 1, n)} de ${n}</span>
       <button id="bladderclose" class="btn btn-ghost btn-icon" aria-label="Fechar">${ICON.close('currentColor', 13)}</button>
     </div>
-    <div class="scroll-y" style="flex:1;display:flex;flex-direction:column-reverse;justify-content:flex-end;gap:2px;">
+    <div class="display ld-title"><em>A escada do milhão</em></div>
+    <div class="ld" role="list">
       ${LADDER.map((step, i) => {
-        const state = i < rung ? 'rung-done' : i === rung ? 'rung-now' : step.safe ? 'rung-safe' : '';
-        const top = i === LADDER.length - 1 ? ' rung-top' : '';
-        return `<div class="rung ${state}${top}">
-          <span class="rung-n">${i + 1}</span>
-          ${step.safe ? ICON.shield(i < rung ? 'var(--good)' : 'var(--ink-4)', 11) : '<span style="width:11px;"></span>'}
-          <span style="flex:1;">${money(step.v)}</span>
-          ${i < rung ? ICON.check('var(--good)', 12) : ''}
+        const st = i < rung ? ' is-done' : i === rung ? ' is-now' : '', k = i / (n - 1), top = i === n - 1;
+        return `<div class="ld-r${st}${step.safe ? ' is-safe' : ''}${top ? ' is-top' : ''}" role="listitem" style="--c:${mix('8A6436', 'C9962F', k)}">
+          <span class="ld-n">${step.safe ? ICON.shield('currentColor', 13) : i + 1}</span>
+          <span class="ld-plank">${top ? ICON.crown('currentColor', 14) : ''}<b class="num">${money(step.v)}</b>${i === rung ? '<small>você está aqui</small>' : ''}</span>
+          <span class="ld-ok">${i < rung ? ICON.check('currentColor', 13) : ''}</span>
         </div>`;
       }).join('')}
     </div>
-    <p class="small muted" style="font-size:10px;text-align:center;">
+    <p class="small muted" style="font-size:10px;text-align:center;margin:0;">
       ${ICON.shield('var(--ink-3)', 10)} são os degraus garantidos —
       passou de um, esse dinheiro é seu aconteça o que acontecer.</p>
   </div>`;
@@ -21274,7 +21276,8 @@ const SELO_THEMES = [
   ['91_artes',            'Artes',            'Pintura, palco e pedra',    'ART', 'star'],
   ['92_letras_musica',    'Letras e Música',  'Livros, poemas e notas',    'LET', 'quill'],
 ];
-const SELO_PER = 9;                     // stamps to a page: three rows of three
+/* stamps to a page: three to a row, and as many rows as the phone is tall — five on a tall one, three on a short one */
+const seloPer = () => innerHeight >= 800 ? 15 : innerHeight >= 690 ? 12 : 9;
 let selos = LS.get('selos', {});        // scene id → 'YYYY-MM-DD' it was won
 let runSelos = [];                      // stamps won in this run
 let seloTheme = null, seloPage = 0;
@@ -21336,9 +21339,13 @@ function seloSvg(id, opts) {
   for (let y = STEP / 2; y < H; y += STEP) holes += `<circle cx="0" cy="${y}" r="${R}"/><circle cx="${W}" cy="${y}" r="${R}"/>`;
   const got = opts.got !== undefined ? opts.got : seloHas(id);
   const num = String(seloNum(id)).padStart(3, '0');
-  if (!got) return `<svg class="selo-svg" viewBox="0 0 ${W} ${H}" aria-hidden="true">
+  /* a stamp not yet won: its space in the album, printed with a faint picture of it, as stamp albums print them */
+  if (!got) return `<svg class="selo-svg selo-ghost" viewBox="0 0 ${W} ${H}" aria-hidden="true">
+    <defs><clipPath id="${u}c"><rect x="0" y="0" width="120" height="80"/></clipPath><filter id="${u}g"><feColorMatrix type="saturate" values="0"/></filter></defs>
+    ${SCENE[id] && !opts.bare ? `<g transform="translate(6 6)" clip-path="url(#${u}c)" filter="url(#${u}g)" opacity=".2">${SCENE[id].draw()}</g>` : ''}
     <rect x="3" y="3" width="${W - 6}" height="${H - 6}" rx="2" fill="none" stroke="currentColor" stroke-width="1.4" stroke-dasharray="4 3" opacity=".55"/>
-    <text x="${W / 2}" y="${H / 2 + 6}" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-weight="700" font-size="17" fill="currentColor" opacity=".85">Nº ${num}</text></svg>`;
+    <text x="${W / 2}" y="${H / 2 + 6}" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-weight="700" font-size="17" fill="currentColor" opacity=".9"
+      style="paint-order: stroke; stroke: var(--stock); stroke-width: 4px; stroke-linejoin: round;">Nº ${num}</text></svg>`;
   const d = String(selos[id] || _todayISO()).split('-');
   const date = `${+d[2]} ${_MES[(+d[1] || 1) - 1]} ${d[0]}`;
   const scene = SCENE[id] ? SCENE[id].draw() : '';
@@ -21367,13 +21374,13 @@ function selosHtml() {
     /* open on the theme of the stamp just won, else the first with stamps to find */
     const fresh = runSelos[runSelos.length - 1];
     seloTheme = (fresh && SCENE_T[fresh]) || SELO_THEMES[0][0];
-    seloPage = fresh ? Math.floor(by[seloTheme].indexOf(fresh) / SELO_PER) : 0;
+    seloPage = fresh ? Math.floor(by[seloTheme].indexOf(fresh) / seloPer()) : 0;
   }
   const th = SELO_THEMES.find(t => t[0] === seloTheme);
   const ids = by[seloTheme];
-  const pages = Math.max(1, Math.ceil(ids.length / SELO_PER));
+  const pages = Math.max(1, Math.ceil(ids.length / seloPer()));
   seloPage = Math.max(0, Math.min(seloPage, pages - 1));
-  const show = ids.slice(seloPage * SELO_PER, (seloPage + 1) * SELO_PER);
+  const show = ids.slice(seloPage * seloPer(), (seloPage + 1) * seloPer());
   const all = seloAll(), got = all.filter(seloHas).length;
   const pct = Math.round(got / Math.max(1, all.length) * 100);
   return `
@@ -21400,7 +21407,7 @@ function selosHtml() {
       <div class="selo-grid">
         ${show.map((id, i) => `<button class="selo${seloHas(id) ? ' is-got' : ''}${runSelos.includes(id) ? ' is-new' : ''}" data-selo="${id}"
             style="animation-delay:${i * 40}ms" aria-label="${seloHas(id) ? _esc(_seloLabel(id)) : 'Selo nº ' + seloNum(id) + ', ainda por ganhar'}">${seloSvg(id)}</button>`).join('')}
-        ${Array.from({ length: SELO_PER - show.length }, () => '<span class="selo selo-void" aria-hidden="true"></span>').join('')}
+        ${Array.from({ length: seloPer() - show.length }, () => '<span class="selo selo-void" aria-hidden="true"></span>').join('')}
       </div>
       <div class="selo-pager">
         <button id="selo-prev" class="btn btn-ghost btn-icon" aria-label="Página anterior"${seloPage === 0 ? ' disabled' : ''}>${ICON.back('currentColor', 12)}</button>
@@ -21686,6 +21693,29 @@ function anoPic(e) {
   return `<div class="ano-pic ano-scene">${ART.hourglass(240)}</div>`;
 }
 
+/* the ruler is engraved: the ages of history it spans, as bands over it, and round years under it */
+const ANO_ERAS = [[-1e5, 476, 'Antiguidade'], [476, 1453, 'Idade Média'], [1453, 1789, 'Idade Moderna'], [1789, 1e5, 'Contemporânea']];
+function anoEras(q, pos) {
+  const span = q.hi - q.lo;
+  return `<div class="ano-eras" aria-hidden="true">${ANO_ERAS.map(([a, b, n], i) => {
+    const lo = Math.max(a, q.lo), hi = Math.min(b, q.hi);
+    if (hi <= lo) return '';
+    const w = (hi - lo) / span;
+    return `<span class="ano-era ano-era-${i}" style="left:${pos(lo)};width:calc((100% - 2 * var(--ano-th0)) * ${w.toFixed(4)})">${w > .2 ? n : ''}</span>`;
+  }).join('')}</div>`;
+}
+function anoTicks(q, pos) {
+  /* two to four round years between the ends, fewer where the years are long to write (a.C.) */
+  const span = q.hi - q.lo, most = q.lo < 0 ? 2 : 4;
+  const step = [1000, 500, 250, 200, 100, 50, 25, 10, 5].find(s => span / s >= 2 && Math.floor(span / s) <= most + 1) || 5;
+  let out = '';
+  for (let y = Math.ceil(q.lo / step) * step; y <= q.hi; y += step) {
+    const f = (y - q.lo) / span;
+    if (f < .12 || f > .88) continue;          // the two ends are printed already
+    out += `<span class="ano-tk" style="left:${pos(y)}">${anoYear(y === 0 ? 1 : y)}</span>`;
+  }
+  return `<span>${anoYear(q.lo)}</span>${out}<span>${anoYear(q.hi)}</span>`;
+}
 function anoHtml() {
   if (!ano) ano = buildAno();
   if (ano.phase === 'end') return anoEndHtml();
@@ -21702,21 +21732,22 @@ function anoHtml() {
     ${topbar(ano.hoje ? 'Hoje na História' : 'Que ano?')}
     <div class="ano-head"><div class="runlog" aria-hidden="true">${dots}</div>
       <span class="ano-score"><b class="num">${ano.pts}</b> pts</span></div>
-    <div class="ano-card">
+    <div class="ano-card"><div class="ano-slip">
       ${anoPic(e)}
       ${ano.hoje ? `<span class="ano-date">${ICON.calendar('currentColor', 12)} ${hojeWhen(q)}</span>` : ''}
       <p class="ano-t">${_esc(e.t).replace(/\S+-\S+/g, w => `<span class="ano-nw">${w}</span>`)}</p>
-    </div>
+    </div></div>
     <div class="ano-dial">
       <div class="ano-year num${rev ? ' is-set' : ''}${rev && last.d === 0 ? ' is-hit' : ''}" id="ano-year"${rev ? ' aria-live="polite"' : ''}>${anoYear(rev ? last.g : ano.guess)}</div>
       ${rev ? `<div class="ano-truth"><span>${anoVerdict(last.p)}</span> <b>${e.c ? 'c. ' : ''}${anoYear(e.y)}</b>
           · ${last.d === 0 ? 'o ano exato' : `${last.d} ${last.d === 1 ? 'ano' : 'anos'} de diferença`}</div>` : ''}
       <div class="ano-rule">
+        ${anoEras(q, pos)}
         <input type="range" id="ano-range" min="${q.lo}" max="${q.hi}" step="1" value="${rev ? last.g : ano.guess}"
           aria-label="Ano" aria-valuetext="${anoYear(rev ? last.g : ano.guess)}" ${rev ? 'disabled' : ''}>
         ${rev ? `<span class="ano-mark ano-mark-g" style="left:${pos(last.g)}"></span>
                  <span class="ano-mark ano-mark-y" style="left:${pos(e.y)}"></span>` : ''}
-        <div class="ano-ends"><span>${anoYear(q.lo)}</span><span>${anoYear(q.hi)}</span></div>
+        <div class="ano-ends">${anoTicks(q, pos)}</div>
       </div>
       ${rev ? '' : `<div class="ano-nudge">
         <button class="btn btn-ghost btn-sm" data-nudge="-10" aria-label="Menos 10 anos">−10</button><button class="btn btn-ghost btn-sm" data-nudge="-1" aria-label="Menos 1 ano">−1</button>
@@ -23050,6 +23081,7 @@ function ondeHtml() {
       <span class="onde-mk onde-mk-g" id="onde-pin" hidden aria-hidden="true">${ondePinSvg()}</span>
       ${rev ? `<span class="onde-mk onde-mk-t" id="onde-truth" aria-hidden="true"><i></i><b>${_esc(q.at[2])}</b></span>
         <span class="onde-dist" id="onde-dist" aria-hidden="true">${last.p === 100 ? 'na mosca!' : ondeKmTxt(last.d)}</span>` : ''}
+      <span class="onde-coord" id="onde-coord" aria-hidden="true"></span>
       <div class="onde-zoom">
         <button class="onde-zb" data-zoom="in" type="button" aria-label="Aproximar">+</button>
         <button class="onde-zb" data-zoom="out" type="button" aria-label="Afastar">−</button>
@@ -23152,6 +23184,7 @@ function ondeLabels() {
   }
   return out;
 }
+const ondeCoordTxt = ([la, lo]) => `${Math.abs(la).toFixed(0)}° ${la >= 0 ? 'N' : 'S'} · ${Math.abs(lo).toFixed(0)}° ${lo >= 0 ? 'L' : 'O'}`;
 const ondePinSvg = () => `<svg viewBox="0 0 24 32"><path d="M12 31C12 31 2 18.6 2 11.5A10 10 0 0 1 22 11.5C22 18.6 12 31 12 31Z" fill="#8E2F2F" stroke="#3A1208" stroke-width="1.4"/><circle cx="12" cy="11.5" r="4" fill="#F7F1E2"/></svg>`;
 
 function ondeEndHtml() {
@@ -23261,6 +23294,9 @@ function ondeApply() {
   };
   const pin = onde.pin ? ondeXY(onde.pin[0], onde.pin[1]) : null;
   place(document.getElementById('onde-pin'), pin);
+  /* the pin's latitude and longitude in the corner, as a chart marks a position */
+  const co = document.getElementById('onde-coord');
+  if (co) { co.hidden = !onde.pin; if (onde.pin) co.textContent = ondeCoordTxt(onde.pin); }
   const rev = onde.phase === 'reveal', q = onde.qs[onde.i];
   const truth = rev ? ondeXY(q.at[0], q.at[1]) : null;
   const t = document.getElementById('onde-truth');
@@ -24634,6 +24670,29 @@ function retTally(picks) {
   return { pts, top, sec, id, why, total: picks.length * 3 };
 }
 
+/* the portrait being painted: on a canvas in a gilt frame, each answer lays one broad stroke in the colour of
+   the kind it leans to — a wash of sky, the ground, a head, the shoulders — until, at the eighth, the sitter is
+   known. The newest stroke is brushed on as it appears. */
+const RET_STROKES = [
+  ['M16 38C38 26 70 46 104 30', 24], ['M14 122C40 110 78 130 106 114', 26], ['M18 78C42 64 78 90 102 70', 18],
+  ['M60 48C47 56 46 80 60 88C74 80 73 56 60 48', 15], ['M34 134C40 104 80 104 86 134', 22], ['M22 54C30 88 24 110 32 128', 11],
+  ['M98 54C90 88 97 110 88 128', 11], ['M28 20C50 15 74 22 94 17', 8],
+];
+function retEasel() {
+  const strokes = ret.picks.map((pk, k) => {
+    const o = RET_QS[k] && RET_QS[k].o[pk], col = o ? RET_KINDS[o[2]].col : '#8A6416', [d, w] = RET_STROKES[k % RET_STROKES.length];
+    return `<path d="${d}" stroke="${col}" stroke-width="${w}" class="ret-st${k === ret.picks.length - 1 ? ' is-new' : ''}" pathLength="1"/>`;
+  }).join('');
+  return `<svg viewBox="0 0 120 150">
+    <defs><filter id="ret-brush" x="-10%" y="-10%" width="120%" height="120%"><feTurbulence type="fractalNoise" baseFrequency=".09" numOctaves="2" seed="7"/>
+      <feDisplacementMap in="SourceGraphic" scale="5"/></filter>
+      <clipPath id="ret-cv"><rect x="12" y="12" width="96" height="126"/></clipPath></defs>
+    <rect x="1" y="1" width="118" height="148" rx="3" fill="#8A6416"/><rect x="5" y="5" width="110" height="140" rx="2" fill="#D9B45E"/>
+    <rect x="9" y="9" width="102" height="132" fill="#6E4C14"/><rect x="12" y="12" width="96" height="126" fill="#F4ECD8"/>
+    <g clip-path="url(#ret-cv)" filter="url(#ret-brush)" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity=".82">${strokes}</g>
+    ${ret.picks.length ? '' : '<path d="M60 48C47 56 46 80 60 88C74 80 73 56 60 48M34 134C40 104 80 104 86 134" fill="none" stroke="#B8A27A" stroke-width="1.4" stroke-dasharray="3 3"/>'}
+  </svg>`;
+}
 function retratoHtml() {
   if (!ret) ret = { i: 0, picks: [], phase: 'intro' };
   if (ret.phase === 'intro') return `
@@ -24655,6 +24714,7 @@ function retratoHtml() {
     <div class="ret-prog" aria-hidden="true">${RET_QS.map((x, k) => `<i class="${k < ret.i ? 'ok' : k === ret.i ? 'on' : ''}"></i>`).join('')}</div>
     <span class="ret-k">Pergunta ${ret.i + 1} de ${RET_QS.length}</span>
     <div class="display ret-q"><em>${q.t}</em></div>
+    <div class="ret-easel" aria-hidden="true">${retEasel()}</div>
     <div class="ret-opts">
       ${q.o.map((o, k) => `<button class="ret-opt" data-o="${k}" type="button" style="animation-delay:${(k * .07 + .05).toFixed(2)}s">
         <span class="ret-e" aria-hidden="true">${o[0]}</span><span class="ret-t">${o[1]}</span></button>`).join('')}

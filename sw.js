@@ -20,7 +20,7 @@
    v6: the game's script is its own file, app.js, named by its content (APP, stamped by
    tools/history/page.py at every build): kept with the page, and compiled once, not at every launch. */
 const VERSION = 'v6';
-const APP = 'app.js?v=08a792999d';
+const APP = 'app.js?v=83f32fc225';
 const NAV_WAIT = 2500;   // ms the network gets to bring the page before the kept copy opens
 const CACHE   = 'history-quiz-' + VERSION;
 /* Photos, crests and flags never change under the same name (each file is

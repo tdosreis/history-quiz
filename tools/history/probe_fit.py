@@ -176,7 +176,7 @@ DRIVE = r"""
   /* the stamp album: every page of every theme, some stamps won */
   seloAll().forEach(function(id, i){ if (i % 3 === 0) awardSelo(id); });
   SELO_THEMES.forEach(function(t){
-    var n = Math.ceil(seloBy()[t[0]].length / SELO_PER);
+    var n = Math.ceil(seloBy()[t[0]].length / seloPer());
     for (var pg=0; pg<n; pg++){ seloTheme=t[0]; seloPage=pg; sc='selos'; go(); fit('selos/'+t[0]+'/'+pg); }
   });
   /* a right answer that wins a stamp prints it under the verdict */

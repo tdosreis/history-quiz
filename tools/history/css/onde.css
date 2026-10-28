@@ -51,6 +51,10 @@
 .good > .onde-li-n { background: #3A9C6E; } .brass > .onde-li-n { background: #D9A441; }
 .onde-list .ano-li-p { white-space: nowrap; }
 @media (max-height: 700px) { .onde-res-map { display: none; } .onde-li-n { display: none; } }
+.onde-coord { position: absolute; left: 8px; bottom: 8px; z-index: 4; pointer-events: none; padding: 5px 8px 4px; border-radius: 3px;
+  font: italic 600 12px/1 'IM Fell English', 'Fraunces', Georgia, serif; letter-spacing: .04em; color: #2A1D10; background: rgba(247, 241, 226, .9);
+  box-shadow: 0 0 0 1px #6E5836, 0 1px 3px rgba(0, 0, 0, .25); }
+.onde-coord[hidden] { display: none; }
 .onde-dist { position: absolute; left: 0; top: 0; z-index: 3; pointer-events: none; white-space: nowrap; will-change: transform;
   font: 700 11px/1 var(--font-s); color: #F7F1E2; background: rgba(42, 29, 16, .86); padding: 4px 7px; border-radius: 10px; }
 #onde-line { stroke: #2A1D10; stroke-width: 2; stroke-dasharray: 5 4; stroke-linecap: round; }

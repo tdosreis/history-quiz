@@ -56,3 +56,11 @@
 @media (prefers-reduced-motion: reduce) {
   .ret-opt, .ret-portrait, .ret-kind, .ret-bar b { animation: none !important; }
 }
+
+/* the easel: the portrait painted a stroke at a time, between the question and its answers */
+.ret-easel { flex: 1 1 0; min-height: 0; max-height: 200px; display: flex; justify-content: center; margin: 2px 0; }
+.ret-easel svg { height: 100%; width: auto; filter: drop-shadow(0 4px 8px rgba(0, 0, 0, .28)); transform: rotate(-1.5deg); }
+.ret-st { stroke-dasharray: 1; stroke-dashoffset: 0; }
+.ret-st.is-new { animation: ret-brush .8s cubic-bezier(.4, 0, .2, 1) both; }
+@keyframes ret-brush { from { stroke-dashoffset: 1; } }
+@media (prefers-reduced-motion: reduce) { .ret-st.is-new { animation: none; } }

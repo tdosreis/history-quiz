@@ -182,6 +182,29 @@ function anoPic(e) {
   return `<div class="ano-pic ano-scene">${ART.hourglass(240)}</div>`;
 }
 
+/* the ruler is engraved: the ages of history it spans, as bands over it, and round years under it */
+const ANO_ERAS = [[-1e5, 476, 'Antiguidade'], [476, 1453, 'Idade Média'], [1453, 1789, 'Idade Moderna'], [1789, 1e5, 'Contemporânea']];
+function anoEras(q, pos) {
+  const span = q.hi - q.lo;
+  return `<div class="ano-eras" aria-hidden="true">${ANO_ERAS.map(([a, b, n], i) => {
+    const lo = Math.max(a, q.lo), hi = Math.min(b, q.hi);
+    if (hi <= lo) return '';
+    const w = (hi - lo) / span;
+    return `<span class="ano-era ano-era-${i}" style="left:${pos(lo)};width:calc((100% - 2 * var(--ano-th0)) * ${w.toFixed(4)})">${w > .2 ? n : ''}</span>`;
+  }).join('')}</div>`;
+}
+function anoTicks(q, pos) {
+  /* two to four round years between the ends, fewer where the years are long to write (a.C.) */
+  const span = q.hi - q.lo, most = q.lo < 0 ? 2 : 4;
+  const step = [1000, 500, 250, 200, 100, 50, 25, 10, 5].find(s => span / s >= 2 && Math.floor(span / s) <= most + 1) || 5;
+  let out = '';
+  for (let y = Math.ceil(q.lo / step) * step; y <= q.hi; y += step) {
+    const f = (y - q.lo) / span;
+    if (f < .12 || f > .88) continue;          // the two ends are printed already
+    out += `<span class="ano-tk" style="left:${pos(y)}">${anoYear(y === 0 ? 1 : y)}</span>`;
+  }
+  return `<span>${anoYear(q.lo)}</span>${out}<span>${anoYear(q.hi)}</span>`;
+}
 function anoHtml() {
   if (!ano) ano = buildAno();
   if (ano.phase === 'end') return anoEndHtml();
@@ -198,21 +221,22 @@ function anoHtml() {
     ${topbar(ano.hoje ? 'Hoje na História' : 'Que ano?')}
     <div class="ano-head"><div class="runlog" aria-hidden="true">${dots}</div>
       <span class="ano-score"><b class="num">${ano.pts}</b> pts</span></div>
-    <div class="ano-card">
+    <div class="ano-card"><div class="ano-slip">
       ${anoPic(e)}
       ${ano.hoje ? `<span class="ano-date">${ICON.calendar('currentColor', 12)} ${hojeWhen(q)}</span>` : ''}
       <p class="ano-t">${_esc(e.t).replace(/\S+-\S+/g, w => `<span class="ano-nw">${w}</span>`)}</p>
-    </div>
+    </div></div>
     <div class="ano-dial">
       <div class="ano-year num${rev ? ' is-set' : ''}${rev && last.d === 0 ? ' is-hit' : ''}" id="ano-year"${rev ? ' aria-live="polite"' : ''}>${anoYear(rev ? last.g : ano.guess)}</div>
       ${rev ? `<div class="ano-truth"><span>${anoVerdict(last.p)}</span> <b>${e.c ? 'c. ' : ''}${anoYear(e.y)}</b>
           · ${last.d === 0 ? 'o ano exato' : `${last.d} ${last.d === 1 ? 'ano' : 'anos'} de diferença`}</div>` : ''}
       <div class="ano-rule">
+        ${anoEras(q, pos)}
         <input type="range" id="ano-range" min="${q.lo}" max="${q.hi}" step="1" value="${rev ? last.g : ano.guess}"
           aria-label="Ano" aria-valuetext="${anoYear(rev ? last.g : ano.guess)}" ${rev ? 'disabled' : ''}>
         ${rev ? `<span class="ano-mark ano-mark-g" style="left:${pos(last.g)}"></span>
                  <span class="ano-mark ano-mark-y" style="left:${pos(e.y)}"></span>` : ''}
-        <div class="ano-ends"><span>${anoYear(q.lo)}</span><span>${anoYear(q.hi)}</span></div>
+        <div class="ano-ends">${anoTicks(q, pos)}</div>
       </div>
       ${rev ? '' : `<div class="ano-nudge">
         <button class="btn btn-ghost btn-sm" data-nudge="-10" aria-label="Menos 10 anos">−10</button><button class="btn btn-ghost btn-sm" data-nudge="-1" aria-label="Menos 1 ano">−1</button>

@@ -11,6 +11,9 @@
   -webkit-mask-image: linear-gradient(transparent, #000 14px, #000 calc(100% - 14px), transparent);
   mask-image: linear-gradient(transparent, #000 14px, #000 calc(100% - 14px), transparent); }
 .cron-line:focus-visible { outline: 2px solid var(--brass); outline-offset: 2px; }
+/* below the events placed so far, the spine runs on, dotted and fading: the line still to be laid */
+.cron-line:not(.cron-line-end) { background: repeating-linear-gradient(to bottom, color-mix(in srgb, var(--brass) 55%, transparent) 0 5px, transparent 5px 11px)
+  36px 0 / 2px 100% no-repeat local; }
 /* the spine of the line, behind the slips and the gaps: a rule down the year column */
 .cron-row, .cron-slot { --sp: 34px; background-image: linear-gradient(var(--brass), var(--brass)); background-repeat: no-repeat;
   background-size: 2px 100%; background-position: var(--sp) 0; }

@@ -133,6 +133,7 @@ function ondeHtml() {
       <span class="onde-mk onde-mk-g" id="onde-pin" hidden aria-hidden="true">${ondePinSvg()}</span>
       ${rev ? `<span class="onde-mk onde-mk-t" id="onde-truth" aria-hidden="true"><i></i><b>${_esc(q.at[2])}</b></span>
         <span class="onde-dist" id="onde-dist" aria-hidden="true">${last.p === 100 ? 'na mosca!' : ondeKmTxt(last.d)}</span>` : ''}
+      <span class="onde-coord" id="onde-coord" aria-hidden="true"></span>
       <div class="onde-zoom">
         <button class="onde-zb" data-zoom="in" type="button" aria-label="Aproximar">+</button>
         <button class="onde-zb" data-zoom="out" type="button" aria-label="Afastar">−</button>
@@ -235,6 +236,7 @@ function ondeLabels() {
   }
   return out;
 }
+const ondeCoordTxt = ([la, lo]) => `${Math.abs(la).toFixed(0)}° ${la >= 0 ? 'N' : 'S'} · ${Math.abs(lo).toFixed(0)}° ${lo >= 0 ? 'L' : 'O'}`;
 const ondePinSvg = () => `<svg viewBox="0 0 24 32"><path d="M12 31C12 31 2 18.6 2 11.5A10 10 0 0 1 22 11.5C22 18.6 12 31 12 31Z" fill="#8E2F2F" stroke="#3A1208" stroke-width="1.4"/><circle cx="12" cy="11.5" r="4" fill="#F7F1E2"/></svg>`;
 
 function ondeEndHtml() {
@@ -344,6 +346,9 @@ function ondeApply() {
   };
   const pin = onde.pin ? ondeXY(onde.pin[0], onde.pin[1]) : null;
   place(document.getElementById('onde-pin'), pin);
+  /* the pin's latitude and longitude in the corner, as a chart marks a position */
+  const co = document.getElementById('onde-coord');
+  if (co) { co.hidden = !onde.pin; if (onde.pin) co.textContent = ondeCoordTxt(onde.pin); }
   const rev = onde.phase === 'reveal', q = onde.qs[onde.i];
   const truth = rev ? ondeXY(q.at[0], q.at[1]) : null;
   const t = document.getElementById('onde-truth');

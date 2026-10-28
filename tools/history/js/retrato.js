@@ -125,6 +125,29 @@ function retTally(picks) {
   return { pts, top, sec, id, why, total: picks.length * 3 };
 }
 
+/* the portrait being painted: on a canvas in a gilt frame, each answer lays one broad stroke in the colour of
+   the kind it leans to — a wash of sky, the ground, a head, the shoulders — until, at the eighth, the sitter is
+   known. The newest stroke is brushed on as it appears. */
+const RET_STROKES = [
+  ['M16 38C38 26 70 46 104 30', 24], ['M14 122C40 110 78 130 106 114', 26], ['M18 78C42 64 78 90 102 70', 18],
+  ['M60 48C47 56 46 80 60 88C74 80 73 56 60 48', 15], ['M34 134C40 104 80 104 86 134', 22], ['M22 54C30 88 24 110 32 128', 11],
+  ['M98 54C90 88 97 110 88 128', 11], ['M28 20C50 15 74 22 94 17', 8],
+];
+function retEasel() {
+  const strokes = ret.picks.map((pk, k) => {
+    const o = RET_QS[k] && RET_QS[k].o[pk], col = o ? RET_KINDS[o[2]].col : '#8A6416', [d, w] = RET_STROKES[k % RET_STROKES.length];
+    return `<path d="${d}" stroke="${col}" stroke-width="${w}" class="ret-st${k === ret.picks.length - 1 ? ' is-new' : ''}" pathLength="1"/>`;
+  }).join('');
+  return `<svg viewBox="0 0 120 150">
+    <defs><filter id="ret-brush" x="-10%" y="-10%" width="120%" height="120%"><feTurbulence type="fractalNoise" baseFrequency=".09" numOctaves="2" seed="7"/>
+      <feDisplacementMap in="SourceGraphic" scale="5"/></filter>
+      <clipPath id="ret-cv"><rect x="12" y="12" width="96" height="126"/></clipPath></defs>
+    <rect x="1" y="1" width="118" height="148" rx="3" fill="#8A6416"/><rect x="5" y="5" width="110" height="140" rx="2" fill="#D9B45E"/>
+    <rect x="9" y="9" width="102" height="132" fill="#6E4C14"/><rect x="12" y="12" width="96" height="126" fill="#F4ECD8"/>
+    <g clip-path="url(#ret-cv)" filter="url(#ret-brush)" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity=".82">${strokes}</g>
+    ${ret.picks.length ? '' : '<path d="M60 48C47 56 46 80 60 88C74 80 73 56 60 48M34 134C40 104 80 104 86 134" fill="none" stroke="#B8A27A" stroke-width="1.4" stroke-dasharray="3 3"/>'}
+  </svg>`;
+}
 function retratoHtml() {
   if (!ret) ret = { i: 0, picks: [], phase: 'intro' };
   if (ret.phase === 'intro') return `
@@ -146,6 +169,7 @@ function retratoHtml() {
     <div class="ret-prog" aria-hidden="true">${RET_QS.map((x, k) => `<i class="${k < ret.i ? 'ok' : k === ret.i ? 'on' : ''}"></i>`).join('')}</div>
     <span class="ret-k">Pergunta ${ret.i + 1} de ${RET_QS.length}</span>
     <div class="display ret-q"><em>${q.t}</em></div>
+    <div class="ret-easel" aria-hidden="true">${retEasel()}</div>
     <div class="ret-opts">
       ${q.o.map((o, k) => `<button class="ret-opt" data-o="${k}" type="button" style="animation-delay:${(k * .07 + .05).toFixed(2)}s">
         <span class="ret-e" aria-hidden="true">${o[0]}</span><span class="ret-t">${o[1]}</span></button>`).join('')}

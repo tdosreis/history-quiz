@@ -23,7 +23,8 @@ const SELO_THEMES = [
   ['91_artes',            'Artes',            'Pintura, palco e pedra',    'ART', 'star'],
   ['92_letras_musica',    'Letras e Música',  'Livros, poemas e notas',    'LET', 'quill'],
 ];
-const SELO_PER = 9;                     // stamps to a page: three rows of three
+/* stamps to a page: three to a row, and as many rows as the phone is tall — five on a tall one, three on a short one */
+const seloPer = () => innerHeight >= 800 ? 15 : innerHeight >= 690 ? 12 : 9;
 let selos = LS.get('selos', {});        // scene id → 'YYYY-MM-DD' it was won
 let runSelos = [];                      // stamps won in this run
 let seloTheme = null, seloPage = 0;
@@ -85,9 +86,13 @@ function seloSvg(id, opts) {
   for (let y = STEP / 2; y < H; y += STEP) holes += `<circle cx="0" cy="${y}" r="${R}"/><circle cx="${W}" cy="${y}" r="${R}"/>`;
   const got = opts.got !== undefined ? opts.got : seloHas(id);
   const num = String(seloNum(id)).padStart(3, '0');
-  if (!got) return `<svg class="selo-svg" viewBox="0 0 ${W} ${H}" aria-hidden="true">
+  /* a stamp not yet won: its space in the album, printed with a faint picture of it, as stamp albums print them */
+  if (!got) return `<svg class="selo-svg selo-ghost" viewBox="0 0 ${W} ${H}" aria-hidden="true">
+    <defs><clipPath id="${u}c"><rect x="0" y="0" width="120" height="80"/></clipPath><filter id="${u}g"><feColorMatrix type="saturate" values="0"/></filter></defs>
+    ${SCENE[id] && !opts.bare ? `<g transform="translate(6 6)" clip-path="url(#${u}c)" filter="url(#${u}g)" opacity=".2">${SCENE[id].draw()}</g>` : ''}
     <rect x="3" y="3" width="${W - 6}" height="${H - 6}" rx="2" fill="none" stroke="currentColor" stroke-width="1.4" stroke-dasharray="4 3" opacity=".55"/>
-    <text x="${W / 2}" y="${H / 2 + 6}" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-weight="700" font-size="17" fill="currentColor" opacity=".85">Nº ${num}</text></svg>`;
+    <text x="${W / 2}" y="${H / 2 + 6}" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-weight="700" font-size="17" fill="currentColor" opacity=".9"
+      style="paint-order: stroke; stroke: var(--stock); stroke-width: 4px; stroke-linejoin: round;">Nº ${num}</text></svg>`;
   const d = String(selos[id] || _todayISO()).split('-');
   const date = `${+d[2]} ${_MES[(+d[1] || 1) - 1]} ${d[0]}`;
   const scene = SCENE[id] ? SCENE[id].draw() : '';
@@ -116,13 +121,13 @@ function selosHtml() {
     /* open on the theme of the stamp just won, else the first with stamps to find */
     const fresh = runSelos[runSelos.length - 1];
     seloTheme = (fresh && SCENE_T[fresh]) || SELO_THEMES[0][0];
-    seloPage = fresh ? Math.floor(by[seloTheme].indexOf(fresh) / SELO_PER) : 0;
+    seloPage = fresh ? Math.floor(by[seloTheme].indexOf(fresh) / seloPer()) : 0;
   }
   const th = SELO_THEMES.find(t => t[0] === seloTheme);
   const ids = by[seloTheme];
-  const pages = Math.max(1, Math.ceil(ids.length / SELO_PER));
+  const pages = Math.max(1, Math.ceil(ids.length / seloPer()));
   seloPage = Math.max(0, Math.min(seloPage, pages - 1));
-  const show = ids.slice(seloPage * SELO_PER, (seloPage + 1) * SELO_PER);
+  const show = ids.slice(seloPage * seloPer(), (seloPage + 1) * seloPer());
   const all = seloAll(), got = all.filter(seloHas).length;
   const pct = Math.round(got / Math.max(1, all.length) * 100);
   return `
@@ -149,7 +154,7 @@ function selosHtml() {
       <div class="selo-grid">
         ${show.map((id, i) => `<button class="selo${seloHas(id) ? ' is-got' : ''}${runSelos.includes(id) ? ' is-new' : ''}" data-selo="${id}"
             style="animation-delay:${i * 40}ms" aria-label="${seloHas(id) ? _esc(_seloLabel(id)) : 'Selo nº ' + seloNum(id) + ', ainda por ganhar'}">${seloSvg(id)}</button>`).join('')}
-        ${Array.from({ length: SELO_PER - show.length }, () => '<span class="selo selo-void" aria-hidden="true"></span>').join('')}
+        ${Array.from({ length: seloPer() - show.length }, () => '<span class="selo selo-void" aria-hidden="true"></span>').join('')}
       </div>
       <div class="selo-pager">
         <button id="selo-prev" class="btn btn-ghost btn-icon" aria-label="Página anterior"${seloPage === 0 ? ' disabled' : ''}>${ICON.back('currentColor', 12)}</button>

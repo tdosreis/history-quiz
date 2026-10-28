@@ -43,6 +43,10 @@
   color: var(--on-brass, #1A1204); background: var(--at-card-on, var(--brass)) center / 100% 100% no-repeat; background-color: var(--brass);
   border-radius: 4px; transition: transform .12s, filter .15s; }
 .aod-btn b { font: 700 21px/1 var(--font-d); letter-spacing: -.01em; }
+/* on the night page the slip is dark, so its lettering is the paper's; the arrow and the year in brass */
+:root[data-theme="dark"] .aod-btn, :root:not([data-theme="light"]) .aod-btn { color: var(--ink); }
+:root[data-theme="dark"] .aod-btn small, :root:not([data-theme="light"]) .aod-btn small,
+:root[data-theme="dark"] .aod-btn svg, :root:not([data-theme="light"]) .aod-btn svg { color: var(--brass-2, #E0B968); }
 .aod-btn small { font: 700 11px/1 var(--font-s); letter-spacing: .06em; opacity: .78; }
 .aod-btn:hover { filter: brightness(1.06); }
 .aod-btn:active { transform: translateY(1px) scale(.985); }
