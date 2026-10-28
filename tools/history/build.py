@@ -346,7 +346,9 @@ def main():
             + io.open(os.path.join(H, "js", "atlas.js"), encoding="utf-8").read()
             + io.open(os.path.join(H, "js", "mapa.js"), encoding="utf-8").read()
             # "Onde foi?": where each of those events happened (tools/history/onde_events.json)
-            + "\n" + onde_js + io.open(os.path.join(H, "js", "onde.js"), encoding="utf-8").read()
+            # and its own mapa-múndi in two hemispheres (tools/history/onde_map.json, from ondemapgen.mjs)
+            + "\n" + onde_js + "const ONDE_MAP = " + io.open(os.path.join(H, "onde_map.json"), encoding="utf-8").read().strip() + ";\n"
+            + io.open(os.path.join(H, "js", "onde.js"), encoding="utf-8").read()
             # a game sent to a friend as a link
             + io.open(os.path.join(H, "js", "desafio.js"), encoding="utf-8").read()
             # the questions once got wrong, to review

@@ -206,23 +206,23 @@ DRIVE = r"""
   for (var g2=0; g2<3; g2++){
     startOnde();
     for (var k4=0; k4<onde.qs.length; k4++){
-      onde.i=k4; onde.phase='guess'; onde.pin=null; onde.v={cx:180,cy:67,z:1}; go(); fit('onde/guess');
-      var at=onde.qs[k4].at, xy=ondeXY(at[0]+(k4%2?9:0.2), at[1]+(k4%3?14:0.3));
-      onde.v={cx:xy[0],cy:xy[1],z:4}; go(); ondeSetPin(xy); fit('onde/pin');
+      onde.i=k4; onde.phase='guess'; onde.pin=null; onde.v={cx:0,cy:0,z:1}; go(); fit('onde/guess');
+      var at=onde.qs[k4].at, ll=[at[0]+(k4%2?9:0.2), at[1]+(k4%3?14:0.3)], xy=ondeXY(ll[0], ll[1]);
+      onde.v={cx:xy[0],cy:xy[1],z:[4,8,14][k4%3]}; go(); ondeSetPin(ll); fit('onde/pin');
       ondeCommit(); fit('onde/reveal'+(onde.qs[k4].e.x?'+story':'')+(onde.log[onde.log.length-1].selo?'+selo':''));
     }
     onde.phase='end'; go(); fit('onde/end');
   }
   startOnde();
-  for (var k5=0; k5<onde.qs.length; k5++){ onde.i=k5; onde.phase='guess'; ondeSetPin(ondeXY(onde.qs[k5].at[0], onde.qs[k5].at[1])); ondeCommit(); }
+  for (var k5=0; k5<onde.qs.length; k5++){ onde.i=k5; onde.phase='guess'; ondeSetPin([onde.qs[k5].at[0], onde.qs[k5].at[1]]); ondeCommit(); }
   onde.i=onde.qs.length-1; ondeNext(); window._newMedals = MEDALS.slice(0, 3); go(); fit('onde/end-cheio');
   /* O desafio: the screen a link opens on, for every game, and who won, on each game's results */
-  ['tf','tm','td','m','a','o','c'].forEach(function(g){
+  ['tf','tm','td','m','a','o','c','d','f'].forEach(function(g){
     chal = { g: g, seed: 12345, score: g==='m' ? 1000000 : g[0]==='t' ? 23456 : g==='c' ? 258 : 1000, more: g==='m' ? 16 : g[0]==='t' ? 20 : null, code: 'x' };
     sc='desafio'; go(); fit('desafio/'+g);
   });
   chal = { g:'o', seed: 4242, score: 815, more: null, accepted: true };
-  startOnde(); for (var k6=0; k6<onde.qs.length; k6++){ onde.i=k6; onde.phase='guess'; ondeSetPin(ondeXY(onde.qs[k6].at[0], onde.qs[k6].at[1])); ondeCommit(); }
+  startOnde(); for (var k6=0; k6<onde.qs.length; k6++){ onde.i=k6; onde.phase='guess'; ondeSetPin([onde.qs[k6].at[0], onde.qs[k6].at[1]]); ondeCommit(); }
   onde.i=onde.qs.length-1; ondeNext(); window._newMedals = MEDALS.slice(0, 3); go(); fit('desafio/onde-end');
   chal = { g:'a', seed: 4243, score: 815, more: null, accepted: true };
   startAno(); for (var k7=0; k7<ano.qs.length; k7++){ ano.i=k7; ano.phase='guess'; ano.guess=ano.qs[k7].e.y; anoCommit(); }

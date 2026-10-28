@@ -255,7 +255,9 @@ function albPlaceHtml() {
               <span class="alb-n">${String(n).padStart(3, '0')}</span>
               ${has
                 ? `<span class="flip"><span class="flip-in"><span class="flip-face flip-front">${front}</span><span class="flip-face flip-back">${back}</span></span></span>`
-                : `<span class="ph" aria-hidden="true">${albGhost(p ? 'player' : (stk(sid) || {}).kind)}</span><span class="nm">a colar</span>`}
+                : p && p.img
+                ? `<span class="ph ph-face" aria-hidden="true"><img src="${p.img}" alt="" loading="lazy" draggable="false"></span><span class="nm-who">${_esc(name)}</span><span class="nm">a colar</span>`
+                : `<span class="ph" aria-hidden="true">${albGhost(p ? 'player' : (stk(sid) || {}).kind)}</span>${name ? `<span class="nm-who">${_esc(name)}</span>` : ''}<span class="nm">a colar</span>`}
             </div>`;
           }).join('')}
           ${(() => {
@@ -322,6 +324,7 @@ function fitAlbMap() {
   if (m.dataset.drawn === key) return;
   const fresh = m.dataset.drawn ? new Set() : _amapFresh();
   m.dataset.drawn = key;
+  if (_amapArrive) { m.classList.add(_amapArrive === 'out' ? 'is-arriving-out' : 'is-arriving-in'); _amapArrive = null; }
   m.style.width = W + 'px'; m.style.height = H + 'px';
   if (amapView === 'WORLD') {
     const wd = atlasWorld(W, H, fresh);
@@ -367,6 +370,19 @@ function fitAlbInsets() {
     }
   });
 }
+/* from the world into a part of it: the map leans in towards the spot tapped and the chart comes up out of it;
+   back to the world, the chart draws away and the world comes back from afar */
+let _amapArrive = null;
+function _amapFly(id, x, y) {
+  const m = document.getElementById('amap');
+  snd.page();
+  if (!m || FX_STILL) { amapView = id; go(); return; }
+  const out = id === 'WORLD';
+  if (x == null) { x = m.clientWidth / 2; y = m.clientHeight / 2; }
+  m.style.transformOrigin = `${x.toFixed(0)}px ${y.toFixed(0)}px`;
+  m.classList.add(out ? 'is-leaving-out' : 'is-leaving-in');
+  setTimeout(() => { if (sc !== 'album') return; amapView = id; _amapArrive = out ? 'out' : 'in'; go(); }, 230);
+}
 function _amapOpen(c) {
   snd.swipe();
   albCtry = c;
@@ -388,7 +404,7 @@ function wireAlbMap() {
   on('amap-play', () => { snd.select(); startMilhao(); });
   document.querySelectorAll('[data-view]').forEach(b => b.addEventListener('click', () => {
     if (b.dataset.view === amapView) return;
-    snd.page(); amapView = b.dataset.view; go();
+    _amapFly(b.dataset.view);
   }));
   document.querySelectorAll('.amap-nr').forEach(b => b.addEventListener('click', () => _amapOpen(b.dataset.place)));
   const m = document.getElementById('amap');
@@ -410,6 +426,6 @@ function wireAlbMap() {
         id = Object.keys(an).sort((a, b) => Math.hypot(an[a][0] - ux, an[a][1] - uy) - Math.hypot(an[b][0] - ux, an[b][1] - uy))[0];
       }
     }
-    if (id) { snd.page(); amapView = id; go(); }
+    if (id) { const r = m.getBoundingClientRect(); _amapFly(id, e.clientX - r.left, e.clientY - r.top); }
   });
 }

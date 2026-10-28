@@ -21,15 +21,38 @@
 .is-rev .onde-map { cursor: grab; }
 .onde-svg, .onde-ov { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
 .onde-ov { pointer-events: none; overflow: visible; }
-.onde-deco { position: absolute; left: 0; right: 0; display: flex; align-items: center; justify-content: center; pointer-events: none;
-  opacity: 0; transition: opacity .25s; z-index: 1; overflow: hidden; }
-.onde-deco-t { top: 0; height: var(--ob-t, 0px); align-items: flex-end; padding-bottom: 12px; }
-.onde-deco-b { bottom: 0; height: var(--ob-b, 0px); }
-.has-top .onde-deco-t, .has-bot .onde-deco-b { opacity: 1; }
-.onde-cart { width: min(76%, 230px); height: auto; max-height: 100%; }
-.onde-deco-b { gap: 18px; }
-.onde-rose { width: 56px; height: 56px; }
-.onde-ship { width: 66px; height: 60px; }
+/* the hemispheres' lettering, over the map at a size of its own: the parts of the world in spaced capitals,
+   the seas in italic, the countries in small capitals, each with a halo of paper */
+.onde-lbls { position: absolute; inset: 0; pointer-events: none; overflow: hidden; z-index: 1; }
+.ol { position: absolute; left: 0; top: 0; white-space: nowrap; will-change: transform; font-family: 'IM Fell English', 'Fraunces', Georgia, serif;
+  color: #3A2A1A; text-shadow: 0 0 2px #F6EDD3, 0 0 2px #F6EDD3, 0 0 3px #F6EDD3; line-height: 1; }
+.ol-big { font-size: 13px; letter-spacing: .38em; }
+.ol-land { font-size: 8.5px; letter-spacing: .2em; color: #4A3926; }
+.ol-sea { font-size: 11px; font-style: italic; color: #2E4A3C; text-shadow: 0 0 2px #C7D9CB, 0 0 3px #C7D9CB; }
+.ol-nm { font-size: 9.5px; letter-spacing: .08em; text-transform: uppercase; color: #4A3926; }
+.onde-map.is-near .og-hills, .onde-map.is-close .og-deco, .onde-map.is-near .og-band { display: none; }
+.onde-map.is-zoomed .og-cart { opacity: 0; }
+.og-cart { transition: opacity .3s; }
+/* the results' little map: the two worlds side by side, each event numbered where it was, the pins and the lines */
+.onde-res-map { flex: 1 1 0; min-height: 0; max-height: 218px; width: 100%; max-width: 440px; display: flex; justify-content: center;
+  filter: drop-shadow(0 3px 6px rgba(0, 0, 0, .18)); }
+.onde-res-map > svg { height: 100%; width: auto; max-width: 100%; aspect-ratio: 2.02; display: block; overflow: visible; }
+.onde-res-map.is-tiny { display: none; }
+.onde-res-map .og-deco, .onde-res-map .og-hills { opacity: .8; }
+.oe-m { animation: oe-pop .45s cubic-bezier(.3, 1.6, .5, 1) calc(.35s + var(--i) * .12s) both; transform-box: fill-box; }
+@keyframes oe-pop { from { opacity: 0; } }
+.oe-ln { fill: none; stroke: #2A1D10; stroke-width: 1.2; stroke-dasharray: 3 2.4; vector-effect: non-scaling-stroke; opacity: .75; }
+.oe-g { fill: #8E2F2F; stroke: #F7F1E2; stroke-width: 1; vector-effect: non-scaling-stroke; }
+.oe-t { stroke: #2A1D10; stroke-width: 1.2; vector-effect: non-scaling-stroke; }
+.oe-good .oe-t { fill: #3A9C6E; } .oe-brass .oe-t { fill: #D9A441; } .oe-bad .oe-t { fill: #C9573F; }
+.oe-n { font: 800 6.4px/1 var(--font-s); fill: #fff; text-anchor: middle; dominant-baseline: central; }
+.onde-li-n { display: inline-grid; place-items: center; width: 15px; height: 15px; margin-right: 5px; border-radius: 50%; font: 800 9px/1 var(--font-s);
+  font-style: normal; color: #fff; vertical-align: 1px; background: #C9573F; }
+.good > .onde-li-n { background: #3A9C6E; } .brass > .onde-li-n { background: #D9A441; }
+.onde-list .ano-li-p { white-space: nowrap; }
+@media (max-height: 700px) { .onde-res-map { display: none; } .onde-li-n { display: none; } }
+.onde-dist { position: absolute; left: 0; top: 0; z-index: 3; pointer-events: none; white-space: nowrap; will-change: transform;
+  font: 700 11px/1 var(--font-s); color: #F7F1E2; background: rgba(42, 29, 16, .86); padding: 4px 7px; border-radius: 10px; }
 #onde-line { stroke: #2A1D10; stroke-width: 2; stroke-dasharray: 5 4; stroke-linecap: round; }
 .onde-mk { position: absolute; left: 0; top: 0; pointer-events: none; will-change: transform; z-index: 2; }
 .onde-mk.is-off { opacity: 0; }

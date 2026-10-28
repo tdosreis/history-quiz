@@ -23,8 +23,8 @@ STATES = {
  "shot-02-milhao": ("isMil=true; rung=10; banked=5000; diffKey='moderado'; var g=buildMilhao(); cat=g; qi=10; sel.clear(); pts=480; streak=4; runLog=[3,3,3,3,3,3,3,3,3,3]; sc='quiz'; tMax=30; tLeft=22; disp=getDisp(cat.qs[qi]); go();"),
  "shot-03-album": SEED + " albView='map'; amapView='WORLD'; sc='album'; go();",
  "shot-04-onde": ("chal={g:'o',seed:4242,score:0,accepted:true}; startOnde(); chal=null;"
-                  " var q=onde.qs[0]; ondeSetPin(ondeXY(q.at[0]+0.6, q.at[1]+0.9)); ondeCommit(); ondeNext();"
-                  " q=onde.qs[1]; ondeSetPin(ondeXY(q.at[0]+2.2, q.at[1]-3.1)); ondeCommit();"
+                  " var q=onde.qs[0]; ondeSetPin([q.at[0]+0.6, q.at[1]+0.9]); ondeCommit(); ondeNext();"
+                  " q=onde.qs[1]; ondeSetPin([q.at[0]+2.2, q.at[1]-3.1]); ondeCommit();"
                   " var xy=ondeXY(q.at[0]+1, q.at[1]-1.5); onde.v={cx:xy[0],cy:xy[1],z:3.2}; go();"),
  "shot-05-cronologia": ("chal={g:'c',seed:90210,score:0,accepted:true}; startCron(); chal=null;"
                         " for (var k=0;k<9;k++){ var e=cron.cur, r=cron.line.findIndex(function(x){return x.y>e.y}); cronPlace(r<0?cron.line.length:r); cronNext(); }"),

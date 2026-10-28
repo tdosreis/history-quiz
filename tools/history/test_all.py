@@ -214,11 +214,24 @@ JS = r"""
     ids.forEach(id => {
       const [la, lo, pl] = ONDE_AT[id], w = 'onde ' + id + ': ';
       if (!aid.has(id)) F(w + 'no such event');
-      if (!(la > -56 && la < 78 && lo >= -180 && lo <= 180)) F(w + 'off the map ' + la + ',' + lo);
+      if (!(la > -85 && la < 85 && lo >= -180 && lo <= 180)) F(w + 'off the map ' + la + ',' + lo);
       if (!pl || pl.length > 60 || /^,|,$|\s{2}/.test(pl)) F(w + 'odd place name ' + pl);
       const [x, y] = ondeXY(la, lo), [la2, lo2] = ondeLL([x, y]);
       if (ondeKm([la, lo], [la2, lo2]) > 1) F(w + 'the projection does not round-trip');
     });
+    /* the two hemispheres turn back exactly, rims included, on a tall map and on a wide one; between them is no place */
+    for (const box of [{ W: 340, H: 560 }, { W: 700, H: 300 }]) {
+      _ondeLay = null; const L = ondeLayout(box);
+      if ((box.W > box.H) !== (L.key === 'row')) F('onde: the discs are not laid out for a ' + box.W + '×' + box.H + ' map');
+      for (let la = -88; la <= 88; la += 8) for (let lo = -180; lo < 180; lo += 7) {
+        const q = ondeXY(la, lo), b = ondeLL(q);
+        if (!b || ondeKm([la, lo], b) > 1) { F('onde: ' + la + ',' + lo + ' does not round-trip on a ' + L.key + ' map'); break; }
+      }
+      if (ondeLL([L.x0 + 1, L.y0 + 1]) || ondeLL([0, 0])) F('onde: a tap off the discs is a place');
+      if (ondeHemi(-20) !== 'W' || ondeHemi(-19.9) !== 'E' || ondeHemi(159.9) !== 'E' || ondeHemi(160.1) !== 'W') F('onde: the hemispheres do not meet on 20°W and 160°E');
+    }
+    _ondeLay = null;
+    if (OM.W.names.length + OM.E.names.length < 150) F('onde: few countries lettered');
     if (Math.abs(ondeKm([0, 0], [0, 1]) - 111.2) > 0.5) F('ondeKm is off');
     if (ondeKm([0, 179], [0, -179]) > 230) F('ondeKm does not wrap at the date line');
     if (ondePts(0) !== 100 || ondePts(50) !== 100 || ondePts(51) > 99 || ondePts(20000) !== 0) F('ondePts scale is off');

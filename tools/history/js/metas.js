@@ -107,11 +107,22 @@ function metaFlush() {
 /* the cover's footer link */
 const metasTail = () => { const l = metasList(); return `${l.filter(g => g.done).length}/${l.length}`; };
 
+/* the week as a desk calendar: the days gone crossed out in red ink, today ringed, and a seal with the goals met */
+const METAS_DIAS = ['Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb', 'Dom'];
+function metasWeekStrip(l) {
+  const today = dayIndex() % 7, done = l.filter(g => g.done).length, now = new Date();
+  const date = i => new Date(now.getFullYear(), now.getMonth(), now.getDate() - today + i).getDate();
+  return `<div class="metas-week" aria-hidden="true">
+    <div class="metas-cal">${METAS_DIAS.map((d, i) => `<span class="mc-day${i < today ? ' is-gone' : i === today ? ' is-today' : ''}"><small>${d}</small><b>${date(i)}</b></span>`).join('')}</div>
+    <span class="metas-seal${done === l.length ? ' is-full' : ''}"><b>${done}</b><small>de ${l.length}</small></span>
+  </div>`;
+}
 function metasHtml() {
   const l = metasList(), left = metasLeft(), all = l.every(g => g.done), free = seloAll().some(id => !selos[id]);
   return `
   <div class="pg metas-pg">
     ${topbar('Metas da semana')}
+    ${metasWeekStrip(l)}
     <p class="metas-when">${all ? 'As três cumpridas!' : `${l.filter(g => g.done).length} de ${l.length} cumpridas`} · <b>${left === 1 ? 'último dia' : `faltam ${left} dias`}</b></p>
     <div class="metas-list">
       ${l.map(g => `<div class="meta${g.done ? ' is-done' : ''}">
