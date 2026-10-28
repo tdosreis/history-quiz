@@ -325,6 +325,20 @@ DRIVE = r"""
   window._newMedals = MEDALS.slice(0, 2); go(); fit('mito/fim');
   mf.log = mf.log.slice(-1); go(); fit('mito/fim-1');
   LS.set('mfBest', keepMf[0]); LS.set('mfSeen', keepMf[1]); selos = JSON.parse(keepMf[2]); LS.set('selos', selos); mf = null;
+  /* Onde foi?'s door; No rastro do ladrão: the poster, each stop's file and choices, a flight, a cold trail, both ends */
+  sc='ondeMenu'; go(); fit('onde/menu');
+  var keepOD = LS.get('ondeDia', null); LS.set('ondeDia', { day: dayIndex(), pts: 640 }); go(); fit('onde/menu-feito'); LS.set('ondeDia', keepOD);
+  [11, 23, 37, 51].forEach(function(sd, j22){
+    startLadrao(sd * 1009); fit('ladrao/cartaz'); lr.phase='clue'; lr.hot=true; go(); fit('ladrao/pista0');
+    for (var k22=1; k22<=LR_STOPS; k22++){
+      if (k22 === 2 && j22 % 2) { var wr = lr.opts[2].find(function(p){ return p !== lr.chain[2]; }); lr.to = wr; lr.flyH = 3; lr.phase='fly'; go(); fit('ladrao/voo'); lrLand(); fit('ladrao/fria'); lrBack(); fit('ladrao/volta'); }
+      if (lr.phase !== 'clue') break;
+      lr.to = lr.chain[lr.stop + 1]; lr.flyH = 2; lr.phase='fly'; lrLand(); if (lr.phase === 'clue') fit('ladrao/pista'+lr.stop);
+    }
+    window._newMedals = j22 ? MEDALS.slice(0, 2) : []; go(); fit('ladrao/fim-preso');
+  });
+  startLadrao(999); lr.phase='clue'; lr.hours=1; lr.to=lr.chain[1]; lr.flyH=5; lr.phase='fly'; lrLand(); fit('ladrao/fim-escapou');
+  lr = null;
   /* Metas da semana: fresh, one met with its stamp, all three met */
   LS.set('metas', null); sc='metas'; go(); fit('metas/nova');
   var sm=metasState(), lm=metasList(); sm.base[lm[0].m.id]=lm[0].m.v()-lm[0].n; sm.base[lm[1].m.id]=lm[1].m.v()-Math.floor(lm[1].n/2); LS.set('metas', sm); metasCheck(); go(); fit('metas/uma');

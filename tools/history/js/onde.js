@@ -86,15 +86,46 @@ function buildOnde() {
   take(shuf([].concat(by.EU, by.AM, by.AF, by.AS)), ONDE_N - qs.length);
   return { qs: shuf(qs).slice(0, ONDE_N).map(e => ({ e, at: ONDE_AT[e.id] })), i: 0, pin: null, log: [], pts: 0, phase: 'guess', v: { cx: 0, cy: 0, z: 1 } };
 }
-function startOnde() {
+function startOnde(day) {
   isDaily = false; isSurv = false; isMil = false; isRev = false;
   runSelos = [];
-  /* dealt from a seed, so the game can be sent to a friend as a challenge (js/desafio.js) */
-  const seed = chalSeed('o');
+  /* dealt from a seed, so the game can be sent to a friend as a challenge (js/desafio.js); the day's map is
+     dealt from the day's number, the same ten places for everyone */
+  const seed = day ? (dayIndex() * 7919 + 101) % CHAL_SEED_MAX : chalSeed('o');
   seedFrom(seed); onde = buildOnde(); _seed = null;
-  onde.seed = seed;
+  onde.seed = seed; onde.dia = !!day && !ondeDiaRes();
   sc = 'onde';
   go();
+}
+const ondeDiaRes = () => { const r = LS.get('ondeDia', null); return r && r.day === dayIndex() ? r : null; };
+
+/* the door: the day's map, a game of one's own, and the chase */
+function ondeMenuHtml() {
+  const r = ondeDiaRes(), best = LS.get('ondeBest', 0);
+  return `
+  <div class="pg cron-menu">
+    ${topbar('Onde foi?')}
+    <div class="cron-menu-in">
+      <span class="chal-ic mode-disc mode-onde" aria-hidden="true">${ICON.globe('currentColor', 28)}</span>
+      <div class="display" style="font-size:30px;"><em>A História no mapa</em></div>
+      <p class="small muted cron-menu-p">Cada acontecimento tem um lugar. Ache-o no mapa-múndi — ou siga um ladrão de cidade em cidade pelas pistas que ele deixa.</p>
+      <button id="onde-dia" class="cron-opt is-day${r ? ' is-done' : ''}" type="button">
+        <span class="mode-disc mode-${r ? 'done' : 'daily'}">${ICON.calendar('currentColor', 18)}</span>
+        <span><b>${r ? 'Mapa do dia · feito' : 'Mapa do dia · nº ' + dayIndex()}</b><small>${r ? `${r.pts} pts hoje · jogar de novo, sem valer` : 'Os mesmos dez lugares para todo mundo, hoje'}</small></span></button>
+      <button id="onde-free" class="cron-opt" type="button">
+        <span class="mode-disc mode-onde">${ICON.globe('currentColor', 18)}</span>
+        <span><b>Partida livre</b><small>${best > 0 ? 'Recorde: ' + best + ' pts' : 'Dez acontecimentos para achar no mapa'}</small></span></button>
+      <button id="onde-lr" class="cron-opt" type="button">
+        <span class="mode-disc mode-lr">${ICON.map('currentColor', 18)}</span>
+        <span><b>No rastro do ladrão</b><small>${stats.lrCaught > 0 ? `${stats.lrCaught} ${stats.lrCaught === 1 ? 'ladrão preso' : 'ladrões presos'}` : 'Siga as pistas de cidade em cidade'}</small></span></button>
+    </div>
+  </div>`;
+}
+function wireOndeMenu() {
+  const ready = tapArmed();
+  document.getElementById('onde-dia')?.addEventListener('click', () => { if (ready()) { snd.select(); startOnde(true); } });
+  document.getElementById('onde-free')?.addEventListener('click', () => { if (ready()) { snd.select(); startOnde(); } });
+  document.getElementById('onde-lr')?.addEventListener('click', () => { if (ready()) { snd.select(); startLadrao(); } });
 }
 
 /* the picture of an event, small: its scene, or a face, a brasão, a flag */
@@ -244,7 +275,7 @@ function ondeEndHtml() {
   const msg = onde.pts >= 800 ? 'Um atlas ambulante!' : onde.pts >= 600 ? 'Ótimo senso de direção!' : onde.pts >= 400 ? 'Nada mau!' : 'O mundo é grande…';
   return `
   <div class="pg pg-center ano-end" style="padding:22px 18px;gap:9px;">
-    <div class="eyebrow">Onde foi? · ${ONDE_N} eventos</div>
+    <div class="eyebrow">${onde.diaDone ? `Mapa do dia nº ${dayIndex()}` : `Onde foi? · ${ONDE_N} eventos`}</div>
     <div class="display" style="font-size:28px;"><em>${msg}</em></div>
     ${wreathed(onde.pts >= ONDE_N * 60, `<div class="display prize-pop brass" style="font-size:50px;letter-spacing:-.03em;">${onde.pts}<span class="muted" style="font-size:18px;"> / ${ONDE_N * 100}</span></div>`)}
     ${chalBanner() || `<p class="small muted">${onde.isBest ? 'Seu novo recorde!' : `Recorde: ${best} pts`}</p>`}
@@ -450,6 +481,8 @@ function ondeNext() {
     LS.set('stats', stats);
     onde.isBest = onde.pts > LS.get('ondeBest', 0);
     if (onde.isBest) LS.set('ondeBest', onde.pts);
+    /* the day's map is kept, once: the first time it is played today */
+    if (onde.dia) { LS.set('ondeDia', { day: dayIndex(), pts: onde.pts }); stats.ondeDias = (stats.ondeDias || 0) + 1; LS.set('stats', stats); onde.dia = false; onde.diaDone = true; }
     window._newMedals = (onde.medals || []).concat(newMedals());
     setTimeout(() => snd.final(onde.pts >= 500), 200);
   } else {

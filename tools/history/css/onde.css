@@ -120,3 +120,10 @@
   .cv-toc-4 .cv-row { padding: 6px 4px 7px; }
   .cv-toc-4 .cv-rt small { display: none; }
 }
+
+/* at night the parchment is lit by a candle: dimmer, warmer, darker at its edges (under the lettering and the pins) */
+:root[data-theme="dark"] .onde-map::after, :root:not([data-theme="light"]) .onde-map::after,
+:root[data-theme="dark"] .lr-map::after, :root:not([data-theme="light"]) .lr-map::after {
+  content: ''; position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  background: radial-gradient(ellipse 80% 75% at 50% 50%, rgba(28, 16, 6, .18) 45%, rgba(28, 16, 6, .5) 100%), rgba(40, 24, 8, .1); }
+:root[data-theme="dark"] .onde-res-map > svg, :root:not([data-theme="light"]) .onde-res-map > svg { filter: brightness(.8) sepia(.12); }

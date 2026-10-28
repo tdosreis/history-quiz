@@ -48,4 +48,19 @@ Object.assign(FLAGS, {
      + `<circle cx="4.5" cy="3" r=".95" fill="#FFE600" stroke="#D20000" stroke-width=".2"/>`,
   ETH: _H3('#078930', '#FCDD09', '#DA121D') + `<circle cx="4.5" cy="3" r="1.05" fill="#0F47AF"/>` + _STAR(4.5, 3, .6, '#FCDD09'),
   AGO: `<rect width="9" height="3" fill="#CC092F"/><rect y="3" width="9" height="3" fill="#000"/><circle cx="4.5" cy="3" r=".95" fill="none" stroke="#FFCB00" stroke-width=".28"/>` + _STAR(4.5, 3, .5, '#FFCB00'),
+  /* the places the chase runs through (js/ladrao.js) */
+  SYR: _H3('#CE1126', '#fff', '#000') + _STAR(3.3, 3, .5, '#007A3D') + _STAR(5.7, 3, .5, '#007A3D'),
+  BOL: _H3('#D52B1E', '#F9E300', '#007934'),
+  LTU: _H3('#FDB913', '#006A44', '#C1272D'),
+  BHS: _H3('#00778B', '#FFC72C', '#00778B') + `<path d="M0 0L3.9 3L0 6z" fill="#000"/>`,
+  KAZ: `<rect width="9" height="6" fill="#00AFCA"/><rect x=".35" width=".32" height="6" fill="#FEC50C" opacity=".85"/><circle cx="4.7" cy="2.7" r=".85" fill="#FEC50C"/>`
+     + Array.from({ length: 16 }, (_, i) => { const a = i * Math.PI / 8; return `<path d="M${(4.7 + Math.cos(a) * 1.05).toFixed(2)} ${(2.7 + Math.sin(a) * 1.05).toFixed(2)}L${(4.7 + Math.cos(a) * 1.4).toFixed(2)} ${(2.7 + Math.sin(a) * 1.4).toFixed(2)}" stroke="#FEC50C" stroke-width=".16"/>`; }).join('')
+     + `<path d="M3.4 4.6q1.3-.7 2.6 0" stroke="#FEC50C" stroke-width=".3" fill="none"/>`,
+  BIH: `<rect width="9" height="6" fill="#002395"/><path d="M2.7 0H7V6z" fill="#FECB00"/>`
+     + Array.from({ length: 8 }, (_, i) => `<circle cx="${(2.15 + i * .62).toFixed(2)}" cy="${(.3 + i * .78).toFixed(2)}" r=".19" fill="#fff"/>`).join(''),
+  ECU: `<rect width="9" height="3" fill="#FFD100"/><rect y="3" width="9" height="1.5" fill="#034EA2"/><rect y="4.5" width="9" height="1.5" fill="#ED1C24"/><ellipse cx="4.5" cy="3" rx=".6" ry=".75" fill="#8B6B3D" stroke="#FFD100" stroke-width=".12"/>`,
+  VAT: `<rect width="4.5" height="6" fill="#FFE000"/><rect x="4.5" width="4.5" height="6" fill="#fff"/><path d="M5.9 2.4l1.6 1.9M7.5 2.4L5.9 4.3" stroke="#C9A04E" stroke-width=".28" stroke-linecap="round"/><path d="M6.35 1.9h.7l-.35-.45z" fill="#C9A04E"/>`,
+  SAU: `<rect width="9" height="6" fill="#006C35"/><path d="M2.3 2.4c.6-.3 1-.1 1.5-.3s.9.2 1.4-.1.9.1 1.5-.2" stroke="#fff" stroke-width=".42" fill="none" stroke-linecap="round"/><path d="M2.6 3.9h3.9l.35-.2" stroke="#fff" stroke-width=".22" fill="none"/>`,
+  CAN: `<rect width="9" height="6" fill="#fff"/><rect width="2.25" height="6" fill="#D52B1E"/><rect x="6.75" width="2.25" height="6" fill="#D52B1E"/>`
+     + `<path d="M4.5 1.1l.33.66.55-.22-.13.86.6-.5.12.5.55-.1-.3.8.25.13-1.0.82.12.38-.95-.12V4.7h-.28v-.42l-.95.12.12-.38-1-.82.25-.13-.3-.8.55.1.12-.5.6.5-.13-.86.55.22z" fill="#D52B1E"/>`,
 });

@@ -511,6 +511,53 @@ JS = r"""
     Object.assign(stats, JSON.parse(keepS)); LS.set('stats', stats); LS.set('mfBest', keepB); LS.set('mfSeen', keepSeen);
     selos = JSON.parse(keepSelos); LS.set('selos', selos); mf = null; fromGab = false; sc = 'home';
   } catch (e) { F('mito EXC ' + e.stack); }
+  /* ── No rastro do ladrão: every case a chain of far cities, three real choices at each, clues that do not name the
+        answer, a way to the end both ways; the Onde foi? door and its map of the day ── */
+  try {
+    const keepS = JSON.stringify(stats), keepD = LS.get('ondeDia', null);
+    note.ladrao = { places: lrPlaces().length };
+    if (lrPlaces().length < 150) F('ladrao: only ' + lrPlaces().length + ' places');
+    let noflag = 0, cases = 0;
+    for (let seed = 1; seed <= 80; seed++) {
+      lrNew(seed * 7919); cases++;
+      const w = 'ladrao case ' + seed + ': ';
+      if (lr.chain.length !== LR_STOPS + 1 || new Set(lr.chain).size !== lr.chain.length) F(w + 'a chain of ' + lr.chain.length);
+      for (let i = 1; i < lr.chain.length; i++) {
+        if (ondeKm(lr.chain[i - 1].at, lr.chain[i].at) < 900) F(w + 'two stops too near: ' + lr.chain[i - 1].name + ' / ' + lr.chain[i].name);
+        const o = lr.opts[i];
+        if (o.length !== 3 || !o.includes(lr.chain[i]) || new Set(o).size !== 3) F(w + 'stop ' + i + ' has ' + o.length + ' choices');
+        for (let a = 0; a < o.length; a++) for (let b = a + 1; b < o.length; b++) if (ondeKm(o[a].at, o[b].at) < 1300) F(w + 'two choices too near at stop ' + i);
+        o.forEach(p => { if (!lrFlag(p.name)) noflag++; });
+        const c = lr.clues[i], first = lr.chain[i].name.split(/,|\(/)[0].trim();
+        if (first.length >= 5 && c.ev.toLowerCase().includes(first.toLowerCase())) F(w + 'the clue names ' + first + ': ' + c.ev);
+        if (!c.ev || !c.wx) F(w + 'a stop without its clues');
+      }
+      if (!(lr.hours > 0)) F(w + 'no time to give');
+    }
+    note.ladrao.cases = cases; note.ladrao.noflag = noflag;
+    /* the right way to the end: caught; and the clock run out: gone */
+    lrNew(4242); lr.phase = 'clue';
+    while (lr.phase === 'clue') { lr.to = lr.chain[lr.stop + 1]; lr.flyH = lrHours(ondeKm(lr.at.at, lr.to.at)); lr.phase = 'fly'; lrLand(); }
+    if (lr.phase !== 'end' || !lr.caught || lr.stop !== LR_STOPS) F('ladrao: the right way does not end in an arrest');
+    if (!/lr-stamp-big/.test(ladraoHtml())) F('ladrao: no end poster');
+    lrNew(4243); lr.phase = 'clue';
+    const wrongTo = lr.opts[1].find(p => p !== lr.chain[1]); lr.to = wrongTo; lr.flyH = 3; lr.phase = 'fly'; lrLand();
+    if (lr.phase !== 'cold' || !lr.wrong.includes(wrongTo)) F('ladrao: a wrong city is not a cold trail');
+    lrBack(); if (lr.phase !== 'clue' || lr.at !== lr.chain[0]) F('ladrao: the way back does not return');
+    lr.hours = 1; lr.to = lr.chain[1]; lr.flyH = 9; lr.phase = 'fly'; lrLand();
+    if (lr.phase !== 'end' || lr.caught) F('ladrao: the clock running out does not end the case');
+    /* the map of the day: the same ten places all day, and kept once */
+    LS.set('ondeDia', null);
+    startOnde(true); const a1 = onde.qs.map(q => q.e.id).join(); startOnde(true); const a2 = onde.qs.map(q => q.e.id).join();
+    if (a1 !== a2) F('onde: the map of the day is not the same twice');
+    if (!onde.dia) F('onde: the map of the day is not kept');
+    onde.qs.forEach((q, i) => { onde.i = i; onde.phase = 'guess'; ondeSetPin([q.at[0], q.at[1]]); ondeCommit(); });
+    onde.i = onde.qs.length - 1; ondeNext();
+    if (!ondeDiaRes() || ondeDiaRes().pts !== onde.pts) F('onde: the map of the day was not kept');
+    startOnde(true); if (onde.dia) F('onde: the map of the day counts twice');
+    sc = 'ondeMenu'; go(); if (!document.getElementById('onde-lr') || !document.getElementById('onde-dia')) F('onde: the door has no way to the chase or the day');
+    LS.set('ondeDia', keepD); Object.assign(stats, JSON.parse(keepS)); LS.set('stats', stats); lr = null; onde = null; sc = 'home';
+  } catch (e) { F('ladrao EXC ' + e.stack); }
   /* ── Hoje na História: every day of the year has five dates near it, the same five all day, each with its picture ── */
   try {
     const pool = hojePool();

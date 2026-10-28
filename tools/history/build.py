@@ -349,6 +349,8 @@ def main():
             # and its own mapa-múndi in two hemispheres (tools/history/onde_map.json, from ondemapgen.mjs)
             + "\n" + onde_js + "const ONDE_MAP = " + io.open(os.path.join(H, "onde_map.json"), encoding="utf-8").read().strip() + ";\n"
             + io.open(os.path.join(H, "js", "onde.js"), encoding="utf-8").read()
+            # No rastro do ladrão: a chase from city to city over the same map, by the clues the events leave
+            + io.open(os.path.join(H, "js", "ladrao.js"), encoding="utf-8").read()
             # a game sent to a friend as a link
             + io.open(os.path.join(H, "js", "desafio.js"), encoding="utf-8").read()
             # the questions once got wrong, to review
@@ -371,7 +373,7 @@ def main():
             + io.open(os.path.join(H, "js", "gabinete.js"), encoding="utf-8").read()
             # three goals a week, a stamp for each one met
             + io.open(os.path.join(H, "js", "metas.js"), encoding="utf-8").read())
-    s = put(s, "formats_css", "\n".join(io.open(os.path.join(H, "css", f), encoding="utf-8").read() for f in ("fonts.css", "formats.css", "selos_ano.css", "mapa.css", "onde.css", "desafio.css", "cronologia.css", "metas.css", "festa.css", "aod.css", "jornada.css", "retrato.css", "gazeta.css", "duo.css", "mito.css")))
+    s = put(s, "formats_css", "\n".join(io.open(os.path.join(H, "css", f), encoding="utf-8").read() for f in ("fonts.css", "formats.css", "selos_ano.css", "mapa.css", "onde.css", "desafio.css", "cronologia.css", "metas.css", "festa.css", "aod.css", "jornada.css", "retrato.css", "gazeta.css", "duo.css", "mito.css", "ladrao.css")))
     v = page.write(s)
     print("index.html + app.js?v=%s updated: %d bytes" % (v, len(s.encode("utf-8"))))
 
