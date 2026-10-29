@@ -6,6 +6,14 @@
 ═══════════════════════════════════════════════════ */
 let fromGab = false;   // a game opened from the cabinet goes back to it
 const GAB = [
+  { id: 'gab-tf', n: 'Super Trunfo', d: 'Suas figurinhas viram cartas', art: 'trophy', go: () => startTrunfo(),
+    tail: () => stats.tfWins > 0 ? stats.tfWins + (stats.tfWins === 1 ? ' vitória' : ' vitórias') : 'Contra o Arquivista', isNew: () => !(stats.tfGames > 0) },
+  { id: 'gab-cc', n: 'Cara a cara', d: 'Adivinhe quem é o mistério', art: 'telescope', go: () => startCaraCara(),
+    tail: () => stats.ccBest > 0 ? 'Recorde: ' + stats.ccBest : 'Dezesseis rostos', isNew: () => !(stats.ccGames > 0) },
+  { id: 'gab-rio', n: 'Rio do tempo', d: 'Pesque o século certo', art: 'ship', go: () => startRio(),
+    tail: () => stats.rioBest > 0 ? 'Recorde: ' + stats.rioBest : 'Reflexo e História', isNew: () => !(stats.rioGames > 0) },
+  { id: 'gab-mm', n: 'Mímica', d: 'Para jogar em turma', art: 'masks', go: () => startMimica(),
+    tail: () => stats.mmGames > 0 ? stats.mmGames + (stats.mmGames === 1 ? ' festa' : ' festas') : 'Dois times', isNew: () => !(stats.mmGames > 0) },
   { id: 'gab-mf', n: 'Mito ou fato?', d: 'Arraste a carta: lenda ou verdade?', art: 'scales', go: () => startMito(),
     tail: () => LS.get('mfBest', 0) > 0 ? 'Recorde: ' + LS.get('mfBest', 0) : 'Novo', isNew: () => !(stats.mfGames > 0) },
   { id: 'gab-duo', n: 'Duelo a dois', d: 'Dois jogadores, um celular', art: 'sword', go: () => startDuoSetup(),

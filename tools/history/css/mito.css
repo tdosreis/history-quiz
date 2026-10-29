@@ -123,3 +123,16 @@
   .gab-pedim { height: 22px; }
 }
 @media (prefers-reduced-motion: reduce) { .gab-niche { animation: none; } }
+
+/* the cabinet with eight niches: three to a shelf, the last shelf centred; the labels keep the name and how far you are */
+.gab-case { grid-template-columns: none; display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
+.gab-niche { width: calc((100% - 16px) / 3); }
+.gab-velvet { aspect-ratio: 1 / .78; }
+.gab-obj { width: 68%; }
+.gab-label { padding: 5px 4px 6px; gap: 1px; }
+.gab-label b { font-size: 12.5px; }
+.gab-label small { display: none; }
+.gab-tail { font-size: 8px; letter-spacing: .06em; }
+.gab-new { top: 5px; right: 5px; font-size: 7.5px; padding: 2px 5px; }
+.gab-title .display { font-size: clamp(19px, 3vh, 24px); }
+@media (max-height: 700px) { .gab-velvet { aspect-ratio: 1 / .62; } .gab-obj { width: 56%; } .gab-label b { font-size: 11.5px; } .gab-pedim { display: none; } }

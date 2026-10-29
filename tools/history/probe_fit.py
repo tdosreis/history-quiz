@@ -339,6 +339,39 @@ DRIVE = r"""
   });
   startLadrao(999); lr.phase='clue'; lr.hours=1; lr.to=lr.chain[1]; lr.flyH=5; lr.phase='fly'; lrLand(); fit('ladrao/fim-escapou');
   lr = null;
+  /* the four other games: Cara a cara's board through to its ends; Super Trunfo's table, every way a round falls, its end;
+     Mímica's setup, pass, each kind of card with long words, the summary and the end; the Rio's intro, a busy river, its end */
+  for (var g23=0; g23<3; g23++){
+    startCaraCara(); fit('caracara/inicio');
+    var qs23 = ['m15', 'eu', 'gov', 'v70', 'ac'];
+    for (var k23=0; k23<qs23.length && ccUp().length > 1; k23++){ ccAsk(qs23[k23]); fit('caracara/pergunta'); }
+    cc.pick = ccUp()[0].id; go(); fit('caracara/palpite');
+    if (ccUp().length > 1) { ccGuess(ccUp().find(function(p){ return p !== cc.secret; }).id); fit('caracara/errou'); }
+    ccGuess(cc.secret.id); window._newMedals = g23 ? MEDALS.slice(0, 3) : []; go(); fit('caracara/fim');
+  }
+  ccNew(); var o23 = cc.board.filter(function(p){ return p !== cc.secret; }); ccGuess(o23[0].id); ccGuess(o23[1].id); fit('caracara/fim-perdeu');
+  for (var g24=0; g24<3; g24++){
+    startTrunfo(); fit('trunfo/escolha');
+    var n24 = 0;
+    while (tf.phase !== 'end' && n24 < 60){ n24++;
+      if (tf.phase === 'show') { fit('trunfo/rodada'); tfNext(); }
+      else if (tf.phase === 'cpu') { fit('trunfo/arquivista'); tfPlay(tfCpuPick(tf.cpu[0])); }
+      else tfPlay(['ant','vida','fama','poder','saber'][n24 % 5]);
+    }
+    window._newMedals = g24 ? MEDALS.slice(0, 2) : []; go(); fit('trunfo/fim');
+  }
+  startMimica(); fit('mimica/times'); mmStart(); fit('mimica/vez');
+  mmGo(); ['act','draw','talk'].forEach(function(h){ mm.deck.filter(function(c){ return c.how === h; }).slice(0, 6).forEach(function(c){ mm.card = c; go(); fit('mimica/carta-' + h); }); });
+  mm.deck.filter(function(c){ return c.k === 'mon'; }).slice(0, 4).forEach(function(c){ mm.card = c; go(); fit('mimica/monumento'); });
+  for (var k25=0; k25<14; k25++) mmMark(k25 % 3 !== 1);
+  mmTimeUp(); fit('mimica/tempo');
+  mm.teams = ['Os Imperadores do Sofá', 'Turma da Revolução']; mm.done = mm.rounds * 2 - 1; mmAfter(); window._newMedals = MEDALS.slice(0, 2); go(); fit('mimica/fim');
+  startRio(); fit('rio/inicio'); rio.phase='play'; go();
+  for (var k26=0; k26<80; k26++) rioStep(.1); rioDraw(); fit('rio/rio');
+  for (var k27=0; k27<40; k27++){ rioStep(.1); var n27 = rio.notes.find(function(n){ return n.state === 'float'; }); if (n27 && k27 % 6 === 0) rioTap(n27.id); }
+  rioDraw(); fit('rio/pescando');
+  rio.t = RIO_TIME; rioStep(.1); window._newMedals = MEDALS.slice(0, 2); go(); fit('rio/fim');
+  cc = null; tf = null; mm = null; rio = null;
   /* Metas da semana: fresh, one met with its stamp, all three met */
   LS.set('metas', null); sc='metas'; go(); fit('metas/nova');
   var sm=metasState(), lm=metasList(); sm.base[lm[0].m.id]=lm[0].m.v()-lm[0].n; sm.base[lm[1].m.id]=lm[1].m.v()-Math.floor(lm[1].n/2); LS.set('metas', sm); metasCheck(); go(); fit('metas/uma');

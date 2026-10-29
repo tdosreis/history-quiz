@@ -5970,6 +5970,14 @@ const MEDALS = [
     t: st => (st.lrCaught || 0) >= 1 },
   { id:'lr5', ic:'crown', n:'Inspetor-chefe', d:'Prenda cinco ladrões de relíquias',
     t: st => (st.lrCaught || 0) >= 5, p: () => [stats.lrCaught || 0, 5] },
+  { id:'tf1', ic:'crown', n:'Trunfo na mão', d:'Vença o Arquivista no Super Trunfo só com figurinhas suas',
+    t: st => (st.tfOwnWins || 0) >= 1 },
+  { id:'cc1', ic:'star', n:'Fisionomista', d:'Descubra o rosto misterioso do Cara a cara com até três perguntas',
+    t: st => (st.ccSharp || 0) >= 1 },
+  { id:'rio300', ic:'flame', n:'Pescador de séculos', d:'Faça 300 pontos no Rio do tempo',
+    t: st => (st.rioBest || 0) >= 300, p: () => [stats.rioBest || 0, 300] },
+  { id:'mm1', ic:'star', n:'Festa na História', d:'Jogue uma partida de Mímica histórica com os amigos',
+    t: st => (st.mmGames || 0) >= 1 },
 ];
 
 function earnedMedals() { return MEDALS.filter(m => { try { return m.t(stats); } catch (e) { return false; } }); }
@@ -18658,6 +18666,10 @@ function html() {
   if (sc === 'gabinete') return gabineteHtml();
   if (sc === 'ondeMenu') return ondeMenuHtml();
   if (sc === 'ladrao') return ladraoHtml();
+  if (sc === 'caracara') return caracaraHtml();
+  if (sc === 'trunfo') return trunfoHtml();
+  if (sc === 'mimica') return mimicaHtml();
+  if (sc === 'rio') return rioHtml();
   if (sc === 'anoMenu') return anoMenuHtml();
   if (sc === 'metas') return metasHtml();
   if (sc === 'desafio') return chalHtml();
@@ -18742,7 +18754,7 @@ function html() {
         ${(() => { try { return almanacHtml(); } catch (e) { return ''; } })()}
 
         <nav class="cv-toc cv-toc-4" aria-label="Modos">
-          <h2 class="cv-h">Outros jogos</h2>
+          <h2 class="cv-h">Outros jogos<button id="bgab2" class="cv-more" type="button">Gabinete · ${GAB.length} jogos ${ICON.back('currentColor', 9).replace('<svg', '<svg style="transform:scaleX(-1)"')}</button></h2>
           ${row('daily-btn', 'I', 'Diário',
             done ? 'Feito hoje' + (dres ? ' · ' + dres.nCorrect + '/' + dres.total : '')
                  : 'Desafio nº ' + dayIndex() + (dst > 0 ? ' · ' + dst + ' dias seguidos' : ''),
@@ -19458,6 +19470,7 @@ function go() {
   on('surv-btn',    () => { snd.select(); startSurvival(); });
   on('bcred',       () => { snd.swipe();  sc = 'credits'; go(); });
   on('bcur',        () => { snd.select(); fromGab = false; sc = 'gabinete'; go(); });
+  on('bgab2',       () => { snd.select(); fromGab = false; sc = 'gabinete'; go(); });
   on('bmfn',        () => { snd.select(); startMito(); });
   on('bretn',       () => { snd.select(); startRetrato(); });
   on('bmed',        () => { snd.swipe();  sc = 'medals';  go(); });
@@ -19495,6 +19508,10 @@ function go() {
   if (sc === 'gabinete') wireGabinete();
   if (sc === 'ondeMenu') wireOndeMenu();
   if (sc === 'ladrao') wireLadrao();
+  if (sc === 'caracara') wireCaraCara();
+  if (sc === 'trunfo') wireTrunfo();
+  if (sc === 'mimica') wireMimica();
+  if (sc === 'rio') wireRio();
   if (sc === 'anoMenu') wireAnoMenu();
   if (sc === 'desafio') wireChal();
   on('bwelc',       () => { snd.tap(); openWelcomePack(); });
@@ -26133,12 +26150,704 @@ document.addEventListener('keydown', ev => {
 });
 
 /* ═══════════════════════════════════════════════════
+   SUPER TRUNFO DA HISTÓRIA — the album becomes a deck. Ten of your own
+   stickers (or cards on loan, while the album is thin) against ten of the
+   Arquivista's. Each card has five numbers: how long ago its figure was
+   born, how many years they lived, how famous they are in this game (how
+   many questions are about them), their Poder and their Saber. Whoever
+   won the last round calls a number from their top card; the higher one
+   takes both cards. One card of the twenty is the Super Trunfo: it beats
+   every card except those of group A, the Antiguidade.
+═══════════════════════════════════════════════════ */
+const TF_N = 10, TF_MAX = 18;
+const TF_STATS = [['ant', 'Antiguidade', 'anos atrás', 'hourglass'], ['vida', 'Longevidade', 'anos de vida', 'flame'],
+  ['fama', 'Fama', 'pontos', 'star'], ['poder', 'Poder', 'pontos', 'crown'], ['saber', 'Saber', 'pontos', 'book']];
+const TF_GROUP = y => y < 476 ? 'A' : y < 1453 ? 'B' : y < 1789 ? 'C' : 'D';
+/* fame: how many questions in the game are about the figure, as a place among them all (1 to 99) */
+let _tfFame = null;
+function tfFame(id) {
+  if (!_tfFame) {
+    const n = {};
+    CATS.forEach(c => c.qs.forEach(q => (q.a || []).forEach(a => { n[a] = (n[a] || 0) + 1; })));
+    const order = PL.slice().sort((a, b) => (n[a.id] || 0) - (n[b.id] || 0) || a.era[0] - b.era[0]);
+    _tfFame = {}; order.forEach((p, i) => { _tfFame[p.id] = 1 + Math.round(i / (order.length - 1) * 98); });
+  }
+  return _tfFame[id] || 1;
+}
+/* Poder and Saber lean on what the figure was (a ruler is strong, a thinker wise), and the rest is the card's own luck */
+const TF_LEAN = { GOV: [70, 30], GEN: [68, 24], REV: [54, 44], EXP: [42, 54], PEN: [22, 70], ART: [16, 60] };
+function tfStats(p) {
+  let h = 7; for (const c of p.id) h = (h * 31 + c.charCodeAt(0)) >>> 0;
+  const [pw, sb] = TF_LEAN[p.pos] || [40, 40];
+  return { ant: ANO_NOW - p.era[0], vida: p.era[1] - p.era[0], fama: tfFame(p.id), poder: Math.min(99, pw + h % 30), saber: Math.min(99, sb + (h >>> 8) % 30) };
+}
+let tf = null;   // { me: [card], cpu: [card], pot: [card], turn, phase: 'pick'|'cpu'|'show'|'end', stat, win, round, loaned }
+
+function tfNew() {
+  const own = shuf(PL.filter(p => p.img && album.has(p.id)));
+  const mine = own.slice(0, TF_N), loaned = Math.max(0, TF_N - mine.length);
+  const rest = shuf(PL.filter(p => p.img && !mine.includes(p)));
+  mine.push(...rest.splice(0, loaned));
+  const theirs = rest.slice(0, TF_N);
+  const card = (p, i, side) => ({ p, s: tfStats(p), g: TF_GROUP(p.era[0]), loan: side === 'me' && i >= TF_N - loaned });
+  const me = mine.map((p, i) => card(p, i, 'me')), cpu = theirs.map((p, i) => card(p, i, 'cpu'));
+  /* the Super Trunfo: the most famous card of the twenty */
+  const all = me.concat(cpu), st = all.reduce((a, b) => b.s.fama > a.s.fama ? b : a);
+  st.st = true;
+  /* each card's number in its group, as the printed decks had them: A1, A2…, B1… */
+  const num = {}; all.slice().sort((a, b) => a.p.era[0] - b.p.era[0]).forEach(c => { num[c.g] = (num[c.g] || 0) + 1; c.code = c.g + num[c.g]; });
+  tf = { me, cpu, pot: [], turn: 'me', phase: 'pick', stat: null, round: 1, loaned };
+}
+function startTrunfo() { isDaily = false; isSurv = false; isMil = false; isRev = false; tfNew(); sc = 'trunfo'; go(); }
+
+/* who takes the round on a number: the Super Trunfo beats all but group A; otherwise the higher number */
+function tfBeats(a, b, k) {
+  if (a.st && b.g !== 'A') return 1;
+  if (b.st && a.g !== 'A') return -1;
+  return Math.sign(a.s[k] - b.s[k]);
+}
+/* the Arquivista calls the number its card is best at, against the whole pack */
+let _tfRank = null;
+function tfCpuPick(c) {
+  if (!_tfRank) { _tfRank = {}; TF_STATS.forEach(([k]) => { _tfRank[k] = PL.map(p => tfStats(p)[k]).sort((a, b) => a - b); }); }
+  const pct = k => { const a = _tfRank[k]; let i = 0; while (i < a.length && a[i] < c.s[k]) i++; return i / a.length; };
+  return TF_STATS.map(([k]) => k).reduce((a, b) => pct(b) > pct(a) ? b : a);
+}
+function tfPlay(k) {
+  if (!tf || (tf.phase !== 'pick' && tf.phase !== 'cpu')) return;
+  const a = tf.me.shift(), b = tf.cpu.shift(), r = tfBeats(a, b, k);
+  tf.stat = k; tf.shown = [a, b]; tf.win = r; tf.phase = 'show';
+  if (r > 0) { tf.me.push(a, b, ...tf.pot); tf.pot = []; tf.turn = 'me'; }
+  else if (r < 0) { tf.cpu.push(b, a, ...tf.pot); tf.pot = []; tf.turn = 'cpu'; }
+  else tf.pot.push(a, b);
+  try { r > 0 ? snd.correct(0) : r < 0 ? snd.wrong() : snd.almost(); } catch (e) {}
+  go();
+  if (r > 0) requestAnimationFrame(() => { try { fx.splash(document.querySelector('.tf-card.is-me'), '#3A9C6E', 9); } catch (e) {} });
+}
+function tfNext() {
+  if (!tf || tf.phase !== 'show') return;
+  tf.round++;
+  if (!tf.me.length || !tf.cpu.length || tf.round > TF_MAX) return tfEnd();
+  tf.shown = null; tf.stat = null;
+  tf.phase = tf.turn === 'me' ? 'pick' : 'cpu';
+  go();
+}
+function tfEnd() {
+  tf.phase = 'end';
+  const m = tf.me.length, c = tf.cpu.length;
+  tf.result = m > c ? 1 : m < c ? -1 : 0;
+  stats.tfGames = (stats.tfGames || 0) + 1;
+  if (tf.result > 0) { stats.tfWins = (stats.tfWins || 0) + 1; if (!tf.loaned) stats.tfOwnWins = (stats.tfOwnWins || 0) + 1; }
+  LS.set('stats', stats);
+  window._newMedals = newMedals();
+  go();
+  setTimeout(() => { try { if (tf.result > 0) { snd.fanfare(); fx.rain(60); } else snd.final(tf.result === 0); } catch (e) {} }, 250);
+}
+
+/* a card as the old decks printed it: its code and group colour, the portrait, the name, five numbers */
+function tfCardHtml(c, side, open) {
+  if (!open) return `<div class="tf-card tf-back is-${side}" aria-label="Carta virada"><span class="tf-back-in">${ICON.crown('currentColor', 26)}<b>Super Trunfo</b><small>da História</small></span></div>`;
+  const pick = side === 'me' && tf.phase === 'pick', shown = tf.phase === 'show';
+  return `<div class="tf-card tf-g${c.g} is-${side}${c.st ? ' is-st' : ''}${shown ? (tf.win === 0 ? ' is-tie' : (tf.win > 0) === (side === 'me') ? ' is-win' : ' is-lose') : ''}">
+    <span class="tf-top"><b class="tf-code">${c.code}</b>${c.st ? '<span class="tf-st">Super Trunfo</span>' : c.loan ? '<span class="tf-loan">emprestada</span>' : ''}</span>
+    <span class="tf-pic"><img src="${c.p.img}" alt="" draggable="false"></span>
+    <span class="tf-nm">${_esc(c.p.n)}</span>
+    <span class="tf-rows">${TF_STATS.map(([k, n, u, ic]) => `<${pick ? 'button type="button"' : 'span'} class="tf-row${tf.stat === k ? ' is-on' : ''}" data-k="${k}">
+      ${(ICON[ic] || ICON.star)('currentColor', 11)}<span class="tf-k">${n}</span><b class="num">${c.s[k].toLocaleString('pt-BR')}</b></${pick ? 'button' : 'span'}>`).join('')}</span>
+    ${c.st ? '<span class="tf-st-rule">vence todas, menos as do grupo A</span>' : ''}
+  </div>`;
+}
+function trunfoHtml() {
+  if (!tf) tfNew();
+  if (tf.phase === 'end') return tfEndHtml();
+  const show = tf.phase === 'show', [a, b] = show ? tf.shown : [tf.me[0], tf.cpu[0]];
+  const S = tf.stat && TF_STATS.find(s => s[0] === tf.stat);
+  const why = show && S ? (a.st && b.g !== 'A' && tf.win > 0 ? 'O Super Trunfo vence!' : b.st && a.g !== 'A' && tf.win < 0 ? 'O Super Trunfo do Arquivista vence!'
+    : `${S[1]}: ${a.s[tf.stat].toLocaleString('pt-BR')} × ${b.s[tf.stat].toLocaleString('pt-BR')}`) : '';
+  return `
+  <div class="pg tf-pg">
+    ${topbar('Super Trunfo', fromGab ? 'bgab' : '')}
+    <div class="tf-score">
+      <span class="tf-pile is-me"><b class="num">${tf.me.length}</b><small>suas cartas</small></span>
+      <span class="tf-round">Rodada ${tf.round}${tf.pot.length ? ` · <b>${tf.pot.length}</b> na mesa` : ''}</span>
+      <span class="tf-pile is-cpu"><b class="num">${tf.cpu.length}</b><small>do Arquivista</small></span>
+    </div>
+    <div class="tf-table">
+      ${tfCardHtml(a, 'me', true)}
+      <span class="tf-vs" aria-hidden="true">×</span>
+      ${tfCardHtml(b, 'cpu', show)}
+    </div>
+    <div class="tf-say" role="status">${tf.phase === 'pick' ? '<b>Sua vez:</b> toque no número em que a sua carta é mais forte.'
+      : tf.phase === 'cpu' ? '<b>O Arquivista</b> está escolhendo…'
+      : `<b class="${tf.win > 0 ? 'good' : tf.win < 0 ? 'bad' : 'brass'}">${tf.win > 0 ? 'Você leva as cartas!' : tf.win < 0 ? 'O Arquivista leva.' : 'Empate: as cartas ficam na mesa.'}</b> <span>${why}</span>`}</div>
+    ${show ? '<button id="tf-next" class="btn btn-brass" type="button">Próxima rodada</button>' : ''}
+  </div>`;
+}
+function tfEndHtml() {
+  const r = tf.result;
+  return `
+  <div class="pg pg-center tf-pg tf-end">
+    <div class="eyebrow">Super Trunfo da História</div>
+    <div class="tf-fan" aria-hidden="true">${(r >= 0 ? tf.me : tf.cpu).slice(0, 5).map((c, i) => `<span style="--i:${i}"><img src="${c.p.img}" alt=""></span>`).join('')}</div>
+    <div class="display" style="font-size:28px;"><em>${r > 0 ? 'Você venceu o Arquivista!' : r < 0 ? 'O Arquivista venceu' : 'Empate!'}</em></div>
+    <p class="small muted" style="margin:0;">${tf.me.length} × ${tf.cpu.length} cartas${tf.round > TF_MAX ? ' no fim das rodadas' : ''}${tf.loaned ? ` · ${tf.loaned} ${tf.loaned === 1 ? 'carta emprestada' : 'cartas emprestadas'}: cole mais figurinhas para jogar só com as suas` : ''}</p>
+    ${medalChips()}
+    <div class="foot-row" style="margin-top:6px;">
+      <button id="tf-again" class="btn btn-brass" type="button">Nova partida</button>
+      <button id="${fromGab ? 'bgab' : 'bhome'}" class="btn btn-ghost btn-sm" type="button">${fromGab ? 'Gabinete' : 'Início'}</button>
+    </div>
+  </div>`;
+}
+function wireTrunfo() {
+  if (!tf) return;
+  const on = (id, fn) => document.getElementById(id)?.addEventListener('click', fn);
+  const ready = tapArmed(250);
+  document.querySelectorAll('button.tf-row').forEach(b => b.addEventListener('click', () => { if (ready()) tfPlay(b.dataset.k); }));
+  on('tf-next', () => { if (ready()) { snd.swipe(); tfNext(); } });
+  on('tf-again', () => { snd.select(); startTrunfo(); });
+  /* the Arquivista thinks, then calls */
+  if (tf.phase === 'cpu') { const r = tf.round; setTimeout(() => { if (sc === 'trunfo' && tf && tf.phase === 'cpu' && tf.round === r) tfPlay(tfCpuPick(tf.cpu[0])); }, 1100); }
+}
+
+/* ═══════════════════════════════════════════════════
+   CARA A CARA DA HISTÓRIA — the board game of faces, with history's.
+   Sixteen portraits; one of them is the mystery. Ask yes-or-no questions
+   (born before Christ? from the Americas? a painter?) and the faces that
+   do not fit fold down by themselves. Point at the one left — or guess
+   early, if you dare: two wrong guesses and the mystery walks away. The
+   fewer the questions, the more the points.
+═══════════════════════════════════════════════════ */
+const CC_N = 16;
+const ccCont = p => AMAP_PLACE_CONT[p.ctry] || '';
+/* [id, the question, what a figure answers, the group it is listed under] */
+const CC_QS = [
+  ['ac', 'Nasceu antes de Cristo?', p => p.era[0] < 0, 'Época'],
+  ['m10', 'Nasceu antes do ano 1000?', p => p.era[0] < 1000, 'Época'],
+  ['m15', 'Nasceu antes de 1500?', p => p.era[0] < 1500, 'Época'],
+  ['m18', 'Nasceu antes de 1800?', p => p.era[0] < 1800, 'Época'],
+  ['s20', 'Nasceu depois de 1900?', p => p.era[0] > 1900, 'Época'],
+  ['v70', 'Viveu mais de 70 anos?', p => p.era[1] - p.era[0] > 70, 'Vida'],
+  ['v45', 'Morreu antes dos 45?', p => p.era[1] - p.era[0] < 45, 'Vida'],
+  ['eu', 'É da Europa?', p => ccCont(p) === 'EU', 'Lugar'],
+  ['am', 'É das Américas?', p => ccCont(p) === 'AM', 'Lugar'],
+  ['as', 'É da Ásia?', p => ccCont(p) === 'AS', 'Lugar'],
+  ['af', 'É da África ou do Oriente Médio?', p => ccCont(p) === 'AF', 'Lugar'],
+  ['br', 'É do Brasil?', p => p.ctry === 'BRA', 'Lugar'],
+  ['gov', 'Governou um povo?', p => p.pos === 'GOV', 'Ofício'],
+  ['gen', 'Foi um chefe militar?', p => p.pos === 'GEN', 'Ofício'],
+  ['pen', 'Foi pensador ou cientista?', p => p.pos === 'PEN', 'Ofício'],
+  ['art', 'Foi artista?', p => p.pos === 'ART', 'Ofício'],
+  ['rev', 'Quis mudar as regras do seu tempo?', p => p.pos === 'REV', 'Ofício'],
+  ['exp', 'Foi explorador ou viajante?', p => p.pos === 'EXP', 'Ofício'],
+];
+let cc = null;   // { board: [p], secret: p, down: Set(id), asked: [[qid, yes]], tries, pick, phase, flip: [ids just folded] }
+
+function ccNew() {
+  const pool = shuf(PL.filter(p => p.img));
+  const board = pool.slice(0, CC_N);
+  cc = { board, secret: board[Math.floor(Math.random() * CC_N)], down: new Set(), asked: [], tries: 2, pick: null, phase: 'play', flip: [], said: null };
+}
+function startCaraCara() { isDaily = false; isSurv = false; isMil = false; isRev = false; ccNew(); sc = 'caracara'; go(); }
+const ccUp = () => cc.board.filter(p => !cc.down.has(p.id));
+/* a question that would fold none of the faces still up tells nothing: it is offered greyed */
+const ccHelps = q => { const up = ccUp(), y = up.filter(q[2]).length; return y > 0 && y < up.length; };
+
+function ccAsk(qid) {
+  if (!cc || cc.phase !== 'play' || cc.asked.some(a => a[0] === qid)) return;
+  const q = CC_QS.find(x => x[0] === qid), yes = !!q[2](cc.secret);
+  cc.asked.push([qid, yes]);
+  cc.flip = ccUp().filter(p => !!q[2](p) !== yes).map(p => p.id);
+  cc.flip.forEach(id => cc.down.add(id));
+  cc.said = yes; cc.pick = null;
+  try { snd.tap(); } catch (e) {}
+  go();
+  if (cc.flip.length) setTimeout(() => { try { snd.page(); } catch (e) {} }, 200);
+}
+function ccGuess(id) {
+  if (!cc || cc.phase !== 'play') return;
+  if (id === cc.secret.id) return ccEnd(true);
+  cc.tries--; cc.down.add(id); cc.flip = [id]; cc.pick = null; cc.said = 'nao-e';
+  try { snd.wrong(); haptic([28, 45, 28]); } catch (e) {}
+  if (cc.tries <= 0) return ccEnd(false);
+  go();
+}
+const ccScore = () => Math.max(10, 100 - 8 * cc.asked.length - 15 * (2 - cc.tries));
+function ccEnd(won) {
+  cc.phase = 'end'; cc.won = won; cc.score = won ? ccScore() : 0;
+  stats.ccGames = (stats.ccGames || 0) + 1;
+  if (won) { stats.ccWins = (stats.ccWins || 0) + 1; stats.ccBest = Math.max(stats.ccBest || 0, cc.score); }
+  if (won && cc.asked.length <= 3) stats.ccSharp = (stats.ccSharp || 0) + 1;
+  LS.set('stats', stats);
+  window._newMedals = newMedals();
+  go();
+  setTimeout(() => { try { if (won) { snd.fanfare(); fx.rain(50); } else snd.final(false); } catch (e) {} }, 250);
+}
+
+function caracaraHtml() {
+  if (!cc) ccNew();
+  if (cc.phase === 'end') return ccEndHtml();
+  const up = ccUp().length, last = cc.asked[cc.asked.length - 1], lq = last && CC_QS.find(q => q[0] === last[0]);
+  const pick = cc.pick && cc.board.find(p => p.id === cc.pick);
+  const groups = ['Época', 'Lugar', 'Ofício', 'Vida'];
+  return `
+  <div class="pg cc-pg">
+    ${topbar('Cara a cara', fromGab ? 'bgab' : '')}
+    <div class="cc-head">
+      <span class="cc-who" aria-hidden="true"><span class="cc-q">?</span></span>
+      <span class="cc-bubble${cc.said == null ? '' : cc.said === 'nao-e' ? ' is-no' : cc.said ? ' is-yes' : ' is-no'}" role="status">${cc.said == null
+        ? 'Sou um destes dezesseis. Pergunte!'
+        : cc.said === 'nao-e' ? `<b>Não sou eu!</b> ${cc.tries === 1 ? 'Só mais um palpite.' : ''}`
+        : `<small>${_esc(lq[1])}</small><b>${cc.said ? 'Sim!' : 'Não.'}</b>`}</span>
+      <span class="cc-meta"><b class="num">${cc.asked.length}</b><small>${cc.asked.length === 1 ? 'pergunta' : 'perguntas'}</small><i class="cc-tries">${'●'.repeat(cc.tries)}${'○'.repeat(2 - cc.tries)}</i></span>
+    </div>
+    <div class="cc-board" role="group" aria-label="Os dezesseis rostos; ${up} ainda de pé">
+      ${cc.board.map((p, i) => { const dn = cc.down.has(p.id), fl = cc.flip.includes(p.id);
+        return `<button class="cc-face${dn ? ' is-down' : ''}${fl ? ' is-folding' : ''}${cc.pick === p.id ? ' is-pick' : ''}" data-id="${p.id}" type="button"${dn ? ' disabled' : ''}
+          style="--d:${fl ? cc.flip.indexOf(p.id) * 45 : 0}ms" aria-label="${_esc(p.n)}${dn ? ' (descartado)' : ''}">
+          <span class="cc-in"><span class="cc-front"><img src="${p.img}" alt="" loading="lazy" draggable="false"><span class="cc-nm">${_esc(p.n)}</span></span>
+          <span class="cc-back" aria-hidden="true"></span></span></button>`; }).join('')}
+    </div>
+    ${pick ? `<div class="cc-accuse"><button id="cc-yes" class="btn btn-brass" type="button">É você, ${_esc(pick.n.split(' ')[0])}?</button>
+        <button id="cc-no" class="btn btn-ghost btn-sm" type="button">Ainda não</button></div>`
+    : `<div class="cc-asks scroll-x" role="group" aria-label="Perguntas">${groups.map(g => `<span class="cc-grp"><small>${g}</small>${
+        CC_QS.filter(q => q[3] === g).map(q => { const done = cc.asked.find(a => a[0] === q[0]), help = !done && ccHelps(q);
+          return `<button class="cc-ask${done ? (done[1] ? ' is-yes' : ' is-no') : help ? '' : ' is-idle'}" data-q="${q[0]}" type="button"${done ? ' disabled' : ''}>${q[1]}${done ? ` <b>${done[1] ? 'sim' : 'não'}</b>` : ''}</button>`; }).join('')}</span>`).join('')}</div>
+      <p class="cc-tip small muted">${up === 1 ? 'Só sobrou um rosto: toque nele para acusar!' : 'Toque num rosto para dar o seu palpite.'}</p>`}
+  </div>`;
+}
+function ccEndHtml() {
+  const p = cc.secret, cont = { EU: 'Europa', AM: 'Américas', AS: 'Ásia', AF: 'África e Oriente Médio' }[ccCont(p)] || '';
+  return `
+  <div class="pg pg-center cc-pg cc-end">
+    <div class="eyebrow">Cara a cara</div>
+    <div class="cc-reveal${cc.won ? ' is-won' : ''}">
+      <span class="cc-reveal-pic"><img src="${p.img}" alt=""></span>
+      <span class="cc-stamp">${cc.won ? 'Achou!' : 'Fugiu!'}</span>
+    </div>
+    <div class="display" style="font-size:26px;"><em>${cc.won ? `Era ${_esc(p.n)}!` : `Era ${_esc(p.n)}…`}</em></div>
+    <p class="small muted" style="margin:0;">${_esc(p.nick || '')}${p.nick ? ' · ' : ''}${POS_NAME[p.pos]} · ${cont} · ${anoYear(p.era[0])}–${anoYear(p.era[1])}</p>
+    ${cc.won ? `<div class="display prize-pop brass" style="font-size:44px;">${cc.score}<span class="muted" style="font-size:15px;"> pts</span></div>
+      <p class="small muted" style="margin:0;">${cc.asked.length} ${cc.asked.length === 1 ? 'pergunta' : 'perguntas'}${cc.tries < 2 ? ' · um palpite errado' : ''}</p>` : ''}
+    ${medalChips()}
+    <div class="foot-row" style="margin-top:6px;">
+      <button id="cc-again" class="btn btn-brass" type="button">De novo</button>
+      <button id="${fromGab ? 'bgab' : 'bhome'}" class="btn btn-ghost btn-sm" type="button">${fromGab ? 'Gabinete' : 'Início'}</button>
+    </div>
+  </div>`;
+}
+function wireCaraCara() {
+  if (!cc) return;
+  const on = (id, fn) => document.getElementById(id)?.addEventListener('click', fn);
+  const ready = tapArmed(200);
+  document.querySelectorAll('.cc-ask').forEach(b => b.addEventListener('click', () => { if (ready()) ccAsk(b.dataset.q); }));
+  document.querySelectorAll('.cc-face:not(.is-down)').forEach(b => b.addEventListener('click', () => {
+    if (!ready()) return; cc.pick = cc.pick === b.dataset.id ? null : b.dataset.id; snd.tap(); go(); }));
+  on('cc-yes', () => { if (ready()) ccGuess(cc.pick); });
+  on('cc-no', () => { cc.pick = null; snd.swipe(); go(); });
+  on('cc-again', () => { snd.select(); startCaraCara(); });
+  cc.flip = [];
+}
+
+/* ═══════════════════════════════════════════════════
+   MÍMICA HISTÓRICA — the party game, for a room full of people and one
+   phone. Two teams take turns; whoever holds the phone gets a card and a
+   minute, and the card says how to play it: act it out without a word,
+   draw it, or describe it without the three words printed under it. The
+   team shouts the answer; Acertou! scores, Pular passes. After each turn
+   the phone goes to the other team. The cards are the game's own: its
+   figures, its monuments and its events.
+═══════════════════════════════════════════════════ */
+const MM_TIME = 60;
+const MM_HOW = { act: ['🎭', 'Faça mímica', 'sem falar nada'], draw: ['✏️', 'Desenhe', 'sem letras nem números'], talk: ['🗣️', 'Descreva', 'sem dizer'] };
+const MM_COL = ['#2E5E7E', '#9B2226'];
+let mm = null;   // { teams, pts, rounds, turn, done, phase: 'setup'|'pass'|'play'|'sum'|'end', deck, card, log, t0, left }
+
+/* the cards: a figure (with its portrait to help whoever plays it), a monument, an event; and how each is played */
+function mmDeck() {
+  const figs = PL.filter(p => p.img).map(p => ({ k: 'fig', t: p.n, p, sub: p.nick || POS_NAME[p.pos] }));
+  const mons = (typeof MASCOTES !== 'undefined' ? MASCOTES : []).map(id => ({ k: 'mon', t: (stk(SK.msc(id)) || {}).n, sid: SK.msc(id), at: MONUMENT_AT[id], sub: 'Monumento' })).filter(c => c.t);
+  const evs = ANO_EVENTS.filter(e => e.t.length <= 46).map(e => ({ k: 'ev', t: e.t, e, sub: anoYear(e.y) }));
+  return shuf(shuf(figs).slice(0, 80).concat(shuf(mons), shuf(evs).slice(0, 60))).map(c => {
+    c.how = c.k === 'ev' ? (rnd() < .5 ? 'talk' : 'act') : ['act', 'draw', 'talk'][Math.floor(rnd() * 3)];
+    if (c.how === 'talk') c.no = mmBan(c);
+    if (c.how === 'talk' && !c.no.length) c.how = 'draw';      // nothing to forbid: it is drawn instead
+    return c;
+  });
+}
+/* three words that may not be said: what would give the card away at once */
+function mmBan(c) {
+  const words = [];
+  if (c.p) {
+    words.push(CTRY_NAME[c.p.ctry] || '', { GOV: 'governo', GEN: 'guerra', PEN: 'ideia', ART: 'arte', REV: 'revolução', EXP: 'viagem' }[c.p.pos]);
+    const nick = (c.p.nick || '').split(/\s+/).filter(w => w.length > 4).sort((a, b) => b.length - a.length)[0];
+    if (nick) words.push(nick.replace(/[^\p{L}-]/gu, ''));
+    const sur = c.p.n.split(' ').filter(w => w.length > 3).pop();
+    if (sur && sur !== c.p.n && words.length < 4) words.push(sur);
+  } else {
+    if (c.at) words.push(placeName(c.at));
+    (c.t.split(/\s+/).filter(w => w.length > 4).sort((a, b) => b.length - a.length)).slice(0, 3).forEach(w => words.push(w.replace(/[^\p{L}-]/gu, '')));
+  }
+  return [...new Set(words.filter(Boolean).map(w => w.toLowerCase()))].slice(0, 3);
+}
+/* a monument as its own picture, without the sticker's frame */
+function mmMonArt(sid) {
+  const st = stk(sid), m = st && MASCOTS[st.id] || {}, br = CL.find(c => c.id === m.p);
+  return (MASC_ART[m.art] || (() => ''))(br && br.c1, br && br.c2);
+}
+function mmNew() {
+  const kept = LS.get('mimica', null);
+  mm = { teams: kept && kept.teams || ['Time Azul', 'Time Vermelho'], rounds: kept && kept.rounds || 3, pts: [0, 0], turn: 0, done: 0, phase: 'setup' };
+}
+function startMimica() { isDaily = false; isSurv = false; isMil = false; isRev = false; mmNew(); sc = 'mimica'; go(); }
+function mmStart() {
+  LS.set('mimica', { teams: mm.teams, rounds: mm.rounds });
+  mm.deck = mmDeck(); mm.pts = [0, 0]; mm.turn = 0; mm.done = 0; mm.phase = 'pass';
+  go();
+}
+function mmGo() {
+  mm.phase = 'play'; mm.log = []; mm.card = mm.deck.shift(); mm.t0 = performance.now(); mm.left = MM_TIME;
+  try { snd.rung(); } catch (e) {}
+  go();
+}
+function mmMark(ok) {
+  if (!mm || mm.phase !== 'play') return;
+  mm.log.push({ c: mm.card, ok });
+  if (ok) { mm.pts[mm.turn]++; try { snd.correct(Math.min(mm.log.filter(l => l.ok).length - 1, 6)); haptic(18); } catch (e) {} }
+  else try { snd.swipe(); } catch (e) {}
+  if (!mm.deck.length) mm.deck = mmDeck();
+  mm.card = mm.deck.shift();
+  const el = document.getElementById('mm-card');
+  if (el && !FX_STILL) { el.classList.remove('is-in', 'is-ok', 'is-skip'); void el.offsetWidth; el.classList.add(ok ? 'is-ok' : 'is-skip'); setTimeout(() => { if (mm && mm.phase === 'play') go(); }, 180); }
+  else go();
+}
+function mmTimeUp() {
+  if (!mm || mm.phase !== 'play') return;
+  mm.phase = 'sum';
+  try { snd.drop(); haptic([60, 40, 60]); } catch (e) {}
+  go();
+}
+function mmAfter() {
+  mm.done++;
+  if (mm.done >= mm.rounds * 2) {
+    mm.phase = 'end';
+    stats.mmGames = (stats.mmGames || 0) + 1; LS.set('stats', stats);
+    window._newMedals = newMedals();
+    setTimeout(() => { try { snd.fanfare(); fx.rain(70, [MM_COL[mm.pts[0] >= mm.pts[1] ? 0 : 1], '#E0B968', '#F3EEDE']); } catch (e) {} }, 250);
+  } else { mm.turn = 1 - mm.turn; mm.phase = 'pass'; }
+  go();
+}
+
+function mimicaHtml() {
+  if (!mm) mmNew();
+  const T = i => _esc(mm.teams[i] || 'Time ' + (i + 1));
+  if (mm.phase === 'setup') return `
+  <div class="pg mm-pg">
+    ${topbar('Mímica histórica', fromGab ? 'bgab' : '')}
+    <div class="mm-setup">
+      <span class="mm-masks" aria-hidden="true">${(QICON.masks || QICON.scroll)(96)}</span>
+      <div class="display" style="font-size:27px;"><em>Para jogar em turma</em></div>
+      <p class="small muted mm-p">Dois times e um celular. Na sua vez, você recebe uma carta e um minuto: faça mímica, desenhe ou descreva sem dizer as palavras proibidas. Seu time grita a resposta!</p>
+      <div class="duo-names mm-names">${[0, 1].map(i => `<label style="--pc:${MM_COL[i]}"><span>Time ${i + 1}</span>
+        <input id="mm-n${i}" type="text" maxlength="16" autocomplete="off" value="${T(i)}"></label>`).join('')}</div>
+      <div class="duo-opts" role="group" aria-label="Rodadas">${[2, 3, 4].map(n => `<button class="duo-opt${mm.rounds === n ? ' is-on' : ''}" data-r="${n}" type="button">${n}<small>rodadas</small></button>`).join('')}</div>
+      <button id="mm-start" class="btn btn-brass btn-lg" type="button">${ICON.play('currentColor', 13)} Começar a festa</button>
+    </div>
+  </div>`;
+  if (mm.phase === 'pass') return `
+  <div class="pg mm-pg mm-pass" style="--pc:${MM_COL[mm.turn]}">
+    ${topbar('Mímica histórica', 'mm-quit')}
+    <div class="mm-board">${[0, 1].map(i => `<span class="mm-team${i === mm.turn ? ' is-on' : ''}" style="--pc:${MM_COL[i]}"><b>${T(i)}</b><span class="num">${mm.pts[i]}</span></span>`).join('')}</div>
+    <div class="mm-pass-in">
+      <span class="eyebrow">Rodada ${Math.floor(mm.done / 2) + 1} de ${mm.rounds}</span>
+      <div class="display mm-vez"><small>Vez do</small><em>${T(mm.turn)}</em></div>
+      <p class="small muted">Quem vai jogar pega o celular; o resto do time se prepara para adivinhar.</p>
+      <span class="mm-hour" aria-hidden="true">${ICON.hourglass('currentColor', 30)}<b>${MM_TIME} s</b></span>
+      <button id="mm-go" class="btn btn-brass btn-lg" type="button">${ICON.play('currentColor', 13)} Valendo!</button>
+    </div>
+  </div>`;
+  if (mm.phase === 'play') { const c = mm.card, h = MM_HOW[c.how];
+    return `
+  <div class="pg mm-pg mm-play" style="--pc:${MM_COL[mm.turn]}">
+    <div class="mm-bar"><span class="mm-team is-on" style="--pc:${MM_COL[mm.turn]}"><b>${T(mm.turn)}</b><span class="num" id="mm-pts">${mm.pts[mm.turn]}</span></span>
+      <span class="mm-clock" id="mm-clock"><b class="num" id="mm-left">${Math.ceil(mm.left)}</b>s</span></div>
+    <div class="mm-time"><i id="mm-tf" style="width:${(mm.left / MM_TIME * 100).toFixed(1)}%"></i></div>
+    <div class="mm-card mm-${c.how} is-in" id="mm-card">
+      <span class="mm-how">${h[0]} ${h[1]}<small>${h[2]}</small></span>
+      ${c.p ? `<span class="mm-pic"><img src="${c.p.img}" alt="" draggable="false"></span>` : c.sid ? `<span class="mm-pic mm-pic-art">${mmMonArt(c.sid)}</span>` : `<span class="mm-pic mm-pic-ev">${anoPic(c.e)}</span>`}
+      <b class="mm-t">${_esc(c.t)}</b>
+      <small class="mm-sub">${_esc(c.sub || '')}</small>
+      ${c.no ? `<span class="mm-ban">${c.no.map(w => `<s>${_esc(w)}</s>`).join('')}</span>` : ''}
+    </div>
+    <div class="mm-btns">
+      <button id="mm-skip" class="mm-btn is-skip" type="button">Pular</button>
+      <button id="mm-ok" class="mm-btn is-ok" type="button">${ICON.check('currentColor', 18)} Acertou!</button>
+    </div>
+  </div>`; }
+  if (mm.phase === 'sum') { const got = mm.log.filter(l => l.ok).length;
+    return `
+  <div class="pg mm-pg" style="--pc:${MM_COL[mm.turn]}">
+    ${topbar('Mímica histórica', 'mm-quit')}
+    <div class="mm-sum">
+      <span class="mm-times-up">Tempo!</span>
+      <div class="display" style="font-size:26px;"><em>${T(mm.turn)}: ${got} ${got === 1 ? 'acerto' : 'acertos'}</em></div>
+      <div class="mm-list">${mm.log.map(l => `<span class="mm-li${l.ok ? ' is-ok' : ''}">${l.ok ? ICON.check('currentColor', 12) : ICON.cross('currentColor', 12)} ${_esc(l.c.t)}</span>`).join('') || '<span class="mm-li">Nenhuma carta jogada</span>'}</div>
+      <div class="mm-board">${[0, 1].map(i => `<span class="mm-team${i === mm.turn ? ' is-on' : ''}" style="--pc:${MM_COL[i]}"><b>${T(i)}</b><span class="num">${mm.pts[i]}</span></span>`).join('')}</div>
+      <button id="mm-next" class="btn btn-brass btn-lg" type="button">${mm.done + 1 >= mm.rounds * 2 ? 'Ver o placar final' : `Passar para o ${T(1 - mm.turn)}`}</button>
+    </div>
+  </div>`; }
+  const w = mm.pts[0] === mm.pts[1] ? -1 : mm.pts[0] > mm.pts[1] ? 0 : 1;
+  return `
+  <div class="pg pg-center mm-pg mm-end">
+    <div class="eyebrow">Mímica histórica · ${mm.rounds} rodadas</div>
+    <span class="mm-masks" aria-hidden="true">${(QICON.masks || QICON.scroll)(84)}</span>
+    <div class="display" style="font-size:30px;"><em>${w < 0 ? 'Empate!' : T(w) + ' venceu!'}</em></div>
+    <div class="mm-board mm-board-end">${[0, 1].map(i => `<span class="mm-team${i === w ? ' is-on' : ''}" style="--pc:${MM_COL[i]}"><b>${T(i)}</b><span class="num">${mm.pts[i]}</span></span>`).join('')}</div>
+    ${medalChips()}
+    <div class="foot-row" style="margin-top:8px;">
+      <button id="mm-again" class="btn btn-brass" type="button">Revanche</button>
+      <button id="mm-setup" class="btn btn-ghost btn-sm" type="button">Trocar times</button>
+      <button id="${fromGab ? 'bgab' : 'bhome'}" class="btn btn-ghost btn-sm" type="button">${fromGab ? 'Gabinete' : 'Início'}</button>
+    </div>
+  </div>`;
+}
+let _mmTmr = null;
+function wireMimica() {
+  if (!mm) return;
+  const on = (id, fn) => document.getElementById(id)?.addEventListener('click', fn);
+  const ready = tapArmed(220);
+  [0, 1].forEach(i => { const el = document.getElementById('mm-n' + i); if (el) el.addEventListener('input', () => { mm.teams[i] = el.value.slice(0, 16); }); });
+  document.querySelectorAll('[data-r]').forEach(b => b.addEventListener('click', () => { mm.rounds = +b.dataset.r; snd.tap(); go(); }));
+  on('mm-start', () => { if (ready()) { snd.select(); mmStart(); } });
+  on('mm-go', () => { if (ready()) mmGo(); });
+  on('mm-ok', () => mmMark(true));
+  on('mm-skip', () => mmMark(false));
+  on('mm-next', () => { if (ready()) { snd.page(); mmAfter(); } });
+  on('mm-again', () => { snd.select(); mmStart(); });
+  on('mm-setup', () => { snd.swipe(); mm.phase = 'setup'; go(); });
+  on('mm-quit', () => { snd.swipe(); clearInterval(_mmTmr); mm.phase = 'setup'; go(); });
+  /* the minute: a bar that empties and a tick in the last five seconds */
+  clearInterval(_mmTmr);
+  if (mm.phase === 'play') {
+    _mmTmr = setInterval(() => {
+      if (sc !== 'mimica' || !mm || mm.phase !== 'play') { clearInterval(_mmTmr); return; }
+      if (document.hidden) { mm.t0 += 100; return; }
+      const left = MM_TIME - (performance.now() - mm.t0) / 1000, el = document.getElementById('mm-left'), tf = document.getElementById('mm-tf');
+      mm.left = Math.max(0, left);
+      if (el && +el.textContent !== Math.ceil(mm.left)) { el.textContent = Math.ceil(mm.left); if (mm.left <= 5 && mm.left > 0) try { snd.tick(Math.ceil(mm.left)); } catch (e) {} }
+      if (tf) { tf.style.width = (mm.left / MM_TIME * 100).toFixed(1) + '%'; tf.className = mm.left <= 10 ? 't-bad' : ''; }
+      if (left <= 0) { clearInterval(_mmTmr); mmTimeUp(); }
+    }, 100);
+  }
+}
+
+/* ═══════════════════════════════════════════════════
+   RIO DO TEMPO — an arcade game on the river of the centuries. Notes in
+   bottles float down, each with an event on it; the banner says which
+   century to fish. Tap the ones from that century: a catch scores, more
+   for a run of them; a note from another century costs one of three
+   nets. Every few catches the banner moves to another century. The river
+   runs faster as the minute and a half goes on. Pure reflex and a sense
+   of when things happened — the opposite of the slow, thinking games.
+═══════════════════════════════════════════════════ */
+const RIO_TIME = 90, RIO_LIVES = 3, RIO_LANES = 3;
+const rioCent = y => y > 0 ? Math.ceil(y / 100) : -Math.ceil(-y / 100);
+const RIO_ROM = n => { let s = ''; [[1000, 'M'], [900, 'CM'], [500, 'D'], [400, 'CD'], [100, 'C'], [90, 'XC'], [50, 'L'], [40, 'XL'], [10, 'X'], [9, 'IX'], [5, 'V'], [4, 'IV'], [1, 'I']]
+  .forEach(([v, r]) => { while (n >= v) { s += r; n -= v; } }); return s; };
+const rioCentName = c => `século ${RIO_ROM(Math.abs(c))}${c < 0 ? ' a.C.' : ''}`;
+const rioRange = c => c > 0 ? `de ${(c - 1) * 100 + 1} a ${c * 100}` : `de ${-c * 100} a ${(-c - 1) * 100 + 1} a.C.`;
+let rio = null;   // { t, lives, score, combo, best, target, caught, notes: [], next, id, phase, log, speed }
+
+/* the centuries that have enough events to be fished for */
+let _rioByC = null;
+function rioByC() {
+  if (_rioByC) return _rioByC;
+  _rioByC = {};
+  ANO_EVENTS.filter(e => !e.c && e.t.length <= 64).forEach(e => { const c = rioCent(e.y); (_rioByC[c] = _rioByC[c] || []).push(e); });
+  return _rioByC;
+}
+const rioTargets = () => Object.keys(rioByC()).map(Number).filter(c => rioByC()[c].length >= 6);
+
+function rioNew() {
+  rio = { t: 0, lives: RIO_LIVES, score: 0, combo: 0, best: 0, target: null, inTarget: 0, notes: [], next: .4, id: 0, phase: 'intro', log: [], used: new Set(), best0: LS.get('rioBest', 0) };
+  rioNewTarget();
+}
+function rioNewTarget() {
+  const ts = rioTargets().filter(c => c !== rio.target);
+  rio.target = ts[Math.floor(Math.random() * ts.length)];
+  rio.inTarget = 0; rio.flash = performance.now();
+}
+function startRio() { isDaily = false; isSurv = false; isMil = false; isRev = false; rioNew(); sc = 'rio'; go(); }
+
+/* a new note: about half from the century being fished, the rest from its neighbours, never one already seen */
+function rioSpawn() {
+  const by = rioByC(), want = Math.random() < .46;
+  const near = Object.keys(by).map(Number).filter(c => c !== rio.target && Math.abs(c - rio.target) <= 3);
+  const cs = want ? [rio.target] : (near.length ? near : Object.keys(by).map(Number).filter(c => c !== rio.target));
+  const c = cs[Math.floor(Math.random() * cs.length)], pool = (by[c] || []).filter(e => !rio.used.has(e.id));
+  const e = pool.length ? pool[Math.floor(Math.random() * pool.length)] : (by[c] || [])[0];
+  if (!e) return;
+  rio.used.add(e.id);
+  /* a lane no note is still entering */
+  const free = [...Array(RIO_LANES).keys()].filter(l => !rio.notes.some(n => n.lane === l && n.y < 34));
+  if (!free.length) return;
+  rio.notes.push({ id: ++rio.id, e, lane: free[Math.floor(Math.random() * free.length)], y: -30, rot: (Math.random() * 8 - 4).toFixed(1), state: 'float' });
+}
+const rioSpeed = () => 15 + rio.t * .32;      // % of the river's height a second
+
+/* the river moves on by dt seconds (the game loop calls it; the tests can too) */
+function rioStep(dt) {
+  if (!rio || rio.phase !== 'play') return;
+  rio.t += dt;
+  rio.next -= dt;
+  if (rio.next <= 0) { rioSpawn(); rio.next = Math.max(.62, 1.35 - rio.t * .008); }
+  const v = rioSpeed();
+  rio.notes.forEach(n => {
+    if (n.state !== 'float') { n.age = (n.age || 0) + dt; return; }
+    n.y += v * dt;
+    if (n.y > 104) { n.state = 'gone'; if (rioCent(n.e.y) === rio.target) { rio.combo = 0; n.missed = true; } }
+  });
+  rio.notes = rio.notes.filter(n => n.state === 'float' || (n.age || 0) < .7);
+  if (rio.t >= RIO_TIME) rioEnd();
+}
+function rioTap(id) {
+  const n = rio && rio.phase === 'play' && rio.notes.find(x => x.id === id && x.state === 'float');
+  if (!n) return;
+  const ok = rioCent(n.e.y) === rio.target;
+  n.state = ok ? 'caught' : 'wrong'; n.age = 0;
+  rio.log.push({ e: n.e, ok, target: rio.target });
+  if (ok) {
+    rio.combo++; rio.best = Math.max(rio.best, rio.combo);
+    const gain = 10 * Math.min(5, 1 + Math.floor(rio.combo / 3));
+    rio.score += gain; n.gain = gain; rio.inTarget++;
+    try { snd.correct(Math.min(rio.combo - 1, 8)); haptic(12); } catch (e) {}
+    if (rio.inTarget >= 6) rioNewTarget();
+  } else {
+    rio.combo = 0; rio.lives--;
+    try { snd.wrong(); haptic([28, 45, 28]); } catch (e) {}
+    if (rio.lives <= 0) { rioEnd(); return; }
+  }
+  rioDraw();
+}
+function rioEnd() {
+  if (rio.phase === 'end') return;
+  rio.phase = 'end';
+  stats.rioGames = (stats.rioGames || 0) + 1; stats.rioBest = Math.max(stats.rioBest || 0, rio.score);
+  rio.isBest = rio.score > rio.best0;
+  if (rio.isBest) LS.set('rioBest', rio.score);
+  LS.set('stats', stats);
+  window._newMedals = newMedals();
+  go();
+  setTimeout(() => { try { snd.final(rio.score >= 200); if (rio.isBest && rio.score >= 100) fx.rain(50, ['#2E6B8A', '#E0B968', '#F3EEDE']); } catch (e) {} }, 250);
+}
+
+/* the notes are drawn straight into the river, frame by frame, without a full redraw of the page */
+function rioNoteHtml(n) {
+  const yr = n.state !== 'float';
+  return `<button class="rio-note is-${n.state}" data-id="${n.id}" type="button" style="--l:${n.lane};--r:${n.rot}deg" tabindex="-1">
+    <span class="rio-pic">${anoPic(n.e)}</span><span class="rio-t">${_esc(n.e.t)}</span>
+    ${yr ? `<b class="rio-y">${anoYear(n.e.y)}${n.gain ? ` · +${n.gain}` : ''}</b>` : ''}</button>`;
+}
+function rioDraw() {
+  const box = document.getElementById('rio-water');
+  if (!box || !rio) return;
+  const have = new Map([...box.querySelectorAll('.rio-note')].map(el => [+el.dataset.id, el]));
+  rio.notes.forEach(n => {
+    let el = have.get(n.id);
+    if (!el || el.dataset.st !== n.state) {
+      const tmp = document.createElement('div'); tmp.innerHTML = rioNoteHtml(n).trim();
+      const nel = tmp.firstChild; nel.dataset.st = n.state;
+      if (el) el.replaceWith(nel); else box.appendChild(nel);
+      el = nel;
+    }
+    el.style.top = n.y.toFixed(2) + '%';
+    have.delete(n.id);
+  });
+  have.forEach(el => el.remove());
+  const set = (id, v) => { const el = document.getElementById(id); if (el && el.textContent !== String(v)) el.textContent = v; };
+  set('rio-score', rio.score); set('rio-combo', rio.combo >= 3 ? `×${Math.min(5, 1 + Math.floor(rio.combo / 3))}` : '');
+  const tf = document.getElementById('rio-tf'); if (tf) tf.style.width = Math.max(0, 100 - rio.t / RIO_TIME * 100).toFixed(1) + '%';
+  const tg = document.getElementById('rio-target'); if (tg && tg.dataset.c !== String(rio.target)) {
+    tg.dataset.c = rio.target; tg.querySelector('b').textContent = rioCentName(rio.target);
+    tg.classList.remove('is-new'); void tg.offsetWidth; tg.classList.add('is-new');
+    const yr = tg.querySelector('small'); if (yr) yr.textContent = rioRange(rio.target);
+  }
+  const lv = document.getElementById('rio-lives'); if (lv) lv.innerHTML = rioLives();
+}
+const rioLives = () => Array.from({ length: RIO_LIVES }, (_, i) => `<i class="${i < rio.lives ? 'on' : ''}">${ICON.shield('currentColor', 13)}</i>`).join('');
+
+function rioHtml() {
+  if (!rio) rioNew();
+  if (rio.phase === 'end') return rioEndHtml();
+  return `
+  <div class="pg rio-pg">
+    ${topbar('Rio do tempo', fromGab ? 'bgab' : '')}
+    <div class="rio-head">
+      <span class="rio-lives" id="rio-lives" aria-label="Redes">${rioLives()}</span>
+      <span class="rio-score"><b class="num" id="rio-score">${rio.score}</b> pts <em id="rio-combo"></em></span>
+    </div>
+    <div class="rio-target" id="rio-target" data-c="${rio.target}" role="status"><span>Pesque o</span><b>${rioCentName(rio.target)}</b><small>${rioRange(rio.target)}</small></div>
+    <div class="rio-time"><i id="rio-tf" style="width:100%"></i></div>
+    <div class="rio-water" id="rio-water">
+      ${rio.phase === 'intro' ? `<div class="rio-intro">
+        <span class="rio-intro-ic" aria-hidden="true">${(QICON.ship || QICON.scroll)(80)}</span>
+        <p>Bilhetes descem o rio, cada um com um acontecimento. <b>Toque só nos do século da faixa</b> — a faixa muda de século de tempos em tempos. Errou, perde uma rede.</p>
+        <button id="rio-go" class="btn btn-brass btn-lg" type="button">${ICON.play('currentColor', 13)} Remar!</button></div>` : ''}
+    </div>
+  </div>`;
+}
+function rioEndHtml() {
+  const ok = rio.log.filter(l => l.ok), bad = rio.log.filter(l => !l.ok).slice(-3);
+  return `
+  <div class="pg pg-center rio-pg rio-end">
+    <div class="eyebrow">Rio do tempo</div>
+    <div class="display" style="font-size:28px;"><em>${rio.lives <= 0 ? 'As redes se rasgaram!' : 'Fim da correnteza!'}</em></div>
+    ${wreathed(rio.score >= 300, `<div class="display prize-pop brass" style="font-size:54px;">${rio.score}<span class="muted" style="font-size:16px;"> pts</span></div>`)}
+    <p class="small muted" style="margin:0;">${ok.length} ${ok.length === 1 ? 'pesca' : 'pescas'} · maior sequência ${rio.best} · ${rio.isBest ? 'seu novo recorde!' : 'recorde ' + rio.best0}</p>
+    ${bad.length ? `<div class="mf-miss"><span class="mf-miss-k">Fisgados por engano</span>${bad.map(l => `<span class="mf-miss-row"><b class="is-m">${anoYear(l.e.y)}</b><span>${_esc(l.e.t)} <small class="muted">(pescando o ${rioCentName(l.target)})</small></span></span>`).join('')}</div>` : ''}
+    ${medalChips()}
+    <div class="foot-row" style="margin-top:6px;">
+      <button id="rio-again" class="btn btn-brass" type="button">De novo</button>
+      <button id="${fromGab ? 'bgab' : 'bhome'}" class="btn btn-ghost btn-sm" type="button">${fromGab ? 'Gabinete' : 'Início'}</button>
+    </div>
+  </div>`;
+}
+let _rioRaf = 0;
+function wireRio() {
+  if (!rio) return;
+  const on = (id, fn) => document.getElementById(id)?.addEventListener('click', fn);
+  on('rio-go', () => { snd.rung(); rio.phase = 'play'; go(); });
+  on('rio-again', () => { snd.select(); startRio(); });
+  const box = document.getElementById('rio-water');
+  if (box) box.addEventListener('pointerdown', e => { const n = e.target.closest('.rio-note'); if (n) { e.preventDefault(); rioTap(+n.dataset.id); } });
+  cancelAnimationFrame(_rioRaf);
+  if (rio.phase === 'play') {
+    rioDraw();
+    let last = performance.now();
+    const loop = now => {
+      if (sc !== 'rio' || !rio || rio.phase !== 'play') return;
+      const dt = Math.min(.1, (now - last) / 1000); last = now;
+      if (!document.hidden) { rioStep(dt); if (rio.phase === 'play') rioDraw(); }
+      if (rio.phase === 'play') _rioRaf = requestAnimationFrame(loop);
+    };
+    _rioRaf = requestAnimationFrame(loop);
+  }
+}
+
+/* ═══════════════════════════════════════════════════
    GABINETE DE CURIOSIDADES — the games that are not rounds of questions,
    kept the way a collector of the 1600s kept wonders: a walnut cabinet,
    each one in its niche on velvet, with a brass label under it.
 ═══════════════════════════════════════════════════ */
 let fromGab = false;   // a game opened from the cabinet goes back to it
 const GAB = [
+  { id: 'gab-tf', n: 'Super Trunfo', d: 'Suas figurinhas viram cartas', art: 'trophy', go: () => startTrunfo(),
+    tail: () => stats.tfWins > 0 ? stats.tfWins + (stats.tfWins === 1 ? ' vitória' : ' vitórias') : 'Contra o Arquivista', isNew: () => !(stats.tfGames > 0) },
+  { id: 'gab-cc', n: 'Cara a cara', d: 'Adivinhe quem é o mistério', art: 'telescope', go: () => startCaraCara(),
+    tail: () => stats.ccBest > 0 ? 'Recorde: ' + stats.ccBest : 'Dezesseis rostos', isNew: () => !(stats.ccGames > 0) },
+  { id: 'gab-rio', n: 'Rio do tempo', d: 'Pesque o século certo', art: 'ship', go: () => startRio(),
+    tail: () => stats.rioBest > 0 ? 'Recorde: ' + stats.rioBest : 'Reflexo e História', isNew: () => !(stats.rioGames > 0) },
+  { id: 'gab-mm', n: 'Mímica', d: 'Para jogar em turma', art: 'masks', go: () => startMimica(),
+    tail: () => stats.mmGames > 0 ? stats.mmGames + (stats.mmGames === 1 ? ' festa' : ' festas') : 'Dois times', isNew: () => !(stats.mmGames > 0) },
   { id: 'gab-mf', n: 'Mito ou fato?', d: 'Arraste a carta: lenda ou verdade?', art: 'scales', go: () => startMito(),
     tail: () => LS.get('mfBest', 0) > 0 ? 'Recorde: ' + LS.get('mfBest', 0) : 'Novo', isNew: () => !(stats.mfGames > 0) },
   { id: 'gab-duo', n: 'Duelo a dois', d: 'Dois jogadores, um celular', art: 'sword', go: () => startDuoSetup(),

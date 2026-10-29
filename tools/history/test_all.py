@@ -558,6 +558,66 @@ JS = r"""
     sc = 'ondeMenu'; go(); if (!document.getElementById('onde-lr') || !document.getElementById('onde-dia')) F('onde: the door has no way to the chase or the day');
     LS.set('ondeDia', keepD); Object.assign(stats, JSON.parse(keepS)); LS.set('stats', stats); lr = null; onde = null; sc = 'home';
   } catch (e) { F('ladrao EXC ' + e.stack); }
+  /* ── The four other games: Cara a cara always leaves the mystery standing; Super Trunfo keeps its twenty cards and
+        its one Super Trunfo; Mímica's cards can all be played; the Rio's centuries all have notes to fish ── */
+  try {
+    const keepS = JSON.stringify(stats);
+    let ccQs = 0;
+    for (let g = 0; g < 40; g++) {
+      ccNew(); const w = 'caracara ' + g + ': ';
+      if (cc.board.length !== CC_N || new Set(cc.board.map(p => p.id)).size !== CC_N || !cc.board.includes(cc.secret)) F(w + 'a bad board');
+      while (ccUp().length > 1) {
+        const q = CC_QS.find(q => !cc.asked.some(a => a[0] === q[0]) && ccHelps(q));
+        if (!q) break;
+        ccAsk(q[0]); ccQs++;
+        if (cc.down.has(cc.secret.id)) { F(w + 'the mystery was folded by ' + q[1]); break; }
+      }
+      const up = ccUp(); if (!up.includes(cc.secret)) F(w + 'the mystery is not standing');
+      ccGuess(cc.secret.id); if (cc.phase !== 'end' || !cc.won || !(cc.score >= 10)) F(w + 'the right face does not win');
+    }
+    note.caracara = { avgQuestions: +(ccQs / 40).toFixed(1) };
+    ccNew(); const others = cc.board.filter(p => p !== cc.secret);
+    ccGuess(others[0].id); if (cc.tries !== 1 || cc.phase !== 'play') F('caracara: a wrong guess does not cost a try');
+    ccGuess(others[1].id); if (cc.phase !== 'end' || cc.won) F('caracara: two wrong guesses do not end it');
+    /* Super Trunfo */
+    PL.forEach(p => { const st = tfStats(p);
+      if (!(st.ant > 0 && st.vida > 0 && st.vida < 125 && st.fama >= 1 && st.fama <= 99 && st.poder >= 1 && st.poder <= 99 && st.saber >= 1 && st.saber <= 99)) F('trunfo: odd numbers on ' + p.id + ' ' + JSON.stringify(st)); });
+    for (let g = 0; g < 25; g++) {
+      tfNew(); const w = 'trunfo ' + g + ': ';
+      if (tf.me.length !== TF_N || tf.cpu.length !== TF_N) F(w + 'not ten cards each');
+      const all = tf.me.concat(tf.cpu);
+      if (all.filter(c => c.st).length !== 1) F(w + 'not one Super Trunfo');
+      if (new Set(all.map(c => c.code)).size !== all.length || new Set(all.map(c => c.p.id)).size !== all.length) F(w + 'a card twice');
+      let n = 0;
+      while (tf.phase !== 'end' && n < 200) { n++;
+        if (tf.phase === 'show') tfNext(); else tfPlay(tfCpuPick(tf.phase === 'pick' ? tf.me[0] : tf.cpu[0]));
+        if (tf.me.length + tf.cpu.length + tf.pot.length + (tf.phase === 'show' ? 0 : 0) !== 2 * TF_N) { F(w + 'cards lost: ' + (tf.me.length + tf.cpu.length + tf.pot.length)); break; } }
+      if (tf.phase !== 'end') F(w + 'never ends');
+    }
+    const A = { s: { ant: 3000, vida: 50, fama: 10, poder: 10, saber: 10 }, g: 'A' }, Bst = { s: { ant: 100, vida: 40, fama: 99, poder: 99, saber: 99 }, g: 'D', st: true }, C = { s: { ant: 200, vida: 90, fama: 5, poder: 5, saber: 5 }, g: 'C' };
+    if (tfBeats(Bst, C, 'vida') !== 1 || tfBeats(C, Bst, 'vida') !== -1) F('trunfo: the Super Trunfo does not beat the others');
+    if (tfBeats(Bst, A, 'ant') !== -1 || tfBeats(A, Bst, 'fama') !== -1) F('trunfo: group A is not compared on the number against the Super Trunfo');
+    /* Mímica */
+    const deck = mmDeck(); note.mimica = deck.length;
+    if (deck.length < 120) F('mimica: only ' + deck.length + ' cards');
+    deck.forEach(c => { if (!c.t || !MM_HOW[c.how]) F('mimica: a card without a word or a way: ' + JSON.stringify(c.t));
+      if (c.how === 'talk' && (!c.no || !c.no.length || c.no.some(w => !w || w.length < 3))) F('mimica: odd forbidden words for ' + c.t + ': ' + JSON.stringify(c.no)); });
+    mmNew(); mmStart();
+    for (let k = 0; k < mm.rounds * 2; k++) { if (mm.phase !== 'pass') { F('mimica: no pass before turn ' + k); break; } mmGo(); mmMark(true); mmMark(false); mmMark(true); mmTimeUp(); if (mm.phase !== 'sum') F('mimica: no summary'); mmAfter(); }
+    if (mm.phase !== 'end' || mm.pts[0] !== mm.rounds * 2 || mm.pts[1] !== mm.rounds * 2) F('mimica: the score is off ' + JSON.stringify(mm.pts));
+    /* Rio do tempo */
+    note.rio = rioTargets().length;
+    if (rioTargets().length < 8) F('rio: only ' + rioTargets().length + ' centuries to fish');
+    rioNew(); rio.phase = 'play'; let caught = 0;
+    for (let i = 0; i < RIO_TIME * 10 + 5 && rio.phase === 'play'; i++) { rioStep(.1);
+      const n = rio.notes.find(n => n.state === 'float' && n.y > 20 && rioCent(n.e.y) === rio.target); if (n) { rioTap(n.id); caught++; } }
+    if (rio.phase !== 'end' || !(rio.score > 0) || rio.lives !== RIO_LIVES) F('rio: a clean run did not end on time with points ' + JSON.stringify([rio.phase, rio.score, rio.lives]));
+    note.rioCaught = caught;
+    rioNew(); rio.phase = 'play';
+    for (let i = 0; i < 600 && rio.phase === 'play'; i++) { rioStep(.1); const n = rio.notes.find(n => n.state === 'float' && rioCent(n.e.y) !== rio.target); if (n) rioTap(n.id); }
+    if (rio.phase !== 'end' || rio.lives !== 0) F('rio: three wrong notes do not end it');
+    Object.assign(stats, JSON.parse(keepS)); LS.set('stats', stats); cc = null; tf = null; mm = null; rio = null; sc = 'home';
+  } catch (e) { F('jogos EXC ' + e.stack); }
   /* ── Hoje na História: every day of the year has five dates near it, the same five all day, each with its picture ── */
   try {
     const pool = hojePool();
