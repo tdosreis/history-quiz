@@ -196,8 +196,8 @@ function retResHtml() {
     ${medalChips()}
     <div class="foot-row" style="margin-top:6px;">
       <button id="ret-share" class="btn btn-ghost btn-sm" type="button">Compartilhar</button>
-      <button id="ret-again" class="btn btn-brass" type="button">De novo</button>
-      <button id="bhome" class="btn btn-ghost btn-sm" type="button">Início</button>
+      <button id="ret-selfie" class="btn btn-brass" type="button">${ICON.star('currentColor', 12)} Selfie de época</button>
+      <button id="ret-again" class="btn btn-ghost btn-sm" type="button">De novo</button>
     </div>
   </div>`;
 }
@@ -273,6 +273,7 @@ function wireRetrato() {
   document.querySelectorAll('.ret-opt').forEach(b => b.addEventListener('click', () => { if (ready()) { b.classList.add('is-picked'); setTimeout(() => retPick(+b.dataset.o), 160); } }));
   on('ret-back', () => { if (!ready() || !ret || ret.i === 0) return; ret.i--; snd.swipe(); go(); });
   on('ret-again', () => { snd.select(); ret = { i: 0, picks: [], phase: 'q' }; go(); });
+  on('ret-selfie', () => { snd.select(); startSelfie(); });
   on('ret-share', () => {
     const txt = retShareText();
     if (_retCard && navigator.canShare) {

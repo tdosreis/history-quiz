@@ -371,7 +371,7 @@ def main():
             + io.open(os.path.join(H, "js", "mito.js"), encoding="utf-8").read()
             # four games of other kinds: a card battle with the album's stickers, the board game of faces,
             # a party game for a room, and an arcade on the river of centuries
-            + "".join(io.open(os.path.join(H, "js", f), encoding="utf-8").read() for f in ("trunfo.js", "caracara.js", "mimica.js", "rio.js"))
+            + "".join(io.open(os.path.join(H, "js", f), encoding="utf-8").read() for f in ("trunfo.js", "caracara.js", "mimica.js", "rio.js", "maquina.js", "graus.js", "selfie.js"))
             # the Gabinete de curiosidades: the games that are not rounds of questions
             + io.open(os.path.join(H, "js", "gabinete.js"), encoding="utf-8").read()
             # three goals a week, a stamp for each one met

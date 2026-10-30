@@ -618,6 +618,58 @@ JS = r"""
     if (rio.phase !== 'end' || rio.lives !== 0) F('rio: three wrong notes do not end it');
     Object.assign(stats, JSON.parse(keepS)); LS.set('stats', stats); cc = null; tf = null; mm = null; rio = null; sc = 'home';
   } catch (e) { F('jogos EXC ' + e.stack); }
+  /* ── Máquina do tempo: every adventure a path to its endings, one right answer in every question, its pictures drawn;
+        Seis graus: every chain can be closed on par; the Selfie's six costumes ── */
+  try {
+    const keepS = JSON.stringify(stats), keepM = LS.get('maquina', {}), keepF = LS.get('maquinaFins', {}), keepG = LS.get('grausDia', null);
+    let ends = 0;
+    MT_ADV.forEach(a => {
+      const w = 'maquina ' + a.id + ': ';
+      if (a.scenes.length < 5) F(w + 'too short');
+      a.scenes.forEach((sc0, i) => {
+        if (!SCENE[sc0[0]]) F(w + 'no picture ' + sc0[0]);
+        const last = i === a.scenes.length - 1, chs = sc0[2];
+        if (last) { if (!chs.every(c => c[1] === null && a.ends[c[2]])) F(w + 'the last choice does not lead to an ending'); }
+        else if (chs.filter(c => c[1] === true).length !== 1 || chs.some(c => !c[0] || !c[2] || c[1] === null)) F(w + 'scene ' + (i + 1) + ' is not one right answer among the rest');
+        if (sc0[1].length > 260 || chs.some(c => c[0].length > 64 || (c[1] !== null && c[2].length > 200))) F(w + 'scene ' + (i + 1) + ' has text too long');
+      });
+      Object.values(a.ends).forEach(e => { ends++; if (!SCENE[e[1]] || !e[2]) F(w + 'an ending without its picture or text'); });
+      Object.keys(a.ends).forEach(k => {
+        mtGo(a.id); mt.phase = 'scene';
+        while (mt.phase === 'scene' || mt.phase === 'after') {
+          if (mt.phase === 'after') { mtNext(); continue; }
+          const chs = mt.adv.scenes[mt.i][2], j = chs.every(c => c[1] === null) ? chs.findIndex(c => c[2] === k) : chs.findIndex(c => c[1] === true);
+          mtChoose(j);
+        }
+        if (mt.phase !== 'end' || mt.end !== k || mt.stars !== 3) F(w + 'the right way does not reach the ending ' + k);
+      });
+      mtGo(a.id); mt.phase = 'scene';
+      while (mt.phase === 'scene' || mt.phase === 'after') { if (mt.phase === 'after') { mtNext(); continue; } const chs = mt.adv.scenes[mt.i][2]; mtChoose(Math.max(0, chs.findIndex(c => c[1] === false))); }
+      if (mt.phase !== 'end' || mt.end !== null || mt.mistakes !== MT_LIVES) F(w + 'three wrong answers do not send you home');
+    });
+    note.maquina = { adventures: MT_ADV.length, ends };
+    if (stats.mtEnds !== ends) F('maquina: the endings seen are not counted ' + stats.mtEnds);
+    /* Seis graus */
+    const G = sgGraph(); let comp = 0; Object.values(G.adj).forEach(l => { if (l.length) comp++; });
+    note.graus = { linked: comp, of: G.ps.length };
+    for (let k = 0; k < 40; k++) {
+      sgNew(); const w = 'graus ' + k + ': ';
+      if (!(sg.par >= 3 && sg.par <= 5)) F(w + 'par ' + sg.par);
+      let n = 0;
+      while (sg.phase === 'play' && n < 20) { n++;
+        const cur = sg.chain[sg.chain.length - 1], next = sg.opts.includes(sg.b) ? sg.b : sg.opts.find(id => sg.d[id] === sg.d[cur] - 1);
+        if (!next) { F(w + 'no step closer among ' + sg.opts.join()); break; }
+        const free = sgGraph().adj[cur].filter(id => !sg.chain.includes(id)).length;
+        if (sg.opts.length !== Math.min(SG_OPTS, free) && !sg.opts.includes(sg.b)) F(w + sg.opts.length + ' choices of ' + free);
+        sgPick(next); }
+      if (sg.phase !== 'end' || !sg.won || sg.stars !== 3) F(w + 'the shortest way does not close on par');
+    }
+    LS.set('grausDia', null); sgNew(true); const d1 = sg.a + sg.b; sgNew(true); if (sg.a + sg.b !== d1) F('graus: the chain of the day is not the same twice');
+    /* Selfie */
+    SF_KINDS.forEach(k => { if (!SF_COST[k] || !SF_COST[k].hat || !SF_COST[k].body || !RET_KINDS[k]) F('selfie: no costume for ' + k); });
+    startSelfie(); SF_KINDS.forEach(k => { sf.kind = k; go(); if (!document.querySelector('.sf-cost') || !document.getElementById('sf-cam')) F('selfie: the ' + k + ' costume does not draw'); });
+    LS.set('maquina', keepM); LS.set('maquinaFins', keepF); LS.set('grausDia', keepG); Object.assign(stats, JSON.parse(keepS)); LS.set('stats', stats); mt = null; sg = null; sf = null; sc = 'home';
+  } catch (e) { F('jogos2 EXC ' + e.stack); }
   /* ── Hoje na História: every day of the year has five dates near it, the same five all day, each with its picture ── */
   try {
     const pool = hojePool();

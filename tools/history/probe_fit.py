@@ -372,6 +372,34 @@ DRIVE = r"""
   rioDraw(); fit('rio/pescando');
   rio.t = RIO_TIME; rioStep(.1); window._newMedals = MEDALS.slice(0, 2); go(); fit('rio/fim');
   cc = null; tf = null; mm = null; rio = null;
+  /* Máquina do tempo: the dial, the warp, every scene of every adventure with each kind of answer, every ending, the way home;
+     Seis graus: a chain in play and long, closed and broken; the Selfie: each costume, no camera, and a portrait taken */
+  var keepMT = [LS.get('maquina', {}), LS.get('maquinaFins', {})];
+  startMaquina(); fit('maquina/menu');
+  MT_ADV.forEach(function(a){
+    mtGo(a.id); fit('maquina/viagem');
+    mt.phase='scene'; go();
+    a.scenes.forEach(function(s28, i28){
+      mt.i = i28; mt.lives = 3; mt.phase='scene'; go(); fit('maquina/cena');
+      if (s28[2][0][1] !== null) { s28[2].forEach(function(c, j){ mt.phase='scene'; mt.lives = 2; mtChoose(j); fit('maquina/depois-' + (c[1] ? 'certo' : 'errado')); }); }
+    });
+    Object.keys(a.ends).forEach(function(k){ mt = { adv: a, i: a.scenes.length - 1, lives: 2, mistakes: 1, phase: 'scene' }; mtEnd(k); window._newMedals = MEDALS.slice(0, 2); go(); fit('maquina/fim'); });
+    mt = { adv: a, i: 2, lives: 0, mistakes: 3, phase: 'after' }; mtEnd(null); fit('maquina/volta');
+  });
+  LS.set('maquina', keepMT[0]); LS.set('maquinaFins', keepMT[1]); mt = null;
+  var keepSG = LS.get('grausDia', null);
+  for (var g29=0; g29<3; g29++){
+    startGraus(g29 === 0); fit('graus/inicio');
+    var n29 = 0; while (sg.phase === 'play' && n29 < 12){ n29++; var o29 = sg.opts.filter(function(id){ return id !== sg.b; }); sgPick(n29 < 4 && o29.length ? o29[0] : (sg.opts.includes(sg.b) ? sg.b : sg.opts[0])); if (sg.phase === 'play') fit('graus/passo'); }
+    window._newMedals = g29 ? MEDALS.slice(0, 2) : []; go(); fit('graus/fim');
+  }
+  LS.set('grausDia', keepSG); sg = null;
+  startSelfie(); SF_KINDS.forEach(function(k){ sf.kind = k; go(); fit('selfie/' + k); });
+  sf.phase = 'nocam'; go(); fit('selfie/sem-camera');
+  sf.name = 'Maria Leopoldina de Habsburgo'; go(); fit('selfie/nome-longo');
+  var cv30 = document.createElement('canvas'); cv30.width = 300; cv30.height = 470; var g30 = cv30.getContext('2d'); g30.fillStyle = '#7A5A36'; g30.fillRect(0, 0, 300, 470);
+  sf.shot = cv30.toDataURL('image/png'); sf.phase = 'shot'; window._newMedals = MEDALS.slice(0, 1); go(); fit('selfie/retrato');
+  sf = null;
   /* Metas da semana: fresh, one met with its stamp, all three met */
   LS.set('metas', null); sc='metas'; go(); fit('metas/nova');
   var sm=metasState(), lm=metasList(); sm.base[lm[0].m.id]=lm[0].m.v()-lm[0].n; sm.base[lm[1].m.id]=lm[1].m.v()-Math.floor(lm[1].n/2); LS.set('metas', sm); metasCheck(); go(); fit('metas/uma');

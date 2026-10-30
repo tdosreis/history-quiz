@@ -5978,6 +5978,14 @@ const MEDALS = [
     t: st => (st.rioBest || 0) >= 300, p: () => [stats.rioBest || 0, 300] },
   { id:'mm1', ic:'star', n:'Festa na História', d:'Jogue uma partida de Mímica histórica com os amigos',
     t: st => (st.mmGames || 0) >= 1 },
+  { id:'mt1', ic:'hourglass', n:'Passageiro do tempo', d:'Chegue ao fim de uma aventura da Máquina do tempo',
+    t: st => (st.mtEnds || 0) >= 1 },
+  { id:'mtAll', ic:'crown', n:'Todos os finais', d:'Veja todos os finais das aventuras da Máquina do tempo',
+    t: st => (st.mtEnds || 0) >= 8, p: () => [stats.mtEnds || 0, 8] },
+  { id:'sg3', ic:'chain', n:'No par', d:'Feche uma corrente dos Seis graus com o menor número de passos',
+    t: st => (st.sgPar || 0) >= 1 },
+  { id:'sf1', ic:'star', n:'Pose de época', d:'Tire um selfie de época',
+    t: st => (st.selfies || 0) >= 1 },
 ];
 
 function earnedMedals() { return MEDALS.filter(m => { try { return m.t(stats); } catch (e) { return false; } }); }
@@ -18670,6 +18678,9 @@ function html() {
   if (sc === 'trunfo') return trunfoHtml();
   if (sc === 'mimica') return mimicaHtml();
   if (sc === 'rio') return rioHtml();
+  if (sc === 'maquina') return maquinaHtml();
+  if (sc === 'graus') return grausHtml();
+  if (sc === 'selfie') return selfieHtml();
   if (sc === 'anoMenu') return anoMenuHtml();
   if (sc === 'metas') return metasHtml();
   if (sc === 'desafio') return chalHtml();
@@ -19512,6 +19523,9 @@ function go() {
   if (sc === 'trunfo') wireTrunfo();
   if (sc === 'mimica') wireMimica();
   if (sc === 'rio') wireRio();
+  if (sc === 'maquina') wireMaquina();
+  if (sc === 'graus') wireGraus();
+  if (sc === 'selfie') wireSelfie();
   if (sc === 'anoMenu') wireAnoMenu();
   if (sc === 'desafio') wireChal();
   on('bwelc',       () => { snd.tap(); openWelcomePack(); });
@@ -25178,8 +25192,8 @@ function retResHtml() {
     ${medalChips()}
     <div class="foot-row" style="margin-top:6px;">
       <button id="ret-share" class="btn btn-ghost btn-sm" type="button">Compartilhar</button>
-      <button id="ret-again" class="btn btn-brass" type="button">De novo</button>
-      <button id="bhome" class="btn btn-ghost btn-sm" type="button">Início</button>
+      <button id="ret-selfie" class="btn btn-brass" type="button">${ICON.star('currentColor', 12)} Selfie de época</button>
+      <button id="ret-again" class="btn btn-ghost btn-sm" type="button">De novo</button>
     </div>
   </div>`;
 }
@@ -25255,6 +25269,7 @@ function wireRetrato() {
   document.querySelectorAll('.ret-opt').forEach(b => b.addEventListener('click', () => { if (ready()) { b.classList.add('is-picked'); setTimeout(() => retPick(+b.dataset.o), 160); } }));
   on('ret-back', () => { if (!ready() || !ret || ret.i === 0) return; ret.i--; snd.swipe(); go(); });
   on('ret-again', () => { snd.select(); ret = { i: 0, picks: [], phase: 'q' }; go(); });
+  on('ret-selfie', () => { snd.select(); startSelfie(); });
   on('ret-share', () => {
     const txt = retShareText();
     if (_retCard && navigator.canShare) {
@@ -26834,6 +26849,599 @@ function wireRio() {
 }
 
 /* ═══════════════════════════════════════════════════
+   MÁQUINA DO TEMPO — short adventures in a moment of history. The machine
+   drops you in Lisbon in 1500, in Rome the day before the Ides of March,
+   in Paris on 14 July 1789, in Rio when the court arrives in 1808. Each
+   scene is a page with its picture and a choice; most choices ask what
+   you know of where you are — a wrong one costs one of three hourglasses
+   (and tells you how it really was), and with none left the machine pulls
+   you home. The last choice is yours alone, and decides the ending.
+   History does not change; you only decide how you come out of it.
+   Each scene: [picture, what happens, [[choice, right?, what you learn]…]];
+   the last scene's choices lead to the endings, [title, picture, text].
+═══════════════════════════════════════════════════ */
+const MT_LIVES = 3;
+const MT_ADV = [
+  { id: 'cabral', t: 'Na frota de Cabral', y: 1500, place: 'Lisboa → Terra de Vera Cruz', s: 'chegada_cabral', col: '#2E5E7E',
+    intro: 'Você embarca como grumete numa frota de treze navios. O capitão-mor tem uns 32 anos e uma missão do rei.',
+    scenes: [
+      ['ev_grandes_navegacoes', 'Lisboa, 9 de março de 1500. No cais do Restelo, marinheiros carregam biscoito, vinho e pólvora em treze navios. O capitão-mor é Pedro Álvares Cabral. Qual é o destino oficial da frota?',
+        [['Calicute, nas Índias', true, 'Isso: a frota seguia a rota que Vasco da Gama abrira em 1498, contornando a África.'],
+         ['As terras que Colombo achou a oeste', false, 'O destino oficial era Calicute, na Índia, pela rota de Vasco da Gama.'],
+         ['A China', false, 'Os portugueses só chegariam à China anos depois. O destino era Calicute, na Índia.']]],
+      ['dhow_oceano', 'Passadas as ilhas de Cabo Verde, o piloto explica: para contornar a África, não se vai colado à costa, onde há calmarias e ventos contrários. Para que lado a frota deve abrir?',
+        [['Para oeste, mar adentro, numa grande volta', true, 'É a «volta do mar»: os navios se afastavam para oeste para pegar ventos que os levassem ao sul.'],
+         ['Para leste, junto à costa da África', false, 'Junto à costa as calmarias atrasavam tudo; os pilotos portugueses aprenderam a abrir para oeste, na «volta do mar».']]],
+      ['chegada_cabral', '22 de abril. Do alto do mastro, alguém grita: terra à vista! Primeiro surge um monte alto e redondo. Que nome os portugueses dão a ele?',
+        [['Monte Pascoal', true, 'Era a semana da Páscoa — por isso, Pascoal. O monte fica no sul da Bahia.'],
+         ['Pão de Açúcar', false, 'O Pão de Açúcar fica no Rio de Janeiro. O monte avistado, no sul da Bahia, ganhou o nome de Pascoal, pela Páscoa.'],
+         ['Corcovado', false, 'O Corcovado fica no Rio de Janeiro. O monte avistado foi o Pascoal, na Bahia.']]],
+      ['chegada_cabral', 'Na praia aparecem homens com arcos e flechas, que trocam presentes com os marinheiros. Um escrivão anota tudo numa longa carta ao rei. Quem é ele?',
+        [['Pero Vaz de Caminha', true, 'A carta de Caminha é considerada a «certidão de nascimento» do Brasil.'],
+         ['Bartolomeu Dias', false, 'Bartolomeu Dias estava na frota, mas como capitão de um navio. A carta é de Pero Vaz de Caminha.'],
+         ['Luís de Camões', false, 'Camões só nasceria por volta de 1524. A carta é de Pero Vaz de Caminha.']]],
+      ['chegada_cabral', 'No domingo, 26 de abril, frei Henrique de Coimbra reza a primeira missa, observada pelos indígenas. Que nome Cabral dá à terra, pensando que é uma ilha?',
+        [['Ilha de Vera Cruz', true, 'Depois veio Terra de Santa Cruz — e só mais tarde o nome Brasil, do pau-brasil.'],
+         ['Brasil', false, 'O nome Brasil, do pau-brasil, só pegou anos depois. Cabral, achando que era uma ilha, chamou-a de Ilha de Vera Cruz.'],
+         ['Nova Lusitânia', false, 'Cabral, achando que era uma ilha, chamou-a de Ilha de Vera Cruz.']]],
+      ['adamastor', 'Em 2 de maio a frota parte para a Índia, e um navio volta a Lisboa com a carta de Caminha. Você precisa escolher o seu.',
+        [['Volto a Lisboa com a notícia', null, 'mensageiro'], ['Sigo com a frota para a Índia', null, 'india']]],
+    ],
+    ends: {
+      mensageiro: ['O mensageiro', 'ev_grandes_navegacoes', 'Você desembarca em Lisboa com a carta. Caminha escreveu ao rei D. Manuel que a terra era tão graciosa que, querendo aproveitá-la, «dar-se-á nela tudo».'],
+      india: ['Rumo às Índias', 'adamastor', 'Perto do Cabo da Boa Esperança, uma tempestade afunda quatro navios — num deles ia Bartolomeu Dias, o primeiro a dobrar aquele cabo. Você sobrevive e chega a Calicute em setembro de 1500.'],
+    } },
+  { id: 'cesar', t: 'Os Idos de Março', y: -44, place: 'Roma', s: 'forum_romano', col: '#7B2D26',
+    intro: 'Você acorda no Fórum, copista na casa de um senador. A cidade fala de um homem só: Júlio César.',
+    scenes: [
+      ['forum_romano', 'Roma, março de 44 a.C. César venceu a guerra civil, e o Senado lhe deu um título que nenhum romano tivera. Qual?',
+        [['Ditador perpétuo', true, 'Ditador para sempre: para muitos senadores, era um rei sem a coroa.'],
+         ['Imperador de Roma', false, 'Roma ainda era uma república; o primeiro imperador seria Augusto, em 27 a.C.'],
+         ['Rei de Roma', false, 'Os romanos odiavam a palavra «rei» — e o medo de que César quisesse ser um ajudou a matá-lo.']]],
+      ['loba_capitolina', 'Na rua, um adivinho chamado Espurina repete a quem quiser ouvir o aviso que já deu a César. Qual era?',
+        [['Que o perigo viria até os Idos de Março', true, 'Os Idos de Março são o dia 15. Shakespeare imortalizou o aviso: «Cuidado com os Idos de Março».'],
+         ['Que não atravessasse o Rubicão', false, 'O Rubicão César já tinha atravessado em 49 a.C. — «a sorte está lançada».'],
+         ['Que desconfiasse de Cleópatra', false, 'O aviso de Espurina era sobre os Idos de Março, o dia 15.']]],
+      ['estatua_equestre', 'Na manhã de 15 de março, Calpúrnia, a esposa de César, conta um sonho ruim e pede que ele fique em casa. Quem o convence a ir ao Senado assim mesmo?',
+        [['Décimo Bruto, um dos conspiradores', true, 'Décimo Bruto zombou dos agouros e levou César pela mão.'],
+         ['Marco Antônio', false, 'Marco Antônio era fiel a César — tanto que um conspirador o segurou conversando do lado de fora.'],
+         ['Cícero', false, 'Quem o convenceu foi Décimo Bruto, um dos conspiradores.']]],
+      ['forum_romano', 'A reunião do Senado não é na Cúria do Fórum. Onde os senadores se reúnem naquele dia?',
+        [['Numa sala do teatro de Pompeu', true, 'A Cúria antiga tinha queimado anos antes; o Senado se reunia no complexo do teatro de Pompeu.'],
+         ['No Coliseu', false, 'O Coliseu só seria inaugurado em 80 d.C., mais de um século depois.'],
+         ['No Capitólio', false, 'Foi numa sala do teatro de Pompeu — César caiu junto à estátua do antigo rival.']]],
+      ['ev_fim_republica', 'Lá dentro, os conspiradores cercam César com punhais escondidos nas togas. Segundo o historiador Suetônio, quantas punhaladas ele recebe?',
+        [['Vinte e três', true, 'E, diz Suetônio, só uma delas foi mortal.'],
+         ['Três', false, 'Suetônio conta vinte e três punhaladas — e só uma delas teria sido mortal.'],
+         ['Cem', false, 'Suetônio conta vinte e três.']]],
+      ['forum_romano', 'Roma vai ferver. Você precisa levar a notícia a alguém.',
+        [['A Marco Antônio, que fará o discurso no funeral', null, 'funeral'], ['A Otaviano, o jovem herdeiro de César', null, 'herdeiro']]],
+    ],
+    ends: {
+      funeral: ['O discurso', 'forum_romano', 'No funeral, Marco Antônio mostra a toga furada de César e lê o testamento que deixa dinheiro a cada romano. O povo se volta contra os conspiradores, que fogem da cidade.'],
+      herdeiro: ['O herdeiro', 'estatua_equestre', 'Você encontra Otaviano em Apolônia, do outro lado do mar Adriático. Ele tem 18 anos e acaba de saber que é filho adotivo de César. Em 27 a.C. será Augusto, o primeiro imperador.'],
+    } },
+  { id: 'bastilha', t: 'O dia da Bastilha', y: 1789, place: 'Paris', s: 'ev_revolucao_francesa', col: '#2E4A7A',
+    intro: 'A máquina para numa rua estreita do bairro de Saint-Antoine, de manhã cedo. Ouve-se um tambor.',
+    scenes: [
+      ['ev_revolucao_francesa', 'Paris, 14 de julho de 1789. O povo está furioso: dias antes, o rei Luís XVI demitiu um ministro querido. Quem?',
+        [['Jacques Necker', true, 'Necker era o ministro das finanças, popular entre o povo; a demissão, em 11 de julho, incendiou Paris.'],
+         ['Robespierre', false, 'Robespierre ainda era um deputado pouco conhecido. O demitido foi Jacques Necker.'],
+         ['Napoleão', false, 'Napoleão era um jovem tenente de artilharia, longe de Paris. O demitido foi Jacques Necker.']]],
+      ['guilhotina', 'De manhã, a multidão invade o hospital dos Inválidos e leva milhares de fuzis. Mas falta uma coisa para atirar. O quê?',
+        [['Pólvora — e ela está na Bastilha', true, 'A pólvora tinha sido levada para a Bastilha dias antes. Para lá a multidão marchou.'],
+         ['Canhões', false, 'Faltava pólvora — e ela estava guardada na Bastilha.'],
+         ['Cavalos', false, 'Faltava pólvora — e ela estava guardada na Bastilha.']]],
+      ['ev_revolucao_francesa', 'Diante da fortaleza, alguém jura que lá dentro há centenas de presos políticos. É verdade?',
+        [['Não: são só sete presos', true, 'Sete: quatro falsários, dois loucos e um nobre. A Bastilha valia como símbolo — e pela pólvora.'],
+         ['Sim, centenas', false, 'Eram só sete presos. A Bastilha valia como símbolo — e pela pólvora.'],
+         ['Nenhum', false, 'Havia sete presos — quatro falsários, dois loucos e um nobre.']]],
+      ['ev_revolucao_francesa', 'À tarde, depois de horas de tiros, o comandante da fortaleza se rende. Qual é o nome dele?',
+        [['Bernard-René de Launay', true, 'De Launay foi levado pela multidão e morto a caminho da prefeitura.'],
+         ['Marquês de Lafayette', false, 'Lafayette assumiria, no dia seguinte, a nova Guarda Nacional de Paris. O comandante era De Launay.'],
+         ['Luís XVI', false, 'O rei estava em Versalhes. O comandante da Bastilha era Bernard-René de Launay.']]],
+      ['versalhes_espelhos', 'Em Versalhes, o rei ouve a notícia. Conta-se que perguntou: «É uma revolta?» O que lhe responderam?',
+        [['«Não, Majestade, é uma revolução»', true, 'A resposta é atribuída ao duque de La Rochefoucauld-Liancourt.'],
+         ['«Que comam brioches»', false, 'Essa frase é atribuída, sem prova nenhuma, a Maria Antonieta.'],
+         ['«O Estado sou eu»', false, 'Essa frase é atribuída a Luís XIV, mais de um século antes.']]],
+      ['ev_revolucao_francesa', 'Nos dias seguintes a Bastilha começa a ser demolida. O que você leva de lembrança?',
+        [['Uma pedra da fortaleza', null, 'pedra'], ['A chave da Bastilha', null, 'chave']]],
+    ],
+    ends: {
+      pedra: ['A pedra', 'ev_revolucao_francesa', 'Um empreiteiro chamado Palloy, encarregado da demolição, mandou esculpir pedras da Bastilha em miniaturas da fortaleza e as vendeu pela França. Você chegou antes dele.'],
+      chave: ['A chave', 'versalhes_espelhos', 'Você entrega a chave ao marquês de Lafayette. Em 1790 ele a manda de presente a George Washington — e ela está até hoje em Mount Vernon, nos Estados Unidos.'],
+    } },
+  { id: 'corte', t: 'A corte chega ao Rio', y: 1808, place: 'Rio de Janeiro', s: 'corte_1808', col: '#2E6B3F',
+    intro: 'A máquina para no cais do Rio de Janeiro. A cidade inteira está na rua, olhando para o mar.',
+    scenes: [
+      ['corte_1808', 'Março de 1808. Navios entram na baía de Guanabara trazendo a família real portuguesa. Do que ela fugiu?',
+        [['Das tropas de Napoleão, que invadiram Portugal', true, 'Em novembro de 1807, com o exército francês às portas de Lisboa, a corte embarcou para o Brasil.'],
+         ['De uma peste em Lisboa', false, 'A corte fugiu das tropas de Napoleão, que invadiram Portugal em 1807.'],
+         ['De um terremoto', false, 'O grande terremoto de Lisboa foi em 1755. Em 1807, a fuga era das tropas de Napoleão.']]],
+      ['salvador_colonial', 'Antes do Rio, a corte parou em Salvador, onde o príncipe regente assinou um decreto famoso. Qual?',
+        [['A abertura dos portos às nações amigas', true, 'Em janeiro de 1808: o Brasil podia, enfim, comerciar com outros países além de Portugal.'],
+         ['A abolição da escravidão', false, 'A abolição só viria em 1888, com a Lei Áurea. O decreto foi a abertura dos portos.'],
+         ['A independência do Brasil', false, 'A independência seria em 1822. O decreto de Salvador foi a abertura dos portos.']]],
+      ['corte_1808', 'Quem governa no lugar da mãe, a rainha D. Maria I, considerada incapaz?',
+        [['O príncipe regente D. João', true, 'D. João só seria aclamado rei, D. João VI, em 1818, no Rio de Janeiro.'],
+         ['D. Pedro', false, 'D. Pedro tinha só nove anos. Quem governava era o príncipe regente D. João.'],
+         ['D. Sebastião', false, 'D. Sebastião sumiu na batalha de Alcácer-Quibir, em 1578, e virou lenda. Quem governava era D. João.']]],
+      ['rio_oitocentista', 'Faltam casas para tantos nobres. Nas portas escolhidas os funcionários pintam P.R., de «Príncipe Regente». Como os cariocas leem as letras?',
+        [['«Ponha-se na rua»', true, 'Os donos das casas marcadas tinham de entregá-las à corte.'],
+         ['«Por respeito»', false, 'Os cariocas liam «Ponha-se na rua»: os donos tinham de entregar as casas à corte.'],
+         ['«Pague a renda»', false, 'Os cariocas liam «Ponha-se na rua»: os donos tinham de entregar as casas à corte.']]],
+      ['prensa_tipos', 'Ainda em 1808 a corte cria coisas novas no Rio. Qual destas é desse ano?',
+        [['A Imprensa Régia, a primeira gráfica oficial', true, 'Até então era proibido imprimir no Brasil. A Imprensa Régia começou a funcionar em maio de 1808.'],
+         ['A Universidade de São Paulo', false, 'A USP é de 1934. Em 1808 nasceu a Imprensa Régia, a primeira gráfica oficial.'],
+         ['O Cristo Redentor', false, 'O Cristo foi inaugurado em 1931. Em 1808 nasceu a Imprensa Régia.']]],
+      ['rio_oitocentista', 'D. João tem dois projetos para aquele ano, e você pode ajudar num deles.',
+        [['Plantar o jardim de aclimatação', null, 'jardim'], ['Abrir o primeiro banco do Brasil', null, 'banco']]],
+    ],
+    ends: {
+      jardim: ['O jardim', 'rio_oitocentista', 'Em junho de 1808 nasce o Real Horto, para aclimatar plantas vindas do Oriente, como chá e especiarias. Hoje é o Jardim Botânico do Rio, e suas palmeiras-imperiais descendem da primeira, plantada pelo próprio D. João.'],
+      banco: ['O banco', 'corte_1808', 'Em outubro de 1808 é fundado o Banco do Brasil, para pagar as contas da corte e pôr moeda em circulação. Você assina como testemunha.'],
+    } },
+];
+
+let mt = null;   // { adv, i, lives, mistakes, phase: 'menu'|'warp'|'scene'|'after'|'end', pick, ok, end }
+const mtSaved = () => LS.get('maquina', {});
+function startMaquina() { isDaily = false; isSurv = false; isMil = false; isRev = false; mt = { phase: 'menu' }; sc = 'maquina'; go(); }
+function mtGo(id) {
+  const a = MT_ADV.find(x => x.id === id); if (!a) return;
+  mt = { adv: a, i: 0, lives: MT_LIVES, mistakes: 0, phase: 'warp', pick: null };
+  try { snd.warp(); } catch (e) {}
+  go();
+  setTimeout(() => { if (mt && mt.phase === 'warp' && mt.adv === a) { mt.phase = 'scene'; go(); } }, FX_STILL ? 0 : 1700);
+}
+function mtChoose(k) {
+  if (!mt || mt.phase !== 'scene') return;
+  const sc0 = mt.adv.scenes[mt.i], c = sc0[2][k];
+  if (!c) return;
+  if (c[1] === null) return mtEnd(c[2]);
+  mt.pick = k; mt.ok = c[1]; mt.phase = 'after';
+  if (!c[1]) { mt.lives--; mt.mistakes++; try { snd.wrong(); haptic([28, 45, 28]); } catch (e) {} }
+  else try { snd.correct(mt.i); } catch (e) {}
+  go();
+}
+function mtNext() {
+  if (!mt || mt.phase !== 'after') return;
+  if (mt.lives <= 0) return mtEnd(null);
+  mt.i++; mt.pick = null; mt.phase = 'scene';
+  try { snd.page(); } catch (e) {}
+  go();
+}
+function mtEnd(key) {
+  mt.phase = 'end'; mt.end = key;
+  const stars = key ? Math.max(1, MT_LIVES - mt.mistakes) : 0;
+  mt.stars = stars;
+  const sv = mtSaved(); if (stars > (sv[mt.adv.id] || 0)) { sv[mt.adv.id] = stars; LS.set('maquina', sv); }
+  const ends = LS.get('maquinaFins', {}); if (key) { ends[mt.adv.id + ':' + key] = 1; LS.set('maquinaFins', ends); }
+  stats.mtTrips = (stats.mtTrips || 0) + 1;
+  stats.mtDone = Object.keys(mtSaved()).length; stats.mtEnds = Object.keys(ends).length;
+  LS.set('stats', stats);
+  window._newMedals = newMedals();
+  go();
+  setTimeout(() => { try { if (key) { snd.fanfare(); if (stars === 3) fx.rain(50); } else snd.final(false); } catch (e) {} }, 300);
+}
+
+const mtYear = y => y < 0 ? `${-y} a.C.` : String(y);
+const mtStars = n => `<span class="mt-stars" aria-label="${n} de 3 estrelas">${[0, 1, 2].map(i => `<i class="${i < n ? 'on' : ''}">★</i>`).join('')}</span>`;
+const mtHg = () => `<span class="mt-hg" aria-label="${mt.lives} de ${MT_LIVES} ampulhetas">${Array.from({ length: MT_LIVES }, (_, i) => `<i class="${i < mt.lives ? 'on' : ''}">${ICON.hourglass('currentColor', 14)}</i>`).join('')}</span>`;
+function maquinaHtml() {
+  if (!mt) mt = { phase: 'menu' };
+  if (mt.phase === 'menu') {
+    const sv = mtSaved(), fins = LS.get('maquinaFins', {});
+    return `
+  <div class="pg mt-pg">
+    ${topbar('Máquina do tempo', fromGab ? 'bgab' : '')}
+    <div class="mt-menu">
+      <span class="mt-dial" aria-hidden="true">${mtDial(2026)}</span>
+      <div class="display" style="font-size:26px;"><em>Para quando vamos?</em></div>
+      <p class="small muted mt-p">Escolha um momento. Lá, o que você sabe decide como você sai — mas a História não muda.</p>
+      <div class="mt-trips">${MT_ADV.map(a => { const n = Object.keys(a.ends).filter(k => fins[a.id + ':' + k]).length;
+        return `<button class="mt-trip" data-a="${a.id}" type="button" style="--ac:${a.col}">
+          <span class="mt-trip-pic">${sceneSvg({ id: a.s }, 120)}</span>
+          <span class="mt-trip-tx"><b class="mt-trip-y">${mtYear(a.y)}</b><span class="mt-trip-t">${a.t}</span><small>${a.place}${n ? ` · ${n} de ${Object.keys(a.ends).length} finais` : ''}</small></span>
+          ${mtStars(sv[a.id] || 0)}</button>`; }).join('')}</div>
+    </div>
+  </div>`;
+  }
+  const a = mt.adv;
+  if (mt.phase === 'warp') return `
+  <div class="pg pg-center mt-pg mt-warp" style="--ac:${a.col}">
+    <span class="mt-vortex" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+    <span class="mt-dial mt-dial-spin" aria-hidden="true">${mtDial(a.y)}</span>
+    <div class="display" style="font-size:24px;"><em>Viajando para ${mtYear(a.y)}…</em></div>
+    <p class="small muted">${_esc(a.intro)}</p>
+  </div>`;
+  if (mt.phase === 'end') return mtEndHtml();
+  const [pic, text, chs] = a.scenes[mt.i], after = mt.phase === 'after', c = after ? chs[mt.pick] : null, last = chs.every(x => x[1] === null);
+  return `
+  <div class="pg mt-pg mt-scene" style="--ac:${a.col}">
+    ${topbar(`${a.t} · ${mtYear(a.y)}`, 'mt-quit')}
+    <div class="mt-head"><span class="mt-step">Cena ${mt.i + 1} de ${a.scenes.length}</span>${mtHg()}</div>
+    <div class="mt-plate">${sceneSvg({ id: pic }, 320)}</div>
+    <p class="mt-text">${_esc(text)}</p>
+    ${after ? `<div class="mt-after ${c[1] ? 'is-ok' : 'is-bad'}" role="status">
+        <b>${c[1] ? `${ICON.check('currentColor', 13)} Isso!` : `${ICON.cross('currentColor', 13)} ${mt.lives > 0 ? 'Não foi bem assim — uma ampulheta a menos' : 'A última ampulheta se esvaziou'}`}</b>
+        <p>${_esc(c[2])}</p>
+        <button id="mt-next" class="btn btn-brass" type="button">${mt.lives > 0 ? 'Seguir em frente' : 'Voltar ao presente'}</button></div>`
+    : `<div class="mt-chs${last ? ' is-last' : ''}">${chs.map((x, k) => `<button class="mt-ch" data-k="${k}" type="button">${last ? ICON.map('currentColor', 13) : `<b>${'ABC'[k]}</b>`}<span>${_esc(x[0])}</span></button>`).join('')}</div>`}
+  </div>`;
+}
+function mtEndHtml() {
+  const a = mt.adv, e = mt.end && a.ends[mt.end];
+  return `
+  <div class="pg pg-center mt-pg mt-end" style="--ac:${a.col}">
+    <div class="eyebrow">${_esc(a.t)} · ${mtYear(a.y)}</div>
+    ${e ? `<div class="mt-plate mt-plate-end">${sceneSvg({ id: e[1] }, 320)}<span class="mt-fim">Fim · ${_esc(e[0])}</span></div>
+      <p class="mt-text">${_esc(e[2])}</p>
+      ${mtStars(mt.stars)}
+      <p class="small muted" style="margin:0;">${mt.mistakes ? `${mt.mistakes} ${mt.mistakes === 1 ? 'ampulheta gasta' : 'ampulhetas gastas'}` : 'Sem gastar nenhuma ampulheta!'} · ${Object.keys(a.ends).length - Object.keys(a.ends).filter(k => LS.get('maquinaFins', {})[a.id + ':' + k]).length ? 'há outro final para descobrir' : 'você viu todos os finais'}</p>`
+    : `<span class="mt-dial" aria-hidden="true">${mtDial(2026)}</span>
+      <div class="display" style="font-size:24px;"><em>A máquina puxou você de volta</em></div>
+      <p class="mt-text">As três ampulhetas se esvaziaram antes do fim da aventura. Tente de novo: agora você sabe um pouco mais sobre ${mtYear(a.y)}.</p>`}
+    ${medalChips()}
+    <div class="foot-row" style="margin-top:6px;">
+      <button id="mt-again" class="btn btn-brass" type="button">${e ? 'Outra viagem' : 'Tentar de novo'}</button>
+      <button id="${fromGab ? 'bgab' : 'bhome'}" class="btn btn-ghost btn-sm" type="button">${fromGab ? 'Gabinete' : 'Início'}</button>
+    </div>
+  </div>`;
+}
+/* the machine's dial: a brass ring with the year in its window */
+function mtDial(y) {
+  return `<svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="56" fill="#2A1D10"/><circle cx="60" cy="60" r="52" fill="none" stroke="#C9A04E" stroke-width="3"/>
+    ${Array.from({ length: 24 }, (_, i) => { const t = i / 24 * Math.PI * 2, r1 = i % 2 ? 44 : 41; return `<path d="M${(60 + Math.cos(t) * r1).toFixed(1)} ${(60 + Math.sin(t) * r1).toFixed(1)}L${(60 + Math.cos(t) * 48).toFixed(1)} ${(60 + Math.sin(t) * 48).toFixed(1)}" stroke="#C9A04E" stroke-width="${i % 2 ? 1 : 2}"/>`; }).join('')}
+    <g class="mt-hand"><path d="M60 60L60 22" stroke="#E0B968" stroke-width="3" stroke-linecap="round"/><path d="M60 60L84 70" stroke="#E0B968" stroke-width="2" stroke-linecap="round"/></g>
+    <circle cx="60" cy="60" r="5" fill="#E0B968"/>
+    <rect x="30" y="78" width="60" height="20" rx="3" fill="#F6EEDA" stroke="#C9A04E" stroke-width="1.5"/>
+    <text x="60" y="92.5" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-weight="700" font-size="${String(mtYear(y)).length > 6 ? 11 : 14}" fill="#2A1D10">${mtYear(y)}</text></svg>`;
+}
+function wireMaquina() {
+  if (!mt) return;
+  const on = (id, fn) => document.getElementById(id)?.addEventListener('click', fn);
+  const ready = tapArmed(250);
+  document.querySelectorAll('.mt-trip').forEach(b => b.addEventListener('click', () => { if (ready()) mtGo(b.dataset.a); }));
+  document.querySelectorAll('.mt-ch').forEach(b => b.addEventListener('click', () => { if (ready()) mtChoose(+b.dataset.k); }));
+  on('mt-next', () => { if (ready()) mtNext(); });
+  on('mt-quit', () => { snd.swipe(); mt = { phase: 'menu' }; go(); });
+  on('mt-again', () => { snd.select(); if (mt.end) mt = { phase: 'menu' }, go(); else mtGo(mt.adv.id); });
+}
+
+/* ═══════════════════════════════════════════════════
+   SEIS GRAUS DA HISTÓRIA — get from one figure to another through people
+   who were alive at the same time. Two figures are linked when their lives
+   overlapped by ten years or more; from Cleópatra to Napoleão is a chain
+   of such links across the centuries. At each step four contemporaries of
+   the last one are offered (their dates hidden until chosen), one of them
+   always a step closer; the target is the end. The fewest steps the chain
+   could take is the par. A puzzle of the day, the same for everyone, and
+   free ones.
+═══════════════════════════════════════════════════ */
+const SG_OVER = 10, SG_OPTS = 4;
+let _sgG = null;
+/* the links, and the people linked to the most of the others (the ones a chain can be built through) */
+function sgGraph() {
+  if (_sgG) return _sgG;
+  const ps = PL.filter(p => p.img), adj = {};
+  ps.forEach(p => { adj[p.id] = []; });
+  for (let i = 0; i < ps.length; i++) for (let j = i + 1; j < ps.length; j++) {
+    const a = ps[i], b = ps[j], o = Math.min(a.era[1], b.era[1]) - Math.max(a.era[0], b.era[0]);
+    if (o >= SG_OVER) { adj[a.id].push(b.id); adj[b.id].push(a.id); }
+  }
+  return (_sgG = { ps, adj, by: Object.fromEntries(ps.map(p => [p.id, p])) });
+}
+/* a chain worth playing: the shortest way can be walked through figures with several contemporaries each, so no step
+   offers a single face */
+function sgWide(from, d) {
+  const { adj } = sgGraph();
+  let cur = from;
+  while (d[cur] > 1) {
+    if (adj[cur].length < 5) return false;
+    cur = adj[cur].filter(v => d[v] === d[cur] - 1).sort((x, y) => adj[y].length - adj[x].length)[0];
+    if (!cur) return false;
+  }
+  return adj[from].length >= 5;
+}
+/* how many links from every figure to one */
+function sgDist(to) {
+  const { adj } = sgGraph(), d = { [to]: 0 }, q = [to];
+  while (q.length) { const u = q.shift(); adj[u].forEach(v => { if (d[v] == null) { d[v] = d[u] + 1; q.push(v); } }); }
+  return d;
+}
+let sg = null;   // { a, b, chain: [id], opts: [id], d: {id: dist to b}, par, max, phase: 'play'|'end', day, last }
+
+function sgNew(day) {
+  const { ps } = sgGraph();
+  if (day) seedFrom(dayIndex() * 4241 + 77);
+  let a, b, d;
+  for (let k = 0; k < 400; k++) {
+    a = ps[Math.floor(rnd() * ps.length)]; b = ps[Math.floor(rnd() * ps.length)];
+    if (a === b) continue;
+    d = sgDist(b.id);
+    if (d[a.id] >= 3 && d[a.id] <= 5 && sgWide(a.id, d)) break;
+  }
+  if (day) _seed = null;
+  sg = { a: a.id, b: b.id, chain: [a.id], d, par: d[a.id], max: d[a.id] + 4, phase: 'play', day: !!day, last: null };
+  sg.opts = sgOptions();
+}
+/* four contemporaries of the last link: the target itself when it is one; always at least one a step closer */
+function sgOptions() {
+  const { adj } = sgGraph(), cur = sg.chain[sg.chain.length - 1], here = sg.d[cur];
+  const free = adj[cur].filter(id => !sg.chain.includes(id));
+  const closer = shuf(free.filter(id => sg.d[id] === here - 1)), other = shuf(free.filter(id => sg.d[id] !== here - 1));
+  const out = [];
+  if (free.includes(sg.b)) out.push(sg.b);
+  if (closer.length && !out.length) out.push(closer[0]);
+  other.concat(closer.slice(1)).forEach(id => { if (out.length < SG_OPTS && !out.includes(id)) out.push(id); });
+  return shuf(out);
+}
+function startGraus(day) { isDaily = false; isSurv = false; isMil = false; isRev = false; sgNew(day); sc = 'graus'; go(); }
+const sgDiaRes = () => { const r = LS.get('grausDia', null); return r && r.day === dayIndex() ? r : null; };
+
+function sgPick(id) {
+  if (!sg || sg.phase !== 'play' || !sg.opts.includes(id)) return;
+  const before = sg.d[sg.chain[sg.chain.length - 1]];
+  sg.chain.push(id);
+  sg.last = sg.d[id] < before ? 'perto' : sg.d[id] > before ? 'longe' : 'igual';
+  if (id === sg.b) return sgEnd(true);
+  if (sg.chain.length - 1 >= sg.max) return sgEnd(false);
+  sg.opts = sgOptions();
+  if (!sg.opts.length) return sgEnd(false);
+  try { sg.last === 'perto' ? snd.correct(0) : sg.last === 'longe' ? snd.almost() : snd.tap(); } catch (e) {}
+  go();
+}
+function sgEnd(won) {
+  sg.phase = 'end'; sg.won = won;
+  const steps = sg.chain.length - 1;
+  sg.stars = !won ? 0 : steps <= sg.par ? 3 : steps <= sg.par + 1 ? 2 : 1;
+  stats.sgGames = (stats.sgGames || 0) + 1;
+  if (won) stats.sgWins = (stats.sgWins || 0) + 1;
+  if (sg.stars === 3) stats.sgPar = (stats.sgPar || 0) + 1;
+  if (sg.day && !sgDiaRes()) LS.set('grausDia', { day: dayIndex(), stars: sg.stars, steps });
+  LS.set('stats', stats);
+  window._newMedals = newMedals();
+  go();
+  setTimeout(() => { try { if (won) { snd.fanfare(); if (sg.stars === 3) fx.rain(50); } else snd.final(false); } catch (e) {} }, 250);
+}
+
+const sgYears = p => `${anoYear(p.era[0])}–${anoYear(p.era[1])}`;
+const sgFace = (p, cls, extra) => `<span class="sg-face ${cls || ''}"><img src="${p.img}" alt="" loading="lazy" draggable="false"></span>`;
+function grausHtml() {
+  if (!sg) sgNew();
+  const G = sgGraph().by, A = G[sg.a], B = G[sg.b], steps = sg.chain.length - 1;
+  if (sg.phase === 'end') return sgEndHtml();
+  return `
+  <div class="pg sg-pg">
+    ${topbar(sg.day ? 'Seis graus · do dia' : 'Seis graus', fromGab ? 'bgab' : '')}
+    <div class="sg-goal">
+      <span class="sg-end-p">${sgFace(A)}<b>${_esc(A.n)}</b><small>${sgYears(A)}</small></span>
+      <span class="sg-arrow" aria-hidden="true"><i></i><small>par ${sg.par}</small></span>
+      <span class="sg-end-p is-b">${sgFace(B)}<b>${_esc(B.n)}</b><small>${sgYears(B)}</small></span>
+    </div>
+    <div class="sg-chain scroll-x" aria-label="A corrente até agora">${sg.chain.map((id, i) => { const p = G[id];
+      return `${i ? '<i class="sg-link" aria-hidden="true"></i>' : ''}<span class="sg-node${i === sg.chain.length - 1 ? ' is-last' : ''}">${sgFace(p)}<small>${anoYear(p.era[0])}</small></span>`; }).join('')}</div>
+    <p class="sg-say" role="status">${!steps ? `Quem viveu no tempo de <b>${_esc(A.n)}</b> e leva você para mais perto de ${_esc(B.n.split(' ')[0])}?`
+      : `<span class="sg-hot is-${sg.last}">${sg.last === 'perto' ? 'Mais perto!' : sg.last === 'longe' ? 'Mais longe…' : 'Na mesma distância'}</span> ${steps} de no máximo ${sg.max} passos.`}</p>
+    <div class="sg-opts">${sg.opts.map(id => { const p = G[id];
+      return `<button class="sg-opt${id === sg.b ? ' is-goal' : ''}" data-id="${id}" type="button">${sgFace(p)}<span><b>${_esc(p.n)}</b><small>${_esc(p.nick || POS_NAME[p.pos])}</small></span></button>`; }).join('')}</div>
+  </div>`;
+}
+function sgEndHtml() {
+  const G = sgGraph().by, steps = sg.chain.length - 1;
+  return `
+  <div class="pg pg-center sg-pg sg-end">
+    <div class="eyebrow">Seis graus da História${sg.day ? ` · nº ${dayIndex()}` : ''}</div>
+    <div class="display" style="font-size:26px;"><em>${sg.won ? (sg.stars === 3 ? 'No par! Corrente perfeita.' : 'Corrente fechada!') : 'A corrente se partiu'}</em></div>
+    ${sg.won ? `<span class="mt-stars">${[0, 1, 2].map(i => `<i class="${i < sg.stars ? 'on' : ''}">★</i>`).join('')}</span>` : ''}
+    <p class="small muted" style="margin:0;">${steps} ${steps === 1 ? 'passo' : 'passos'} · o menor caminho tinha ${sg.par}</p>
+    <div class="sg-final">${sg.chain.map((id, i) => { const p = G[id];
+      return `${i ? '<i class="sg-vlink" aria-hidden="true"></i>' : ''}<span class="sg-row${id === sg.b ? ' is-b' : ''}">${sgFace(p)}<b>${_esc(p.n)}</b><small>${sgYears(p)}</small></span>`; }).join('')}</div>
+    ${medalChips()}
+    <div class="foot-row" style="margin-top:6px;">
+      <button id="sg-share" class="btn btn-ghost btn-sm" type="button">Compartilhar</button>
+      <button id="sg-again" class="btn btn-brass" type="button">Outra corrente</button>
+      <button id="${fromGab ? 'bgab' : 'bhome'}" class="btn btn-ghost btn-sm" type="button">${fromGab ? 'Gabinete' : 'Início'}</button>
+    </div>
+  </div>`;
+}
+const sgShareText = () => { const G = sgGraph().by;
+  return `🔗 Seis graus da História${sg.day ? ' nº ' + dayIndex() : ''}\n${sg.chain.map(id => G[id].n).join(' → ')}\n${sg.won ? `${sg.chain.length - 1} passos (par ${sg.par}) ${'⭐'.repeat(sg.stars)}` : 'A corrente se partiu'}\n${CHAL_URL}`; };
+function wireGraus() {
+  if (!sg) return;
+  const on = (id, fn) => document.getElementById(id)?.addEventListener('click', fn);
+  const ready = tapArmed(250);
+  document.querySelectorAll('.sg-opt').forEach(b => b.addEventListener('click', () => { if (ready()) sgPick(b.dataset.id); }));
+  on('sg-again', () => { snd.select(); startGraus(); });
+  on('sg-share', () => { const txt = sgShareText();
+    if (navigator.share) navigator.share({ text: txt }).catch(() => {});
+    else if (navigator.clipboard) navigator.clipboard.writeText(txt).then(() => { const b = document.getElementById('sg-share'); if (b) { b.dataset.l = b.dataset.l || b.textContent; b.textContent = 'Copiado!'; setTimeout(() => { b.textContent = b.dataset.l; }, 1600); } }).catch(() => {}); });
+  const ch = document.querySelector('.sg-chain'); if (ch) ch.scrollLeft = ch.scrollWidth;
+}
+
+/* ═══════════════════════════════════════════════════
+   SELFIE DE ÉPOCA — your face in a portrait of the past. Pick one of the six
+   kinds of people of Retrato de época (yours, if you have played it), and
+   the camera shows you inside an oval, in costume: the Soberano's crown and
+   ermine, the Estrategista's bicorne and epaulettes, the Artista's beret
+   and ruff, the Pensador's laurel and toga, the Explorador's helmet, the
+   Revolucionário's red cap. The shot is painted in sepia into a gilt frame
+   with a brass plate, ready to share. Without a camera, a photo from the
+   gallery does. Nothing leaves the phone.
+═══════════════════════════════════════════════════ */
+const SF_W = 300, SF_H = 400, SF_FACE = { cx: 150, cy: 182, rx: 84, ry: 106 };
+/* the costumes, drawn on the portrait's own 300 × 400 field around the face's oval */
+const SF_COST = {
+  GOV: { t: 'O Soberano', hat: `<path d="M78 96L72 44l26 22 18-36 18 30 16-38 16 38 18-30 18 36 26-22-6 52z" fill="#D4A73A" stroke="#7A5A14" stroke-width="3" stroke-linejoin="round"/>
+      <rect x="74" y="88" width="152" height="18" rx="4" fill="#B8862F" stroke="#7A5A14" stroke-width="3"/>
+      <circle cx="150" cy="97" r="6" fill="#B3402F"/><circle cx="112" cy="97" r="4.5" fill="#2E5E7E"/><circle cx="188" cy="97" r="4.5" fill="#2E7D4F"/>
+      <circle cx="72" cy="42" r="6" fill="#F6EEDA" stroke="#7A5A14" stroke-width="2"/><circle cx="116" cy="28" r="6" fill="#F6EEDA" stroke="#7A5A14" stroke-width="2"/><circle cx="150" cy="22" r="7" fill="#F6EEDA" stroke="#7A5A14" stroke-width="2"/><circle cx="184" cy="28" r="6" fill="#F6EEDA" stroke="#7A5A14" stroke-width="2"/><circle cx="228" cy="42" r="6" fill="#F6EEDA" stroke="#7A5A14" stroke-width="2"/>`,
+    body: `<path d="M0 400V336Q150 262 300 336V400z" fill="#7B1E2A"/><path d="M34 400Q52 312 150 300Q248 312 266 400z" fill="#F7F3EA" stroke="#C9BFA8" stroke-width="2"/>
+      ${[[70, 360], [104, 330], [150, 322], [196, 330], [230, 360], [92, 384], [150, 360], [208, 384], [124, 352], [176, 352]].map(([x, y]) => `<path d="M${x} ${y}l-4 9h8z" fill="#20180E"/>`).join('')}` },
+  GEN: { t: 'O Estrategista', hat: `<path d="M26 104Q150 -10 274 104Q150 70 26 104z" fill="#1A1A22" stroke="#C9A04E" stroke-width="4" stroke-linejoin="round"/>
+      <circle cx="206" cy="68" r="15" fill="#2E4A7A"/><circle cx="206" cy="68" r="10" fill="#F6EEDA"/><circle cx="206" cy="68" r="5" fill="#B3402F"/>`,
+    body: `<path d="M0 400V340Q150 270 300 340V400z" fill="#1E2E5A"/><path d="M112 292L150 330 188 292 196 316 150 360 104 316z" fill="#B3402F"/>
+      ${[56, 244].map(x => `<g><ellipse cx="${x}" cy="330" rx="34" ry="12" fill="#D4A73A" stroke="#7A5A14" stroke-width="2"/>${Array.from({ length: 7 }, (_, i) => `<path d="M${x - 27 + i * 9} 340v18" stroke="#D4A73A" stroke-width="4" stroke-linecap="round"/>`).join('')}</g>`).join('')}
+      <circle cx="150" cy="378" r="4" fill="#D4A73A"/><circle cx="150" cy="396" r="4" fill="#D4A73A"/>` },
+  ART: { t: 'O Artista', hat: `<ellipse cx="138" cy="84" rx="100" ry="34" transform="rotate(-9 138 84)" fill="#6B1E2E" stroke="#3A0E16" stroke-width="3"/>
+      <path d="M150 52l4-12" stroke="#3A0E16" stroke-width="5" stroke-linecap="round"/>`,
+    body: `<path d="M0 400V346Q150 290 300 346V400z" fill="#1F1A1C"/>
+      <path d="M34 318a116 34 0 1 0 232 0a116 34 0 1 0-232 0zM96 314a54 14 0 1 0 108 0a54 14 0 1 0-108 0z" fill="#FBF8F0" fill-rule="evenodd" stroke="#B8AE98" stroke-width="2"/>
+      ${Array.from({ length: 28 }, (_, i) => { const t = i / 28 * Math.PI * 2, c = Math.cos(t), sn = Math.sin(t);
+        return `<path d="M${(150 + c * 56).toFixed(1)} ${(314 + sn * 15).toFixed(1)}Q${(150 + c * 92).toFixed(1)} ${(316 + sn * 22 + 6).toFixed(1)} ${(150 + c * 114).toFixed(1)} ${(318 + sn * 32).toFixed(1)}" fill="none" stroke="#C9BFA8" stroke-width="1.6"/>`; }).join('')}` },
+  PEN: { t: 'O Pensador', hat: `${Array.from({ length: 9 }, (_, i) => { const t = Math.PI * (1.08 + i * .1), x = 150 + Math.cos(t) * 92, y = 150 + Math.sin(t) * 96;
+        return `<ellipse cx="${x.toFixed(0)}" cy="${y.toFixed(0)}" rx="15" ry="7" transform="rotate(${(t * 180 / Math.PI + 60).toFixed(0)} ${x.toFixed(0)} ${y.toFixed(0)})" fill="#5E7F3A" stroke="#33481E" stroke-width="2"/>`; }).join('')}
+      ${Array.from({ length: 9 }, (_, i) => { const t = Math.PI * (1.92 - i * .1), x = 150 + Math.cos(t) * 92, y = 150 + Math.sin(t) * 96;
+        return `<ellipse cx="${x.toFixed(0)}" cy="${y.toFixed(0)}" rx="15" ry="7" transform="rotate(${(t * 180 / Math.PI - 60).toFixed(0)} ${x.toFixed(0)} ${y.toFixed(0)})" fill="#6E9244" stroke="#33481E" stroke-width="2"/>`; }).join('')}`,
+    body: `<path d="M0 400V340Q150 280 300 340V400z" fill="#EDE6D4"/><path d="M30 400Q90 330 210 300Q260 312 300 350V400z" fill="#F8F4EA" stroke="#C9BFA8" stroke-width="2"/>
+      <path d="M86 400Q120 352 200 318" stroke="#C9BFA8" stroke-width="2" fill="none"/><path d="M130 400Q160 362 228 330" stroke="#C9BFA8" stroke-width="2" fill="none"/>` },
+  EXP: { t: 'O Explorador', hat: `<ellipse cx="150" cy="104" rx="128" ry="20" fill="#C8B080" stroke="#7A6440" stroke-width="3"/>
+      <path d="M62 104Q62 22 150 22T238 104z" fill="#DCC898" stroke="#7A6440" stroke-width="3"/><path d="M64 92Q150 80 236 92v10Q150 90 64 102z" fill="#6E5836"/>`,
+    body: `<path d="M0 400V342Q150 282 300 342V400z" fill="#8A7650"/><path d="M110 298Q150 330 190 298L200 330Q150 372 100 330z" fill="#B3402F"/>
+      <path d="M150 340l-10 30h20z" fill="#8E2F2F"/><path d="M60 400V360M240 400V360" stroke="#6E5836" stroke-width="4"/>` },
+  REV: { t: 'O Revolucionário', hat: `<path d="M64 112C58 50 120 18 186 30C232 38 262 66 258 98C252 120 226 118 214 104C200 88 196 108 236 112Q150 96 64 112z" fill="#B3262F" stroke="#6E1018" stroke-width="3" stroke-linejoin="round"/>
+      <circle cx="96" cy="94" r="14" fill="#2E4A7A"/><circle cx="96" cy="94" r="9.5" fill="#F6EEDA"/><circle cx="96" cy="94" r="5" fill="#B3262F"/>`,
+    body: `<path d="M0 400V340Q150 280 300 340V400z" fill="#F4F1E8"/><path d="M118 298L150 352 182 298" stroke="#C9BFA8" stroke-width="3" fill="none"/>
+      <path d="M10 360L290 400H260L0 380z" fill="#2E4A7A"/><path d="M0 380L260 400H230L0 396z" fill="#F6EEDA"/><path d="M20 352L300 396V376L40 342z" fill="#B3262F"/>` },
+};
+const SF_KINDS = ['GOV', 'GEN', 'ART', 'PEN', 'EXP', 'REV'];
+let sf = null;   // { kind, name, phase: 'pick'|'cam'|'shot'|'nocam', stream, shot (object URL), blob }
+
+function startSelfie() {
+  isDaily = false; isSurv = false; isMil = false; isRev = false;
+  const r = LS.get('retrato', null);
+  sf = { kind: r && SF_COST[r.top] ? r.top : 'GOV', name: LS.get('selfieName', ''), phase: 'pick' };
+  sc = 'selfie'; go();
+}
+const sfCostume = (k, part) => `<svg class="sf-cost" viewBox="0 0 ${SF_W} ${SF_H}" aria-hidden="true">${SF_COST[k][part]}</svg>`;
+function sfStop() { if (sf && sf.stream) { sf.stream.getTracks().forEach(t => t.stop()); sf.stream = null; } }
+async function sfCamera() {
+  if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) { sf.phase = 'nocam'; go(); return; }
+  try {
+    sf.stream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: 'user', width: { ideal: 720 }, height: { ideal: 960 } }, audio: false });
+    sf.phase = 'cam'; go();
+  } catch (e) { sf.phase = 'nocam'; sf.err = e && e.name; go(); }
+}
+/* the portrait painted: a dark painted ground, the face in sepia inside the oval, the costume, the gilt frame and the plate */
+async function sfPaint(src, sw, sh, mirror) {
+  const K = 3, c = document.createElement('canvas'); c.width = SF_W * K; c.height = (SF_H + 70) * K;
+  const g = c.getContext('2d'); g.scale(K, K);
+  const bg = g.createRadialGradient(150, 170, 30, 150, 200, 260); bg.addColorStop(0, '#5A4A36'); bg.addColorStop(1, '#1E1710');
+  g.fillStyle = bg; g.fillRect(0, 0, SF_W, SF_H);
+  /* the face: the picture scaled to cover the oval's box, clipped to the oval */
+  const { cx, cy, rx, ry } = SF_FACE, bw = rx * 2.5, bh = ry * 2.5, s = Math.max(bw / sw, bh / sh);
+  g.save(); g.beginPath(); g.ellipse(cx, cy, rx * 1.18, ry * 1.12, 0, 0, Math.PI * 2); g.clip();
+  try { g.filter = 'sepia(.62) saturate(.85) contrast(1.08) brightness(1.03)'; } catch (e) {}
+  if (mirror) { g.translate(cx * 2, 0); g.scale(-1, 1); }
+  g.drawImage(src, cx - sw * s / 2, cy - sh * s / 2, sw * s, sh * s);
+  g.restore(); try { g.filter = 'none'; } catch (e) {}
+  /* a soft vignette, as old paintings darken at the edges */
+  const vg = g.createRadialGradient(cx, cy, ry * .7, cx, cy, ry * 1.3); vg.addColorStop(0, 'rgba(30,20,10,0)'); vg.addColorStop(1, 'rgba(30,20,10,.55)');
+  g.fillStyle = vg; g.fillRect(0, 0, SF_W, SF_H);
+  /* the costume, from its own drawing */
+  for (const part of ['body', 'hat']) {
+    const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${SF_W} ${SF_H}">${SF_COST[sf.kind][part]}</svg>`;
+    const img = await new Promise((ok, no) => { const i = new Image(); i.onload = () => ok(i); i.onerror = no; i.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg); });
+    g.drawImage(img, 0, 0, SF_W, SF_H);
+  }
+  /* the gilt frame */
+  const fr = g.createLinearGradient(0, 0, SF_W, SF_H); fr.addColorStop(0, '#8A6416'); fr.addColorStop(.35, '#E8CF8A'); fr.addColorStop(.6, '#B8862F'); fr.addColorStop(1, '#6E4C14');
+  g.lineWidth = 16; g.strokeStyle = fr; g.strokeRect(8, 8, SF_W - 16, SF_H - 16);
+  g.lineWidth = 2; g.strokeStyle = '#4A3410'; g.strokeRect(17, 17, SF_W - 34, SF_H - 34); g.strokeRect(1, 1, SF_W - 2, SF_H - 2);
+  /* the plate */
+  g.fillStyle = '#1E1710'; g.fillRect(0, SF_H, SF_W, 70);
+  const pl = g.createLinearGradient(0, SF_H + 14, 0, SF_H + 58); pl.addColorStop(0, '#E8CF8A'); pl.addColorStop(1, '#A97A22');
+  g.fillStyle = pl; g.fillRect(40, SF_H + 12, SF_W - 80, 46);
+  g.fillStyle = '#2A1F08'; g.textAlign = 'center';
+  try { await document.fonts.load('italic 700 18px Fraunces'); } catch (e) {}
+  g.font = 'italic 700 17px Fraunces, Georgia, serif'; g.fillText(sf.name ? sf.name.slice(0, 22) : SF_COST[sf.kind].t, 150, SF_H + 33);
+  g.font = '700 7.5px Archivo, sans-serif'; try { g.letterSpacing = '2px'; } catch (e) {}
+  g.fillText(((sf.name ? SF_COST[sf.kind].t + ' · ' : '') + 'retrato de época · ' + new Date().getFullYear()).toUpperCase(), 150, SF_H + 49);
+  return new Promise(ok => c.toBlob(ok, 'image/jpeg', .9));
+}
+async function sfShoot() {
+  const v = document.getElementById('sf-video');
+  if (!v || !v.videoWidth) return;
+  try { snd.stamp(); } catch (e) {}
+  const fl = document.getElementById('sf-flash'); if (fl) { fl.classList.remove('is-on'); void fl.offsetWidth; fl.classList.add('is-on'); }
+  const blob = await sfPaint(v, v.videoWidth, v.videoHeight, true);
+  sfStop(); sfDone(blob);
+}
+async function sfFromFile(file) {
+  if (!file) return;
+  const url = URL.createObjectURL(file);
+  const img = await new Promise((ok, no) => { const i = new Image(); i.onload = () => ok(i); i.onerror = no; i.src = url; }).catch(() => null);
+  if (!img) return;
+  const blob = await sfPaint(img, img.naturalWidth, img.naturalHeight, false);
+  URL.revokeObjectURL(url); sfDone(blob);
+}
+function sfDone(blob) {
+  if (!blob) return;
+  if (sf.shot) URL.revokeObjectURL(sf.shot);
+  sf.blob = blob; sf.shot = URL.createObjectURL(blob); sf.phase = 'shot';
+  stats.selfies = (stats.selfies || 0) + 1; LS.set('stats', stats);
+  window._newMedals = newMedals();
+  go();
+  try { snd.fanfare(); } catch (e) {}
+}
+
+function selfieHtml() {
+  if (!sf) startSelfie();
+  const k = sf.kind, frame = (inner, cls) => `<div class="sf-frame ${cls || ''}"><div class="sf-canvas">${inner}</div><span class="sf-plate">${_esc(sf.name || SF_COST[k].t)}</span></div>`;
+  const kinds = `<div class="sf-kinds" role="group" aria-label="Fantasia">${SF_KINDS.map(x => `<button class="sf-kind${x === k ? ' is-on' : ''}" data-k="${x}" type="button" style="--kc:${RET_KINDS[x].col}">${(ICON[RET_KINDS[x].ic] || ICON.star)('currentColor', 13)}<span>${SF_COST[x].t.replace(/^O /, '')}</span></button>`).join('')}</div>`;
+  if (sf.phase === 'shot') return `
+  <div class="pg pg-center sf-pg sf-done">
+    <div class="eyebrow">Selfie de época</div>
+    <img class="sf-shot" src="${sf.shot}" alt="Seu retrato de época">
+    ${medalChips()}
+    <div class="foot-row">
+      <button id="sf-share" class="btn btn-brass" type="button">${ICON.share('currentColor', 13)} Compartilhar</button>
+      <a id="sf-save" class="btn btn-ghost btn-sm" href="${sf.shot}" download="selfie-de-epoca.jpg">Salvar</a>
+      <button id="sf-redo" class="btn btn-ghost btn-sm" type="button">Outra</button>
+    </div>
+  </div>`;
+  const live = sf.phase === 'cam';
+  return `
+  <div class="pg sf-pg">
+    ${topbar('Selfie de época', 'sf-back')}
+    ${frame(`${live ? '<video id="sf-video" autoplay playsinline muted></video>' : `<span class="sf-ghost">${QICON.bust(110)}</span>`}
+      <svg class="sf-oval" viewBox="0 0 ${SF_W} ${SF_H}" aria-hidden="true"><defs><mask id="sf-m"><rect width="${SF_W}" height="${SF_H}" fill="#fff"/><ellipse cx="${SF_FACE.cx}" cy="${SF_FACE.cy}" rx="${SF_FACE.rx}" ry="${SF_FACE.ry}" fill="#000"/></mask></defs>
+        <rect width="${SF_W}" height="${SF_H}" fill="rgba(30,23,16,.55)" mask="url(#sf-m)"/><ellipse cx="${SF_FACE.cx}" cy="${SF_FACE.cy}" rx="${SF_FACE.rx}" ry="${SF_FACE.ry}" fill="none" stroke="#E0B968" stroke-width="2" stroke-dasharray="6 5"/></svg>
+      ${sfCostume(k, 'body')}${sfCostume(k, 'hat')}<span class="sf-flash" id="sf-flash"></span>`, live ? 'is-live' : '')}
+    ${kinds}
+    <input id="sf-name" class="sf-name" type="text" maxlength="22" placeholder="Seu nome na placa (opcional)" value="${_esc(sf.name)}" autocomplete="off">
+    ${live ? `<div class="sf-btns"><button id="sf-snap" class="btn btn-brass btn-lg" type="button">${ICON.star('currentColor', 14)} Posar!</button></div><p class="small muted sf-p">Encaixe o rosto no oval e pose como um retrato a óleo.</p>`
+      : `<div class="sf-btns"><button id="sf-cam" class="btn btn-brass btn-lg" type="button">${ICON.play('currentColor', 13)} Abrir a câmera</button>
+        <label class="btn btn-ghost btn-sm sf-file">Usar uma foto<input id="sf-file" type="file" accept="image/*" hidden></label></div>
+        <p class="small muted sf-p">${sf.phase === 'nocam' ? 'A câmera não abriu — use uma foto da galeria.' : 'A foto fica só no seu celular.'}</p>`}
+  </div>`;
+}
+let _sfWatch = 0;
+function wireSelfie() {
+  if (!sf) return;
+  const on = (id, fn) => document.getElementById(id)?.addEventListener('click', fn);
+  const ready = tapArmed(200);
+  document.querySelectorAll('.sf-kind').forEach(b => b.addEventListener('click', () => { sf.kind = b.dataset.k; snd.tap(); go(); }));
+  const nm = document.getElementById('sf-name'); if (nm) nm.addEventListener('input', () => { sf.name = nm.value.slice(0, 22); LS.set('selfieName', sf.name); const pl = document.querySelector('.sf-plate'); if (pl) pl.textContent = sf.name || SF_COST[sf.kind].t; });
+  on('sf-cam', () => { if (ready()) sfCamera(); });
+  on('sf-snap', () => { if (ready()) sfShoot(); });
+  const fi = document.getElementById('sf-file'); if (fi) fi.addEventListener('change', () => sfFromFile(fi.files && fi.files[0]));
+  on('sf-redo', () => { snd.swipe(); sf.phase = 'pick'; go(); });
+  on('sf-back', () => { snd.swipe(); sfStop(); sc = fromGab ? 'gabinete' : 'home'; go(); });
+  on('sf-share', () => {
+    const txt = `Meu retrato de época 🖼️ — History Quiz\n${CHAL_URL}`;
+    if (sf.blob && navigator.canShare) { const f = new File([sf.blob], 'selfie-de-epoca.jpg', { type: 'image/jpeg' });
+      if (navigator.canShare({ files: [f] })) { navigator.share({ files: [f], text: txt }).catch(() => {}); return; } }
+    if (navigator.share) navigator.share({ text: txt }).catch(() => {});
+  });
+  const v = document.getElementById('sf-video');
+  if (v && sf.stream) { v.srcObject = sf.stream; v.play().catch(() => {}); }
+  /* the camera is let go the moment the screen is left, whichever way */
+  clearInterval(_sfWatch);
+  if (sf.stream) _sfWatch = setInterval(() => { if (sc !== 'selfie' || !sf || sf.phase !== 'cam') { sfStop(); clearInterval(_sfWatch); } }, 500);
+}
+
+/* ═══════════════════════════════════════════════════
    GABINETE DE CURIOSIDADES — the games that are not rounds of questions,
    kept the way a collector of the 1600s kept wonders: a walnut cabinet,
    each one in its niche on velvet, with a brass label under it.
@@ -26846,6 +27454,12 @@ const GAB = [
     tail: () => stats.ccBest > 0 ? 'Recorde: ' + stats.ccBest : 'Dezesseis rostos', isNew: () => !(stats.ccGames > 0) },
   { id: 'gab-rio', n: 'Rio do tempo', d: 'Pesque o século certo', art: 'ship', go: () => startRio(),
     tail: () => stats.rioBest > 0 ? 'Recorde: ' + stats.rioBest : 'Reflexo e História', isNew: () => !(stats.rioGames > 0) },
+  { id: 'gab-mt', n: 'Máquina do tempo', d: 'Aventuras em quatro momentos', art: 'hourglass', go: () => startMaquina(),
+    tail: () => { const n = Object.keys(LS.get('maquinaFins', {})).length; return n ? n + (n === 1 ? ' final visto' : ' finais vistos') : 'Para quando vamos?'; }, isNew: () => !(stats.mtTrips > 0) },
+  { id: 'gab-sg', n: 'Seis graus', d: 'De uma figura a outra, por contemporâneos', art: 'chains', go: () => startGraus(!sgDiaRes()),
+    tail: () => sgDiaRes() ? 'Corrente do dia feita' : 'Corrente do dia nº ' + dayIndex(), isNew: () => !(stats.sgGames > 0) },
+  { id: 'gab-sf', n: 'Selfie de época', d: 'Você num retrato a óleo', art: 'palette', go: () => startSelfie(),
+    tail: () => stats.selfies > 0 ? stats.selfies + (stats.selfies === 1 ? ' retrato' : ' retratos') : 'Câmera e fantasia', isNew: () => !(stats.selfies > 0) },
   { id: 'gab-mm', n: 'Mímica', d: 'Para jogar em turma', art: 'masks', go: () => startMimica(),
     tail: () => stats.mmGames > 0 ? stats.mmGames + (stats.mmGames === 1 ? ' festa' : ' festas') : 'Dois times', isNew: () => !(stats.mmGames > 0) },
   { id: 'gab-mf', n: 'Mito ou fato?', d: 'Arraste a carta: lenda ou verdade?', art: 'scales', go: () => startMito(),
