@@ -167,6 +167,7 @@ function mfAnswer(v) {
 }
 function mfNext() {
   if (!mf || mf.phase !== 'rev') return;
+  if (mf.quest && (!mf.ok || mf.score >= mf.quest.need)) return provaDone(mf.ok);
   if (mf.lives <= 0 || mf.i >= mf.deck.length - 1) { if (mf.i >= mf.deck.length - 1 && mf.lives > 0) mf.all = true; return mfEnd(); }
   mf.i++; mf.phase = 'card'; mf.pick = null; mf.ok = null; mf.anim = 'in';
   go();
@@ -203,15 +204,17 @@ const mfWord = v => v === 'f' ? 'Fato' : 'Mito';
 function mitoHtml() {
   if (!mf) mfNew();
   if (mf.phase === 'end') return mitoEndHtml();
-  const c = mfCard(), rev = mf.phase === 'rev';
+  const c = mfCard(), rev = mf.phase === 'rev', Q = mf.quest;
+  const settled = Q && rev && (!mf.ok || mf.score >= Q.need);
   const best = Math.max(mf.best0, mf.score);
   return `
   <div class="pg mf-pg${rev ? ' is-rev' : ''}">
-    ${topbar('Mito ou fato?', fromGab ? 'bgab' : '')}
-    <div class="mf-head">
+    ${Q ? provaBar() : topbar('Mito ou fato?', fromGab ? 'bgab' : '')}
+    ${Q ? `<div class="mf-head pv-head">${provaPips(mf.score, Q.need, rev && !mf.ok)}<span class="mf-run"><small>${Q.need === 3 ? 'Três' : 'Duas'} cartas, sem errar</small></span></div>`
+      : `<div class="mf-head">
       ${mfSeals()}
       <span class="mf-run"><b class="num">${mf.score}</b> ${mf.score === 1 ? 'certa' : 'certas'}<small>Recorde ${best}</small></span>
-    </div>
+    </div>`}
     <div class="mf-stage">
       <i class="mf-under mf-under-2" aria-hidden="true"></i><i class="mf-under" aria-hidden="true"></i>
       <div id="mf-card" class="mf-card${rev ? ' is-turned' : ''}${mf.anim === 'flip' ? ' is-flipping' : mf.anim === 'in' ? ' is-coming' : ''}">
@@ -230,7 +233,8 @@ function mitoHtml() {
         </div>
       </div>
     </div>
-    ${rev ? `<div class="mf-btns"><button id="mf-next" class="btn ${mf.lives > 0 ? 'btn-brass' : 'btn-ghost'} btn-lg" type="button">${mf.lives > 0 && !(mf.i >= mf.deck.length - 1) ? `Próxima ${ICON.back('currentColor', 12).replace('<svg', '<svg style="transform:scaleX(-1)"')}` : 'Ver resultado'}</button></div>`
+    ${settled ? provaVerdict(mf.ok) : ''}
+    ${rev ? `<div class="mf-btns"><button id="mf-next" class="btn ${mf.lives > 0 || Q ? 'btn-brass' : 'btn-ghost'} btn-lg" type="button">${settled ? provaGoLabel(mf.ok) : mf.lives > 0 && !(mf.i >= mf.deck.length - 1) ? `Próxima ${ICON.back('currentColor', 12).replace('<svg', '<svg style="transform:scaleX(-1)"')}` : 'Ver resultado'}</button></div>`
     : `<div class="mf-btns">
         <button id="mf-m" class="mf-btn is-m" type="button">${ICON.cross('currentColor', 16)}<b>Mito</b></button>
         <span class="mf-or" aria-hidden="true">arraste<br>a carta</span>

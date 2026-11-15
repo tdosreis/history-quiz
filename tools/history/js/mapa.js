@@ -183,11 +183,10 @@ function albMapHtml() {
     <div class="alb-top">
       ${topbar('Álbum')}
       <div class="alb-head">
-        <button id="balbvit" class="alb-vit" type="button">${ICON.star('currentColor', 12)} Vitrine</button>
-        <button id="balbselo" class="alb-vit" type="button">${ICON.stamp('currentColor', 12)} Selos</button>
         <span class="display" style="font-size:20px;">${album.size}<span class="muted" style="font-size:13px;"> / ${total}</span></span>
       </div>
     </div>
+    ${albNav('fig')}
     <div class="alb-bar"><i style="width:${Math.max(1, pct)}%"></i></div>
     <div class="amap-tabs" id="amap-tabs" aria-label="Partes do mundo">
       <button class="amap-tab${amapView === 'WORLD' ? ' is-on' : ''}" data-view="WORLD" type="button" aria-pressed="${amapView === 'WORLD'}">Mundo<small>${album.size}/${total}</small></button>

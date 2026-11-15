@@ -81,7 +81,9 @@ const cronRow = (e, cls, id, li) => `<div class="cron-row${cls || ''}"${id ? ` i
 function cronHtml() {
   if (!cron) cron = buildCron();
   if (cron.phase === 'end') return cronEndHtml();
-  const rev = cron.phase === 'reveal', L = cron.last;
+  const rev = cron.phase === 'reveal', L = cron.last, Q = cron.quest;
+  /* a prova of the climb: one or two events, no second chance; it is settled when the last is placed or one is missed */
+  const settled = Q && rev && (cron.lives <= 0 || !cron.deck.length), pass = settled && cron.lives > 0;
   const lives = Array.from({ length: CRON_LIVES }, (_, i) => `<i class="${i < cron.lives ? 'on' : ''}">${ICON.hourglass('currentColor', 15)}</i>`).join('');
   const rows = [];
   cron.line.forEach((e, i) => {
@@ -91,14 +93,15 @@ function cronHtml() {
   });
   if (!rev) rows.push(`<button class="cron-slot" data-slot="${cron.line.length}" type="button" aria-label="Depois de ${cronYear(cron.line[cron.line.length - 1])}"><span>depois</span></button>`);
   /* the first turn says the rules once, in the room the line has not yet taken */
-  if (!rev && cron.line.length === 1) rows.push(`<p class="cron-hint">O ano de cada evento aparece quando ele entra na linha. Errou o lugar, perde uma das ${CRON_LIVES === 3 ? 'três' : CRON_LIVES} ampulhetas.</p>`);
+  if (!rev && cron.line.length === 1 && !Q) rows.push(`<p class="cron-hint">O ano de cada evento aparece quando ele entra na linha. Errou o lugar, perde uma das ${CRON_LIVES === 3 ? 'três' : CRON_LIVES} ampulhetas.</p>`);
   return `
   <div class="pg cron-pg${rev ? ' is-rev' : ''}">
-    ${topbar(cron.daily ? 'Linha do dia · nº ' + cron.daily.day : 'Cronologia')}
-    <div class="ano-head"><span class="cron-lives" role="img" aria-label="${cron.lives} de ${CRON_LIVES} vidas">${lives}</span>
-      <span class="ano-score"><b class="num">${cron.score}</b> na linha</span></div>
+    ${Q ? provaBar() : topbar(cron.daily ? 'Linha do dia · nº ' + cron.daily.day : 'Cronologia')}
+    ${Q ? (Q.need > 1 ? `<div class="ano-head pv-head">${provaPips(cron.score, Q.need, rev && cron.lives <= 0)}<span class="ano-score">${Q.need} eventos, sem errar</span></div>` : '')
+      : `<div class="ano-head"><span class="cron-lives" role="img" aria-label="${cron.lives} de ${CRON_LIVES} vidas">${lives}</span>
+      <span class="ano-score"><b class="num">${cron.score}</b> na linha</span></div>`}
     ${rev ? `<div class="cron-res ${L.ok ? 'good' : 'bad'}" id="cron-res" aria-live="polite">
-        <p class="cron-res-h"><b>${L.ok ? 'Isso!' : 'Não era aí'}</b> <span class="num">${cronYear(L.e)}</span>${L.ok ? '' : ` <small>· ${cron.lives} ${cron.lives === 1 ? 'vida' : 'vidas'}</small>`}</p>
+        <p class="cron-res-h"><b>${L.ok ? 'Isso!' : 'Não era aí'}</b> <span class="num">${cronYear(L.e)}</span>${L.ok || Q ? '' : ` <small>· ${cron.lives} ${cron.lives === 1 ? 'vida' : 'vidas'}</small>`}</p>
         ${L.selo ? seloWonLine(L.selo) : ''}${L.e.x ? `<p class="cron-res-x">${_esc(L.e.x)}</p>` : ''}
       </div>`
       : `<div class="onde-card cron-card">
@@ -106,7 +109,8 @@ function cronHtml() {
       <div class="onde-tt"><p class="onde-t">${_esc(cron.cur.t)}</p><span class="onde-y">Toque onde entra na linha</span></div>
     </div>`}
     <div class="cron-line scroll-y" id="cron-line" ${rev ? 'role="list" tabindex="0"' : 'role="group"'} aria-label="A linha do tempo, do mais antigo ao mais recente">${rows.join('')}</div>
-    ${rev ? `<button id="cron-next" class="btn btn-brass" aria-describedby="cron-res">${cron.lives <= 0 || !cron.deck.length ? 'Ver resultado' : 'Próximo'}</button>` : ''}
+    ${settled ? provaVerdict(pass) : ''}
+    ${rev ? `<button id="cron-next" class="btn btn-brass" aria-describedby="cron-res">${settled ? provaGoLabel(pass) : cron.lives <= 0 || !cron.deck.length ? 'Ver resultado' : 'Próximo'}</button>` : ''}
   </div>`;
 }
 
@@ -171,6 +175,7 @@ function cronPlace(i) {
 }
 function cronNext() {
   if (!cron || cron.phase !== 'reveal') return;
+  if (cron.quest && (cron.lives <= 0 || !cron.deck.length)) return provaDone(cron.lives > 0);
   if (cron.lives <= 0 || !cron.deck.length) {
     cron.phase = 'end';
     if (cron.replay) { go(); return; }

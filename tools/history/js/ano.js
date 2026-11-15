@@ -205,10 +205,15 @@ function anoTicks(q, pos) {
   }
   return `<span>${anoYear(q.lo)}</span>${out}<span>${anoYear(q.hi)}</span>`;
 }
+/* a prova's margin, drawn on the ruler: the years either side of the thumb that still count */
+function anoBand(q, g, tol) {
+  const span = q.hi - q.lo, a = Math.max(q.lo, g - tol), b = Math.min(q.hi, g + tol);
+  return `left:calc(var(--ano-th0) + (100% - 2 * var(--ano-th0)) * ${((a - q.lo) / span).toFixed(4)});width:calc((100% - 2 * var(--ano-th0)) * ${((b - a) / span).toFixed(4)})`;
+}
 function anoHtml() {
   if (!ano) ano = buildAno();
   if (ano.phase === 'end') return anoEndHtml();
-  const q = ano.qs[ano.i], e = q.e, rev = ano.phase === 'reveal';
+  const q = ano.qs[ano.i], e = q.e, rev = ano.phase === 'reveal', Q = ano.quest;
   const last = ano.log[ano.log.length - 1];
   const dots = ano.qs.map((x, i) => {
     const l = ano.log[i];
@@ -218,9 +223,9 @@ function anoHtml() {
   const pos = y => `calc(var(--ano-th0) + (100% - 2 * var(--ano-th0)) * ${((y - q.lo) / (q.hi - q.lo)).toFixed(4)})`;
   return `
   <div class="pg ano-pg${rev ? ' is-rev' : ''}">
-    ${topbar(ano.hoje ? 'Hoje na História' : 'Que ano?')}
-    <div class="ano-head"><div class="runlog" aria-hidden="true">${dots}</div>
-      <span class="ano-score"><b class="num">${ano.pts}</b> pts</span></div>
+    ${Q ? provaBar() : topbar(ano.hoje ? 'Hoje na História' : 'Que ano?')}
+    ${Q ? '' : `<div class="ano-head"><div class="runlog" aria-hidden="true">${dots}</div>
+      <span class="ano-score"><b class="num">${ano.pts}</b> pts</span></div>`}
     <div class="ano-card"><div class="ano-slip">
       ${anoPic(e)}
       ${ano.hoje ? `<span class="ano-date">${ICON.calendar('currentColor', 12)} ${hojeWhen(q)}</span>` : ''}
@@ -234,19 +239,21 @@ function anoHtml() {
         ${anoEras(q, pos)}
         <input type="range" id="ano-range" min="${q.lo}" max="${q.hi}" step="1" value="${rev ? last.g : ano.guess}"
           aria-label="Ano" aria-valuetext="${anoYear(rev ? last.g : ano.guess)}" ${rev ? 'disabled' : ''}>
+        ${Q ? `<span class="ano-band${rev ? (ano.pass ? ' is-good' : ' is-bad') : ''}" id="ano-band" style="${anoBand(q, rev ? last.g : ano.guess, Q.tol)}" aria-hidden="true"></span>` : ''}
         ${rev ? `<span class="ano-mark ano-mark-g" style="left:${pos(last.g)}"></span>
                  <span class="ano-mark ano-mark-y" style="left:${pos(e.y)}"></span>` : ''}
         <div class="ano-ends">${anoTicks(q, pos)}</div>
       </div>
+      ${Q && !rev ? `<p class="pv-rule">Vale se errar por até <b>${Q.tol} ${Q.tol === 1 ? 'ano' : 'anos'}</b>: a faixa na régua</p>` : ''}
       ${rev ? '' : `<div class="ano-nudge">
         <button class="btn btn-ghost btn-sm" data-nudge="-10" aria-label="Menos 10 anos">−10</button><button class="btn btn-ghost btn-sm" data-nudge="-1" aria-label="Menos 1 ano">−1</button>
         <button class="btn btn-ghost btn-sm" data-nudge="1" aria-label="Mais 1 ano">+1</button><button class="btn btn-ghost btn-sm" data-nudge="10" aria-label="Mais 10 anos">+10</button></div>`}
     </div>
     ${rev ? `<div class="ano-after">
-        <span class="display ${last.p >= 80 ? 'good' : last.p >= 50 ? 'brass' : 'bad'}" style="font-size:17px;">+${last.p}</span>
+        ${Q ? provaVerdict(ano.pass) : `<span class="display ${last.p >= 80 ? 'good' : last.p >= 50 ? 'brass' : 'bad'}" style="font-size:17px;">+${last.p}</span>`}
         ${last.selo ? seloWonLine(last.selo) : ''}
         ${e.x ? `<div class="story"><span class="story-k">${ICON.book('currentColor', 11)} Você sabia?</span><p>${_esc(e.x)}</p></div>` : ''}
-        <button id="ano-next" class="btn btn-brass">${ano.i >= ano.qs.length - 1 ? 'Ver resultado' : 'Próximo'}</button></div>`
+        <button id="ano-next" class="btn btn-brass">${Q ? provaGoLabel(ano.pass) : ano.i >= ano.qs.length - 1 ? 'Ver resultado' : 'Próximo'}</button></div>`
       : `<button id="ano-go" class="btn btn-brass btn-lg">${ICON.check('currentColor', 14)} Cravar o ano</button>`}
   </div>`;
 }
@@ -296,12 +303,15 @@ function anoCommit() {
   /* a medal (or a goal of the week) is won the moment it is earned, and announced on this game's results */
   try { ano.medals = (ano.medals || []).concat(newMedals()); } catch (err) {}
   ano.phase = 'reveal';
-  if (p === 100) snd.fanfare(); else if (p >= 80) snd.correct(0); else if (p >= 50) snd.almost(); else snd.wrong();
+  /* a prova of the climb is won inside its margin, whatever the points */
+  if (ano.quest) ano.pass = d <= ano.quest.tol;
+  if (p === 100) snd.fanfare(); else if (ano.quest ? ano.pass : p >= 80) snd.correct(0); else if (!ano.quest && p >= 50) snd.almost(); else snd.wrong();
   go();
-  if (p >= 80) try { burst(p === 100 ? 28 : 14); } catch (err) {}
+  if (ano.quest ? ano.pass : p >= 80) try { burst(p === 100 ? 28 : 14); } catch (err) {}
 }
 function anoNext() {
   if (!ano || ano.phase !== 'reveal') return;
+  if (ano.quest) return provaDone(ano.pass);
   if (ano.i >= ano.qs.length - 1) {
     ano.phase = 'end';
     if (ano.hoje) {
@@ -344,6 +354,8 @@ function wireAno() {
     ano.guess = v;
     if (r) { r.value = v; r.setAttribute('aria-valuetext', anoYear(v)); }
     if (yEl) yEl.textContent = anoYear(v);
+    const band = document.getElementById('ano-band');
+    if (band && ano.quest) band.style.cssText = anoBand(q, v, ano.quest.tol);
   };
   if (r && ano.phase === 'guess') {
     r.addEventListener('input', () => set(+r.value));

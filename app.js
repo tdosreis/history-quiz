@@ -5301,16 +5301,7 @@ function shareText() {
 
   /* The ladder gets its own card: the climb reads better as a column of
      rungs than as a row of squares, and the number is the whole story. */
-  if (isMil) {
-    const climb   = LADDER.map((s, i) => i < rung ? '🟨' : '⬛').join('');
-    const verdict = banked >= LADDER[LADDER.length - 1].v ? 'LEVEI O MILHÃO!'
-                  : cashed ? 'parei e levei' : 'caí e levei';
-    const albM = runNew
-      ? `\n📔 ${runNew} ${runNew === 1 ? 'figurinha nova' : 'figurinhas novas'} · ${album.size}/${ALL_STICKERS.length} no álbum`
-      : '';
-    return `Rumo ao Milhão 📜 History Quiz\n${climb}\n`
-         + `${verdict} ${money(banked)} · degrau ${rung}/${LADDER.length}${albM}\n${chalShareTail(chalMine())}`;
-  }
+  if (isMil) return famaShareText();
 
   const grid = runLog.map(p => p === 3 ? '🟩' : p === 1 ? '🟨' : p === -1 ? '⬜' : '⬛').join('');
   const head = isDaily ? `History Quiz 📜 Desafio #${dayIndex()}`
@@ -5906,13 +5897,13 @@ const MEDALS = [
   { id:'surv10', ic:'shield', n:'Sobrevivente',   d:'10 acertos seguidos no Mata-mata',
     t: st => (st.survBest || 0) >= 10, p: st => [st.survBest || 0, 10] },
   /* ── the ladder ── */
-  { id:'safe1',  ic:'money', n:'Primeiro degrau', d:'Garanta R$ 5.000 no Milhão',
+  { id:'safe1',  ic:'money', n:'Primeiro degrau', d:'Chegue ao primeiro degrau gravado: um ano',
     t: st => (st.milBest || 0) >= 5000 },
-  { id:'safe2',  ic:'coins', n:'Meio caminho',   d:'Garanta R$ 50.000 no Milhão',
+  { id:'safe2',  ic:'coins', n:'Meio caminho',   d:'Chegue ao segundo degrau gravado: dois séculos',
     t: st => (st.milBest || 0) >= 50000 },
-  { id:'quit',   ic:'stop', n:'Sabe a hora',    d:'Pare e leve R$ 100.000 ou mais',
+  { id:'quit',   ic:'stop', n:'Sabe a hora',    d:'Pare com cinco séculos ou mais',
     t: st => (st.milBest || 0) >= 100000 },
-  { id:'million',ic:'crown', n:'Milionário',     d:'Chegue a R$ 1.000.000',
+  { id:'million',ic:'crown', n:'Imortal',        d:'Suba os 16 degraus: para sempre',
     t: st => (st.million || 0) >= 1 },
   /* ── the stamps and the years ── */
   { id:'selo10', ic:'stamp', n:'Filatelista',     d:'Ganhe 10 selos',
@@ -6019,7 +6010,7 @@ const MEDAL_SETS = [
     ids:['alb25','alb60','albHalf','alb3q','albAll','albEsc','albSel','albMsc','albBook'] },
   { id:'rotina', n:'Rotina',         tag:'Rotina', shape:'hex',
     ids:['daily3','daily7','surv10','revLearn','hoje400','cronDia7','semana1','semana4'] },
-  { id:'milhao', n:'Rumo ao Milhão', tag:'Milhão', shape:'coin',
+  { id:'milhao', n:'Para a História', tag:'História', shape:'coin',
     ids:['safe1','safe2','quit','million'] },
   { id:'arquivo', n:'O arquivo',     tag:'Arquivo', shape:'hex',
     ids:['fQuote','fBattle','fLine','fNews','fDuel','fMyth','fOrder','fAll'] },
@@ -6409,8 +6400,10 @@ function buildMilhao() {
      a card dealt from the album's own data. It is the same climb; it just
      stops being sixteen of the same shape. */
   dealSpecials(qs);
+  /* and five more are a turn of one of the other games, played for the rung (js/prova.js) */
+  dealProvas(qs);
 
-  return { id:'milhao', name:'Rumo ao Milhão', emoji:'💰',
+  return { id:'milhao', name:'Para a História', emoji:'📜',
            tag:'Uma pergunta por degrau', col:'#FFD700', diff:'Show', qs, spare };
 }
 
@@ -6433,7 +6426,8 @@ function startMilhao() {
 
 /* PARAR — take the money on the table and stop. Always a win. */
 function cashOut() {
-  if (!isMil || sc !== 'quiz') return;
+  /* from the board, or from the card that announces a carta especial or a prova */
+  if (!isMil || (sc !== 'quiz' && sc !== 'card')) return;
   clearInterval(tmr);
   cashed = true;
   banked = rung > 0 ? LADDER[rung - 1].v : 0;
@@ -18269,7 +18263,7 @@ function packStrip() {
 }
 function openRunPack() {
   openPack(runPulls, {
-    title: isMil ? 'Pacote do Milhão' : isSurv ? 'Pacote do mata-mata' : isDaily ? 'Pacote do diário' : 'Pacote da rodada',
+    title: isMil ? 'Pacote da escalada' : isSurv ? 'Pacote do mata-mata' : isDaily ? 'Pacote do diário' : 'Pacote da rodada',
     onClose: to => { runPackOpened = true; if (to) { snd.swipe(); sc = to; } go(); },
   });
 }
@@ -18571,7 +18565,8 @@ function vitrineHtml() {
   const chip = (k, n, t) => `<span class="vit-chip"><i class="vit-sw vit-f${k}"></i><b>${n}</b>${t}</span>`;
   return `
   <div class="pg vit-pg scroll-y" style="gap:12px;">
-    ${topbar('Vitrine')}
+    ${topbar('Álbum', 'bvitback')}
+    ${albNav('vit')}
     <div class="vit-hero">
       <h1 class="display vit-title">A <em class="brass">vitrine</em></h1>
       <p class="vit-dek">${all.length} ${all.length === 1 ? 'figurinha colada' : 'figurinhas coladas'}, cada uma uma cópia única — e ${rares.length} ${rares.length === 1 ? 'rara' : 'raras'}.</p>
@@ -18630,7 +18625,7 @@ function vitrineHtml() {
         <span class="vit-f0"><b>Comum</b>80%</span><span class="vit-f1"><b>Prata</b>14% · tiragem 500</span>
         <span class="vit-f2"><b>Holográfica</b>5% · tiragem 150</span><span class="vit-f3"><b>Ouro</b>1% · tiragem 50</span>
       </div>
-      <p>Autografadas saem em 2,5% (tiragem 25) e erros de impressão em 0,8% (tiragem 10). Difícil, sequência, mata-mata e degraus altos do Milhão melhoram as chances. Cada figurinha tem estado de 7 a 10 e um código no verso: <b>Verificar</b> confere se ela é autêntica.</p>
+      <p>Autografadas saem em 2,5% (tiragem 25) e erros de impressão em 0,8% (tiragem 10). Difícil, sequência, mata-mata e os degraus altos da escalada melhoram as chances. Cada figurinha tem estado de 7 a 10 e um código no verso: <b>Verificar</b> confere se ela é autêntica.</p>
     </section>
   </div>`;
 }
@@ -18685,163 +18680,10 @@ function html() {
   if (sc === 'metas') return metasHtml();
   if (sc === 'desafio') return chalHtml();
 
-  /* ── Home: the cover ────────────────────────────────────────── */
-  if (sc === 'home') {
-    const best = milBest();
-    const done = dailyDone(), dst = dailyStreakNow(), dres = dailyInfo();
-    const { p: hero, num } = heroSticker();
-    const year = new Date().getFullYear();
-
-    /* The three modes share the lifelines' language now: the icon in a disc
-       tinted with that mode's own colour, so the home screen and the board
-       look like the same app rather than two. */
-    const mode = (id, ic, label, tail, kind) => `
-      <button id="${id}" class="mode mode-${kind}">
-        <span class="mode-disc">${ic}</span>
-        <span class="mt">${label}</span>
-        ${tail ? `<span class="ms">${tail}</span>` : ''}
-      </button>`;
-
-    const NUM = String(num).padStart(3, '0');
-    const pct = albumPct();
-    /* three faces for the album's fan: the latest you hold, else great ones
-       still to find (shown as missing — the invitation) */
-    const held = PL.filter(p => album.has(p.id) && !UNPAINTED.has(p.id));
-    const fan = (held.length >= 3 ? held.slice(-3)
-      : [...held, ...PL.filter(p => FAMOUS.has(p.id) && !album.has(p.id) && !UNPAINTED.has(p.id))].slice(0, 3));
-    /* a tile on a phone is four to a row: it says its line short (\`short\`), the list on a wider screen says it long */
-    const row = (id, n, label, tail, kind, ic, short) => `
-      <button id="${id}" class="cv-row mode-${kind}">
-        <span class="cv-n">${n}</span>
-        <span class="cv-rt"><b>${label}</b><small>${short && short !== tail ? `<span class="cv-tl">${tail}</span><span class="cv-ts">${short}</span>` : tail}</small></span>
-        <span class="mode-disc cv-ic">${ic}</span>
-      </button>`;
-
-    return `
-    <div class="pg pg-home cover">
-
-      <figure class="cv-art">
-        <img class="cv-bg" src="${hero.img}" alt="" aria-hidden="true" decoding="async">
-        <img src="${hero.img}" alt="${hero.n}" decoding="async">
-        <div class="cv-mast">
-          <span>History Quiz</span><span>Edição ${year}</span>
-        </div>
-        <figcaption class="cv-cap"><b>Nº ${NUM}</b> ${hero.n}<i>${POS_NAME[hero.pos]} · ${CTRY_NAME[hero.ctry] || hero.ctry}</i></figcaption>
-      </figure>
-
-      <div class="cv-body">
-        <h1 class="display cv-title">Rumo ao <em class="brass">Milhão</em></h1>
-        <p class="cv-dek">Dezesseis perguntas até <b>R$ 1.000.000</b>, cada uma mais difícil — e quatro cartas especiais no caminho.</p>
-
-        <div class="cv-cta">
-          <button id="mil-btn" class="btn btn-brass btn-lg">${ICON.play('currentColor', 15)} Jogar agora</button>
-          ${best > 0 ? `<span class="cv-best">Seu recorde <b>${money(best)}</b></span>` : ''}
-        </div>
-
-      ${(() => {
-        /* one line of news, when there is some: the welcome packet first,
-           then a birthday edition waiting to be won today */
-        const v = V();
-        if (chal && !chal.accepted) return chalNews();
-        if (v.welcome && v.welcome.length) return `<button id="bwelc" class="home-news is-gift" type="button">
-          <span class="hn-ic">${ICON.star('currentColor', 13)}</span>
-          <span><b>Pacote de boas-vindas</b> · suas figurinhas foram certificadas</span></button>`;
-        /* the newest kinds of question, once, until a round of them has been played */
-        if ((stats.novasV || (stats.novasGames > 0 ? 1 : 0)) < NOVAS_V) return `<button id="bnovas" class="home-news is-new" type="button">
-          <span class="hn-ic">${ICON.star('currentColor', 13)}</span>
-          <span><b>Novidade</b> · charadas, rostos na lupa, o intruso, frases para completar e anacronismos: jogue uma rodada</span></button>`;
-        if (!(stats.retratos > 0)) return `<button id="bretn" class="home-news is-new" type="button">
-          <span class="hn-ic">${ICON.star('currentColor', 13)}</span>
-          <span><b>Quem você seria na História?</b> · oito perguntas, um retrato de época</span></button>`;
-        if (!(stats.mfGames > 0)) return `<button id="bmfn" class="home-news is-new" type="button">
-          <span class="hn-ic">${ICON.star('currentColor', 13)}</span>
-          <span><b>Novo: Mito ou fato?</b> · arraste a carta para a lenda ou para a verdade</span></button>`;
-        const t = todaysBdays().filter(id => !v.lim[`${id}:${new Date().getFullYear()}`]);
-        if (t.length) return `<button id="bvit" class="home-news" type="button">
-          <span class="hn-ic">${ICON.star('currentColor', 13)}</span>
-          <span>Aniversário de <b>${PL.find(p => p.id === t[0]).n}</b> · edição do dia</span></button>`;
-        return '';
-      })()}
-        ${(() => { try { return almanacHtml(); } catch (e) { return ''; } })()}
-
-        <nav class="cv-toc cv-toc-4" aria-label="Modos">
-          <h2 class="cv-h">Outros jogos<button id="bgab2" class="cv-more" type="button">Gabinete · ${GAB.length} jogos ${ICON.back('currentColor', 9).replace('<svg', '<svg style="transform:scaleX(-1)"')}</button></h2>
-          ${row('daily-btn', 'I', 'Diário',
-            done ? 'Feito hoje' + (dres ? ' · ' + dres.nCorrect + '/' + dres.total : '')
-                 : 'Desafio nº ' + dayIndex() + (dst > 0 ? ' · ' + dst + ' dias seguidos' : ''),
-            done ? 'done' : 'daily', ICON.calendar('currentColor', 15),
-            done ? (dres ? 'Feito · ' + dres.nCorrect + '/' + dres.total : 'Feito hoje') : dst > 0 ? 'Sequência ' + dst : 'Nº ' + dayIndex())}
-          ${(() => { const nx = jorNextIdx(), t = jorTotal();
-            return row('jor-btn', 'II', 'Jornada', nx < 0 ? 'Completa · ' + t + ' estrelas' : nx === 0 ? 'Seis eras, 19 paradas' : 'Parada ' + (nx + 1) + ' de ' + JOR_STOPS.length,
-              'jor', ICON.map('currentColor', 15), nx > 0 ? '★ ' + t : ''); })()}
-          ${row('surv-btn', 'III', 'Mata-mata',
-            (stats.survBest || 0) > 0 ? 'Recorde ' + stats.survBest : 'Até errar uma', 'surv', ICON.shield('currentColor', 15))}
-          ${row('cta-btn', 'IV', 'Treino', 'Sem pressa', 'train', ICON.ladder('currentColor', 15))}
-          ${(() => { const r = hojeRes(), o = !r && hojeOpen(), d = new Date(), b = LS.get('anoBest', 0);
-            return row('ano-btn', 'V', 'Que ano?', !r ? (o ? 'Hoje · continuar' : 'Hoje · ' + d.getDate() + ' de ' + MES[d.getMonth()]) : b > 0 ? 'Recorde ' + b + ' pts' : 'Acerte o ano',
-              r ? 'ano' : 'hoje', ICON.hourglass('currentColor', 15), !r ? 'Hoje' : b > 0 ? 'Recorde ' + b : ''); })()}
-          ${(() => { const r = ondeDiaRes(), fresh = !(stats.lrCases > 0);
-            /* until the day's map is played the tile says it is waiting; then it points at the chase until it has been tried */
-            return row('onde-btn', 'VI', 'Onde foi?', !r ? 'Mapa do dia nº ' + dayIndex() : fresh ? 'Novo: o rastro do ladrão' : LS.get('ondeBest', 0) > 0 ? 'Recorde ' + LS.get('ondeBest', 0) + ' pts' : 'Ache no mapa',
-              'onde', ICON.globe('currentColor', 15), !r ? 'Mapa do dia' : fresh ? 'Novo jogo' : ''); })()}
-          ${(() => { const k = cronDiaKept(), b = LS.get('cronBest', 0);
-            /* until today's line is laid, the tile says it is waiting */
-            /* with the day's line laid, the tile points at the newest game behind it until it has been played */
-            const fresh = !(stats.aodGames > 0);
-            return row('cron-btn', 'VII', 'Cronologia', !k || !k.done ? (k ? 'Linha do dia · continuar' : 'Linha do dia nº ' + dayIndex()) : fresh ? 'Novo: Antes ou depois?' : b > 0 ? 'Recorde ' + b : 'Linha do tempo',
-              'cron', ICON.timeline('currentColor', 15), !k || !k.done ? 'Linha do dia' : fresh ? 'Novo jogo' : ''); })()}
-          ${row('rev-btn', 'VIII', 'Revisar', revTail(), revDue().length ? 'rev' : 'rev is-off', ICON.book('currentColor', 15))}
-        </nav>
-
-        <div class="cv-cols">
-        <button id="balb" class="cv-album" type="button">
-          <span class="cv-fan" aria-hidden="true">${fan.map((p, i) => `<i class="${album.has(p.id) ? 'on' : ''}" style="--i:${i}"><img src="${p.img}" alt="" aria-hidden="true" loading="lazy"></i>`).join('')}</span>
-          <span class="cv-at">
-            <span class="cv-h">Meu álbum</span>
-            <b>${album.size}<small> de ${ALL_STICKERS.length} figurinhas</small></b>
-            <span class="cv-bar"><i style="width:${Math.max(2, pct)}%"></i></span>
-          </span>
-        </button>
-        ${seloHomeTile()}
-        </div>
-
-      ${(() => {
-        /* The insígnias, small, on the cover — and printed even at zero. An
-           empty pocket is the invitation; hiding the strip until the first one
-           is won means the player who most needs to see it never does. The
-           full cards live one tap deeper, same as the álbum. */
-        const e = earnedMedals();
-        const shown = e.slice(0, 9);
-        const blanks = Math.max(0, Math.min(3, MEDALS.length - e.length));
-        return `<div style="display:flex;flex-direction:column;align-items:center;gap:5px;">
-          <div id="medal-strip" class="medal-strip" title="Insígnias">
-            ${shown.map(m => `<span class="medal-dot" data-medal="${m.id}" title="${m.n}">${
-              (ICON[m.ic] || ICON.medal)('currentColor', 13)}</span>`).join('')}
-            ${e.length > shown.length ? `<span class="small muted" style="align-self:center;">+${e.length - shown.length}</span>` : ''}
-            ${Array.from({ length: blanks }, () => '<span class="medal-dot medal-dot-off" aria-hidden="true"></span>').join('')}
-          </div>
-          <span class="medal-cap">${e.length} de ${MEDALS.length} insígnias</span>
-        </div>`;
-      })()}
-
-        <div class="home-foot">
-          <button id="bmute" class="btn btn-ghost btn-icon" title="Som" aria-label="Som">${
-            muted ? ICON.mute('currentColor', 14) : ICON.sound('currentColor', 14)}</button>
-          <button id="bmetas" class="link">Metas <span class="num">${(() => { try { return metasTail(); } catch (e) { return ''; } })()}</span></button>
-          <button id="bcur"  class="link">Curiosidades</button>
-          <button id="bmed"  class="link">Insígnias</button>
-          <button id="bvit2" class="link">Vitrine</button>
-          <button id="bcred" class="link">Créditos</button>
-        </div>
-        <p class="home-indep">App independente · imagens da Wikimedia Commons</p>
-
-        ${stats.games > 0 ? `<div class="cv-stats">
-          ${stats.games} ${stats.games === 1 ? 'partida' : 'partidas'}
-          · ${Math.round(stats.correct / Math.max(1, stats.answered) * 100)}% de acerto
-          ${stats.bestStreak >= 3 ? `· ${ICON.flame('var(--brass)', 11)} ${stats.bestStreak}` : ''}</div>` : ''}
-      </div>
-    </div>`;
-  }
+  /* ── Home: the cover, and the page of the other games (js/home.js) ── */
+  if (sc === 'home') return homeHtml();
+  if (sc === 'jogos') return jogosHtml();
+  if (sc === 'eu') return euHtml();
 
   /* ── O ÁLBUM: a map of the world, each country a page of its stickers
      (js/mapa.js) ── */
@@ -18952,20 +18794,23 @@ function html() {
      The rung is announced, not sprung: the clock does not start until the
      player turns the card over, because reading "Quem sou eu?" for the first
      time should not cost him the seconds he needs to answer it. */
-  if (sc === 'card' && cat && cat.qs[qi] && cat.qs[qi]._special) {
-    const k = SPECIAL[cat.qs[qi]._special];
+  if (sc === 'card' && cat && cat.qs[qi] && (cat.qs[qi]._special || cat.qs[qi]._prova)) {
+    const q = cat.qs[qi], pv = q._prova, k = pv ? PROVA[pv] : SPECIAL[q._special];
     return `
     <div class="pg pg-center" style="padding:26px 22px;gap:15px;">
-      <div class="eyebrow">Degrau ${rung + 1} de ${LADDER.length} ·
-        <span class="brass num" style="font-weight:800;">${money(RUNG().v)}</span></div>
-      <div class="spcard spcard-${cat.qs[qi]._special}">
-        <span class="spcard-k">Carta especial</span>
+      <div class="eyebrow">Degrau ${rung + 1} de ${LADDER.length} · lembrado por
+        <span class="brass" style="font-weight:800;">${fama(RUNG().v)}</span></div>
+      <div class="spcard spcard-${pv ? 'prova spcard-pv-' + pv : q._special}">
+        <span class="spcard-k">${pv ? 'Prova' : 'Carta especial'}</span>
         <span class="spcard-ic">${k.ic('currentColor', 32)}</span>
         <span class="spcard-n display"><em>${k.n}</em></span>
-        <span class="spcard-s">${k.tag}</span>
+        <span class="spcard-s">${pv ? k.tag(q._p) : k.tag}</span>
       </div>
-      <button id="bcardgo" class="btn btn-brass btn-lg">Virar a carta</button>
-      <button id="bexit" class="btn btn-ghost btn-sm">Sair</button>
+      <button id="bcardgo" class="btn btn-brass btn-lg">${pv ? 'Começar a prova' : 'Virar a carta'}</button>
+      <div class="foot-row">
+        ${rung > 0 ? `<button id="bstop" class="btn btn-ghost btn-sm">${ICON.stop('currentColor', 13)} Parar · ${fama(LADDER[rung - 1].v)}</button>` : ''}
+        <button id="bexit" class="btn btn-ghost btn-sm">Sair</button>
+      </div>
     </div>`;
   }
 
@@ -19007,54 +18852,7 @@ function html() {
      away with money is a win and gets the brass; falling to a
      checkpoint still pays, but quietly; going out with nothing is
      stated plainly rather than dressed up. */
-  if (sc === 'end' && isMil) {
-    const won     = banked >= LADDER[LADDER.length - 1].v;
-    const cleared = rung;
-    const tone    = won ? 'brass' : banked > 0 ? 'good' : 'bad';
-    const head    = won     ? 'Um milhão!'
-                  : cashed  ? 'Você parou a tempo'
-                  : banked  ? 'Caiu, mas levou'
-                  :           'Fim de jogo';
-    const sub     = won
-      ? 'Dezesseis perguntas, dezesseis acertos. Não dá pra ir mais longe.'
-      : cashed
-      ? 'Saiu com o dinheiro na mão — decisão de quem sabe a hora.'
-      : banked
-      ? `Errou a pergunta de ${money(LADDER[Math.min(rung, LADDER.length - 1)].v)} — o degrau garantido segurou.`
-      : 'Escorregou antes do primeiro degrau garantido. Da próxima, considere parar.';
-
-    return `
-    <div class="pg pg-center scroll-y" style="padding:26px 22px;gap:9px;">
-      <div class="eyebrow">Rumo ao Milhão · degrau ${cleared}/${LADDER.length}</div>
-      ${banked > 0 ? `<div style="margin:2px 0 -2px;">${ART.trophy(58)}</div>` : ''}
-      <div class="display ${tone}" style="font-size:30px;"><em>${head}</em></div>
-      <div id="endcash" class="display prize-pop ${banked > 0 ? 'brass' : 'muted'}"
-        data-to="${banked}"
-        style="font-size:${banked >= 100000 ? 44 : 52}px;letter-spacing:-.03em;">${money(banked)}</div>
-      <p class="small muted" style="max-width:290px;font-size:12px;">${sub}</p>
-      ${chalBanner()}
-
-      <div class="rail" style="width:100%;max-width:300px;margin:6px 0;">
-        ${LADDER.map((step, i) => `<span class="notch${i < rung ? ' notch-done' : ''}${step.safe ? ' notch-safe' : ''}"></span>`).join('')}
-      </div>
-
-      <div class="stats">
-        <div><div class="v num">${nCorrect}</div><div class="k">Acertos</div></div>
-        <div><div class="v num">${pts}</div><div class="k">Pontos</div></div>
-        <div><div class="v num brass">${money(Math.max(milBest(), banked))}</div><div class="k">Recorde</div></div>
-      </div>
-
-      ${packStrip()}
-      ${selosStrip()}
-      ${medalChips()}
-
-      <div class="foot-row" style="margin-top:12px;">
-        <button id="bshare"  class="btn btn-ghost btn-sm">${chalMine() ? 'Desafiar' : 'Compartilhar'}</button>
-        <button id="bmilrep" class="btn btn-brass">De novo</button>
-        <button id="bhome"   class="btn btn-ghost btn-sm">Início</button>
-      </div>
-    </div>`;
-  }
+  if (sc === 'end' && isMil) return famaEndHtml();
 
   /* ── End of a round ── */
   if (sc === 'end') {
@@ -19117,21 +18915,8 @@ function html() {
     <div class="rail">${LADDER.map((step, i) => `<span class="notch${
       i < rung ? ' notch-done' : ''}${step.safe ? ' notch-safe' : ''}${i === rung ? ' notch-now' : ''}"></span>`).join('')}</div>`;
 
-  /* what this question is worth, and what you keep if it goes wrong */
-  const stakes = !isMil ? '' : `
-    <div class="stakes">
-      <div style="min-width:0;">
-        <div class="eyebrow">Pergunta ${rung + 1} de ${LADDER.length}${isFinal() ? ' · a última' : ''}</div>
-        <div class="stakes-v prize-pop">${money(RUNG().v)}</div>
-      </div>
-      <button id="bladder" class="safe-box">
-        <div>
-          <div class="k">Garantido</div>
-          <div class="v num ${safetyNet() ? 'good' : 'muted'}">${safetyNet() ? money(safetyNet()) : '—'}</div>
-        </div>
-        ${ICON.ladder('var(--ink-3)', 14)}
-      </button>
-    </div>`;
+  /* what this rung is worth, and what is already engraved (js/fama.js) */
+  const stakes = !isMil ? '' : famaStakes();
 
   const expertBox = !(expert && armed) ? '' : `
     <div class="expert-box">
@@ -19245,14 +19030,14 @@ function html() {
           isMil ? 'btn-brass' : 'btn-primary'} btn-lg${sel.size ? ' is-armed' : ''}">
           ${q.order ? 'Confirmar ordem' : sel.size && q.type === 'player' ? 'Colar figurinha' : 'Confirmar'}</button>
         ${isMil && rung > 0 ? `
-        <button id="bstop" class="btn btn-ghost btn-sm">${ICON.stop('currentColor', 13)} Parar · ${money(LADDER[rung - 1].v)}</button>` : ''}
+        <button id="bstop" class="btn btn-ghost btn-sm">${ICON.stop('currentColor', 13)} Parar · ${fama(LADDER[rung - 1].v)}</button>` : ''}
       </div>
     </div>`
     : sc === 'ask' ? `
     <div class="pg-center" style="display:flex;flex-direction:column;align-items:center;gap:9px;padding-top:4px;">
       <div class="display brass" style="font-size:22px;text-align:center;"><em>Essa é a sua resposta final?</em></div>
       <p class="small muted" style="text-align:center;max-width:300px;">
-        Está valendo <b class="brass">${money(RUNG().v)}</b>. Se errar, você sai com ${money(safetyNet())}.</p>
+        Vale ser lembrado <b class="brass">${famaPor(RUNG().v)}</b>. Se errar, seu nome fica ${famaPor(safetyNet())}.</p>
       <div class="foot-row">
         <button id="bfinal"  class="btn btn-brass">É essa</button>
         <button id="bunlock" class="btn btn-ghost btn-sm">Deixa eu pensar</button>
@@ -19261,7 +19046,7 @@ function html() {
     : sc === 'lock' ? `
     <div class="settling">
       <span class="settle-dots" aria-hidden="true"><i></i><i></i><i></i></span>
-      <span class="small muted">${isMil ? money(RUNG().v) + ' na mesa…' : ''}</span>
+      <span class="small muted">${isMil ? fama(RUNG().v) + ' em jogo…' : ''}</span>
     </div>`
     : `<div id="rvl" class="rvl-sheet"></div>`}
 
@@ -19269,37 +19054,6 @@ function html() {
     ${ladderOpen ? ladderOverlay() : ''}
   </div>`;
 }
-
-/* ── The full ladder, as a sheet over the board ──────────────────
-   Opening it stops the clock: checking where you stand is not
-   something the player should have to pay for in seconds. */
-function ladderOverlay() {
-  /* a ladder that climbs from bronze to gold: the rungs climbed ticked, the one you stand on lit, the safe ones
-     with their shield, the million crowned at the top */
-  const n = LADDER.length, mix = (a, b, k) => '#' + [0, 2, 4].map(o => Math.round(parseInt(a.substr(o, 2), 16) * (1 - k) + parseInt(b.substr(o, 2), 16) * k).toString(16).padStart(2, '0')).join('');
-  return `
-  <div class="sheet ld-sheet">
-    <div class="ld-head">
-      <span class="eyebrow" style="color:var(--brass);">Rumo ao Milhão · degrau ${Math.min(rung + 1, n)} de ${n}</span>
-      <button id="bladderclose" class="btn btn-ghost btn-icon" aria-label="Fechar">${ICON.close('currentColor', 13)}</button>
-    </div>
-    <div class="display ld-title"><em>A escada do milhão</em></div>
-    <div class="ld" role="list">
-      ${LADDER.map((step, i) => {
-        const st = i < rung ? ' is-done' : i === rung ? ' is-now' : '', k = i / (n - 1), top = i === n - 1;
-        return `<div class="ld-r${st}${step.safe ? ' is-safe' : ''}${top ? ' is-top' : ''}" role="listitem" style="--c:${mix('8A6436', 'C9962F', k)}">
-          <span class="ld-n">${step.safe ? ICON.shield('currentColor', 13) : i + 1}</span>
-          <span class="ld-plank">${top ? ICON.crown('currentColor', 14) : ''}<b class="num">${money(step.v)}</b>${i === rung ? '<small>você está aqui</small>' : ''}</span>
-          <span class="ld-ok">${i < rung ? ICON.check('currentColor', 13) : ''}</span>
-        </div>`;
-      }).join('')}
-    </div>
-    <p class="small muted" style="font-size:10px;text-align:center;margin:0;">
-      ${ICON.shield('var(--ink-3)', 10)} são os degraus garantidos —
-      passou de um, esse dinheiro é seu aconteça o que acontecer.</p>
-  </div>`;
-}
-
 
 /* ═══════════════════════════════════════════════════
    FX — paint that moves
@@ -19500,6 +19254,17 @@ function go() {
   on('cron-btn',    () => { snd.select(); sc = 'cronMenu'; go(); });
   on('bnovas',      () => { snd.select(); startNovas(); });
   on('bmetas',      () => { snd.swipe(); sc = 'metas'; go(); });
+  on('bjogos',      () => { snd.swipe(); sc = 'jogos'; go(); });
+  on('beu',         () => openEu('home'));
+  on('balbeu',      () => openEu(sc));
+  on('alb-nav-fig', () => { if (sc !== 'album') { snd.swipe(); sc = 'album'; go(); } });
+  on('alb-nav-selo', () => { if (sc !== 'selos') { snd.swipe(); seloTheme = null; sc = 'selos'; go(); } });
+  on('alb-nav-vit', () => { if (sc !== 'vitrine') { snd.swipe(); sc = 'vitrine'; go(); } });
+  on('bvitback',    () => { snd.swipe(); sc = 'album'; go(); });
+  if (sc === 'eu') wireEu();
+  on('hj-onde',     () => { snd.select(); startOnde(true); });
+  on('hj-cron',     () => { snd.select(); startCronDia(); });
+  on('hj-graus',    () => { snd.select(); startGraus(true); });
   on('hoje-btn',    () => { snd.select(); startHoje(); });
   on('balm',        () => { snd.select(); startHoje(); });
   on('rev-btn',     () => { if (startRev()) snd.select(); else { snd.tap(); const b = document.getElementById('rev-btn'); if (b) { b.classList.remove('is-nudge'); void b.offsetWidth; b.classList.add('is-nudge'); } } });
@@ -19707,7 +19472,9 @@ function go() {
 
   /* ── run controls ── */
   on('bshare',  () => { snd.tap(); doShare(); });
-  on('bhome',   () => { snd.swipe(); clearInterval(tmr); fromGab = false; sc = 'home'; go(); });
+  /* the way back: from a game's own door to the page of games, from anywhere else to the cover */
+  on('bhome',   () => { snd.swipe(); clearInterval(tmr); fromGab = false;
+    sc = ['difficulty', 'anoMenu', 'ondeMenu', 'cronMenu', 'jornada', 'gabinete'].includes(sc) ? 'jogos' : 'home'; go(); });
   on('bgab',    () => { snd.swipe(); clearInterval(tmr); sc = 'gabinete'; go(); });
   /* One more clue, and the clock pays for it. It used to say "−2 pts" and
      charge nothing at all; seconds are what a rung actually costs, and on the
@@ -19722,6 +19489,7 @@ function go() {
   /* the card is turned over: now the clock starts */
   on('bcardgo',   () => {
     snd.rung();
+    if (cat.qs[qi] && cat.qs[qi]._prova) return startProva();
     sc = 'quiz'; tMax = qTime(); tLeft = tMax;
     startTmr(); go();
   });
@@ -19736,6 +19504,7 @@ function go() {
     if (r) jorPage = JOR_ERAS.indexOf(JOR_STOPS[r.next != null ? r.next : r.i].era); sc = 'jornada'; go(); });
   on('brev2',   () => { snd.swipe(); startRev(); });
   on('bmilrep', () => { snd.rung();  startMilhao(); });
+  if (sc === 'end' && isMil) wirePlaca();
   if (sc === 'end' && _fxEnd) { const k = _fxEnd; _fxEnd = 0; setTimeout(() => fx.rain(k === 2 ? 90 : 34), 350); }
   on('bdiff',   () => { snd.swipe(); sc = 'difficulty'; go(); });
   on('bstop',   cashOut);
@@ -21423,7 +21192,7 @@ function seloSvg(id, opts) {
 }
 const _seloLabel = id => { const l = SCENE[id] && SCENE[id].label; return typeof l === 'function' ? l() : (l || ''); };
 
-/* ── the stamp album screen ── */
+/* ── the stamps' section of the album (its tabs: js/eu.js, albNav) ── */
 function selosHtml() {
   const by = seloBy();
   if (!seloTheme || !by[seloTheme]) {
@@ -21442,13 +21211,12 @@ function selosHtml() {
   return `
   <div class="pg selo-pg">
     <div class="alb-top">
-      ${topbar('Selos')}
+      ${topbar('Álbum', 'bselalb')}
       <div class="alb-head">
-        <button id="bselalb" class="alb-vit" type="button">${ICON.book('currentColor', 12)} Figurinhas</button>
-        <span class="small muted">${pct}% colado</span>
         <span class="display" style="font-size:20px;">${got}<span class="muted" style="font-size:13px;"> / ${all.length}</span></span>
       </div>
     </div>
+    ${albNav('selo')}
     <div class="alb-bar"><i style="width:${Math.max(1, pct)}%"></i></div>
     <div class="alb-tabs" id="selo-tabs">
       ${SELO_THEMES.map(([t, n, , ab, ic]) => {
@@ -21772,10 +21540,15 @@ function anoTicks(q, pos) {
   }
   return `<span>${anoYear(q.lo)}</span>${out}<span>${anoYear(q.hi)}</span>`;
 }
+/* a prova's margin, drawn on the ruler: the years either side of the thumb that still count */
+function anoBand(q, g, tol) {
+  const span = q.hi - q.lo, a = Math.max(q.lo, g - tol), b = Math.min(q.hi, g + tol);
+  return `left:calc(var(--ano-th0) + (100% - 2 * var(--ano-th0)) * ${((a - q.lo) / span).toFixed(4)});width:calc((100% - 2 * var(--ano-th0)) * ${((b - a) / span).toFixed(4)})`;
+}
 function anoHtml() {
   if (!ano) ano = buildAno();
   if (ano.phase === 'end') return anoEndHtml();
-  const q = ano.qs[ano.i], e = q.e, rev = ano.phase === 'reveal';
+  const q = ano.qs[ano.i], e = q.e, rev = ano.phase === 'reveal', Q = ano.quest;
   const last = ano.log[ano.log.length - 1];
   const dots = ano.qs.map((x, i) => {
     const l = ano.log[i];
@@ -21785,9 +21558,9 @@ function anoHtml() {
   const pos = y => `calc(var(--ano-th0) + (100% - 2 * var(--ano-th0)) * ${((y - q.lo) / (q.hi - q.lo)).toFixed(4)})`;
   return `
   <div class="pg ano-pg${rev ? ' is-rev' : ''}">
-    ${topbar(ano.hoje ? 'Hoje na História' : 'Que ano?')}
-    <div class="ano-head"><div class="runlog" aria-hidden="true">${dots}</div>
-      <span class="ano-score"><b class="num">${ano.pts}</b> pts</span></div>
+    ${Q ? provaBar() : topbar(ano.hoje ? 'Hoje na História' : 'Que ano?')}
+    ${Q ? '' : `<div class="ano-head"><div class="runlog" aria-hidden="true">${dots}</div>
+      <span class="ano-score"><b class="num">${ano.pts}</b> pts</span></div>`}
     <div class="ano-card"><div class="ano-slip">
       ${anoPic(e)}
       ${ano.hoje ? `<span class="ano-date">${ICON.calendar('currentColor', 12)} ${hojeWhen(q)}</span>` : ''}
@@ -21801,19 +21574,21 @@ function anoHtml() {
         ${anoEras(q, pos)}
         <input type="range" id="ano-range" min="${q.lo}" max="${q.hi}" step="1" value="${rev ? last.g : ano.guess}"
           aria-label="Ano" aria-valuetext="${anoYear(rev ? last.g : ano.guess)}" ${rev ? 'disabled' : ''}>
+        ${Q ? `<span class="ano-band${rev ? (ano.pass ? ' is-good' : ' is-bad') : ''}" id="ano-band" style="${anoBand(q, rev ? last.g : ano.guess, Q.tol)}" aria-hidden="true"></span>` : ''}
         ${rev ? `<span class="ano-mark ano-mark-g" style="left:${pos(last.g)}"></span>
                  <span class="ano-mark ano-mark-y" style="left:${pos(e.y)}"></span>` : ''}
         <div class="ano-ends">${anoTicks(q, pos)}</div>
       </div>
+      ${Q && !rev ? `<p class="pv-rule">Vale se errar por até <b>${Q.tol} ${Q.tol === 1 ? 'ano' : 'anos'}</b>: a faixa na régua</p>` : ''}
       ${rev ? '' : `<div class="ano-nudge">
         <button class="btn btn-ghost btn-sm" data-nudge="-10" aria-label="Menos 10 anos">−10</button><button class="btn btn-ghost btn-sm" data-nudge="-1" aria-label="Menos 1 ano">−1</button>
         <button class="btn btn-ghost btn-sm" data-nudge="1" aria-label="Mais 1 ano">+1</button><button class="btn btn-ghost btn-sm" data-nudge="10" aria-label="Mais 10 anos">+10</button></div>`}
     </div>
     ${rev ? `<div class="ano-after">
-        <span class="display ${last.p >= 80 ? 'good' : last.p >= 50 ? 'brass' : 'bad'}" style="font-size:17px;">+${last.p}</span>
+        ${Q ? provaVerdict(ano.pass) : `<span class="display ${last.p >= 80 ? 'good' : last.p >= 50 ? 'brass' : 'bad'}" style="font-size:17px;">+${last.p}</span>`}
         ${last.selo ? seloWonLine(last.selo) : ''}
         ${e.x ? `<div class="story"><span class="story-k">${ICON.book('currentColor', 11)} Você sabia?</span><p>${_esc(e.x)}</p></div>` : ''}
-        <button id="ano-next" class="btn btn-brass">${ano.i >= ano.qs.length - 1 ? 'Ver resultado' : 'Próximo'}</button></div>`
+        <button id="ano-next" class="btn btn-brass">${Q ? provaGoLabel(ano.pass) : ano.i >= ano.qs.length - 1 ? 'Ver resultado' : 'Próximo'}</button></div>`
       : `<button id="ano-go" class="btn btn-brass btn-lg">${ICON.check('currentColor', 14)} Cravar o ano</button>`}
   </div>`;
 }
@@ -21863,12 +21638,15 @@ function anoCommit() {
   /* a medal (or a goal of the week) is won the moment it is earned, and announced on this game's results */
   try { ano.medals = (ano.medals || []).concat(newMedals()); } catch (err) {}
   ano.phase = 'reveal';
-  if (p === 100) snd.fanfare(); else if (p >= 80) snd.correct(0); else if (p >= 50) snd.almost(); else snd.wrong();
+  /* a prova of the climb is won inside its margin, whatever the points */
+  if (ano.quest) ano.pass = d <= ano.quest.tol;
+  if (p === 100) snd.fanfare(); else if (ano.quest ? ano.pass : p >= 80) snd.correct(0); else if (!ano.quest && p >= 50) snd.almost(); else snd.wrong();
   go();
-  if (p >= 80) try { burst(p === 100 ? 28 : 14); } catch (err) {}
+  if (ano.quest ? ano.pass : p >= 80) try { burst(p === 100 ? 28 : 14); } catch (err) {}
 }
 function anoNext() {
   if (!ano || ano.phase !== 'reveal') return;
+  if (ano.quest) return provaDone(ano.pass);
   if (ano.i >= ano.qs.length - 1) {
     ano.phase = 'end';
     if (ano.hoje) {
@@ -21911,6 +21689,8 @@ function wireAno() {
     ano.guess = v;
     if (r) { r.value = v; r.setAttribute('aria-valuetext', anoYear(v)); }
     if (yEl) yEl.textContent = anoYear(v);
+    const band = document.getElementById('ano-band');
+    if (band && ano.quest) band.style.cssText = anoBand(q, v, ano.quest.tol);
   };
   if (r && ano.phase === 'guess') {
     r.addEventListener('input', () => set(+r.value));
@@ -22504,11 +22284,10 @@ function albMapHtml() {
     <div class="alb-top">
       ${topbar('Álbum')}
       <div class="alb-head">
-        <button id="balbvit" class="alb-vit" type="button">${ICON.star('currentColor', 12)} Vitrine</button>
-        <button id="balbselo" class="alb-vit" type="button">${ICON.stamp('currentColor', 12)} Selos</button>
         <span class="display" style="font-size:20px;">${album.size}<span class="muted" style="font-size:13px;"> / ${total}</span></span>
       </div>
     </div>
+    ${albNav('fig')}
     <div class="alb-bar"><i style="width:${Math.max(1, pct)}%"></i></div>
     <div class="amap-tabs" id="amap-tabs" aria-label="Partes do mundo">
       <button class="amap-tab${amapView === 'WORLD' ? ' is-on' : ''}" data-view="WORLD" type="button" aria-pressed="${amapView === 'WORLD'}">Mundo<small>${album.size}/${total}</small></button>
@@ -23145,7 +22924,7 @@ function ondePic(e) {
 function ondeHtml() {
   if (!onde) onde = buildOnde();
   if (onde.phase === 'end') return ondeEndHtml();
-  const q = onde.qs[onde.i], e = q.e, rev = onde.phase === 'reveal';
+  const q = onde.qs[onde.i], e = q.e, rev = onde.phase === 'reveal', Q = onde.quest;
   const last = onde.log[onde.log.length - 1];
   const dots = onde.qs.map((x, i) => {
     const l = onde.log[i];
@@ -23153,12 +22932,12 @@ function ondeHtml() {
   }).join('');
   return `
   <div class="pg onde-pg${rev ? ' is-rev' : ''}">
-    ${topbar('Onde foi?')}
-    <div class="ano-head"><div class="runlog" aria-hidden="true">${dots}</div>
-      <span class="ano-score"><b class="num">${onde.pts}</b> pts</span></div>
+    ${Q ? provaBar() : topbar('Onde foi?')}
+    ${Q ? '' : `<div class="ano-head"><div class="runlog" aria-hidden="true">${dots}</div>
+      <span class="ano-score"><b class="num">${onde.pts}</b> pts</span></div>`}
     <div class="onde-card">
       ${ondePic(e)}
-      <div class="onde-tt"><p class="onde-t">${_esc(e.t)}</p><span class="onde-y">${e.c ? 'c. ' : ''}${anoYear(e.y)}</span></div>
+      <div class="onde-tt"><p class="onde-t">${_esc(e.t)}</p><span class="onde-y">${e.c ? 'c. ' : ''}${anoYear(e.y)}${Q ? ` · vale até ${Q.km.toLocaleString('pt-BR')} km` : ''}</span></div>
     </div>
     <div class="onde-map" id="onde-map" tabindex="0" role="application"
       aria-label="${rev ? 'Mapa com a resposta' : 'Mapa: toque onde aconteceu. No teclado, as setas movem, mais e menos aproximam, espaço marca o centro e Enter crava.'}">
@@ -23177,11 +22956,12 @@ function ondeHtml() {
       ${rev || onde.pin ? '' : `<span class="onde-tip" id="onde-tip">Toque no mapa onde aconteceu</span>`}
     </div>
     ${rev ? `<div class="onde-after" aria-live="polite">
-        <div class="onde-res"><span class="display ${last.p >= 80 ? 'good' : last.p >= 50 ? 'brass' : 'bad'}" style="font-size:17px;">+${last.p}</span>
-          <span><b>${anoVerdict(last.p)}</b> · ${last.p === 100 ? 'no lugar certo' : `a ${ondeKmTxt(last.d)}`}</span></div>
+        ${Q ? provaVerdict(onde.pass) + `<p class="pv-rule">${last.p === 100 ? 'No lugar certo' : `A ${ondeKmTxt(last.d)} de ${_esc(q.at[2])}`} · valia até ${Q.km.toLocaleString('pt-BR')} km</p>`
+          : `<div class="onde-res"><span class="display ${last.p >= 80 ? 'good' : last.p >= 50 ? 'brass' : 'bad'}" style="font-size:17px;">+${last.p}</span>
+          <span><b>${anoVerdict(last.p)}</b> · ${last.p === 100 ? 'no lugar certo' : `a ${ondeKmTxt(last.d)}`}</span></div>`}
         ${last.selo ? seloWonLine(last.selo) : ''}
         ${e.x ? `<div class="story"><span class="story-k">${ICON.book('currentColor', 11)} Você sabia?</span><p>${_esc(e.x)}</p></div>` : ''}
-        <button id="onde-next" class="btn btn-brass">${onde.i >= onde.qs.length - 1 ? 'Ver resultado' : 'Próximo'}</button></div>`
+        <button id="onde-next" class="btn btn-brass">${Q ? provaGoLabel(onde.pass) : onde.i >= onde.qs.length - 1 ? 'Ver resultado' : 'Próximo'}</button></div>`
       : `<button id="onde-go" class="btn btn-brass btn-lg"${onde.pin ? '' : ' disabled'}>${ICON.check('currentColor', 14)} Cravar aqui</button>`}
   </div>`;
 }
@@ -23472,13 +23252,16 @@ function ondeCommit() {
   try { onde.medals = (onde.medals || []).concat(newMedals()); } catch (err) {}
   onde.pts += p;
   onde.phase = 'reveal';
-  if (p === 100) snd.fanfare(); else if (p >= 80) snd.correct(0); else if (p >= 50) snd.almost(); else snd.wrong();
+  /* a prova of the climb is won inside its margin, whatever the points */
+  if (onde.quest) onde.pass = d <= onde.quest.km;
+  if (p === 100) snd.fanfare(); else if (onde.quest ? onde.pass : p >= 80) snd.correct(0); else if (!onde.quest && p >= 50) snd.almost(); else snd.wrong();
   go();
   requestAnimationFrame(() => ondeFitBoth());
-  if (p >= 80) try { burst(p === 100 ? 28 : 14); } catch (err) {}
+  if (onde.quest ? onde.pass : p >= 80) try { burst(p === 100 ? 28 : 14); } catch (err) {}
 }
 function ondeNext() {
   if (!onde || onde.phase !== 'reveal') return;
+  if (onde.quest) return provaDone(onde.pass);
   if (onde.i >= onde.qs.length - 1) {
     onde.phase = 'end';
     stats.ondeGames = (stats.ondeGames || 0) + 1;
@@ -23985,7 +23768,7 @@ const CHAL_GAMES = {
   tf: { n: 'Treino · Fácil', diff: 'facil', ic: 'check' },
   tm: { n: 'Treino · Moderado', diff: 'moderado', ic: 'bolt' },
   td: { n: 'Treino · Difícil', diff: 'dificil', ic: 'flame' },
-  m:  { n: 'Rumo ao Milhão', ic: 'crown' },
+  m:  { n: 'Para a História', ic: 'crown' },
   a:  { n: 'Que ano?', ic: 'hourglass' },
   o:  { n: 'Onde foi?', ic: 'globe' },
   c:  { n: 'Cronologia', ic: 'timeline' },
@@ -24005,6 +23788,8 @@ function chalVer() {
   const add = s => { for (let i = 0; i < s.length; i++) h = (h * 33 + s.charCodeAt(i)) | 0; };
   CATS.forEach(c => { add(c.id); c.qs.forEach(q => add(q.t)); });
   ANO_EVENTS.forEach(e => add(e.id)); MF.forEach(c => add(c.id + c.v)); Object.keys(ONDE_AT).forEach(add); PL.forEach(p => add(p.id)); add(String(LADDER.length));
+  /* the climb's provas (js/prova.js): a climb dealt before them is another game */
+  add('provas1');
   return (_chalVer = ((h >>> 0) % 1296).toString(36).padStart(2, '0'));
 }
 function chalCode(c) {
@@ -24047,7 +23832,7 @@ const chalIsThis = mine => !!(mine && chal && chal.used && chal.g === mine.g && 
 /* better, worse or the same: the money first on the ladder, then how far up */
 const chalCmp = (a, b) => a.g === 'm' ? (a.score - b.score) || ((a.more || 0) - (b.more || 0)) : a.score - b.score;
 function chalScoreTxt(c) {
-  if (c.g === 'm') return `${money(c.score)} · degrau ${c.more || 0}`;
+  if (c.g === 'm') return `${fama(c.score)} · degrau ${c.more || 0}`;
   if (c.g === 'c') return `${c.score} na linha`;
   if (c.g === 'd') return `${c.score} ${c.score === 1 ? 'acerto seguido' : 'acertos seguidos'}`;
   if (c.g === 'f') return `${c.score} ${c.score === 1 ? 'acerto' : 'acertos'}`;
@@ -24062,7 +23847,7 @@ function chalShareTail(mine) {
     const r = chalCmp(mine, chal);
     head = `Desafio: ${chalScoreTxt(mine)} × ${chalScoreTxt(chal)} — ${r > 0 ? 'venci! 🏆' : r < 0 ? 'perdi, desta vez' : 'empate'}\n`;
   }
-  return `${head}${mine.g === 'm' ? 'Encara as mesmas 16 perguntas?' : mine.g === 'a' || mine.g === 'o' ? 'Encara os mesmos 10 eventos?' : mine.g === 'c' ? 'Encara a mesma linha do tempo?' : mine.g === 'd' ? 'Encara a mesma sequência de eventos?' : 'Encara as mesmas perguntas?'} ${chalLink(mine)}`;
+  return `${head}${mine.g === 'm' ? 'Encara os mesmos 16 degraus?' : mine.g === 'a' || mine.g === 'o' ? 'Encara os mesmos 10 eventos?' : mine.g === 'c' ? 'Encara a mesma linha do tempo?' : mine.g === 'd' ? 'Encara a mesma sequência de eventos?' : 'Encara as mesmas perguntas?'} ${chalLink(mine)}`;
 }
 
 /* on the results: who won */
@@ -24071,9 +23856,9 @@ function chalBanner() {
   if (!chalIsThis(mine)) return '';
   /* a link from another version of the game dealt a different game: no winner is called */
   const r = chal.old ? 0 : chalCmp(mine, chal), say = chal.old ? 'outra versão do jogo' : r > 0 ? 'Você venceu!' : r < 0 ? 'Não foi dessa vez' : 'Empate!';
-  /* on the ladder the money decides, and the rung when the money is the same — then the rung is said too */
+  /* on the ladder what was kept decides, and the rung when that is the same — then the rung is said too */
   const tie = mine.g === 'm' && mine.score === chal.score;
-  const n = c => c.g === 'm' ? money(c.score) + (tie ? ` · degrau ${c.more || 0}` : '') : c.score + (c.g[0] === 't' ? ' pts' : '');
+  const n = c => c.g === 'm' ? fama(c.score) + (tie ? ` · degrau ${c.more || 0}` : '') : c.score + (c.g[0] === 't' ? ' pts' : '');
   return `<div class="chal-res ${r > 0 ? 'is-win' : r < 0 ? 'is-lose' : 'is-tie'}" role="status"
       aria-label="Desafio: você ${chalScoreTxt(mine)}, seu amigo ${chalScoreTxt(chal)}. ${say}.">
     <span class="chal-res-k" aria-hidden="true">${ICON.sword('currentColor', 11)} Desafio</span>
@@ -24085,7 +23870,7 @@ function chalBanner() {
 function chalHtml() {
   const c = chal, G = c && CHAL_GAMES[c.g];
   if (!G) { sc = 'home'; return html(); }
-  const what = c.g === 'm' ? 'As mesmas 16 perguntas da escada até o milhão, com as mesmas alternativas.'
+  const what = c.g === 'm' ? 'Os mesmos 16 degraus da escalada: as mesmas perguntas, as mesmas provas.'
              : c.g === 'a' ? 'Os mesmos 10 eventos, na mesma régua de anos.'
              : c.g === 'o' ? 'Os mesmos 10 eventos, para achar no mapa.'
              : c.g === 'c' ? 'Os mesmos eventos, na mesma ordem, para pôr na linha do tempo. Três vidas.'
@@ -24315,7 +24100,9 @@ const cronRow = (e, cls, id, li) => `<div class="cron-row${cls || ''}"${id ? ` i
 function cronHtml() {
   if (!cron) cron = buildCron();
   if (cron.phase === 'end') return cronEndHtml();
-  const rev = cron.phase === 'reveal', L = cron.last;
+  const rev = cron.phase === 'reveal', L = cron.last, Q = cron.quest;
+  /* a prova of the climb: one or two events, no second chance; it is settled when the last is placed or one is missed */
+  const settled = Q && rev && (cron.lives <= 0 || !cron.deck.length), pass = settled && cron.lives > 0;
   const lives = Array.from({ length: CRON_LIVES }, (_, i) => `<i class="${i < cron.lives ? 'on' : ''}">${ICON.hourglass('currentColor', 15)}</i>`).join('');
   const rows = [];
   cron.line.forEach((e, i) => {
@@ -24325,14 +24112,15 @@ function cronHtml() {
   });
   if (!rev) rows.push(`<button class="cron-slot" data-slot="${cron.line.length}" type="button" aria-label="Depois de ${cronYear(cron.line[cron.line.length - 1])}"><span>depois</span></button>`);
   /* the first turn says the rules once, in the room the line has not yet taken */
-  if (!rev && cron.line.length === 1) rows.push(`<p class="cron-hint">O ano de cada evento aparece quando ele entra na linha. Errou o lugar, perde uma das ${CRON_LIVES === 3 ? 'três' : CRON_LIVES} ampulhetas.</p>`);
+  if (!rev && cron.line.length === 1 && !Q) rows.push(`<p class="cron-hint">O ano de cada evento aparece quando ele entra na linha. Errou o lugar, perde uma das ${CRON_LIVES === 3 ? 'três' : CRON_LIVES} ampulhetas.</p>`);
   return `
   <div class="pg cron-pg${rev ? ' is-rev' : ''}">
-    ${topbar(cron.daily ? 'Linha do dia · nº ' + cron.daily.day : 'Cronologia')}
-    <div class="ano-head"><span class="cron-lives" role="img" aria-label="${cron.lives} de ${CRON_LIVES} vidas">${lives}</span>
-      <span class="ano-score"><b class="num">${cron.score}</b> na linha</span></div>
+    ${Q ? provaBar() : topbar(cron.daily ? 'Linha do dia · nº ' + cron.daily.day : 'Cronologia')}
+    ${Q ? (Q.need > 1 ? `<div class="ano-head pv-head">${provaPips(cron.score, Q.need, rev && cron.lives <= 0)}<span class="ano-score">${Q.need} eventos, sem errar</span></div>` : '')
+      : `<div class="ano-head"><span class="cron-lives" role="img" aria-label="${cron.lives} de ${CRON_LIVES} vidas">${lives}</span>
+      <span class="ano-score"><b class="num">${cron.score}</b> na linha</span></div>`}
     ${rev ? `<div class="cron-res ${L.ok ? 'good' : 'bad'}" id="cron-res" aria-live="polite">
-        <p class="cron-res-h"><b>${L.ok ? 'Isso!' : 'Não era aí'}</b> <span class="num">${cronYear(L.e)}</span>${L.ok ? '' : ` <small>· ${cron.lives} ${cron.lives === 1 ? 'vida' : 'vidas'}</small>`}</p>
+        <p class="cron-res-h"><b>${L.ok ? 'Isso!' : 'Não era aí'}</b> <span class="num">${cronYear(L.e)}</span>${L.ok || Q ? '' : ` <small>· ${cron.lives} ${cron.lives === 1 ? 'vida' : 'vidas'}</small>`}</p>
         ${L.selo ? seloWonLine(L.selo) : ''}${L.e.x ? `<p class="cron-res-x">${_esc(L.e.x)}</p>` : ''}
       </div>`
       : `<div class="onde-card cron-card">
@@ -24340,7 +24128,8 @@ function cronHtml() {
       <div class="onde-tt"><p class="onde-t">${_esc(cron.cur.t)}</p><span class="onde-y">Toque onde entra na linha</span></div>
     </div>`}
     <div class="cron-line scroll-y" id="cron-line" ${rev ? 'role="list" tabindex="0"' : 'role="group"'} aria-label="A linha do tempo, do mais antigo ao mais recente">${rows.join('')}</div>
-    ${rev ? `<button id="cron-next" class="btn btn-brass" aria-describedby="cron-res">${cron.lives <= 0 || !cron.deck.length ? 'Ver resultado' : 'Próximo'}</button>` : ''}
+    ${settled ? provaVerdict(pass) : ''}
+    ${rev ? `<button id="cron-next" class="btn btn-brass" aria-describedby="cron-res">${settled ? provaGoLabel(pass) : cron.lives <= 0 || !cron.deck.length ? 'Ver resultado' : 'Próximo'}</button>` : ''}
   </div>`;
 }
 
@@ -24405,6 +24194,7 @@ function cronPlace(i) {
 }
 function cronNext() {
   if (!cron || cron.phase !== 'reveal') return;
+  if (cron.quest && (cron.lives <= 0 || !cron.deck.length)) return provaDone(cron.lives > 0);
   if (cron.lives <= 0 || !cron.deck.length) {
     cron.phase = 'end';
     if (cron.replay) { go(); return; }
@@ -24502,7 +24292,8 @@ const aodClock = n => Math.max(6, 12 - Math.floor(n / 3));      // seconds to an
 /* the next event: one not seen in this run, a fair distance from the last (an event dated "c." needs more
    room: its year is a guess too), and closer as the run grows; any unseen one when nothing fits */
 function aodPick(a) {
-  const [, lo, hi] = AOD_BANDS.filter(b => aod.score >= b[0]).pop();
+  /* a prova of the climb starts as far into the bands as its rung is high */
+  const [, lo, hi] = AOD_BANDS.filter(b => aod.score + (aod.quest ? aod.quest.band : 0) >= b[0]).pop();
   const free = ANO_EVENTS.filter(e => !aod.used.has(e.id) && e.y !== a.y);
   const fair = e => anoGap(a.y, e.y) >= ((a.c || e.c) ? Math.max(lo, 80) : lo);
   let pool = free.filter(e => fair(e) && anoGap(a.y, e.y) <= hi);
@@ -24566,6 +24357,7 @@ function aodAnswer(dir) {
 function aodNext() {
   if (!aod || aod.phase !== 'reveal') return;
   clearTimeout(aod.adv);
+  if (aod.quest && (!aod.ok || aod.score >= aod.quest.need)) return provaDone(aod.ok);
   if (!aod.ok) return aodEnd();
   const nb = aodPick(aod.b);
   if (!nb) { aod.all = true; return aodEnd(); }      // every event seen: the deck is spent
@@ -24600,7 +24392,8 @@ function aodCard(e, which, rev) {
 function aodHtml() {
   if (!aod) aodNew();
   if (aod.phase === 'end') return aodEndHtml();
-  const { a, b } = aod, rev = aod.phase === 'reveal';
+  const { a, b } = aod, rev = aod.phase === 'reveal', Q = aod.quest;
+  const settled = Q && rev && (!aod.ok || aod.score >= Q.need);
   const best = Math.max(aod.best0, aod.score);
   const up = ICON.back('currentColor', 15).replace('<svg', '<svg style="transform:rotate(90deg)"');
   const down = ICON.back('currentColor', 15).replace('<svg', '<svg style="transform:rotate(-90deg)"');
@@ -24608,11 +24401,12 @@ function aodHtml() {
   const wait = b.x ? Math.min(7000, 2000 + b.x.length * 32) : 1500;
   const html = `
   <div class="pg aod-pg${rev ? ' is-rev' : ''}">
-    ${topbar('Antes ou depois?')}
-    <div class="aod-head">
+    ${Q ? provaBar() : topbar('Antes ou depois?')}
+    ${Q ? `<div class="aod-head pv-head">${provaPips(aod.score, Q.need, rev && !aod.ok)}<span class="aod-best">${Q.need === 3 ? 'Três' : 'Duas'} seguidas, sem errar</span></div>`
+      : `<div class="aod-head">
       <span class="aod-run">${ICON.flame('currentColor', 13)} <b class="num">${aod.score}</b> ${aod.score === 1 ? 'acerto' : 'acertos'} seguidos</span>
       <span class="aod-best">Recorde <b class="num">${best}</b></span>
-    </div>
+    </div>`}
     <div class="timer aod-timer"><i id="aod-tf" style="width:${rev ? 0 : 100}%"></i></div>
     ${aodCard(a, 'a', rev)}
     <div class="aod-q"><span>${rev ? (aod.ok ? 'Isso!' : aod.pick ? 'Não…' : 'O tempo acabou') : 'E este aconteceu…'}</span></div>
@@ -24620,9 +24414,10 @@ function aodHtml() {
     ${rev ? `<div class="aod-res" role="status">
         <p class="aod-verdict ${aod.ok ? 'good' : 'bad'}">${gap === 0 ? 'No mesmo ano' : `${gap} ${gap === 1 ? 'ano' : 'anos'} ${when}`}</p>
         ${aod.selo ? seloWonLine(aod.selo) : ''}
-        ${b.x ? `<div class="story"><span class="story-k">${ICON.book('currentColor', 11)} Você sabia?</span><p>${_esc(b.x)}</p></div>` : ''}
-        <button id="aod-next" class="btn ${aod.ok ? 'btn-ghost btn-sm btn-next' : 'btn-brass'}" style="--wait:${wait}ms">
-          ${aod.ok ? `Próximo ${ICON.back('currentColor', 11).replace('<svg', '<svg style="transform:scaleX(-1)"')}<i class="next-fill"></i>` : 'Ver resultado'}</button>
+        ${settled ? provaVerdict(aod.ok) : ''}
+        ${b.x && !settled ? `<div class="story"><span class="story-k">${ICON.book('currentColor', 11)} Você sabia?</span><p>${_esc(b.x)}</p></div>` : ''}
+        <button id="aod-next" class="btn ${aod.ok && !settled ? 'btn-ghost btn-sm btn-next' : 'btn-brass'}" style="--wait:${wait}ms">
+          ${settled ? provaGoLabel(aod.ok) : aod.ok ? `Próximo ${ICON.back('currentColor', 11).replace('<svg', '<svg style="transform:scaleX(-1)"')}<i class="next-fill"></i>` : 'Ver resultado'}</button>
       </div>`
     : `<div class="aod-btns">
         <button id="aod-antes" class="aod-btn" type="button">${up}<b>Antes</b><small>de ${aodYear(a)}</small></button>
@@ -24720,7 +24515,7 @@ function wireAod() {
   if (aod.phase === 'reveal') {
     aodRoll();
     /* a right answer moves on by itself (a tap is quicker); a miss waits to be read */
-    if (aod.ok && !aod.adv) {
+    if (aod.ok && !aod.adv && !(aod.quest && aod.score >= aod.quest.need)) {
       const tok = aod.tok;
       aod.adv = setTimeout(() => { aod.adv = null; if (sc === 'aod' && aod.phase === 'reveal' && aod.tok === tok) aodNext(); }, aod.wait || 1500);
     }
@@ -25937,6 +25732,7 @@ function mfAnswer(v) {
 }
 function mfNext() {
   if (!mf || mf.phase !== 'rev') return;
+  if (mf.quest && (!mf.ok || mf.score >= mf.quest.need)) return provaDone(mf.ok);
   if (mf.lives <= 0 || mf.i >= mf.deck.length - 1) { if (mf.i >= mf.deck.length - 1 && mf.lives > 0) mf.all = true; return mfEnd(); }
   mf.i++; mf.phase = 'card'; mf.pick = null; mf.ok = null; mf.anim = 'in';
   go();
@@ -25973,15 +25769,17 @@ const mfWord = v => v === 'f' ? 'Fato' : 'Mito';
 function mitoHtml() {
   if (!mf) mfNew();
   if (mf.phase === 'end') return mitoEndHtml();
-  const c = mfCard(), rev = mf.phase === 'rev';
+  const c = mfCard(), rev = mf.phase === 'rev', Q = mf.quest;
+  const settled = Q && rev && (!mf.ok || mf.score >= Q.need);
   const best = Math.max(mf.best0, mf.score);
   return `
   <div class="pg mf-pg${rev ? ' is-rev' : ''}">
-    ${topbar('Mito ou fato?', fromGab ? 'bgab' : '')}
-    <div class="mf-head">
+    ${Q ? provaBar() : topbar('Mito ou fato?', fromGab ? 'bgab' : '')}
+    ${Q ? `<div class="mf-head pv-head">${provaPips(mf.score, Q.need, rev && !mf.ok)}<span class="mf-run"><small>${Q.need === 3 ? 'Três' : 'Duas'} cartas, sem errar</small></span></div>`
+      : `<div class="mf-head">
       ${mfSeals()}
       <span class="mf-run"><b class="num">${mf.score}</b> ${mf.score === 1 ? 'certa' : 'certas'}<small>Recorde ${best}</small></span>
-    </div>
+    </div>`}
     <div class="mf-stage">
       <i class="mf-under mf-under-2" aria-hidden="true"></i><i class="mf-under" aria-hidden="true"></i>
       <div id="mf-card" class="mf-card${rev ? ' is-turned' : ''}${mf.anim === 'flip' ? ' is-flipping' : mf.anim === 'in' ? ' is-coming' : ''}">
@@ -26000,7 +25798,8 @@ function mitoHtml() {
         </div>
       </div>
     </div>
-    ${rev ? `<div class="mf-btns"><button id="mf-next" class="btn ${mf.lives > 0 ? 'btn-brass' : 'btn-ghost'} btn-lg" type="button">${mf.lives > 0 && !(mf.i >= mf.deck.length - 1) ? `Próxima ${ICON.back('currentColor', 12).replace('<svg', '<svg style="transform:scaleX(-1)"')}` : 'Ver resultado'}</button></div>`
+    ${settled ? provaVerdict(mf.ok) : ''}
+    ${rev ? `<div class="mf-btns"><button id="mf-next" class="btn ${mf.lives > 0 || Q ? 'btn-brass' : 'btn-ghost'} btn-lg" type="button">${settled ? provaGoLabel(mf.ok) : mf.lives > 0 && !(mf.i >= mf.deck.length - 1) ? `Próxima ${ICON.back('currentColor', 12).replace('<svg', '<svg style="transform:scaleX(-1)"')}` : 'Ver resultado'}</button></div>`
     : `<div class="mf-btns">
         <button id="mf-m" class="mf-btn is-m" type="button">${ICON.cross('currentColor', 16)}<b>Mito</b></button>
         <span class="mf-or" aria-hidden="true">arraste<br>a carta</span>
@@ -27344,6 +27143,8 @@ async function sfPaint(src, sw, sh, mirror) {
     const img = await new Promise((ok, no) => { const i = new Image(); i.onload = () => ok(i); i.onerror = no; i.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg); });
     g.drawImage(img, 0, 0, SF_W, SF_H);
   }
+  /* the painting itself, small, before it is framed: the face of the player's own sticker (js/eu.js) */
+  try { const t = document.createElement('canvas'); t.width = 240; t.height = 320; t.getContext('2d').drawImage(c, 0, 0, SF_W * K, SF_H * K, 0, 0, 240, 320); sf.thumb = t.toDataURL('image/jpeg', .74); } catch (e) { sf.thumb = null; }
   /* the gilt frame */
   const fr = g.createLinearGradient(0, 0, SF_W, SF_H); fr.addColorStop(0, '#8A6416'); fr.addColorStop(.35, '#E8CF8A'); fr.addColorStop(.6, '#B8862F'); fr.addColorStop(1, '#6E4C14');
   g.lineWidth = 16; g.strokeStyle = fr; g.strokeRect(8, 8, SF_W - 16, SF_H - 16);
@@ -27380,6 +27181,7 @@ function sfDone(blob) {
   if (sf.shot) URL.revokeObjectURL(sf.shot);
   sf.blob = blob; sf.shot = URL.createObjectURL(blob); sf.phase = 'shot';
   stats.selfies = (stats.selfies || 0) + 1; LS.set('stats', stats);
+  if (sf.thumb) LS.set('euImg', sf.thumb);
   window._newMedals = newMedals();
   go();
   try { snd.fanfare(); } catch (e) {}
@@ -27577,7 +27379,7 @@ const _metaQ = [];
 let _metaBusy = false;
 const META_HOLD = ['quiz', 'ask', 'lock', 'reveal', 'card'];
 function metaFlush() {
-  if (_metaBusy || !_metaQ.length || META_HOLD.includes(sc) || (sc === 'aod' && aod && aod.phase !== 'end') || !document.body) return;
+  if (_metaBusy || !_metaQ.length || META_HOLD.includes(sc) || (sc === 'aod' && aod && aod.phase !== 'end') || provaOn() || !document.body) return;
   const met = _metaQ.shift(), one = met.length === 1, prizes = met.map(f => f.prize).filter(p => typeof p === 'string');
   _metaBusy = true;
   const el = document.createElement('div');
@@ -27628,6 +27430,550 @@ function metasHtml() {
       </div>`).join('')}
     </div>
     <p class="small muted metas-foot">${free ? 'Cada meta cumprida dá um selo que ainda falta no seu álbum. ' : 'Seu álbum de selos está completo. '}As três cumpridas fazem uma semana cheia. Toda segunda-feira, três metas novas.</p>
+  </div>`;
+}
+
+/* ═══════════════════════════════════════════════════
+   PARA A HISTÓRIA — what the climb is played for
+   Not money: memory. Each of the sixteen rungs is a length of time your name
+   will be remembered, from a day to forever, and from the fifth up each one
+   is the time the world has already remembered someone real — ten years like
+   Hawking, two centuries like Beethoven, three thousand years like
+   Tutankhamun. The two safe rungs are where the name is engraved; a miss
+   lets it fade back to the last of them. The values in LADDER (v) are kept
+   as they always were — they are what a record, a medal and a challenge
+   link compare — and this file says what each of them is called, draws the
+   ladder, the plaque the name ends up on, and the end of a climb.
+═══════════════════════════════════════════════════ */
+const FAMA = [
+  { t: 'um dia',        as: 'o sol de hoje',             ic: 'sun' },
+  { t: 'uma semana',    as: 'a manchete de um jornal',   ic: 'news' },
+  { t: 'um mês',        as: 'a folha do calendário',     ic: 'calendar' },
+  { t: 'um ano',        as: 'uma volta ao redor do Sol', ic: 'globe' },
+  { t: 'dez anos',      who: 'hawking' },
+  { t: 'uma geração',   who: 'madre_teresa' },
+  { t: 'meio século',   who: 'chaplin' },
+  { t: 'um século',     who: 'monet' },
+  { t: 'dois séculos',  who: 'beethoven' },
+  { t: 'três séculos',  who: 'newton' },
+  { t: 'cinco séculos', who: 'leonardo' },
+  { t: 'um milênio',    who: 'avicena' },
+  { t: 'dois milênios', who: 'cesar' },
+  { t: '2.500 anos',    who: 'confucio' },
+  { t: 'três milênios', who: 'tutancamon' },
+  { t: 'para sempre',   ic: 'star' },
+];
+/* the rung a value is (−1 for nothing banked), what it is called, and the words that go round it */
+const famaIdx = v => LADDER.findIndex(s => s.v === v);
+const fama = v => { const i = famaIdx(v); return i < 0 ? 'um instante' : FAMA[i].t; };
+const famaPor = v => (famaIdx(v) === LADDER.length - 1 ? '' : 'por ') + fama(v);
+const famaWho = i => (FAMA[i] && FAMA[i].who && PL.find(p => p.id === FAMA[i].who)) || null;
+/* "como Charlie Chaplin", "como o sol de hoje"; the last rung is like nobody */
+const famaComo = i => { const p = famaWho(i); return p ? 'como ' + p.n : FAMA[i] && FAMA[i].as ? 'como ' + FAMA[i].as : ''; };
+/* the little disc a rung wears: the face of whoever has been remembered that long, or a sign of that span */
+function famaDisc(i) {
+  const p = famaWho(i);
+  if (p) return `<span class="fm-disc"><img src="${p.img}" alt="" loading="lazy" draggable="false"></span>`;
+  return `<span class="fm-disc fm-disc-ic">${(ICON[(FAMA[i] || {}).ic] || ICON.star)('currentColor', 12)}</span>`;
+}
+
+/* ── the player's name: what the plaque says. Asked once, on the plaque itself; "Você" until then ── */
+const NOME_MAX = 16;
+const nomeJog = () => String(LS.get('nome', '') || LS.get('selfieName', '') || '').replace(/\s+/g, ' ').trim().slice(0, NOME_MAX);
+let nomeEdit = false;      // the plaque's name is being typed
+
+/* ── the plaque ──
+   What the name is written on says how long it will last: breath on a cold pane, a finger in the sand, chalk
+   on a slate, ink on paper, cast bronze, cut marble, the stars. One for each stretch of the ladder. */
+const PLACAS = [
+  [0,  'ar',       'dito ao vento'],
+  [1,  'areia',    'escrito na areia'],
+  [4,  'giz',      'a giz, na lousa'],
+  [6,  'tinta',    'a tinta, no papel'],
+  [9,  'bronze',   'fundido em bronze'],
+  [12, 'marmore',  'talhado em mármore'],
+  [16, 'estrelas', 'escrito nas estrelas'],
+];
+const placaOf = r => PLACAS.filter(p => r >= p[0]).pop();
+/* r: rungs kept (0–16). opts.edit: the name can be changed by a tap; opts.sm: the small one on the cover */
+function placaHtml(r, opts) {
+  opts = opts || {};
+  const [, k, how] = placaOf(r), nm = nomeJog(), v = r > 0 ? LADDER[r - 1].v : 0;
+  const stars = k !== 'estrelas' ? '' : `<svg class="pl-sky" viewBox="0 0 300 120" preserveAspectRatio="xMidYMid slice" aria-hidden="true">${
+    [[22, 18, 1.2], [58, 44, .8], [41, 96, 1], [96, 14, .7], [133, 104, .9], [171, 12, 1.1], [209, 100, .7], [246, 26, 1.3], [278, 78, .9], [262, 108, .6], [12, 66, .7], [118, 30, .5], [188, 58, .5], [228, 60, .6], [76, 76, .6]]
+      .map(([x, y, s], i) => `<circle cx="${x}" cy="${y}" r="${s}" style="--i:${i}"/>`).join('')}
+    <path d="M22 18L58 44L41 96M246 26L278 78L262 108" fill="none" stroke="currentColor" stroke-width=".5" opacity=".35"/></svg>`;
+  const name = opts.edit && nomeEdit
+    ? `<span class="pl-edit"><input id="pl-in" class="pl-in" type="text" maxlength="${NOME_MAX}" value="${_esc(nm)}" placeholder="Seu nome" autocomplete="off" autocapitalize="words" enterkeyhint="done" aria-label="Seu nome">
+        <button id="pl-ok" class="pl-ok" type="button" aria-label="Gravar o nome">${ICON.check('currentColor', 14)}</button></span>`
+    : `<${opts.edit ? 'button id="pl-nome" type="button"' : 'span'} class="pl-nome${nm ? '' : ' is-blank'}${nm.length > 11 ? ' is-long' : ''}"${opts.edit ? ` aria-label="${nm ? 'Mudar o nome: ' + _esc(nm) : 'Escrever o seu nome'}"` : ''}>${
+        nm ? _esc(nm) : opts.edit ? 'seu nome aqui' : 'Você'}${opts.edit ? `<i class="pl-pen" aria-hidden="true">${ICON.quill('currentColor', 11)}</i>` : ''}</${opts.edit ? 'button' : 'span'}>`;
+  return `<div class="placa pl-${k}${opts.sm ? ' pl-sm' : ''}">
+    ${stars}
+    <span class="pl-k">${how}</span>
+    ${name}
+    <span class="pl-por">${r >= LADDER.length ? 'lembrado para sempre' : 'lembrado ' + famaPor(v)}</span>
+  </div>`;
+}
+function wirePlaca() {
+  const save = () => {
+    const el = document.getElementById('pl-in');
+    if (!el) return;
+    LS.set('nome', el.value.replace(/\s+/g, ' ').trim().slice(0, NOME_MAX));
+    nomeEdit = false; snd.tap(); go();
+  };
+  document.getElementById('pl-nome')?.addEventListener('click', () => { nomeEdit = true; snd.tap(); go(); });
+  document.getElementById('pl-ok')?.addEventListener('click', save);
+  const el = document.getElementById('pl-in');
+  if (el) {
+    el.addEventListener('keydown', e => { if (e.key === 'Enter') { e.preventDefault(); save(); } });
+    try { el.focus({ preventScroll: true }); el.setSelectionRange(el.value.length, el.value.length); } catch (e) {}
+  }
+}
+
+/* ── the board's line of stakes: what this rung is worth, and what is already engraved ── */
+function famaStakes() {
+  const top = isFinal(), net = safetyNet();
+  return `
+    <div class="stakes fm-stakes">
+      <div style="min-width:0;">
+        <div class="eyebrow">Degrau ${rung + 1} de ${LADDER.length} · ${top ? 'seu nome' : 'lembrado por'}</div>
+        <div class="stakes-v prize-pop"><em>${fama(RUNG().v)}</em></div>
+      </div>
+      <button id="bladder" class="safe-box" aria-label="Ver a escada. Garantido: ${net ? fama(net) : 'nada ainda'}">
+        ${famaDisc(rung)}
+        <div>
+          <div class="k">Garantido</div>
+          <div class="v ${net ? 'good' : 'muted'}">${net ? fama(net) : '—'}</div>
+        </div>
+      </button>
+    </div>`;
+}
+
+/* ── the full ladder, as a sheet over the board: a line of time that climbs from a day to forever, each rung
+   with the face of whoever has been remembered that long ── */
+function ladderOverlay() {
+  const n = LADDER.length;
+  return `
+  <div class="sheet ld-sheet fm-sheet">
+    <div class="ld-head">
+      <span class="eyebrow" style="color:var(--brass);">Para a História · degrau ${Math.min(rung + 1, n)} de ${n}</span>
+      <button id="bladderclose" class="btn btn-ghost btn-icon" aria-label="Fechar">${ICON.close('currentColor', 13)}</button>
+    </div>
+    <div class="display ld-title"><em>Por quanto tempo vão lembrar de você?</em></div>
+    <div class="fm-ld" role="list">
+      ${LADDER.map((step, i) => {
+        const st = i < rung ? ' is-done' : i === rung ? ' is-now' : '', top = i === n - 1;
+        return `<div class="fm-r${st}${step.safe ? ' is-safe' : ''}${top ? ' is-top' : ''}" role="listitem">
+          <span class="fm-n">${i + 1}</span>
+          ${famaDisc(i)}
+          <span class="fm-t"><b>${FAMA[i].t}</b><small>${top ? 'sua figurinha vira ouro no álbum' : famaComo(i)}</small></span>
+          <span class="fm-ok">${i < rung ? ICON.check('currentColor', 12) : step.safe ? ICON.shield('currentColor', 12) : i === rung ? '<i>você</i>' : ''}</span>
+        </div>`;
+      }).reverse().join('')}
+    </div>
+    <p class="small muted fm-foot">${ICON.shield('var(--ink-3)', 10)} degraus gravados: passou de um, esse tempo é seu aconteça o que acontecer.</p>
+  </div>`;
+}
+
+/* ── how a climb ends: the plaque, in what the name earned, and how long it will be read ── */
+function famaEndHtml() {
+  const n = LADDER.length, won = banked >= LADDER[n - 1].v;
+  const kept = famaIdx(banked) + 1;                     // rungs kept: 0 when the name fades at once
+  const who = kept > 0 ? famaWho(kept - 1) : null;
+  const head = won ? 'Imortal!' : cashed ? 'Você assinou e parou' : banked ? 'Caiu, mas ficou' : 'Fama de um instante';
+  const fell = FAMA[Math.min(rung, n - 1)].t;
+  const sub = won ? 'Dezesseis degraus, dezesseis acertos. A sua figurinha foi reimpressa em ouro.'
+    : cashed ? (who ? `O mundo já lembra de <b>${_esc(who.n)}</b> há esse tempo.` : 'Saiu com o nome escrito — decisão de quem sabe a hora.')
+    : banked ? `Tropeçou no degrau de <b>${fell}</b> — o degrau gravado segurou.`
+    : 'Escorregou antes do primeiro degrau gravado. Da próxima, considere parar.';
+  const best = Math.max(milBest(), banked);
+  return `
+  <div class="pg pg-center scroll-y fm-end" style="padding:22px 22px;gap:8px;">
+    <div class="eyebrow">Para a História · degrau ${rung} de ${n}</div>
+    ${placaHtml(kept, { edit: true })}
+    <div class="display ${won ? 'brass' : banked ? 'good' : 'bad'} fm-end-h"><em>${head}</em></div>
+    <p class="small muted fm-end-p">${sub}</p>
+    ${chalBanner()}
+    <div class="rail" style="width:100%;max-width:300px;margin:4px 0;">
+      ${LADDER.map((step, i) => `<span class="notch${i < rung ? ' notch-done' : ''}${step.safe ? ' notch-safe' : ''}"></span>`).join('')}
+    </div>
+    <div class="stats">
+      <div><div class="v num">${nCorrect}</div><div class="k">Acertos</div></div>
+      <div><div class="v num">${pts}</div><div class="k">Pontos</div></div>
+      <div><div class="v brass fm-best">${best ? fama(best) : '—'}</div><div class="k">Recorde</div></div>
+    </div>
+    ${packStrip()}
+    ${selosStrip()}
+    ${medalChips()}
+    <div class="foot-row" style="margin-top:10px;">
+      <button id="bshare"  class="btn btn-ghost btn-sm">${chalMine() ? 'Desafiar' : 'Compartilhar'}</button>
+      <button id="bmilrep" class="btn btn-brass">De novo</button>
+      <button id="bhome"   class="btn btn-ghost btn-sm">Início</button>
+    </div>
+  </div>`;
+}
+/* the climb as a message: the column of rungs, and what the name earned */
+function famaShareText() {
+  const climb = LADDER.map((s, i) => i < rung ? '🟨' : '⬛').join('');
+  const kept = famaIdx(banked) + 1, who = kept > 0 ? famaWho(kept - 1) : null;
+  const say = banked >= LADDER[LADDER.length - 1].v ? 'ENTREI PARA A HISTÓRIA: meu nome será lembrado para sempre!'
+    : `Meu nome será lembrado ${famaPor(banked)}${who ? ' — como ' + who.n : ''}.`;
+  const albM = runNew ? `\n📔 ${runNew} ${runNew === 1 ? 'figurinha nova' : 'figurinhas novas'} · ${album.size}/${ALL_STICKERS.length} no álbum` : '';
+  return `Para a História 📜 History Quiz\n${climb}\n${say} · degrau ${rung}/${LADDER.length}${albM}\n${chalShareTail(chalMine())}`;
+}
+
+/* ═══════════════════════════════════════════════════
+   AS PROVAS — the other games, played for a rung
+   Five of the sixteen rungs are not a question to mark: they are a turn of
+   one of the games that live behind the cover, played for the rung. The
+   ruler of years (Que ano?), the pin on the mapa-múndi (Onde foi?), an event
+   to set in a line of time (Cronologia), three "before or after?" in a row,
+   two or three legends to stamp (Mito ou fato?). Each climb draws the five
+   in its own order, from the climb's seed, so a climb sent to a friend has
+   the same provas; the higher the rung, the narrower the margin. A prova is
+   announced on a card, like a carta especial — and that card is where the
+   player may still stop — and is played on its game's own screen, under the
+   climb's bar instead of the game's.
+═══════════════════════════════════════════════════ */
+const PROVA_RUNGS = [1, 4, 7, 10, 13];       // none a checkpoint, none a carta especial, never the first or the last
+const GC_PROVA = { id: 'g_prova', name: 'Prova', emoji: '🧭', col: '#8C2F2F' };
+const PROVA = {
+  ano:  { n: 'Que ano?',         ic: ICON.hourglass, tag: d => `Leve a régua até o ano: vale errar por até ${d.tol} ${d.tol === 1 ? 'ano' : 'anos'}` },
+  onde: { n: 'Onde foi?',        ic: ICON.globe,     tag: d => `Crave o alfinete no mapa: vale até ${d.km.toLocaleString('pt-BR')} km do lugar` },
+  cron: { n: 'Cronologia',       ic: ICON.timeline,  tag: d => d.cur.length === 1 ? 'Um evento para pôr no seu lugar na linha do tempo' : 'Dois eventos para pôr no lugar na linha do tempo, sem errar' },
+  aod:  { n: 'Antes ou depois?', ic: ICON.clock,     tag: d => `${d.need === 3 ? 'Três' : 'Duas'} seguidas, sem errar: veio antes ou depois?` },
+  mito: { n: 'Mito ou fato?',    ic: ICON.stamp,     tag: d => `${d.need === 3 ? 'Três' : 'Duas'} cartas, nenhuma dúvida: lenda ou verdade?` },
+};
+const _pvTier = (tier, arr) => arr[Math.max(0, Math.min(arr.length - 1, tier - 1))];
+const _pvEvt = id => ANO_EVENTS.find(e => e.id === id);
+
+/* What each prova is, dealt once when the climb is built (so the seed that deals the questions deals these too) */
+const PROVA_DEAL = {
+  ano(tier, used) {
+    const e = shuf(ANO_EVENTS.filter(x => !used.has(x.id)))[0];
+    if (!e) return null;
+    used.add(e.id);
+    const [lo, hi] = anoWindow(e, rnd()), mid = Math.round((lo + hi) / 2 / 5) * 5;
+    return { e: e.id, lo, hi, start: mid === 0 ? 1 : mid, tol: Math.max(2, Math.round(anoTol(e) * _pvTier(tier, [3, 2.6, 2.2, 1.8, 1.4]))) };
+  },
+  onde(tier, used) {
+    const e = shuf(ANO_EVENTS.filter(x => ONDE_AT[x.id] && !used.has(x.id)))[0];
+    if (!e) return null;
+    used.add(e.id);
+    return { e: e.id, km: _pvTier(tier, [2500, 2000, 1600, 1200, 900]) };
+  },
+  cron(tier, used) {
+    /* three events already on the line and one or two to place, none too near another to be fair */
+    const gap = _pvTier(tier, [150, 100, 60, 40, 25]), n = tier >= 3 ? 5 : 4, got = [];
+    for (const e of shuf(ANO_EVENTS.filter(x => !used.has(x.id) && (!x.c || gap >= 100)))) {
+      if (got.every(o => anoGap(o.y, e.y) >= gap)) got.push(e);
+      if (got.length === n) break;
+    }
+    if (got.length < n) return null;
+    got.forEach(e => used.add(e.id));
+    return { line: got.slice(0, 3).sort((a, b) => a.y - b.y).map(e => e.id), cur: got.slice(3).map(e => e.id) };
+  },
+  aod(tier) { return { seed: Math.floor(rnd() * CHAL_SEED_MAX), need: 3, band: _pvTier(tier, [0, 3, 6, 10, 15]) }; },
+  mito(tier) { return { seed: Math.floor(rnd() * CHAL_SEED_MAX), need: tier >= 3 ? 3 : 2 }; },
+};
+/* Deals the provas into a ladder that is already built, as dealSpecials does its cards */
+function dealProvas(qs) {
+  const kinds = shuf(Object.keys(PROVA)), used = new Set();
+  PROVA_RUNGS.forEach((i, k) => {
+    if (i >= qs.length) return;
+    const kind = kinds[k % kinds.length], tier = LADDER[i].tier, d = PROVA_DEAL[kind](tier, used);
+    if (!d) return;                             // nothing fair to deal: the rung keeps its question
+    qs[i] = { t: PROVA[kind].n, type: 'txt', a: [], choices: [], _prova: kind, _p: d, _cat: GC_PROVA, _d: tier };
+  });
+  return qs;
+}
+
+/* is a prova being played right now (on its game's screen, for the rung in hand)? */
+const PROVA_SC = { ano: 'ano', onde: 'onde', cron: 'cron', aod: 'aod', mito: 'mito' };
+const provaQ = () => (isMil && cat && cat.qs && cat.qs[qi] && cat.qs[qi]._prova ? cat.qs[qi] : null);
+const provaOn = () => { const q = provaQ(); return !!(q && sc === PROVA_SC[q._prova]); };
+
+/* the card turned: the game's own state, set for one turn under the climb */
+function startProva() {
+  const q = provaQ();
+  if (!q) return;
+  const d = q._p, k = q._prova;
+  clearInterval(tmr);
+  if (k === 'ano') {
+    ano = { qs: [{ e: _pvEvt(d.e), lo: d.lo, hi: d.hi, start: d.start }], i: 0, guess: d.start, log: [], pts: 0, phase: 'guess', quest: { tol: d.tol } };
+  } else if (k === 'onde') {
+    const e = _pvEvt(d.e);
+    onde = { qs: [{ e, at: ONDE_AT[e.id] }], i: 0, pin: null, log: [], pts: 0, phase: 'guess', v: { cx: 0, cy: 0, z: 1 }, quest: { km: d.km } };
+  } else if (k === 'cron') {
+    const cur = d.cur.map(_pvEvt);
+    cron = { deck: cur.slice(1).reverse(), line: d.line.map(_pvEvt), cur: cur[0], lives: 1, score: 0, phase: 'place', last: null, log: [], picks: [], quest: { need: cur.length } };
+  } else if (k === 'aod') {
+    aodNew(d.seed); aod.quest = { need: d.need, band: d.band };
+    /* the second event is drawn again, now that the run knows how near the years may be */
+    aod.used.delete(aod.b.id); aod.b = aodPick(aod.a); aod.used.add(aod.b.id);
+  } else if (k === 'mito') {
+    mfNew(d.seed); mf.quest = { need: d.need }; mf.lives = 1;
+  }
+  sc = PROVA_SC[k];
+  go();
+}
+
+/* the bar a prova is played under: the way out, what it is, the rung it is for and what the rung is worth */
+function provaBar() {
+  const q = provaQ(), k = q ? PROVA[q._prova] : null;
+  if (!k) return topbar('Prova');
+  return `<div class="pv-bar">
+    <div class="pv-top">
+      <button id="bexit" class="btn btn-ghost btn-icon" aria-label="Sair">${ICON.close('currentColor', 12)}</button>
+      <span class="chip pv-chip">${k.ic('currentColor', 11)}<span>Prova · ${k.n}</span></span>
+      <span class="pv-stake"><small>degrau ${rung + 1} · vale</small><b>${fama(RUNG().v)}</b></span>
+    </div>
+    <div class="rail">${LADDER.map((step, i) => `<span class="notch${
+      i < rung ? ' notch-done' : ''}${step.safe ? ' notch-safe' : ''}${i === rung ? ' notch-now' : ''}"></span>`).join('')}</div>
+  </div>`;
+}
+/* how far along a prova of several turns is: "1 de 3" as pips */
+const provaPips = (done, need, bad) => `<span class="pv-pips" role="img" aria-label="${done} de ${need}">${
+  Array.from({ length: need }, (_, i) => `<i class="${i < done ? 'on' : ''}${bad && i === done ? ' bad' : ''}"></i>`).join('')}</span>`;
+/* the verdict, once the prova is settled: what the name keeps */
+function provaVerdict(pass) {
+  return `<div class="pv-verdict ${pass ? 'is-good' : 'is-bad'}" role="status">
+    <b>${pass ? ICON.check('currentColor', 14) + ' Prova vencida!' : ICON.cross('currentColor', 14) + ' Não foi desta vez'}</b>
+    <small>${pass ? `Seu nome, lembrado ${famaPor(RUNG().v)}${rung + 1 < LADDER.length ? ` · próximo degrau: ${fama(LADDER[rung + 1].v)}` : ''}`
+      : `Seu nome fica ${safetyNet() ? 'lembrado ' + famaPor(safetyNet()) : 'por um instante'}`}</small>
+  </div>`;
+}
+const provaGoLabel = pass => pass ? `Continuar ${ICON.back('currentColor', 11).replace('<svg', '<svg style="transform:scaleX(-1)"')}` : 'Ver resultado';
+
+/* The prova is settled: the climb takes it as it takes an answer — up a rung, or down to the last one engraved */
+function provaDone(pass) {
+  const q = provaQ();
+  if (!q) return;
+  const k = q._prova, p = pass ? 3 : 0;
+  /* the game's own state is put away: its screen, opened later from the cover, starts a game of its own */
+  if (k === 'ano') ano = null; else if (k === 'onde') onde = null; else if (k === 'cron') cron = null;
+  else if (k === 'aod') { clearTimeout(aod && aod.adv); aod = null; } else if (k === 'mito') mf = null;
+  prevPts = pts;
+  if (pass) { streak++; nCorrect++; pts += Math.round(4 * (streak >= 6 ? 3 : streak >= 3 ? 2 : 1) * DCFG().pmul); }
+  else streak = 0;
+  bestStreak = Math.max(bestStreak, streak);
+  runLog.push(p);
+  stats.provas = (stats.provas || 0) + (pass ? 1 : 0);
+  if (pass) snd.rung(rung); else { snd.drop(); banked = safetyNet(); }
+  sc = 'reveal';
+  advanceAfterReveal(p);
+  go();
+}
+
+/* ═══════════════════════════════════════════════════
+   A SUA FIGURINHA — Nº 000
+   The album has a sticker of the player. It is there from the first day,
+   printed on common paper with a silhouette where the face goes; the
+   climb is what changes it. The first engraved rung reprints it in silver,
+   the second in holographic foil, and the sixteenth in gold — and a Selfie
+   de época (js/selfie.js) puts the player's own painted portrait on it. The
+   plaque under it is where the name is written.
+
+   And the album is one book with three sections — the figurinhas on the
+   map, the stamps, the showcase of rare copies — so each of the three wears
+   the same strip of tabs under its header (albNav).
+═══════════════════════════════════════════════════ */
+const EU_BLANK = 'data:image/svg+xml,' + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 400"><defs><radialGradient id="g" cx="50%" cy="36%" r="78%"><stop offset="0" stop-color="#6B5A45"/><stop offset="1" stop-color="#241B12"/></radialGradient></defs><rect width="300" height="400" fill="url(#g)"/><ellipse cx="150" cy="168" rx="60" ry="76" fill="#C9B38C" opacity=".5"/><path d="M36 400c0-92 52-142 114-142s114 50 114 142z" fill="#C9B38C" opacity=".5"/><text x="150" y="196" text-anchor="middle" font-family="Georgia,serif" font-style="italic" font-weight="700" font-size="88" fill="#241B12" opacity=".65">?</text></svg>');
+/* the painted portrait kept from the last Selfie de época, or the silhouette */
+const euImg = () => { const d = LS.get('euImg', ''); return typeof d === 'string' && d.startsWith('data:image/') ? d : EU_BLANK; };
+/* rungs kept at best, and the paper that earns: common, silver from the first engraved rung, foil from the second, gold at the top */
+const euKept = () => famaIdx(milBest()) + 1;
+const euFin = k => k >= LADDER.length ? 3 : k >= 9 ? 2 : k >= 4 ? 1 : 0;
+let euFrom = 'home';       // where the way back leads
+
+function euCard(pw) {
+  const kept = euKept(), f = euFin(kept), nm = nomeJog() || 'Você';
+  const p = { id: '_eu', n: nm, img: euImg(), era: [1500, 1500], pos: 'GOV', ctry: 'BRA' };
+  let card = figurinha(p, 'lg', { hideEra: true, band: kept >= LADDER.length ? 'IMORTAL' : 'VOCÊ', sub: kept ? 'lembrado ' + famaPor(milBest()) : 'um instante de fama', decorative: true });
+  if (f > 0) {
+    card = card.replace('class="fig ', `class="fig fin-${f} `);
+    const foil = '<span class="fl-frame" aria-hidden="true"></span><span class="fl-foil" aria-hidden="true"></span><span class="fl-glare" aria-hidden="true" style="--d:-1.3s"></span>'
+      + (f === 3 ? '<span class="fl-glitter" aria-hidden="true"></span>' : '');
+    card = card.replace(/<\/span>\s*$/, foil + '</span>');
+  }
+  return `<div class="figx eu-card" style="--pw:${pw}px"><span class="alb-n">000</span>${card}</div>`;
+}
+function euHtml() {
+  const kept = euKept(), f = euFin(kept);
+  const pw = Math.max(104, Math.min(200, Math.round((innerHeight - 400) * 29 / 50)));
+  const nx = f === 0 ? ['prata', 4] : f === 1 ? ['holográfico', 9] : f === 2 ? ['ouro', LADDER.length] : null;
+  return `
+  <div class="pg eu-pg">
+    ${topbar('Sua figurinha', 'beu-back')}
+    <div class="eu-stage">${euCard(pw)}</div>
+    <p class="eu-paper">Papel <b>${FIN_NAME[f].toLowerCase()}</b>${nx ? ` · no ${nx[1]}º degrau ela é reimpressa em <b>${nx[0]}</b>` : ' · você é <b>Imortal</b>'}</p>
+    ${placaHtml(kept, { edit: true })}
+    <div class="eu-stats">
+      <span><b class="num">${album.size}</b>figurinhas</span><span><b class="num">${seloCount()}</b>selos</span>
+      <span><b class="num">${earnedMedals().length}</b>insígnias</span><span><b class="num">${stats.games || 0}</b>partidas</span>
+    </div>
+    <div class="foot-row">
+      <button id="eu-selfie" class="btn btn-ghost btn-sm" type="button">${ICON.star('currentColor', 12)} ${LS.get('euImg', '') ? 'Novo retrato' : 'Pôr o meu rosto'}</button>
+      <button id="mil-btn" class="btn btn-brass" type="button">${ICON.play('currentColor', 13)} Subir a escada</button>
+    </div>
+  </div>`;
+}
+function wireEu() {
+  document.getElementById('beu-back')?.addEventListener('click', () => { snd.swipe(); nomeEdit = false; sc = euFrom; go(); });
+  document.getElementById('eu-selfie')?.addEventListener('click', () => { snd.select(); startSelfie(); });
+  wirePlaca();
+}
+function openEu(from) { euFrom = from || 'home'; nomeEdit = false; snd.swipe(); sc = 'eu'; go(); }
+
+/* ── one album, three sections: the strip of tabs each of them wears ── */
+function albNav(on) {
+  const v = V(), rare = Object.keys(v.c || {}).filter(sid => v.c[sid] && (v.c[sid].f > 0 || v.c[sid].v)).length;
+  const tabs = [
+    ['fig',  'Figurinhas', `${album.size}/${ALL_STICKERS.length}`, ICON.book],
+    ['selo', 'Selos',      `${seloCount()}/${seloAll().length}`,   ICON.stamp],
+    ['vit',  'Vitrine',    rare === 1 ? '1 rara' : rare + ' raras', ICON.star],
+  ];
+  return `<div class="alb-nav" role="tablist" aria-label="Seções do álbum">
+    ${tabs.map(([id, n, tail, ic]) => `<button id="alb-nav-${id}" class="alb-nv${id === on ? ' is-on' : ''}" type="button" role="tab" aria-selected="${id === on}">
+      <span class="alb-nv-l">${ic('currentColor', 11)}<b>${n}</b></span><small>${tail}</small></button>`).join('')}
+    <button id="balbeu" class="alb-eu" type="button" aria-label="Sua figurinha"><img src="${euImg()}" alt="" draggable="false"></button>
+  </div>`;
+}
+
+/* ═══════════════════════════════════════════════════
+   A CAPA — the cover, quiet
+   One thing to do, said once: the climb. Under it, the plaque the player's
+   name is on so far; the day's five games as five small seals; the album;
+   and one door to every other game (the Jogos page below). Everything that
+   used to crowd the cover — eight tiles, the stamp album, the strip of
+   insígnias — is one tap in, where it has room.
+═══════════════════════════════════════════════════ */
+/* the day's five games: the same for everyone, each played once */
+function hojeJogos() {
+  const k = cronDiaKept();
+  return [
+    ['daily-btn', 'Diário',   ICON.calendar, dailyDone()],
+    ['hoje-btn',  'Datas',    ICON.sun,      !!hojeRes()],
+    ['hj-onde',   'Mapa',     ICON.globe,    !!ondeDiaRes()],
+    ['hj-cron',   'Linha',    ICON.timeline, !!(k && k.done)],
+    ['hj-graus',  'Corrente', ICON.chain,    !!sgDiaRes()],
+  ];
+}
+/* one line of news, when there is some: a friend's challenge, the welcome packet, a birthday edition to win today */
+function homeNews() {
+  const v = V();
+  if (chal && !chal.accepted) return chalNews();
+  if (v.welcome && v.welcome.length) return `<button id="bwelc" class="home-news is-gift" type="button">
+    <span class="hn-ic">${ICON.star('currentColor', 13)}</span>
+    <span><b>Pacote de boas-vindas</b> · suas figurinhas foram certificadas</span></button>`;
+  const t = todaysBdays().filter(id => !v.lim[`${id}:${new Date().getFullYear()}`]);
+  if (t.length) return `<button id="bvit" class="home-news" type="button">
+    <span class="hn-ic">${ICON.star('currentColor', 13)}</span>
+    <span>Aniversário de <b>${PL.find(p => p.id === t[0]).n}</b> · edição do dia</span></button>`;
+  return '';
+}
+function homeHtml() {
+  const best = milBest(), kept = famaIdx(best) + 1;
+  const { p: hero, num } = heroSticker();
+  const d = new Date(), pct = albumPct();
+  /* three faces for the album's fan: the latest you hold, else great ones still to find */
+  const held = PL.filter(p => album.has(p.id) && !UNPAINTED.has(p.id));
+  const fan = (held.length >= 3 ? held.slice(-3)
+    : [...held, ...PL.filter(p => FAMOUS.has(p.id) && !album.has(p.id) && !UNPAINTED.has(p.id))].slice(0, 3));
+  const dia = hojeJogos(), feitos = dia.filter(g => g[3]).length;
+  const e = earnedMedals().length;
+  return `
+  <div class="pg pg-home cover hm">
+    <figure class="cv-art">
+      <img class="cv-bg" src="${hero.img}" alt="" aria-hidden="true" decoding="async">
+      <img src="${hero.img}" alt="${hero.n}" decoding="async">
+      <div class="cv-mast"><span>History Quiz</span><span>Edição ${d.getFullYear()}</span></div>
+      <figcaption class="cv-cap"><b>Nº ${String(num).padStart(3, '0')}</b> ${hero.n}<i>${POS_NAME[hero.pos]} · ${CTRY_NAME[hero.ctry] || hero.ctry}</i></figcaption>
+    </figure>
+
+    <div class="cv-body">
+      <h1 class="display cv-title">Entre para a <em class="brass">História</em></h1>
+      <p class="cv-dek">Dezesseis degraus. A cada um, o seu nome é lembrado por mais tempo — de <b>um dia</b> até <b>para sempre</b>.</p>
+
+      <div class="cv-cta">
+        <button id="mil-btn" class="btn btn-brass btn-lg">${ICON.play('currentColor', 15)} ${best > 0 ? 'Subir de novo' : 'Começar a subir'}</button>
+        <button id="beu" class="hm-placa" type="button" aria-label="Sua figurinha: ${nomeJog() || 'Você'}, lembrado ${kept ? famaPor(best) : 'por um instante'}">${placaHtml(kept, { sm: true })}</button>
+      </div>
+
+      ${homeNews()}
+
+      <section class="hm-hoje" aria-label="Os jogos de hoje">
+        <h2 class="cv-h"><span>Hoje · ${d.getDate()} de ${MES_LONGO[d.getMonth()]}</span><small>${feitos === dia.length ? 'tudo feito' : feitos + ' de ' + dia.length}</small></h2>
+        <div class="hm-dia">
+          ${dia.map(([id, n, ic, done]) => `<button id="${id}" class="hm-d${done ? ' is-done' : ''}" type="button" aria-label="${n}${done ? ': feito hoje' : ''}">
+            <span class="hm-seal">${(done ? ICON.check : ic)('currentColor', 15)}</span><small>${n}</small></button>`).join('')}
+        </div>
+      </section>
+
+      <div class="cv-cols hm-cols">
+        <button id="balb" class="cv-album" type="button">
+          <span class="cv-fan" aria-hidden="true">${fan.map((p, i) => `<i class="${album.has(p.id) ? 'on' : ''}" style="--i:${i}"><img src="${p.img}" alt="" aria-hidden="true" loading="lazy"></i>`).join('')}</span>
+          <span class="cv-at">
+            <span class="cv-h">Meu álbum</span>
+            <b>${album.size}<small> de ${ALL_STICKERS.length}</small></b>
+            <span class="cv-bar"><i style="width:${Math.max(2, pct)}%"></i></span>
+          </span>
+        </button>
+        <button id="bjogos" class="cv-album hm-jogos" type="button">
+          <span class="hm-jg-ic" aria-hidden="true">${[ICON.map, ICON.hourglass, ICON.globe].map((ic, i) => `<i class="mode-disc mode-${['jor', 'ano', 'onde'][i]}" style="--i:${i}">${ic('currentColor', 13)}</i>`).join('')}</span>
+          <span class="cv-at"><span class="cv-h">Jogos</span><b>${JOGOS_N + GAB.length}<small> jeitos de jogar</small></b></span>
+        </button>
+      </div>
+
+      <div class="home-foot">
+        <button id="bmute" class="btn btn-ghost btn-icon" title="Som" aria-label="Som">${
+          muted ? ICON.mute('currentColor', 14) : ICON.sound('currentColor', 14)}</button>
+        <button id="bmetas" class="link">Metas <span class="num">${(() => { try { return metasTail(); } catch (err) { return ''; } })()}</span></button>
+        <button id="bmed"  class="link">Insígnias <span class="num">${e}/${MEDALS.length}</span></button>
+        <button id="bcred" class="link">Créditos</button>
+      </div>
+      <p class="home-indep">App independente · imagens da Wikimedia Commons</p>
+    </div>
+  </div>`;
+}
+
+/* ═══════════════════════════════════════════════════
+   JOGOS — every other way to play, on one page
+   The rounds to train on, the games of time and place, and the door of the
+   Gabinete de curiosidades. The cover used to carry all of these as tiles.
+═══════════════════════════════════════════════════ */
+const JOGOS_N = 7;
+function jogosHtml() {
+  const tile = (id, label, tail, kind, ic) => `
+    <button id="${id}" class="jg-t mode-${kind}" type="button">
+      <span class="mode-disc jg-ic">${ic('currentColor', 16)}</span>
+      <span class="jg-tx"><b>${label}</b><small>${tail}</small></span>
+    </button>`;
+  const nx = jorNextIdx(), jt = jorTotal();
+  const rA = hojeRes(), bA = LS.get('anoBest', 0), bO = LS.get('ondeBest', 0), bC = LS.get('cronBest', 0);
+  return `
+  <div class="pg jg-pg">
+    ${topbar('Jogos')}
+    <div class="display jg-h"><em>Outros jeitos de jogar</em></div>
+    <h2 class="cv-h jg-sec"><span>Para treinar</span></h2>
+    <div class="jg-grid">
+      ${tile('jor-btn', 'Jornada', nx < 0 ? 'Completa · ' + jt + ' estrelas' : nx === 0 ? 'Seis eras, 19 paradas' : 'Parada ' + (nx + 1) + ' de ' + JOR_STOPS.length, 'jor', ICON.map)}
+      ${tile('cta-btn', 'Treino', 'Sem pressa, três níveis', 'train', ICON.ladder)}
+      ${tile('surv-btn', 'Mata-mata', (stats.survBest || 0) > 0 ? 'Recorde ' + stats.survBest : 'Até errar uma', 'surv', ICON.shield)}
+      ${tile('rev-btn', 'Revisar', revTail(), revDue().length ? 'rev' : 'rev is-off', ICON.book)}
+    </div>
+    <h2 class="cv-h jg-sec"><span>No tempo e no mapa</span></h2>
+    <div class="jg-grid jg-grid-3">
+      ${tile('ano-btn', 'Que ano?', bA > 0 ? 'Recorde ' + bA : 'Na régua', rA ? 'ano' : 'hoje', ICON.hourglass)}
+      ${tile('onde-btn', 'Onde foi?', bO > 0 ? 'Recorde ' + bO : 'No mapa', 'onde', ICON.globe)}
+      ${tile('cron-btn', 'Cronologia', bC > 0 ? 'Recorde ' + bC : 'Na linha', 'cron', ICON.timeline)}
+    </div>
+    <h2 class="cv-h jg-sec"><span>Curiosidades</span></h2>
+    <button id="bgab2" class="jg-gab" type="button">
+      <span class="jg-gab-art" aria-hidden="true">${GAB.slice(0, 5).map((g, i) => `<i style="--i:${i}">${(QICON[g.art] || QICON.scroll)(40)}</i>`).join('')}</span>
+      <span class="jg-tx"><b>Gabinete de curiosidades</b><small>${GAB.length} jogos de outro tipo: cartas, rostos, mímica, um rio, uma máquina do tempo…</small></span>
+    </button>
   </div>`;
 }
 
@@ -27825,11 +28171,11 @@ function doReveal() {
     /* On the ladder there is no half credit: you either climb or you fall. */
     lastMsg = p === 3
       ? `<span class="display good" style="font-size:18px;">${ICON.check('currentColor', 14)} ${
-          isFinal() ? 'É o milhão!' : 'Colada! ' + money(RUNG().v)}</span>`
-        + (isFinal() ? '' : `<div class="small muted" style="margin-top:3px;">Próximo degrau: ${money(LADDER[rung + 1].v)}</div>`) + backs
+          isFinal() ? 'Para sempre!' : 'Colada! ' + fama(RUNG().v).replace(/^./, c => c.toUpperCase())}</span>`
+        + (isFinal() ? '' : `<div class="small muted" style="margin-top:3px;">${famaComo(rung) ? famaComo(rung).replace(/^./, c => c.toUpperCase()) + ' · p' : 'P'}róximo degrau: ${fama(LADDER[rung + 1].v)}</div>`) + backs
       : `<span class="display bad" style="font-size:18px;">${ICON.cross('currentColor', 14)} Essa não era…</span>
          <div class="small muted" style="margin-top:3px;">Era <b class="good">${rightNames}</b>
-          · você leva ${money(safetyNet())}</div>` + backs;
+          · seu nome fica ${famaPor(safetyNet())}</div>` + backs;
   } else {
     lastMsg = (p === 3
       ? `<span class="display good" style="font-size:17px;">${ICON.check('currentColor', 13)} ${
@@ -27878,11 +28224,12 @@ function advanceAfterReveal(p) {
     }
     qi++;
     sel.clear(); clearHelpers(); lastMsg = '';
-    disp = dealDisp(qi);
+    /* a prova has no board of its own: it is played on its game's screen (js/prova.js) */
+    disp = cat.qs[qi] && cat.qs[qi]._prova ? [] : dealDisp(qi);
     tMax = qTime(); tLeft = tMax;
     /* A carta especial is announced before it is played, and the clock waits
-       for the player to turn it over. */
-    if (cat.qs[qi] && cat.qs[qi]._special) { sc = 'card'; snd.card(); return; }
+       for the player to turn it over. A prova too. */
+    if (cat.qs[qi] && (cat.qs[qi]._special || cat.qs[qi]._prova)) { sc = 'card'; snd.card(); return; }
     sc = 'quiz';
     startTmr();
     return;

@@ -84,6 +84,8 @@ async function sfPaint(src, sw, sh, mirror) {
     const img = await new Promise((ok, no) => { const i = new Image(); i.onload = () => ok(i); i.onerror = no; i.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg); });
     g.drawImage(img, 0, 0, SF_W, SF_H);
   }
+  /* the painting itself, small, before it is framed: the face of the player's own sticker (js/eu.js) */
+  try { const t = document.createElement('canvas'); t.width = 240; t.height = 320; t.getContext('2d').drawImage(c, 0, 0, SF_W * K, SF_H * K, 0, 0, 240, 320); sf.thumb = t.toDataURL('image/jpeg', .74); } catch (e) { sf.thumb = null; }
   /* the gilt frame */
   const fr = g.createLinearGradient(0, 0, SF_W, SF_H); fr.addColorStop(0, '#8A6416'); fr.addColorStop(.35, '#E8CF8A'); fr.addColorStop(.6, '#B8862F'); fr.addColorStop(1, '#6E4C14');
   g.lineWidth = 16; g.strokeStyle = fr; g.strokeRect(8, 8, SF_W - 16, SF_H - 16);
@@ -120,6 +122,7 @@ function sfDone(blob) {
   if (sf.shot) URL.revokeObjectURL(sf.shot);
   sf.blob = blob; sf.shot = URL.createObjectURL(blob); sf.phase = 'shot';
   stats.selfies = (stats.selfies || 0) + 1; LS.set('stats', stats);
+  if (sf.thumb) LS.set('euImg', sf.thumb);
   window._newMedals = newMedals();
   go();
   try { snd.fanfare(); } catch (e) {}

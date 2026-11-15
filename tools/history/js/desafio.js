@@ -12,7 +12,7 @@ const CHAL_GAMES = {
   tf: { n: 'Treino · Fácil', diff: 'facil', ic: 'check' },
   tm: { n: 'Treino · Moderado', diff: 'moderado', ic: 'bolt' },
   td: { n: 'Treino · Difícil', diff: 'dificil', ic: 'flame' },
-  m:  { n: 'Rumo ao Milhão', ic: 'crown' },
+  m:  { n: 'Para a História', ic: 'crown' },
   a:  { n: 'Que ano?', ic: 'hourglass' },
   o:  { n: 'Onde foi?', ic: 'globe' },
   c:  { n: 'Cronologia', ic: 'timeline' },
@@ -32,6 +32,8 @@ function chalVer() {
   const add = s => { for (let i = 0; i < s.length; i++) h = (h * 33 + s.charCodeAt(i)) | 0; };
   CATS.forEach(c => { add(c.id); c.qs.forEach(q => add(q.t)); });
   ANO_EVENTS.forEach(e => add(e.id)); MF.forEach(c => add(c.id + c.v)); Object.keys(ONDE_AT).forEach(add); PL.forEach(p => add(p.id)); add(String(LADDER.length));
+  /* the climb's provas (js/prova.js): a climb dealt before them is another game */
+  add('provas1');
   return (_chalVer = ((h >>> 0) % 1296).toString(36).padStart(2, '0'));
 }
 function chalCode(c) {
@@ -74,7 +76,7 @@ const chalIsThis = mine => !!(mine && chal && chal.used && chal.g === mine.g && 
 /* better, worse or the same: the money first on the ladder, then how far up */
 const chalCmp = (a, b) => a.g === 'm' ? (a.score - b.score) || ((a.more || 0) - (b.more || 0)) : a.score - b.score;
 function chalScoreTxt(c) {
-  if (c.g === 'm') return `${money(c.score)} · degrau ${c.more || 0}`;
+  if (c.g === 'm') return `${fama(c.score)} · degrau ${c.more || 0}`;
   if (c.g === 'c') return `${c.score} na linha`;
   if (c.g === 'd') return `${c.score} ${c.score === 1 ? 'acerto seguido' : 'acertos seguidos'}`;
   if (c.g === 'f') return `${c.score} ${c.score === 1 ? 'acerto' : 'acertos'}`;
@@ -89,7 +91,7 @@ function chalShareTail(mine) {
     const r = chalCmp(mine, chal);
     head = `Desafio: ${chalScoreTxt(mine)} × ${chalScoreTxt(chal)} — ${r > 0 ? 'venci! 🏆' : r < 0 ? 'perdi, desta vez' : 'empate'}\n`;
   }
-  return `${head}${mine.g === 'm' ? 'Encara as mesmas 16 perguntas?' : mine.g === 'a' || mine.g === 'o' ? 'Encara os mesmos 10 eventos?' : mine.g === 'c' ? 'Encara a mesma linha do tempo?' : mine.g === 'd' ? 'Encara a mesma sequência de eventos?' : 'Encara as mesmas perguntas?'} ${chalLink(mine)}`;
+  return `${head}${mine.g === 'm' ? 'Encara os mesmos 16 degraus?' : mine.g === 'a' || mine.g === 'o' ? 'Encara os mesmos 10 eventos?' : mine.g === 'c' ? 'Encara a mesma linha do tempo?' : mine.g === 'd' ? 'Encara a mesma sequência de eventos?' : 'Encara as mesmas perguntas?'} ${chalLink(mine)}`;
 }
 
 /* on the results: who won */
@@ -98,9 +100,9 @@ function chalBanner() {
   if (!chalIsThis(mine)) return '';
   /* a link from another version of the game dealt a different game: no winner is called */
   const r = chal.old ? 0 : chalCmp(mine, chal), say = chal.old ? 'outra versão do jogo' : r > 0 ? 'Você venceu!' : r < 0 ? 'Não foi dessa vez' : 'Empate!';
-  /* on the ladder the money decides, and the rung when the money is the same — then the rung is said too */
+  /* on the ladder what was kept decides, and the rung when that is the same — then the rung is said too */
   const tie = mine.g === 'm' && mine.score === chal.score;
-  const n = c => c.g === 'm' ? money(c.score) + (tie ? ` · degrau ${c.more || 0}` : '') : c.score + (c.g[0] === 't' ? ' pts' : '');
+  const n = c => c.g === 'm' ? fama(c.score) + (tie ? ` · degrau ${c.more || 0}` : '') : c.score + (c.g[0] === 't' ? ' pts' : '');
   return `<div class="chal-res ${r > 0 ? 'is-win' : r < 0 ? 'is-lose' : 'is-tie'}" role="status"
       aria-label="Desafio: você ${chalScoreTxt(mine)}, seu amigo ${chalScoreTxt(chal)}. ${say}.">
     <span class="chal-res-k" aria-hidden="true">${ICON.sword('currentColor', 11)} Desafio</span>
@@ -112,7 +114,7 @@ function chalBanner() {
 function chalHtml() {
   const c = chal, G = c && CHAL_GAMES[c.g];
   if (!G) { sc = 'home'; return html(); }
-  const what = c.g === 'm' ? 'As mesmas 16 perguntas da escada até o milhão, com as mesmas alternativas.'
+  const what = c.g === 'm' ? 'Os mesmos 16 degraus da escalada: as mesmas perguntas, as mesmas provas.'
              : c.g === 'a' ? 'Os mesmos 10 eventos, na mesma régua de anos.'
              : c.g === 'o' ? 'Os mesmos 10 eventos, para achar no mapa.'
              : c.g === 'c' ? 'Os mesmos eventos, na mesma ordem, para pôr na linha do tempo. Três vidas.'

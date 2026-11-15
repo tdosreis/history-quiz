@@ -16,7 +16,8 @@ const aodClock = n => Math.max(6, 12 - Math.floor(n / 3));      // seconds to an
 /* the next event: one not seen in this run, a fair distance from the last (an event dated "c." needs more
    room: its year is a guess too), and closer as the run grows; any unseen one when nothing fits */
 function aodPick(a) {
-  const [, lo, hi] = AOD_BANDS.filter(b => aod.score >= b[0]).pop();
+  /* a prova of the climb starts as far into the bands as its rung is high */
+  const [, lo, hi] = AOD_BANDS.filter(b => aod.score + (aod.quest ? aod.quest.band : 0) >= b[0]).pop();
   const free = ANO_EVENTS.filter(e => !aod.used.has(e.id) && e.y !== a.y);
   const fair = e => anoGap(a.y, e.y) >= ((a.c || e.c) ? Math.max(lo, 80) : lo);
   let pool = free.filter(e => fair(e) && anoGap(a.y, e.y) <= hi);
@@ -80,6 +81,7 @@ function aodAnswer(dir) {
 function aodNext() {
   if (!aod || aod.phase !== 'reveal') return;
   clearTimeout(aod.adv);
+  if (aod.quest && (!aod.ok || aod.score >= aod.quest.need)) return provaDone(aod.ok);
   if (!aod.ok) return aodEnd();
   const nb = aodPick(aod.b);
   if (!nb) { aod.all = true; return aodEnd(); }      // every event seen: the deck is spent
@@ -114,7 +116,8 @@ function aodCard(e, which, rev) {
 function aodHtml() {
   if (!aod) aodNew();
   if (aod.phase === 'end') return aodEndHtml();
-  const { a, b } = aod, rev = aod.phase === 'reveal';
+  const { a, b } = aod, rev = aod.phase === 'reveal', Q = aod.quest;
+  const settled = Q && rev && (!aod.ok || aod.score >= Q.need);
   const best = Math.max(aod.best0, aod.score);
   const up = ICON.back('currentColor', 15).replace('<svg', '<svg style="transform:rotate(90deg)"');
   const down = ICON.back('currentColor', 15).replace('<svg', '<svg style="transform:rotate(-90deg)"');
@@ -122,11 +125,12 @@ function aodHtml() {
   const wait = b.x ? Math.min(7000, 2000 + b.x.length * 32) : 1500;
   const html = `
   <div class="pg aod-pg${rev ? ' is-rev' : ''}">
-    ${topbar('Antes ou depois?')}
-    <div class="aod-head">
+    ${Q ? provaBar() : topbar('Antes ou depois?')}
+    ${Q ? `<div class="aod-head pv-head">${provaPips(aod.score, Q.need, rev && !aod.ok)}<span class="aod-best">${Q.need === 3 ? 'Três' : 'Duas'} seguidas, sem errar</span></div>`
+      : `<div class="aod-head">
       <span class="aod-run">${ICON.flame('currentColor', 13)} <b class="num">${aod.score}</b> ${aod.score === 1 ? 'acerto' : 'acertos'} seguidos</span>
       <span class="aod-best">Recorde <b class="num">${best}</b></span>
-    </div>
+    </div>`}
     <div class="timer aod-timer"><i id="aod-tf" style="width:${rev ? 0 : 100}%"></i></div>
     ${aodCard(a, 'a', rev)}
     <div class="aod-q"><span>${rev ? (aod.ok ? 'Isso!' : aod.pick ? 'Não…' : 'O tempo acabou') : 'E este aconteceu…'}</span></div>
@@ -134,9 +138,10 @@ function aodHtml() {
     ${rev ? `<div class="aod-res" role="status">
         <p class="aod-verdict ${aod.ok ? 'good' : 'bad'}">${gap === 0 ? 'No mesmo ano' : `${gap} ${gap === 1 ? 'ano' : 'anos'} ${when}`}</p>
         ${aod.selo ? seloWonLine(aod.selo) : ''}
-        ${b.x ? `<div class="story"><span class="story-k">${ICON.book('currentColor', 11)} Você sabia?</span><p>${_esc(b.x)}</p></div>` : ''}
-        <button id="aod-next" class="btn ${aod.ok ? 'btn-ghost btn-sm btn-next' : 'btn-brass'}" style="--wait:${wait}ms">
-          ${aod.ok ? `Próximo ${ICON.back('currentColor', 11).replace('<svg', '<svg style="transform:scaleX(-1)"')}<i class="next-fill"></i>` : 'Ver resultado'}</button>
+        ${settled ? provaVerdict(aod.ok) : ''}
+        ${b.x && !settled ? `<div class="story"><span class="story-k">${ICON.book('currentColor', 11)} Você sabia?</span><p>${_esc(b.x)}</p></div>` : ''}
+        <button id="aod-next" class="btn ${aod.ok && !settled ? 'btn-ghost btn-sm btn-next' : 'btn-brass'}" style="--wait:${wait}ms">
+          ${settled ? provaGoLabel(aod.ok) : aod.ok ? `Próximo ${ICON.back('currentColor', 11).replace('<svg', '<svg style="transform:scaleX(-1)"')}<i class="next-fill"></i>` : 'Ver resultado'}</button>
       </div>`
     : `<div class="aod-btns">
         <button id="aod-antes" class="aod-btn" type="button">${up}<b>Antes</b><small>de ${aodYear(a)}</small></button>
@@ -234,7 +239,7 @@ function wireAod() {
   if (aod.phase === 'reveal') {
     aodRoll();
     /* a right answer moves on by itself (a tap is quicker); a miss waits to be read */
-    if (aod.ok && !aod.adv) {
+    if (aod.ok && !aod.adv && !(aod.quest && aod.score >= aod.quest.need)) {
       const tok = aod.tok;
       aod.adv = setTimeout(() => { aod.adv = null; if (sc === 'aod' && aod.phase === 'reveal' && aod.tok === tok) aodNext(); }, aod.wait || 1500);
     }

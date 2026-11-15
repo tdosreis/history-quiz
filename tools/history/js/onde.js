@@ -141,7 +141,7 @@ function ondePic(e) {
 function ondeHtml() {
   if (!onde) onde = buildOnde();
   if (onde.phase === 'end') return ondeEndHtml();
-  const q = onde.qs[onde.i], e = q.e, rev = onde.phase === 'reveal';
+  const q = onde.qs[onde.i], e = q.e, rev = onde.phase === 'reveal', Q = onde.quest;
   const last = onde.log[onde.log.length - 1];
   const dots = onde.qs.map((x, i) => {
     const l = onde.log[i];
@@ -149,12 +149,12 @@ function ondeHtml() {
   }).join('');
   return `
   <div class="pg onde-pg${rev ? ' is-rev' : ''}">
-    ${topbar('Onde foi?')}
-    <div class="ano-head"><div class="runlog" aria-hidden="true">${dots}</div>
-      <span class="ano-score"><b class="num">${onde.pts}</b> pts</span></div>
+    ${Q ? provaBar() : topbar('Onde foi?')}
+    ${Q ? '' : `<div class="ano-head"><div class="runlog" aria-hidden="true">${dots}</div>
+      <span class="ano-score"><b class="num">${onde.pts}</b> pts</span></div>`}
     <div class="onde-card">
       ${ondePic(e)}
-      <div class="onde-tt"><p class="onde-t">${_esc(e.t)}</p><span class="onde-y">${e.c ? 'c. ' : ''}${anoYear(e.y)}</span></div>
+      <div class="onde-tt"><p class="onde-t">${_esc(e.t)}</p><span class="onde-y">${e.c ? 'c. ' : ''}${anoYear(e.y)}${Q ? ` · vale até ${Q.km.toLocaleString('pt-BR')} km` : ''}</span></div>
     </div>
     <div class="onde-map" id="onde-map" tabindex="0" role="application"
       aria-label="${rev ? 'Mapa com a resposta' : 'Mapa: toque onde aconteceu. No teclado, as setas movem, mais e menos aproximam, espaço marca o centro e Enter crava.'}">
@@ -173,11 +173,12 @@ function ondeHtml() {
       ${rev || onde.pin ? '' : `<span class="onde-tip" id="onde-tip">Toque no mapa onde aconteceu</span>`}
     </div>
     ${rev ? `<div class="onde-after" aria-live="polite">
-        <div class="onde-res"><span class="display ${last.p >= 80 ? 'good' : last.p >= 50 ? 'brass' : 'bad'}" style="font-size:17px;">+${last.p}</span>
-          <span><b>${anoVerdict(last.p)}</b> · ${last.p === 100 ? 'no lugar certo' : `a ${ondeKmTxt(last.d)}`}</span></div>
+        ${Q ? provaVerdict(onde.pass) + `<p class="pv-rule">${last.p === 100 ? 'No lugar certo' : `A ${ondeKmTxt(last.d)} de ${_esc(q.at[2])}`} · valia até ${Q.km.toLocaleString('pt-BR')} km</p>`
+          : `<div class="onde-res"><span class="display ${last.p >= 80 ? 'good' : last.p >= 50 ? 'brass' : 'bad'}" style="font-size:17px;">+${last.p}</span>
+          <span><b>${anoVerdict(last.p)}</b> · ${last.p === 100 ? 'no lugar certo' : `a ${ondeKmTxt(last.d)}`}</span></div>`}
         ${last.selo ? seloWonLine(last.selo) : ''}
         ${e.x ? `<div class="story"><span class="story-k">${ICON.book('currentColor', 11)} Você sabia?</span><p>${_esc(e.x)}</p></div>` : ''}
-        <button id="onde-next" class="btn btn-brass">${onde.i >= onde.qs.length - 1 ? 'Ver resultado' : 'Próximo'}</button></div>`
+        <button id="onde-next" class="btn btn-brass">${Q ? provaGoLabel(onde.pass) : onde.i >= onde.qs.length - 1 ? 'Ver resultado' : 'Próximo'}</button></div>`
       : `<button id="onde-go" class="btn btn-brass btn-lg"${onde.pin ? '' : ' disabled'}>${ICON.check('currentColor', 14)} Cravar aqui</button>`}
   </div>`;
 }
@@ -468,13 +469,16 @@ function ondeCommit() {
   try { onde.medals = (onde.medals || []).concat(newMedals()); } catch (err) {}
   onde.pts += p;
   onde.phase = 'reveal';
-  if (p === 100) snd.fanfare(); else if (p >= 80) snd.correct(0); else if (p >= 50) snd.almost(); else snd.wrong();
+  /* a prova of the climb is won inside its margin, whatever the points */
+  if (onde.quest) onde.pass = d <= onde.quest.km;
+  if (p === 100) snd.fanfare(); else if (onde.quest ? onde.pass : p >= 80) snd.correct(0); else if (!onde.quest && p >= 50) snd.almost(); else snd.wrong();
   go();
   requestAnimationFrame(() => ondeFitBoth());
-  if (p >= 80) try { burst(p === 100 ? 28 : 14); } catch (err) {}
+  if (onde.quest ? onde.pass : p >= 80) try { burst(p === 100 ? 28 : 14); } catch (err) {}
 }
 function ondeNext() {
   if (!onde || onde.phase !== 'reveal') return;
+  if (onde.quest) return provaDone(onde.pass);
   if (onde.i >= onde.qs.length - 1) {
     onde.phase = 'end';
     stats.ondeGames = (stats.ondeGames || 0) + 1;

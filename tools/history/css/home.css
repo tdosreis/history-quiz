@@ -1,0 +1,107 @@
+
+/* ═══ A CAPA, quiet (js/home.js) ═══ */
+.hm .cv-body { gap: 16px; }
+.hm .cv-cta { align-items: stretch; gap: 10px; }
+.hm .cv-cta .placa { max-width: none; flex-direction: row; flex-wrap: wrap; align-items: baseline; justify-content: center; column-gap: 9px; row-gap: 1px; padding: 9px 14px; min-height: 0; }
+.hm .cv-cta .pl-k { display: none; }
+.hm .cv-cta .pl-nome { font-size: 20px; }
+.hm .cv-cta .pl-nome.is-long { font-size: 17px; }
+.hm .cv-cta .pl-por { font-size: 11px; }
+.hm .cv-cta .pl-bronze .pl-nome, .hm .cv-cta .pl-marmore .pl-nome { font-size: 16px; padding: 0; }
+.hm .cv-cta .pl-tinta::after, .hm .cv-cta .pl-bronze::before, .hm .cv-cta .pl-bronze::after { display: none; }
+.hm .cv-cta .pl-tinta .pl-nome { transform: none; }
+.hm .cv-cta .pl-areia .pl-nome { padding-bottom: 0; } .hm .cv-cta .pl-areia .pl-por { margin-bottom: 0; }
+.hm .cv-cta .pl-areia { background-size: auto, auto, auto; background-position: 50% 190%, 0 0, 0 0; }
+.hm .cv-cta .pl-giz { padding: 10px 16px; }
+
+/* the day's five games: five small seals on a line */
+.hm-hoje { display: flex; flex-direction: column; gap: 9px; }
+.hm-hoje .cv-h { justify-content: space-between; }
+.hm-hoje .cv-h small { font: 700 9.5px/1 var(--font-s); letter-spacing: .12em; text-transform: uppercase; color: var(--brass-ink); }
+.hm-dia { position: relative; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 4px; }
+.hm-dia::before { content: ''; position: absolute; left: 10%; right: 10%; top: 19px; border-top: 2px dotted var(--rule); }
+.hm-d { all: unset; box-sizing: border-box; position: relative; cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 5px; padding: 0 0 2px; -webkit-tap-highlight-color: transparent; }
+.hm-seal { width: 38px; height: 38px; border-radius: 50%; display: grid; place-items: center; color: var(--pitch); background: var(--pocket);
+  box-shadow: 0 0 0 1.5px var(--pitch), 0 2px 5px var(--shadow); transition: transform .18s; }
+.hm-d small { font: 700 9.5px/1 var(--font-s); letter-spacing: .06em; color: var(--ink-2); }
+.hm-d:hover .hm-seal, .hm-d:focus-visible .hm-seal { transform: translateY(-2px) rotate(-5deg); }
+.hm-d:focus-visible .hm-seal { outline: 2px solid var(--brass); outline-offset: 3px; }
+.hm-d:active .hm-seal { transform: scale(.94); }
+.hm-d.is-done .hm-seal { color: var(--on-pitch); background: radial-gradient(circle at 35% 30%, #9A2B4D, #6A1730); box-shadow: 0 0 0 1.5px #6A1730, inset 0 0 0 2.5px rgba(255, 255, 255, .16), 0 2px 5px var(--shadow-2); }
+.hm-d.is-done small { color: var(--ink-3); }
+
+/* the album and the door to the other games, side by side */
+.hm-cols { grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); }
+.hm-jogos { gap: 10px; }
+.hm-jg-ic { position: relative; flex: none; width: 46px; height: 44px; }
+.hm-jg-ic i { position: absolute; width: 26px; height: 26px; left: calc(var(--i) * 10px); top: calc(9px + (var(--i) - 1) * (var(--i) - 1) * -9px + 9px * (1 - var(--i)) * 0); }
+.hm-jg-ic i:nth-child(1) { left: 0; top: 16px; } .hm-jg-ic i:nth-child(2) { left: 11px; top: 0; z-index: 1; } .hm-jg-ic i:nth-child(3) { left: 21px; top: 17px; }
+.hm .cv-at b small { white-space: nowrap; }
+.hm .home-foot { justify-content: flex-start; gap: 13px; }
+.hm .home-foot .num { color: var(--ink-3); font-weight: 600; }
+@media (max-width: 699px) {
+  .hm .cv-body { gap: 11px; margin-top: -64px; }
+  .hm .cv-art { min-height: 150px; }
+  .hm-hoje { gap: 7px; }
+  .hm-seal { width: 34px; height: 34px; }
+  .hm-dia::before { top: 17px; }
+  .hm .cv-album { padding: 9px 10px 9px 9px; gap: 9px; }
+  .hm .cv-fan { width: 62px; }
+  .hm .cv-fan i { left: calc(var(--i) * 15px); }
+  .hm .cv-at b { font-size: 21px; }
+  .hm .cv-at b small { font-size: 10.5px; }
+  .hm .hm-jogos .cv-at b small { display: block; margin-top: 2px; }
+}
+@media (max-width: 699px) and (max-height: 700px) {
+  .hm .cv-art { min-height: 140px; }
+  .hm .cv-body { gap: 9px; }
+  .hm .cv-cta .placa { padding: 6px 12px; }
+}
+/* a wide screen: the cover is a spread, the painting on the left page and everything else on the right */
+@media (min-width: 900px) {
+  .hm.cover { flex-direction: row; align-items: stretch; padding: 0; min-height: 100%; }
+  .hm .cv-art { flex: 1 1 52%; height: auto; min-height: 100vh; }
+  .hm .cv-body { flex: 1 1 48%; margin: 0; padding: 48px 56px 40px 28px; justify-content: center; max-width: 560px; align-self: center; }
+  .hm .cv-cap { bottom: 12%; }
+}
+
+/* ═══ JOGOS: every other way to play (js/home.js) ═══ */
+.jg-pg { gap: 10px; }
+.jg-h { font-size: clamp(24px, 7.4vw, 31px); line-height: 1.02; margin: 2px 0 2px; }
+.jg-sec { margin-top: 6px; }
+.jg-sec::after { content: ''; flex: 1; height: 5px; background: currentColor; opacity: .3;
+  -webkit-mask: url(img/atelier/stroke-bar.webp) center / 100% 100%; mask: url(img/atelier/stroke-bar.webp) center / 100% 100%; }
+.jg-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+.jg-grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.jg-t { all: unset; box-sizing: border-box; cursor: pointer; display: flex; align-items: center; gap: 10px; padding: 11px 12px; min-width: 0; color: var(--ink);
+  background: var(--at-card-img) center / 100% 100% no-repeat; -webkit-tap-highlight-color: transparent; }
+.jg-t:hover, .jg-t:focus-visible { background-image: var(--at-card-on); }
+.jg-t:focus-visible { outline: 2px solid var(--brass); outline-offset: 2px; }
+.jg-t:active { transform: translateY(1px); }
+.jg-ic { flex: none; width: 34px; height: 34px; transition: transform .2s; }
+.jg-t:hover .jg-ic { transform: rotate(-6deg) scale(1.06); }
+.jg-tx { min-width: 0; display: flex; flex-direction: column; gap: 3px; }
+.jg-tx b { font: 600 18px/1.05 var(--font-d); letter-spacing: -.015em; }
+.jg-tx small { font: 600 10.5px/1.25 var(--font-s); color: var(--ink-3); }
+.jg-grid-3 .jg-t { flex-direction: column; text-align: center; gap: 6px; padding: 11px 4px 10px; }
+.jg-grid-3 .jg-tx { align-items: center; }
+.jg-grid-3 .jg-tx b { font-size: 16px; }
+.jg-t.is-off { opacity: .55; }
+.jg-t.is-nudge { animation: revNudge .4s; }
+.jg-gab { all: unset; box-sizing: border-box; cursor: pointer; display: flex; align-items: center; gap: 12px; padding: 12px 14px; color: #F3E7CC; border-radius: 6px;
+  background: linear-gradient(180deg, #5A3A1F, #40270F); box-shadow: inset 0 0 0 1px #8A6436, inset 0 0 0 3px #40270F, inset 0 0 0 4px rgba(201, 160, 78, .5), 0 3px 9px var(--shadow-2); }
+.jg-gab:focus-visible { outline: 2px solid var(--brass); outline-offset: 2px; }
+.jg-gab:active { transform: translateY(1px); }
+.jg-gab .jg-tx small { color: #E3D2A9; opacity: .9; }
+.jg-gab-art { flex: none; position: relative; width: 84px; height: 46px; }
+.jg-gab-art i { position: absolute; top: 3px; left: calc(var(--i) * 11px); width: 40px; height: 40px; border-radius: 4px; overflow: hidden; background: #6B1E2B;
+  box-shadow: 0 0 0 1.5px #C9A04E, 0 2px 4px rgba(0, 0, 0, .45); transform: rotate(calc((var(--i) - 2) * 5deg)); display: grid; place-items: center; }
+.jg-gab-art svg { width: 100%; height: 100%; display: block; }
+@keyframes revNudge { 0%, 100% { transform: none; } 30% { transform: translateX(-4px); } 60% { transform: translateX(4px); } }
+@media (max-height: 640px) {
+  .jg-t { padding: 8px 10px; } .jg-ic { width: 30px; height: 30px; } .jg-tx b { font-size: 16px; } .jg-h { font-size: 23px; }
+  .jg-grid-3 .jg-t { padding: 8px 4px 7px; }
+}
+:root[data-theme="dark"] .hm-seal, :root:not([data-theme="light"]) .hm-seal { background: #2E2A24; color: #E8A9BC; box-shadow: 0 0 0 1.5px #B8627C, 0 2px 5px rgba(0, 0, 0, .4); }
+:root[data-theme="dark"] .hm-d.is-done .hm-seal, :root:not([data-theme="light"]) .hm-d.is-done .hm-seal { color: #F3F1E8; }
+:root[data-theme="dark"] .hm-hoje .cv-h small, :root:not([data-theme="light"]) .hm-hoje .cv-h small { color: #E0B968; }

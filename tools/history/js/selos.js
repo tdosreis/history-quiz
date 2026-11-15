@@ -114,7 +114,7 @@ function seloSvg(id, opts) {
 }
 const _seloLabel = id => { const l = SCENE[id] && SCENE[id].label; return typeof l === 'function' ? l() : (l || ''); };
 
-/* ── the stamp album screen ── */
+/* ── the stamps' section of the album (its tabs: js/eu.js, albNav) ── */
 function selosHtml() {
   const by = seloBy();
   if (!seloTheme || !by[seloTheme]) {
@@ -133,13 +133,12 @@ function selosHtml() {
   return `
   <div class="pg selo-pg">
     <div class="alb-top">
-      ${topbar('Selos')}
+      ${topbar('Álbum', 'bselalb')}
       <div class="alb-head">
-        <button id="bselalb" class="alb-vit" type="button">${ICON.book('currentColor', 12)} Figurinhas</button>
-        <span class="small muted">${pct}% colado</span>
         <span class="display" style="font-size:20px;">${got}<span class="muted" style="font-size:13px;"> / ${all.length}</span></span>
       </div>
     </div>
+    ${albNav('selo')}
     <div class="alb-bar"><i style="width:${Math.max(1, pct)}%"></i></div>
     <div class="alb-tabs" id="selo-tabs">
       ${SELO_THEMES.map(([t, n, , ab, ic]) => {

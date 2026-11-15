@@ -1,0 +1,34 @@
+
+/* ═══ one album, three sections: the strip of tabs under the header (js/eu.js: albNav) ═══ */
+.alb-nav { display: flex; align-items: stretch; gap: 5px; }
+.alb-nv { all: unset; box-sizing: border-box; cursor: pointer; flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; padding: 5px 4px 5px;
+  color: var(--ink-2); border-bottom: 2px solid var(--rule); -webkit-tap-highlight-color: transparent; white-space: nowrap; }
+.alb-nv-l { display: inline-flex; align-items: center; gap: 5px; }
+.alb-nv b { font: 700 10.5px/1 var(--font-s); letter-spacing: .08em; text-transform: uppercase; }
+.alb-nv small { font: 600 9.5px/1 var(--font-s); color: var(--ink-3); font-variant-numeric: tabular-nums; }
+.alb-nv.is-on { color: var(--pitch); border-bottom-color: var(--pitch); }
+.alb-nv:focus-visible { outline: 2px solid var(--brass); outline-offset: -2px; }
+.alb-nv:active { transform: translateY(1px); }
+.alb-eu { all: unset; box-sizing: border-box; cursor: pointer; flex: none; width: 30px; height: 30px; margin-left: 3px; border-radius: 50%; overflow: hidden; align-self: center;
+  box-shadow: 0 0 0 1.5px var(--brass), 0 1px 4px var(--shadow-2); }
+.alb-eu img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; display: block; }
+.alb-eu:focus-visible { outline: 2px solid var(--pitch); outline-offset: 2px; }
+.vit-pg .alb-nav, .selo-pg .alb-nav { flex: none; }
+
+/* ═══ A SUA FIGURINHA (js/eu.js) ═══ */
+.eu-pg { gap: 10px; align-items: center; }
+.eu-pg .topbar { align-self: stretch; }
+.eu-stage { flex: 1 1 0; min-height: 0; display: grid; place-items: center; width: 100%; }
+.eu-card { position: relative; transform: rotate(-2deg); filter: drop-shadow(0 8px 14px var(--shadow-2)); animation: euIn .5s cubic-bezier(.2, .8, .2, 1) both; }
+.eu-card .alb-n { position: absolute; z-index: 5; top: -8px; left: -8px; }
+.eu-paper { margin: 0; font: 500 11.5px/1.35 var(--font-s); color: var(--ink-3); text-align: center; max-width: 300px; }
+.eu-paper b { color: var(--ink); }
+.eu-stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 4px; width: 100%; max-width: 320px; }
+.eu-stats span { display: flex; flex-direction: column; align-items: center; gap: 2px; font: 700 8.5px/1 var(--font-s); letter-spacing: .12em; text-transform: uppercase; color: var(--ink-3); }
+.eu-stats b { font: 600 20px/1 var(--font-d); letter-spacing: -.01em; color: var(--ink); }
+@keyframes euIn { from { opacity: 0; transform: rotate(-8deg) translateY(14px) scale(.94); } to { opacity: 1; transform: rotate(-2deg); } }
+@media (prefers-reduced-motion: reduce) { .eu-card { animation: none; } }
+/* the plaque on the cover is the way in */
+.hm-placa { all: unset; box-sizing: border-box; display: block; cursor: pointer; border-radius: 8px; -webkit-tap-highlight-color: transparent; }
+.hm-placa:focus-visible { outline: 2px solid var(--brass); outline-offset: 3px; }
+.hm-placa:active { transform: translateY(1px); }
