@@ -5977,6 +5977,15 @@ const MEDALS = [
     t: st => (st.sgPar || 0) >= 1 },
   { id:'sf1', ic:'star', n:'Pose de época', d:'Tire um selfie de época',
     t: st => (st.selfies || 0) >= 1 },
+  /* ── the provas of the climb, and the two games of the hands ── */
+  { id:'pv5', ic:'target', n:'Mãos à obra', d:'Vença 5 provas da escalada',
+    t: st => (st.provas || 0) >= 5, p: () => [stats.provas || 0, 5] },
+  { id:'pv7', ic:'medal', n:'Sete ofícios', d:'Vença uma prova de cada um dos sete tipos',
+    t: st => Object.keys(st.provaK || {}).length >= 7, p: () => [Object.keys(stats.provaK || {}).length, 7] },
+  { id:'sl10', ic:'quill', n:'Letra por letra', d:'Soletre 10 nomes',
+    t: st => (st.soletras || 0) >= 10, p: () => [stats.soletras || 0, 10] },
+  { id:'pr10', ic:'chain', n:'Nó certo', d:'Acerte 10 rodadas de Pares',
+    t: st => (st.pares || 0) >= 10, p: () => [stats.pares || 0, 10] },
 ];
 
 function earnedMedals() { return MEDALS.filter(m => { try { return m.t(stats); } catch (e) { return false; } }); }
@@ -6016,6 +6025,14 @@ const MEDAL_SETS = [
     ids:['fQuote','fBattle','fLine','fNews','fDuel','fMyth','fOrder','fAll'] },
   { id:'selos',  n:'Selos, anos e lugares', tag:'Selos', shape:'seal',
     ids:['selo10','selo50','seloPg','anoExato','ano700','ondeMosca','onde700','cron10','cron25'] },
+  /* the games that came after these pages were laid out had their insígnias counted and never printed: three
+     more pages, so that every one of them is on a page (tools/history/test_all.py holds that) */
+  { id:'estrada', n:'Tempo e estrada', tag:'Tempo', shape:'hex',
+    ids:['aod10','aod20','jor1','jorEra','jorStars','jorAll','sg3','rio300'] },
+  { id:'gabinete', n:'O gabinete',   tag:'Gabinete', shape:'shield',
+    ids:['retrato1','gazeta1','duo1','mf10','mfAll','tf1','cc1','mm1','sf1'] },
+  { id:'provas', n:'Casos e provas', tag:'Provas', shape:'seal',
+    ids:['lr1','lr5','mt1','mtAll','pv5','pv7','sl10','pr10'] },
 ];
 /* How hard each one is to get, not how many people hold it — there is no
    server to count that, and a made-up percentage would be a lie. */
@@ -6032,6 +6049,8 @@ const MEDAL_TIER = {
   fQuote:2, fBattle:2, fLine:2, fNews:2, fOrder:2, fDuel:2, fMyth:2, fAll:3,
   selo10:1, anoExato:2, selo50:2, ano700:3, seloPg:3, ondeMosca:2, onde700:3, revLearn:2,
   cron10:2, cron25:3, hoje400:2, cronDia7:2, semana1:2, semana4:3,
+  aod10:2, aod20:3, jorEra:2, jorStars:3, jorAll:4, mfAll:3, lr5:3, rio300:2, mtAll:3, sg3:2,
+  pv5:1, pv7:3, sl10:2, pr10:2,
 };
 const TIER_NAME = ['', 'Comum', 'Rara', 'Épica', 'Lendária'];
 const medalSet = m => MEDAL_SETS.find(s => s.ids.includes(m.id)) || MEDAL_SETS[0];
@@ -18684,6 +18703,8 @@ function html() {
   if (sc === 'home') return homeHtml();
   if (sc === 'jogos') return jogosHtml();
   if (sc === 'eu') return euHtml();
+  if (sc === 'soletra') return soletraHtml();
+  if (sc === 'pares') return paresHtml();
 
   /* ── O ÁLBUM: a map of the world, each country a page of its stickers
      (js/mapa.js) ── */
@@ -18798,7 +18819,7 @@ function html() {
     const q = cat.qs[qi], pv = q._prova, k = pv ? PROVA[pv] : SPECIAL[q._special];
     return `
     <div class="pg pg-center" style="padding:26px 22px;gap:15px;">
-      <div class="eyebrow">Degrau ${rung + 1} de ${LADDER.length} · lembrado por
+      <div class="eyebrow">Degrau ${rung + 1} de ${LADDER.length} · vale
         <span class="brass" style="font-weight:800;">${fama(RUNG().v)}</span></div>
       <div class="spcard spcard-${pv ? 'prova spcard-pv-' + pv : q._special}">
         <span class="spcard-k">${pv ? 'Prova' : 'Carta especial'}</span>
@@ -19262,6 +19283,10 @@ function go() {
   on('alb-nav-vit', () => { if (sc !== 'vitrine') { snd.swipe(); sc = 'vitrine'; go(); } });
   on('bvitback',    () => { snd.swipe(); sc = 'album'; go(); });
   if (sc === 'eu') wireEu();
+  if (sc === 'soletra') wireSoletra();
+  if (sc === 'pares') wirePares();
+  on('sl-btn',      () => { snd.select(); startSoletra(); });
+  on('pr-btn',      () => { snd.select(); startPares(); });
   on('hj-onde',     () => { snd.select(); startOnde(true); });
   on('hj-cron',     () => { snd.select(); startCronDia(); });
   on('hj-graus',    () => { snd.select(); startGraus(true); });
@@ -19474,7 +19499,7 @@ function go() {
   on('bshare',  () => { snd.tap(); doShare(); });
   /* the way back: from a game's own door to the page of games, from anywhere else to the cover */
   on('bhome',   () => { snd.swipe(); clearInterval(tmr); fromGab = false;
-    sc = ['difficulty', 'anoMenu', 'ondeMenu', 'cronMenu', 'jornada', 'gabinete'].includes(sc) ? 'jogos' : 'home'; go(); });
+    sc = ['difficulty', 'anoMenu', 'ondeMenu', 'cronMenu', 'jornada', 'gabinete', 'soletra', 'pares'].includes(sc) ? 'jogos' : 'home'; go(); });
   on('bgab',    () => { snd.swipe(); clearInterval(tmr); sc = 'gabinete'; go(); });
   /* One more clue, and the clock pays for it. It used to say "−2 pts" and
      charge nothing at all; seconds are what a rung actually costs, and on the
@@ -27567,7 +27592,7 @@ function ladderOverlay() {
         return `<div class="fm-r${st}${step.safe ? ' is-safe' : ''}${top ? ' is-top' : ''}" role="listitem">
           <span class="fm-n">${i + 1}</span>
           ${famaDisc(i)}
-          <span class="fm-t"><b>${FAMA[i].t}</b><small>${top ? 'sua figurinha vira ouro no álbum' : famaComo(i)}</small></span>
+          <span class="fm-t"><b>${FAMA[i].t}</b><small>${top ? 'sua figurinha vira ouro' : famaComo(i)}</small></span>
           <span class="fm-ok">${i < rung ? ICON.check('currentColor', 12) : step.safe ? ICON.shield('currentColor', 12) : i === rung ? '<i>você</i>' : ''}</span>
         </div>`;
       }).reverse().join('')}
@@ -27629,7 +27654,8 @@ function famaShareText() {
    one of the games that live behind the cover, played for the rung. The
    ruler of years (Que ano?), the pin on the mapa-múndi (Onde foi?), an event
    to set in a line of time (Cronologia), three "before or after?" in a row,
-   two or three legends to stamp (Mito ou fato?). Each climb draws the five
+   two or three legends to stamp (Mito ou fato?), a name to spell from letter
+   tiles and pairs to tie (js/maos.js). Each climb draws the five
    in its own order, from the climb's seed, so a climb sent to a friend has
    the same provas; the higher the rung, the narrower the margin. A prova is
    announced on a card, like a carta especial — and that card is where the
@@ -27644,6 +27670,9 @@ const PROVA = {
   cron: { n: 'Cronologia',       ic: ICON.timeline,  tag: d => d.cur.length === 1 ? 'Um evento para pôr no seu lugar na linha do tempo' : 'Dois eventos para pôr no lugar na linha do tempo, sem errar' },
   aod:  { n: 'Antes ou depois?', ic: ICON.clock,     tag: d => `${d.need === 3 ? 'Três' : 'Duas'} seguidas, sem errar: veio antes ou depois?` },
   mito: { n: 'Mito ou fato?',    ic: ICON.stamp,     tag: d => `${d.need === 3 ? 'Três' : 'Duas'} cartas, nenhuma dúvida: lenda ou verdade?` },
+  /* and two that are not games of the cover but ways of answering with the hands (js/maos.js) */
+  soletra: { n: 'Soletre',       ic: ICON.quill,     tag: d => d.level >= 4 ? 'Monte o nome de quem está no retrato — há letras que não entram' : 'Monte o nome de quem está no retrato, letra por letra' },
+  pares:   { n: 'Pares',         ic: ICON.chain,     tag: d => PR_REL[d.rel].h + ', sem errar nenhum' },
 };
 const _pvTier = (tier, arr) => arr[Math.max(0, Math.min(arr.length - 1, tier - 1))];
 const _pvEvt = id => ANO_EVENTS.find(e => e.id === id);
@@ -27676,6 +27705,15 @@ const PROVA_DEAL = {
   },
   aod(tier) { return { seed: Math.floor(rnd() * CHAL_SEED_MAX), need: 3, band: _pvTier(tier, [0, 3, 6, 10, 15]) }; },
   mito(tier) { return { seed: Math.floor(rnd() * CHAL_SEED_MAX), need: tier >= 3 ? 3 : 2 }; },
+  soletra(tier) {
+    const st = { rs: Math.floor(rnd() * CHAL_SEED_MAX) };
+    const pool = slPool().filter(p => tier > 2 || FAMOUS.has(p.id));
+    return pool.length ? slDeal(pool[Math.floor(_mRnd(st) * pool.length)], tier, st) : null;
+  },
+  pares(tier) {
+    const st = { rs: Math.floor(rnd() * CHAL_SEED_MAX) };
+    return prDeal(['nick', 'ctry', 'cent'][Math.floor(_mRnd(st) * 3)], tier >= 3 ? 4 : 3, tier <= 2, st);
+  },
 };
 /* Deals the provas into a ladder that is already built, as dealSpecials does its cards */
 function dealProvas(qs) {
@@ -27690,7 +27728,7 @@ function dealProvas(qs) {
 }
 
 /* is a prova being played right now (on its game's screen, for the rung in hand)? */
-const PROVA_SC = { ano: 'ano', onde: 'onde', cron: 'cron', aod: 'aod', mito: 'mito' };
+const PROVA_SC = { ano: 'ano', onde: 'onde', cron: 'cron', aod: 'aod', mito: 'mito', soletra: 'soletra', pares: 'pares' };
 const provaQ = () => (isMil && cat && cat.qs && cat.qs[qi] && cat.qs[qi]._prova ? cat.qs[qi] : null);
 const provaOn = () => { const q = provaQ(); return !!(q && sc === PROVA_SC[q._prova]); };
 
@@ -27714,7 +27752,8 @@ function startProva() {
     aod.used.delete(aod.b.id); aod.b = aodPick(aod.a); aod.used.add(aod.b.id);
   } else if (k === 'mito') {
     mfNew(d.seed); mf.quest = { need: d.need }; mf.lives = 1;
-  }
+  } else if (k === 'soletra') slSet(d, { quest: true });
+  else if (k === 'pares') prSet(d, { quest: true });
   sc = PROVA_SC[k];
   go();
 }
@@ -27754,16 +27793,72 @@ function provaDone(pass) {
   /* the game's own state is put away: its screen, opened later from the cover, starts a game of its own */
   if (k === 'ano') ano = null; else if (k === 'onde') onde = null; else if (k === 'cron') cron = null;
   else if (k === 'aod') { clearTimeout(aod && aod.adv); aod = null; } else if (k === 'mito') mf = null;
+  else if (k === 'soletra') sl = null; else if (k === 'pares') pr = null;
   prevPts = pts;
   if (pass) { streak++; nCorrect++; pts += Math.round(4 * (streak >= 6 ? 3 : streak >= 3 ? 2 : 1) * DCFG().pmul); }
   else streak = 0;
   bestStreak = Math.max(bestStreak, streak);
   runLog.push(p);
-  stats.provas = (stats.provas || 0) + (pass ? 1 : 0);
+  /* the provas won, and of which kinds (the insígnias count them) */
+  if (pass) { stats.provas = (stats.provas || 0) + 1; stats.provaK = stats.provaK || {}; stats.provaK[k] = 1; LS.set('stats', stats); }
   if (pass) snd.rung(rung); else { snd.drop(); banked = safetyNet(); }
   sc = 'reveal';
   advanceAfterReveal(p);
   go();
+}
+
+/* Plays the prova in hand to its verdict, right or wrong, and stops on that verdict's screen; provaGo is the tap
+   that follows it. The suite and the layout probe drive whole climbs with these (tools/history/test_all.py). */
+function provaAuto(pass) {
+  const q = provaQ();
+  if (!q || !provaOn()) return false;
+  const k = q._prova, slots = line => line.map((_, i) => i).concat(line.length);
+  if (k === 'ano') {
+    const x = ano.qs[0], off = ano.quest.tol + 3;
+    ano.guess = pass ? x.e.y : x.e.y + off <= x.hi ? x.e.y + off : x.e.y - off;
+    anoCommit();
+  } else if (k === 'onde') {
+    const at = onde.qs[0].at;
+    ondeSetPin(pass ? [at[0], at[1]] : [Math.max(-80, Math.min(80, -at[0] * .5 - 20)), at[1] + 150]);
+    ondeCommit();
+  } else if (k === 'cron') {
+    for (;;) {
+      cronPlace(slots(cron.line).find(i => cronFits(cron.line, cron.cur, i) === pass));
+      if (cron.lives <= 0 || !cron.deck.length) break;
+      cronNext();
+    }
+  } else if (k === 'aod') {
+    for (;;) {
+      const truth = aod.b.y < aod.a.y ? 'antes' : 'depois';
+      aodAnswer(pass ? truth : truth === 'antes' ? 'depois' : 'antes');
+      if (!aod.ok || aod.score >= aod.quest.need) break;
+      aodNext();
+    }
+  } else if (k === 'mito') {
+    for (;;) {
+      const v = mfCard().v;
+      mfAnswer(pass ? v : v === 'f' ? 'm' : 'f');
+      if (!mf.ok || mf.score >= mf.quest.need) break;
+      mfNext();
+    }
+  } else if (k === 'soletra') {
+    sl.flat.forEach((ch, i) => { if (!sl.given.has(i)) sl.put[i] = sl.tray.findIndex((t, j) => !sl.put.includes(j) && slFold(t) === slFold(ch)); });
+    if (!pass) {
+      /* two different letters change places */
+      const a = sl.put.findIndex(v => v !== null), b = sl.put.findIndex(v => v !== null && slFold(sl.tray[v]) !== slFold(sl.tray[sl.put[a]]));
+      if (b >= 0) [sl.put[a], sl.put[b]] = [sl.put[b], sl.put[a]];
+    }
+    slCheck();
+  } else if (k === 'pares') {
+    pr.link = pr.left.map((_, i) => pr.right.indexOf(i));
+    if (!pass) [pr.link[0], pr.link[1]] = [pr.link[1], pr.link[0]];
+    prCheck();
+  }
+  return true;
+}
+function provaGo() {
+  const q = provaQ();
+  if (q && provaOn()) ({ ano: anoNext, onde: ondeNext, cron: cronNext, aod: aodNext, mito: mfNext, soletra: slGo, pares: prGo })[q._prova]();
 }
 
 /* ═══════════════════════════════════════════════════
@@ -27943,7 +28038,7 @@ function homeHtml() {
    The rounds to train on, the games of time and place, and the door of the
    Gabinete de curiosidades. The cover used to carry all of these as tiles.
 ═══════════════════════════════════════════════════ */
-const JOGOS_N = 7;
+const JOGOS_N = 9;
 function jogosHtml() {
   const tile = (id, label, tail, kind, ic) => `
     <button id="${id}" class="jg-t mode-${kind}" type="button">
@@ -27969,12 +28064,281 @@ function jogosHtml() {
       ${tile('onde-btn', 'Onde foi?', bO > 0 ? 'Recorde ' + bO : 'No mapa', 'onde', ICON.globe)}
       ${tile('cron-btn', 'Cronologia', bC > 0 ? 'Recorde ' + bC : 'Na linha', 'cron', ICON.timeline)}
     </div>
+    <h2 class="cv-h jg-sec"><span>Com as mãos</span></h2>
+    <div class="jg-grid">
+      ${tile('sl-btn', 'Soletre', LS.get('soletraBest', 0) > 0 ? 'Recorde ' + LS.get('soletraBest', 0) : 'O nome, letra por letra', 'soletra', ICON.quill)}
+      ${tile('pr-btn', 'Pares', LS.get('paresBest', 0) > 0 ? 'Recorde ' + LS.get('paresBest', 0) : 'Ligue quem com o quê', 'pares', ICON.chain)}
+    </div>
     <h2 class="cv-h jg-sec"><span>Curiosidades</span></h2>
     <button id="bgab2" class="jg-gab" type="button">
       <span class="jg-gab-art" aria-hidden="true">${GAB.slice(0, 5).map((g, i) => `<i style="--i:${i}">${(QICON[g.art] || QICON.scroll)(40)}</i>`).join('')}</span>
       <span class="jg-tx"><b>Gabinete de curiosidades</b><small>${GAB.length} jogos de outro tipo: cartas, rostos, mímica, um rio, uma máquina do tempo…</small></span>
     </button>
   </div>`;
+}
+
+/* ═══════════════════════════════════════════════════
+   COM AS MÃOS — two ways to answer that are not a tile to mark
+   SOLETRE: a portrait and a line about whoever it is; the name is spelled
+   from a tray of letter tiles, one tap a letter, into the blanks. The easy
+   ones give the first letter of each word; the hard ones mix in letters that
+   do not belong. PARES: three or four figures on the left, as many epithets,
+   countries or centuries on the right; a tap on one and then on the other
+   ties them with a numbered knot; all tied, it is checked.
+   Both are provas of the climb (js/prova.js deals them) and both are games
+   of their own on the Jogos page, played in a row until the first miss.
+═══════════════════════════════════════════════════ */
+const _mRnd = st => { let t = (st.rs = (st.rs + 0x6D2B79F5) | 0); t = Math.imul(t ^ (t >>> 15), t | 1); t ^= t + Math.imul(t ^ (t >>> 7), t | 61); return ((t ^ (t >>> 14)) >>> 0) / 4294967296; };
+const _mShuf = (a, st) => { a = a.slice(); for (let k = a.length - 1; k > 0; k--) { const j = Math.floor(_mRnd(st) * (k + 1)); [a[k], a[j]] = [a[j], a[k]]; } return a; };
+/* a right answer sticks the figure in the album, as on the board; `fresh` is true when it was not there */
+function _mStick(id, inRun) {
+  const fresh = collect([id]);
+  try { const pulls = pullCopies([id], fresh, 1); if (inRun) { runNew += fresh.length; runNewIds.push(...fresh); runPulls.push(...pulls); } } catch (e) {}
+  return fresh.length > 0;
+}
+
+/* ── SOLETRE ── */
+const SL_DECOY = 'AEIORSNLTMCDUPBGV';
+/* the words to spell: the name up to a comma ("Alexandre, o Grande" is ALEXANDRE), one or two words, five to twelve letters */
+function slWords(p) {
+  const w = p.n.split(',')[0].trim().split(/\s+/);
+  if (!w.length || w.length > 2 || w.some(x => /^[IVX]+$/.test(x) || /[^A-Za-zÀ-ÿ]/.test(x))) return null;
+  const n = w.join('').length;
+  if (n < 5 || n > 12 || (w.length === 2 && w.some(x => x.length < 3))) return null;
+  return w.map(x => [...x.toUpperCase()]);
+}
+const slPool = () => PL.filter(p => p.img && slWords(p));
+/* what is dealt: who, which blanks come filled, and the tray in its shuffled order.
+   level 1–5: the first letter of each word given (1–2), of the first word only (3), none and three stray letters (4–5) */
+function slDeal(p, level, st) {
+  const words = slWords(p), flat = words.flat();
+  const given = new Set();
+  let at = 0;
+  words.forEach((w, k) => { if (level <= 2 || (level === 3 && k === 0)) given.add(at); at += w.length; });
+  const tray = flat.map((ch, i) => ({ ch, i })).filter(t => !given.has(t.i)).map(t => t.ch);
+  const stray = level >= 4 ? 3 : level === 3 ? 1 : 0;
+  for (let k = 0; k < stray; k++) tray.push(SL_DECOY[Math.floor(_mRnd(st) * SL_DECOY.length)]);
+  return { id: p.id, given: [...given], tray: _mShuf(tray, st), level };
+}
+let sl = null;   // { p, words, flat, given:Set, tray:[ch], put:[tray index | null per blank], phase:'play'|'rev', ok, quest, run, best0, rs, level, fresh }
+function slSet(d, extra) {
+  const p = PL.find(x => x.id === d.id), words = slWords(p), flat = words.flat();
+  sl = Object.assign({ p, words, flat, given: new Set(d.given), tray: d.tray.slice(), put: flat.map(() => null), phase: 'play', ok: null, level: d.level }, extra || {});
+}
+function slNext() {
+  /* a game of one's own: the names get harder as the run grows, and none comes twice */
+  const level = sl.run < 2 ? 2 : sl.run < 5 ? 3 : 4;
+  const pool = slPool().filter(p => !sl.used.has(p.id) && (level > 2 || FAMOUS.has(p.id) || sl.run > 0));
+  const p = (pool.length ? pool : slPool())[Math.floor(_mRnd(sl) * (pool.length || slPool().length))];
+  const keep = { run: sl.run, used: sl.used, rs: sl.rs, best0: sl.best0, free: true };
+  keep.used.add(p.id);
+  const d = slDeal(p, level, keep);
+  slSet(d, keep);
+}
+function startSoletra() {
+  isDaily = false; isSurv = false; isMil = false; isRev = false;
+  sl = { run: 0, used: new Set(), rs: (Math.random() * 2147483647) | 0, best0: LS.get('soletraBest', 0) };
+  slNext();
+  sc = 'soletra'; go();
+}
+const slFold = s => _fold(s).toUpperCase();
+/* a letter of the tray goes to the first empty blank; a tap on a blank sends its letter back */
+function slTap(k) {
+  if (!sl || sl.phase !== 'play' || sl.put.includes(k)) return;
+  const at = sl.flat.findIndex((ch, i) => !sl.given.has(i) && sl.put[i] === null);
+  if (at < 0) return;
+  sl.put[at] = k; snd.tap(); go();
+}
+function slBack(i) {
+  if (!sl || sl.phase !== 'play' || sl.put[i] === null) return;
+  sl.put[i] = null; snd.swipe(); go();
+}
+const slFull = () => sl.flat.every((ch, i) => sl.given.has(i) || sl.put[i] !== null);
+function slCheck() {
+  if (!sl || sl.phase !== 'play' || !slFull()) return;
+  sl.ok = sl.flat.every((ch, i) => sl.given.has(i) || slFold(sl.tray[sl.put[i]]) === slFold(ch));
+  sl.phase = 'rev';
+  if (sl.ok) {
+    sl.fresh = _mStick(sl.p.id, !!sl.quest);
+    stats.soletras = (stats.soletras || 0) + 1;
+    if (sl.free) { sl.run++; if (sl.run > LS.get('soletraBest', 0)) LS.set('soletraBest', sl.run); }
+    LS.set('stats', stats);
+    try { snd.correct(Math.min(sl.run || 0, 8)); } catch (e) {}
+  } else { try { snd.wrong(); haptic([28, 45, 28]); } catch (e) {} }
+  go();
+  if (sl.ok) requestAnimationFrame(() => { try { fx.splash(document.querySelector('.sl-word'), '#3A9C6E', 12); } catch (e) {} });
+  else requestAnimationFrame(() => { try { fx.edge('#B3402F', false); } catch (e) {} });
+}
+function slGo() {
+  if (!sl || sl.phase !== 'rev') return;
+  if (sl.quest) return provaDone(sl.ok);
+  if (sl.ok) { slNext(); go(); } else startSoletra();
+}
+function soletraHtml() {
+  if (!sl) { sl = { run: 0, used: new Set(), rs: (Math.random() * 2147483647) | 0, best0: LS.get('soletraBest', 0) }; slNext(); }
+  const p = sl.p, rev = sl.phase === 'rev', Q = sl.quest;
+  let at = 0;
+  const word = sl.words.map(w => `<span class="sl-w">${w.map(ch => {
+    const i = at++, k = sl.put[i], giv = sl.given.has(i);
+    const shown = rev ? ch : giv ? ch : k !== null ? sl.tray[k] : '';
+    const bad = rev && !giv && (k === null || slFold(sl.tray[k]) !== slFold(ch));
+    return `<button class="sl-b${giv ? ' is-given' : ''}${shown ? ' is-on' : ''}${rev ? (bad ? ' is-bad' : ' is-good') : ''}" data-b="${i}" type="button"${giv || rev || k === null ? ' disabled' : ''}
+      aria-label="${shown ? 'Letra ' + shown : 'Vazio'}">${shown}</button>`;
+  }).join('')}</span>`).join('');
+  const clue = [POS_NAME[p.pos], 'nasceu no ' + centTxt(p.era[0]), sl.level <= 3 && CTRY_NAME[p.ctry] && !NAT_SKIP.has(p.id) ? ctryEm(p.ctry) : ''].filter(Boolean).join(' · ');
+  return `
+  <div class="pg sl-pg${rev ? ' is-rev' : ''}">
+    ${Q ? provaBar() : topbar('Soletre')}
+    ${Q ? '' : `<div class="ano-head pv-head"><span class="aod-run">${ICON.flame('currentColor', 13)} <b class="num">${sl.run}</b> ${sl.run === 1 ? 'nome' : 'nomes'} seguidos</span><span class="aod-best">Recorde <b class="num">${Math.max(sl.best0, sl.run)}</b></span></div>`}
+    <div class="sl-card">
+      <span class="sl-pic"><img src="${p.img}" alt="" draggable="false"></span>
+      <p class="sl-clue">${clue}</p>
+      ${sl.level <= 2 && prNickOk(p) ? `<p class="sl-nick">“${_esc(p.nick)}”</p>` : ''}
+    </div>
+    <div class="sl-word" role="group" aria-label="O nome, letra por letra">${word}</div>
+    ${rev ? `<div class="sl-after">
+        ${Q ? provaVerdict(sl.ok) : `<div class="pv-verdict ${sl.ok ? 'is-good' : 'is-bad'}" role="status"><b>${sl.ok ? ICON.check('currentColor', 14) + ' Isso!' : ICON.cross('currentColor', 14) + ' Não era assim'}</b>
+          <small>${sl.ok ? `${_esc(p.n)}${sl.fresh ? ' · figurinha nova no álbum' : ''}` : `Era ${_esc(p.n)} · ${sl.run} ${sl.run === 1 ? 'nome' : 'nomes'} seguidos`}</small></div>`}
+        ${Q && sl.ok && sl.fresh ? '<p class="pv-rule">Figurinha nova no álbum</p>' : ''}
+        ${Q && !sl.ok ? `<p class="pv-rule">Era <b>${_esc(p.n)}</b></p>` : ''}
+        <button id="sl-go" class="btn btn-brass" type="button">${Q ? provaGoLabel(sl.ok) : sl.ok ? 'Próximo nome' : 'De novo'}</button>
+      </div>`
+    : `<div class="sl-tray" role="group" aria-label="Letras">${sl.tray.map((ch, k) =>
+        `<button class="sl-t${sl.put.includes(k) ? ' is-used' : ''}" data-t="${k}" type="button"${sl.put.includes(k) ? ' disabled' : ''}>${ch}</button>`).join('')}</div>
+      <div class="foot-row">
+        <button id="sl-clear" class="btn btn-ghost btn-sm" type="button"${sl.put.some(k => k !== null) ? '' : ' disabled'}>Limpar</button>
+        <button id="sl-ok" class="btn btn-brass btn-lg" type="button"${slFull() ? '' : ' disabled'}>${ICON.check('currentColor', 14)} Confirmar</button>
+      </div>`}
+  </div>`;
+}
+function wireSoletra() {
+  if (!sl) return;
+  const ready = tapArmed(250);
+  document.querySelectorAll('.sl-t').forEach(b => b.addEventListener('click', () => slTap(+b.dataset.t)));
+  document.querySelectorAll('.sl-b').forEach(b => b.addEventListener('click', () => slBack(+b.dataset.b)));
+  document.getElementById('sl-clear')?.addEventListener('click', () => { sl.put = sl.put.map(() => null); snd.swipe(); go(); });
+  document.getElementById('sl-ok')?.addEventListener('click', () => { if (ready()) slCheck(); });
+  document.getElementById('sl-go')?.addEventListener('click', () => { if (ready()) { snd.swipe(); slGo(); } });
+}
+
+/* ── PARES ── */
+const PR_REL = {
+  nick: { h: 'Ligue cada personagem ao seu epíteto',          of: p => '“' + p.nick + '”' },
+  ctry: { h: 'Ligue cada personagem ao país onde nasceu',     of: p => CTRY_NAME[p.ctry] },
+  cent: { h: 'Ligue cada personagem ao século em que nasceu', of: p => centTxt(p.era[0]).replace(/^s/, 'S') },
+};
+/* an epithet may not give its owner away: no word of the name in it */
+function prNickOk(p) {
+  if (!p.nick) return false;
+  const nk = _fold(p.nick);
+  return !_fold(p.n).split(/[^a-z0-9]+/).filter(w => w.length >= 4).some(w => nk.includes(w));
+}
+const prFits = { nick: prNickOk, ctry: p => !NAT_SKIP.has(p.id) && !!CTRY_NAME[p.ctry], cent: p => !!p.era };
+/* n figures whose answers are all different, and the answers in a shuffled order (never the order of the figures) */
+function prDeal(rel, n, famous, st) {
+  const of = PR_REL[rel].of, got = [], seen = new Set();
+  for (const p of _mShuf(PL.filter(p => p.img && prFits[rel](p) && (!famous || FAMOUS.has(p.id))), st)) {
+    const v = of(p);
+    if (seen.has(v)) continue;
+    seen.add(v); got.push(p);
+    if (got.length === n) break;
+  }
+  if (got.length < n) return null;
+  let order;
+  do { order = _mShuf(got.map((_, i) => i), st); } while (order.every((v, i) => v === i));
+  return { rel, ids: got.map(p => p.id), order };
+}
+let pr = null;   // { rel, left:[p], right:[left index shown at each place on the right], link:[right place | null per left], cur, phase, ok, quest, run, best0, rs, free }
+function prSet(d, extra) {
+  pr = Object.assign({ rel: d.rel, left: d.ids.map(id => PL.find(p => p.id === id)), right: d.order.slice(), link: d.ids.map(() => null), cur: null, phase: 'play', ok: null }, extra || {});
+}
+function prNext() {
+  const keep = { run: pr.run, rs: pr.rs, best0: pr.best0, free: true };
+  const rel = ['nick', 'ctry', 'cent'][Math.floor(_mRnd(keep) * 3)], n = keep.run < 3 ? 3 : 4;
+  const d = prDeal(rel, n, keep.run < 2, keep) || prDeal('ctry', 3, false, keep);
+  prSet(d, keep);
+}
+function startPares() {
+  isDaily = false; isSurv = false; isMil = false; isRev = false;
+  pr = { run: 0, rs: (Math.random() * 2147483647) | 0, best0: LS.get('paresBest', 0) };
+  prNext();
+  sc = 'pares'; go();
+}
+function prTapLeft(i) {
+  if (!pr || pr.phase !== 'play') return;
+  pr.cur = pr.cur === i ? null : i; snd.tap(); go();
+}
+function prTapRight(r) {
+  if (!pr || pr.phase !== 'play') return;
+  const owner = pr.link.indexOf(r);
+  if (pr.cur === null) {                     // no figure in hand: a tied answer comes loose, with its figure in hand again
+    if (owner >= 0) { pr.link[owner] = null; pr.cur = owner; snd.swipe(); go(); }
+    return;
+  }
+  if (owner >= 0) pr.link[owner] = null;     // the answer changes hands
+  pr.link[pr.cur] = r;
+  /* the next figure still loose is in hand, so three taps in a row tie three pairs */
+  const nx = pr.link.findIndex(v => v === null);
+  pr.cur = nx >= 0 ? nx : null;
+  try { snd.pin(); } catch (e) { snd.tap(); }
+  go();
+}
+function prCheck() {
+  if (!pr || pr.phase !== 'play' || pr.link.includes(null)) return;
+  pr.ok = pr.link.every((r, i) => pr.right[r] === i);
+  pr.phase = 'rev'; pr.cur = null;
+  if (pr.ok) {
+    stats.pares = (stats.pares || 0) + 1;
+    if (pr.free) { pr.run++; if (pr.run > LS.get('paresBest', 0)) LS.set('paresBest', pr.run); }
+    LS.set('stats', stats);
+    try { snd.correct(Math.min(pr.run || 0, 8)); } catch (e) {}
+  } else { try { snd.wrong(); haptic([28, 45, 28]); } catch (e) {} }
+  go();
+  if (!pr.ok) requestAnimationFrame(() => { try { fx.edge('#B3402F', false); } catch (e) {} });
+}
+function prGo() {
+  if (!pr || pr.phase !== 'rev') return;
+  if (pr.quest) return provaDone(pr.ok);
+  if (pr.ok) { prNext(); go(); } else startPares();
+}
+function paresHtml() {
+  if (!pr) { pr = { run: 0, rs: (Math.random() * 2147483647) | 0, best0: LS.get('paresBest', 0) }; prNext(); }
+  const rev = pr.phase === 'rev', Q = pr.quest, of = PR_REL[pr.rel].of, n = pr.left.length;
+  const knot = i => `<i class="pr-k pr-k${i}" aria-hidden="true">${i + 1}</i>`;
+  const left = pr.left.map((p, i) => {
+    const tied = pr.link[i] !== null, good = rev && pr.right[pr.link[i]] === i;
+    return `<button class="pr-l${pr.cur === i ? ' is-cur' : ''}${tied ? ' is-tied' : ''}${rev ? (good ? ' is-good' : ' is-bad') : ''}" data-l="${i}" type="button"${rev ? ' disabled' : ''}
+      aria-label="${_esc(p.n)}${tied ? ', ligado a ' + _esc(of(pr.left[pr.right[pr.link[i]]])) : ''}">
+      <span class="pr-pic"><img src="${p.img}" alt="" draggable="false"></span><b>${_esc(p.n)}</b>${tied ? knot(i) : ''}
+      ${rev && !good ? `<small>${_esc(of(p))}</small>` : ''}</button>`;
+  }).join('');
+  const right = pr.right.map((li, r) => {
+    const owner = pr.link.indexOf(r), good = rev && owner === li;
+    return `<button class="pr-r${owner >= 0 ? ' is-tied' : ''}${rev ? (good ? ' is-good' : ' is-bad') : ''}" data-r="${r}" type="button"${rev ? ' disabled' : ''}>
+      ${owner >= 0 ? knot(owner) : ''}<span>${pr.rel === 'ctry' && FLAGS[pr.left[li].ctry] ? `<i class="pr-flag">${flagSVG(pr.left[li].ctry, 12)}</i>` : ''}${_esc(of(pr.left[li]))}</span></button>`;
+  }).join('');
+  return `
+  <div class="pg pr-pg pr-n${n}${rev ? ' is-rev' : ''}">
+    ${Q ? provaBar() : topbar('Pares')}
+    ${Q ? '' : `<div class="ano-head pv-head"><span class="aod-run">${ICON.flame('currentColor', 13)} <b class="num">${pr.run}</b> ${pr.run === 1 ? 'rodada' : 'rodadas'} seguidas</span><span class="aod-best">Recorde <b class="num">${Math.max(pr.best0, pr.run)}</b></span></div>`}
+    <p class="pr-h display"><em>${PR_REL[pr.rel].h}</em></p>
+    <div class="pr-board"><div class="pr-col">${left}</div><div class="pr-col">${right}</div></div>
+    ${rev ? `<div class="sl-after">
+        ${Q ? provaVerdict(pr.ok) : `<div class="pv-verdict ${pr.ok ? 'is-good' : 'is-bad'}" role="status"><b>${pr.ok ? ICON.check('currentColor', 14) + ' Todos certos!' : ICON.cross('currentColor', 14) + ' Não foi desta vez'}</b>
+          <small>${pr.ok ? 'Pares feitos' : `${pr.run} ${pr.run === 1 ? 'rodada' : 'rodadas'} seguidas`}</small></div>`}
+        <button id="pr-go" class="btn btn-brass" type="button">${Q ? provaGoLabel(pr.ok) : pr.ok ? 'Próxima rodada' : 'De novo'}</button>
+      </div>`
+    : `<p class="pv-rule">${pr.cur !== null ? `Agora toque ${pr.rel === 'nick' ? 'no epíteto' : pr.rel === 'ctry' ? 'no país' : 'no século'} de <b>${_esc(pr.left[pr.cur].n)}</b>` : pr.link.includes(null) ? 'Toque num personagem e depois na resposta dele' : 'Tudo ligado: confira, ou toque numa resposta para soltá-la'}</p>
+      <div class="foot-row"><button id="pr-ok" class="btn btn-brass btn-lg" type="button"${pr.link.includes(null) ? ' disabled' : ''}>${ICON.check('currentColor', 14)} Confirmar</button></div>`}
+  </div>`;
+}
+function wirePares() {
+  if (!pr) return;
+  const ready = tapArmed(250);
+  document.querySelectorAll('.pr-l').forEach(b => b.addEventListener('click', () => prTapLeft(+b.dataset.l)));
+  document.querySelectorAll('.pr-r').forEach(b => b.addEventListener('click', () => prTapRight(+b.dataset.r)));
+  document.getElementById('pr-ok')?.addEventListener('click', () => { if (ready()) prCheck(); });
+  document.getElementById('pr-go')?.addEventListener('click', () => { if (ready()) { snd.swipe(); prGo(); } });
 }
 
 /*@@/formats@@*/

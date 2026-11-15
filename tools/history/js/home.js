@@ -101,7 +101,7 @@ function homeHtml() {
    The rounds to train on, the games of time and place, and the door of the
    Gabinete de curiosidades. The cover used to carry all of these as tiles.
 ═══════════════════════════════════════════════════ */
-const JOGOS_N = 7;
+const JOGOS_N = 9;
 function jogosHtml() {
   const tile = (id, label, tail, kind, ic) => `
     <button id="${id}" class="jg-t mode-${kind}" type="button">
@@ -126,6 +126,11 @@ function jogosHtml() {
       ${tile('ano-btn', 'Que ano?', bA > 0 ? 'Recorde ' + bA : 'Na régua', rA ? 'ano' : 'hoje', ICON.hourglass)}
       ${tile('onde-btn', 'Onde foi?', bO > 0 ? 'Recorde ' + bO : 'No mapa', 'onde', ICON.globe)}
       ${tile('cron-btn', 'Cronologia', bC > 0 ? 'Recorde ' + bC : 'Na linha', 'cron', ICON.timeline)}
+    </div>
+    <h2 class="cv-h jg-sec"><span>Com as mãos</span></h2>
+    <div class="jg-grid">
+      ${tile('sl-btn', 'Soletre', LS.get('soletraBest', 0) > 0 ? 'Recorde ' + LS.get('soletraBest', 0) : 'O nome, letra por letra', 'soletra', ICON.quill)}
+      ${tile('pr-btn', 'Pares', LS.get('paresBest', 0) > 0 ? 'Recorde ' + LS.get('paresBest', 0) : 'Ligue quem com o quê', 'pares', ICON.chain)}
     </div>
     <h2 class="cv-h jg-sec"><span>Curiosidades</span></h2>
     <button id="bgab2" class="jg-gab" type="button">

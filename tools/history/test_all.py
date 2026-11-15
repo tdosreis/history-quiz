@@ -128,6 +128,10 @@ JS = r"""
   });
   try { albumPages(PL.map((p, i) => ({ p, n: i + 1 }))); } catch (e) { F('albumPages ' + e.message); }
   try { MEDALS.forEach(m => { m.t({ games: 0, correct: 0 }); }); } catch (e) { F('medals ' + e.message); }
+  /* every insígnia is printed on one page of the insígnias, and only one; no page holds more than nine */
+  MEDALS.forEach(m => { const n = MEDAL_SETS.filter(s => s.ids.includes(m.id)).length; if (n !== 1) F('insígnia ' + m.id + ' is on ' + n + ' pages'); });
+  MEDAL_SETS.forEach(s => { if (s.ids.length > 9) F('page ' + s.id + ' holds ' + s.ids.length + ' insígnias');
+    s.ids.forEach(id => { if (!MEDALS.some(m => m.id === id)) F('page ' + s.id + ' names an unknown insígnia ' + id); }); });
   /* ── the album's world map: every sticker on a page, every page on the map ── */
   try {
     const P = albPlaces();
@@ -768,6 +772,140 @@ JS = r"""
     LS.set('metas', keepM); selos = JSON.parse(keepSel); LS.set('selos', selos); Object.assign(stats, JSON.parse(keepSt)); LS.set('stats', stats);
     runSelos = [];
   } catch (e) { F('metas EXC ' + e.stack); }
+  /* ── Para a História: every rung has its name and its face, a plaque for every height; the provas dealt from the seed and
+     played to both verdicts, whole climbs to the top; Soletre and Pares deal fair and check true; the cover, the page of
+     games, the player's sticker and the album's three sections ── */
+  try {
+    const kS = JSON.stringify(stats), kAlb = [...album], kBest = LS.get('milBest', 0), kNome = LS.get('nome', ''), kVault = JSON.stringify(V());
+    if (FAMA.length !== LADDER.length) F('fama: ' + FAMA.length + ' names for ' + LADDER.length + ' rungs');
+    FAMA.forEach((f, i) => { if (!f.t) F('fama: rung ' + i + ' has no name'); if (f.who && !famaWho(i)) F('fama: unknown figure ' + f.who);
+      if (!/fm-disc/.test(famaDisc(i))) F('fama: rung ' + i + ' has no disc'); if (fama(LADDER[i].v) !== f.t) F('fama: the value of rung ' + i + ' is not named'); });
+    if (new Set(FAMA.map(f => f.t)).size !== FAMA.length) F('fama: two rungs with one name');
+    if (fama(0) !== 'um instante' || famaPor(LADDER[15].v) !== 'para sempre' || famaPor(LADDER[3].v) !== 'por um ano') F('fama: the words round a span');
+    for (let r = 0; r <= 16; r++) { const h = placaHtml(r, {}); if (!/class="placa pl-/.test(h) || !/lembrado/.test(h)) F('placa: nothing for ' + r); }
+    if (new Set([0, 1, 4, 6, 9, 12, 16].map(r => placaOf(r)[1])).size !== 7) F('placa: seven materials');
+    LS.set('nome', '  Maria   Eduarda de Albuquerque  '); if (nomeJog() !== 'Maria Eduarda de') F('nome: ' + JSON.stringify(nomeJog()));
+    /* the provas of a climb: five, each of its own kind, on their rungs, the same from the same seed */
+    const kinds = new Set();
+    for (let i = 0; i < 40; i++) {
+      isMil = true; diffKey = 'moderado'; seedFrom(5000 + i); const a = buildMilhao(); seedFrom(5000 + i); const b = buildMilhao(); _seed = null; isMil = false;
+      const pv = a.qs.map((q, k) => q._prova ? k : -1).filter(k => k >= 0);
+      if (pv.join() !== PROVA_RUNGS.join()) F('provas on rungs ' + pv.join());
+      if (new Set(pv.map(k => a.qs[k]._prova)).size !== pv.length) F('a prova dealt twice in a climb');
+      if (JSON.stringify(a.qs.map(q => q._p || q.t)) !== JSON.stringify(b.qs.map(q => q._p || q.t))) F('a seed does not deal the same climb');
+      pv.forEach(k => { const q = a.qs[k]; kinds.add(q._prova);
+        if (LADDER[k].safe || SPECIAL_RUNGS[k]) F('a prova on a checkpoint or a card rung');
+        if (typeof PROVA[q._prova].tag(q._p) !== 'string') F('prova tag ' + q._prova); });
+    }
+    if (kinds.size !== Object.keys(PROVA).length) F('provas never dealt: ' + Object.keys(PROVA).filter(k => !kinds.has(k)).join());
+    note.provas = kinds.size;
+    /* each prova, won and lost: its card, its game's screen under the climb's bar, its verdict, and what the climb does with it */
+    Object.keys(PROVA).forEach(kind => [1, 3, 5].forEach(tier => [true, false].forEach(pass => {
+      startMilhao(); clearInterval(tmr);
+      seedFrom(77 + tier); const d = PROVA_DEAL[kind](tier, new Set()); _seed = null;
+      if (!d) { F('prova ' + kind + ' deals nothing at tier ' + tier); return; }
+      cat.qs[7] = { t: PROVA[kind].n, type: 'txt', a: [], choices: [], _prova: kind, _p: d, _cat: GC_PROVA, _d: tier };
+      rung = qi = 7; sc = 'card'; go();
+      if (!document.getElementById('bcardgo') || !document.getElementById('bstop')) F('prova card ' + kind);
+      startProva();
+      if (!provaOn() || !document.querySelector('.pv-bar') || !document.getElementById('bexit')) F('prova ' + kind + ' does not open under the climb bar');
+      provaAuto(pass);
+      if (!document.querySelector('.pv-verdict.' + (pass ? 'is-good' : 'is-bad'))) F('prova ' + kind + ' tier ' + tier + ': no verdict for ' + pass);
+      provaGo(); clearInterval(tmr);
+      if (pass ? (rung !== 8 || sc === 'end' || nCorrect !== 1) : (sc !== 'end' || banked !== LADDER[3].v))
+        F('prova ' + kind + (pass ? ' won does not climb' : ' lost does not fall to the engraved rung') + ': ' + sc + ' ' + rung + ' ' + banked);
+    })));
+    /* stopping on the card keeps what the last rung was worth */
+    startMilhao(); clearInterval(tmr); rung = qi = 4; sc = 'card'; go(); cashOut();
+    if (sc !== 'end' || banked !== LADDER[3].v || !cashed) F('stopping on a card: ' + sc + ' ' + banked);
+    /* whole climbs answered right reach the top, provas and all */
+    for (let i = 0; i < 6; i++) {
+      startMilhao(); clearInterval(tmr);
+      let guard = 0;
+      while (sc !== 'end' && guard++ < 60) {
+        if (sc === 'card') { if (cat.qs[qi]._prova) startProva(); else { sc = 'quiz'; go(); } }
+        if (provaOn()) { provaAuto(true); provaGo(); }
+        else { sel = new Set(cat.qs[qi].a); doReveal(); fireAdvance(); }
+        clearInterval(tmr);
+      }
+      if (sc !== 'end' || rung !== 16 || banked !== LADDER[15].v || nCorrect !== 16) F('a climb answered right ends at rung ' + rung + ' with ' + banked + ', ' + nCorrect + ' right');
+      const end = document.getElementById('ct');
+      if (!end.querySelector('.pl-estrelas')) F('the top is not written in the stars');
+      if (/R\$|Milhão/.test(end.textContent)) F('money still printed at the end of a climb');
+    }
+    startMilhao(); clearInterval(tmr); rung = 9; banked = LADDER[8].v; cashed = true; finishRun(); go();
+    const tx = shareText(); if (!/Para a História/.test(tx) || !/dois séculos/.test(tx) || !/Beethoven/.test(tx) || /R\$/.test(tx)) F('share: ' + tx.slice(0, 90));
+    ladderOpen = true; sc = 'quiz'; go(); if (document.querySelectorAll('.fm-r').length !== 16 || !document.querySelector('.fm-r.is-now')) F('the ladder sheet'); ladderOpen = false;
+    /* Soletre: every name can be spelled from its tray, at every level */
+    const pool = slPool(); note.soletre = pool.length;
+    if (pool.length < 60) F('soletre: few names');
+    pool.forEach(p => [1, 3, 5].forEach(level => {
+      slSet(slDeal(p, level, { rs: 11 + level }), { free: true, run: 0, used: new Set(), rs: 1, best0: 0 });
+      const left = sl.tray.map(slFold);
+      sl.flat.forEach((ch, i) => { if (sl.given.has(i)) return; const k = left.indexOf(slFold(ch)); if (k < 0) F('soletre: the tray lacks ' + ch + ' for ' + p.n); else left.splice(k, 1); });
+      if (left.length !== (level >= 4 ? 3 : level === 3 ? 1 : 0)) F('soletre: stray letters for ' + p.n + ' at ' + level);
+      if (level <= 2 && sl.given.size !== sl.words.length) F('soletre: first letters for ' + p.n);
+      if (sl.flat.length < 5 || sl.flat.length > 12) F('soletre: ' + p.n + ' is ' + sl.flat.length + ' letters');
+    }));
+    LS.set('soletraBest', 0); startSoletra();
+    slTap(0); if (sl.put.filter(v => v !== null).length !== 1) F('soletre: a tap puts a letter');
+    slBack(sl.put.findIndex(v => v !== null)); if (sl.put.some(v => v !== null)) F('soletre: a tap on a blank takes it back');
+    if (!document.getElementById('sl-ok').disabled) F('soletre: confirm before the name is whole');
+    for (let k = 0; k < 12; k++) {
+      sl.flat.forEach((ch, i) => { if (!sl.given.has(i)) sl.put[i] = sl.tray.findIndex((t, j) => !sl.put.includes(j) && slFold(t) === slFold(ch)); });
+      slCheck(); if (!sl.ok) F('soletre: the right letters are wrong for ' + sl.p.n); slGo();
+    }
+    if (sl.run !== 12 || LS.get('soletraBest', 0) !== 12 || sl.used.size !== 13) F('soletre: a run of ' + sl.run);
+    /* the letters as they lie in the tray, put in the blanks in that order: right only if that happens to spell the name */
+    { const blanks = sl.flat.map((_, i) => i).filter(i => !sl.given.has(i));
+      blanks.forEach((i, n) => { sl.put[i] = n; });
+      const right = blanks.every((i, n) => slFold(sl.tray[n]) === slFold(sl.flat[i]));
+      slCheck(); if (sl.ok !== right) F('soletre: the check does not read the blanks'); }
+    /* Pares: the answers all different, never dealt in the figures' own order, right pairs pass and wrong ones do not */
+    ['nick', 'ctry', 'cent'].forEach(rel => [3, 4].forEach(n => { for (let k = 0; k < 25; k++) {
+      const d = prDeal(rel, n, n === 3 && k % 2 === 0, { rs: 100 + k });
+      if (!d) { F('pares: no deal for ' + rel + ' ' + n); continue; }
+      const ps = d.ids.map(id => PL.find(p => p.id === id)), vals = ps.map(PR_REL[rel].of);
+      if (new Set(vals).size !== n || vals.some(v => !v)) F('pares: answers not all different, ' + rel);
+      if (d.order.slice().sort().join() !== ps.map((_, i) => i).join() || d.order.every((v, i) => v === i)) F('pares: order ' + d.order);
+      if (rel === 'nick' && ps.some(p => !prNickOk(p))) F('pares: an epithet names its owner');
+      prSet(d, { free: true, run: 0, rs: 1, best0: 0 }); sc = 'pares'; go();
+      if (document.querySelectorAll('.pr-l').length !== n || document.querySelectorAll('.pr-r').length !== n) F('pares: board of ' + n);
+      pr.link = pr.left.map((_, i) => pr.right.indexOf(i)); prCheck(); if (!pr.ok) F('pares: the right pairs are wrong');
+      prSet(d, { free: true, run: 0, rs: 1, best0: 0 }); pr.link = pr.left.map((_, i) => pr.right.indexOf(i)); [pr.link[0], pr.link[1]] = [pr.link[1], pr.link[0]]; prCheck(); if (pr.ok) F('pares: wrong pairs pass');
+    } }));
+    startPares(); prTapLeft(0); prTapRight(1); if (pr.link[0] !== 1 || pr.cur !== 1) F('pares: a tap ties a pair and takes up the next figure');
+    prTapRight(1); if (pr.link[0] !== null || pr.link[1] !== 1) F('pares: an answer changes hands');
+    if (!document.getElementById('pr-ok').disabled) F('pares: confirm before all are tied');
+    /* the cover, the page of games and the way back */
+    sc = 'home'; go();
+    ['mil-btn', 'beu', 'balb', 'bjogos', 'daily-btn', 'hoje-btn', 'hj-onde', 'hj-cron', 'hj-graus', 'bmetas', 'bmed', 'bcred', 'bmute'].forEach(id => { if (!document.getElementById(id)) F('cover: no ' + id); });
+    if (document.querySelectorAll('.hm-d').length !== 5 || !document.querySelector('.hm .placa')) F('cover: the day\'s five games and the plaque');
+    if (/R\$|Milhão/.test(document.getElementById('ct').textContent)) F('money still printed on the cover');
+    document.getElementById('bjogos').click(); if (sc !== 'jogos') F('cover → jogos');
+    ['jor-btn', 'cta-btn', 'surv-btn', 'rev-btn', 'ano-btn', 'onde-btn', 'cron-btn', 'sl-btn', 'pr-btn', 'bgab2'].forEach(id => { if (!document.getElementById(id)) F('jogos: no ' + id); });
+    if (document.querySelectorAll('.jg-t').length !== JOGOS_N) F('jogos: ' + document.querySelectorAll('.jg-t').length + ' tiles');
+    document.getElementById('ano-btn').click(); if (sc !== 'anoMenu') F('jogos → Que ano?');
+    document.getElementById('bhome').click(); if (sc !== 'jogos') F('a game\'s door does not lead back to the page of games');
+    document.getElementById('bhome').click(); if (sc !== 'home') F('jogos → cover');
+    /* the player's sticker: its paper by the best climb, its name typed on the plaque */
+    [[0, 0], [5000, 1], [50000, 2], [1000000, 3]].forEach(([v, f]) => { LS.set('milBest', v); openEu('home');
+      if (sc !== 'eu' || euFin(euKept()) !== f) F('eu: paper for ' + v);
+      if (!document.querySelector('.eu-card .fig' + (f ? '.fin-' + f : '')) || !document.querySelector('.eu-pg .placa')) F('eu: card for ' + v); });
+    document.getElementById('pl-nome').click();
+    if (!document.getElementById('pl-in')) F('eu: the name cannot be typed'); else { document.getElementById('pl-in').value = ' Clio '; document.getElementById('pl-ok').click(); if (nomeJog() !== 'Clio') F('eu: the name is not kept'); }
+    document.getElementById('beu-back').click(); if (sc !== 'home') F('eu → back');
+    /* one album, three sections */
+    sc = 'album'; albView = 'map'; go(); ['alb-nav-fig', 'alb-nav-selo', 'alb-nav-vit', 'balbeu'].forEach(id => { if (!document.getElementById(id)) F('album: no ' + id); });
+    document.getElementById('alb-nav-selo').click(); if (sc !== 'selos' || !document.querySelector('#alb-nav-selo.is-on')) F('album → selos');
+    document.getElementById('alb-nav-vit').click(); if (sc !== 'vitrine' || !document.querySelector('#alb-nav-vit.is-on')) F('selos → vitrine');
+    document.getElementById('alb-nav-fig').click(); if (sc !== 'album') F('vitrine → figurinhas');
+    document.getElementById('balbeu').click(); if (sc !== 'eu') F('album → eu'); document.getElementById('beu-back').click(); if (sc !== 'album') F('eu → album');
+    album = new Set(kAlb); LS.set('album', kAlb); _vault = JSON.parse(kVault); saveVault(); LS.set('milBest', kBest); LS.set('nome', kNome);
+    LS.set('soletraBest', 0); LS.set('paresBest', 0);
+    Object.assign(stats, JSON.parse(kS)); Object.keys(stats).forEach(k => { if (!(k in JSON.parse(kS))) delete stats[k]; }); LS.set('stats', stats);
+    sl = null; pr = null; ano = null; onde = null; cron = null; aod = null; mf = null; isMil = false; runPulls = []; runNewIds = []; runNew = 0; window._newMedals = []; sc = 'home';
+  } catch (e) { F('fama EXC ' + e.stack); }
   note.ms = Date.now() - T0;
   return { fails, note };
 })()

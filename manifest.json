@@ -1,7 +1,7 @@
 {
   "name": "History Quiz",
   "short_name": "History Quiz",
-  "description": "O álbum de figurinhas que faz perguntas de História: faraós, imperadores, descobridores e a escada de 16 degraus rumo ao milhão.",
+  "description": "O álbum de figurinhas que faz perguntas de História: faraós, imperadores, descobridores e 16 degraus para o seu nome entrar para a História.",
   "start_url": "/history-quiz/",
   "scope": "/history-quiz/",
   "display": "standalone",

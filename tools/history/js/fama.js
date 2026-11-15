@@ -133,7 +133,7 @@ function ladderOverlay() {
         return `<div class="fm-r${st}${step.safe ? ' is-safe' : ''}${top ? ' is-top' : ''}" role="listitem">
           <span class="fm-n">${i + 1}</span>
           ${famaDisc(i)}
-          <span class="fm-t"><b>${FAMA[i].t}</b><small>${top ? 'sua figurinha vira ouro no álbum' : famaComo(i)}</small></span>
+          <span class="fm-t"><b>${FAMA[i].t}</b><small>${top ? 'sua figurinha vira ouro' : famaComo(i)}</small></span>
           <span class="fm-ok">${i < rung ? ICON.check('currentColor', 12) : step.safe ? ICON.shield('currentColor', 12) : i === rung ? '<i>você</i>' : ''}</span>
         </div>`;
       }).reverse().join('')}

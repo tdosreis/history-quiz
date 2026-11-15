@@ -5,7 +5,8 @@
    one of the games that live behind the cover, played for the rung. The
    ruler of years (Que ano?), the pin on the mapa-múndi (Onde foi?), an event
    to set in a line of time (Cronologia), three "before or after?" in a row,
-   two or three legends to stamp (Mito ou fato?). Each climb draws the five
+   two or three legends to stamp (Mito ou fato?), a name to spell from letter
+   tiles and pairs to tie (js/maos.js). Each climb draws the five
    in its own order, from the climb's seed, so a climb sent to a friend has
    the same provas; the higher the rung, the narrower the margin. A prova is
    announced on a card, like a carta especial — and that card is where the
@@ -20,6 +21,9 @@ const PROVA = {
   cron: { n: 'Cronologia',       ic: ICON.timeline,  tag: d => d.cur.length === 1 ? 'Um evento para pôr no seu lugar na linha do tempo' : 'Dois eventos para pôr no lugar na linha do tempo, sem errar' },
   aod:  { n: 'Antes ou depois?', ic: ICON.clock,     tag: d => `${d.need === 3 ? 'Três' : 'Duas'} seguidas, sem errar: veio antes ou depois?` },
   mito: { n: 'Mito ou fato?',    ic: ICON.stamp,     tag: d => `${d.need === 3 ? 'Três' : 'Duas'} cartas, nenhuma dúvida: lenda ou verdade?` },
+  /* and two that are not games of the cover but ways of answering with the hands (js/maos.js) */
+  soletra: { n: 'Soletre',       ic: ICON.quill,     tag: d => d.level >= 4 ? 'Monte o nome de quem está no retrato — há letras que não entram' : 'Monte o nome de quem está no retrato, letra por letra' },
+  pares:   { n: 'Pares',         ic: ICON.chain,     tag: d => PR_REL[d.rel].h + ', sem errar nenhum' },
 };
 const _pvTier = (tier, arr) => arr[Math.max(0, Math.min(arr.length - 1, tier - 1))];
 const _pvEvt = id => ANO_EVENTS.find(e => e.id === id);
@@ -52,6 +56,15 @@ const PROVA_DEAL = {
   },
   aod(tier) { return { seed: Math.floor(rnd() * CHAL_SEED_MAX), need: 3, band: _pvTier(tier, [0, 3, 6, 10, 15]) }; },
   mito(tier) { return { seed: Math.floor(rnd() * CHAL_SEED_MAX), need: tier >= 3 ? 3 : 2 }; },
+  soletra(tier) {
+    const st = { rs: Math.floor(rnd() * CHAL_SEED_MAX) };
+    const pool = slPool().filter(p => tier > 2 || FAMOUS.has(p.id));
+    return pool.length ? slDeal(pool[Math.floor(_mRnd(st) * pool.length)], tier, st) : null;
+  },
+  pares(tier) {
+    const st = { rs: Math.floor(rnd() * CHAL_SEED_MAX) };
+    return prDeal(['nick', 'ctry', 'cent'][Math.floor(_mRnd(st) * 3)], tier >= 3 ? 4 : 3, tier <= 2, st);
+  },
 };
 /* Deals the provas into a ladder that is already built, as dealSpecials does its cards */
 function dealProvas(qs) {
@@ -66,7 +79,7 @@ function dealProvas(qs) {
 }
 
 /* is a prova being played right now (on its game's screen, for the rung in hand)? */
-const PROVA_SC = { ano: 'ano', onde: 'onde', cron: 'cron', aod: 'aod', mito: 'mito' };
+const PROVA_SC = { ano: 'ano', onde: 'onde', cron: 'cron', aod: 'aod', mito: 'mito', soletra: 'soletra', pares: 'pares' };
 const provaQ = () => (isMil && cat && cat.qs && cat.qs[qi] && cat.qs[qi]._prova ? cat.qs[qi] : null);
 const provaOn = () => { const q = provaQ(); return !!(q && sc === PROVA_SC[q._prova]); };
 
@@ -90,7 +103,8 @@ function startProva() {
     aod.used.delete(aod.b.id); aod.b = aodPick(aod.a); aod.used.add(aod.b.id);
   } else if (k === 'mito') {
     mfNew(d.seed); mf.quest = { need: d.need }; mf.lives = 1;
-  }
+  } else if (k === 'soletra') slSet(d, { quest: true });
+  else if (k === 'pares') prSet(d, { quest: true });
   sc = PROVA_SC[k];
   go();
 }
@@ -130,14 +144,70 @@ function provaDone(pass) {
   /* the game's own state is put away: its screen, opened later from the cover, starts a game of its own */
   if (k === 'ano') ano = null; else if (k === 'onde') onde = null; else if (k === 'cron') cron = null;
   else if (k === 'aod') { clearTimeout(aod && aod.adv); aod = null; } else if (k === 'mito') mf = null;
+  else if (k === 'soletra') sl = null; else if (k === 'pares') pr = null;
   prevPts = pts;
   if (pass) { streak++; nCorrect++; pts += Math.round(4 * (streak >= 6 ? 3 : streak >= 3 ? 2 : 1) * DCFG().pmul); }
   else streak = 0;
   bestStreak = Math.max(bestStreak, streak);
   runLog.push(p);
-  stats.provas = (stats.provas || 0) + (pass ? 1 : 0);
+  /* the provas won, and of which kinds (the insígnias count them) */
+  if (pass) { stats.provas = (stats.provas || 0) + 1; stats.provaK = stats.provaK || {}; stats.provaK[k] = 1; LS.set('stats', stats); }
   if (pass) snd.rung(rung); else { snd.drop(); banked = safetyNet(); }
   sc = 'reveal';
   advanceAfterReveal(p);
   go();
+}
+
+/* Plays the prova in hand to its verdict, right or wrong, and stops on that verdict's screen; provaGo is the tap
+   that follows it. The suite and the layout probe drive whole climbs with these (tools/history/test_all.py). */
+function provaAuto(pass) {
+  const q = provaQ();
+  if (!q || !provaOn()) return false;
+  const k = q._prova, slots = line => line.map((_, i) => i).concat(line.length);
+  if (k === 'ano') {
+    const x = ano.qs[0], off = ano.quest.tol + 3;
+    ano.guess = pass ? x.e.y : x.e.y + off <= x.hi ? x.e.y + off : x.e.y - off;
+    anoCommit();
+  } else if (k === 'onde') {
+    const at = onde.qs[0].at;
+    ondeSetPin(pass ? [at[0], at[1]] : [Math.max(-80, Math.min(80, -at[0] * .5 - 20)), at[1] + 150]);
+    ondeCommit();
+  } else if (k === 'cron') {
+    for (;;) {
+      cronPlace(slots(cron.line).find(i => cronFits(cron.line, cron.cur, i) === pass));
+      if (cron.lives <= 0 || !cron.deck.length) break;
+      cronNext();
+    }
+  } else if (k === 'aod') {
+    for (;;) {
+      const truth = aod.b.y < aod.a.y ? 'antes' : 'depois';
+      aodAnswer(pass ? truth : truth === 'antes' ? 'depois' : 'antes');
+      if (!aod.ok || aod.score >= aod.quest.need) break;
+      aodNext();
+    }
+  } else if (k === 'mito') {
+    for (;;) {
+      const v = mfCard().v;
+      mfAnswer(pass ? v : v === 'f' ? 'm' : 'f');
+      if (!mf.ok || mf.score >= mf.quest.need) break;
+      mfNext();
+    }
+  } else if (k === 'soletra') {
+    sl.flat.forEach((ch, i) => { if (!sl.given.has(i)) sl.put[i] = sl.tray.findIndex((t, j) => !sl.put.includes(j) && slFold(t) === slFold(ch)); });
+    if (!pass) {
+      /* two different letters change places */
+      const a = sl.put.findIndex(v => v !== null), b = sl.put.findIndex(v => v !== null && slFold(sl.tray[v]) !== slFold(sl.tray[sl.put[a]]));
+      if (b >= 0) [sl.put[a], sl.put[b]] = [sl.put[b], sl.put[a]];
+    }
+    slCheck();
+  } else if (k === 'pares') {
+    pr.link = pr.left.map((_, i) => pr.right.indexOf(i));
+    if (!pass) [pr.link[0], pr.link[1]] = [pr.link[1], pr.link[0]];
+    prCheck();
+  }
+  return true;
+}
+function provaGo() {
+  const q = provaQ();
+  if (q && provaOn()) ({ ano: anoNext, onde: ondeNext, cron: cronNext, aod: aodNext, mito: mfNext, soletra: slGo, pares: prGo })[q._prova]();
 }

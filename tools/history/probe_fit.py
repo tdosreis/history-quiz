@@ -90,7 +90,19 @@ PROBE = r"""
 
 DRIVE = r"""
   /* the still screens */
-  ['home','album','medals','credits','difficulty','vitrine'].forEach(function(s){ sc=s; go(); fit(s); });
+  ['home','jogos','album','medals','credits','difficulty','vitrine'].forEach(function(s){ sc=s; go(); fit(s); });
+  /* every page of the insígnias, none won and all won */
+  for (var mp=0; mp<MEDAL_SETS.length; mp++){ insPage=mp; sc='medals'; go(); fit('medals/'+mp); }
+  var em0 = earnedMedals; earnedMedals = function(){ return MEDALS; };
+  for (var mp2=0; mp2<MEDAL_SETS.length; mp2++){ insPage=mp2; sc='medals'; go(); fit('medals/todas-'+mp2); }
+  earnedMedals = em0; insPage = 0;
+  /* the cover with each plaque under its button: a new player's, a short name, a long one, at every height */
+  [0,2,5,7,10,13,16].forEach(function(k, n){
+    LS.set('milBest', k ? LADDER[k-1].v : 0); LS.set('nome', ['', 'Tiago', 'Maria Eduarda de'][n % 3]); sc='home'; go(); fit('home/placa-'+k);
+    openEu('home'); fit('eu/'+k);
+  });
+  nomeEdit=true; go(); fit('eu/edit'); nomeEdit=false;
+  LS.set('milBest', 0); LS.set('nome', '');
   /* the album: the world and its four parts, then every page of every place */
   ['WORLD','EU','AS','AF','AM'].forEach(function(v){ albView='map'; amapView=v; sc='album'; go(); fit('album/mapa-'+v); });
   albPlaces().order.forEach(function(c){
@@ -106,7 +118,10 @@ DRIVE = r"""
 
   /* the ladder, every rung — the tall boards and the cartas especiais */
   for (var r=0;r<LADDER.length;r++){
-    startMilhao(); rung=r; qi=r; disp=dealDisp(r); tMax=qTime(); tLeft=tMax;
+    startMilhao(); rung=r; qi=r;
+    /* a prova is played on its game's own screen: only its card is the climb's (the provas themselves are below) */
+    if (cat.qs[r]._prova){ sc='card'; go(); fit('carta/prova-'+cat.qs[r]._prova); continue; }
+    disp=dealDisp(r); tMax=qTime(); tLeft=tMax;
     if (cat.qs[r]._special){ sc='card'; go(); fit('carta/'+cat.qs[r]._special); }
     sc='quiz'; go(); fit('milhao/rung'+(r+1));
     if (cat.qs[r].clues){ cat.qs[r]._shown=cat.qs[r].clues.length; go(); fit('milhao/rung'+(r+1)+'-4pistas'); }
@@ -133,7 +148,7 @@ DRIVE = r"""
     }
   });
   for (var i=0;i<7;i++){
-    startMilhao(); var r2=i%LADDER.length; rung=r2; qi=r2;
+    startMilhao(); var r2=[0,2,3,5,6,8,15][i]; rung=r2; qi=r2;
     disp=dealDisp(r2); sel=new Set(cat.qs[r2].a); tLeft=10; doReveal();
     var st2 = document.querySelector('.story');
     fit('reveal/milhao-rung'+(r2+1)+(st2?'+story':''));
@@ -166,7 +181,48 @@ DRIVE = r"""
     }
   });
 
-  /* the endings */
+  /* the provas of the climb: each kind at three heights, its screen as dealt, and its verdict won and lost */
+  Object.keys(PROVA).forEach(function(kind){
+    [1,3,5].forEach(function(tier, n){
+      [true,false].forEach(function(pass){
+        startMilhao(); clearInterval(tmr);
+        seedFrom(900 + n*77 + kind.length); var d = PROVA_DEAL[kind](tier, new Set()); _seed = null;
+        if (!d) return;
+        var r = PROVA_RUNGS[n*2];
+        cat.qs[r] = { t: PROVA[kind].n, type:'txt', a:[], choices:[], _prova:kind, _p:d, _cat:GC_PROVA, _d:tier };
+        rung=r; qi=r;
+        if (pass){ sc='card'; go(); fit('prova/'+kind+'-carta'); }
+        startProva(); if (pass) fit('prova/'+kind);
+        provaAuto(pass); fit('prova/'+kind+(pass?'-venceu':'-perdeu'));
+        clearInterval(tmr); try { clearTimeout(aod && aod.adv); } catch (e) {}
+      });
+    });
+  });
+  ano=null; onde=null; cron=null; aod=null; mf=null; sl=null; pr=null; isMil=false;
+  /* Soletre and Pares as games of their own: short names and long, each level, right and wrong */
+  slPool().forEach(function(p, i){
+    if (i % 4 && p.n.replace(/[^A-Za-zÀ-ÿ]/g,'').length < 11) return;
+    var level = 1 + i % 5;
+    slSet(slDeal(p, level, { rs: 40 + i }), { free:true, run: i % 9, used: new Set(), rs: 3 + i, best0: 5 }); sc='soletra'; go(); fit('soletra/'+level);
+    sl.flat.forEach(function(ch, k){ if (!sl.given.has(k)) sl.put[k] = sl.tray.findIndex(function(t, j){ return !sl.put.includes(j) && slFold(t) === slFold(ch); }); });
+    if (i % 3 === 0){ var a0 = sl.put.findIndex(function(v){ return v !== null; }); sl.put[a0] = sl.put.find(function(v, k){ return v !== null && k !== a0; }); }
+    go(); fit('soletra/cheio'); slCheck(); fit('soletra/'+(sl.ok?'certo':'errado'));
+  });
+  ['nick','ctry','cent'].forEach(function(rel){ [3,4].forEach(function(n){ for (var k=0;k<5;k++){
+    var d = prDeal(rel, n, false, { rs: 300 + k*7 + n }); if (!d) continue;
+    prSet(d, { free:true, run:k, rs:1, best0:4 }); sc='pares'; go(); fit('pares/'+rel+n);
+    prTapLeft(0); fit('pares/'+rel+n+'-mao');
+    pr.link = pr.left.map(function(_, i){ return pr.right.indexOf(i); }); if (k % 2) { var t0 = pr.link[0]; pr.link[0] = pr.link[1]; pr.link[1] = t0; }
+    pr.cur = null; go(); fit('pares/'+rel+n+'-ligados'); prCheck(); fit('pares/'+rel+n+(pr.ok?'-certo':'-errado'));
+  } }); });
+  sl=null; pr=null;
+
+  /* the endings: a climb on each plaque, a name short and long, the name being typed */
+  [0,2,4,7,10,13,16].forEach(function(k, n){
+    LS.set('nome', ['', 'Tiago', 'Maria Eduarda de'][n % 3]);
+    startMilhao(); clearInterval(tmr); rung=k; banked=k?LADDER[k-1].v:0; cashed=k>0 && n%2===0; finishRun(); go(); fit('end/fama-'+k);
+  });
+  window._newMedals = MEDALS.slice(0, 4); nomeEdit=true; go(); fit('end/fama-edit'); nomeEdit=false; LS.set('nome', ''); LS.set('milBest', 0);
   startMilhao(); banked=1000000; rung=LADDER.length; cashed=true; sc='end'; go(); fit('end/milhao-win');
   startMilhao(); banked=5000; rung=7; cashed=false; sc='end'; go(); fit('end/milhao-queda');
   startMilhao(); banked=0; rung=1; cashed=false; sc='end'; go(); fit('end/milhao-zero');
@@ -445,29 +501,42 @@ def run(label, w, h, inset):
           + "}catch(e){all.push({label:'EXCEPTION',over:0,vh:0,boxes:[],"
             "tall:[{cls:(e&&(e.stack||e.message))||String(e),h:0}]});}"
             "var d=document.createElement('pre');d.id='OUT';"
-            "d.textContent=JSON.stringify({checked:seen,bad:all});"
-            "document.body.appendChild(d);})();")
+            "d.textContent=JSON.stringify({checked:seen,bad:all,vp:[innerWidth,innerHeight]});"
+            "document.body.appendChild(d);try{parent.postMessage(d.textContent,'*')}catch(e){}})();")
     tmp = os.path.join(ROOT, "_fit.html")
+    host = os.path.join(ROOT, "_fit_host.html")
     io.open(tmp, "w", encoding="utf-8").write(
         src.replace("</body>", "<script>window.addEventListener('load',function(){"
                     "setTimeout(function(){" + js + "},400)});</script></body>"))
+    # The page is measured inside a frame of exactly the phone's size, not in the window itself: a headless
+    # window keeps some of its height for browser chrome in one Chrome and none in another, and a newer one
+    # refuses to be narrower than 500px -- a "360" window was then measuring a 500px page, and passing.
+    # The frame is the size asked for whatever the window does; the page reports its own viewport back, and
+    # a size that is not the one asked for is a failed run, not a pass.
+    io.open(host, "w", encoding="utf-8").write(
+        '<!doctype html><meta charset="utf-8"><body style="margin:0">'
+        '<iframe src="_fit.html" style="display:block;border:0;width:%dpx;height:%dpx"></iframe>'
+        "<script>addEventListener('message',function(e){var d=document.createElement('pre');d.id='OUT';"
+        "d.textContent=e.data;document.body.appendChild(d);});</script></body>" % (w, h))
     try:
         dom = subprocess.run([CHROME] + (["--no-sandbox"] if os.environ.get("CI") else []) + ["--headless", "--disable-gpu", "--hide-scrollbars",
-                              # --window-size is the WINDOW: headless still keeps ~87px of
-                              # browser chrome, so a "640" window was measuring a 553px
-                              # viewport and the labels were lying about which phone failed.
-                              "--window-size=%d,%d" % (w, h + CHROME_H), "--allow-file-access-from-files",
-                              "--virtual-time-budget=20000", "--dump-dom", "file://" + tmp],
-                             capture_output=True, text=True, timeout=560).stdout
+                              "--window-size=%d,%d" % (max(w, 520) + 20, h + CHROME_H + 120), "--allow-file-access-from-files",
+                              "--virtual-time-budget=20000", "--dump-dom", "file://" + host],
+                             capture_output=True, text=True, timeout=900).stdout
     finally:
-        if os.path.exists(tmp): os.remove(tmp)
+        for f in (tmp, host):
+            if os.path.exists(f): os.remove(f)
     m = re.search(r'<pre id="OUT">(.*?)</pre>', dom, re.S)
     if not m:
         print("  %s: NO OUTPUT" % label)
         for u in re.findall(r"Uncaught[^<\n]*", dom)[:3]: print("     " + u)
         return None
-    return json.loads(m.group(1).replace("&quot;", '"').replace("&amp;", "&")
-                                .replace("&lt;", "<").replace("&gt;", ">"))
+    r = json.loads(m.group(1).replace("&quot;", '"').replace("&amp;", "&")
+                               .replace("&lt;", "<").replace("&gt;", ">"))
+    if r.get("vp") != [w, h]:
+        print("  %s: measured a %s viewport, not %dx%d" % (label, "x".join(map(str, r.get("vp") or ["?"])), w, h))
+        return None
+    return r
 
 want = sys.argv[1:]
 total_bad = 0

@@ -1,6 +1,7 @@
 # History Quiz
 
-Quiz de História em formato de programa de auditório (Rumo ao Milhão), com álbum de figurinhas
+Quiz de História em que se joga por um lugar nela (Para a História: dezesseis degraus, e a cada um o nome do
+jogador é lembrado por mais tempo — de um dia a para sempre), com álbum de figurinhas
 de personagens, brasões, nações e monumentos. PWA (`index.html` com a página e os estilos, `app.js`
 com o jogo) + Trusted Web Activity Android. Irmão do [Futebol Quiz BR](https://github.com/tdosreis/futebol-quiz): mesmo motor, outro conteúdo.
 

@@ -19,21 +19,24 @@ History Quiz
 
 **Short description** (max 80)
 ```
-Quiz de História em clima de auditório: 16 degraus até o milhão. 5 ajudas!
+Quiz de História: suba 16 degraus e faça seu nome ser lembrado para sempre.
 ```
 
 **Full description** (max 4000)
 ```
-📜 Quanto você sabe de História? Sente na cadeira e vá rumo ao milhão!
+📜 Quanto você sabe de História? O bastante para entrar nela?
 
-Um quiz de História em clima de programa de auditório: refletor aceso, placa dourada e dezesseis degraus até R$ 1.000.000. Perguntas sobre faraós, imperadores, descobridores, revoluções, guerras, o Brasil e muito mais — com retratos, bustos, pinturas e fotos de monumentos de verdade. Mais de 2.000 perguntas em 33 temas, do Egito Antigo à Nova República, do fácil ao difícil de verdade. Cada partida é montada na hora, então nunca se repete.
+Um quiz de História em que o prêmio não é dinheiro: é memória. São dezesseis degraus, e a cada um o seu nome é lembrado por mais tempo — um dia, um ano, um século como Monet, cinco séculos como Leonardo da Vinci, três milênios como Tutancâmon… até para sempre. Perguntas sobre faraós, imperadores, descobridores, revoluções, guerras, o Brasil e muito mais — com retratos, bustos, pinturas e fotos de monumentos de verdade. Mais de 2.000 perguntas em 33 temas, do Egito Antigo à Nova República, do fácil ao difícil de verdade. Cada partida é montada na hora, então nunca se repete.
 
-💰 RUMO AO MILHÃO:
-• 16 perguntas, uma por degrau — cada uma vale mais e é mais difícil
-• Dois degraus garantidos (R$ 5.000 e R$ 50.000): passou, o dinheiro é seu
-• Errou? Você cai para o último degrau garantido
-• PARAR a qualquer momento e levar o que já conquistou
-• A partir de R$ 75.000 o apresentador pergunta: "essa é a sua resposta final?"
+🏛️ ENTRE PARA A HISTÓRIA:
+• 16 degraus — cada um mais difícil, cada um faz seu nome durar mais
+• Em cada degrau, o rosto de quem já é lembrado há esse tempo: de Stephen Hawking a Tutancâmon
+• Dois degraus gravados (um ano e dois séculos): passou, esse tempo é seu
+• Errou? Seu nome volta para o último degrau gravado
+• PARAR a qualquer momento e ficar com o que já conquistou
+• No fim, a placa com o seu nome: escrito na areia, a giz, a tinta, em bronze, em mármore… ou nas estrelas
+• A sua própria figurinha no álbum, reimpressa em prata, holográfica e ouro conforme você sobe
+• Cinco PROVAS no meio da subida, sorteadas a cada partida: acertar o ano numa régua, cravar o lugar no mapa-múndi, pôr um evento na linha do tempo, "antes ou depois?", mito ou fato, soletrar um nome com letras soltas, ligar pares
 • Quatro CARTAS ESPECIAIS no meio da subida:
   — Quem sou eu? — as pistas vêm uma de cada vez, e cada pista extra custa cinco segundos do relógio
   — Linha do tempo — quatro fatos para colocar em ordem, do mais antigo ao mais novo
@@ -62,6 +65,7 @@ Um quiz de História em clima de programa de auditório: refletor aceso, placa d
 • Toque na figurinha e ela vira: quando viveu, onde nasceu, a que estados esteve ligado
 
 🎮 OUTROS MODOS:
+• Cinco jogos do dia — os mesmos para todo mundo: Diário, Datas, Mapa, Linha e Corrente
 • Desafio Diário — a mesma partida para todo mundo, todo dia
 • Mata-mata — errou, acabou. Até onde você vai?
 • Treino — Fácil, Moderado e Difícil, sem apostar nada
@@ -69,7 +73,7 @@ Um quiz de História em clima de programa de auditório: refletor aceso, placa d
 🔥 PARA JOGAR DE VERDADE:
 • Sequências que multiplicam seus pontos (×2 e ×3)
 • Bônus por responder rápido
-• Insígnias para desbloquear, incluindo a de Milionário
+• Insígnias para desbloquear, incluindo a de Imortal
 • Recordes e estatísticas salvos no aparelho
 • Compartilhe sua escalada no WhatsApp
 
@@ -84,18 +88,19 @@ Um quiz de História em clima de programa de auditório: refletor aceso, placa d
 
 **Short description**
 ```
-A history trivia game show: 16 steps to the million, 5 lifelines. (In Portuguese)
+History trivia: climb 16 steps so your name is remembered forever. (Portuguese)
 ```
 
 **Full description**
 ```
-Think you know history? Take the chair and climb to the million!
+Think you know history? Enough to go down in it?
 
-A history trivia game in the style of a TV quiz show: spotlight, golden plaque and sixteen steps to R$ 1,000,000. Over 2,000 questions in 33 themes — from Ancient Egypt to the Cold War: pharaohs, emperors, explorers, revolutions, wars, Brazil — with real portraits, busts, paintings and photographs of monuments.
+A history trivia game where the prize is not money but memory: sixteen steps, and at each one your name is remembered for longer — a day, a year, a century like Monet, five centuries like Leonardo, three thousand years like Tutankhamun… and at the top, forever. Over 2,000 questions in 33 themes — from Ancient Egypt to the Cold War: pharaohs, emperors, explorers, revolutions, wars, Brazil — with real portraits, busts, paintings and photographs of monuments.
 
 The game is in Brazilian Portuguese.
 
-• Sixteen-question ladder with safe steps, five lifelines and special cards (Who am I? · Timeline)
+• Sixteen-step ladder with safe steps, five lifelines, special cards (Who am I? · Timeline) and hands-on trials: a ruler of years, a pin on the world map, a timeline, letter tiles, matching pairs
+• A plaque with your name at the end — in sand, chalk, ink, bronze, marble or the stars — and your own sticker in the album
 • History's own question formats: Who said it?, Battle, Line of succession, Headline, Duel, Fact or myth?
 • Sticker album with 230 historical figures, coats of arms, nations and monuments
 • Daily challenge, sudden-death mode and practice mode

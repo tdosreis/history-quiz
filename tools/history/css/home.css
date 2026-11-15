@@ -99,6 +99,7 @@
 .jg-gab-art svg { width: 100%; height: 100%; display: block; }
 @keyframes revNudge { 0%, 100% { transform: none; } 30% { transform: translateX(-4px); } 60% { transform: translateX(4px); } }
 @media (max-height: 640px) {
+  .jg-pg { gap: 7px; } .jg-sec { margin-top: 2px; } .jg-gab { padding: 8px 12px; }
   .jg-t { padding: 8px 10px; } .jg-ic { width: 30px; height: 30px; } .jg-tx b { font-size: 16px; } .jg-h { font-size: 23px; }
   .jg-grid-3 .jg-t { padding: 8px 4px 7px; }
 }

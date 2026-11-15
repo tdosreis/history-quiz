@@ -13,14 +13,14 @@ CHROME_H = 87   # the part of a headless window that is not page (see probe_fit.
 os.makedirs(OUT, exist_ok=True)
 
 SEED = """album=new Set(PL.filter(function(p,i){return i%3!==1}).map(function(p){return p.id})); LS.set('album',[...album]);
- stats={games:37,correct:412,answered:560,bestStreak:9,perfect:3,hard80:2,survBest:11}; LS.set('stats',stats); LS.set('milBest',150000);"""
+ stats={games:37,correct:412,answered:560,bestStreak:9,perfect:3,hard80:2,survBest:11}; LS.set('stats',stats); LS.set('milBest',150000); LS.set('nome','Clio');"""
 def Q(cat, pick, extra=""):
     return ("diffKey='dificil'; cat=buildGame('dificil'); var q=CATS.find(function(c){return c.id==='%s'}).qs.find(function(q){return %s}); "
             "cat.qs=[q]; qi=0; sel.clear(); pts=72; streak=5; runLog=[3,3,3,3,3]; sc='quiz'; tMax=20; tLeft=14; disp=getDisp(q); %s go();") % (cat, pick, extra)
 
 STATES = {
  "shot-01-home": SEED + " heroSticker=function(){var h=PL.find(function(p){return p.id==='napoleao'});return {p:h,num:PL.indexOf(h)+1}}; sc='home'; go();",
- "shot-02-milhao": ("isMil=true; rung=10; banked=5000; diffKey='moderado'; var g=buildMilhao(); cat=g; qi=10; sel.clear(); pts=480; streak=4; runLog=[3,3,3,3,3,3,3,3,3,3]; sc='quiz'; tMax=30; tLeft=22; disp=getDisp(cat.qs[qi]); go();"),
+ "shot-02-milhao": ("isMil=true; rung=11; banked=5000; diffKey='moderado'; var g=buildMilhao(); cat=g; qi=11; sel.clear(); pts=480; streak=4; runLog=[3,3,3,3,3,3,3,3,3,3,3]; sc='quiz'; tMax=30; tLeft=22; disp=getDisp(cat.qs[qi]); go();"),
  "shot-03-album": SEED + " albView='map'; amapView='WORLD'; sc='album'; go();",
  "shot-04-onde": ("chal={g:'o',seed:4242,score:0,accepted:true}; startOnde(); chal=null;"
                   " var q=onde.qs[0]; ondeSetPin([q.at[0]+0.6, q.at[1]+0.9]); ondeCommit(); ondeNext();"
@@ -43,17 +43,22 @@ def shot(name, js, w=500, h=900, scale=2, light=True):
             "*,*::before,*::after{animation-duration:0s!important;animation-delay:0s!important;transition:none!important}</style>"
             "<script>window.addEventListener('load',function(){setTimeout(function(){%s},800);});</script>") % js
     tmp = os.path.join(ROOT, "_store_%s.html" % name)
+    host = os.path.join(ROOT, "_store_%s_host.html" % name)
     io.open(tmp, "w", encoding="utf-8").write(src.replace("</body>", tail + "</body>"))
+    # the page is shot inside a frame of exactly the size wanted: what a headless window gives its page differs
+    # from one Chrome to another (some keep CHROME_H px of it, some none), and a frame is the size it is told
+    io.open(host, "w", encoding="utf-8").write(
+        '<!doctype html><meta charset="utf-8"><body style="margin:0;background:#fff">'
+        '<iframe src="%s" style="display:block;border:0;width:%dpx;height:%dpx"></iframe></body>' % (os.path.basename(tmp), w, h))
     out = os.path.join(OUT, name + ".png")
     try:
         subprocess.run([CHROME] + EXTRA + ["--headless", "--disable-gpu", "--hide-scrollbars", "--allow-file-access-from-files",
-                        "--window-size=%d,%d" % (w, h + CHROME_H), "--force-device-scale-factor=%d" % scale,
-                        "--virtual-time-budget=6000", "--screenshot=" + out, "file://" + tmp],
+                        "--window-size=%d,%d" % (max(w, 500), h + CHROME_H), "--force-device-scale-factor=%d" % scale,
+                        "--virtual-time-budget=6000", "--screenshot=" + out, "file://" + host],
                        capture_output=True, timeout=120)
     finally:
-        os.remove(tmp)
-    # headless Chrome keeps CHROME_H px of the window for itself and leaves them
-    # blank under the page: the window is that much taller, and the blank cut off
+        os.remove(tmp); os.remove(host)
+    # the frame sits in the window's top left corner: the rest of the window is cut off
     from PIL import Image
     im = Image.open(out)
     im.crop((0, 0, w * scale, h * scale)).save(out)
@@ -79,7 +84,7 @@ def feature():
     .row{position:absolute;right:26px;top:84px;display:flex;gap:0}
     .c{width:150px;height:215px;margin-left:-14px;background:#EFE4CA;padding:8px 8px 22px;box-shadow:0 8px 24px #0006;transform:rotate(var(--r));margin-top:calc(var(--r)*3)}
     .c img{width:134px;height:185px;object-fit:cover;display:block}
-    </style><div class=bg></div><h1>History<br><em>Quiz</em></h1><p>16 degraus até o milhão.<br>Do Egito Antigo à Guerra Fria.</p><div class=row>@@CARDS@@</div>""".replace("@@CARDS@@", cards).replace("@@ROOT@@", ROOT)
+    </style><div class=bg></div><h1>History<br><em>Quiz</em></h1><p>16 degraus para entrar para a História.<br>Do Egito Antigo à Guerra Fria.</p><div class=row>@@CARDS@@</div>""".replace("@@CARDS@@", cards).replace("@@ROOT@@", ROOT)
     tmp = os.path.join(ROOT, "_feature.html")
     io.open(tmp, "w", encoding="utf-8").write(html)
     out = os.path.join(OUT, "feature-graphic.png")
@@ -115,7 +120,7 @@ def og():
     .c{width:168px;height:242px;margin-left:-16px;background:#EFE4CA;padding:9px 9px 26px;box-shadow:0 10px 28px #0006;transform:rotate(var(--r));margin-top:calc(var(--r)*3.4)}
     .c img{width:150px;height:207px;object-fit:cover;display:block}
     </style><div class=bg></div><h1>History<br><em>Quiz</em></h1>
-    <p>16 degraus até o milhão.<br>Do Egito Antigo à Guerra Fria.<small>Álbum · mapa-múndi · 8 jogos</small></p><div class=row>@@CARDS@@</div>""".replace("@@CARDS@@", cards).replace("@@ROOT@@", ROOT)
+    <p>16 degraus para entrar para a História.<br>Do Egito Antigo à Guerra Fria.<small>Álbum · mapa-múndi · 20 jogos</small></p><div class=row>@@CARDS@@</div>""".replace("@@CARDS@@", cards).replace("@@ROOT@@", ROOT)
     tmp = os.path.join(ROOT, "_og.html")
     io.open(tmp, "w", encoding="utf-8").write(html)
     png = os.path.join(OUT, "_og.png")
