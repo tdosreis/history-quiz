@@ -39,7 +39,7 @@ function homeHtml() {
   const held = PL.filter(p => album.has(p.id) && !UNPAINTED.has(p.id));
   const fan = (held.length >= 3 ? held.slice(-3)
     : [...held, ...PL.filter(p => FAMOUS.has(p.id) && !album.has(p.id) && !UNPAINTED.has(p.id))].slice(0, 3));
-  const dia = hojeJogos(), feitos = dia.filter(g => g[3]).length;
+  const dia = hojeJogos(), feitos = dia.filter(g => g[3]).length, prox = dia.findIndex(g => !g[3]);
   const e = earnedMedals().length;
   return `
   <div class="pg pg-home cover hm">
@@ -64,7 +64,7 @@ function homeHtml() {
       <section class="hm-hoje" aria-label="Os jogos de hoje">
         <h2 class="cv-h"><span>Hoje · ${d.getDate()} de ${MES_LONGO[d.getMonth()]}</span><small>${feitos === dia.length ? 'tudo feito' : feitos + ' de ' + dia.length}</small></h2>
         <div class="hm-dia">
-          ${dia.map(([id, n, ic, done]) => `<button id="${id}" class="hm-d${done ? ' is-done' : ''}" type="button" aria-label="${n}${done ? ': feito hoje' : ''}">
+          ${dia.map(([id, n, ic, done], i) => `<button id="${id}" class="hm-d${done ? ' is-done' : ''}${i === prox ? ' is-next' : ''}" type="button" aria-label="${n}${done ? ': feito hoje' : ''}">
             <span class="hm-seal">${(done ? ICON.check : ic)('currentColor', 15)}</span><small>${n}</small></button>`).join('')}
         </div>
       </section>

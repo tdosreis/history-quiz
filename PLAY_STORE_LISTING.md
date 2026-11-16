@@ -36,7 +36,7 @@ Um quiz de História em que o prêmio não é dinheiro: é memória. São dezess
 • PARAR a qualquer momento e ficar com o que já conquistou
 • No fim, a placa com o seu nome: escrito na areia, a giz, a tinta, em bronze, em mármore… ou nas estrelas
 • A sua própria figurinha no álbum, reimpressa em prata, holográfica e ouro conforme você sobe
-• Cinco PROVAS no meio da subida, sorteadas a cada partida: acertar o ano numa régua, cravar o lugar no mapa-múndi, pôr um evento na linha do tempo, "antes ou depois?", mito ou fato, soletrar um nome com letras soltas, ligar pares
+• Cinco PROVAS no meio da subida, sorteadas a cada partida: acertar o ano numa régua, cravar o lugar no mapa-múndi, pôr um evento na linha do tempo, "antes ou depois?", mito ou fato, uma cena da Máquina do tempo, soletrar um nome com letras soltas, ligar pares
 • Quatro CARTAS ESPECIAIS no meio da subida:
   — Quem sou eu? — as pistas vêm uma de cada vez, e cada pista extra custa cinco segundos do relógio
   — Linha do tempo — quatro fatos para colocar em ordem, do mais antigo ao mais novo

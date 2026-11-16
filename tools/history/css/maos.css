@@ -63,3 +63,5 @@
 :root[data-theme="dark"] .sl-b.is-bad, :root:not([data-theme="light"]) .sl-b.is-bad { color: #F08A78; }
 :root[data-theme="dark"] .sl-b.is-given, :root:not([data-theme="light"]) .sl-b.is-given { color: #E0B968; }
 :root[data-theme="dark"] .pr-l small, :root:not([data-theme="light"]) .pr-l small { color: #6FCF97; }
+.spcard-pv-maquina { --sp: #2E5E7E; --sp-soft: rgba(46, 94, 126, .14); }
+.spcard-pv-aod { --sp: #8C2F2F; --sp-soft: rgba(140, 47, 47, .13); }

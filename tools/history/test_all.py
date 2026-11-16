@@ -808,6 +808,8 @@ JS = r"""
       rung = qi = 7; sc = 'card'; go();
       if (!document.getElementById('bcardgo') || !document.getElementById('bstop')) F('prova card ' + kind);
       startProva();
+      /* the Máquina do tempo spins its dial first; the scene comes when it stops */
+      if (kind === 'maquina') { if (mt.phase !== 'warp' || !document.querySelector('.mt-warp')) F('prova maquina: no trip'); mt.phase = 'scene'; go(); }
       if (!provaOn() || !document.querySelector('.pv-bar') || !document.getElementById('bexit')) F('prova ' + kind + ' does not open under the climb bar');
       provaAuto(pass);
       if (!document.querySelector('.pv-verdict.' + (pass ? 'is-good' : 'is-bad'))) F('prova ' + kind + ' tier ' + tier + ': no verdict for ' + pass);
@@ -904,7 +906,7 @@ JS = r"""
     album = new Set(kAlb); LS.set('album', kAlb); _vault = JSON.parse(kVault); saveVault(); LS.set('milBest', kBest); LS.set('nome', kNome);
     LS.set('soletraBest', 0); LS.set('paresBest', 0);
     Object.assign(stats, JSON.parse(kS)); Object.keys(stats).forEach(k => { if (!(k in JSON.parse(kS))) delete stats[k]; }); LS.set('stats', stats);
-    sl = null; pr = null; ano = null; onde = null; cron = null; aod = null; mf = null; isMil = false; runPulls = []; runNewIds = []; runNew = 0; window._newMedals = []; sc = 'home';
+    sl = null; pr = null; ano = null; onde = null; cron = null; aod = null; mf = null; mt = null; isMil = false; runPulls = []; runNewIds = []; runNew = 0; window._newMedals = []; sc = 'home';
   } catch (e) { F('fama EXC ' + e.stack); }
   note.ms = Date.now() - T0;
   return { fails, note };

@@ -4953,6 +4953,7 @@ button.tf-row:hover, button.tf-row:focus-visible { background: #E0B968; outline:
 .mm-btn.is-ok { background: #2E7D4F; } .mm-btn.is-skip { background: #7A6A55; }
 .mm-btn:active { transform: translateY(2px); box-shadow: 0 1px 0 rgba(0, 0, 0, .22); }
 .mm-times-up { padding: 6px 16px 4px; border: 3px double #8E1F1C; border-radius: 6px; transform: rotate(-6deg); font: 800 26px/1 var(--font-s); letter-spacing: .14em; text-transform: uppercase; color: #8E1F1C; }
+.mm-sum { min-height: 0; }   /* a long turn's list scrolls inside the page instead of pushing it past the screen */
 .mm-list { width: 100%; max-width: 360px; flex: 0 1 auto; min-height: 0; overflow-y: auto; display: flex; flex-direction: column; gap: 3px; text-align: left; }
 .mm-li { display: flex; align-items: center; gap: 6px; padding: 4px 8px; font: 500 13px/1.25 var(--font-d); color: var(--ink-3); text-decoration: line-through; }
 .mm-li.is-ok { color: var(--ink); text-decoration: none; } .mm-li.is-ok svg { color: var(--good); }
@@ -5286,6 +5287,35 @@ button.pl-nome:focus-visible { outline: 2px solid currentColor; outline-offset: 
 :root[data-theme="dark"] .pv-verdict.is-good b, :root:not([data-theme="light"]) .pv-verdict.is-good b { color: #6FCF97; }
 :root[data-theme="dark"] .pv-verdict.is-bad b, :root:not([data-theme="light"]) .pv-verdict.is-bad b { color: #F08A78; }
 
+/* a round's end with everything on it at once (a record, insígnias, the pack, stamps) on a short phone: less air round it */
+/* (the page centres what it holds, so less padding changes nothing until a round's end is tall enough to need it) */
+.end-pg { padding-top: 12px !important; padding-bottom: 12px !important; }
+@media (max-height: 800px) { .end-pg { gap: 7px !important; } .end-pg .foot-row { margin-top: 6px !important; } }
+@media (max-height: 660px) {
+  .end-pg { padding: 12px 20px !important; gap: 6px !important; }
+  .end-pg .medal-chips { gap: 3px 5px !important; margin-top: 0 !important; }
+  .end-pg .medal-chips .chip { font-size: 10px !important; padding: 2px 8px; }
+  .end-pg .foot-row { margin-top: 6px !important; }
+}
+
+/* ── the plaques are not still: the tide comes for a name in the sand, breath fades on the pane, bronze catches the
+   light, ink is written as the climb ends. All of it slow, and none of it for a player who asked for less motion ── */
+.pl-areia { background-repeat: no-repeat, repeat, no-repeat; animation: plTide 4.6s ease-in-out infinite alternate; }
+@keyframes plTide { from { background-position: 0 0, 0 0, 0 0; } to { background-position: 0 10px, 0 0, 0 0; } }
+.pl-ar .pl-nome { animation: plBreath 5.2s ease-in-out infinite; }
+@keyframes plBreath { 0%, 100% { opacity: .46; filter: blur(1.4px); } 50% { opacity: .8; filter: blur(.5px); } }
+.pl-bronze { background:
+  linear-gradient(105deg, transparent 42%, rgba(255, 240, 200, .38) 50%, transparent 58%) 140% 0 / 260% 100% no-repeat,
+  linear-gradient(155deg, #D9A765 0%, #A9722F 38%, #C99550 62%, #7E5220 100%); animation: plGlint 6.5s ease-in-out infinite; }
+@keyframes plGlint { 0%, 55% { background-position: 140% 0, 0 0; } 85%, 100% { background-position: -40% 0, 0 0; } }
+.fm-end .pl-tinta .pl-nome, .eu-pg .pl-tinta .pl-nome { animation: plWrite 1s .35s cubic-bezier(.3, .7, .3, 1) both; }
+@keyframes plWrite { from { clip-path: inset(-10% 100% -10% 0); } to { clip-path: inset(-10% -6% -10% 0); } }
+.fm-end .pl-giz .pl-nome { animation: plChalk .7s .3s ease-out both; }
+@keyframes plChalk { from { opacity: 0; letter-spacing: .12em; } to { opacity: 1; letter-spacing: .01em; } }
+@media (prefers-reduced-motion: reduce) {
+  .pl-areia, .pl-ar .pl-nome, .pl-bronze, .fm-end .pl-tinta .pl-nome, .eu-pg .pl-tinta .pl-nome, .fm-end .pl-giz .pl-nome { animation: none; }
+}
+
 
 /* ═══ A CAPA, quiet (js/home.js) ═══ */
 .hm .cv-body { gap: 16px; }
@@ -5345,12 +5375,11 @@ button.pl-nome:focus-visible { outline: 2px solid currentColor; outline-offset: 
   .hm .cv-body { gap: 9px; }
   .hm .cv-cta .placa { padding: 6px 12px; }
 }
-/* a wide screen: the cover is a spread, the painting on the left page and everything else on the right */
-@media (min-width: 900px) {
-  .hm.cover { flex-direction: row; align-items: stretch; padding: 0; min-height: 100%; }
-  .hm .cv-art { flex: 1 1 52%; height: auto; min-height: 100vh; }
-  .hm .cv-body { flex: 1 1 48%; margin: 0; padding: 48px 56px 40px 28px; justify-content: center; max-width: 560px; align-self: center; }
-  .hm .cv-cap { bottom: 12%; }
+/* a wide screen shows the app as a sheet in the middle of the window: the painting is kept short enough for the whole
+   cover to stand on it without scrolling */
+@media (min-width: 700px) {
+  .hm .cv-art { height: clamp(240px, 36vh, 460px); }
+  .hm .cv-body { margin-top: -96px; padding-bottom: 6px; }
 }
 
 /* ═══ JOGOS: every other way to play (js/home.js) ═══ */
@@ -5394,6 +5423,13 @@ button.pl-nome:focus-visible { outline: 2px solid currentColor; outline-offset: 
 :root[data-theme="dark"] .hm-seal, :root:not([data-theme="light"]) .hm-seal { background: #2E2A24; color: #E8A9BC; box-shadow: 0 0 0 1.5px #B8627C, 0 2px 5px rgba(0, 0, 0, .4); }
 :root[data-theme="dark"] .hm-d.is-done .hm-seal, :root:not([data-theme="light"]) .hm-d.is-done .hm-seal { color: #F3F1E8; }
 :root[data-theme="dark"] .hm-hoje .cv-h small, :root:not([data-theme="light"]) .hm-hoje .cv-h small { color: #E0B968; }
+
+/* the next of the day's games still to play beckons, quietly */
+.hm-d.is-next .hm-seal { animation: hmNext 3.2s ease-in-out infinite; }
+@keyframes hmNext { 0%, 70%, 100% { box-shadow: 0 0 0 1.5px var(--pitch), 0 2px 5px var(--shadow), 0 0 0 0 rgba(123, 30, 58, 0); }
+  82% { box-shadow: 0 0 0 1.5px var(--pitch), 0 2px 5px var(--shadow), 0 0 0 7px rgba(123, 30, 58, .16); } }
+@media (prefers-reduced-motion: reduce) { .hm-d.is-next .hm-seal { animation: none; } }
+:root[data-theme="dark"] .hm-d.is-next .hm-seal, :root:not([data-theme="light"]) .hm-d.is-next .hm-seal { animation: none; }
 
 
 /* ═══ one album, three sections: the strip of tabs under the header (js/eu.js: albNav) ═══ */
@@ -5495,6 +5531,8 @@ button.pl-nome:focus-visible { outline: 2px solid currentColor; outline-offset: 
 :root[data-theme="dark"] .sl-b.is-bad, :root:not([data-theme="light"]) .sl-b.is-bad { color: #F08A78; }
 :root[data-theme="dark"] .sl-b.is-given, :root:not([data-theme="light"]) .sl-b.is-given { color: #E0B968; }
 :root[data-theme="dark"] .pr-l small, :root:not([data-theme="light"]) .pr-l small { color: #6FCF97; }
+.spcard-pv-maquina { --sp: #2E5E7E; --sp-soft: rgba(46, 94, 126, .14); }
+.spcard-pv-aod { --sp: #8C2F2F; --sp-soft: rgba(140, 47, 47, .13); }
 
 /*@@/formats_css@@*/
   </style>
@@ -5504,6 +5542,6 @@ button.pl-nome:focus-visible { outline: 2px solid currentColor; outline-offset: 
   <div id="ct"></div>
 </div>
 
-<script src="app.js?v=8cb6b3b29a"></script>
+<script src="app.js?v=823741c0bf"></script>
 </body>
 </html>

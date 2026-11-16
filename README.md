@@ -31,6 +31,25 @@ script uma vez e guarda o resultado, e o app abre ~40% mais rápido num celular 
 nunca rode um script antigo do cache. Os dois arquivos podem ser editados à mão; as ferramentas leem e
 gravam os dois juntos por `tools/history/page.py`.
 
+## A escalada: Para a História
+
+O jogo principal não vale dinheiro: vale memória. São dezesseis degraus, e cada um é o tempo pelo qual o nome
+do jogador será lembrado — um dia, um ano, um século, três milênios, para sempre —, do quinto em diante com o
+rosto de quem o mundo já lembra há esse tempo (`tools/history/js/fama.js`). No fim, a placa com o nome, no
+material que ele mereceu: dito ao vento, na areia, a giz, a tinta, em bronze, em mármore, nas estrelas.
+
+Cinco dos dezesseis degraus são **provas** (`js/prova.js`): uma rodada de um dos outros jogos, jogada pelo degrau,
+na tela do próprio jogo — a régua do Que ano?, o alfinete do Onde foi?, um evento na Cronologia, três «antes ou
+depois?», cartas de Mito ou fato?, uma cena da Máquina do tempo, um nome para soletrar e pares para ligar
+(`js/maos.js`). Cada escalada sorteia as suas, da mesma semente que sorteia as perguntas, então um desafio
+mandado a um amigo tem as mesmas provas. `provaAuto(acerta)` joga a prova da vez até o veredito: é com ela que
+a suíte e a sonda de layout sobem escaladas inteiras.
+
+A capa (`js/home.js`) tem uma coisa só para fazer, a escalada; embaixo, a placa do jogador, os cinco jogos do
+dia e duas portas: o álbum e a página **Jogos**. O álbum é um livro só, com três seções sob a mesma tira de abas
+— figurinhas no mapa, selos, vitrine — e a figurinha do próprio jogador, a Nº 000 (`js/eu.js`), reimpressa em
+prata, holográfica e ouro conforme ele sobe.
+
 ## Os formatos de pergunta
 
 Além das clássicas (texto, personagem, estado, "Quem sou eu?", linha do tempo), a História pergunta

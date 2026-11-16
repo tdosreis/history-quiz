@@ -149,6 +149,7 @@ button.tf-row:hover, button.tf-row:focus-visible { background: #E0B968; outline:
 .mm-btn.is-ok { background: #2E7D4F; } .mm-btn.is-skip { background: #7A6A55; }
 .mm-btn:active { transform: translateY(2px); box-shadow: 0 1px 0 rgba(0, 0, 0, .22); }
 .mm-times-up { padding: 6px 16px 4px; border: 3px double #8E1F1C; border-radius: 6px; transform: rotate(-6deg); font: 800 26px/1 var(--font-s); letter-spacing: .14em; text-transform: uppercase; color: #8E1F1C; }
+.mm-sum { min-height: 0; }   /* a long turn's list scrolls inside the page instead of pushing it past the screen */
 .mm-list { width: 100%; max-width: 360px; flex: 0 1 auto; min-height: 0; overflow-y: auto; display: flex; flex-direction: column; gap: 3px; text-align: left; }
 .mm-li { display: flex; align-items: center; gap: 6px; padding: 4px 8px; font: 500 13px/1.25 var(--font-d); color: var(--ink-3); text-decoration: line-through; }
 .mm-li.is-ok { color: var(--ink); text-decoration: none; } .mm-li.is-ok svg { color: var(--good); }

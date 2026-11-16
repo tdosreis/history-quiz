@@ -193,12 +193,13 @@ DRIVE = r"""
         rung=r; qi=r;
         if (pass){ sc='card'; go(); fit('prova/'+kind+'-carta'); }
         startProva(); if (pass) fit('prova/'+kind);
+        if (kind === 'maquina' && pass){ mt.phase='scene'; go(); fit('prova/maquina-cena'); }
         provaAuto(pass); fit('prova/'+kind+(pass?'-venceu':'-perdeu'));
         clearInterval(tmr); try { clearTimeout(aod && aod.adv); } catch (e) {}
       });
     });
   });
-  ano=null; onde=null; cron=null; aod=null; mf=null; sl=null; pr=null; isMil=false;
+  ano=null; onde=null; cron=null; aod=null; mf=null; sl=null; pr=null; mt=null; isMil=false;
   /* Soletre and Pares as games of their own: short names and long, each level, right and wrong */
   slPool().forEach(function(p, i){
     if (i % 4 && p.n.replace(/[^A-Za-zÀ-ÿ]/g,'').length < 11) return;

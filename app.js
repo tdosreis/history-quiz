@@ -5980,8 +5980,8 @@ const MEDALS = [
   /* ── the provas of the climb, and the two games of the hands ── */
   { id:'pv5', ic:'target', n:'Mãos à obra', d:'Vença 5 provas da escalada',
     t: st => (st.provas || 0) >= 5, p: () => [stats.provas || 0, 5] },
-  { id:'pv7', ic:'medal', n:'Sete ofícios', d:'Vença uma prova de cada um dos sete tipos',
-    t: st => Object.keys(st.provaK || {}).length >= 7, p: () => [Object.keys(stats.provaK || {}).length, 7] },
+  { id:'pv7', ic:'medal', n:'Sete ofícios', d:'Vença uma prova de cada tipo',
+    t: st => Object.keys(st.provaK || {}).length >= Object.keys(PROVA).length, p: () => [Object.keys(stats.provaK || {}).length, Object.keys(PROVA).length] },
   { id:'sl10', ic:'quill', n:'Letra por letra', d:'Soletre 10 nomes',
     t: st => (st.soletras || 0) >= 10, p: () => [stats.soletras || 0, 10] },
   { id:'pr10', ic:'chain', n:'Nó certo', d:'Acerte 10 rodadas de Pares',
@@ -18842,7 +18842,7 @@ function html() {
     <div class="dc-head">
       <span class="mode-disc mode-train dc-disc" aria-hidden="true">${ICON.ladder('currentColor', 24)}</span>
       <div class="display"><em>Escolha o seu ritmo</em></div>
-      <p class="small muted">Rodadas de treino: sem degraus e sem prêmio, só pontos — e cada acerto cola uma figurinha.</p>
+      <p class="small muted">Rodadas de treino: sem degraus e sem aposta, só pontos — e cada acerto cola uma figurinha.</p>
     </div>
     <div class="dc-list">
       ${DIFFS.map(d => `
@@ -18884,7 +18884,7 @@ function html() {
     const isRecord = !isRev && !isThemed() && scores[diffKey] !== undefined && pts === scores[diffKey] && pts > 0;
     const curDiff  = DIFFS.find(d => d.key === diffKey);
     return `
-    <div class="pg pg-center" style="padding:28px 24px;gap:10px;">
+    <div class="pg pg-center end-pg" style="padding:28px 24px;gap:10px;">
       <div class="end-cert">
       <span class="chip chip-soft" style="color:${curDiff.col};">
         ${isSurv ? `${ICON.shield('currentColor', 11)} Mata-mata · ${nCorrect} ${nCorrect === 1 ? 'acerto' : 'acertos'} seguidos`
@@ -26829,6 +26829,8 @@ function mtChoose(k) {
 }
 function mtNext() {
   if (!mt || mt.phase !== 'after') return;
+  /* one scene played for a rung of the climb (js/prova.js): the climb takes it from here */
+  if (mt.quest) return provaDone(mt.ok);
   if (mt.lives <= 0) return mtEnd(null);
   mt.i++; mt.pick = null; mt.phase = 'scene';
   try { snd.page(); } catch (e) {}
@@ -26882,14 +26884,15 @@ function maquinaHtml() {
   const [pic, text, chs] = a.scenes[mt.i], after = mt.phase === 'after', c = after ? chs[mt.pick] : null, last = chs.every(x => x[1] === null);
   return `
   <div class="pg mt-pg mt-scene" style="--ac:${a.col}">
-    ${topbar(`${a.t} · ${mtYear(a.y)}`, 'mt-quit')}
-    <div class="mt-head"><span class="mt-step">Cena ${mt.i + 1} de ${a.scenes.length}</span>${mtHg()}</div>
+    ${mt.quest ? provaBar() : topbar(`${a.t} · ${mtYear(a.y)}`, 'mt-quit')}
+    <div class="mt-head">${mt.quest ? `<span class="mt-step">${_esc(a.t)} · ${mtYear(a.y)}</span>` : `<span class="mt-step">Cena ${mt.i + 1} de ${a.scenes.length}</span>${mtHg()}`}</div>
     <div class="mt-plate">${sceneSvg({ id: pic }, 320)}</div>
     <p class="mt-text">${_esc(text)}</p>
     ${after ? `<div class="mt-after ${c[1] ? 'is-ok' : 'is-bad'}" role="status">
-        <b>${c[1] ? `${ICON.check('currentColor', 13)} Isso!` : `${ICON.cross('currentColor', 13)} ${mt.lives > 0 ? 'Não foi bem assim — uma ampulheta a menos' : 'A última ampulheta se esvaziou'}`}</b>
+        <b>${c[1] ? `${ICON.check('currentColor', 13)} Isso!` : `${ICON.cross('currentColor', 13)} ${mt.quest ? 'Não foi bem assim' : mt.lives > 0 ? 'Não foi bem assim — uma ampulheta a menos' : 'A última ampulheta se esvaziou'}`}</b>
         <p>${_esc(c[2])}</p>
-        <button id="mt-next" class="btn btn-brass" type="button">${mt.lives > 0 ? 'Seguir em frente' : 'Voltar ao presente'}</button></div>`
+        ${mt.quest ? provaVerdict(mt.ok) : ''}
+        <button id="mt-next" class="btn btn-brass" type="button">${mt.quest ? provaGoLabel(mt.ok) : mt.lives > 0 ? 'Seguir em frente' : 'Voltar ao presente'}</button></div>`
     : `<div class="mt-chs${last ? ' is-last' : ''}">${chs.map((x, k) => `<button class="mt-ch" data-k="${k}" type="button">${last ? ICON.map('currentColor', 13) : `<b>${'ABC'[k]}</b>`}<span>${_esc(x[0])}</span></button>`).join('')}</div>`}
   </div>`;
 }
@@ -27655,7 +27658,7 @@ function famaShareText() {
    ruler of years (Que ano?), the pin on the mapa-múndi (Onde foi?), an event
    to set in a line of time (Cronologia), three "before or after?" in a row,
    two or three legends to stamp (Mito ou fato?), a name to spell from letter
-   tiles and pairs to tie (js/maos.js). Each climb draws the five
+   tiles and pairs to tie (js/maos.js), a scene of the Máquina do tempo. Each climb draws the five
    in its own order, from the climb's seed, so a climb sent to a friend has
    the same provas; the higher the rung, the narrower the margin. A prova is
    announced on a card, like a carta especial — and that card is where the
@@ -27673,6 +27676,8 @@ const PROVA = {
   /* and two that are not games of the cover but ways of answering with the hands (js/maos.js) */
   soletra: { n: 'Soletre',       ic: ICON.quill,     tag: d => d.level >= 4 ? 'Monte o nome de quem está no retrato — há letras que não entram' : 'Monte o nome de quem está no retrato, letra por letra' },
   pares:   { n: 'Pares',         ic: ICON.chain,     tag: d => PR_REL[d.rel].h + ', sem errar nenhum' },
+  /* and a scene of one of the Máquina do tempo's adventures: there, with one question to get right */
+  maquina: { n: 'Máquina do tempo', ic: ICON.rocket, tag: d => { const a = MT_ADV.find(x => x.id === d.a); return `Uma viagem a ${mtYear(a.y)}: ${a.place.split(' → ')[0]}. Lá, o que você sabe decide`; } },
 };
 const _pvTier = (tier, arr) => arr[Math.max(0, Math.min(arr.length - 1, tier - 1))];
 const _pvEvt = id => ANO_EVENTS.find(e => e.id === id);
@@ -27714,6 +27719,11 @@ const PROVA_DEAL = {
     const st = { rs: Math.floor(rnd() * CHAL_SEED_MAX) };
     return prDeal(['nick', 'ctry', 'cent'][Math.floor(_mRnd(st) * 3)], tier >= 3 ? 4 : 3, tier <= 2, st);
   },
+  /* any scene that asks something (the last of each adventure only chooses an ending) */
+  maquina() {
+    const all = MT_ADV.flatMap(a => a.scenes.map((s, i) => ({ a: a.id, i })).filter(x => a.scenes[x.i][2].some(c => c[1] === true)));
+    return all.length ? all[Math.floor(rnd() * all.length)] : null;
+  },
 };
 /* Deals the provas into a ladder that is already built, as dealSpecials does its cards */
 function dealProvas(qs) {
@@ -27728,7 +27738,7 @@ function dealProvas(qs) {
 }
 
 /* is a prova being played right now (on its game's screen, for the rung in hand)? */
-const PROVA_SC = { ano: 'ano', onde: 'onde', cron: 'cron', aod: 'aod', mito: 'mito', soletra: 'soletra', pares: 'pares' };
+const PROVA_SC = { ano: 'ano', onde: 'onde', cron: 'cron', aod: 'aod', mito: 'mito', soletra: 'soletra', pares: 'pares', maquina: 'maquina' };
 const provaQ = () => (isMil && cat && cat.qs && cat.qs[qi] && cat.qs[qi]._prova ? cat.qs[qi] : null);
 const provaOn = () => { const q = provaQ(); return !!(q && sc === PROVA_SC[q._prova]); };
 
@@ -27754,6 +27764,13 @@ function startProva() {
     mfNew(d.seed); mf.quest = { need: d.need }; mf.lives = 1;
   } else if (k === 'soletra') slSet(d, { quest: true });
   else if (k === 'pares') prSet(d, { quest: true });
+  else if (k === 'maquina') {
+    /* the machine's dial spins down to the year, as on any trip, and stops on the one scene */
+    const a = MT_ADV.find(x => x.id === d.a);
+    mt = { adv: a, i: d.i, lives: 1, mistakes: 0, phase: 'warp', pick: null, quest: true };
+    try { snd.warp(); } catch (e) {}
+    setTimeout(() => { if (sc === 'maquina' && mt && mt.quest && mt.phase === 'warp' && mt.adv === a) { mt.phase = 'scene'; go(); } }, FX_STILL ? 0 : 1700);
+  }
   sc = PROVA_SC[k];
   go();
 }
@@ -27793,7 +27810,7 @@ function provaDone(pass) {
   /* the game's own state is put away: its screen, opened later from the cover, starts a game of its own */
   if (k === 'ano') ano = null; else if (k === 'onde') onde = null; else if (k === 'cron') cron = null;
   else if (k === 'aod') { clearTimeout(aod && aod.adv); aod = null; } else if (k === 'mito') mf = null;
-  else if (k === 'soletra') sl = null; else if (k === 'pares') pr = null;
+  else if (k === 'soletra') sl = null; else if (k === 'pares') pr = null; else if (k === 'maquina') mt = null;
   prevPts = pts;
   if (pass) { streak++; nCorrect++; pts += Math.round(4 * (streak >= 6 ? 3 : streak >= 3 ? 2 : 1) * DCFG().pmul); }
   else streak = 0;
@@ -27853,12 +27870,15 @@ function provaAuto(pass) {
     pr.link = pr.left.map((_, i) => pr.right.indexOf(i));
     if (!pass) [pr.link[0], pr.link[1]] = [pr.link[1], pr.link[0]];
     prCheck();
+  } else if (k === 'maquina') {
+    mt.phase = 'scene';
+    mtChoose(mt.adv.scenes[mt.i][2].findIndex(c => c[1] === pass));
   }
   return true;
 }
 function provaGo() {
   const q = provaQ();
-  if (q && provaOn()) ({ ano: anoNext, onde: ondeNext, cron: cronNext, aod: aodNext, mito: mfNext, soletra: slGo, pares: prGo })[q._prova]();
+  if (q && provaOn()) ({ ano: anoNext, onde: ondeNext, cron: cronNext, aod: aodNext, mito: mfNext, soletra: slGo, pares: prGo, maquina: mtNext })[q._prova]();
 }
 
 /* ═══════════════════════════════════════════════════
@@ -27976,7 +27996,7 @@ function homeHtml() {
   const held = PL.filter(p => album.has(p.id) && !UNPAINTED.has(p.id));
   const fan = (held.length >= 3 ? held.slice(-3)
     : [...held, ...PL.filter(p => FAMOUS.has(p.id) && !album.has(p.id) && !UNPAINTED.has(p.id))].slice(0, 3));
-  const dia = hojeJogos(), feitos = dia.filter(g => g[3]).length;
+  const dia = hojeJogos(), feitos = dia.filter(g => g[3]).length, prox = dia.findIndex(g => !g[3]);
   const e = earnedMedals().length;
   return `
   <div class="pg pg-home cover hm">
@@ -28001,7 +28021,7 @@ function homeHtml() {
       <section class="hm-hoje" aria-label="Os jogos de hoje">
         <h2 class="cv-h"><span>Hoje · ${d.getDate()} de ${MES_LONGO[d.getMonth()]}</span><small>${feitos === dia.length ? 'tudo feito' : feitos + ' de ' + dia.length}</small></h2>
         <div class="hm-dia">
-          ${dia.map(([id, n, ic, done]) => `<button id="${id}" class="hm-d${done ? ' is-done' : ''}" type="button" aria-label="${n}${done ? ': feito hoje' : ''}">
+          ${dia.map(([id, n, ic, done], i) => `<button id="${id}" class="hm-d${done ? ' is-done' : ''}${i === prox ? ' is-next' : ''}" type="button" aria-label="${n}${done ? ': feito hoje' : ''}">
             <span class="hm-seal">${(done ? ICON.check : ic)('currentColor', 15)}</span><small>${n}</small></button>`).join('')}
         </div>
       </section>

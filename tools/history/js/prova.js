@@ -6,7 +6,7 @@
    ruler of years (Que ano?), the pin on the mapa-múndi (Onde foi?), an event
    to set in a line of time (Cronologia), three "before or after?" in a row,
    two or three legends to stamp (Mito ou fato?), a name to spell from letter
-   tiles and pairs to tie (js/maos.js). Each climb draws the five
+   tiles and pairs to tie (js/maos.js), a scene of the Máquina do tempo. Each climb draws the five
    in its own order, from the climb's seed, so a climb sent to a friend has
    the same provas; the higher the rung, the narrower the margin. A prova is
    announced on a card, like a carta especial — and that card is where the
@@ -24,6 +24,8 @@ const PROVA = {
   /* and two that are not games of the cover but ways of answering with the hands (js/maos.js) */
   soletra: { n: 'Soletre',       ic: ICON.quill,     tag: d => d.level >= 4 ? 'Monte o nome de quem está no retrato — há letras que não entram' : 'Monte o nome de quem está no retrato, letra por letra' },
   pares:   { n: 'Pares',         ic: ICON.chain,     tag: d => PR_REL[d.rel].h + ', sem errar nenhum' },
+  /* and a scene of one of the Máquina do tempo's adventures: there, with one question to get right */
+  maquina: { n: 'Máquina do tempo', ic: ICON.rocket, tag: d => { const a = MT_ADV.find(x => x.id === d.a); return `Uma viagem a ${mtYear(a.y)}: ${a.place.split(' → ')[0]}. Lá, o que você sabe decide`; } },
 };
 const _pvTier = (tier, arr) => arr[Math.max(0, Math.min(arr.length - 1, tier - 1))];
 const _pvEvt = id => ANO_EVENTS.find(e => e.id === id);
@@ -65,6 +67,11 @@ const PROVA_DEAL = {
     const st = { rs: Math.floor(rnd() * CHAL_SEED_MAX) };
     return prDeal(['nick', 'ctry', 'cent'][Math.floor(_mRnd(st) * 3)], tier >= 3 ? 4 : 3, tier <= 2, st);
   },
+  /* any scene that asks something (the last of each adventure only chooses an ending) */
+  maquina() {
+    const all = MT_ADV.flatMap(a => a.scenes.map((s, i) => ({ a: a.id, i })).filter(x => a.scenes[x.i][2].some(c => c[1] === true)));
+    return all.length ? all[Math.floor(rnd() * all.length)] : null;
+  },
 };
 /* Deals the provas into a ladder that is already built, as dealSpecials does its cards */
 function dealProvas(qs) {
@@ -79,7 +86,7 @@ function dealProvas(qs) {
 }
 
 /* is a prova being played right now (on its game's screen, for the rung in hand)? */
-const PROVA_SC = { ano: 'ano', onde: 'onde', cron: 'cron', aod: 'aod', mito: 'mito', soletra: 'soletra', pares: 'pares' };
+const PROVA_SC = { ano: 'ano', onde: 'onde', cron: 'cron', aod: 'aod', mito: 'mito', soletra: 'soletra', pares: 'pares', maquina: 'maquina' };
 const provaQ = () => (isMil && cat && cat.qs && cat.qs[qi] && cat.qs[qi]._prova ? cat.qs[qi] : null);
 const provaOn = () => { const q = provaQ(); return !!(q && sc === PROVA_SC[q._prova]); };
 
@@ -105,6 +112,13 @@ function startProva() {
     mfNew(d.seed); mf.quest = { need: d.need }; mf.lives = 1;
   } else if (k === 'soletra') slSet(d, { quest: true });
   else if (k === 'pares') prSet(d, { quest: true });
+  else if (k === 'maquina') {
+    /* the machine's dial spins down to the year, as on any trip, and stops on the one scene */
+    const a = MT_ADV.find(x => x.id === d.a);
+    mt = { adv: a, i: d.i, lives: 1, mistakes: 0, phase: 'warp', pick: null, quest: true };
+    try { snd.warp(); } catch (e) {}
+    setTimeout(() => { if (sc === 'maquina' && mt && mt.quest && mt.phase === 'warp' && mt.adv === a) { mt.phase = 'scene'; go(); } }, FX_STILL ? 0 : 1700);
+  }
   sc = PROVA_SC[k];
   go();
 }
@@ -144,7 +158,7 @@ function provaDone(pass) {
   /* the game's own state is put away: its screen, opened later from the cover, starts a game of its own */
   if (k === 'ano') ano = null; else if (k === 'onde') onde = null; else if (k === 'cron') cron = null;
   else if (k === 'aod') { clearTimeout(aod && aod.adv); aod = null; } else if (k === 'mito') mf = null;
-  else if (k === 'soletra') sl = null; else if (k === 'pares') pr = null;
+  else if (k === 'soletra') sl = null; else if (k === 'pares') pr = null; else if (k === 'maquina') mt = null;
   prevPts = pts;
   if (pass) { streak++; nCorrect++; pts += Math.round(4 * (streak >= 6 ? 3 : streak >= 3 ? 2 : 1) * DCFG().pmul); }
   else streak = 0;
@@ -204,10 +218,13 @@ function provaAuto(pass) {
     pr.link = pr.left.map((_, i) => pr.right.indexOf(i));
     if (!pass) [pr.link[0], pr.link[1]] = [pr.link[1], pr.link[0]];
     prCheck();
+  } else if (k === 'maquina') {
+    mt.phase = 'scene';
+    mtChoose(mt.adv.scenes[mt.i][2].findIndex(c => c[1] === pass));
   }
   return true;
 }
 function provaGo() {
   const q = provaQ();
-  if (q && provaOn()) ({ ano: anoNext, onde: ondeNext, cron: cronNext, aod: aodNext, mito: mfNext, soletra: slGo, pares: prGo })[q._prova]();
+  if (q && provaOn()) ({ ano: anoNext, onde: ondeNext, cron: cronNext, aod: aodNext, mito: mfNext, soletra: slGo, pares: prGo, maquina: mtNext })[q._prova]();
 }

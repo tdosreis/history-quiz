@@ -152,3 +152,32 @@ button.pl-nome:focus-visible { outline: 2px solid currentColor; outline-offset: 
 :root[data-theme="dark"] .pv-stake b, :root:not([data-theme="light"]) .pv-stake b { color: #E0B968; }
 :root[data-theme="dark"] .pv-verdict.is-good b, :root:not([data-theme="light"]) .pv-verdict.is-good b { color: #6FCF97; }
 :root[data-theme="dark"] .pv-verdict.is-bad b, :root:not([data-theme="light"]) .pv-verdict.is-bad b { color: #F08A78; }
+
+/* a round's end with everything on it at once (a record, insígnias, the pack, stamps) on a short phone: less air round it */
+/* (the page centres what it holds, so less padding changes nothing until a round's end is tall enough to need it) */
+.end-pg { padding-top: 12px !important; padding-bottom: 12px !important; }
+@media (max-height: 800px) { .end-pg { gap: 7px !important; } .end-pg .foot-row { margin-top: 6px !important; } }
+@media (max-height: 660px) {
+  .end-pg { padding: 12px 20px !important; gap: 6px !important; }
+  .end-pg .medal-chips { gap: 3px 5px !important; margin-top: 0 !important; }
+  .end-pg .medal-chips .chip { font-size: 10px !important; padding: 2px 8px; }
+  .end-pg .foot-row { margin-top: 6px !important; }
+}
+
+/* ── the plaques are not still: the tide comes for a name in the sand, breath fades on the pane, bronze catches the
+   light, ink is written as the climb ends. All of it slow, and none of it for a player who asked for less motion ── */
+.pl-areia { background-repeat: no-repeat, repeat, no-repeat; animation: plTide 4.6s ease-in-out infinite alternate; }
+@keyframes plTide { from { background-position: 0 0, 0 0, 0 0; } to { background-position: 0 10px, 0 0, 0 0; } }
+.pl-ar .pl-nome { animation: plBreath 5.2s ease-in-out infinite; }
+@keyframes plBreath { 0%, 100% { opacity: .46; filter: blur(1.4px); } 50% { opacity: .8; filter: blur(.5px); } }
+.pl-bronze { background:
+  linear-gradient(105deg, transparent 42%, rgba(255, 240, 200, .38) 50%, transparent 58%) 140% 0 / 260% 100% no-repeat,
+  linear-gradient(155deg, #D9A765 0%, #A9722F 38%, #C99550 62%, #7E5220 100%); animation: plGlint 6.5s ease-in-out infinite; }
+@keyframes plGlint { 0%, 55% { background-position: 140% 0, 0 0; } 85%, 100% { background-position: -40% 0, 0 0; } }
+.fm-end .pl-tinta .pl-nome, .eu-pg .pl-tinta .pl-nome { animation: plWrite 1s .35s cubic-bezier(.3, .7, .3, 1) both; }
+@keyframes plWrite { from { clip-path: inset(-10% 100% -10% 0); } to { clip-path: inset(-10% -6% -10% 0); } }
+.fm-end .pl-giz .pl-nome { animation: plChalk .7s .3s ease-out both; }
+@keyframes plChalk { from { opacity: 0; letter-spacing: .12em; } to { opacity: 1; letter-spacing: .01em; } }
+@media (prefers-reduced-motion: reduce) {
+  .pl-areia, .pl-ar .pl-nome, .pl-bronze, .fm-end .pl-tinta .pl-nome, .eu-pg .pl-tinta .pl-nome, .fm-end .pl-giz .pl-nome { animation: none; }
+}

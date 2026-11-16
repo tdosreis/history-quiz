@@ -57,12 +57,11 @@
   .hm .cv-body { gap: 9px; }
   .hm .cv-cta .placa { padding: 6px 12px; }
 }
-/* a wide screen: the cover is a spread, the painting on the left page and everything else on the right */
-@media (min-width: 900px) {
-  .hm.cover { flex-direction: row; align-items: stretch; padding: 0; min-height: 100%; }
-  .hm .cv-art { flex: 1 1 52%; height: auto; min-height: 100vh; }
-  .hm .cv-body { flex: 1 1 48%; margin: 0; padding: 48px 56px 40px 28px; justify-content: center; max-width: 560px; align-self: center; }
-  .hm .cv-cap { bottom: 12%; }
+/* a wide screen shows the app as a sheet in the middle of the window: the painting is kept short enough for the whole
+   cover to stand on it without scrolling */
+@media (min-width: 700px) {
+  .hm .cv-art { height: clamp(240px, 36vh, 460px); }
+  .hm .cv-body { margin-top: -96px; padding-bottom: 6px; }
 }
 
 /* ═══ JOGOS: every other way to play (js/home.js) ═══ */
@@ -106,3 +105,10 @@
 :root[data-theme="dark"] .hm-seal, :root:not([data-theme="light"]) .hm-seal { background: #2E2A24; color: #E8A9BC; box-shadow: 0 0 0 1.5px #B8627C, 0 2px 5px rgba(0, 0, 0, .4); }
 :root[data-theme="dark"] .hm-d.is-done .hm-seal, :root:not([data-theme="light"]) .hm-d.is-done .hm-seal { color: #F3F1E8; }
 :root[data-theme="dark"] .hm-hoje .cv-h small, :root:not([data-theme="light"]) .hm-hoje .cv-h small { color: #E0B968; }
+
+/* the next of the day's games still to play beckons, quietly */
+.hm-d.is-next .hm-seal { animation: hmNext 3.2s ease-in-out infinite; }
+@keyframes hmNext { 0%, 70%, 100% { box-shadow: 0 0 0 1.5px var(--pitch), 0 2px 5px var(--shadow), 0 0 0 0 rgba(123, 30, 58, 0); }
+  82% { box-shadow: 0 0 0 1.5px var(--pitch), 0 2px 5px var(--shadow), 0 0 0 7px rgba(123, 30, 58, .16); } }
+@media (prefers-reduced-motion: reduce) { .hm-d.is-next .hm-seal { animation: none; } }
+:root[data-theme="dark"] .hm-d.is-next .hm-seal, :root:not([data-theme="light"]) .hm-d.is-next .hm-seal { animation: none; }

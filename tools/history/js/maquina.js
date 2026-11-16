@@ -156,6 +156,8 @@ function mtChoose(k) {
 }
 function mtNext() {
   if (!mt || mt.phase !== 'after') return;
+  /* one scene played for a rung of the climb (js/prova.js): the climb takes it from here */
+  if (mt.quest) return provaDone(mt.ok);
   if (mt.lives <= 0) return mtEnd(null);
   mt.i++; mt.pick = null; mt.phase = 'scene';
   try { snd.page(); } catch (e) {}
@@ -209,14 +211,15 @@ function maquinaHtml() {
   const [pic, text, chs] = a.scenes[mt.i], after = mt.phase === 'after', c = after ? chs[mt.pick] : null, last = chs.every(x => x[1] === null);
   return `
   <div class="pg mt-pg mt-scene" style="--ac:${a.col}">
-    ${topbar(`${a.t} · ${mtYear(a.y)}`, 'mt-quit')}
-    <div class="mt-head"><span class="mt-step">Cena ${mt.i + 1} de ${a.scenes.length}</span>${mtHg()}</div>
+    ${mt.quest ? provaBar() : topbar(`${a.t} · ${mtYear(a.y)}`, 'mt-quit')}
+    <div class="mt-head">${mt.quest ? `<span class="mt-step">${_esc(a.t)} · ${mtYear(a.y)}</span>` : `<span class="mt-step">Cena ${mt.i + 1} de ${a.scenes.length}</span>${mtHg()}`}</div>
     <div class="mt-plate">${sceneSvg({ id: pic }, 320)}</div>
     <p class="mt-text">${_esc(text)}</p>
     ${after ? `<div class="mt-after ${c[1] ? 'is-ok' : 'is-bad'}" role="status">
-        <b>${c[1] ? `${ICON.check('currentColor', 13)} Isso!` : `${ICON.cross('currentColor', 13)} ${mt.lives > 0 ? 'Não foi bem assim — uma ampulheta a menos' : 'A última ampulheta se esvaziou'}`}</b>
+        <b>${c[1] ? `${ICON.check('currentColor', 13)} Isso!` : `${ICON.cross('currentColor', 13)} ${mt.quest ? 'Não foi bem assim' : mt.lives > 0 ? 'Não foi bem assim — uma ampulheta a menos' : 'A última ampulheta se esvaziou'}`}</b>
         <p>${_esc(c[2])}</p>
-        <button id="mt-next" class="btn btn-brass" type="button">${mt.lives > 0 ? 'Seguir em frente' : 'Voltar ao presente'}</button></div>`
+        ${mt.quest ? provaVerdict(mt.ok) : ''}
+        <button id="mt-next" class="btn btn-brass" type="button">${mt.quest ? provaGoLabel(mt.ok) : mt.lives > 0 ? 'Seguir em frente' : 'Voltar ao presente'}</button></div>`
     : `<div class="mt-chs${last ? ' is-last' : ''}">${chs.map((x, k) => `<button class="mt-ch" data-k="${k}" type="button">${last ? ICON.map('currentColor', 13) : `<b>${'ABC'[k]}</b>`}<span>${_esc(x[0])}</span></button>`).join('')}</div>`}
   </div>`;
 }
